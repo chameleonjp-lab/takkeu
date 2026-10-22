@@ -1,6 +1,6 @@
-import { BackSide, BoxGeometry, BufferGeometry, CircleGeometry, CylinderGeometry, Float32BufferAttribute, Group, LineBasicMaterial, LineSegments, Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, SphereGeometry, Texture } from 'three';
+import { BoxGeometry, BufferGeometry, CylinderGeometry, Group, LineBasicMaterial, LineSegments, Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, SphereGeometry, Texture } from 'three';
 import type { GameConfig } from '../game/types';
-import { sampleRainbow } from './rainbow';
+import { createBallPool } from './balls';
 import { lineMaterial, lines, standard, tableTexture } from './materials';
 import { createPaddle, RUBBER_FACE_DEPTH } from './paddle';
 import { createEnvironment } from './environment';
@@ -58,30 +58,18 @@ export function createObjects(config: GameConfig) {
     const clamp = new Mesh(new BoxGeometry(0.07, 0.04, 0.08), standard(0x4a4b42, 0.4));
     clamp.position.set(x, -0.012, 0); net.add(clamp);
   }
-  root.add(createEnvironment(config));
+  const environment = createEnvironment(config); root.add(environment.root);
   const parts = {
     selfCourtRight: self.right, selfCourtLeft: self.left,
     opponentCourtRight: opponent.right, opponentCourtLeft: opponent.left,
+    selfFloor: environment.selfFloor, opponentFloor: environment.opponentFloor, opponentWall: environment.opponentWall,
     courtEdges, net, playerRacketBody: player.body, playerRacketEdge: player.rim,
     opponentRacketBody: other.body, opponentRacketEdge: other.rim, opponentBody,
   };
-  const balls = new Map<number, { root: Group; core: Mesh<SphereGeometry, MeshStandardMaterial>; glow: Mesh<SphereGeometry, MeshBasicMaterial>; shadow: Mesh<CircleGeometry, MeshBasicMaterial> }>();
-  for (let id = 1; id <= config.maxBalls; id++) {
-    const group = new Group();
-    const core = new Mesh(new SphereGeometry(config.ballRadius, 20, 12), standard(0xffec64, 0.42, 0xffeaa0, 0.15));
-    const geometry = new SphereGeometry(config.ballRadius, 24, 16);
-    geometry.setAttribute('color', new Float32BufferAttribute(new Float32Array(geometry.attributes.position!.count * 3), 3));
-    // Normal depth testing keeps a far ball behind the paddle. Only the outer
-    // band of the back shell survives the opaque core's depth, preserving its
-    // white centre instead of tinting the whole ball with the rainbow.
-    const glow = new Mesh(geometry, new MeshBasicMaterial({ vertexColors: true, side: BackSide, transparent: true, opacity: 0.75, depthWrite: false }));
-    const shadow = new Mesh(new CircleGeometry(config.ballRadius * 1.2, 20), new MeshBasicMaterial({ color: 0x153827, transparent: true, opacity: 0.25, depthWrite: false }));
-    shadow.rotation.x = -Math.PI / 2;
-    group.add(core, glow, shadow); group.visible = false; root.add(group); balls.set(id, { root: group, core, glow, shadow });
-  }
+  const pool = createBallPool(config); root.add(pool.root);
   root.add(self.group, opponent.group, courtEdges, player.group, other.group, opponentBody, net);
   return {
-    root, parts, balls, tableY: config.tableY, tableHalfLength: config.tableHalfLength, tableHalfWidth: config.tableHalfWidth,
+    root, parts, balls: pool.balls, syncBalls: pool.sync, tableY: config.tableY, tableHalfLength: config.tableHalfLength, tableHalfWidth: config.tableHalfWidth,
     playerCourt: self.group, opponentCourt: opponent.group, playerEdges, opponentEdges,
     playerPaddle: player.group, opponentPaddle: other.group, opponentBody, opponentArm, net, rimMaterial: player.rim.material,
     dispose() {
@@ -100,17 +88,7 @@ export function createObjects(config: GameConfig) {
       for (const texture of textures) texture.dispose();
       for (const geometry of geometries) geometry.dispose();
       for (const material of materials) material.dispose();
-      root.clear();
+      pool.clear(); root.clear();
     },
   };
-}
-
-export function colorBall(glow: Mesh<SphereGeometry, MeshBasicMaterial>, simTime: number): void {
-  const colors = glow.geometry.attributes.color!;
-  const positions = glow.geometry.attributes.position!;
-  for (let i = 0; i < colors.count; i++) {
-    const rgb = sampleRainbow(simTime, (positions.getY(i) / glow.geometry.parameters.radius + 1) / 2);
-    colors.setXYZ(i, rgb.r, rgb.g, rgb.b);
-  }
-  colors.needsUpdate = true;
 }

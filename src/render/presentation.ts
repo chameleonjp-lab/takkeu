@@ -1,16 +1,16 @@
 import { Color, Float32BufferAttribute, LineBasicMaterial, LineSegments, Mesh, MeshStandardMaterial } from 'three';
 import type { BufferGeometry } from 'three';
 import type { BallSnapshot, GameSnapshot } from '../game/types';
-import { colorBall } from './objects';
 import type { createObjects } from './objects';
 import { samplePulse, sampleRainbow } from './rainbow';
 
-export type PartId = 'selfCourtRight' | 'selfCourtLeft' | 'opponentCourtRight' | 'opponentCourtLeft' | 'courtEdges' | 'net' | 'playerRacketBody' | 'playerRacketEdge' | 'opponentRacketBody' | 'opponentRacketEdge' | 'opponentBody';
-export type PartState = Readonly<{ visible: boolean; rainbow: boolean }>;
+export type PartId = 'selfCourtRight' | 'selfCourtLeft' | 'opponentCourtRight' | 'opponentCourtLeft' | 'courtEdges' | 'net' | 'playerRacketBody' | 'playerRacketEdge' | 'opponentRacketBody' | 'opponentRacketEdge' | 'opponentBody' | 'selfFloor' | 'opponentFloor' | 'opponentWall';
+export type PartState = Readonly<{ visible: boolean; rainbow: boolean; solid?: boolean }>;
 export type PresentationState = Readonly<{
   parts: Readonly<Record<PartId, PartState>>; balls: Readonly<Record<number, PartState>>;
   pulseStrength: number; opponentEdgesVisible: boolean;
 }>;
+const SOLID_RACKET_GLOW = new Color(0xef252e);
 type VisualSnapshot = Pick<GameSnapshot, 'simTime' | 'progression'>;
 function glowing(snapshot?: VisualSnapshot): boolean {
   return !!snapshot && (snapshot.progression.appliedMilestones.includes(30) || (snapshot.progression.ballGlowUntil !== null && snapshot.simTime < snapshot.progression.ballGlowUntil));
@@ -27,13 +27,14 @@ export function resolvePresentation(snapshot: GameSnapshot): PresentationState {
   return {
     parts: {
       selfCourtRight: part(160, true), selfCourtLeft: part(210, true),
-      opponentCourtRight: part(190, true), opponentCourtLeft: part(240, true), courtEdges: part(70, true),
-      net: part(130, true), playerRacketBody: part(270, true), playerRacketEdge: part(100, true),
-      opponentRacketBody: part(330, true), opponentRacketEdge: part(300, true), opponentBody: part(360),
+      opponentCourtRight: part(190), opponentCourtLeft: part(240), courtEdges: part(70, true),
+      net: part(130, true), playerRacketBody: reached(390) ? part(390, true) : { visible: true, rainbow: false, ...(reached(270) ? { solid: true } : {}) }, playerRacketEdge: part(100, true),
+      opponentRacketBody: part(330), opponentRacketEdge: part(300), opponentBody: part(360),
+      selfFloor: part(410, true), opponentFloor: part(380), opponentWall: part(420),
     },
     balls: Object.fromEntries(snapshot.balls.map(ball => [ball.id, { visible: isBallVisible(ball, snapshot), rainbow: glowing(snapshot) }])),
     pulseStrength: reached(390) ? samplePulse(snapshot.simTime) : 1,
-    opponentEdgesVisible: true,
+    opponentEdgesVisible: reached(70),
   };
 }
 function colorVertices(geometry: BufferGeometry, time: number): void {
@@ -63,15 +64,16 @@ export function applyPresentation(objects: ReturnType<typeof createObjects>, sna
         if (material.vertexColors !== part.rainbow) { material.vertexColors = part.rainbow; material.needsUpdate = true; }
         if (part.rainbow) {
           colorVertices(child.geometry, snapshot.simTime);
-          const rgb = sampleRainbow(snapshot.simTime, 0);
-          material.color.setRGB(1, 1, 1).multiplyScalar(0.7 * state.pulseStrength);
+          material.color.setRGB(1, 1, 1).multiplyScalar((material instanceof MeshStandardMaterial ? 0.16 : 1) * state.pulseStrength);
           if (material instanceof MeshStandardMaterial) {
-            material.emissive.setRGB(rgb.r, rgb.g, rgb.b); material.emissiveIntensity = 0.12 * state.pulseStrength;
+            material.emissive.setRGB(1, 1, 1); material.emissiveIntensity = 0.85 * state.pulseStrength;
           } else material.opacity = 0.9;
         } else {
           material.color.copy(material.userData.baseColor as Color);
           if (material instanceof MeshStandardMaterial) {
-            material.emissive.copy(material.userData.baseEmissive as Color); material.emissiveIntensity = material.userData.baseIntensity as number;
+            material.emissive.copy(part.solid ? SOLID_RACKET_GLOW : material.userData.baseEmissive as Color);
+            if (part.solid) material.color.multiplyScalar(0.16);
+            material.emissiveIntensity = part.solid ? 0.85 : material.userData.baseIntensity as number;
           } else material.opacity = material.userData.baseOpacity as number;
         }
       }
@@ -81,24 +83,19 @@ export function applyPresentation(objects: ReturnType<typeof createObjects>, sna
   objects.opponentEdges.visible = state.opponentEdgesVisible;
   objects.opponentPaddle.visible = state.parts.opponentRacketBody.visible || state.parts.opponentRacketEdge.visible;
   objects.playerPaddle.position.x = snapshot.paddle.x; objects.playerPaddle.position.y = snapshot.paddle.y;
-  for (const [id, visual] of objects.balls) {
-    const ball = snapshot.balls.find(b => b.id === id), style = state.balls[id];
+  objects.syncBalls(snapshot.balls.filter(ball => state.balls[ball.id]?.visible).map(ball => ball.id), glowing(snapshot), snapshot.simTime);
+  for (const ball of snapshot.balls) {
+    const id = ball.id, visual = objects.balls.get(id), style = state.balls[id];
+    if (!visual) continue;
     // One visibility gate for the entire ball subtree, including all light/outline effects.
-    visual.root.visible = !!ball && !!style?.visible;
-    if (!ball || !style) continue;
+    visual.root.visible = !!style?.visible;
+    if (!style) continue;
     visual.root.position.set(ball.position.x, ball.position.y, ball.position.z);
     visual.shadow.position.y = objects.tableY + 0.007 - ball.position.y;
-    visual.shadow.visible = Math.abs(ball.position.z) <= objects.tableHalfLength && Math.abs(ball.position.x) <= objects.tableHalfWidth;
+    const surfaceVisible = ball.position.z >= 0 || state.parts[ball.position.x >= 0 ? 'opponentCourtRight' : 'opponentCourtLeft'].visible;
+    visual.shadow.visible = surfaceVisible && Math.abs(ball.position.z) <= objects.tableHalfLength && Math.abs(ball.position.x) <= objects.tableHalfWidth;
     visual.shadow.material.opacity = 0.3 / (1 + Math.max(0, ball.position.y - objects.tableY));
     visual.glow.visible = style.rainbow;
     visual.core.scale.setScalar(style.rainbow ? 0.9 : 1);
-    if (style.rainbow) {
-      visual.core.material.color.setHex(0xffffff);
-      visual.core.material.emissive.setHex(0xffffff);
-    } else {
-      visual.core.material.color.copy(visual.core.material.userData.baseColor as Color);
-      visual.core.material.emissive.copy(visual.core.material.userData.baseEmissive as Color);
-    }
-    if (style.rainbow) colorBall(visual.glow, snapshot.simTime);
   }
 }

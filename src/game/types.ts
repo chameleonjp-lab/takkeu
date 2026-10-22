@@ -11,7 +11,7 @@ export type GameEvent = Readonly<{
   ballId?: number; milestone?: number;
 }>;
 export type BallSnapshot = Readonly<{ id: number; phase: BallPhase; position: Point3; smash: boolean }>;
-export type ProgressionState = Readonly<{ appliedMilestones: readonly number[]; ballGlowUntil: number | null }>;
+export type ProgressionState = Readonly<{ appliedMilestones: readonly number[]; ballGlowUntil: number | null; awardedBallCount: number }>;
 export type ReturnPlan = Readonly<{
   ballId: number; departAt: number; netCrossAt: number; arriveAt: number;
   target: PaddlePoint; smash: boolean; warningAt: number | null; speedMultiplier: number;
@@ -39,6 +39,6 @@ export type GameConfig = Readonly<{
   ballRadius: number; paddleRadius: number;
   fixedDt: number; maxStepsPerFrame: number; slowFrameSeconds: number;
   normalVisibleSeconds: number; minimumVisibleSeconds: number;
-  maxBalls: number; pulseHalfPeriod: number; audioVoiceLimit: number;
+  pulseHalfPeriod: number; audioVoiceLimit: number;
   maxPixelRatio: number; maxDrawingPixels: number;
 }>;

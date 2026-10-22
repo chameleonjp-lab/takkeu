@@ -60,18 +60,20 @@ describe('450以降の相手の返球', () => {
   });
   it('449→450の接触後の新規予約からスマッシュを使い、予告と打球と加点を1回ずつ出す', async () => {
     const s = scenario(449);
-    s.state.randomState = 2;
+    // The 450 reward consumes two random values before the next return.
+    s.state.randomState = 6;
     s.state.balls = [incoming(1, 20.001, INITIAL_PADDLE, 20, 0.1), outgoing(2, 20.005)];
     const all: GameEvent[] = [...s.step().events];
     const committed = s.snapshot().scheduledReturns.find(p => p.ballId === 2)!;
     expect(s.state.score).toBe(450);
     expect(committed.smash).toBe(true);
+    while (s.state.simTime < committed.warningAt! + DEFAULT_CONFIG.fixedDt) all.push(...s.step(committed.target).events);
     expect(resolveOpponentPose(s.snapshot()).preparing).toBe(true);
     expect(resolvePresentation(s.snapshot()).balls[2]!.visible).toBe(false);
     const { context, voices } = fakeAudioContext();
     const audio = createAudio(DEFAULT_CONFIG, () => context); audio.reset(s.state.runId); await audio.unlock();
     audio.consume(all);
-    for (let tick = 0; tick < 240; tick++) {
+    for (; s.state.simTime < committed.arriveAt + 0.05;) {
       const before = structuredClone(s.snapshot());
       const events = s.step(committed.target).events;
       all.push(...events); audio.consume(events); audio.consume(events);
@@ -80,7 +82,8 @@ describe('450以降の相手の返球', () => {
     expect(all.filter(e => e.kind === 'smash-warning' && e.ballId === 2)).toHaveLength(1);
     expect(all.filter(e => e.kind === 'opponent-hit' && e.ballId === 2)).toHaveLength(1);
     expect(all.filter(e => e.kind === 'player-hit' && e.ballId === 2)).toHaveLength(1);
-    expect(s.state.score).toBe(451); expect(s.state.phase).toBe('running');
+    expect(all.filter(e => e.kind === 'player-hit').map(e => e.ballId).sort()).toEqual([1, 2, 3]);
+    expect(s.state.score).toBe(452); expect(s.state.phase).toBe('running');
     expect(voices).toHaveLength(all.filter(e => ['player-hit', 'opponent-hit', 'smash-warning'].includes(e.kind)).length);
     expect(voices.some(v => v.frequencies[0] === 440)).toBe(true);
     await audio.dispose();

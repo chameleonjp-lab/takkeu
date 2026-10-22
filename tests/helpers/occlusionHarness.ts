@@ -26,7 +26,41 @@ function show(depth: 'absent' | 'behind' | 'front', score = 0) {
   gl.readPixels(Math.round(screen.x), canvas.height - Math.round(screen.y), 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, rgba);
   return [...rgba];
 }
-const occlusion = { show, screen };
+const occlusion = { show, screen, emissionProbe };
 declare global { interface Window { occlusion: typeof occlusion } }
 window.occlusion = occlusion;
 show('absent');
+
+/** Isolate real production parts with zero lights to verify emitted colour. */
+async function emissionProbe() {
+  const { Color, Scene, WebGLRenderer } = await import('three');
+  const { createObjects } = await import('../../src/render/objects');
+  const { applyPresentation } = await import('../../src/render/presentation');
+  const renderer = new WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  renderer.setSize(600, 419);
+  const scene = new Scene(); scene.background = new Color(0);
+  const objects = createObjects(config), results = [];
+  const points = [
+    ['selfCourtRight', 160, [0.5, 0, 0.9]], ['opponentCourtRight', 190, [0.5, 0, -0.9]],
+    ['opponentFloor', 380, [0, -0.8, -3]], ['selfFloor', 410, [0, -0.8, 0.5]],
+    ['opponentWall', 420, [0, 0, -6.15]],
+  ] as const;
+  try {
+    for (const [id, threshold, point] of points) {
+      const pixels = [], captures = [];
+      const screen = new Vector3(...point).project(camera);
+      const x = Math.round((screen.x + 1) * 300), y = Math.round((screen.y + 1) * 419 / 2);
+      for (const score of [threshold - 1, threshold]) {
+        applyPresentation(objects, scenario(score, 0).snapshot());
+        const part = objects.parts[id], parent = part.parent!;
+        scene.add(part); renderer.render(scene, camera);
+        const gl = renderer.getContext(), rgba = new Uint8Array(4);
+        gl.readPixels(x, y, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, rgba);
+        pixels.push([...rgba]); captures.push(renderer.domElement.toDataURL('image/png'));
+        parent.add(part);
+      }
+      results.push({ id, threshold, x, y, pixels, captures });
+    }
+    return results;
+  } finally { objects.dispose(); renderer.dispose(); renderer.forceContextLoss(); }
+}

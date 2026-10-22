@@ -1,4 +1,5 @@
 import { createAudio } from '../../src/audio/audio';
+import { ballCountAtScore } from '../../src/game/milestones';
 import { DEFAULT_CONFIG } from '../../src/game/config';
 import type { GameEvent, GameSnapshot } from '../../src/game/types';
 import { createView } from '../../src/render/createView';
@@ -27,11 +28,11 @@ function render(events: readonly GameEvent[] = []) {
 }
 function show(score: number, time = 0, glowUntil: number | null = null) {
   simulation = null; emitted.length = 0;
-  const count = score >= 150 ? 4 : score >= 50 ? 3 : score >= 30 ? 2 : 1;
+  const count = ballCountAtScore(score);
   const base = scenario(score, time).snapshot();
   current = { ...base, phase: 'running', progression: { ...base.progression, ballGlowUntil: glowUntil },
     balls: Array.from({ length: count }, (_, i) => ({ id: i + 1, phase: 'incoming', smash: false,
-      position: { x: [-0.45, 0.45, 0.7, -0.6][i]!, y: [0.45, 0.48, 0.6, 0.7][i]!, z: score === 10 ? -0.75 : [0.95, -0.75, 0.45, -1.3][i]! } })),
+      position: i < 4 ? { x: [-0.45, 0.45, 0.7, -0.6][i]!, y: [0.45, 0.48, 0.6, 0.7][i]!, z: score === 10 ? -0.75 : [0.95, -0.75, 0.45, -1.3][i]! } : { x: -0.8 + (i % 6) * 0.32, y: 0.32 + (i % 3) * 0.045, z: (i % 2 ? -1 : 1) * (0.25 + Math.floor(i / 6) * 0.21) } })),
   };
   audio.reset(current.runId); render();
 }

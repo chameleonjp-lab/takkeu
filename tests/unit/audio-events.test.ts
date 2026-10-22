@@ -136,3 +136,18 @@ it('音ノード生成失敗を画面側へ通知し、無音継続後に手動�
   audio.consume([event('player-hit', '2'), event('opponent-hit', '3')]);
   expect(voices).toHaveLength(1); await audio.dispose();
 });
+
+
+it('34球の同時イベントも個別に一度だけ発音し、同時ノードは8音と8フェード尾以下に保つ', async () => {
+  const { context, voices } = fakeAudioContext();
+  const audio = createAudio(DEFAULT_CONFIG, () => context); audio.reset('run-1'); await audio.unlock();
+  const burst = Array.from({ length: 34 }, (_, i) => ({ ...event(i % 2 ? 'player-hit' : 'opponent-hit', `burst-${i}`), ballId: i + 1 }));
+  audio.consume(burst); audio.consume(burst);
+  expect(voices).toHaveLength(34);
+  expect(voices.filter(v => !v.disconnected).length).toBeLessThanOrEqual(16);
+  audio.consume([event('game-over', 'end')]);
+  expect(voices.every(v => v.disconnected)).toBe(true);
+  audio.reset('run-2'); await audio.unlock(); audio.consume(burst);
+  expect(voices).toHaveLength(34);
+  await audio.dispose();
+});

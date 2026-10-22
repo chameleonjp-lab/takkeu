@@ -25,3 +25,22 @@ test('球と虹色の輪郭はラケットとの前後関係を守る', async ({
   }
   await testInfo.attach('gpu-occlusion', { body: JSON.stringify(results, null, 2), contentType: 'application/json' });
 });
+
+
+test('虹色は照明がなくても発光し、相手床・壁は閾値まで暗い', async ({ page }, info) => {
+  const errors: string[] = [];
+  page.on('pageerror', e => errors.push(e.message));
+  page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
+  await page.goto('/tests/fixtures/occlusion.html');
+  await page.waitForFunction(() => !!window.occlusion);
+  const results = await page.evaluate(() => window.occlusion.emissionProbe());
+  for (const row of results) {
+    expect(row.x).toBeGreaterThan(0); expect(row.x).toBeLessThan(600);
+    expect(row.y).toBeGreaterThan(0); expect(row.y).toBeLessThan(419);
+    expect(Math.max(...row.pixels[0]!.slice(0, 3)), `${row.id} before`).toBeLessThan(8);
+    expect(Math.max(...row.pixels[1]!.slice(0, 3)), `${row.id} emitted light`).toBeGreaterThan(150);
+    for (let i = 0; i < row.captures.length; i++) await info.attach(`${row.id}-${i ? 'glowing' : 'before'}`, { body: Buffer.from(row.captures[i]!.split(',')[1]!, 'base64'), contentType: 'image/png' });
+  }
+  await info.attach('emission-pixels.json', { body: JSON.stringify(results.map(({ captures: _, ...row }) => row), null, 2), contentType: 'application/json' });
+  expect(errors).toEqual([]);
+});

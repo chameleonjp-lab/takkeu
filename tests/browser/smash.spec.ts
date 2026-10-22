@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.use({ video: 'on' });
 
-test('450の予告はミュート・390・420・4球・停止中でも見え、球を暴露しない', async ({ page }, info) => {
+test('450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない', async ({ page }, info) => {
   await page.goto('/tests/fixtures/stage2.html');
   await page.waitForFunction(() => !!window.stage2);
   await page.evaluate(() => window.stage2.beginSmash(449));
