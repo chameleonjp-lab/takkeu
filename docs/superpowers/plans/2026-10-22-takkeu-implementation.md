@@ -191,7 +191,7 @@ T01で次のスクリプトを用意する。T01以前に実行できると主�
 
 **Interfaces:** `advanceProgression(state: ProgressionState, previousScore: number, nextScore: number, simTime: number): ProgressionUpdate`。`ProgressionUpdate`は`state`、`crossed: readonly number[]`、`addedBalls: number`、`speedTier: number`を返す。`speedMultiplier(score: number): number`は要件書の式を使う。`scheduleReturn(request: ReturnRequest, reserved: readonly ReturnPlan[], config: GameConfig): ReturnPlan`は既存予約を変更せず次の成立する打球を返す。`ReturnRequest`は`ballId`、`earliestDepartAt`、`preferredTarget`、`speedMultiplier`、`smash`を持つ。
 
-- [ ] `progression.test.ts`で、以下の境界とM10の5秒・M30の優先を検査する。
+- [x] `progression.test.ts`で、以下の境界とM10の5秒・M30の優先を検査する。
 ```ts
 const state = { appliedMilestones: [10, 30], ballGlowUntil: null };
 const first = advanceProgression(state, 49, 51, 12);
@@ -202,10 +202,10 @@ expect(advanceProgression(first.state, 51, 52, 13).addedBalls).toBe(0);
 expect(speedMultiplier(0)).toBe(1);
 expect(speedMultiplier(450)).toBeLessThanOrEqual(2.2);
 ```
-- [ ] `multiball.test.ts`で29→31、149→151、途中の落球後に50で1球だけ追加、生存球4以下、同じ刻みの追加・落球・終了順序を検査する。`scheduler.test.ts`で左右端を交互に狙う4球、最短到着、候補なしの待機、待ち順維持、3球以上の到着列の前後双方の移動成立を検査し、最初に失敗を確認する。
-- [ ] 段階表をデータ化し、イベントを一度だけ適用する。球を配列の長さだけで補充しない。現在の球数と生涯追加数を区別し、発射待ちも生存球に含める。
-- [ ] 速度段階は得点到達で更新し、次に新規確定する相手返球の予約から適用する。予約済み・予告中・飛行中は倍率と時刻を固定する。予約時に通常0.60秒・スマッシュ0.50秒の視認下限、追加球1.0秒、移動に必要な到着間隔を満たす。既存予約を変更せず、候補なしでは打球を待つ。
-- [ ] 関連単体検査・型検査を通す。成立条件は境界値と固定seedで確認し、根拠なく大量のランダム試行を必須にしない。ログを保存してコミットする。
+- [x] `multiball.test.ts`で29→31、149→151、途中の落球後に50で1球だけ追加、生存球4以下、同じ刻みの追加・落球・終了順序を検査する。`scheduler.test.ts`で左右端を交互に狙う4球、最短到着、候補なしの待機、待ち順維持、3球以上の到着列の前後双方の移動成立を検査し、最初に失敗を確認する。
+- [x] 段階表をデータ化し、イベントを一度だけ適用する。球を配列の長さだけで補充しない。現在の球数と生涯追加数を区別し、発射待ちも生存球に含める。
+- [x] 速度段階は得点到達で更新し、次に新規確定する相手返球の予約から適用する。予約済み・予告中・飛行中は倍率と時刻を固定する。予約時に通常0.60秒・スマッシュ0.50秒の視認下限、追加球1.0秒、移動に必要な到着間隔を満たす。既存予約を変更せず、候補なしでは打球を待つ。
+- [x] 関連単体検査・型検査を通す。成立条件は境界値と固定seedで確認し、根拠なく大量のランダム試行を必須にしない。ログを保存してコミットする。
 
 **完了条件:** Q02〜Q04、Q08の通常球部分が成立。50の時点で残り1球なら、追加後は2球。
 
@@ -215,11 +215,11 @@ expect(speedMultiplier(450)).toBeLessThanOrEqual(2.2);
 
 **Interfaces:** `resolvePresentation(snapshot: GameSnapshot): PresentationState`を純粋関数として実装する。`PresentationState`は部位ごとの`visible`／`rainbow`、球IDごとの`visible`／`rainbow`、`pulseStrength`を持つ。部位IDは`selfCourtRight`、`selfCourtLeft`、`opponentCourtRight`、`opponentCourtLeft`、`courtEdges`、`net`、`playerRacketBody`、`playerRacketEdge`、`opponentRacketBody`、`opponentRacketEdge`、`opponentBody`。`sampleRainbow(simTime: number, phase: number): RGB`と`samplePulse(simTime: number): number`を描画だけで使用する。
 
-- [ ] `presentation.test.ts`で全19行の閾値を検査する。70では相手の縁だけ、190では右だけ、300ではラケット縁だけ、330では本体、360では身体、270では自ラケット全体が虹色になることを固定する。
-- [ ] 10の終了と30の常時発光、419→420、`z = 0`、消えた球、初回発射待ち`queued`、既存球の返球待ち`waiting-return`を組み合わせる。初回待機だけを隠し、30〜419の返球待ちは表示を保つ。420で相手側の球・光・影・残像が消え、自側と解放済みの部位は残ることを検査し、失敗を確認する。
-- [ ] 共通の表示条件を全ての球由来の描画へ適用し、部位別の材質を実装する。親の非表示で子の解放が消えない構造を保つ。390は各0.3秒で強弱を滑らかに遷移し、1周期0.6秒とする。
-- [ ] `milestones.spec.ts`でテスト用状態を直接注入し、開始、10の発光中/終了、30、70、190、240、270、300、330、360、390、420を撮影する。その他の節目も純粋関数の検査で対応し、画像と判定条件を混同しない。
-- [ ] 単体・画面検査を実行する。画像を実際に開き、未解放部位の漏れ、球の輪郭、文字、スマッシュ予告用領域を確認する。390は動画も保存し、点滅条件の検証はT09へ引き継ぐ。
+- [x] `presentation.test.ts`で全19行の閾値を検査する。70では相手の縁だけ、190では右だけ、300ではラケット縁だけ、330では本体、360では身体、270では自ラケット全体が虹色になることを固定する。
+- [x] 10の終了と30の常時発光、419→420、`z = 0`、消えた球、初回発射待ち`queued`、既存球の返球待ち`waiting-return`を組み合わせる。初回待機だけを隠し、30〜419の返球待ちは表示を保つ。420で相手側の球・光・影・残像が消え、自側と解放済みの部位は残ることを検査し、失敗を確認する。
+- [x] 共通の表示条件を全ての球由来の描画へ適用し、部位別の材質を実装する。親の非表示で子の解放が消えない構造を保つ。390は各0.3秒で強弱を滑らかに遷移し、1周期0.6秒とする。
+- [x] `milestones.spec.ts`でテスト用状態を直接注入し、開始、10の発光中/終了、30、70、190、240、270、300、330、360、390、420を撮影する。その他の節目も純粋関数の検査で対応し、画像と判定条件を混同しない。
+- [x] 単体・画面検査を実行する。画像を実際に開き、未解放部位の漏れ、球の輪郭、文字、スマッシュ予告用領域を確認する。390は動画も保存し、点滅条件の検証はT09へ引き継ぐ。
 
 **完了条件:** Q05、Q06とQ12の周期・対象が成立。可視状態の変更で物理・音を止めていない。
 
@@ -229,11 +229,11 @@ expect(speedMultiplier(450)).toBeLessThanOrEqual(2.2);
 
 **Interfaces:** `chooseReturnKind(score: number, plannedDepartAt: number, committedSmashDepartures: readonly number[], randomValue: number): 'normal' | 'smash'`。`committedSmashDepartures`は実行済みと予約済み両方の打球時刻を持つ。新候補の前後2.0秒内にスマッシュがあれば通常球へ戻す。`scheduleReturn`の最終時刻でも再確認してから予約を登録し、複数球の同時予約で間隔を破らない。`scheduleReturn`が返した`warningAt`と`departAt`から、`smash-warning`と`opponent-hit`を各1回発行する。`opponentView`は`GameView.render(snapshot, events)`から状態と当該イベントを受け、表示状態はT05へ委ねる。継続中の予告は`scheduledReturns`の`warningAt <= simTime < departAt`から復元し、停止・WebGL復旧時に単発イベントの再送を必要としない。
 
-- [ ] `opponent.test.ts`で449では通常、450以上で20%の候補、実行済み・予約済みいずれかのスマッシュの前後2.0秒未満なら通常、4球が同時に候補になっても予約間隔を守る、予告が打球0.40秒以上前、音と打球が1回ずつ、450を超えても終了しないことを検査する。
-- [ ] 4球の予約へスマッシュを挿入し、成立しなければ通常返球または打球前の予約調整になる検査を書く。相手側の不可視を予告で解除しない検査と合わせて、失敗を確認する。
-- [ ] 軽量な形状を組み合わせた相手、腕とラケットの返球動作、構えによる予告、短い文字表示と予告音を実装する。外部3D素材の入手を前提にしない。
-- [ ] `smash.spec.ts`で390＋420＋450、ミュート、複数球、停止中の予告を確認する。予告は点滅対象にしない。打球音は通常と同じ相手用音を確実に鳴らす。
-- [ ] 第2段階の単体・画面・ビルド検査を通し、予告中に別球が加速閾値を越えても予約時刻と倍率が変わらないことを確認する。全節目の確認表、画像、予告動画、音メモを保存してPRを提出する。
+- [x] `opponent.test.ts`で449では通常、450以上で20%の候補、実行済み・予約済みいずれかのスマッシュの前後2.0秒未満なら通常、4球が同時に候補になっても予約間隔を守る、予告が打球0.40秒以上前、音と打球が1回ずつ、450を超えても終了しないことを検査する。
+- [x] 4球の予約へスマッシュを挿入し、成立しなければ通常返球または打球前の予約調整になる検査を書く。相手側の不可視を予告で解除しない検査と合わせて、失敗を確認する。
+- [x] 軽量な形状を組み合わせた相手、腕とラケットの返球動作、構えによる予告、短い文字表示と予告音を実装する。外部3D素材の入手を前提にしない。
+- [x] `smash.spec.ts`で390＋420＋450、ミュート、複数球、停止中の予告を確認する。予告は点滅対象にしない。打球音は通常と同じ相手用音を確実に鳴らす。
+- [x] 第2段階の単体・画面・ビルド検査を通し、予告中に別球が加速閾値を越えても予約時刻と倍率が変わらないことを確認する。全節目の確認表、画像、予告動画、音メモを保存してPRを提出する。
 
 **第2段階PR完了条件:** Q02〜Q08、Q12の実装部分、Q13が成立。プレイの全ルールが実装されている。実機の性能や安全な表示の最終判定はT09の結果を明示する。
 

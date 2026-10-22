@@ -1,0 +1,33 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit tests/unit/camera.test.ts
+
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/camera.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/camera.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/camera.test.ts [ tests/unit/camera.test.ts ]
+Error: Cannot find module '../../src/render/camera' imported from /workspace/takkeu/tests/unit/camera.test.ts
+ ❯ tests/unit/camera.test.ts:4:1
+      2| import { Vector3 } from 'three';
+      3| import { DEFAULT_CONFIG } from '../../src/game/config';
+      4| import { createCamera, fitCamera } from '../../src/render/camera';
+       | ^
+      5|
+      6| it.each([[900, 390], [360, 440], [600, 220]])('全解放後の相手の姿と両コートを%ix%iでも画…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  12:52:24
+   Duration  186ms (worker 97%, environment 3%)
+

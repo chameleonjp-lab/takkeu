@@ -1,0 +1,33 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit tests/unit/presentation.test.ts
+
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/presentation.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/presentation.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/presentation.test.ts [ tests/unit/presentation.test.ts ]
+Error: Cannot find module '../../src/render/rainbow' imported from /workspace/takkeu/tests/unit/presentation.test.ts
+ ❯ tests/unit/presentation.test.ts:5:1
+      3| import { DEFAULT_CONFIG } from '../../src/game/config';
+      4| import { isBallVisible, applyPresentation, resolvePresentation } from …
+      5| import { samplePulse, sampleRainbow } from '../../src/render/rainbow';
+       | ^
+      6| import { createObjects } from '../../src/render/objects';
+      7| import { advance } from '../helpers/fixtures';
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  12:46:26
+   Duration  185ms (worker 97%, environment 3%)
+

@@ -1,0 +1,57 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit tests/unit/opponent.test.ts tests/unit/audio-events.test.ts
+
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/opponent.test.ts tests/unit/audio-events.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/opponent.test.ts (0 test)
+ ❯ tests/unit/audio-events.test.ts (4 tests | 1 failed) 17ms
+   × スマッシュの予告音は打球音と別に1回だけ鳴り、消音で音だけを捨てる 9ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/opponent.test.ts [ tests/unit/opponent.test.ts ]
+Error: Cannot find module '../../src/game/opponent' imported from /workspace/takkeu/tests/unit/opponent.test.ts
+ ❯ tests/unit/opponent.test.ts:3:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { DEFAULT_CONFIG, INITIAL_PADDLE } from '../../src/game/config';
+      3| import { chooseReturnKind, planOpponentReturn } from '../../src/game/o…
+       | ^
+      4| import { resolveOpponentPose } from '../../src/render/opponentView';
+      5| import { resolvePresentation } from '../../src/render/presentation';
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/audio-events.test.ts > スマッシュの予告音は打球音と別に1回だけ鳴り、消音で音だけを捨てる
+AssertionError: expected [ { type: 'sine', …(2) } ] to have a length of 2 but got 1
+
+- Expected
++ Received
+
+- 2
++ 1
+
+ ❯ tests/unit/audio-events.test.ts:52:18
+     50|   const warning = event('smash-warning', 'warn');
+     51|   audio.consume([warning, warning, event('opponent-hit', 'hit')]);
+     52|   expect(voices).toHaveLength(2);
+       |                  ^
+     53|   expect(voices[0]!.frequencies[1]).toBeGreaterThan(voices[0]!.frequen…
+     54|   expect(voices[1]!.frequencies[0]).toBe(440);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  1 failed | 3 passed (4)
+   Start at  12:56:49
+   Duration  257ms (transform 69%, tests 14%, import 9%, worker 6%)
+

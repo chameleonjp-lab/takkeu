@@ -1,0 +1,60 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/boot.spec.ts
+
+[WebServer] (node:2766) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:2779) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:2823) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  1 [chromium] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない (1.3s)
+(node:3078) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  2 [webkit] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない (1ms)
+
+
+  1) [webkit] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない ───────────────────────
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /tmp/takkeu-browsers/webkit-2370/pw_run.sh --inspector-pipe --headless --no-startup-window
+    <launched> pid=3108
+    [pid=3108][err] /tmp/takkeu-browsers/webkit-2370/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libharfbuzz-icu.so.0: cannot open shared object file: No such file or directory
+    Call log:
+      - <launching> /tmp/takkeu-browsers/webkit-2370/pw_run.sh --inspector-pipe --headless --no-startup-window
+      - <launched> pid=3108
+      - [pid=3108][err] /tmp/takkeu-browsers/webkit-2370/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libharfbuzz-icu.so.0: cannot open shared object file: No such file or directory
+      - [pid=3108] <gracefully close start>
+      - [pid=3108] <kill>
+      - [pid=3108] <will force kill>
+      - [pid=3108] <process did exit: exitCode=127, signal=null>
+      - [pid=3108] starting temporary directories cleanup
+      - [pid=3108] finished temporary directories cleanup
+      - [pid=3108] <gracefully close end>
+
+
+    Error Context: test-results/boot-ホームにタイトルと開始ボタンを表示し、自動で開始しない-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/boot-ホームにタイトルと開始ボタンを表示し、自動で開始しない-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/boot-ホームにタイトルと開始ボタンを表示し、自動で開始しない-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない ────────────────────────
+  1 passed (4.0s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

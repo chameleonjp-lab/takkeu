@@ -1,0 +1,17 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit tests/unit/progression.test.ts
+
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/progression.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  12:37:56
+   Duration  156ms (transform 63%, import 21%, tests 9%, worker 7%)
+

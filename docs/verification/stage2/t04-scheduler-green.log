@@ -1,0 +1,17 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit tests/unit/scheduler.test.ts
+
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/scheduler.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  12:39:13
+   Duration  200ms (transform 66%, import 18%, tests 10%, worker 6%)
+

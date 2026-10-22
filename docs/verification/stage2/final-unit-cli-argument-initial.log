@@ -1,0 +1,32 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit --reporter=default --reporter=json --outputFile=docs/verification/stage2/final-unit.json
+
+npm warn Unknown cli config "--reporter". This will stop working in the next major version of npm.
+npm warn Unknown cli config "--outputFile". This will stop working in the next major version of npm.
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+
+ Test Files  17 passed (17)
+      Tests  66 passed (66)
+   Start at  13:09:54
+   Duration  2.04s (environment 55%, tests 23%, import 12%, transform 7%, worker 2%)
+
+    Isolate  17 workers spawned · ~251ms startup each (spawn + environment, per file)
+             at least ~1.17s faster with isolate: false — reuses workers across files instead of one per file
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
