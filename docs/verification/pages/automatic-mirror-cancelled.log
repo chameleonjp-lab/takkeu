@@ -1,0 +1,615 @@
+verify-build	Set up job	﻿2026-10-22T15:10:22.7823033Z Current runner version: '2.338.0'
+verify-build	Set up job	2026-10-22T15:10:22.7844000Z ##[group]Runner Image Provisioner
+verify-build	Set up job	2026-10-22T15:10:22.7844760Z Hosted Compute Agent
+verify-build	Set up job	2026-10-22T15:10:22.7845256Z Version: 20261012.601
+verify-build	Set up job	2026-10-22T15:10:22.7845860Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+verify-build	Set up job	2026-10-22T15:10:22.7846463Z Build Date: 2026-10-12T17:48:21Z
+verify-build	Set up job	2026-10-22T15:10:22.7847066Z Worker ID: {f873398e-010f-4368-a8b7-6ad31e25a0d4}
+verify-build	Set up job	2026-10-22T15:10:22.7847700Z Region: westus2
+verify-build	Set up job	2026-10-22T15:10:22.7848169Z Cloud: Azure
+verify-build	Set up job	2026-10-22T15:10:22.7848663Z ##[endgroup]
+verify-build	Set up job	2026-10-22T15:10:22.7850073Z ##[group]Operating System
+verify-build	Set up job	2026-10-22T15:10:22.7850589Z Ubuntu
+verify-build	Set up job	2026-10-22T15:10:22.7851133Z 24.04.5
+verify-build	Set up job	2026-10-22T15:10:22.7851580Z LTS
+verify-build	Set up job	2026-10-22T15:10:22.7852328Z ##[endgroup]
+verify-build	Set up job	2026-10-22T15:10:22.7852800Z ##[group]Runner Image
+verify-build	Set up job	2026-10-22T15:10:22.7853285Z Image: ubuntu-24.04
+verify-build	Set up job	2026-10-22T15:10:22.7853843Z Version: 20261012.334.1
+verify-build	Set up job	2026-10-22T15:10:22.7854720Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+verify-build	Set up job	2026-10-22T15:10:22.7856167Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+verify-build	Set up job	2026-10-22T15:10:22.7856962Z ##[endgroup]
+verify-build	Set up job	2026-10-22T15:10:22.7857898Z ##[group]GITHUB_TOKEN Permissions
+verify-build	Set up job	2026-10-22T15:10:22.7859621Z Contents: read
+verify-build	Set up job	2026-10-22T15:10:22.7860341Z Metadata: read
+verify-build	Set up job	2026-10-22T15:10:22.7860803Z ##[endgroup]
+verify-build	Set up job	2026-10-22T15:10:22.7862576Z Secret source: Actions
+verify-build	Set up job	2026-10-22T15:10:22.7863392Z Cache mode: write
+verify-build	Set up job	2026-10-22T15:10:22.7864162Z Prepare workflow directory
+verify-build	Set up job	2026-10-22T15:10:22.8314641Z Prepare all required actions
+verify-build	Set up job	2026-10-22T15:10:22.8357679Z Getting action download info
+verify-build	Set up job	2026-10-22T15:10:23.1648081Z Download action repository 'actions/checkout@v5' (SHA:fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09)
+verify-build	Set up job	2026-10-22T15:10:23.2820871Z Download action repository 'actions/setup-node@v6' (SHA:249970729cb0ef3589644e2896645e5dc5ba9c38)
+verify-build	Set up job	2026-10-22T15:10:23.3893218Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+verify-build	Set up job	2026-10-22T15:10:23.6092453Z Download action repository 'actions/upload-pages-artifact@v4' (SHA:7b1f4a764d45c48632c6b24a0339c27f5614fb0b)
+verify-build	Set up job	2026-10-22T15:10:23.8449874Z Getting action download info
+verify-build	Set up job	2026-10-22T15:10:23.9759287Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+verify-build	Set up job	2026-10-22T15:10:24.1736191Z Complete job name: verify-build
+verify-build	Run actions/checkout@v5	﻿2026-10-22T15:10:24.2396172Z ##[group]Run actions/checkout@v5
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2397241Z with:
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2397938Z   ref: fe488a01864b2449f334584e0d2260a3c5670549
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2398870Z   persist-credentials: false
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2399824Z   repository: chameleonjp-lab/takkeu
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2406288Z   token: ***
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2406948Z   ssh-strict: true
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2407618Z   ssh-user: git
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2408262Z   clean: true
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2408945Z   sparse-checkout-cone-mode: true
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2409856Z   fetch-depth: 1
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2410552Z   fetch-tags: false
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2411243Z   show-progress: true
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2411919Z   lfs: false
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2412544Z   submodules: false
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2413226Z   set-safe-directory: true
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2414011Z   allow-unsafe-pr-checkout: false
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2414975Z env:
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2415718Z   EXPECTED_SHA: fe488a01864b2449f334584e0d2260a3c5670549
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.2416662Z ##[endgroup]
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3247002Z Syncing repository: chameleonjp-lab/takkeu
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3250143Z ##[group]Getting Git version info
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3251636Z Working directory is '/home/runner/work/takkeu/takkeu'
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3253862Z [command]/usr/bin/git version
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3280111Z git version 2.55.0
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3296292Z ##[endgroup]
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3308192Z Temporarily overriding HOME='/home/runner/work/_temp/e73f3f0c-2f2d-4375-96ba-1946081b03fb' before making global git config changes
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3312149Z Adding repository directory to the temporary git global config as a safe directory
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3314933Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/takkeu/takkeu
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3352242Z Deleting the contents of '/home/runner/work/takkeu/takkeu'
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3355156Z ##[group]Initializing the repository
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3358322Z [command]/usr/bin/git init /home/runner/work/takkeu/takkeu
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3431358Z hint: Using 'master' as the name for the initial branch. This default branch name
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3433093Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3434632Z hint: to use in all of your new repositories, which will suppress this warning,
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3435798Z hint: call:
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3436431Z hint:
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3437236Z hint: 	git config --global init.defaultBranch <name>
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3438207Z hint:
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3439101Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3440800Z hint: 'development'. The just-created branch can be renamed via this command:
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3442270Z hint:
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3443122Z hint: 	git branch -m <name>
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3444238Z hint:
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3445737Z hint: Disable this message with "git config set advice.defaultBranchName false"
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3448112Z Initialized empty Git repository in /home/runner/work/takkeu/takkeu/.git/
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3453857Z [command]/usr/bin/git remote add origin https://github.com/chameleonjp-lab/takkeu
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3492184Z ##[endgroup]
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3493986Z ##[group]Disabling automatic garbage collection
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3495591Z [command]/usr/bin/git config --local gc.auto 0
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3523427Z ##[endgroup]
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3525176Z ##[group]Setting up auth
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3528076Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3555569Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3849002Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.3886343Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.4097296Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.4129662Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.4316545Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.4352079Z ##[endgroup]
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.4411944Z ##[group]Fetching the repository
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:24.4414885Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin fe488a01864b2449f334584e0d2260a3c5670549
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.7198197Z From https://github.com/chameleonjp-lab/takkeu
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.7199352Z  * branch            fe488a01864b2449f334584e0d2260a3c5670549 -> FETCH_HEAD
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.7201496Z ##[endgroup]
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.7202027Z ##[group]Determining the checkout info
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.7204005Z ##[endgroup]
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.7208597Z [command]/usr/bin/git sparse-checkout disable
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.7253498Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.7280435Z ##[group]Checking out the ref
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.7283674Z [command]/usr/bin/git checkout --progress --force fe488a01864b2449f334584e0d2260a3c5670549
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8255356Z Note: switching to 'fe488a01864b2449f334584e0d2260a3c5670549'.
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8256461Z 
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8256793Z You are in 'detached HEAD' state. You can look around, make experimental
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8257528Z changes and commit them, and you can discard any commits you make in this
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8258362Z state without impacting any branches by switching back to a branch.
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8258811Z 
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8259191Z If you want to create a new branch to retain commits you create, you may
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8260226Z do so (now or later) by using -c with the switch command. Example:
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8260662Z 
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8260922Z   git switch -c <new-branch-name>
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8261267Z 
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8261511Z Or undo this operation with:
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8261861Z 
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8262088Z   git switch -
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8262385Z 
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8262784Z Turn off this advice by setting config variable advice.detachedHead to false
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8263306Z 
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8263740Z HEAD is now at fe488a0 Merge pull request #5 from chameleonjp-lab/feat/pages-auto-release
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8270265Z ##[endgroup]
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8309370Z [command]/usr/bin/git log -1 --format=%H
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8332352Z fe488a01864b2449f334584e0d2260a3c5670549
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8339817Z ##[group]Removing auth
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8342598Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8369121Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8557667Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8580680Z http.https://github.com/.extraheader
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8587075Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8616402Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8797353Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8824268Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify-build	Run actions/checkout@v5	2026-10-22T15:10:25.8999447Z ##[endgroup]
+verify-build	Match the release commit with current main	﻿2026-10-22T15:10:25.9176624Z ##[group]Run set -euo pipefail
+verify-build	Match the release commit with current main	2026-10-22T15:10:25.9177089Z [36;1mset -euo pipefail[0m
+verify-build	Match the release commit with current main	2026-10-22T15:10:25.9177434Z [36;1mmkdir -p artifacts[0m
+verify-build	Match the release commit with current main	2026-10-22T15:10:25.9177868Z [36;1mmain_sha="$(git ls-remote --refs origin refs/heads/main | cut -f1)"[0m
+verify-build	Match the release commit with current main	2026-10-22T15:10:25.9178331Z [36;1m[[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]][0m
+verify-build	Match the release commit with current main	2026-10-22T15:10:25.9178722Z [36;1m[[ "$GITHUB_REF" == refs/heads/main ]][0m
+verify-build	Match the release commit with current main	2026-10-22T15:10:25.9179130Z [36;1m[[ "$(git rev-parse HEAD)" == "$EXPECTED_SHA" ]][0m
+verify-build	Match the release commit with current main	2026-10-22T15:10:25.9179554Z [36;1m[[ "$main_sha" == "$EXPECTED_SHA" ]][0m
+verify-build	Match the release commit with current main	2026-10-22T15:10:25.9180352Z [36;1mnode scripts/check-release-revision.mjs "$EXPECTED_SHA" "$GITHUB_REF" "$main_sha" | tee artifacts/revision.json[0m
+verify-build	Match the release commit with current main	2026-10-22T15:10:25.9381265Z shell: /usr/bin/bash -e {0}
+verify-build	Match the release commit with current main	2026-10-22T15:10:25.9381660Z env:
+verify-build	Match the release commit with current main	2026-10-22T15:10:25.9381992Z   EXPECTED_SHA: fe488a01864b2449f334584e0d2260a3c5670549
+verify-build	Match the release commit with current main	2026-10-22T15:10:25.9382372Z ##[endgroup]
+verify-build	Match the release commit with current main	2026-10-22T15:10:26.3512471Z {"expected_sha":"fe488a01864b2449f334584e0d2260a3c5670549","checkout_sha":"fe488a01864b2449f334584e0d2260a3c5670549","main_sha":"fe488a01864b2449f334584e0d2260a3c5670549","result":"matched"}
+verify-build	Run actions/setup-node@v6	﻿2026-10-22T15:10:26.3638242Z ##[group]Run actions/setup-node@v6
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:26.3638595Z with:
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:26.3638878Z   node-version-file: .node-version
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:26.3639196Z   cache: npm
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:26.3639480Z   check-latest: false
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:26.3641715Z   token: ***
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:26.3642019Z   package-manager-cache: true
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:26.3642504Z env:
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:26.3642815Z   EXPECTED_SHA: fe488a01864b2449f334584e0d2260a3c5670549
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:26.3643186Z ##[endgroup]
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:26.4651471Z Node version file is not JSON file
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:26.4652813Z Resolved .node-version as 24.19.0
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:26.4669197Z Attempting to download 24.19.0...
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:27.3877026Z Acquiring 24.19.0 - x64 from https://github.com/actions/node-versions/releases/download/24.19.0-30872449280/node-24.19.0-linux-x64.tar.gz
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:27.9459475Z Extracting ...
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:27.9547296Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/09ea74d6-7a53-482c-81fb-d40c05c73b28 -f /home/runner/work/_temp/46f3ed0d-b2ff-4a2a-a4c5-f27e435694e9
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:28.9958777Z Adding to the cache ...
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:31.2145682Z ##[group]Environment details
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:31.3905673Z node: v24.19.0
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:31.3906064Z npm: 11.17.0
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:31.3906594Z yarn: 1.22.22
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:31.3907168Z ##[endgroup]
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:31.3919398Z [command]/opt/hostedtoolcache/node/24.19.0/x64/bin/npm config get cache
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:31.4668806Z /home/runner/.npm
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:31.7437636Z Cache hit for: node-cache-Linux-x64-npm-7f7fbffbfc35d55335654ede3ea1994ea0a8c172937b397c6b84f9c4230c2af8
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:33.0565638Z Received 0 of 52832990 (0.0%), 0.0 MBs/sec
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:33.5377069Z Received 52832990 of 52832990 (100.0%), 34.0 MBs/sec
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:33.5380712Z Cache Size: ~50 MB (52832990 B)
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:33.5409387Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d26e64fb-d159-469e-8a43-cd1d42e16c88/cache.tzst -P -C /home/runner/work/takkeu/takkeu --use-compress-program unzstd
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:33.6120906Z Cache restored successfully
+verify-build	Run actions/setup-node@v6	2026-10-22T15:10:33.6148756Z Cache restored from key: node-cache-Linux-x64-npm-7f7fbffbfc35d55335654ede3ea1994ea0a8c172937b397c6b84f9c4230c2af8
+verify-build	Verify and build this checkout	﻿2026-10-22T15:10:33.6287614Z ##[group]Run set -euo pipefail
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.6287904Z [36;1mset -euo pipefail[0m
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.6288128Z [36;1mnpm ci 2>&1 | tee artifacts/install.log[0m
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.6288514Z [36;1mnpx playwright install --with-deps chromium webkit 2>&1 | tee artifacts/browsers.log[0m
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.6288939Z [36;1mnpm run typecheck 2>&1 | tee artifacts/typecheck.log[0m
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.6289261Z [36;1mnpm run test:unit 2>&1 | tee artifacts/unit.log[0m
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.6289571Z [36;1mnpm run test:browser 2>&1 | tee artifacts/browser.log[0m
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.6290198Z [36;1mnpm run verify:release 2>&1 | tee artifacts/distribution.log[0m
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.6290935Z [36;1mnode -e "if (JSON.parse(require('fs').readFileSync('dist/release.json')).commit !== require('child_process').execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim()) process.exit(1)"[0m
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.6291679Z [36;1mfind dist -type f -print0 | sort -z | xargs -0 sha256sum > artifacts/distribution-sha256.txt[0m
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.6349480Z shell: /usr/bin/bash -e {0}
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.6349888Z env:
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.6350143Z   EXPECTED_SHA: fe488a01864b2449f334584e0d2260a3c5670549
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.6350414Z ##[endgroup]
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.9466870Z npm warn EBADENGINE Unsupported engine {
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.9467299Z npm warn EBADENGINE   package: 'takkeu@0.1.0',
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.9467735Z npm warn EBADENGINE   required: { node: '24.19.0', npm: '11.9.0' },
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.9468149Z npm warn EBADENGINE   current: { node: 'v24.19.0', npm: '11.17.0' }
+verify-build	Verify and build this checkout	2026-10-22T15:10:33.9468622Z npm warn EBADENGINE }
+verify-build	Verify and build this checkout	2026-10-22T15:10:35.5339193Z 
+verify-build	Verify and build this checkout	2026-10-22T15:10:35.5340207Z added 87 packages, and audited 88 packages in 2s
+verify-build	Verify and build this checkout	2026-10-22T15:10:35.5340580Z 
+verify-build	Verify and build this checkout	2026-10-22T15:10:35.5348466Z 21 packages are looking for funding
+verify-build	Verify and build this checkout	2026-10-22T15:10:35.5348887Z   run `npm fund` for details
+verify-build	Verify and build this checkout	2026-10-22T15:10:35.5358774Z 
+verify-build	Verify and build this checkout	2026-10-22T15:10:35.5359231Z found 0 vulnerabilities
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.1330286Z Installing dependencies...
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.1389567Z Switching to root user to install dependencies...
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.2922080Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.3091896Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.3308037Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.3323020Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.3398960Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.3714379Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.4301863Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [567 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.4495260Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.4 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.4551643Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [630 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.5326707Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1400 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.5401107Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [310 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.5430679Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1706 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.5483184Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.5540538Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1805 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.5584826Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [411 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.6191409Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1146 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.6249431Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [231 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.6275125Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1222 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.6326284Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [246 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.6851666Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1713 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:36.6925090Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [392 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:10:46.0881943Z Fetched 12.5 MB in 1s (11.2 MB/s)
+verify-build	Verify and build this checkout	2026-10-22T15:10:46.8066551Z Reading package lists...
+verify-build	Verify and build this checkout	2026-10-22T15:10:46.8267588Z Reading package lists...
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0206662Z Building dependency tree...
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0212957Z Reading state information...
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0407695Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0408285Z libasound2t64 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0408793Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0409361Z libatk-bridge2.0-0t64 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0410081Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0410589Z libatk1.0-0t64 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0411138Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0411616Z libatspi2.0-0t64 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0412119Z libcairo2 is already the newest version (1.18.0-3build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0412609Z libcairo2 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0413147Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0413589Z libcups2t64 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0414035Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0414467Z libdbus-1-3 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0414955Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0415426Z libdrm2 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0415941Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.4).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0416692Z libgbm1 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0417176Z libnspr4 is already the newest version (2:4.35-1.1build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0417654Z libnspr4 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0418156Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0418676Z libpango-1.0-0 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0419203Z libx11-6 is already the newest version (2:1.8.7-1ubuntu0.1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0419868Z libx11-6 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0420333Z libxcb1 is already the newest version (1.15-1ubuntu2).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0420803Z libxcb1 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0421319Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0422098Z libxcomposite1 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0422634Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0423138Z libxdamage1 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0423614Z libxext6 is already the newest version (2:1.3.4-1build2).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0423912Z libxext6 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0424233Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0424540Z libxfixes3 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0424861Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0425187Z libxkbcommon0 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0425510Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0425813Z libxrandr2 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0426209Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0426668Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0427005Z libfontconfig1 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0427367Z libfreetype6 is already the newest version (2.13.2+dfsg-1ubuntu0.2).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0427916Z libfreetype6 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0428241Z fonts-liberation is already the newest version (1:2.1.5-3).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0428565Z fonts-liberation set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0428888Z libicu74 is already the newest version (74.2-1ubuntu3.1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0429262Z libatomic1 is already the newest version (14.2.0-4ubuntu2~24.04.1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0429586Z libatomic1 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0430133Z libcairo-gobject2 is already the newest version (1.18.0-3build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0430481Z libcairo-gobject2 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0430818Z libenchant-2-2 is already the newest version (2.3.3-2build2).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0431139Z libenchant-2-2 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0431447Z libepoxy0 is already the newest version (1.5.10-1build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0431738Z libepoxy0 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0432115Z libgdk-pixbuf-2.0-0 is already the newest version (2.42.10+dfsg-3ubuntu3.3).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0432492Z libgdk-pixbuf-2.0-0 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0432854Z libgstreamer1.0-0 is already the newest version (1.24.2-1ubuntu0.1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0433201Z libgstreamer1.0-0 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0433531Z libharfbuzz0b is already the newest version (8.3.0-2build2).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0433841Z libharfbuzz0b set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0434177Z libjpeg-turbo8 is already the newest version (2.1.5-2ubuntu2).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0434493Z libjpeg-turbo8 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0434814Z liblcms2-2 is already the newest version (2.14-2ubuntu0.1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0435208Z liblcms2-2 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0435588Z libpangocairo-1.0-0 is already the newest version (1.52.1+ds-1build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0435939Z libpangocairo-1.0-0 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0436307Z libpng16-16t64 is already the newest version (1.6.43-5ubuntu0.7).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0436875Z libpng16-16t64 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0437220Z libwayland-client0 is already the newest version (1.22.0-2.1build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0437573Z libwayland-client0 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0437920Z libwayland-egl1 is already the newest version (1.22.0-2.1build1).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0438244Z libwayland-egl1 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0438581Z libwebp7 is already the newest version (1.3.2-0.4build3).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0438877Z libwebp7 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0439196Z libwebpdemux2 is already the newest version (1.3.2-0.4build3).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0439519Z libwebpdemux2 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.0440039Z libxml2 is already the newest version (2.9.14+dfsg-1.3ubuntu3.10).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1711522Z libxml2 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1712435Z libxslt1.1 is already the newest version (1.1.39-0exp1ubuntu0.24.04.3).
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1713073Z libxslt1.1 set to manually installed.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1713634Z The following additional packages will be installed:
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1714142Z   gir1.2-glib-2.0 glib-networking glib-networking-common
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1714747Z   glib-networking-services gsettings-desktop-schemas libaa1 libabsl20220623t64
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1715287Z   libass9 libasyncns0 libavc1394-0 libavcodec60 libavfilter9 libavformat60
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1715681Z   libavtp0 libavutil58 libblas3 libbluray2 libbs2b0 libcaca0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1716077Z   libcairo-script-interpreter2 libcdparanoia0 libchromaprint1 libcjson1
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1716489Z   libcodec2-1.2 libdav1d7 libdc1394-25 libdca0 libde265-0 libdecor-0-0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1716876Z   libdirectfb-1.7-7t64 libdv4t64 libdvdnav4 libdvdread8t64 libegl-mesa0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1717269Z   libegl1 libfaad2 libflac12t64 libfluidsynth3 libfreeaptx0 libgav1-1
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1717653Z   libglib2.0-bin libglib2.0-data libgme0 libgraphene-1.0-0 libgsm1
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1718332Z   libgssdp-1.6-0 libgstreamer-plugins-good1.0-0 libgtk-4-common libgupnp-1.6-0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1718766Z   libgupnp-igd-1.6-0 libhwy1t64 libiec61883-0 libimath-3-1-29t64
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1719146Z   libinstpatch-1.0-2 libjack-jackd2-0 libjxl0.7 liblapack3 liblc3-1
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1719615Z   libldacbt-enc2 liblilv-0-0 liblrdf0 libltc11 libmbedcrypto7t64 libmfx1
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1720775Z   libmjpegutils-2.1-0t64 libmodplug1 libmp3lame0 libmpcdec6
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1721368Z   libmpeg2encpp-2.1-0t64 libmpg123-0t64 libmplex2-2.1-0t64 libmysofa1
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1721830Z   libneon27t64 libnice10 libnss3-tools libopenal-data libopenal1
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1722242Z   libopenexr-3-1-30 libopenh264-7 libopenmpt0t64 libopenni2-0 liborc-0.4-0t64
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1722688Z   libpipewire-0.3-0t64 libplacebo338 libpocketsphinx3 libpostproc57
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1723255Z   libproxy1v5 libpulse0 libqrencode4 libraptor2-0 librav1e0 libraw1394-11
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1723690Z   librist4 librsvg2-2 librubberband2 libsamplerate0 libsbc1 libsdl2-2.0-0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1724109Z   libsecret-common libserd-0-0 libshine3 libshout3 libsndfile1 libsndio7.0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1724527Z   libsord-0-0 libsoundtouch1 libsoup-3.0-0 libsoup-3.0-common libsoxr0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1724944Z   libspa-0.2-modules libspandsp2t64 libspeex1 libsphinxbase3t64 libsratom-0-0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1725373Z   libsrt1.5-gnutls libsrtp2-1 libssh-gcrypt-4 libsvtav1enc1d1 libswresample4
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1725804Z   libswscale7 libtag1v5 libtag1v5-vanilla libtheora0 libtwolame0 libudfread0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1744520Z   libunibreak5 libv4l-0t64 libv4lconvert0t64 libva-drm2 libva-x11-2 libva2
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1745032Z   libvdpau1 libvidstab1.1 libvisual-0.4-0 libvo-aacenc0 libvo-amrwbenc0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1745734Z   libvorbisenc2 libvpl2 libwavpack1 libwebrtc-audio-processing1 libwildmidi2
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1746420Z   libx265-199 libxcb-xkb1 libxkbcommon-x11-0 libxvidcore4 libyuv0 libzbar0t64
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1747212Z   libzimg2 libzix-0-0 libzvbi-common libzvbi0t64 libzxing3 ocl-icd-libopencl1
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1747713Z   session-migration timgm6mb-soundfont xfonts-encodings xfonts-utils
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1748039Z   xserver-common
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1748251Z Suggested packages:
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1748565Z   frei0r-plugins gvfs libcuda1 libnvcuvid1 libnvidia-encode1 libbluray-bdj
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1748999Z   libdirectfb-extra libdv-bin oss-compat libdvdcss2 low-memory-monitor
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1749435Z   libvisual-0.4-plugins jackd2 liblrdf0-dev libportaudio2 opus-tools pipewire
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1750043Z   pulseaudio raptor2-utils libraw1394-doc librsvg2-bin serdi sndiod sordi
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1750439Z   speex libwildmidi-config opencl-icd fluid-soundfont-gm
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1750719Z Recommended packages:
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1750997Z   fonts-ipafont-mincho fonts-tlwg-loma gstreamer1.0-x libaacs0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1751400Z   default-libdecor-0-plugin-1 | libdecor-0-plugin-1 gstreamer1.0-gl
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1751849Z   libgtk-4-bin librsvg2-common libgtk-4-media-gstreamer libpipewire-0.3-common
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1752301Z   pocketsphinx-en-us va-driver-all | va-driver vdpau-driver-all | vdpau-driver
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.1752651Z   libmagickcore-6.q16-7-extra xfonts-base
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2567115Z The following NEW packages will be installed:
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2567860Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2568514Z   fonts-wqy-zenhei glib-networking glib-networking-common
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2569150Z   glib-networking-services gsettings-desktop-schemas gstreamer1.0-libav
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2570048Z   gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2570759Z   libaa1 libabsl20220623t64 libass9 libasyncns0 libavc1394-0 libavcodec60
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2571174Z   libavfilter9 libavformat60 libavif16 libavtp0 libavutil58 libblas3
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2572100Z   libbluray2 libbs2b0 libcaca0 libcairo-script-interpreter2 libcdparanoia0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2572738Z   libchromaprint1 libcjson1 libcodec2-1.2 libdav1d7 libdc1394-25 libdca0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2573152Z   libde265-0 libdecor-0-0 libdirectfb-1.7-7t64 libdv4t64 libdvdnav4
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2573594Z   libdvdread8t64 libegl-mesa0 libegl1 libevent-2.1-7t64 libfaad2 libflac12t64
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2574123Z   libflite1 libfluidsynth3 libfreeaptx0 libgav1-1 libgles2 libgme0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2574531Z   libgraphene-1.0-0 libgsm1 libgssdp-1.6-0 libgstreamer-gl1.0-0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2574915Z   libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2575324Z   libgstreamer-plugins-good1.0-0 libgtk-4-1 libgtk-4-common libgupnp-1.6-0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2575900Z   libgupnp-igd-1.6-0 libharfbuzz-icu0 libhwy1t64 libhyphen0 libiec61883-0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2576396Z   libimath-3-1-29t64 libinstpatch-1.0-2 libjack-jackd2-0 libjxl0.7 liblapack3
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2576838Z   liblc3-1 libldacbt-enc2 liblilv-0-0 liblrdf0 libltc11 libmanette-0.2-0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2577266Z   libmbedcrypto7t64 libmfx1 libmjpegutils-2.1-0t64 libmodplug1 libmp3lame0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2577675Z   libmpcdec6 libmpeg2encpp-2.1-0t64 libmpg123-0t64 libmplex2-2.1-0t64
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2578051Z   libmysofa1 libneon27t64 libnice10 libopenal-data libopenal1
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2578436Z   libopenexr-3-1-30 libopenh264-7 libopenmpt0t64 libopenni2-0 libopus0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2578821Z   liborc-0.4-0t64 libpipewire-0.3-0t64 libplacebo338 libpocketsphinx3
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2579212Z   libpostproc57 libproxy1v5 libpulse0 libqrencode4 libraptor2-0 librav1e0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2579963Z   libraw1394-11 librist4 librsvg2-2 librubberband2 libsamplerate0 libsbc1
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2580645Z   libsdl2-2.0-0 libsecret-1-0 libsecret-common libserd-0-0 libshine3 libshout3
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2581344Z   libsndfile1 libsndio7.0 libsord-0-0 libsoundtouch1 libsoup-3.0-0
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2581996Z   libsoup-3.0-common libsoxr0 libspa-0.2-modules libspandsp2t64 libspeex1
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2582599Z   libsphinxbase3t64 libsratom-0-0 libsrt1.5-gnutls libsrtp2-1 libssh-gcrypt-4
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2583040Z   libsvtav1enc1d1 libswresample4 libswscale7 libtag1v5 libtag1v5-vanilla
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2583437Z   libtheora0 libtwolame0 libudfread0 libunibreak5 libv4l-0t64
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2583825Z   libv4lconvert0t64 libva-drm2 libva-x11-2 libva2 libvdpau1 libvidstab1.1
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2584433Z   libvisual-0.4-0 libvo-aacenc0 libvo-amrwbenc0 libvorbisenc2 libvpl2 libvpx9
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2585137Z   libwavpack1 libwayland-server0 libwebrtc-audio-processing1 libwildmidi2
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2585659Z   libwoff1 libx264-164 libx265-199 libxcb-xkb1 libxkbcommon-x11-0 libxvidcore4
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2586106Z   libyuv0 libzbar0t64 libzimg2 libzix-0-0 libzvbi-common libzvbi0t64 libzxing3
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2586544Z   ocl-icd-libopencl1 session-migration timgm6mb-soundfont xfonts-cyrillic
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2586907Z   xfonts-encodings xfonts-scalable xfonts-utils
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2587225Z The following packages will be upgraded:
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2587558Z   gir1.2-glib-2.0 libglib2.0-0t64 libglib2.0-bin libglib2.0-data libnss3
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2587879Z   libnss3-tools xserver-common xvfb
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2769335Z 8 upgraded, 181 newly installed, 0 to remove and 89 not upgraded.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2769976Z Need to get 119 MB of archives.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2770331Z After this operation, 364 MB of additional disk space will be used.
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.2770728Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+verify-build	Verify and build this checkout	2026-10-22T15:10:47.8414018Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:11:15.9805876Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libglib2.0-data all 2.80.0-6ubuntu3.10 [50.2 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:11:16.8039174Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libglib2.0-bin amd64 2.80.0-6ubuntu3.10 [97.9 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:11:18.0985615Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 gir1.2-glib-2.0 amd64 2.80.0-6ubuntu3.10 [183 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:11:20.0125549Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libglib2.0-0t64 amd64 2.80.0-6ubuntu3.10 [1548 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:11:33.5139637Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:12:27.8108772Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:12:29.2753648Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:12:59.0793578Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:14:14.4451569Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libproxy1v5 amd64 0.5.4-4build1 [26.5 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:14:15.3034753Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 glib-networking-common all 2.80.0-1build1 [6702 B]
+verify-build	Verify and build this checkout	2026-10-22T15:14:15.8390323Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 glib-networking-services amd64 2.80.0-1build1 [12.8 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:14:16.4893936Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 session-migration amd64 0.3.9build1 [9034 B]
+verify-build	Verify and build this checkout	2026-10-22T15:14:17.0906259Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 gsettings-desktop-schemas all 46.1-0ubuntu1 [35.6 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:14:17.9224642Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 glib-networking amd64 2.80.0-1build1 [64.1 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:14:18.8568279Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva2 amd64 2.20.0-2ubuntu0.2 [66.4 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:14:20.0161188Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva-drm2 amd64 2.20.0-2ubuntu0.2 [7124 B]
+verify-build	Verify and build this checkout	2026-10-22T15:14:20.4235353Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva-x11-2 amd64 2.20.0-2ubuntu0.2 [12.0 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:14:21.0868566Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libvdpau1 amd64 1.5-2build1 [27.8 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:14:21.6721606Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libvpl2 amd64 2023.3.0-1build1 [99.8 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:14:23.1348211Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 ocl-icd-libopencl1 amd64 2.3.2-1build1 [38.5 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:14:23.9029228Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libavutil58 amd64 7:6.1.1-3ubuntu5 [401 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:14:28.0434252Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libcodec2-1.2 amd64 1.2.0-2build1 [8998 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:15:35.0787760Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libdav1d7 amd64 1.4.1-1build1 [604 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:15:39.5113126Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libgsm1 amd64 1.0.22-1build1 [27.8 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:16:09.7716136Z Ign:27 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libhwy1t64 amd64 1.0.7-8.1build1
+verify-build	Verify and build this checkout	2026-10-22T15:16:10.0142455Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 libjxl0.7 amd64 0.7.0-10.2ubuntu6.1 [1001 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:16:15.9872366Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libmp3lame0 amd64 3.100-6build1 [142 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:16:17.2834282Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libopus0 amd64 1.4-1build1 [208 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:16:19.0576655Z Get:31 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 librav1e0 amd64 0.7.1-2 [1022 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:16:25.8854124Z Get:32 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 librsvg2-2 amd64 2.58.0+dfsg-1ubuntu0.1 [2141 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:16:40.9167585Z Get:33 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libshine3 amd64 3.1.1-2build1 [23.2 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:16:41.7899167Z Get:34 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libspeex1 amd64 1.2.1-2ubuntu2.24.04.1 [59.6 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:16:42.5440423Z Get:35 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libsvtav1enc1d1 amd64 1.7.0+dfsg-2build1 [2425 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:17:00.2409979Z Get:36 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libsoxr0 amd64 0.1.3-4build3 [80.0 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:17:01.3776298Z Get:37 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libswresample4 amd64 7:6.1.1-3ubuntu5 [63.8 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:17:02.1579315Z Get:38 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libtheora0 amd64 1.1.1+dfsg.1-16.1build3 [211 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:17:04.2504338Z Get:39 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libtwolame0 amd64 0.4.0-2build3 [52.3 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:17:04.9816213Z Get:40 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libvorbisenc2 amd64 1.3.7-1build3 [80.8 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:17:06.1401337Z Get:41 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libvpx9 amd64 1.14.0-1ubuntu2.3 [1143 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:17:14.9331126Z Get:42 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libx264-164 amd64 2:0.164.3108+git31e19f9-1 [604 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:17:19.6428413Z Get:43 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libx265-199 amd64 3.5-2build1 [1226 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:17:29.4955646Z Get:44 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libxvidcore4 amd64 2:1.3.7-1build1 [219 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:17:31.4578317Z Get:45 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libzvbi-common all 0.2.42-2 [42.4 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:17:32.0570687Z Get:46 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libzvbi0t64 amd64 0.2.42-2 [261 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:17:34.5278947Z Get:47 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libavcodec60 amd64 7:6.1.1-3ubuntu5 [5851 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:22.6267641Z Get:48 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libunibreak5 amd64 5.1-2build1 [25.0 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:23.1019823Z Get:49 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libass9 amd64 1:0.17.1-2build1 [104 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:24.1832969Z Get:50 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libudfread0 amd64 1.1.2-1build1 [19.0 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:24.6277997Z Get:51 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libbluray2 amd64 1:1.3.4-1build1 [159 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:26.2212789Z Get:52 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libchromaprint1 amd64 1.5.1-5 [30.5 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:27.0468892Z Get:53 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libgme0 amd64 0.6.3-7build1 [134 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:28.4896025Z Get:54 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libmpg123-0t64 amd64 1.32.5-1ubuntu1.1 [169 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:30.0906025Z Get:55 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libopenmpt0t64 amd64 0.7.3-1.1build3 [647 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:36.0945828Z Get:56 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libcjson1 amd64 1.7.17-1 [24.8 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:36.5887027Z Get:57 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libmbedcrypto7t64 amd64 2.28.8-1 [209 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:38.5966639Z Get:58 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 librist4 amd64 0.2.10+dfsg-2 [74.9 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:39.7057859Z Get:59 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libsrt1.5-gnutls amd64 1.5.3-1build2 [316 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:42.5988151Z Get:60 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libssh-gcrypt-4 amd64 0.10.6-2ubuntu0.5 [226 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:44.7288608Z Get:61 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libavformat60 amd64 7:6.1.1-3ubuntu5 [1153 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:54.1888030Z Get:62 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libbs2b0 amd64 3.1.0+dfsg-7build1 [10.6 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:18:54.5666912Z Get:63 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libflite1 amd64 2.2-6build3 [13.6 MB]
+verify-build	Verify and build this checkout	2026-10-22T15:20:54.5802240Z Get:64 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libserd-0-0 amd64 0.32.2-1 [43.6 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:20:55.3547453Z Get:65 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libzix-0-0 amd64 0.4.2-2build1 [23.6 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:20:55.8925530Z Get:66 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libsord-0-0 amd64 0.16.16-2build1 [15.8 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:20:56.3691486Z Get:67 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libsratom-0-0 amd64 0.6.16-1build1 [17.3 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:20:56.8635590Z Get:68 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 liblilv-0-0 amd64 0.24.22-1build1 [41.0 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:20:57.5925048Z Get:69 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libmysofa1 amd64 1.3.2+dfsg-2ubuntu2 [1158 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:21:09.0745730Z Get:70 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libplacebo338 amd64 6.338.2-2build1 [2654 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:21:34.6104076Z Get:71 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libblas3 amd64 3.12.0-3build1.1 [238 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:21:37.4449601Z Get:72 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 liblapack3 amd64 3.12.0-3build1.1 [2646 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:22:02.8495955Z Get:73 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libasyncns0 amd64 0.8-6build4 [11.3 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:22:04.5323544Z Get:74 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libflac12t64 amd64 1.4.3+ds-2.1ubuntu2 [197 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:22:07.0475948Z Get:75 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libsndfile1 amd64 1.2.2-1ubuntu5.24.04.1 [209 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:22:09.2535777Z Get:76 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libpulse0 amd64 1:16.1+dfsg1-2ubuntu10.1 [292 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:22:12.5270970Z Get:77 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libsphinxbase3t64 amd64 0.8+5prealpha+1-17build2 [126 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:22:14.1114305Z Get:78 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libpocketsphinx3 amd64 0.8.0+real5prealpha+1-15ubuntu5 [133 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:22:15.7337181Z Get:79 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libpostproc57 amd64 7:6.1.1-3ubuntu5 [49.9 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:22:16.4299947Z Get:80 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libsamplerate0 amd64 0.2.2-4build1 [1344 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:22:29.0821904Z Get:81 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 librubberband2 amd64 3.3.0+dfsg-2build1 [130 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:22:30.5880878Z Get:82 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libswscale7 amd64 7:6.1.1-3ubuntu5 [193 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:22:35.9767828Z Get:83 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libvidstab1.1 amd64 1.1.0-2build1 [38.5 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:22:37.1560171Z Get:84 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libzimg2 amd64 3.0.5+ds1-1build1 [254 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:22:40.1042140Z Get:85 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libavfilter9 amd64 7:6.1.1-3ubuntu5 [4235 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:21.1210017Z Get:86 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 liborc-0.4-0t64 amd64 1:0.4.38-1ubuntu0.1 [207 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:23.3961533Z Get:87 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libgstreamer-plugins-base1.0-0 amd64 1.24.2-1ubuntu0.5 [862 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:31.5661685Z Get:88 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 gstreamer1.0-libav amd64 1.24.1-1build1 [103 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:32.8568308Z Get:89 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libcdparanoia0 amd64 3.10.2+debian-14build3 [48.5 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:33.6047944Z Get:90 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libvisual-0.4-0 amd64 0.4.2-2build1 [115 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:35.1010024Z Get:91 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 gstreamer1.0-plugins-base amd64 1.24.2-1ubuntu0.5 [721 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:42.0006110Z Get:92 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libaa1 amd64 1.4p5-51.1 [49.9 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:42.8093778Z Get:93 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libraw1394-11 amd64 2.1.2-2build3 [26.2 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:43.6344625Z Get:94 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libavc1394-0 amd64 0.5.4-5build3 [15.4 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:44.1185348Z Get:95 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libcaca0 amd64 0.99.beta20-4ubuntu0.2 [209 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:46.6333046Z Get:96 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libdv4t64 amd64 1.0.0-17.1build1 [63.2 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:47.5965814Z Get:97 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libgstreamer-plugins-good1.0-0 amd64 1.24.2-1ubuntu1.8 [34.3 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:48.4884618Z Get:98 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libiec61883-0 amd64 1.2.0-6build1 [24.5 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:49.0729908Z Get:99 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libshout3 amd64 2.4.6-1build2 [50.3 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:49.8306303Z Get:100 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libtag1v5-vanilla amd64 1.13.1-1build1 [326 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:53.5862676Z Get:101 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libtag1v5 amd64 1.13.1-1build1 [11.7 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:54.2316948Z Get:102 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libv4lconvert0t64 amd64 1.26.1-4build3 [87.6 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:55.3100174Z Get:103 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libv4l-0t64 amd64 1.26.1-4build3 [46.9 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:56.2978051Z Get:104 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libwavpack1 amd64 5.6.0-1build1 [84.6 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:57.3737230Z Get:105 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libsoup-3.0-common all 3.4.4-5ubuntu0.9 [12.3 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:23:58.0655180Z Get:106 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libsoup-3.0-0 amd64 3.4.4-5ubuntu0.9 [291 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:00.9561312Z Get:107 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 gstreamer1.0-plugins-good amd64 1.24.2-1ubuntu1.8 [2236 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:21.9877545Z Get:108 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libabsl20220623t64 amd64 20220623.1-3.1ubuntu3.2 [423 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:26.2217403Z Get:109 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libgav1-1 amd64 0.18.0-1build3 [357 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:29.5028239Z Get:110 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libyuv0 amd64 0.0~git202401110.af6ac82-1 [178 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:31.3631093Z Get:111 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libavif16 amd64 1.0.4-1ubuntu3 [91.2 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:32.5344601Z Get:112 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libavtp0 amd64 0.2.0-1build1 [6414 B]
+verify-build	Verify and build this checkout	2026-10-22T15:24:33.1053565Z Get:113 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libcairo-script-interpreter2 amd64 1.18.0-3build1 [60.3 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:33.9386108Z Get:114 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libdc1394-25 amd64 2.2.6-4build1 [90.1 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:35.0364757Z Get:115 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libde265-0 amd64 1.0.15-1ubuntu0.2 [167 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:36.9857466Z Get:116 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libdecor-0-0 amd64 0.2.2-1build2 [16.5 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:37.4505224Z Get:117 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libgles2 amd64 1.7.0-1build1 [17.1 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:37.9427056Z Get:118 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libdirectfb-1.7-7t64 amd64 1.7.7-11.1ubuntu2 [1035 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:47.2141845Z Get:119 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libdvdread8t64 amd64 6.1.3-1.1build1 [54.7 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:48.0237009Z Get:120 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libdvdnav4 amd64 6.1.1-3build1 [39.5 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:48.6555381Z Get:121 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libegl-mesa0 amd64 25.2.8-0ubuntu0.24.04.4 [117 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:50.2322601Z Get:122 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libevent-2.1-7t64 amd64 2.1.12-stable-9ubuntu2.2 [146 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:52.1749901Z Get:123 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libfaad2 amd64 2.11.1-1build1 [207 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:54.3050613Z Get:124 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libinstpatch-1.0-2 amd64 1.1.6-1build2 [251 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:56.7290835Z Get:125 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libjack-jackd2-0 amd64 1.9.21~dfsg-3ubuntu3 [289 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:24:59.4319315Z Get:126 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libwebrtc-audio-processing1 amd64 0.3.1-0ubuntu6 [290 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:25:02.5316194Z Get:127 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libspa-0.2-modules amd64 1.0.5-1ubuntu3.3 [628 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:25:08.6184450Z Get:128 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libpipewire-0.3-0t64 amd64 1.0.5-1ubuntu3.3 [252 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:25:10.9854735Z Get:129 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libsdl2-2.0-0 amd64 2.30.0+dfsg-1ubuntu3.1 [686 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:25:16.7668525Z Get:130 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 timgm6mb-soundfont all 1.3-5 [5427 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:26:02.3269596Z Get:131 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libfluidsynth3 amd64 2.3.4-1build3 [249 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:26:04.7781347Z Get:132 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libfreeaptx0 amd64 0.1.1-2build1 [13.5 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:26:05.2824593Z Get:133 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libgraphene-1.0-0 amd64 1.10.8-3build2 [46.2 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:26:05.9296249Z Get:134 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libgssdp-1.6-0 amd64 1.6.3-1build3 [40.4 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:26:06.7986707Z Get:135 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libegl1 amd64 1.7.0-1build1 [28.7 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:26:07.2566490Z Get:136 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libgstreamer-gl1.0-0 amd64 1.24.2-1ubuntu0.5 [214 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:26:09.2845694Z Get:137 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libgtk-4-common all 4.14.5+ds-0ubuntu0.10 [1497 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:26:22.7097769Z Get:138 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libgtk-4-1 amd64 4.14.5+ds-0ubuntu0.10 [3295 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:26:56.1506298Z Get:139 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libgupnp-1.6-0 amd64 1.6.6-1build3 [92.7 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:26:57.3415478Z Get:140 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libgupnp-igd-1.6-0 amd64 1.6.0-3build3 [16.5 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:26:57.8932362Z Get:141 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libharfbuzz-icu0 amd64 8.3.0-2build2 [13.3 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:26:58.4658599Z Get:142 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libhyphen0 amd64 2.8.8-7build3 [26.5 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:26:59.0021258Z Get:143 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libimath-3-1-29t64 amd64 3.1.9-3.1ubuntu2 [72.2 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:00.0251619Z Get:144 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 liblc3-1 amd64 1.0.4-3build1 [69.7 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:01.2705274Z Get:145 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libldacbt-enc2 amd64 2.0.2.3+git20200429+ed310a0-4ubuntu2 [27.1 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:01.8334361Z Get:146 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libraptor2-0 amd64 2.0.16-3ubuntu0.1 [165 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:04.1973260Z Get:147 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 liblrdf0 amd64 0.6.1-4build1 [18.5 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:04.8221860Z Get:148 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libltc11 amd64 1.3.2-1build1 [13.0 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:05.3638602Z Get:149 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libmanette-0.2-0 amd64 0.2.7-1build2 [30.6 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:06.0927209Z Get:150 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libmfx1 amd64 22.5.4-1 [3124 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:40.6285961Z Get:151 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libmjpegutils-2.1-0t64 amd64 1:2.1.0+debian-8.1build1 [25.5 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:41.3061091Z Get:152 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libmodplug1 amd64 1:0.8.9.0-3build1 [166 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:43.5391657Z Get:153 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libmpcdec6 amd64 2:0.1~r495-2build1 [32.7 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:44.4814192Z Get:154 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libmpeg2encpp-2.1-0t64 amd64 1:2.1.0+debian-8.1build1 [75.6 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:45.6989308Z Get:155 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libmplex2-2.1-0t64 amd64 1:2.1.0+debian-8.1build1 [46.1 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:46.8067605Z Get:156 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libneon27t64 amd64 0.33.0-1.1build3 [102 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:48.2902105Z Get:157 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libnice10 amd64 0.1.21-2build3 [157 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:27:50.4981167Z Get:158 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libnss3 amd64 2:3.98-1ubuntu0.3 [1445 kB]
+verify-build	Verify and build this checkout	2026-10-22T15:28:06.3359662Z ##[error]The operation was canceled.
+verify-build	Run actions/upload-artifact@v4	﻿2026-10-22T15:28:06.3428071Z ##[group]Run actions/upload-artifact@v4
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.3428324Z with:
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.3428579Z   name: release-verification-fe488a01864b2449f334584e0d2260a3c5670549
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.3428926Z   path: artifacts/
+verify-build	Run actions/upload-artifact@v4	test-results/
+verify-build	Run actions/upload-artifact@v4	playwright-report/
+verify-build	Run actions/upload-artifact@v4	
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.3429187Z   retention-days: 90
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.3429366Z   if-no-files-found: warn
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.3429556Z   compression-level: 6
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.3429871Z   overwrite: false
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.3430054Z   include-hidden-files: false
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.3430431Z env:
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.3430627Z   EXPECTED_SHA: fe488a01864b2449f334584e0d2260a3c5670549
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.3430868Z ##[endgroup]
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.4676051Z (node:3082) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.4677301Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.4738554Z Multiple search paths detected. Calculating the least common ancestor of all paths
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.4742566Z The least common ancestor is /home/runner/work/takkeu/takkeu. This will be the root directory of the artifact
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.4743470Z With the provided path, there will be 3 files uploaded
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.4744919Z Artifact name is valid!
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.4745603Z Root directory input is valid!
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.8598092Z Beginning upload of artifact content to blob storage
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:06.8748100Z (node:3082) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:07.1650643Z Uploaded bytes 6720
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:07.3169063Z Finished uploading artifact content to blob storage!
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:07.3184130Z SHA256 digest of uploaded artifact zip is aef7f5a45b68d841995b5e9b8bf3dcd2dd8f58a279c90c7ae9bf147aec38d190
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:07.3184660Z Finalizing artifact upload
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:07.7674826Z Artifact release-verification-fe488a01864b2449f334584e0d2260a3c5670549.zip successfully finalized. Artifact ID 12438060624
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:07.7675942Z Artifact release-verification-fe488a01864b2449f334584e0d2260a3c5670549 has been successfully uploaded! Final size is 6720 bytes. Artifact ID is 12438060624
+verify-build	Run actions/upload-artifact@v4	2026-10-22T15:28:07.7676920Z Artifact download URL: https://github.com/chameleonjp-lab/takkeu/actions/runs/39802282136/artifacts/12438060624
+verify-build	Post Run actions/checkout@v5	﻿2026-10-22T15:28:07.7841239Z Post job cleanup.
+verify-build	Post Run actions/checkout@v5	2026-10-22T15:28:07.8512221Z [command]/usr/bin/git version
+verify-build	Post Run actions/checkout@v5	2026-10-22T15:28:07.8545610Z git version 2.55.0
+verify-build	Post Run actions/checkout@v5	2026-10-22T15:28:07.8574882Z Temporarily overriding HOME='/home/runner/work/_temp/4eb35715-d4bb-4d31-bc9a-a5b3810bd042' before making global git config changes
+verify-build	Post Run actions/checkout@v5	2026-10-22T15:28:07.8576047Z Adding repository directory to the temporary git global config as a safe directory
+verify-build	Post Run actions/checkout@v5	2026-10-22T15:28:07.8580557Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/takkeu/takkeu
+verify-build	Post Run actions/checkout@v5	2026-10-22T15:28:07.8611452Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify-build	Post Run actions/checkout@v5	2026-10-22T15:28:07.8640503Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify-build	Post Run actions/checkout@v5	2026-10-22T15:28:07.8847531Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify-build	Post Run actions/checkout@v5	2026-10-22T15:28:07.8877636Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify-build	Post Run actions/checkout@v5	2026-10-22T15:28:07.9090389Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify-build	Post Run actions/checkout@v5	2026-10-22T15:28:07.9121558Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify-build	Complete job	﻿2026-10-22T15:28:07.9462212Z Cleaning up orphan processes
+verify-build	Complete job	2026-10-22T15:28:07.9635497Z Terminate orphan process: pid (2494) (npm exec playwright install --with-deps chromium webkit)
+verify-build	Complete job	2026-10-22T15:28:07.9673570Z Terminate orphan process: pid (2495) (tee)
+verify-build	Complete job	2026-10-22T15:28:07.9694060Z Terminate orphan process: pid (2508) (sh)
+verify-build	Complete job	2026-10-22T15:28:07.9714097Z Terminate orphan process: pid (2509) (MainThread)
+verify-build	Complete job	2026-10-22T15:28:07.9797648Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

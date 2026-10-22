@@ -1,0 +1,133 @@
+{
+  "at": "2026-10-22T15:34:37.482Z",
+  "url": "https://chameleonjp-lab.github.io/takkeu/",
+  "expected": "fe488a01864b2449f334584e0d2260a3c5670549",
+  "status": "passed",
+  "browsers": [
+    {
+      "name": "chromium-desktop",
+      "version": "156.0.8078.4",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "errors": [],
+      "resources": [
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-ChYxDtOP.css",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-BTxwV7fV.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-BTxwV7fV.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-ChYxDtOP.css",
+          "status": 200
+        }
+      ],
+      "result": "passed",
+      "scope": "Linux emulation, clock paused; not iPhone hardware, listening or performance"
+    },
+    {
+      "name": "webkit-portrait",
+      "version": "27.2",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "errors": [],
+      "resources": [
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-BTxwV7fV.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-ChYxDtOP.css",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-BTxwV7fV.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-ChYxDtOP.css",
+          "status": 200
+        }
+      ],
+      "result": "passed",
+      "scope": "Linux emulation, clock paused; not iPhone hardware, listening or performance"
+    },
+    {
+      "name": "webkit-landscape",
+      "version": "27.2",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "errors": [],
+      "resources": [
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-BTxwV7fV.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-ChYxDtOP.css",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-BTxwV7fV.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-ChYxDtOP.css",
+          "status": 200
+        }
+      ],
+      "result": "passed",
+      "scope": "Linux emulation, clock paused; not iPhone hardware, listening or performance"
+    }
+  ],
+  "transport": {
+    "apiTLS": "default certificate verification enabled for metadata and development-path requests",
+    "browserTLS": "session proxy CA is not in Chromium browser trust store; browser context bypasses that certificate check, separately verified by API and curl"
+  },
+  "release": {
+    "commit": "fe488a01864b2449f334584e0d2260a3c5670549",
+    "base": "/takkeu/"
+  },
+  "developmentPaths": {
+    "tests/fixtures/stage2.html": 404,
+    "tests/fixtures/stage3.html": 404,
+    "src/main.ts": 404,
+    "@vite/client": 404
+  }
+}
