@@ -1,5 +1,5 @@
 import type { GameConfig, GameEvent } from '../game/types';
-import { playOpponentHit, playPlayerHit } from './tones';
+import { playOpponentHit, playPlayerHit, playSmashWarning } from './tones';
 import type { Voice } from './tones';
 export interface GameAudio { unlock(): Promise<boolean>; consume(events: readonly GameEvent[]): void; setVolume(value: number): void; setMuted(value: boolean): void; suspend(): void; reset(runId: string): void; dispose(): Promise<void> }
 export function createAudio(config: GameConfig, contextFactory: () => AudioContext = () => new AudioContext()): GameAudio {
@@ -34,12 +34,13 @@ export function createAudio(config: GameConfig, contextFactory: () => AudioConte
         if (event.runId !== runId || seen.has(event.id)) continue;
         seen.add(event.id);
         if (!enabled || muted || !context || !output || context.state !== 'running') continue;
-        if (event.kind !== 'player-hit' && event.kind !== 'opponent-hit') continue;
+        if (event.kind !== 'player-hit' && event.kind !== 'opponent-hit' && event.kind !== 'smash-warning') continue;
         if (voices.size >= config.audioVoiceLimit) {
           const oldest = voices.values().next().value;
           if (oldest) { oldest.stop(); voices.delete(oldest); }
         }
-        const voice = event.kind === 'player-hit' ? playPlayerHit(context, output, ended) : playOpponentHit(context, output, ended);
+        const voice = event.kind === 'player-hit' ? playPlayerHit(context, output, ended)
+          : event.kind === 'smash-warning' ? playSmashWarning(context, output, ended) : playOpponentHit(context, output, ended);
         voices.add(voice);
       }
     },

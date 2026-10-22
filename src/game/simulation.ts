@@ -4,6 +4,7 @@ import { speedMultiplier } from './difficulty';
 import { advanceProgression } from './progression';
 import { scheduleReturn } from './scheduler';
 import { sampleReturn } from './trajectory';
+import { planOpponentReturn } from './opponent';
 import type { BallPhase, GameConfig, GameEvent, GameEventKind, GamePhase, GameSnapshot, InputFrame, PaddlePoint, PauseReason, Point3, ProgressionState, ReturnPlan, StepResult } from './types';
 
 export type SimulationBall = {
@@ -11,13 +12,13 @@ export type SimulationBall = {
 };
 export type SimulationState = {
   runId: string; randomState: number; eventNumber: number; phase: GamePhase; pauseReason: PauseReason | null;
-  score: number; simTime: number; paddle: PaddlePoint; balls: SimulationBall[]; progression: ProgressionState;
+  committedSmashDepartures: number[]; score: number; simTime: number; paddle: PaddlePoint; balls: SimulationBall[]; progression: ProgressionState;
 };
 let nextRunId = 0;
 export function createSimulationState(seed: number): SimulationState {
   return {
     runId: `run-${++nextRunId}`, randomState: seed >>> 0 || 1, eventNumber: 0,
-    phase: 'ready', pauseReason: null, score: 0, simTime: 0, paddle: { ...INITIAL_PADDLE }, balls: [],
+    phase: 'ready', pauseReason: null, committedSmashDepartures: [], score: 0, simTime: 0, paddle: { ...INITIAL_PADDLE }, balls: [],
     progression: { appliedMilestones: [], ballGlowUntil: null },
   };
 }
@@ -48,7 +49,7 @@ export function startSimulation(state: SimulationState, config: GameConfig): voi
     plan: scheduleReturn({ ballId: 1, earliestDepartAt: 0, preferredTarget: INITIAL_PADDLE, speedMultiplier: 1, smash: false }, [], config) });
 }
 
-type Action = { kind: 'hit' | 'lost' | 'ready' | 'depart'; time: number; ball: SimulationBall; position?: Point3 };
+type Action = { kind: 'hit' | 'lost' | 'ready' | 'warning' | 'depart'; time: number; ball: SimulationBall; position?: Point3 };
 
 /** Domain state only: neither rendering nor sound can feed back into the simulation. */
 export function stepSimulation(state: SimulationState, config: GameConfig, dt: number, input: InputFrame): StepResult {
@@ -60,6 +61,7 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
       ...(ballId === undefined ? {} : { ballId }), ...(milestone === undefined ? {} : { milestone }) });
   };
   const end = state.simTime + dt;
+  state.committedSmashDepartures = state.committedSmashDepartures.filter(time => time >= state.simTime - DIFFICULTY.smashSeparation);
   const previousPaddle = state.paddle;
   const target = clampPaddle(input.target, config);
   const distance = Math.hypot(target.x - previousPaddle.x, target.y - previousPaddle.y);
@@ -67,6 +69,7 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
   state.paddle = { x: previousPaddle.x + (target.x - previousPaddle.x) * fraction, y: previousPaddle.y + (target.y - previousPaddle.y) * fraction };
   const actions: Action[] = [];
   const enqueueDeparture = (ball: SimulationBall): void => {
+    if (!ball.warningSent && ball.plan.warningAt !== null && ball.plan.warningAt <= end + 1e-12) actions.push({ kind: 'warning', time: ball.plan.warningAt, ball });
     if (ball.plan.departAt <= end + 1e-12) actions.push({ kind: 'depart', time: ball.plan.departAt, ball });
   };
   for (const ball of state.balls) {
@@ -120,10 +123,13 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
       ball.from = sampleReturn(ball.plan, ball.from, time);
       ball.position = ball.from;
       // Process ready actions in chronological order; this preserves waiting order.
-      ball.plan = scheduleReturn({ ballId: ball.id, earliestDepartAt: time,
+      ball.plan = planOpponentReturn({ ballId: ball.id, earliestDepartAt: time,
         preferredTarget: { x: (random(state) * 2 - 1) * 0.75, y: 0.25 + random(state) * 0.5 },
-        speedMultiplier: speedMultiplier(state.score), smash: false }, reservations(state), config);
-      ball.phase = 'waiting-return'; enqueueDeparture(ball);
+        speedMultiplier: speedMultiplier(state.score), score: state.score, randomValue: random(state) }, reservations(state), state.committedSmashDepartures, config);
+      if (ball.plan.smash) state.committedSmashDepartures.push(ball.plan.departAt);
+      ball.warningSent = false; ball.phase = 'waiting-return'; enqueueDeparture(ball);
+    } else if (kind === 'warning') {
+      ball.warningSent = true; emit('smash-warning', time, ball.id);
     } else {
       ball.phase = 'incoming'; emit('opponent-hit', time, ball.id);
     }

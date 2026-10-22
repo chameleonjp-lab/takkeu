@@ -62,12 +62,14 @@ describe('多球の接触・落球・累計到達', () => {
       const from = { x: 0, y: 0.5, z: -DEFAULT_CONFIG.paddleZ };
       s.state.balls.push({ id, phase: 'queued', position: from, from, plan, warningSent: false });
     }
+    let warnings = 0;
     for (let tick = 0; tick < 120 * 30; tick++) {
       const next = s.snapshot().scheduledReturns[0];
-      s.step(next?.target ?? s.state.paddle);
+      warnings += s.step(next?.target ?? s.state.paddle).events.filter(e => e.kind === 'smash-warning').length;
       expect(s.state.balls.filter(b => b.phase !== 'lost')).toHaveLength(4);
     }
     expect(s.state.score).toBeGreaterThan(10030);
+    expect(warnings).toBeGreaterThan(0);
   });
   it('落球でも解放・加速を維持し、確定済み予約は閾値通過でも変わらない', () => {
     const s = scenario(149);

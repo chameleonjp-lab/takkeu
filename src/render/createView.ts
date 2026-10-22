@@ -4,6 +4,7 @@ import type { InputMapping } from '../input/swipe';
 import { createObjects } from './objects';
 import { applyPresentation } from './presentation';
 import { createCamera, fitCamera } from './camera';
+import { updateOpponentView } from './opponentView';
 
 export interface GameView {
   render(snapshot: GameSnapshot, events: readonly GameEvent[]): void;
@@ -31,6 +32,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
       if (snapshot.runId !== previousRunId) { flashUntil = 0; previousRunId = snapshot.runId; }
       for (const event of events) if (event.kind === 'player-hit') flashUntil = event.time + 0.12;
       applyPresentation(objects, snapshot);
+      updateOpponentView(objects, snapshot, events);
       if (!snapshot.progression.appliedMilestones.includes(100)) objects.rimMaterial.emissiveIntensity = snapshot.simTime < flashUntil ? 0.8 : 0.15;
       renderer.render(scene, camera);
     },
