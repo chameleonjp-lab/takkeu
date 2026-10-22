@@ -5,11 +5,15 @@ import { createObjects } from './objects';
 import { applyPresentation } from './presentation';
 import { createCamera, fitCamera } from './camera';
 import { updateOpponentView } from './opponentView';
+import { computeDrawingSize } from './quality';
+import type { Quality } from '../storage/preferences';
 
 export interface GameView {
   render(snapshot: GameSnapshot, events: readonly GameEvent[]): void;
   resize(width: number, height: number): void;
   inputMapping(): InputMapping;
+  setQuality(quality: Quality): void;
+  resources(): { geometries: number; textures: number; programs: number; drawCalls: number };
   dispose(): void;
 }
 
@@ -27,6 +31,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
   scene.add(objects.root);
   let flashUntil = 0;
   let previousRunId = '';
+  let quality: Quality = 'standard';
   return {
     render(snapshot, events) {
       if (snapshot.runId !== previousRunId) { flashUntil = 0; previousRunId = snapshot.runId; }
@@ -38,9 +43,9 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
     },
     resize(width, height) {
       const w = Math.max(1, width), h = Math.max(1, height);
-      const ratio = Math.min(window.devicePixelRatio || 1, config.maxPixelRatio, Math.sqrt(config.maxDrawingPixels / (w * h)));
+      const size = computeDrawingSize(w, h, window.devicePixelRatio || 1, quality);
       renderer.setPixelRatio(1);
-      renderer.setSize(Math.max(1, Math.floor(w * ratio)), Math.max(1, Math.floor(h * ratio)), false);
+      renderer.setSize(size.width, size.height, false);
       fitCamera(camera, w, h, config);
     },
     inputMapping() {
@@ -52,6 +57,8 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
         world: { minX: config.paddleMinX, maxX: config.paddleMaxX, minY: config.paddleMinY, maxY: config.paddleMaxY },
       };
     },
+    setQuality(value) { quality = value; },
+    resources() { return { geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures, programs: renderer.info.programs?.length ?? 0, drawCalls: renderer.info.render.calls }; },
     dispose() { objects.dispose(); renderer.dispose(); },
   };
 }

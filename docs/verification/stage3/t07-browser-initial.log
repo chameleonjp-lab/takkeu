@@ -1,0 +1,118 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/preferences.spec.ts tests/browser/lifecycle.spec.ts tests/browser/basic-play.spec.ts --project=chromium
+
+[WebServer] (node:2845) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:2858) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:2882) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/basic-play.spec.ts:12:1 › 開始→相対ドラッグ→返球→失球→結果→再挑戦 (8.9s)
+  ✓  2 [chromium] › tests/browser/basic-play.spec.ts:39:1 › 停止中は描画を保持し、再開操作でだけ進む (6.6s)
+  ✓  3 [chromium] › tests/browser/basic-play.spec.ts:55:1 › タッチの左右上下スワイプでラケットを動かせる (3.6s)
+(node:3145) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  4 [chromium] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない (3.6s)
+  ✘  5 [chromium] › tests/browser/lifecycle.spec.ts:39:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 (9.9s)
+(node:3352) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  6 [chromium] › tests/browser/lifecycle.spec.ts:54:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する (3.0s)
+  ✘  7 [chromium] › tests/browser/preferences.spec.ts:3:1 › 全設定と自己ベストが再読込・リトライを越えて残る (810ms)
+(node:3499) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  8 [chromium] › tests/browser/preferences.spec.ts:30:1 › 保存拒否でも設定と自己ベストをメモリに保持して遊べる (1.5s)
+
+
+  1) [chromium] › tests/browser/lifecycle.spec.ts:39:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 ───
+
+    Error: expect(received).toBeCloseTo(expected, precision)
+
+    Expected: 0.058333333333333334
+    Received: 0.049999999999999996
+
+    Expected precision:    2
+    Expected difference: < 0.005
+    Received difference:   0.008333333333333338
+
+      47 |   expect(await page.evaluate(() => window.stage3.snapshot())).toEqual(before);
+      48 |   await page.getByRole('button', { name: 'つづける', exact: true }).click(); await page.clock.runFor(32);
+    > 49 |   expect(await page.evaluate(() => window.stage3.snapshot().simTime)).toBeCloseTo(before.simTime + 1 / 30, 2);
+         |                                                                       ^
+      50 |   await page.evaluate(() => window.dispatchEvent(new Event('pagehide')));
+      51 |   expect(await page.evaluate(() => window.stage3.snapshot().phase)).toBe('paused');
+      52 | });
+        at /workspace/takkeu/tests/browser/lifecycle.spec.ts:49:71
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/lifecycle-非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/lifecycle-非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/lifecycle-非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/lifecycle-非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/lifecycle-非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/browser/preferences.spec.ts:3:1 › 全設定と自己ベストが再読込・リトライを越えて残る ─────────────────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: getByLabel('自己ベスト', { exact: true })
+    Expected: "0"
+    Error: strict mode violation: getByLabel('自己ベスト', { exact: true }) resolved to 2 elements:
+        1) <output data-best="" aria-label="自己ベスト">0</output> aka getByRole('status', { name: '自己ベスト' })
+        2) <output data-best="" aria-label="自己ベスト">0</output> aka locator('section').filter({ hasText: 't.RALLY COMPLETE' }).getByLabel('自己ベスト')
+
+    Call log:
+      - Expect "toHaveText" getByLabel('自己ベスト', { exact: true }) with timeout 5000ms
+      - waiting for getByLabel('自己ベスト', { exact: true })
+
+
+      4 |   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
+      5 |   await page.goto('/');
+    > 6 |   await expect(page.getByLabel('自己ベスト', { exact: true })).toHaveText('0');
+        |                                                           ^
+      7 |   await page.getByRole('button', { name: '設定', exact: true }).click();
+      8 |   await page.getByLabel('効果音の音量', { exact: true }).fill('0.3');
+      9 |   await page.getByLabel('操作感度', { exact: true }).fill('1.6');
+        at /workspace/takkeu/tests/browser/preferences.spec.ts:6:59
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/preferences-全設定と自己ベストが再読込・リトライを越えて残る-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/preferences-全設定と自己ベストが再読込・リトライを越えて残る-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/preferences-全設定と自己ベストが再読込・リトライを越えて残る-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/preferences-全設定と自己ベストが再読込・リトライを越えて残る-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/preferences-全設定と自己ベストが再読込・リトライを越えて残る-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/browser/lifecycle.spec.ts:39:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 ────
+    [chromium] › tests/browser/preferences.spec.ts:3:1 › 全設定と自己ベストが再読込・リトライを越えて残る ──────────────────
+  6 passed (43.4s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

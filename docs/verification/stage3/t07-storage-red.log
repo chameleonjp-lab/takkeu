@@ -1,0 +1,28 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/storage.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/storage.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/storage.test.ts [ tests/unit/storage.test.ts ]
+Error: Cannot find module '../../src/storage/preferences' imported from /workspace/takkeu/tests/unit/storage.test.ts
+ ❯ tests/unit/storage.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { DEFAULT_PREFERENCES, PREFERENCES_KEY, loadPreferences, savePr…
+       | ^
+      3|
+      4| describe('版付き端末内保存', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  13:33:13
+   Duration  256ms (worker 96%, environment 4%)
+

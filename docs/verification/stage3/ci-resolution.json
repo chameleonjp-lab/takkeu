@@ -1,0 +1,19 @@
+{
+  "observedAt": "2026-10-22T14:41:39.097Z",
+  "headSha": "b06b6468497f5f8e0522b4594d9c29a363f0ca8a",
+  "pullRequestRun": {
+    "id": 39795978382,
+    "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/39795978382",
+    "status": "completed",
+    "conclusion": "success",
+    "checkout": "bfc0c9bfe5861aa06fa5bbbcd91380cad3bfb590",
+    "log": "ci-source-job.log"
+  },
+  "pushRun": {
+    "id": 39795806505,
+    "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/39795806505",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "note": "Actions Results reporting was delayed: the API reported queued/in_progress after logs show the job had executed. Both source-head workflows eventually reported success. Latest documentation-head run is tracked in PR #4."
+}

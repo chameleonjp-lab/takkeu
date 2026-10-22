@@ -29,10 +29,10 @@ jobs:
         run: |
           set -o pipefail
           npm run test:unit 2>&1 | tee artifacts/unit.log
-      - name: Build
+      - name: Build and test root and Pages distributions
         run: |
           set -o pipefail
-          npm run build 2>&1 | tee artifacts/build.log
+          npm run verify:release 2>&1 | tee artifacts/build-release.log
       - name: Browser tests
         run: |
           set -o pipefail

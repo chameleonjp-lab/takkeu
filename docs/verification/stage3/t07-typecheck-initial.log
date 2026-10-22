@@ -1,0 +1,5 @@
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+tests/helpers/appHarness.ts(32,39): error TS2540: Cannot assign to 'ballGlowUntil' because it is a read-only property.

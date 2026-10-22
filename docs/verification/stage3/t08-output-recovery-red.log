@@ -1,0 +1,37 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/audio-events.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/audio-events.test.ts (9 tests | 1 failed) 29ms
+   × 出力ノードの初期化に一度失敗しても、次の操作で出力を作り直せる 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/audio-events.test.ts > 出力ノードの初期化に一度失敗しても、次の操作で出力を作り直せる
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/audio-events.test.ts:121:61
+    119|   context.createGain = gain;
+    120|   expect(await audio.unlock()).toBe(true);
+    121|   audio.consume([event('player-hit', '1')]); expect(voices).toHaveLeng…
+       |                                                             ^
+    122|   await audio.dispose();
+    123| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  14:00:21
+   Duration  305ms (transform 54%, tests 27%, import 14%, worker 4%)
+

@@ -1,0 +1,104 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/preferences.spec.ts --project=chromium
+
+[WebServer] (node:1697) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:1710) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:1737) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/browser/preferences.spec.ts:3:1 › 全設定と自己ベストが再読込・リトライを越えて残る (6.1s)
+(node:1849) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/browser/preferences.spec.ts:30:1 › 保存拒否でも設定と自己ベストをメモリに保持して遊べる (31.1s)
+
+
+  1) [chromium] › tests/browser/preferences.spec.ts:3:1 › 全設定と自己ベストが再読込・リトライを越えて残る ─────────────────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: getByLabel('自己ベスト', { exact: true })
+    Expected: "0"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveText" getByLabel('自己ベスト', { exact: true }) with timeout 5000ms
+      - waiting for getByLabel('自己ベスト', { exact: true })
+
+
+      4 |   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
+      5 |   await page.goto('/');
+    > 6 |   await expect(page.getByLabel('自己ベスト', { exact: true })).toHaveText('0');
+        |                                                           ^
+      7 |   await page.getByRole('button', { name: '設定', exact: true }).click();
+      8 |   await page.getByLabel('効果音の音量', { exact: true }).fill('0.3');
+      9 |   await page.getByLabel('操作感度', { exact: true }).fill('1.6');
+        at /workspace/takkeu/tests/browser/preferences.spec.ts:6:59
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/preferences-全設定と自己ベストが再読込・リトライを越えて残る-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/preferences-全設定と自己ベストが再読込・リトライを越えて残る-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/preferences-全設定と自己ベストが再読込・リトライを越えて残る-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/preferences-全設定と自己ベストが再読込・リトライを越えて残る-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/preferences-全設定と自己ベストが再読込・リトライを越えて残る-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/browser/preferences.spec.ts:30:1 › 保存拒否でも設定と自己ベストをメモリに保持して遊べる ──────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: '設定', exact: true })
+
+
+      34 |   });
+      35 |   await page.goto('/');
+    > 36 |   await page.getByRole('button', { name: '設定', exact: true }).click();
+         |                                                               ^
+      37 |   await page.getByLabel('操作感度', { exact: true }).fill('1.4');
+      38 |   await expect(page.getByText('この端末に保存できません。開いている間は設定と自己ベストを保持します。')).toBeVisible();
+      39 |   await page.getByRole('button', { name: '戻る', exact: true }).click();
+        at /workspace/takkeu/tests/browser/preferences.spec.ts:36:63
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/preferences-保存拒否でも設定と自己ベストをメモリに保持して遊べる-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/preferences-保存拒否でも設定と自己ベストをメモリに保持して遊べる-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/preferences-保存拒否でも設定と自己ベストをメモリに保持して遊べる-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/preferences-保存拒否でも設定と自己ベストをメモリに保持して遊べる-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/preferences-保存拒否でも設定と自己ベストをメモリに保持して遊べる-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/browser/preferences.spec.ts:3:1 › 全設定と自己ベストが再読込・リトライを越えて残る ──────────────────
+    [chromium] › tests/browser/preferences.spec.ts:30:1 › 保存拒否でも設定と自己ベストをメモリに保持して遊べる ───────────────
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

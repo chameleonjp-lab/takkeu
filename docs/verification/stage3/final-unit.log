@@ -1,0 +1,42 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run --reporter=default --reporter=json --outputFile=docs/verification/stage3/final-unit.json
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ✓ tests/unit/audio-events.test.ts (10 tests) 20ms
+ ✓ tests/unit/opponent.test.ts (7 tests) 22ms
+ ✓ tests/unit/presentation.test.ts (7 tests) 62ms
+ ✓ tests/unit/session.test.ts (6 tests) 53ms
+ ✓ tests/unit/multiball.test.ts (9 tests) 166ms
+ ✓ tests/unit/loop.test.ts (5 tests) 38ms
+ ✓ tests/unit/scheduler.test.ts (4 tests) 5ms
+ ✓ tests/unit/simulation-isolation.test.ts (1 test) 162ms
+ ✓ tests/unit/storage.test.ts (11 tests) 7ms
+ ✓ tests/unit/swipe.test.ts (4 tests) 29ms
+ ✓ tests/unit/progression.test.ts (5 tests) 8ms
+ ✓ tests/unit/pointer-loop.test.ts (2 tests) 30ms
+ ✓ tests/unit/collision.test.ts (4 tests) 5ms
+ ✓ tests/unit/input-timeline.test.ts (2 tests) 5ms
+ ✓ tests/unit/release-revision.test.ts (1 test) 269ms
+ ✓ tests/unit/trajectory.test.ts (1 test) 4ms
+ ✓ tests/unit/quality.test.ts (1 test) 4ms
+ ✓ tests/unit/camera.test.ts (3 tests) 14ms
+ ✓ tests/unit/replay.test.ts (1 test) 29ms
+ ✓ tests/unit/warning-ui.test.ts (1 test) 202ms
+
+ Test Files  20 passed (20)
+      Tests  85 passed (85)
+   Start at  14:12:15
+   Duration  3.25s (environment 52%, tests 22%, transform 15%, import 9%, worker 2%)
+
+    Isolate  20 workers spawned · ~259ms startup each (spawn + environment, per file)
+             at least ~1.47s faster with isolate: false — reuses workers across files instead of one per file
+
+JSON report written to /workspace/takkeu/docs/verification/stage3/final-unit.json
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

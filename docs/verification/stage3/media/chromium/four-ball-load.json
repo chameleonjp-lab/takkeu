@@ -1,0 +1,3217 @@
+[
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 450,
+      "simTime": 0.9833333333333323,
+      "paddle": {
+        "x": -0.7,
+        "y": 0.5
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": -0.7,
+            "y": 0.21617586665312116,
+            "z": 0.5777777777777728
+          },
+          "smash": true
+        },
+        {
+          "id": 2,
+          "phase": "incoming",
+          "position": {
+            "x": 0.7,
+            "y": 0.3280126886145412,
+            "z": 0.3639999999999983
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "incoming",
+          "position": {
+            "x": 0,
+            "y": 0.5984344993141293,
+            "z": -0.4160000000000015
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "incoming",
+          "position": {
+            "x": 0.4,
+            "y": 0.652806927297668,
+            "z": -1.1960000000000015
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 1,
+          "departAt": 0.4,
+          "netCrossAt": 0.7,
+          "arriveAt": 1.3,
+          "target": {
+            "x": -0.7,
+            "y": 0.5
+          },
+          "smash": true,
+          "warningAt": 0,
+          "speedMultiplier": 2.2,
+          "landingZ": 1.95
+        },
+        {
+          "ballId": 2,
+          "departAt": -0.5,
+          "netCrossAt": 0.75,
+          "arriveAt": 2,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.2,
+          "landingZ": 1.95
+        },
+        {
+          "ballId": 3,
+          "departAt": 0,
+          "netCrossAt": 1.25,
+          "arriveAt": 2.5,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.2,
+          "landingZ": 1.95
+        },
+        {
+          "ballId": 4,
+          "departAt": 0.5,
+          "netCrossAt": 1.75,
+          "arriveAt": 3,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.2,
+          "landingZ": 1.95
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 20,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 20
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 452,
+      "simTime": 1.991666666666662,
+      "paddle": {
+        "x": 0.5999999999999999,
+        "y": 0.5
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.5034256410256424,
+            "y": 0.653759477404858,
+            "z": 0.8224369230769304
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.6942564102564115,
+            "y": 0.5076613066270146,
+            "z": 1.8733692307692378
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "incoming",
+          "position": {
+            "x": 0,
+            "y": 0.2491184807256195,
+            "z": 1.1569999999999927
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "incoming",
+          "position": {
+            "x": 0.4,
+            "y": 0.3216752400548732,
+            "z": 0.3769999999999929
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 3,
+          "departAt": 0,
+          "netCrossAt": 1.25,
+          "arriveAt": 2.5,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.2,
+          "landingZ": 1.95
+        },
+        {
+          "ballId": 4,
+          "departAt": 0.5,
+          "netCrossAt": 1.75,
+          "arriveAt": 3,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.2,
+          "landingZ": 1.95
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 24
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 454,
+      "simTime": 2.9833333333333254,
+      "paddle": {
+        "x": 0.4,
+        "y": 0.5
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.22575897435897668,
+            "y": 0.14946989890082335,
+            "z": -0.7067130769230643
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.41658974358974576,
+            "y": 0.5874104290323918,
+            "z": 0.3442192307692429
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": 0,
+            "y": 0.6534250673188522,
+            "z": 1.1152192307692435
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.3980512820512834,
+            "y": 0.5033903228892631,
+            "z": 1.8862192307692431
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": []
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 22
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 454,
+      "simTime": 3.991666666666655,
+      "paddle": {
+        "x": -0.7493390230229124,
+        "y": 0.3047605165047571
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": -0.12557650019061992,
+            "y": 0.644108394721935,
+            "z": -1.2964262026983175
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.13425641025641344,
+            "y": 0.2746460438218581,
+            "z": -1.2106307692307514
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": 0,
+            "y": 0.2988149226318326,
+            "z": -0.4396307692307506
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.2367179487179506,
+            "y": 0.584479766679608,
+            "z": 0.33136923076924885
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 1,
+          "departAt": 3.789615384615385,
+          "netCrossAt": 4.3924547298073575,
+          "arriveAt": 4.99529407499933,
+          "target": {
+            "x": -0.7493390230229124,
+            "y": 0.3047605165047571
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 18
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 455,
+      "simTime": 4.983333333333371,
+      "paddle": {
+        "x": -0.7493390230229124,
+        "y": 0.3047605165047571
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.7401147859633774,
+            "y": 0.3110453750148839,
+            "z": 1.901991657411539
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "incoming",
+          "position": {
+            "x": 0.1368645890087695,
+            "y": 0.5702041526793193,
+            "z": -0.2932567765097962
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "incoming",
+          "position": {
+            "x": -0.006663248662436806,
+            "y": 0.5129829848736116,
+            "z": -1.9106031023198913
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.07805128205127615,
+            "y": 0.2674109574796711,
+            "z": -1.1977807692308258
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 2,
+          "departAt": 4.471153846153847,
+          "netCrossAt": 5.073993191345819,
+          "arriveAt": 5.676832536537791,
+          "target": {
+            "x": 0.322181427734904,
+            "y": 0.5823473929194734
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 3,
+          "departAt": 4.971153846153847,
+          "netCrossAt": 5.573993191345819,
+          "arriveAt": 6.176832536537791,
+          "target": {
+            "x": -0.6596120840404183,
+            "y": 0.34249673306476325
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 18
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 456,
+      "simTime": 5.991666666666754,
+      "paddle": {
+        "x": -0.6596120840404183,
+        "y": 0.34249673306476325
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.44136868854100986,
+            "y": 0.505927809454595,
+            "z": 0.3471416574114614
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.27658647442030604,
+            "y": 0.6879700234776729,
+            "z": 1.398073965103769
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "incoming",
+          "position": {
+            "x": -0.5583100984509597,
+            "y": 0.2783811296878591,
+            "z": 1.3510453213972962
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "incoming",
+          "position": {
+            "x": -0.07562361243212223,
+            "y": 0.6186946780309994,
+            "z": -1.4815091790512642
+          },
+          "smash": true
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 3,
+          "departAt": 4.971153846153847,
+          "netCrossAt": 5.573993191345819,
+          "arriveAt": 6.176832536537791,
+          "target": {
+            "x": -0.6596120840404183,
+            "y": 0.34249673306476325
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 4,
+          "departAt": 5.871153846153847,
+          "netCrossAt": 6.3727645277127145,
+          "arriveAt": 6.874375209271583,
+          "target": {
+            "x": -0.6295365358237177,
+            "y": 0.6980987485731021
+          },
+          "smash": true,
+          "warningAt": 5.471153846153847,
+          "speedMultiplier": 2.076643709877656,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 22
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 458,
+      "simTime": 6.98333333333347,
+      "paddle": {
+        "x": -0.6295365358237177,
+        "y": 0.6980987485731021
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.1475605431421525,
+            "y": 0.25837543422553466,
+            "z": -1.1820083425886143
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.15026244103034372,
+            "y": 0.460092428913401,
+            "z": -0.1310760348963067
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.4380372164431463,
+            "y": 0.5560615778461689,
+            "z": 0.639923965103693
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.5922707088881867,
+            "y": 0.7313890009891441,
+            "z": 1.7191369495204831
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": []
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 20
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 458,
+      "simTime": 7.991666666666854,
+      "paddle": {
+        "x": -0.10784718487411737,
+        "y": 0.5205795166548342
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": -0.04571334229394403,
+            "y": 0.5711194590811862,
+            "z": -0.29690135718908084
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.0218153146422308,
+            "y": 0.4626030901605032,
+            "z": -1.6859260348963845
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.17506340904050643,
+            "y": 0.07943640226319772,
+            "z": -0.9149260348963846
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.3412874056252235,
+            "y": 0.6117008164143329,
+            "z": 0.1642869495204058
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 1,
+          "departAt": 7.481382397802593,
+          "netCrossAt": 8.083315215673235,
+          "arriveAt": 8.685248033543875,
+          "target": {
+            "x": -0.10784718487411737,
+            "y": 0.5205795166548342
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.076643709877656,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 18
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 459,
+      "simTime": 8.983333333333464,
+      "paddle": {
+        "x": 0.47881313029211015,
+        "y": 0.6148839570814744
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.09329978650429335,
+            "y": 0.6355583480322395,
+            "z": 1.4239329199131496
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "incoming",
+          "position": {
+            "x": 0.3263024154361865,
+            "y": 0.14023117829418014,
+            "z": 0.7077788696495502
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "waiting-return",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": true
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.09445258671374068,
+            "y": 0.35263815752964645,
+            "z": -1.3648630504795072
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 2,
+          "departAt": 8.162920859341053,
+          "netCrossAt": 8.764853677211695,
+          "arriveAt": 9.366786495082335,
+          "target": {
+            "x": 0.47881313029211015,
+            "y": 0.6148839570814744
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.076643709877656,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 3,
+          "departAt": 9.062920859341054,
+          "netCrossAt": 9.564531540899921,
+          "arriveAt": 10.066142222458788,
+          "target": {
+            "x": -0.07378325751051307,
+            "y": 0.4474175324430689
+          },
+          "smash": true,
+          "warningAt": 8.662920859341053,
+          "speedMultiplier": 2.076643709877656,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 20
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 460,
+      "simTime": 9.99166666666674,
+      "paddle": {
+        "x": -0.07378325751051307,
+        "y": 0.4474175324430689
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.05030332614493133,
+            "y": 0.44437783972795547,
+            "z": -0.13091708008676206
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.35235922438867523,
+            "y": 0.7281706622646661,
+            "z": 0.9200152276055441
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "incoming",
+          "position": {
+            "x": -0.06830585310779362,
+            "y": 0.41865899507981574,
+            "z": 1.6604779879424256
+          },
+          "smash": true
+        },
+        {
+          "id": 4,
+          "phase": "incoming",
+          "position": {
+            "x": 0.03229909773505942,
+            "y": 0.4475296569066779,
+            "z": 0.0902432078164439
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 3,
+          "departAt": 9.062920859341054,
+          "netCrossAt": 9.564531540899921,
+          "arriveAt": 10.066142222458788,
+          "target": {
+            "x": -0.07378325751051307,
+            "y": 0.4474175324430689
+          },
+          "smash": true,
+          "warningAt": 8.662920859341053,
+          "speedMultiplier": 2.076643709877656,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 4,
+          "departAt": 9.362799578158686,
+          "netCrossAt": 9.963850873363405,
+          "arriveAt": 10.564902168568125,
+          "target": {
+            "x": 0.06174091435968876,
+            "y": 0.7079809702700004
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0796893875326354,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 22
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 462,
+      "simTime": 10.98333333333335,
+      "paddle": {
+        "x": 0.06174091435968876,
+        "y": 0.7079809702700004
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.008017551080765392,
+            "y": 0.4563670958399977,
+            "z": -1.660067080086675
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.16462150690505,
+            "y": 0.21741356586458754,
+            "z": -0.6091347723943688
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.04583721842746248,
+            "y": 0.5890007458400515,
+            "z": 0.4728416838553404
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.050475429102770974,
+            "y": 0.7954656517087768,
+            "z": 1.238390964765737
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": []
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 20
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 462,
+      "simTime": 11.991666666666626,
+      "paddle": {
+        "x": -0.6298767677508295,
+        "y": 0.5049624821403995
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": -0.42982506779350205,
+            "y": 0.1380648926882767,
+            "z": 0.7113424247737712
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "incoming",
+          "position": {
+            "x": 0.01797014688382062,
+            "y": 0.6155256291121971,
+            "z": -1.4997833320509233
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.016421347160740757,
+            "y": 0.19711392411893638,
+            "z": -1.0820083161445713
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.025860593027859022,
+            "y": 0.3987613477115124,
+            "z": -0.3164590352341745
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 1,
+          "departAt": 11.171357276208399,
+          "netCrossAt": 11.772408571413118,
+          "arriveAt": 12.373459866617837,
+          "target": {
+            "x": -0.6298767677508295,
+            "y": 0.5049624821403995
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0796893875326354,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 2,
+          "departAt": 11.85289573774686,
+          "netCrossAt": 12.453947032951579,
+          "arriveAt": 13.054998328156298,
+          "target": {
+            "x": 0.1556663220981136,
+            "y": 0.3841029100585729
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0796893875326354,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 18
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 463,
+      "simTime": 12.983333333333237,
+      "paddle": {
+        "x": 0.1556663220981136,
+        "y": 0.3841029100585729
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.467269547491438,
+            "y": 0.6605184753533495,
+            "z": 0.9431869351585693
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "incoming",
+          "position": {
+            "x": 0.1463860607824079,
+            "y": 0.3789356279754591,
+            "z": 1.7174961504618806
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "incoming",
+          "position": {
+            "x": -0.16010843917868695,
+            "y": 0.6245678847321863,
+            "z": -0.5589454368606841
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.0016526137475737154,
+            "y": 0.49093955170233755,
+            "z": -1.8456090352340875
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 2,
+          "departAt": 11.85289573774686,
+          "netCrossAt": 12.453947032951579,
+          "arriveAt": 13.054998328156298,
+          "target": {
+            "x": 0.1556663220981136,
+            "y": 0.3841029100585729
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0796893875326354,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 3,
+          "departAt": 12.554566591345893,
+          "netCrossAt": 13.155617886550612,
+          "arriveAt": 13.756669181755331,
+          "target": {
+            "x": -0.4488845580490306,
+            "y": 0.5589019831968471
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0796893875326354,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 20
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 465,
+      "simTime": 13.991666666666513,
+      "paddle": {
+        "x": 0.49920965207275003,
+        "y": 0.3106216451851651
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.2161506007382787,
+            "y": 0.2060355477778273,
+            "z": -0.6116630648413424
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.0953663475735267,
+            "y": 0.5547835122966186,
+            "z": 0.4392692428509637
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.399535536287283,
+            "y": 0.6499967498948485,
+            "z": 1.5212456991006729
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "incoming",
+          "position": {
+            "x": 0.39062724861789333,
+            "y": 0.1736314152973597,
+            "z": 1.1017163746420742
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 4,
+          "departAt": 13.0510317540634,
+          "netCrossAt": 13.65208304926812,
+          "arriveAt": 14.253134344472839,
+          "target": {
+            "x": 0.49920965207275003,
+            "y": 0.3106216451851651
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0796893875326354,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 22
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 466,
+      "simTime": 14.983333333333123,
+      "paddle": {
+        "x": 0.5777512894710526,
+        "y": 0.5628013582900167
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": 0.05955839648468216,
+            "y": 0.6066020899218116,
+            "z": -1.5479623922554682
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.034331179256522376,
+            "y": 0.20218569617282678,
+            "z": -1.089880757148949
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.22353250502045313,
+            "y": 0.5029412272056555,
+            "z": -0.007904300899241212
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.34658525856612765,
+            "y": 0.5431354259971427,
+            "z": 0.7576449800111569
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 1,
+          "departAt": 14.859589452113113,
+          "netCrossAt": 15.459783473097215,
+          "arriveAt": 16.059977494081316,
+          "target": {
+            "x": 0.5777512894710526,
+            "y": 0.5628013582900167
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.08265986713838,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 18
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 466,
+      "simTime": 15.991666666666399,
+      "paddle": {
+        "x": 0.5777512894710526,
+        "y": 0.5628013582900167
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": 0.5448730307380749,
+            "y": 0.5223367235689654,
+            "z": 1.7280615787530194
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "incoming",
+          "position": {
+            "x": -0.036944956556888654,
+            "y": 0.6121793438051429,
+            "z": -0.48622239198851025
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.044571439614684905,
+            "y": 0.4287846558162729,
+            "z": -1.5627543008991538
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.14756061048272473,
+            "y": 0.08819212452506164,
+            "z": -0.7972050199887548
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 1,
+          "departAt": 14.859589452113113,
+          "netCrossAt": 15.459783473097215,
+          "arriveAt": 16.059977494081316,
+          "target": {
+            "x": 0.5777512894710526,
+            "y": 0.5628013582900167
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.08265986713838,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 2,
+          "departAt": 15.541127913651575,
+          "netCrossAt": 16.141321934635677,
+          "arriveAt": 16.74151595561978,
+          "target": {
+            "x": -0.09843389445450157,
+            "y": 0.5238384425174445
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.08265986713838,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 18
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 468,
+      "simTime": 16.98333333333301,
+      "paddle": {
+        "x": 0.19870334537699819,
+        "y": 0.43474762281402946
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.3569951323824029,
+            "y": 0.6399176316526409,
+            "z": 0.4598276224810216
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.08734771223052559,
+            "y": 0.6230175062658035,
+            "z": 1.5107599301733303
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "incoming",
+          "position": {
+            "x": 0.12258260704314443,
+            "y": 0.2818936418007546,
+            "z": 0.45595932877335765
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "waiting-return",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": true
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 3,
+          "departAt": 16.242798767250605,
+          "netCrossAt": 16.842992788234707,
+          "arriveAt": 17.44318680921881,
+          "target": {
+            "x": 0.19870334537699819,
+            "y": 0.43474762281402946
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.08265986713838,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 4,
+          "departAt": 17.139263929968113,
+          "netCrossAt": 17.63942561412153,
+          "arriveAt": 18.13958729827495,
+          "target": {
+            "x": -0.08758686028886586,
+            "y": 0.7151919364696369
+          },
+          "smash": true,
+          "warningAt": 16.739263929968114,
+          "speedMultiplier": 2.08265986713838,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 22
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 469,
+      "simTime": 17.991666666666287,
+      "paddle": {
+        "x": -0.08758686028886586,
+        "y": 0.7151919364696369
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.12665754457880923,
+            "y": 0.20547518121791566,
+            "z": -1.0950223775188903
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.04810413766832737,
+            "y": 0.47914968280240505,
+            "z": -0.04409006982658137
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.1522315437406833,
+            "y": 0.6135012343831014,
+            "z": 1.0378863864231227
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "incoming",
+          "position": {
+            "x": -0.0746351447686355,
+            "y": 0.46093582113031745,
+            "z": 1.3732960245143129
+          },
+          "smash": true
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 4,
+          "departAt": 17.139263929968113,
+          "netCrossAt": 17.63942561412153,
+          "arriveAt": 18.13958729827495,
+          "target": {
+            "x": -0.08758686028886586,
+            "y": 0.7151919364696369
+          },
+          "smash": true,
+          "warningAt": 16.739263929968114,
+          "speedMultiplier": 2.08265986713838,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 20
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 470,
+      "simTime": 18.983333333332897,
+      "paddle": {
+        "x": -0.731037899851799,
+        "y": 0.35212795878760517
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": -0.26634541666636424,
+            "y": 0.619707328700867,
+            "z": -0.5290789708585528
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.009509217231124162,
+            "y": 0.43206932573117446,
+            "z": -1.5732400698264943
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.07432200000139622,
+            "y": 0.26340869583308657,
+            "z": -0.4912636135767905
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.05695718620604201,
+            "y": 0.7396363100173822,
+            "z": 0.5861455527799255
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 1,
+          "departAt": 18.546126862827837,
+          "netCrossAt": 19.14612686282784,
+          "arriveAt": 19.746126862827836,
+          "target": {
+            "x": -0.731037899851799,
+            "y": 0.35212795878760517
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0855570053413404,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 18
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 471,
+      "simTime": 19.991666666666173,
+      "paddle": {
+        "x": -0.022702541551552713,
+        "y": 0.5211463805753738
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.6476296345466225,
+            "y": 0.48321338595942714,
+            "z": 1.5050268532505167
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "incoming",
+          "position": {
+            "x": -0.014453976849170793,
+            "y": 0.24094240894872487,
+            "z": 0.5330043624745924
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "incoming",
+          "position": {
+            "x": 0.019680016199239155,
+            "y": 0.560887763181725,
+            "z": -1.7474259117222553
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.022038101662417556,
+            "y": 0.11940494511219221,
+            "z": -0.9687044472199859
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 2,
+          "departAt": 19.2276653243663,
+          "netCrossAt": 19.8276653243663,
+          "arriveAt": 20.4276653243663,
+          "target": {
+            "x": -0.022702541551552713,
+            "y": 0.5211463805753738
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0855570053413404,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 3,
+          "departAt": 19.92933617796533,
+          "netCrossAt": 20.52933617796533,
+          "arriveAt": 21.129336177965328,
+          "target": {
+            "x": 0.37888391269370914,
+            "y": 0.31416494178120047
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0855570053413404,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 20
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 472,
+      "simTime": 20.983333333332784,
+      "paddle": {
+        "x": 0.37888391269370914,
+        "y": 0.31416494178120047
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.3609971718393622,
+            "y": 0.4363658143152597,
+            "z": -0.02412314674939653
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.017328495812140833,
+            "y": 0.6706537368016814,
+            "z": 1.0268091609429124
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "incoming",
+          "position": {
+            "x": 0.3327854718280506,
+            "y": 0.2954896779220624,
+            "z": 1.4754907549442298
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "incoming",
+          "position": {
+            "x": -0.17168861192863116,
+            "y": 0.6518616543170892,
+            "z": -0.7953132597505361
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 3,
+          "departAt": 19.92933617796533,
+          "netCrossAt": 20.52933617796533,
+          "arriveAt": 21.129336177965328,
+          "target": {
+            "x": 0.37888391269370914,
+            "y": 0.31416494178120047
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0855570053413404,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 4,
+          "departAt": 20.628045105563718,
+          "netCrossAt": 21.22804510556372,
+          "arriveAt": 21.828045105563717,
+          "target": {
+            "x": -0.5798850572900847,
+            "y": 0.2741481362609193
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0855570053413404,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 20
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 474,
+      "simTime": 21.99166666666606,
+      "paddle": {
+        "x": -0.5798850572900847,
+        "y": 0.2741481362609193
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.0695473568176942,
+            "y": 0.4338332906674746,
+            "z": -1.578973146749308
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.008277458188697311,
+            "y": 0.25474758055342583,
+            "z": -0.5280408390569991
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.2432566471218229,
+            "y": 0.535302883352875,
+            "z": 0.5539356171927046
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.5325046987138722,
+            "y": 0.3816651994559309,
+            "z": 1.6313447835494206
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": []
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 20
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 474,
+      "simTime": 22.98333333333267,
+      "paddle": {
+        "x": 0.37265317991841584,
+        "y": 0.6237383069237694
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": 0.23323512395872228,
+            "y": 0.26357192050297273,
+            "z": 0.49092102914070757
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "incoming",
+          "position": {
+            "x": -0.009253819506867248,
+            "y": 0.5669686338426907,
+            "z": -1.724078970859296
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.09470015094347617,
+            "y": 0.12410843820869655,
+            "z": -0.9752143828072082
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.3051377152894921,
+            "y": 0.4462252499766801,
+            "z": 0.10219478354950762
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 1,
+          "departAt": 22.232280708981683,
+          "netCrossAt": 22.832280708981685,
+          "arriveAt": 23.432280708981683,
+          "target": {
+            "x": 0.37265317991841584,
+            "y": 0.6237383069237694
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0855570053413404,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 2,
+          "departAt": 22.913819170520146,
+          "netCrossAt": 23.513819170520147,
+          "arriveAt": 24.113819170520145,
+          "target": {
+            "x": -0.15974562533665448,
+            "y": 0.2772927327314392
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0855570053413404,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 20
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 475,
+      "simTime": 23.991666666665946,
+      "paddle": {
+        "x": -0.15974562533665448,
+        "y": 0.2772927327314392
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.28389255140760106,
+            "y": 0.7377827643539835,
+            "z": 1.0210760840200985
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "incoming",
+          "position": {
+            "x": -0.1434845185744652,
+            "y": 0.28539537727411896,
+            "z": 1.553004362473853
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "incoming",
+          "position": {
+            "x": 0.002806744055867301,
+            "y": 0.6460534177674389,
+            "z": -0.7274259117229951
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.0739494380260467,
+            "y": 0.3897381164597251,
+            "z": -1.452655216450404
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 2,
+          "departAt": 22.913819170520146,
+          "netCrossAt": 23.513819170520147,
+          "arriveAt": 24.113819170520145,
+          "target": {
+            "x": -0.15974562533665448,
+            "y": 0.2772927327314392
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0855570053413404,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 3,
+          "departAt": 23.615490024119175,
+          "netCrossAt": 24.215490024119177,
+          "arriveAt": 24.815490024119175,
+          "target": {
+            "x": 0.008953487500548363,
+            "y": 0.7046411449555308
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.088382612947204,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 20
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 477,
+      "simTime": 24.983333333332556,
+      "paddle": {
+        "x": 0.018358741072006524,
+        "y": 0.640872908057645
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.1377790616454951,
+            "y": 0.2785072121700909,
+            "z": -0.5080739159798144
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.10210851863072798,
+            "y": 0.5163471811978865,
+            "z": 0.5428583917124945
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.008206984391731858,
+            "y": 0.7548426492974049,
+            "z": 1.6248348479621981
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "incoming",
+          "position": {
+            "x": 0.010237054045372368,
+            "y": 0.3921597583617591,
+            "z": 0.22468674024872404
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 4,
+          "departAt": 24.314198951717565,
+          "netCrossAt": 24.914198951717566,
+          "arriveAt": 25.514198951717564,
+          "target": {
+            "x": 0.018358741072006524,
+            "y": 0.640872908057645
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.088382612947204,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 22
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 478,
+      "simTime": 25.991666666665832,
+      "paddle": {
+        "x": -0.38149195301858496,
+        "y": 0.6299448508070494
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "waiting-return",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": true
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.03842121464234771,
+            "y": 0.1501337945726241,
+            "z": -1.0119916082874172
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.004637412586545491,
+            "y": 0.5783222852961019,
+            "z": 0.06998484796228643
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.014580578129965497,
+            "y": 0.7496874867156218,
+            "z": 1.1473940143190027
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 1,
+          "departAt": 26.31843455513553,
+          "netCrossAt": 26.81843455513553,
+          "arriveAt": 27.31843455513553,
+          "target": {
+            "x": -0.6143497719895095,
+            "y": 0.6235807663761079
+          },
+          "smash": true,
+          "warningAt": 25.91843455513553,
+          "speedMultiplier": 2.088382612947204,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 20
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 478,
+      "simTime": 26.983333333332443,
+      "paddle": {
+        "x": -0.6143497719895095,
+        "y": 0.6235807663761079
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": -0.40848041278137753,
+            "y": 0.1787627109149915,
+            "z": 0.6431052349679647
+          },
+          "smash": true
+        },
+        {
+          "id": 2,
+          "phase": "incoming",
+          "position": {
+            "x": -0.18974071307553061,
+            "y": 0.64367772366019,
+            "z": -0.7040789708600359
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.0011268419682217094,
+            "y": 0.39227837787107694,
+            "z": -1.4591651520376263
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.007382304050412373,
+            "y": 0.3515474814298721,
+            "z": -0.3817559856809105
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 1,
+          "departAt": 26.31843455513553,
+          "netCrossAt": 26.81843455513553,
+          "arriveAt": 27.31843455513553,
+          "target": {
+            "x": -0.6143497719895095,
+            "y": 0.6235807663761079
+          },
+          "smash": true,
+          "warningAt": 25.91843455513553,
+          "speedMultiplier": 2.088382612947204,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 2,
+          "departAt": 26.599973016673992,
+          "netCrossAt": 27.199973016673994,
+          "arriveAt": 27.79997301667399,
+          "target": {
+            "x": -0.5939291204558685,
+            "y": 0.3924538193969056
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.088382612947204,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 18
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 480,
+      "simTime": 27.99166666666572,
+      "paddle": {
+        "x": 0.16777553118299693,
+        "y": 0.5818900098092854
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.4409273025042893,
+            "y": 0.7284442960827341,
+            "z": 0.8490837763281407
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.5388090902161307,
+            "y": 0.4956559078650156,
+            "z": 1.5880576224819896
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "incoming",
+          "position": {
+            "x": 0.09647411766096806,
+            "y": 0.3617618439221013,
+            "z": 0.29257408827626485
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.00006305057456423846,
+            "y": 0.49925592734377927,
+            "z": -1.9366059856808222
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 3,
+          "departAt": 27.301643870273022,
+          "netCrossAt": 27.901643870273023,
+          "arriveAt": 28.50164387027302,
+          "target": {
+            "x": 0.16777553118299693,
+            "y": 0.5818900098092854
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.088382612947204,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 22
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 481,
+      "simTime": 28.98333333333233,
+      "paddle": {
+        "x": 0.10247176978737116,
+        "y": 0.317054434097372
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.2000470579305188,
+            "y": 0.17366916060794763,
+            "z": -0.680066223671772
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.3059355736661204,
+            "y": 0.47366847241420673,
+            "z": 0.05890762248207637
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.13296787644469038,
+            "y": 0.7087731251355238,
+            "z": 1.1408840787317802
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "incoming",
+          "position": {
+            "x": 0.05973904722026968,
+            "y": 0.3473131360161831,
+            "z": 0.3236240882975847
+          },
+          "smash": true
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 4,
+          "departAt": 28.40035279787141,
+          "netCrossAt": 28.90035279787141,
+          "arriveAt": 29.40035279787141,
+          "target": {
+            "x": 0.10247176978737116,
+            "y": 0.317054434097372
+          },
+          "smash": true,
+          "warningAt": 28.00035279787141,
+          "speedMultiplier": 2.091138456052705,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 22
+    }
+  },
+  {
+    "state": {
+      "runId": "run-3",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 482,
+      "simTime": 29.991666666665605,
+      "paddle": {
+        "x": 0.056819184799678624,
+        "y": 0.340385275776498
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": 0.008748761113936441,
+            "y": 0.6380653706893182,
+            "z": -1.3494956375272547
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.06914821650182434,
+            "y": 0.4060827746901908,
+            "z": -1.4959423775178353
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.06607921371139092,
+            "y": 0.3247096493411345,
+            "z": -0.4139659212681315
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.07686438210694083,
+            "y": 0.5407874228193037,
+            "z": 0.9754017066270447
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          50,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          390,
+          420,
+          450
+        ],
+        "ballGlowUntil": null
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 1,
+          "departAt": 29.806896093597068,
+          "netCrossAt": 30.40689609359707,
+          "arriveAt": 31.006896093597067,
+          "target": {
+            "x": 0.056819184799678624,
+            "y": 0.340385275776498
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.091138456052705,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "resources": {
+      "geometries": 24,
+      "textures": 1,
+      "programs": 7,
+      "drawCalls": 18
+    }
+  }
+]

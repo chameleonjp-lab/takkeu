@@ -1,0 +1,29 @@
+{
+  "observedAt": "2026-10-22T14:37:16.537753+00:00",
+  "source": "https://www.githubstatus.com/api/v2/summary.json",
+  "run": "https://github.com/chameleonjp-lab/takkeu/actions/runs/39795978382",
+  "runStatus": "in_progress",
+  "conclusion": null,
+  "headSha": "b06b6468497f5f8e0522b4594d9c29a363f0ca8a",
+  "actions": [
+    {
+      "id": "br0l2tvcx85d",
+      "name": "Actions",
+      "status": "degraded_performance",
+      "created_at": "2019-11-13T18:02:19.432Z",
+      "updated_at": "2026-10-22T14:18:15.773Z",
+      "position": 7,
+      "description": "Workflows, Compute and Orchestration for GitHub Actions",
+      "showcase": true,
+      "start_date": null,
+      "group_id": null,
+      "page_id": "kctbh9vrtdwd",
+      "group": false,
+      "only_show_if_degraded": false
+    }
+  ],
+  "incidentNames": [
+    "Incident with Actions Results"
+  ],
+  "verdict": "未確認（観測時）: run status was in_progress; earlier API responses reported queued. Actions was degraded. Later success is recorded in ci-resolution.json."
+}

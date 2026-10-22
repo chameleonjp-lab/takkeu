@@ -1,0 +1,26 @@
+- main:
+  - text: TAKKEU 卓球の、その先へ。
+  - paragraph: ONE BALL. ENDLESS RALLY.
+  - heading "タッケウ" [level=1]
+  - paragraph: 見えない相手と、 ラリーをつなぐ。
+  - paragraph: 指をすべらせて、球を返す。 すべての球が落ちるまで、どこまでも。
+  - button "はじめる"
+  - paragraph: スマホはスワイプ・PCはドラッグ
+  - text: "01"
+  - paragraph:
+    - strong: 指を置く
+    - text: 画面の好きな場所から。
+  - text: "02"
+  - paragraph:
+    - strong: 動かす
+    - text: 左右・上下へスワイプ。
+  - text: "03"
+  - paragraph:
+    - strong: つなぐ
+    - text: 自分の返球で +1 ラリー。
+  - paragraph:
+    - text: 自己ベスト
+    - status "自己ベスト": "0"
+    - text: ラリー
+  - button "設定"
+  - status: ホーム

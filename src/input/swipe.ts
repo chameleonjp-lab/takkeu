@@ -1,6 +1,6 @@
 import type { InputSample, PaddlePoint } from '../game/types';
 export type InputMapping = Readonly<{ screen: { left: number; top: number; width: number; height: number }; world: { minX: number; maxX: number; minY: number; maxY: number } }>;
-export type SwipeOptions = { mapping: InputMapping; onTarget(sample: InputSample): void; getPaddlePosition(): PaddlePoint; toSimTime(eventTimestamp: number): number; onInterruption(): void; canStart?(): boolean; beforeInput?(eventTimestamp: number): void; onHold?(sample: InputSample): void };
+export type SwipeOptions = { mapping: InputMapping; sensitivity?(): number; onTarget(sample: InputSample): void; getPaddlePosition(): PaddlePoint; toSimTime(eventTimestamp: number): number; onInterruption(): void; canStart?(): boolean; beforeInput?(eventTimestamp: number): void; onHold?(sample: InputSample): void };
 export interface SwipeController { updateMapping(mapping: InputMapping): void; cancel(): void; dispose(): void }
 export function createSwipeController(element: HTMLElement, options: SwipeOptions): SwipeController {
   const doc = element.ownerDocument;
@@ -31,8 +31,9 @@ export function createSwipeController(element: HTMLElement, options: SwipeOption
     options.beforeInput?.(event.timeStamp);
     if (!active || options.canStart?.() === false) return;
     const { screen, world } = mapping;
-    const x = active.paddle.x + (event.clientX - active.x) * (world.maxX - world.minX) / Math.max(1, screen.width);
-    const y = active.paddle.y - (event.clientY - active.y) * (world.maxY - world.minY) / Math.max(1, screen.height);
+    const sensitivity = options.sensitivity?.() ?? 1;
+    const x = active.paddle.x + (event.clientX - active.x) * sensitivity * (world.maxX - world.minX) / Math.max(1, screen.width);
+    const y = active.paddle.y - (event.clientY - active.y) * sensitivity * (world.maxY - world.minY) / Math.max(1, screen.height);
     notify({ x: Math.min(world.maxX, Math.max(world.minX, x)), y: Math.min(world.maxY, Math.max(world.minY, y)) }, event.timeStamp);
     event.preventDefault();
   };
@@ -53,6 +54,8 @@ export function createSwipeController(element: HTMLElement, options: SwipeOption
   doc.addEventListener('pointerup', up);
   doc.addEventListener('pointercancel', interrupted);
   element.addEventListener('lostpointercapture', interrupted);
+  const contextMenu = (event: Event): void => event.preventDefault();
+  element.addEventListener('contextmenu', contextMenu);
   return {
     updateMapping(next) { if (active) finish(performance.now()); mapping = next; },
     cancel() { if (active) finish(performance.now()); },
@@ -63,6 +66,7 @@ export function createSwipeController(element: HTMLElement, options: SwipeOption
       doc.removeEventListener('pointerup', up);
       doc.removeEventListener('pointercancel', interrupted);
       element.removeEventListener('lostpointercapture', interrupted);
+      element.removeEventListener('contextmenu', contextMenu);
     },
   };
 }

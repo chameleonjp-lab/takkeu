@@ -56,3 +56,83 @@ it('スマッシュの予告音は打球音と別に1回だけ鳴り、消音で
   expect(voices).toHaveLength(2);
   await audio.dispose();
 });
+
+it('4球を個別発音し、9音目では終了間近の音を短く消して切断する', async () => {
+  const { context, voices, ramps } = fakeAudioContext();
+  const audio = createAudio(DEFAULT_CONFIG, () => context); audio.reset('run-1'); await audio.unlock();
+  // The shorter player voice ends before the older warning voice.
+  audio.consume([event('smash-warning', 'w'), ...Array.from({ length: 7 }, (_, i) => event('player-hit', String(i)))]);
+  expect(voices).toHaveLength(8);
+  audio.consume([event('opponent-hit', 'ninth')]);
+  expect(voices).toHaveLength(9);
+  // Natural stop is already scheduled for all voices; fade is observed via the gain ramp.
+  expect(ramps.filter(value => value === 0)).toHaveLength(1);
+  expect(voices[0]!.stops).toHaveLength(1);
+  expect(voices[1]!.stops).toHaveLength(2);
+  expect(voices[1]!.disconnected).toBe(false);
+  voices[1]!.ended?.(); expect(voices[1]!.disconnected).toBe(true);
+  audio.consume(Array.from({ length: 4 }, (_, i) => event('opponent-hit', `four-${i}`)));
+  expect(voices).toHaveLength(13);
+  await audio.dispose(); expect(voices.every(v => v.disconnected)).toBe(true);
+});
+
+it('ノード生成失敗をゲーム側へ投げず、次のユーザー操作で再試行できる', async () => {
+  const { context } = fakeAudioContext();
+  const original = context.createOscillator.bind(context);
+  const audio = createAudio(DEFAULT_CONFIG, () => context); audio.reset('run-1'); await audio.unlock();
+  context.createOscillator = () => { throw new Error('audio unavailable'); };
+  expect(() => audio.consume([event('player-hit', '1')])).not.toThrow();
+  context.createOscillator = original;
+  expect(await audio.unlock()).toBe(true);
+  await audio.dispose();
+});
+
+it('遅れて失敗した旧resumeが、新しいresumeの成功を取り消さない', async () => {
+  const { context, voices } = fakeAudioContext();
+  let rejectOld!: (reason: Error) => void;
+  const resume = context.resume.bind(context);
+  context.resume = () => new Promise<void>((_, reject) => { rejectOld = reject; });
+  const audio = createAudio(DEFAULT_CONFIG, () => context); audio.reset('run-1');
+  const old = audio.unlock(); audio.suspend(); context.resume = resume;
+  expect(await audio.unlock()).toBe(true);
+  rejectOld(new Error('interrupted')); expect(await old).toBe(false);
+  audio.consume([event('player-hit', '1')]); expect(voices).toHaveLength(1);
+  await audio.dispose();
+});
+
+it('ブラウザ側の音声中断を通知し、過去の音を復帰時に再生しない', async () => {
+  const { context, voices } = fakeAudioContext(); let interruptions = 0;
+  const audio = createAudio(DEFAULT_CONFIG, () => context, () => interruptions++);
+  audio.reset('run-1'); await audio.unlock(); audio.consume([event('player-hit', '1')]);
+  Object.assign(context, { state: 'interrupted' }); context.onstatechange?.(new Event('statechange'));
+  expect(interruptions).toBe(1); expect(voices[0]!.disconnected).toBe(true);
+  audio.consume([event('opponent-hit', '2')]); await audio.unlock(); audio.consume([event('opponent-hit', '2')]);
+  expect(voices).toHaveLength(1); await audio.dispose();
+});
+
+it('出力ノードの初期化に一度失敗しても、次の操作で出力を作り直せる', async () => {
+  const { context, voices } = fakeAudioContext();
+  const gain = context.createGain.bind(context);
+  context.createGain = () => { throw new Error('output unavailable'); };
+  const audio = createAudio(DEFAULT_CONFIG, () => context); audio.reset('run-1');
+  expect(await audio.unlock()).toBe(false);
+  context.createGain = gain;
+  expect(await audio.unlock()).toBe(true);
+  audio.consume([event('player-hit', '1')]); expect(voices).toHaveLength(1);
+  await audio.dispose();
+});
+
+it('音ノード生成失敗を画面側へ通知し、無音継続後に手動再試行できる', async () => {
+  const { context, voices } = fakeAudioContext(); let unavailable = 0;
+  const native = context.createOscillator.bind(context);
+  const audio = createAudio(DEFAULT_CONFIG, () => context, () => {}, () => unavailable++);
+  audio.reset('run-1'); await audio.unlock();
+  context.createOscillator = () => { throw new Error('temporarily unavailable'); };
+  expect(() => audio.consume([event('opponent-hit', '1')])).not.toThrow();
+  expect(unavailable).toBe(1);
+  context.createOscillator = native; audio.consume([event('player-hit', '2')]);
+  expect(voices).toHaveLength(0);
+  expect(await audio.unlock()).toBe(true);
+  audio.consume([event('player-hit', '2'), event('opponent-hit', '3')]);
+  expect(voices).toHaveLength(1); await audio.dispose();
+});

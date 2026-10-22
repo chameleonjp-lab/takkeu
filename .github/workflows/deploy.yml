@@ -1,0 +1,91 @@
+name: Manual Pages release
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: 'Reviewed and approved main commit (full 40-character SHA)'
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: takkeu-pages
+  cancel-in-progress: false
+jobs:
+  verify-build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.expected_sha }}
+          persist-credentials: false
+      - name: Match the reviewed commit with current main
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          main_sha="$(git ls-remote --refs origin refs/heads/main | cut -f1)"
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$GITHUB_REF" == refs/heads/main ]]
+          [[ "$(git rev-parse HEAD)" == "$EXPECTED_SHA" ]]
+          [[ "$main_sha" == "$EXPECTED_SHA" ]]
+          node scripts/check-release-revision.mjs "$EXPECTED_SHA" "$GITHUB_REF" "$main_sha" | tee artifacts/revision.json
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Verify and build this checkout
+        run: |
+          set -euo pipefail
+          npm ci 2>&1 | tee artifacts/install.log
+          npx playwright install --with-deps chromium webkit 2>&1 | tee artifacts/browsers.log
+          npm run typecheck 2>&1 | tee artifacts/typecheck.log
+          npm run test:unit 2>&1 | tee artifacts/unit.log
+          npm run test:browser 2>&1 | tee artifacts/browser.log
+          npm run verify:release 2>&1 | tee artifacts/distribution.log
+          node -e "if (JSON.parse(require('fs').readFileSync('dist/release.json')).commit !== require('child_process').execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim()) process.exit(1)"
+          find dist -type f -print0 | sort -z | xargs -0 sha256sum > artifacts/distribution-sha256.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: release-verification-${{ inputs.expected_sha }}
+          path: |
+            artifacts/
+            test-results/
+            playwright-report/
+          retention-days: 90
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+  deploy:
+    needs: verify-build
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.expected_sha }}
+          persist-credentials: false
+      - name: Recheck main immediately before deploying the verified artifact
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          set -euo pipefail
+          main_sha="$(git ls-remote --refs origin refs/heads/main | cut -f1)"
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$GITHUB_REF" == refs/heads/main ]]
+          [[ "$(git rev-parse HEAD)" == "$EXPECTED_SHA" ]]
+          [[ "$main_sha" == "$EXPECTED_SHA" ]]
+          node scripts/check-release-revision.mjs "$EXPECTED_SHA" "$GITHUB_REF" "$main_sha"
+      - name: Deploy the artifact from verify-build in this run
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,46 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/preferences.spec.ts tests/browser/lifecycle.spec.ts tests/browser/basic-play.spec.ts
+
+[WebServer] (node:3950) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:3963) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 16 tests using 1 worker
+
+(node:3987) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/basic-play.spec.ts:12:1 › 開始→相対ドラッグ→返球→失球→結果→再挑戦 (7.2s)
+  ✓   2 [chromium] › tests/browser/basic-play.spec.ts:39:1 › 停止中は描画を保持し、再開操作でだけ進む (5.9s)
+  ✓   3 [chromium] › tests/browser/basic-play.spec.ts:55:1 › タッチの左右上下スワイプでラケットを動かせる (2.7s)
+(node:4158) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   4 [chromium] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない (3.6s)
+  ✓   5 [chromium] › tests/browser/lifecycle.spec.ts:39:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 (7.9s)
+  ✓   6 [chromium] › tests/browser/lifecycle.spec.ts:56:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する (2.6s)
+  ✓   7 [chromium] › tests/browser/preferences.spec.ts:3:1 › 全設定と自己ベストが再読込・リトライを越えて残る (3.8s)
+  ✓   8 [chromium] › tests/browser/preferences.spec.ts:30:1 › 保存拒否でも設定と自己ベストをメモリに保持して遊べる (1.1s)
+(node:4379) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   9 [webkit] › tests/browser/basic-play.spec.ts:12:1 › 開始→相対ドラッグ→返球→失球→結果→再挑戦 (9.4s)
+  ✓  10 [webkit] › tests/browser/basic-play.spec.ts:39:1 › 停止中は描画を保持し、再開操作でだけ進む (7.5s)
+  ✓  11 [webkit] › tests/browser/basic-play.spec.ts:55:1 › タッチの左右上下スワイプでラケットを動かせる (4.3s)
+(node:4619) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  12 [webkit] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない (6.0s)
+  ✓  13 [webkit] › tests/browser/lifecycle.spec.ts:39:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 (9.4s)
+  ✓  14 [webkit] › tests/browser/lifecycle.spec.ts:56:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する (6.3s)
+  ✓  15 [webkit] › tests/browser/preferences.spec.ts:3:1 › 全設定と自己ベストが再読込・リトライを越えて残る (5.4s)
+  ✓  16 [webkit] › tests/browser/preferences.spec.ts:30:1 › 保存拒否でも設定と自己ベストをメモリに保持して遊べる (3.1s)
+
+  16 passed (1.5m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
