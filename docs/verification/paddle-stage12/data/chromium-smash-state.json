@@ -1,0 +1,43 @@
+{
+  "commit": "77f21a5f213d2f3d848a81fc743fcad890c77d6c",
+  "data": {
+    "plan": {
+      "ballId": 1,
+      "departAt": 0.401,
+      "netCrossAt": 0.9033661209933104,
+      "arriveAt": 1.4057322419866207,
+      "target": {
+        "x": -0.6994498404146063,
+        "y": 0.2656291725579649
+      },
+      "smash": true,
+      "warningAt": 0.0010000000000000009,
+      "speedMultiplier": 2.0735209305257625,
+      "landingZ": 1.95,
+      "bounceY": 0.045
+    },
+    "events": [
+      {
+        "id": "run-4:1",
+        "runId": "run-4",
+        "kind": "smash-warning",
+        "time": 0.0010000000000000009,
+        "ballId": 1
+      },
+      {
+        "id": "run-4:2",
+        "runId": "run-4",
+        "kind": "opponent-hit",
+        "time": 0.401,
+        "ballId": 1
+      },
+      {
+        "id": "run-4:3",
+        "runId": "run-4",
+        "kind": "ball-lost",
+        "time": 1.4768135847640196,
+        "ballId": 1
+      }
+    ]
+  }
+}

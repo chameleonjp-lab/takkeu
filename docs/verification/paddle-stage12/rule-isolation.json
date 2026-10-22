@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-10-22T19:34:35.037190+00:00",
+  "base": "01ef27f2f521a8a09a82da385c928ba47b2355f7",
+  "commit": "77f21a5f213d2f3d848a81fc743fcad890c77d6c",
+  "identicalFiles": {
+    "src/app/controls.ts": "c147c8ac4bee8e5d346aa2712eff142ff2bc6ae15101650093918940e4fa6f75",
+    "src/app/createApp.ts": "3bf361a7f1f42faceb98314acda9f25e38b4158adbd0a59f1b491bfab6d27b5b",
+    "src/app/lifecycle.ts": "c96e07477994c190d3607d7ce4ba9cc0f62032585221475b605e73cba41440bb",
+    "src/app/loop.ts": "f4e8948b4dee94abcd3a867d5c65c17eaca7e8617fecd2e195c061f45907094f",
+    "src/audio/audio.ts": "07ecded33b8e41b3282aa91c4cef1e7022e8938b2626a6c2ff6d7dcff3db28ce",
+    "src/audio/tones.ts": "04f65b7879d442cc30515c66846166c336d643e5cdfd088170d5d1558f893368",
+    "src/game/collision.ts": "8e5ad013fcafcc33d7aabf57d9ccdae0dd99fa6db4f1aefb5cd75a1730074c1c",
+    "src/game/config.ts": "6f5afd3fe155ba6051851df60e6e2d61e62ede691f256bc7ec9035b28bdc5d15",
+    "src/game/difficulty.ts": "bf5d32e92c1e2acd99bb6af4fe2731663b1f76d668ed1b6a781bc30a17cf9b0f",
+    "src/game/milestones.ts": "abb55a21ba5a715f1dac94b1c29112038506cdab4524a52634b5b57d2f4b0c91",
+    "src/game/opponent.ts": "f771417216d3accac5dd0244020a5cb85ce52ad965b1c2401a71c7e38c17c48d",
+    "src/game/progression.ts": "9a4e2b2be029278084dd8f38918fc69b77c70f18d573349558c08d306e8b72a2",
+    "src/game/scheduler.ts": "c68ed24f8552c3a5b734402f14d02dadf84b1f72f5291a9ff8d6505157226d00",
+    "src/game/session.ts": "5c6fdc5f690b3addaeb8484d9f962276f4b3f60623e12acb1d4968909ad0c93a",
+    "src/game/simulation.ts": "2ad173b57990b97ad8b7b8d652c249ae078c33568e12dba30dea1a699064ca6c",
+    "src/game/trajectory.ts": "405387c6e263444ec03f40849cd2a89d248c8bac153d7474d9cc3abec73f7b8d",
+    "src/game/types.ts": "7aaddfff29f5580ba4721ab11d0890a520c5f977bec7284dc9ae5522171206df",
+    "src/game/viewpoint.ts": "1e5bea55f6b62fc37c9dce79f2b266d938d08e3fd663a925540e7b39dc9ad3f9",
+    "src/input/swipe.ts": "b462c1a4a517dca2d3f37a5d62239588954a00f6f65312f1e8569db51f5b5904",
+    "src/input/timeline.ts": "f2fc08142866529028d06bd407918cedc99958fc39dcfbbbec664136412fcd17",
+    "src/storage/preferences.ts": "d1413a7c858fdef151919d1a8a31c9c2511b8c97723cabb11be1ede0b9599d37"
+  },
+  "productChanges": [
+    "src/render/objects.ts",
+    "src/render/paddle.ts",
+    "src/render/presentation.ts",
+    "src/ui/court-preview.png"
+  ]
+}
