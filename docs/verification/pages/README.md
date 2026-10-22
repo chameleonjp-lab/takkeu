@@ -33,6 +33,14 @@ mainの[CI run 39802282118](https://github.com/chameleonjp-lab/takkeu/actions/ru
 
 再実行でも依存導入が長引いたため、CI／公開ジョブのUbuntu 24.04のAPT mirrorlistを公式の`https://archive.ubuntu.com/ubuntu`へ切り替える。APTの署名検証とUbuntuのパッケージ系列は維持し、ゲーム・npm lockfile・検査項目・SHA照合・時間制限は変更しない。ローカルから公式noble／noble-securityのInReleaseが証明書検証ありで200になることを確認した。実際のGitHub実行での導入・検査・公開成功は、修正PRのCIとmainの公開runで別に確認する。
 
+### 自動公開の再検証結果
+
+`39802282136`の**attempt 2はcompleted / success**。pushイベントと対象SHA `fe488a01864b2449f334584e0d2260a3c5670549`を維持した再実行で、15:33 UTCに配備まで成功した。型・単体85件・画面50件・配布4件、検査前／配備前のSHA照合が成功。[全文ログ](automatic-attempt2-success.log)。初回の遅延・中断と再実行の成功は区別する。最初のマージから無介入ですべて成功したとは記録しない。
+
+15:34 UTCの実URLの再確認も、release.jsonのSHAと`/takkeu/`、PC／縦／横の3条件が成功した。[公開後JSON](automatic-live-check.json)。設定保存、開始・停止・再開・リトライ・ホーム、JS/CSS 200、例外なし、開発経路404を再検証した。時計・プロキシCA・実機／試聴の制約は初回と同じ。
+
+このrunの`release-verification-fe488a01864b2449f334584e0d2260a3c5670549`成果物（ID `12437576910`）に正式ログ・配布ハッシュを保存した。実機等の未確認項目は変更しない。Ubuntu HTTPSミラーの修正と本文書を含む[PR #6](https://github.com/chameleonjp-lab/takkeu/pull/6)のCIと、その後のmainの自動公開結果はPR本文に追記する。
+
 ## ローカル検証
 
 2026-10-22 15:04〜15:05 UTC、上記mainを基準にworkflowと文書だけを変更した作業ツリーで実行した。ゲーム・テスト・配布スクリプトは変更していない。ログ内の`release.json`は当時のHEADである上記mainを示す。設定変更自体の確定コミットはPRのCIと公開ワークフローで追跡する。
