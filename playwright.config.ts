@@ -8,7 +8,8 @@ export default defineConfig({
   timeout: 60_000,
   forbidOnly: !!process.env.CI,
   retries: 0,
-  workers: process.env.CI ? 2 : 1,
+  // Concurrent SwiftShader contexts starve each other's GPU readbacks in CI.
+  workers: 1,
   reporter: [['list'], ['html', { open: 'never' }], ['json', { outputFile: 'test-results/results.json' }]],
   use: {
     baseURL: 'http://127.0.0.1:4173',

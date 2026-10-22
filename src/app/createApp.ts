@@ -88,6 +88,8 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     if (session.snapshot().phase !== 'paused') return;
     swipe.cancel(); timeline.clear(session.snapshot().paddle); silence(); rememberBest(); persist();
     loop.resetClock(performance.now()); screens.render(session.snapshot());
+    if (view && contextAvailable) view.render(session.snapshot(), []);
+    observedPhase = 'paused';
   }
   function resume(): void {
     if (session.snapshot().phase !== 'paused' || !contextAvailable || document.hidden) return;
@@ -124,7 +126,10 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     if (result.snapshot.phase === 'gameover' && observedPhase !== 'gameover') {
       swipe.cancel(); timeline.clear(result.snapshot.paddle); silence(); persist();
     }
-    if (view && contextAvailable && result.snapshot.phase !== 'ready') view.render(result.snapshot, result.events);
+    // Frozen scenes need no repeated GPU work. Resize, restore and pause render
+    // explicitly; a transition to the result screen may render once.
+    const needsFrame = result.snapshot.phase === 'running' || result.snapshot.phase !== observedPhase;
+    if (view && contextAvailable && result.snapshot.phase !== 'ready' && needsFrame) view.render(result.snapshot, result.events);
     screens.render(result.snapshot); observedPhase = result.snapshot.phase;
     frameId = requestAnimationFrame(frame);
   };
