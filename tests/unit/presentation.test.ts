@@ -84,6 +84,18 @@ it('30〜419の既存返球待ちは見え、初回待ちだけが隠れる', ()
   expect(resolvePresentation({ ...s, balls: [{ ...ball, phase: 'queued' }] }).balls[1]!.visible).toBe(false);
 });
 
+it('虹色の球は白い中心を保ち、M10終了とリトライで通常の黄色へ戻る', () => {
+  const objects = createObjects(DEFAULT_CONFIG);
+  const ball = { id: 1, phase: 'incoming', position: { x: 0, y: 0.5, z: 0.9 }, smash: false } satisfies BallSnapshot;
+  for (const [score, time, until, white] of [[10, 24.99, 25, true], [10, 25, 25, false], [30, 26, 25, true], [390, 0.3, null, true], [0, 0, null, false]] as const) {
+    const snapshot = scenario(score, time).snapshot();
+    applyPresentation(objects, { ...snapshot, progression: { ...snapshot.progression, ballGlowUntil: until }, balls: [ball] });
+    const core = objects.balls.get(1)!.core;
+    expect(core.material.color.getHex(), `score=${score} time=${time}`).toBe(white ? 0xffffff : 0xffec64);
+  }
+  objects.dispose();
+});
+
 it('390の強→弱は0.3秒、周期は0.6秒で形と球の明るさを保つ', () => {
   expect(samplePulse(0)).toBeCloseTo(1);
   expect(samplePulse(0.3)).toBeCloseTo(0.65);

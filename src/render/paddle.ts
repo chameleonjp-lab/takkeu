@@ -12,8 +12,12 @@ export function createPaddle(config: GameConfig, color: number, angle: number) {
   back.rotation.y = Math.PI; back.position.z = -0.018;
   const handle = new Mesh(new CylinderGeometry(0.031, 0.036, 0.22, 12), standard(0xd1a36e, 0.58));
   handle.position.y = -config.paddleRadius - 0.075;
+  // The joint lies inside the wooden blade. Keep both sides below the rubber
+  // at z=±.018; a round cylinder protruded through the striking surfaces.
+  handle.scale.z = 0.45;
   const grip = new Mesh(new CylinderGeometry(0.032, 0.036, 0.12, 12), standard(0xb88951, 0.65));
   grip.position.y = -config.paddleRadius - 0.12;
+  grip.scale.z = 0.45;
   body.add(wood, front, back, handle, grip);
   // Rotate within the contact plane. The circular rubber face keeps the same
   // physical contact area while its wooden handle leans like the reference.

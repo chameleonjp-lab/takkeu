@@ -1,4 +1,4 @@
-import { BoxGeometry, BufferGeometry, CircleGeometry, CylinderGeometry, Float32BufferAttribute, Group, LineBasicMaterial, LineSegments, Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, SphereGeometry, Texture } from 'three';
+import { BackSide, BoxGeometry, BufferGeometry, CircleGeometry, CylinderGeometry, Float32BufferAttribute, Group, LineBasicMaterial, LineSegments, Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, SphereGeometry, Texture } from 'three';
 import type { GameConfig } from '../game/types';
 import { sampleRainbow } from './rainbow';
 import { lineMaterial, lines, standard, tableTexture } from './materials';
@@ -67,13 +67,12 @@ export function createObjects(config: GameConfig) {
   for (let id = 1; id <= config.maxBalls; id++) {
     const group = new Group();
     const core = new Mesh(new SphereGeometry(config.ballRadius, 20, 12), standard(0xffec64, 0.42, 0xffeaa0, 0.15));
-    // Keep the playable ball readable even when it overlaps the paddle before
-    // the bounce. The whole subtree still obeys the ball visibility rules.
-    core.material.transparent = true; core.material.depthTest = false; core.material.depthWrite = false; core.renderOrder = 20;
     const geometry = new SphereGeometry(config.ballRadius, 24, 16);
     geometry.setAttribute('color', new Float32BufferAttribute(new Float32Array(geometry.attributes.position!.count * 3), 3));
-    const glow = new Mesh(geometry, new MeshBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.48, depthWrite: false, depthTest: false }));
-    glow.renderOrder = 21;
+    // Normal depth testing keeps a far ball behind the paddle. Only the outer
+    // band of the back shell survives the opaque core's depth, preserving its
+    // white centre instead of tinting the whole ball with the rainbow.
+    const glow = new Mesh(geometry, new MeshBasicMaterial({ vertexColors: true, side: BackSide, transparent: true, opacity: 0.75, depthWrite: false }));
     const shadow = new Mesh(new CircleGeometry(config.ballRadius * 1.2, 20), new MeshBasicMaterial({ color: 0x153827, transparent: true, opacity: 0.25, depthWrite: false }));
     shadow.rotation.x = -Math.PI / 2;
     group.add(core, glow, shadow); group.visible = false; root.add(group); balls.set(id, { root: group, core, glow, shadow });

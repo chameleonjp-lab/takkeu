@@ -92,6 +92,13 @@ export function applyPresentation(objects: ReturnType<typeof createObjects>, sna
     visual.shadow.material.opacity = 0.3 / (1 + Math.max(0, ball.position.y - objects.tableY));
     visual.glow.visible = style.rainbow;
     visual.core.scale.setScalar(style.rainbow ? 0.9 : 1);
+    if (style.rainbow) {
+      visual.core.material.color.setHex(0xffffff);
+      visual.core.material.emissive.setHex(0xffffff);
+    } else {
+      visual.core.material.color.copy(visual.core.material.userData.baseColor as Color);
+      visual.core.material.emissive.copy(visual.core.material.userData.baseEmissive as Color);
+    }
     if (style.rainbow) colorBall(visual.glow, snapshot.simTime);
   }
 }
