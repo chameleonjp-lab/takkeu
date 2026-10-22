@@ -57,6 +57,18 @@
 
 Linux採取のp95はChromium16.7ms／WebKit17ms、25ms以下の割合99.97%／99.95%だが、ほぼ停止中の値であるため性能合格に使わない。performance-chromium/webkit.jsonに全間隔・端末条件・実進行・状態を保存した。正式目標「iPhone 17 Pro Safari、4球・390以降・スマッシュを含む60秒、95%以上25ms以下」は未確認のまま。
 
-## 残る実機確認と公開
+## 残る実機確認
 
-iPhone 17 Pro Safari実機、音の試聴、390ラリーの安全性の最終測定は未確認。Linux自動検査を実機合格へ代用しない。連続負荷は停止中の値を分けて評価する。変更は新しいDraft PRで提出し、自動マージは行わない。[Draft PR #8](https://github.com/chameleonjp-lab/takkeu/pull/8)へ提出した。ユーザーがDraftを解除しChecksを確認してmainへマージすると、既存のPages releaseが同じコミットで検査・ビルド・配備する。手動のexpected_sha照合も維持。公開後は /takkeu/release.json とActionsのSHA、縦横の返球・リトライを確認する。問題があれば [公開・revertによる復旧手順](../../release.md) に従う。修正版の公開実行・自動マージ・課金変更・ランキング追加は行っていない。
+iPhone 17 Pro Safari実機、音の試聴、390ラリーの安全性の最終測定は未確認。Linux自動検査を実機合格へ代用しない。連続負荷は停止中の値を分けて評価する。
+
+## マージ後の自動公開
+
+[PR #8](https://github.com/chameleonjp-lab/takkeu/pull/8) は2026-10-22 18:39:58 UTCにユーザーがmain **01ef27f2f521a8a09a82da385c928ba47b2355f7**へマージした。mainと81e2957の製品・検査・ビルド設定に差分がないことを確認した。既存の自動公開 [Pages release 39833364446](https://github.com/chameleonjp-lab/takkeu/actions/runs/39833364446) が、この同じコミットを検査・ビルド・配備した。
+
+**公開済み**：上記Pages releaseは18:51:47 UTCまでに全工程成功。型・単体99・画面58・ルート／Pages配布4の検査後、同じrunの成果物を再ビルドせず配備した。pages-run.json、pages-jobs.json、pages-verify-build.log、pages-deploy.logに記録した。
+
+公開先：https://chameleonjp-lab.github.io/takkeu/ 。公開版のrelease.jsonは **01ef27f2f521a8a09a82da385c928ba47b2355f7 / base=/takkeu/** と一致。2026-10-22 18:52:16 UTCから、PC1280×800・WebKit縦390×844・横844×390の3条件で確認し、すべて成功した。公開用ゲームへの通常の相対ドラッグで、バウンド前0点→バウンド後1点、停止・再開・再挑戦・ホーム、設定保存と再読込を確認。資産取得エラー・pageerrorなし。得点URL無効、開発経路4つが404、stage2/stage3のグローバル非混入も確認した。
+
+[published/live-check.json](published/live-check.json) と published-check.log、実行コマンドと環境条件のpublished-command.json、公開後の画像9枚を保存し、[公開後ファイルのハッシュ](published/manifest.json)を記録した。公開後もLinuxの自動操作であり、実機・試聴・実時間性能の合格にはしない。HTTPSメタデータは通常の証明書検証で確認。ブラウザはセッションのプロキシCA制約によりcontextの証明書確認だけ例外を使っており、transport欄に明示した。
+
+検証ログ・画像を追加した049c3a4はPR #8のマージに含まれないため、この文書はゲーム本体に差分のない後続Draft PRで提出する。手動のexpected_sha照合は維持し、問題があれば [公開・revertによる復旧手順](../../release.md) に従う。自動マージ・手動の公開実行・課金変更・ランキング追加は行っていない。

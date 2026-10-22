@@ -16,3 +16,5 @@
 | iPhone 17 Pro Safari | 未確認 | Linux Chromium/SwiftShaderとLinux WebKitのiPhone 13プロファイル。実機の操作・性能・音声・VoiceOver・点滅安全性を代替しない。 |
 
 媒体一覧とSHA-256はmedia-manifest.json。ソース・正式コマンドはfinal-verification.json、検査同期の追加確認はresize-sync-verification.json、各媒体の元テストとの対応はfinal-browser.json。
+
+公開版main `01ef27f2f521a8a09a82da385c928ba47b2355f7`では、18:52 UTCからPC・WebKit縦横の通常入力でワンバウンド返球0→1点を確認。公開ページの returned 画像も開き、緑の台・ネット・木の床・ラケットと球の表示を確認した。結果はpublished/live-check.json、画像9枚とそのハッシュはpublished/へ保存。clockを制御したLinux検査であり、実機・性能・人の操作感や音の評価は未確認のまま。
