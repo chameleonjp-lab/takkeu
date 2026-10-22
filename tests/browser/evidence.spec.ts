@@ -31,7 +31,7 @@ test.describe('画面の証拠', () => {
     await page.clock.runFor(300); await page.mouse.up();
     await page.clock.runFor(1500);
     await expect(page.getByRole('heading', { name: 'ナイスラリー！' })).toBeVisible();
-    await page.screenshot({ path: testInfo.outputPath('result.png') });
+    await page.screenshot({ path: testInfo.outputPath('result.png'), fullPage: true });
     await page.getByRole('button', { name: 'ホームへ', exact: true }).click();
     await expect(page.getByRole('heading', { name: 'タッケウ', exact: true })).toBeVisible();
     expect(errors).toEqual([]);

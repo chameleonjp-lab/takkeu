@@ -1,5 +1,7 @@
 import { expect, test } from '@playwright/test';
 
+test.use({ video: 'on' });
+
 test.beforeEach(async ({ page }) => {
   const now = new Date('2026-10-22T12:00:00Z');
   await page.clock.install({ time: now });

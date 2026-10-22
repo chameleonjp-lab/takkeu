@@ -1,0 +1,75 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/pointer-loop.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/pointer-loop.test.ts (2 tests | 2 failed) 18ms
+   ❯ 生のポインター入力を実際のアプリ接続へ渡す回帰検査 (2)
+     × 離した時刻まで計算して実位置を確定し、その後に未処理目標へ動き戻らない 14ms
+     × 再接触の基準位置も30/60/120Hzで一致し、指位置へ瞬間移動しない 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pointer-loop.test.ts > 生のポインター入力を実際のアプリ接続へ渡す回帰検査 > 離した時刻まで計算して実位置を確定し、その後に未処理目標へ動き戻らない
+AssertionError: expected +0 to be close to 0.05, received difference is 0.05, but expected 0.005
+ ❯ tests/unit/pointer-loop.test.ts:44:38
+     42|     for (const hz of [30, 60, 120]) {
+     43|       const result = replayPointers(hz);
+     44|       expect(result.releasePosition).toBeCloseTo(0.05);
+       |                                      ^
+     45|       expect(result.finalPosition).toBeCloseTo(result.releasePosition);
+     46|       for (const position of result.positions) expect(position).toBeCl…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/pointer-loop.test.ts > 生のポインター入力を実際のアプリ接続へ渡す回帰検査 > 再接触の基準位置も30/60/120Hzで一致し、指位置へ瞬間移動しない
+AssertionError: expected 0.105 to be close to 0.155, received difference is 0.05, but expected 0.005
+ ❯ tests/unit/pointer-loop.test.ts:50:84
+     48|   });
+     49|   it('再接触の基準位置も30/60/120Hzで一致し、指位置へ瞬間移動しない', () => {
+     50|     for (const hz of [30, 60, 120]) expect(replayPointers(hz, true).fi…
+       |                                                                                    ^
+     51|   });
+     52| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  12:09:34
+   Duration  711ms (environment 82%, transform 11%, tests 3%, import 3%, worker 1%)
+
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/loop.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/loop.test.ts (5 tests | 1 failed) 28ms
+   ❯ 実際の固定刻みループ (5)
+     × 遅れて配送された入力の時刻で計算時計を巻き戻さない 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/loop.test.ts > 実際の固定刻みループ > 遅れて配送された入力の時刻で計算時計を巻き戻さない
+AssertionError: expected 0.049999999999999996 to be close to 0.03333333333333333, received difference is 0.016666666666666663, but expected 0.005
+ ❯ tests/unit/loop.test.ts:67:40
+     65|     const loop = createLoop({ session, timeline: createInputTimeline(I…
+     66|     loop.resetClock(0); loop.frame(20); loop.flushInput(10); loop.fram…
+     67|     expect(session.snapshot().simTime).toBeCloseTo(4 * DEFAULT_CONFIG.…
+       |                                        ^
+     68|   });
+     69| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  12:11:17
+   Duration  199ms (transform 44%, tests 33%, import 18%, worker 5%)
+

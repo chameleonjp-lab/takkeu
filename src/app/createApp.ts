@@ -2,12 +2,12 @@ import { createAudio } from '../audio/audio';
 import { DEFAULT_CONFIG, INITIAL_PADDLE } from '../game/config';
 import { createSession } from '../game/session';
 import type { PauseReason } from '../game/types';
-import { createSwipeController } from '../input/swipe';
 import { createInputTimeline } from '../input/timeline';
 import { createView } from '../render/createView';
 import type { GameView } from '../render/createView';
 import { createScreens } from '../ui/screens';
 import { createLoop } from './loop';
+import { createControls } from './controls';
 
 export function createApp(root: HTMLElement) {
   const config = DEFAULT_CONFIG;
@@ -27,12 +27,10 @@ export function createApp(root: HTMLElement) {
     volume(value) { audio.setVolume(value); void unlockAudio(); },
   });
   const loop = createLoop({ session, timeline, config, onEvents: events => audio.consume(events), onPause: pause });
-  const swipe = createSwipeController(screens.surface, {
+  const swipe = createControls(screens.surface, {
+    session, timeline, loop, config,
     mapping: { screen: { left: 0, top: 0, width: 1, height: 1 }, world: { minX: config.paddleMinX, maxX: config.paddleMaxX, minY: config.paddleMinY, maxY: config.paddleMaxY } },
-    onTarget(sample) { if (session.snapshot().phase === 'running') timeline.enqueue(sample); },
-    getPaddlePosition: () => session.snapshot().paddle,
-    toSimTime(timestamp) { return loop.toSimTime(timestamp > 1e12 ? timestamp - performance.timeOrigin : timestamp); },
-    onInterruption: () => pause('input-lost'), canStart: () => session.snapshot().phase === 'running',
+    onInterruption: () => pause('input-lost'),
   });
   async function unlockAudio(): Promise<void> {
     const ready = await audio.unlock();

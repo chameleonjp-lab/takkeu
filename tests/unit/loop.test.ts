@@ -43,9 +43,27 @@ describe('実際の固定刻みループ', () => {
     const received: GameEvent[] = [];
     const loop = createLoop({ session, timeline: createInputTimeline(INITIAL_PADDLE), config, onEvents: e => received.push(...e), onPause() {} });
     loop.resetClock(0);
+    loop.flushInput(50);
+    expect(received.length).toBeGreaterThanOrEqual(1);
     const result = loop.frame(100);
     expect(received.length).toBeGreaterThanOrEqual(3);
     expect(result.events).toEqual(received);
     expect(new Set(received.map(e => e.id)).size).toBe(received.length);
+  });
+
+  it('入力処理で計算を進めても、0.10秒を超す描画遅延を隠さない', () => {
+    const session = createSession(DEFAULT_CONFIG, 7); session.start();
+    const loop = createLoop({ session, timeline: createInputTimeline(INITIAL_PADDLE), config: DEFAULT_CONFIG, onEvents() {}, onPause() {} });
+    loop.resetClock(0); loop.flushInput(25); loop.flushInput(75);
+    const time = session.snapshot().simTime;
+    loop.frame(101);
+    expect(session.snapshot()).toMatchObject({ phase: 'paused', simTime: time, pauseReason: 'slow-frame' });
+  });
+
+  it('遅れて配送された入力の時刻で計算時計を巻き戻さない', () => {
+    const session = createSession(DEFAULT_CONFIG, 7); session.start();
+    const loop = createLoop({ session, timeline: createInputTimeline(INITIAL_PADDLE), config: DEFAULT_CONFIG, onEvents() {}, onPause() {} });
+    loop.resetClock(0); loop.frame(20); loop.flushInput(10); loop.frame(40);
+    expect(session.snapshot().simTime).toBeCloseTo(4 * DEFAULT_CONFIG.fixedDt);
   });
 });
