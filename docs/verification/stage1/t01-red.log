@@ -1,0 +1,64 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/boot.spec.ts --project=chromium
+
+[WebServer] (node:1276) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:1289) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:1313) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない (5.3s)
+
+
+  1) [chromium] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない ─────────────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'タッケウ', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'タッケウ', exact: true }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'タッケウ', exact: true })
+
+
+      3 | test('ホームにタイトルと開始ボタンを表示し、自動で開始しない', async ({ page }) => {
+      4 |   await page.goto('/');
+    > 5 |   await expect(page.getByRole('heading', { name: 'タッケウ', exact: true })).toBeVisible();
+        |                                                                          ^
+      6 |   await expect(page.getByRole('button', { name: 'はじめる', exact: true })).toBeVisible();
+      7 |   await expect(page.getByTestId('game-screen')).toBeHidden();
+      8 | });
+        at /workspace/takkeu/tests/browser/boot.spec.ts:5:74
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/boot-ホームにタイトルと開始ボタンを表示し、自動で開始しない-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/boot-ホームにタイトルと開始ボタンを表示し、自動で開始しない-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/boot-ホームにタイトルと開始ボタンを表示し、自動で開始しない-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/boot-ホームにタイトルと開始ボタンを表示し、自動で開始しない-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/boot-ホームにタイトルと開始ボタンを表示し、自動で開始しない-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない ──────────────────────
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

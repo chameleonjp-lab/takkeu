@@ -1,0 +1,176 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/session.test.ts tests/unit/collision.test.ts tests/unit/trajectory.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/trajectory.test.ts (1 test | 1 failed) 9ms
+   × ネットを越えて台内で一度弾み、予約した打球地点へ届く 8ms
+ ❯ tests/unit/collision.test.ts (4 tests | 4 failed) 11ms
+   ❯ 移動区間と動く円形ラケットの接触 (4)
+     × 1刻みで平面を飛び越える高速球も最初の接触時刻を返す 6ms
+     × ラケット自身の移動を相対移動として扱う 2ms
+     × 球半径を含めた円の縁の接触を拾う 1ms
+     × 円形の範囲外や平面に届かない球は接触にしない 1ms
+ ❯ tests/unit/session.test.ts (5 tests | 5 failed) 13ms
+   ❯ 1球のラリー (5)
+     × 開始時は1球で、自分の接触1回だけを加点する 7ms
+     × 不可視と無関係に相手は必ず返球し、相手の打球や台バウンドは加点しない 1ms
+     × 打球範囲を通り過ぎたら残球0とし、終了イベントを一度だけ発行する 2ms
+     × 停止とreadyでは時刻・球を変えず、再開とリトライで古い状態を残さない 1ms
+     × ラケットの速さを制限し、返球目標は打球後に追尾しない 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/collision.test.ts > 移動区間と動く円形ラケットの接触 > 1刻みで平面を飛び越える高速球も最初の接触時刻を返す
+AssertionError: expected null to be close to 0.47625, received difference is 0.47625, but expected 5e-8
+ ❯ tests/unit/collision.test.ts:9:18
+      7|   it('1刻みで平面を飛び越える高速球も最初の接触時刻を返す', () => {
+      8|     const time = sweepPaddleHit({ ...center, z: 0 }, { ...center, z: 4…
+      9|     expect(time).toBeCloseTo((config.paddleZ - config.ballRadius) / 4,…
+       |                  ^
+     10|   });
+     11|   it('ラケット自身の移動を相対移動として扱う', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  tests/unit/collision.test.ts > 移動区間と動く円形ラケットの接触 > ラケット自身の移動を相対移動として扱う
+AssertionError: expected null not to be null
+ ❯ tests/unit/collision.test.ts:13:21
+     11|   it('ラケット自身の移動を相対移動として扱う', () => {
+     12|     const hit = sweepPaddleHit({ x: 0, y: 0.5, z: 1.5 }, { x: 0, y: 0.…
+     13|     expect(hit).not.toBeNull();
+       |                     ^
+     14|     expect(hit).toBeGreaterThan(0);
+     15|     expect(hit).toBeLessThan(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  tests/unit/collision.test.ts > 移動区間と動く円形ラケットの接触 > 球半径を含めた円の縁の接触を拾う
+AssertionError: expected null to be close to 0.5, received difference is 0.5, but expected 0.000005
+ ❯ tests/unit/collision.test.ts:19:98
+     17|   it('球半径を含めた円の縁の接触を拾う', () => {
+     18|     const x = config.paddleRadius + config.ballRadius;
+     19|     expect(sweepPaddleHit({ x, y: 0.5, z: 1.5 }, { x, y: 0.5, z: 2.4 }…
+       |                                                                                                  ^
+     20|   });
+     21|   it('円形の範囲外や平面に届かない球は接触にしない', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  tests/unit/collision.test.ts > 移動区間と動く円形ラケットの接触 > 円形の範囲外や平面に届かない球は接触にしない
+AssertionError: expected null to be +0 // Object.is equality
+
+- Expected:
+0
+
++ Received:
+null
+
+ ❯ tests/unit/collision.test.ts:24:100
+     22|     expect(sweepPaddleHit({ x: 0.246, y: 0.5, z: 1.5 }, { x: 0.246, y:…
+     23|     expect(sweepPaddleHit({ ...center, z: 0 }, { ...center, z: 1 }, ce…
+     24|     expect(sweepPaddleHit({ ...center, z: 1.95 }, { ...center, z: 1.95…
+       |                                                                                                    ^
+     25|   });
+     26| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  tests/unit/session.test.ts > 1球のラリー > 開始時は1球で、自分の接触1回だけを加点する
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/session.test.ts:10:70
+      8|     const session = createSession(DEFAULT_CONFIG, 7);
+      9|     session.start();
+     10|     expect(session.snapshot().balls.filter(b => b.phase !== 'lost')).t…
+       |                                                                      ^
+     11|     const events = advance(session, 2.6);
+     12|     expect(session.snapshot().score).toBe(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+ FAIL  tests/unit/session.test.ts > 1球のラリー > 不可視と無関係に相手は必ず返球し、相手の打球や台バウンドは加点しない
+AssertionError: expected [] to have a length of 2 but got +0
+
+- Expected
++ Received
+
+- 2
++ 0
+
+ ❯ tests/unit/session.test.ts:23:59
+     21|     session.start();
+     22|     const events = advance(session, 5.3);
+     23|     expect(events.filter(e => e.kind === 'opponent-hit')).toHaveLength…
+       |                                                           ^
+     24|     expect(events.filter(e => e.kind === 'player-hit')).toHaveLength(1…
+     25|     expect(session.snapshot().score).toBe(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯
+
+ FAIL  tests/unit/session.test.ts > 1球のラリー > 打球範囲を通り過ぎたら残球0とし、終了イベントを一度だけ発行する
+AssertionError: expected 'ready' to be 'gameover' // Object.is equality
+
+Expected: "gameover"
+Received: "ready"
+
+ ❯ tests/unit/session.test.ts:35:38
+     33|     session.start();
+     34|     const events = advance(session, 3, { x: -1.05, y: 0.15 });
+     35|     expect(session.snapshot().phase).toBe('gameover');
+       |                                      ^
+     36|     expect(session.snapshot().balls.filter(b => b.phase !== 'lost')).t…
+     37|     expect(events.filter(e => e.kind === 'ball-lost')).toHaveLength(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/10]⎯
+
+ FAIL  tests/unit/session.test.ts > 1球のラリー > 停止とreadyでは時刻・球を変えず、再開とリトライで古い状態を残さない
+AssertionError: expected 0 to be greater than 0
+ ❯ tests/unit/session.test.ts:56:40
+     54|     session.resume();
+     55|     advance(session, 0.1);
+     56|     expect(session.snapshot().simTime).toBeGreaterThan(paused.simTime);
+       |                                        ^
+     57|     session.reset(7);
+     58|     expect(session.snapshot().runId).not.toBe(ready.runId);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/10]⎯
+
+ FAIL  tests/unit/session.test.ts > 1球のラリー > ラケットの速さを制限し、返球目標は打球後に追尾しない
+AssertionError: expected +0 to be close to 0.05, received difference is 0.05, but expected 0.005
+ ❯ tests/unit/session.test.ts:69:66
+     67|     const initial = session.snapshot();
+     68|     const stepped = session.step(DEFAULT_CONFIG.fixedDt, { target: { x…
+     69|     expect(Math.hypot(stepped.paddle.x, stepped.paddle.y - 0.5)).toBeC…
+       |                                                                  ^
+     70|     expect(stepped.scheduledReturns).toEqual(initial.scheduledReturns);
+     71|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/10]⎯
+
+ FAIL  tests/unit/trajectory.test.ts > ネットを越えて台内で一度弾み、予約した打球地点へ届く
+AssertionError: expected -1.95 to be close to +0, received difference is 1.95, but expected 0.005
+ ❯ tests/unit/trajectory.test.ts:10:17
+      8|   expect(sampleReturn(plan, from, 0)).toEqual(from);
+      9|   const net = sampleReturn(plan, from, 1.25);
+     10|   expect(net.z).toBeCloseTo(0);
+       |                 ^
+     11|   expect(net.y).toBeGreaterThan(0.18 + 0.045);
+     12|   const bounce = sampleReturn(plan, from, 2.5 * 0.72);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/10]⎯
+
+
+ Test Files  3 failed (3)
+      Tests  10 failed (10)
+   Start at  11:37:32
+   Duration  206ms (transform 62%, tests 17%, import 15%, worker 5%)
+

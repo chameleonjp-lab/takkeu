@@ -1,0 +1,38 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+
+ Test Files  10 passed (10)
+      Tests  29 passed (29)
+   Start at  12:11:29
+   Duration  1.10s (environment 72%, tests 9%, import 9%, transform 8%, worker 3%)
+
+    Isolate  10 workers spawned · ~229ms startup each (spawn + environment, per file)
+             at least ~534ms faster with isolate: false — reuses workers across files instead of one per file
+
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+
+> takkeu@0.1.0 build
+> npm run typecheck && vite build
+
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 22 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.61 kB │ gzip:   0.42 kB
+dist/assets/index-Csp-3VTc.css    9.32 kB │ gzip:   2.95 kB
+dist/assets/index-DuP5vMLD.js   559.25 kB │ gzip: 142.79 kB
+
+✓ built in 205ms

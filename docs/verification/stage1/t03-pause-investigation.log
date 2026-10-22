@@ -1,0 +1,56 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/basic-play.spec.ts --project=webkit --grep 停止中
+
+
+Running 1 test using 1 worker
+
+(node:4974) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [webkit] › tests/browser/basic-play.spec.ts:37:1 › 停止中は描画を保持し、再開操作でだけ進む (6.5s)
+
+
+  1) [webkit] › tests/browser/basic-play.spec.ts:37:1 › 停止中は描画を保持し、再開操作でだけ進む ───────────────────────
+
+    Error: 停止中の画面が一致する
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      45 |   await testInfo.attach('paused-before', { body: before, contentType: 'image/png' });
+      46 |   await testInfo.attach('paused-after', { body: after, contentType: 'image/png' });
+    > 47 |   expect(before.equals(after), '停止中の画面が一致する').toBe(true);
+         |                                               ^
+      48 |   await page.getByRole('button', { name: 'つづける', exact: true }).click();
+      49 |   await page.clock.runFor(1000);
+      50 |   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('1');
+        at /workspace/takkeu/tests/browser/basic-play.spec.ts:47:47
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/basic-play-停止中は描画を保持し、再開操作でだけ進む-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/basic-play-停止中は描画を保持し、再開操作でだけ進む-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/basic-play-停止中は描画を保持し、再開操作でだけ進む-webkit/error-context.md
+
+    attachment #6: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/basic-play-停止中は描画を保持し、再開操作でだけ進む-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/basic-play-停止中は描画を保持し、再開操作でだけ進む-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit] › tests/browser/basic-play.spec.ts:37:1 › 停止中は描画を保持し、再開操作でだけ進む ────────────────────────
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

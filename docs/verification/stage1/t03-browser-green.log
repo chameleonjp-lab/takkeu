@@ -1,0 +1,42 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test
+
+[WebServer] (node:7034) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:7047) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 1 worker
+
+(node:7071) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/basic-play.spec.ts:10:1 › 開始→相対ドラッグ→返球→失球→結果→再挑戦 (5.9s)
+  ✓   2 [chromium] › tests/browser/basic-play.spec.ts:37:1 › 停止中は描画を保持し、再開操作でだけ進む (4.9s)
+  ✓   3 [chromium] › tests/browser/basic-play.spec.ts:53:1 › タッチの左右上下スワイプでラケットを動かせる (2.2s)
+  ✓   4 [chromium] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない (571ms)
+(node:7401) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   5 [chromium] › tests/browser/evidence.spec.ts:6:3 › 画面の証拠 › 縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す (2.8s)
+  ✓   6 [chromium] › tests/browser/evidence.spec.ts:41:1 › 実際のWeb Audioで自分用・相手用の異なる短音を合成できる (644ms)
+(node:7626) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   7 [webkit] › tests/browser/basic-play.spec.ts:10:1 › 開始→相対ドラッグ→返球→失球→結果→再挑戦 (8.3s)
+  ✓   8 [webkit] › tests/browser/basic-play.spec.ts:37:1 › 停止中は描画を保持し、再開操作でだけ進む (7.0s)
+  ✓   9 [webkit] › tests/browser/basic-play.spec.ts:53:1 › タッチの左右上下スワイプでラケットを動かせる (3.7s)
+  ✓  10 [webkit] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない (875ms)
+(node:7935) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  11 [webkit] › tests/browser/evidence.spec.ts:6:3 › 画面の証拠 › 縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す (5.0s)
+  ✓  12 [webkit] › tests/browser/evidence.spec.ts:41:1 › 実際のWeb Audioで自分用・相手用の異なる短音を合成できる (902ms)
+
+  12 passed (47.4s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

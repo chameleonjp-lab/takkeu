@@ -1,0 +1,16 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+
+ Test Files  9 passed (9)
+      Tests  25 passed (25)
+   Start at  11:59:31
+   Duration  1.01s (environment 62%, import 16%, tests 14%, transform 6%, worker 3%)
+
+    Isolate  9 workers spawned · ~236ms startup each (spawn + environment, per file)
+             at least ~471ms faster with isolate: false — reuses workers across files instead of one per file
+

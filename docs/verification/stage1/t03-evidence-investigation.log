@@ -1,0 +1,70 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test
+
+[WebServer] (node:5312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5325) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 1 worker
+
+(node:5395) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/basic-play.spec.ts:10:1 › 開始→相対ドラッグ→返球→失球→結果→再挑戦 (7.2s)
+  ✓   2 [chromium] › tests/browser/basic-play.spec.ts:37:1 › 停止中は描画を保持し、再開操作でだけ進む (5.8s)
+  ✓   3 [chromium] › tests/browser/basic-play.spec.ts:53:1 › タッチの左右上下スワイプでラケットを動かせる (2.7s)
+  ✓   4 [chromium] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない (643ms)
+(node:5813) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘   5 [chromium] › tests/browser/evidence.spec.ts:6:3 › 画面の証拠 › 縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す (30.2s)
+(node:6056) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   6 [chromium] › tests/browser/evidence.spec.ts:41:1 › 実際のWeb Audioで自分用・相手用の異なる短音を合成できる (855ms)
+(node:6171) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   7 [webkit] › tests/browser/basic-play.spec.ts:10:1 › 開始→相対ドラッグ→返球→失球→結果→再挑戦 (8.6s)
+  ✓   8 [webkit] › tests/browser/basic-play.spec.ts:37:1 › 停止中は描画を保持し、再開操作でだけ進む (7.1s)
+  ✓   9 [webkit] › tests/browser/basic-play.spec.ts:53:1 › タッチの左右上下スワイプでラケットを動かせる (3.8s)
+  ✓  10 [webkit] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない (955ms)
+(node:6463) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  11 [webkit] › tests/browser/evidence.spec.ts:6:3 › 画面の証拠 › 縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す (5.6s)
+  ✓  12 [webkit] › tests/browser/evidence.spec.ts:41:1 › 実際のWeb Audioで自分用・相手用の異なる短音を合成できる (990ms)
+
+
+  1) [chromium] › tests/browser/evidence.spec.ts:6:3 › 画面の証拠 › 縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す ──────
+
+    Test timeout of 30000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/evidence-画面の証拠-縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/evidence-画面の証拠-縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/evidence-画面の証拠-縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/evidence-画面の証拠-縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/evidence-画面の証拠-縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/evidence.spec.ts:6:3 › 画面の証拠 › 縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す ───────
+  11 passed (1.3m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
