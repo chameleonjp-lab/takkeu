@@ -1,0 +1,79 @@
+{
+  "priorImplementationCommit": "6427463d979ca28be209b361e35bf4a4cd3fcbc8",
+  "verifiedProductCommit": "eb02cb0c63f122a2410ddc4c8e0cbb9955f34d5d",
+  "scope": "Camera, contact, trajectories, reservation spacing, smash rules, input, audio, lifecycle and storage unchanged. Progression/cadence/ball count and presentation are intentionally revised. difficulty.ts uses revised configuration, so its identical bytes do not imply unchanged cadence.",
+  "files": {
+    "src/game/collision.ts": {
+      "same": true,
+      "sha256": "8e5ad013fcafcc33d7aabf57d9ccdae0dd99fa6db4f1aefb5cd75a1730074c1c"
+    },
+    "src/game/viewpoint.ts": {
+      "same": true,
+      "sha256": "1e5bea55f6b62fc37c9dce79f2b266d938d08e3fd663a925540e7b39dc9ad3f9"
+    },
+    "src/game/trajectory.ts": {
+      "same": true,
+      "sha256": "405387c6e263444ec03f40849cd2a89d248c8bac153d7474d9cc3abec73f7b8d"
+    },
+    "src/game/scheduler.ts": {
+      "same": true,
+      "sha256": "c68ed24f8552c3a5b734402f14d02dadf84b1f72f5291a9ff8d6505157226d00"
+    },
+    "src/game/opponent.ts": {
+      "same": true,
+      "sha256": "f771417216d3accac5dd0244020a5cb85ce52ad965b1c2401a71c7e38c17c48d"
+    },
+    "src/game/difficulty.ts": {
+      "same": true,
+      "sha256": "bf5d32e92c1e2acd99bb6af4fe2731663b1f76d668ed1b6a781bc30a17cf9b0f"
+    },
+    "src/render/camera.ts": {
+      "same": true,
+      "sha256": "21bbe2f2ecd39520e72ffdca080a0936414b7131f06ded2d5a85f1aa21fd31ac"
+    },
+    "src/render/paddle.ts": {
+      "same": true,
+      "sha256": "9b88815c5b00032957a222f43b5b13dae1004fa144a92ec05fe8e1f32944c9dd"
+    },
+    "src/render/quality.ts": {
+      "same": true,
+      "sha256": "8b7797fc97658f3877c4c5ab0c7162c176368cf46ee1a5d325f4eb3047212763"
+    },
+    "src/app/controls.ts": {
+      "same": true,
+      "sha256": "c147c8ac4bee8e5d346aa2712eff142ff2bc6ae15101650093918940e4fa6f75"
+    },
+    "src/app/createApp.ts": {
+      "same": true,
+      "sha256": "3bf361a7f1f42faceb98314acda9f25e38b4158adbd0a59f1b491bfab6d27b5b"
+    },
+    "src/app/lifecycle.ts": {
+      "same": true,
+      "sha256": "c96e07477994c190d3607d7ce4ba9cc0f62032585221475b605e73cba41440bb"
+    },
+    "src/app/loop.ts": {
+      "same": true,
+      "sha256": "f4e8948b4dee94abcd3a867d5c65c17eaca7e8617fecd2e195c061f45907094f"
+    },
+    "src/audio/audio.ts": {
+      "same": true,
+      "sha256": "07ecded33b8e41b3282aa91c4cef1e7022e8938b2626a6c2ff6d7dcff3db28ce"
+    },
+    "src/audio/tones.ts": {
+      "same": true,
+      "sha256": "04f65b7879d442cc30515c66846166c336d643e5cdfd088170d5d1558f893368"
+    },
+    "src/input/swipe.ts": {
+      "same": true,
+      "sha256": "b462c1a4a517dca2d3f37a5d62239588954a00f6f65312f1e8569db51f5b5904"
+    },
+    "src/input/timeline.ts": {
+      "same": true,
+      "sha256": "f2fc08142866529028d06bd407918cedc99958fc39dcfbbbec664136412fcd17"
+    },
+    "src/storage/preferences.ts": {
+      "same": true,
+      "sha256": "d1413a7c858fdef151919d1a8a31c9c2511b8c97723cabb11be1ede0b9599d37"
+    }
+  }
+}

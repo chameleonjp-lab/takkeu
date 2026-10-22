@@ -1,0 +1,143 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/presentation.test.ts tests/unit/ball-pool.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-audit
+
+ ❯ tests/unit/ball-pool.test.ts (2 tests | 2 failed) 70ms
+   × 34球以上を表示し、共通の形状・虹色材質を再利用して落球後のIDを保持しない 51ms
+   × 420の相手球・未解放面の影・落球を漏らさず、次の通常球は黄色へ戻す 18ms
+ ❯ tests/unit/presentation.test.ts (10 tests | 6 failed) 128ms
+   × 相手側は暗闇に隠し、自側と不可視の相手の返球計算を保つ 49ms
+   × 最新21行の進行表の部位を順に解放し、未解放の本体を漏らさない 4ms
+   × 虹色の球は白い中心を保ち、M10終了とリトライで通常の黄色へ戻る 11ms
+   × 部位の材質を共有して未解放面へ色を漏らさず、描画が計算を変えない 13ms
+   × 390で未解放の自側床と壁を先取りせず、解放済みの相手床だけが脈動する 8ms
+   × 270の本体は単色で発光し、390から非球部品として虹色の強弱へ移る 15ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/ball-pool.test.ts > 34球以上を表示し、共通の形状・虹色材質を再利用して落球後のIDを保持しない
+AssertionError: expected +0 to be 34 // Object.is equality
+
+- Expected
++ Received
+
+- 34
++ 0
+
+ ❯ tests/unit/ball-pool.test.ts:14:30
+     12|   const snapshot = scenario(390).snapshot();
+     13|   applyPresentation(objects, { ...snapshot, balls: balls(1, 34) });
+     14|   expect(objects.balls.size).toBe(34);
+       |                              ^
+     15|   const cores = [...objects.balls.values()].map(v => v.core.geometry);
+     16|   expect(new Set(cores).size).toBe(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+ FAIL  tests/unit/ball-pool.test.ts > 420の相手球・未解放面の影・落球を漏らさず、次の通常球は黄色へ戻す
+TypeError: Cannot read properties of undefined (reading 'shadow')
+ ❯ tests/unit/ball-pool.test.ts:38:30
+     36|   const snapshot = scenario(30).snapshot();
+     37|   applyPresentation(objects, { ...snapshot, balls: [{ ...balls(1, 1)[0…
+     38|   expect(objects.balls.get(1)!.shadow.visible).toBe(false);
+       |                              ^
+     39|   applyPresentation(objects, { ...scenario(420).snapshot(), balls: [{ …
+     40|   expect(objects.balls.size).toBe(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  tests/unit/presentation.test.ts > 相手側は暗闇に隠し、自側と不可視の相手の返球計算を保つ
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/presentation.test.ts:15:41
+     13|   const objects = createObjects(DEFAULT_CONFIG);
+     14|   applyPresentation(objects, session.snapshot());
+     15|   expect(objects.opponentCourt.visible).toBe(false);
+       |                                         ^
+     16|   expect(objects.opponentEdges.visible).toBe(false);
+     17|   expect(objects.opponentPaddle.visible).toBe(false);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  tests/unit/presentation.test.ts > 最新21行の進行表の部位を順に解放し、未解放の本体を漏らさない
+TypeError: Cannot read properties of undefined (reading 'rainbow')
+ ❯ tests/unit/presentation.test.ts:37:75
+     35|   ] as const;
+     36|   for (const [score, part] of changes) {
+     37|     expect(resolvePresentation(scenario(score - 1).snapshot()).parts[p…
+       |                                                                           ^
+     38|     expect(resolvePresentation(scenario(score).snapshot()).parts[part]…
+     39|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  tests/unit/presentation.test.ts > 虹色の球は白い中心を保ち、M10終了とリトライで通常の黄色へ戻る
+TypeError: Cannot read properties of undefined (reading 'core')
+ ❯ tests/unit/presentation.test.ts:94:38
+     92|     const snapshot = scenario(score, time).snapshot();
+     93|     applyPresentation(objects, { ...snapshot, progression: { ...snapsh…
+     94|     const core = objects.balls.get(1)!.core;
+       |                                      ^
+     95|     expect(core.material.color.getHex(), `score=${score} time=${time}`…
+     96|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  tests/unit/presentation.test.ts > 部位の材質を共有して未解放面へ色を漏らさず、描画が計算を変えない
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/presentation.test.ts:123:51
+    121|   expect(objects.parts.selfCourtLeft.material).not.toBe(objects.parts.…
+    122|   expect(objects.parts.opponentCourtRight.visible).toBe(true);
+    123|   expect(objects.parts.opponentCourtLeft.visible).toBe(false);
+       |                                                   ^
+    124|   expect(objects.parts.opponentCourtLeft.material.vertexColors).toBe(f…
+    125|   expect(objects.parts.playerRacketBody.visible).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  tests/unit/presentation.test.ts > 390で未解放の自側床と壁を先取りせず、解放済みの相手床だけが脈動する
+TypeError: Cannot read properties of undefined (reading 'visible')
+ ❯ tests/unit/presentation.test.ts:135:37
+    133|   const objects = createObjects(DEFAULT_CONFIG);
+    134|   const before = resolvePresentation(scenario(379).snapshot());
+    135|   expect(before.parts.opponentFloor.visible).toBe(false);
+       |                                     ^
+    136|   const at390 = resolvePresentation(scenario(390).snapshot());
+    137|   expect(at390.parts.opponentFloor).toEqual({ visible: true, rainbow: …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+ FAIL  tests/unit/presentation.test.ts > 270の本体は単色で発光し、390から非球部品として虹色の強弱へ移る
+AssertionError: expected 0.12 to be greater than 0.5
+ ❯ tests/unit/presentation.test.ts:150:45
+    148|   applyPresentation(objects, scenario(270).snapshot());
+    149|   const rubber = objects.parts.playerRacketBody.children[1] as import(…
+    150|   expect(rubber.material.emissiveIntensity).toBeGreaterThan(0.5);
+       |                                             ^
+    151|   expect(rubber.material.emissive.getHex()).toBe(rubber.material.userD…
+    152|   expect(rubber.material.vertexColors).toBe(false);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  8 failed | 4 passed (12)
+   Start at  20:58:14
+   Duration  441ms (tests 41%, transform 29%, import 28%, worker 2%)
+

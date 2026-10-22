@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/takkeu-audit/docs/verification/rally-revision/validate-record.py", line 27, in <module>
+    assert all(any(status in row for status in ['成功','失敗','未確認'])for row in rows)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

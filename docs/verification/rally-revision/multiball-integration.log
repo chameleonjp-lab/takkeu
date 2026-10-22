@@ -1,0 +1,38 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/opponent.test.ts tests/unit/multiball.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-audit
+
+ ❯ tests/unit/opponent.test.ts (7 tests | 1 failed) 34ms
+   ❯ 450以降の相手の返球 (7)
+     × 449→450の接触後の新規予約からスマッシュを使い、予告と打球と加点を1回ずつ出す 25ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/opponent.test.ts > 450以降の相手の返球 > 449→450の接触後の新規予約からスマッシュを使い、予告と打球と加点を1回ずつ出す
+AssertionError: expected 452 to be 451 // Object.is equality
+
+- Expected
++ Received
+
+- 451
++ 452
+
+ ❯ tests/unit/opponent.test.ts:85:27
+     83|     expect(all.filter(e => e.kind === 'opponent-hit' && e.ballId === 2…
+     84|     expect(all.filter(e => e.kind === 'player-hit' && e.ballId === 2))…
+     85|     expect(s.state.score).toBe(451); expect(s.state.phase).toBe('runni…
+       |                           ^
+     86|     expect(voices).toHaveLength(all.filter(e => ['player-hit', 'oppone…
+     87|     expect(voices.some(v => v.frequencies[0] === 440)).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 17 passed (18)
+   Start at  21:00:27
+   Duration  601ms (tests 64%, transform 21%, import 13%, worker 1%)
+

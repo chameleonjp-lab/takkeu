@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/takkeu-audit/docs/verification/rally-revision/validate-record.py", line 34, in <module>
+    assert path.exists(),(str(md),target)
+           ^^^^^^^^^^^^^
+AssertionError: ('docs/superpowers/specs/2026-10-22-takkeu-design.md', '../../verification/reference-threejs/README.md')
