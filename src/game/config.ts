@@ -13,6 +13,12 @@ export const DEFAULT_CONFIG: GameConfig = Object.freeze({
 
 export const INITIAL_PADDLE: PaddlePoint = Object.freeze({ x: 0, y: 0.5 });
 export const TRAJECTORY = Object.freeze({ bounceFraction: 0.72, flightArcHeight: 0.35, bounceArcHeight: 0.10 });
+export const DIFFICULTY = Object.freeze({
+  scoreInterval: 5, speedGain: 1.2, speedDecay: 40,
+  temporaryGlowSeconds: 5, arrivalGap: 0.12, addedBallDelay: 1,
+  smashProbability: 0.20, smashSpeed: 1.2, smashMinimumVisible: 0.50,
+  smashSeparation: 2, smashWarning: 0.40,
+});
 
 export function clampPaddle(point: PaddlePoint, config: GameConfig): PaddlePoint {
   return {
