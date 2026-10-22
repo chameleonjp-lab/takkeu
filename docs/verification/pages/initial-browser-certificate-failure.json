@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-22T15:08:02.496Z",
+  "url": "https://chameleonjp-lab.github.io/takkeu/",
+  "expected": "fe0ee999d9e3033d9ea732e0caa1f1622da151f3",
+  "status": "failed",
+  "browsers": [],
+  "release": {
+    "commit": "fe0ee999d9e3033d9ea732e0caa1f1622da151f3",
+    "base": "/takkeu/"
+  },
+  "developmentPaths": {
+    "tests/fixtures/stage2.html": 404,
+    "tests/fixtures/stage3.html": 404,
+    "src/main.ts": 404,
+    "@vite/client": 404
+  },
+  "error": "Error: page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1\nCall log:\n\u001b[2m  - navigating to \"https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1\", waiting until \"networkidle\"\u001b[22m\n"
+}
