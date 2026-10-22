@@ -27,4 +27,45 @@ Linux Debian 13、Node.js 24.19.0、npm 11.9.0、Playwright 1.64.1付属のChrom
 - T04〜T06の多球、加速、虹色、可視解放、420、450以降のスマッシュ。第1段階では高得点でも球は1つ、速度と見え方は初期状態のまま。
 - Pages配布パスと公開設定はT10。今回はマージ・公開しない。
 
-最終検証対象コミット、確認済み画像・動画・WAVとCI実行への参照は、最終検証後にこの記録へ追加する。
+## 正式な最終検証
+
+検証対象：[`9908970e0c26848f6dd021d89b5d0f3428a3d19a`](https://github.com/chameleonjp-lab/takkeu/commit/9908970e0c26848f6dd021d89b5d0f3428a3d19a)。2026-10-22 12:14〜12:15 UTCに、そのコミットのソースを変更せず実行した。以後に追加する検証文書・証拠は、このコミットのゲームやテストを変更しない。
+
+| 検証 | 結果 | 全文・正式結果 |
+|---|---|---|
+| `npm ci` | 成功 | [導入ログ](final-install.log) |
+| `npm run typecheck` | 成功 | [型検査ログ](final-typecheck.log) |
+| Vitest単体検査 | 10ファイル・29件成功 | [全文ログ](final-unit.log) / [JSON](final-unit.json) |
+| `npm run build` | 成功 | [ビルドログ](final-build.log) |
+| `npm run test:browser` | Chromium 6件＋WebKit 6件、計12件成功。skip/flaky/failure 0 | [全文ログ](final-browser.log) / [JSON](final-browser.json) |
+
+[検証マニフェスト](final-verification.json)に、実行した完全なコマンド、終了コード、時刻、版番号、検証対象43ファイルと証拠ファイルのSHA-256を保存した。単体検査にはJSON出力の追加引数を付けた。CIは同じ型・単体・ビルド・画面検査を実行する。
+
+| 必須の動作 | 主な証拠 |
+|---|---|
+| 自分の接触だけ+1・継続接触の二重加点なし・相手返球は加点なし | `session.test.ts`、`collision.test.ts` |
+| 高速球・移動中ラケット・円の縁を含む連続接触 | `collision.test.ts` |
+| 相手側が隠れても計算・返球を継続 | `presentation.test.ts` と描画部品の可視フラグ検査 |
+| 自他の別SE・イベントID重複防止・旧プレイ音の破棄 | `audio-events.test.ts`、実Web Audioの波形合成検査 |
+| 指位置へ瞬間移動しない左右上下のスワイプ・PCドラッグ | `swipe.test.ts`、`basic-play.spec.ts` |
+| 指離れ・再接触を含む30/60/120Hzの一致 | `pointer-loop.test.ts`、`loop.test.ts`、`replay.test.ts` |
+| 開始→返球→加点→失球→結果→再挑戦、停止と手動再開 | `basic-play.spec.ts`、`session.test.ts`、`loop.test.ts` |
+| 1球でラリーを継続 | `session.test.ts`で65秒・12回以上の往復。操作補助はテスト側だけに存在 |
+
+### 画面・動画・音
+
+以下の7枚は最終検証後に実際に開き、表示を確認した。
+
+- ホーム：[PC](screenshots/home-desktop.png) / [スマホ縦](screenshots/home-mobile.png)
+- ゲーム：[PC](screenshots/game-desktop.png) / [スマホ縦](screenshots/game-mobile.png) / [横](screenshots/game-landscape.png)
+- [停止画面](screenshots/paused-mobile.png) / [結果画面](screenshots/result.png)
+- [開始・返球成功・失球・結果・再挑戦の操作動画](media/basic-play-chromium.webm)。自動ブラウザ操作で、音声は収録しない。
+- 実Web Audioで生成した [自分用WAV](media/player-hit.wav) / [相手用WAV](media/opponent-hit.wav)。波形の相違と非無音を自動確認した。人による聞き分けの合格記録ではない。
+
+## レビューと第2段階への引き継ぎ
+
+[独立レビュー](../../reviews/2026-10-22-takkeu-stage1-review.md)のImportant 1件は、生のポインター回帰検査で失敗を確認して修正した。Critical・延期Minor・未採用指摘はない。修正後の確認は実装担当による。
+
+T04では `GameSession` の1球内部状態を複数球・返球予約へ拡張し、共通の `GameSnapshot` / `ReturnPlan` / イベント契約を保つ。T05では `presentation.ts` と分割した描画部品へ可視解放を追加する。T06では相手の判断とスマッシュを追加する。不可視を計算停止へ使わず、すべての固定刻みのイベントを音へ渡し、描画へまとめる境界を維持する。
+
+PRとCIの実行URL・最終状態はPR本文で追跡する。CIのログと対象SHAは各実行の `verification-<sha>` 成果物にも保存する。

@@ -1,0 +1,138 @@
+{
+  "commit": "9908970e0c26848f6dd021d89b5d0f3428a3d19a",
+  "startedAtUtc": "2026-10-22T12:14:50Z",
+  "node": "v24.19.0",
+  "npm": "11.9.0",
+  "platform": "Debian 13 Linux x86_64",
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "ci"
+      ],
+      "log": "final-install.log",
+      "exitCode": 0,
+      "durationSeconds": 2.651
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "log": "final-typecheck.log",
+      "exitCode": 0,
+      "durationSeconds": 0.442
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "test:unit",
+        "--",
+        "--reporter=default",
+        "--reporter=json",
+        "--outputFile=docs/verification/stage1/final-unit.json"
+      ],
+      "log": "final-unit.log",
+      "exitCode": 0,
+      "durationSeconds": 1.484
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "log": "final-build.log",
+      "exitCode": 0,
+      "durationSeconds": 0.854
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "test:browser"
+      ],
+      "log": "final-browser.log",
+      "exitCode": 0,
+      "durationSeconds": 49.053
+    }
+  ],
+  "sourceSha256": {
+    ".github/workflows/ci.yml": "9186847bedd43f97887aba695064d2b9a551b4f3feb50a356124a2814bec78a7",
+    ".node-version": "7e8a2fa94951112b894a3dbe3d05efef5e9263741fa49125f0a70f40fedab4cc",
+    "index.html": "c726aff59806ab667192ddca8641b7c4c98bb647b6b388a137794d43486aede1",
+    "package-lock.json": "893de008ca9c31bfe8dede7eaf10d8ad81d8cae5eb37128cc000471eb4348bf8",
+    "package.json": "33fe8788297578e88081762c802e315df7d681ee49a7e918e7bf3e6922cc258b",
+    "playwright.config.ts": "e26d4ff7e86e712fe28859f5ce0e095c87cfea17ed95d46d4e3a33945f97e5b8",
+    "src/app/controls.ts": "17a41c31b628d7a2045564cbd8e5737bb1d3ded04de61f576c05375d42342bd8",
+    "src/app/createApp.ts": "40a9cf9ad892454588c15f395c4a2893d3554c2145c38739b16b17f9501abc84",
+    "src/app/loop.ts": "f4e8948b4dee94abcd3a867d5c65c17eaca7e8617fecd2e195c061f45907094f",
+    "src/audio/audio.ts": "858acba5c158750b1c7e313e98638f399e4327833d43996a799937e471932e7e",
+    "src/audio/tones.ts": "6aad24ac27a78e3966e66b6da5cb890554b357744737bde81ece930319e630a3",
+    "src/game/collision.ts": "7123608a2272a2523b1ca239c6cdb51bbee9d482cfaa7dd38bb4a69e7f123230",
+    "src/game/config.ts": "015e6d0dfc40c38ec492651ea7a1aa19fde330e9a12d6d8404ed619f193b618a",
+    "src/game/session.ts": "129f7550ae681e66e57a5bf2fc4dad6a84ca8e45c55810cbc8607d4c81021fb4",
+    "src/game/trajectory.ts": "f6e154339e06d7a32950fd0c5af5ad3f3f4527ebe7c7fd0e6d99f1850a691a73",
+    "src/game/types.ts": "7aaddfff29f5580ba4721ab11d0890a520c5f977bec7284dc9ae5522171206df",
+    "src/input/swipe.ts": "f4f9643e2749ccc8dc20f091ac16ce489ead75e102b21a092ee8d5595a1933e8",
+    "src/input/timeline.ts": "f2fc08142866529028d06bd407918cedc99958fc39dcfbbbec664136412fcd17",
+    "src/main.ts": "1f32056096aa7d74eb8db4129d8a599515e6c88fa2691fa699477580938d3bcf",
+    "src/render/createView.ts": "6c0753ab401bae49618d879d0ae9991607dffe228e312bf98c48c208ecd33abf",
+    "src/render/objects.ts": "76e0433927344f0b880358ba516ca7b1d3be69087e57dd496b764b0393718045",
+    "src/render/presentation.ts": "7b88a4f218f34b9ea77e29e587176aac53ebe52e170b3d5c9284e19faf72d698",
+    "src/ui/screens.ts": "c473cfc9e18460c0272641afdcad5d63ebdb3b3a1e7028626ca43b74b0528eea",
+    "src/ui/styles.css": "505fe0d20b4ff0a9c7eecd80da510ca864ee6f0a9a1eff6081c0c301464c598d",
+    "tests/browser/basic-play.spec.ts": "538335f329564fb61d03483bc454b4a6becd8de935169c33b5c507a1dd273842",
+    "tests/browser/boot.spec.ts": "d3a6f0522fe0ebbf104d301f287faed70e0c1e0ea74eb6efd145c0f4a7827b73",
+    "tests/browser/evidence.spec.ts": "d75e8ca5d3bf3f120558a2b18d04eb0f54312fc95815459c071a9cdf304c7a2d",
+    "tests/helpers/audioContext.ts": "67ee239262ace86e14857aba50317e075631877af47d7d45f7035154e6122167",
+    "tests/helpers/fixtures.ts": "2a51053b7ff46c6f6e717bea05cc58512e2f96cb3159004640f330b9721c80c8",
+    "tests/helpers/replay.ts": "6eb36e76f77284c5fe55f8af0365576bf53ce0f3c3fbf2ecd04a9dae3f38a9d5",
+    "tests/unit/audio-events.test.ts": "742a4efca507a605edef2c50a6b1a3a6e06e30239900abffd6844d4943168a84",
+    "tests/unit/collision.test.ts": "e7b2aeaffd7e4db4539b4a80e36bada4adcf1a7757441faf02e3ced0e8930d31",
+    "tests/unit/input-timeline.test.ts": "3355b9f49ad6daadbb7c74f5f307018de25c1578e7969ab447efb88d35e314bc",
+    "tests/unit/loop.test.ts": "04f60284665e7d152bbe4d14ec16705e2362ef16be5733c515d41eb2eba7a0fb",
+    "tests/unit/pointer-loop.test.ts": "a813f26b343f755ebe1a8141cd145b363636c959b412122edd4e10ef3248650f",
+    "tests/unit/presentation.test.ts": "5a3d4c7616f065b098cc7b11b059bd4f80c344aafdfcc598eaac95d5863d6dd0",
+    "tests/unit/replay.test.ts": "24addb7c545bbdfb5cdef73e89de7d5d1508c3032e7cc642217cd6417a120612",
+    "tests/unit/session.test.ts": "56aac305a9fb82609daabcb15324558a3cd68d48378bcdfdd42d559a136b2960",
+    "tests/unit/swipe.test.ts": "4b3bc47045ef8b00d494ffbc733f404ab670ea583cbbac66e7fb88aba88444aa",
+    "tests/unit/trajectory.test.ts": "c2d7ebbab61ebd3500985afff460e5ffb13d14712fc2ee892efd4c478fb924a9",
+    "tsconfig.json": "4c050c1c11e485826e0c6525abf15eb0656a116d1cb564375a997b35b689fb99",
+    "vite.config.ts": "752742f12da835fc31c4d0fe0ee728091c1cf08f143512890a6aed1f0606db41",
+    "vitest.config.ts": "baf97e73233329ba67e1569806c967b20bd6fc096233608326abe0def44f2aac"
+  },
+  "finishedAtUtc": "2026-10-22T12:15:45Z",
+  "browserStats": {
+    "startTime": "2026-10-22T12:14:56.509Z",
+    "duration": 48479.960999999996,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "screenshotsVisuallyReviewed": true,
+  "evidenceSha256": {
+    "screenshots/game-desktop.png": "c43decac5d7dc09264f2405e5ad6f59b85a1ceb7c541fb298b3addba482a158b",
+    "screenshots/game-landscape.png": "76b65a61a8b164122597c5eb8a8b3cf941b9bdcf294be6ff09e128c472b834e2",
+    "screenshots/game-mobile.png": "fa1434e07d02d1898d980abde94d9f73b019790f4f5b2ce261236e20de320e4e",
+    "screenshots/home-desktop.png": "abe2d06ba4bfd0abe731211cd380848ac211d978a34498c996966edf7bee2194",
+    "screenshots/home-mobile.png": "350e1c4cbaac57102caa5adbb273bd910ac2bfb199326d4f1eb722522115135d",
+    "screenshots/paused-mobile.png": "a2e06b1a58a20516bc4a8e9bbe22810954bb3858c28c425122800727d706a48a",
+    "screenshots/result.png": "fd5c450d67bc00418e4f58542f39c2478347da1c37f6ef7eabeef3e9c6202b9e",
+    "media/basic-play-chromium.webm": "0557edcae4be09f1258b6b87d11bfab06de3c7c9b565219ab754301455a76210",
+    "media/opponent-hit.wav": "6e656b8ff7cb6bbc27758dc1467aa59d3704648fc29ff75b54ed48745bf76d4a",
+    "media/player-hit.wav": "00926f063ff85798524e7ae91c2a40455304c93d8057c293c88b43d7007f97d4"
+  },
+  "reviewedScreenshots": [
+    "screenshots/game-desktop.png",
+    "screenshots/game-landscape.png",
+    "screenshots/game-mobile.png",
+    "screenshots/home-desktop.png",
+    "screenshots/home-mobile.png",
+    "screenshots/paused-mobile.png",
+    "screenshots/result.png"
+  ]
+}
