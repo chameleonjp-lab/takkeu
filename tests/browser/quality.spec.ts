@@ -51,6 +51,7 @@ test('品質変更は解像度だけに作用し、4球・390・420・450・高�
     expect(row.resources!.drawCalls).toBeLessThan(100); samples.push(row);
   }
   expect(samples.at(-1)!.state.score).toBeGreaterThan(470);
+  expect(await page.evaluate(() => window.stage3.metrics().smashDepartures)).toBeGreaterThan(0);
   await info.attach('four-ball-load.json', { body: JSON.stringify(samples, null, 2), contentType: 'application/json' });
 });
 

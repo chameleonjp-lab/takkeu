@@ -20,7 +20,9 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   const seed = (): number => Date.now() >>> 0;
   const session = (services.createSession ?? createSession)(config, seed());
   const timeline = createInputTimeline(INITIAL_PADDLE);
-  const audio = (services.createAudio ?? createAudio)(config, undefined, () => { if (session.snapshot().phase === 'running') pause('hidden'); });
+  const audio = (services.createAudio ?? createAudio)(config, undefined, () => { if (session.snapshot().phase === 'running') pause('hidden'); }, () => {
+    if (!disposed) { unlockAttempt++; screens.setAudioReady(preferences.muted); }
+  });
   audio.reset(session.snapshot().runId);
   audio.setVolume(preferences.volume); audio.setMuted(preferences.muted);
   let view: GameView | null = null;

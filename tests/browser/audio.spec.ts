@@ -3,12 +3,13 @@ import { wav } from '../helpers/wav';
 
 test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => {
-    const probe = { contexts: [] as AudioContext[], started: [] as string[], live: new Set<OscillatorNode>(), failResume: false };
+    const probe = { contexts: [] as AudioContext[], started: [] as string[], live: new Set<OscillatorNode>(), failResume: false, failNodes: false };
     const Native = window.AudioContext;
     window.AudioContext = class extends Native {
       constructor() { super(); probe.contexts.push(this); }
       override async resume() { if (probe.failResume) throw new Error('Autoplay denied'); return super.resume(); }
       override createOscillator() {
+        if (probe.failNodes) throw new Error('Audio nodes unavailable');
         const node = super.createOscillator(), start = node.start.bind(node), disconnect = node.disconnect.bind(node);
         node.start = when => { probe.started.push(node.type); probe.live.add(node); start(when); };
         node.disconnect = () => { probe.live.delete(node); disconnect(); };
@@ -18,7 +19,25 @@ test.beforeEach(async ({ page }) => {
     Object.assign(window, { audioProbe: probe });
   });
 });
-declare global { interface Window { audioProbe: { contexts: AudioContext[]; started: string[]; live: Set<OscillatorNode>; failResume: boolean } } }
+declare global { interface Window { audioProbe: { contexts: AudioContext[]; started: string[]; live: Set<OscillatorNode>; failResume: boolean; failNodes: boolean } } }
+
+test('打球ノード生成失敗を案内し、ゲームを進めたまま音ボタンで復旧できる', async ({ page }) => {
+  await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
+  await page.goto('/'); await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await expect.poll(() => page.evaluate(() => window.audioProbe.contexts[0]?.state)).toBe('running');
+  await page.evaluate(() => { window.audioProbe.failNodes = true; });
+  await page.clock.runFor(2700);
+  await expect(page.locator('[data-audio-notice]')).toBeVisible();
+  await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('1');
+  await expect(page.getByRole('button', { name: '一時停止', exact: true })).toBeVisible();
+  await page.evaluate(() => { window.audioProbe.failNodes = false; });
+  await page.getByRole('button', { name: '音：オン', exact: true }).click();
+  await page.getByRole('button', { name: '音：オフ', exact: true }).click();
+  await expect(page.locator('[data-audio-notice]')).toBeHidden();
+  expect(await page.evaluate(() => window.audioProbe.started)).toHaveLength(0);
+  await page.clock.runFor(2600);
+  expect(await page.evaluate(() => window.audioProbe.started)).toEqual(['sine']);
+});
 
 test('開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰', async ({ page }, info) => {
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));

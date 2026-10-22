@@ -19,7 +19,8 @@ test('Linuxの実フレーム60秒を記録し、実機の性能判定とは分�
         fractionAtMost25ms: intervals.filter(n => n <= 25).length / intervals.length,
         runningSimulationSeconds: final.simTime - first.simTime, finalPhase: final.phase, pauseReason: final.pauseReason,
         remaining: final.balls.filter(b => b.phase !== 'lost').length, score: final.score,
-        smashHits: window.stage3.metrics().events.filter(e => e.kind === 'opponent-hit').length,
+        opponentHits: window.stage3.metrics().events.filter(e => e.kind === 'opponent-hit').length,
+        smashHits: window.stage3.metrics().smashDepartures,
         initialResources, finalResources: window.stage3.resources(), intervals,
         targetHardwareVerdict: '未確認' });
     }

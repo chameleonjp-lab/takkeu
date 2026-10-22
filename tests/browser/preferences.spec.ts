@@ -22,6 +22,9 @@ test('全設定と自己ベストが再読込・リトライを越えて残る',
   await page.clock.runFor(2700);
   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('1');
   await page.getByRole('button', { name: '一時停止', exact: true }).click();
+  await page.getByRole('button', { name: '最初からやり直す', exact: true }).click();
+  await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('0');
+  await page.getByRole('button', { name: '一時停止', exact: true }).click();
   await page.getByRole('button', { name: 'ホームへ', exact: true }).click();
   await page.reload();
   await expect(page.locator('[data-home]').getByLabel('自己ベスト', { exact: true })).toHaveText('1');

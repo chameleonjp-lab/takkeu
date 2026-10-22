@@ -121,3 +121,18 @@ it('出力ノードの初期化に一度失敗しても、次の操作で出力�
   audio.consume([event('player-hit', '1')]); expect(voices).toHaveLength(1);
   await audio.dispose();
 });
+
+it('音ノード生成失敗を画面側へ通知し、無音継続後に手動再試行できる', async () => {
+  const { context, voices } = fakeAudioContext(); let unavailable = 0;
+  const native = context.createOscillator.bind(context);
+  const audio = createAudio(DEFAULT_CONFIG, () => context, () => {}, () => unavailable++);
+  audio.reset('run-1'); await audio.unlock();
+  context.createOscillator = () => { throw new Error('temporarily unavailable'); };
+  expect(() => audio.consume([event('opponent-hit', '1')])).not.toThrow();
+  expect(unavailable).toBe(1);
+  context.createOscillator = native; audio.consume([event('player-hit', '2')]);
+  expect(voices).toHaveLength(0);
+  expect(await audio.unlock()).toBe(true);
+  audio.consume([event('player-hit', '2'), event('opponent-hit', '3')]);
+  expect(voices).toHaveLength(1); await audio.dispose();
+});

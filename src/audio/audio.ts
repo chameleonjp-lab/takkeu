@@ -2,7 +2,7 @@ import type { GameConfig, GameEvent } from '../game/types';
 import { playOpponentHit, playPlayerHit, playSmashWarning } from './tones';
 import type { Voice } from './tones';
 export interface GameAudio { unlock(): Promise<boolean>; consume(events: readonly GameEvent[]): void; setVolume(value: number): void; setMuted(value: boolean): void; suspend(): void; reset(runId: string): void; dispose(): Promise<void> }
-export function createAudio(config: GameConfig, contextFactory: () => AudioContext = () => new AudioContext(), onInterruption: () => void = () => {}): GameAudio {
+export function createAudio(config: GameConfig, contextFactory: () => AudioContext = () => new AudioContext(), onInterruption: () => void = () => {}, onUnavailable: () => void = () => {}): GameAudio {
   let context: AudioContext | null = null, output: GainNode | null = null;
   let runId = '', enabled = false, muted = false, disposed = false, volume = 0.65, generation = 0;
   // The simulation emits chronological events. Only IDs at the newest timestamp
@@ -58,7 +58,7 @@ export function createAudio(config: GameConfig, contextFactory: () => AudioConte
           const voice = event.kind === 'player-hit' ? playPlayerHit(context, output, ended)
             : event.kind === 'smash-warning' ? playSmashWarning(context, output, ended) : playOpponentHit(context, output, ended);
           voices.add(voice);
-        } catch { enabled = false; clearVoices(); }
+        } catch { enabled = false; clearVoices(); onUnavailable(); }
       }
     },
     setVolume(value) { if (Number.isFinite(value)) volume = Math.max(0, Math.min(1, value)); setGain(); },

@@ -13,12 +13,14 @@ let currentView: ReturnType<typeof createView> | null = null;
 let currentAudio: ReturnType<typeof createAudio> | null = null;
 let autoPlay = false;
 let failNextView = false;
-const metrics = { viewCreates: 0, viewDisposes: 0, events: [] as GameEvent[] };
+const metrics = { viewCreates: 0, viewDisposes: 0, smashDepartures: 0, events: [] as GameEvent[] };
 const session: GameSession = {
   snapshot: () => snapshotSimulation(state), start() { startSimulation(state, DEFAULT_CONFIG); },
   step(dt, input) {
     const target = autoPlay ? session.snapshot().scheduledReturns[0]?.target ?? state.paddle : input.target;
-    const result = stepSimulation(state, DEFAULT_CONFIG, dt, { target }); metrics.events.push(...result.events); return result;
+    const result = stepSimulation(state, DEFAULT_CONFIG, dt, { target }); metrics.events.push(...result.events);
+    metrics.smashDepartures += result.events.filter(event => event.kind === 'opponent-hit' && result.snapshot.balls.find(ball => ball.id === event.ballId)?.smash).length;
+    return result;
   },
   pause(reason) { if (state.phase === 'running') { state.phase = 'paused'; state.pauseReason = reason; } },
   resume() { if (state.phase === 'paused') { state.phase = 'running'; state.pauseReason = null; } },
@@ -37,7 +39,7 @@ const app = createApp(document.querySelector<HTMLElement>('#app')!, {
 });
 function show(score: number) {
   state = scenario(score, 0).state;
-  currentAudio?.reset(state.runId); metrics.events.length = 0;
+  currentAudio?.reset(state.runId); metrics.events.length = 0; metrics.smashDepartures = 0;
   state.balls = [1, 2, 3, 4].map((id, i) => incoming(id, 1.5 + i * 0.5, { x: [-0.7, 0.7, 0, 0.4][i]!, y: 0.5 }, 0, 2.5));
   if (score === 10) state.progression = { ...state.progression, ballGlowUntil: 5 };
   if (score >= 450) {

@@ -59,7 +59,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       </section>
 
       <section class="result-screen" data-result hidden><span class="brand-mark" aria-hidden="true">t.</span><p class="eyebrow">RALLY COMPLETE</p><h2>ナイスラリー！</h2><p class="result-label">今回のラリー数</p><output class="result-score" aria-label="今回のラリー数" data-result-score>0</output><p>自己ベスト <output aria-label="自己ベスト" data-best>0</output> ラリー</p><p class="result-message">もう1ラリー、つないでみよう。</p><button type="button" class="button primary" data-action="retry">もう一度 <span aria-hidden="true">↗</span></button><button type="button" class="button subtle" data-action="home">ホームへ</button></section>
-      <p class="notice" data-audio-notice role="status" hidden>音声を開始できませんでした。無音でも遊べます。音ボタンで再試行できます。</p>
+      <p class="notice" data-audio-notice role="status" hidden>音声を利用できません。無音でも遊べます。音ボタンで再試行できます。</p>
       <p class="error-banner" data-error role="alert" hidden></p>
       <p class="notice" data-storage-notice role="status" hidden>この端末に保存できません。開いている間は設定と自己ベストを保持します。</p>
       <p class="sr-only" role="status" aria-live="polite" data-status></p>
