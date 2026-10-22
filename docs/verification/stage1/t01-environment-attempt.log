@@ -1,0 +1,95 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/boot.spec.ts --project=chromium
+
+[WebServer] (node:1531) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:1544) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:1568) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない (297ms)
+
+  1 passed (1.9s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+
+> takkeu@0.1.0 build
+> npm run typecheck && vite build
+
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 5 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                0.54 kB │ gzip: 0.39 kB
+dist/assets/index-BuRfmD_9.js  0.92 kB │ gzip: 0.57 kB
+
+✓ built in 38ms
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/boot.spec.ts
+
+[WebServer] (node:2046) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:2059) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:2083) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない (249ms)
+(node:2199) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [webkit] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない (2ms)
+
+
+  1) [webkit] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない ───────────────────────
+
+    Error: browserType.launch: 
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libcairo-script-interpreter.so.2                 ║
+    ║     libhidapi-hidraw.so.0                            ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: test-results/boot-ホームにタイトルと開始ボタンを表示し、自動で開始しない-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/boot-ホームにタイトルと開始ボタンを表示し、自動で開始しない-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/boot-ホームにタイトルと開始ボタンを表示し、自動で開始しない-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない ────────────────────────
+  1 passed (1.9s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

@@ -1,0 +1,44 @@
+export type GamePhase = 'ready' | 'running' | 'paused' | 'gameover';
+export type PauseReason = 'user' | 'hidden' | 'resize' | 'slow-frame' | 'context-lost' | 'input-lost';
+export type BallPhase = 'queued' | 'incoming' | 'outgoing' | 'waiting-return' | 'lost';
+export type GameEventKind = 'player-hit' | 'opponent-hit' | 'ball-lost' | 'milestone' | 'smash-warning' | 'game-over';
+export type Point3 = Readonly<{ x: number; y: number; z: number }>;
+export type PaddlePoint = Readonly<{ x: number; y: number }>;
+export type InputFrame = Readonly<{ target: PaddlePoint }>;
+export type InputSample = Readonly<{ at: number; target: PaddlePoint }>;
+export type GameEvent = Readonly<{
+  id: string; runId: string; kind: GameEventKind; time: number;
+  ballId?: number; milestone?: number;
+}>;
+export type BallSnapshot = Readonly<{ id: number; phase: BallPhase; position: Point3; smash: boolean }>;
+export type ProgressionState = Readonly<{ appliedMilestones: readonly number[]; ballGlowUntil: number | null }>;
+export type ReturnPlan = Readonly<{
+  ballId: number; departAt: number; netCrossAt: number; arriveAt: number;
+  target: PaddlePoint; smash: boolean; warningAt: number | null; speedMultiplier: number;
+  landingZ?: number; bounceY?: number;
+}>;
+export type GameSnapshot = Readonly<{
+  runId: string; phase: GamePhase; score: number; simTime: number;
+  pauseReason: PauseReason | null;
+  paddle: PaddlePoint; balls: readonly BallSnapshot[];
+  progression: ProgressionState; scheduledReturns: readonly ReturnPlan[];
+}>;
+export type StepResult = Readonly<{ snapshot: GameSnapshot; events: readonly GameEvent[] }>;
+export interface GameSession {
+  start(): void;
+  step(dt: number, input: InputFrame): StepResult;
+  snapshot(): GameSnapshot;
+  pause(reason: PauseReason): void;
+  resume(): void;
+  reset(seed: number): void;
+}
+export type GameConfig = Readonly<{
+  tableHalfWidth: number; tableHalfLength: number; tableY: number;
+  paddleZ: number; paddleMinX: number; paddleMaxX: number;
+  paddleMinY: number; paddleMaxY: number; paddleSpeed: number;
+  ballRadius: number; paddleRadius: number;
+  fixedDt: number; maxStepsPerFrame: number; slowFrameSeconds: number;
+  normalVisibleSeconds: number; minimumVisibleSeconds: number;
+  maxBalls: number; pulseHalfPeriod: number; audioVoiceLimit: number;
+  maxPixelRatio: number; maxDrawingPixels: number;
+}>;
