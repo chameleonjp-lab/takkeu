@@ -1,0 +1,119 @@
+[
+  {
+    "call": "pw:api",
+    "params": {},
+    "durationMs": 27986.9,
+    "error": null
+  },
+  {
+    "call": "fixture",
+    "params": {},
+    "durationMs": 27993.1,
+    "error": null
+  },
+  {
+    "call": "pw:api",
+    "params": {
+      "url": "/"
+    },
+    "durationMs": 870.7,
+    "error": null
+  },
+  {
+    "call": "hook",
+    "params": {},
+    "durationMs": 28985.5,
+    "error": null
+  },
+  {
+    "call": "hook",
+    "params": {},
+    "durationMs": 28986.0,
+    "error": null
+  },
+  {
+    "call": "pw:api",
+    "params": {},
+    "durationMs": 1230.8,
+    "error": null
+  },
+  {
+    "call": "pw:api",
+    "params": {
+      "locator": "locator('canvas')",
+      "state": "attached"
+    },
+    "durationMs": 8159.7,
+    "error": null
+  },
+  {
+    "call": "pw:api",
+    "params": {},
+    "durationMs": 1569.1,
+    "error": null
+  },
+  {
+    "call": "pw:api",
+    "params": {
+      "locator": "locator('canvas')",
+      "state": "attached"
+    },
+    "durationMs": 22046.0,
+    "error": null
+  },
+  {
+    "call": "pw:api",
+    "params": {},
+    "durationMs": 1195.4,
+    "error": null
+  },
+  {
+    "call": "fixture",
+    "params": {},
+    "durationMs": 1395.1,
+    "error": null
+  },
+  {
+    "call": "hook",
+    "params": {},
+    "durationMs": 3928.7,
+    "error": null
+  },
+  {
+    "call": "fixture",
+    "params": {},
+    "durationMs": 3946.9,
+    "error": null
+  },
+  {
+    "call": "hook",
+    "params": {},
+    "durationMs": 3949.8,
+    "error": null
+  },
+  {
+    "call": "goto",
+    "params": {
+      "url": "/",
+      "waitUntil": "load"
+    },
+    "durationMs": 860.2,
+    "error": null
+  },
+  {
+    "call": "clockRunFor",
+    "params": {
+      "ticksNumber": 1800
+    },
+    "durationMs": 1230.1,
+    "error": null
+  },
+  {
+    "call": "clockRunFor",
+    "params": {
+      "ticksNumber": 5000
+    },
+    "durationMs": 1568.5,
+    "error": null
+  }
+]
