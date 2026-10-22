@@ -113,3 +113,7 @@ canvas { display: block; position: absolute; inset: 0; width: 100%; height: 100%
   .input-pad p { font-size: 9px; } .pad-cross { display: none; } .game-hint { margin: 8px 0 0; }
   .pause-overlay { align-items: flex-start; } .pause-card { padding-top: 0; gap: 8px; } .pause-card h2 { font-size: 22px; } .pause-card > p:not(.eyebrow) { margin-bottom: 0; }
 }
+
+.smash-warning { margin: 0 0 6px auto; padding: 9px 12px; border: 1px solid #c9a34a; border-radius: 8px; background: #27251a; color: #fff0b8; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.court-caption { left: 18px; transform: none; }
+@media (max-width: 600px) { .smash-warning { font-size: 11px; padding: 8px; } }

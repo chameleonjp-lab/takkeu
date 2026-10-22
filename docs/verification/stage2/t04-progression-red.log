@@ -1,0 +1,32 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit tests/unit/progression.test.ts
+
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/progression.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/progression.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/progression.test.ts [ tests/unit/progression.test.ts ]
+Error: Cannot find module '../../src/game/progression' imported from /workspace/takkeu/tests/unit/progression.test.ts
+ ❯ tests/unit/progression.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { advanceProgression } from '../../src/game/progression';
+       | ^
+      3| import { speedMultiplier } from '../../src/game/difficulty';
+      4|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  12:37:28
+   Duration  407ms (worker 95%, environment 5%)
+

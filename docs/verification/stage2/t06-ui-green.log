@@ -1,0 +1,17 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit tests/unit/warning-ui.test.ts
+
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/warning-ui.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  12:59:01
+   Duration  703ms (environment 72%, tests 19%, transform 6%, import 2%, worker 1%)
+

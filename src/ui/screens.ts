@@ -17,7 +17,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
             <p class="eyebrow"><span class="status-dot"></span> ONE BALL. ENDLESS RALLY.</p>
             <h1>タッケウ<span class="title-dot" aria-hidden="true">.</span></h1>
             <p class="hero-lead">見えない相手と、<br>ラリーをつなぐ。</p>
-            <p class="hero-description">指をすべらせて、球を返す。<br>ひとつの球が落ちるまで、どこまでも。</p>
+            <p class="hero-description">指をすべらせて、球を返す。<br>すべての球が落ちるまで、どこまでも。</p>
             <button type="button" class="button primary start-button" data-action="start">はじめる <span aria-hidden="true">↗</span></button>
             <p class="start-note">スマホはスワイプ・PCはドラッグ</p>
           </div>
@@ -42,12 +42,12 @@ export function createScreens(root: HTMLElement, actions: Actions) {
           <div><span class="step-number">02</span><p><strong>動かす</strong><span>左右・上下へスワイプ。</span></p></div>
           <div><span class="step-number">03</span><p><strong>つなぐ</strong><span>自分の返球で +1 ラリー。</span></p></div>
         </div>
-        <footer class="home-footer"><span>球は1つ。頼りは、リズム。</span><details class="sound-settings"><summary>サウンド設定</summary><div class="sound-panel"><button type="button" class="button subtle" data-action="sound">音：オン</button><label>効果音の音量<input type="range" min="0" max="1" step="0.05" value="0.65" aria-label="効果音の音量"></label></div></details></footer>
+        <footer class="home-footer"><span>はじまりは、1つの球。</span><details class="sound-settings"><summary>サウンド設定</summary><div class="sound-panel"><button type="button" class="button subtle" data-action="sound">音：オン</button><label>効果音の音量<input type="range" min="0" max="1" step="0.05" value="0.65" aria-label="効果音の音量"></label></div></details></footer>
       </section>
 
       <section class="game-screen" data-testid="game-screen" data-game hidden>
         <header class="game-header"><a class="wordmark" href="#" data-action="home">タッケウ<span aria-hidden="true">.</span></a><div class="game-tools"><button class="button icon-button" type="button" data-action="sound">音：オン</button><button class="button pause-button" type="button" aria-label="一時停止" data-action="pause"><span aria-hidden="true">Ⅱ</span><span>一時停止</span></button></div></header>
-        <div class="hud"><div><span class="eyebrow">RALLY</span><output aria-label="ラリー数" aria-live="off" class="rally-number" data-score>0</output></div><div class="balls-counter"><span class="eyebrow">残球数</span><output aria-label="残球数" aria-live="off" data-balls>1</output></div><p class="hud-note">ひとつずつ、<br>つないでいこう。</p></div>
+        <div class="hud"><div><span class="eyebrow">RALLY</span><output aria-label="ラリー数" aria-live="off" class="rally-number" data-score>0</output></div><div class="balls-counter"><span class="eyebrow">残球数</span><output aria-label="残球数" aria-live="off" data-balls>1</output></div><p class="smash-warning" data-smash-warning role="status" hidden>スマッシュがくる！</p><p class="hud-note" data-hud-note>ひとつずつ、<br>つないでいこう。</p></div>
         <div class="play-frame"><div class="input-surface" data-testid="input-surface"><div class="canvas-wrap"><canvas aria-label="卓球ゲームの描画領域"></canvas><span class="court-caption" aria-hidden="true">OPPONENT · OUT OF SIGHT</span></div><div class="input-pad"><span class="swipe-symbol" aria-hidden="true">↔</span><p>ここからも操作できます<span>指を置いたまま、左右・上下へ</span></p><span class="pad-cross" aria-hidden="true">＋</span></div></div>
           <div class="pause-overlay" role="dialog" aria-modal="true" aria-labelledby="pause-title" hidden><div class="pause-card"><p class="eyebrow">PAUSE</p><h2 id="pause-title">ひと休み</h2><p data-pause-message></p><button type="button" class="button primary" data-action="resume">つづける <span aria-hidden="true">→</span></button><button type="button" class="button subtle" data-action="retry">最初からやり直す</button><button type="button" class="text-button" data-action="home">ホームへ</button></div></div>
         </div>
@@ -90,11 +90,14 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       overlay.hidden = snapshot.phase !== 'paused';
       get<HTMLElement>('.game-header').inert = snapshot.phase === 'paused';
       get<HTMLElement>('.input-surface').inert = snapshot.phase === 'paused';
+      const warning = snapshot.scheduledReturns.some(plan => plan.smash && plan.warningAt !== null && plan.warningAt <= snapshot.simTime + 1e-10 && snapshot.simTime < plan.departAt);
+      get('[data-smash-warning]').hidden = !warning; get('[data-hud-note]').hidden = warning;
+      setText('.court-caption', snapshot.progression.appliedMilestones.includes(360) ? 'OPPONENT · IN VIEW' : 'OPPONENT · OUT OF SIGHT');
       const remaining = snapshot.balls.filter(ball => ball.phase !== 'lost').length;
       setText('[data-score]', String(snapshot.score)); setText('[data-balls]', String(remaining)); setText('[data-result-score]', String(snapshot.score));
       if (snapshot.phase === 'paused') setText('[data-pause-message]', pauseMessages[snapshot.pauseReason ?? 'user']);
       if (lastPhase !== snapshot.phase) {
-        setText('[data-status]', snapshot.phase === 'paused' ? '一時停止中。再開ボタンで続けられます。' : snapshot.phase === 'gameover' ? `終了。${snapshot.score}ラリー。残球数0。` : snapshot.phase === 'running' ? 'プレイ中。残球数1。' : 'ホーム');
+        setText('[data-status]', snapshot.phase === 'paused' ? '一時停止中。再開ボタンで続けられます。' : snapshot.phase === 'gameover' ? `終了。${snapshot.score}ラリー。残球数0。` : snapshot.phase === 'running' ? `プレイ中。残球数${remaining}。` : 'ホーム');
         const focus = snapshot.phase === 'paused' ? overlay.querySelector<HTMLElement>('[data-action="resume"]') : snapshot.phase === 'gameover' ? result.querySelector<HTMLElement>('[data-action="retry"]') : snapshot.phase === 'running' ? game.querySelector<HTMLElement>('[data-action="pause"]') : home.querySelector<HTMLElement>('[data-action="start"]');
         focus?.focus({ preventScroll: true }); lastPhase = snapshot.phase;
       }

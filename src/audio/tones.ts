@@ -35,3 +35,7 @@ export function playPlayerHit(context: AudioContext, output: AudioNode, onEnded:
 export function playOpponentHit(context: AudioContext, output: AudioNode, onEnded: (voice: Voice) => void = () => {}): Voice {
   return tone(context, output, 'sine', 440, 220, 0.085, onEnded);
 }
+
+export function playSmashWarning(context: AudioContext, output: AudioNode, onEnded: (voice: Voice) => void = () => {}): Voice {
+  return tone(context, output, 'triangle', 660, 1320, 0.12, onEnded);
+}

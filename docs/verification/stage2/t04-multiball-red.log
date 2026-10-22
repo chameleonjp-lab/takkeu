@@ -1,0 +1,34 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit tests/unit/multiball.test.ts
+
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/multiball.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/multiball.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/multiball.test.ts [ tests/unit/multiball.test.ts ]
+Error: Cannot find module '../../src/game/simulation' imported from /workspace/takkeu/tests/helpers/scenarios.ts
+ ❯ tests/helpers/scenarios.ts:3:1
+      1| import { DEFAULT_CONFIG, INITIAL_PADDLE } from '../../src/game/config';
+      2| import { MILESTONES } from '../../src/game/milestones';
+      3| import { createSimulationState, snapshotSimulation, startSimulation, s…
+       | ^
+      4| import { sampleReturn } from '../../src/game/trajectory';
+      5| import type { ReturnPlan } from '../../src/game/types';
+ ❯ tests/unit/multiball.test.ts:4:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  12:40:46
+   Duration  206ms (worker 96%, environment 4%)
+

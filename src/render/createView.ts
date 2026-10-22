@@ -1,8 +1,10 @@
-import { Color, DirectionalLight, HemisphereLight, OrthographicCamera, Scene, Vector3, WebGLRenderer } from 'three';
+import { Color, DirectionalLight, HemisphereLight, Scene, Vector3, WebGLRenderer } from 'three';
 import type { GameConfig, GameEvent, GameSnapshot } from '../game/types';
 import type { InputMapping } from '../input/swipe';
 import { createObjects } from './objects';
 import { applyPresentation } from './presentation';
+import { createCamera, fitCamera } from './camera';
+import { updateOpponentView } from './opponentView';
 
 export interface GameView {
   render(snapshot: GameSnapshot, events: readonly GameEvent[]): void;
@@ -17,10 +19,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
   const renderer = new WebGLRenderer({ canvas, context, antialias: true });
   const scene = new Scene();
   scene.background = new Color(0x0b1723);
-  const camera = new OrthographicCamera(-1.5, 1.5, 1, -1, 0.1, 30);
-  camera.position.set(0, 3.6, 6.8);
-  camera.lookAt(0, 0.1, 0.7);
-  camera.updateMatrixWorld();
+  const camera = createCamera();
   scene.add(new HemisphereLight(0xd8f8ff, 0x17313b, 2.1));
   const light = new DirectionalLight(0xffffff, 2);
   light.position.set(-2, 4, 4); scene.add(light);
@@ -33,7 +32,8 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
       if (snapshot.runId !== previousRunId) { flashUntil = 0; previousRunId = snapshot.runId; }
       for (const event of events) if (event.kind === 'player-hit') flashUntil = event.time + 0.12;
       applyPresentation(objects, snapshot);
-      objects.rimMaterial.emissiveIntensity = snapshot.simTime < flashUntil ? 0.8 : 0.15;
+      updateOpponentView(objects, snapshot, events);
+      if (!snapshot.progression.appliedMilestones.includes(100)) objects.rimMaterial.emissiveIntensity = snapshot.simTime < flashUntil ? 0.8 : 0.15;
       renderer.render(scene, camera);
     },
     resize(width, height) {
@@ -41,11 +41,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
       const ratio = Math.min(window.devicePixelRatio || 1, config.maxPixelRatio, Math.sqrt(config.maxDrawingPixels / (w * h)));
       renderer.setPixelRatio(1);
       renderer.setSize(Math.max(1, Math.floor(w * ratio)), Math.max(1, Math.floor(h * ratio)), false);
-      const aspect = w / h;
-      const worldWidth = Math.max(2.8, aspect * 1.8);
-      camera.left = -worldWidth / 2; camera.right = worldWidth / 2;
-      camera.top = worldWidth / aspect / 2; camera.bottom = -camera.top;
-      camera.updateProjectionMatrix();
+      fitCamera(camera, w, h, config);
     },
     inputMapping() {
       const rect = canvas.getBoundingClientRect();

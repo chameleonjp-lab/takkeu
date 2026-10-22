@@ -1,0 +1,33 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit tests/unit/scheduler.test.ts
+
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/scheduler.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/scheduler.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/scheduler.test.ts [ tests/unit/scheduler.test.ts ]
+Error: Cannot find module '../../src/game/scheduler' imported from /workspace/takkeu/tests/unit/scheduler.test.ts
+ ❯ tests/unit/scheduler.test.ts:3:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { DEFAULT_CONFIG } from '../../src/game/config';
+      3| import { scheduleReturn } from '../../src/game/scheduler';
+       | ^
+      4| import type { PaddlePoint, ReturnPlan } from '../../src/game/types';
+      5|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  12:38:50
+   Duration  168ms (worker 97%, environment 3%)
+

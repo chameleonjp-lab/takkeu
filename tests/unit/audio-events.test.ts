@@ -42,3 +42,17 @@ describe('接触イベントから自他の音を生成', () => {
     await audio.dispose();
   });
 });
+
+it('スマッシュの予告音は打球音と別に1回だけ鳴り、消音で音だけを捨てる', async () => {
+  const { context, voices } = fakeAudioContext();
+  const audio = createAudio(DEFAULT_CONFIG, () => context);
+  audio.reset('run-1'); await audio.unlock();
+  const warning = event('smash-warning', 'warn');
+  audio.consume([warning, warning, event('opponent-hit', 'hit')]);
+  expect(voices).toHaveLength(2);
+  expect(voices[0]!.frequencies[1]).toBeGreaterThan(voices[0]!.frequencies[0]!);
+  expect(voices[1]!.frequencies[0]).toBe(440);
+  audio.setMuted(true); audio.consume([event('smash-warning', 'muted')]);
+  expect(voices).toHaveLength(2);
+  await audio.dispose();
+});

@@ -1,0 +1,17 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit tests/unit/presentation.test.ts
+
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/presentation.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  12:47:43
+   Duration  233ms (transform 42%, import 34%, tests 21%, worker 2%)
+
