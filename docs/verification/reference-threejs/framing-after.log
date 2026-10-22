@@ -1,0 +1,37 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/camera.test.ts tests/unit/render-assets.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/camera.test.ts (10 tests | 2 failed) 18ms
+   × 全解放後の相手の姿と両コートを900x390でも画面に収める 5ms
+   × 全解放後の相手の姿と両コートを600x220でも画面に収める 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/camera.test.ts > 全解放後の相手の姿と両コートを900x390でも画面に収める
+ FAIL  tests/unit/camera.test.ts > 全解放後の相手の姿と両コートを600x220でも画面に収める
+AssertionError: expected 1.0243468662483002 to be less than 1
+ ❯ tests/unit/camera.test.ts:51:27
+     49|     const p = new Vector3(...point as [number, number, number]).projec…
+     50|     expect(Math.abs(p.x)).toBeLessThan(1);
+     51|     expect(Math.abs(p.y)).toBeLessThan(1);
+       |                           ^
+     52|   }
+     53| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  2 failed | 9 passed (11)
+   Start at  17:55:04
+   Duration  311ms (transform 45%, import 33%, tests 19%, worker 3%)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

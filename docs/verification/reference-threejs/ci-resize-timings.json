@@ -1,0 +1,29 @@
+{
+  "commit": "c4a277126799156ae2e974905c36b958f3e5c0f3",
+  "run": 39829519243,
+  "case": "render-loop Chromium native resize race",
+  "observedCount": 8,
+  "expectedCount": ">8",
+  "trace": "ci-resize-first-trace.zip",
+  "calls": [
+    {
+      "method": "setViewportSize",
+      "startMs": 179822.054,
+      "endMs": 179830.521,
+      "wallMs": 8.467
+    },
+    {
+      "method": "clockRunFor",
+      "startMs": 179833.58,
+      "endMs": 179835.01,
+      "wallMs": 1.43,
+      "fakeMilliseconds": 32
+    },
+    {
+      "method": "evaluateExpression",
+      "startMs": 179836.014,
+      "endMs": 179837.801,
+      "wallMs": 1.787
+    }
+  ]
+}

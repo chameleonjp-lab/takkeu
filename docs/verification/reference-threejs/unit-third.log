@@ -1,0 +1,63 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/camera.test.ts (11 tests | 1 failed) 90ms
+   × 全操作範囲でラケットの面と柄を画面内に保つ 42ms
+ ❯ tests/unit/scheduler.test.ts (4 tests | 1 failed) 14ms
+   ❯ 確定した到着予約 (4)
+     × 通常の最低視認時間0.60秒と追加から1秒を守る 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/camera.test.ts > 全操作範囲でラケットの面と柄を画面内に保つ
+AssertionError: expected 1.0119470291684487 to be less than 1
+ ❯ tests/unit/camera.test.ts:24:29
+     22|     for (const px of [box.min.x, box.max.x]) for (const py of [box.min…
+     23|       const p = new Vector3(px, py, pz).project(camera);
+     24|       expect(Math.abs(p.x)).toBeLessThan(1); expect(Math.abs(p.y)).toB…
+       |                             ^
+     25|     }
+     26|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/scheduler.test.ts > 確定した到着予約 > 通常の最低視認時間0.60秒と追加から1秒を守る
+AssertionError: expected { x: 0.8672811440775128, y: 0.15 } to deeply equal { x: 1.05, y: 0.15 }
+
+- Expected
++ Received
+
+  {
+-   "x": 1.05,
++   "x": 0.8672811440775128,
+    "y": 0.15,
+  }
+
+ ❯ tests/unit/scheduler.test.ts:38:25
+     36|     expect(plan.arriveAt - plan.netCrossAt).toBeCloseTo(0.6, 10);
+     37|     expect(plan.arriveAt).toBeGreaterThanOrEqual(11);
+     38|     expect(plan.target).toEqual({ x: 1.05, y: 0.15 });
+       |                         ^
+     39|     expect(plan.speedMultiplier).toBe(2.2);
+     40|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed | 20 passed (22)
+      Tests  2 failed | 97 passed (99)
+   Start at  18:02:58
+   Duration  2.66s (environment 45%, tests 34%, import 12%, transform 6%, worker 2%)
+
+    Isolate  22 workers spawned · ~222ms startup each (spawn + environment, per file)
+             at least ~1.40s faster with isolate: false — reuses workers across files instead of one per file
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

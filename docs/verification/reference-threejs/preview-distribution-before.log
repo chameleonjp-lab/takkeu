@@ -1,0 +1,11 @@
+file:///workspace/takkeu/scripts/check-production.mjs:11
+  if (!/^(index\.html|release\.json|assets\/[\w.-]+\.(js|css))$/.test(name)) throw new Error(`unexpected distribution file: ${name}`);
+                                                                                   ^
+
+Error: unexpected distribution file: assets/court-preview-DT7D6bWQ.png
+    at file:///workspace/takkeu/scripts/check-production.mjs:11:84
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.19.0

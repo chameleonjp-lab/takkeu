@@ -1,0 +1,38 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/camera.test.ts (11 tests | 1 failed) 116ms
+   × 全操作範囲でラケットの面と柄を画面内に保つ 50ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/camera.test.ts > 全操作範囲でラケットの面と柄を画面内に保つ
+AssertionError: expected 1.0429140372274714 to be less than 1
+ ❯ tests/unit/camera.test.ts:24:29
+     22|     for (const px of [box.min.x, box.max.x]) for (const py of [box.min…
+     23|       const p = new Vector3(px, py, pz).project(camera);
+     24|       expect(Math.abs(p.x)).toBeLessThan(1); expect(Math.abs(p.y)).toB…
+       |                             ^
+     25|     }
+     26|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 21 passed (22)
+      Tests  1 failed | 98 passed (99)
+   Start at  18:05:12
+   Duration  2.67s (environment 49%, tests 31%, import 11%, transform 7%, worker 2%)
+
+    Isolate  22 workers spawned · ~233ms startup each (spawn + environment, per file)
+             at least ~1.48s faster with isolate: false — reuses workers across files instead of one per file
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
