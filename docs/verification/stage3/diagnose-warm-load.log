@@ -1,0 +1,4 @@
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+chromium {"coldPhase":"paused","coldReason":"slow-frame","durationMs":60014.30000000028,"frames":3366,"p95Ms":33.29999999999927,"fractionAtMost25ms":0.9343434343434344,"simulationSeconds":60.016666666663895,"finalPhase":"running","pauseReason":null,"remaining":4,"score":514,"smashHits":10,"resources":{"geometries":24,"textures":1,"programs":7,"drawCalls":20},"errors":[]}
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+webkit {"coldPhase":"paused","coldReason":"slow-frame","durationMs":60017,"frames":3277,"p95Ms":22,"fractionAtMost25ms":0.9844369850472994,"simulationSeconds":0.7666666666666664,"finalPhase":"paused","pauseReason":"slow-frame","remaining":4,"score":450,"smashHits":1,"resources":{"geometries":18,"textures":1,"programs":7,"drawCalls":18},"errors":[]}

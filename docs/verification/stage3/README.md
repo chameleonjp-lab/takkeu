@@ -63,3 +63,25 @@
 [Pages用ビルドZIP](distribution/takkeu-pages-1e13fd4.zip)は正式検証で作成したdistのコピーであり、公開はしていない。release.jsonは上記のソースSHAと/takkeu/を示す。公開時はこのZIPを無条件に再利用せず、docs/release.mdに従い承認済みmainのSHAを照合し、そのコミットで検査・ビルドした成果物だけを配備する。
 
 [証拠ファイルのSHA-256と確認対象](media-verification.json)に画像・動画・WAV・測定JSON・配布ZIPの来歴を記録する。
+
+
+## 初回描画後の補助切分け
+
+同じゲームソースで、450の専用状態→1秒の描画準備→手動再開→実フレーム60秒を追加測定した。測定中は自動再開しない。[実行スクリプト](diagnose-warm-load.mjs)／[全文](diagnose-warm-load.log)。
+
+| 条件 | ゲーム内進行 | 残球／実スマッシュ | 全フレームp95・25ms以下率 | 判定 |
+|---|---:|---|---|---|
+| Chromium・描画準備後 | 60.017秒 | 4球／10回 | 33.3ms・93.43% | 連続負荷成立。参考25ms条件は未達。実機合格ではない |
+| WebKit・描画準備後 | 0.767秒 | 4球／1回 | 22ms・98.44% | 再びslow-frameで停止。停止中を含み、連続負荷不成立 |
+
+[PC測定](media/chromium/warm-performance-60s.json)／[WebKit測定](media/webkit/warm-performance-60s.json)。Chromiumは描画準備後に60秒継続し、初回準備の影響を示した。WebKitは準備後も停止したため、原因が初回準備だけとは断定しない。元の失敗結果を上書きせず、実機での負荷と描画／計算の内訳は引き続き公開前の課題とする。
+
+## Draft PR・GitHub CIの外部制約
+
+[Draft PR #4](https://github.com/chameleonjp-lab/takkeu/pull/4)を作成した。mainへのマージ・公開はしていない。
+
+証拠追加head b06b646の[PRイベントCI](https://github.com/chameleonjp-lab/takkeu/actions/runs/39795978382)と[push CI](https://github.com/chameleonjp-lab/takkeu/actions/runs/39795806505)は、**全工程成功**を確認した。PR側の[全文ジョブログ](ci-source-job.log)／[工程結果](ci-source-jobs.json)／[成果物](ci-source-artifacts.json)を保存した。型・単体85件・2パス配布4件・画面50件・証拠保存が成功。PR CIはGitHubのmerge ref bfc0c9b、push CIはhead b06b646自体をcheckoutしている。
+
+最初はAPIにqueued／in_progressと表示されたが、後から取得したジョブログでは処理自体は14:28〜14:33 UTCに進んでいた。GitHub公式はActions degraded_performance、Incident with Actions Results investigatingを報告していたため、これは結果報告の遅延として記録し、実際のランナー停止とは断定しない。[公式レスポンス](ci-github-status.json)／[初回の状態観測](ci-observation.json)／[成功確認](ci-resolution.json)。未確認時に成功と記載せず、ログと最終状態を確認して更新した。
+
+文書・補助測定追加後の最新headのCIは、PR本文・Checksで追跡する。実機・試聴・390最終判定と性能の未確認はCI成功とは別に残る。課金・Actions設定変更・公開は行っていない。
