@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync, openSync, closeSync, mkdirSync, cpSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-const dir = 'docs/verification/stage3'; mkdirSync(dir, { recursive: true });
+const dir = process.env.TAKKEU_VERIFICATION_DIR ?? 'docs/verification/stage3'; mkdirSync(dir, { recursive: true });
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8' }).trim();
 const sha = git('rev-parse', 'HEAD');
 const sourcePaths = ['src', 'tests', 'scripts', '.github', 'package.json', 'package-lock.json', '*.config.ts', 'index.html', '.node-version'];

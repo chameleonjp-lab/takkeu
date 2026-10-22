@@ -28,7 +28,8 @@ describe('多球の接触・落球・累計到達', () => {
   });
   it('接触と落球を時刻・球ID順に処理し、追加の待機球があれば終了しない', () => {
     const s = scenario(29);
-    s.state.balls = [incoming(2, 20.004), incoming(1, 20.005, { x: 1, y: 0.5 }, 20, 0.1)];
+    // The miss fixture crosses the visible lower boundary during this step.
+    s.state.balls = [incoming(2, 20.004), incoming(1, 19.992, { x: 1, y: 0.5 }, 20, 0.1)];
     const { events, snapshot } = s.step();
     expect(events.filter(e => e.kind !== 'opponent-hit').map(e => e.kind)).toEqual(['player-hit', 'milestone', 'ball-lost']);
     expect(events.map(e => e.time)).toEqual(events.map(e => e.time).sort((a, b) => a - b));
@@ -38,7 +39,7 @@ describe('多球の接触・落球・累計到達', () => {
   });
   it('最後の球を失えば終了を一度だけ発行し、将来の報酬は追加しない', () => {
     const s = scenario(29);
-    s.state.balls = [incoming(1, 20.001, { x: 1, y: 0.5 }, 20, 0.1)];
+    s.state.balls = [incoming(1, 19.992, { x: 1, y: 0.5 }, 20, 0.1)];
     const result = s.step();
     expect(result.events.map(e => e.kind)).toEqual(['ball-lost', 'game-over']);
     expect(s.snapshot().balls.filter(b => b.phase !== 'lost')).toHaveLength(0);
@@ -74,7 +75,7 @@ describe('多球の接触・落球・累計到達', () => {
   it('落球でも解放・加速を維持し、確定済み予約は閾値通過でも変わらない', () => {
     const s = scenario(149);
     const future = incoming(3, 21.5);
-    s.state.balls = [incoming(1, 20.004), incoming(2, 20.002, { x: 1, y: 0.5 }, 20, 0.1), future];
+    s.state.balls = [incoming(1, 20.004), incoming(2, 19.992, { x: 1, y: 0.5 }, 20, 0.1), future];
     const original = structuredClone(future.plan);
     s.step();
     expect(s.state.score).toBe(150);

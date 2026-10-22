@@ -1,0 +1,51 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/bounce-contact.test.ts (2 tests | 2 failed) 23ms
+   ❯ ワンバウンド後の見える接触 (2)
+     × 高い位置に構えたラケットに重なる最初のバウンドを返せる 13ms
+     × 空振りした球も手前を通り抜けるまで消さない 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/bounce-contact.test.ts > ワンバウンド後の見える接触 > 高い位置に構えたラケットに重なる最初のバウンドを返せる
+AssertionError: 奥行きの判定面まで待たず、見える接触で返す: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/bounce-contact.test.ts:14:60
+     12|     expect(game.snapshot().score, 'バウンド前は加点しない').toBe(0);
+     13|     const events = advance(game, 0.15, paddle);
+     14|     expect(game.snapshot().score, '奥行きの判定面まで待たず、見える接触で返す').toBe(1);
+       |                                                            ^
+     15|     expect(events.filter(e => e.kind === 'player-hit')).toHaveLength(1…
+     16|     expect(events.find(e => e.kind === 'player-hit')!.time).toBeGreate…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/bounce-contact.test.ts > ワンバウンド後の見える接触 > 空振りした球も手前を通り抜けるまで消さない
+AssertionError: 予定到着時刻だけでは失球にしない: expected 'gameover' to be 'running' // Object.is equality
+
+Expected: "running"
+Received: "gameover"
+
+ ❯ tests/unit/bounce-contact.test.ts:25:55
+     23|     const paddle = { x: config.paddleMinX, y: config.paddleMinY };
+     24|     advance(game, 2.6, paddle);
+     25|     expect(game.snapshot().phase, '予定到着時刻だけでは失球にしない').toBe('running');
+       |                                                       ^
+     26|     expect(game.snapshot().balls[0]!.position.z).toBeGreaterThan(confi…
+     27|     expect(game.snapshot().score).toBe(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  16:13:38
+   Duration  236ms (transform 50%, tests 26%, import 19%, worker 5%)
+

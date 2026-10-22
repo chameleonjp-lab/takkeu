@@ -1,9 +1,9 @@
 import { clampPaddle, DIFFICULTY, INITIAL_PADDLE } from './config';
-import { sweepPaddleHit } from './collision';
+import { paddleExitFraction, sweepPaddleHit } from './collision';
 import { speedMultiplier } from './difficulty';
 import { advanceProgression } from './progression';
 import { scheduleReturn } from './scheduler';
-import { sampleReturn } from './trajectory';
+import { bounceTime, sampleReturn } from './trajectory';
 import { planOpponentReturn } from './opponent';
 import type { BallPhase, GameConfig, GameEvent, GameEventKind, GamePhase, GameSnapshot, InputFrame, PaddlePoint, PauseReason, Point3, ProgressionState, ReturnPlan, StepResult } from './types';
 
@@ -80,16 +80,22 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
       continue;
     }
     const nextPosition = sampleReturn(ball.plan, ball.from, end);
-    const hit = sweepPaddleHit(ball.position, nextPosition, previousPaddle, state.paddle, config);
+    const lostFraction = paddleExitFraction(ball.position, nextPosition, config);
+    const contactStart = Math.max(state.simTime, bounceTime(ball.plan));
+    const contactEnd = state.simTime + (lostFraction ?? 1) * dt;
+    let hit: number | null = null;
+    if (contactStart <= contactEnd + 1e-12) {
+      const first = Math.min(1, (contactStart - state.simTime) / dt);
+      const last = (contactEnd - state.simTime) / dt;
+      const paddleAt = (t: number): PaddlePoint => ({ x: previousPaddle.x + (state.paddle.x - previousPaddle.x) * t, y: previousPaddle.y + (state.paddle.y - previousPaddle.y) * t });
+      const fraction = sweepPaddleHit(sampleReturn(ball.plan, ball.from, contactStart), sampleReturn(ball.plan, ball.from, contactEnd), paddleAt(first), paddleAt(last), config);
+      if (fraction !== null) hit = first + (last - first) * fraction;
+    }
     if (hit !== null) {
-      actions.push({ kind: 'hit', time: state.simTime + hit * dt, ball, position: {
-        x: ball.position.x + (nextPosition.x - ball.position.x) * hit,
-        y: ball.position.y + (nextPosition.y - ball.position.y) * hit,
-        z: ball.position.z + (nextPosition.z - ball.position.z) * hit,
-      } });
-    } else if (nextPosition.z > config.paddleZ + config.ballRadius) {
-      const lostFraction = (config.paddleZ + config.ballRadius - ball.position.z) / (nextPosition.z - ball.position.z);
-      actions.push({ kind: 'lost', time: state.simTime + Math.max(0, lostFraction) * dt, ball });
+      const time = state.simTime + hit * dt;
+      actions.push({ kind: 'hit', time, ball, position: sampleReturn(ball.plan, ball.from, time) });
+    } else if (lostFraction !== null) {
+      actions.push({ kind: 'lost', time: state.simTime + lostFraction * dt, ball });
     }
   }
   while (actions.length) {

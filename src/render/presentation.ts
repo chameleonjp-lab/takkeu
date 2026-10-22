@@ -27,13 +27,13 @@ export function resolvePresentation(snapshot: GameSnapshot): PresentationState {
   return {
     parts: {
       selfCourtRight: part(160, true), selfCourtLeft: part(210, true),
-      opponentCourtRight: part(190), opponentCourtLeft: part(240), courtEdges: part(70, true),
+      opponentCourtRight: part(190, true), opponentCourtLeft: part(240, true), courtEdges: part(70, true),
       net: part(130, true), playerRacketBody: part(270, true), playerRacketEdge: part(100, true),
-      opponentRacketBody: part(330), opponentRacketEdge: part(300), opponentBody: part(360),
+      opponentRacketBody: part(330, true), opponentRacketEdge: part(300, true), opponentBody: part(360),
     },
     balls: Object.fromEntries(snapshot.balls.map(ball => [ball.id, { visible: isBallVisible(ball, snapshot), rainbow: glowing(snapshot) }])),
     pulseStrength: reached(390) ? samplePulse(snapshot.simTime) : 1,
-    opponentEdgesVisible: reached(70),
+    opponentEdgesVisible: true,
   };
 }
 function colorVertices(geometry: BufferGeometry, time: number): void {
@@ -87,6 +87,9 @@ export function applyPresentation(objects: ReturnType<typeof createObjects>, sna
     visual.root.visible = !!ball && !!style?.visible;
     if (!ball || !style) continue;
     visual.root.position.set(ball.position.x, ball.position.y, ball.position.z);
+    visual.shadow.position.y = objects.tableY + 0.007 - ball.position.y;
+    visual.shadow.visible = Math.abs(ball.position.z) <= objects.tableHalfLength && Math.abs(ball.position.x) <= objects.tableHalfWidth;
+    visual.shadow.material.opacity = 0.3 / (1 + Math.max(0, ball.position.y - objects.tableY));
     visual.glow.visible = style.rainbow;
     visual.core.scale.setScalar(style.rainbow ? 0.9 : 1);
     if (style.rainbow) colorBall(visual.glow, snapshot.simTime);

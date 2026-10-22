@@ -1,0 +1,74 @@
+
+Running 4 tests using 1 worker
+
+(node:26422) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/audio.spec.ts:64:1 › 音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える (6.4s)
+(node:26524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  2 [chromium] › tests/browser/contact.spec.ts:30:1 › 見えている球にドラッグで合わせ、3ラリーをつなげる (24.8s)
+(node:26655) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  3 [webkit] › tests/browser/audio.spec.ts:64:1 › 音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える (6.2s)
+(node:26756) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  4 [webkit] › tests/browser/contact.spec.ts:30:1 › 見えている球にドラッグで合わせ、3ラリーをつなげる (15.8s)
+
+
+  1) [chromium] › tests/browser/audio.spec.ts:64:1 › 音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える ──────────────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByLabel('ラリー数', { exact: true })
+    Expected: "1"
+    Received: "0"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" getByLabel('ラリー数', { exact: true }) with timeout 5000ms
+      - waiting for getByLabel('ラリー数', { exact: true })
+        - waiting for "http://127.0.0.1:4173/" navigation to finish...
+        - navigated to "http://127.0.0.1:4173/"
+        11 × locator resolved to <output data-score="" aria-live="off" aria-label="ラリー数" class="rally-number">0</output>
+           - unexpected value "0"
+
+
+      67 |   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+      68 |   await expect(page.locator('[data-audio-notice]')).toBeVisible();
+    > 69 |   await page.clock.runFor(2700); await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('1');
+         |                                                                                         ^
+      70 |   await page.screenshot({ path: info.outputPath('audio-unavailable.png') });
+      71 |   await page.getByRole('button', { name: '一時停止', exact: true }).click();
+      72 |   await page.getByRole('button', { name: 'つづける', exact: true }).click();
+        at /workspace/takkeu/tests/browser/audio.spec.ts:69:89
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/audio-音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/audio-音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/audio-音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/audio-音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/audio-音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/audio.spec.ts:64:1 › 音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える ───────────────
+  3 passed (57.6s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
