@@ -2,7 +2,7 @@ import { BackSide, BoxGeometry, BufferGeometry, CircleGeometry, CylinderGeometry
 import type { GameConfig } from '../game/types';
 import { sampleRainbow } from './rainbow';
 import { lineMaterial, lines, standard, tableTexture } from './materials';
-import { createPaddle } from './paddle';
+import { createPaddle, RUBBER_FACE_DEPTH } from './paddle';
 import { createEnvironment } from './environment';
 
 export function createObjects(config: GameConfig) {
@@ -37,7 +37,9 @@ export function createObjects(config: GameConfig) {
   const courtEdges = new Group(); courtEdges.add(playerEdges, opponentEdges);
   const player = createPaddle(config, 0xef252e, -0.56), other = createPaddle(config, 0x285be4, -0.22);
   player.group.position.z = config.paddleZ;
-  other.group.position.set(0, 0.5, -config.paddleZ);
+  // The flight endpoint is the ball's centre; put the rubber behind its
+  // surface so the returning/waiting ball never sits inside the blade.
+  other.group.position.set(0, 0.5, -config.paddleZ - config.ballRadius - RUBBER_FACE_DEPTH);
   const opponentBody = new Group(); opponentBody.position.z = -2.22; opponentBody.scale.setScalar(0.6);
   const head = new Mesh(new SphereGeometry(0.12, 12, 8), standard(0x145c66)); head.position.y = 1.02;
   const torso = new Mesh(new CylinderGeometry(0.16, 0.12, 0.40, 12), standard(0x145c66)); torso.position.y = 0.65;

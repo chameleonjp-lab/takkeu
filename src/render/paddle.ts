@@ -2,14 +2,16 @@ import { CircleGeometry, CylinderGeometry, Group, Mesh, TorusGeometry } from 'th
 import type { GameConfig } from '../game/types';
 import { standard } from './materials';
 
+export const RUBBER_FACE_DEPTH = 0.018;
+
 export function createPaddle(config: GameConfig, color: number, angle: number) {
   const group = new Group(), body = new Group();
   const wood = new Mesh(new CylinderGeometry(config.paddleRadius, config.paddleRadius, 0.034, 48), standard(0xcba374, 0.58));
   wood.rotation.x = Math.PI / 2;
   const front = new Mesh(new CircleGeometry(config.paddleRadius - 0.004, 48), standard(color, 0.48));
-  front.position.z = 0.018;
+  front.position.z = RUBBER_FACE_DEPTH;
   const back = new Mesh(new CircleGeometry(config.paddleRadius - 0.004, 48), standard(0x26282a));
-  back.rotation.y = Math.PI; back.position.z = -0.018;
+  back.rotation.y = Math.PI; back.position.z = -RUBBER_FACE_DEPTH;
   const handle = new Mesh(new CylinderGeometry(0.031, 0.036, 0.22, 12), standard(0xd1a36e, 0.58));
   handle.position.y = -config.paddleRadius - 0.075;
   // The joint lies inside the wooden blade. Keep both sides below the rubber

@@ -1,7 +1,8 @@
 import { expect, it } from 'vitest';
-import { Mesh, MeshStandardMaterial, Raycaster, Vector3 } from 'three';
+import { Box3, Mesh, MeshStandardMaterial, Raycaster, Vector3 } from 'three';
 import { DEFAULT_CONFIG as config } from '../../src/game/config';
 import { createPaddle } from '../../src/render/paddle';
+import { createObjects } from '../../src/render/objects';
 
 it.each([0xef252e, 0x285be4])('柄がラバー面を突き抜けない（%i）', color => {
   const paddle = createPaddle(config, color, -0.56);
@@ -19,4 +20,13 @@ it.each([0xef252e, 0x285be4])('柄がラバー面を突き抜けない（%i）',
     child.geometry.dispose();
     for (const material of Array.isArray(child.material) ? child.material : [child.material]) material.dispose();
   });
+});
+
+it('相手の打球点の球はラバー面に埋まらず、その手前で接する', () => {
+  const objects = createObjects(config);
+  const blade = new Box3().setFromObject(objects.opponentPaddle);
+  // Both outgoing endpoints and new incoming flights use this ball centre.
+  // The nearest rubber surface must touch its back, not cross its centre.
+  expect(blade.max.z).toBeCloseTo(-config.paddleZ - config.ballRadius, 10);
+  objects.dispose();
 });
