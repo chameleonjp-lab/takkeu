@@ -1,0 +1,57 @@
+import { createApp } from '../../src/app/createApp';
+import { DEFAULT_CONFIG } from '../../src/game/config';
+import { createSession } from '../../src/game/session';
+import { createView } from '../../src/render/createView';
+import { createAudio } from '../../src/audio/audio';
+import type { GameSession, GameSnapshot, GameEvent } from '../../src/game/types';
+import { createSimulationState, snapshotSimulation, startSimulation, stepSimulation } from '../../src/game/simulation';
+import { scenario, incoming } from './scenarios';
+import '../../src/ui/styles.css';
+
+let state = createSimulationState(7);
+let currentView: ReturnType<typeof createView> | null = null;
+let currentAudio: ReturnType<typeof createAudio> | null = null;
+let autoPlay = false;
+let failNextView = false;
+const metrics = { viewCreates: 0, viewDisposes: 0, events: [] as GameEvent[] };
+const session: GameSession = {
+  snapshot: () => snapshotSimulation(state), start() { startSimulation(state, DEFAULT_CONFIG); },
+  step(dt, input) {
+    const target = autoPlay ? session.snapshot().scheduledReturns[0]?.target ?? state.paddle : input.target;
+    const result = stepSimulation(state, DEFAULT_CONFIG, dt, { target }); metrics.events.push(...result.events); return result;
+  },
+  pause(reason) { if (state.phase === 'running') { state.phase = 'paused'; state.pauseReason = reason; } },
+  resume() { if (state.phase === 'paused') { state.phase = 'running'; state.pauseReason = null; } },
+  reset(seed) { state = createSimulationState(seed); },
+};
+// Only this test entrypoint can replace the session. It is never a Vite build input.
+const app = createApp(document.querySelector<HTMLElement>('#app')!, {
+  createSession: () => session,
+  storage: { getItem: () => null, setItem() {} },
+  createAudio(...args) { currentAudio = createAudio(...args); return currentAudio; },
+  createView(canvas, config) {
+    if (failNextView) { failNextView = false; throw new Error('verification: renderer creation failed'); }
+    const view = createView(canvas, config); currentView = view; metrics.viewCreates++;
+    return { ...view, dispose() { metrics.viewDisposes++; view.dispose(); } };
+  },
+});
+function show(score: number) {
+  state = scenario(score, 0).state;
+  currentAudio?.reset(state.runId); metrics.events.length = 0;
+  state.balls = [1, 2, 3, 4].map((id, i) => incoming(id, 1.5 + i * 0.5, { x: [-0.7, 0.7, 0, 0.4][i]!, y: 0.5 }, 0, 2.5));
+  if (score === 10) state.progression = { ...state.progression, ballGlowUntil: 5 };
+  if (score >= 450) {
+    const ball = state.balls[0]!;
+    ball.phase = 'waiting-return'; ball.warningSent = true;
+    ball.plan = { ...ball.plan!, smash: true, warningAt: 0, departAt: 0.4, netCrossAt: 0.7, arriveAt: 1.3 };
+  }
+}
+function restore() { const canvas = document.querySelector('canvas')!; canvas.dispatchEvent(new Event('webglcontextrestored')); }
+const harness = { snapshot: (): GameSnapshot => session.snapshot(), show, restore, metrics: () => metrics,
+  resources: () => currentView?.resources(),
+  failNextView() { failNextView = true; },
+  finish() { state.phase = 'gameover'; state.balls.forEach(ball => { ball.phase = 'lost'; }); },
+  autoPlay(value: boolean) { autoPlay = value; },
+  dispose: () => app.dispose(), freshSession: () => createSession(DEFAULT_CONFIG, 7).snapshot() };
+declare global { interface Window { stage3: typeof harness } }
+window.stage3 = harness;

@@ -1,0 +1,65 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/storage.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/storage.test.ts (11 tests | 2 failed) 14ms
+   ❯ 版付き端末内保存 (11)
+     × 自己ベストと全設定を保存して読み戻す 7ms
+     × 不正な設定だけを既定値にし、有効な自己ベストは残す 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/storage.test.ts > 版付き端末内保存 > 自己ベストと全設定を保存して読み戻す
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/storage.test.ts:10:45
+      8|     const storage = { getItem: (key: string) => key === PREFERENCES_KE…
+      9|     const value = { ...DEFAULT_PREFERENCES, bestScore: 450, volume: 0.…
+     10|     expect(savePreferences(storage, value)).toBe(true);
+       |                                             ^
+     11|     expect(loadPreferences(storage)).toEqual(value);
+     12|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/storage.test.ts > 版付き端末内保存 > 不正な設定だけを既定値にし、有効な自己ベストは残す
+AssertionError: expected { version: 1, bestScore: +0, …(4) } to deeply equal { version: 1, bestScore: 80, …(4) }
+
+- Expected
++ Received
+
+@@ -1,7 +1,7 @@
+  {
+-   "bestScore": 80,
++   "bestScore": 0,
+    "muted": false,
+    "quality": "standard",
+    "sensitivity": 1,
+    "version": 1,
+    "volume": 0.65,
+
+ ❯ tests/unit/storage.test.ts:17:148
+     15|   });
+     16|   it('不正な設定だけを既定値にし、有効な自己ベストは残す', () => {
+     17|     expect(loadPreferences(stored(JSON.stringify({ version: 1, bestSco…
+       |                                                                                                                                                    ^
+     18|   });
+     19|   it('読取拒否・容量不足・NaNでも例外を投げずメモリ内継続できる', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 9 passed (11)
+   Start at  13:34:40
+   Duration  193ms (transform 43%, tests 27%, import 23%, worker 7%)
+

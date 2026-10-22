@@ -1,0 +1,44 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit
+
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/audio-events.test.ts (8 tests | 1 failed) 19ms
+   × 4球を個別発音し、9音目では終了間近の音を短く消して切断する 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/audio-events.test.ts > 4球を個別発音し、9音目では終了間近の音を短く消して切断する
+AssertionError: expected 0.16 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 0.16
+
+ ❯ tests/unit/audio-events.test.ts:69:24
+     67|   expect(voices).toHaveLength(9);
+     68|   // Natural stop is already scheduled for all voices; fade is observe…
+     69|   expect(ramps.at(-1)).toBe(0);
+       |                        ^
+     70|   expect(voices[1]!.disconnected).toBe(false);
+     71|   voices[1]!.ended?.(); expect(voices[1]!.disconnected).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 18 passed (19)
+      Tests  1 failed | 81 passed (82)
+   Start at  13:43:42
+   Duration  2.25s (environment 57%, tests 22%, import 12%, transform 7%, worker 2%)
+
+    Isolate  19 workers spawned · ~249ms startup each (spawn + environment, per file)
+             at least ~1.33s faster with isolate: false — reuses workers across files instead of one per file
+

@@ -1,0 +1,315 @@
+
+> takkeu@0.1.0 verify:release
+> node scripts/verify-release.mjs
+
+
+> takkeu@0.1.0 build
+> npm run typecheck && vite build
+
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 34 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/release.json                 0.07 kB │ gzip:   0.09 kB
+dist/index.html                   0.61 kB │ gzip:   0.43 kB
+dist/assets/index-ChYxDtOP.css   11.30 kB │ gzip:   3.38 kB
+dist/assets/index-DbiuWXL1.js   574.97 kB │ gzip: 148.02 kB
+
+✓ built in 672ms
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+{
+  "status": "passed",
+  "commit": "c6e59a2e5400c34c464ce2e6f56fda1abd13437d",
+  "base": "/",
+  "files": [
+    "assets/index-ChYxDtOP.css",
+    "assets/index-DbiuWXL1.js",
+    "index.html",
+    "release.json"
+  ]
+}
+
+> takkeu@0.1.0 build:pages
+> npm run typecheck && vite build --base=/takkeu/
+
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 34 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/release.json                 0.08 kB │ gzip:   0.09 kB
+dist/index.html                   0.63 kB │ gzip:   0.43 kB
+dist/assets/index-ChYxDtOP.css   11.30 kB │ gzip:   3.38 kB
+dist/assets/index-DbiuWXL1.js   574.97 kB │ gzip: 148.02 kB
+
+✓ built in 444ms
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+{
+  "status": "passed",
+  "commit": "c6e59a2e5400c34c464ce2e6f56fda1abd13437d",
+  "base": "/takkeu/",
+  "files": [
+    "assets/index-ChYxDtOP.css",
+    "assets/index-DbiuWXL1.js",
+    "index.html",
+    "release.json"
+  ]
+}
+
+> takkeu@0.1.0 test:release
+> playwright test --config=playwright.release.config.ts
+
+[WebServer] (node:8406) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:8415) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:8423) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 (32.6s)
+(node:8526) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  2 [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 (31.6s)
+(node:8619) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  3 [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 (30.3s)
+(node:8952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  4 [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 (30.5s)
+
+
+  1) [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 ───────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: '一時停止', exact: true })
+        - locator resolved to <button type="button" aria-label="一時停止" data-action="pause" class="button pause-button">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <section data-game="" class="game-screen" data-testid="game-screen">…</section> intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <section data-game="" class="game-screen" data-testid="game-screen">…</section> intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        53 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <section data-game="" class="game-screen" data-testid="game-screen">…</section> intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+
+
+      18 |     await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('0');
+      19 |     await expect(page.getByLabel('残球数', { exact: true })).toHaveText('1');
+    > 20 |     await page.getByRole('button', { name: '一時停止', exact: true }).click();
+         |                                                                   ^
+      21 |     expect(failures).toEqual([]);
+      22 |     for (const path of ['tests/fixtures/stage2.html', 'tests/fixtures/stage3.html', 'src/main.ts', '@vite/client']) expect((await request.get(origin + base + path)).status()).toBe(404);
+      23 |     expect(await page.evaluate(() => 'stage2' in window || 'stage3' in window)).toBe(false);
+        at /workspace/takkeu/tests/release/distribution.spec.ts:20:67
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/distribution-実配布物-の参照・開始・保存と開発機能の非混入-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/distribution-実配布物-の参照・開始・保存と開発機能の非混入-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/distribution-実配布物-の参照・開始・保存と開発機能の非混入-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/distribution-実配布物-の参照・開始・保存と開発機能の非混入-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 ────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: '一時停止', exact: true })
+        - locator resolved to <button type="button" aria-label="一時停止" data-action="pause" class="button pause-button">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <section data-game="" class="game-screen" data-testid="game-screen">…</section> intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <section data-game="" class="game-screen" data-testid="game-screen">…</section> intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        52 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <section data-game="" class="game-screen" data-testid="game-screen">…</section> intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      18 |     await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('0');
+      19 |     await expect(page.getByLabel('残球数', { exact: true })).toHaveText('1');
+    > 20 |     await page.getByRole('button', { name: '一時停止', exact: true }).click();
+         |                                                                   ^
+      21 |     expect(failures).toEqual([]);
+      22 |     for (const path of ['tests/fixtures/stage2.html', 'tests/fixtures/stage3.html', 'src/main.ts', '@vite/client']) expect((await request.get(origin + base + path)).status()).toBe(404);
+      23 |     expect(await page.evaluate(() => 'stage2' in window || 'stage3' in window)).toBe(false);
+        at /workspace/takkeu/tests/release/distribution.spec.ts:20:67
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/distribution-実配布物-takkeu-の参照・開始・保存と開発機能の非混入-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/distribution-実配布物-takkeu-の参照・開始・保存と開発機能の非混入-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/distribution-実配布物-takkeu-の参照・開始・保存と開発機能の非混入-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/distribution-実配布物-takkeu-の参照・開始・保存と開発機能の非混入-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 ─────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: apiRequestContext._wrapApiCall: ENOENT: no such file or directory, copyfile '/workspace/takkeu/test-results/.playwright-artifacts-2/traces/50fea97024d96f5f2763-d37c0c841f3282e02f43-recording2.network' -> '/workspace/takkeu/test-results/.playwright-artifacts-2/traces/50fea97024d96f5f2763-d37c0c841f3282e02f43-recording2-pwnetcopy-1.network'
+
+    Error: apiRequestContext._wrapApiCall: ENOENT: no such file or directory, copyfile '/workspace/takkeu/test-results/.playwright-artifacts-2/traces/50fea97024d96f5f2763-d37c0c841f3282e02f43-recording1.network' -> '/workspace/takkeu/test-results/.playwright-artifacts-2/traces/50fea97024d96f5f2763-d37c0c841f3282e02f43-recording1-pwnetcopy-1.network'
+
+    Error: browserContext._wrapApiCall: ENOENT: no such file or directory, open '/workspace/takkeu/test-results/.playwright-artifacts-2/traces/50fea97024d96f5f2763-d37c0c841f3282e02f43.trace'
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for getByRole('button', { name: '一時停止', exact: true })
+        - locator resolved to <button type="button" aria-label="一時停止" data-action="pause" class="button pause-button">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <section data-game="" class="game-screen" data-testid="game-screen">…</section> intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <section data-game="" class="game-screen" data-testid="game-screen">…</section> intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        46 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <section data-game="" class="game-screen" data-testid="game-screen">…</section> intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      18 |     await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('0');
+      19 |     await expect(page.getByLabel('残球数', { exact: true })).toHaveText('1');
+    > 20 |     await page.getByRole('button', { name: '一時停止', exact: true }).click();
+         |                                                                   ^
+      21 |     expect(failures).toEqual([]);
+      22 |     for (const path of ['tests/fixtures/stage2.html', 'tests/fixtures/stage3.html', 'src/main.ts', '@vite/client']) expect((await request.get(origin + base + path)).status()).toBe(404);
+      23 |     expect(await page.evaluate(() => 'stage2' in window || 'stage3' in window)).toBe(false);
+        at /workspace/takkeu/tests/release/distribution.spec.ts:20:67
+
+    Error: ENOENT: no such file or directory, open '/workspace/takkeu/test-results/.playwright-artifacts-2/0c5127d76539016529566ebe6cf9f38f.zip'
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/distribution-実配布物-の参照・開始・保存と開発機能の非混入-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 ──────────
+
+    Test timeout of 30000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/distribution-実配布物-takkeu-の参照・開始・保存と開発機能の非混入-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/distribution-実配布物-takkeu-の参照・開始・保存と開発機能の非混入-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/distribution-実配布物-takkeu-の参照・開始・保存と開発機能の非混入-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/distribution-実配布物-takkeu-の参照・開始・保存と開発機能の非混入-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 ────────────────
+    [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 ─────────
+    [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 ──────────────────
+    [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 ───────────
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

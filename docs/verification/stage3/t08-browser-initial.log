@@ -1,0 +1,44 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/audio.spec.ts tests/browser/evidence.spec.ts tests/browser/smash.spec.ts
+
+[WebServer] (node:5630) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:5643) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 14 tests using 1 worker
+
+(node:5673) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/audio.spec.ts:23:1 › 開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰 (11.1s)
+  ✓   2 [chromium] › tests/browser/audio.spec.ts:45:1 › 音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える (3.3s)
+  ✓   3 [chromium] › tests/browser/audio.spec.ts:63:1 › 実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査 (1.3s)
+(node:5866) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   4 [chromium] › tests/browser/evidence.spec.ts:6:3 › 画面の証拠 › 縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す (5.3s)
+  ✓   5 [chromium] › tests/browser/evidence.spec.ts:41:1 › 実際のWeb Audioで自分用・相手用の異なる短音を合成できる (794ms)
+  ✓   6 [chromium] › tests/browser/smash.spec.ts:5:1 › 450の予告はミュート・390・420・4球・停止中でも見え、球を暴露しない (5.2s)
+  ✓   7 [chromium] › tests/browser/smash.spec.ts:43:1 › 予告音を実際のWeb Audioで合成して保存する (806ms)
+(node:6238) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   8 [webkit] › tests/browser/audio.spec.ts:23:1 › 開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰 (8.4s)
+  ✓   9 [webkit] › tests/browser/audio.spec.ts:45:1 › 音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える (5.3s)
+  ✓  10 [webkit] › tests/browser/audio.spec.ts:63:1 › 実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査 (2.2s)
+(node:6472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  11 [webkit] › tests/browser/evidence.spec.ts:6:3 › 画面の証拠 › 縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す (6.3s)
+  ✓  12 [webkit] › tests/browser/evidence.spec.ts:41:1 › 実際のWeb Audioで自分用・相手用の異なる短音を合成できる (1.3s)
+  ✓  13 [webkit] › tests/browser/smash.spec.ts:5:1 › 450の予告はミュート・390・420・4球・停止中でも見え、球を暴露しない (6.9s)
+  ✓  14 [webkit] › tests/browser/smash.spec.ts:43:1 › 予告音を実際のWeb Audioで合成して保存する (1.4s)
+
+  14 passed (1.1m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

@@ -1,0 +1,36 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/lifecycle.spec.ts tests/browser/retry.spec.ts
+
+[WebServer] (node:9654) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:9667) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 1 worker
+
+(node:9691) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない (6.7s)
+  ✓   2 [chromium] › tests/browser/lifecycle.spec.ts:39:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 (10.4s)
+  ✓   3 [chromium] › tests/browser/lifecycle.spec.ts:56:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する (3.6s)
+  ✓   4 [chromium] › tests/browser/lifecycle.spec.ts:74:1 › 実際のWEBGL_lose_contextによる喪失と復旧でも手動再開を待つ (3.9s)
+  ✓   5 [chromium] › tests/browser/lifecycle.spec.ts:92:1 › 描画再作成の失敗時も状態を壊さずホームへ戻れる (1.2s)
+  ✓   6 [chromium] › tests/browser/retry.spec.ts:5:1 › 再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない (8.0s)
+(node:9981) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   7 [webkit] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない (7.6s)
+  ✓   8 [webkit] › tests/browser/lifecycle.spec.ts:39:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 (12.2s)
+  ✓   9 [webkit] › tests/browser/lifecycle.spec.ts:56:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する (7.2s)
+  ✓  10 [webkit] › tests/browser/lifecycle.spec.ts:74:1 › 実際のWEBGL_lose_contextによる喪失と復旧でも手動再開を待つ (7.3s)
+  ✓  11 [webkit] › tests/browser/lifecycle.spec.ts:92:1 › 描画再作成の失敗時も状態を壊さずホームへ戻れる (3.2s)
+  ✓  12 [webkit] › tests/browser/retry.spec.ts:5:1 › 再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない (11.8s)
+
+  12 passed (1.4m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

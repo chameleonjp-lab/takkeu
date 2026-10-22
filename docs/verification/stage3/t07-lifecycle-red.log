@@ -1,0 +1,66 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/lifecycle.spec.ts --project=chromium --grep WebGL
+
+[WebServer] (node:2147) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:2161) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:2195) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/browser/lifecycle.spec.ts:54:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する (6.7s)
+
+
+  1) [chromium] › tests/browser/lifecycle.spec.ts:54:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する ──────
+
+    Error: expect(locator).toBeDisabled() failed
+
+    Locator:  getByRole('button', { name: 'つづける', exact: true })
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeDisabled" getByRole('button', { name: 'つづける', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'つづける', exact: true })
+        14 × locator resolved to <button type="button" data-action="resume" class="button primary">…</button>
+           - unexpected value "enabled"
+
+
+      56 |   await expect(page.getByText('スマッシュがくる！', { exact: true })).toBeVisible();
+      57 |   await page.locator('canvas').dispatchEvent('webglcontextlost', { cancelable: true });
+    > 58 |   await expect(page.getByRole('button', { name: 'つづける', exact: true })).toBeDisabled();
+         |                                                                         ^
+      59 |   const before = await page.evaluate(() => window.stage3.snapshot());
+      60 |   await page.clock.runFor(5000); expect(await page.evaluate(() => window.stage3.snapshot())).toEqual(before);
+      61 |   await page.evaluate(() => window.stage3.restore());
+        at /workspace/takkeu/tests/browser/lifecycle.spec.ts:58:73
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/lifecycle-WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/lifecycle-WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/lifecycle-WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/lifecycle-WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/lifecycle-WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/lifecycle.spec.ts:54:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する ───────
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

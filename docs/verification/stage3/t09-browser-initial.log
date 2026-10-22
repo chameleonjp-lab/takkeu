@@ -1,0 +1,32 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/retry.spec.ts tests/browser/quality.spec.ts
+
+[WebServer] (node:7090) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:7103) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:7130) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  1 [chromium] › tests/browser/quality.spec.ts:4:1 › 縦横・44pxボタン・200%文字・ラベル・安全余白を確認 (4.2s)
+  ✓  2 [chromium] › tests/browser/quality.spec.ts:40:1 › 品質変更は解像度だけに作用し、4球・390・420・450・高速接触を維持する (34.2s)
+  ✓  3 [chromium] › tests/browser/quality.spec.ts:57:1 › WebGL初期化不可と復旧失敗でもホームと自己ベストを保つ (12.3s)
+  ✓  4 [chromium] › tests/browser/retry.spec.ts:5:1 › 再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない (10.8s)
+(node:7786) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  5 [webkit] › tests/browser/quality.spec.ts:4:1 › 縦横・44pxボタン・200%文字・ラベル・安全余白を確認 (8.2s)
+  ✓  6 [webkit] › tests/browser/quality.spec.ts:40:1 › 品質変更は解像度だけに作用し、4球・390・420・450・高速接触を維持する (37.5s)
+  ✓  7 [webkit] › tests/browser/quality.spec.ts:57:1 › WebGL初期化不可と復旧失敗でもホームと自己ベストを保つ (2.0s)
+  ✓  8 [webkit] › tests/browser/retry.spec.ts:5:1 › 再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない (11.5s)
+
+  8 passed (2.1m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

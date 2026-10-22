@@ -1,0 +1,97 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/audio-events.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/audio-events.test.ts (8 tests | 4 failed) 20ms
+   × 4球を個別発音し、9音目では終了間近の音を短く消して切断する 7ms
+   × ノード生成失敗をゲーム側へ投げず、次のユーザー操作で再試行できる 3ms
+   × 遅れて失敗した旧resumeが、新しいresumeの成功を取り消さない 1ms
+   × ブラウザ側の音声中断を通知し、過去の音を復帰時に再生しない 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/audio-events.test.ts > 4球を個別発音し、9音目では終了間近の音を短く消して切断する
+AssertionError: expected 0.35 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 0.35
+
+ ❯ tests/unit/audio-events.test.ts:69:24
+     67|   expect(voices).toHaveLength(9);
+     68|   // Natural stop is already scheduled for all voices; fade is observe…
+     69|   expect(ramps.at(-1)).toBe(0);
+       |                        ^
+     70|   expect(voices[1]!.disconnected).toBe(false);
+     71|   voices[1]!.ended?.(); expect(voices[1]!.disconnected).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/unit/audio-events.test.ts > ノード生成失敗をゲーム側へ投げず、次のユーザー操作で再試行できる
+AssertionError: expected [Function] to not throw an error but 'Error: audio unavailable' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: audio unavailable"
+
+ ❯ tests/unit/audio-events.test.ts:82:63
+     80|   const audio = createAudio(DEFAULT_CONFIG, () => context); audio.rese…
+     81|   context.createOscillator = () => { throw new Error('audio unavailabl…
+     82|   expect(() => audio.consume([event('player-hit', '1')])).not.toThrow(…
+       |                                                               ^
+     83|   context.createOscillator = original;
+     84|   expect(await audio.unlock()).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/unit/audio-events.test.ts > 遅れて失敗した旧resumeが、新しいresumeの成功を取り消さない
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/audio-events.test.ts:97:61
+     95|   expect(await audio.unlock()).toBe(true);
+     96|   rejectOld(new Error('interrupted')); expect(await old).toBe(false);
+     97|   audio.consume([event('player-hit', '1')]); expect(voices).toHaveLeng…
+       |                                                             ^
+     98|   await audio.dispose();
+     99| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/unit/audio-events.test.ts > ブラウザ側の音声中断を通知し、過去の音を復帰時に再生しない
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/audio-events.test.ts:106:25
+    104|   audio.reset('run-1'); await audio.unlock(); audio.consume([event('pl…
+    105|   Object.assign(context, { state: 'interrupted' }); context.onstatecha…
+    106|   expect(interruptions).toBe(1); expect(voices[0]!.disconnected).toBe(…
+       |                         ^
+    107|   audio.consume([event('opponent-hit', '2')]); await audio.unlock(); a…
+    108|   expect(voices).toHaveLength(1); await audio.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 4 passed (8)
+   Start at  13:42:20
+   Duration  273ms (transform 63%, tests 18%, import 16%, worker 3%)
+

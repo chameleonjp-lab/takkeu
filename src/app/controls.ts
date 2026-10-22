@@ -4,12 +4,12 @@ import type { InputMapping } from '../input/swipe';
 import type { InputTimeline } from '../input/timeline';
 import type { createLoop } from './loop';
 
-type ControlOptions = { session: GameSession; timeline: InputTimeline; loop: ReturnType<typeof createLoop>; config: GameConfig; mapping: InputMapping; onInterruption(): void };
+type ControlOptions = { session: GameSession; timeline: InputTimeline; loop: ReturnType<typeof createLoop>; config: GameConfig; mapping: InputMapping; sensitivity?(): number; onInterruption(): void };
 
-export function createControls(surface: HTMLElement, { session, timeline, loop, mapping, onInterruption }: ControlOptions) {
+export function createControls(surface: HTMLElement, { session, timeline, loop, mapping, onInterruption, sensitivity = () => 1 }: ControlOptions) {
   const normalize = (timestamp: number): number => timestamp > 1e12 ? timestamp - performance.timeOrigin : timestamp;
   return createSwipeController(surface, {
-    mapping,
+    mapping, sensitivity,
     beforeInput(timestamp) { loop.flushInput(normalize(timestamp)); },
     onTarget(sample) { if (session.snapshot().phase === 'running') timeline.enqueue(sample); },
     onHold(sample) { timeline.clear(sample.target); },

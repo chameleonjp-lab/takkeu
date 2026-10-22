@@ -5,90 +5,122 @@ import type { PauseReason } from '../game/types';
 import { createInputTimeline } from '../input/timeline';
 import { createView } from '../render/createView';
 import type { GameView } from '../render/createView';
+import { loadPreferences, savePreferences } from '../storage/preferences';
+import type { Preferences, StorageLike } from '../storage/preferences';
 import { createScreens } from '../ui/screens';
 import { createLoop } from './loop';
 import { createControls } from './controls';
+import { bindLifecycle } from './lifecycle';
 
-export function createApp(root: HTMLElement) {
+type AppServices = { createSession: typeof createSession; createView: typeof createView; createAudio: typeof createAudio; storage: StorageLike };
+export function createApp(root: HTMLElement, services: Partial<AppServices> = {}) {
   const config = DEFAULT_CONFIG;
+  const storage = services.storage ?? { getItem: key => window.localStorage.getItem(key), setItem: (key, value) => window.localStorage.setItem(key, value) };
+  let preferences = loadPreferences(storage);
   const seed = (): number => Date.now() >>> 0;
-  const session = createSession(config, seed());
+  const session = (services.createSession ?? createSession)(config, seed());
   const timeline = createInputTimeline(INITIAL_PADDLE);
-  const audio = createAudio(config);
+  const audio = (services.createAudio ?? createAudio)(config, undefined, () => { if (session.snapshot().phase === 'running') pause('hidden'); });
   audio.reset(session.snapshot().runId);
+  audio.setVolume(preferences.volume); audio.setMuted(preferences.muted);
   let view: GameView | null = null;
-  let muted = false;
   let disposed = false;
   let contextAvailable = true;
   let observedPhase = session.snapshot().phase;
+  let unlockAttempt = 0;
   const screens = createScreens(root, {
     start, retry: start, pause: () => pause('user'), resume, home,
-    toggleSound() { muted = !muted; audio.setMuted(muted); screens.setSound(muted); if (!muted) void unlockAudio(); },
-    volume(value) { audio.setVolume(value); void unlockAudio(); },
+    toggleSound() { updatePreferences({ muted: !preferences.muted }); if (!preferences.muted) void unlockAudio(); },
+    volume(value) { updatePreferences({ volume: value }); void unlockAudio(); },
+    sensitivity(value) { updatePreferences({ sensitivity: value }); },
+    quality(value) { updatePreferences({ quality: value }); resizeView(); },
   });
+  function persist(): void { screens.setStorageAvailable(savePreferences(storage, preferences)); }
+  function updatePreferences(update: Partial<Preferences>): void {
+    preferences = { ...preferences, ...update };
+    audio.setVolume(preferences.volume); audio.setMuted(preferences.muted);
+    screens.setSound(preferences.muted); screens.setPreferences(preferences);
+    if (preferences.muted) screens.setAudioReady(true);
+    view?.setQuality(preferences.quality); persist();
+  }
+  function rememberBest(): void {
+    const score = session.snapshot().score;
+    if (score > preferences.bestScore) { preferences = { ...preferences, bestScore: score }; screens.setPreferences(preferences); }
+  }
   const loop = createLoop({ session, timeline, config, onEvents: events => audio.consume(events), onPause: pause });
   const swipe = createControls(screens.surface, {
-    session, timeline, loop, config,
+    session, timeline, loop, config, sensitivity: () => preferences.sensitivity,
     mapping: { screen: { left: 0, top: 0, width: 1, height: 1 }, world: { minX: config.paddleMinX, maxX: config.paddleMaxX, minY: config.paddleMinY, maxY: config.paddleMaxY } },
     onInterruption: () => pause('input-lost'),
   });
   async function unlockAudio(): Promise<void> {
+    const attempt = ++unlockAttempt;
     const ready = await audio.unlock();
-    if (!disposed) screens.setAudioReady(ready || muted);
+    if (!disposed && attempt === unlockAttempt) screens.setAudioReady(ready || preferences.muted);
   }
   function resizeView(): void {
-    if (!view) return;
+    if (!view || !contextAvailable) return;
     const rect = screens.canvasWrap.getBoundingClientRect();
-    view.resize(rect.width, rect.height);
-    swipe.updateMapping(view.inputMapping());
-    if (contextAvailable) view.render(session.snapshot(), []);
+    view.resize(rect.width, rect.height); swipe.updateMapping(view.inputMapping());
+    view.render(session.snapshot(), []);
+  }
+  function makeView(): GameView {
+    const next = (services.createView ?? createView)(screens.canvas, config);
+    next.setQuality(preferences.quality); return next;
   }
   function start(): void {
+    if (!contextAvailable) { screens.setError('描画の復旧を待つか、再読み込みしてください。'); return; }
     if (!view) {
-      try { view = createView(screens.canvas, config); }
+      try { view = makeView(); }
       catch (error) { screens.setError(error instanceof Error ? error.message : '描画を開始できません。再読み込みしてください。'); return; }
     }
+    rememberBest(); persist();
     swipe.cancel(); session.reset(seed()); session.start();
     timeline.clear(INITIAL_PADDLE); audio.reset(session.snapshot().runId);
     screens.setError(''); screens.render(session.snapshot()); resizeView();
-    loop.resetClock(performance.now()); observedPhase = 'running';
-    void unlockAudio();
+    loop.resetClock(performance.now()); observedPhase = 'running'; void unlockAudio();
   }
+  function silence(): void { unlockAttempt++; audio.suspend(); }
   function pause(reason: PauseReason): void {
     if (session.snapshot().phase === 'running') session.pause(reason);
     if (session.snapshot().phase !== 'paused') return;
-    swipe.cancel(); timeline.clear(session.snapshot().paddle); audio.suspend();
+    swipe.cancel(); timeline.clear(session.snapshot().paddle); silence(); rememberBest(); persist();
     loop.resetClock(performance.now()); screens.render(session.snapshot());
   }
   function resume(): void {
-    if (session.snapshot().phase !== 'paused' || !contextAvailable) return;
+    if (session.snapshot().phase !== 'paused' || !contextAvailable || document.hidden) return;
     swipe.cancel(); timeline.clear(session.snapshot().paddle); resizeView();
-    session.resume(); loop.resetClock(performance.now());
-    screens.render(session.snapshot()); void unlockAudio();
+    session.resume(); loop.resetClock(performance.now()); screens.render(session.snapshot()); void unlockAudio();
   }
   function home(): void {
-    swipe.cancel(); audio.suspend(); session.reset(seed());
+    rememberBest(); persist(); swipe.cancel(); silence(); session.reset(seed());
     timeline.clear(INITIAL_PADDLE); audio.reset(session.snapshot().runId);
     loop.resetClock(performance.now()); screens.render(session.snapshot());
   }
-  const onResize = (): void => { pause('resize'); resizeView(); };
-  const onHidden = (): void => { if (document.hidden) pause('hidden'); };
-  const onBlur = (): void => pause('hidden');
-  const onContextLost = (event: Event): void => { event.preventDefault(); contextAvailable = false; pause('context-lost'); };
-  const onContextRestored = (): void => { contextAvailable = true; resizeView(); };
-  window.addEventListener('resize', onResize);
-  window.addEventListener('blur', onBlur);
-  window.addEventListener('pagehide', onBlur);
-  document.addEventListener('visibilitychange', onHidden);
-  screens.canvas.addEventListener('webglcontextlost', onContextLost);
-  screens.canvas.addEventListener('webglcontextrestored', onContextRestored);
-  screens.render(session.snapshot());
+  const unbindLifecycle = bindLifecycle({
+    canvas: screens.canvas, pause, resize: resizeView,
+    contextLost() { contextAvailable = false; screens.setContextAvailable(false); },
+    contextRestored() {
+      // Let the renderer's own restore listener complete before replacing its resources.
+      queueMicrotask(() => {
+        if (disposed) return;
+        try {
+          if (view) { view.dispose(); view = null; view = makeView(); }
+          contextAvailable = true; screens.setContextAvailable(true); screens.setError(''); resizeView();
+        } catch {
+          contextAvailable = false; screens.setContextAvailable(false);
+          screens.setError('描画を復旧できませんでした。ホームへ戻るか、再読み込みしてください。');
+        }
+      });
+    },
+  });
+  screens.setSound(preferences.muted); screens.setPreferences(preferences); persist(); screens.render(session.snapshot());
   let frameId = 0;
   const frame = (now: number): void => {
     if (disposed) return;
-    const result = loop.frame(now);
+    const result = loop.frame(now); rememberBest();
     if (result.snapshot.phase === 'gameover' && observedPhase !== 'gameover') {
-      swipe.cancel(); timeline.clear(result.snapshot.paddle); audio.suspend();
+      swipe.cancel(); timeline.clear(result.snapshot.paddle); silence(); persist();
     }
     if (view && contextAvailable && result.snapshot.phase !== 'ready') view.render(result.snapshot, result.events);
     screens.render(result.snapshot); observedPhase = result.snapshot.phase;
@@ -97,10 +129,9 @@ export function createApp(root: HTMLElement) {
   frameId = requestAnimationFrame(frame);
   return {
     dispose() {
-      disposed = true; cancelAnimationFrame(frameId); swipe.dispose();
-      window.removeEventListener('resize', onResize); window.removeEventListener('blur', onBlur); window.removeEventListener('pagehide', onBlur);
-      document.removeEventListener('visibilitychange', onHidden);
-      screens.canvas.removeEventListener('webglcontextlost', onContextLost); screens.canvas.removeEventListener('webglcontextrestored', onContextRestored);
+      if (disposed) return;
+      rememberBest(); persist(); disposed = true; unlockAttempt++;
+      cancelAnimationFrame(frameId); swipe.dispose(); unbindLifecycle();
       view?.dispose(); void audio.dispose(); screens.dispose();
     },
   };
