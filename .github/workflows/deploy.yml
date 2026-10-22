@@ -1,5 +1,7 @@
-name: Manual Pages release
+name: Pages release
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
     inputs:
       expected_sha:
@@ -8,6 +10,8 @@ on:
         type: string
 permissions:
   contents: read
+env:
+  EXPECTED_SHA: ${{ github.event_name == 'push' && github.sha || inputs.expected_sha }}
 concurrency:
   group: takkeu-pages
   cancel-in-progress: false
@@ -19,11 +23,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          ref: ${{ inputs.expected_sha }}
+          ref: ${{ env.EXPECTED_SHA }}
           persist-credentials: false
-      - name: Match the reviewed commit with current main
-        env:
-          EXPECTED_SHA: ${{ inputs.expected_sha }}
+      - name: Match the release commit with current main
         run: |
           set -euo pipefail
           mkdir -p artifacts
@@ -51,7 +53,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: release-verification-${{ inputs.expected_sha }}
+          name: release-verification-${{ env.EXPECTED_SHA }}
           path: |
             artifacts/
             test-results/
@@ -73,11 +75,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          ref: ${{ inputs.expected_sha }}
+          ref: ${{ env.EXPECTED_SHA }}
           persist-credentials: false
       - name: Recheck main immediately before deploying the verified artifact
-        env:
-          EXPECTED_SHA: ${{ inputs.expected_sha }}
         run: |
           set -euo pipefail
           main_sha="$(git ls-remote --refs origin refs/heads/main | cut -f1)"
