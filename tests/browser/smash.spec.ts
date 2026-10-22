@@ -27,12 +27,11 @@ test('450の予告はミュート・390・420・4球・停止中でも見え、�
   expect(await page.evaluate(() => window.stage2.snapshot())).toEqual(paused);
   await page.screenshot({ path: info.outputPath('smash-warning-paused.png') });
   await page.getByRole('button', { name: 'つづける', exact: true }).click();
-  for (let i = 0; i < 90; i++) {
-    await page.evaluate(() => window.stage2.advance(0.025));
-    if (i === 11) await page.screenshot({ path: info.outputPath('smash-departure-hidden.png') });
-    if (i === 36) await page.screenshot({ path: info.outputPath('smash-own-side.png') });
-    await page.waitForTimeout(25);
-  }
+  await page.evaluate(() => window.stage2.animate(0.3));
+  await page.screenshot({ path: info.outputPath('smash-departure-hidden.png') });
+  await page.evaluate(() => window.stage2.animate(0.65));
+  await page.screenshot({ path: info.outputPath('smash-own-side.png') });
+  await page.evaluate(() => window.stage2.animate(1.3));
   await expect(warning).toBeHidden();
   const events = await page.evaluate(() => window.stage2.events());
   expect(events.filter(e => e.kind === 'smash-warning' && e.ballId === 1)).toHaveLength(1);

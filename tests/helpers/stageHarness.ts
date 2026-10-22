@@ -54,8 +54,26 @@ function advance(seconds: number) {
   for (let i = 0; i < Math.round(seconds / DEFAULT_CONFIG.fixedDt); i++) events.push(...simulation.step().events);
   current = simulation.snapshot(); emitted.push(...events); render(events);
 }
+function animate(seconds: number): Promise<void> {
+  const initialTime = current.simTime, started = performance.now();
+  let completedTicks = 0;
+  return new Promise(resolve => {
+    const frame = (now: number) => {
+      const elapsed = Math.min(seconds, (now - started) / 1000);
+      const events: GameEvent[] = [];
+      if (simulation) {
+        const requiredTicks = Math.floor(elapsed / DEFAULT_CONFIG.fixedDt + 1e-9);
+        while (completedTicks < requiredTicks) { events.push(...simulation.step().events); completedTicks++; }
+        current = simulation.snapshot(); emitted.push(...events);
+      } else if (current.phase === 'running') current = { ...current, simTime: initialTime + elapsed };
+      render(events);
+      if (elapsed < seconds) requestAnimationFrame(frame); else resolve();
+    };
+    requestAnimationFrame(frame);
+  });
+}
 const harness = {
-  show, beginSmash, advance, events: () => emitted, pose: () => resolveOpponentPose(current),
+  show, beginSmash, advance, animate, events: () => emitted, pose: () => resolveOpponentPose(current),
   time(value: number) { if (current.phase === 'running') current = { ...current, simTime: value }; render(); },
   snapshot: () => current,
   presentation: () => resolvePresentation(current),

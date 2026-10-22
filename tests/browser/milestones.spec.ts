@@ -40,9 +40,6 @@ test('390の強弱を実描画で比較し、0.6秒の動きを保存する', as
   await info.attach('pulse-strong', { body: strong, contentType: 'image/png' });
   await info.attach('pulse-weak', { body: weak, contentType: 'image/png' });
   await page.evaluate(() => window.stage2.show(390, 0));
-  for (let i = 0; i <= 72; i++) {
-    await page.evaluate(t => window.stage2.time(t), i / 40);
-    await page.waitForTimeout(25);
-  }
+  await page.evaluate(() => window.stage2.animate(1.8));
   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('390');
 });
