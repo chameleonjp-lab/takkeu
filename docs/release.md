@@ -1,27 +1,36 @@
 # タッケウの公開手順
 
-第3段階は配布用ビルドと手順の準備まで。Pages設定の有効化・公開・マージは実行していない。
-今回の正式検証・配布候補ソースは`1e13fd4281721a2b843967a3b69b5801088da26e`。公開対象のmain SHAはユーザーのマージ後に確定し、手動実行の`expected_sha`と公開記録に明示する。この作業ブランチのSHAを現在のmainとして扱わない。
-**iPhone実機・試聴・390映像の最終点滅判定が未確認の間は、公開可能と扱わない。**
-[受入表](verification/acceptance.md)、[音の確認記録](verification/audio-review.md)、第3段階Draft PRの残件を先に確認する。
+公開URL： https://chameleonjp-lab.github.io/takkeu/ 。GitHub PagesのSourceはGitHub Actionsを使用する。
 
-## 公開前にユーザーが行うこと
+2026-10-22に第3段階PR #4がmainへマージされた。その後、ユーザーから「ページ公開」「今後マージされるPRの自動反映」の指示を受け、手動のみの公開方針を更新した。実機・試聴・390の最終点滅判定・実機性能は未確認のままであり、公開によって合格へ変更しない。[受入表](verification/acceptance.md)、[音の確認記録](verification/audio-review.md)を維持する。
+
+第3段階の正式検証ソースは`1e13fd4281721a2b843967a3b69b5801088da26e`。公開時にはマージ後の**mainの完全40文字SHA**を対象とし、そのコミットで検査・ビルドをやり直す。PR headとマージ後SHAは別の場合がある。
+
+## 自動公開
+
+PRをレビューしてmainへマージすると、`Pages release`がmainへのpushを検出する。mainへの直接pushも同じ検査を通る。PRの自動マージ設定は使用しない。
+
+pushの`github.sha`を`EXPECTED_SHA`として固定し、そのコミットをcheckoutする。型・単体・Chromium/WebKit画面・ルート／`/takkeu/`配布検査を同じcheckoutで実行し、成功した`dist`だけをPagesへ配備する。失敗した変更は公開せず、直前の配布物を維持する。
+
+検査前と配備直前に、checkout・対象SHA・現在のmainの全一致を検証する。mainが先へ進んだ古い実行は拒否し、新しいpushの実行で最新mainを検証して公開する。公開処理は直列化する。配備ジョブで再ビルドはしない。
+
+通常の更新でユーザーが行う操作は**PRのレビューとmainへのマージ**。Actionsの`Pages release`の成功と、公開後の`release.json`を確認する。Pages設定を毎回変更する必要はない。
+
+## 継続して確認する品質項目
 
 1. iPhone 17 ProのOS/Safari版、縦横、音量、品質、低電力モード等の条件を記録する。4球・390・420・450・最大速度付近を検証し、60秒の描画間隔の95%以上が25ms以下であるか測る。操作・回転・アプリ切替・画面ロック・音声復帰・VoiceOverも確認する。
 2. 自分音・相手音・4球の重なり・予告音を実際に聴き、識別と快適さを記録する。390の実動画を確認し、[WCAG 2.3.1](https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html)の頻度・明るさ・面積・赤色を判断する。不適合は表示を調整し再検証する。
-3. レビューを終え、ユーザーがPRをmainへマージする。自動マージは使用しない。
-4. 公開する**mainの完全な40文字SHA**を確定する。PR headとマージ後SHAは別の場合がある。検証済みコミットと公開対象の差分を確認し、ゲーム・入力・音・描画・設定・依存・配布設定に変更があれば該当検証をやり直す。実機・試聴・映像の対象SHAと結果をPR／検証記録へ紐付ける。
-5. 必須の未確認がなくなった後に、GitHubのSettings → PagesでSourceをGitHub Actionsにする。この設定はユーザーが行う。github-pages Environmentの承認者・main限定の配備規則も設定することを推奨する。
+3. ゲーム・入力・音・描画・設定・依存・配布設定に変更があれば該当検証を更新する。実機・試聴・映像の対象SHAと結果をPR／検証記録へ紐付ける。自動検査で実機や試聴の結果を代替しない。
 
 ## 手動公開
 
-Actions → **Manual Pages release** → Run workflowで、ブランチを`main`、`expected_sha`を上記の完全SHAにする。
+再配布など手動実行が必要な場合は、Actions → **Pages release** → Run workflowで、ブランチを`main`、`expected_sha`を現在のmainの完全SHAにする。`gh workflow run deploy.yml --ref main -f expected_sha=<完全SHA>`でも実行できる。
 
 ワークフローはそのSHA自体をcheckoutし、現在のmainと一致することを照合する。短縮SHA、別ブランチ、古いSHA、検査中に進んだmainは拒否する。PRのCIは読取権限だけで動く。
 
 同じcheckoutで依存導入、型、単体、Chromium/WebKit画面検査、ルート／`/takkeu/`の配布検査を実行する。最後に作った`dist`だけをPages成果物へ保存する。配備直前にもmainのSHAを再照合し、**同じ実行の検査済み成果物**を配備する。配備ジョブで再ビルドはしない。検査失敗時は配備へ進まない。
 
-`release-verification-<expected_sha>`成果物に全文ログ、`revision.json`、配布物のSHA-256、画像等を90日保存する。公開対象の`release.json`にもコミットと基準パスを含める。実行URLと公開対象SHAを公開記録へ残す。mainが進んだ場合は、新しい対象を確認して新しい手動実行を行う。同時配備は直列化する。
+自動・手動とも`release-verification-<対象SHA>`成果物に全文ログ、`revision.json`、配布物のSHA-256、画像等を90日保存する。公開対象の`release.json`にもコミットと基準パスを含める。実行URLと公開対象SHAを公開記録へ残す。mainが進んだ場合は最新pushの実行を確認し、必要なら最新SHAを指定して再実行する。
 
 ## 公開後の確認
 
@@ -34,9 +43,9 @@ Actions → **Manual Pages release** → Run workflowで、ブランチを`main`
 ## 以前の承認済み版へ戻す
 
 1. 公開記録と`release.json`から直前の正常な公開SHAを特定し、その検証記録・成果物を確保する。
-2. mainを強制更新しない。正常版との差分を戻すブランチを作り、問題の変更をrevertしたPRを作る。マージコミットを戻す場合は正しい親を確認する。公開のSHA照合と手動実行の仕組みは維持する。
+2. mainを強制更新しない。正常版との差分を戻すブランチを作り、問題の変更をrevertしたPRを作る。マージコミットを戻す場合は正しい親を確認する。公開のSHA照合と自動・手動実行の仕組みは維持する。
 3. 復旧PRの型・単体・画面・配布検査を通し、戻すゲーム内容と既存実機・音・映像の証拠を比較する。差異があれば再検証する。ユーザーが復旧PRをマージする。
-4. **復旧後mainの新しいSHA**を`expected_sha`として手動公開する。過去SHAをそのまま入力して最新mainの照合を回避しない。
+4. マージにより**復旧後mainの新しいSHA**が自動公開されることを確認する。再実行が必要ならそのSHAを`expected_sha`として手動公開する。過去SHAをそのまま入力して最新mainの照合を回避しない。
 5. 公開後確認を繰り返し、障害版／正常版／復旧版のSHAと実行URLを記録する。
 
 ## ローカルでの配布確認
