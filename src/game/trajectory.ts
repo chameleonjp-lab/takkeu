@@ -1,6 +1,10 @@
 import type { Point3, ReturnPlan } from './types';
 import { DEFAULT_CONFIG, TRAJECTORY } from './config';
 
+export function bounceTime(plan: ReturnPlan): number {
+  return plan.departAt + (plan.arriveAt - plan.departAt) * TRAJECTORY.bounceFraction;
+}
+
 export function sampleReturn(plan: ReturnPlan, from: Point3, time: number): Point3 {
   const u = Math.max(0, (time - plan.departAt) / (plan.arriveAt - plan.departAt));
   const bounceY = plan.bounceY ?? DEFAULT_CONFIG.ballRadius;

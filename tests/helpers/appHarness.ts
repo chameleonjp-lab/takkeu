@@ -13,7 +13,7 @@ let currentView: ReturnType<typeof createView> | null = null;
 let currentAudio: ReturnType<typeof createAudio> | null = null;
 let autoPlay = false;
 let failNextView = false;
-const metrics = { viewCreates: 0, viewDisposes: 0, smashDepartures: 0, events: [] as GameEvent[] };
+const metrics = { viewCreates: 0, viewDisposes: 0, viewRenders: 0, smashDepartures: 0, events: [] as GameEvent[] };
 const session: GameSession = {
   snapshot: () => snapshotSimulation(state), start() { startSimulation(state, DEFAULT_CONFIG); },
   step(dt, input) {
@@ -34,7 +34,7 @@ const app = createApp(document.querySelector<HTMLElement>('#app')!, {
   createView(canvas, config) {
     if (failNextView) { failNextView = false; throw new Error('verification: renderer creation failed'); }
     const view = createView(canvas, config); currentView = view; metrics.viewCreates++;
-    return { ...view, dispose() { metrics.viewDisposes++; view.dispose(); } };
+    return { ...view, render(...args) { metrics.viewRenders++; view.render(...args); }, dispose() { metrics.viewDisposes++; view.dispose(); } };
   },
 });
 function show(score: number) {

@@ -1,5 +1,7 @@
 # タッケウ 実装計画書（Implementation Plan）
 
+> 公開後のユーザー指定による接触と外観の改訂は、[要件書冒頭の改訂](../specs/2026-10-22-takkeu-design.md) と [接触修正の検証記録](../../verification/contact-fix/README.md) を優先する。以下は初回実装の完了履歴。特にT02の奥行き平面だけの判定とT05の台・相手ラケットの初期非表示を、現在の仕様として再導入しない。
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 >
 > 実装担当への補足：本人が指定した実行方法を優先する。各段階を一つずつ完了し、レビュー可能なプルリクエストを提出する。この文書の追加だけでゲームを実装済みと扱わない。

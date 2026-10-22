@@ -8,13 +8,13 @@ import { advance } from '../helpers/fixtures';
 import { scenario } from '../helpers/scenarios';
 import type { BallSnapshot } from '../../src/game/types';
 
-it('相手の台・人物・ラケットと相手側の球だけを描画で隠し、返球処理は続く', () => {
+it('参考画像に合わせ台全体と両ラケットを初めから表示し、人物・球の段階条件を保つ', () => {
   const session = createSession(DEFAULT_CONFIG, 7); session.start();
   const objects = createObjects(DEFAULT_CONFIG);
   applyPresentation(objects, session.snapshot());
-  expect(objects.opponentCourt.visible).toBe(false);
-  expect(objects.opponentEdges.visible).toBe(false);
-  expect(objects.opponentPaddle.visible).toBe(false);
+  expect(objects.opponentCourt.visible).toBe(true);
+  expect(objects.opponentEdges.visible).toBe(true);
+  expect(objects.opponentPaddle.visible).toBe(true);
   expect(objects.opponentBody.visible).toBe(false);
   expect(objects.playerCourt.visible).toBe(true);
   expect(isBallVisible(session.snapshot().balls[0]!)).toBe(false);
@@ -38,9 +38,10 @@ it('19行の進行表の部位を順に解放し、未解放の本体を漏ら�
   }
   const at70 = resolvePresentation(scenario(70).snapshot());
   expect(at70.opponentEdgesVisible).toBe(true);
-  for (const part of ['opponentCourtRight', 'opponentCourtLeft', 'opponentRacketBody', 'opponentRacketEdge', 'opponentBody'] as const) expect(at70.parts[part].visible).toBe(false);
-  expect(resolvePresentation(scenario(190).snapshot()).parts.opponentCourtLeft.visible).toBe(false);
-  expect(resolvePresentation(scenario(300).snapshot()).parts.opponentRacketBody.visible).toBe(false);
+  for (const part of ['opponentCourtRight', 'opponentCourtLeft', 'opponentRacketBody', 'opponentRacketEdge'] as const) expect(at70.parts[part]).toEqual({ visible: true, rainbow: false });
+  expect(at70.parts.opponentBody.visible).toBe(false);
+  expect(resolvePresentation(scenario(190).snapshot()).parts.opponentCourtLeft.rainbow).toBe(false);
+  expect(resolvePresentation(scenario(300).snapshot()).parts.opponentRacketBody.rainbow).toBe(false);
   expect(resolvePresentation(scenario(330).snapshot()).parts.opponentBody.visible).toBe(false);
 });
 
@@ -106,9 +107,10 @@ it('部位の材質を共有して未解放面へ色を漏らさず、描画が�
   applyPresentation(objects, snapshot);
   expect(objects.parts.selfCourtLeft.material).not.toBe(objects.parts.selfCourtRight.material);
   expect(objects.parts.opponentCourtRight.visible).toBe(true);
-  expect(objects.parts.opponentCourtLeft.visible).toBe(false);
+  expect(objects.parts.opponentCourtLeft.visible).toBe(true);
+  expect(objects.parts.opponentCourtLeft.material.vertexColors).toBe(false);
   expect(objects.parts.playerRacketBody.visible).toBe(true);
-  expect(objects.parts.opponentRacketBody.visible).toBe(false);
+  expect(objects.parts.opponentRacketBody.visible).toBe(true);
   expect(snapshot).toEqual(before);
   objects.dispose();
 });

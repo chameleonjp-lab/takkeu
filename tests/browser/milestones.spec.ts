@@ -13,10 +13,14 @@ test('専用状態で全19行の表示と発光終了を撮影する', async ({ 
     await page.evaluate(score => window.stage2.show(score, 0, score === 10 ? 5 : null), score);
     await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText(String(score));
     const parts = await page.evaluate(() => window.stage2.presentation());
-    expect(parts.opponentEdgesVisible).toBe(score >= 70);
-    expect(parts.parts.opponentCourtRight.visible).toBe(score >= 190);
-    expect(parts.parts.opponentCourtLeft.visible).toBe(score >= 240);
-    expect(parts.parts.opponentRacketBody.visible).toBe(score >= 330);
+    expect(parts.opponentEdgesVisible).toBe(true);
+    expect(parts.parts.courtEdges.rainbow).toBe(score >= 70);
+    expect(parts.parts.opponentCourtRight.visible).toBe(true);
+    expect(parts.parts.opponentCourtRight.rainbow).toBe(score >= 190);
+    expect(parts.parts.opponentCourtLeft.visible).toBe(true);
+    expect(parts.parts.opponentCourtLeft.rainbow).toBe(score >= 240);
+    expect(parts.parts.opponentRacketBody.visible).toBe(true);
+    expect(parts.parts.opponentRacketBody.rainbow).toBe(score >= 330);
     expect(parts.parts.opponentBody.visible).toBe(score >= 360);
     await page.screenshot({ path: info.outputPath(`milestone-${String(score).padStart(3, '0')}.png`) });
   }

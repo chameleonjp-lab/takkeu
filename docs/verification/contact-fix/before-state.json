@@ -1,0 +1,74 @@
+{
+  "bounce": {
+    "runId": "run-2",
+    "phase": "running",
+    "pauseReason": null,
+    "score": 0,
+    "simTime": 1.799999999999996,
+    "paddle": {
+      "x": 0,
+      "y": 0.85
+    },
+    "balls": [
+      {
+        "id": 1,
+        "phase": "incoming",
+        "position": {
+          "x": 0,
+          "y": 0.045000000000003884,
+          "z": 0.8579999999999937
+        },
+        "smash": false
+      }
+    ],
+    "progression": {
+      "appliedMilestones": [],
+      "ballGlowUntil": null
+    },
+    "scheduledReturns": [
+      {
+        "ballId": 1,
+        "departAt": 0,
+        "netCrossAt": 1.25,
+        "arriveAt": 2.5,
+        "target": {
+          "x": 0,
+          "y": 0.5
+        },
+        "smash": false,
+        "warningAt": null,
+        "speedMultiplier": 1,
+        "landingZ": 1.95,
+        "bounceY": 0.045
+      }
+    ]
+  },
+  "missed": {
+    "runId": "run-2",
+    "phase": "gameover",
+    "pauseReason": null,
+    "score": 0,
+    "simTime": 2.533333333333327,
+    "paddle": {
+      "x": 0,
+      "y": 0.85
+    },
+    "balls": [
+      {
+        "id": 1,
+        "phase": "lost",
+        "position": {
+          "x": 0,
+          "y": 0.5014540816326528,
+          "z": 1.9889999999999903
+        },
+        "smash": false
+      }
+    ],
+    "progression": {
+      "appliedMilestones": [],
+      "ballGlowUntil": null
+    },
+    "scheduledReturns": []
+  }
+}

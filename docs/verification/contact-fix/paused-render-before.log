@@ -1,0 +1,54 @@
+[WebServer] (node:32770) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:32815) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/render-loop.spec.ts:4:1 › 停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する (3.0s)
+
+
+  1) [chromium] › tests/browser/render-loop.spec.ts:4:1 › 停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する ───────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 7
+    Received: 38
+
+      11 |   const before = await page.evaluate(() => ({ count: window.stage3.metrics().viewRenders, state: window.stage3.snapshot() }));
+      12 |   await page.clock.runFor(500);
+    > 13 |   expect(await page.evaluate(() => window.stage3.metrics().viewRenders)).toBe(before.count);
+         |                                                                          ^
+      14 |   expect(await page.evaluate(() => window.stage3.snapshot())).toEqual(before.state);
+      15 |   await page.setViewportSize({ width: 844, height: 390 });
+      16 |   await page.clock.runFor(32);
+        at /workspace/takkeu/tests/browser/render-loop.spec.ts:13:74
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/render-loop-停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/render-loop-停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/render-loop-停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/render-loop-停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/render-loop-停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/render-loop.spec.ts:4:1 › 停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する ────────
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

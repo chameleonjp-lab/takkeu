@@ -1,0 +1,120 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test
+
+
+Running 52 tests using 1 worker
+
+(node:24086) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/audio.spec.ts:24:1 › 打球ノード生成失敗を案内し、ゲームを進めたまま音ボタンで復旧できる (11.2s)
+  ✓   2 [chromium] › tests/browser/audio.spec.ts:42:1 › 開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰 (23.8s)
+  ✘   3 [chromium] › tests/browser/audio.spec.ts:64:1 › 音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える (30.9s)
+(node:24269) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   4 [chromium] › tests/browser/audio.spec.ts:82:1 › 実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査 (1.4s)
+  ✓   5 [chromium] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない (1.4s)
+  ✓   6 [chromium] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない (13.0s)
+  ✓   7 [chromium] › tests/browser/lifecycle.spec.ts:39:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 (16.6s)
+  ✓   8 [chromium] › tests/browser/lifecycle.spec.ts:56:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する (18.7s)
+  ✓   9 [chromium] › tests/browser/lifecycle.spec.ts:74:1 › 実際のWEBGL_lose_contextによる喪失と復旧でも手動再開を待つ (8.3s)
+  ✓  10 [chromium] › tests/browser/lifecycle.spec.ts:92:1 › 描画再作成の失敗時も状態を壊さずホームへ戻れる (1.2s)
+  ✓  11 [chromium] › tests/browser/preferences.spec.ts:3:1 › 全設定と自己ベストが再読込・リトライを越えて残る (11.7s)
+  ✓  12 [chromium] › tests/browser/preferences.spec.ts:33:1 › 保存拒否でも設定と自己ベストをメモリに保持して遊べる (2.8s)
+  ✓  13 [chromium] › tests/browser/quality.spec.ts:4:1 › 縦横・44pxボタン・200%文字・ラベル・安全余白を確認 (4.1s)
+  ✓  14 [chromium] › tests/browser/quality.spec.ts:40:1 › 品質変更は解像度だけに作用し、4球・390・420・450・高速接触を維持する (55.2s)
+  ✓  15 [chromium] › tests/browser/quality.spec.ts:58:1 › WebGL初期化不可と復旧失敗でもホームと自己ベストを保つ (13.0s)
+  ✓  16 [chromium] › tests/browser/retry.spec.ts:5:1 › 再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない (8.9s)
+(node:25088) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  17 [chromium] › tests/browser/basic-play.spec.ts:12:1 › 開始→相対ドラッグ→返球→失球→結果→再挑戦 (16.2s)
+  ✓  18 [chromium] › tests/browser/basic-play.spec.ts:39:1 › 停止中は描画を保持し、再開操作でだけ進む (26.4s)
+  ✓  19 [chromium] › tests/browser/basic-play.spec.ts:55:1 › タッチの左右上下スワイプでラケットを動かせる (6.9s)
+  ✓  20 [chromium] › tests/browser/contact.spec.ts:5:1 › 上に構えたラケットにワンバウンドした球が触れれば返球できる (8.2s)
+  ✓  21 [chromium] › tests/browser/evidence.spec.ts:6:3 › 画面の証拠 › 縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す (7.5s)
+  ✓  22 [chromium] › tests/browser/evidence.spec.ts:41:1 › 実際のWeb Audioで自分用・相手用の異なる短音を合成できる (745ms)
+  ✓  23 [chromium] › tests/browser/milestones.spec.ts:6:1 › 専用状態で全19行の表示と発光終了を撮影する (3.1s)
+  ✓  24 [chromium] › tests/browser/milestones.spec.ts:33:1 › 390の強弱を実描画で比較し、0.6秒の動きを保存する (4.1s)
+  ✓  25 [chromium] › tests/browser/smash.spec.ts:5:1 › 450の予告はミュート・390・420・4球・停止中でも見え、球を暴露しない (6.7s)
+  ✓  26 [chromium] › tests/browser/smash.spec.ts:43:1 › 予告音を実際のWeb Audioで合成して保存する (709ms)
+(node:25820) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  27 [webkit] › tests/browser/audio.spec.ts:24:1 › 打球ノード生成失敗を案内し、ゲームを進めたまま音ボタンで復旧できる (8.4s)
+  ✓  28 [webkit] › tests/browser/audio.spec.ts:42:1 › 開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰 (10.6s)
+  ✓  29 [webkit] › tests/browser/audio.spec.ts:64:1 › 音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える (5.8s)
+  ✓  30 [webkit] › tests/browser/audio.spec.ts:82:1 › 実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査 (1.5s)
+  ✓  31 [webkit] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない (1.3s)
+  ✓  32 [webkit] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない (8.1s)
+  ✘  33 [webkit] › tests/browser/lifecycle.spec.ts:39:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 (3.3s)
+
+
+  1) [chromium] › tests/browser/audio.spec.ts:64:1 › 音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える ──────────────
+
+    Test timeout of 30000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/audio-音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/audio-音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/audio-音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/audio-音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/audio-音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit] › tests/browser/lifecycle.spec.ts:39:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 ─────
+
+    Test was interrupted.
+
+    Error: page.evaluate: Target page, context or browser has been closed
+
+      42 |   const before = await page.evaluate(() => window.stage3.snapshot());
+      43 |   await page.clock.runFor(10_000);
+    > 44 |   expect(await page.evaluate(() => window.stage3.snapshot())).toEqual(before);
+         |                     ^
+      45 |   await page.evaluate(() => { Object.defineProperty(document, 'hidden', { configurable: true, value: false }); document.dispatchEvent(new Event('visibilitychange')); window.dispatchEvent(new Event('pageshow')); });
+      46 |   await page.clock.runFor(500);
+      47 |   expect(await page.evaluate(() => window.stage3.snapshot())).toEqual(before);
+        at /workspace/takkeu/tests/browser/lifecycle.spec.ts:44:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/lifecycle-非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/lifecycle-非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/lifecycle-非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/lifecycle-非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/lifecycle-非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/audio.spec.ts:64:1 › 音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える ───────────────
+  1 interrupted
+    [webkit] › tests/browser/lifecycle.spec.ts:39:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 ──────
+  19 did not run
+  31 passed (5.8m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

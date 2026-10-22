@@ -22,7 +22,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
   if (!context) throw new Error('WebGL 2を利用できません。対応ブラウザで再読み込みしてください。');
   const renderer = new WebGLRenderer({ canvas, context, antialias: true });
   const scene = new Scene();
-  scene.background = new Color(0x0b1723);
+  scene.background = new Color(0xb29a6a);
   const camera = createCamera();
   scene.add(new HemisphereLight(0xd8f8ff, 0x17313b, 2.1));
   const light = new DirectionalLight(0xffffff, 2);

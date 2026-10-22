@@ -1,0 +1,108 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/multiball.test.ts (9 tests | 2 failed) 370ms
+   ❯ 多球の接触・落球・累計到達 (9)
+     × 接触と落球を時刻・球ID順に処理し、追加の待機球があれば終了しない 15ms
+     × 最後の球を失えば終了を一度だけ発行し、将来の報酬は追加しない 1ms
+ ❯ tests/unit/collision.test.ts (4 tests | 3 failed) 13ms
+   ❯ 移動区間と動く円形ラケットの接触 (4)
+     × 1刻みで平面を飛び越える高速球も最初の接触時刻を返す 5ms
+     × 球半径を含めた円の縁の接触を拾う 1ms
+     × 円形の範囲外や平面に届かない球は接触にしない 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/collision.test.ts > 移動区間と動く円形ラケットの接触 > 1刻みで平面を飛び越える高速球も最初の接触時刻を返す
+AssertionError: expected 0.06685926010409983 to be close to 0.47625, received difference is 0.4093907398959002, but expected 5e-8
+ ❯ tests/unit/collision.test.ts:9:18
+      7|   it('1刻みで平面を飛び越える高速球も最初の接触時刻を返す', () => {
+      8|     const time = sweepPaddleHit({ ...center, z: 0 }, { ...center, z: 4…
+      9|     expect(time).toBeCloseTo((config.paddleZ - config.ballRadius) / 4,…
+       |                  ^
+     10|   });
+     11|   it('ラケット自身の移動を相対移動として扱う', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  tests/unit/collision.test.ts > 移動区間と動く円形ラケットの接触 > 球半径を含めた円の縁の接触を拾う
+AssertionError: expected 0.2815988618915454 to be close to 0.5, received difference is 0.21840113810845457, but expected 0.000005
+ ❯ tests/unit/collision.test.ts:19:98
+     17|   it('球半径を含めた円の縁の接触を拾う', () => {
+     18|     const x = config.paddleRadius + config.ballRadius;
+     19|     expect(sweepPaddleHit({ x, y: 0.5, z: 1.5 }, { x, y: 0.5, z: 2.4 }…
+       |                                                                                                  ^
+     20|   });
+     21|   it('円形の範囲外や平面に届かない球は接触にしない', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  tests/unit/collision.test.ts > 移動区間と動く円形ラケットの接触 > 円形の範囲外や平面に届かない球は接触にしない
+AssertionError: expected 0.2844557629537391 to be null
+
+- Expected:
+null
+
++ Received:
+0.2844557629537391
+
+ ❯ tests/unit/collision.test.ts:22:112
+     20|   });
+     21|   it('円形の範囲外や平面に届かない球は接触にしない', () => {
+     22|     expect(sweepPaddleHit({ x: 0.246, y: 0.5, z: 1.5 }, { x: 0.246, y:…
+       |                                                                                                                ^
+     23|     expect(sweepPaddleHit({ ...center, z: 0 }, { ...center, z: 1 }, ce…
+     24|     expect(sweepPaddleHit({ ...center, z: 1.95 }, { ...center, z: 1.95…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  tests/unit/multiball.test.ts > 多球の接触・落球・累計到達 > 接触と落球を時刻・球ID順に処理し、追加の待機球があれば終了しない
+AssertionError: expected [ 'player-hit', 'milestone' ] to deeply equal [ 'player-hit', 'milestone', …(1) ]
+
+- Expected
++ Received
+
+  [
+    "player-hit",
+    "milestone",
+-   "ball-lost",
+  ]
+
+ ❯ tests/unit/multiball.test.ts:33:76
+     31|     s.state.balls = [incoming(2, 20.004), incoming(1, 20.005, { x: 1, …
+     32|     const { events, snapshot } = s.step();
+     33|     expect(events.filter(e => e.kind !== 'opponent-hit').map(e => e.ki…
+       |                                                                            ^
+     34|     expect(events.map(e => e.time)).toEqual(events.map(e => e.time).so…
+     35|     expect(snapshot.phase).toBe('running');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  tests/unit/multiball.test.ts > 多球の接触・落球・累計到達 > 最後の球を失えば終了を一度だけ発行し、将来の報酬は追加しない
+AssertionError: expected [] to deeply equal [ 'ball-lost', 'game-over' ]
+
+- Expected
++ Received
+
+- [
+-   "ball-lost",
+-   "game-over",
+- ]
++ []
+
+ ❯ tests/unit/multiball.test.ts:43:44
+     41|     s.state.balls = [incoming(1, 20.001, { x: 1, y: 0.5 }, 20, 0.1)];
+     42|     const result = s.step();
+     43|     expect(result.events.map(e => e.kind)).toEqual(['ball-lost', 'game…
+       |                                            ^
+     44|     expect(s.snapshot().balls.filter(b => b.phase !== 'lost')).toHaveL…
+     45|     expect(s.step().events).toEqual([]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  2 failed | 3 passed (5)
+      Tests  5 failed | 19 passed (24)
+   Start at  16:16:43
+   Duration  1.63s (tests 55%, transform 31%, import 13%, worker 1%)
+
