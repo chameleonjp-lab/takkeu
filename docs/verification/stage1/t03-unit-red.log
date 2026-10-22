@@ -1,0 +1,273 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/swipe.test.ts tests/unit/input-timeline.test.ts tests/unit/audio-events.test.ts tests/unit/loop.test.ts tests/unit/presentation.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/audio-events.test.ts (3 tests | 2 failed) 14ms
+   ❯ 接触イベントから自他の音を生成 (3)
+     × 不可視に関係なく自他で異なる波形と高さを作り、同じ接触は一度だけ発音する 8ms
+     × 停止・消音中の音とリトライ前の古いイベントを捨てる 3ms
+ ❯ tests/unit/loop.test.ts (3 tests | 3 failed) 17ms
+   ❯ 実際の固定刻みループ (3)
+     × 30/60/120Hzの描画で、時刻付き入力から同じ得点・残球・進行となる 10ms
+     × 0.10秒を超すフレームは追いつき計算せず停止し、再開前の時間を捨てる 4ms
+     × 1描画中の全刻みのイベントを音側へ一度ずつ渡し、描画にも集約する 1ms
+ ❯ tests/unit/input-timeline.test.ts (2 tests | 2 failed) 9ms
+   × 未来の入力を先取りせず、同時刻では最後の入力を使う 8ms
+   × clearは停止前の未適用目標を捨てて実位置を保持する 1ms
+ ❯ tests/unit/presentation.test.ts (1 test | 1 failed) 8ms
+   × 相手の台・人物・ラケットと相手側の球だけを描画で隠し、返球処理は続く 7ms
+ ❯ tests/unit/swipe.test.ts (4 tests | 4 failed) 27ms
+   ❯ 相対スワイプとマウスドラッグ (4)
+     × 触れた位置に瞬間移動せず、左右上下の移動差分だけを反映する 18ms
+     × 指を離したら未追従の目標を捨て、実位置を保持する 3ms
+     × 2本目の指とボタン操作を無視し、異常中断だけを通知する 3ms
+     × 領域外も追跡し、cancelとdisposeで入力を解除する 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 12 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/audio-events.test.ts > 接触イベントから自他の音を生成 > 不可視に関係なく自他で異なる波形と高さを作り、同じ接触は一度だけ発音する
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/audio-events.test.ts:13:34
+     11|     const audio = createAudio(DEFAULT_CONFIG, () => context);
+     12|     audio.reset('run-1');
+     13|     expect(await audio.unlock()).toBe(true);
+       |                                  ^
+     14|     audio.consume([event('player-hit', '1'), event('opponent-hit', '2'…
+     15|     expect(voices).toHaveLength(2);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯
+
+ FAIL  tests/unit/audio-events.test.ts > 接触イベントから自他の音を生成 > 停止・消音中の音とリトライ前の古いイベントを捨てる
+AssertionError: expected [] to have a length of 2 but got +0
+
+- Expected
++ Received
+
+- 2
++ 0
+
+ ❯ tests/unit/audio-events.test.ts:32:20
+     30|     audio.reset('run-2');
+     31|     audio.consume([event('player-hit', 'old', 'run-1'), event('opponen…
+     32|     expect(voices).toHaveLength(2);
+       |                    ^
+     33|     await audio.dispose();
+     34|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯
+
+ FAIL  tests/unit/input-timeline.test.ts > 未来の入力を先取りせず、同時刻では最後の入力を使う
+AssertionError: expected { x: +0, y: 0.5 } to deeply equal { x: -0.2, y: 0.4 }
+
+- Expected
++ Received
+
+  {
+-   "x": -0.2,
+-   "y": 0.4,
++   "x": 0,
++   "y": 0.5,
+  }
+
+ ❯ tests/unit/input-timeline.test.ts:10:41
+      8|   timeline.enqueue({ at: 0.2, target: { x: 0.7, y: 0.7 } });
+      9|   expect(timeline.sampleAt(0.09).target).toEqual({ x: 0, y: 0.5 });
+     10|   expect(timeline.sampleAt(0.1).target).toEqual({ x: -0.2, y: 0.4 });
+       |                                         ^
+     11|   expect(timeline.sampleAt(0.19).target).toEqual({ x: -0.2, y: 0.4 });
+     12|   expect(timeline.sampleAt(0.2).target).toEqual({ x: 0.7, y: 0.7 });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/12]⎯
+
+ FAIL  tests/unit/input-timeline.test.ts > clearは停止前の未適用目標を捨てて実位置を保持する
+AssertionError: expected { x: +0, y: 0.5 } to deeply equal { x: 0.1, y: 0.4 }
+
+- Expected
++ Received
+
+  {
+-   "x": 0.1,
+-   "y": 0.4,
++   "x": 0,
++   "y": 0.5,
+  }
+
+ ❯ tests/unit/input-timeline.test.ts:19:40
+     17|   timeline.enqueue({ at: 1, target: { x: 1, y: 0.8 } });
+     18|   timeline.clear({ x: 0.1, y: 0.4 });
+     19|   expect(timeline.sampleAt(10).target).toEqual({ x: 0.1, y: 0.4 });
+       |                                        ^
+     20| });
+     21|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/12]⎯
+
+ FAIL  tests/unit/loop.test.ts > 実際の固定刻みループ > 30/60/120Hzの描画で、時刻付き入力から同じ得点・残球・進行となる
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/loop.test.ts:21:34
+     19|   }
+     20|   it('30/60/120Hzの描画で、時刻付き入力から同じ得点・残球・進行となる', () => {
+     21|     expect(run(120).state.score).toBe(1);
+       |                                  ^
+     22|     expect(run(30)).toEqual(run(120));
+     23|     expect(run(60)).toEqual(run(120));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/12]⎯
+
+ FAIL  tests/unit/loop.test.ts > 実際の固定刻みループ > 0.10秒を超すフレームは追いつき計算せず停止し、再開前の時間を捨てる
+AssertionError: expected { runId: 'session-2-run-0', …(8) } to match object { phase: 'paused', simTime: +0, …(1) }
+(10 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "pauseReason": "slow-frame",
+-   "phase": "paused",
++   "pauseReason": null,
++   "phase": "running",
+    "simTime": 0,
+  }
+
+ ❯ tests/unit/loop.test.ts:33:32
+     31|     const time = session.snapshot().simTime;
+     32|     loop.frame(121);
+     33|     expect(session.snapshot()).toMatchObject({ phase: 'paused', simTim…
+       |                                ^
+     34|     expect(reasons).toEqual(['slow-frame']);
+     35|     loop.frame(10_000);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/12]⎯
+
+ FAIL  tests/unit/loop.test.ts > 実際の固定刻みループ > 1描画中の全刻みのイベントを音側へ一度ずつ渡し、描画にも集約する
+AssertionError: expected 0 to be greater than or equal to 3
+ ❯ tests/unit/loop.test.ts:47:29
+     45|     loop.resetClock(0);
+     46|     const result = loop.frame(100);
+     47|     expect(received.length).toBeGreaterThanOrEqual(3);
+       |                             ^
+     48|     expect(result.events).toEqual(received);
+     49|     expect(new Set(received.map(e => e.id)).size).toBe(received.length…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/12]⎯
+
+ FAIL  tests/unit/presentation.test.ts > 相手の台・人物・ラケットと相手側の球だけを描画で隠し、返球処理は続く
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/presentation.test.ts:12:41
+     10|   const objects = createObjects(DEFAULT_CONFIG);
+     11|   applyPresentation(objects, session.snapshot());
+     12|   expect(objects.opponentCourt.visible).toBe(false);
+       |                                         ^
+     13|   expect(objects.opponentEdges.visible).toBe(false);
+     14|   expect(objects.opponentPaddle.visible).toBe(false);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/12]⎯
+
+ FAIL  tests/unit/swipe.test.ts > 相対スワイプとマウスドラッグ > 触れた位置に瞬間移動せず、左右上下の移動差分だけを反映する
+AssertionError: expected undefined to deeply equal { x: +0, y: 0.5 }
+
+- Expected:
+{
+  "x": 0,
+  "y": 0.5,
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/swipe.test.ts:29:36
+     27|     const { pointer, samples, controller } = setup();
+     28|     pointer('pointerdown', 180, 90);
+     29|     expect(samples.at(-1)?.target).toEqual({ x: 0, y: 0.5 });
+       |                                    ^
+     30|     pointer('pointermove', 200, 70);
+     31|     expect(samples.at(-1)?.target.x).toBeCloseTo(0.21);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/12]⎯
+
+ FAIL  tests/unit/swipe.test.ts > 相対スワイプとマウスドラッグ > 指を離したら未追従の目標を捨て、実位置を保持する
+AssertionError: expected undefined to deeply equal { x: 0.1, y: 0.55 }
+
+- Expected:
+{
+  "x": 0.1,
+  "y": 0.55,
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/swipe.test.ts:43:36
+     41|     state.paddle = { x: 0.1, y: 0.55 };
+     42|     pointer('pointerup', 180, 0);
+     43|     expect(samples.at(-1)?.target).toEqual(state.paddle);
+       |                                    ^
+     44|     const count = samples.length;
+     45|     pointer('lostpointercapture', 180, 0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/12]⎯
+
+ FAIL  tests/unit/swipe.test.ts > 相対スワイプとマウスドラッグ > 2本目の指とボタン操作を無視し、異常中断だけを通知する
+AssertionError: expected undefined to deeply equal { x: +0, y: 0.5 }
+
+- Expected:
+{
+  "x": 0,
+  "y": 0.5,
+}
+
++ Received:
+undefined
+
+ ❯ tests/unit/swipe.test.ts:58:36
+     56|     pointer('pointerdown', 150, 10, 2);
+     57|     pointer('pointermove', 180, 10, 2);
+     58|     expect(samples.at(-1)?.target).toEqual(state.paddle);
+       |                                    ^
+     59|     pointer('pointercancel', 50, 50);
+     60|     expect(state.interruptions).toBe(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/12]⎯
+
+ FAIL  tests/unit/swipe.test.ts > 相対スワイプとマウスドラッグ > 領域外も追跡し、cancelとdisposeで入力を解除する
+AssertionError: expected undefined to be close to 0.21, received difference is NaN, but expected 0.005
+ ❯ tests/unit/swipe.test.ts:68:38
+     66|     pointer('pointerdown', 50, 50);
+     67|     pointer('pointermove', 70, 50, 1, document);
+     68|     expect(samples.at(-1)?.target.x).toBeCloseTo(0.21);
+       |                                      ^
+     69|     controller.cancel();
+     70|     expect(samples.at(-1)?.target).toEqual(state.paddle);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/12]⎯
+
+
+ Test Files  5 failed (5)
+      Tests  12 failed | 1 passed (13)
+   Start at  11:46:20
+   Duration  667ms (environment 59%, transform 19%, import 11%, tests 9%, worker 2%)
+

@@ -1,0 +1,147 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/basic-play.spec.ts --project=chromium
+
+[WebServer] (node:3537) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:3550) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 3 tests using 1 worker
+
+(node:3574) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/basic-play.spec.ts:10:1 › 開始→相対ドラッグ→返球→失球→結果→再挑戦 (5.5s)
+(node:3658) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  2 [chromium] › tests/browser/basic-play.spec.ts:37:1 › 停止中は描画を保持し、再開操作でだけ進む (30.6s)
+(node:3744) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  3 [chromium] › tests/browser/basic-play.spec.ts:50:1 › タッチの左右上下スワイプでラケットを動かせる (30.6s)
+
+
+  1) [chromium] › tests/browser/basic-play.spec.ts:10:1 › 開始→相対ドラッグ→返球→失球→結果→再挑戦 ───────────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByTestId('input-surface')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByTestId('input-surface') with timeout 5000ms
+      - waiting for getByTestId('input-surface')
+
+
+      11 |   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+      12 |   const surface = page.getByTestId('input-surface');
+    > 13 |   await expect(surface).toBeVisible();
+         |                         ^
+      14 |   const box = (await surface.boundingBox())!;
+      15 |   // A far corner touch without movement must leave the paddle at its center.
+      16 |   await page.mouse.move(box.x + box.width * 0.85, box.y + box.height * 0.85);
+        at /workspace/takkeu/tests/browser/basic-play.spec.ts:13:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/basic-play-開始→相対ドラッグ→返球→失球→結果→再挑戦-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/basic-play-開始→相対ドラッグ→返球→失球→結果→再挑戦-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/basic-play-開始→相対ドラッグ→返球→失球→結果→再挑戦-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/basic-play-開始→相対ドラッグ→返球→失球→結果→再挑戦-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/basic-play-開始→相対ドラッグ→返球→失球→結果→再挑戦-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/browser/basic-play.spec.ts:37:1 › 停止中は描画を保持し、再開操作でだけ進む ─────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: '一時停止', exact: true })
+
+
+      38 |   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+      39 |   await page.clock.runFor(1800);
+    > 40 |   await page.getByRole('button', { name: '一時停止', exact: true }).click();
+         |                                                                 ^
+      41 |   await expect(page.getByRole('heading', { name: 'ひと休み' })).toBeVisible();
+      42 |   const before = await page.getByTestId('game-screen').screenshot();
+      43 |   await page.clock.runFor(5000);
+        at /workspace/takkeu/tests/browser/basic-play.spec.ts:40:65
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/basic-play-停止中は描画を保持し、再開操作でだけ進む-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/basic-play-停止中は描画を保持し、再開操作でだけ進む-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/basic-play-停止中は描画を保持し、再開操作でだけ進む-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/basic-play-停止中は描画を保持し、再開操作でだけ進む-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/basic-play-停止中は描画を保持し、再開操作でだけ進む-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/browser/basic-play.spec.ts:50:1 › タッチの左右上下スワイプでラケットを動かせる ───────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.boundingBox: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByTestId('input-surface')
+
+
+      51 |   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+      52 |   const surface = page.getByTestId('input-surface');
+    > 53 |   const box = (await surface.boundingBox())!;
+         |                              ^
+      54 |   const position = { x: box.x + box.width * 0.15, y: box.y + box.height * 0.8 };
+      55 |   await surface.dispatchEvent('pointerdown', { pointerId: 10, pointerType: 'touch', clientX: position.x, clientY: position.y, button: 0 });
+      56 |   await surface.dispatchEvent('pointermove', { pointerId: 10, pointerType: 'touch', clientX: position.x + box.width * 0.8, clientY: position.y - 100 });
+        at /workspace/takkeu/tests/browser/basic-play.spec.ts:53:30
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/basic-play-タッチの左右上下スワイプでラケットを動かせる-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/basic-play-タッチの左右上下スワイプでラケットを動かせる-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/basic-play-タッチの左右上下スワイプでラケットを動かせる-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/basic-play-タッチの左右上下スワイプでラケットを動かせる-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/basic-play-タッチの左右上下スワイプでラケットを動かせる-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › tests/browser/basic-play.spec.ts:10:1 › 開始→相対ドラッグ→返球→失球→結果→再挑戦 ────────────────────
+    [chromium] › tests/browser/basic-play.spec.ts:37:1 › 停止中は描画を保持し、再開操作でだけ進む ──────────────────────
+    [chromium] › tests/browser/basic-play.spec.ts:50:1 › タッチの左右上下スワイプでラケットを動かせる ────────────────────
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

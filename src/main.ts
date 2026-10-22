@@ -1,3 +1,5 @@
-import { mountHome } from './ui/screens';
+import { createApp } from './app/createApp';
+import './ui/styles.css';
 
-mountHome(document.querySelector<HTMLDivElement>('#app')!);
+const app = createApp(document.querySelector<HTMLDivElement>('#app')!);
+if (import.meta.hot) import.meta.hot.dispose(() => app.dispose());
