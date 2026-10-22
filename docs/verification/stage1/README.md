@@ -68,4 +68,10 @@ Linux Debian 13、Node.js 24.19.0、npm 11.9.0、Playwright 1.64.1付属のChrom
 
 T04では `GameSession` の1球内部状態を複数球・返球予約へ拡張し、共通の `GameSnapshot` / `ReturnPlan` / イベント契約を保つ。T05では `presentation.ts` と分割した描画部品へ可視解放を追加する。T06では相手の判断とスマッシュを追加する。不可視を計算停止へ使わず、すべての固定刻みのイベントを音へ渡し、描画へまとめる境界を維持する。
 
-PRとCIの実行URL・最終状態はPR本文で追跡する。CIのログと対象SHAは各実行の `verification-<sha>` 成果物にも保存する。
+## Draft PRとCI
+
+[Draft PR #2](https://github.com/chameleonjp-lab/takkeu/pull/2) を `feat/stage1-basic-rally` → `main` で提出した。実装後もmainは基準コミット `2e7bbb5` のままであることを再取得して確認した。マージ・公開・自動マージは実行していない。
+
+ソース検証対象 `9908970` の [GitHub Actions実行](https://github.com/chameleonjp-lab/takkeu/actions/runs/39776788535) は**成功**。型・単体29件・ビルド・画面12件と成果物保存がすべて成功した。[CI全文ログ](ci-source-9908970.log) と [ジョブ／成果物の正式メタデータ](ci-source-9908970.json) を保存した。成果物 `verification-9908970e0c26848f6dd021d89b5d0f3428a3d19a`（ID 12425325825）には各コマンド全文、画像・動画・JSON・対象SHAが含まれる。
+
+PR最新コミットのCI実行URL・最終状態はPR本文でも追跡する。各実行の `verification-<sha>` 成果物は30日保持。上記のソース対象については期限後も読める全文ログと主な証拠をこのディレクトリへ保存している。

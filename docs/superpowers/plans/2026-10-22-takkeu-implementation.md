@@ -147,11 +147,11 @@ T01で次のスクリプトを用意する。T01以前に実行できると主�
 
 **Interfaces:** 生成＝3節の型、`GameConfig`、`DEFAULT_CONFIG`。ブラウザ検査の`webServer`と`baseURL`を設定し、ホームの見出し「タッケウ」を読み取れるようにする。
 
-- [ ] 公式の実行環境要件を確認し、互換性のあるThree.js・Vite・TypeScript・検証ツールの版を固定する。採用版と確認URLを`docs/progress.md`へ記録する。
-- [ ] `boot.spec.ts`へ、ホームにタイトルと開始ボタンがあり、ゲーム未開始のまま表示される検査を書く。
-- [ ] テスト環境と最低限の空の起動先を用意し、`npm run test:browser -- tests/browser/boot.spec.ts`が「期待するホームがない」理由で失敗することを確認する。依存不足による失敗を機能検証の代わりにしない。
-- [ ] 起動先、ホーム、共通の型、要件書の初期値を実装する。CIは読取権限を基本とし、テスト出力を省略せず成果物へ保存する。
-- [ ] 同じ検査、`npm run typecheck`、`npm run build`を実行し、成功したコマンドと全文結果を保存してコミットする。
+- [x] 公式の実行環境要件を確認し、互換性のあるThree.js・Vite・TypeScript・検証ツールの版を固定する。採用版と確認URLを`docs/progress.md`へ記録する。
+- [x] `boot.spec.ts`へ、ホームにタイトルと開始ボタンがあり、ゲーム未開始のまま表示される検査を書く。
+- [x] テスト環境と最低限の空の起動先を用意し、`npm run test:browser -- tests/browser/boot.spec.ts`が「期待するホームがない」理由で失敗することを確認する。依存不足による失敗を機能検証の代わりにしない。
+- [x] 起動先、ホーム、共通の型、要件書の初期値を実装する。CIは読取権限を基本とし、テスト出力を省略せず成果物へ保存する。
+- [x] 同じ検査、`npm run typecheck`、`npm run build`を実行し、成功したコマンドと全文結果を保存してコミットする。
 
 **完了条件:** ホームを起動でき、`index.html`にゲームロジックがない。ゲームコードとテスト環境の版が固定されている。
 
@@ -161,11 +161,11 @@ T01で次のスクリプトを用意する。T01以前に実行できると主�
 
 **Interfaces:** 使用＝T01の型と設定。生成＝`createSession(config, seed)`。接触計算は`sweepPaddleHit(ballFrom: Point3, ballTo: Point3, paddleFrom: PaddlePoint, paddleTo: PaddlePoint, config: GameConfig): number | null`として、接触した移動区間の割合0〜1を返す。軌道は`sampleReturn(plan: ReturnPlan, from: Point3, time: number): Point3`で評価する。フィクスチャはテスト側だけから初期球・得点・時刻を指定でき、配布入口から読み込まない。
 
-- [ ] `session.test.ts`で、自分の接触1回→得点1・`player-hit`1件、同じ接触継続→追加0、相手の接触→得点0増・`opponent-hit`1件、落球→生存0・`game-over`1件を検査する。
-- [ ] `collision.test.ts`で、1刻みで打球平面をまたぐ高速球、移動中のラケット、円の縁に触れる球、範囲外の球を配置し、接触時刻または`null`を照合する。描画用の光の半径は使わない。
-- [ ] `npm run test:unit -- tests/unit/session.test.ts tests/unit/collision.test.ts`で未実装の失敗を確認する。
-- [ ] 相手への自動返球、相手の確実な返球、台で弾む軌道、接触ロック、落球、時刻順処理を実装する。`pause`中は時刻と球を進めない。球の内部状態は描画オブジェクトから分離する。
-- [ ] 同じ単体検査と型検査を通す。入力時刻を固定した30/60/120回描画の再現検査を`replay.ts`で追加し、得点・残球・到達段階が一致することを確認してコミットする。
+- [x] `session.test.ts`で、自分の接触1回→得点1・`player-hit`1件、同じ接触継続→追加0、相手の接触→得点0増・`opponent-hit`1件、落球→生存0・`game-over`1件を検査する。
+- [x] `collision.test.ts`で、1刻みで打球平面をまたぐ高速球、移動中のラケット、円の縁に触れる球、範囲外の球を配置し、接触時刻または`null`を照合する。描画用の光の半径は使わない。
+- [x] `npm run test:unit -- tests/unit/session.test.ts tests/unit/collision.test.ts`で未実装の失敗を確認する。
+- [x] 相手への自動返球、相手の確実な返球、台で弾む軌道、接触ロック、落球、時刻順処理を実装する。`pause`中は時刻と球を進めない。球の内部状態は描画オブジェクトから分離する。
+- [x] 同じ単体検査と型検査を通す。入力時刻を固定した30/60/120回描画の再現検査を`replay.ts`で追加し、得点・残球・到達段階が一致することを確認してコミットする。
 
 **完了条件:** Q01、Q02の基本部分、Q09が成立する。台の弾みや相手の打球で誤加点しない。
 
@@ -175,11 +175,11 @@ T01で次のスクリプトを用意する。T01以前に実行できると主�
 
 **Interfaces:** 使用＝T02の`GameSession`、`StepResult`。生成＝`createView(canvas, config): GameView`、`GameView.render(snapshot, events: readonly GameEvent[]): void`／`resize(width, height): void`／`dispose(): void`。入力は`createSwipeController(element, options: SwipeOptions): SwipeController`を使い、`updateMapping(mapping)`、`cancel()`、`dispose()`を公開する。`SwipeOptions`は`mapping`、`onTarget(sample: InputSample)`、`getPaddlePosition(): PaddlePoint`、`toSimTime(eventTimestamp: number): number`、`onInterruption(): void`を持つ。指離れ・中断時は最新の実ラケット位置を新しい目標として通知する。異常中断だけは`onInterruption`から`pause('input-lost')`を呼ぶ。`mapping`は操作平面の画面上の範囲とゲーム内範囲を持つ。音は`createAudio(config): GameAudio`を使い、`unlock(): Promise<boolean>`、`consume(events): void`、`setVolume(value): void`、`setMuted(value): void`、`suspend(): void`、`reset(runId: string): void`、`dispose(): Promise<void>`を公開する。
 
-- [ ] `swipe.test.ts`で触れた瞬間の移動0、差分での移動、範囲制限、指離れ後の実位置保持（未追従目標を破棄）、2本目の指の無視を検査する。`audio-events.test.ts`で2種類のイベントが異なる音生成へ1回ずつ渡ることを検査する。`input-timeline.test.ts`では同じ刻みに複数入力がある場合と、未到来時刻の入力を先取りしないことを検査する。
-- [ ] `basic-play.spec.ts`へ開始→スワイプ→成功→失球→結果→再挑戦、開始時の相手側非表示、停止中の時刻保持を追加し、未実装部分の失敗を確認する。
-- [ ] 固定視点、部位を分けた形状、相対スワイプ、接触時の控えめな表示、得点・残球・結果画面を実装する。相手側の不可視は5節の部位単位にする。
-- [ ] 開始操作内で音声を開始し、自分用と相手用の短音を生成する。音声開始失敗は無音継続にする。ループは1/120秒刻みで進め、描画間隔0.10秒超は停止する。各刻みのイベントを音へ1回ずつ渡し、1描画内の全イベントを配列にまとめて`GameView.render`へ渡す。音は初期化時とリトライ時に`reset(session.snapshot().runId)`してから受け付ける。
-- [ ] 関連単体検査、`basic-play.spec.ts`、ビルドを通し、1球の操作動画・自他の音の確認メモを保存する。実機未確認ならそのまま記録し、第1段階PRを作成する。
+- [x] `swipe.test.ts`で触れた瞬間の移動0、差分での移動、範囲制限、指離れ後の実位置保持（未追従目標を破棄）、2本目の指の無視を検査する。`audio-events.test.ts`で2種類のイベントが異なる音生成へ1回ずつ渡ることを検査する。`input-timeline.test.ts`では同じ刻みに複数入力がある場合と、未到来時刻の入力を先取りしないことを検査する。
+- [x] `basic-play.spec.ts`へ開始→スワイプ→成功→失球→結果→再挑戦、開始時の相手側非表示、停止中の時刻保持を追加し、未実装部分の失敗を確認する。
+- [x] 固定視点、部位を分けた形状、相対スワイプ、接触時の控えめな表示、得点・残球・結果画面を実装する。相手側の不可視は5節の部位単位にする。
+- [x] 開始操作内で音声を開始し、自分用と相手用の短音を生成する。音声開始失敗は無音継続にする。ループは1/120秒刻みで進め、描画間隔0.10秒超は停止する。各刻みのイベントを音へ1回ずつ渡し、1描画内の全イベントを配列にまとめて`GameView.render`へ渡す。音は初期化時とリトライ時に`reset(session.snapshot().runId)`してから受け付ける。
+- [x] 関連単体検査、`basic-play.spec.ts`、ビルドを通し、1球の操作動画・自他の音の確認メモを保存する。実機未確認ならそのまま記録し、第1段階PRを作成する。
 
 **第1段階PR完了条件:** 一連の操作が成立する。相手が見えなくても相手の返球音が鳴る。後半機能はまだ未実装と明示する。
 
