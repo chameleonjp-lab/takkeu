@@ -9,6 +9,7 @@ for (const [port, base] of [[4174, '/'], [4175, '/takkeu/']] as const) {
     page.on('response', r => { if (r.status() >= 400) failures.push(`${r.status()} ${r.url()}`); });
     await page.goto(origin + base + '?score=450&debug=1');
     await expect(page.getByRole('heading', { name: 'タッケウ', exact: true })).toBeVisible();
+    expect(await page.locator('.home-art img').evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
     const revision = await (await request.get(origin + base + 'release.json')).json();
     expect(revision.commit).toBe(execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim());
     expect(revision.base).toBe(base);

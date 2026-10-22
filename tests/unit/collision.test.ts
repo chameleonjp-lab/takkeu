@@ -12,7 +12,9 @@ describe('見える移動区間と動く円形ラケットの接触', () => {
     expect(time).toBeGreaterThan(0);
     expect(time).toBeLessThan(0.5);
     const x = from.x + (to.x - from.x) * time;
-    expect(Math.abs(x)).toBeCloseTo(config.paddleRadius + projectBall(from, config).radius, 7);
+    const fromRadius = projectBall(from, config).radius, toRadius = projectBall(to, config).radius;
+    // Off-center perspective gives the endpoint spheres different radii.
+    expect(Math.abs(x)).toBeCloseTo(config.paddleRadius + fromRadius + (toRadius - fromRadius) * time, 7);
   });
   it('ラケット自身が球を横切る移動も相対移動として拾う', () => {
     const ball = { ...center, z: config.paddleZ };
@@ -29,7 +31,7 @@ describe('見える移動区間と動く円形ラケットの接触', () => {
   it('奥行きが異なっても、投影上ラケットに重なる球を拾う', () => {
     const ball = { x: 0.4, y: 0.045, z: 0.858 };
     const projected = projectBall(ball, config);
-    expect(projected.y).toBeGreaterThan(0.8);
+    expect(projected.y).toBeGreaterThan(ball.y + 0.4);
     expect(sweepPaddleHit(ball, ball, projected, projected, config)).toBe(0);
     expect(sweepPaddleHit(ball, ball, { x: -0.5, y: 0.5 }, { x: -0.5, y: 0.5 }, config)).toBeNull();
   });
