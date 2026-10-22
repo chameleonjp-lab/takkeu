@@ -27,6 +27,12 @@
 
 [PR #5](https://github.com/chameleonjp-lab/takkeu/pull/5)のCIと、マージ後mainのpushで開始される`Pages release`を追跡する。PR本文に最終run URL・公開SHA・公開後確認を記録する。検証ログ・`revision.json`・配布SHA-256は各公開runの`release-verification-<対象SHA>`成果物に保存する。
 
+PR #5は2026-10-22 15:10 UTCにmain `fe488a01864b2449f334584e0d2260a3c5670549`へマージされ、[自動公開run 39802282136](https://github.com/chameleonjp-lab/takkeu/actions/runs/39802282136)がpushで起動した。
+
+mainの[CI run 39802282118](https://github.com/chameleonjp-lab/takkeu/actions/runs/39802282118)初回は、15分の時間制限でcancelled。npm ciは1秒で成功し、続くPlaywright用のUbuntuライブラリ取得が原因だった。Azure Ubuntuミラーからの数MBの取得に数分かかり、15分時点でもパッケージ取得中で、型・ゲームテストへ進んでいない。[初回CI全文](main-ci-mirror-timeout.log)。自動公開も同じミラーで18分近く取得を続けていたため中断し、初回配布物を維持した。[公開初回の全文](automatic-mirror-cancelled.log)。正常な取消し要求後も実行が終了しなかったためforce-cancelし、両runを同一SHAで再実行した。
+
+再実行でも依存導入が長引いたため、CI／公開ジョブのUbuntu 24.04のAPT mirrorlistを公式の`https://archive.ubuntu.com/ubuntu`へ切り替える。APTの署名検証とUbuntuのパッケージ系列は維持し、ゲーム・npm lockfile・検査項目・SHA照合・時間制限は変更しない。ローカルから公式noble／noble-securityのInReleaseが証明書検証ありで200になることを確認した。実際のGitHub実行での導入・検査・公開成功は、修正PRのCIとmainの公開runで別に確認する。
+
 ## ローカル検証
 
 2026-10-22 15:04〜15:05 UTC、上記mainを基準にworkflowと文書だけを変更した作業ツリーで実行した。ゲーム・テスト・配布スクリプトは変更していない。ログ内の`release.json`は当時のHEADである上記mainを示す。設定変更自体の確定コミットはPRのCIと公開ワークフローで追跡する。

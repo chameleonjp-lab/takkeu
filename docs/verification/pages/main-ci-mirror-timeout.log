@@ -1,0 +1,427 @@
+verify	Set up job	﻿2026-10-22T15:10:22.5755624Z Current runner version: '2.338.0'
+verify	Set up job	2026-10-22T15:10:22.5771590Z ##[group]Runner Image Provisioner
+verify	Set up job	2026-10-22T15:10:22.5772207Z Hosted Compute Agent
+verify	Set up job	2026-10-22T15:10:22.5772613Z Version: 20261021.618
+verify	Set up job	2026-10-22T15:10:22.5773020Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+verify	Set up job	2026-10-22T15:10:22.5773472Z Build Date: 2026-10-21T00:45:21Z
+verify	Set up job	2026-10-22T15:10:22.5773914Z Worker ID: {5f55bf07-43ed-4f65-9ada-1ee0254b3311}
+verify	Set up job	2026-10-22T15:10:22.5774382Z Region: westus3
+verify	Set up job	2026-10-22T15:10:22.5774822Z Cloud: Azure
+verify	Set up job	2026-10-22T15:10:22.5775186Z ##[endgroup]
+verify	Set up job	2026-10-22T15:10:22.5775926Z ##[group]Operating System
+verify	Set up job	2026-10-22T15:10:22.5776463Z Ubuntu
+verify	Set up job	2026-10-22T15:10:22.5776934Z 24.04.5
+verify	Set up job	2026-10-22T15:10:22.5777290Z LTS
+verify	Set up job	2026-10-22T15:10:22.5777858Z ##[endgroup]
+verify	Set up job	2026-10-22T15:10:22.5778249Z ##[group]Runner Image
+verify	Set up job	2026-10-22T15:10:22.5778621Z Image: ubuntu-24.04
+verify	Set up job	2026-10-22T15:10:22.5779036Z Version: 20261021.345.10
+verify	Set up job	2026-10-22T15:10:22.5779689Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261021.345/images/ubuntu/Ubuntu2404-Readme.md
+verify	Set up job	2026-10-22T15:10:22.5780723Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261021.345
+verify	Set up job	2026-10-22T15:10:22.5781299Z ##[endgroup]
+verify	Set up job	2026-10-22T15:10:22.5782006Z ##[group]GITHUB_TOKEN Permissions
+verify	Set up job	2026-10-22T15:10:22.5783247Z Contents: read
+verify	Set up job	2026-10-22T15:10:22.5783657Z Metadata: read
+verify	Set up job	2026-10-22T15:10:22.5784003Z ##[endgroup]
+verify	Set up job	2026-10-22T15:10:22.5785462Z Secret source: Actions
+verify	Set up job	2026-10-22T15:10:22.5786107Z Cache mode: write
+verify	Set up job	2026-10-22T15:10:22.5786836Z Prepare workflow directory
+verify	Set up job	2026-10-22T15:10:22.5990217Z Prepare all required actions
+verify	Set up job	2026-10-22T15:10:22.6020743Z Getting action download info
+verify	Set up job	2026-10-22T15:10:22.8982031Z Download action repository 'actions/checkout@v5' (SHA:fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09)
+verify	Set up job	2026-10-22T15:10:22.9897440Z Download action repository 'actions/setup-node@v6' (SHA:249970729cb0ef3589644e2896645e5dc5ba9c38)
+verify	Set up job	2026-10-22T15:10:23.0803850Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+verify	Set up job	2026-10-22T15:10:23.2693727Z Complete job name: verify
+verify	Run actions/checkout@v5	﻿2026-10-22T15:10:23.3152532Z ##[group]Run actions/checkout@v5
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3152954Z with:
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3153201Z   repository: chameleonjp-lab/takkeu
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3155171Z   token: ***
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3155403Z   ssh-strict: true
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3155643Z   ssh-user: git
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3155889Z   persist-credentials: true
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3156159Z   clean: true
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3156686Z   sparse-checkout-cone-mode: true
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3156969Z   fetch-depth: 1
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3157207Z   fetch-tags: false
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3157451Z   show-progress: true
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3157694Z   lfs: false
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3157918Z   submodules: false
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3158165Z   set-safe-directory: true
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3158443Z   allow-unsafe-pr-checkout: false
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3158824Z ##[endgroup]
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3843066Z Syncing repository: chameleonjp-lab/takkeu
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3844302Z ##[group]Getting Git version info
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3844669Z Working directory is '/home/runner/work/takkeu/takkeu'
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3845272Z [command]/usr/bin/git version
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3955860Z git version 2.55.0
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3975967Z ##[endgroup]
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3981520Z Temporarily overriding HOME='/home/runner/work/_temp/f5df5063-4016-4fb3-8ef7-e382b33646c7' before making global git config changes
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3982264Z Adding repository directory to the temporary git global config as a safe directory
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.3985206Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/takkeu/takkeu
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4036106Z Deleting the contents of '/home/runner/work/takkeu/takkeu'
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4039395Z ##[group]Initializing the repository
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4042932Z [command]/usr/bin/git init /home/runner/work/takkeu/takkeu
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4138659Z hint: Using 'master' as the name for the initial branch. This default branch name
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4139809Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4140332Z hint: to use in all of your new repositories, which will suppress this warning,
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4140729Z hint: call:
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4140950Z hint:
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4141252Z hint: 	git config --global init.defaultBranch <name>
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4141590Z hint:
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4141908Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4142410Z hint: 'development'. The just-created branch can be renamed via this command:
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4142810Z hint:
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4143041Z hint: 	git branch -m <name>
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4143472Z hint:
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4143999Z hint: Disable this message with "git config set advice.defaultBranchName false"
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4148673Z Initialized empty Git repository in /home/runner/work/takkeu/takkeu/.git/
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4167312Z [command]/usr/bin/git remote add origin https://github.com/chameleonjp-lab/takkeu
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4205139Z ##[endgroup]
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4205852Z ##[group]Disabling automatic garbage collection
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4208813Z [command]/usr/bin/git config --local gc.auto 0
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4239062Z ##[endgroup]
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4239698Z ##[group]Setting up auth
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4244317Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4287389Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4589872Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4625612Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4816564Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.4853745Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.5043352Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.5085399Z ##[endgroup]
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.5086098Z ##[group]Fetching the repository
+verify	Run actions/checkout@v5	2026-10-22T15:10:23.5092570Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fe488a01864b2449f334584e0d2260a3c5670549:refs/remotes/origin/main
+verify	Run actions/checkout@v5	2026-10-22T15:10:25.0302476Z From https://github.com/chameleonjp-lab/takkeu
+verify	Run actions/checkout@v5	2026-10-22T15:10:25.0303716Z  * [new ref]         fe488a01864b2449f334584e0d2260a3c5670549 -> origin/main
+verify	Run actions/checkout@v5	2026-10-22T15:10:25.0308119Z ##[endgroup]
+verify	Run actions/checkout@v5	2026-10-22T15:10:25.0308816Z ##[group]Determining the checkout info
+verify	Run actions/checkout@v5	2026-10-22T15:10:25.0309866Z ##[endgroup]
+verify	Run actions/checkout@v5	2026-10-22T15:10:25.0314038Z [command]/usr/bin/git sparse-checkout disable
+verify	Run actions/checkout@v5	2026-10-22T15:10:25.0371584Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+verify	Run actions/checkout@v5	2026-10-22T15:10:25.0407203Z ##[group]Checking out the ref
+verify	Run actions/checkout@v5	2026-10-22T15:10:25.0410586Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+verify	Run actions/checkout@v5	2026-10-22T15:10:25.1324506Z Switched to a new branch 'main'
+verify	Run actions/checkout@v5	2026-10-22T15:10:25.1327842Z branch 'main' set up to track 'origin/main'.
+verify	Run actions/checkout@v5	2026-10-22T15:10:25.1339114Z ##[endgroup]
+verify	Run actions/checkout@v5	2026-10-22T15:10:25.1386864Z [command]/usr/bin/git log -1 --format=%H
+verify	Run actions/checkout@v5	2026-10-22T15:10:25.1417268Z fe488a01864b2449f334584e0d2260a3c5670549
+verify	Run actions/setup-node@v6	﻿2026-10-22T15:10:25.1747237Z ##[group]Run actions/setup-node@v6
+verify	Run actions/setup-node@v6	2026-10-22T15:10:25.1748079Z with:
+verify	Run actions/setup-node@v6	2026-10-22T15:10:25.1748712Z   node-version-file: .node-version
+verify	Run actions/setup-node@v6	2026-10-22T15:10:25.1749449Z   cache: npm
+verify	Run actions/setup-node@v6	2026-10-22T15:10:25.1750087Z   check-latest: false
+verify	Run actions/setup-node@v6	2026-10-22T15:10:25.1754951Z   token: ***
+verify	Run actions/setup-node@v6	2026-10-22T15:10:25.1755600Z   package-manager-cache: true
+verify	Run actions/setup-node@v6	2026-10-22T15:10:25.1756560Z ##[endgroup]
+verify	Run actions/setup-node@v6	2026-10-22T15:10:25.2654294Z Node version file is not JSON file
+verify	Run actions/setup-node@v6	2026-10-22T15:10:25.2655780Z Resolved .node-version as 24.19.0
+verify	Run actions/setup-node@v6	2026-10-22T15:10:25.2673757Z Attempting to download 24.19.0...
+verify	Run actions/setup-node@v6	2026-10-22T15:10:26.4354436Z Acquiring 24.19.0 - x64 from https://github.com/actions/node-versions/releases/download/24.19.0-30872449280/node-24.19.0-linux-x64.tar.gz
+verify	Run actions/setup-node@v6	2026-10-22T15:10:26.9251673Z Extracting ...
+verify	Run actions/setup-node@v6	2026-10-22T15:10:26.9347101Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/f7e3a311-dbe5-4003-b622-83cc2ac7b9ac -f /home/runner/work/_temp/e2168651-b1a5-4595-8eee-26930b7a1c29
+verify	Run actions/setup-node@v6	2026-10-22T15:10:27.8935354Z Adding to the cache ...
+verify	Run actions/setup-node@v6	2026-10-22T15:10:29.6651838Z ##[group]Environment details
+verify	Run actions/setup-node@v6	2026-10-22T15:10:29.8322036Z node: v24.19.0
+verify	Run actions/setup-node@v6	2026-10-22T15:10:29.8322368Z npm: 11.17.0
+verify	Run actions/setup-node@v6	2026-10-22T15:10:29.8322487Z yarn: 1.22.22
+verify	Run actions/setup-node@v6	2026-10-22T15:10:29.8322887Z ##[endgroup]
+verify	Run actions/setup-node@v6	2026-10-22T15:10:29.8335391Z [command]/opt/hostedtoolcache/node/24.19.0/x64/bin/npm config get cache
+verify	Run actions/setup-node@v6	2026-10-22T15:10:29.9017723Z /home/runner/.npm
+verify	Run actions/setup-node@v6	2026-10-22T15:10:30.1520370Z Cache hit for: node-cache-Linux-x64-npm-7f7fbffbfc35d55335654ede3ea1994ea0a8c172937b397c6b84f9c4230c2af8
+verify	Run actions/setup-node@v6	2026-10-22T15:10:31.2035588Z Received 52832990 of 52832990 (100.0%), 60.5 MBs/sec
+verify	Run actions/setup-node@v6	2026-10-22T15:10:31.2036488Z Cache Size: ~50 MB (52832990 B)
+verify	Run actions/setup-node@v6	2026-10-22T15:10:31.2056047Z [command]/usr/bin/tar -xf /home/runner/work/_temp/14521203-95ee-4831-aa84-2927057bc5f8/cache.tzst -P -C /home/runner/work/takkeu/takkeu --use-compress-program unzstd
+verify	Run actions/setup-node@v6	2026-10-22T15:10:31.2747989Z Cache restored successfully
+verify	Run actions/setup-node@v6	2026-10-22T15:10:31.2779244Z Cache restored from key: node-cache-Linux-x64-npm-7f7fbffbfc35d55335654ede3ea1994ea0a8c172937b397c6b84f9c4230c2af8
+verify	Dependencies	﻿2026-10-22T15:10:31.3002843Z ##[group]Run mkdir -p artifacts
+verify	Dependencies	2026-10-22T15:10:31.3003132Z [36;1mmkdir -p artifacts[0m
+verify	Dependencies	2026-10-22T15:10:31.3003290Z [36;1mset -o pipefail[0m
+verify	Dependencies	2026-10-22T15:10:31.3003466Z [36;1mnpm ci 2>&1 | tee artifacts/install.log[0m
+verify	Dependencies	2026-10-22T15:10:31.3003788Z [36;1mnpx playwright install --with-deps chromium webkit 2>&1 | tee artifacts/browsers.log[0m
+verify	Dependencies	2026-10-22T15:10:31.3166233Z shell: /usr/bin/bash -e {0}
+verify	Dependencies	2026-10-22T15:10:31.3166600Z ##[endgroup]
+verify	Dependencies	2026-10-22T15:10:31.5621822Z npm warn EBADENGINE Unsupported engine {
+verify	Dependencies	2026-10-22T15:10:31.5622233Z npm warn EBADENGINE   package: 'takkeu@0.1.0',
+verify	Dependencies	2026-10-22T15:10:31.5622532Z npm warn EBADENGINE   required: { node: '24.19.0', npm: '11.9.0' },
+verify	Dependencies	2026-10-22T15:10:31.5622841Z npm warn EBADENGINE   current: { node: 'v24.19.0', npm: '11.17.0' }
+verify	Dependencies	2026-10-22T15:10:31.5623056Z npm warn EBADENGINE }
+verify	Dependencies	2026-10-22T15:10:32.7834791Z 
+verify	Dependencies	2026-10-22T15:10:32.7835724Z added 87 packages, and audited 88 packages in 1s
+verify	Dependencies	2026-10-22T15:10:32.7836102Z 
+verify	Dependencies	2026-10-22T15:10:32.7836429Z 21 packages are looking for funding
+verify	Dependencies	2026-10-22T15:10:32.7836818Z   run `npm fund` for details
+verify	Dependencies	2026-10-22T15:10:32.7852934Z 
+verify	Dependencies	2026-10-22T15:10:32.7853351Z found 0 vulnerabilities
+verify	Dependencies	2026-10-22T15:10:33.2764886Z Installing dependencies...
+verify	Dependencies	2026-10-22T15:10:33.2827490Z Switching to root user to install dependencies...
+verify	Dependencies	2026-10-22T15:10:33.3528416Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+verify	Dependencies	2026-10-22T15:10:33.3787674Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+verify	Dependencies	2026-10-22T15:10:33.4178629Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+verify	Dependencies	2026-10-22T15:10:33.4187769Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+verify	Dependencies	2026-10-22T15:10:33.4221255Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+verify	Dependencies	2026-10-22T15:10:33.4239272Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+verify	Dependencies	2026-10-22T15:10:33.4379079Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [630 kB]
+verify	Dependencies	2026-10-22T15:10:33.4541585Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [567 kB]
+verify	Dependencies	2026-10-22T15:10:33.5228396Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1400 kB]
+verify	Dependencies	2026-10-22T15:10:33.5327492Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1706 kB]
+verify	Dependencies	2026-10-22T15:10:33.6040964Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1146 kB]
+verify	Dependencies	2026-10-22T15:10:36.0173610Z Fetched 5831 kB in 0s (11.8 MB/s)
+verify	Dependencies	2026-10-22T15:10:36.6431823Z Reading package lists...
+verify	Dependencies	2026-10-22T15:10:36.6719830Z Reading package lists...
+verify	Dependencies	2026-10-22T15:10:36.8331556Z Building dependency tree...
+verify	Dependencies	2026-10-22T15:10:36.8336697Z Reading state information...
+verify	Dependencies	2026-10-22T15:10:36.8456449Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+verify	Dependencies	2026-10-22T15:10:36.8456886Z libasound2t64 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8457279Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+verify	Dependencies	2026-10-22T15:10:36.8457584Z libatk-bridge2.0-0t64 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8457840Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+verify	Dependencies	2026-10-22T15:10:36.8458068Z libatk1.0-0t64 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8458322Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+verify	Dependencies	2026-10-22T15:10:36.8458620Z libatspi2.0-0t64 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8458858Z libcairo2 is already the newest version (1.18.0-3build1).
+verify	Dependencies	2026-10-22T15:10:36.8459077Z libcairo2 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8459331Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+verify	Dependencies	2026-10-22T15:10:36.8459562Z libcups2t64 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8459799Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+verify	Dependencies	2026-10-22T15:10:36.8460033Z libdbus-1-3 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8460276Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+verify	Dependencies	2026-10-22T15:10:36.8460503Z libdrm2 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8461118Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.4).
+verify	Dependencies	2026-10-22T15:10:36.8461414Z libgbm1 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8461654Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.10).
+verify	Dependencies	2026-10-22T15:10:36.8461892Z libglib2.0-0t64 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8462226Z libnspr4 is already the newest version (2:4.35-1.1build1).
+verify	Dependencies	2026-10-22T15:10:36.8462443Z libnspr4 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8462663Z libnss3 is already the newest version (2:3.98-1ubuntu0.3).
+verify	Dependencies	2026-10-22T15:10:36.8462960Z libnss3 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8463197Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+verify	Dependencies	2026-10-22T15:10:36.8463430Z libpango-1.0-0 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8463752Z libx11-6 is already the newest version (2:1.8.7-1ubuntu0.1).
+verify	Dependencies	2026-10-22T15:10:36.8463980Z libx11-6 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8464189Z libxcb1 is already the newest version (1.15-1ubuntu2).
+verify	Dependencies	2026-10-22T15:10:36.8464488Z libxcb1 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8464749Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+verify	Dependencies	2026-10-22T15:10:36.8464987Z libxcomposite1 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8465348Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+verify	Dependencies	2026-10-22T15:10:36.8465572Z libxdamage1 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8465794Z libxext6 is already the newest version (2:1.3.4-1build2).
+verify	Dependencies	2026-10-22T15:10:36.8466080Z libxext6 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8466447Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+verify	Dependencies	2026-10-22T15:10:36.8466688Z libxfixes3 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8466916Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+verify	Dependencies	2026-10-22T15:10:36.8467175Z libxkbcommon0 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8467462Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+verify	Dependencies	2026-10-22T15:10:36.8467681Z libxrandr2 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8467917Z xvfb is already the newest version (2:21.1.12-1ubuntu1.9).
+verify	Dependencies	2026-10-22T15:10:36.8468301Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+verify	Dependencies	2026-10-22T15:10:36.8469017Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+verify	Dependencies	2026-10-22T15:10:36.8469377Z libfontconfig1 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8469771Z libfreetype6 is already the newest version (2.13.2+dfsg-1ubuntu0.2).
+verify	Dependencies	2026-10-22T15:10:36.8470141Z libfreetype6 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8470499Z fonts-liberation is already the newest version (1:2.1.5-3).
+verify	Dependencies	2026-10-22T15:10:36.8470853Z fonts-liberation set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8471212Z libicu74 is already the newest version (74.2-1ubuntu3.1).
+verify	Dependencies	2026-10-22T15:10:36.8471640Z libatomic1 is already the newest version (14.2.0-4ubuntu2~24.04.1).
+verify	Dependencies	2026-10-22T15:10:36.8472008Z libatomic1 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8472404Z libcairo-gobject2 is already the newest version (1.18.0-3build1).
+verify	Dependencies	2026-10-22T15:10:36.8472796Z libcairo-gobject2 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8473168Z libenchant-2-2 is already the newest version (2.3.3-2build2).
+verify	Dependencies	2026-10-22T15:10:36.8473529Z libenchant-2-2 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8473883Z libepoxy0 is already the newest version (1.5.10-1build1).
+verify	Dependencies	2026-10-22T15:10:36.8474265Z libepoxy0 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8474746Z libgdk-pixbuf-2.0-0 is already the newest version (2.42.10+dfsg-3ubuntu3.3).
+verify	Dependencies	2026-10-22T15:10:36.8475182Z libgdk-pixbuf-2.0-0 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8475646Z libgstreamer1.0-0 is already the newest version (1.24.2-1ubuntu0.1).
+verify	Dependencies	2026-10-22T15:10:36.8476140Z libgstreamer1.0-0 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8476670Z libharfbuzz0b is already the newest version (8.3.0-2build2).
+verify	Dependencies	2026-10-22T15:10:36.8477037Z libharfbuzz0b set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8477433Z libjpeg-turbo8 is already the newest version (2.1.5-2ubuntu2).
+verify	Dependencies	2026-10-22T15:10:36.8478018Z libjpeg-turbo8 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8478408Z liblcms2-2 is already the newest version (2.14-2ubuntu0.1).
+verify	Dependencies	2026-10-22T15:10:36.8478768Z liblcms2-2 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8479187Z libpangocairo-1.0-0 is already the newest version (1.52.1+ds-1build1).
+verify	Dependencies	2026-10-22T15:10:36.8479618Z libpangocairo-1.0-0 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8480054Z libpng16-16t64 is already the newest version (1.6.43-5ubuntu0.7).
+verify	Dependencies	2026-10-22T15:10:36.8480446Z libpng16-16t64 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8480872Z libwayland-client0 is already the newest version (1.22.0-2.1build1).
+verify	Dependencies	2026-10-22T15:10:36.8481295Z libwayland-client0 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.8481715Z libwayland-egl1 is already the newest version (1.22.0-2.1build1).
+verify	Dependencies	2026-10-22T15:10:36.8482126Z libwayland-egl1 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.9556078Z libwebp7 is already the newest version (1.3.2-0.4build3).
+verify	Dependencies	2026-10-22T15:10:36.9556722Z libwebp7 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.9557103Z libwebpdemux2 is already the newest version (1.3.2-0.4build3).
+verify	Dependencies	2026-10-22T15:10:36.9557520Z libwebpdemux2 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.9557787Z libxml2 is already the newest version (2.9.14+dfsg-1.3ubuntu3.10).
+verify	Dependencies	2026-10-22T15:10:36.9558018Z libxml2 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.9558274Z libxslt1.1 is already the newest version (1.1.39-0exp1ubuntu0.24.04.3).
+verify	Dependencies	2026-10-22T15:10:36.9558678Z libxslt1.1 set to manually installed.
+verify	Dependencies	2026-10-22T15:10:36.9559033Z The following additional packages will be installed:
+verify	Dependencies	2026-10-22T15:10:36.9559453Z   glib-networking glib-networking-common glib-networking-services
+verify	Dependencies	2026-10-22T15:10:36.9559854Z   gsettings-desktop-schemas libaa1 libabsl20220623t64 libass9 libasyncns0
+verify	Dependencies	2026-10-22T15:10:36.9560343Z   libavc1394-0 libavcodec60 libavfilter9 libavformat60 libavtp0 libavutil58
+verify	Dependencies	2026-10-22T15:10:36.9560853Z   libblas3 libbluray2 libbs2b0 libcaca0 libcairo-script-interpreter2
+verify	Dependencies	2026-10-22T15:10:36.9561304Z   libcdparanoia0 libchromaprint1 libcjson1 libcodec2-1.2 libdav1d7
+verify	Dependencies	2026-10-22T15:10:36.9561791Z   libdc1394-25 libdca0 libde265-0 libdecor-0-0 libdirectfb-1.7-7t64 libdv4t64
+verify	Dependencies	2026-10-22T15:10:36.9562583Z   libdvdnav4 libdvdread8t64 libegl-mesa0 libegl1 libfaad2 libflac12t64
+verify	Dependencies	2026-10-22T15:10:36.9563066Z   libfluidsynth3 libfreeaptx0 libgav1-1 libgme0 libgraphene-1.0-0 libgsm1
+verify	Dependencies	2026-10-22T15:10:36.9563610Z   libgssdp-1.6-0 libgstreamer-plugins-good1.0-0 libgtk-4-common libgupnp-1.6-0
+verify	Dependencies	2026-10-22T15:10:36.9564158Z   libgupnp-igd-1.6-0 libhwy1t64 libiec61883-0 libimath-3-1-29t64
+verify	Dependencies	2026-10-22T15:10:36.9564647Z   libinstpatch-1.0-2 libjack-jackd2-0 libjxl0.7 liblapack3 liblc3-1
+verify	Dependencies	2026-10-22T15:10:36.9565162Z   libldacbt-enc2 liblilv-0-0 liblrdf0 libltc11 libmbedcrypto7t64 libmfx1
+verify	Dependencies	2026-10-22T15:10:36.9565637Z   libmjpegutils-2.1-0t64 libmodplug1 libmp3lame0 libmpcdec6
+verify	Dependencies	2026-10-22T15:10:36.9566075Z   libmpeg2encpp-2.1-0t64 libmpg123-0t64 libmplex2-2.1-0t64 libmysofa1
+verify	Dependencies	2026-10-22T15:10:36.9566701Z   libneon27t64 libnice10 libopenal-data libopenal1 libopenexr-3-1-30
+verify	Dependencies	2026-10-22T15:10:36.9567158Z   libopenh264-7 libopenmpt0t64 libopenni2-0 liborc-0.4-0t64
+verify	Dependencies	2026-10-22T15:10:36.9567589Z   libpipewire-0.3-0t64 libplacebo338 libpocketsphinx3 libpostproc57
+verify	Dependencies	2026-10-22T15:10:36.9568084Z   libproxy1v5 libpulse0 libqrencode4 libraptor2-0 librav1e0 libraw1394-11
+verify	Dependencies	2026-10-22T15:10:36.9568558Z   librist4 librsvg2-2 librubberband2 libsamplerate0 libsbc1 libsdl2-2.0-0
+verify	Dependencies	2026-10-22T15:10:36.9569065Z   libsecret-common libserd-0-0 libshine3 libshout3 libsndfile1 libsndio7.0
+verify	Dependencies	2026-10-22T15:10:36.9569580Z   libsord-0-0 libsoundtouch1 libsoup-3.0-0 libsoup-3.0-common libsoxr0
+verify	Dependencies	2026-10-22T15:10:36.9570080Z   libspa-0.2-modules libspandsp2t64 libspeex1 libsphinxbase3t64 libsratom-0-0
+verify	Dependencies	2026-10-22T15:10:36.9570603Z   libsrt1.5-gnutls libsrtp2-1 libssh-gcrypt-4 libsvtav1enc1d1 libswresample4
+verify	Dependencies	2026-10-22T15:10:36.9571127Z   libswscale7 libtag1v5 libtag1v5-vanilla libtheora0 libtwolame0 libudfread0
+verify	Dependencies	2026-10-22T15:10:36.9571633Z   libunibreak5 libv4l-0t64 libv4lconvert0t64 libva-drm2 libva-x11-2 libva2
+verify	Dependencies	2026-10-22T15:10:36.9572331Z   libvdpau1 libvidstab1.1 libvisual-0.4-0 libvo-aacenc0 libvo-amrwbenc0
+verify	Dependencies	2026-10-22T15:10:36.9572843Z   libvorbisenc2 libvpl2 libwavpack1 libwebrtc-audio-processing1 libwildmidi2
+verify	Dependencies	2026-10-22T15:10:36.9573376Z   libx265-199 libxcb-xkb1 libxkbcommon-x11-0 libxvidcore4 libyuv0 libzbar0t64
+verify	Dependencies	2026-10-22T15:10:36.9573934Z   libzimg2 libzix-0-0 libzvbi-common libzvbi0t64 libzxing3 ocl-icd-libopencl1
+verify	Dependencies	2026-10-22T15:10:36.9574418Z   session-migration timgm6mb-soundfont xfonts-encodings xfonts-utils
+verify	Dependencies	2026-10-22T15:10:36.9574778Z Suggested packages:
+verify	Dependencies	2026-10-22T15:10:36.9575120Z   frei0r-plugins gvfs libcuda1 libnvcuvid1 libnvidia-encode1 libbluray-bdj
+verify	Dependencies	2026-10-22T15:10:36.9575616Z   libdirectfb-extra libdv-bin oss-compat libdvdcss2 libvisual-0.4-plugins
+verify	Dependencies	2026-10-22T15:10:36.9576138Z   jackd2 liblrdf0-dev libportaudio2 opus-tools pipewire pulseaudio
+verify	Dependencies	2026-10-22T15:10:36.9576763Z   raptor2-utils libraw1394-doc librsvg2-bin serdi sndiod sordi speex
+verify	Dependencies	2026-10-22T15:10:36.9577027Z   libwildmidi-config opencl-icd fluid-soundfont-gm
+verify	Dependencies	2026-10-22T15:10:36.9577219Z Recommended packages:
+verify	Dependencies	2026-10-22T15:10:36.9577424Z   fonts-ipafont-mincho fonts-tlwg-loma gstreamer1.0-x libaacs0
+verify	Dependencies	2026-10-22T15:10:36.9577710Z   default-libdecor-0-plugin-1 | libdecor-0-plugin-1 gstreamer1.0-gl
+verify	Dependencies	2026-10-22T15:10:36.9578021Z   libgtk-4-bin librsvg2-common libgtk-4-media-gstreamer libpipewire-0.3-common
+verify	Dependencies	2026-10-22T15:10:36.9578351Z   pocketsphinx-en-us va-driver-all | va-driver vdpau-driver-all | vdpau-driver
+verify	Dependencies	2026-10-22T15:10:36.9578587Z   libmagickcore-6.q16-7-extra
+verify	Dependencies	2026-10-22T15:10:37.0021597Z The following NEW packages will be installed:
+verify	Dependencies	2026-10-22T15:10:37.0022168Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+verify	Dependencies	2026-10-22T15:10:37.0022475Z   fonts-wqy-zenhei glib-networking glib-networking-common
+verify	Dependencies	2026-10-22T15:10:37.0022765Z   glib-networking-services gsettings-desktop-schemas gstreamer1.0-libav
+verify	Dependencies	2026-10-22T15:10:37.0023098Z   gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good
+verify	Dependencies	2026-10-22T15:10:37.0023653Z   libaa1 libabsl20220623t64 libass9 libasyncns0 libavc1394-0 libavcodec60
+verify	Dependencies	2026-10-22T15:10:37.0023979Z   libavfilter9 libavformat60 libavif16 libavtp0 libavutil58 libblas3
+verify	Dependencies	2026-10-22T15:10:37.0024628Z   libbluray2 libbs2b0 libcaca0 libcairo-script-interpreter2 libcdparanoia0
+verify	Dependencies	2026-10-22T15:10:37.0024931Z   libchromaprint1 libcjson1 libcodec2-1.2 libdav1d7 libdc1394-25 libdca0
+verify	Dependencies	2026-10-22T15:10:37.0025293Z   libde265-0 libdecor-0-0 libdirectfb-1.7-7t64 libdv4t64 libdvdnav4
+verify	Dependencies	2026-10-22T15:10:37.0025608Z   libdvdread8t64 libegl-mesa0 libegl1 libevent-2.1-7t64 libfaad2 libflac12t64
+verify	Dependencies	2026-10-22T15:10:37.0025899Z   libflite1 libfluidsynth3 libfreeaptx0 libgav1-1 libgles2 libgme0
+verify	Dependencies	2026-10-22T15:10:37.0026172Z   libgraphene-1.0-0 libgsm1 libgssdp-1.6-0 libgstreamer-gl1.0-0
+verify	Dependencies	2026-10-22T15:10:37.0026656Z   libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0
+verify	Dependencies	2026-10-22T15:10:37.0026953Z   libgstreamer-plugins-good1.0-0 libgtk-4-1 libgtk-4-common libgupnp-1.6-0
+verify	Dependencies	2026-10-22T15:10:37.0027276Z   libgupnp-igd-1.6-0 libharfbuzz-icu0 libhwy1t64 libhyphen0 libiec61883-0
+verify	Dependencies	2026-10-22T15:10:37.0027586Z   libimath-3-1-29t64 libinstpatch-1.0-2 libjack-jackd2-0 libjxl0.7 liblapack3
+verify	Dependencies	2026-10-22T15:10:37.0027894Z   liblc3-1 libldacbt-enc2 liblilv-0-0 liblrdf0 libltc11 libmanette-0.2-0
+verify	Dependencies	2026-10-22T15:10:37.0028196Z   libmbedcrypto7t64 libmfx1 libmjpegutils-2.1-0t64 libmodplug1 libmp3lame0
+verify	Dependencies	2026-10-22T15:10:37.0028498Z   libmpcdec6 libmpeg2encpp-2.1-0t64 libmpg123-0t64 libmplex2-2.1-0t64
+verify	Dependencies	2026-10-22T15:10:37.0028782Z   libmysofa1 libneon27t64 libnice10 libopenal-data libopenal1
+verify	Dependencies	2026-10-22T15:10:37.0029063Z   libopenexr-3-1-30 libopenh264-7 libopenmpt0t64 libopenni2-0 libopus0
+verify	Dependencies	2026-10-22T15:10:37.0029352Z   liborc-0.4-0t64 libpipewire-0.3-0t64 libplacebo338 libpocketsphinx3
+verify	Dependencies	2026-10-22T15:10:37.0029641Z   libpostproc57 libproxy1v5 libpulse0 libqrencode4 libraptor2-0 librav1e0
+verify	Dependencies	2026-10-22T15:10:37.0029940Z   libraw1394-11 librist4 librsvg2-2 librubberband2 libsamplerate0 libsbc1
+verify	Dependencies	2026-10-22T15:10:37.0030357Z   libsdl2-2.0-0 libsecret-1-0 libsecret-common libserd-0-0 libshine3 libshout3
+verify	Dependencies	2026-10-22T15:10:37.0030649Z   libsndfile1 libsndio7.0 libsord-0-0 libsoundtouch1 libsoup-3.0-0
+verify	Dependencies	2026-10-22T15:10:37.0030936Z   libsoup-3.0-common libsoxr0 libspa-0.2-modules libspandsp2t64 libspeex1
+verify	Dependencies	2026-10-22T15:10:37.0031241Z   libsphinxbase3t64 libsratom-0-0 libsrt1.5-gnutls libsrtp2-1 libssh-gcrypt-4
+verify	Dependencies	2026-10-22T15:10:37.0031550Z   libsvtav1enc1d1 libswresample4 libswscale7 libtag1v5 libtag1v5-vanilla
+verify	Dependencies	2026-10-22T15:10:37.0031830Z   libtheora0 libtwolame0 libudfread0 libunibreak5 libv4l-0t64
+verify	Dependencies	2026-10-22T15:10:37.0032102Z   libv4lconvert0t64 libva-drm2 libva-x11-2 libva2 libvdpau1 libvidstab1.1
+verify	Dependencies	2026-10-22T15:10:37.0032403Z   libvisual-0.4-0 libvo-aacenc0 libvo-amrwbenc0 libvorbisenc2 libvpl2 libvpx9
+verify	Dependencies	2026-10-22T15:10:37.0032706Z   libwavpack1 libwayland-server0 libwebrtc-audio-processing1 libwildmidi2
+verify	Dependencies	2026-10-22T15:10:37.0033009Z   libwoff1 libx264-164 libx265-199 libxcb-xkb1 libxkbcommon-x11-0 libxvidcore4
+verify	Dependencies	2026-10-22T15:10:37.0033332Z   libyuv0 libzbar0t64 libzimg2 libzix-0-0 libzvbi-common libzvbi0t64 libzxing3
+verify	Dependencies	2026-10-22T15:10:37.0033651Z   ocl-icd-libopencl1 session-migration timgm6mb-soundfont xfonts-cyrillic
+verify	Dependencies	2026-10-22T15:10:37.0033914Z   xfonts-encodings xfonts-scalable xfonts-utils
+verify	Dependencies	2026-10-22T15:10:37.0242195Z 0 upgraded, 181 newly installed, 0 to remove and 1 not upgraded.
+verify	Dependencies	2026-10-22T15:10:37.0242647Z Need to get 114 MB of archives.
+verify	Dependencies	2026-10-22T15:10:37.0243029Z After this operation, 364 MB of additional disk space will be used.
+verify	Dependencies	2026-10-22T15:10:37.0243486Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+verify	Dependencies	2026-10-22T15:10:52.3269331Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+verify	Dependencies	2026-10-22T15:11:48.5540328Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+verify	Dependencies	2026-10-22T15:13:20.8398578Z Ign:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2
+verify	Dependencies	2026-10-22T15:13:49.3018026Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+verify	Dependencies	2026-10-22T15:13:50.9164043Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+verify	Dependencies	2026-10-22T15:16:34.8795408Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+verify	Dependencies	2026-10-22T15:20:08.4091371Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libproxy1v5 amd64 0.5.4-4build1 [26.5 kB]
+verify	Dependencies	2026-10-22T15:20:23.9755555Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 glib-networking-common all 2.80.0-1build1 [6702 B]
+verify	Dependencies	2026-10-22T15:20:24.6579828Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 glib-networking-services amd64 2.80.0-1build1 [12.8 kB]
+verify	Dependencies	2026-10-22T15:20:25.3717974Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 session-migration amd64 0.3.9build1 [9034 B]
+verify	Dependencies	2026-10-22T15:20:38.0386754Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 gsettings-desktop-schemas all 46.1-0ubuntu1 [35.6 kB]
+verify	Dependencies	2026-10-22T15:20:39.1670102Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 glib-networking amd64 2.80.0-1build1 [64.1 kB]
+verify	Dependencies	2026-10-22T15:20:53.9409953Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva2 amd64 2.20.0-2ubuntu0.2 [66.4 kB]
+verify	Dependencies	2026-10-22T15:20:56.1755973Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva-drm2 amd64 2.20.0-2ubuntu0.2 [7124 B]
+verify	Dependencies	2026-10-22T15:20:57.2707541Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva-x11-2 amd64 2.20.0-2ubuntu0.2 [12.0 kB]
+verify	Dependencies	2026-10-22T15:20:58.3354991Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libvdpau1 amd64 1.5-2build1 [27.8 kB]
+verify	Dependencies	2026-10-22T15:20:59.8421183Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libvpl2 amd64 2023.3.0-1build1 [99.8 kB]
+verify	Dependencies	2026-10-22T15:21:03.5881317Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 ocl-icd-libopencl1 amd64 2.3.2-1build1 [38.5 kB]
+verify	Dependencies	2026-10-22T15:21:05.4339472Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libavutil58 amd64 7:6.1.1-3ubuntu5 [401 kB]
+verify	Dependencies	2026-10-22T15:21:16.2263477Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libcodec2-1.2 amd64 1.2.0-2build1 [8998 kB]
+verify	Dependencies	2026-10-22T15:23:59.8317217Z Ign:20 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libcodec2-1.2 amd64 1.2.0-2build1
+verify	Dependencies	2026-10-22T15:24:01.1736849Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libdav1d7 amd64 1.4.1-1build1 [604 kB]
+verify	Dependencies	2026-10-22T15:24:17.0101005Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libgsm1 amd64 1.0.22-1build1 [27.8 kB]
+verify	Dependencies	2026-10-22T15:24:18.7673089Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libhwy1t64 amd64 1.0.7-8.1build1 [584 kB]
+verify	Dependencies	2026-10-22T15:24:34.0822162Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 libjxl0.7 amd64 0.7.0-10.2ubuntu6.1 [1001 kB]
+verify	Dependencies	2026-10-22T15:24:58.7964250Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libmp3lame0 amd64 3.100-6build1 [142 kB]
+verify	Dependencies	2026-10-22T15:25:04.7694714Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libopus0 amd64 1.4-1build1 [208 kB]
+verify	Dependencies	2026-10-22T15:25:10.0606976Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 librav1e0 amd64 0.7.1-2 [1022 kB]
+verify	Dependencies	2026-10-22T15:25:32.5076239Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 librsvg2-2 amd64 2.58.0+dfsg-1ubuntu0.1 [2141 kB]
+verify	Dependencies	2026-10-22T15:25:35.6904391Z ##[error]The operation was canceled.
+verify	Record revision	﻿2026-10-22T15:25:35.6944013Z ##[group]Run git rev-parse HEAD > artifacts/commit.txt
+verify	Record revision	2026-10-22T15:25:35.6944274Z [36;1mgit rev-parse HEAD > artifacts/commit.txt[0m
+verify	Record revision	2026-10-22T15:25:35.6944471Z [36;1mnode --version > artifacts/node.txt[0m
+verify	Record revision	2026-10-22T15:25:35.6944649Z [36;1mnpm --version > artifacts/npm.txt[0m
+verify	Record revision	2026-10-22T15:25:35.6990006Z shell: /usr/bin/bash -e {0}
+verify	Record revision	2026-10-22T15:25:35.6990155Z ##[endgroup]
+verify	Run actions/upload-artifact@v4	﻿2026-10-22T15:25:35.7711459Z ##[group]Run actions/upload-artifact@v4
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.7711661Z with:
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.7711828Z   name: verification-fe488a01864b2449f334584e0d2260a3c5670549
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.7712202Z   retention-days: 30
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.7712367Z   path: artifacts/
+verify	Run actions/upload-artifact@v4	test-results/
+verify	Run actions/upload-artifact@v4	playwright-report/
+verify	Run actions/upload-artifact@v4	
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.7712562Z   if-no-files-found: warn
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.7712702Z   compression-level: 6
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.7712830Z   overwrite: false
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.7712960Z   include-hidden-files: false
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.7713103Z ##[endgroup]
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.8872557Z (node:2768) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.8873076Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.8939438Z Multiple search paths detected. Calculating the least common ancestor of all paths
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.8941035Z The least common ancestor is /home/runner/work/takkeu/takkeu. This will be the root directory of the artifact
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.8941857Z With the provided path, there will be 5 files uploaded
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.8944663Z Artifact name is valid!
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:35.8945078Z Root directory input is valid!
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:36.2543045Z Beginning upload of artifact content to blob storage
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:36.2701172Z (node:2768) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:36.4986825Z Uploaded bytes 4529
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:36.5577779Z Finished uploading artifact content to blob storage!
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:36.5578667Z SHA256 digest of uploaded artifact zip is f4f8271351a0eb924dcfd7cb9e85a60f78f7ceae5413a31aa0caf4f7c39c593e
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:36.5579494Z Finalizing artifact upload
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:37.0738627Z Artifact verification-fe488a01864b2449f334584e0d2260a3c5670549.zip successfully finalized. Artifact ID 12437995423
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:37.0739810Z Artifact verification-fe488a01864b2449f334584e0d2260a3c5670549 has been successfully uploaded! Final size is 4529 bytes. Artifact ID is 12437995423
+verify	Run actions/upload-artifact@v4	2026-10-22T15:25:37.0740909Z Artifact download URL: https://github.com/chameleonjp-lab/takkeu/actions/runs/39802282118/artifacts/12437995423
+verify	Post Run actions/checkout@v5	﻿2026-10-22T15:25:37.0872244Z Post job cleanup.
+verify	Post Run actions/checkout@v5	2026-10-22T15:25:37.1529889Z [command]/usr/bin/git version
+verify	Post Run actions/checkout@v5	2026-10-22T15:25:37.1530288Z git version 2.55.0
+verify	Post Run actions/checkout@v5	2026-10-22T15:25:37.1533117Z Temporarily overriding HOME='/home/runner/work/_temp/30be576b-7d45-4d03-b39b-65f7ec33974a' before making global git config changes
+verify	Post Run actions/checkout@v5	2026-10-22T15:25:37.1533755Z Adding repository directory to the temporary git global config as a safe directory
+verify	Post Run actions/checkout@v5	2026-10-22T15:25:37.1534324Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/takkeu/takkeu
+verify	Post Run actions/checkout@v5	2026-10-22T15:25:37.1535315Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify	Post Run actions/checkout@v5	2026-10-22T15:25:37.1561074Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify	Post Run actions/checkout@v5	2026-10-22T15:25:37.1778088Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify	Post Run actions/checkout@v5	2026-10-22T15:25:37.1811947Z http.https://github.com/.extraheader
+verify	Post Run actions/checkout@v5	2026-10-22T15:25:37.1827560Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+verify	Post Run actions/checkout@v5	2026-10-22T15:25:37.1863190Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify	Post Run actions/checkout@v5	2026-10-22T15:25:37.2077617Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify	Post Run actions/checkout@v5	2026-10-22T15:25:37.2125757Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify	Complete job	﻿2026-10-22T15:25:37.2442904Z Cleaning up orphan processes
+verify	Complete job	2026-10-22T15:25:37.2611537Z Terminate orphan process: pid (2226) (npm exec playwright install --with-deps chromium webkit)
+verify	Complete job	2026-10-22T15:25:37.2630186Z Terminate orphan process: pid (2227) (tee)
+verify	Complete job	2026-10-22T15:25:37.2651711Z Terminate orphan process: pid (2240) (sh)
+verify	Complete job	2026-10-22T15:25:37.2668415Z Terminate orphan process: pid (2241) (MainThread)
+verify	Complete job	2026-10-22T15:25:37.2778210Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

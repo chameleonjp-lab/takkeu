@@ -39,6 +39,10 @@ jobs:
         with:
           node-version-file: .node-version
           cache: npm
+      - name: Use the primary Ubuntu HTTPS mirror for browser dependencies
+        run: |
+          test -f /etc/apt/apt-mirrors.txt
+          printf '%s\n' 'https://archive.ubuntu.com/ubuntu' | sudo tee /etc/apt/apt-mirrors.txt > /dev/null
       - name: Verify and build this checkout
         run: |
           set -euo pipefail
