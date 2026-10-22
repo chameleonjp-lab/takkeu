@@ -1,4 +1,4 @@
-import { Color, DirectionalLight, HemisphereLight, Scene, Vector3, WebGLRenderer } from 'three';
+import { ACESFilmicToneMapping, Color, DirectionalLight, HemisphereLight, Scene, Vector3, WebGLRenderer } from 'three';
 import type { GameConfig, GameEvent, GameSnapshot } from '../game/types';
 import type { InputMapping } from '../input/swipe';
 import { createObjects } from './objects';
@@ -21,12 +21,13 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
   const context = canvas.getContext('webgl2', { antialias: true, alpha: false });
   if (!context) throw new Error('WebGL 2を利用できません。対応ブラウザで再読み込みしてください。');
   const renderer = new WebGLRenderer({ canvas, context, antialias: true });
+  renderer.toneMapping = ACESFilmicToneMapping; renderer.toneMappingExposure = 1.15;
   const scene = new Scene();
-  scene.background = new Color(0xb29a6a);
+  scene.background = new Color(0xc7a374);
   const camera = createCamera();
-  scene.add(new HemisphereLight(0xd8f8ff, 0x17313b, 2.1));
-  const light = new DirectionalLight(0xffffff, 2);
-  light.position.set(-2, 4, 4); scene.add(light);
+  scene.add(new HemisphereLight(0xfff9eb, 0x5b5446, 2.0));
+  const light = new DirectionalLight(0xfff7e2, 2.8);
+  light.position.set(-3, 5, 1.5); scene.add(light);
   const objects = createObjects(config);
   scene.add(objects.root);
   let flashUntil = 0;

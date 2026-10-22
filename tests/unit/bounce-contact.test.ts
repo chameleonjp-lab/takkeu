@@ -6,10 +6,10 @@ import { projectBall } from '../../src/game/viewpoint';
 import { incoming, scenario } from '../helpers/scenarios';
 
 describe('ワンバウンド後の見える接触', () => {
-  it('高い位置に構えたラケットに重なる最初のバウンドを返せる', () => {
+  it('新しい視点で最初のバウンドに重なるラケットが返球できる', () => {
     const game = createSession(config, 7);
     game.start();
-    const paddle = { x: 0, y: config.paddleMaxY };
+    const paddle = projectBall({ x: 0, y: config.ballRadius, z: 0.858 }, config);
     advance(game, 1.75, paddle);
     expect(game.snapshot().score, 'バウンド前は加点しない').toBe(0);
     const events = advance(game, 0.15, paddle);
@@ -48,7 +48,7 @@ describe('ワンバウンド後の見える接触', () => {
   it('バウンドをまたぐ刻みでも、バウンド前の重なりだけでは返球しない', () => {
     const s = scenario(0, 1.797);
     const ball = incoming(1, 2.5, { x: 0, y: 0.5 }, 1.797, 2.5);
-    s.state.balls = [ball]; s.state.paddle = { x: 0, y: 0.85 };
+    s.state.balls = [ball]; s.state.paddle = projectBall({ x: 0, y: config.ballRadius, z: 0.858 }, config);
     const result = s.step(s.state.paddle);
     expect(result.events.filter(event => event.kind === 'player-hit')).toHaveLength(1);
     expect(result.events[0]!.time).toBeCloseTo(1.8, 9);

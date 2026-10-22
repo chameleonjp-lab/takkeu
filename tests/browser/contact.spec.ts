@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.use({ video: 'on' });
 
-test('上に構えたラケットにワンバウンドした球が触れれば返球できる', async ({ page }, testInfo) => {
+test('ワンバウンド後の見える球にラケットを合わせれば返球できる', async ({ page }, testInfo) => {
   const now = new Date('2026-10-22T16:00:00Z');
   await page.clock.install({ time: now });
   await page.clock.pauseAt(new Date(+now + 1000));
@@ -10,11 +10,13 @@ test('上に構えたラケットにワンバウンドした球が触れれば�
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   const surface = page.getByTestId('input-surface');
   const box = (await surface.boundingBox())!;
+  const canvas = (await page.locator('canvas').boundingBox())!;
   const x = box.x + box.width / 2, y = box.y + box.height * 0.8;
+  const target = { x: x + canvas.width * 0.05, y: y - canvas.height * 0.06 };
   await surface.dispatchEvent('pointerdown', { pointerId: 7, pointerType: 'touch', clientX: x, clientY: y, button: 0 });
-  await surface.dispatchEvent('pointermove', { pointerId: 7, pointerType: 'touch', clientX: x, clientY: y - box.height * 0.6 });
+  await surface.dispatchEvent('pointermove', { pointerId: 7, pointerType: 'touch', clientX: target.x, clientY: target.y });
   await page.clock.runFor(300);
-  await surface.dispatchEvent('pointerup', { pointerId: 7, pointerType: 'touch', clientX: x, clientY: y - box.height * 0.6 });
+  await surface.dispatchEvent('pointerup', { pointerId: 7, pointerType: 'touch', clientX: target.x, clientY: target.y });
   await page.clock.runFor(1450);
   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('0');
   await page.screenshot({ path: testInfo.outputPath('before-bounce.png') });

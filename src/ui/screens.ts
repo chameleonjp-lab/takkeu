@@ -1,3 +1,4 @@
+import courtPreviewUrl from './court-preview.png';
 import type { GameSnapshot, PauseReason } from '../game/types';
 import { DEFAULT_PREFERENCES } from '../storage/preferences';
 import type { Preferences, Quality } from '../storage/preferences';
@@ -23,21 +24,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
             <button type="button" class="button primary start-button" data-action="start">はじめる <span aria-hidden="true">↗</span></button>
             <p class="start-note">スマホはスワイプ・PCはドラッグ</p>
           </div>
-          <div class="home-art" aria-hidden="true">
-            <span class="art-caption">KEEP IT GOING</span>
-            <svg viewBox="0 0 460 390" focusable="false">
-              <path d="M150 75 L310 75 L407 300 L53 300Z" fill="#087b45" stroke="#f4f5e8" stroke-width="2"/>
-              <path d="M230 75 L230 300" stroke="#75b6b8" stroke-width="1.5"/>
-              <path d="M108 175 L352 175 M108 175 L108 151 L352 151 L352 175" fill="none" stroke="#8fbcc3" stroke-width="2"/>
-              <path d="M118 163 H342" stroke="#719da7" stroke-dasharray="3 4"/>
-              <path d="M132 106 Q160 60 208 79" fill="none" stroke="#73d2ca" stroke-width="1.5" stroke-dasharray="4 7"/>
-              <circle cx="217" cy="83" r="9" fill="#fff4db"/>
-              <g transform="translate(304 270) rotate(25)"><rect x="-7" y="28" width="14" height="53" rx="5" fill="#d7a46c"/><ellipse rx="40" ry="44" fill="#e92e35" stroke="#ffc5a2" stroke-width="3"/><path d="M-22 -18 Q0 -34 20 -17" fill="none" stroke="#ffab8e" stroke-width="2"/></g>
-              <path d="M70 333 H175 M285 333 H390" stroke="#2f4758"/>
-              <text x="230" y="338" text-anchor="middle" fill="#7193a3" font-size="12" font-family="monospace" letter-spacing="3">01 / RALLY</text>
-            </svg>
-            <span class="art-coordinate">PLAY WITH FEELING</span>
-          </div>
+          <div class="home-art" aria-hidden="true"><img src="${courtPreviewUrl}" width="600" height="415" alt="" decoding="async"></div>
         </div>
         <div class="how-to" aria-label="遊び方">
           <div><span class="step-number">01</span><p><strong>指を置く</strong><span>画面の好きな場所から。</span></p></div>

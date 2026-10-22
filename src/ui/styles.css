@@ -25,8 +25,8 @@ h1 { font-weight: 850; letter-spacing: -.08em; font-size: clamp(52px, 6.7vw, 80p
 .primary span { margin-left: auto; font-size: 1.4375rem; line-height: 1; font-weight: 400; }
 .start-button { width: min(100%, 290px); min-height: 58px; padding: 14px 24px; font-size: 1.0rem; }
 .start-note { margin: 10px 0 0; color: #718899; font-size: 0.625rem; letter-spacing: .03em; }
-.home-art { position: relative; padding: 40px 0 0; background: radial-gradient(ellipse at center, #142f3a 0, transparent 68%); }
-.home-art svg { display: block; width: 100%; height: auto; }
+.home-art { position: relative; }
+.home-art img { display: block; width: 100%; height: auto; border-radius: 14px; }
 .art-caption, .art-coordinate { position: absolute; font: 10px ui-monospace, monospace; letter-spacing: .18em; color: #587887; }
 .art-caption { top: 22px; right: 14px; }
 .art-coordinate { bottom: 0; left: 70px; font-size: 0.5rem; }
@@ -142,4 +142,17 @@ body { overscroll-behavior: none; }
 @media (max-height: 540px) and (orientation: landscape) {
   .shell:has([data-game]:not([hidden])) { padding-top: calc(6px + env(safe-area-inset-top)); padding-bottom: calc(8px + env(safe-area-inset-bottom)); }
   .input-surface { height: 100%; min-height: 0; }
+}
+
+
+/* Keep the court close to the reference image's 225:157 composition. */
+.game-screen { max-width: min(900px, calc((100dvh - 300px) * 1.433)); }
+.court-caption { display: none; }
+@media (max-width: 600px) and (orientation: portrait) {
+  .game-screen { max-width: 100%; }
+  .input-surface { grid-template-rows: auto minmax(78px, 1fr); }
+  .canvas-wrap { aspect-ratio: 225 / 157; width: 100%; }
+}
+@media (max-height: 540px) and (orientation: landscape) {
+  .game-screen { max-width: min(900px, calc((100dvh - 150px) * 1.433 + 150px)); }
 }

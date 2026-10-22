@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { DEFAULT_CONFIG } from '../../src/game/config';
+import { clampPaddle, DEFAULT_CONFIG } from '../../src/game/config';
 import { scheduleReturn } from '../../src/game/scheduler';
 import type { PaddlePoint, ReturnPlan } from '../../src/game/types';
 
@@ -35,7 +35,7 @@ describe('確定した到着予約', () => {
     const plan = scheduleReturn({ ...request(1, { x: 9, y: -3 }, 10), earliestArriveAt: 11 }, [], DEFAULT_CONFIG);
     expect(plan.arriveAt - plan.netCrossAt).toBeCloseTo(0.6, 10);
     expect(plan.arriveAt).toBeGreaterThanOrEqual(11);
-    expect(plan.target).toEqual({ x: 1.05, y: 0.15 });
+    expect(plan.target).toEqual(clampPaddle({ x: 99, y: -99 }, DEFAULT_CONFIG));
     expect(plan.speedMultiplier).toBe(2.2);
   });
   it('同時候補が空きを待つ場合は受付順で予約される', () => {
