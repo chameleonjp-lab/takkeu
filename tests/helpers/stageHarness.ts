@@ -31,7 +31,7 @@ function show(score: number, time = 0, glowUntil: number | null = null) {
   const base = scenario(score, time).snapshot();
   current = { ...base, phase: 'running', progression: { ...base.progression, ballGlowUntil: glowUntil },
     balls: Array.from({ length: count }, (_, i) => ({ id: i + 1, phase: 'incoming', smash: false,
-      position: { x: i % 2 ? 0.4 : -0.4, y: 0.45, z: (score === 10 || i % 2) ? -0.75 : 0.95 } })),
+      position: { x: [-0.45, 0.45, 0.7, -0.6][i]!, y: [0.45, 0.48, 0.6, 0.7][i]!, z: score === 10 ? -0.75 : [0.95, -0.75, 0.45, -1.3][i]! } })),
   };
   audio.reset(current.runId); render();
 }
