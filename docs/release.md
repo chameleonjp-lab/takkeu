@@ -16,9 +16,11 @@ pushの`github.sha`を`EXPECTED_SHA`として固定し、そのコミットをch
 
 通常の更新でユーザーが行う操作は**PRのレビューとmainへのマージ**。Actionsの`Pages release`の成功と、公開後の`release.json`を確認する。Pages設定を毎回変更する必要はない。
 
+マージ直後、公開検証が進行中ならページは直前の版を表示する。PRのCI成功とPagesの配備成功は別であり、[Pages releaseの実行一覧](https://github.com/chameleonjp-lab/takkeu/actions/workflows/deploy.yml)で対象mainのSHA・配備ジョブまでの成功を確認する。2026-10-23のPR #10も、検証中は旧版の明るい相手コートが配信され、完了後に暗闇の版へ更新された。[公開照合記録](verification/ball-cadence/README.md)へ実SHA・画像を保存した。
+
 ## 継続して確認する品質項目
 
-1. iPhone 17 ProのOS/Safari版、縦横、音量、品質、低電力モード等の条件を記録する。4球・390・420・450・最大速度付近を検証し、60秒の描画間隔の95%以上が25ms以下であるか測る。操作・回転・アプリ切替・画面ロック・音声復帰・VoiceOverも確認する。
+1. iPhone 17 ProのOS/Safari版、縦横、音量、品質、低電力モード等の条件を記録する。4球の回帰に加え、最新規則の450の無落球47球と以後の増球・390・420・最大速度付近を検証し、60秒の描画間隔の95%以上が25ms以下であるか測る。操作・回転・アプリ切替・画面ロック・音声復帰・VoiceOverも確認する。
 2. 自分音・相手音・4球の重なり・予告音を実際に聴き、識別と快適さを記録する。390の実動画を確認し、[WCAG 2.3.1](https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html)の頻度・明るさ・面積・赤色を判断する。不適合は表示を調整し再検証する。
 3. ゲーム・入力・音・描画・設定・依存・配布設定に変更があれば該当検証を更新する。実機・試聴・映像の対象SHAと結果をPR／検証記録へ紐付ける。自動検査で実機や試聴の結果を代替しない。
 

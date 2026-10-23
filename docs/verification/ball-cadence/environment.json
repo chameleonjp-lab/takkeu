@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-23T03:10:38.414Z",
+  "productCommit": "432e72965e71aae9999136c47f3901ff67a60db1",
+  "platform": "linux",
+  "os": "Debian GNU/Linux 13.6",
+  "node": "v24.19.0",
+  "npm": "11.9.0",
+  "browserVersions": {
+    "chromium": "156.0.8078.4",
+    "webkit": "27.2"
+  },
+  "profiles": {
+    "chromium": "Desktop Chrome",
+    "webkit": "iPhone 13 emulation"
+  },
+  "webgl": "Linux software WebGL, not iPhone hardware",
+  "targetHardware": "iPhone 17 Pro Safari",
+  "targetHardwareVerdict": "未確認",
+  "audioListeningVerdict": "未確認",
+  "flashingSafetyVerdict": "未確認",
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/node": "24.10.0",
+    "@types/three": "0.186.0",
+    "jsdom": "30.1.3",
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}

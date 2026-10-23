@@ -1,0 +1,7 @@
+install: exit 0; docs/verification/ball-cadence/final-install.log
+typecheck: exit 0; docs/verification/ball-cadence/final-typecheck.log
+unit: exit 0; docs/verification/ball-cadence/final-unit.log
+browser: exit 0; docs/verification/ball-cadence/final-browser.log
+distribution: exit 0; docs/verification/ball-cadence/final-distribution.log
+performance: exit 0; docs/verification/ball-cadence/final-performance.log
+diff: exit 0; docs/verification/ball-cadence/final-diff.log

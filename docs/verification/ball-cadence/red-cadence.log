@@ -1,0 +1,454 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/progression.test.ts tests/unit/multiball.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-audit
+
+ ❯ tests/unit/progression.test.ts (27 tests | 21 failed) 29ms
+   ❯ 累計の進行 (8)
+     × 4→6で5を一度だけ処理する 10ms
+     × 9→11で10を一度だけ処理する 2ms
+     × 19→21で20を一度だけ処理する 1ms
+     × 全節目を昇順に処理し、5秒と常時発光を競合させない 2ms
+   × 10ごとの増球と表面解放を両方一度だけ適用する 1ms
+   × 新しい床と壁の節目も順序どおり処理する 1ms
+   ❯ 最新指定の増球タイミング (17)
+     × 5ラリーの無落球時は2球 1ms
+     × 9ラリーの無落球時は2球 2ms
+     × 10ラリーの無落球時は3球 1ms
+     × 19ラリーの無落球時は3球 1ms
+     × 20ラリーの無落球時は4球 0ms
+     × 21ラリーの無落球時は4球 0ms
+     × 29ラリーの無落球時は4球 0ms
+     × 30ラリーの無落球時は5球 0ms
+     × 40ラリーの無落球時は6球 0ms
+     × 150ラリーの無落球時は17球 0ms
+     × 160ラリーの無落球時は18球 0ms
+     × 450ラリーの無落球時は47球 0ms
+     × 460ラリーの無落球時は48球 0ms
+     × 追加報酬の1回目は5、2回目は10、その後10ごと 1ms
+     × 0→21でも5/10/20の3球だけを一度ずつ追加し、M10の発光を同時に開始する 0ms
+ ❯ tests/unit/multiball.test.ts (14 tests | 4 failed) 151ms
+   ❯ 多球の接触・落球・累計到達 (12)
+     × 4から同時接触で閾値5を飛び越しても追加は1球 13ms
+     × 9から同時接触で閾値10を飛び越しても追加は1球 2ms
+     × 19から同時接触で閾値20を飛び越しても追加は1球 1ms
+   × 450の無落球47球を30ゲーム秒継続し、追加・スマッシュ・到着余裕を守る 4ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 25 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/multiball.test.ts > 多球の接触・落球・累計到達 > 4から同時接触で閾値5を飛び越しても追加は1球
+ FAIL  tests/unit/multiball.test.ts > 多球の接触・落球・累計到達 > 9から同時接触で閾値10を飛び越しても追加は1球
+ FAIL  tests/unit/multiball.test.ts > 多球の接触・落球・累計到達 > 19から同時接触で閾値20を飛び越しても追加は1球
+AssertionError: expected [ …(2) ] to have a length of 3 but got 2
+
+- Expected
++ Received
+
+- 3
++ 2
+
+ ❯ tests/unit/multiball.test.ts:13:35
+     11|     const result = s.step();
+     12|     expect(result.snapshot.score).toBe(score + 2);
+     13|     expect(result.snapshot.balls).toHaveLength(3);
+       |                                   ^
+     14|     expect(['queued', 'incoming']).toContain(result.snapshot.balls[2]!…
+     15|     expect(result.events.filter(e => e.kind === 'player-hit')).toHaveL…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/25]⎯
+
+ FAIL  tests/unit/multiball.test.ts > 450の無落球47球を30ゲーム秒継続し、追加・スマッシュ・到着余裕を守る
+AssertionError: expected [ …(47) ] to have a length of 34 but got 47
+
+- Expected
++ Received
+
+- 34
++ 47
+
+ ❯ tests/unit/multiball.test.ts:120:35
+    118|     smashes += result.events.filter(e => e.kind === 'smash-warning').l…
+    119|     expect(result.snapshot.phase).toBe('running');
+    120|     expect(result.snapshot.balls).toHaveLength(ballCountAtScore(result…
+       |                                   ^
+    121|     if (tick % 120 === 0) {
+    122|       const plans = result.snapshot.scheduledReturns;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 累計の進行 > 4→6で5を一度だけ処理する
+AssertionError: expected [] to deeply equal [ 5 ]
+
+- Expected
++ Received
+
+- [
+-   5,
+- ]
++ []
+
+ ❯ tests/unit/progression.test.ts:11:27
+      9|   it.each([[4, 6, 5], [9, 11, 10], [19, 21, 20], [29, 31, 30], [39, 41…
+     10|     const first = advanceProgression(empty(), before, after, 12);
+     11|     expect(first.crossed).toEqual([threshold]);
+       |                           ^
+     12|     expect(first.addedBalls).toBe(1);
+     13|     expect(first.speedTier).toBe(after);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 累計の進行 > 9→11で10を一度だけ処理する
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/progression.test.ts:12:30
+     10|     const first = advanceProgression(empty(), before, after, 12);
+     11|     expect(first.crossed).toEqual([threshold]);
+     12|     expect(first.addedBalls).toBe(1);
+       |                              ^
+     13|     expect(first.speedTier).toBe(after);
+     14|     expect(advanceProgression(first.state, before, after, 13).addedBal…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 累計の進行 > 19→21で20を一度だけ処理する
+AssertionError: expected [] to deeply equal [ 20 ]
+
+- Expected
++ Received
+
+- [
+-   20,
+- ]
++ []
+
+ ❯ tests/unit/progression.test.ts:11:27
+      9|   it.each([[4, 6, 5], [9, 11, 10], [19, 21, 20], [29, 31, 30], [39, 41…
+     10|     const first = advanceProgression(empty(), before, after, 12);
+     11|     expect(first.crossed).toEqual([threshold]);
+       |                           ^
+     12|     expect(first.addedBalls).toBe(1);
+     13|     expect(first.speedTier).toBe(after);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 累計の進行 > 全節目を昇順に処理し、5秒と常時発光を競合させない
+AssertionError: expected [ Array(37) ] to deeply equal [ Array(46) ]
+
+- Expected
++ Received
+
+@@ -1,21 +1,12 @@
+  [
+-   5,
+    10,
+-   20,
+    30,
+    40,
+-   50,
+-   60,
+    70,
+-   80,
+-   90,
+    100,
+-   110,
+-   120,
+    130,
+-   140,
+    150,
+    160,
+    170,
+    180,
+    190,
+
+ ❯ tests/unit/progression.test.ts:24:25
+     22|     expect(thirty.state.appliedMilestones).toEqual([10, 30]);
+     23|     const all = advanceProgression(empty(), 0, 451, 20);
+     24|     expect(all.crossed).toEqual([5, ...Array.from({ length: 45 }, (_, …
+       |                         ^
+     25|     expect(all.addedBalls).toBe(46);
+     26|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 10ごとの増球と表面解放を両方一度だけ適用する
+AssertionError: expected 5 to be 18 // Object.is equality
+
+- Expected
++ Received
+
+- 18
++ 5
+
+ ❯ tests/unit/progression.test.ts:45:40
+     43|   expect(first.crossed).toEqual([150, 160, 170]);
+     44|   expect(first.state.appliedMilestones).toEqual([150, 160]);
+     45|   expect(first.state.awardedBallCount).toBe(18);
+       |                                        ^
+     46|   expect(advanceProgression(first.state, 149, 171, 13).addedBalls).toB…
+     47|   const later = advanceProgression(first.state, 171, 181, 14);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 新しい床と壁の節目も順序どおり処理する
+AssertionError: expected 33 to be 46 // Object.is equality
+
+- Expected
++ Received
+
+- 46
++ 33
+
+ ❯ tests/unit/progression.test.ts:56:38
+     54|   const all = advanceProgression(empty(), 0, 450, 12);
+     55|   expect(all.state.appliedMilestones).toEqual([10, 30, 40, 70, 100, 13…
+     56|   expect(all.state.awardedBallCount).toBe(46);
+       |                                      ^
+     57| });
+     58|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 5ラリーの無落球時は2球
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 9ラリーの無落球時は2球
+AssertionError: expected 1 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 1
+
+ ❯ tests/unit/progression.test.ts:62:37
+     60| describe('最新指定の増球タイミング', () => {
+     61|   it.each([[0, 1], [4, 1], [5, 2], [9, 2], [10, 3], [19, 3], [20, 4], …
+     62|     expect(ballCountAtScore(score)).toBe(count);
+       |                                     ^
+     63|   });
+     64|   it('追加報酬の1回目は5、2回目は10、その後10ごと', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 10ラリーの無落球時は3球
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 19ラリーの無落球時は3球
+AssertionError: expected 1 to be 3 // Object.is equality
+
+- Expected
++ Received
+
+- 3
++ 1
+
+ ❯ tests/unit/progression.test.ts:62:37
+     60| describe('最新指定の増球タイミング', () => {
+     61|   it.each([[0, 1], [4, 1], [5, 2], [9, 2], [10, 3], [19, 3], [20, 4], …
+     62|     expect(ballCountAtScore(score)).toBe(count);
+       |                                     ^
+     63|   });
+     64|   it('追加報酬の1回目は5、2回目は10、その後10ごと', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 20ラリーの無落球時は4球
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 21ラリーの無落球時は4球
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 29ラリーの無落球時は4球
+AssertionError: expected 1 to be 4 // Object.is equality
+
+- Expected
++ Received
+
+- 4
++ 1
+
+ ❯ tests/unit/progression.test.ts:62:37
+     60| describe('最新指定の増球タイミング', () => {
+     61|   it.each([[0, 1], [4, 1], [5, 2], [9, 2], [10, 3], [19, 3], [20, 4], …
+     62|     expect(ballCountAtScore(score)).toBe(count);
+       |                                     ^
+     63|   });
+     64|   it('追加報酬の1回目は5、2回目は10、その後10ごと', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 30ラリーの無落球時は5球
+AssertionError: expected 2 to be 5 // Object.is equality
+
+- Expected
++ Received
+
+- 5
++ 2
+
+ ❯ tests/unit/progression.test.ts:62:37
+     60| describe('最新指定の増球タイミング', () => {
+     61|   it.each([[0, 1], [4, 1], [5, 2], [9, 2], [10, 3], [19, 3], [20, 4], …
+     62|     expect(ballCountAtScore(score)).toBe(count);
+       |                                     ^
+     63|   });
+     64|   it('追加報酬の1回目は5、2回目は10、その後10ごと', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 40ラリーの無落球時は6球
+AssertionError: expected 3 to be 6 // Object.is equality
+
+- Expected
++ Received
+
+- 6
++ 3
+
+ ❯ tests/unit/progression.test.ts:62:37
+     60| describe('最新指定の増球タイミング', () => {
+     61|   it.each([[0, 1], [4, 1], [5, 2], [9, 2], [10, 3], [19, 3], [20, 4], …
+     62|     expect(ballCountAtScore(score)).toBe(count);
+       |                                     ^
+     63|   });
+     64|   it('追加報酬の1回目は5、2回目は10、その後10ごと', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 150ラリーの無落球時は17球
+AssertionError: expected 4 to be 17 // Object.is equality
+
+- Expected
++ Received
+
+- 17
++ 4
+
+ ❯ tests/unit/progression.test.ts:62:37
+     60| describe('最新指定の増球タイミング', () => {
+     61|   it.each([[0, 1], [4, 1], [5, 2], [9, 2], [10, 3], [19, 3], [20, 4], …
+     62|     expect(ballCountAtScore(score)).toBe(count);
+       |                                     ^
+     63|   });
+     64|   it('追加報酬の1回目は5、2回目は10、その後10ごと', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 160ラリーの無落球時は18球
+AssertionError: expected 5 to be 18 // Object.is equality
+
+- Expected
++ Received
+
+- 18
++ 5
+
+ ❯ tests/unit/progression.test.ts:62:37
+     60| describe('最新指定の増球タイミング', () => {
+     61|   it.each([[0, 1], [4, 1], [5, 2], [9, 2], [10, 3], [19, 3], [20, 4], …
+     62|     expect(ballCountAtScore(score)).toBe(count);
+       |                                     ^
+     63|   });
+     64|   it('追加報酬の1回目は5、2回目は10、その後10ごと', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 450ラリーの無落球時は47球
+AssertionError: expected 34 to be 47 // Object.is equality
+
+- Expected
++ Received
+
+- 47
++ 34
+
+ ❯ tests/unit/progression.test.ts:62:37
+     60| describe('最新指定の増球タイミング', () => {
+     61|   it.each([[0, 1], [4, 1], [5, 2], [9, 2], [10, 3], [19, 3], [20, 4], …
+     62|     expect(ballCountAtScore(score)).toBe(count);
+       |                                     ^
+     63|   });
+     64|   it('追加報酬の1回目は5、2回目は10、その後10ごと', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 460ラリーの無落球時は48球
+AssertionError: expected 35 to be 48 // Object.is equality
+
+- Expected
++ Received
+
+- 48
++ 35
+
+ ❯ tests/unit/progression.test.ts:62:37
+     60| describe('最新指定の増球タイミング', () => {
+     61|   it.each([[0, 1], [4, 1], [5, 2], [9, 2], [10, 3], [19, 3], [20, 4], …
+     62|     expect(ballCountAtScore(score)).toBe(count);
+       |                                     ^
+     63|   });
+     64|   it('追加報酬の1回目は5、2回目は10、その後10ごと', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 追加報酬の1回目は5、2回目は10、その後10ごと
+AssertionError: expected [ 30, 40, 150, 160, 280, 580, 590 ] to deeply equal [ 5, 10, 20, 30, 150, 450, 460 ]
+
+- Expected
++ Received
+
+  [
+-   5,
+-   10,
+-   20,
+    30,
++   40,
+    150,
+-   450,
+-   460,
++   160,
++   280,
++   580,
++   590,
+  ]
+
+ ❯ tests/unit/progression.test.ts:65:59
+     63|   });
+     64|   it('追加報酬の1回目は5、2回目は10、その後10ごと', () => {
+     65|     expect([1, 2, 3, 4, 16, 46, 47].map(ballRewardScore)).toEqual([5, …
+       |                                                           ^
+     66|   });
+     67|   it('0→21でも5/10/20の3球だけを一度ずつ追加し、M10の発光を同時に開始する', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/25]⎯
+
+ FAIL  tests/unit/progression.test.ts > 最新指定の増球タイミング > 0→21でも5/10/20の3球だけを一度ずつ追加し、M10の発光を同時に開始する
+AssertionError: expected +0 to be 3 // Object.is equality
+
+- Expected
++ Received
+
+- 3
++ 0
+
+ ❯ tests/unit/progression.test.ts:69:30
+     67|   it('0→21でも5/10/20の3球だけを一度ずつ追加し、M10の発光を同時に開始する', () => {
+     68|     const first = advanceProgression(empty(), 0, 21, 12);
+     69|     expect(first.addedBalls).toBe(3);
+       |                              ^
+     70|     expect(first.crossed).toEqual([5, 10, 20]);
+     71|     expect(first.state.ballGlowUntil).toBe(17);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/25]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  25 failed | 16 passed (41)
+   Start at  02:42:00
+   Duration  449ms (tests 48%, transform 39%, import 11%, worker 2%)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

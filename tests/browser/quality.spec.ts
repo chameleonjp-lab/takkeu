@@ -1,6 +1,43 @@
 import { expect, test } from '@playwright/test';
 import { ballCountAtScore } from '../../src/game/milestones';
 import type {} from '../helpers/appHarness';
+import type { GameSnapshot } from '../../src/game/types';
+
+test('開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む', async ({ page }, info) => {
+  test.setTimeout(180_000);
+  await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
+  await page.goto('/tests/fixtures/stage3.html');
+  // Only input is automated: start the real session without replacing its score or balls.
+  await page.evaluate(() => window.stage3.autoPlay(true));
+  await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  const checkpoints = [{ score: 5, balls: 2 }, { score: 10, balls: 3 }, { score: 20, balls: 4 }];
+  const reached: { threshold: number; state: GameSnapshot }[] = [];
+  for (let i = 0; i < 480; i++) {
+    await page.clock.runFor(250);
+    const state = await page.evaluate(() => window.stage3.snapshot());
+    expect(state.phase).toBe('running');
+    const checkpoint = checkpoints[reached.length];
+    if (checkpoint && state.score >= checkpoint.score) {
+      expect(state.balls).toHaveLength(checkpoint.balls);
+      expect(state.progression.awardedBallCount).toBe(checkpoint.balls - 1);
+      await expect(page.getByLabel('残球数', { exact: true })).toContainText(String(checkpoint.balls));
+      reached.push({ threshold: checkpoint.score, state });
+      await page.screenshot({ path: info.outputPath(`cadence-${checkpoint.score}.png`) });
+    }
+    if (state.score >= 21) {
+      await page.screenshot({ path: info.outputPath('cadence-after-020.png') });
+      break;
+    }
+  }
+  expect(reached.map(row => row.threshold)).toEqual([5, 10, 20]);
+  const state = await page.evaluate(() => window.stage3.snapshot());
+  expect(state.score).toBeGreaterThanOrEqual(21); expect(state.score).toBeLessThan(30);
+  expect(state.balls).toHaveLength(4);
+  const events = await page.evaluate(() => window.stage3.metrics().events);
+  expect(events.filter(e => e.kind === 'milestone').map(e => e.milestone)).toEqual([5, 10, 20]);
+  expect(events.filter(e => e.kind === 'ball-lost')).toEqual([]);
+  await info.attach('cadence-play.json', { body: JSON.stringify({ reached, final: state, events }, null, 2), contentType: 'application/json' });
+});
 
 test('縦横・44pxボタン・200%文字・ラベル・安全余白を確認', async ({ page }, info) => {
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
@@ -38,13 +75,13 @@ test('縦横・44pxボタン・200%文字・ラベル・安全余白を確認', 
   await info.attach('menu-accessibility.yml', { body: await page.locator('main').ariaSnapshot(), contentType: 'text/yaml' });
 });
 
-test('450の34球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する', async ({ page }, info) => {
+test('450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する', async ({ page }, info) => {
   test.setTimeout(180_000);
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   await page.evaluate(() => { window.stage3.show(450); window.stage3.autoPlay(true); });
-  expect(await page.evaluate(() => window.stage3.snapshot().balls.length)).toBe(34);
+  expect(await page.evaluate(() => window.stage3.snapshot().balls.length)).toBe(47);
   const samples = [];
   for (let i = 0; i < 30; i++) {
     await page.clock.runFor(1000);
@@ -54,7 +91,7 @@ test('450の34球と以後の増球・スマッシュ・高速接触を30ゲー�
   }
   expect(samples.at(-1)!.state.score).toBeGreaterThan(500);
   const servedIds = await page.evaluate(() => [...new Set(window.stage3.metrics().events.filter(e => e.kind === 'opponent-hit').map(e => e.ballId))]);
-  for (let id = 1; id <= 34; id++) expect(servedIds).toContain(id);
+  for (let id = 1; id <= 47; id++) expect(servedIds).toContain(id);
   expect(await page.evaluate(() => window.stage3.metrics().smashDepartures)).toBeGreaterThan(0);
   await info.attach('growing-ball-load.json', { body: JSON.stringify(samples, null, 2), contentType: 'application/json' });
 });

@@ -1,9 +1,9 @@
 import { expect, test } from '@playwright/test';
 
 test.use({ video: 'on' });
-const scores = [0, 1, 10, 30, 40, 70, 100, 130, 150, 160, 190, 210, 240, 270, 300, 330, 360, 380, 390, 410, 420, 450];
+const scores = [0, 1, 4, 5, 9, 10, 19, 20, 21, 30, 40, 70, 100, 130, 150, 160, 190, 210, 240, 270, 300, 330, 360, 380, 390, 410, 420, 450];
 
-test('専用状態で全21行の表示と発光終了を撮影する', async ({ page }, info) => {
+test('専用状態で増球の境界と全演出の表示・発光終了を撮影する', async ({ page }, info) => {
   test.setTimeout(90_000);
   const errors: string[] = [];
   page.on('pageerror', e => errors.push(e.message));
@@ -25,7 +25,7 @@ test('専用状態で全21行の表示と発光終了を撮影する', async ({ 
     expect(parts.parts.opponentFloor.visible).toBe(score >= 380);
     expect(parts.parts.opponentWall.visible).toBe(score >= 420);
     expect(parts.parts.selfFloor.rainbow).toBe(score >= 410);
-    const expected = score < 30 ? 1 : score < 40 ? 2 : score < 150 ? 3 : 4 + Math.floor((score - 150) / 10);
+    const expected = score < 5 ? 1 : 2 + Math.floor(score / 10);
     await expect(page.getByLabel('残球数', { exact: true })).toContainText(String(expected));
     await page.screenshot({ path: info.outputPath(`milestone-${String(score).padStart(3, '0')}.png`) });
   }

@@ -1,0 +1,23 @@
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+{
+  "at": "2026-10-23T02:44:53.115Z",
+  "url": "https://chameleonjp-lab.github.io/takkeu/",
+  "expected": "df6eb63da25cc3c88f0d3b5669a81530bbf37a95",
+  "status": "failed",
+  "browsers": [],
+  "transport": {
+    "apiTLS": "default certificate verification enabled for metadata and development-path requests",
+    "browserTLS": "default certificate verification enabled"
+  },
+  "release": {
+    "commit": "df6eb63da25cc3c88f0d3b5669a81530bbf37a95",
+    "base": "/takkeu/"
+  },
+  "developmentPaths": {
+    "tests/fixtures/stage2.html": 404,
+    "tests/fixtures/stage3.html": 404,
+    "src/main.ts": 404,
+    "@vite/client": 404
+  },
+  "error": "Error: page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1\nCall log:\n\u001b[2m  - navigating to \"https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1\", waiting until \"networkidle\"\u001b[22m\n"
+}

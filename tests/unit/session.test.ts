@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { DEFAULT_CONFIG, INITIAL_PADDLE } from '../../src/game/config';
 import { createSession } from '../../src/game/session';
+import { ballCountAtScore } from '../../src/game/milestones';
 import { advance } from '../helpers/fixtures';
 
 describe('1球のラリー', () => {
@@ -70,7 +71,7 @@ describe('1球のラリー', () => {
     expect(stepped.scheduledReturns).toEqual(initial.scheduledReturns);
   });
 
-  it('1球でラリーを繰り返し、打球済みの球だけが相手から戻って再加点できる', () => {
+  it('開始1球から増球してラリーを繰り返し、打球済みの球だけが再加点できる', () => {
     const session = createSession(DEFAULT_CONFIG, 7);
     session.start();
     let playerHits = 0;
@@ -86,6 +87,6 @@ describe('1球のラリー', () => {
     expect(session.snapshot().score).toBeGreaterThanOrEqual(12);
     expect(playerHits).toBe(session.snapshot().score);
     expect(opponentHits).toBeGreaterThanOrEqual(playerHits);
-    expect(session.snapshot().balls).toHaveLength(1);
+    expect(session.snapshot().balls).toHaveLength(ballCountAtScore(session.snapshot().score));
   });
 });

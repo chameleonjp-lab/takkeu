@@ -1,0 +1,5 @@
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+tests/browser/quality.spec.ts(18,11): error TS7022: 'checkpoint' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.

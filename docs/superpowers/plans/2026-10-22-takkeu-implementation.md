@@ -1,5 +1,7 @@
 # タッケウ 実装計画書（Implementation Plan）
 
+> 2026-10-23の増球指定は[新しい計画](2026-10-23-ball-cadence.md)で対応する。開始1球、5で計2球、10で計3球、以後10ごとに追加。この文書の過去段階の検査値は当時の記録として保持する。
+
 > **最新のラリー一覧による改訂**は[現行要件書](../specs/2026-10-22-takkeu-design.md)と[改訂実装計画](2026-10-22-rally-revision.md)を優先する。以下のT01〜T10は初回3段階の実装・受入の履歴であり、5ラリーごと・50で3球目・最大4球・旧19行は現在の数値ではない。最新では毎ラリー加速、40で3球目、150以降10ごとに上限なく増球、床・壁を含む21行、相手側の暗闇を適用する。ワンバウンド後の投影接触・参考画像の固定画角・貫通修正は保つ。
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.

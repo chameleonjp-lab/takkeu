@@ -1,0 +1,36 @@
+{
+  "scope": "公開ページとmainの照合。球数変更の実装・公開とは区別する。",
+  "initialObservation": {
+    "when": "今回の調査開始時、Pages run 39889118163がverify-build中",
+    "main": "df6eb63da25cc3c88f0d3b5669a81530bbf37a95",
+    "publicRelease": {
+      "commit": "01ef27f2f521a8a09a82da385c928ba47b2355f7",
+      "base": "/takkeu/"
+    },
+    "pr": 10,
+    "mergedAt": "2026-10-23T02:21:22Z",
+    "imageObservation": "添付は21ラリー・残球1。相手側の台・床・壁・青ラケットが見える。旧公開版の初期可視と旧増球条件に一致する。"
+  },
+  "resolvedObservation": {
+    "pagesRun": 39889118163,
+    "pagesUrl": "https://github.com/chameleonjp-lab/takkeu/actions/runs/39889118163",
+    "conclusion": "success",
+    "updatedAt": "2026-10-23T02:40:51Z",
+    "publicRelease": {
+      "commit": "df6eb63da25cc3c88f0d3b5669a81530bbf37a95",
+      "base": "/takkeu/"
+    },
+    "smokeEvidence": "public/merged-pr10-webkit/live-check.json",
+    "visualReview": "WebKit縦画面の実公開スクリーンショットを開き、ネットより奥が黒く、相手台・床・壁・青ラケットが隠れていることを確認。"
+  },
+  "newCadence": {
+    "productCommit": "432e72965e71aae9999136c47f3901ff67a60db1",
+    "start": 1,
+    "at5": 2,
+    "at10": 3,
+    "at20": 4,
+    "at450": 47,
+    "publishedByThisInvestigation": false,
+    "reason": "この新規則は別ブランチの変更。自動マージせず、mainへのマージ後に既存Pagesで同じSHAを検証・配布する。"
+  }
+}
