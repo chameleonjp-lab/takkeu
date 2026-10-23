@@ -22,7 +22,9 @@ test.beforeEach(async ({ page }) => {
 declare global { interface Window { audioProbe: { contexts: AudioContext[]; started: string[]; live: Set<OscillatorNode>; failResume: boolean; failNodes: boolean } } }
 
 test('打球ノード生成失敗を案内し、ゲームを進めたまま音ボタンで復旧できる', async ({ page }) => {
-  await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
+  // Seed 7 returns the next ball into the resting paddle at about 5.10s.
+  // Use this path to distinguish a valid later hit from replayed failed audio.
+  await page.clock.install({ time: new Date(-1000) }); await page.clock.pauseAt(new Date(7));
   await page.goto('/'); await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   await expect.poll(() => page.evaluate(() => window.audioProbe.contexts[0]?.state)).toBe('running');
   await page.evaluate(() => { window.audioProbe.failNodes = true; });
@@ -35,8 +37,17 @@ test('打球ノード生成失敗を案内し、ゲームを進めたまま音�
   await page.getByRole('button', { name: '音：オフ', exact: true }).click();
   await expect(page.locator('[data-audio-notice]')).toBeHidden();
   expect(await page.evaluate(() => window.audioProbe.started)).toHaveLength(0);
-  await page.clock.runFor(2600);
+  let elapsed = 0;
+  while (elapsed < 2600 && await page.evaluate(() => window.audioProbe.started.length === 0)) {
+    await page.clock.runFor(50); elapsed += 50;
+  }
+  // Recovery must wait for the next new opponent hit, without replaying the
+  // earlier failed player hit. Observe it before the next legitimate return.
   expect(await page.evaluate(() => window.audioProbe.started)).toEqual(['sine']);
+  await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('1');
+  await page.clock.runFor(2600 - elapsed);
+  await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('2');
+  expect(await page.evaluate(() => window.audioProbe.started)).toEqual(['sine', 'triangle']);
 });
 
 test('開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰', async ({ page }, info) => {

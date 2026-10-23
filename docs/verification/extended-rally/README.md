@@ -18,6 +18,8 @@
 
 [final-verification.json](final-verification.json)は完全SHA、ソース115ファイル・配布10ファイルのSHA-256、コマンド・時刻・終了コード・全文ログのハッシュを含む。[summary.json](summary.json)は集計。
 
+提出後CIで音声復旧テストの観測範囲に不安定さを確認した。同じheadのpush CIは74件成功、PR CIは72件成功/2件失敗。固定seed7では5.10秒に正常な次の自返球が起きるため、5.30秒時点の「相手音だけ」という期待が誤っていた。復旧後の次の相手打球と、その後の正常な自返球を分けて観測する検査へ修正。両エンジンの失敗再現2件→音声関連8件成功、型検査成功を[補足の正式記録](supplemental-verification.json)と[修正履歴](review.md)へ保存した。製品コード・音声処理は一切変更していない。現在のソース115ファイルのうち変わったのは`tests/browser/audio.spec.ts`だけで、残る114ファイルと配布10ファイルは元の正式検証と同一。変更した観測テストの旧版は固定コミットのGit blob、新版は補足マニフェストで検証する。提出headの再CIはPR本文・Checksで追跡する。
+
 | 検査 | 結果・範囲 | 証拠 |
 |---|---|---|
 | 導入・型 | 成功 | [導入](final-install.log)・[型](final-typecheck.log) |
@@ -169,7 +171,7 @@
 
 実装・自動検証・実機の受入・公開を区別する。実機/試聴/最終点滅判定は未確認で、上記のLinux性能の結果も残る。[提出前のmain・公開SHA照合](public-state.json)では双方0082ce8で、今回の変更は未公開。
 
-配布候補は[ZIP](takkeu-pages-candidate.zip)・[ハッシュと対象SHA](release-candidate.json)。これは未公開の検証済み候補。PR headの文書追加と製品のソースハッシュ一致は文書検証へ記録し、CIはPR最終headを別途検査する。
+配布候補は[ZIP](takkeu-pages-candidate.zip)・[ハッシュと対象SHA](release-candidate.json)。これは未公開の検証済み候補。PR headの文書追加・観測テスト1件の修正と製品のソースハッシュ一致は文書検証へ記録し、CIはPR最終headを別途検査する。
 
 1. Draft PRの差異・失敗・未確認事項をレビューし、Readyへ変更してmainへマージする。
 2. 既存のPages releaseが対象mainの同じ完全SHAで型・単体・画面・配布検査とビルドを行い、その成果物を再ビルドせず配布する。成功まで直前の公開版が残る。

@@ -1,12 +1,28 @@
 """Validate frozen evidence, acceptance rows and local links without rerunning games."""
-import hashlib,json,re,zipfile
+import hashlib,json,re,subprocess,zipfile
 from pathlib import Path
 root=Path(__file__).parent
 formal=json.loads((root/'final-verification.json').read_text());assert formal['result']=='passed'
 assert all(s['exitCode']==0 for s in formal['steps'])
 hashfile=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
-for group in ['sourceSha256','distributionSha256']:
- for path,value in formal[group].items():assert hashfile(path)==value,path
+supplement=json.loads((root/'supplemental-verification.json').read_text())
+assert supplement['baseFormalCommit']==formal['commit'] and supplement['result']=='passed'
+assert supplement['changedFiles']==['tests/browser/audio.spec.ts']
+assert set(supplement['sourceSha256'])==set(formal['sourceSha256'])
+changed=[]
+for path,value in formal['sourceSha256'].items():
+ current=hashfile(path);assert current==supplement['sourceSha256'][path],path
+ if current!=value:
+  changed.append(path)
+  frozen=subprocess.check_output(['git','show',formal['commit']+':'+path])
+  assert hashlib.sha256(frozen).hexdigest()==value,path
+assert changed==supplement['changedFiles'],changed
+for check in supplement['checks']:
+ assert check['exitCode']==0 and hashfile(root/check['log'])==check['logSha256']
+assert supplement['checks'][1]['passed']==8 and supplement['checks'][1]['failed']==0
+red=supplement['failureReproduced'];assert hashfile(root/red['log'])==red['logSha256']
+for ci in supplement['ciBeforeFix'].values():assert hashfile(root/ci['log'])==ci['logSha256']
+for path,value in formal['distributionSha256'].items():assert hashfile(path)==value,path
 for step in formal['steps']:assert hashfile(step['log'])==step['logSha256']
 media=json.loads((root/'media-manifest.json').read_text());assert media['commit']==formal['commit']
 for path,value in media['files'].items():assert hashfile(root/path)==value['sha256'],path
@@ -32,5 +48,5 @@ for path,value in preserved['unchangedSourceSha256'].items():assert hashfile(pat
 summary=json.loads((root/'summary.json').read_text());assert summary['unit']['failed']==summary['unit']['pending']==0
 assert summary['browser']['expected']==74 and summary['release']['expected']==4
 for item in ['browser','release']:assert all(summary[item][k]==0 for k in ['skipped','unexpected','flaky'])
-report={'commit':formal['commit'],'result':'passed','sourceFiles':len(formal['sourceSha256']),'distributionFiles':len(formal['distributionSha256']),'mediaFiles':len(media['files']),'localLinksChecked':len(links),'requirementCounts':{k:len(v)for k,v in expected.items()},'performanceAcceptance':{engine:{score:v['continuousPlayVerdict']for score,v in cases.items()}for engine,cases in summary['realtime'].items()},'targetHardwareAcceptance':'未確認'}
+report={'commit':formal['commit'],'result':'passed','sourceFiles':len(formal['sourceSha256']),'supplementalChangedFiles':changed,'productCodeChangedSinceFormal':False,'supplementalAudioBrowserPassed':8,'distributionFiles':len(formal['distributionSha256']),'mediaFiles':len(media['files']),'localLinksChecked':len(links),'requirementCounts':{k:len(v)for k,v in expected.items()},'performanceAcceptance':{engine:{score:v['continuousPlayVerdict']for score,v in cases.items()}for engine,cases in summary['realtime'].items()},'targetHardwareAcceptance':'未確認'}
 (root/'document-validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps(report,ensure_ascii=False))

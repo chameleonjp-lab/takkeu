@@ -1,0 +1,28 @@
+[WebServer] (node:107215) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:107228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:107252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  1 [chromium] › tests/browser/audio.spec.ts:24:1 › 打球ノード生成失敗を案内し、ゲームを進めたまま音ボタンで復旧できる (10.0s)
+  ✓  2 [chromium] › tests/browser/audio.spec.ts:53:1 › 開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰 (12.4s)
+  ✓  3 [chromium] › tests/browser/audio.spec.ts:75:1 › 音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える (7.5s)
+  ✓  4 [chromium] › tests/browser/audio.spec.ts:93:1 › 実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査 (1.2s)
+(node:107431) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  5 [webkit] › tests/browser/audio.spec.ts:24:1 › 打球ノード生成失敗を案内し、ゲームを進めたまま音ボタンで復旧できる (9.4s)
+  ✓  6 [webkit] › tests/browser/audio.spec.ts:53:1 › 開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰 (10.7s)
+  ✓  7 [webkit] › tests/browser/audio.spec.ts:75:1 › 音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える (7.1s)
+  ✓  8 [webkit] › tests/browser/audio.spec.ts:93:1 › 実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査 (1.8s)
+
+  8 passed (1.1m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
