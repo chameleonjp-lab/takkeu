@@ -128,9 +128,9 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
       for (let added = 0; added < update.addedBalls; added++) {
         const id = state.balls.reduce((next, ball) => Math.max(next, ball.id + 1), state.nextBallId);
         state.nextBallId = id + 1;
-        const from = { x: 0, y: 0.5, z: -config.paddleZ };
+        const from = { ...chooseOpponentTarget(state, config), z: -config.paddleZ };
         let plan = planOpponentReturn({ ballId: id, earliestDepartAt: time + DIFFICULTY.addedBallDelay,
-          preferredTarget: choosePlayerTarget(state, config), speedMultiplier: speedMultiplier(state.score), score: state.score,
+          preferredTarget: choosePlayerTarget(state, config, from), speedMultiplier: speedMultiplier(state.score), score: state.score,
           randomValue: randomUnit(state) }, reservations(state), state.committedSmashDepartures, config);
         if (state.score >= 555) plan = deflectBounce(plan, from, randomUnit(state), config);
         const extra: SimulationBall = { id, phase: 'queued', from, position: from, plan, warningSent: false };
@@ -143,7 +143,7 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
       ball.position = ball.from;
       // Process ready actions in chronological order; this preserves waiting order.
       ball.plan = planOpponentReturn({ ballId: ball.id, earliestDepartAt: time,
-        preferredTarget: choosePlayerTarget(state, config),
+        preferredTarget: choosePlayerTarget(state, config, ball.from),
         speedMultiplier: speedMultiplier(state.score), score: state.score, randomValue: randomUnit(state) }, reservations(state), state.committedSmashDepartures, config);
       if (ball.plan.smash) state.committedSmashDepartures.push(ball.plan.departAt);
       if (state.score >= 555) ball.plan = deflectBounce(ball.plan, ball.from, randomUnit(state), config);
