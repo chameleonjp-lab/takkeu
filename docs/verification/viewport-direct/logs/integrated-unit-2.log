@@ -1,0 +1,17 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+
+ Test Files  36 passed (36)
+      Tests  254 passed (254)
+   Start at  19:35:37
+   Duration  5.58s (tests 55%, environment 31%, import 10%, transform 3%, worker 2%)
+
+    Isolate  36 workers spawned · ~222ms startup each (spawn + environment, per file)
+             at least ~2.45s faster with isolate: false — reuses workers across files instead of one per file
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

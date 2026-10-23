@@ -5,17 +5,17 @@ import type { GameSnapshot } from '../../src/game/types';
 
 // Functional load/UI checks retain traces, screenshots and state attachments.
 // Native input videos are recorded in contact/direct-input/basic-play instead.
-// Avoid encoding every software-GPU frame here: a full-canvas 30s run completed
-// all assertions but exhausted the unchanged 180s limit during artifact teardown.
-// CI traces showed full-viewport software-GPU readbacks exhausting the budget.
+// An earlier full-canvas run completed its assertions but exhausted the original
+// 180s limit during artifact teardown. Traces also show long screenshot/evaluate
+// API waits; no internal GPU profile establishes their sole cause.
 // Keep API/DOM/source traces and explicit milestone screenshots; omit only the
-// continuous trace screencast. Resolution, simulated duration and limits stay put.
+// continuous trace screencast. Resolution, simulated duration and assertions stay.
 test.use({ video: 'off', trace: { mode: 'retain-on-failure', screenshots: false, snapshots: true, sources: true } });
 
 test('開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む', async ({ page }, info) => {
-  // Full-viewport SwiftShader has ~3.7x the old PC pixel workload. CI traces
-  // exceeded 180s in GPU readback; this is a functional completion budget,
-  // not the unchanged 25ms/95% real-time performance acceptance criterion.
+  // Full viewport has ~3.7x the old PC pixel count. Repeated CI API/teardown waits
+  // exceeded 180s. This 360s functional budget applies locally and in CI;
+  // the separate 25ms/95% real-time performance criterion is unchanged.
   test.setTimeout(360_000);
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/tests/fixtures/stage3.html');

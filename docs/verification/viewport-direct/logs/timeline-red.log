@@ -1,0 +1,52 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/input-timeline.test.ts (3 tests | 3 failed) 6ms
+   × 未来の入力を先取りせず、同時刻の種類と受理順を全て保持する 4ms
+   × clearは停止前の入力を捨て、再開の初期位置だけを保持する 1ms
+   × NaNと既に確定した区間への入力を拒否する 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/input-timeline.test.ts > 未来の入力を先取りせず、同時刻の種類と受理順を全て保持する
+TypeError: timeline.take is not a function
+ ❯ tests/unit/input-timeline.test.ts:11:19
+      9|   timeline.enqueue({ kind: 'place', at: .020, target: initial });
+     10|   timeline.enqueue(a); timeline.enqueue(b); timeline.enqueue(c);
+     11|   expect(timeline.take(0, .002)).toEqual({ target: initial, samples: […
+       |                   ^
+     12|   expect(timeline.take(.002, .008)).toEqual({ target: initial, samples…
+     13|   expect(timeline.take(.008, .016)).toEqual({ target: b.target, sample…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/input-timeline.test.ts > clearは停止前の入力を捨て、再開の初期位置だけを保持する
+TypeError: timeline.take is not a function
+ ❯ tests/unit/input-timeline.test.ts:20:19
+     18|   timeline.enqueue({ at: 1, kind: 'move', target: { x: 1, y: .8 } });
+     19|   timeline.clear({ x: .1, y: .4 });
+     20|   expect(timeline.take(0, 2)).toEqual({ target: { x: .1, y: .4 }, samp…
+       |                   ^
+     21| });
+     22| it('NaNと既に確定した区間への入力を拒否する', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/input-timeline.test.ts > NaNと既に確定した区間への入力を拒否する
+TypeError: timeline.take is not a function
+ ❯ tests/unit/input-timeline.test.ts:24:12
+     22| it('NaNと既に確定した区間への入力を拒否する', () => {
+     23|   const timeline = createInputTimeline({ x: 0, y: .5 });
+     24|   timeline.take(0, .1);
+       |            ^
+     25|   timeline.enqueue({ at: .05, target: { x: 1, y: .8 } });
+     26|   timeline.enqueue({ at: NaN, target: { x: 1, y: .8 } });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  19:16:35
+   Duration  166ms (transform 60%, import 18%, tests 13%, worker 8%)
+

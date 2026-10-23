@@ -1,0 +1,122 @@
+[WebServer] (node:9426) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:9439) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 16 tests using 1 worker
+
+(node:9463) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/basic-play.spec.ts:64:1 › タッチの絶対位置ドラッグでラケットを動かせる (9.9s)
+  ✓   2 [chromium] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844 (3.7s)
+  ✓   3 [chromium] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390 (3.3s)
+  ✓   4 [chromium] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720 (5.8s)
+  ✓   5 [chromium] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360 (2.0s)
+  ✓   6 [chromium] › tests/browser/direct-input.spec.ts:64:1 › 二本指は両releaseで停止し、追加指やドラッグでは停止しない (1.2s)
+  ✓   7 [chromium] › tests/browser/direct-input.spec.ts:93:1 › 情報上の入力・safe area・resize連発・メニューに古い入力が残らない (1.2s)
+(node:9835) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   8 [chromium] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない (3.4s)
+(node:9962) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   9 [webkit] › tests/browser/basic-play.spec.ts:64:1 › タッチの絶対位置ドラッグでラケットを動かせる (5.2s)
+  ✓  10 [webkit] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844 (5.7s)
+  ✓  11 [webkit] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390 (6.0s)
+  ✘  12 [webkit] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720 (4.8s)
+(node:10360) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  13 [webkit] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360 (2.8s)
+(node:10462) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  14 [webkit] › tests/browser/direct-input.spec.ts:64:1 › 二本指は両releaseで停止し、追加指やドラッグでは停止しない (3.4s)
+  ✓  15 [webkit] › tests/browser/direct-input.spec.ts:93:1 › 情報上の入力・safe area・resize連発・メニューに古い入力が残らない (3.5s)
+(node:10660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  16 [webkit] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない (5.6s)
+
+
+  1) [webkit] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 1
+    Received:   1.0623677568735979
+
+      27 |   const paddle = await page.evaluate(() => window.stage3.snapshot().paddle);
+      28 |   const screen = await projection(page, paddle, false);
+    > 29 |   expect(Math.hypot(screen.x - expected.x, screen.y - expected.y)).toBeLessThan(1);
+         |                                                                    ^
+      30 | }
+      31 |
+      32 | for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 1280, height: 720 }, { width: 280, height: 360 }]) {
+        at aligned (/workspace/takkeu/tests/browser/direct-input.spec.ts:29:68)
+        at /workspace/takkeu/tests/browser/direct-input.spec.ts:45:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 1
+    Received:   1.0867987553907947
+
+      27 |   const paddle = await page.evaluate(() => window.stage3.snapshot().paddle);
+      28 |   const screen = await projection(page, paddle, false);
+    > 29 |   expect(Math.hypot(screen.x - expected.x, screen.y - expected.y)).toBeLessThan(1);
+         |                                                                    ^
+      30 | }
+      31 |
+      32 | for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 1280, height: 720 }, { width: 280, height: 360 }]) {
+        at aligned (/workspace/takkeu/tests/browser/direct-input.spec.ts:29:68)
+        at /workspace/takkeu/tests/browser/direct-input.spec.ts:47:75
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [webkit] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720 
+    [webkit] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360 
+  14 passed (1.2m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

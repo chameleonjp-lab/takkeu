@@ -1,0 +1,1858 @@
+[
+  {
+    "title": "Create context",
+    "method": "pw:api",
+    "startMs": 261093.822,
+    "endMs": 261096.603,
+    "durationMs": 2.7810000000172295,
+    "error": null
+  },
+  {
+    "title": "Fixture \"context\"",
+    "method": "fixture",
+    "startMs": 261093.258,
+    "endMs": 261098.621,
+    "durationMs": 5.363000000012107,
+    "error": null
+  },
+  {
+    "title": "Create page",
+    "method": "pw:api",
+    "startMs": 261099.187,
+    "endMs": 261122.944,
+    "durationMs": 23.756999999983236,
+    "error": null
+  },
+  {
+    "title": "Fixture \"page\"",
+    "method": "fixture",
+    "startMs": 261098.861,
+    "endMs": 261122.977,
+    "durationMs": 24.11600000000908,
+    "error": null
+  },
+  {
+    "title": "Before Hooks",
+    "method": "hook",
+    "startMs": 261089.726,
+    "endMs": 261122.996,
+    "durationMs": 33.27000000001863,
+    "error": null
+  },
+  {
+    "title": "Install clock \"{timeNumber|timeString}\"",
+    "method": "pw:api",
+    "startMs": 261124.256,
+    "endMs": 261133.247,
+    "durationMs": 8.99100000000908,
+    "error": null
+  },
+  {
+    "title": "Pause clock \"Fri Oct 23 2026 19:40:55 GMT+0000 (Coordinated Universal Time)\"",
+    "method": "pw:api",
+    "startMs": 261133.612,
+    "endMs": 261135.806,
+    "durationMs": 2.194000000017695,
+    "error": null
+  },
+  {
+    "title": "Navigate",
+    "method": "pw:api",
+    "startMs": 261136.228,
+    "endMs": 261578.939,
+    "durationMs": 442.71100000001024,
+    "error": null
+  },
+  {
+    "title": "Click",
+    "method": "pw:api",
+    "startMs": 261579.593,
+    "endMs": 261742.512,
+    "durationMs": 162.9189999999944,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 261743.003,
+    "endMs": 261755.774,
+    "durationMs": 12.771000000007916,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 261756.118,
+    "endMs": 261759.932,
+    "durationMs": 3.8140000000130385,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 261760.337,
+    "endMs": 261760.366,
+    "durationMs": 0.029000000009546056,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 261760.651,
+    "endMs": 267486.563,
+    "durationMs": 5725.912000000011,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 267487.119,
+    "endMs": 267517.69,
+    "durationMs": 30.570999999996275,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 267519.15,
+    "endMs": 267519.194,
+    "durationMs": 0.043999999994412065,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 267519.765,
+    "endMs": 267519.817,
+    "durationMs": 0.05199999996693805,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 267520.194,
+    "endMs": 267520.217,
+    "durationMs": 0.022999999986495823,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 267520.796,
+    "endMs": 267973.459,
+    "durationMs": 452.66300000000047,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 267974.265,
+    "endMs": 268001.329,
+    "durationMs": 27.06400000001304,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 268003.747,
+    "endMs": 268003.786,
+    "durationMs": 0.03900000004796311,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 268004.172,
+    "endMs": 268004.212,
+    "durationMs": 0.03999999997904524,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 268004.601,
+    "endMs": 268004.622,
+    "durationMs": 0.02099999994970858,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 268004.95,
+    "endMs": 268431.239,
+    "durationMs": 426.28899999998976,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 268431.832,
+    "endMs": 268475.501,
+    "durationMs": 43.66899999999441,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 268476.765,
+    "endMs": 268476.8,
+    "durationMs": 0.03499999997438863,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 268477.523,
+    "endMs": 268477.573,
+    "durationMs": 0.04999999998835847,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 268483.009,
+    "endMs": 268483.044,
+    "durationMs": 0.03499999997438863,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 268483.505,
+    "endMs": 270073.019,
+    "durationMs": 1589.5139999999665,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 270073.699,
+    "endMs": 270100.725,
+    "durationMs": 27.025999999954365,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 270101.735,
+    "endMs": 270101.772,
+    "durationMs": 0.03700000001117587,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 270125.02,
+    "endMs": 270125.085,
+    "durationMs": 0.0650000000023283,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 270125.472,
+    "endMs": 270125.493,
+    "durationMs": 0.021000000007916242,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 270125.807,
+    "endMs": 270884.127,
+    "durationMs": 758.320000000007,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 270884.852,
+    "endMs": 270903.807,
+    "durationMs": 18.95499999995809,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 270904.45,
+    "endMs": 270904.476,
+    "durationMs": 0.026000000012572855,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 270904.672,
+    "endMs": 270904.709,
+    "durationMs": 0.03699999995296821,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 270904.863,
+    "endMs": 270904.874,
+    "durationMs": 0.010999999998603016,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 270905.07,
+    "endMs": 275610.72,
+    "durationMs": 4705.649999999965,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 275611.195,
+    "endMs": 275640.739,
+    "durationMs": 29.543999999994412,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 275641.582,
+    "endMs": 275641.61,
+    "durationMs": 0.027999999991152436,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 275641.877,
+    "endMs": 275641.917,
+    "durationMs": 0.0400000000372529,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 275642.199,
+    "endMs": 275642.215,
+    "durationMs": 0.01600000000325963,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 275642.523,
+    "endMs": 280631.138,
+    "durationMs": 4988.614999999991,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 280631.749,
+    "endMs": 280654.53,
+    "durationMs": 22.78100000001723,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 280655.431,
+    "endMs": 280655.462,
+    "durationMs": 0.031000000017229468,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 280655.757,
+    "endMs": 280655.786,
+    "durationMs": 0.029000000038649887,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 280656.029,
+    "endMs": 280656.043,
+    "durationMs": 0.014000000024680048,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 280656.363,
+    "endMs": 290905.596,
+    "durationMs": 10249.233000000007,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 290906.175,
+    "endMs": 290952.498,
+    "durationMs": 46.32300000003306,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 290953.092,
+    "endMs": 290953.118,
+    "durationMs": 0.026000000012572855,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 290953.33,
+    "endMs": 290953.354,
+    "durationMs": 0.023999999975785613,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 290953.509,
+    "endMs": 290953.52,
+    "durationMs": 0.010999999998603016,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 290953.715,
+    "endMs": 293066.96,
+    "durationMs": 2113.2449999999953,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 293067.549,
+    "endMs": 293097.96,
+    "durationMs": 30.411000000021886,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 293099.054,
+    "endMs": 293099.087,
+    "durationMs": 0.03299999999580905,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 293099.415,
+    "endMs": 293099.444,
+    "durationMs": 0.029000000038649887,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 293099.7,
+    "endMs": 293099.718,
+    "durationMs": 0.01799999998183921,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 293100.049,
+    "endMs": 305033.292,
+    "durationMs": 11933.243000000017,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 305039.992,
+    "endMs": 305085.8,
+    "durationMs": 45.807999999960884,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 305087.09,
+    "endMs": 305087.126,
+    "durationMs": 0.03599999996367842,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 305087.475,
+    "endMs": 305087.503,
+    "durationMs": 0.028000000049360096,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 305087.774,
+    "endMs": 305087.794,
+    "durationMs": 0.02000000001862645,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 305088.145,
+    "endMs": 324834.355,
+    "durationMs": 19746.209999999963,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 324835.091,
+    "endMs": 324871.515,
+    "durationMs": 36.42399999999907,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 324872.621,
+    "endMs": 324872.654,
+    "durationMs": 0.03299999999580905,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 324873.13,
+    "endMs": 324873.157,
+    "durationMs": 0.027000000001862645,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 324873.436,
+    "endMs": 324873.451,
+    "durationMs": 0.015000000013969839,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 324873.742,
+    "endMs": 325570.136,
+    "durationMs": 696.3939999999711,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 325570.78,
+    "endMs": 325626.86,
+    "durationMs": 56.07999999995809,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 325627.899,
+    "endMs": 325627.931,
+    "durationMs": 0.03200000000651926,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 325628.253,
+    "endMs": 325628.283,
+    "durationMs": 0.029999999969732016,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 325628.609,
+    "endMs": 325628.63,
+    "durationMs": 0.021000000007916242,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 325628.961,
+    "endMs": 334259.545,
+    "durationMs": 8630.583999999973,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 334260.293,
+    "endMs": 334291.387,
+    "durationMs": 31.09399999998277,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 334297.131,
+    "endMs": 334297.166,
+    "durationMs": 0.03500000003259629,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 334297.661,
+    "endMs": 334297.74,
+    "durationMs": 0.0789999999688007,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 334298.056,
+    "endMs": 334298.108,
+    "durationMs": 0.05200000002514571,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 334298.588,
+    "endMs": 335658.636,
+    "durationMs": 1360.0480000000098,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 335659.356,
+    "endMs": 335685.395,
+    "durationMs": 26.038999999989755,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 335686.889,
+    "endMs": 335686.918,
+    "durationMs": 0.028999999980442226,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 335687.178,
+    "endMs": 335687.198,
+    "durationMs": 0.01999999996041879,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 335687.465,
+    "endMs": 335687.48,
+    "durationMs": 0.014999999955762178,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 335687.73,
+    "endMs": 347581.722,
+    "durationMs": 11893.992000000027,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 347582.274,
+    "endMs": 347604.361,
+    "durationMs": 22.086999999999534,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 347605.406,
+    "endMs": 347605.438,
+    "durationMs": 0.03200000000651926,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 347605.905,
+    "endMs": 347605.93,
+    "durationMs": 0.024999999965075403,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 347630.493,
+    "endMs": 347630.525,
+    "durationMs": 0.03200000000651926,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 347630.94,
+    "endMs": 348043.704,
+    "durationMs": 412.7640000000247,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 348044.179,
+    "endMs": 348070.449,
+    "durationMs": 26.270000000018626,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 348071.258,
+    "endMs": 348071.282,
+    "durationMs": 0.024000000033993274,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 348071.502,
+    "endMs": 348071.517,
+    "durationMs": 0.015000000013969839,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 348071.674,
+    "endMs": 348071.685,
+    "durationMs": 0.010999999998603016,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 348071.887,
+    "endMs": 357191.032,
+    "durationMs": 9119.145000000019,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 357191.575,
+    "endMs": 357231.712,
+    "durationMs": 40.13699999998789,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 357232.827,
+    "endMs": 357232.856,
+    "durationMs": 0.029000000038649887,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 357233.595,
+    "endMs": 357233.763,
+    "durationMs": 0.16800000000512227,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 357234.155,
+    "endMs": 357234.179,
+    "durationMs": 0.023999999975785613,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 357234.604,
+    "endMs": 359448.922,
+    "durationMs": 2214.3180000000284,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 359449.56,
+    "endMs": 359474.457,
+    "durationMs": 24.896999999997206,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 359475.587,
+    "endMs": 359475.622,
+    "durationMs": 0.03499999997438863,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 359475.933,
+    "endMs": 359475.954,
+    "durationMs": 0.021000000007916242,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 359476.192,
+    "endMs": 359476.208,
+    "durationMs": 0.01600000000325963,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 359476.523,
+    "endMs": 370655.75,
+    "durationMs": 11179.227000000014,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 370657.916,
+    "endMs": 370696.683,
+    "durationMs": 38.76699999999255,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 370698,
+    "endMs": 370698.061,
+    "durationMs": 0.060999999986961484,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 370698.666,
+    "endMs": 370698.698,
+    "durationMs": 0.0319999999483116,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 370699.153,
+    "endMs": 370699.178,
+    "durationMs": 0.025000000023283064,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 370699.585,
+    "endMs": 371162.264,
+    "durationMs": 462.6790000000037,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 371163.195,
+    "endMs": 371205.252,
+    "durationMs": 42.056999999971595,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 371206.137,
+    "endMs": 371206.21,
+    "durationMs": 0.07300000003306195,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 371224.61,
+    "endMs": 371224.714,
+    "durationMs": 0.10399999999208376,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 371225.126,
+    "endMs": 371225.173,
+    "durationMs": 0.0470000000204891,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 371225.939,
+    "endMs": 375302.221,
+    "durationMs": 4076.2820000000065,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 375303.051,
+    "endMs": 375354.831,
+    "durationMs": 51.78000000002794,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 375356.195,
+    "endMs": 375356.673,
+    "durationMs": 0.47800000000279397,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 375357.093,
+    "endMs": 375357.124,
+    "durationMs": 0.031000000017229468,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 375357.77,
+    "endMs": 375358.001,
+    "durationMs": 0.23099999997066334,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 375358.505,
+    "endMs": 375795.91,
+    "durationMs": 437.40499999996973,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 375802.417,
+    "endMs": 375872.61,
+    "durationMs": 70.1929999999702,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 375873.761,
+    "endMs": 375873.799,
+    "durationMs": 0.03800000000046566,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 375874.708,
+    "endMs": 375874.768,
+    "durationMs": 0.059999999997671694,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 375875.608,
+    "endMs": 375875.646,
+    "durationMs": 0.03800000000046566,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 375876.913,
+    "endMs": 378649.124,
+    "durationMs": 2772.2110000000102,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 378649.939,
+    "endMs": 378683.347,
+    "durationMs": 33.40799999999581,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 378684.434,
+    "endMs": 378684.511,
+    "durationMs": 0.07699999999022111,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 378684.962,
+    "endMs": 378684.996,
+    "durationMs": 0.03399999998509884,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 378685.984,
+    "endMs": 378686.05,
+    "durationMs": 0.0659999999916181,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 378686.542,
+    "endMs": 389598.022,
+    "durationMs": 10911.479999999981,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 389598.644,
+    "endMs": 389639.958,
+    "durationMs": 41.31400000001304,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 389640.864,
+    "endMs": 389640.894,
+    "durationMs": 0.029999999969732016,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 389641.184,
+    "endMs": 389641.206,
+    "durationMs": 0.021999999997206032,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 389641.968,
+    "endMs": 389641.992,
+    "durationMs": 0.024000000033993274,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 389643.007,
+    "endMs": 411471.697,
+    "durationMs": 21828.690000000002,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 411475.2,
+    "endMs": 411537.3,
+    "durationMs": 62.09999999997672,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 411538.426,
+    "endMs": 411538.469,
+    "durationMs": 0.043000000005122274,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 411538.934,
+    "endMs": 411538.963,
+    "durationMs": 0.028999999980442226,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 411539.265,
+    "endMs": 411539.283,
+    "durationMs": 0.01799999998183921,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 411539.624,
+    "endMs": 417674.578,
+    "durationMs": 6134.953999999969,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 417675.372,
+    "endMs": 417741.682,
+    "durationMs": 66.30999999999767,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 417746.114,
+    "endMs": 417746.19,
+    "durationMs": 0.07600000000093132,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 417746.681,
+    "endMs": 417746.707,
+    "durationMs": 0.026000000012572855,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 417746.997,
+    "endMs": 417747.012,
+    "durationMs": 0.015000000013969839,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 417747.712,
+    "endMs": 425632.162,
+    "durationMs": 7884.450000000012,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 425632.874,
+    "endMs": 425684.637,
+    "durationMs": 51.76299999997718,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 425685.832,
+    "endMs": 425685.859,
+    "durationMs": 0.027000000001862645,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 425686.07,
+    "endMs": 425686.141,
+    "durationMs": 0.07099999999627471,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 425686.538,
+    "endMs": 425686.565,
+    "durationMs": 0.027000000001862645,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 425686.934,
+    "endMs": 426226.996,
+    "durationMs": 540.0619999999763,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 426227.774,
+    "endMs": 426268.278,
+    "durationMs": 40.50400000001537,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 426269.207,
+    "endMs": 426269.24,
+    "durationMs": 0.03299999999580905,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 426269.793,
+    "endMs": 426269.821,
+    "durationMs": 0.027999999991152436,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 426270.548,
+    "endMs": 426270.575,
+    "durationMs": 0.027000000001862645,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 426270.941,
+    "endMs": 431630.334,
+    "durationMs": 5359.392999999982,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 431631.077,
+    "endMs": 431664.389,
+    "durationMs": 33.31200000003446,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 431665.454,
+    "endMs": 431665.499,
+    "durationMs": 0.044999999983701855,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 431665.879,
+    "endMs": 431665.908,
+    "durationMs": 0.028999999980442226,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 431666.604,
+    "endMs": 431666.63,
+    "durationMs": 0.026000000012572855,
+    "error": null
+  },
+  {
+    "title": "Run clock \"1000\"",
+    "method": "pw:api",
+    "startMs": 431666.999,
+    "endMs": 442328.888,
+    "durationMs": 10661.888999999966,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 442329.358,
+    "endMs": 442380.869,
+    "durationMs": 51.5109999999986,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBe\"",
+    "method": "expect",
+    "startMs": 442381.829,
+    "endMs": 442381.862,
+    "durationMs": 0.03299999999580905,
+    "error": null
+  },
+  {
+    "title": "Expect \"toHaveLength\"",
+    "method": "expect",
+    "startMs": 442382.145,
+    "endMs": 442382.173,
+    "durationMs": 0.027999999991152436,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeLessThan\"",
+    "method": "expect",
+    "startMs": 442382.421,
+    "endMs": 442382.443,
+    "durationMs": 0.022000000055413693,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeGreaterThan\"",
+    "method": "expect",
+    "startMs": 442382.668,
+    "endMs": 442382.687,
+    "durationMs": 0.018999999971129,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 442382.948,
+    "endMs": 442388.468,
+    "durationMs": 5.5200000000186265,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442388.743,
+    "endMs": 442388.988,
+    "durationMs": 0.2449999999953434,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442389.222,
+    "endMs": 442389.251,
+    "durationMs": 0.028999999980442226,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442389.482,
+    "endMs": 442389.507,
+    "durationMs": 0.024999999965075403,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442389.771,
+    "endMs": 442389.795,
+    "durationMs": 0.023999999975785613,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442389.978,
+    "endMs": 442389.998,
+    "durationMs": 0.02000000001862645,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442390.221,
+    "endMs": 442390.243,
+    "durationMs": 0.021999999997206032,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442390.466,
+    "endMs": 442390.486,
+    "durationMs": 0.01999999996041879,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442390.655,
+    "endMs": 442390.673,
+    "durationMs": 0.01799999998183921,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442390.831,
+    "endMs": 442390.853,
+    "durationMs": 0.021999999997206032,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442391.008,
+    "endMs": 442391.036,
+    "durationMs": 0.028000000049360096,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442391.369,
+    "endMs": 442391.398,
+    "durationMs": 0.028999999980442226,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442391.613,
+    "endMs": 442391.632,
+    "durationMs": 0.018999999971129,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442391.818,
+    "endMs": 442391.834,
+    "durationMs": 0.015999999945051968,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442392.006,
+    "endMs": 442392.021,
+    "durationMs": 0.015000000013969839,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442392.189,
+    "endMs": 442392.204,
+    "durationMs": 0.015000000013969839,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442393.309,
+    "endMs": 442393.369,
+    "durationMs": 0.059999999997671694,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442393.763,
+    "endMs": 442393.79,
+    "durationMs": 0.027000000001862645,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442394.008,
+    "endMs": 442394.028,
+    "durationMs": 0.02000000001862645,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442394.263,
+    "endMs": 442394.28,
+    "durationMs": 0.01700000005075708,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442394.815,
+    "endMs": 442394.92,
+    "durationMs": 0.10499999998137355,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442395.253,
+    "endMs": 442395.281,
+    "durationMs": 0.027999999991152436,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442395.51,
+    "endMs": 442395.528,
+    "durationMs": 0.01799999998183921,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442395.85,
+    "endMs": 442395.871,
+    "durationMs": 0.021000000007916242,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442396.059,
+    "endMs": 442396.074,
+    "durationMs": 0.015000000013969839,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442396.245,
+    "endMs": 442396.258,
+    "durationMs": 0.012999999977182597,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442396.445,
+    "endMs": 442396.457,
+    "durationMs": 0.011999999987892807,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442396.624,
+    "endMs": 442396.637,
+    "durationMs": 0.012999999977182597,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442396.874,
+    "endMs": 442396.889,
+    "durationMs": 0.015000000013969839,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442397.111,
+    "endMs": 442397.127,
+    "durationMs": 0.01600000000325963,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442399.021,
+    "endMs": 442399.058,
+    "durationMs": 0.03700000001117587,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442399.402,
+    "endMs": 442399.428,
+    "durationMs": 0.026000000012572855,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442399.617,
+    "endMs": 442399.633,
+    "durationMs": 0.015999999945051968,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442399.913,
+    "endMs": 442399.935,
+    "durationMs": 0.021999999997206032,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442400.225,
+    "endMs": 442400.248,
+    "durationMs": 0.023000000044703484,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442400.496,
+    "endMs": 442400.515,
+    "durationMs": 0.01900000002933666,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442400.706,
+    "endMs": 442400.724,
+    "durationMs": 0.01799999998183921,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442400.908,
+    "endMs": 442400.924,
+    "durationMs": 0.01600000000325963,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442401.102,
+    "endMs": 442401.118,
+    "durationMs": 0.01600000000325963,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442401.31,
+    "endMs": 442401.35,
+    "durationMs": 0.03999999997904524,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442401.539,
+    "endMs": 442401.554,
+    "durationMs": 0.015000000013969839,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442401.733,
+    "endMs": 442401.747,
+    "durationMs": 0.013999999966472387,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442401.92,
+    "endMs": 442401.934,
+    "durationMs": 0.014000000024680048,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442402.183,
+    "endMs": 442402.202,
+    "durationMs": 0.018999999971129,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442402.831,
+    "endMs": 442402.855,
+    "durationMs": 0.023999999975785613,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442403.075,
+    "endMs": 442403.16,
+    "durationMs": 0.0849999999627471,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442403.421,
+    "endMs": 442403.441,
+    "durationMs": 0.02000000001862645,
+    "error": null
+  },
+  {
+    "title": "Expect \"toContain\"",
+    "method": "expect",
+    "startMs": 442403.657,
+    "endMs": 442403.673,
+    "durationMs": 0.01600000000325963,
+    "error": null
+  },
+  {
+    "title": "Evaluate",
+    "method": "pw:api",
+    "startMs": 442403.937,
+    "endMs": 442439.787,
+    "durationMs": 35.850000000034925,
+    "error": null
+  },
+  {
+    "title": "Expect \"toBeGreaterThan\"",
+    "method": "expect",
+    "startMs": 442440.296,
+    "endMs": 442440.343,
+    "durationMs": 0.0470000000204891,
+    "error": null
+  },
+  {
+    "title": "Attach \"growing-ball-load.json\"",
+    "method": "test.attach",
+    "startMs": 442449.758,
+    "endMs": 442457.875,
+    "durationMs": 8.117000000027474,
+    "error": null
+  },
+  {
+    "title": "Fixture \"page\"",
+    "method": "fixture",
+    "startMs": 446103.85,
+    "endMs": 446106.223,
+    "durationMs": 2.3730000000214204,
+    "error": null
+  },
+  {
+    "title": "Close context",
+    "method": "pw:api",
+    "startMs": 446342.619,
+    "endMs": 447579.923,
+    "durationMs": 1237.3040000000037,
+    "error": null
+  },
+  {
+    "title": "Fixture \"context\"",
+    "method": "fixture",
+    "startMs": 446106.625,
+    "endMs": 447587.504,
+    "durationMs": 1480.8790000000154,
+    "error": null
+  },
+  {
+    "title": "Attach \"error-context\"",
+    "method": "test.attach",
+    "startMs": 447589.489,
+    "endMs": 447589.503,
+    "durationMs": 0.014000000024680048,
+    "error": null
+  },
+  {
+    "title": "Fixture \"baseURL\"",
+    "method": "fixture",
+    "startMs": 447590.173,
+    "endMs": 447590.183,
+    "durationMs": 0.010000000009313226,
+    "error": null
+  },
+  {
+    "title": "Fixture \"userAgent\"",
+    "method": "fixture",
+    "startMs": 447590.188,
+    "endMs": 447590.192,
+    "durationMs": 0.003999999957159162,
+    "error": null
+  },
+  {
+    "title": "Fixture \"viewport\"",
+    "method": "fixture",
+    "startMs": 447590.292,
+    "endMs": 447590.296,
+    "durationMs": 0.003999999957159162,
+    "error": null
+  },
+  {
+    "title": "Fixture \"screen\"",
+    "method": "fixture",
+    "startMs": 447590.411,
+    "endMs": 447590.414,
+    "durationMs": 0.002999999967869371,
+    "error": null
+  },
+  {
+    "title": "Fixture \"isMobile\"",
+    "method": "fixture",
+    "startMs": 447590.932,
+    "endMs": 447590.936,
+    "durationMs": 0.0040000000153668225,
+    "error": null
+  },
+  {
+    "title": "Fixture \"hasTouch\"",
+    "method": "fixture",
+    "startMs": 447591.175,
+    "endMs": 447591.178,
+    "durationMs": 0.003000000026077032,
+    "error": null
+  },
+  {
+    "title": "Fixture \"deviceScaleFactor\"",
+    "method": "fixture",
+    "startMs": 447591.361,
+    "endMs": 447591.364,
+    "durationMs": 0.003000000026077032,
+    "error": null
+  },
+  {
+    "title": "After Hooks",
+    "method": "hook",
+    "startMs": 441095.429,
+    "endMs": 447591.96,
+    "durationMs": 6496.531000000017,
+    "error": null
+  },
+  {
+    "title": "Fixture \"video\"",
+    "method": "fixture",
+    "startMs": 447592.576,
+    "endMs": 447592.581,
+    "durationMs": 0.005000000004656613,
+    "error": null
+  },
+  {
+    "title": "Fixture \"browser\"",
+    "method": "fixture",
+    "startMs": 447592.711,
+    "endMs": 476843.561,
+    "durationMs": 29250.849999999977,
+    "error": null
+  },
+  {
+    "title": "Fixture \"defaultBrowserType\"",
+    "method": "fixture",
+    "startMs": 476843.987,
+    "endMs": 476843.995,
+    "durationMs": 0.007999999972525984,
+    "error": null
+  },
+  {
+    "title": "Fixture \"screenshot\"",
+    "method": "fixture",
+    "startMs": 476843.998,
+    "endMs": 476844.001,
+    "durationMs": 0.002999999967869371,
+    "error": null
+  },
+  {
+    "title": "Fixture \"launchOptions\"",
+    "method": "fixture",
+    "startMs": 476844.26,
+    "endMs": 476844.263,
+    "durationMs": 0.002999999967869371,
+    "error": null
+  },
+  {
+    "title": "Worker Cleanup",
+    "method": "hook",
+    "startMs": 447592.089,
+    "endMs": 476844.452,
+    "durationMs": 29252.363000000012,
+    "error": null
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "dir": "/tmp/takkeu-release-diagnosis-t3nk61",
+  "sha": "ac389848773bb19539fd5f036cfb1990278efe40",
+  "script": "/workspace/takkeu-baseline/scripts/check-release-revision.mjs",
+  "execPath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+  "result": {
+    "error": {
+      "errno": -1,
+      "code": "EPERM",
+      "syscall": "spawnSync /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "spawnargs": [
+        "/workspace/takkeu-baseline/scripts/check-release-revision.mjs",
+        "ac389848773bb19539fd5f036cfb1990278efe40",
+        "refs/heads/main",
+        "ac389848773bb19539fd5f036cfb1990278efe40"
+      ]
+    },
+    "status": 1,
+    "signal": null,
+    "output": [
+      null,
+      "",
+      ""
+    ],
+    "pid": 4218,
+    "stdout": "",
+    "stderr": ""
+  }
+}

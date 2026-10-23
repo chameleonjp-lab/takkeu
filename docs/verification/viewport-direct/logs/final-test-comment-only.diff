@@ -1,0 +1,46 @@
+diff --git a/tests/browser/extended.spec.ts b/tests/browser/extended.spec.ts
+index 1739ab1..516e3bc 100644
+--- a/tests/browser/extended.spec.ts
++++ b/tests/browser/extended.spec.ts
+@@ -54,9 +54,9 @@ test('返球・台面の花火を実際の接触イベントで描き、停止
+ test('555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する',async({page},info)=>{
+   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+   page.on('console',message=>{if(message.type()==='error')errors.push(message.text());});
+-  // Full-viewport CI completed the 30-game-second state, then exceeded 240s
+-  // during software GPU readback/video teardown. Preserve all frames/assertions
+-  // with a 360s completion budget; real-time performance is assessed separately.
++  // A full-viewport CI run completed 30 game seconds and final assertions but
++  // exceeded 240s after long screenshot/teardown waits. Preserve all frames and
++  // assertions with 360s locally and in CI; real-time performance is separate.
+   test.setTimeout(360_000);await page.clock.install();await page.clock.pauseAt(new Date(Date.now()+1000));
+   await page.goto('/tests/fixtures/stage3.html');await page.getByRole('button',{name:'はじめる',exact:true}).click();
+   await page.evaluate(()=>{window.stage3.show(555);window.stage3.autoPlay(true);});
+diff --git a/tests/browser/quality.spec.ts b/tests/browser/quality.spec.ts
+index c53a133..44ac0c9 100644
+--- a/tests/browser/quality.spec.ts
++++ b/tests/browser/quality.spec.ts
+@@ -5,17 +5,17 @@ import type { GameSnapshot } from '../../src/game/types';
+ 
+ // Functional load/UI checks retain traces, screenshots and state attachments.
+ // Native input videos are recorded in contact/direct-input/basic-play instead.
+-// Avoid encoding every software-GPU frame here: a full-canvas 30s run completed
+-// all assertions but exhausted the unchanged 180s limit during artifact teardown.
+-// CI traces showed full-viewport software-GPU readbacks exhausting the budget.
++// An earlier full-canvas run completed its assertions but exhausted the original
++// 180s limit during artifact teardown. Traces also show long screenshot/evaluate
++// API waits; no internal GPU profile establishes their sole cause.
+ // Keep API/DOM/source traces and explicit milestone screenshots; omit only the
+-// continuous trace screencast. Resolution, simulated duration and limits stay put.
++// continuous trace screencast. Resolution, simulated duration and assertions stay.
+ test.use({ video: 'off', trace: { mode: 'retain-on-failure', screenshots: false, snapshots: true, sources: true } });
+ 
+ test('開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む', async ({ page }, info) => {
+-  // Full-viewport SwiftShader has ~3.7x the old PC pixel workload. CI traces
+-  // exceeded 180s in GPU readback; this is a functional completion budget,
+-  // not the unchanged 25ms/95% real-time performance acceptance criterion.
++  // Full viewport has ~3.7x the old PC pixel count. Repeated CI API/teardown waits
++  // exceeded 180s. This 360s functional budget applies locally and in CI;
++  // the separate 25ms/95% real-time performance criterion is unchanged.
+   test.setTimeout(360_000);
+   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
+   await page.goto('/tests/fixtures/stage3.html');

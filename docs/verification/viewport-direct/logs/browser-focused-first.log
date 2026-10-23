@@ -1,0 +1,675 @@
+[WebServer] (node:6266) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:6279) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 30 tests using 1 worker
+
+(node:6306) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/basic-play.spec.ts:12:1 › 開始→直接配置・ドラッグ→返球→失球→結果→再挑戦 (21.4s)
+  ✓   2 [chromium] › tests/browser/basic-play.spec.ts:48:1 › 停止中は描画を保持し、再開操作でだけ進む (29.8s)
+  ✘   3 [chromium] › tests/browser/basic-play.spec.ts:64:1 › タッチの絶対位置ドラッグでラケットを動かせる (13.3s)
+(node:6569) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘   4 [chromium] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844 (1.2s)
+(node:6702) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘   5 [chromium] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390 (1.4s)
+(node:6833) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘   6 [chromium] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720 (1.4s)
+(node:6940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘   7 [chromium] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360 (1.2s)
+(node:7067) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘   8 [chromium] › tests/browser/direct-input.spec.ts:62:1 › 二本指は両releaseで停止し、追加指やドラッグでは停止しない (6.1s)
+(node:7173) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘   9 [chromium] › tests/browser/direct-input.spec.ts:91:1 › 情報上の入力・safe area・resize連発・メニューに古い入力が残らない (1.1s)
+(node:7273) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  10 [chromium] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない (7.5s)
+(node:7415) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  11 [chromium] › tests/browser/lifecycle.spec.ts:39:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 (4.3s)
+  ✓  12 [chromium] › tests/browser/lifecycle.spec.ts:56:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する (3.5s)
+  ✓  13 [chromium] › tests/browser/lifecycle.spec.ts:74:1 › 実際のWEBGL_lose_contextによる喪失と復旧でも手動再開を待つ (2.8s)
+  ✓  14 [chromium] › tests/browser/lifecycle.spec.ts:92:1 › 描画再作成の失敗時も状態を壊さずホームへ戻れる (1.4s)
+  ✓  15 [chromium] › tests/browser/reference.spec.ts:3:1 › viewport全体の実描画でPC・縦・横の台を最大限収める (1.9s)
+(node:7731) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  16 [webkit] › tests/browser/basic-play.spec.ts:12:1 › 開始→直接配置・ドラッグ→返球→失球→結果→再挑戦 (14.0s)
+  ✓  17 [webkit] › tests/browser/basic-play.spec.ts:48:1 › 停止中は描画を保持し、再開操作でだけ進む (8.5s)
+  ✘  18 [webkit] › tests/browser/basic-play.spec.ts:64:1 › タッチの絶対位置ドラッグでラケットを動かせる (10.2s)
+(node:8005) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  19 [webkit] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844 (3.0s)
+(node:8107) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  20 [webkit] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390 (3.2s)
+(node:8224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  21 [webkit] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720 (4.3s)
+(node:8452) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  22 [webkit] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360 (2.8s)
+(node:8554) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  23 [webkit] › tests/browser/direct-input.spec.ts:62:1 › 二本指は両releaseで停止し、追加指やドラッグでは停止しない (7.7s)
+(node:8664) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  24 [webkit] › tests/browser/direct-input.spec.ts:91:1 › 情報上の入力・safe area・resize連発・メニューに古い入力が残らない (3.6s)
+(node:8794) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  25 [webkit] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない (7.7s)
+(node:8896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  26 [webkit] › tests/browser/lifecycle.spec.ts:39:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 (8.3s)
+  ✓  27 [webkit] › tests/browser/lifecycle.spec.ts:56:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する (7.0s)
+  ✓  28 [webkit] › tests/browser/lifecycle.spec.ts:74:1 › 実際のWEBGL_lose_contextによる喪失と復旧でも手動再開を待つ (5.1s)
+  ✓  29 [webkit] › tests/browser/lifecycle.spec.ts:92:1 › 描画再作成の失敗時も状態を壊さずホームへ戻れる (3.4s)
+  ✓  30 [webkit] › tests/browser/reference.spec.ts:3:1 › viewport全体の実描画でPC・縦・横の台を最大限収める (5.7s)
+
+
+  1) [chromium] › tests/browser/basic-play.spec.ts:64:1 › タッチの絶対位置ドラッグでラケットを動かせる ───────────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'ナイスラリー！' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'ナイスラリー！' }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'ナイスラリー！' })
+
+
+      72 |   await surface.dispatchEvent('pointerup', { pointerId: 10, pointerType: 'touch', clientX: position.x + box.width * 0.8, clientY: position.y - 100 });
+      73 |   await page.clock.runFor(2700);
+    > 74 |   await expect(page.getByRole('heading', { name: 'ナイスラリー！' })).toBeVisible();
+         |                                                                ^
+      75 |   await expect(page.getByLabel('今回のラリー数')).toHaveText('0');
+      76 | });
+      77 |
+        at /workspace/takkeu/tests/browser/basic-play.spec.ts:74:64
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/basic-play-タッチの絶対位置ドラッグでラケットを動かせる-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/basic-play-タッチの絶対位置ドラッグでラケットを動かせる-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/basic-play-タッチの絶対位置ドラッグでラケットを動かせる-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/basic-play-タッチの絶対位置ドラッグでラケットを動かせる-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/basic-play-タッチの絶対位置ドラッグでラケットを動かせる-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 1
+    Received:   160.72677347444707
+
+      25 |   const paddle = await page.evaluate(() => window.stage3.snapshot().paddle);
+      26 |   const screen = await projection(page, paddle, false);
+    > 27 |   expect(Math.hypot(screen.x - expected.x, screen.y - expected.y)).toBeLessThan(1);
+         |                                                                    ^
+      28 | }
+      29 |
+      30 | for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 1280, height: 720 }, { width: 280, height: 360 }]) {
+        at aligned (/workspace/takkeu/tests/browser/direct-input.spec.ts:27:68)
+        at /workspace/takkeu/tests/browser/direct-input.spec.ts:43:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 1
+    Received:   213.02966956100104
+
+      25 |   const paddle = await page.evaluate(() => window.stage3.snapshot().paddle);
+      26 |   const screen = await projection(page, paddle, false);
+    > 27 |   expect(Math.hypot(screen.x - expected.x, screen.y - expected.y)).toBeLessThan(1);
+         |                                                                    ^
+      28 | }
+      29 |
+      30 | for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 1280, height: 720 }, { width: 280, height: 360 }]) {
+        at aligned (/workspace/takkeu/tests/browser/direct-input.spec.ts:27:68)
+        at /workspace/takkeu/tests/browser/direct-input.spec.ts:43:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-844×390-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-844×390-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-844×390-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-844×390-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-844×390-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 1
+    Received:   393.28554380492494
+
+      25 |   const paddle = await page.evaluate(() => window.stage3.snapshot().paddle);
+      26 |   const screen = await projection(page, paddle, false);
+    > 27 |   expect(Math.hypot(screen.x - expected.x, screen.y - expected.y)).toBeLessThan(1);
+         |                                                                    ^
+      28 | }
+      29 |
+      30 | for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 1280, height: 720 }, { width: 280, height: 360 }]) {
+        at aligned (/workspace/takkeu/tests/browser/direct-input.spec.ts:27:68)
+        at /workspace/takkeu/tests/browser/direct-input.spec.ts:43:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 1
+    Received:   115.39358095601331
+
+      25 |   const paddle = await page.evaluate(() => window.stage3.snapshot().paddle);
+      26 |   const screen = await projection(page, paddle, false);
+    > 27 |   expect(Math.hypot(screen.x - expected.x, screen.y - expected.y)).toBeLessThan(1);
+         |                                                                    ^
+      28 | }
+      29 |
+      30 | for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 1280, height: 720 }, { width: 280, height: 360 }]) {
+        at aligned (/workspace/takkeu/tests/browser/direct-input.spec.ts:27:68)
+        at /workspace/takkeu/tests/browser/direct-input.spec.ts:45:75
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chromium] › tests/browser/direct-input.spec.ts:62:1 › 二本指は両releaseで停止し、追加指やドラッグでは停止しない ───────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('dialog')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('dialog') with timeout 5000ms
+      - waiting for getByRole('dialog')
+
+
+      71 |   expect(await page.evaluate(() => window.stage3.snapshot().phase)).toBe('running');
+      72 |   await canvas.dispatchEvent('pointerup', b);
+    > 73 |   await expect(page.getByRole('dialog')).toBeVisible();
+         |                                          ^
+      74 |   const paused = await page.evaluate(() => window.stage3.snapshot());
+      75 |   await page.clock.runFor(1000); expect(await page.evaluate(() => window.stage3.snapshot())).toEqual(paused);
+      76 |   await expect(page.getByRole('button', { name: 'つづける', exact: true })).toBeFocused();
+        at /workspace/takkeu/tests/browser/direct-input.spec.ts:73:42
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [chromium] › tests/browser/direct-input.spec.ts:91:1 › 情報上の入力・safe area・resize連発・メニューに古い入力が残らない 
+
+    Error: expect(received).not.toEqual(expected) // deep equality
+
+    Expected: not {"x": 0, "y": 0.5}
+
+
+       96 |   await page.mouse.click(hud!.x + 8, hud!.y + 8); await page.clock.runFor(12);
+       97 |   const inputState = await page.evaluate(() => window.stage3.snapshot());
+    >  98 |   expect(inputState.paddle).not.toEqual({ x: 0, y: .5 });
+          |                                 ^
+       99 |   await page.keyboard.press('Escape');
+      100 |   const paused = await page.evaluate(() => ({ state: window.stage3.snapshot(), renders: window.stage3.metrics().viewRenders }));
+      101 |   await page.evaluate(() => { for (let i = 0; i < 20; i++) window.dispatchEvent(new Event('resize')); });
+        at /workspace/takkeu/tests/browser/direct-input.spec.ts:98:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/direct-input-情報上の入力・safe-area・resize連発・メニューに古い入力が残らない-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/direct-input-情報上の入力・safe-area・resize連発・メニューに古い入力が残らない-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/direct-input-情報上の入力・safe-area・resize連発・メニューに古い入力が残らない-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/direct-input-情報上の入力・safe-area・resize連発・メニューに古い入力が残らない-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/direct-input-情報上の入力・safe-area・resize連発・メニューに古い入力が残らない-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [chromium] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない ────────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'ひと休み' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'ひと休み' }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'ひと休み' })
+
+
+      25 |   await surface.dispatchEvent('pointerdown', down);
+      26 |   await surface.dispatchEvent('lostpointercapture', down);
+    > 27 |   await expect(page.getByRole('heading', { name: 'ひと休み' })).toBeVisible();
+         |                                                             ^
+      28 |   const held = await page.evaluate(() => window.stage3.snapshot());
+      29 |   await page.setViewportSize({ width: 844, height: 390 }); await page.clock.runFor(5000);
+      30 |   expect(await page.evaluate(() => window.stage3.snapshot().paddle)).toEqual(held.paddle);
+        at /workspace/takkeu/tests/browser/lifecycle.spec.ts:27:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/lifecycle-通常の指離れ・2本目・追跡喪失・回転で入力が残らない-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/lifecycle-通常の指離れ・2本目・追跡喪失・回転で入力が残らない-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/lifecycle-通常の指離れ・2本目・追跡喪失・回転で入力が残らない-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/lifecycle-通常の指離れ・2本目・追跡喪失・回転で入力が残らない-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/lifecycle-通常の指離れ・2本目・追跡喪失・回転で入力が残らない-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [webkit] › tests/browser/basic-play.spec.ts:64:1 › タッチの絶対位置ドラッグでラケットを動かせる ─────────────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'ナイスラリー！' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'ナイスラリー！' }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'ナイスラリー！' })
+
+
+      72 |   await surface.dispatchEvent('pointerup', { pointerId: 10, pointerType: 'touch', clientX: position.x + box.width * 0.8, clientY: position.y - 100 });
+      73 |   await page.clock.runFor(2700);
+    > 74 |   await expect(page.getByRole('heading', { name: 'ナイスラリー！' })).toBeVisible();
+         |                                                                ^
+      75 |   await expect(page.getByLabel('今回のラリー数')).toHaveText('0');
+      76 | });
+      77 |
+        at /workspace/takkeu/tests/browser/basic-play.spec.ts:74:64
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/basic-play-タッチの絶対位置ドラッグでラケットを動かせる-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/basic-play-タッチの絶対位置ドラッグでラケットを動かせる-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/basic-play-タッチの絶対位置ドラッグでラケットを動かせる-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/basic-play-タッチの絶対位置ドラッグでラケットを動かせる-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/basic-play-タッチの絶対位置ドラッグでラケットを動かせる-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [webkit] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 1
+    Received:   160.72677347444707
+
+      25 |   const paddle = await page.evaluate(() => window.stage3.snapshot().paddle);
+      26 |   const screen = await projection(page, paddle, false);
+    > 27 |   expect(Math.hypot(screen.x - expected.x, screen.y - expected.y)).toBeLessThan(1);
+         |                                                                    ^
+      28 | }
+      29 |
+      30 | for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 1280, height: 720 }, { width: 280, height: 360 }]) {
+        at aligned (/workspace/takkeu/tests/browser/direct-input.spec.ts:27:68)
+        at /workspace/takkeu/tests/browser/direct-input.spec.ts:43:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [webkit] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 1
+    Received:   213.02966956100104
+
+      25 |   const paddle = await page.evaluate(() => window.stage3.snapshot().paddle);
+      26 |   const screen = await projection(page, paddle, false);
+    > 27 |   expect(Math.hypot(screen.x - expected.x, screen.y - expected.y)).toBeLessThan(1);
+         |                                                                    ^
+      28 | }
+      29 |
+      30 | for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 1280, height: 720 }, { width: 280, height: 360 }]) {
+        at aligned (/workspace/takkeu/tests/browser/direct-input.spec.ts:27:68)
+        at /workspace/takkeu/tests/browser/direct-input.spec.ts:43:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-844×390-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-844×390-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-844×390-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-844×390-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-844×390-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [webkit] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 1
+    Received:   393.28554380492494
+
+      25 |   const paddle = await page.evaluate(() => window.stage3.snapshot().paddle);
+      26 |   const screen = await projection(page, paddle, false);
+    > 27 |   expect(Math.hypot(screen.x - expected.x, screen.y - expected.y)).toBeLessThan(1);
+         |                                                                    ^
+      28 | }
+      29 |
+      30 | for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 1280, height: 720 }, { width: 280, height: 360 }]) {
+        at aligned (/workspace/takkeu/tests/browser/direct-input.spec.ts:27:68)
+        at /workspace/takkeu/tests/browser/direct-input.spec.ts:43:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [webkit] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 1
+    Received:   115.22325996288146
+
+      25 |   const paddle = await page.evaluate(() => window.stage3.snapshot().paddle);
+      26 |   const screen = await projection(page, paddle, false);
+    > 27 |   expect(Math.hypot(screen.x - expected.x, screen.y - expected.y)).toBeLessThan(1);
+         |                                                                    ^
+      28 | }
+      29 |
+      30 | for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 1280, height: 720 }, { width: 280, height: 360 }]) {
+        at aligned (/workspace/takkeu/tests/browser/direct-input.spec.ts:27:68)
+        at /workspace/takkeu/tests/browser/direct-input.spec.ts:45:75
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [webkit] › tests/browser/direct-input.spec.ts:62:1 › 二本指は両releaseで停止し、追加指やドラッグでは停止しない ────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('dialog')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('dialog') with timeout 5000ms
+      - waiting for getByRole('dialog')
+
+
+      71 |   expect(await page.evaluate(() => window.stage3.snapshot().phase)).toBe('running');
+      72 |   await canvas.dispatchEvent('pointerup', b);
+    > 73 |   await expect(page.getByRole('dialog')).toBeVisible();
+         |                                          ^
+      74 |   const paused = await page.evaluate(() => window.stage3.snapshot());
+      75 |   await page.clock.runFor(1000); expect(await page.evaluate(() => window.stage3.snapshot())).toEqual(paused);
+      76 |   await expect(page.getByRole('button', { name: 'つづける', exact: true })).toBeFocused();
+        at /workspace/takkeu/tests/browser/direct-input.spec.ts:73:42
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [webkit] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない ─────────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'ひと休み' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'ひと休み' }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'ひと休み' })
+
+
+      25 |   await surface.dispatchEvent('pointerdown', down);
+      26 |   await surface.dispatchEvent('lostpointercapture', down);
+    > 27 |   await expect(page.getByRole('heading', { name: 'ひと休み' })).toBeVisible();
+         |                                                             ^
+      28 |   const held = await page.evaluate(() => window.stage3.snapshot());
+      29 |   await page.setViewportSize({ width: 844, height: 390 }); await page.clock.runFor(5000);
+      30 |   expect(await page.evaluate(() => window.stage3.snapshot().paddle)).toEqual(held.paddle);
+        at /workspace/takkeu/tests/browser/lifecycle.spec.ts:27:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/lifecycle-通常の指離れ・2本目・追跡喪失・回転で入力が残らない-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/lifecycle-通常の指離れ・2本目・追跡喪失・回転で入力が残らない-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/lifecycle-通常の指離れ・2本目・追跡喪失・回転で入力が残らない-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/lifecycle-通常の指離れ・2本目・追跡喪失・回転で入力が残らない-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/lifecycle-通常の指離れ・2本目・追跡喪失・回転で入力が残らない-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15 failed
+    [chromium] › tests/browser/basic-play.spec.ts:64:1 › タッチの絶対位置ドラッグでラケットを動かせる ────────────────────
+    [chromium] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844 
+    [chromium] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390 
+    [chromium] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720 
+    [chromium] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360 
+    [chromium] › tests/browser/direct-input.spec.ts:62:1 › 二本指は両releaseで停止し、追加指やドラッグでは停止しない ────────
+    [chromium] › tests/browser/direct-input.spec.ts:91:1 › 情報上の入力・safe area・resize連発・メニューに古い入力が残らない 
+    [chromium] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない ─────────────────
+    [webkit] › tests/browser/basic-play.spec.ts:64:1 › タッチの絶対位置ドラッグでラケットを動かせる ──────────────────────
+    [webkit] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844 
+    [webkit] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390 
+    [webkit] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720 
+    [webkit] › tests/browser/direct-input.spec.ts:31:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360 
+    [webkit] › tests/browser/direct-input.spec.ts:62:1 › 二本指は両releaseで停止し、追加指やドラッグでは停止しない ──────────
+    [webkit] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない ───────────────────
+  15 passed (3.5m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

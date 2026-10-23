@@ -1,0 +1,58 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/home/runner/work/takkeu/takkeu[39m
+
+ [32m✓[39m tests/unit/direct-contact.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 28[2mms[22m[39m
+ [32m✓[39m tests/unit/presentation.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 188[2mms[22m[39m
+ [32m✓[39m tests/unit/audio-events.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m tests/unit/swipe.test.ts [2m([22m[2m30 tests[22m[2m)[22m[32m 126[2mms[22m[39m
+ [32m✓[39m tests/unit/pointer-loop.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 107[2mms[22m[39m
+ [32m✓[39m tests/unit/opponent.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 33[2mms[22m[39m
+ [32m✓[39m tests/unit/screens-direct.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 554[2mms[22m[39m
+ [32m✓[39m tests/unit/extended-core.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 25[2mms[22m[39m
+ [32m✓[39m tests/unit/multiball.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 1431[2mms[22m[39m
+   [32m✓[39m 多球の接触・落球・累計到達 [2m(12)[22m
+     [33m[2m✓[22m[39m 4球・上限速度でも決められた中心へ順に移動すれば継続できる[33m 474[2mms[22m[39m
+   [33m[2m✓[22m[39m 450の無落球47球を30ゲーム秒継続し、追加・スマッシュ・到着余裕を守る[33m 930[2mms[22m[39m
+ [32m✓[39m tests/unit/session.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 136[2mms[22m[39m
+ [32m✓[39m tests/unit/extended-safety.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+ [32m✓[39m tests/unit/camera.test.ts [2m([22m[2m16 tests[22m[2m)[22m[33m 884[2mms[22m[39m
+ [32m✓[39m tests/unit/progression.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m tests/unit/pointer-mapping.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 390[2mms[22m[39m
+ [32m✓[39m tests/unit/extended-render.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 99[2mms[22m[39m
+ [32m✓[39m tests/unit/loop.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 105[2mms[22m[39m
+ [32m✓[39m tests/unit/extended-progression.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m tests/unit/bounce-contact.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 200[2mms[22m[39m
+ [32m✓[39m tests/unit/scheduler.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/unit/glow-timing.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 281[2mms[22m[39m
+ [32m✓[39m tests/unit/return-spread.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 725[2mms[22m[39m
+ [32m✓[39m tests/unit/ball-pool.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 125[2mms[22m[39m
+ [32m✓[39m tests/unit/collision.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/unit/simulation-isolation.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 322[2mms[22m[39m
+   [33m[2m✓[22m[39m 4球・スマッシュで描画頻度や消音を変えても、計算・時刻・予約・イベントが一致する[33m 320[2mms[22m[39m
+ [32m✓[39m tests/unit/ball-instancing.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 157[2mms[22m[39m
+ [32m✓[39m tests/unit/storage.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/unit/paddle.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 49[2mms[22m[39m
+ [32m✓[39m tests/unit/input-boundary.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 28[2mms[22m[39m
+ [32m✓[39m tests/unit/input-timeline.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/unit/growing-replay.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 1289[2mms[22m[39m
+   [33m[2m✓[22m[39m 47球から増球・加速・スマッシュを含む同じ入力で30/60/120Hzの結果が一致する[33m 1287[2mms[22m[39m
+ [32m✓[39m tests/unit/release-revision.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 290[2mms[22m[39m
+ [32m✓[39m tests/unit/trajectory.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/unit/render-assets.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 57[2mms[22m[39m
+ [32m✓[39m tests/unit/warning-ui.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 226[2mms[22m[39m
+ [32m✓[39m tests/unit/quality.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/unit/replay.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 31[2mms[22m[39m
+ [32m✓[39m tests/unit/lifecycle-resize.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 8[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m37 passed[39m[22m[90m (37)[39m
+[2m      Tests [22m [1m[32m256 passed[39m[22m[90m (256)[39m
+[2m   Start at [22m 20:58:06
+[2m   Duration [22m 7.32s[2m (tests 50%, environment 33%, import 8%, transform 7%, worker 1%)[22m
+
+[2m    Isolate [22m [33m37 workers spawned[39m[2m · ~268ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~3.04s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+

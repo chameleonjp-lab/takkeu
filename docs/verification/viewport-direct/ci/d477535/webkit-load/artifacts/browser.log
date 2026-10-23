@@ -1,0 +1,12 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test --project=webkit --grep 開始から実際|450の47球|555の91球
+
+
+Running 3 tests using 1 worker
+
+  ✓  1 [webkit] › tests/browser/extended.spec.ts:54:1 › 555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する (1.5m)
+  ✓  2 [webkit] › tests/browser/quality.spec.ts:15:1 › 開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む (52.3s)
+  ✓  3 [webkit] › tests/browser/quality.spec.ts:98:1 › 450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する (1.5m)
+
+  3 passed (4.0m)

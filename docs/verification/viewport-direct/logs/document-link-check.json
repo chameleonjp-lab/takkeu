@@ -1,0 +1,622 @@
+{
+  "checkedAtUtc": "2026-10-23T21:10:47.281183+00:00",
+  "files": [
+    {
+      "file": "README.md",
+      "links": [
+        {
+          "target": "logs/git-reflog.txt",
+          "exists": true
+        },
+        {
+          "target": "logs/git-remotes.txt",
+          "exists": true
+        },
+        {
+          "target": "logs/git-branches.txt",
+          "exists": true
+        },
+        {
+          "target": "pr13-reference.json",
+          "exists": true
+        },
+        {
+          "target": "logs/final-test-comments-identity.json",
+          "exists": true
+        },
+        {
+          "target": "manifest.json",
+          "exists": true
+        },
+        {
+          "target": "input-contract.md",
+          "exists": true
+        },
+        {
+          "target": "acceptance.md",
+          "exists": true
+        },
+        {
+          "target": "baseline/README.md",
+          "exists": true
+        },
+        {
+          "target": "comparison.md",
+          "exists": true
+        },
+        {
+          "target": "after/",
+          "exists": true
+        },
+        {
+          "target": "media/README.md",
+          "exists": true
+        },
+        {
+          "target": "performance.md",
+          "exists": true
+        },
+        {
+          "target": "review.md",
+          "exists": true
+        },
+        {
+          "target": "WORK-LOG.md",
+          "exists": true
+        },
+        {
+          "target": "logs/",
+          "exists": true
+        },
+        {
+          "target": "../../plans/2026-10-23-viewport-direct.md",
+          "exists": true
+        },
+        {
+          "target": "logs/unchanged-world-and-camera.diff",
+          "exists": true
+        },
+        {
+          "target": "baseline/README.md",
+          "exists": true
+        },
+        {
+          "target": "logs/integrated-unit.log",
+          "exists": true
+        },
+        {
+          "target": "logs/unit-final-7307746.log",
+          "exists": true
+        },
+        {
+          "target": "logs/boundary-unit-all.log",
+          "exists": true
+        },
+        {
+          "target": "logs/boundary-typecheck.log",
+          "exists": true
+        },
+        {
+          "target": "review.md",
+          "exists": true
+        },
+        {
+          "target": "logs/browser-focused-first.log",
+          "exists": true
+        },
+        {
+          "target": "runs/focused-first/playwright-report/index.html",
+          "exists": true
+        },
+        {
+          "target": "logs/browser-input-retry.log",
+          "exists": true
+        },
+        {
+          "target": "runs/input-retry/playwright-report/index.html",
+          "exists": true
+        },
+        {
+          "target": "logs/browser-full-7307746.log",
+          "exists": true
+        },
+        {
+          "target": "runs/full-7307746/playwright-report/index.html",
+          "exists": true
+        },
+        {
+          "target": "logs/quality-450-original-isolated.log",
+          "exists": true
+        },
+        {
+          "target": "runs/quality-original-isolated/playwright-report/index.html",
+          "exists": true
+        },
+        {
+          "target": "logs/browser-final-affected-2c3d95d.log",
+          "exists": true
+        },
+        {
+          "target": "runs/final-affected-2c3d95d/playwright-report/index.html",
+          "exists": true
+        },
+        {
+          "target": "logs/release-2c3d95d.log",
+          "exists": true
+        },
+        {
+          "target": "runs/release-2c3d95d/release-results.json",
+          "exists": true
+        },
+        {
+          "target": "logs/ci-2c3d95d-verify-job.log",
+          "exists": true
+        },
+        {
+          "target": "logs/ci-2c3d95d-webkit-job.log",
+          "exists": true
+        },
+        {
+          "target": "ci/2c3d95d/",
+          "exists": true
+        },
+        {
+          "target": "logs/ci-2c3d95d-chromium-job.log",
+          "exists": true
+        },
+        {
+          "target": "ci/2c3d95d/chromium/",
+          "exists": true
+        },
+        {
+          "target": "performance.md",
+          "exists": true
+        },
+        {
+          "target": "logs/native-demo-and-pixel-caps-01768ab.log",
+          "exists": true
+        },
+        {
+          "target": "media/README.md",
+          "exists": true
+        },
+        {
+          "target": "logs/browser-load-trace-01768ab.log",
+          "exists": true
+        },
+        {
+          "target": "runs/load-trace-01768ab/playwright-report/index.html",
+          "exists": true
+        },
+        {
+          "target": "logs/ci-01768ab-verify-job.log",
+          "exists": true
+        },
+        {
+          "target": "logs/ci-01768ab-webkit-job.log",
+          "exists": true
+        },
+        {
+          "target": "logs/ci-01768ab-chromium-job.log",
+          "exists": true
+        },
+        {
+          "target": "ci/01768ab/",
+          "exists": true
+        },
+        {
+          "target": "logs/ci-group-coverage.json",
+          "exists": true
+        },
+        {
+          "target": "logs/typecheck-ci-load-groups.log",
+          "exists": true
+        },
+        {
+          "target": "review.md",
+          "exists": true
+        },
+        {
+          "target": "logs/ci-d477535-final.json",
+          "exists": true
+        },
+        {
+          "target": "ci/d477535/",
+          "exists": true
+        },
+        {
+          "target": "logs/",
+          "exists": true
+        },
+        {
+          "target": "acceptance.md",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "file": "WORK-LOG.md",
+      "links": []
+    },
+    {
+      "file": "acceptance.md",
+      "links": [
+        {
+          "target": "README.md",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "file": "comparison.md",
+      "links": [
+        {
+          "target": "baseline/manifest.json",
+          "exists": true
+        },
+        {
+          "target": "after/manifest.json",
+          "exists": true
+        },
+        {
+          "target": "after/analysis.json",
+          "exists": true
+        },
+        {
+          "target": "after/comparison-data.json",
+          "exists": true
+        },
+        {
+          "target": "after/run-context.json",
+          "exists": true
+        },
+        {
+          "target": "baseline/glow-sphere-sampling-correction.json",
+          "exists": true
+        },
+        {
+          "target": "after/analysis.json",
+          "exists": true
+        },
+        {
+          "target": "baseline/chromium-390x844-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/chromium-390x844-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/chromium-390x844-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/chromium-390x844-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/chromium-844x390-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/chromium-844x390-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/chromium-844x390-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/chromium-844x390-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/chromium-1280x720-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/chromium-1280x720-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/chromium-1280x720-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/chromium-1280x720-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/chromium-320x568-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/chromium-320x568-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/chromium-320x568-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/chromium-320x568-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/chromium-280x360-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/chromium-280x360-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/chromium-280x360-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/chromium-280x360-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/webkit-390x844-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/webkit-390x844-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/webkit-390x844-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/webkit-390x844-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/webkit-844x390-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/webkit-844x390-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/webkit-844x390-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/webkit-844x390-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/webkit-1280x720-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/webkit-1280x720-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/webkit-1280x720-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/webkit-1280x720-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/webkit-320x568-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/webkit-320x568-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/webkit-320x568-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/webkit-320x568-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/webkit-280x360-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/webkit-280x360-score0-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/webkit-280x360-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/webkit-280x360-score555-t1.25-viewport.png",
+          "exists": true
+        },
+        {
+          "target": "after/upper-left-background-observation.json",
+          "exists": true
+        },
+        {
+          "target": "baseline/chromium-844x390-score555-t1.25-canvas.png",
+          "exists": true
+        },
+        {
+          "target": "after/chromium-844x390-score555-t1.25-canvas.png",
+          "exists": true
+        },
+        {
+          "target": "baseline/README.md",
+          "exists": true
+        },
+        {
+          "target": "after/capture.log",
+          "exists": true
+        },
+        {
+          "target": "after/analysis.log",
+          "exists": true
+        },
+        {
+          "target": "after/comparison.log",
+          "exists": true
+        },
+        {
+          "target": "after/server.log",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "file": "input-contract.md",
+      "links": []
+    },
+    {
+      "file": "performance.md",
+      "links": [
+        {
+          "target": "logs/performance-2c3d95d.log",
+          "exists": true
+        },
+        {
+          "target": "runs/performance-2c3d95d/performance-results.json",
+          "exists": true
+        },
+        {
+          "target": "runs/performance-2c3d95d/summary.json",
+          "exists": true
+        },
+        {
+          "target": "runs/performance-2c3d95d/chromium-browser-performance-60s-standard-450.json",
+          "exists": true
+        },
+        {
+          "target": "runs/performance-2c3d95d/chromium-browser-performance-60s-standard-555.json",
+          "exists": true
+        },
+        {
+          "target": "runs/performance-2c3d95d/chromium-browser-performance-60s-low-450.json",
+          "exists": true
+        },
+        {
+          "target": "runs/performance-2c3d95d/chromium-browser-performance-60s-low-555.json",
+          "exists": true
+        },
+        {
+          "target": "runs/performance-2c3d95d/webkit-browser-performance-60s-standard-450.json",
+          "exists": true
+        },
+        {
+          "target": "runs/performance-2c3d95d/webkit-browser-performance-60s-standard-555.json",
+          "exists": true
+        },
+        {
+          "target": "runs/performance-2c3d95d/webkit-browser-performance-60s-low-450.json",
+          "exists": true
+        },
+        {
+          "target": "runs/performance-2c3d95d/webkit-browser-performance-60s-low-555.json",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "file": "review.md",
+      "links": []
+    },
+    {
+      "file": "media/README.md",
+      "links": [
+        {
+          "target": "chromium-native-demo.webm",
+          "exists": true
+        },
+        {
+          "target": "webkit-native-demo.webm",
+          "exists": true
+        },
+        {
+          "target": "capture-demo.mjs",
+          "exists": true
+        },
+        {
+          "target": "native-demo-input.json",
+          "exists": true
+        },
+        {
+          "target": "native-demo-manifest.json",
+          "exists": true
+        },
+        {
+          "target": "../logs/native-demo-and-pixel-caps-01768ab.log",
+          "exists": true
+        },
+        {
+          "target": "chromium-native-demo-sequence-01.jpg",
+          "exists": true
+        },
+        {
+          "target": "chromium-native-demo-sequence-02.jpg",
+          "exists": true
+        },
+        {
+          "target": "chromium-native-demo-sequence-03.jpg",
+          "exists": true
+        },
+        {
+          "target": "webkit-native-demo-sequence-01.jpg",
+          "exists": true
+        },
+        {
+          "target": "webkit-native-demo-sequence-02.jpg",
+          "exists": true
+        },
+        {
+          "target": "webkit-native-demo-sequence-03.jpg",
+          "exists": true
+        },
+        {
+          "target": "chromium-three-rallies.webm",
+          "exists": true
+        },
+        {
+          "target": "webkit-three-rallies.webm",
+          "exists": true
+        },
+        {
+          "target": "chromium-direct-390.webm",
+          "exists": true
+        },
+        {
+          "target": "webkit-direct-390.webm",
+          "exists": true
+        },
+        {
+          "target": "chromium-two-finger.webm",
+          "exists": true
+        },
+        {
+          "target": "webkit-two-finger.webm",
+          "exists": true
+        },
+        {
+          "target": "manifest.json",
+          "exists": true
+        },
+        {
+          "target": "actual-pixel-caps.json",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "file": "baseline/README.md",
+      "links": []
+    }
+  ]
+}

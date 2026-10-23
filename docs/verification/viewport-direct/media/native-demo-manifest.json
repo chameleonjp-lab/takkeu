@@ -1,0 +1,36 @@
+[
+  {
+    "engine": "chromium",
+    "video": "chromium-native-demo.webm",
+    "sourceSha": "01768abab9979f4e422bb8d17d1f63ad361fb01a",
+    "durationSeconds": 6.52,
+    "recordingSize": [
+      390,
+      844
+    ],
+    "sampleFps": 4,
+    "frameCount": 26,
+    "sheets": [
+      "chromium-native-demo-sequence-01.jpg",
+      "chromium-native-demo-sequence-02.jpg",
+      "chromium-native-demo-sequence-03.jpg"
+    ]
+  },
+  {
+    "engine": "webkit",
+    "video": "webkit-native-demo.webm",
+    "sourceSha": "01768abab9979f4e422bb8d17d1f63ad361fb01a",
+    "durationSeconds": 7.64,
+    "recordingSize": [
+      390,
+      844
+    ],
+    "sampleFps": 4,
+    "frameCount": 31,
+    "sheets": [
+      "webkit-native-demo-sequence-01.jpg",
+      "webkit-native-demo-sequence-02.jpg",
+      "webkit-native-demo-sequence-03.jpg"
+    ]
+  }
+]

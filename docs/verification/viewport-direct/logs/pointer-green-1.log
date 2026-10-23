@@ -1,0 +1,75 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/swipe.test.ts tests/unit/pointer-mapping.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/swipe.test.ts (28 tests | 2 failed) 74ms
+   ❯ direct paddle pointer ownership (19)
+     × does not let an extra contact take ownership after the owner lifts 9ms
+     × ignores nonfinite pointer coordinates and timestamps without poisoning the accepted target 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > does not let an extra contact take ownership after the owner lifts
+AssertionError: expected { target: { x: 0.5, …(1) }, …(2) } to deeply equal { at: 0.19, kind: 'place', …(1) }
+
+- Expected
++ Received
+
+  {
+    "at": 0.19,
+    "kind": "place",
+    "target": {
+      "x": 0.5,
+-     "y": 0.5,
++     "y": 0.49999999999999994,
+    },
+  }
+
+ ❯ tests/unit/swipe.test.ts:103:28
+    101|     pointer('pointerup', 210, 30, { type: 'pen', id: 3, at: 180 });
+    102|     pointer('pointerdown', 170, 60, { type: 'touch', at: 190 });
+    103|     expect(samples.at(-1)).toEqual({ at: 0.19, kind: 'place', target: …
+       |                            ^
+    104|   });
+    105|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > ignores nonfinite pointer coordinates and timestamps without poisoning the accepted target
+AssertionError: expected [ Array(2) ] to deeply equal [ { x: -0.5, y: 0.5 }, …(1) ]
+
+- Expected
++ Received
+
+  [
+    {
+      "x": -0.5,
+-     "y": 0.5,
++     "y": 0.49999999999999994,
+    },
+    {
+      "x": -0.5,
+-     "y": 0.5,
++     "y": 0.49999999999999994,
+    },
+  ]
+
+ ❯ tests/unit/swipe.test.ts:199:50
+    197|     }
+    198|     pointer('pointerup', 210, 20);
+    199|     expect(samples.map(sample => sample.target)).toEqual([{ x: -0.5, y…
+       |                                                  ^
+    200|   });
+    201| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  2 failed | 38 passed (40)
+   Start at  19:19:27
+   Duration  1.13s (environment 65%, tests 22%, transform 9%, import 4%, worker 1%)
+

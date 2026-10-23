@@ -20,6 +20,8 @@ pushの`github.sha`を`EXPECTED_SHA`として固定し、そのコミットをch
 
 マージ直後、公開検証が進行中ならページは直前の版を表示する。PRのCI成功とPagesの配備成功は別であり、[Pages releaseの実行一覧](https://github.com/chameleonjp-lab/takkeu/actions/workflows/deploy.yml)で対象mainのSHA・配備ジョブまでの成功を確認する。2026-10-23のPR #10も、検証中は旧版の明るい相手コートが配信され、完了後に暗闇の版へ更新された。[公開照合記録](verification/ball-cadence/README.md)へ実SHA・画像を保存した。
 
+今回の全面化・直接操作はDraft PRまでを対象とし、merge・自動merge・手動公開は行わない。[対象SHA・検証証拠](verification/viewport-direct/README.md)を参照する。
+
 ## 継続して確認する品質項目
 
 1. iPhone 17 ProのOS/Safari版、縦横、音量、品質、低電力モード等の条件を記録する。4球の回帰に加え、最新規則の450の無落球47球、470以後2ごとの増球、555の無落球91球とランダム発光・花火・変向バウンド、390・420・480・最大速度付近を検証し、60秒の描画間隔の95%以上が25ms以下であるか測る。操作・回転・アプリ切替・画面ロック・音声復帰・VoiceOverも確認する。
@@ -40,7 +42,7 @@ pushの`github.sha`を`EXPECTED_SHA`として固定し、そのコミットをch
 
 - `https://chameleonjp-lab.github.io/takkeu/release.json`の`commit`が`expected_sha`、`base`が`/takkeu/`であることを確認する。キャッシュを避けるため再読込やクエリー付き取得も使う。
 - `/takkeu/`の入口と全JS/CSSが200で読み込まれ、コンソールに例外がないことを確認する。
-- iPhone縦横とPCで開始、相対操作、停止・手動再開、結果、再挑戦、ホーム、保存、音の切替を短く試す。
+- iPhone縦横とPCで開始、タップによる直接配置・ドラッグ・離した後の保持、二本指タップ／Escape停止・手動再開、結果、再挑戦、ホーム、保存、音の切替を短く試す。
 - `?score=450&debug=1`でも0ラリー・1球から始まること、`tests/fixtures/stage3.html`等の開発用ファイルが配信されないことを確認する。
 - 不具合があれば公開記録へ症状・端末・対象SHAを残し、次の手順で戻す。
 

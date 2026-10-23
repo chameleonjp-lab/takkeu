@@ -1,0 +1,260 @@
+[
+  {
+    "quality": "standard",
+    "initialScore": 450,
+    "durationMs": 60197.39999999981,
+    "frames": 500,
+    "p95Ms": 249.90000000000146,
+    "fractionAtMost25ms": 0.174,
+    "runningSimulationSeconds": 41.91666666666493,
+    "finalPhase": "running",
+    "pauseReason": null,
+    "runningP95Ms": 249.90000000000146,
+    "runningFractionAtMost25ms": 0.174,
+    "continuousRun": true,
+    "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "deviceRatio": 1
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "engine": "chromium",
+    "raw": "chromium-browser-performance-60s-standard-450.json",
+    "phaseSamples": {
+      "running": 500
+    },
+    "pauseReasons": {
+      "None": 500
+    }
+  },
+  {
+    "quality": "standard",
+    "initialScore": 555,
+    "durationMs": 60147.800000000556,
+    "frames": 492,
+    "p95Ms": 266.6999999999971,
+    "fractionAtMost25ms": 0.18292682926829268,
+    "runningSimulationSeconds": 39.69999999999839,
+    "finalPhase": "running",
+    "pauseReason": null,
+    "runningP95Ms": 266.6999999999971,
+    "runningFractionAtMost25ms": 0.18292682926829268,
+    "continuousRun": true,
+    "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "deviceRatio": 1
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "engine": "chromium",
+    "raw": "chromium-browser-performance-60s-standard-555.json",
+    "phaseSamples": {
+      "running": 492
+    },
+    "pauseReasons": {
+      "None": 492
+    }
+  },
+  {
+    "quality": "low",
+    "initialScore": 450,
+    "durationMs": 60014.4,
+    "frames": 3508,
+    "p95Ms": 16.700000000004366,
+    "fractionAtMost25ms": 0.999429874572406,
+    "runningSimulationSeconds": 0.1833333333333333,
+    "finalPhase": "paused",
+    "pauseReason": "slow-frame",
+    "runningP95Ms": 16.700000000000045,
+    "runningFractionAtMost25ms": 1,
+    "continuousRun": false,
+    "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "deviceRatio": 1
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "engine": "chromium",
+    "raw": "chromium-browser-performance-60s-low-450.json",
+    "phaseSamples": {
+      "running": 11,
+      "paused": 3497
+    },
+    "pauseReasons": {
+      "None": 11,
+      "slow-frame": 3497
+    }
+  },
+  {
+    "quality": "low",
+    "initialScore": 555,
+    "durationMs": 60080.199999999815,
+    "frames": 488,
+    "p95Ms": 283.29999999999563,
+    "fractionAtMost25ms": 0.1680327868852459,
+    "runningSimulationSeconds": 39.591666666665056,
+    "finalPhase": "running",
+    "pauseReason": null,
+    "runningP95Ms": 283.29999999999563,
+    "runningFractionAtMost25ms": 0.1680327868852459,
+    "continuousRun": true,
+    "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "deviceRatio": 1
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "engine": "chromium",
+    "raw": "chromium-browser-performance-60s-low-555.json",
+    "phaseSamples": {
+      "running": 488
+    },
+    "pauseReasons": {
+      "None": 488
+    }
+  },
+  {
+    "quality": "standard",
+    "initialScore": 450,
+    "durationMs": 60004,
+    "frames": 1345,
+    "p95Ms": 54,
+    "fractionAtMost25ms": 0,
+    "runningSimulationSeconds": 58.774999999997306,
+    "finalPhase": "running",
+    "pauseReason": null,
+    "runningP95Ms": 54,
+    "runningFractionAtMost25ms": 0,
+    "continuousRun": true,
+    "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+    "viewport": {
+      "width": 390,
+      "height": 664,
+      "deviceRatio": 3
+    },
+    "drawingSize": {
+      "width": 585,
+      "height": 996
+    },
+    "engine": "webkit",
+    "raw": "webkit-browser-performance-60s-standard-450.json",
+    "phaseSamples": {
+      "running": 1345
+    },
+    "pauseReasons": {
+      "None": 1345
+    }
+  },
+  {
+    "quality": "standard",
+    "initialScore": 555,
+    "durationMs": 60024,
+    "frames": 1179,
+    "p95Ms": 68,
+    "fractionAtMost25ms": 0.0008481764206955047,
+    "runningSimulationSeconds": 58.88333333333063,
+    "finalPhase": "running",
+    "pauseReason": null,
+    "runningP95Ms": 68,
+    "runningFractionAtMost25ms": 0.0008481764206955047,
+    "continuousRun": true,
+    "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+    "viewport": {
+      "width": 390,
+      "height": 664,
+      "deviceRatio": 3
+    },
+    "drawingSize": {
+      "width": 585,
+      "height": 996
+    },
+    "engine": "webkit",
+    "raw": "webkit-browser-performance-60s-standard-555.json",
+    "phaseSamples": {
+      "running": 1179
+    },
+    "pauseReasons": {
+      "None": 1179
+    }
+  },
+  {
+    "quality": "low",
+    "initialScore": 450,
+    "durationMs": 60026,
+    "frames": 1536,
+    "p95Ms": 50,
+    "fractionAtMost25ms": 0,
+    "runningSimulationSeconds": 58.8499999999973,
+    "finalPhase": "running",
+    "pauseReason": null,
+    "runningP95Ms": 50,
+    "runningFractionAtMost25ms": 0,
+    "continuousRun": true,
+    "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+    "viewport": {
+      "width": 390,
+      "height": 664,
+      "deviceRatio": 3
+    },
+    "drawingSize": {
+      "width": 390,
+      "height": 664
+    },
+    "engine": "webkit",
+    "raw": "webkit-browser-performance-60s-low-450.json",
+    "phaseSamples": {
+      "running": 1536
+    },
+    "pauseReasons": {
+      "None": 1536
+    }
+  },
+  {
+    "quality": "low",
+    "initialScore": 555,
+    "durationMs": 60059,
+    "frames": 746,
+    "p95Ms": 175,
+    "fractionAtMost25ms": 0.04423592493297587,
+    "runningSimulationSeconds": 50.36666666666445,
+    "finalPhase": "running",
+    "pauseReason": null,
+    "runningP95Ms": 175,
+    "runningFractionAtMost25ms": 0.04423592493297587,
+    "continuousRun": true,
+    "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+    "viewport": {
+      "width": 390,
+      "height": 664,
+      "deviceRatio": 3
+    },
+    "drawingSize": {
+      "width": 390,
+      "height": 664
+    },
+    "engine": "webkit",
+    "raw": "webkit-browser-performance-60s-low-555.json",
+    "phaseSamples": {
+      "running": 746
+    },
+    "pauseReasons": {
+      "None": 746
+    }
+  }
+]

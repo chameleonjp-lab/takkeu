@@ -1,0 +1,18 @@
+{
+  "dir": "/tmp/takkeu-release-diagnosis-t3nk61",
+  "sha": "ac389848773bb19539fd5f036cfb1990278efe40",
+  "script": "/workspace/takkeu-baseline/scripts/check-release-revision.mjs",
+  "execPath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+  "result": {
+    "status": 0,
+    "signal": null,
+    "output": [
+      null,
+      "{\"expected_sha\":\"ac389848773bb19539fd5f036cfb1990278efe40\",\"checkout_sha\":\"ac389848773bb19539fd5f036cfb1990278efe40\",\"main_sha\":\"ac389848773bb19539fd5f036cfb1990278efe40\",\"result\":\"matched\"}\n",
+      ""
+    ],
+    "pid": 4673,
+    "stdout": "{\"expected_sha\":\"ac389848773bb19539fd5f036cfb1990278efe40\",\"checkout_sha\":\"ac389848773bb19539fd5f036cfb1990278efe40\",\"main_sha\":\"ac389848773bb19539fd5f036cfb1990278efe40\",\"result\":\"matched\"}\n",
+    "stderr": ""
+  }
+}
