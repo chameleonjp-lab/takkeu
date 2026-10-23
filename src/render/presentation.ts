@@ -104,8 +104,9 @@ export function applyPresentation(objects: ReturnType<typeof createObjects>, sna
     visual.shadow.position.y = objects.tableY + 0.007 - ball.position.y;
     const surfaceVisible = ball.position.z >= 0 || state.parts[ball.position.x >= 0 ? 'opponentCourtRight' : 'opponentCourtLeft'].visible;
     visual.shadow.visible = surfaceVisible && Math.abs(ball.position.z) <= objects.tableHalfLength && Math.abs(ball.position.x) <= objects.tableHalfWidth;
-    visual.shadow.material.opacity = 0.3 / (1 + Math.max(0, ball.position.y - objects.tableY));
+    visual.shadowOpacity = 0.3 / (1 + Math.max(0, ball.position.y - objects.tableY));
     visual.glow.visible = style.rainbow;
     visual.core.scale.setScalar(style.rainbow ? 0.9 : 1);
   }
+  objects.commitBalls();
 }

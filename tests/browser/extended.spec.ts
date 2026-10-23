@@ -6,6 +6,7 @@ test.use({video:'on'});
 test('460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する',async({page},info)=>{
   test.setTimeout(120_000);
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+  page.on('console',message=>{if(message.type()==='error')errors.push(message.text());});
   await page.goto('/tests/fixtures/stage2.html');await page.waitForFunction(()=>!!window.stage2);
   const scores=[459,460,469,470,471,472,479,480,489,490,499,500,509,510,519,520,529,530,539,540,554,555];
   for(const score of scores){
@@ -51,6 +52,8 @@ test('返球・台面の花火を実際の接触イベントで描き、停止�
 });
 
 test('555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する',async({page},info)=>{
+  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+  page.on('console',message=>{if(message.type()==='error')errors.push(message.text());});
   test.setTimeout(180_000);await page.clock.install();await page.clock.pauseAt(new Date(Date.now()+1000));
   await page.goto('/tests/fixtures/stage3.html');await page.getByRole('button',{name:'はじめる',exact:true}).click();
   await page.evaluate(()=>{window.stage3.show(555);window.stage3.autoPlay(true);});
@@ -61,6 +64,8 @@ test('555の91球から毎ラリー加速・全スマッシュ・増球を30ゲ�
   expect(events.filter(e=>e.kind==='opponent-hit').length).toBeGreaterThan(40);
   expect(await page.evaluate(()=>window.stage3.metrics().smashDepartures)).toBe(events.filter(e=>e.kind==='opponent-hit').length);
   expect(rows.every(row=>row.resources!.particles<=1536)).toBe(true);
+  expect(rows.every(row=>row.resources!.drawCalls<45)).toBe(true);
+  expect(errors).toEqual([]);
   await page.screenshot({path:info.outputPath('555-multiball.png')});
   await info.attach('extended-highload.json',{body:JSON.stringify({rows,final:state,eventCount:events.length},null,2),contentType:'application/json'});
   await page.getByRole('link',{name:'タッケウ'}).click();
