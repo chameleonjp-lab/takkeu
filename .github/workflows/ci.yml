@@ -37,10 +37,6 @@ jobs:
         run: |
           set -o pipefail
           npm run verify:release 2>&1 | tee artifacts/build-release.log
-      - name: Browser tests
-        run: |
-          set -o pipefail
-          npm run test:browser 2>&1 | tee artifacts/browser.log
       - name: Record revision
         if: always()
         run: |
@@ -51,6 +47,51 @@ jobs:
         if: always()
         with:
           name: verification-${{ github.sha }}
+          retention-days: 30
+          path: |
+            artifacts/
+            test-results/
+            playwright-report/
+
+  browser:
+    name: Browser (${{ matrix.project }})
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [chromium, webkit]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Use the primary Ubuntu HTTPS mirror for browser dependencies
+        run: |
+          test -f /etc/apt/apt-mirrors.txt
+          printf '%s\n' 'https://archive.ubuntu.com/ubuntu' | sudo tee /etc/apt/apt-mirrors.txt > /dev/null
+      - name: Dependencies
+        run: |
+          mkdir -p artifacts
+          set -o pipefail
+          npm ci 2>&1 | tee artifacts/install.log
+          npx playwright install --with-deps ${{ matrix.project }} 2>&1 | tee artifacts/browsers.log
+      - name: Browser tests
+        run: |
+          set -o pipefail
+          npm run test:browser -- --project=${{ matrix.project }} 2>&1 | tee artifacts/browser.log
+      - name: Record revision
+        if: always()
+        run: |
+          git rev-parse HEAD > artifacts/commit.txt
+          node --version > artifacts/node.txt
+          npm --version > artifacts/npm.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-browser-${{ matrix.project }}-${{ github.sha }}
           retention-days: 30
           path: |
             artifacts/
