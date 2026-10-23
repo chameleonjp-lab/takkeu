@@ -1,0 +1,653 @@
+{
+  "commit": "432e72965e71aae9999136c47f3901ff67a60db1",
+  "data": {
+    "reached": [
+      {
+        "threshold": 5,
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 5,
+          "simTime": 21.241666666666102,
+          "paddle": {
+            "x": 0.310569911970621,
+            "y": 0.33714421512856446
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "outgoing",
+              "position": {
+                "x": -0.30645759699395386,
+                "y": 0.3903608314501247,
+                "z": 1.5743617600375654
+              },
+              "smash": false
+            },
+            {
+              "id": 2,
+              "phase": "incoming",
+              "position": {
+                "x": 0.01917856743071219,
+                "y": 0.5542618474491717,
+                "z": -1.7720597577326755
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 1
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 2,
+              "departAt": 21.130884669509015,
+              "netCrossAt": 22.34491524350239,
+              "arriveAt": 23.558945817495758,
+              "target": {
+                "x": 0.4203456847462803,
+                "y": 0.3405315007548779
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1.0296281055660008,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            }
+          ]
+        }
+      },
+      {
+        "threshold": 10,
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 10,
+          "simTime": 32.983333333332105,
+          "paddle": {
+            "x": 0.22710980416741222,
+            "y": 0.49363754061050713
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "outgoing",
+              "position": {
+                "x": -0.02819646166780615,
+                "y": 0.4722590600852796,
+                "z": -1.740376191575433
+              },
+              "smash": false
+            },
+            {
+              "id": 2,
+              "phase": "outgoing",
+              "position": {
+                "x": 0.18356563368039783,
+                "y": 0.41788810215211,
+                "z": 1.446785339488678
+              },
+              "smash": false
+            },
+            {
+              "id": 3,
+              "phase": "incoming",
+              "position": {
+                "x": 0.013499064029398575,
+                "y": 0.568471916146174,
+                "z": -1.7181898854712296
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [
+              10
+            ],
+            "ballGlowUntil": 37.84295283150562,
+            "awardedBallCount": 2
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 3,
+              "departAt": 32.84295283150562,
+              "netCrossAt": 34.02384167718052,
+              "arriveAt": 35.204730522855414,
+              "target": {
+                "x": 0.22710980416741222,
+                "y": 0.49363754061050713
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1.0585246905991432,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            }
+          ]
+        }
+      },
+      {
+        "threshold": 20,
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 20,
+          "simTime": 48.49166666666456,
+          "paddle": {
+            "x": -0.3761923568090424,
+            "y": 0.32148656353820115
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": -0.29955786477523993,
+                "y": 0.19962220292599345,
+                "z": 1.1555274023455497
+              },
+              "smash": false
+            },
+            {
+              "id": 2,
+              "phase": "outgoing",
+              "position": {
+                "x": 0.06674024175378274,
+                "y": 0.3449323695097648,
+                "z": -1.468005903905803
+              },
+              "smash": false
+            },
+            {
+              "id": 3,
+              "phase": "outgoing",
+              "position": {
+                "x": -0.5104738906495313,
+                "y": 0.6936181507535735,
+                "z": 1.4661815061621326
+              },
+              "smash": false
+            },
+            {
+              "id": 4,
+              "phase": "incoming",
+              "position": {
+                "x": -0.016647818411060472,
+                "y": 0.5807094136070213,
+                "z": -1.6683151522240784
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [
+              10
+            ],
+            "ballGlowUntil": 37.84295283150562,
+            "awardedBallCount": 3
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 46.69620489123164,
+              "netCrossAt": 47.82359808681247,
+              "arriveAt": 48.9509912823933,
+              "target": {
+                "x": -0.3761923568090424,
+                "y": 0.32148656353820115
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1.1087524786381222,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 4,
+              "departAt": 48.3296059913133,
+              "netCrossAt": 49.45149209711598,
+              "arriveAt": 50.57337820291866,
+              "target": {
+                "x": -0.23049337696284056,
+                "y": 0.3195410369662568
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1.1141950983568485,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            }
+          ]
+        }
+      }
+    ],
+    "final": {
+      "runId": "run-2",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 21,
+      "simTime": 48.983333333331196,
+      "paddle": {
+        "x": -0.23049337696284056,
+        "y": 0.3195410369662568
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.3343423550650793,
+            "y": 0.41499425067449786,
+            "z": 1.5161394926098808
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "incoming",
+          "position": {
+            "x": 0.00292715303242318,
+            "y": 0.5539860552230332,
+            "z": -1.7730680319330347
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "outgoing",
+          "position": {
+            "x": -0.40312166230472024,
+            "y": 0.7424438734865911,
+            "z": 0.7477614187993852
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "incoming",
+          "position": {
+            "x": -0.06715468793814812,
+            "y": 0.6531549547796209,
+            "z": -0.8137275117844236
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10
+        ],
+        "ballGlowUntil": 37.84295283150562,
+        "awardedBallCount": 3
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 4,
+          "departAt": 48.3296059913133,
+          "netCrossAt": 49.45149209711598,
+          "arriveAt": 50.57337820291866,
+          "target": {
+            "x": -0.23049337696284056,
+            "y": 0.3195410369662568
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 1.1141950983568485,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 2,
+          "departAt": 48.882032103248456,
+          "netCrossAt": 49.99849172792509,
+          "arriveAt": 51.11495135260173,
+          "target": {
+            "x": 0.06452139175962657,
+            "y": 0.4259416819550097
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 1.1196105728964814,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "events": [
+      {
+        "id": "run-2:1",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 0,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:2",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 2.1496192468948756,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:3",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 4.649619246894876,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:4",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 7.016058111927961,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:5",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 9.516058111927961,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:6",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 11.670389388260778,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:7",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 14.170389388260778,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:8",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 16.32179243937331,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:9",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 18.82179243937331,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:10",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 21.130884669509015,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:11",
+        "runId": "run-2",
+        "kind": "milestone",
+        "time": 21.130884669509015,
+        "milestone": 5
+      },
+      {
+        "id": "run-2:12",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 21.130884669509015,
+        "ballId": 2
+      },
+      {
+        "id": "run-2:13",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 23.37972636136905,
+        "ballId": 2
+      },
+      {
+        "id": "run-2:14",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 23.630884669509015,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:15",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 25.872599795783135,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:16",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 25.87972636136905,
+        "ballId": 2
+      },
+      {
+        "id": "run-2:17",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 28.15169029521283,
+        "ballId": 2
+      },
+      {
+        "id": "run-2:18",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 28.37259979578313,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:19",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 30.625730423968683,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:20",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 30.65169029521283,
+        "ballId": 2
+      },
+      {
+        "id": "run-2:21",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 32.84295283150562,
+        "ballId": 2
+      },
+      {
+        "id": "run-2:22",
+        "runId": "run-2",
+        "kind": "milestone",
+        "time": 32.84295283150562,
+        "milestone": 10
+      },
+      {
+        "id": "run-2:23",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 32.84295283150562,
+        "ballId": 3
+      },
+      {
+        "id": "run-2:24",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 33.12573042396868,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:25",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 34.54343276927747,
+        "ballId": 3
+      },
+      {
+        "id": "run-2:26",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 35.33697268638965,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:27",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 35.34295283150562,
+        "ballId": 2
+      },
+      {
+        "id": "run-2:28",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 37.04343276927747,
+        "ballId": 3
+      },
+      {
+        "id": "run-2:29",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 37.44383561180807,
+        "ballId": 2
+      },
+      {
+        "id": "run-2:30",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 37.83697268638965,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:31",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 39.103213815372015,
+        "ballId": 3
+      },
+      {
+        "id": "run-2:32",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 39.70140809625305,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:33",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 39.94383561180807,
+        "ballId": 2
+      },
+      {
+        "id": "run-2:34",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 41.603213815372015,
+        "ballId": 3
+      },
+      {
+        "id": "run-2:35",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 42.088541890357334,
+        "ballId": 2
+      },
+      {
+        "id": "run-2:36",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 42.20140809625305,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:37",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 43.707161448124886,
+        "ballId": 3
+      },
+      {
+        "id": "run-2:38",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 44.19620489123164,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:39",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 44.588541890357334,
+        "ballId": 2
+      },
+      {
+        "id": "run-2:40",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 46.207161448124886,
+        "ballId": 3
+      },
+      {
+        "id": "run-2:41",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 46.382032103248456,
+        "ballId": 2
+      },
+      {
+        "id": "run-2:42",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 46.69620489123164,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:43",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 48.3296059913133,
+        "ballId": 3
+      },
+      {
+        "id": "run-2:44",
+        "runId": "run-2",
+        "kind": "milestone",
+        "time": 48.3296059913133,
+        "milestone": 20
+      },
+      {
+        "id": "run-2:45",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 48.3296059913133,
+        "ballId": 4
+      },
+      {
+        "id": "run-2:46",
+        "runId": "run-2",
+        "kind": "player-hit",
+        "time": 48.83057321687691,
+        "ballId": 1
+      },
+      {
+        "id": "run-2:47",
+        "runId": "run-2",
+        "kind": "opponent-hit",
+        "time": 48.882032103248456,
+        "ballId": 2
+      }
+    ]
+  }
+}

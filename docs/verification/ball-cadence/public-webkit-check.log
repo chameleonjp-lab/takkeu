@@ -1,0 +1,114 @@
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+{
+  "at": "2026-10-23T02:45:50.319Z",
+  "url": "https://chameleonjp-lab.github.io/takkeu/",
+  "expected": "df6eb63da25cc3c88f0d3b5669a81530bbf37a95",
+  "status": "passed",
+  "browsers": [
+    {
+      "name": "webkit-portrait",
+      "version": "27.2",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "errors": [],
+      "resources": [
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-BIjnV9Vk.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DHYvWzW-.css",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/court-preview-Bzxbrgc7.png",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-BIjnV9Vk.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DHYvWzW-.css",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/court-preview-Bzxbrgc7.png",
+          "status": 200
+        }
+      ],
+      "result": "passed",
+      "scope": "Linux emulation, clock paused; not iPhone hardware, listening or performance"
+    },
+    {
+      "name": "webkit-landscape",
+      "version": "27.2",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "errors": [],
+      "resources": [
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-BIjnV9Vk.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DHYvWzW-.css",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/court-preview-Bzxbrgc7.png",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-BIjnV9Vk.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DHYvWzW-.css",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/court-preview-Bzxbrgc7.png",
+          "status": 200
+        }
+      ],
+      "result": "passed",
+      "scope": "Linux emulation, clock paused; not iPhone hardware, listening or performance"
+    }
+  ],
+  "transport": {
+    "apiTLS": "default certificate verification enabled for metadata and development-path requests",
+    "browserTLS": "default certificate verification enabled"
+  },
+  "release": {
+    "commit": "df6eb63da25cc3c88f0d3b5669a81530bbf37a95",
+    "base": "/takkeu/"
+  },
+  "developmentPaths": {
+    "tests/fixtures/stage2.html": 404,
+    "tests/fixtures/stage3.html": 404,
+    "src/main.ts": 404,
+    "@vite/client": 404
+  }
+}

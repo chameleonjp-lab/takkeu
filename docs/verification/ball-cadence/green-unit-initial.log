@@ -1,0 +1,46 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu-audit
+
+ ❯ tests/unit/session.test.ts (6 tests | 1 failed) 57ms
+   ❯ 1球のラリー (6)
+     × 1球でラリーを繰り返し、打球済みの球だけが相手から戻って再加点できる 35ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/session.test.ts > 1球のラリー > 1球でラリーを繰り返し、打球済みの球だけが相手から戻って再加点できる
+AssertionError: expected [ …(5) ] to have a length of 1 but got 5
+
+- Expected
++ Received
+
+- 1
++ 5
+
+ ❯ tests/unit/session.test.ts:89:38
+     87|     expect(playerHits).toBe(session.snapshot().score);
+     88|     expect(opponentHits).toBeGreaterThanOrEqual(playerHits);
+     89|     expect(session.snapshot().balls).toHaveLength(1);
+       |                                      ^
+     90|   });
+     91| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 24 passed (25)
+      Tests  1 failed | 135 passed (136)
+   Start at  02:42:39
+   Duration  4.73s (tests 49%, environment 31%, import 12%, transform 7%, worker 1%)
+
+    Isolate  25 workers spawned · ~270ms startup each (spawn + environment, per file)
+             at least ~1.98s faster with isolate: false — reuses workers across files instead of one per file
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
