@@ -3,6 +3,12 @@ import { ballCountAtScore } from '../../src/game/milestones';
 import type {} from '../helpers/appHarness';
 import type { GameSnapshot } from '../../src/game/types';
 
+// Functional load/UI checks retain traces, screenshots and state attachments.
+// Native input videos are recorded in contact/direct-input/basic-play instead.
+// Avoid encoding every software-GPU frame here: a full-canvas 30s run completed
+// all assertions but exhausted the unchanged 180s limit during artifact teardown.
+test.use({ video: 'off' });
+
 test('開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む', async ({ page }, info) => {
   test.setTimeout(180_000);
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));

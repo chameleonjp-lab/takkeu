@@ -16,7 +16,7 @@ export function createLoop(options: LoopOptions) {
     options.onPause('slow-frame');
     return true;
   };
-  const advance = (now: number): void => {
+  const advance = (now: number, preserveInputEndpoint = false): void => {
     now = Math.max(lastSimulation ?? now, now);
     const elapsed = lastSimulation === null ? 0 : Math.max(0, now - lastSimulation) / 1000;
     lastSimulation = now;
@@ -25,6 +25,9 @@ export function createLoop(options: LoopOptions) {
     // pointer events could consume as a burst of unseen ball movement.
     accumulator = Math.min(catchUpBudget(), accumulator + elapsed);
     while (accumulator + 1e-10 >= config.fixedDt && stepsSinceFrame < config.maxStepsPerFrame) {
+      // The pending pointer sample must get a chance to participate at its
+      // exact fixed boundary. A normal RAF still commits that boundary.
+      if (preserveInputEndpoint && accumulator <= config.fixedDt + 1e-10) break;
       const time = session.snapshot().simTime;
       const result = session.step(config.fixedDt, timeline.take(time, time + config.fixedDt));
       pendingEvents.push(...result.events);
@@ -47,7 +50,7 @@ export function createLoop(options: LoopOptions) {
     },
     // Flush chronological input before reading a release/recontact origin.
     // This does not render, reset the draw-delay clock, or consume draw events.
-    flushInput(now: number) { if (!pauseForDelay(now)) advance(now); },
+    flushInput(now: number) { if (!pauseForDelay(now)) advance(now, true); },
     frame(now: number): StepResult {
       if (pauseForDelay(now)) {
         lastFrame = now;stepsSinceFrame=0;
