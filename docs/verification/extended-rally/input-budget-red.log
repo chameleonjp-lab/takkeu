@@ -1,0 +1,32 @@
+
+ RUN  v5.0.5 /workspace/takkeu-audit
+
+ ❯ tests/unit/extended-core.test.ts (10 tests | 1 failed) 21ms
+   ❯ 短い描画遅延ではプレイを続ける (4)
+     × 描画の間に多数の入力が配送されても、合計12刻みの予算を共有する 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/extended-core.test.ts > 短い描画遅延ではプレイを続ける > 描画の間に多数の入力が配送されても、合計12刻みの予算を共有する
+AssertionError: expected 0.2 to be less than or equal to 0.1000000001
+ ❯ tests/unit/extended-core.test.ts:37:108
+     35|   it('描画の間に多数の入力が配送されても、合計12刻みの予算を共有する',()=>{
+     36|     const single=setup(),queued=setup();single.loop.frame(900);
+     37|     for(let time=100;time<=900;time+=100){queued.loop.flushInput(time)…
+       |                                                                                                            ^
+     38|     queued.loop.frame(900);expect(queued.session.snapshot().simTime).t…
+     39|     queued.loop.frame(920);expect(queued.session.snapshot().simTime).t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 passed (10)
+   Start at  10:37:37
+   Duration  301ms (transform 64%, import 18%, tests 16%, worker 3%)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

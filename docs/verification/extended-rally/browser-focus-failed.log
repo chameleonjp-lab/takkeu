@@ -1,0 +1,72 @@
+[WebServer] (node:89657) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:89670) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 1 worker
+
+(node:89694) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/contact.spec.ts:5:1 › ワンバウンド後の見える球にラケットを合わせれば返球できる (7.4s)
+  ✓   2 [chromium] › tests/browser/contact.spec.ts:32:1 › 見えている球にドラッグで合わせ、3ラリーをつなげる (19.7s)
+  ✓   3 [chromium] › tests/browser/extended.spec.ts:6:1 › 460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する (14.1s)
+  ✓   4 [chromium] › tests/browser/extended.spec.ts:30:1 › 返球・台面の花火を実際の接触イベントで描き、停止・リトライで過去の粒子を残さない (4.6s)
+  ✘   5 [chromium] › tests/browser/extended.spec.ts:53:1 › 555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する (2.1m)
+(node:90549) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   6 [chromium] › tests/browser/smash.spec.ts:5:1 › 450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない (8.4s)
+  ✓   7 [chromium] › tests/browser/smash.spec.ts:43:1 › 予告音を実際のWeb Audioで合成して保存する (796ms)
+(node:90801) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   8 [chromium] › tests/browser/lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない (3.2s)
+  ✓   9 [chromium] › tests/browser/lifecycle.spec.ts:39:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 (3.9s)
+  ✓  10 [chromium] › tests/browser/lifecycle.spec.ts:56:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する (3.4s)
+  ✓  11 [chromium] › tests/browser/lifecycle.spec.ts:74:1 › 実際のWEBGL_lose_contextによる喪失と復旧でも手動再開を待つ (2.6s)
+  ✓  12 [chromium] › tests/browser/lifecycle.spec.ts:92:1 › 描画再作成の失敗時も状態を壊さずホームへ戻れる (1.4s)
+
+
+  1) [chromium] › tests/browser/extended.spec.ts:53:1 › 555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する ───────
+
+    Test timeout of 120000ms exceeded.
+
+    Error: page.screenshot: Test timeout of 120000ms exceeded.
+    Call log:
+      - taking page screenshot
+      - waiting for fonts to load...
+      - fonts loaded
+
+
+      62 |   expect(await page.evaluate(()=>window.stage3.metrics().smashDepartures)).toBe(events.filter(e=>e.kind==='opponent-hit').length);
+      63 |   expect(rows.every(row=>row.resources!.particles<=1536)).toBe(true);
+    > 64 |   await page.screenshot({path:info.outputPath('555-multiball.png')});
+         |              ^
+      65 |   await info.attach('extended-highload.json',{body:JSON.stringify({rows,final:state,eventCount:events.length},null,2),contentType:'application/json'});
+      66 | });
+      67 |
+        at /workspace/takkeu-audit/tests/browser/extended.spec.ts:64:14
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/extended.spec.ts:53:1 › 555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する ────────
+  11 passed (3.6m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

@@ -1,0 +1,81 @@
+{
+  "commit": "45106aace7340820da8b5eaafba8efc1d0ea7af1",
+  "data": {
+    "plan": {
+      "ballId": 1,
+      "departAt": 0.401,
+      "netCrossAt": 0.7099734441172845,
+      "arriveAt": 1.018946888234569,
+      "target": {
+        "x": 0.4416697688355129,
+        "y": 0.3300026704370976
+      },
+      "smash": true,
+      "warningAt": 0.0010000000000000009,
+      "speedMultiplier": 2.5892192848014632,
+      "landingZ": 1.95,
+      "bounceY": 0.045,
+      "speedScore": 450,
+      "smashMultiplier": 1.25
+    },
+    "events": [
+      {
+        "id": "run-4:1",
+        "runId": "run-4",
+        "kind": "smash-warning",
+        "time": 0.0010000000000000009,
+        "ballId": 1
+      },
+      {
+        "id": "run-4:2",
+        "runId": "run-4",
+        "kind": "opponent-hit",
+        "time": 0.401,
+        "ballId": 1
+      },
+      {
+        "id": "run-4:3",
+        "runId": "run-4",
+        "kind": "table-bounce",
+        "time": 0.8459217595288896,
+        "ballId": 1,
+        "position": {
+          "x": 0.31800223356156926,
+          "y": 0.044999999999999984,
+          "z": 0.8579999999999999
+        }
+      },
+      {
+        "id": "run-4:4",
+        "runId": "run-4",
+        "kind": "ball-lost",
+        "time": 1.0716346434763775,
+        "ballId": 1
+      },
+      {
+        "id": "run-4:5",
+        "runId": "run-4",
+        "kind": "table-bounce",
+        "time": 1.5280000000000002,
+        "ballId": 2,
+        "position": {
+          "x": 0.8,
+          "y": 0.044999999999999984,
+          "z": 0.8579999999999999
+        }
+      },
+      {
+        "id": "run-4:6",
+        "runId": "run-4",
+        "kind": "table-bounce",
+        "time": 1.9039999999999995,
+        "ballId": 3,
+        "position": {
+          "x": -0.7,
+          "y": 0.04500000000000019,
+          "z": 0.8579999999999994
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+[WebServer] (node:93199) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:93212) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:93243) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  1 [chromium] › tests/browser/extended.spec.ts:53:1 › 555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する (2.8m)
+  ✓  2 [chromium] › tests/browser/extended.spec.ts:71:1 › 実アプリのホーム遷移で花火を直ちに消し、再挑戦へ持ち越さない (4.3s)
+(node:93409) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  3 [chromium] › tests/browser/occlusion.spec.ts:30:1 › 虹色は照明がなくても発光し、相手床・壁は閾値まで暗い (1.5s)
+(node:93523) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  4 [webkit] › tests/browser/extended.spec.ts:53:1 › 555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する (1.1m)
+  ✓  5 [webkit] › tests/browser/extended.spec.ts:71:1 › 実アプリのホーム遷移で花火を直ちに消し、再挑戦へ持ち越さない (6.6s)
+(node:93778) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  6 [webkit] › tests/browser/occlusion.spec.ts:30:1 › 虹色は照明がなくても発光し、相手床・壁は閾値まで暗い (2.3s)
+
+  6 passed (4.3m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

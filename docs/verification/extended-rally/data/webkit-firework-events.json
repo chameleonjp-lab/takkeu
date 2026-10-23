@@ -1,0 +1,50 @@
+{
+  "commit": "45106aace7340820da8b5eaafba8efc1d0ea7af1",
+  "data": [
+    {
+      "id": "run-3:1",
+      "runId": "run-3",
+      "kind": "table-bounce",
+      "time": 0.0020000000000000018,
+      "ballId": 1,
+      "position": {
+        "x": 0,
+        "y": 0.044999999999999984,
+        "z": 0.8579999999999999
+      },
+      "effect": "bounce-firework"
+    },
+    {
+      "id": "run-3:2",
+      "runId": "run-3",
+      "kind": "player-hit",
+      "time": 0.14183970295810178,
+      "ballId": 1,
+      "position": {
+        "x": 0,
+        "y": 0.5,
+        "z": 1.95
+      },
+      "effect": "racket-firework"
+    },
+    {
+      "id": "run-3:3",
+      "runId": "run-3",
+      "kind": "table-bounce",
+      "time": 0.6966211140733193,
+      "ballId": 1,
+      "position": {
+        "x": -0.5754923696815967,
+        "y": 0.04500000000000019,
+        "z": -1.0110550443697524
+      }
+    },
+    {
+      "id": "run-3:4",
+      "runId": "run-3",
+      "kind": "smash-warning",
+      "time": 0.9123694406181263,
+      "ballId": 1
+    }
+  ]
+}
