@@ -7,7 +7,10 @@ import type { GameSnapshot } from '../../src/game/types';
 // Native input videos are recorded in contact/direct-input/basic-play instead.
 // Avoid encoding every software-GPU frame here: a full-canvas 30s run completed
 // all assertions but exhausted the unchanged 180s limit during artifact teardown.
-test.use({ video: 'off' });
+// CI traces showed full-viewport software-GPU readbacks exhausting the budget.
+// Keep API/DOM/source traces and explicit milestone screenshots; omit only the
+// continuous trace screencast. Resolution, simulated duration and limits stay put.
+test.use({ video: 'off', trace: { mode: 'retain-on-failure', screenshots: false, snapshots: true, sources: true } });
 
 test('開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む', async ({ page }, info) => {
   test.setTimeout(180_000);
