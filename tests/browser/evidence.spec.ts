@@ -13,7 +13,8 @@ test.describe('画面の証拠', () => {
     await page.screenshot({ path: testInfo.outputPath('home.png'), fullPage: true });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await page.getByRole('button', { name: 'はじめる', exact: true }).click();
-    await page.clock.runFor(1550);
+    // Observe before the faster first bounce (1.44s), then deliberately miss it.
+    await page.clock.runFor(1250);
     await page.screenshot({ path: testInfo.outputPath('playing.png') });
     await page.getByRole('button', { name: '一時停止', exact: true }).click();
     await page.screenshot({ path: testInfo.outputPath('paused.png') });
