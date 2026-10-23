@@ -1,0 +1,1441 @@
+{
+  "recorded_at": "2026-10-23T13:35:53.826114+00:00",
+  "base": "547cec0654c18c8739752ae1ef322dde42086ee7",
+  "implementation_commit": "20f175116f7816d0818d6b432a4b442690a44d3d",
+  "typecheck": "passed",
+  "unit_tests": 179,
+  "browser_cases": 76,
+  "release_tests": 4,
+  "glow_reported_symptom": "unconfirmed; not reproduced",
+  "iphone_17_pro": "unconfirmed",
+  "listening": "unconfirmed",
+  "flashing_safety": "unconfirmed",
+  "performance": "prior failure remains; not remeasured",
+  "published": false,
+  "source_files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "326249baf61a195d776e88cfa93002db4291795e7e27ef38547626dd5ae96756"
+    },
+    {
+      "path": ".github/workflows/deploy.yml",
+      "sha256": "d1d94320856bf35e7ddbdf918e919f5449bed711ccc8374983ff26a79475bfea"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "893de008ca9c31bfe8dede7eaf10d8ad81d8cae5eb37128cc000471eb4348bf8"
+    },
+    {
+      "path": "package.json",
+      "sha256": "eb985c4ae938c1ed6b025c3a636d809a035ec23a9232df1ac86a405980e0c1ec"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "0adf38c3752bec28fdf9130daa988b1d4b00023cc3ab86cbc8e36e9797b88492"
+    },
+    {
+      "path": "playwright.performance.config.ts",
+      "sha256": "e378be6ffeec242932170471701294eec606a77bf512b28550f098d7b73d6a46"
+    },
+    {
+      "path": "playwright.release.config.ts",
+      "sha256": "20f55aaa7c93763c0f97e8ad3996fee0e2aaab504d36f25a90407d52b35ad7a3"
+    },
+    {
+      "path": "scripts/check-production.mjs",
+      "sha256": "85f14ddbf1eb626653810c7c0506a3833127964676c057014ed877a85393137e"
+    },
+    {
+      "path": "scripts/check-release-revision.mjs",
+      "sha256": "834c330676bad945871a2e9f74b9a2a207b4fe66f61d7da0c5b2262c84d7ac67"
+    },
+    {
+      "path": "scripts/serve-built.mjs",
+      "sha256": "a60f12a8eda489c16f153f59e58244f53159ce12f97e1918264615c9a2dcecab"
+    },
+    {
+      "path": "scripts/verify-release.mjs",
+      "sha256": "119c34c9a9e85daee9e878041452db9fba7cb483e83bb47148f08bdd6c30bc0a"
+    },
+    {
+      "path": "scripts/verify-stage3.mjs",
+      "sha256": "4068ecd530b1bae68adb67b15bced9b99d777af469d591f3917f518cc608b06b"
+    },
+    {
+      "path": "src/app/controls.ts",
+      "sha256": "c147c8ac4bee8e5d346aa2712eff142ff2bc6ae15101650093918940e4fa6f75"
+    },
+    {
+      "path": "src/app/createApp.ts",
+      "sha256": "eb8aa3a31138efb4bcc00cb5158bfa48c277bda7a5d413464cd310aa93601f2f"
+    },
+    {
+      "path": "src/app/lifecycle.ts",
+      "sha256": "c96e07477994c190d3607d7ce4ba9cc0f62032585221475b605e73cba41440bb"
+    },
+    {
+      "path": "src/app/loop.ts",
+      "sha256": "a912ccd303fb171206ce4b3dbe7cdc85a930f4f71945fae2a45459efab7e2d5a"
+    },
+    {
+      "path": "src/audio/audio.ts",
+      "sha256": "07ecded33b8e41b3282aa91c4cef1e7022e8938b2626a6c2ff6d7dcff3db28ce"
+    },
+    {
+      "path": "src/audio/tones.ts",
+      "sha256": "04f65b7879d442cc30515c66846166c336d643e5cdfd088170d5d1558f893368"
+    },
+    {
+      "path": "src/game/collision.ts",
+      "sha256": "8e5ad013fcafcc33d7aabf57d9ccdae0dd99fa6db4f1aefb5cd75a1730074c1c"
+    },
+    {
+      "path": "src/game/config.ts",
+      "sha256": "33b136eb51e8caf3bd2397ea6e2c38403a58be713c672fb35a7c5be23c37de43"
+    },
+    {
+      "path": "src/game/difficulty.ts",
+      "sha256": "eb1b55b2232639eb399d00b4e24c6357a376a4a6eef70ae5f5dbc2e029db3820"
+    },
+    {
+      "path": "src/game/flightSpeed.ts",
+      "sha256": "612377b499a431354f7284324d957c84409ce5e5a4ca90de14aed0f47afcbdbf"
+    },
+    {
+      "path": "src/game/milestones.ts",
+      "sha256": "c23320eab3ff193c5979c259c57620eacaad188989d84e66a5eb302f29292301"
+    },
+    {
+      "path": "src/game/opponent.ts",
+      "sha256": "69f800055694bf5745d89428086fbab15538116406b7d6b8487ca0c99c20f3e9"
+    },
+    {
+      "path": "src/game/progression.ts",
+      "sha256": "97ceca2fb5ee365dc7aa2e7c77e1dde3119b182c70869cf839a25d1ef837b39c"
+    },
+    {
+      "path": "src/game/scheduler.ts",
+      "sha256": "0612f6c316ccc8ea64406828008735bc33d9620871c28b15d057dbe75873b0b0"
+    },
+    {
+      "path": "src/game/session.ts",
+      "sha256": "5c6fdc5f690b3addaeb8484d9f962276f4b3f60623e12acb1d4968909ad0c93a"
+    },
+    {
+      "path": "src/game/simulation.ts",
+      "sha256": "507361e9fa3336098cf97642bb27ffb64222877974087da7951f01d64a06ac2c"
+    },
+    {
+      "path": "src/game/targets.ts",
+      "sha256": "ff2f28b829518c6d952f39de59d40b74b51e7d74550eb9347faf40618add01cf"
+    },
+    {
+      "path": "src/game/trajectory.ts",
+      "sha256": "2e985214f496ceac6955d9e21a011232513dde662f1ecea3df40ffdd94fcb924"
+    },
+    {
+      "path": "src/game/types.ts",
+      "sha256": "8951cc421e4c4b4fee7d5c258d3ca1a440a13ea86ff0c3903af8423798f0de7b"
+    },
+    {
+      "path": "src/game/viewpoint.ts",
+      "sha256": "1e5bea55f6b62fc37c9dce79f2b266d938d08e3fd663a925540e7b39dc9ad3f9"
+    },
+    {
+      "path": "src/input/swipe.ts",
+      "sha256": "b462c1a4a517dca2d3f37a5d62239588954a00f6f65312f1e8569db51f5b5904"
+    },
+    {
+      "path": "src/input/timeline.ts",
+      "sha256": "f2fc08142866529028d06bd407918cedc99958fc39dcfbbbec664136412fcd17"
+    },
+    {
+      "path": "src/main.ts",
+      "sha256": "1f32056096aa7d74eb8db4129d8a599515e6c88fa2691fa699477580938d3bcf"
+    },
+    {
+      "path": "src/render/balls.ts",
+      "sha256": "dad9399341352e1a8ffc13801b70e2568a64a5410ff4eaefc97c17f754d9052a"
+    },
+    {
+      "path": "src/render/camera.ts",
+      "sha256": "21bbe2f2ecd39520e72ffdca080a0936414b7131f06ded2d5a85f1aa21fd31ac"
+    },
+    {
+      "path": "src/render/createView.ts",
+      "sha256": "6d0227115d691864bf64cff3cbc80db88e560d89f9eb2fa5d4b30d290fd2b5ac"
+    },
+    {
+      "path": "src/render/environment.ts",
+      "sha256": "089bb1539b6cb324697c8eb2d57f78919bfbeaf393a079572ea883efe641ab3e"
+    },
+    {
+      "path": "src/render/field.ts",
+      "sha256": "33a224d11f907415d9064e9c9b9096a6cf84b7f7f71915d69f5810e43e31a452"
+    },
+    {
+      "path": "src/render/materials.ts",
+      "sha256": "762098367b45770052d30790e2fc76ce02939ad912a6a07a6d96831c11ba5c85"
+    },
+    {
+      "path": "src/render/objects.ts",
+      "sha256": "819e3b5de8ad23589e374c01072615ea58cdc6e9e7be1ddc9b03a19fde32b063"
+    },
+    {
+      "path": "src/render/opponentView.ts",
+      "sha256": "18b3fd0fc7fabc45a7137c8ba544306208c626405cd85b497efb6af50a448658"
+    },
+    {
+      "path": "src/render/paddle.ts",
+      "sha256": "9b88815c5b00032957a222f43b5b13dae1004fa144a92ec05fe8e1f32944c9dd"
+    },
+    {
+      "path": "src/render/particles.ts",
+      "sha256": "48a74a02e3b5bd99dbd6eecd186709057f28d221beb5e5818c81852ece56d415"
+    },
+    {
+      "path": "src/render/presentation.ts",
+      "sha256": "0d5c7fd8f69eefca1708d3893332c79a05e63347d449a2515d7460909c32cf48"
+    },
+    {
+      "path": "src/render/quality.ts",
+      "sha256": "8b7797fc97658f3877c4c5ab0c7162c176368cf46ee1a5d325f4eb3047212763"
+    },
+    {
+      "path": "src/render/rainbow.ts",
+      "sha256": "3789d9a0fdc078b95454fbecc14c194badea2b004911261bcae65d64cb628c80"
+    },
+    {
+      "path": "src/storage/preferences.ts",
+      "sha256": "d1413a7c858fdef151919d1a8a31c9c2511b8c97723cabb11be1ede0b9599d37"
+    },
+    {
+      "path": "src/ui/court-preview.png",
+      "sha256": "08f9fb9d7067af221769f957cec4a9d38362adfa0a8fe6acdf62f2b33765d4c4"
+    },
+    {
+      "path": "src/ui/screens.ts",
+      "sha256": "585a4ceb14d6a9c1c5e8132013beb748d8198ec88ac1354cc2c40e9c85975720"
+    },
+    {
+      "path": "src/ui/styles.css",
+      "sha256": "21c0567a43f6b21a4314abc89bad5c769c04d888e380c68c9aa0da7909969b3a"
+    },
+    {
+      "path": "tests/browser/audio.spec.ts",
+      "sha256": "c9b2395c3942f9f421058bc3d3b0420ee359852b015a9e435e949219fb33a864"
+    },
+    {
+      "path": "tests/browser/basic-play.spec.ts",
+      "sha256": "538335f329564fb61d03483bc454b4a6becd8de935169c33b5c507a1dd273842"
+    },
+    {
+      "path": "tests/browser/boot.spec.ts",
+      "sha256": "d3a6f0522fe0ebbf104d301f287faed70e0c1e0ea74eb6efd145c0f4a7827b73"
+    },
+    {
+      "path": "tests/browser/contact.spec.ts",
+      "sha256": "92237b36641ebe98a35e358597a228c590100b643e2b21af27e9cbbcacd133b0"
+    },
+    {
+      "path": "tests/browser/evidence.spec.ts",
+      "sha256": "eab1e1e682aee6300deb143d3d1c57d9ebb1d6c86d73f54613e9fd4968194ddd"
+    },
+    {
+      "path": "tests/browser/extended.spec.ts",
+      "sha256": "eb01808523453125ab6d93745e85cd977fdd23986dd2912ce1e144963aa307ca"
+    },
+    {
+      "path": "tests/browser/glow-timing.spec.ts",
+      "sha256": "8b17d953edaaa00517e9e4fd619ebe6154d924a7c6ecc0caa4424342c0e42e80"
+    },
+    {
+      "path": "tests/browser/lifecycle.spec.ts",
+      "sha256": "4aca40108034db1ca9f5769eb92244a863ca404583a98657b40113bd42ef3c47"
+    },
+    {
+      "path": "tests/browser/milestones.spec.ts",
+      "sha256": "9bed6e962b914aad33220e6ff9ca6b4cc6a1fd3b9840dfd6e018cb26006938d2"
+    },
+    {
+      "path": "tests/browser/occlusion.spec.ts",
+      "sha256": "32a426e21a24167cfcf3369df0c26bb133a537dde9373e0748ebf1e7590823d3"
+    },
+    {
+      "path": "tests/browser/preferences.spec.ts",
+      "sha256": "b9a854e396f2a77dc4d6ffc3628587f2a273815ac406830a1627284ab070aba1"
+    },
+    {
+      "path": "tests/browser/quality.spec.ts",
+      "sha256": "4f7bed31f8acf558b9c4deee103a085308a2fae6a8691c4793b7864f00fd19c5"
+    },
+    {
+      "path": "tests/browser/reference.spec.ts",
+      "sha256": "caac5cc85b65360d81c6d64d9294ed2305557f58dc83e7821d148fce16b0d0e4"
+    },
+    {
+      "path": "tests/browser/render-loop.spec.ts",
+      "sha256": "dfee9b534855e5949e80d8c04266e615cccdafb3325e2a6c8367b9ba855fc807"
+    },
+    {
+      "path": "tests/browser/retry.spec.ts",
+      "sha256": "487e57903ab73fa0d385ddc800d198f004e3bc08fee1196b2ecaa3ff8554b6c3"
+    },
+    {
+      "path": "tests/browser/smash.spec.ts",
+      "sha256": "98135dfe1ce2e77359f6b17c0253e21fd935dd06ff3409678e8799c7a21e59d6"
+    },
+    {
+      "path": "tests/fixtures/occlusion.html",
+      "sha256": "da2159078fd64962e0ccc65ada6b967c09e82eac7053a8ac43ef1c8919dd66fb"
+    },
+    {
+      "path": "tests/fixtures/stage2.html",
+      "sha256": "4077177da6097a5776955bd7b2df1e1a0e9348cf7692a2a249b302ab16e419f2"
+    },
+    {
+      "path": "tests/fixtures/stage3.html",
+      "sha256": "31bc16f8a66dc916e83a90b027c69fc8716b22fb8f8174d19be3cf82d5fd7b46"
+    },
+    {
+      "path": "tests/helpers/appHarness.ts",
+      "sha256": "774d0e3be7269832a9883a6399d2d4c2f93973df8babb1373af81232dd0f2107"
+    },
+    {
+      "path": "tests/helpers/audioContext.ts",
+      "sha256": "b79efeb17324dfb492283e2f389d3ba783dbbebc7665e70cb4b12bedf5a42d21"
+    },
+    {
+      "path": "tests/helpers/fixtures.ts",
+      "sha256": "2a51053b7ff46c6f6e717bea05cc58512e2f96cb3159004640f330b9721c80c8"
+    },
+    {
+      "path": "tests/helpers/glowSchedule.ts",
+      "sha256": "2dfcfbc223eea204e9c83874f022c0929f315b5a993bc9882d91ada8e3506816"
+    },
+    {
+      "path": "tests/helpers/occlusionHarness.ts",
+      "sha256": "61358ec0ecf5702182e764ec09dd7c34ce57e00566fd9e05f31745d43d3971cc"
+    },
+    {
+      "path": "tests/helpers/replay.ts",
+      "sha256": "6eb36e76f77284c5fe55f8af0365576bf53ce0f3c3fbf2ecd04a9dae3f38a9d5"
+    },
+    {
+      "path": "tests/helpers/runtimeProbe.ts",
+      "sha256": "c8349a4d8230400a7cc218fe6b732fa812bca2bce29cd5489d4f1916dfb5d5d0"
+    },
+    {
+      "path": "tests/helpers/scenarios.ts",
+      "sha256": "c93d45fef606a07cb49a6271b6d608062ecce11744ccb50d294efc655c8cab66"
+    },
+    {
+      "path": "tests/helpers/stageHarness.ts",
+      "sha256": "900328b26bb0b3788945ed91f516a9d1f2d9067b030a745b8a4583fde9658f7e"
+    },
+    {
+      "path": "tests/helpers/wav.ts",
+      "sha256": "4e2f5b732e9c829f38ca1656d1766d48fe45746bd1ba6069a91bc035388e4aac"
+    },
+    {
+      "path": "tests/performance/browser-load.spec.ts",
+      "sha256": "4133a497f340bd97dca55163ebd3f54498537ee2bcc7f2a7a23c34d30e084746"
+    },
+    {
+      "path": "tests/release/distribution.spec.ts",
+      "sha256": "75c73aae751c82a990174ac734b01ad8608a9729657741abeef2238dd38b5c5b"
+    },
+    {
+      "path": "tests/unit/audio-events.test.ts",
+      "sha256": "b52c91f6461dd965ade57af54fd7dd45368c1a1c04418824561276f236f86f72"
+    },
+    {
+      "path": "tests/unit/ball-instancing.test.ts",
+      "sha256": "356db72cc1df17bc51cfbd33ff23a09f6c2649a7bca1f2a81d67d74551d5bc32"
+    },
+    {
+      "path": "tests/unit/ball-pool.test.ts",
+      "sha256": "eb24ef6053a86596545de4d229c6b2df70e33ec6fc00cebced357940dd4d8d84"
+    },
+    {
+      "path": "tests/unit/bounce-contact.test.ts",
+      "sha256": "611caaa6fc23cfa88ff6de7201235e13f350be5166b71295ed33fefc2293c424"
+    },
+    {
+      "path": "tests/unit/camera.test.ts",
+      "sha256": "122231602232f95b88034cc6789a1750cac907a013d5d1414b99fcd4db00a4db"
+    },
+    {
+      "path": "tests/unit/collision.test.ts",
+      "sha256": "9b1b7aa7bcf9449cb94c9914a2017d1439b159dc594a1ca49c9685805f48e5ef"
+    },
+    {
+      "path": "tests/unit/extended-core.test.ts",
+      "sha256": "91abada808d74e03875172ff9ea1dc2f6be3bcbc5098e7855bd81c763541b744"
+    },
+    {
+      "path": "tests/unit/extended-progression.test.ts",
+      "sha256": "6f6a107114886fd56852e0d1aa9cb50e6946176bc6c6d08d1db95ed025173a7a"
+    },
+    {
+      "path": "tests/unit/extended-render.test.ts",
+      "sha256": "92201b38f07f474e3c74e441af46e76ad186e84cd4a09cebe905c0205ab07f4f"
+    },
+    {
+      "path": "tests/unit/extended-safety.test.ts",
+      "sha256": "2db62a743ed4ae6054d0ddb97603980fde76d74c9c8808fee4c4ce8cb9796469"
+    },
+    {
+      "path": "tests/unit/glow-timing.test.ts",
+      "sha256": "a827f9fb9b135d8b9c9e1c2f72a520fedfd5b9f11b58b81df1512b5896d22b10"
+    },
+    {
+      "path": "tests/unit/growing-replay.test.ts",
+      "sha256": "4d6659c0ed646eb583d5f1d6f9c0762f29214c4182b88a6a6ef9dc30d57c1447"
+    },
+    {
+      "path": "tests/unit/input-timeline.test.ts",
+      "sha256": "3355b9f49ad6daadbb7c74f5f307018de25c1578e7969ab447efb88d35e314bc"
+    },
+    {
+      "path": "tests/unit/loop.test.ts",
+      "sha256": "3e50a41c239dd67cf76d8e5592ab06c260609c0247a2b4ec212d54ab65d33856"
+    },
+    {
+      "path": "tests/unit/multiball.test.ts",
+      "sha256": "a72be066d46ac991fd4869311fed6d7a1a21a3dee3c2464f0cc28bc826a85ee6"
+    },
+    {
+      "path": "tests/unit/opponent.test.ts",
+      "sha256": "1d57af823fd1d8af16964ee42947894850dd4eaf82b76c0f72d275347737e99f"
+    },
+    {
+      "path": "tests/unit/paddle.test.ts",
+      "sha256": "7b8288cafb0ae129a38150d8f2576b6087399ad35eddde6a6de6bfa06b35dc25"
+    },
+    {
+      "path": "tests/unit/pointer-loop.test.ts",
+      "sha256": "a813f26b343f755ebe1a8141cd145b363636c959b412122edd4e10ef3248650f"
+    },
+    {
+      "path": "tests/unit/presentation.test.ts",
+      "sha256": "a2d7b561eb9234348785b62636a1b8e36c4f9f2b040b6db413f4149fc3dc1768"
+    },
+    {
+      "path": "tests/unit/progression.test.ts",
+      "sha256": "b5a98aa466664beacfa042d852227cb3bf5872647b2e60a56bb97c5b1866a165"
+    },
+    {
+      "path": "tests/unit/quality.test.ts",
+      "sha256": "95d244b21caf22cd01b4cb8fa8133c5aefe4933924a850b214b49cf6711bd0a1"
+    },
+    {
+      "path": "tests/unit/release-revision.test.ts",
+      "sha256": "ba223406070299cb39968086efff6485228ecc829ad0df0946650700028dc9fa"
+    },
+    {
+      "path": "tests/unit/render-assets.test.ts",
+      "sha256": "1164d686236efc7e7c63feeb3c62072851cbb37e43912c135446f0b0f1a942d8"
+    },
+    {
+      "path": "tests/unit/replay.test.ts",
+      "sha256": "31acbdadd44cacde82c0cdea46a9e3822a6987240476803187918d44f69ef97f"
+    },
+    {
+      "path": "tests/unit/return-spread.test.ts",
+      "sha256": "b3fda45f400b0219b2dadccf886329965f59382d2a6695b44b90a91e0a96cfe6"
+    },
+    {
+      "path": "tests/unit/scheduler.test.ts",
+      "sha256": "cb3b1de3f1d6147de5b8032d8e348ff49ecf3ef9d04806f2c9f5decc46bcb0d5"
+    },
+    {
+      "path": "tests/unit/session.test.ts",
+      "sha256": "1d6098f558172a98affce981f6a639cffb7880d6def453f55abb0211db9180db"
+    },
+    {
+      "path": "tests/unit/simulation-isolation.test.ts",
+      "sha256": "108d3d7fada39994317d1b8880082a579e4d414b68aa01101ede0e503d4b5fef"
+    },
+    {
+      "path": "tests/unit/storage.test.ts",
+      "sha256": "bda6f2c4f549d6685af1e6e5727004a77906402793ea21a7e86fbfa20641eee3"
+    },
+    {
+      "path": "tests/unit/swipe.test.ts",
+      "sha256": "4b3bc47045ef8b00d494ffbc733f404ab670ea583cbbac66e7fb88aba88444aa"
+    },
+    {
+      "path": "tests/unit/trajectory.test.ts",
+      "sha256": "c2d7ebbab61ebd3500985afff460e5ffb13d14712fc2ee892efd4c478fb924a9"
+    },
+    {
+      "path": "tests/unit/warning-ui.test.ts",
+      "sha256": "3327dec010ff1b6260fe8a649e85f01627ffe16ca9b70c6e55dad082353c0c16"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "4c050c1c11e485826e0c6525abf15eb0656a116d1cb564375a997b35b689fb99"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "70811e05e174c52e3047d6903bd1a31d3b2189e5289d21a217d8fd1bfc0f3afe"
+    },
+    {
+      "path": "vitest.config.ts",
+      "sha256": "baf97e73233329ba67e1569806c967b20bd6fc096233608326abe0def44f2aac"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "attempts/555-capture-chromium/555-multiball.png",
+      "sha256": "c161ad7cf1e1c52675f82bdbd3ac20c3ad174a71121b271c240ee4f10b298c6a",
+      "bytes": 174110
+    },
+    {
+      "path": "attempts/555-capture-chromium/error-context.md",
+      "sha256": "8b0d110f7e4ee773978537192a3f225278c3c7174f53efdd30a209461d1869e0",
+      "bytes": 2130
+    },
+    {
+      "path": "attempts/555-capture-chromium/trace.zip",
+      "sha256": "b6240a810d3a966dedfb4a6029932e57ae3a2413c6751bd9bf85bc7e12537012",
+      "bytes": 9441265
+    },
+    {
+      "path": "attempts/555-capture-chromium/video.webm",
+      "sha256": "e3a59b90ca401550d834b4a3ff8742ed87675a454959c55d60b91d24e4cc95ed",
+      "bytes": 7755312
+    },
+    {
+      "path": "attempts/555-capture-timing.json",
+      "sha256": "9aac34b4678382582e5c337d72c44c94c000287dff4cdb481f569d4a6288a813",
+      "bytes": 39419
+    },
+    {
+      "path": "attempts/555-navigation-chromium/error-context.md",
+      "sha256": "8c7c681764fbd1d15c60c9248e5f5a37eed1b7fa77f79c806b109987f4d5c0e9",
+      "bytes": 9748
+    },
+    {
+      "path": "attempts/555-navigation-chromium/test-failed-1.png",
+      "sha256": "3878570f4a62a0d65f57cf1754e0269e56ec797f4e36e26b44c172eb6e800401",
+      "bytes": 4254
+    },
+    {
+      "path": "attempts/555-navigation-chromium/trace.zip",
+      "sha256": "bb71b174d89fc44efc6e347a6ea1a6c7599440fa0c5249766b3b3cc0ca97ebf0",
+      "bytes": 421092
+    },
+    {
+      "path": "attempts/555-navigation-chromium/video.webm",
+      "sha256": "d2483a6f886dae80054a7ea79f079e88cd066b4ab9d7d1e2e78c584ccaa1c243",
+      "bytes": 217662
+    },
+    {
+      "path": "attempts/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-chromium/error-context.md",
+      "sha256": "6ad83a5f56a60a4d5df2bfab4300e6c1811cccff3012a40082ebcd838286d89a",
+      "bytes": 5774
+    },
+    {
+      "path": "attempts/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-chromium/test-failed-1.png",
+      "sha256": "79d66531857f2c1358c2c668e1538c269a5f8d60afd9c03d4d8cb9fc1d39ee52",
+      "bytes": 173683
+    },
+    {
+      "path": "attempts/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-chromium/trace.zip",
+      "sha256": "bb80fdcc3438a91c49732c75a6eaa173add1c51ed9400c562caa070c915ff26f",
+      "bytes": 611876
+    },
+    {
+      "path": "attempts/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-chromium/video.webm",
+      "sha256": "e5c7face19a4f89844b938cd8fada699d8a81a514e49ea1f93cece374f0be4fd",
+      "bytes": 234854
+    },
+    {
+      "path": "attempts/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-webkit/error-context.md",
+      "sha256": "00f929aaffcae2956a3129c1b0678d92ca7e2bca9b6a36510a05578dd7f5327c",
+      "bytes": 5774
+    },
+    {
+      "path": "attempts/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-webkit/test-failed-1.png",
+      "sha256": "3f91e6ffb2a6a470f7a1438ccfaa3c594a32d3d5635fd546990c1c3c5b6b030b",
+      "bytes": 405617
+    },
+    {
+      "path": "attempts/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-webkit/trace.zip",
+      "sha256": "12fcaa396581fef9bc7862250e22f8b1bf2690753c7388fc66952165e89f1e88",
+      "bytes": 868381
+    },
+    {
+      "path": "attempts/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-webkit/video.webm",
+      "sha256": "aa1ca590151e6ad3c973b4509a21494c1c4dd92da51c995766f2f90477c48216",
+      "bytes": 262351
+    },
+    {
+      "path": "audio-and-state/audio-context-chromium.json",
+      "sha256": "bd7cb3b153f0bd1c4aa86b81e01c1f9a8c54f7692859a730dbad182dfedbd61a",
+      "bytes": 97
+    },
+    {
+      "path": "audio-and-state/audio-context-webkit.json",
+      "sha256": "bd7cb3b153f0bd1c4aa86b81e01c1f9a8c54f7692859a730dbad182dfedbd61a",
+      "bytes": 97
+    },
+    {
+      "path": "audio-and-state/browser-final-555-chromium-extended-highload.json",
+      "sha256": "73c146cb8fea887a4238c7d2ac496e223b19bd605d0a3e21322ace166fe14238",
+      "bytes": 114994
+    },
+    {
+      "path": "audio-and-state/browser-recheck-webkit-extended-highload.json",
+      "sha256": "73c146cb8fea887a4238c7d2ac496e223b19bd605d0a3e21322ace166fe14238",
+      "bytes": 114994
+    },
+    {
+      "path": "audio-and-state/browser-regression-initial-chromium-extended-highload.json",
+      "sha256": "9df9197d7149026916b5793a8e12fe9d87fc8d9e7d34e14aa88c2b74030d8882",
+      "bytes": 115994
+    },
+    {
+      "path": "audio-and-state/browser-regression-initial-chromium-growing-ball-load.json",
+      "sha256": "f977cf00be9cc1a0297f33ec1e1d3498638293d0430a1efe7f951c8344cce273",
+      "bytes": 1352853
+    },
+    {
+      "path": "audio-and-state/browser-regression-initial-webkit-extended-highload.json",
+      "sha256": "b32f9345a90f796345c70e3b8d891add9699be25efa40cb0d4f9feea83386a45",
+      "bytes": 115991
+    },
+    {
+      "path": "audio-and-state/browser-regression-initial-webkit-growing-ball-load.json",
+      "sha256": "aa31c1a096ceb56f11dc4b1a49505b0244eedf7e3c8880aa8ea9d8c8aee55b97",
+      "bytes": 1352852
+    },
+    {
+      "path": "audio-and-state/four-chromium.wav",
+      "sha256": "8d95d85bf80f19838ef371316d9907750f9a04a7ddc1b1a20c2b85ac8c8e4c19",
+      "bytes": 22094
+    },
+    {
+      "path": "audio-and-state/four-webkit.wav",
+      "sha256": "8d95d85bf80f19838ef371316d9907750f9a04a7ddc1b1a20c2b85ac8c8e4c19",
+      "bytes": 22094
+    },
+    {
+      "path": "audio-and-state/glow-boundaries-chromium.json",
+      "sha256": "30f46059849d7ad009dc960ac2489f77cc1051ed49bf8c7795ced96097c4e031",
+      "bytes": 3981
+    },
+    {
+      "path": "audio-and-state/glow-boundaries-webkit.json",
+      "sha256": "30f46059849d7ad009dc960ac2489f77cc1051ed49bf8c7795ced96097c4e031",
+      "bytes": 3981
+    },
+    {
+      "path": "audio-and-state/opponent-chromium.wav",
+      "sha256": "9a0a0f01792cd23d923bf09645b918229b406eca32539b5175101dd52915fa71",
+      "bytes": 22094
+    },
+    {
+      "path": "audio-and-state/opponent-webkit.wav",
+      "sha256": "9a0a0f01792cd23d923bf09645b918229b406eca32539b5175101dd52915fa71",
+      "bytes": 22094
+    },
+    {
+      "path": "audio-and-state/player-chromium.wav",
+      "sha256": "f8cff69774daa3865279fcd7db478cec747b9d190489e984b3ef313c411346b5",
+      "bytes": 22094
+    },
+    {
+      "path": "audio-and-state/player-webkit.wav",
+      "sha256": "f8cff69774daa3865279fcd7db478cec747b9d190489e984b3ef313c411346b5",
+      "bytes": 22094
+    },
+    {
+      "path": "audio-and-state/sixteen-chromium.wav",
+      "sha256": "ba71e186873445440d4a0cf71abfd0d31612dc6e360819bc3913241741f256d2",
+      "bytes": 22094
+    },
+    {
+      "path": "audio-and-state/sixteen-webkit.wav",
+      "sha256": "ab6a168f0d1f916a0f73fafa11764035cb7118a79433cc7020d12afb9f45c766",
+      "bytes": 22094
+    },
+    {
+      "path": "audio-and-state/warning-chromium.wav",
+      "sha256": "ae2c07f0e13347e082d0de9a04a97d3a42c9a5b0aa95a24867d5a92dc8fb68b7",
+      "bytes": 22094
+    },
+    {
+      "path": "audio-and-state/warning-webkit.wav",
+      "sha256": "ae2c07f0e13347e082d0de9a04a97d3a42c9a5b0aa95a24867d5a92dc8fb68b7",
+      "bytes": 22094
+    },
+    {
+      "path": "audio-and-state/waveform-measurements-chromium.json",
+      "sha256": "293744d3e0c56dc28be5e4b1591f6f14207c23a3be94140a394d1338c7784a1a",
+      "bytes": 485
+    },
+    {
+      "path": "audio-and-state/waveform-measurements-webkit.json",
+      "sha256": "d8b08a931f326a2333f90598657b10c0835b136e02f3f0f353f19d850eaadfdc",
+      "bytes": 483
+    },
+    {
+      "path": "audio-and-state-index.json",
+      "sha256": "858c8b3ede4af61d38561b0824452c59f695c084452cfdb648d66db1f12239bc",
+      "bytes": 3873
+    },
+    {
+      "path": "browser-final-555.json",
+      "sha256": "c7b05c38142f0fd2de034b9b0773311f7545452b92e8175afc2990c9ad3b1920",
+      "bytes": 159241
+    },
+    {
+      "path": "browser-final-555.log",
+      "sha256": "bb6c3983d31c9ba5656f459186350b7e2fd8adb14c77428d39205a5725276969",
+      "bytes": 689
+    },
+    {
+      "path": "browser-final-coverage.json",
+      "sha256": "630bf25193cce709adba4afc8d16421b2398bd80ecf3db399c8cb1651a0beb32",
+      "bytes": 19152
+    },
+    {
+      "path": "browser-recheck.json",
+      "sha256": "e3c6e924dd20be19725c7fc1e758eaa27b42352153c5bb34e85bab6c0a122318",
+      "bytes": 177013
+    },
+    {
+      "path": "browser-recheck.log",
+      "sha256": "c9227b714f9d9c8825a7e3652d2de85680f3c738a11bc8708a706136c187a1a1",
+      "bytes": 5815
+    },
+    {
+      "path": "browser-regression-initial.json",
+      "sha256": "b0fba461873360bdac66767dbcd1784516ee8172ddb7a64280310a69a08a6614",
+      "bytes": 6499953
+    },
+    {
+      "path": "browser-regression.log",
+      "sha256": "4952ffc085a2f7a46f3a7eb5cc0ddf1f8c61481ea71e2e777c79f9fba993c0d6",
+      "bytes": 21464
+    },
+    {
+      "path": "distribution-sha256.json",
+      "sha256": "c689222cb58fe2c546748c7c788d3c36b0e27fe8762a49e7d0471519df9cb35e",
+      "bytes": 1588
+    },
+    {
+      "path": "drag-contact-sheet-chromium.jpg",
+      "sha256": "48cd8c3fa6e8f6b26167e9e9f8bd870e04f61dab6ce5f0b7bef813a9a833b799",
+      "bytes": 68976
+    },
+    {
+      "path": "drag-contact-sheet-webkit.jpg",
+      "sha256": "c9b6275556d07c2fd38edab45251542d34e5bab526bcddd70e1fb39d598f73f7",
+      "bytes": 97311
+    },
+    {
+      "path": "drag-frames-chromium/0.png",
+      "sha256": "101acecabe4871badd87eaa50eb2f4f472ff505f6147b9434d1e743ccf4cca2e",
+      "bytes": 105187
+    },
+    {
+      "path": "drag-frames-chromium/1.png",
+      "sha256": "e66e76aa95f8ae03c4e9edb704cdd4a1cb121894407032b03a767aa350979d3a",
+      "bytes": 102054
+    },
+    {
+      "path": "drag-frames-chromium/2.png",
+      "sha256": "f34ddcd9281474d3a89d404ba32f904453e1d64739b0db317a6b50645cca5a67",
+      "bytes": 96294
+    },
+    {
+      "path": "drag-frames-chromium/3.png",
+      "sha256": "593e9a24e9e7b8418b36c5bc1c07c24747f5b4c205d730bde83be34f67c787ec",
+      "bytes": 99446
+    },
+    {
+      "path": "drag-frames-chromium/4.png",
+      "sha256": "be80735769b9ca92984e66f107b1e028ab8c4a4240ae04984986b6d575ad9cd9",
+      "bytes": 96119
+    },
+    {
+      "path": "drag-frames-chromium/5.png",
+      "sha256": "ad33458b187955c23537358bf0d47eea7a2d8ae66bbf241d769935bf2e4b2093",
+      "bytes": 98709
+    },
+    {
+      "path": "drag-frames-chromium/6.png",
+      "sha256": "1d41fd2a54e3a37276de4de5f4aea88e7e619e014f72a01490ece9ae18584e4a",
+      "bytes": 96195
+    },
+    {
+      "path": "drag-frames-chromium/7.png",
+      "sha256": "d281199c6fc2aa7363bc7eb0b53c0d3e082385928a46a878f1af353768c28f5b",
+      "bytes": 98690
+    },
+    {
+      "path": "drag-frames-webkit/0.png",
+      "sha256": "65c68710898c46c19ba0a23b4e4ecf0b498ccf511f0d16a4481469e855b06922",
+      "bytes": 2263
+    },
+    {
+      "path": "drag-frames-webkit/1.png",
+      "sha256": "9f2b3a485b1ba46441b04a077d0be59369e55b2d3af2dc1ba657a403882489ce",
+      "bytes": 102438
+    },
+    {
+      "path": "drag-frames-webkit/2.png",
+      "sha256": "b8923b4cf23289f66540d28fa842608f98135b79c6450b52b41fb56dc141dbc4",
+      "bytes": 108054
+    },
+    {
+      "path": "drag-frames-webkit/3.png",
+      "sha256": "b62332ef2489947f689e641f5ccbc7e392456487d256029c46557f45ae022f1b",
+      "bytes": 108147
+    },
+    {
+      "path": "drag-frames-webkit/4.png",
+      "sha256": "82139a77680e5d88cbca6f75d792319fcafefcef6f981d6157a0c6aaebc99bbb",
+      "bytes": 103695
+    },
+    {
+      "path": "drag-frames-webkit/5.png",
+      "sha256": "b33fb66f612f6f0b85edcf7026a2c4cab19d6e13c2d2ac8c16896f84e0b9226c",
+      "bytes": 110013
+    },
+    {
+      "path": "drag-frames-webkit/6.png",
+      "sha256": "cff32ad524ba31cf50ac17e812a89a3447bbb7f54c3c0881c4f3fcba7980f7f3",
+      "bytes": 112070
+    },
+    {
+      "path": "drag-frames-webkit/7.png",
+      "sha256": "3026796fde2663ddf8a494cee0dc0265eb14b6ecbb9621308055865cd2d7287d",
+      "bytes": 112652
+    },
+    {
+      "path": "final-media/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-chromium/555-multiball.png",
+      "sha256": "40375b2cc8e206ff09f87373ce74b238e0b192b3de8d4a82b9eee43da685b52b",
+      "bytes": 175001
+    },
+    {
+      "path": "final-media/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-chromium/video.webm",
+      "sha256": "2258c2e4d33451c40a7c985748bdd4c5dfd9d275db850b175c701019dc615624",
+      "bytes": 5867247
+    },
+    {
+      "path": "final-media/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-webkit/555-multiball.png",
+      "sha256": "c780272ec6706d06de1036b422848891fd934fc1ac8f5c56d1c2b82722762ec4",
+      "bytes": 424324
+    },
+    {
+      "path": "final-media/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-webkit/video.webm",
+      "sha256": "a87f558d9368de26d4549ca86eb473578a6e1c59bd65ec3ca58022bc2c7fabde",
+      "bytes": 7817053
+    },
+    {
+      "path": "final-media/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-chromium/smash-departure-hidden.png",
+      "sha256": "d69b41ac8b82be0927feaf57af4fa758a80e9e082df195f67f027abb6375ad04",
+      "bytes": 172143
+    },
+    {
+      "path": "final-media/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-chromium/smash-own-side.png",
+      "sha256": "62bf5e13a210e6c740a1ddce9ba658dc7be323a57f3908bbe9903c5950525597",
+      "bytes": 176749
+    },
+    {
+      "path": "final-media/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-chromium/smash-warning-muted.png",
+      "sha256": "3dc6864131fd27a3d813de117516a8393a426b74f0ef32adf2b16170e925c46c",
+      "bytes": 174580
+    },
+    {
+      "path": "final-media/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-chromium/smash-warning-paused.png",
+      "sha256": "0d63e5efcb436aa97cfe8dddf46acbe37d31d4b786e3b43d76a74e4f00a2b514",
+      "bytes": 100283
+    },
+    {
+      "path": "final-media/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-chromium/video.webm",
+      "sha256": "e597ef25b9a0093cea97b40bc313c8d2a3899950285bb79a753d3565b63515c8",
+      "bytes": 668018
+    },
+    {
+      "path": "final-media/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-webkit/smash-departure-hidden.png",
+      "sha256": "a42a8d8ffdf79a168a9b7728500c213eae45b588142eb8b706f0eb9a41911b46",
+      "bytes": 408567
+    },
+    {
+      "path": "final-media/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-webkit/smash-own-side.png",
+      "sha256": "bae2379810866b1b8a9ef8edb371412cb56d6ddc19d57f026c7681a650e8ab73",
+      "bytes": 412232
+    },
+    {
+      "path": "final-media/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-webkit/smash-warning-muted.png",
+      "sha256": "fce55c412676ec4eb17a561451975d62b5cbc984fced31ef03739263bee4d1af",
+      "bytes": 406747
+    },
+    {
+      "path": "final-media/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-webkit/smash-warning-paused.png",
+      "sha256": "88765e71681d33a8e6c1362b4b3568048be6011d860c536cfa51754bfce786c5",
+      "bytes": 286195
+    },
+    {
+      "path": "final-media/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-webkit/video.webm",
+      "sha256": "8ce19c026370575199b5b20f68a492ef395eae9246e9d64380706bea2b1e4b3b",
+      "bytes": 582035
+    },
+    {
+      "path": "focused-browser.log",
+      "sha256": "a1397ae98d82bc7d2957978e70b78e09d563ea095d817456ff414c4ae308a4e8",
+      "bytes": 3638
+    },
+    {
+      "path": "focused-media/.last-run.json",
+      "sha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903",
+      "bytes": 45
+    },
+    {
+      "path": "focused-media/audio-音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える-chromium/audio-unavailable.png",
+      "sha256": "418fa7731a132ca937d15e87f09968c90e6b1ad0c5382e8244da16ca8c963f77",
+      "bytes": 95633
+    },
+    {
+      "path": "focused-media/audio-音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える-webkit/audio-unavailable.png",
+      "sha256": "4c28bd01c068807926a624374b1d2e2494454cc9221f46dc0c10beab6f0ff273",
+      "bytes": 254201
+    },
+    {
+      "path": "focused-media/contact-ワンバウンド後の見える球にラケットを合わせれば返球できる-chromium/before-bounce.png",
+      "sha256": "ed86e6972b5a13a519e5cb9195e26f8925dac1f7ba0b26ca9d5ec4a04c1b2f19",
+      "bytes": 95587
+    },
+    {
+      "path": "focused-media/contact-ワンバウンド後の見える球にラケットを合わせれば返球できる-chromium/returned.png",
+      "sha256": "dc2bcdffcd2ba6c1a6e67db9445e04723d15100649fa7199f4393f8e085c8055",
+      "bytes": 95049
+    },
+    {
+      "path": "focused-media/contact-ワンバウンド後の見える球にラケットを合わせれば返球できる-chromium/video.webm",
+      "sha256": "69841e72905e0bd21c6b5e352cedf389f2aafedba2b1c50ab2d01833373f77ed",
+      "bytes": 189094
+    },
+    {
+      "path": "focused-media/contact-ワンバウンド後の見える球にラケットを合わせれば返球できる-webkit/before-bounce.png",
+      "sha256": "87a8e64a04ae9123880b34897c19b8b2ef7a4362fd6c7ca2ea14298446d46445",
+      "bytes": 225008
+    },
+    {
+      "path": "focused-media/contact-ワンバウンド後の見える球にラケットを合わせれば返球できる-webkit/returned.png",
+      "sha256": "12339bcceb710a07abc8efe9933ad1149c6ff348c7205bf0a73dace9287c3726",
+      "bytes": 222879
+    },
+    {
+      "path": "focused-media/contact-ワンバウンド後の見える球にラケットを合わせれば返球できる-webkit/video.webm",
+      "sha256": "c8ae3c3aabaaab8d4f8ef6c9d88837b062141e342a1d6e4176db671d8fa0e830",
+      "bytes": 226298
+    },
+    {
+      "path": "focused-media/contact-見えている球にドラッグで合わせ、3ラリーをつなげる-chromium/three-visible-returns.png",
+      "sha256": "f77aea19cd1b16c81e06cb3e8473a10534cb759955c364f878a319ff4733d493",
+      "bytes": 95323
+    },
+    {
+      "path": "focused-media/contact-見えている球にドラッグで合わせ、3ラリーをつなげる-chromium/video.webm",
+      "sha256": "9a9990f0441effa25d910f539dd5e5266cf3ab83136e79b178b68606e12e6625",
+      "bytes": 506433
+    },
+    {
+      "path": "focused-media/contact-見えている球にドラッグで合わせ、3ラリーをつなげる-webkit/three-visible-returns.png",
+      "sha256": "034a5a048bc26e66a169727c2ecb07ff004b5271c128cf21858710f9317a07df",
+      "bytes": 228797
+    },
+    {
+      "path": "focused-media/contact-見えている球にドラッグで合わせ、3ラリーをつなげる-webkit/video.webm",
+      "sha256": "69537def1e0f14491f5134a2d2dbba58996f5554091dcc06be31b2af1216cc36",
+      "bytes": 364612
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-100-100.png",
+      "sha256": "7e2e6a1465d78fbce1c6d95bb22ead49b0b2d25c3b17362373f24bcb4c98b90a",
+      "bytes": 83677
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-100-99.png",
+      "sha256": "483684075ed1bbbd7ab1dccfdfac4764948bc8ba63e9781e41d376d012696129",
+      "bytes": 83480
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-130-129.png",
+      "sha256": "369369d1bd7a708de82cf0a1cca61562ed51b208b211f73cadd76b170ad44f58",
+      "bytes": 84371
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-130-130.png",
+      "sha256": "a05e30d7f0b198bd1adfb22f054fe70fbf9621838b80f2b183c1fac2bd166e7a",
+      "bytes": 92680
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-160-159.png",
+      "sha256": "18953c0346bbeb58ec83cd2aa77c31405e227e5b76e21b672a832db6bcc80419",
+      "bytes": 93144
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-160-160.png",
+      "sha256": "d6a7f140f6edc42d659723b02b44aa2eb04f5bb1955ee703fee6fa3dc6788a69",
+      "bytes": 107605
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-190-189.png",
+      "sha256": "e77c1ba0edaf2889b68cb1d5cde879f0dd3fe708ed820c1019aabe95f6195d72",
+      "bytes": 108701
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-190-190.png",
+      "sha256": "5584b84c2cb3b91990380a6a8cdc03113dea7a1734173247e977c783ca76f5d2",
+      "bytes": 112046
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-210-209.png",
+      "sha256": "7f628e6e858e1624b58dc252e9bb913b55b72e191bb9fcdd68a1215b6b7078ac",
+      "bytes": 112326
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-210-210.png",
+      "sha256": "8a480dda0ef73bc68409a6a7bf36d5e26591a22cfe266597e189e39337ebad71",
+      "bytes": 122259
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-240-239.png",
+      "sha256": "de671f2563b78503e0c4bf72f0a0d8bc6992f8e03dd4d9dde234864bd5bef597",
+      "bytes": 123920
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-240-240.png",
+      "sha256": "a8a10c9739034f508e4b8308634e4cce8e11dd9998241a6e6947efae6c14088a",
+      "bytes": 126274
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-270-269.png",
+      "sha256": "043dfe153a0534a4e1fac40168a8ce9cc36171fd3ba137d446798099c9ee9a8f",
+      "bytes": 126890
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-270-270.png",
+      "sha256": "f6743fa25040dc8011246de33d5a8b46577e399f8ddf87f7ce47d61db227e518",
+      "bytes": 126980
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-300-299.png",
+      "sha256": "cd0f67d64d3404e9a368efb089a6af290c170f7372aa9a393500d5e5b6e77b66",
+      "bytes": 128603
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-300-300.png",
+      "sha256": "fa5c9e40b8ce3a204c78edd837eb40b42c0680ba2f5b71764c556b387ce7e09c",
+      "bytes": 129680
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-330-329.png",
+      "sha256": "58657ef711df3caf9914afc284d531da545239032e7b34aa1267aec28cb1711b",
+      "bytes": 130416
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-330-330.png",
+      "sha256": "f0732d513b74f729b2bc5323433fd443512670af7a86eff201e9a88e39820a2f",
+      "bytes": 132031
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-360-359.png",
+      "sha256": "8aa8a05be7f00c127abfbc175b79927c35ad7734d008a79255c3d078c23cd773",
+      "bytes": 133885
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-360-360.png",
+      "sha256": "b123aa6bb6b0645380eeeb1ddbf8a6c69d1110d5e8a5c623a6483d30dba61980",
+      "bytes": 134885
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-380-379.png",
+      "sha256": "869c96490af46ab9acd32755a907f98eb53f1dc3bfece83ddc9515549ad0da97",
+      "bytes": 135248
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-380-380.png",
+      "sha256": "b5e02dcf83f9b5e1bf89f1f000b5cad4785fa144f4b5874515e7fba5dcbb6f81",
+      "bytes": 154972
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-390-389.png",
+      "sha256": "b5e02dcf83f9b5e1bf89f1f000b5cad4785fa144f4b5874515e7fba5dcbb6f81",
+      "bytes": 154972
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-390-390.png",
+      "sha256": "67405cb3853c4462a74e44efb6d09dffa0692118c5ac983023caf75916ba97cf",
+      "bytes": 160356
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-410-409.png",
+      "sha256": "dddd170deaeeae9db3a7d20d36b52c2aeaa33fea21bbb4b3251205b909715b86",
+      "bytes": 160566
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-410-410.png",
+      "sha256": "f655beab435a74ffd3bb5621226bbc4bcb586f66dee3dd1c34a66546143a3a67",
+      "bytes": 155836
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-420-419.png",
+      "sha256": "f655beab435a74ffd3bb5621226bbc4bcb586f66dee3dd1c34a66546143a3a67",
+      "bytes": 155836
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-420-420.png",
+      "sha256": "6ed0f768cdff02eb87ec666de6ec8a759cf1fffaea298029b3c1d01c3a8a1470",
+      "bytes": 155099
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-460-459.png",
+      "sha256": "f72ca3a5a70ca2297c8e20998a975305c746efc9fdf35427105cb55cc322e2b3",
+      "bytes": 156638
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-460-460.png",
+      "sha256": "588bd783287c0fabcb5d1d85e89b982a79be87dfc420d304849f8fa495a326d4",
+      "bytes": 162976
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-70-69.png",
+      "sha256": "c3bacabd88f5feebf171fbbd3464afa409c9019e74bb3caf5dfb7e3e4692363c",
+      "bytes": 73561
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-70-70.png",
+      "sha256": "a4f5119be794cc3000bd4608b083fa6d6a18b8463adb6c58a2e1360e83e40050",
+      "bytes": 82563
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-100-100.png",
+      "sha256": "e91d080d23648e54330e144578a128429b8a0160ceb3ea28832f4ce6daab34a1",
+      "bytes": 189972
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-100-99.png",
+      "sha256": "ef79c37e4b0e227a38d9fbc94630ab6233d400fd85ce92beb3176c818dd2e484",
+      "bytes": 189414
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-130-129.png",
+      "sha256": "e6701c47a29d77a21894ad54cec475bd6bc39354feb25da636410447f1a2ae4e",
+      "bytes": 192319
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-130-130.png",
+      "sha256": "8c4f7251629487d5271ada312ef05e9e31e1ee701d84cfa417944dba211684c0",
+      "bytes": 220604
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-160-159.png",
+      "sha256": "3295a14913a1529286f4d4662fa8c789c561cc0cd611651b7f67064b826a1382",
+      "bytes": 222144
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-160-160.png",
+      "sha256": "62ec353b8bf6fe7a69f77eb37f56971a9782f3969c5af580194ed1642c8718aa",
+      "bytes": 264571
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-190-189.png",
+      "sha256": "b7507e31360baab88a66bc938fed078417b82f816fc58039e581438e33874ff7",
+      "bytes": 267442
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-190-190.png",
+      "sha256": "4a1ab45c7e4277b18aaea2cfb232aa7240e42f8fd4b5dc0349f8f8965639edb2",
+      "bytes": 277747
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-210-209.png",
+      "sha256": "30f12a13773beda6ec1c846290efe0d34e63581c7792b76eb0a889992a466eac",
+      "bytes": 278598
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-210-210.png",
+      "sha256": "4982e983a8bdbbe0987b2bfc44c572d5ccee98b17983e36aaa475739f4bb42d4",
+      "bytes": 306744
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-240-239.png",
+      "sha256": "d256d03e94d7c5da49cc14cca3a240623aa86012e725999333e2332e4e7927ea",
+      "bytes": 310524
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-240-240.png",
+      "sha256": "dca1d71f45ccad59301af51b2fd5d3b33a6f1110bf1a615859b5997a9abd1f9b",
+      "bytes": 316307
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-270-269.png",
+      "sha256": "35e6febe58477053fb64246dbf35c4fb3448aa2e449946459b8526dd068f709f",
+      "bytes": 318162
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-270-270.png",
+      "sha256": "69e4087a3ba5bc654f2df3304148b9a16a3a6ac3680d2e9501312e84b8a51a0a",
+      "bytes": 318402
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-300-299.png",
+      "sha256": "c5d3be6b70dd70762ba0334a223a8542b55ae4e2172fc6db54f97ad332db841c",
+      "bytes": 322720
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-300-300.png",
+      "sha256": "e3ff2f57363e03f4c1cfd84015f35050d93f683f98b75196ea078f9a19d24b39",
+      "bytes": 325770
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-330-329.png",
+      "sha256": "b35d5be91470a007d60fbf1965d901f6bfa9c5cf3ba9696f8275108ee877faa8",
+      "bytes": 327834
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-330-330.png",
+      "sha256": "77044d93b2ccc5959f3156215fae481710a38504ce11f0c36757e954202fb59c",
+      "bytes": 332229
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-360-359.png",
+      "sha256": "962324e546c335b9e8c6074e2aec6a47233c8b839da5b1d538e9a344661d3034",
+      "bytes": 336995
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-360-360.png",
+      "sha256": "8fca0a4f1471d9a8e2d9230d122e8e5cd560b78567c157e95673fd490f21fcb3",
+      "bytes": 339755
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-380-379.png",
+      "sha256": "9ba3eed840ba3ae8b0004d5e187e88433339c02e71d7fc31bbe675b00d2f0b62",
+      "bytes": 340927
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-380-380.png",
+      "sha256": "f5c9e1ed0646537a8622c6ea25020c371c154275f8b707a8bf652ac940f9b518",
+      "bytes": 377567
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-390-389.png",
+      "sha256": "f5c9e1ed0646537a8622c6ea25020c371c154275f8b707a8bf652ac940f9b518",
+      "bytes": 377567
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-390-390.png",
+      "sha256": "62f89510276de3a7f28b2129844f9fe53ec9a813f7edb9cb9e1bcc40f3fba87c",
+      "bytes": 392012
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-410-409.png",
+      "sha256": "570a088b36e18778be42b4e08a1baf8f3ab900648761b6545f77b019ed869bed",
+      "bytes": 392494
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-410-410.png",
+      "sha256": "afa97e11aa52ffe5a048296c81a8a57554abe592ac0ebd2aba49cf9b792b1271",
+      "bytes": 369436
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-420-419.png",
+      "sha256": "afa97e11aa52ffe5a048296c81a8a57554abe592ac0ebd2aba49cf9b792b1271",
+      "bytes": 369436
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-420-420.png",
+      "sha256": "59f20f9d0e266af81c3d4a68004f4158a2a2224d163232484f604a46dbc7c825",
+      "bytes": 356025
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-460-459.png",
+      "sha256": "5d912c506fa054c40f1a7fc3446d87aa3fa96937e9ec9f75fe214604b87c790e",
+      "bytes": 360685
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-460-460.png",
+      "sha256": "5c880eea7084614cf52a85ef5cf74b5753ea9256372f699ad51c90243b9cec67",
+      "bytes": 378783
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-70-69.png",
+      "sha256": "d0336bc7976682d9b32505a8faa69ecb2bb368b5901cc410125d0412f8913aeb",
+      "bytes": 153746
+    },
+    {
+      "path": "focused-media/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-webkit/glow-70-70.png",
+      "sha256": "4a8fa562135ab361e848160abd5dfda82bced64ede564f176a035268c934b48e",
+      "bytes": 186741
+    },
+    {
+      "path": "focused-media/results.json",
+      "sha256": "be036b1b73b0260cb48093a3c19c1ca214236fb30839dd75cbb391616cb8f00e",
+      "bytes": 332754
+    },
+    {
+      "path": "glow-audit.log",
+      "sha256": "3144181da86e2f101e83c8b9dd152d07226c742a869525e7883b6d23a09e8ebc",
+      "bytes": 184
+    },
+    {
+      "path": "glow-contact-sheet-1.jpg",
+      "sha256": "ed971b12095746f1e926df3212d2600b2a33c6cf73344e437d90e90a5145bf52",
+      "bytes": 195397
+    },
+    {
+      "path": "glow-contact-sheet-2.jpg",
+      "sha256": "a50c22be4dd5252e28d01a210087799b894f152fddc96cf056506f238e9cf350",
+      "bytes": 218719
+    },
+    {
+      "path": "glow-contact-sheet-3.jpg",
+      "sha256": "271d96c32b9f46ed6475726df12ff72f54471a6bf44db8fae86534098a84f926",
+      "bytes": 234624
+    },
+    {
+      "path": "glow-contact-sheet-4.jpg",
+      "sha256": "85b7dba7b2aac15785cf36aae71864ed73f42a107e642a45acef74e8398d903e",
+      "bytes": 249082
+    },
+    {
+      "path": "late-bounce-final.json",
+      "sha256": "2960f50ca0075f005c95e69f0e58df833c5f249d6624d3a6aac8a76b644da47f",
+      "bytes": 243
+    },
+    {
+      "path": "late-bounce-hypothesis.json",
+      "sha256": "62cc7c7431f7c4b07da2396d65e21595ce63797ac15adc653e1c6ed6eee07886",
+      "bytes": 158
+    },
+    {
+      "path": "late-bounce-red.log",
+      "sha256": "c566483d71018ed6d757af8ef7a8e8b38c8398a31fc930ed08297703ff5cfff7",
+      "bytes": 925
+    },
+    {
+      "path": "load-results-summary.json",
+      "sha256": "d1cfc1cd2abba356f5674d1f2fe81d7739b7d62d4ec7841c080c8dbf5b8e7d9d",
+      "bytes": 985
+    },
+    {
+      "path": "pages-candidate.zip",
+      "sha256": "da561cb3e28e6083a7a0e57cf7bebc5736898b5274b102e58287b7191e1d6a1d",
+      "bytes": 216238
+    },
+    {
+      "path": "preserved-behaviour-initial.json",
+      "sha256": "86896189bd4407defcf032920a2876cfabc9fcb7eefb292587d8ea063f354188",
+      "bytes": 3347
+    },
+    {
+      "path": "preserved-behaviour.json",
+      "sha256": "d190bfdab666d96e80f4708badfa711661eca672e2ce62fb1a12606e93e08032",
+      "bytes": 3414
+    },
+    {
+      "path": "public-before.json",
+      "sha256": "898de5f551fcbba3092eaab0ad7e031db8a35fb66bebe53e658eea6138880ed0",
+      "bytes": 375
+    },
+    {
+      "path": "regression-media/milestones-390の強弱を実描画で比較し、0-6秒の動きを保存する-chromium/video.webm",
+      "sha256": "e00ca75edf97d6947f3b60cfe619ccdf8b70e2c65e87a8e24aebfd80a8ed92c8",
+      "bytes": 451804
+    },
+    {
+      "path": "regression-media/milestones-390の強弱を実描画で比較し、0-6秒の動きを保存する-webkit/video.webm",
+      "sha256": "eea0758a3f51a46eb23198e015040479385d34ed7fd4ceffc914cf9ebd1a8a34",
+      "bytes": 384724
+    },
+    {
+      "path": "release-candidate-initial.json",
+      "sha256": "ba41a48aec90f1d68723f296c2eb6c2aa6bb9275aabaa31fa00be47f20c170e4",
+      "bytes": 81
+    },
+    {
+      "path": "release-candidate.json",
+      "sha256": "f50f73aaa2be4441248ca8b8248e2917edf0ce3a93c9253cb7ca21f591d2bafd",
+      "bytes": 81
+    },
+    {
+      "path": "release-final.log",
+      "sha256": "d136cfe48dd51ede086e26dd14b6d1e25342d6cc7ff703d2654acc56c4a3abff",
+      "bytes": 3467
+    },
+    {
+      "path": "release-initial.log",
+      "sha256": "be0d8d09cb3f0a584993ad1986986140374bd2b91a6aebd3b81691c92e4aa3c9",
+      "bytes": 13877
+    },
+    {
+      "path": "release-results-initial.json",
+      "sha256": "7cce6c7411ff514e1f996c827788ffe643e182aea4b47a3a9a4a758419706c9d",
+      "bytes": 8791
+    },
+    {
+      "path": "release-results.json",
+      "sha256": "af4930e95f79937bbb1ee020c52e4c0d893736521edc292862682e98fe985362",
+      "bytes": 8799
+    },
+    {
+      "path": "release.log",
+      "sha256": "297fcb69ccd19caa8f3c50eba36e95dd0becd46b2977af512cf3fb735aa18818",
+      "bytes": 4715
+    },
+    {
+      "path": "return-spread-data.json",
+      "sha256": "80d3c617549e0e9b177a1356c67ea8f88d80731c4b632756d2ad454ae1ee7899",
+      "bytes": 710395
+    },
+    {
+      "path": "return-spread-green.log",
+      "sha256": "44a80ade8166bad2f4728552408030ebe7d34b06fc39d24194ee2cc8a27fefb5",
+      "bytes": 185
+    },
+    {
+      "path": "return-spread-red.log",
+      "sha256": "d5d9f571e6edd99609ae5ab06226b641400ff9c6857a40c55afa87456b559230",
+      "bytes": 957
+    },
+    {
+      "path": "return-spread.png",
+      "sha256": "da36f551da0771122ebcbb567212bce833278160b3063891d8cc633c6704171c",
+      "bytes": 75681
+    },
+    {
+      "path": "typecheck-final.log",
+      "sha256": "7387726701432fe739960b358d079b2a1bffc9c365345e50c588b4fb70f9beb2",
+      "bytes": 250
+    },
+    {
+      "path": "typecheck.log",
+      "sha256": "7387726701432fe739960b358d079b2a1bffc9c365345e50c588b4fb70f9beb2",
+      "bytes": 250
+    },
+    {
+      "path": "unit-final.log",
+      "sha256": "7ca0f53f80294fa372395ef31e0dea7a271a38e7ea5547d897b9c86f420c2747",
+      "bytes": 654
+    },
+    {
+      "path": "unit-initial.log",
+      "sha256": "cae5ac658762ea5c50228369f1c57958649be8ccd1b292febde1b216207f18ec",
+      "bytes": 2930
+    },
+    {
+      "path": "unit.log",
+      "sha256": "2753b18a51959c2c90de4e8500d990bf339099624586f13dafc2922c5a5ac20d",
+      "bytes": 654
+    }
+  ]
+}

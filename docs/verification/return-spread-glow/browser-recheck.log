@@ -1,0 +1,59 @@
+
+Running 6 tests using 1 worker
+
+(node:118949) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/extended.spec.ts:54:1 › 555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する (3.4s)
+(node:119051) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  2 [chromium] › tests/browser/extended.spec.ts:77:1 › 実アプリのホーム遷移で花火を直ちに消し、再挑戦へ持ち越さない (5.1s)
+  ✓  3 [chromium] › tests/browser/smash.spec.ts:5:1 › 450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない (12.1s)
+(node:119252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  4 [webkit] › tests/browser/extended.spec.ts:54:1 › 555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する (1.3m)
+  ✓  5 [webkit] › tests/browser/extended.spec.ts:77:1 › 実アプリのホーム遷移で花火を直ちに消し、再挑戦へ持ち越さない (6.9s)
+  ✓  6 [webkit] › tests/browser/smash.spec.ts:5:1 › 450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない (8.0s)
+
+
+  1) [chromium] › tests/browser/extended.spec.ts:54:1 › 555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する ───────
+
+    Error: page.evaluate: Execution context was destroyed, most likely because of a navigation
+
+      61 |   await page.evaluate(()=>{window.stage3.show(555);window.stage3.autoPlay(true);});
+      62 |   const rows=[];
+    > 63 |   for(let i=0;i<30;i++){await page.clock.runFor(1000);rows.push(await page.evaluate(()=>({score:window.stage3.snapshot().score,balls:window.stage3.snapshot().balls.length,phase:window.stage3.snapshot().phase,resources:window.stage3.resources()})));}
+         |                                                                            ^
+      64 |   const state=await page.evaluate(()=>window.stage3.snapshot()),events=await page.evaluate(()=>window.stage3.metrics().events);
+      65 |   expect(state.phase).toBe('running');expect(state.score).toBeGreaterThan(600);expect(state.balls.length).toBe(49+Math.floor((state.score-470)/2));
+      66 |   expect(events.filter(e=>e.kind==='opponent-hit').length).toBeGreaterThan(40);
+        at /workspace/takkeu-audit/tests/browser/extended.spec.ts:63:76
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/extended.spec.ts:54:1 › 555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する ────────
+  5 passed (2.0m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

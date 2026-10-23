@@ -1,0 +1,98 @@
+[
+  {
+    "file": "audio-and-state/audio-context-chromium.json",
+    "test": "開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰",
+    "project": "chromium",
+    "contentType": "application/json"
+  },
+  {
+    "file": "audio-and-state/player-chromium.wav",
+    "test": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+    "project": "chromium",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "audio-and-state/opponent-chromium.wav",
+    "test": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+    "project": "chromium",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "audio-and-state/warning-chromium.wav",
+    "test": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+    "project": "chromium",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "audio-and-state/four-chromium.wav",
+    "test": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+    "project": "chromium",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "audio-and-state/sixteen-chromium.wav",
+    "test": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+    "project": "chromium",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "audio-and-state/waveform-measurements-chromium.json",
+    "test": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+    "project": "chromium",
+    "contentType": "application/json"
+  },
+  {
+    "file": "audio-and-state/audio-context-webkit.json",
+    "test": "開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰",
+    "project": "webkit",
+    "contentType": "application/json"
+  },
+  {
+    "file": "audio-and-state/player-webkit.wav",
+    "test": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+    "project": "webkit",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "audio-and-state/opponent-webkit.wav",
+    "test": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+    "project": "webkit",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "audio-and-state/warning-webkit.wav",
+    "test": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+    "project": "webkit",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "audio-and-state/four-webkit.wav",
+    "test": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+    "project": "webkit",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "audio-and-state/sixteen-webkit.wav",
+    "test": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+    "project": "webkit",
+    "contentType": "audio/wav"
+  },
+  {
+    "file": "audio-and-state/waveform-measurements-webkit.json",
+    "test": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+    "project": "webkit",
+    "contentType": "application/json"
+  },
+  {
+    "file": "audio-and-state/glow-boundaries-chromium.json",
+    "test": "指定された発光ラリーの直前・到達時を同一画角で撮影する",
+    "project": "chromium",
+    "contentType": "application/json"
+  },
+  {
+    "file": "audio-and-state/glow-boundaries-webkit.json",
+    "test": "指定された発光ラリーの直前・到達時を同一画角で撮影する",
+    "project": "webkit",
+    "contentType": "application/json"
+  }
+]

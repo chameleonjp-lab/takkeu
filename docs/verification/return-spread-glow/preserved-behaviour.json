@@ -1,0 +1,109 @@
+{
+  "base": "547cec0654c18c8739752ae1ef322dde42086ee7",
+  "tested_commit": "20f175116f7816d0818d6b432a4b442690a44d3d",
+  "files": [
+    {
+      "path": "src/game/config.ts",
+      "sha256": "33b136eb51e8caf3bd2397ea6e2c38403a58be713c672fb35a7c5be23c37de43",
+      "unchanged": true
+    },
+    {
+      "path": "src/game/difficulty.ts",
+      "sha256": "eb1b55b2232639eb399d00b4e24c6357a376a4a6eef70ae5f5dbc2e029db3820",
+      "unchanged": true
+    },
+    {
+      "path": "src/game/collision.ts",
+      "sha256": "8e5ad013fcafcc33d7aabf57d9ccdae0dd99fa6db4f1aefb5cd75a1730074c1c",
+      "unchanged": true
+    },
+    {
+      "path": "src/game/flightSpeed.ts",
+      "sha256": "612377b499a431354f7284324d957c84409ce5e5a4ca90de14aed0f47afcbdbf",
+      "unchanged": true
+    },
+    {
+      "path": "src/game/scheduler.ts",
+      "sha256": "0612f6c316ccc8ea64406828008735bc33d9620871c28b15d057dbe75873b0b0",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/loop.ts",
+      "sha256": "a912ccd303fb171206ce4b3dbe7cdc85a930f4f71945fae2a45459efab7e2d5a",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/balls.ts",
+      "sha256": "dad9399341352e1a8ffc13801b70e2568a64a5410ff4eaefc97c17f754d9052a",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/camera.ts",
+      "sha256": "21bbe2f2ecd39520e72ffdca080a0936414b7131f06ded2d5a85f1aa21fd31ac",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/createView.ts",
+      "sha256": "6d0227115d691864bf64cff3cbc80db88e560d89f9eb2fa5d4b30d290fd2b5ac",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/environment.ts",
+      "sha256": "089bb1539b6cb324697c8eb2d57f78919bfbeaf393a079572ea883efe641ab3e",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/field.ts",
+      "sha256": "33a224d11f907415d9064e9c9b9096a6cf84b7f7f71915d69f5810e43e31a452",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/materials.ts",
+      "sha256": "762098367b45770052d30790e2fc76ce02939ad912a6a07a6d96831c11ba5c85",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/objects.ts",
+      "sha256": "819e3b5de8ad23589e374c01072615ea58cdc6e9e7be1ddc9b03a19fde32b063",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/opponentView.ts",
+      "sha256": "18b3fd0fc7fabc45a7137c8ba544306208c626405cd85b497efb6af50a448658",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/paddle.ts",
+      "sha256": "9b88815c5b00032957a222f43b5b13dae1004fa144a92ec05fe8e1f32944c9dd",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/particles.ts",
+      "sha256": "48a74a02e3b5bd99dbd6eecd186709057f28d221beb5e5818c81852ece56d415",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/presentation.ts",
+      "sha256": "0d5c7fd8f69eefca1708d3893332c79a05e63347d449a2515d7460909c32cf48",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/quality.ts",
+      "sha256": "8b7797fc97658f3877c4c5ab0c7162c176368cf46ee1a5d325f4eb3047212763",
+      "unchanged": true
+    },
+    {
+      "path": "src/render/rainbow.ts",
+      "sha256": "3789d9a0fdc078b95454fbecc14c194badea2b004911261bcae65d64cb628c80",
+      "unchanged": true
+    }
+  ],
+  "unchanged_trajectory_sampling": {
+    "path": "src/game/trajectory.ts",
+    "functions": [
+      "bounceTime",
+      "sampleReturn"
+    ],
+    "sha256": "cb391c8ff3c56cfc22ed3470e8d4814f1ea91026d4dae2d90d3aa19ecc96cab0"
+  }
+}

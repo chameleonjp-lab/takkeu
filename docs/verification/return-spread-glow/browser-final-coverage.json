@@ -1,0 +1,538 @@
+{
+  "unique_cases": 76,
+  "passed": 76,
+  "cases": [
+    {
+      "file": "audio.spec.ts",
+      "title": "打球ノード生成失敗を案内し、ゲームを進めたまま音ボタンで復旧できる",
+      "project": "chromium",
+      "result": "passed",
+      "record": "focused-media/results.json"
+    },
+    {
+      "file": "audio.spec.ts",
+      "title": "開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰",
+      "project": "chromium",
+      "result": "passed",
+      "record": "focused-media/results.json"
+    },
+    {
+      "file": "audio.spec.ts",
+      "title": "音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える",
+      "project": "chromium",
+      "result": "passed",
+      "record": "focused-media/results.json"
+    },
+    {
+      "file": "audio.spec.ts",
+      "title": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+      "project": "chromium",
+      "result": "passed",
+      "record": "focused-media/results.json"
+    },
+    {
+      "file": "audio.spec.ts",
+      "title": "打球ノード生成失敗を案内し、ゲームを進めたまま音ボタンで復旧できる",
+      "project": "webkit",
+      "result": "passed",
+      "record": "focused-media/results.json"
+    },
+    {
+      "file": "audio.spec.ts",
+      "title": "開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰",
+      "project": "webkit",
+      "result": "passed",
+      "record": "focused-media/results.json"
+    },
+    {
+      "file": "audio.spec.ts",
+      "title": "音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える",
+      "project": "webkit",
+      "result": "passed",
+      "record": "focused-media/results.json"
+    },
+    {
+      "file": "audio.spec.ts",
+      "title": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+      "project": "webkit",
+      "result": "passed",
+      "record": "focused-media/results.json"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "ワンバウンド後の見える球にラケットを合わせれば返球できる",
+      "project": "chromium",
+      "result": "passed",
+      "record": "focused-media/results.json"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "見えている球にドラッグで合わせ、3ラリーをつなげる",
+      "project": "chromium",
+      "result": "passed",
+      "record": "focused-media/results.json"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "ワンバウンド後の見える球にラケットを合わせれば返球できる",
+      "project": "webkit",
+      "result": "passed",
+      "record": "focused-media/results.json"
+    },
+    {
+      "file": "contact.spec.ts",
+      "title": "見えている球にドラッグで合わせ、3ラリーをつなげる",
+      "project": "webkit",
+      "result": "passed",
+      "record": "focused-media/results.json"
+    },
+    {
+      "file": "glow-timing.spec.ts",
+      "title": "指定された発光ラリーの直前・到達時を同一画角で撮影する",
+      "project": "chromium",
+      "result": "passed",
+      "record": "focused-media/results.json"
+    },
+    {
+      "file": "glow-timing.spec.ts",
+      "title": "指定された発光ラリーの直前・到達時を同一画角で撮影する",
+      "project": "webkit",
+      "result": "passed",
+      "record": "focused-media/results.json"
+    },
+    {
+      "file": "basic-play.spec.ts",
+      "title": "開始→相対ドラッグ→返球→失球→結果→再挑戦",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "basic-play.spec.ts",
+      "title": "停止中は描画を保持し、再開操作でだけ進む",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "basic-play.spec.ts",
+      "title": "タッチの左右上下スワイプでラケットを動かせる",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "basic-play.spec.ts",
+      "title": "開始→相対ドラッグ→返球→失球→結果→再挑戦",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "basic-play.spec.ts",
+      "title": "停止中は描画を保持し、再開操作でだけ進む",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "basic-play.spec.ts",
+      "title": "タッチの左右上下スワイプでラケットを動かせる",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "boot.spec.ts",
+      "title": "ホームにタイトルと開始ボタンを表示し、自動で開始しない",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "boot.spec.ts",
+      "title": "ホームにタイトルと開始ボタンを表示し、自動で開始しない",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "evidence.spec.ts",
+      "title": "縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "evidence.spec.ts",
+      "title": "縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "evidence.spec.ts",
+      "title": "実際のWeb Audioで自分用・相手用の異なる短音を合成できる",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "evidence.spec.ts",
+      "title": "実際のWeb Audioで自分用・相手用の異なる短音を合成できる",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "extended.spec.ts",
+      "title": "460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "extended.spec.ts",
+      "title": "返球・台面の花火を実際の接触イベントで描き、停止・リトライで過去の粒子を残さない",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "extended.spec.ts",
+      "title": "555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-final-555.json"
+    },
+    {
+      "file": "extended.spec.ts",
+      "title": "実アプリのホーム遷移で花火を直ちに消し、再挑戦へ持ち越さない",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-recheck.json"
+    },
+    {
+      "file": "extended.spec.ts",
+      "title": "460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "extended.spec.ts",
+      "title": "返球・台面の花火を実際の接触イベントで描き、停止・リトライで過去の粒子を残さない",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "extended.spec.ts",
+      "title": "555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-recheck.json"
+    },
+    {
+      "file": "extended.spec.ts",
+      "title": "実アプリのホーム遷移で花火を直ちに消し、再挑戦へ持ち越さない",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-recheck.json"
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "title": "通常の指離れ・2本目・追跡喪失・回転で入力が残らない",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "title": "非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "title": "WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "title": "実際のWEBGL_lose_contextによる喪失と復旧でも手動再開を待つ",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "title": "描画再作成の失敗時も状態を壊さずホームへ戻れる",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "title": "通常の指離れ・2本目・追跡喪失・回転で入力が残らない",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "title": "非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "title": "WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "title": "実際のWEBGL_lose_contextによる喪失と復旧でも手動再開を待つ",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "lifecycle.spec.ts",
+      "title": "描画再作成の失敗時も状態を壊さずホームへ戻れる",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "milestones.spec.ts",
+      "title": "専用状態で増球の境界と全演出の表示・発光終了を撮影する",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "milestones.spec.ts",
+      "title": "390の強弱を実描画で比較し、0.6秒の動きを保存する",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "milestones.spec.ts",
+      "title": "専用状態で増球の境界と全演出の表示・発光終了を撮影する",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "milestones.spec.ts",
+      "title": "390の強弱を実描画で比較し、0.6秒の動きを保存する",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "occlusion.spec.ts",
+      "title": "球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "occlusion.spec.ts",
+      "title": "球と虹色の輪郭はラケットとの前後関係を守る",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "occlusion.spec.ts",
+      "title": "虹色は照明がなくても発光し、相手床・壁は閾値まで暗い",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "occlusion.spec.ts",
+      "title": "球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "occlusion.spec.ts",
+      "title": "球と虹色の輪郭はラケットとの前後関係を守る",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "occlusion.spec.ts",
+      "title": "虹色は照明がなくても発光し、相手床・壁は閾値まで暗い",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "preferences.spec.ts",
+      "title": "全設定と自己ベストが再読込・リトライを越えて残る",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "preferences.spec.ts",
+      "title": "保存拒否でも設定と自己ベストをメモリに保持して遊べる",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "preferences.spec.ts",
+      "title": "全設定と自己ベストが再読込・リトライを越えて残る",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "preferences.spec.ts",
+      "title": "保存拒否でも設定と自己ベストをメモリに保持して遊べる",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "quality.spec.ts",
+      "title": "開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "quality.spec.ts",
+      "title": "縦横・44pxボタン・200%文字・ラベル・安全余白を確認",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "quality.spec.ts",
+      "title": "450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "quality.spec.ts",
+      "title": "WebGL初期化不可と復旧失敗でもホームと自己ベストを保つ",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "quality.spec.ts",
+      "title": "開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "quality.spec.ts",
+      "title": "縦横・44pxボタン・200%文字・ラベル・安全余白を確認",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "quality.spec.ts",
+      "title": "450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "quality.spec.ts",
+      "title": "WebGL初期化不可と復旧失敗でもホームと自己ベストを保つ",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "reference.spec.ts",
+      "title": "参考画像の構図をPC・縦・横の実描画に保つ",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "reference.spec.ts",
+      "title": "参考画像の構図をPC・縦・横の実描画に保つ",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "render-loop.spec.ts",
+      "title": "停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "render-loop.spec.ts",
+      "title": "停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "retry.spec.ts",
+      "title": "再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "retry.spec.ts",
+      "title": "再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "smash.spec.ts",
+      "title": "450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-recheck.json"
+    },
+    {
+      "file": "smash.spec.ts",
+      "title": "予告音を実際のWeb Audioで合成して保存する",
+      "project": "chromium",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    },
+    {
+      "file": "smash.spec.ts",
+      "title": "450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-recheck.json"
+    },
+    {
+      "file": "smash.spec.ts",
+      "title": "予告音を実際のWeb Audioで合成して保存する",
+      "project": "webkit",
+      "result": "passed",
+      "record": "browser-regression-initial.json"
+    }
+  ]
+}

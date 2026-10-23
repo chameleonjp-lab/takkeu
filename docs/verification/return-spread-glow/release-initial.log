@@ -1,0 +1,216 @@
+
+> takkeu@0.1.0 verify:release
+> node scripts/verify-release.mjs
+
+
+> takkeu@0.1.0 build
+> npm run typecheck && vite build
+
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 44 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/release.json                         0.07 kB │ gzip:   0.09 kB
+dist/index.html                           0.61 kB │ gzip:   0.43 kB
+dist/assets/court-preview-Bzxbrgc7.png   60.33 kB
+dist/assets/index-DHYvWzW-.css           11.62 kB │ gzip:   3.44 kB
+dist/assets/index-B195ISBI.js           595.84 kB │ gzip: 154.27 kB
+
+✓ built in 291ms
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+{
+  "status": "passed",
+  "commit": "0b330d49516b92d3278d614e6262846374b09a25",
+  "base": "/",
+  "files": [
+    "assets/court-preview-Bzxbrgc7.png",
+    "assets/index-B195ISBI.js",
+    "assets/index-DHYvWzW-.css",
+    "index.html",
+    "release.json"
+  ]
+}
+
+> takkeu@0.1.0 build:pages
+> npm run typecheck && vite build --base=/takkeu/
+
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 44 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/release.json                         0.08 kB │ gzip:   0.09 kB
+dist/index.html                           0.63 kB │ gzip:   0.43 kB
+dist/assets/court-preview-Bzxbrgc7.png   60.33 kB
+dist/assets/index-DHYvWzW-.css           11.62 kB │ gzip:   3.44 kB
+dist/assets/index-CN5xZGRt.js           595.85 kB │ gzip: 154.27 kB
+
+✓ built in 275ms
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+{
+  "status": "passed",
+  "commit": "0b330d49516b92d3278d614e6262846374b09a25",
+  "base": "/takkeu/",
+  "files": [
+    "assets/court-preview-Bzxbrgc7.png",
+    "assets/index-CN5xZGRt.js",
+    "assets/index-DHYvWzW-.css",
+    "index.html",
+    "release.json"
+  ]
+}
+
+> takkeu@0.1.0 test:release
+> playwright test --config=playwright.release.config.ts
+
+[WebServer] (node:112467) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:112476) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:112484) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 (2ms)
+(node:112496) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 (5ms)
+(node:112508) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 (4ms)
+(node:112520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 (2ms)
+
+
+  1) [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 ───────────────
+
+    Error: browserType.launch: Executable doesn't exist at /home/agent/.cache/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: artifacts/release-tests/distribution-実配布物-の参照・開始・保存と開発機能の非混入-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/release-tests/distribution-実配布物-の参照・開始・保存と開発機能の非混入-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/release-tests/distribution-実配布物-の参照・開始・保存と開発機能の非混入-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 ────────
+
+    Error: browserType.launch: Executable doesn't exist at /home/agent/.cache/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: artifacts/release-tests/distribution-実配布物-takkeu-の参照・開始・保存と開発機能の非混入-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/release-tests/distribution-実配布物-takkeu-の参照・開始・保存と開発機能の非混入-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/release-tests/distribution-実配布物-takkeu-の参照・開始・保存と開発機能の非混入-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 ─────────────────
+
+    Error: browserType.launch: Executable doesn't exist at /home/agent/.cache/ms-playwright/webkit-2370/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: artifacts/release-tests/distribution-実配布物-の参照・開始・保存と開発機能の非混入-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/release-tests/distribution-実配布物-の参照・開始・保存と開発機能の非混入-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/release-tests/distribution-実配布物-の参照・開始・保存と開発機能の非混入-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 ──────────
+
+    Error: browserType.launch: Executable doesn't exist at /home/agent/.cache/ms-playwright/webkit-2370/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: artifacts/release-tests/distribution-実配布物-takkeu-の参照・開始・保存と開発機能の非混入-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/release-tests/distribution-実配布物-takkeu-の参照・開始・保存と開発機能の非混入-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/release-tests/distribution-実配布物-takkeu-の参照・開始・保存と開発機能の非混入-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 ────────────────
+    [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 ─────────
+    [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 ──────────────────
+    [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 ───────────
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
