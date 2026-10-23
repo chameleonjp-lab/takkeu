@@ -25,3 +25,13 @@ it('124球を3バッチで描き、実位置・深度・発光を保って20回�
   }
   objects.dispose();for(const spy of dispose)expect(spy).toHaveBeenCalledTimes(1);
 });
+
+it('移動・再挑戦後の透明物の並び順に古い球位置の境界球を使わない',()=>{
+  const objects=createObjects(DEFAULT_CONFIG),base=scenario(555).snapshot();
+  const show=(z:number)=>applyPresentation(objects,{...base,balls:[{id:1,phase:'incoming',smash:true,position:{x:0,y:.5,z}}]});
+  show(-1);const batches:InstancedMesh[]=[];objects.root.traverse(o=>{if(o instanceof InstancedMesh)batches.push(o);});
+  for(const b of batches)if(b.count)b.computeBoundingSphere();
+  show(1);
+  for(const b of batches)if(b.count){if(!b.boundingSphere)b.computeBoundingSphere();expect(b.boundingSphere!.center.z).toBeCloseTo(1,6);}
+  objects.dispose();
+});

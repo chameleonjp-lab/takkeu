@@ -12,7 +12,7 @@ export function createBallPool(config: GameConfig) {
   glowGeometry.setAttribute('color', new Float32BufferAttribute(new Float32Array(glowGeometry.attributes.position!.count * 3), 3));
   // The opaque white core occludes the shell's centre. Normal depth testing
   // also keeps the entire ball behind a paddle when it is farther away.
-  const glowMaterial = new MeshBasicMaterial({ vertexColors: true, side: BackSide, transparent: true, opacity: 0.85, depthWrite: false, toneMapped: false });
+  const glowMaterial = new MeshBasicMaterial({ vertexColors: true, side: BackSide, transparent: true, opacity: 0.85, depthWrite: true, toneMapped: false });
   const shadowGeometry = new CircleGeometry(config.ballRadius * 1.2, 20);
   const shadowMaterial=new MeshBasicMaterial({color:0x153827,transparent:true,opacity:1,depthWrite:false});
   shadowMaterial.onBeforeCompile=shader=>{
@@ -24,6 +24,9 @@ export function createBallPool(config: GameConfig) {
   let capacity=16;
   const batch=(geometry:typeof coreGeometry|typeof shadowGeometry,material:typeof coreMaterial|MeshBasicMaterial)=>{
     const model=new InstancedMesh(geometry,material,capacity);model.count=0;model.frustumCulled=false;model.visible=false;
+    // Draw the solid outer shell before translucent net lines. Its depth
+    // distinguishes near/far balls even when one batch straddles the net.
+    if(material===glowMaterial)model.renderOrder=-1;
     model.instanceMatrix.setUsage(DynamicDrawUsage);root.add(model);return model;
   };
   let coreBatch=batch(coreGeometry,coreMaterial),glowBatch=batch(glowGeometry,glowMaterial),shadowBatch=batch(shadowGeometry,shadowMaterial);
@@ -77,7 +80,7 @@ export function createBallPool(config: GameConfig) {
         if(visual.shadow.visible){visual.shadow.updateMatrix();matrix.multiplyMatrices(visual.root.matrix,visual.shadow.matrix);shadowBatch.setMatrixAt(shadows,matrix);
           const opacity=visual.shadowOpacity;shadowBatch.setColorAt(shadows++,alphaColor.setRGB(opacity,opacity,opacity));}
       }
-      for(const [model,count] of [[coreBatch,cores],[glowBatch,glows],[shadowBatch,shadows]] as const){model.count=count;model.visible=count>0;model.instanceMatrix.needsUpdate=true;}
+      for(const [model,count] of [[coreBatch,cores],[glowBatch,glows],[shadowBatch,shadows]] as const){model.count=count;model.visible=count>0;model.instanceMatrix.needsUpdate=true;model.boundingSphere=null;}
       if(shadowBatch.instanceColor){shadowBatch.instanceColor.setUsage(DynamicDrawUsage);shadowBatch.instanceColor.needsUpdate=true;}
     },
     clear() { if(disposed)return;disposed=true;balls.clear(); free.length = 0;for(const model of [coreBatch,glowBatch,shadowBatch])model.dispose(); },
