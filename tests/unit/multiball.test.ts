@@ -5,7 +5,7 @@ import { scheduleReturn } from '../../src/game/scheduler';
 import { incoming, scenario } from '../helpers/scenarios';
 
 describe('多球の接触・落球・累計到達', () => {
-  it.each([[29, 30], [39, 40], [149, 150]])('%iから同時接触で閾値%iを飛び越しても追加は1球', (score, milestone) => {
+  it.each([[4, 5], [9, 10], [19, 20], [29, 30], [39, 40], [149, 150]])('%iから同時接触で閾値%iを飛び越しても追加は1球', (score, milestone) => {
     const s = scenario(score);
     s.state.balls = [incoming(1, 20.005), incoming(2, 20.005)];
     const result = s.step();
@@ -105,9 +105,9 @@ it('160で4球を超えて増え、落球した球を配列に残さずIDを再�
 });
 
 
-it('450の無落球34球を30ゲーム秒継続し、追加・スマッシュ・到着余裕を守る', () => {
+it('450の無落球47球を30ゲーム秒継続し、追加・スマッシュ・到着余裕を守る', () => {
   const s = scenario(450);
-  for (let id = 1; id <= 34; id++) {
+  for (let id = 1; id <= 47; id++) {
     const plan = scheduleReturn({ ballId: id, earliestDepartAt: 20, preferredTarget: { x: id % 2 ? -0.7 : 0.7, y: 0.5 }, speedMultiplier: 2.2, smash: false }, s.snapshot().scheduledReturns, DEFAULT_CONFIG);
     const from = { x: 0, y: 0.5, z: -DEFAULT_CONFIG.paddleZ };
     s.state.balls.push({ id, phase: 'queued', position: from, from, plan, warningSent: false });

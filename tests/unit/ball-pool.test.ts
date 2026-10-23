@@ -7,11 +7,11 @@ import { scenario } from '../helpers/scenarios';
 import type { BallSnapshot } from '../../src/game/types';
 
 const balls = (start: number, count: number): BallSnapshot[] => Array.from({ length: count }, (_, i) => ({ id: start + i, phase: 'incoming', smash: false, position: { x: 0.3, y: 0.5, z: 1 } }));
-it('34球以上を表示し、共通の形状・虹色材質を再利用して落球後のIDを保持しない', () => {
+it('47球以上を表示し、共通の形状・虹色材質を再利用して落球後のIDを保持しない', () => {
   const objects = createObjects(DEFAULT_CONFIG);
   const snapshot = scenario(390).snapshot();
-  applyPresentation(objects, { ...snapshot, balls: balls(1, 34) });
-  expect(objects.balls.size).toBe(34);
+  applyPresentation(objects, { ...snapshot, balls: balls(1, 47) });
+  expect(objects.balls.size).toBe(47);
   const cores = [...objects.balls.values()].map(v => v.core.geometry);
   expect(new Set(cores).size).toBe(1);
   expect(new Set([...objects.balls.values()].map(v => v.glow.geometry)).size).toBe(1);
@@ -21,9 +21,9 @@ it('34球以上を表示し、共通の形状・虹色材質を再利用して�
   applyPresentation(objects, { ...snapshot, balls: [] });
   expect(objects.balls.size).toBe(0);
   for (let retry = 0; retry < 20; retry++) {
-    applyPresentation(objects, { ...snapshot, runId: `retry-${retry}`, balls: balls(100 + retry * 34, 34) });
+    applyPresentation(objects, { ...snapshot, runId: `retry-${retry}`, balls: balls(100 + retry * 47, 47) });
     expect(count()).toBe(high);
-    expect(objects.balls.size).toBe(34);
+    expect(objects.balls.size).toBe(47);
   }
   const geometry = [...objects.balls.values()][0]!.core.geometry;
   const dispose = vi.spyOn(geometry, 'dispose');
