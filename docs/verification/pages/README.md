@@ -59,3 +59,8 @@ mainの[CI run 39802282118](https://github.com/chameleonjp-lab/takkeu/actions/ru
 ## 継続する未確認
 
 iPhone 17 Pro Safari実機の操作・VoiceOver・60秒性能、人による音の試聴、390の最終点滅基準は未確認。[第3段階受入表](../acceptance.md)と[音の確認](../audio-review.md)を維持する。
+
+
+## Three.js再構築後の自動反映（2026-10-22）
+
+ユーザーによるPR #8マージ後のmain `01ef27f2f521a8a09a82da385c928ba47b2355f7`は、自動公開39833364446で検査・配布・公開が成功。18:52 UTCの公開後PC・WebKit縦横3条件も返球0→1点・保存・リトライが成功した。[最新の正式ログ・公開SHA・画像・制約](../reference-threejs/README.md)へ保存した。実機・試聴・点滅最終判定・性能の未確認を解消したという意味ではない。

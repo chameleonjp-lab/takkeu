@@ -1,0 +1,160 @@
+{
+  "at": "2026-10-22T18:52:16.098Z",
+  "url": "https://chameleonjp-lab.github.io/takkeu/",
+  "expected": "01ef27f2f521a8a09a82da385c928ba47b2355f7",
+  "status": "passed",
+  "browsers": [
+    {
+      "name": "chromium-desktop",
+      "version": "156.0.8078.4",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "errors": [],
+      "resources": [
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DHYvWzW-.css",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DyHfNY62.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/court-preview-DT7D6bWQ.png",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DyHfNY62.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DHYvWzW-.css",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/court-preview-DT7D6bWQ.png",
+          "status": 200
+        }
+      ],
+      "firstPostBounceReturn": 1,
+      "result": "passed",
+      "scope": "Linux emulation, clock paused; not iPhone hardware, listening or performance"
+    },
+    {
+      "name": "webkit-portrait",
+      "version": "27.2",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "errors": [],
+      "resources": [
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DyHfNY62.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/court-preview-DT7D6bWQ.png",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DHYvWzW-.css",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DyHfNY62.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DHYvWzW-.css",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/court-preview-DT7D6bWQ.png",
+          "status": 200
+        }
+      ],
+      "firstPostBounceReturn": 1,
+      "result": "passed",
+      "scope": "Linux emulation, clock paused; not iPhone hardware, listening or performance"
+    },
+    {
+      "name": "webkit-landscape",
+      "version": "27.2",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "errors": [],
+      "resources": [
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DyHfNY62.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DHYvWzW-.css",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/court-preview-DT7D6bWQ.png",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/?score=450&debug=1",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DyHfNY62.js",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/index-DHYvWzW-.css",
+          "status": 200
+        },
+        {
+          "url": "https://chameleonjp-lab.github.io/takkeu/assets/court-preview-DT7D6bWQ.png",
+          "status": 200
+        }
+      ],
+      "firstPostBounceReturn": 1,
+      "result": "passed",
+      "scope": "Linux emulation, clock paused; not iPhone hardware, listening or performance"
+    }
+  ],
+  "transport": {
+    "apiTLS": "default certificate verification enabled for metadata and development-path requests",
+    "browserTLS": "session proxy CA is not in Chromium browser trust store; browser context bypasses that certificate check, separately verified by API and curl"
+  },
+  "release": {
+    "commit": "01ef27f2f521a8a09a82da385c928ba47b2355f7",
+    "base": "/takkeu/"
+  },
+  "developmentPaths": {
+    "tests/fixtures/stage2.html": 404,
+    "tests/fixtures/stage3.html": 404,
+    "src/main.ts": 404,
+    "@vite/client": 404
+  }
+}

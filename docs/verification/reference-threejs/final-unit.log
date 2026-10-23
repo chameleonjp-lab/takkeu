@@ -1,0 +1,45 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run --reporter=default --reporter=json --outputFile=docs/verification/reference-threejs/final-unit.json
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ✓ tests/unit/audio-events.test.ts (10 tests) 13ms
+ ✓ tests/unit/opponent.test.ts (7 tests) 32ms
+ ✓ tests/unit/presentation.test.ts (7 tests) 107ms
+ ✓ tests/unit/multiball.test.ts (9 tests) 189ms
+ ✓ tests/unit/session.test.ts (6 tests) 54ms
+ ✓ tests/unit/camera.test.ts (11 tests) 140ms
+ ✓ tests/unit/loop.test.ts (5 tests) 47ms
+ ✓ tests/unit/bounce-contact.test.ts (4 tests) 69ms
+ ✓ tests/unit/scheduler.test.ts (4 tests) 6ms
+ ✓ tests/unit/simulation-isolation.test.ts (1 test) 152ms
+ ✓ tests/unit/collision.test.ts (5 tests) 8ms
+ ✓ tests/unit/swipe.test.ts (4 tests) 47ms
+ ✓ tests/unit/storage.test.ts (11 tests) 6ms
+ ✓ tests/unit/progression.test.ts (5 tests) 9ms
+ ✓ tests/unit/pointer-loop.test.ts (2 tests) 27ms
+ ✓ tests/unit/release-revision.test.ts (1 test) 347ms
+   ✓ 公開の照合は完全SHA・main選択・checkout・最新mainの全一致だけを許す 345ms
+ ✓ tests/unit/render-assets.test.ts (1 test) 39ms
+ ✓ tests/unit/trajectory.test.ts (1 test) 4ms
+ ✓ tests/unit/input-timeline.test.ts (2 tests) 6ms
+ ✓ tests/unit/replay.test.ts (1 test) 20ms
+ ✓ tests/unit/quality.test.ts (1 test) 5ms
+ ✓ tests/unit/warning-ui.test.ts (1 test) 137ms
+
+ Test Files  22 passed (22)
+      Tests  99 passed (99)
+   Start at  18:12:57
+   Duration  2.89s (environment 43%, tests 29%, transform 14%, import 11%, worker 2%)
+
+    Isolate  22 workers spawned · ~237ms startup each (spawn + environment, per file)
+             at least ~1.50s faster with isolate: false — reuses workers across files instead of one per file
+
+JSON report written to /workspace/takkeu/docs/verification/reference-threejs/final-unit.json
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

@@ -1,0 +1,19 @@
+{
+  "expectedPublishedCommit": "01ef27f2f521a8a09a82da385c928ba47b2355f7",
+  "command": [
+    "node",
+    "docs/verification/reference-threejs/check-published.mjs",
+    "01ef27f2f521a8a09a82da385c928ba47b2355f7"
+  ],
+  "environment": {
+    "PLAYWRIGHT_BROWSERS_PATH": "/tmp/takkeu-browsers",
+    "PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS": "1",
+    "TAKKEU_BROWSER_PROXY_TLS_BYPASS": "1"
+  },
+  "startedAt": "2026-10-22T18:52:16.098Z",
+  "completedLogAt": "2026-10-22T18:52:41.167769+00:00",
+  "exitCode": 0,
+  "scriptSha256": "3a212f83bb4019f1c0644e252d037ffcba0a245452009e0d70fbacd7308b6091",
+  "logSha256": "12ddca01d6c8d34ad3284b5871d72389cacf536b50e110ce6db82f8f0e2ed773",
+  "scope": "Linux browser emulation with controlled clock, not hardware, listening or real-frame performance"
+}

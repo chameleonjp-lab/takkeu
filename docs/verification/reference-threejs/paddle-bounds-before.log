@@ -1,0 +1,61 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/camera.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/camera.test.ts (11 tests | 3 failed) 92ms
+   × 全操作範囲でラケットの面と柄を画面内に保つ 50ms
+   × 全解放後の相手の姿と両コートを900x390でも画面に収める 13ms
+   × 全解放後の相手の姿と両コートを600x220でも画面に収める 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/camera.test.ts > 全操作範囲でラケットの面と柄を画面内に保つ
+AssertionError: expected 1.1937668728631514 to be less than 1
+ ❯ tests/unit/camera.test.ts:24:29
+     22|     for (const px of [box.min.x, box.max.x]) for (const py of [box.min…
+     23|       const p = new Vector3(px, py, pz).project(camera);
+     24|       expect(Math.abs(p.x)).toBeLessThan(1); expect(Math.abs(p.y)).toB…
+       |                             ^
+     25|     }
+     26|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/camera.test.ts > 全解放後の相手の姿と両コートを900x390でも画面に収める
+AssertionError: expected 1.0066149546633805 to be less than 1
+ ❯ tests/unit/camera.test.ts:80:68
+     78|     for (const x of [box.min.x, box.max.x]) for (const y of [box.min.y…
+     79|       const p = new Vector3(x, y, z).project(camera);
+     80|       expect(Math.abs(p.x)).toBeLessThan(1); expect(Math.abs(p.y)).toB…
+       |                                                                    ^
+     81|     }
+     82|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/camera.test.ts > 全解放後の相手の姿と両コートを600x220でも画面に収める
+AssertionError: expected 1.0066149546633807 to be less than 1
+ ❯ tests/unit/camera.test.ts:80:68
+     78|     for (const x of [box.min.x, box.max.x]) for (const y of [box.min.y…
+     79|       const p = new Vector3(x, y, z).project(camera);
+     80|       expect(Math.abs(p.x)).toBeLessThan(1); expect(Math.abs(p.y)).toB…
+       |                                                                    ^
+     81|     }
+     82|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 8 passed (11)
+   Start at  18:01:33
+   Duration  643ms (transform 45%, tests 34%, import 20%, worker 2%)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

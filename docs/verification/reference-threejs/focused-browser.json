@@ -1,0 +1,461 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/takkeu/node_modules/.bin/playwright",
+      "test",
+      "tests/browser/reference.spec.ts",
+      "tests/browser/contact.spec.ts"
+    ],
+    "configFile": "/workspace/takkeu/playwright.config.ts",
+    "rootDir": "/workspace/takkeu/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/takkeu/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/workspace/takkeu/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/takkeu/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/workspace/takkeu/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/takkeu/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/workspace/takkeu/tests/browser",
+        "snapshotDir": "/workspace/takkeu/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "launchOptions": {
+            "args": [
+              "--enable-unsafe-swiftshader",
+              "--use-angle=swiftshader"
+            ]
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/takkeu/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "/workspace/takkeu/tests/browser",
+        "snapshotDir": "/workspace/takkeu/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+          "viewport": {
+            "width": 390,
+            "height": 664
+          },
+          "screen": {
+            "width": 390,
+            "height": 844
+          },
+          "deviceScaleFactor": 3,
+          "isMobile": true,
+          "hasTouch": true,
+          "defaultBrowserType": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 4173 --strictPort",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "contact.spec.ts",
+      "file": "contact.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ワンバウンド後の見える球にラケットを合わせれば返球できる",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12150,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-22T18:06:03.651Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/contact-ワンバウンド後の見える球にラケットを合わせれば返球できる-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-0d63fbdd3c6b3196424f",
+          "file": "contact.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "見えている球にドラッグで合わせ、3ラリーをつなげる",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 40746,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T18:06:16.161Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/contact-見えている球にドラッグで合わせ、3ラリーをつなげる-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-1c552dc5f2d26ba081fd",
+          "file": "contact.spec.ts",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "ワンバウンド後の見える球にラケットを合わせれば返球できる",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8157,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-22T18:07:00.310Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/contact-ワンバウンド後の見える球にラケットを合わせれば返球できる-webkit/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-3810c48d472b7b3ec460",
+          "file": "contact.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "見えている球にドラッグで合わせ、3ラリーをつなげる",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16239,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T18:07:09.058Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/contact-見えている球にドラッグで合わせ、3ラリーをつなげる-webkit/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c37ec27874a4649dbe8b-3eb984ed5c8b61eb7b50",
+          "file": "contact.spec.ts",
+          "line": 32,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "reference.spec.ts",
+      "file": "reference.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "参考画像の構図をPC・縦・横の実描画に保つ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1900,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-22T18:06:57.450Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "reference-framing.json",
+                      "contentType": "application/json",
+                      "body": "WwogIHsKICAgICJ2aWV3cG9ydCI6IHsKICAgICAgIndpZHRoIjogMTI4MCwKICAgICAgImhlaWdodCI6IDcyMAogICAgfSwKICAgICJ3aWR0aCI6IDU5OS44NTkzNzUsCiAgICAiaGVpZ2h0IjogNDE0LjcwMzEyNSwKICAgICJmcm9udEZyYWN0aW9uIjogMC44ODUzMTgxNjQwOTI1MjkyLAogICAgInBlcnNwZWN0aXZlIjogMi43MTY2OTAwNDIwNzU3MzYsCiAgICAiZGVwdGhGcmFjdGlvbiI6IDAuNDM5NzM4MTgxMjMxNzA5MywKICAgICJub092ZXJmbG93IjogdHJ1ZSwKICAgICJjb3JuZXJzIjogewogICAgICAiZmwiOiB7CiAgICAgICAgIngiOiAyNi44OTgyNDUwMTgxNTM5MzMsCiAgICAgICAgInkiOiAzMTMuMDE1MzEwOTQ4MjIzNgogICAgICB9LAogICAgICAiZnIiOiB7CiAgICAgICAgIngiOiA1NTcuOTY0NjQ1NjA2ODQ1OSwKICAgICAgICAieSI6IDMxMy4wMTUzMTA5NDgyMjM2CiAgICAgIH0sCiAgICAgICJibCI6IHsKICAgICAgICAieCI6IDI1MS43MzkyMDIwNjI0MzYxNCwKICAgICAgICAieSI6IDc5LjQ4NTEzNzg0MDA4MTgyCiAgICAgIH0sCiAgICAgICJiciI6IHsKICAgICAgICAieCI6IDQ0Ny4yMjIwODQ2NzQ1ODc2LAogICAgICAgICJ5IjogNzkuNDg1MTM3ODQwMDgxODIKICAgICAgfQogICAgfQogIH0sCiAgewogICAgInZpZXdwb3J0IjogewogICAgICAid2lkdGgiOiAzOTAsCiAgICAgICJoZWlnaHQiOiA4NDQKICAgIH0sCiAgICAid2lkdGgiOiAzNTYsCiAgICAiaGVpZ2h0IjogMjQ4LjQwNjI1LAogICAgImZyb250RnJhY3Rpb24iOiAwLjg5MzU2MDY1NTYzMTY5NjUsCiAgICAicGVyc3BlY3RpdmUiOiAyLjcxNjY5MDA0MjA3NTczNjUsCiAgICAiZGVwdGhGcmFjdGlvbiI6IDAuNDM5NzM4MTgxMjMxNzA5MjcsCiAgICAibm9PdmVyZmxvdyI6IHRydWUsCiAgICAiY29ybmVycyI6IHsKICAgICAgImZsIjogewogICAgICAgICJ4IjogMTQuNDk2MjAzMjk3NTU3OTc4LAogICAgICAgICJ5IjogMTg3LjQ5NTQ3NTQzMjUzMwogICAgICB9LAogICAgICAiZnIiOiB7CiAgICAgICAgIngiOiAzMzIuNjAzNzk2NzAyNDQxOTcsCiAgICAgICAgInkiOiAxODcuNDk1NDc1NDMyNTMzCiAgICAgIH0sCiAgICAgICJibCI6IHsKICAgICAgICAieCI6IDE0OS4xNzU0MzY3NTEwODI2NiwKICAgICAgICAieSI6IDQ3LjYxMTQyMDg3MjY3MzI1CiAgICAgIH0sCiAgICAgICJiciI6IHsKICAgICAgICAieCI6IDI2Ni4yNjkyNDg4ODIwNDkyLAogICAgICAgICJ5IjogNDcuNjExNDIwODcyNjczMjUKICAgICAgfQogICAgfQogIH0sCiAgewogICAgInZpZXdwb3J0IjogewogICAgICAid2lkdGgiOiA4NzQsCiAgICAgICJoZWlnaHQiOiA0MDIKICAgIH0sCiAgICAid2lkdGgiOiAzNTkuMTA5Mzc1LAogICAgImhlaWdodCI6IDI1OCwKICAgICJmcm9udEZyYWN0aW9uIjogMC45MjAwMzUyNzc5NDUwNTYxLAogICAgInBlcnNwZWN0aXZlIjogMi43MTY2OTAwNDIwNzU3Mzc0LAogICAgImRlcHRoRnJhY3Rpb24iOiAwLjQzOTczODE4MTIzMTcwOTE2LAogICAgIm5vT3ZlcmZsb3ciOiB0cnVlLAogICAgImNvcm5lcnMiOiB7CiAgICAgICJmbCI6IHsKICAgICAgICAieCI6IDkuODY5MTczNDkyMDk5NzgxLAogICAgICAgICJ5IjogMTk0LjczNjc3NzYwMzU5Njk4CiAgICAgIH0sCiAgICAgICJmciI6IHsKICAgICAgICAieCI6IDM0MC4yNjI0NjcxMzI5MDAxNiwKICAgICAgICAieSI6IDE5NC43MzY3Nzc2MDM1OTY5OAogICAgICB9LAogICAgICAiYmwiOiB7CiAgICAgICAgIngiOiAxNDkuNzQ5ODgxOTMyNDQ0NDUsCiAgICAgICAgInkiOiA0OS40NTAyMzE1NjY4Mzc0MQogICAgICB9LAogICAgICAiYnIiOiB7CiAgICAgICAgIngiOiAyNzEuMzY1OTk4Nzk2NjExLAogICAgICAgICJ5IjogNDkuNDUwMjMxNTY2ODM3NDEKICAgICAgfQogICAgfQogIH0KXQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3de41faf189c1fc07e7d-35d8345f76122705e50c",
+          "file": "reference.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "参考画像の構図をPC・縦・横の実描画に保つ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6048,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-22T18:07:25.888Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "reference-framing.json",
+                      "contentType": "application/json",
+                      "body": "WwogIHsKICAgICJ2aWV3cG9ydCI6IHsKICAgICAgIndpZHRoIjogMTI4MCwKICAgICAgImhlaWdodCI6IDcyMAogICAgfSwKICAgICJ3aWR0aCI6IDU5OS44NTkzNzUsCiAgICAiaGVpZ2h0IjogNDE0LjcwMzEyNSwKICAgICJmcm9udEZyYWN0aW9uIjogMC44ODUzMTgxNjQwOTI1MjkyLAogICAgInBlcnNwZWN0aXZlIjogMi43MTY2OTAwNDIwNzU3MzYsCiAgICAiZGVwdGhGcmFjdGlvbiI6IDAuNDM5NzM4MTgxMjMxNzA5MywKICAgICJub092ZXJmbG93IjogdHJ1ZSwKICAgICJjb3JuZXJzIjogewogICAgICAiZmwiOiB7CiAgICAgICAgIngiOiAyNi44OTgyNDUwMTgxNTM5MzMsCiAgICAgICAgInkiOiAzMTMuMDE1MzEwOTQ4MjIzNgogICAgICB9LAogICAgICAiZnIiOiB7CiAgICAgICAgIngiOiA1NTcuOTY0NjQ1NjA2ODQ1OSwKICAgICAgICAieSI6IDMxMy4wMTUzMTA5NDgyMjM2CiAgICAgIH0sCiAgICAgICJibCI6IHsKICAgICAgICAieCI6IDI1MS43MzkyMDIwNjI0MzYxNCwKICAgICAgICAieSI6IDc5LjQ4NTEzNzg0MDA4MTgyCiAgICAgIH0sCiAgICAgICJiciI6IHsKICAgICAgICAieCI6IDQ0Ny4yMjIwODQ2NzQ1ODc2LAogICAgICAgICJ5IjogNzkuNDg1MTM3ODQwMDgxODIKICAgICAgfQogICAgfQogIH0sCiAgewogICAgInZpZXdwb3J0IjogewogICAgICAid2lkdGgiOiAzOTAsCiAgICAgICJoZWlnaHQiOiA4NDQKICAgIH0sCiAgICAid2lkdGgiOiAzNTYsCiAgICAiaGVpZ2h0IjogMjQ4LjQwNjI1LAogICAgImZyb250RnJhY3Rpb24iOiAwLjg5MzU2MDY1NTYzMTY5NjUsCiAgICAicGVyc3BlY3RpdmUiOiAyLjcxNjY5MDA0MjA3NTczNjUsCiAgICAiZGVwdGhGcmFjdGlvbiI6IDAuNDM5NzM4MTgxMjMxNzA5MjcsCiAgICAibm9PdmVyZmxvdyI6IHRydWUsCiAgICAiY29ybmVycyI6IHsKICAgICAgImZsIjogewogICAgICAgICJ4IjogMTQuNDk2MjAzMjk3NTU3OTc4LAogICAgICAgICJ5IjogMTg3LjQ5NTQ3NTQzMjUzMwogICAgICB9LAogICAgICAiZnIiOiB7CiAgICAgICAgIngiOiAzMzIuNjAzNzk2NzAyNDQxOTcsCiAgICAgICAgInkiOiAxODcuNDk1NDc1NDMyNTMzCiAgICAgIH0sCiAgICAgICJibCI6IHsKICAgICAgICAieCI6IDE0OS4xNzU0MzY3NTEwODI2NiwKICAgICAgICAieSI6IDQ3LjYxMTQyMDg3MjY3MzI1CiAgICAgIH0sCiAgICAgICJiciI6IHsKICAgICAgICAieCI6IDI2Ni4yNjkyNDg4ODIwNDkyLAogICAgICAgICJ5IjogNDcuNjExNDIwODcyNjczMjUKICAgICAgfQogICAgfQogIH0sCiAgewogICAgInZpZXdwb3J0IjogewogICAgICAid2lkdGgiOiA4NzQsCiAgICAgICJoZWlnaHQiOiA0MDIKICAgIH0sCiAgICAid2lkdGgiOiAzNTkuMTA5Mzc1LAogICAgImhlaWdodCI6IDI1OCwKICAgICJmcm9udEZyYWN0aW9uIjogMC45MjAwMzUyNzc5NDUwNTYxLAogICAgInBlcnNwZWN0aXZlIjogMi43MTY2OTAwNDIwNzU3Mzc0LAogICAgImRlcHRoRnJhY3Rpb24iOiAwLjQzOTczODE4MTIzMTcwOTE2LAogICAgIm5vT3ZlcmZsb3ciOiB0cnVlLAogICAgImNvcm5lcnMiOiB7CiAgICAgICJmbCI6IHsKICAgICAgICAieCI6IDkuODY5MTczNDkyMDk5NzgxLAogICAgICAgICJ5IjogMTk0LjczNjc3NzYwMzU5Njk4CiAgICAgIH0sCiAgICAgICJmciI6IHsKICAgICAgICAieCI6IDM0MC4yNjI0NjcxMzI5MDAxNiwKICAgICAgICAieSI6IDE5NC43MzY3Nzc2MDM1OTY5OAogICAgICB9LAogICAgICAiYmwiOiB7CiAgICAgICAgIngiOiAxNDkuNzQ5ODgxOTMyNDQ0NDUsCiAgICAgICAgInkiOiA0OS40NTAyMzE1NjY4Mzc0MQogICAgICB9LAogICAgICAiYnIiOiB7CiAgICAgICAgIngiOiAyNzEuMzY1OTk4Nzk2NjExLAogICAgICAgICJ5IjogNDkuNDUwMjMxNTY2ODM3NDEKICAgICAgfQogICAgfQogIH0KXQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3de41faf189c1fc07e7d-5a09bbdf322dfab1862c",
+          "file": "reference.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-22T18:06:01.631Z",
+    "duration": 90759.184,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

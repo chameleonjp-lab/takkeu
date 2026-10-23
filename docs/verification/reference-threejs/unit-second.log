@@ -1,0 +1,51 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/camera.test.ts (10 tests | 2 failed) 109ms
+   × 全解放後の相手の姿と両コートを900x390でも画面に収める 67ms
+   × 全解放後の相手の姿と両コートを600x220でも画面に収める 17ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/camera.test.ts > 全解放後の相手の姿と両コートを900x390でも画面に収める
+AssertionError: expected 1.0066149546633805 to be less than 1
+ ❯ tests/unit/camera.test.ts:65:68
+     63|     for (const x of [box.min.x, box.max.x]) for (const y of [box.min.y…
+     64|       const p = new Vector3(x, y, z).project(camera);
+     65|       expect(Math.abs(p.x)).toBeLessThan(1); expect(Math.abs(p.y)).toB…
+       |                                                                    ^
+     66|     }
+     67|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/camera.test.ts > 全解放後の相手の姿と両コートを600x220でも画面に収める
+AssertionError: expected 1.0066149546633807 to be less than 1
+ ❯ tests/unit/camera.test.ts:65:68
+     63|     for (const x of [box.min.x, box.max.x]) for (const y of [box.min.y…
+     64|       const p = new Vector3(x, y, z).project(camera);
+     65|       expect(Math.abs(p.x)).toBeLessThan(1); expect(Math.abs(p.y)).toB…
+       |                                                                    ^
+     66|     }
+     67|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 21 passed (22)
+      Tests  2 failed | 96 passed (98)
+   Start at  17:59:39
+   Duration  2.66s (environment 48%, tests 30%, import 12%, transform 7%, worker 3%)
+
+    Isolate  22 workers spawned · ~233ms startup each (spawn + environment, per file)
+             at least ~1.48s faster with isolate: false — reuses workers across files instead of one per file
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

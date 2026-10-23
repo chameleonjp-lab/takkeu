@@ -1,0 +1,110 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/camera.test.ts (10 tests | 2 failed) 12ms
+   × 全解放後の相手の姿と両コートを900x390でも画面に収める 4ms
+   × 全解放後の相手の姿と両コートを600x220でも画面に収める 1ms
+ ❯ tests/unit/bounce-contact.test.ts (4 tests | 2 failed) 97ms
+   ❯ ワンバウンド後の見える接触 (4)
+     × 高い位置に構えたラケットに重なる最初のバウンドを返せる 12ms
+     × バウンドをまたぐ刻みでも、バウンド前の重なりだけでは返球しない 3ms
+ ❯ tests/unit/collision.test.ts (5 tests | 2 failed) 9ms
+   ❯ 見える移動区間と動く円形ラケットの接触 (5)
+     × 1刻みでラケットの左右を通り抜ける高速球も拾う 5ms
+     × 奥行きが異なっても、投影上ラケットに重なる球を拾う 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/bounce-contact.test.ts > ワンバウンド後の見える接触 > 高い位置に構えたラケットに重なる最初のバウンドを返せる
+AssertionError: 奥行きの判定面まで待たず、見える接触で返す: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/bounce-contact.test.ts:16:60
+     14|     expect(game.snapshot().score, 'バウンド前は加点しない').toBe(0);
+     15|     const events = advance(game, 0.15, paddle);
+     16|     expect(game.snapshot().score, '奥行きの判定面まで待たず、見える接触で返す').toBe(1);
+       |                                                            ^
+     17|     expect(events.filter(e => e.kind === 'player-hit')).toHaveLength(1…
+     18|     expect(events.find(e => e.kind === 'player-hit')!.time).toBeGreate…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  tests/unit/bounce-contact.test.ts > ワンバウンド後の見える接触 > バウンドをまたぐ刻みでも、バウンド前の重なりだけでは返球しない
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/bounce-contact.test.ts:53:72
+     51|     s.state.balls = [ball]; s.state.paddle = { x: 0, y: 0.85 };
+     52|     const result = s.step(s.state.paddle);
+     53|     expect(result.events.filter(event => event.kind === 'player-hit'))…
+       |                                                                        ^
+     54|     expect(result.events[0]!.time).toBeCloseTo(1.8, 9);
+     55|     expect(s.step(s.state.paddle).events.filter(event => event.kind ==…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  tests/unit/camera.test.ts > 全解放後の相手の姿と両コートを900x390でも画面に収める
+ FAIL  tests/unit/camera.test.ts > 全解放後の相手の姿と両コートを600x220でも画面に収める
+AssertionError: expected 1.0243468662483002 to be less than 1
+ ❯ tests/unit/camera.test.ts:51:27
+     49|     const p = new Vector3(...point as [number, number, number]).projec…
+     50|     expect(Math.abs(p.x)).toBeLessThan(1);
+     51|     expect(Math.abs(p.y)).toBeLessThan(1);
+       |                           ^
+     52|   }
+     53| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  tests/unit/collision.test.ts > 見える移動区間と動く円形ラケットの接触 > 1刻みでラケットの左右を通り抜ける高速球も拾う
+AssertionError: expected 0.26057278049659816 to be close to 0.2637819074513507, received difference is 0.0032091269547525614, but expected 5e-8
+ ❯ tests/unit/collision.test.ts:15:25
+     13|     expect(time).toBeLessThan(0.5);
+     14|     const x = from.x + (to.x - from.x) * time;
+     15|     expect(Math.abs(x)).toBeCloseTo(config.paddleRadius + projectBall(…
+       |                         ^
+     16|   });
+     17|   it('ラケット自身が球を横切る移動も相対移動として拾う', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  tests/unit/collision.test.ts > 見える移動区間と動く円形ラケットの接触 > 奥行きが異なっても、投影上ラケットに重なる球を拾う
+AssertionError: expected 0.5841266719118804 to be greater than 0.8
+ ❯ tests/unit/collision.test.ts:32:25
+     30|     const ball = { x: 0.4, y: 0.045, z: 0.858 };
+     31|     const projected = projectBall(ball, config);
+     32|     expect(projected.y).toBeGreaterThan(0.8);
+       |                         ^
+     33|     expect(sweepPaddleHit(ball, ball, projected, projected, config)).t…
+     34|     expect(sweepPaddleHit(ball, ball, { x: -0.5, y: 0.5 }, { x: -0.5, …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+
+ Test Files  3 failed | 19 passed (22)
+      Tests  6 failed | 92 passed (98)
+   Start at  17:55:15
+   Duration  2.50s (environment 47%, tests 31%, import 13%, transform 6%, worker 3%)
+
+    Isolate  22 workers spawned · ~218ms startup each (spawn + environment, per file)
+             at least ~1.38s faster with isolate: false — reuses workers across files instead of one per file
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

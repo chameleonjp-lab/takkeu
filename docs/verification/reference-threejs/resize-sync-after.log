@@ -1,0 +1,38 @@
+[WebServer] (node:50994) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:51007) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:51031) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  1 [chromium] › tests/browser/render-loop.spec.ts:4:1 › 停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する (2.2s)
+(node:51188) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  2 [chromium] › tests/browser/render-loop.spec.ts:4:1 › 停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する (3.6s)
+(node:51318) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  3 [chromium] › tests/browser/render-loop.spec.ts:4:1 › 停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する (2.0s)
+(node:51446) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  4 [webkit] › tests/browser/render-loop.spec.ts:4:1 › 停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する (4.1s)
+(node:51573) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  5 [webkit] › tests/browser/render-loop.spec.ts:4:1 › 停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する (4.8s)
+(node:51700) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  6 [webkit] › tests/browser/render-loop.spec.ts:4:1 › 停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する (4.2s)
+
+  6 passed (26.9s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

@@ -1,0 +1,72 @@
+[WebServer] (node:42025) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:42038) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 3 tests using 1 worker
+
+(node:42062) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/contact.spec.ts:5:1 › 上に構えたラケットにワンバウンドした球が触れれば返球できる (11.9s)
+(node:42166) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  2 [chromium] › tests/browser/contact.spec.ts:30:1 › 見えている球にドラッグで合わせ、3ラリーをつなげる (36.9s)
+(node:42313) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  3 [chromium] › tests/browser/reference.spec.ts:3:1 › 参考画像の構図をPC・縦・横の実描画に保つ (1.7s)
+
+
+  1) [chromium] › tests/browser/contact.spec.ts:5:1 › 上に構えたラケットにワンバウンドした球が触れれば返球できる ────────────────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByLabel('ラリー数', { exact: true })
+    Expected: "1"
+    Received: "0"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" getByLabel('ラリー数', { exact: true }) with timeout 5000ms
+      - waiting for getByLabel('ラリー数', { exact: true })
+        14 × locator resolved to <output data-score="" aria-live="off" aria-label="ラリー数" class="rally-number">0</output>
+           - unexpected value "0"
+
+
+      20 |   await page.screenshot({ path: testInfo.outputPath('before-bounce.png') });
+      21 |   await page.clock.runFor(200);
+    > 22 |   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('1');
+         |                                                          ^
+      23 |   await page.screenshot({ path: testInfo.outputPath('returned.png') });
+      24 |   await page.clock.runFor(1000);
+      25 |   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('1');
+        at /workspace/takkeu/tests/browser/contact.spec.ts:22:58
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/contact-上に構えたラケットにワンバウンドした球が触れれば返球できる-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/contact-上に構えたラケットにワンバウンドした球が触れれば返球できる-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/contact-上に構えたラケットにワンバウンドした球が触れれば返球できる-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/contact-上に構えたラケットにワンバウンドした球が触れれば返球できる-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/contact-上に構えたラケットにワンバウンドした球が触れれば返球できる-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/contact.spec.ts:5:1 › 上に構えたラケットにワンバウンドした球が触れれば返球できる ─────────────────
+  2 passed (54.4s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

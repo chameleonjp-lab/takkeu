@@ -1,0 +1,61 @@
+[WebServer] (node:44621) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:44634) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:44658) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/reference.spec.ts:3:1 › 参考画像の構図をPC・縦・横の実描画に保つ (6.1s)
+
+
+  1) [chromium] › tests/browser/reference.spec.ts:3:1 › 参考画像の構図をPC・縦・横の実描画に保つ ──────────────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.home-art img')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.home-art img') with timeout 5000ms
+      - waiting for locator('.home-art img')
+
+
+      4 |   const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
+      5 |   await page.goto('/');
+    > 6 |   await expect(page.locator('.home-art img')).toBeVisible();
+        |                                               ^
+      7 |   expect(await page.locator('.home-art img').evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
+      8 |   await page.goto('/tests/fixtures/stage2.html');
+      9 |   await page.waitForFunction(() => !!window.stage2);
+        at /workspace/takkeu/tests/browser/reference.spec.ts:6:47
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/reference-参考画像の構図をPC・縦・横の実描画に保つ-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/reference-参考画像の構図をPC・縦・横の実描画に保つ-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/reference-参考画像の構図をPC・縦・横の実描画に保つ-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/reference-参考画像の構図をPC・縦・横の実描画に保つ-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/reference-参考画像の構図をPC・縦・横の実描画に保つ-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/reference.spec.ts:3:1 › 参考画像の構図をPC・縦・横の実描画に保つ ───────────────────────
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
