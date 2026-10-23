@@ -7,13 +7,14 @@ import { createCamera, fitCamera } from './camera';
 import { updateOpponentView } from './opponentView';
 import { computeDrawingSize } from './quality';
 import type { Quality } from '../storage/preferences';
+import { createFireworks, PARTICLE_LIMIT } from './particles';
 
 export interface GameView {
   render(snapshot: GameSnapshot, events: readonly GameEvent[]): void;
   resize(width: number, height: number): void;
   inputMapping(): InputMapping;
   setQuality(quality: Quality): void;
-  resources(): { geometries: number; textures: number; programs: number; drawCalls: number };
+  resources(): { geometries: number; textures: number; programs: number; drawCalls: number; particles:number;particleCapacity:number };
   dispose(): void;
 }
 
@@ -30,6 +31,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
   light.position.set(-3, 5, 1.5); scene.add(light);
   const objects = createObjects(config);
   scene.add(objects.root);
+  const fireworks=createFireworks();scene.add(fireworks.root);
   let flashUntil = 0;
   let previousRunId = '';
   let quality: Quality = 'standard';
@@ -39,6 +41,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
       for (const event of events) if (event.kind === 'player-hit') flashUntil = event.time + 0.12;
       applyPresentation(objects, snapshot);
       updateOpponentView(objects, snapshot, events);
+      fireworks.update(snapshot,events,quality);
       if (!snapshot.progression.appliedMilestones.includes(100)) objects.rimMaterial.emissiveIntensity = snapshot.simTime < flashUntil ? 0.8 : 0.15;
       renderer.render(scene, camera);
     },
@@ -47,6 +50,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
       const size = computeDrawingSize(w, h, window.devicePixelRatio || 1, quality);
       renderer.setPixelRatio(1);
       renderer.setSize(size.width, size.height, false);
+      objects.opponentField.resize(size.width,size.height);
       fitCamera(camera, w, h, config);
     },
     inputMapping() {
@@ -59,7 +63,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
       };
     },
     setQuality(value) { quality = value; },
-    resources() { return { geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures, programs: renderer.info.programs?.length ?? 0, drawCalls: renderer.info.render.calls }; },
-    dispose() { objects.dispose(); renderer.dispose(); },
+    resources() { return { geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures, programs: renderer.info.programs?.length ?? 0, drawCalls: renderer.info.render.calls,particles:fireworks.active(),particleCapacity:PARTICLE_LIMIT }; },
+    dispose() { fireworks.dispose(); objects.dispose(); renderer.dispose(); },
   };
 }

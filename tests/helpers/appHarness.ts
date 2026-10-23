@@ -9,6 +9,7 @@ import { createAudio } from '../../src/audio/audio';
 import type { GameSession, GameSnapshot, GameEvent } from '../../src/game/types';
 import { createSimulationState, snapshotSimulation, startSimulation, stepSimulation } from '../../src/game/simulation';
 import { scenario } from './scenarios';
+import { deflectBounce } from '../../src/game/trajectory';
 import '../../src/ui/styles.css';
 
 let state = createSimulationState(7);
@@ -45,12 +46,13 @@ function show(score: number) {
   currentAudio?.reset(state.runId); metrics.events.length = 0; metrics.smashDepartures = 0;
   state.balls = [];
   for (let id = 1; id <= ballCountAtScore(score); id++) {
-    const smash = score >= 450 && id === 1;
-    const plan = scheduleReturn({ ballId: id, earliestDepartAt: 0,
+    const smash = score >= 450;
+    let plan = scheduleReturn({ ballId: id, earliestDepartAt: 0,
       preferredTarget: { x: [-0.7, 0.7, 0, 0.4][(id - 1) % 4]!, y: 0.5 },
-      speedMultiplier: speedMultiplier(score), smash }, session.snapshot().scheduledReturns, DEFAULT_CONFIG);
+      speedMultiplier: speedMultiplier(score), score, smash }, session.snapshot().scheduledReturns, DEFAULT_CONFIG);
     const from = { x: 0, y: 0.5, z: -DEFAULT_CONFIG.paddleZ };
-    state.balls.push({ id, phase: smash ? 'waiting-return' : 'queued', position: from, from, plan, warningSent: smash });
+    if(score>=555)plan=deflectBounce(plan,from,(id*17%29)/29,DEFAULT_CONFIG);
+    state.balls.push({ id, phase: 'queued', position: from, from, plan, warningSent: false });
   }
   state.nextBallId = state.balls.length + 1;
   if (score === 10) state.progression = { ...state.progression, ballGlowUntil: 5 };

@@ -24,12 +24,13 @@ export function createEnvironment(config: GameConfig) {
   shadow.rotation.x = -Math.PI / 2; shadow.position.set(0.12, floorY + 0.003, 1.5);
   const base = new Mesh(new BoxGeometry(config.tableHalfWidth * 2 + 0.018, 0.075, config.tableHalfLength), standard(0x173b31, 0.48));
   base.position.set(0, config.tableY - 0.043, config.tableHalfLength / 2);
-  root.add(selfFloor, opponentFloor, opponentWall, shadow, base);
+  const structure=new Group();structure.add(base);
+  root.add(selfFloor, opponentFloor, opponentWall, shadow, structure);
   for (const x of [-0.81, 0.81]) {
     const leg = new Mesh(new BoxGeometry(0.075, 0.70, 0.075), standard(0x24332e, 0.42));
-    leg.position.set(x, floorY + 0.35, 1.36); root.add(leg);
+    leg.position.set(x, floorY + 0.35, 1.36); structure.add(leg);
   }
   const brace = new Mesh(new BoxGeometry(1.68, 0.045, 0.045), standard(0x2b3b35, 0.48));
-  brace.position.set(0, floorY + 0.35, 1.36); root.add(brace);
-  return { root, selfFloor, opponentFloor, opponentWall };
+  brace.position.set(0, floorY + 0.35, 1.36); structure.add(brace);
+  return { root, selfFloor, opponentFloor, opponentWall, structure };
 }

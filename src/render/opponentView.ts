@@ -10,13 +10,16 @@ export function resolveOpponentPose(snapshot: GameSnapshot, events: readonly Gam
   const swing = age >= 0 && age < 0.24 ? Math.sin(Math.PI * age / 0.24) : 0;
   const preparing = !!warning;
   // Fixed pose cue only; never expose a hidden ball's target or path.
-  return { preparing, armAngle: preparing ? -1.1 : swing * 0.65, racketY: preparing ? 0.60 : 0.5 + swing * 0.10,
+  const contact = snapshot.opponentPaddle ?? { x: 0, y: 0.5 };
+  return { preparing, armAngle: preparing ? -1.1 : swing * 0.65, racketX: contact.x, racketY: contact.y + (preparing ? 0.10 : swing * 0.10),
     racketAngle: preparing ? -0.6 : swing * 0.4, lean: preparing ? -0.07 : swing * 0.035 };
 }
 export function updateOpponentView(objects: ReturnType<typeof createObjects>, snapshot: GameSnapshot, events: readonly GameEvent[]): void {
   const pose = resolveOpponentPose(snapshot, events);
   objects.opponentArm.rotation.x = pose.armAngle;
+  objects.opponentPaddle.position.x = pose.racketX;
   objects.opponentPaddle.position.y = pose.racketY;
   objects.opponentPaddle.rotation.z = pose.racketAngle;
   objects.opponentBody.rotation.z = pose.lean;
+  objects.opponentBody.position.x = pose.racketX;
 }

@@ -17,7 +17,7 @@ test('ワンバウンド後の見える球にラケットを合わせれば返�
   await surface.dispatchEvent('pointermove', { pointerId: 7, pointerType: 'touch', clientX: target.x, clientY: target.y });
   await page.clock.runFor(300);
   await surface.dispatchEvent('pointerup', { pointerId: 7, pointerType: 'touch', clientX: target.x, clientY: target.y });
-  await page.clock.runFor(1450);
+  await page.clock.runFor(1100);
   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('0');
   await page.screenshot({ path: testInfo.outputPath('before-bounce.png') });
   await page.clock.runFor(200);

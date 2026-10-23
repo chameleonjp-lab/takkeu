@@ -31,7 +31,7 @@ function show(score: number, time = 0, glowUntil: number | null = null) {
   const count = ballCountAtScore(score);
   const base = scenario(score, time).snapshot();
   current = { ...base, phase: 'running', progression: { ...base.progression, ballGlowUntil: glowUntil },
-    balls: Array.from({ length: count }, (_, i) => ({ id: i + 1, phase: 'incoming', smash: false,
+    balls: Array.from({ length: count }, (_, i) => ({ id: i + 1, phase: score>=470&&i>=8?'queued':'incoming', smash: score>=450,
       position: i < 4 ? { x: [-0.45, 0.45, 0.7, -0.6][i]!, y: [0.45, 0.48, 0.6, 0.7][i]!, z: score === 10 ? -0.75 : [0.95, -0.75, 0.45, -1.3][i]! } : { x: -0.8 + (i % 6) * 0.32, y: 0.32 + (i % 3) * 0.045, z: (i % 2 ? -1 : 1) * (0.25 + Math.floor(i / 6) * 0.21) } })),
   };
   audio.reset(current.runId); render();
@@ -55,6 +55,10 @@ function advance(seconds: number) {
   for (let i = 0; i < Math.round(seconds / DEFAULT_CONFIG.fixedDt); i++) events.push(...simulation.step().events);
   current = simulation.snapshot(); emitted.push(...events); render(events);
 }
+function beginFireworks(score=530){
+  simulation=scenario(score,0);simulation.state.balls=[incoming(1,.282,{x:0,y:.5},0,1)];
+  emitted.length=0;audio.reset(simulation.state.runId);current=simulation.snapshot();render();
+}
 function animate(seconds: number): Promise<void> {
   const initialTime = current.simTime, started = performance.now();
   let completedTicks = 0;
@@ -74,7 +78,7 @@ function animate(seconds: number): Promise<void> {
   });
 }
 const harness = {
-  show, beginSmash, advance, animate, events: () => emitted, pose: () => resolveOpponentPose(current),
+  show, beginSmash, beginFireworks, advance, animate, resources:()=>view.resources(), events: () => emitted, pose: () => resolveOpponentPose(current),
   time(value: number) { if (current.phase === 'running') current = { ...current, simTime: value }; render(); },
   snapshot: () => current,
   presentation: () => resolvePresentation(current),

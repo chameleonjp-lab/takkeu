@@ -7,7 +7,7 @@ import type { GameEvent, GameSnapshot, PaddlePoint } from '../../src/game/types'
 function make() {
   const s = scenario(450);
   for (let id = 1; id <= 47; id++) {
-    const plan = scheduleReturn({ ballId: id, earliestDepartAt: 20, preferredTarget: { x: id % 2 ? -0.7 : 0.7, y: 0.5 }, speedMultiplier: 2.2, smash: false }, s.snapshot().scheduledReturns, DEFAULT_CONFIG);
+    const plan = scheduleReturn({ ballId: id, earliestDepartAt: 20, preferredTarget: { x: id % 2 ? -0.7 : 0.7, y: 0.5 }, speedMultiplier: 2.6, score:450, smash: true }, s.snapshot().scheduledReturns, DEFAULT_CONFIG);
     const from = { x: 0, y: 0.5, z: -DEFAULT_CONFIG.paddleZ };
     s.state.balls.push({ id, phase: 'queued', position: from, from, plan, warningSent: false });
   }

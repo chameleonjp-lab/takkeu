@@ -10,12 +10,12 @@ describe('ワンバウンド後の見える接触', () => {
     const game = createSession(config, 7);
     game.start();
     const paddle = projectBall({ x: 0, y: config.ballRadius, z: 0.858 }, config);
-    advance(game, 1.75, paddle);
+    advance(game, 1.4, paddle);
     expect(game.snapshot().score, 'バウンド前は加点しない').toBe(0);
     const events = advance(game, 0.15, paddle);
     expect(game.snapshot().score, '奥行きの判定面まで待たず、見える接触で返す').toBe(1);
     expect(events.filter(e => e.kind === 'player-hit')).toHaveLength(1);
-    expect(events.find(e => e.kind === 'player-hit')!.time).toBeGreaterThanOrEqual(1.8 - 1e-9);
+    expect(events.find(e => e.kind === 'player-hit')!.time).toBeGreaterThanOrEqual(1.44 - 1e-9);
     expect(advance(game, 0.7, paddle).filter(e => e.kind === 'player-hit')).toHaveLength(0);
   });
 
@@ -23,7 +23,7 @@ describe('ワンバウンド後の見える接触', () => {
     const game = createSession(config, 7);
     game.start();
     const paddle = { x: config.paddleMinX, y: config.paddleMinY };
-    advance(game, 2.6, paddle);
+    advance(game, 2.08, paddle);
     expect(game.snapshot().phase, '予定到着時刻だけでは失球にしない').toBe('running');
     expect(game.snapshot().balls[0]!.position.z).toBeGreaterThan(config.paddleZ);
     expect(game.snapshot().score).toBe(0);

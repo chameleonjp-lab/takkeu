@@ -31,9 +31,9 @@ describe('確定した到着予約', () => {
     const conflict = scheduleReturn(request(4, { x: 1, y: 0.8 }, 0.75), [left, inserted, right], DEFAULT_CONFIG);
     expectReachable([left, inserted, right, conflict]);
   });
-  it('通常の最低視認時間0.60秒と追加から1秒を守る', () => {
+  it('通常の視認時間と追加から1秒を守る', () => {
     const plan = scheduleReturn({ ...request(1, { x: 9, y: -3 }, 10), earliestArriveAt: 11 }, [], DEFAULT_CONFIG);
-    expect(plan.arriveAt - plan.netCrossAt).toBeCloseTo(0.6, 10);
+    expect(plan.arriveAt - plan.netCrossAt).toBeCloseTo(1/2.2, 10);
     expect(plan.arriveAt).toBeGreaterThanOrEqual(11);
     expect(plan.target).toEqual(clampPaddle({ x: 99, y: -99 }, DEFAULT_CONFIG));
     expect(plan.speedMultiplier).toBe(2.2);

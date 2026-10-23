@@ -1,7 +1,7 @@
 export type GamePhase = 'ready' | 'running' | 'paused' | 'gameover';
 export type PauseReason = 'user' | 'hidden' | 'resize' | 'slow-frame' | 'context-lost' | 'input-lost';
 export type BallPhase = 'queued' | 'incoming' | 'outgoing' | 'waiting-return' | 'lost';
-export type GameEventKind = 'player-hit' | 'opponent-hit' | 'ball-lost' | 'milestone' | 'smash-warning' | 'game-over';
+export type GameEventKind = 'player-hit' | 'opponent-hit' | 'ball-lost' | 'milestone' | 'smash-warning' | 'game-over' | 'table-bounce';
 export type Point3 = Readonly<{ x: number; y: number; z: number }>;
 export type PaddlePoint = Readonly<{ x: number; y: number }>;
 export type InputFrame = Readonly<{ target: PaddlePoint }>;
@@ -9,18 +9,20 @@ export type InputSample = Readonly<{ at: number; target: PaddlePoint }>;
 export type GameEvent = Readonly<{
   id: string; runId: string; kind: GameEventKind; time: number;
   ballId?: number; milestone?: number;
+  position?: Point3; effect?: 'racket-firework' | 'bounce-firework';
 }>;
 export type BallSnapshot = Readonly<{ id: number; phase: BallPhase; position: Point3; smash: boolean }>;
 export type ProgressionState = Readonly<{ appliedMilestones: readonly number[]; ballGlowUntil: number | null; awardedBallCount: number }>;
 export type ReturnPlan = Readonly<{
   ballId: number; departAt: number; netCrossAt: number; arriveAt: number;
   target: PaddlePoint; smash: boolean; warningAt: number | null; speedMultiplier: number;
-  landingZ?: number; bounceY?: number;
+  landingZ?: number; bounceY?: number; bounceX?: number; speedScore?: number; smashMultiplier?: number;
 }>;
 export type GameSnapshot = Readonly<{
   runId: string; phase: GamePhase; score: number; simTime: number;
   pauseReason: PauseReason | null;
   paddle: PaddlePoint; balls: readonly BallSnapshot[];
+  opponentPaddle?: PaddlePoint;
   progression: ProgressionState; scheduledReturns: readonly ReturnPlan[];
 }>;
 export type StepResult = Readonly<{ snapshot: GameSnapshot; events: readonly GameEvent[] }>;

@@ -18,18 +18,18 @@ describe('実際の固定刻みループ', () => {
     return { state, events: events.map(e => ({ kind: e.kind, time: e.time })) };
   }
   it('30/60/120Hzの描画で、時刻付き入力から同じ得点・残球・進行となる', () => {
-    expect(run(120).state.score).toBe(1);
+    expect(run(120).state.score).toBe(2);
     expect(run(30)).toEqual(run(120));
     expect(run(60)).toEqual(run(120));
   });
-  it('0.10秒を超すフレームは追いつき計算せず停止し、再開前の時間を捨てる', () => {
+  it('1.50秒を超すフレームは追いつき計算せず停止し、再開前の時間を捨てる', () => {
     const session = createSession(DEFAULT_CONFIG, 7); session.start();
     const timeline = createInputTimeline(INITIAL_PADDLE);
     const reasons: string[] = [];
     const loop = createLoop({ session, timeline, config: DEFAULT_CONFIG, onEvents() {}, onPause: reason => reasons.push(reason) });
     loop.resetClock(0); loop.frame(20);
     const time = session.snapshot().simTime;
-    loop.frame(121);
+    loop.frame(1521);
     expect(session.snapshot()).toMatchObject({ phase: 'paused', simTime: time, pauseReason: 'slow-frame' });
     expect(reasons).toEqual(['slow-frame']);
     loop.frame(10_000);
@@ -51,12 +51,12 @@ describe('実際の固定刻みループ', () => {
     expect(new Set(received.map(e => e.id)).size).toBe(received.length);
   });
 
-  it('入力処理で計算を進めても、0.10秒を超す描画遅延を隠さない', () => {
+  it('入力処理で計算を進めても、1.50秒を超す描画遅延を隠さない', () => {
     const session = createSession(DEFAULT_CONFIG, 7); session.start();
     const loop = createLoop({ session, timeline: createInputTimeline(INITIAL_PADDLE), config: DEFAULT_CONFIG, onEvents() {}, onPause() {} });
     loop.resetClock(0); loop.flushInput(25); loop.flushInput(75);
     const time = session.snapshot().simTime;
-    loop.frame(101);
+    loop.frame(1501);
     expect(session.snapshot()).toMatchObject({ phase: 'paused', simTime: time, pauseReason: 'slow-frame' });
   });
 

@@ -100,6 +100,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     rememberBest(); persist(); swipe.cancel(); silence(); session.reset(seed());
     timeline.clear(INITIAL_PADDLE); audio.reset(session.snapshot().runId);
     loop.resetClock(performance.now()); screens.render(session.snapshot());
+    if(view&&contextAvailable)view.render(session.snapshot(),[]);
   }
   const unbindLifecycle = bindLifecycle({
     canvas: screens.canvas, pause, resize: resizeView,

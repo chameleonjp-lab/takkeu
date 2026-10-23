@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { DEFAULT_CONFIG, INITIAL_PADDLE } from '../../src/game/config';
-import { ballCountAtScore } from '../../src/game/milestones';
+import { ballCountAtScore, MILESTONES } from '../../src/game/milestones';
 import { scheduleReturn } from '../../src/game/scheduler';
 import { incoming, scenario } from '../helpers/scenarios';
 
@@ -60,7 +60,7 @@ describe('多球の接触・落球・累計到達', () => {
   it('4球・上限速度でも決められた中心へ順に移動すれば継続できる', () => {
     const s = scenario(10000);
     for (let id = 1; id <= 4; id++) {
-      const plan = scheduleReturn({ ballId: id, earliestDepartAt: 20, preferredTarget: { x: id % 2 ? -1.05 : 1.05, y: id % 2 ? 0.15 : 0.85 }, speedMultiplier: 2.2, smash: false }, s.snapshot().scheduledReturns, DEFAULT_CONFIG);
+      const plan = scheduleReturn({ ballId: id, earliestDepartAt: 20, preferredTarget: { x: id % 2 ? -1.05 : 1.05, y: id % 2 ? 0.15 : 0.85 }, speedMultiplier: 2.6, score:s.state.score, smash: true }, s.snapshot().scheduledReturns, DEFAULT_CONFIG);
       const from = { x: 0, y: 0.5, z: -DEFAULT_CONFIG.paddleZ };
       s.state.balls.push({ id, phase: 'queued', position: from, from, plan, warningSent: false });
     }
@@ -68,19 +68,21 @@ describe('多球の接触・落球・累計到達', () => {
     for (let tick = 0; tick < 120 * 30; tick++) {
       const next = s.snapshot().scheduledReturns[0];
       warnings += s.step(next?.target ?? s.state.paddle).events.filter(e => e.kind === 'smash-warning').length;
-      expect(s.state.balls.filter(b => b.phase !== 'lost')).toHaveLength(4 + Math.floor((s.state.score - 10000) / 10));
+      expect(s.state.balls.filter(b => b.phase !== 'lost')).toHaveLength(4 + ballCountAtScore(s.state.score) - ballCountAtScore(10000));
     }
     expect(s.state.score).toBeGreaterThan(10030);
     expect(warnings).toBeGreaterThan(0);
   });
-  it('落球でも解放・加速を維持し、確定済み予約は閾値通過でも変わらない', () => {
+  it('落球でも解放を維持し、飛行中の別球も加速する', () => {
     const s = scenario(149);
     const future = incoming(3, 21.5);
     s.state.balls = [incoming(1, 20.004), incoming(2, 19.992, { x: 1, y: 0.5 }, 20, 0.1), future];
     const original = structuredClone(future.plan);
     s.step();
     expect(s.state.score).toBe(150);
-    expect(s.snapshot().scheduledReturns.find(p => p.ballId === 3)).toEqual(original);
+    const changed=s.snapshot().scheduledReturns.find(p => p.ballId === 3)!;
+    expect(changed.arriveAt).toBeLessThan(original.arriveAt);
+    expect(changed.target).toEqual(original.target);
     expect(s.state.progression.appliedMilestones).toContain(150);
   });
 });
@@ -108,7 +110,7 @@ it('160で4球を超えて増え、落球した球を配列に残さずIDを再�
 it('450の無落球47球を30ゲーム秒継続し、追加・スマッシュ・到着余裕を守る', () => {
   const s = scenario(450);
   for (let id = 1; id <= 47; id++) {
-    const plan = scheduleReturn({ ballId: id, earliestDepartAt: 20, preferredTarget: { x: id % 2 ? -0.7 : 0.7, y: 0.5 }, speedMultiplier: 2.2, smash: false }, s.snapshot().scheduledReturns, DEFAULT_CONFIG);
+    const plan = scheduleReturn({ ballId: id, earliestDepartAt: 20, preferredTarget: { x: id % 2 ? -0.7 : 0.7, y: 0.5 }, speedMultiplier: 2.6, score:s.state.score, smash: true }, s.snapshot().scheduledReturns, DEFAULT_CONFIG);
     const from = { x: 0, y: 0.5, z: -DEFAULT_CONFIG.paddleZ };
     s.state.balls.push({ id, phase: 'queued', position: from, from, plan, warningSent: false });
   }
@@ -128,5 +130,5 @@ it('450の無落球47球を30ゲーム秒継続し、追加・スマッシュ・
   }
   expect(s.state.score).toBeGreaterThan(500);
   expect(smashes).toBeGreaterThan(0);
-  expect(s.state.progression.appliedMilestones.length).toBe(20);
+  expect(s.state.progression.appliedMilestones.length).toBe(MILESTONES.filter(n => n<=s.state.score).length);
 });

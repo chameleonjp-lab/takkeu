@@ -19,7 +19,7 @@ it('相手側は暗闇に隠し、自側と不可視の相手の返球計算を�
   expect(objects.opponentBody.visible).toBe(false);
   expect(objects.playerCourt.visible).toBe(true);
   expect(isBallVisible(session.snapshot().balls[0]!)).toBe(false);
-  const events = advance(session, 5.3);
+  const events = advance(session, 4.0);
   expect(events.filter(e => e.kind === 'opponent-hit')).toHaveLength(2);
   expect(session.snapshot().score).toBe(1);
   expect(isBallVisible({ id: 1, phase: 'incoming', position: { x: 0, y: 0.5, z: 0 }, smash: false })).toBe(true);
