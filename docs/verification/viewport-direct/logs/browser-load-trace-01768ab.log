@@ -1,0 +1,24 @@
+[WebServer] (node:24284) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:24297) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:24321) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  1 [chromium] › tests/browser/quality.spec.ts:15:1 › 開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む (2.5m)
+  ✓  2 [chromium] › tests/browser/quality.spec.ts:95:1 › 450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する (2.3m)
+(node:24575) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  3 [webkit] › tests/browser/quality.spec.ts:15:1 › 開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む (45.6s)
+  ✓  4 [webkit] › tests/browser/quality.spec.ts:95:1 › 450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する (1.0m)
+
+  4 passed (7.0m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

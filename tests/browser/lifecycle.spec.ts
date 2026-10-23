@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
 
 test('通常の指離れ・2本目・追跡喪失・回転で入力が残らない', async ({ page }, testInfo) => {
   const surface = page.getByTestId('input-surface');
-  const down = { pointerId: 1, pointerType: 'touch', button: 0, clientX: 120, clientY: 300 };
+  const down = { pointerId: 1, pointerType: 'touch', isPrimary: true, button: 0, clientX: 120, clientY: 300 };
   await surface.dispatchEvent('pointerdown', down);
   await surface.dispatchEvent('pointermove', { ...down, clientX: 145, clientY: 290 });
   await page.clock.runFor(100);
@@ -22,6 +22,8 @@ test('通常の指離れ・2本目・追跡喪失・回転で入力が残らな�
   await page.clock.runFor(100);
   expect(await page.evaluate(() => window.stage3.snapshot().paddle)).toEqual(released.paddle);
   expect(released.phase).toBe('running');
+  // The extra finger cannot inherit ownership; lift it before a new gesture.
+  await surface.dispatchEvent('pointerup', { ...down, pointerId: 2 });
   await surface.dispatchEvent('pointerdown', down);
   await surface.dispatchEvent('lostpointercapture', down);
   await expect(page.getByRole('heading', { name: 'ひと休み' })).toBeVisible();

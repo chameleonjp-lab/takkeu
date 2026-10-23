@@ -1,0 +1,44 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/swipe.test.ts tests/unit/pointer-mapping.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/swipe.test.ts (30 tests | 2 failed) 77ms
+   ❯ direct paddle pointer ownership (21)
+     × ignores mouse hover or nonprimary-button movement after a primary press 9ms
+     × ignores pen hover or nonprimary-button movement after a primary press 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > ignores mouse hover or nonprimary-button movement after a primary press
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > ignores pen hover or nonprimary-button movement after a primary press
+AssertionError: expected [ 'place', 'move', 'move', 'release' ] to deeply equal [ 'place', 'release' ]
+
+- Expected
++ Received
+
+  [
+    "place",
++   "move",
++   "move",
+    "release",
+  ]
+
+ ❯ tests/unit/swipe.test.ts:97:48
+     95|     pointer('pointermove', 170, 60, { type, buttons: 2 });
+     96|     pointer('pointerup', 170, 60, { type });
+     97|     expect(samples.map(sample => sample.kind)).toEqual(['place', 'rele…
+       |                                                ^
+     98|     expect(samples.map(sample => sample.target.x)).toEqual([-0.5, -0.5…
+     99|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  2 failed | 41 passed (43)
+   Start at  19:21:04
+   Duration  1.14s (environment 66%, tests 20%, transform 7%, import 6%)
+

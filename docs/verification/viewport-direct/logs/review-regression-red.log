@@ -1,0 +1,101 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/direct-contact.test.ts (18 tests | 3 failed) 23ms
+   ❯ 時刻付き絶対操作と可視接触 (15)
+     × release→同時刻の再配置でも直前のドラッグ終端接触を確定する（1球） 7ms
+     × release→同時刻の再配置でも直前のドラッグ終端接触を確定する（2球） 2ms
+     × 同時刻ドラッグの発光位置も終点ではなく接触時のラケット中心を使う 1ms
+ ❯ tests/unit/pointer-loop.test.ts (5 tests | 1 failed) 66ms
+   × 配送が遅れたmove/release/downと停止前のイベントを新しい時刻へ付け替えない 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > release→同時刻の再配置でも直前のドラッグ終端接触を確定する（1球）
+AssertionError: expected [] to deeply equal [ 1 ]
+
+- Expected
++ Received
+
+- [
+-   1,
+- ]
++ []
+
+ ❯ tests/unit/direct-contact.test.ts:66:37
+     64|     const result = step(s, [{ kind: 'move', at: 1.99, target: tangent …
+     65|     const hits = result.events.filter(e => e.kind === 'player-hit');
+     66|     expect(hits.map(e => e.ballId)).toEqual(count === 2 ? [1, 2] : [1]…
+       |                                     ^
+     67|     for (const hit of hits) expect(hit.time).toBeCloseTo(t, 12);
+     68|     expect(result.snapshot.paddle).toEqual(point(.7, .85));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > release→同時刻の再配置でも直前のドラッグ終端接触を確定する（2球）
+AssertionError: expected [] to deeply equal [ 1, 2 ]
+
+- Expected
++ Received
+
+- [
+-   1,
+-   2,
+- ]
++ []
+
+ ❯ tests/unit/direct-contact.test.ts:66:37
+     64|     const result = step(s, [{ kind: 'move', at: 1.99, target: tangent …
+     65|     const hits = result.events.filter(e => e.kind === 'player-hit');
+     66|     expect(hits.map(e => e.ballId)).toEqual(count === 2 ? [1, 2] : [1]…
+       |                                     ^
+     67|     for (const hit of hits) expect(hit.time).toBeCloseTo(t, 12);
+     68|     expect(result.snapshot.paddle).toEqual(point(.7, .85));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > 同時刻ドラッグの発光位置も終点ではなく接触時のラケット中心を使う
+AssertionError: expected 0.7 to be less than 0
+ ❯ tests/unit/direct-contact.test.ts:76:29
+     74|     const hit = result.events.find(e => e.kind === 'player-hit')!;
+     75|     expect(hit.effect).toBe('racket-firework');
+     76|     expect(hit.position!.x).toBeLessThan(0);
+       |                             ^
+     77|     expect(Math.hypot(hit.position!.x - p.x, hit.position!.y - p.y)).t…
+     78|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/unit/pointer-loop.test.ts > 配送が遅れたmove/release/downと停止前のイベントを新しい時刻へ付け替えない
+AssertionError: expected { x: 0.7, y: 0.5 } to deeply equal { x: -0.5, y: 0.5 }
+
+- Expected
++ Received
+
+  {
+-   "x": -0.5,
++   "x": 0.7,
+    "y": 0.5,
+  }
+
+ ❯ tests/unit/pointer-loop.test.ts:118:54
+    116|   const held = session.snapshot().paddle;
+    117|   pointer('pointermove', 5, 170); pointer('pointerup', 6, 170); pointe…
+    118|   loop.frame(120); expect(session.snapshot().paddle).toEqual(held);
+       |                                                      ^
+    119|   // A genuinely new contact still works after stale release/recontact.
+    120|   pointer('pointerdown', 121, 160); pointer('pointerup', 122, 160); lo…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  4 failed | 19 passed (23)
+   Start at  19:34:07
+   Duration  748ms (environment 68%, transform 14%, tests 12%, import 6%, worker 1%)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

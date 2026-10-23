@@ -1,0 +1,54 @@
+[WebServer] (node:19153) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:19166) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 28 tests using 1 worker
+
+(node:19190) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/basic-play.spec.ts:12:1 › 開始→直接配置・ドラッグ→返球→失球→結果→再挑戦 (22.0s)
+  ✓   2 [chromium] › tests/browser/basic-play.spec.ts:48:1 › 停止中は描画を保持し、再開操作でだけ進む (29.3s)
+  ✓   3 [chromium] › tests/browser/basic-play.spec.ts:64:1 › タッチの絶対位置ドラッグでラケットを動かせる (10.2s)
+  ✓   4 [chromium] › tests/browser/contact.spec.ts:35:1 › ワンバウンド後の見える球にラケットを合わせれば返球できる (12.1s)
+  ✓   5 [chromium] › tests/browser/contact.spec.ts:56:1 › 見えている球にドラッグで合わせ、3ラリーをつなげる (37.3s)
+  ✓   6 [chromium] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844 (3.1s)
+  ✓   7 [chromium] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390 (3.2s)
+  ✓   8 [chromium] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720 (6.2s)
+  ✓   9 [chromium] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360 (2.6s)
+  ✓  10 [chromium] › tests/browser/direct-input.spec.ts:66:1 › 二本指は両releaseで停止し、追加指やドラッグでは停止しない (1.2s)
+  ✓  11 [chromium] › tests/browser/direct-input.spec.ts:95:1 › 情報上の入力・safe area・resize連発・メニューに古い入力が残らない (1.2s)
+  ✓  12 [chromium] › tests/browser/smash.spec.ts:5:1 › 450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない (13.1s)
+(node:19888) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  13 [chromium] › tests/browser/quality.spec.ts:48:1 › 縦横・44pxボタン・200%文字・ラベル・安全余白を確認 (4.1s)
+  ✓  14 [chromium] › tests/browser/quality.spec.ts:92:1 › 450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する (2.9m)
+(node:20120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  15 [webkit] › tests/browser/basic-play.spec.ts:12:1 › 開始→直接配置・ドラッグ→返球→失球→結果→再挑戦 (14.0s)
+  ✓  16 [webkit] › tests/browser/basic-play.spec.ts:48:1 › 停止中は描画を保持し、再開操作でだけ進む (8.5s)
+  ✓  17 [webkit] › tests/browser/basic-play.spec.ts:64:1 › タッチの絶対位置ドラッグでラケットを動かせる (5.1s)
+  ✓  18 [webkit] › tests/browser/contact.spec.ts:35:1 › ワンバウンド後の見える球にラケットを合わせれば返球できる (6.4s)
+  ✓  19 [webkit] › tests/browser/contact.spec.ts:56:1 › 見えている球にドラッグで合わせ、3ラリーをつなげる (11.2s)
+  ✓  20 [webkit] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844 (5.8s)
+  ✓  21 [webkit] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390 (5.9s)
+  ✓  22 [webkit] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720 (9.6s)
+  ✓  23 [webkit] › tests/browser/direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360 (4.1s)
+  ✓  24 [webkit] › tests/browser/direct-input.spec.ts:66:1 › 二本指は両releaseで停止し、追加指やドラッグでは停止しない (3.3s)
+  ✓  25 [webkit] › tests/browser/direct-input.spec.ts:95:1 › 情報上の入力・safe area・resize連発・メニューに古い入力が残らない (3.5s)
+  ✓  26 [webkit] › tests/browser/smash.spec.ts:5:1 › 450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない (7.1s)
+(node:21101) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  27 [webkit] › tests/browser/quality.spec.ts:48:1 › 縦横・44pxボタン・200%文字・ラベル・安全余白を確認 (7.5s)
+  ✓  28 [webkit] › tests/browser/quality.spec.ts:92:1 › 450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する (1.0m)
+
+  28 passed (8.4m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

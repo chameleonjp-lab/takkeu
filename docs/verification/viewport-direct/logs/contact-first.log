@@ -1,0 +1,57 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/direct-contact.test.ts (12 tests | 2 failed) 19ms
+   ❯ 時刻付き絶対操作と可視接触 (12)
+     × 入力前に失った球を配置やドラッグで復活させない 6ms
+     × 未来・NaN・確定済み区間の入力を計算へ混入させない 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > 入力前に失った球を配置やドラッグで復活させない
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/direct-contact.test.ts:86:63
+     84|     const s = fixture(3);
+     85|     const result = step(s, [sample('place', 3.004, 0, .15), sample('mo…
+     86|     expect(result.events.filter(e => e.kind === 'ball-lost')).toHaveLe…
+       |                                                               ^
+     87|     expect(result.events.filter(e => e.kind === 'player-hit')).toHaveL…
+     88|     expect(result.snapshot.phase).toBe('gameover');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > 未来・NaN・確定済み区間の入力を計算へ混入させない
+AssertionError: expected { x: -0.6382942652065406, y: 0.5 } to deeply equal { x: -0.7, y: 0.5 }
+
+- Expected
++ Received
+
+  {
+-   "x": -0.7,
++   "x": -0.6382942652065406,
+    "y": 0.5,
+  }
+
+ ❯ tests/unit/direct-contact.test.ts:97:28
+     95|     const s = fixture();
+     96|     step(s, [sample('place', 1, 0), sample('place', 2.5, 0), sample('m…
+     97|     expect(s.state.paddle).toEqual(point(-.7));
+       |                            ^
+     98|     expect(s.state.score).toBe(0);
+     99|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  2 failed | 19 passed (21)
+   Start at  19:15:37
+   Duration  312ms (transform 41%, tests 39%, import 16%, worker 4%)
+

@@ -1,0 +1,208 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/direct-contact.test.ts (12 tests | 10 failed) 20ms
+   ❯ 時刻付き絶対操作と可視接触 (12)
+     × 配置の瞬間移動経路では返さず、指定時刻から新位置に留まる 9ms
+     × 配置先の正当な重なりは配置時刻に返す 1ms
+     × ドラッグで球を横切る経路は入力後だけを調べ、終端は目標に一致する 2ms
+     × 同じ刻みのdown→move→releaseを最後の目標にまとめず処理する 1ms
+     × 同時刻のmove→releaseでも通常ドラッグの経路を保持する 1ms
+     × 離した後も最終位置のラケットで接触できる 1ms
+     × バウンドと配置が同時ならバウンド→新位置の接触となる 1ms
+     × 入力前に失った球を配置やドラッグで復活させない 1ms
+     × 未来・NaN・確定済み区間の入力を計算へ混入させない 1ms
+     × 現行最速の漸近球速・540以後スマッシュでも有効接触を拾い二重得点しない 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > 配置の瞬間移動経路では返さず、指定時刻から新位置に留まる
+AssertionError: expected { x: -0.6499999999999999, y: 0.5 } to deeply equal { x: 0.7, y: 0.5 }
+
+- Expected
++ Received
+
+  {
+-   "x": 0.7,
++   "x": -0.6499999999999999,
+    "y": 0.5,
+  }
+
+ ❯ tests/unit/direct-contact.test.ts:26:36
+     24|     const s = fixture(), t = s.state.simTime + .003;
+     25|     const result = step(s, [sample('place', t, .7)]);
+     26|     expect(result.snapshot.paddle).toEqual(point(.7));
+       |                                    ^
+     27|     expect(result.events.filter(e => e.kind === 'player-hit')).toHaveL…
+     28|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > 配置先の正当な重なりは配置時刻に返す
+AssertionError: expected undefined to be close to 1.9929999999999999, received difference is NaN, but expected 5e-13
+ ❯ tests/unit/direct-contact.test.ts:33:23
+     31|     const result = step(s, [sample('place', t, 0)]);
+     32|     const hit = result.events.find(e => e.kind === 'player-hit');
+     33|     expect(hit?.time).toBeCloseTo(t, 12);
+       |                       ^
+     34|     expect(hit?.position).toEqual({ ...point(0), z: config.paddleZ });
+     35|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > ドラッグで球を横切る経路は入力後だけを調べ、終端は目標に一致する
+TypeError: actual value must be number or bigint, received "undefined"
+ ❯ tests/unit/direct-contact.test.ts:40:23
+     38|     const result = step(s, [sample('move', t, .7)]);
+     39|     const hit = result.events.find(e => e.kind === 'player-hit');
+     40|     expect(hit?.time).toBeGreaterThanOrEqual(t);
+       |                       ^
+     41|     expect(hit?.time).toBeLessThan(s.state.simTime);
+     42|     expect(result.snapshot.paddle).toEqual(point(.7));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > 同じ刻みのdown→move→releaseを最後の目標にまとめず処理する
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/direct-contact.test.ts:47:64
+     45|     const s = fixture(), t = s.state.simTime;
+     46|     const result = step(s, [sample('place', t + .001, -.7), sample('mo…
+     47|     expect(result.events.filter(e => e.kind === 'player-hit')).toHaveL…
+       |                                                                ^
+     48|     expect(result.events.find(e => e.kind === 'player-hit')!.time).toB…
+     49|     expect(result.events.find(e => e.kind === 'player-hit')!.time).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > 同時刻のmove→releaseでも通常ドラッグの経路を保持する
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/direct-contact.test.ts:56:64
+     54|     const s = fixture(), t = s.state.simTime + .003;
+     55|     const result = step(s, [sample('place', t, -.7), sample('move', t,…
+     56|     expect(result.events.filter(e => e.kind === 'player-hit')).toHaveL…
+       |                                                                ^
+     57|     expect(result.snapshot.paddle).toEqual(point(.7));
+     58|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > 離した後も最終位置のラケットで接触できる
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/direct-contact.test.ts:64:57
+     62|     step(s, [{ kind: 'place', at: t, target: p }, { kind: 'release', a…
+     63|     const events = Array.from({ length: 6 }, () => step(s, []).events)…
+     64|     expect(events.filter(e => e.kind === 'player-hit')).toHaveLength(1…
+       |                                                         ^
+     65|     expect(s.state.paddle).toEqual(clampPaddle(p, config));
+     66|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > バウンドと配置が同時ならバウンド→新位置の接触となる
+AssertionError: expected [ 'table-bounce' ] to deeply equal [ 'table-bounce', 'player-hit' ]
+
+- Expected
++ Received
+
+  [
+    "table-bounce",
+-   "player-hit",
+  ]
+
+ ❯ tests/unit/direct-contact.test.ts:71:56
+     69|     const p = projectBall(sampleReturn(ball.plan, ball.from, t), confi…
+     70|     const result = step(s, [{ kind: 'place', at: t, target: p }]);
+     71|     expect(result.events.slice(0, 2).map(e => e.kind)).toEqual(['table…
+       |                                                        ^
+     72|     expect(result.events[1]!.time).toBeCloseTo(t, 12);
+     73|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/10]⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > 入力前に失った球を配置やドラッグで復活させない
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/direct-contact.test.ts:86:63
+     84|     const s = fixture(3);
+     85|     const result = step(s, [sample('place', 3.004, 0, .15), sample('mo…
+     86|     expect(result.events.filter(e => e.kind === 'ball-lost')).toHaveLe…
+       |                                                               ^
+     87|     expect(result.events.filter(e => e.kind === 'player-hit')).toHaveL…
+     88|     expect(result.snapshot.phase).toBe('gameover');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/10]⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > 未来・NaN・確定済み区間の入力を計算へ混入させない
+AssertionError: expected { x: -0.6499999999999999, y: 0.5 } to deeply equal { x: -0.7, y: 0.5 }
+
+- Expected
++ Received
+
+  {
+-   "x": -0.7,
++   "x": -0.6499999999999999,
+    "y": 0.5,
+  }
+
+ ❯ tests/unit/direct-contact.test.ts:97:28
+     95|     const s = fixture();
+     96|     step(s, [sample('place', 1, 0), sample('place', 2.5, 0), sample('m…
+     97|     expect(s.state.paddle).toEqual(point(-.7));
+       |                            ^
+     98|     expect(s.state.score).toBe(0);
+     99|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/10]⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 時刻付き絶対操作と可視接触 > 現行最速の漸近球速・540以後スマッシュでも有効接触を拾い二重得点しない
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/direct-contact.test.ts:109:64
+    107|     const p = projectBall(sampleReturn(s.state.balls[0]!.plan, s.state…
+    108|     const result = step(s, [{ kind: 'place', at: t, target: p }]);
+    109|     expect(result.events.filter(e => e.kind === 'player-hit')).toHaveL…
+       |                                                                ^
+    110|     const more = Array.from({ length: 10 }, () => step(s, []).events).…
+    111|     expect(more.filter(e => e.kind === 'player-hit')).toHaveLength(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/10]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  10 failed | 2 passed (12)
+   Start at  19:14:45
+   Duration  318ms (transform 72%, tests 14%, import 12%, worker 2%)
+

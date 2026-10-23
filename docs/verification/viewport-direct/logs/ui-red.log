@@ -1,0 +1,820 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/screens-direct.test.ts tests/unit/warning-ui.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/screens-direct.test.ts (8 tests | 7 failed) 285ms
+   × running exposes the focusable canvas without a header, pad, links, or persistent controls 153ms
+   × Escape pauses running play and only explicit resume returns focus to the canvas 27ms
+   × hidden screens are inert and home explains direct placement, release hold, and both pause gestures 18ms
+   × settings and pause share sound state, volume, and an explicit audio retry without sensitivity changes 13ms
+   × the pause focus trap includes the volume slider and leaves the canvas inert 23ms
+   × a context loss keeps enabled pause actions and volume reachable 23ms
+   × audio failure remains visible inside the active pause dialog and clears after recovery 17ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/screens-direct.test.ts > running exposes the focusable canvas without a header, pad, links, or persistent controls
+AssertionError: expected <header class="game-header">…(2)</header> to be null
+
+- Expected:
+null
+
++ Received:
+<header
+  class="game-header"
+>
+  <a
+    class="wordmark"
+    data-action="home"
+    href="#"
+  >
+    タッケウ
+    <span
+      aria-hidden="true"
+    >
+      .
+    </span>
+  </a>
+  <div
+    class="game-tools"
+  >
+    <button
+      class="button icon-button"
+      data-action="sound"
+      type="button"
+    >
+      音：オン
+    </button>
+    <button
+      aria-label="一時停止"
+      class="button pause-button"
+      data-action="pause"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        Ⅱ
+      </span>
+      <span>
+        一時停止
+      </span>
+    </button>
+  </div>
+</header>
+
+ ❯ tests/unit/screens-direct.test.ts:28:134
+     26| it('running exposes the focusable canvas without a header, pad, links,…
+     27|   const { root, screens, render, get } = setup(); render('running');
+     28|   expect(get('[data-game]').querySelector('.game-header, .input-pad, .…
+       |                                                                                                                                      ^
+     29|   expect(screens.canvas.tabIndex).toBe(0);
+     30|   expect(document.activeElement).toBe(screens.canvas);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  tests/unit/screens-direct.test.ts > Escape pauses running play and only explicit resume returns focus to the canvas
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/screens-direct.test.ts:40:77
+     38|   const { actions, screens, render, get } = setup(); render('ready');
+     39|   get('[data-action="start"]').click(); expect(actions.start).toHaveBe…
+     40|   render('running'); expect(key(screens.canvas, 'Escape').defaultPreve…
+       |                                                                             ^
+     41|   expect(actions.pause).toHaveBeenCalledTimes(1);
+     42|   render('paused'); const resume = get('[data-action="resume"]');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  tests/unit/screens-direct.test.ts > hidden screens are inert and home explains direct placement, release hold, and both pause gestures
+AssertionError: expected undefined to be true // Object.is equality
+
+- Expected:
+true
+
++ Received:
+undefined
+
+ ❯ tests/unit/screens-direct.test.ts:53:126
+     51| it('hidden screens are inert and home explains direct placement, relea…
+     52|   const { actions, render, get } = setup(); render('running');
+     53|   for (const selector of ['[data-home]', '[data-settings]', '[data-res…
+       |                                                                                                                              ^
+     54|   get('[data-home] [data-action="start"]').click(); expect(actions.sta…
+     55|   render('ready');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+ FAIL  tests/unit/screens-direct.test.ts > settings and pause share sound state, volume, and an explicit audio retry without sensitivity changes
+TypeError: Cannot read properties of null (reading 'textContent')
+ ❯ tests/unit/screens-direct.test.ts:72:57
+     70|     expect(get<HTMLInputElement>(`${section} [aria-label="効果音の音量"]`).v…
+     71|     expect(get(`${section} [data-action="sound"]`).textContent).toBe('…
+     72|     expect(get(`${section} [data-action="retry-audio"]`).textContent).…
+       |                                                         ^
+     73|   }
+     74|   render('ready'); get('[data-action="settings"]').click();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+
+ FAIL  tests/unit/screens-direct.test.ts > the pause focus trap includes the volume slider and leaves the canvas inert
+AssertionError: expected undefined to be true // Object.is equality
+
+- Expected:
+true
+
++ Received:
+undefined
+
+ ❯ tests/unit/screens-direct.test.ts:89:71
+     87|   const { screens, render, get } = setup(); render('paused');
+     88|   const first = get('[data-action="resume"]'), last = get<HTMLInputEle…
+     89|   expect(screens.surface.inert).toBe(true); expect(get('.hud').inert).…
+       |                                                                       ^
+     90|   first.focus(); expect(key(first, 'Tab', true).defaultPrevented).toBe…
+     91|   expect(key(last, 'Tab').defaultPrevented).toBe(true); expect(documen…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯
+
+ FAIL  tests/unit/screens-direct.test.ts > a context loss keeps enabled pause actions and volume reachable
+AssertionError: expected <body><div>…(1)</div></body> to be <button type="button" …(2)></button> // Object.is equality
+
+- Expected
++ Received
+
++ <body>
++   <div>
++     
++     
++     <main
++       class="shell"
++     >
++       
++       
++       <section
++         class="home-screen"
++         data-home=""
++         hidden=""
++       >
++         
++         
++         <header
++           class="brand"
++         >
++           <span
++             aria-hidden="true"
++             class="brand-mark"
++           >
++             t.
++           </span>
++           <span>
++             TAKKEU
++           </span>
++           <span
++             class="brand-note"
++           >
++             卓球の、その先へ。
++           </span>
++         </header>
++         
++         
++         <div
++           class="home-hero"
++         >
++           
++           
++           <div
++             class="hero-copy"
++           >
++             
++             
++             <p
++               class="eyebrow"
++             >
++               <span
++                 class="status-dot"
++               />
++                ONE BALL. ENDLESS RALLY.
++             </p>
++             
++             
++             <h1>
++               タッケウ
++               <span
++                 aria-hidden="true"
++                 class="title-dot"
++               >
++                 .
++               </span>
++             </h1>
++             
++             
++             <p
++               class="hero-lead"
++             >
++               ワンバウンドをとらえて、
++               <br />
++               ラリーをつなぐ。
++             </p>
++             
++             
++             <p
++               class="hero-description"
++             >
++               指をすべらせて、ラケットを球に合わせる。
++               <br />
++               自分の台で一度弾んだ球に触れれば、打ち返せます。
++             </p>
++             
++             
++             <button
++               class="button primary start-button"
++               data-action="start"
++               type="button"
++             >
++               はじめる 
++               <span
++                 aria-hidden="true"
++               >
++                 ↗
++               </span>
++             </button>
++             
++             
++             <p
++               class="start-note"
++             >
++               スマホはスワイプ・PCはドラッグ
++             </p>
++             
++           
++           </div>
++           
++           
++           <div
++             aria-hidden="true"
++             class="home-art"
++           >
++             <img
++               alt=""
++               decoding="async"
++               height="415"
++               src="/src/ui/court-preview.png"
++               width="600"
++             />
++           </div>
++           
++         
++         </div>
++         
++         
++         <div
++           aria-label="遊び方"
++           class="how-to"
++         >
++           
++           
++           <div>
++             <span
++               class="step-number"
++             >
++               01
++             </span>
++             <p>
++               <strong>
++                 指を置く
++               </strong>
++               <span>
++                 画面の好きな場所から。
++               </span>
++             </p>
++           </div>
++           
++           
++           <div>
++             <span
++               class="step-number"
++             >
++               02
++             </span>
++             <p>
++               <strong>
++                 動かす
++               </strong>
++               <span>
++                 左右・上下へスワイプ。
++               </span>
++             </p>
++           </div>
++           
++           
++           <div>
++             <span
++               class="step-number"
++             >
++               03
++             </span>
++             <p>
++               <strong>
++                 つなぐ
++               </strong>
++               <span>
++                 自分の返球で +1 ラリー。
++               </span>
++             </p>
++           </div>
++           
++         
++         </div>
++         
++         
++         <footer
++           class="home-footer"
++         >
++           <p>
++             自己ベスト 
++             <output
++               aria-label="自己ベスト"
++               data-best=""
++             >
++               0
++             </output>
++              ラリー
++           </p>
++           <button
++             class="button subtle"
++             data-action="settings"
++             type="button"
++           >
++             設定
++           </button>
++         </footer>
++         
++       
++       </section>
++       
++
++       
++       <section
++         aria-labelledby="settings-title"
++         class="settings-screen"
++         data-settings=""
++         hidden=""
++       >
++         <p
++           class="eyebrow"
++         >
++           PREFERENCES
++         </p>
++         <h2
++           id="settings-title"
++           tabindex="-1"
++         >
++           設定
++         </h2>
++         <p>
++           指の動かしやすさと音を調整できます。
++         </p>
++         <div
++           class="settings-fields"
++         >
++           <button
++             class="button subtle"
++             data-action="sound"
++             type="button"
++           >
++             音：オン
++           </button>
++           <label>
++             効果音の音量
++             <input
++               aria-label="効果音の音量"
++               max="1"
++               min="0"
++               step="0.05"
++               type="range"
++               value="0.65"
++             />
++           </label>
++           <label>
++             操作感度 
++             <output
++               data-sensitivity-value=""
++             >
++               1.0
++             </output>
++             <input
++               aria-label="操作感度"
++               max="2"
++               min="0.5"
++               step="0.1"
++               type="range"
++               value="1"
++             />
++           </label>
++           <label>
++             描画品質
++             <select
++               aria-label="描画品質"
++             >
++               <option
++                 value="standard"
++               >
++                 標準
++               </option>
++               <option
++                 value="low"
++               >
++                 低負荷
++               </option>
++             </select>
++           </label>
++         </div>
++         <button
++           class="button primary"
++           data-action="settings-back"
++           type="button"
++         >
++           戻る
++         </button>
++       </section>
++       
++
++       
++       <section
++         class="game-screen"
++         data-game=""
++         data-testid="game-screen"
++       >
++         
++         
++         <header
++           class="game-header"
++         >
++           <a
++             class="wordmark"
++             data-action="home"
++             href="#"
++           >
++             タッケウ
++             <span
++               aria-hidden="true"
++             >
++               .
++             </span>
++           </a>
++           <div
++             class="game-tools"
++           >
+              <button
++               class="button icon-button"
++               data-action="sound"
++               type="button"
++             >
++               音：オン
++             </button>
++             <button
++               aria-label="一時停止"
++               class="button pause-button"
++               data-action="pause"
++               type="button"
++             >
++               <span
++                 aria-hidden="true"
++               >
++                 Ⅱ
++               </span>
++               <span>
++                 一時停止
++               </span>
++             </button>
++           </div>
++         </header>
++         
++         
++         <div
++           class="hud"
++         >
++           <div>
++             <span
++               class="eyebrow"
++             >
++               RALLY
++             </span>
++             <output
++               aria-label="ラリー数"
++               aria-live="off"
++               class="rally-number"
++               data-score=""
++             >
++               0
++             </output>
++           </div>
++           <div
++             class="balls-counter"
++           >
++             <span
++               class="eyebrow"
++             >
++               残球数
++             </span>
++             <output
++               aria-label="残球数"
++               aria-live="off"
++               data-balls=""
++             >
++               0
++             </output>
++           </div>
++           <p
++             class="smash-warning"
++             data-smash-warning=""
++             hidden=""
++             role="status"
++           >
++             スマッシュがくる！
++           </p>
++           <p
++             class="hud-note"
++             data-hud-note=""
++           >
++             ひとつずつ、
++             <br />
++             つないでいこう。
++           </p>
++         </div>
++         
++         
++         <div
++           class="play-frame"
++         >
++           <div
++             class="input-surface"
++             data-testid="input-surface"
++           >
++             <div
++               class="canvas-wrap"
++             >
++               <canvas
++                 aria-label="卓球ゲームの描画領域"
++               />
++               <span
++                 aria-hidden="true"
++                 class="court-caption"
++               >
++                 ONE BOUNCE · RETURN
++               </span>
++             </div>
++             <div
++               class="input-pad"
++             >
++               <span
++                 aria-hidden="true"
++                 class="swipe-symbol"
++               >
++                 ↔
++               </span>
++               <p>
++                 ここからも操作できます
++                 <span>
++                   指を置いたまま、左右・上下へ
++                 </span>
++               </p>
++               <span
++                 aria-hidden="true"
++                 class="pad-cross"
++               >
++                 ＋
++               </span>
++             </div>
++           </div>
++           
++           
++           <div
++             aria-labelledby="pause-title"
++             aria-modal="true"
++             class="pause-overlay"
++             role="dialog"
++           >
++             <div
++               class="pause-card"
++             >
++               <p
++                 class="eyebrow"
++               >
++                 PAUSE
++               </p>
++               <h2
++                 id="pause-title"
++               >
++                 ひと休み
++               </h2>
++               <p
++                 data-pause-message=""
++               >
++                 深呼吸したら、またつづきから。
++               </p>
++               <button
++                 class="button primary"
++                 data-action="resume"
++                 disabled=""
++                 type="button"
++               >
++                 つづける 
++                 <span
++                   aria-hidden="true"
++                 >
++                   →
++                 </span>
++               </button>
++               <button
++                 class="button subtle"
++                 data-action="retry"
++                 disabled=""
++                 type="button"
++               >
++                 最初からやり直す
++               </button>
++               <button
+                  class="text-button"
+                  data-action="home"
+                  type="button"
+                >
+                  ホームへ
+                </button>
++             </div>
++           </div>
++           
++         
++         </div>
++         
++         
++         <p
++           class="game-hint"
++         >
++           <span
++             class="status-dot"
++           />
++            ワンバウンドした球にラケットを合わせよう。
++         </p>
++         
++       
++       </section>
++       
++
++       
++       <section
++         class="result-screen"
++         data-result=""
++         hidden=""
++       >
++         <span
++           aria-hidden="true"
++           class="brand-mark"
++         >
++           t.
++         </span>
++         <p
++           class="eyebrow"
++         >
++           RALLY COMPLETE
++         </p>
++         <h2>
++           ナイスラリー！
++         </h2>
++         <p
++           class="result-label"
++         >
++           今回のラリー数
++         </p>
++         <output
++           aria-label="今回のラリー数"
++           class="result-score"
++           data-result-score=""
++         >
++           0
++         </output>
++         <p>
++           自己ベスト 
++           <output
++             aria-label="自己ベスト"
++             data-best=""
++           >
++             0
++           </output>
++            ラリー
++         </p>
++         <p
++           class="result-message"
++         >
++           もう1ラリー、つないでみよう。
++         </p>
++         <button
++           class="button primary"
++           data-action="retry"
++           disabled=""
++           type="button"
++         >
++           もう一度 
++           <span
++             aria-hidden="true"
++           >
++             ↗
++           </span>
++         </button>
++         <button
++           class="button subtle"
++           data-action="home"
++           type="button"
++         >
++           ホームへ
++         </button>
++       </section>
++       
++       
++       <p
++         class="notice"
++         data-audio-notice=""
++         hidden=""
++         role="status"
++       >
++         音声を利用できません。無音でも遊べます。音ボタンで再試行できます。
++       </p>
++       
++       
++       <p
++         class="error-banner"
++         data-error=""
++         hidden=""
++         role="alert"
++       />
++       
++       
++       <p
++         class="notice"
++         data-storage-notice=""
++         hidden=""
++         role="status"
++       >
++         この端末に保存できません。開いている間は設定と自己ベストを保持します。
++       </p>
++       
++       
++       <p
++         aria-live="polite"
++         class="sr-only"
++         data-status=""
++         role="status"
++       >
++         一時停止中。再開ボタンで続けられます。
++       </p>
++       
++     
++     </main>
++   </div>
++ </body>
+
+ ❯ tests/unit/screens-direct.test.ts:99:34
+     97|   const home = get('[role="dialog"] [data-action="home"]'), volume = g…
+     98|   expect(get<HTMLButtonElement>('[data-action="resume"]').disabled).to…
+     99|   expect(document.activeElement).toBe(home);
+       |                                  ^
+    100|   key(home, 'Tab', true); expect(document.activeElement).toBe(volume);
+    101|   key(volume, 'Tab'); expect(document.activeElement).toBe(home);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/7]⎯
+
+ FAIL  tests/unit/screens-direct.test.ts > audio failure remains visible inside the active pause dialog and clears after recovery
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/screens-direct.test.ts:107:89
+    105|   const { screens, render, get } = setup(); render('running'); screens…
+    106|   expect(get('[data-audio-notice]').hidden).toBe(false);
+    107|   render('paused'); expect(get('[role="dialog"]').contains(get('[data-…
+       |                                                                                         ^
+    108|   expect(get('[data-audio-notice]').closest('[inert]')).toBeNull();
+    109|   screens.setAudioReady(true); expect(get('[data-audio-notice]').hidde…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/7]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  7 failed | 2 passed (9)
+   Start at  19:15:32
+   Duration  1.03s (environment 58%, tests 25%, transform 14%, import 3%)
+

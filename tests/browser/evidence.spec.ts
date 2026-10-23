@@ -16,14 +16,15 @@ test.describe('画面の証拠', () => {
     // Observe before the faster first bounce (1.44s), then deliberately miss it.
     await page.clock.runFor(1250);
     await page.screenshot({ path: testInfo.outputPath('playing.png') });
-    await page.getByRole('button', { name: '一時停止', exact: true }).click();
+    await page.keyboard.press('Escape');
     await page.screenshot({ path: testInfo.outputPath('paused.png') });
     await page.setViewportSize({ width: 844, height: 390 });
     await page.clock.runFor(32);
     await page.getByRole('button', { name: 'つづける', exact: true }).click();
     await page.clock.runFor(32);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    await expect(page.getByRole('button', { name: '一時停止', exact: true })).toBeInViewport();
+    await expect(page.locator('canvas')).toBeInViewport();
+    await expect(page.locator('canvas')).toBeFocused();
     await page.screenshot({ path: testInfo.outputPath('landscape.png') });
     const surface = page.getByTestId('input-surface');
     const box = (await surface.boundingBox())!;

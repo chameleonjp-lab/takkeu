@@ -1,0 +1,3 @@
+/workspace/takkeu/tests/helpers/viewportEvidenceAnalysis.py:73: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  for before, after in zip(compare.getdata(), canvas_image.getdata()):
+{"records": 20, "analysis": "docs/verification/viewport-direct/baseline/analysis.json"}

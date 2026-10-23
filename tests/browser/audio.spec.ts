@@ -21,7 +21,7 @@ test.beforeEach(async ({ page }) => {
 });
 declare global { interface Window { audioProbe: { contexts: AudioContext[]; started: string[]; live: Set<OscillatorNode>; failResume: boolean; failNodes: boolean } } }
 
-test('打球ノード生成失敗を案内し、ゲームを進めたまま音ボタンで復旧できる', async ({ page }) => {
+test('打球ノード生成失敗を案内し、一時停止メニューから明示的に音声を再試行できる', async ({ page }) => {
   // Seed 7 returns the next ball to a wing. Keeping the paddle in the centre
   // must not produce a second player hit or replay the failed first hit.
   await page.clock.install({ time: new Date(-1000) }); await page.clock.pauseAt(new Date(7));
@@ -31,12 +31,14 @@ test('打球ノード生成失敗を案内し、ゲームを進めたまま音�
   await page.clock.runFor(2700);
   await expect(page.locator('[data-audio-notice]')).toBeVisible();
   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('1');
-  await expect(page.getByRole('button', { name: '一時停止', exact: true })).toBeVisible();
+  await expect(page.locator('canvas')).toBeFocused();
+  await page.keyboard.press('Escape');
   await page.evaluate(() => { window.audioProbe.failNodes = false; });
-  await page.getByRole('button', { name: '音：オン', exact: true }).click();
-  await page.getByRole('button', { name: '音：オフ', exact: true }).click();
+  await page.getByRole('button', { name: '音声を再試行', exact: true }).click();
   await expect(page.locator('[data-audio-notice]')).toBeHidden();
+  await expect(page.getByRole('dialog')).toBeVisible();
   expect(await page.evaluate(() => window.audioProbe.started)).toHaveLength(0);
+  await page.getByRole('button', { name: 'つづける', exact: true }).click();
   let elapsed = 0;
   while (elapsed < 2600 && await page.evaluate(() => window.audioProbe.started.length === 0)) {
     await page.clock.runFor(50); elapsed += 50;
@@ -57,11 +59,16 @@ test('開始・自他の実ノード・ミュート・ブラウザ音声中断�
   await page.clock.runFor(2700);
   const types = await page.evaluate(() => window.audioProbe.started);
   expect(types).toContain('sine'); expect(types).toContain('triangle');
+  await page.keyboard.press('Escape');
   await page.getByRole('button', { name: '音：オン', exact: true }).click();
   expect(await page.evaluate(() => window.audioProbe.live.size)).toBe(0);
+  await page.getByRole('button', { name: 'つづける', exact: true }).click();
   const count = types.length; await page.clock.runFor(500);
   expect(await page.evaluate(() => window.audioProbe.started.length)).toBe(count);
+  await page.keyboard.press('Escape');
   await page.getByRole('button', { name: '音：オフ', exact: true }).click();
+  await page.getByRole('button', { name: 'つづける', exact: true }).click();
+  await expect.poll(() => page.evaluate(() => window.audioProbe.contexts[0]!.state)).toBe('running');
   await page.evaluate(() => window.audioProbe.contexts[0]!.suspend());
   await expect(page.getByRole('heading', { name: 'ひと休み' })).toBeVisible();
   await page.clock.runFor(5000);
@@ -72,22 +79,31 @@ test('開始・自他の実ノード・ミュート・ブラウザ音声中断�
   await info.attach('audio-context.json', { body: JSON.stringify({ types, result: 'native nodes and state verified; listening not performed' }), contentType: 'application/json' });
 });
 
-test('音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える', async ({ page }, info) => {
+test('音声再開拒否でも無音で継続し、ミュートと明示的な音声の再試行が使える', async ({ page }, info) => {
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/'); await page.evaluate(() => { window.audioProbe.failResume = true; });
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   await expect(page.locator('[data-audio-notice]')).toBeVisible();
   await page.clock.runFor(2700); await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('1');
   await page.screenshot({ path: info.outputPath('audio-unavailable.png') });
-  await page.getByRole('button', { name: '一時停止', exact: true }).click();
+  await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'つづける', exact: true }).click();
-  await expect(page.getByRole('button', { name: '一時停止', exact: true })).toBeVisible();
+  await expect(page.locator('canvas')).toBeFocused();
+  await page.keyboard.press('Escape');
+  await page.getByRole('button', { name: '音声を再試行', exact: true }).click();
+  await expect(page.locator('[data-audio-notice]')).toBeVisible();
   await page.getByRole('button', { name: '音：オン', exact: true }).click();
   await expect(page.locator('[data-audio-notice]')).toBeHidden();
-  await page.evaluate(() => { window.audioProbe.failResume = false; });
   await page.getByRole('button', { name: '音：オフ', exact: true }).click();
+  await expect(page.locator('[data-audio-notice]')).toBeVisible();
+  await page.evaluate(() => { window.audioProbe.failResume = false; });
+  await page.getByRole('button', { name: '音声を再試行', exact: true }).click();
   await expect.poll(() => page.evaluate(() => window.audioProbe.contexts[0]!.state)).toBe('running');
+  await expect(page.locator('[data-audio-notice]')).toBeHidden();
+  await expect(page.getByRole('dialog')).toBeVisible();
   expect(await page.evaluate(() => window.audioProbe.started.length)).toBe(0);
+  await page.getByRole('button', { name: 'つづける', exact: true }).click();
+  await expect(page.locator('canvas')).toBeFocused();
 });
 
 test('実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査', async ({ page }, info) => {

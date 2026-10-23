@@ -3,8 +3,20 @@ import { ballCountAtScore } from '../../src/game/milestones';
 import type {} from '../helpers/appHarness';
 import type { GameSnapshot } from '../../src/game/types';
 
+// Functional load/UI checks retain traces, screenshots and state attachments.
+// Native input videos are recorded in contact/direct-input/basic-play instead.
+// An earlier full-canvas run completed its assertions but exhausted the original
+// 180s limit during artifact teardown. Traces also show long screenshot/evaluate
+// API waits; no internal GPU profile establishes their sole cause.
+// Keep API/DOM/source traces and explicit milestone screenshots; omit only the
+// continuous trace screencast. Resolution, simulated duration and assertions stay.
+test.use({ video: 'off', trace: { mode: 'retain-on-failure', screenshots: false, snapshots: true, sources: true } });
+
 test('開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む', async ({ page }, info) => {
-  test.setTimeout(180_000);
+  // Full viewport has ~3.7x the old PC pixel count. Repeated CI API/teardown waits
+  // exceeded 180s. This 360s functional budget applies locally and in CI;
+  // the separate 25ms/95% real-time performance criterion is unchanged.
+  test.setTimeout(360_000);
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   // Only input is automated: start the real session without replacing its score or balls.
@@ -45,38 +57,48 @@ test('縦横・44pxボタン・200%文字・ラベル・安全余白を確認', 
   await page.addStyleTag({ content: 'html { font-size: 200%; }' });
   await page.getByRole('button', { name: '設定', exact: true }).click();
   await expect(page.getByRole('heading', { name: '設定', exact: true })).toBeVisible();
-  await expect(page.getByLabel('操作感度', { exact: true })).toBeVisible();
+  await expect(page.getByLabel('操作感度', { exact: true })).toHaveCount(0);
+  await expect(page.locator('[data-settings]').getByLabel('効果音の音量', { exact: true })).toBeVisible();
+  await expect(page.getByLabel('描画品質', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: '戻る', exact: true }).click();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: info.outputPath('home-text-200.png'), fullPage: true });
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
-  await page.getByRole('button', { name: '一時停止', exact: true }).click();
+  await page.keyboard.press('Escape');
   await page.screenshot({ path: info.outputPath('paused-text-200.png'), fullPage: true });
   const dialog = page.getByRole('dialog');
   await expect(dialog).toHaveAttribute('aria-modal', 'true');
   await expect(page.getByRole('button', { name: 'つづける', exact: true })).toBeFocused();
-  await page.keyboard.press('Shift+Tab'); await expect(page.getByRole('button', { name: 'ホームへ', exact: true })).toBeFocused();
+  await page.keyboard.press('Shift+Tab'); await expect(dialog.getByLabel('効果音の音量', { exact: true })).toBeFocused();
+  await page.keyboard.press('Tab'); await expect(page.getByRole('button', { name: 'つづける', exact: true })).toBeFocused();
   await page.getByRole('button', { name: 'ホームへ', exact: true }).click();
   await page.addStyleTag({ content: 'html { font-size: 100%; }' });
   for (const size of [{ width: 402, height: 874 }, { width: 874, height: 402 }, { width: 1280, height: 720 }]) {
     await page.setViewportSize(size); await page.clock.runFor(32);
     await page.getByRole('button', { name: 'はじめる', exact: true }).click();
     await page.clock.runFor(32);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth && document.documentElement.scrollHeight <= innerHeight + 1)).toBe(true);
+    await page.screenshot({ path: info.outputPath(`game-${size.width}x${size.height}.png`) });
+    await page.keyboard.press('Escape');
     for (const button of await page.getByRole('button').all()) {
       if (!await button.isVisible()) continue;
+      await button.scrollIntoViewIfNeeded();
       const box = (await button.boundingBox())!;
       expect(box.height).toBeGreaterThanOrEqual(44); expect(box.width).toBeGreaterThanOrEqual(44);
       expect(box.x).toBeGreaterThanOrEqual(12); expect(box.x + box.width).toBeLessThanOrEqual(size.width - 12);
+      await expect(button).toBeInViewport();
     }
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth && document.documentElement.scrollHeight <= innerHeight + 1)).toBe(true);
-    await page.screenshot({ path: info.outputPath(`game-${size.width}x${size.height}.png`) });
-    await page.getByRole('link', { name: 'タッケウ' }).click();
+    await dialog.getByLabel('効果音の音量', { exact: true }).scrollIntoViewIfNeeded();
+    await expect(dialog.getByLabel('効果音の音量', { exact: true })).toBeInViewport();
+    await page.getByRole('button', { name: 'ホームへ', exact: true }).click();
   }
   await info.attach('menu-accessibility.yml', { body: await page.locator('main').ariaSnapshot(), contentType: 'text/yaml' });
 });
 
 test('450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する', async ({ page }, info) => {
-  test.setTimeout(180_000);
+  // Same 30 simulated seconds, rendering resolution and assertions. See the
+  // viewport verification ledger for retained 180s CI failures and rationale.
+  test.setTimeout(360_000);
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();

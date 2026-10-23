@@ -1,0 +1,1135 @@
+{
+  "recordedAt": "2026-10-23T20:13:37.462Z",
+  "source": "/workspace/takkeu",
+  "origin": "http://127.0.0.1:4178",
+  "sourceHead": "2c3d95d62e019c60bc17a6d7b00f737e1a86f3ea",
+  "sourceStatus": "M README.md\n M docs/progress.md\n M docs/release.md\n M docs/superpowers/plans/2026-10-22-takkeu-implementation.md\n M docs/superpowers/specs/2026-10-22-takkeu-design.md\n?? docs/verification/viewport-direct/",
+  "browsersPath": "/tmp/takkeu-browsers",
+  "libraryPath": "/tmp/takkeu-browser-libs/root/usr/lib/x86_64-linux-gnu",
+  "skipHostValidation": "1",
+  "node": "v24.19.0",
+  "playwright": "1.64.1",
+  "viewports": [
+    [
+      390,
+      844
+    ],
+    [
+      844,
+      390
+    ],
+    [
+      1280,
+      720
+    ],
+    [
+      320,
+      568
+    ],
+    [
+      280,
+      360
+    ]
+  ],
+  "states": [
+    {
+      "score": 0,
+      "time": 1.25
+    },
+    {
+      "score": 555,
+      "time": 1.25
+    }
+  ],
+  "deviceScaleFactor": 1,
+  "records": [
+    {
+      "id": "chromium-390x844-score0-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "json": "chromium-390x844-score0-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 376.81159420289856,
+      "tableDepth": 165.6984451018035,
+      "paddleFace": {
+        "left": 150.4349758918954,
+        "right": 203.28759913282323,
+        "top": 405.6111632233662,
+        "bottom": 452.1396526161568,
+        "width": 52.85262324092784,
+        "height": 46.52848939279062,
+        "minimumCanvasMargin": 150.4349758918954,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 150.4349758918954,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 135.0140299033419,
+        "right": 148.32847088517826,
+        "top": 357.9126171583657,
+        "bottom": 370.69956013752744,
+        "width": 13.314440981836356,
+        "height": 12.786942979161722,
+        "minimumCanvasMargin": 135.0140299033419,
+        "clippedVertexCount": 0,
+        "vertexCount": 222,
+        "minimumViewportMargin": 135.0140299033419,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 1.7192028985507064,
+      "paddleBoundaryMinimumMargin": 2.393441903328992,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 25728,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 30.13371200729881
+      }
+    },
+    {
+      "id": "chromium-390x844-score555-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "json": "chromium-390x844-score555-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 376.81159420289856,
+      "tableDepth": 165.6984451018035,
+      "paddleFace": {
+        "left": 150.4349758918954,
+        "right": 203.28759913282323,
+        "top": 405.6111632233662,
+        "bottom": 452.1396526161568,
+        "width": 52.85262324092784,
+        "height": 46.52848939279062,
+        "minimumCanvasMargin": 150.4349758918954,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 150.4349758918954,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 135.00006878226853,
+        "right": 148.33811283209542,
+        "top": 357.9215332900978,
+        "bottom": 370.71966690669774,
+        "width": 13.338044049826891,
+        "height": 12.798133616599955,
+        "minimumCanvasMargin": 135.00006878226853,
+        "clippedVertexCount": 0,
+        "vertexCount": 362,
+        "minimumViewportMargin": 135.00006878226853,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 1.7192028985507064,
+      "paddleBoundaryMinimumMargin": 2.393441903328992,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 51328,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 28.109199227544572
+      }
+    },
+    {
+      "id": "chromium-844x390-score0-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "json": "chromium-844x390-score0-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 499.431722945396,
+      "tableDepth": 219.6191974974273,
+      "paddleFace": {
+        "left": 358.84424840154634,
+        "right": 428.895905764263,
+        "top": 173.277990607641,
+        "bottom": 234.94754637766678,
+        "width": 70.05165736271664,
+        "height": 61.669555770025795,
+        "minimumCanvasMargin": 155.05245362233322,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 155.05245362233322,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 338.4050959364975,
+        "right": 356.05225515854823,
+        "top": 110.05762422367505,
+        "bottom": 127.00562970316831,
+        "width": 17.647159222050732,
+        "height": 16.94800547949326,
+        "minimumCanvasMargin": 110.05762422367505,
+        "clippedVertexCount": 0,
+        "vertexCount": 222,
+        "minimumViewportMargin": 110.05762422367505,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 74.75035004289371,
+      "paddleBoundaryMinimumMargin": 41.065828205958724,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 25728,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 51.00267034414874
+      }
+    },
+    {
+      "id": "chromium-844x390-score555-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "json": "chromium-844x390-score555-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 499.431722945396,
+      "tableDepth": 219.6191974974273,
+      "paddleFace": {
+        "left": 358.84424840154634,
+        "right": 428.895905764263,
+        "top": 173.277990607641,
+        "bottom": 234.94754637766678,
+        "width": 70.05165736271664,
+        "height": 61.669555770025795,
+        "minimumCanvasMargin": 155.05245362233322,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 155.05245362233322,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 338.38659165780973,
+        "right": 356.0650347392073,
+        "top": 110.06944179803186,
+        "bottom": 127.03227951576444,
+        "width": 17.678443081397575,
+        "height": 16.962837717732583,
+        "minimumCanvasMargin": 110.06944179803186,
+        "clippedVertexCount": 0,
+        "vertexCount": 362,
+        "minimumViewportMargin": 110.06944179803186,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 74.75035004289371,
+      "paddleBoundaryMinimumMargin": 41.065828205958724,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 51328,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 7.9379802362526215
+      }
+    },
+    {
+      "id": "chromium-1280x720-score0-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "json": "chromium-1280x720-score0-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 922.0277962068849,
+      "tableDepth": 405.45082614909643,
+      "paddleFace": {
+        "left": 526.881689356701,
+        "right": 656.2078260263318,
+        "top": 319.89782881410645,
+        "bottom": 433.74931638953865,
+        "width": 129.32613666963073,
+        "height": 113.8514875754322,
+        "minimumCanvasMargin": 286.25068361046135,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 286.25068361046135,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 489.1478694212262,
+        "right": 521.7272402927044,
+        "top": 203.1833062590925,
+        "bottom": 234.47193175969542,
+        "width": 32.57937087147826,
+        "height": 31.288625500602933,
+        "minimumCanvasMargin": 203.1833062590925,
+        "clippedVertexCount": 0,
+        "vertexCount": 222,
+        "minimumViewportMargin": 203.1833062590925,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 138.00064623303464,
+      "paddleBoundaryMinimumMargin": 75.81383668792387,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 25728,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 94.158776019967
+      }
+    },
+    {
+      "id": "chromium-1280x720-score555-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "json": "chromium-1280x720-score555-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 922.0277962068849,
+      "tableDepth": 405.45082614909643,
+      "paddleFace": {
+        "left": 526.881689356701,
+        "right": 656.2078260263318,
+        "top": 319.89782881410645,
+        "bottom": 433.74931638953865,
+        "width": 129.32613666963073,
+        "height": 113.8514875754322,
+        "minimumCanvasMargin": 286.25068361046135,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 286.25068361046135,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 489.11370767595645,
+        "right": 521.7508333646904,
+        "top": 203.20512331944352,
+        "bottom": 234.52113141371902,
+        "width": 32.63712568873393,
+        "height": 31.316008094275503,
+        "minimumCanvasMargin": 203.20512331944352,
+        "clippedVertexCount": 0,
+        "vertexCount": 362,
+        "minimumViewportMargin": 203.20512331944352,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 138.00064623303464,
+      "paddleBoundaryMinimumMargin": 75.81383668792387,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 51328,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 14.654732743851074
+      }
+    },
+    {
+      "id": "chromium-320x568-score0-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "json": "chromium-320x568-score0-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 309.17874396135267,
+      "tableDepth": 135.95769854506952,
+      "paddleFace": {
+        "left": 123.43382637283725,
+        "right": 166.80008133975238,
+        "top": 270.55274931147994,
+        "bottom": 308.7299713773594,
+        "width": 43.366254966915136,
+        "height": 38.17722206587945,
+        "minimumCanvasMargin": 123.43382637283725,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 123.43382637283725,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 110.78074248479336,
+        "right": 121.70541200835139,
+        "top": 231.41548074532565,
+        "bottom": 241.9073313948943,
+        "width": 10.924669523558023,
+        "height": 10.491850649568647,
+        "minimumCanvasMargin": 110.78074248479336,
+        "clippedVertexCount": 0,
+        "vertexCount": 222,
+        "minimumViewportMargin": 110.78074248479336,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 1.4106280193236564,
+      "paddleBoundaryMinimumMargin": 1.9638497668340449,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 25728,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 24.725097031629787
+      }
+    },
+    {
+      "id": "chromium-320x568-score555-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "json": "chromium-320x568-score555-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 309.17874396135267,
+      "tableDepth": 135.95769854506952,
+      "paddleFace": {
+        "left": 123.43382637283725,
+        "right": 166.80008133975238,
+        "top": 270.55274931147994,
+        "bottom": 308.7299713773594,
+        "width": 43.366254966915136,
+        "height": 38.17722206587945,
+        "minimumCanvasMargin": 123.43382637283725,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 123.43382637283725,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 110.76928720596392,
+        "right": 121.71332334941162,
+        "top": 231.42279654572127,
+        "bottom": 241.92382925677757,
+        "width": 10.944036143447704,
+        "height": 10.501032711056297,
+        "minimumCanvasMargin": 110.76928720596392,
+        "clippedVertexCount": 0,
+        "vertexCount": 362,
+        "minimumViewportMargin": 110.76928720596392,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 1.4106280193236564,
+      "paddleBoundaryMinimumMargin": 1.9638497668340449,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 51328,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 23.06395834054939
+      }
+    },
+    {
+      "id": "chromium-280x360-score0-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 280,
+        "height": 360
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "json": "chromium-280x360-score0-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 270.5314009661836,
+      "tableDepth": 118.96298622693583,
+      "paddleFace": {
+        "left": 108.00459807623258,
+        "right": 145.95007117228334,
+        "top": 168.2336556475449,
+        "bottom": 201.63872495518942,
+        "width": 37.94547309605076,
+        "height": 33.40506930764451,
+        "minimumCanvasMargin": 108.00459807623258,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 108.00459807623258,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 96.93314967419418,
+        "right": 106.49223550730747,
+        "top": 133.98854565215993,
+        "bottom": 143.1689149705325,
+        "width": 9.559085833113286,
+        "height": 9.180369318372584,
+        "minimumCanvasMargin": 96.93314967419418,
+        "clippedVertexCount": 0,
+        "vertexCount": 222,
+        "minimumViewportMargin": 96.93314967419418,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 1.2342995169081994,
+      "paddleBoundaryMinimumMargin": 1.7183685459797893,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 25728,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 21.6344599026761
+      }
+    },
+    {
+      "id": "chromium-280x360-score555-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 280,
+        "height": 360
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "json": "chromium-280x360-score555-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 270.5314009661836,
+      "tableDepth": 118.96298622693583,
+      "paddleFace": {
+        "left": 108.00459807623258,
+        "right": 145.95007117228334,
+        "top": 168.2336556475449,
+        "bottom": 201.63872495518942,
+        "width": 37.94547309605076,
+        "height": 33.40506930764451,
+        "minimumCanvasMargin": 108.00459807623258,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 108.00459807623258,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 96.92312630521843,
+        "right": 106.49915793073517,
+        "top": 133.9949469775061,
+        "bottom": 143.18335059968035,
+        "width": 9.576031625516734,
+        "height": 9.188403622174263,
+        "minimumCanvasMargin": 96.92312630521843,
+        "clippedVertexCount": 0,
+        "vertexCount": 362,
+        "minimumViewportMargin": 96.92312630521843,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 1.2342995169081994,
+      "paddleBoundaryMinimumMargin": 1.7183685459797893,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 51328,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 20.180963547980717
+      }
+    },
+    {
+      "id": "webkit-390x844-score0-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "json": "webkit-390x844-score0-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 376.81159420289856,
+      "tableDepth": 165.6984451018035,
+      "paddleFace": {
+        "left": 150.4349758918954,
+        "right": 203.28759913282323,
+        "top": 405.6111632233662,
+        "bottom": 452.1396526161568,
+        "width": 52.85262324092784,
+        "height": 46.52848939279062,
+        "minimumCanvasMargin": 150.4349758918954,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 150.4349758918954,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 135.0140299033419,
+        "right": 148.32847088517826,
+        "top": 357.9126171583657,
+        "bottom": 370.69956013752744,
+        "width": 13.314440981836356,
+        "height": 12.786942979161722,
+        "minimumCanvasMargin": 135.0140299033419,
+        "clippedVertexCount": 0,
+        "vertexCount": 222,
+        "minimumViewportMargin": 135.0140299033419,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 1.7192028985507064,
+      "paddleBoundaryMinimumMargin": 2.393441903328992,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 25728,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 30.13371200729881
+      }
+    },
+    {
+      "id": "webkit-390x844-score555-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "json": "webkit-390x844-score555-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 376.81159420289856,
+      "tableDepth": 165.6984451018035,
+      "paddleFace": {
+        "left": 150.4349758918954,
+        "right": 203.28759913282323,
+        "top": 405.6111632233662,
+        "bottom": 452.1396526161568,
+        "width": 52.85262324092784,
+        "height": 46.52848939279062,
+        "minimumCanvasMargin": 150.4349758918954,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 150.4349758918954,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 135.00006878226853,
+        "right": 148.33811283209542,
+        "top": 357.9215332900978,
+        "bottom": 370.71966690669774,
+        "width": 13.338044049826891,
+        "height": 12.798133616599955,
+        "minimumCanvasMargin": 135.00006878226853,
+        "clippedVertexCount": 0,
+        "vertexCount": 362,
+        "minimumViewportMargin": 135.00006878226853,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 1.7192028985507064,
+      "paddleBoundaryMinimumMargin": 2.393441903328992,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 51328,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 28.109199227544572
+      }
+    },
+    {
+      "id": "webkit-844x390-score0-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "json": "webkit-844x390-score0-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 499.431722945396,
+      "tableDepth": 219.6191974974273,
+      "paddleFace": {
+        "left": 358.84424840154634,
+        "right": 428.895905764263,
+        "top": 173.277990607641,
+        "bottom": 234.94754637766678,
+        "width": 70.05165736271664,
+        "height": 61.669555770025795,
+        "minimumCanvasMargin": 155.05245362233322,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 155.05245362233322,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 338.4050959364975,
+        "right": 356.05225515854823,
+        "top": 110.05762422367505,
+        "bottom": 127.00562970316831,
+        "width": 17.647159222050732,
+        "height": 16.94800547949326,
+        "minimumCanvasMargin": 110.05762422367505,
+        "clippedVertexCount": 0,
+        "vertexCount": 222,
+        "minimumViewportMargin": 110.05762422367505,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 74.75035004289371,
+      "paddleBoundaryMinimumMargin": 41.065828205958724,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 25728,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 51.00267034414874
+      }
+    },
+    {
+      "id": "webkit-844x390-score555-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "json": "webkit-844x390-score555-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 499.431722945396,
+      "tableDepth": 219.6191974974273,
+      "paddleFace": {
+        "left": 358.84424840154634,
+        "right": 428.895905764263,
+        "top": 173.277990607641,
+        "bottom": 234.94754637766678,
+        "width": 70.05165736271664,
+        "height": 61.669555770025795,
+        "minimumCanvasMargin": 155.05245362233322,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 155.05245362233322,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 338.38659165780973,
+        "right": 356.0650347392073,
+        "top": 110.06944179803186,
+        "bottom": 127.03227951576444,
+        "width": 17.678443081397575,
+        "height": 16.962837717732583,
+        "minimumCanvasMargin": 110.06944179803186,
+        "clippedVertexCount": 0,
+        "vertexCount": 362,
+        "minimumViewportMargin": 110.06944179803186,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 74.75035004289371,
+      "paddleBoundaryMinimumMargin": 41.065828205958724,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 51328,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 7.9379802362526215
+      }
+    },
+    {
+      "id": "webkit-1280x720-score0-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "json": "webkit-1280x720-score0-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 922.0277962068849,
+      "tableDepth": 405.45082614909643,
+      "paddleFace": {
+        "left": 526.881689356701,
+        "right": 656.2078260263318,
+        "top": 319.89782881410645,
+        "bottom": 433.74931638953865,
+        "width": 129.32613666963073,
+        "height": 113.8514875754322,
+        "minimumCanvasMargin": 286.25068361046135,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 286.25068361046135,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 489.1478694212262,
+        "right": 521.7272402927044,
+        "top": 203.1833062590925,
+        "bottom": 234.47193175969542,
+        "width": 32.57937087147826,
+        "height": 31.288625500602933,
+        "minimumCanvasMargin": 203.1833062590925,
+        "clippedVertexCount": 0,
+        "vertexCount": 222,
+        "minimumViewportMargin": 203.1833062590925,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 138.00064623303464,
+      "paddleBoundaryMinimumMargin": 75.81383668792387,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 25728,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 94.158776019967
+      }
+    },
+    {
+      "id": "webkit-1280x720-score555-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "json": "webkit-1280x720-score555-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 922.0277962068849,
+      "tableDepth": 405.45082614909643,
+      "paddleFace": {
+        "left": 526.881689356701,
+        "right": 656.2078260263318,
+        "top": 319.89782881410645,
+        "bottom": 433.74931638953865,
+        "width": 129.32613666963073,
+        "height": 113.8514875754322,
+        "minimumCanvasMargin": 286.25068361046135,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 286.25068361046135,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 489.11370767595645,
+        "right": 521.7508333646904,
+        "top": 203.20512331944352,
+        "bottom": 234.52113141371902,
+        "width": 32.63712568873393,
+        "height": 31.316008094275503,
+        "minimumCanvasMargin": 203.20512331944352,
+        "clippedVertexCount": 0,
+        "vertexCount": 362,
+        "minimumViewportMargin": 203.20512331944352,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 138.00064623303464,
+      "paddleBoundaryMinimumMargin": 75.81383668792387,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 51328,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 14.654732743851074
+      }
+    },
+    {
+      "id": "webkit-320x568-score0-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "json": "webkit-320x568-score0-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 309.17874396135267,
+      "tableDepth": 135.95769854506952,
+      "paddleFace": {
+        "left": 123.43382637283725,
+        "right": 166.80008133975238,
+        "top": 270.55274931147994,
+        "bottom": 308.7299713773594,
+        "width": 43.366254966915136,
+        "height": 38.17722206587945,
+        "minimumCanvasMargin": 123.43382637283725,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 123.43382637283725,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 110.78074248479336,
+        "right": 121.70541200835139,
+        "top": 231.41548074532565,
+        "bottom": 241.9073313948943,
+        "width": 10.924669523558023,
+        "height": 10.491850649568647,
+        "minimumCanvasMargin": 110.78074248479336,
+        "clippedVertexCount": 0,
+        "vertexCount": 222,
+        "minimumViewportMargin": 110.78074248479336,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 1.4106280193236564,
+      "paddleBoundaryMinimumMargin": 1.9638497668340449,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 25728,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 24.725097031629787
+      }
+    },
+    {
+      "id": "webkit-320x568-score555-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "json": "webkit-320x568-score555-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 309.17874396135267,
+      "tableDepth": 135.95769854506952,
+      "paddleFace": {
+        "left": 123.43382637283725,
+        "right": 166.80008133975238,
+        "top": 270.55274931147994,
+        "bottom": 308.7299713773594,
+        "width": 43.366254966915136,
+        "height": 38.17722206587945,
+        "minimumCanvasMargin": 123.43382637283725,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 123.43382637283725,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 110.76928720596392,
+        "right": 121.71332334941162,
+        "top": 231.42279654572127,
+        "bottom": 241.92382925677757,
+        "width": 10.944036143447704,
+        "height": 10.501032711056297,
+        "minimumCanvasMargin": 110.76928720596392,
+        "clippedVertexCount": 0,
+        "vertexCount": 362,
+        "minimumViewportMargin": 110.76928720596392,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 1.4106280193236564,
+      "paddleBoundaryMinimumMargin": 1.9638497668340449,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 51328,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 23.06395834054939
+      }
+    },
+    {
+      "id": "webkit-280x360-score0-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 280,
+        "height": 360
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "json": "webkit-280x360-score0-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 270.5314009661836,
+      "tableDepth": 118.96298622693583,
+      "paddleFace": {
+        "left": 108.00459807623258,
+        "right": 145.95007117228334,
+        "top": 168.2336556475449,
+        "bottom": 201.63872495518942,
+        "width": 37.94547309605076,
+        "height": 33.40506930764451,
+        "minimumCanvasMargin": 108.00459807623258,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 108.00459807623258,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 96.93314967419418,
+        "right": 106.49223550730747,
+        "top": 133.98854565215993,
+        "bottom": 143.1689149705325,
+        "width": 9.559085833113286,
+        "height": 9.180369318372584,
+        "minimumCanvasMargin": 96.93314967419418,
+        "clippedVertexCount": 0,
+        "vertexCount": 222,
+        "minimumViewportMargin": 96.93314967419418,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 1.2342995169081994,
+      "paddleBoundaryMinimumMargin": 1.7183685459797893,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 25728,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 21.6344599026761
+      }
+    },
+    {
+      "id": "webkit-280x360-score555-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 280,
+        "height": 360
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "json": "webkit-280x360-score555-t1.25.json.gz",
+      "errors": [],
+      "canvasOccupancy": 1,
+      "tableFrontWidth": 270.5314009661836,
+      "tableDepth": 118.96298622693583,
+      "paddleFace": {
+        "left": 108.00459807623258,
+        "right": 145.95007117228334,
+        "top": 168.2336556475449,
+        "bottom": 201.63872495518942,
+        "width": 37.94547309605076,
+        "height": 33.40506930764451,
+        "minimumCanvasMargin": 108.00459807623258,
+        "clippedVertexCount": 0,
+        "vertexCount": 50,
+        "minimumViewportMargin": 108.00459807623258,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "ball": {
+        "left": 96.92312630521843,
+        "right": 106.49915793073517,
+        "top": 133.9949469775061,
+        "bottom": 143.18335059968035,
+        "width": 9.576031625516734,
+        "height": 9.188403622174263,
+        "minimumCanvasMargin": 96.92312630521843,
+        "clippedVertexCount": 0,
+        "vertexCount": 362,
+        "minimumViewportMargin": 96.92312630521843,
+        "outsideViewport": false,
+        "clippedWitnesses": []
+      },
+      "tableCornerMinimumMargin": 1.2342995169081994,
+      "paddleBoundaryMinimumMargin": 1.7183685459797893,
+      "trajectorySummary": {
+        "paths": 128,
+        "visibleSamples": 51328,
+        "centerClippedSamples": 0,
+        "sphereClippedSamples": 0,
+        "minimumSphereMargin": 20.180963547980717
+      }
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "Desktop Linux browser engines at specified CSS viewports; no real iPhone or VoiceOver validation.",
+    "Geometry projection is independent of input mapping. It uses the actual camera configuration and every unique rendered mesh vertex.",
+    "Trajectory evidence samples 64 seeded incoming/outgoing plan pairs at 401 normalized times; it is not proof over every random plan.",
+    "Canvas screenshot includes the complete CSS canvas. Viewport screenshot preserves the initial scroll position; full-page screenshot shows overflow.",
+    "Static score/time screenshots and area estimates do not establish flashing safety."
+  ]
+}

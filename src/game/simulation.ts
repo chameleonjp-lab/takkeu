@@ -46,12 +46,10 @@ export function startSimulation(state: SimulationState, config: GameConfig): voi
     plan: scheduleReturn({ ballId: 1, earliestDepartAt: 0, preferredTarget: INITIAL_PADDLE, speedMultiplier: 1, smash: false }, [], config) });
 }
 
-type Action = { kind: 'bounce' | 'hit' | 'lost' | 'ready' | 'warning' | 'depart'; time: number; ball: SimulationBall; position?: Point3 };
+type Action = { kind: 'bounce' | 'hit' | 'lost' | 'ready' | 'warning' | 'depart'; time: number; ball: SimulationBall; position?: Point3; paddleFraction?: number };
 
-/** Domain state only: neither rendering nor sound can feed back into the simulation. */
-export function stepSimulation(state: SimulationState, config: GameConfig, dt: number, input: InputFrame): StepResult {
-  if (state.phase !== 'running') return { snapshot: snapshotSimulation(state), events: [] };
-  if (!Number.isFinite(dt) || dt <= 0 || dt > config.fixedDt + 1e-12) throw new RangeError('Use a positive fixed simulation step.');
+/** Advance an uncommitted part of a fixed tick, including zero-time input paths. */
+function advanceSegment(state: SimulationState, config: GameConfig, dt: number, target: PaddlePoint, deferEndContact = false): StepResult {
   const events: GameEvent[] = [];
   const emit = (kind: GameEventKind, time: number, ballId?: number, milestone?: number, position?: Point3, effect?: GameEvent['effect']): void => {
     events.push({ id: `${state.runId}:${++state.eventNumber}`, runId: state.runId, kind, time,
@@ -59,13 +57,8 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
       ...(position ? { position: { ...position } } : {}), ...(effect ? { effect } : {}) });
   };
   const end = state.simTime + dt;
-  const oldScore = state.score;
-  state.committedSmashDepartures = state.committedSmashDepartures.filter(time => time >= state.simTime - DIFFICULTY.smashSeparation);
   const previousPaddle = state.paddle;
-  const target = clampPaddle(input.target, config);
-  const distance = Math.hypot(target.x - previousPaddle.x, target.y - previousPaddle.y);
-  const fraction = distance > 0 ? Math.min(1, config.paddleSpeed * dt / distance) : 0;
-  state.paddle = { x: previousPaddle.x + (target.x - previousPaddle.x) * fraction, y: previousPaddle.y + (target.y - previousPaddle.y) * fraction };
+  state.paddle = clampPaddle(target, config);
   const actions: Action[] = [];
   const enqueueDeparture = (ball: SimulationBall): void => {
     if (!ball.warningSent && ball.plan.warningAt !== null && ball.plan.warningAt <= end + 1e-12) actions.push({ kind: 'warning', time: ball.plan.warningAt, ball });
@@ -87,29 +80,29 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
     const contactStart = Math.max(state.simTime, bounceTime(ball.plan));
     const contactEnd = state.simTime + (lostFraction ?? 1) * dt;
     let hit: number | null = null;
-    if (contactStart <= contactEnd + 1e-12) {
-      const first = Math.min(1, (contactStart - state.simTime) / dt);
-      const last = (contactEnd - state.simTime) / dt;
+    if (lostFraction !== 0 && contactStart <= contactEnd + 1e-12) {
+      const first = dt > 0 ? Math.min(1, (contactStart - state.simTime) / dt) : 0;
+      const last = dt > 0 ? (contactEnd - state.simTime) / dt : 1;
       const paddleAt = (t: number): PaddlePoint => ({ x: previousPaddle.x + (state.paddle.x - previousPaddle.x) * t, y: previousPaddle.y + (state.paddle.y - previousPaddle.y) * t });
       const fraction = sweepPaddleHit(sampleReturn(ball.plan, ball.from, contactStart), sampleReturn(ball.plan, ball.from, contactEnd), paddleAt(first), paddleAt(last), config);
       if (fraction !== null) hit = first + (last - first) * fraction;
     }
-    if (hit !== null) {
+    if (hit !== null && !(deferEndContact && hit >= 1 - 1e-10)) {
       const time = state.simTime + hit * dt;
-      actions.push({ kind: 'hit', time, ball, position: sampleReturn(ball.plan, ball.from, time) });
-    } else if (lostFraction !== null) {
+      actions.push({ kind: 'hit', time, ball, position: sampleReturn(ball.plan, ball.from, time), paddleFraction: hit });
+    } else if (hit === null && lostFraction !== null && !(deferEndContact && lostFraction >= 1 - 1e-10)) {
       actions.push({ kind: 'lost', time: state.simTime + lostFraction * dt, ball });
     }
   }
   while (actions.length) {
-    actions.sort((a, b) => a.time - b.time || (a.kind === 'bounce' ? -1 : b.kind === 'bounce' ? 1 : a.ball.id - b.ball.id));
-    const { kind, time, ball, position } = actions.shift()!;
+    actions.sort((a, b) => a.time - b.time || Number(b.kind === 'bounce') - Number(a.kind === 'bounce') || a.ball.id - b.ball.id);
+    const { kind, time, ball, position, paddleFraction } = actions.shift()!;
     if (kind === 'bounce') {
       ball.bounceEmitted = true;
       emit('table-bounce', time, ball.id, undefined, position, ball.phase === 'incoming' && state.score >= 530 ? 'bounce-firework' : undefined);
     } else if (kind === 'hit') {
       state.score++;
-      const at = Math.max(0, Math.min(1, (time - state.simTime) / dt));
+      const at = paddleFraction!;
       const centre = { x: previousPaddle.x + (state.paddle.x - previousPaddle.x) * at,
         y: previousPaddle.y + (state.paddle.y - previousPaddle.y) * at, z: config.paddleZ };
       emit('player-hit', time, ball.id, undefined, centre, state.score >= 520 ? 'racket-firework' : undefined);
@@ -165,7 +158,6 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
   for (const ball of state.balls) {
     if (ball.phase === 'incoming' || ball.phase === 'outgoing') ball.position = sampleReturn(ball.plan, ball.from, end);
   }
-  refreshFlightSpeeds(state, oldScore, end, config);
   if (state.balls.length && state.balls.every(b => b.phase === 'lost')) {
     state.phase = 'gameover';
     emit('game-over', events.at(-1)?.time ?? end);
@@ -173,5 +165,53 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
   // The loss event is sufficient history. Do not retain every lost ball forever.
   state.balls = state.balls.filter(ball => ball.phase !== 'lost');
   state.simTime = end;
+  return { snapshot: snapshotSimulation(state), events };
+}
+
+/**
+ * Inputs split only this uncommitted tick. A move starts at its timestamp and
+ * reaches its target at the next input or tick end; a place has no swept path.
+ * At an input boundary: prior events, bounce, ordered input, overlap, then loss.
+ * Speed/flight reservations still refresh once at the original fixed boundary.
+ */
+export function stepSimulation(state: SimulationState, config: GameConfig, dt: number, input: InputFrame): StepResult {
+  if (state.phase !== 'running') return { snapshot: snapshotSimulation(state), events: [] };
+  if (!Number.isFinite(dt) || dt <= 0 || dt > config.fixedDt + 1e-12) throw new RangeError('Use a positive fixed simulation step.');
+  const start = state.simTime, end = start + dt, oldScore = state.score;
+  const validPoint = (point: PaddlePoint): boolean => Number.isFinite(point.x) && Number.isFinite(point.y);
+  state.committedSmashDepartures = state.committedSmashDepartures.filter(time => time >= start - DIFFICULTY.smashSeparation);
+  const samples = (input.samples ?? []).filter(s => Number.isFinite(s.at) && validPoint(s.target) && s.at >= start - 1e-10 && s.at <= end + 1e-10)
+    .map(s => ({ ...s, at: Math.max(start, Math.min(end, s.at)) })).sort((a, b) => a.at - b.at);
+  // A bare frame is a move known at the tick start (used by domain clients).
+  let target = input.samples ? state.paddle : validPoint(input.target) ? clampPaddle(input.target, config) : state.paddle;
+  let moving = !input.samples;
+  const events: GameEvent[] = [];
+  const advance = (until: number, defer = false): void => {
+    if (state.phase !== 'running') return;
+    events.push(...advanceSegment(state, config, Math.max(0, until - state.simTime), target, defer).events);
+    moving = false;
+  };
+  for (const sample of samples) {
+    // A same-time move still has a real path. Never collapse it into release.
+    if (sample.at > state.simTime || moving) advance(sample.at, sample.at > state.simTime);
+    if (state.phase !== 'running') break;
+    if (sample.kind === 'place') {
+      state.paddle = clampPaddle(sample.target, config);
+      target = state.paddle;
+      advance(sample.at);
+    } else if (sample.kind === 'release') {
+      // Prior accepted move has already completed; release cannot invent a path.
+      target = state.paddle;
+      // Settle its endpoint before a subsequent same-time recontact can place
+      // elsewhere. Bounce has already been processed by the preceding segment.
+      advance(sample.at);
+    } else {
+      target = clampPaddle(sample.target, config); moving = true;
+    }
+  }
+  if (state.phase === 'running') advance(end);
+  // Even game-over inside a tick commits that fixed interval, as before.
+  state.simTime = end;
+  refreshFlightSpeeds(state, oldScore, end, config);
   return { snapshot: snapshotSimulation(state), events };
 }

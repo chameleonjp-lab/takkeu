@@ -1,0 +1,43 @@
+Listing tests:
+  [webkit] › audio.spec.ts:24:1 › 打球ノード生成失敗を案内し、一時停止メニューから明示的に音声を再試行できる
+  [webkit] › audio.spec.ts:55:1 › 開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰
+  [webkit] › audio.spec.ts:82:1 › 音声再開拒否でも無音で継続し、ミュートと明示的な音声の再試行が使える
+  [webkit] › audio.spec.ts:109:1 › 実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査
+  [webkit] › basic-play.spec.ts:12:1 › 開始→直接配置・ドラッグ→返球→失球→結果→再挑戦
+  [webkit] › basic-play.spec.ts:48:1 › 停止中は描画を保持し、再開操作でだけ進む
+  [webkit] › basic-play.spec.ts:64:1 › タッチの絶対位置ドラッグでラケットを動かせる
+  [webkit] › boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない
+  [webkit] › contact.spec.ts:35:1 › ワンバウンド後の見える球にラケットを合わせれば返球できる
+  [webkit] › contact.spec.ts:56:1 › 見えている球にドラッグで合わせ、3ラリーをつなげる
+  [webkit] › direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844
+  [webkit] › direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390
+  [webkit] › direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720
+  [webkit] › direct-input.spec.ts:33:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360
+  [webkit] › direct-input.spec.ts:66:1 › 二本指は両releaseで停止し、追加指やドラッグでは停止しない
+  [webkit] › direct-input.spec.ts:95:1 › 情報上の入力・safe area・resize連発・メニューに古い入力が残らない
+  [webkit] › evidence.spec.ts:6:3 › 画面の証拠 › 縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す
+  [webkit] › evidence.spec.ts:43:1 › 実際のWeb Audioで自分用・相手用の異なる短音を合成できる
+  [webkit] › extended.spec.ts:6:1 › 460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する
+  [webkit] › extended.spec.ts:31:1 › 返球・台面の花火を実際の接触イベントで描き、停止・リトライで過去の粒子を残さない
+  [webkit] › extended.spec.ts:78:1 › 実アプリのホーム遷移で花火を直ちに消し、再挑戦へ持ち越さない
+  [webkit] › glow-timing.spec.ts:4:1 › 指定された発光ラリーの直前・到達時を同一画角で撮影する
+  [webkit] › lifecycle.spec.ts:11:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない
+  [webkit] › lifecycle.spec.ts:41:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開
+  [webkit] › lifecycle.spec.ts:58:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する
+  [webkit] › lifecycle.spec.ts:76:1 › 実際のWEBGL_lose_contextによる喪失と復旧でも手動再開を待つ
+  [webkit] › lifecycle.spec.ts:94:1 › 描画再作成の失敗時も状態を壊さずホームへ戻れる
+  [webkit] › milestones.spec.ts:6:1 › 専用状態で増球の境界と全演出の表示・発光終了を撮影する
+  [webkit] › milestones.spec.ts:38:1 › 390の強弱を実描画で比較し、0.6秒の動きを保存する
+  [webkit] › occlusion.spec.ts:3:1 › 球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない
+  [webkit] › occlusion.spec.ts:10:1 › 球と虹色の輪郭はラケットとの前後関係を守る
+  [webkit] › occlusion.spec.ts:37:1 › 虹色は照明がなくても発光し、相手床・壁は閾値まで暗い
+  [webkit] › preferences.spec.ts:4:1 › 全設定と自己ベストが再読込・リトライを越えて残る
+  [webkit] › preferences.spec.ts:39:1 › 保存拒否でも設定と自己ベストをメモリに保持して遊べる
+  [webkit] › quality.spec.ts:54:1 › 縦横・44pxボタン・200%文字・ラベル・安全余白を確認
+  [webkit] › quality.spec.ts:121:1 › WebGL初期化不可と復旧失敗でもホームと自己ベストを保つ
+  [webkit] › reference.spec.ts:3:1 › viewport全体の実描画でPC・縦・横の台を最大限収める
+  [webkit] › render-loop.spec.ts:4:1 › 停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する
+  [webkit] › retry.spec.ts:5:1 › 再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない
+  [webkit] › smash.spec.ts:5:1 › 450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない
+  [webkit] › smash.spec.ts:60:1 › 予告音を実際のWeb Audioで合成して保存する
+Total: 41 tests in 17 files

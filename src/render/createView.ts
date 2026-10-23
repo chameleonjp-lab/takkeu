@@ -1,6 +1,7 @@
-import { ACESFilmicToneMapping, Color, DirectionalLight, HemisphereLight, Scene, Vector3, WebGLRenderer } from 'three';
+import { ACESFilmicToneMapping, Color, DirectionalLight, HemisphereLight, Scene, WebGLRenderer } from 'three';
 import type { GameConfig, GameEvent, GameSnapshot } from '../game/types';
-import type { InputMapping } from '../input/swipe';
+import { createInputMapping } from '../input/mapping';
+import type { InputMapping } from '../input/mapping';
 import { createObjects } from './objects';
 import { applyPresentation } from './presentation';
 import { createCamera, fitCamera } from './camera';
@@ -53,15 +54,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
       objects.opponentField.resize(size.width,size.height);
       fitCamera(camera, w, h, config);
     },
-    inputMapping() {
-      const rect = canvas.getBoundingClientRect();
-      const topLeft = new Vector3(config.paddleMinX, config.paddleMaxY, config.paddleZ).project(camera);
-      const bottomRight = new Vector3(config.paddleMaxX, config.paddleMinY, config.paddleZ).project(camera);
-      return {
-        screen: { left: rect.left + (topLeft.x + 1) * rect.width / 2, top: rect.top + (1 - topLeft.y) * rect.height / 2, width: (bottomRight.x - topLeft.x) * rect.width / 2, height: (topLeft.y - bottomRight.y) * rect.height / 2 },
-        world: { minX: config.paddleMinX, maxX: config.paddleMaxX, minY: config.paddleMinY, maxY: config.paddleMaxY },
-      };
-    },
+    inputMapping() { return createInputMapping(camera, () => canvas.getBoundingClientRect(), config); },
     setQuality(value) { quality = value; },
     resources() { return { geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures, programs: renderer.info.programs?.length ?? 0, drawCalls: renderer.info.render.calls,particles:fireworks.active(),particleCapacity:PARTICLE_LIMIT }; },
     dispose() { fireworks.dispose(); objects.dispose(); renderer.dispose(); },

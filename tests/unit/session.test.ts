@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { DEFAULT_CONFIG, INITIAL_PADDLE } from '../../src/game/config';
+import { clampPaddle, DEFAULT_CONFIG, INITIAL_PADDLE } from '../../src/game/config';
 import { createSession } from '../../src/game/session';
 import { ballCountAtScore } from '../../src/game/milestones';
 import { advance } from '../helpers/fixtures';
@@ -62,12 +62,12 @@ describe('1球のラリー', () => {
     expect(advance(session, 2.6).filter(e => e.kind === 'player-hit')).toHaveLength(1);
   });
 
-  it('ラケットの速さを制限し、返球目標は打球後に追尾しない', () => {
+  it('ラケットは制限後の直接位置へ進み、返球目標は打球後に追尾しない', () => {
     const session = createSession(DEFAULT_CONFIG, 19);
     session.start();
     const initial = session.snapshot();
     const stepped = session.step(DEFAULT_CONFIG.fixedDt, { target: { x: 1.05, y: 0.85 } }).snapshot;
-    expect(Math.hypot(stepped.paddle.x, stepped.paddle.y - 0.5)).toBeCloseTo(DEFAULT_CONFIG.paddleSpeed * DEFAULT_CONFIG.fixedDt);
+    expect(stepped.paddle).toEqual(clampPaddle({ x: 1.05, y: .85 }, DEFAULT_CONFIG));
     expect(stepped.scheduledReturns).toEqual(initial.scheduledReturns);
   });
 

@@ -10,7 +10,9 @@ test('450の予告はミュート・390・420・落球後4球・停止中でも�
   await page.evaluate(() => window.stage2.beginSmash(450));
   const plan = await page.evaluate(() => window.stage2.snapshot().scheduledReturns.find(p => p.ballId === 1)!);
   expect(plan.smash).toBe(true);
+  await page.keyboard.press('Escape');
   await page.getByRole('button', { name: '音：オン', exact: true }).click();
+  await page.getByRole('button', { name: 'つづける', exact: true }).click();
   expect(await page.evaluate(() => window.stage2.muted())).toBe(true);
   const warning = page.locator('[data-smash-warning]');
   await expect(warning).toBeVisible();
@@ -18,10 +20,25 @@ test('450の予告はミュート・390・420・落球後4球・停止中でも�
   expect(await page.evaluate(() => window.stage2.pose().preparing)).toBe(true);
   expect(await page.evaluate(() => Object.values(window.stage2.presentation().balls).every(b => !b.visible))).toBe(true);
   await page.screenshot({ path: info.outputPath('smash-warning-muted.png') });
-  const beforePulse = await warning.screenshot();
+  // The rounded overlay's transparent corners now expose the animated court.
+  // Compare its opaque content, while preserving the static-warning requirement.
+  const box = (await warning.boundingBox())!;
+  const appearance = () => warning.evaluate(e => {
+    const s = getComputedStyle(e);
+    return { background: s.backgroundColor, color: s.color, opacity: s.opacity, border: s.borderColor, animation: s.animationName, radius: s.borderRadius };
+  });
+  const styles = await appearance(), inset = Math.ceil(Number.parseFloat(styles.radius));
+  const clip = { x: Math.ceil(box.x + inset), y: Math.ceil(box.y + inset),
+    width: Math.floor(box.x + box.width - inset) - Math.ceil(box.x + inset),
+    height: Math.floor(box.y + box.height - inset) - Math.ceil(box.y + inset) };
+  await info.attach('warning-full-before.png', { body: await warning.screenshot(), contentType: 'image/png' });
+  const beforePulse = await page.screenshot({ clip });
   await page.evaluate(() => window.stage2.advance(0.15));
-  expect(beforePulse.equals(await warning.screenshot())).toBe(true);
-  await page.getByRole('button', { name: '一時停止', exact: true }).click();
+  await info.attach('warning-full-after.png', { body: await warning.screenshot(), contentType: 'image/png' });
+  expect(await appearance()).toEqual(styles);
+  expect(await warning.boundingBox()).toEqual(box);
+  expect(beforePulse.equals(await page.screenshot({ clip }))).toBe(true);
+  await page.keyboard.press('Escape');
   const paused = await page.evaluate(() => window.stage2.snapshot());
   await page.evaluate(() => window.stage2.advance(2));
   expect(await page.evaluate(() => window.stage2.snapshot())).toEqual(paused);

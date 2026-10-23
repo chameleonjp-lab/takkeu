@@ -1,0 +1,612 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/swipe.test.ts tests/unit/pointer-mapping.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/swipe.test.ts (28 tests | 28 failed) 102ms
+   ❯ direct paddle pointer ownership (19)
+     × places immediately at the primary mouse pointer and follows absolute movement 27ms
+     × places immediately at the primary touch pointer and follows absolute movement 4ms
+     × places immediately at the primary pen pointer and follows absolute movement 2ms
+     × holds the last accepted movement on release, including movement queued in the same frame 5ms
+     × rejects an outside start and clamps captured movement outside every canvas edge 5ms
+     × ignores hover, secondary buttons, nonprimary starts and interactive controls 8ms
+     × does not let an extra contact take ownership after the owner lifts 3ms
+     × tracks extra contacts that start outside the canvas until they lift 2ms
+     × clears the whole sequence on unexpected pointercancel without appending stale input 2ms
+     × clears the whole sequence on unexpected lostpointercapture without appending stale input 2ms
+     × treats cancellation of the second finger as an interruption too 2ms
+     × cancel clears input without enqueueing a hold from a stale snapshot 2ms
+     × updateMapping clears input without enqueueing a hold from a stale snapshot 2ms
+     × dispose clears input without enqueueing a hold from a stale snapshot 1ms
+     × preserves ordered rapid taps and their distinct placements 2ms
+     × rechecks the running guard after flushing input and rejects menu-time input 2ms
+     × does not resurrect an owner cancelled during beforeInput 9ms
+     × rejects stale mapping before both placement and movement, including changes during beforeInput 8ms
+     × ignores nonfinite pointer coordinates and timestamps without poisoning the accepted target 2ms
+   ❯ two-touch tap pause gesture (9)
+     × pauses only after both fingers lift (owner first: true), without delaying paddle input 1ms
+     × pauses only after both fingers lift (owner first: false), without delaying paddle input 1ms
+     × rejects late second as a pause gesture 2ms
+     × rejects late release as a pause gesture 1ms
+     × rejects owner drag as a pause gesture 1ms
+     × rejects second drag as a pause gesture 1ms
+     × rejects release jump as a pause gesture 1ms
+     × rejects third contact as a pause gesture 1ms
+     × rejects mixed devices as a pause gesture 2ms
+ ❯ tests/unit/pointer-mapping.test.ts (12 tests | 12 failed) 274ms
+   ❯ actual camera ray pointer mapping (12)
+     × roundtrips the reachable center, corners, and height-dependent edges at 390x844 66ms
+     × roundtrips the reachable center, corners, and height-dependent edges at 844x390 19ms
+     × roundtrips the reachable center, corners, and height-dependent edges at 1280x720 24ms
+     × roundtrips the reachable center, corners, and height-dependent edges at 320x568 21ms
+     × roundtrips the reachable center, corners, and height-dependent edges at 280x360 18ms
+     × clamps rays using the height-dependent paddle reach rather than a rectangular world range 15ms
+     × uses CSS pixels at DPR 1 independent of drawing-buffer scaling 21ms
+     × uses CSS pixels at DPR 1.5 independent of drawing-buffer scaling 25ms
+     × uses CSS pixels at DPR 2 independent of drawing-buffer scaling 17ms
+     × uses CSS pixels at DPR 3 independent of drawing-buffer scaling 14ms
+     × invalidates mappings when either the canvas rectangle or camera projection changes 16ms
+     × ignores nonfinite coordinates and invalid canvas geometry 15ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 40 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/pointer-mapping.test.ts > actual camera ray pointer mapping > roundtrips the reachable center, corners, and height-dependent edges at 390x844
+AssertionError: expected { left: -67.39061617196845, …(3) } to deeply equal { left: 17, top: 31, width: 390, …(1) }
+
+- Expected
++ Received
+
+  {
+-   "height": 844,
+-   "left": 17,
+-   "top": 31,
+-   "width": 390,
++   "height": 140.06806338382643,
++   "left": -67.39061617196845,
++   "top": 383.1010213745778,
++   "width": 487.0197609867207,
+  }
+
+ ❯ tests/unit/pointer-mapping.test.ts:37:28
+     35|     const { view, project, rect } = setup(width, height);
+     36|     const mapping = view.inputMapping();
+     37|     expect(mapping.screen).toEqual(rect);
+       |                            ^
+     38|     for (const y of [0.15, 0.325, 0.5, 0.675, 0.85]) {
+     39|       const range = paddleHorizontalRange(y, DEFAULT_CONFIG);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/40]⎯
+
+ FAIL  tests/unit/pointer-mapping.test.ts > actual camera ray pointer mapping > roundtrips the reachable center, corners, and height-dependent edges at 844x390
+AssertionError: expected { left: 64.60289638259073, …(3) } to deeply equal { left: 17, top: 31, width: 844, …(1) }
+
+- Expected
++ Received
+
+  {
+-   "height": 390,
+-   "left": 17,
+-   "top": 31,
+-   "width": 844,
++   "height": 185.64830621358635,
++   "left": 64.60289638259073,
++   "top": 133.35484824752905,
++   "width": 645.5032755894479,
+  }
+
+ ❯ tests/unit/pointer-mapping.test.ts:37:28
+     35|     const { view, project, rect } = setup(width, height);
+     36|     const mapping = view.inputMapping();
+     37|     expect(mapping.screen).toEqual(rect);
+       |                            ^
+     38|     for (const y of [0.15, 0.325, 0.5, 0.675, 0.85]) {
+     39|       const range = paddleHorizontalRange(y, DEFAULT_CONFIG);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/40]⎯
+
+ FAIL  tests/unit/pointer-mapping.test.ts > actual camera ray pointer mapping > roundtrips the reachable center, corners, and height-dependent edges at 1280x720
+AssertionError: expected { left: -30.717729755216993, …(3) } to deeply equal { Object (left, top, ...) }
+
+- Expected
++ Received
+
+  {
+-   "height": 720,
+-   "left": 17,
+-   "top": 31,
+-   "width": 1280,
++   "height": 342.73533454815936,
++   "left": -30.717729755216993,
++   "top": 219.9627967646691,
++   "width": 1191.6983549343652,
+  }
+
+ ❯ tests/unit/pointer-mapping.test.ts:37:28
+     35|     const { view, project, rect } = setup(width, height);
+     36|     const mapping = view.inputMapping();
+     37|     expect(mapping.screen).toEqual(rect);
+       |                            ^
+     38|     for (const y of [0.15, 0.325, 0.5, 0.675, 0.85]) {
+     39|       const range = paddleHorizontalRange(y, DEFAULT_CONFIG);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/40]⎯
+
+ FAIL  tests/unit/pointer-mapping.test.ts > actual camera ray pointer mapping > roundtrips the reachable center, corners, and height-dependent edges at 320x568
+AssertionError: expected { left: -52.243582500076684, …(3) } to deeply equal { left: 17, top: 31, width: 320, …(1) }
+
+- Expected
++ Received
+
+  {
+-   "height": 568,
+-   "left": 17,
+-   "top": 31,
+-   "width": 320,
++   "height": 114.92764175083195,
++   "left": -52.243582500076684,
++   "top": 257.6469918970895,
++   "width": 399.6059577326939,
+  }
+
+ ❯ tests/unit/pointer-mapping.test.ts:37:28
+     35|     const { view, project, rect } = setup(width, height);
+     36|     const mapping = view.inputMapping();
+     37|     expect(mapping.screen).toEqual(rect);
+       |                            ^
+     38|     for (const y of [0.15, 0.325, 0.5, 0.675, 0.85]) {
+     39|       const range = paddleHorizontalRange(y, DEFAULT_CONFIG);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/40]⎯
+
+ FAIL  tests/unit/pointer-mapping.test.ts > actual camera ray pointer mapping > roundtrips the reachable center, corners, and height-dependent edges at 280x360
+AssertionError: expected { left: -43.58813468756709, …(3) } to deeply equal { left: 17, top: 31, width: 280, …(1) }
+
+- Expected
++ Received
+
+  {
+-   "height": 360,
+-   "left": 17,
+-   "top": 31,
+-   "width": 280,
++   "height": 100.56168653197795,
++   "left": -43.58813468756709,
++   "top": 160.81611790995328,
++   "width": 349.65521301610715,
+  }
+
+ ❯ tests/unit/pointer-mapping.test.ts:37:28
+     35|     const { view, project, rect } = setup(width, height);
+     36|     const mapping = view.inputMapping();
+     37|     expect(mapping.screen).toEqual(rect);
+       |                            ^
+     38|     for (const y of [0.15, 0.325, 0.5, 0.675, 0.85]) {
+     39|       const range = paddleHorizontalRange(y, DEFAULT_CONFIG);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/40]⎯
+
+ FAIL  tests/unit/pointer-mapping.test.ts > actual camera ray pointer mapping > clamps rays using the height-dependent paddle reach rather than a rectangular world range
+AssertionError: expected undefined to be close to -0.7296215500757157, received difference is NaN, but expected 5e-11
+ ❯ tests/unit/pointer-mapping.test.ts:61:25
+     59|     for (const { source, expected } of targets) {
+     60|       const client = project(source.x, source.y), target = mapping.toW…
+     61|       expect(target?.x).toBeCloseTo(expected.x, 10); expect(target?.y)…
+       |                         ^
+     62|     }
+     63|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/40]⎯
+
+ FAIL  tests/unit/pointer-mapping.test.ts > actual camera ray pointer mapping > uses CSS pixels at DPR 1 independent of drawing-buffer scaling
+ FAIL  tests/unit/pointer-mapping.test.ts > actual camera ray pointer mapping > uses CSS pixels at DPR 1.5 independent of drawing-buffer scaling
+ FAIL  tests/unit/pointer-mapping.test.ts > actual camera ray pointer mapping > uses CSS pixels at DPR 2 independent of drawing-buffer scaling
+ FAIL  tests/unit/pointer-mapping.test.ts > actual camera ray pointer mapping > uses CSS pixels at DPR 3 independent of drawing-buffer scaling
+AssertionError: expected undefined to be close to 0.32, received difference is NaN, but expected 5e-11
+ ❯ tests/unit/pointer-mapping.test.ts:69:23
+     67|     const { view, project } = setup(390, 844);
+     68|     const client = project(0.32, 0.73), target = view.inputMapping().t…
+     69|     expect(target?.x).toBeCloseTo(0.32, 10); expect(target?.y).toBeClo…
+       |                       ^
+     70|   });
+     71|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/40]⎯
+
+ FAIL  tests/unit/pointer-mapping.test.ts > actual camera ray pointer mapping > invalidates mappings when either the canvas rectangle or camera projection changes
+AssertionError: expected undefined to be true // Object.is equality
+
+- Expected:
+true
+
++ Received:
+undefined
+
+ ❯ tests/unit/pointer-mapping.test.ts:75:35
+     73|     const { view, rect, project } = setup(390, 844);
+     74|     const point = project(0, 0.5), mapping = view.inputMapping();
+     75|     expect(mapping.isCurrent?.()).toBe(true);
+       |                                   ^
+     76|     rect.left += 1;
+     77|     expect(mapping.isCurrent?.()).toBe(false); expect(mapping.toWorld?…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/40]⎯
+
+ FAIL  tests/unit/pointer-mapping.test.ts > actual camera ray pointer mapping > ignores nonfinite coordinates and invalid canvas geometry
+AssertionError: expected undefined to be null
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ tests/unit/pointer-mapping.test.ts:88:42
+     86|     const mapping = view.inputMapping();
+     87|     for (const bad of [NaN, Infinity, -Infinity]) {
+     88|       expect(mapping.toWorld?.(bad, 60)).toBeNull(); expect(mapping.to…
+       |                                          ^
+     89|     }
+     90|     rect.width = 0;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > places immediately at the primary mouse pointer and follows absolute movement
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > places immediately at the primary touch pointer and follows absolute movement
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > places immediately at the primary pen pointer and follows absolute movement
+AssertionError: expected [ { target: { x: +0, y: 0.5 }, …(1) } ] to deeply equal [ { at: 0.1, kind: 'place', …(1) } ]
+
+- Expected
++ Received
+
+  [
+    {
+      "at": 0.1,
+-     "kind": "place",
+      "target": {
+-       "x": 0.8,
+-       "y": 0.21999999999999997,
++       "x": 0,
++       "y": 0.5,
+      },
+    },
+  ]
+
+ ❯ tests/unit/swipe.test.ts:55:21
+     53|     const { pointer, samples } = setup();
+     54|     pointer('pointerdown', 200, 100, { type, at: 100 });
+     55|     expect(samples).toEqual([{ at: 0.1, kind: 'place', target: { x: 0.…
+       |                     ^
+     56|     pointer('pointermove', 70, 40, { type, at: 104 });
+     57|     expect(samples.at(-1)).toEqual({ at: 0.104, kind: 'move', target: …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > holds the last accepted movement on release, including movement queued in the same frame
+AssertionError: expected [ undefined, undefined, undefined ] to deeply equal [ 'place', 'move', 'release' ]
+
+- Expected
++ Received
+
+  [
+-   "place",
+-   "move",
+-   "release",
++   undefined,
++   undefined,
++   undefined,
+  ]
+
+ ❯ tests/unit/swipe.test.ts:65:48
+     63|     pointer('pointermove', 200, 20, { at: 101 });
+     64|     pointer('pointerup', 25, 105, { at: 102 });
+     65|     expect(samples.map(sample => sample.kind)).toEqual(['place', 'move…
+       |                                                ^
+     66|     expect(samples.at(-1)).toEqual({ ...samples[1], at: 0.102, kind: '…
+     67|     const count = samples.length;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > rejects an outside start and clamps captured movement outside every canvas edge
+AssertionError: expected [ Array(1) ] to have a length of +0 but got 1
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ tests/unit/swipe.test.ts:77:21
+     75|     const { pointer, samples } = setup();
+     76|     for (const [x, y] of [[19, 60], [221, 60], [120, 9], [120, 111]]) …
+     77|     expect(samples).toHaveLength(0);
+       |                     ^
+     78|     pointer('pointerdown', 120, 60);
+     79|     pointer('pointermove', -900, 900, { target: document });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > ignores hover, secondary buttons, nonprimary starts and interactive controls
+AssertionError: expected [ Array(1) ] to have a length of +0 but got 1
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ tests/unit/swipe.test.ts:91:21
+     89|     pointer('pointerdown', 120, 60, { type: 'touch', primary: false });
+     90|     for (const control of element.querySelectorAll('button, input, a')…
+     91|     expect(samples).toHaveLength(0);
+       |                     ^
+     92|   });
+     93|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > does not let an extra contact take ownership after the owner lifts
+AssertionError: expected [ undefined, undefined, undefined ] to deeply equal [ 'place', 'release' ]
+
+- Expected
++ Received
+
+  [
+-   "place",
+-   "release",
++   undefined,
++   undefined,
++   undefined,
+  ]
+
+ ❯ tests/unit/swipe.test.ts:102:48
+    100|     pointer('pointerdown', 210, 30, { type: 'pen', id: 3, at: 150 });
+    101|     pointer('pointermove', 190, 20, { type: 'touch', id: 2, primary: f…
+    102|     expect(samples.map(sample => sample.kind)).toEqual(['place', 'rele…
+       |                                                ^
+    103|     pointer('pointerup', 170, 60, { type: 'touch', id: 2, primary: fal…
+    104|     pointer('pointerup', 210, 30, { type: 'pen', id: 3, at: 180 });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > tracks extra contacts that start outside the canvas until they lift
+AssertionError: expected [ { …(2) }, { …(2) }, { …(2) } ] to have a length of 2 but got 3
+
+- Expected
++ Received
+
+- 2
++ 3
+
+ ❯ tests/unit/swipe.test.ts:115:21
+    113|     pointer('pointerup', 70, 60, { type: 'touch' });
+    114|     pointer('pointerdown', 170, 60, { type: 'pen', id: 3 });
+    115|     expect(samples).toHaveLength(2);
+       |                     ^
+    116|     pointer('pointerup', 700, 60, { type: 'touch', id: 2, primary: fal…
+    117|     pointer('pointerup', 170, 60, { type: 'pen', id: 3 });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > clears the whole sequence on unexpected pointercancel without appending stale input
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > clears the whole sequence on unexpected lostpointercapture without appending stale input
+AssertionError: expected [ { …(2) }, { …(2) } ] to have a length of 1 but got 2
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/unit/swipe.test.ts:127:21
+    125|     pointer('pointerdown', 170, 60, { type: 'touch', id: 2, primary: f…
+    126|     pointer(kind, 70, 60, { type: 'touch' });
+    127|     expect(samples).toHaveLength(1); expect(state.interruptions).toBe(…
+       |                     ^
+    128|     pointer('pointerup', 70, 60, { type: 'touch' });
+    129|     pointer('pointerup', 170, 60, { type: 'touch', id: 2, primary: fal…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > treats cancellation of the second finger as an interruption too
+AssertionError: expected [ { …(2) }, { …(2) } ] to have a length of 1 but got 2
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/unit/swipe.test.ts:141:21
+    139|     pointer('pointercancel', 170, 60, { type: 'touch', id: 2, primary:…
+    140|     pointer('pointermove', 120, 60, { type: 'touch' });
+    141|     expect(samples).toHaveLength(1); expect(state.interruptions).toBe(…
+       |                     ^
+    142|   });
+    143|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > cancel clears input without enqueueing a hold from a stale snapshot
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > updateMapping clears input without enqueueing a hold from a stale snapshot
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > dispose clears input without enqueueing a hold from a stale snapshot
+AssertionError: expected [ { …(2) }, …(2) ] to have a length of 2 but got 3
+
+- Expected
++ Received
+
+- 2
++ 3
+
+ ❯ tests/unit/swipe.test.ts:150:21
+    148|     if (action === 'updateMapping') controller.updateMapping(mapping);…
+    149|     pointer('pointerup', 170, 60); pointer('pointermove', 120, 60);
+    150|     expect(samples).toHaveLength(2); expect(captures.size).toBe(0); ex…
+       |                     ^
+    151|   });
+    152|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > preserves ordered rapid taps and their distinct placements
+AssertionError: expected [ undefined, undefined, …(4) ] to deeply equal [ 'place', 'release', 'place', …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "place",
+-   "release",
+-   "place",
+-   "release",
+-   "place",
+-   "release",
++   undefined,
++   undefined,
++   undefined,
++   undefined,
++   undefined,
++   undefined,
+  ]
+
+ ❯ tests/unit/swipe.test.ts:158:48
+    156|       pointer('pointerdown', x!, 60, { at }); pointer('pointerup', x!,…
+    157|     }
+    158|     expect(samples.map(sample => sample.kind)).toEqual(['place', 'rele…
+       |                                                ^
+    159|     expect(samples.map(sample => sample.target.x)).toEqual([-0.5, -0.5…
+    160|     expect(samples.map(sample => sample.at)).toEqual([0.1, 0.101, 0.10…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > rechecks the running guard after flushing input and rejects menu-time input
+AssertionError: expected [ { …(2) }, { …(2) } ] to have a length of 1 but got 2
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/unit/swipe.test.ts:172:21
+    170|     state.before = () => { state.running = false; };
+    171|     pointer('pointermove', 170, 60); pointer('pointerup', 170, 60);
+    172|     expect(samples).toHaveLength(1);
+       |                     ^
+    173|   });
+    174|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > does not resurrect an owner cancelled during beforeInput
+AssertionError: expected [ Array(1) ] to have a length of +0 but got 1
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ tests/unit/swipe.test.ts:179:21
+    177|     state.before = () => controller.cancel();
+    178|     pointer('pointerdown', 70, 60);
+    179|     expect(samples).toHaveLength(0);
+       |                     ^
+    180|   });
+    181|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > rejects stale mapping before both placement and movement, including changes during beforeInput
+AssertionError: expected [ Array(1) ] to have a length of +0 but got 1
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ tests/unit/swipe.test.ts:184:76
+    182|   it('rejects stale mapping before both placement and movement, includ…
+    183|     const { pointer, samples, state } = setup();
+    184|     state.current = false; pointer('pointerdown', 70, 60); expect(samp…
+       |                                                                            ^
+    185|     state.current = true; pointer('pointerdown', 70, 60); expect(sampl…
+    186|     state.before = () => { state.current = false; };
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > direct paddle pointer ownership > ignores nonfinite pointer coordinates and timestamps without poisoning the accepted target
+AssertionError: expected [ Array(1) ] to have a length of +0 but got 1
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ tests/unit/swipe.test.ts:196:21
+    194|       pointer('pointerdown', bad, 60); pointer('pointerdown', 70, bad)…
+    195|     }
+    196|     expect(samples).toHaveLength(0);
+       |                     ^
+    197|     pointer('pointerdown', 70, 60);
+    198|     for (const bad of [NaN, Infinity, -Infinity]) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > two-touch tap pause gesture > pauses only after both fingers lift (owner first: true), without delaying paddle input
+ FAIL  tests/unit/swipe.test.ts > two-touch tap pause gesture > pauses only after both fingers lift (owner first: false), without delaying paddle input
+AssertionError: expected [ undefined ] to deeply equal [ 'place' ]
+
+- Expected
++ Received
+
+  [
+-   "place",
++   undefined,
+  ]
+
+ ❯ tests/unit/swipe.test.ts:210:48
+    208|     const { pointer, samples, state } = setup();
+    209|     pointer('pointerdown', 70, 60, { type: 'touch', at: 100 });
+    210|     expect(samples.map(sample => sample.kind)).toEqual(['place']);
+       |                                                ^
+    211|     pointer('pointermove', 76, 68, { type: 'touch', at: 110 });
+    212|     expect(samples.map(sample => sample.kind)).toEqual(['place', 'move…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/40]⎯
+
+ FAIL  tests/unit/swipe.test.ts > two-touch tap pause gesture > rejects late second as a pause gesture
+ FAIL  tests/unit/swipe.test.ts > two-touch tap pause gesture > rejects late release as a pause gesture
+ FAIL  tests/unit/swipe.test.ts > two-touch tap pause gesture > rejects owner drag as a pause gesture
+ FAIL  tests/unit/swipe.test.ts > two-touch tap pause gesture > rejects second drag as a pause gesture
+ FAIL  tests/unit/swipe.test.ts > two-touch tap pause gesture > rejects release jump as a pause gesture
+ FAIL  tests/unit/swipe.test.ts > two-touch tap pause gesture > rejects third contact as a pause gesture
+ FAIL  tests/unit/swipe.test.ts > two-touch tap pause gesture > rejects mixed devices as a pause gesture
+AssertionError: expected undefined to be 'release' // Object.is equality
+
+- Expected:
+"release"
+
++ Received:
+undefined
+
+ ❯ tests/unit/swipe.test.ts:241:34
+    239|     pointer('pointerup', 170, 60, { type: 'touch', id: 2, primary: fal…
+    240|     expect(state.pauses).toBe(0);
+    241|     expect(samples.at(-1)?.kind).toBe('release');
+       |                                  ^
+    242|   });
+    243| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/40]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  40 failed (40)
+   Start at  19:18:06
+   Duration  1.38s (environment 57%, transform 19%, tests 19%, import 4%)
+

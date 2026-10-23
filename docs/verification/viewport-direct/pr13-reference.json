@@ -1,0 +1,47 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Action completed."
+    }
+  ],
+  "structuredContent": {
+    "url": "https://github.com/chameleonjp-lab/takkeu/pull/13",
+    "number": 13,
+    "state": "closed",
+    "merged": true,
+    "mergeable": false,
+    "draft": false,
+    "body": "ワンバウンド後の返球が中央のラケットに集まる問題を修正しました。現在の球速設定・飛行時間・毎ラリーの加速・接触判定を保ち、実際に見える返球経路を左右へ分けます。\n\n**発光タイミングのご報告は未再現です。指定された数値は変更せず、修正済みとは扱っていません。** 具体的な部位・ラリー数を質問済みです。\n\n- 相手側の打球地点と次の自側終点を同じ左右帯へ配置。候補は左・右各約40%、中央約20%。追加球にも適用し、初回サーブは中央を維持します。\n- 555以後の反転点も対象レーンの外側へ変更。台内のバウンド、位置の連続性、バウンドで方向を変える仕様を維持します。\n- 3,000本の検査で中央固定の返球は55.2%→18.3%。450では18.3%、555では17.9%。左右を狙った球の中央固定接触は全条件で0件でした。\n- 発光は実接触による0〜555の加点と部位別の直前・到達・翌ラリーを照合。16の切り替わりの前後を両ブラウザで64枚撮影し、指定表との一致を確認しました。390で床・壁・足の解放を先取りしません。\n\n正式検証：\n\n- 型検査：成功\n- 全単体：179件 / 32ファイル成功\n- 画面：最終76件成功（14件＋62件の分割、失敗後の影響範囲の再検査を含む）\n- ルートと `/takkeu/` の配布ビルド・実起動・開発機能非混入：4件成功\n- 555から30ゲーム秒で両エンジンとも670ラリー・149球。20回の再挑戦 / ホーム往復、保存、中断復帰も回帰検査に含みます。\n- 自他SE・音声復旧は実Web Audioで確認。実ドラッグ動画、発光境界画像、音声WAV、失敗ログ・trace、再検査ログを保存しています。\n\n検査で見つかった旧前提も修正しました。中央固定で2回返せる前提の入力時系列、予約の都合で予告前になったスマッシュ専用fixtureを更新。555の画像保存に43.8秒かかったため、その機能検査だけ実行上限を180→240秒へ変更しています。30ゲーム秒の条件や別の実時間性能基準は緩めていません。開発サーバー再読込による中断も記録し、新規サーバーで再検査しました。\n\n実機iPhone 17 Pro Safari・人による試聴・390以後の最終点滅安全性は未確認です。前回のLinux実時間性能未達も解消したとは扱いません。今回の時計を制御した検査は性能合格の根拠ではありません。\n\n[受入結果・全ログ・画像動画・音声・未確認事項](https://github.com/chameleonjp-lab/takkeu/blob/1179e5f821f5800e5b74134746d9f1a562d22cf4/docs/verification/return-spread-glow/README.md)\n[ソース118ファイル / 証拠190ファイルの検証マニフェスト](https://github.com/chameleonjp-lab/takkeu/blob/1179e5f821f5800e5b74134746d9f1a562d22cf4/docs/verification/return-spread-glow/manifest.json)\n\n実装・最終配布検証：`20f175116f7816d0818d6b432a4b442690a44d3d`。提出head：`1179e5f821f5800e5b74134746d9f1a562d22cf4`（その後は文書・証拠のみ、製品・テストの同一性を照合済み）。GitHub CIはこのPRで開始されるため、結果はChecksを確認してください。\n\n今回の変更は未公開で、自動マージ・公開実行・設定変更はしていません。現在の公開版はmain `547cec0654c18c8739752ae1ef322dde42086ee7`です。\n\n公開時のユーザー操作：\n\n1. 発光の未再現・実機等の未確認事項とCIを確認し、Draftを解除してmainへマージします。\n2. 既存のPages releaseがmainの完全SHAをexpected_shaと照合し、同じチェックアウトで検証・ビルドした成果物を自動配布します。\n3. 公開後に `/takkeu/release.json` のcommitとmainのSHAを照合し、ページを再読み込みして操作・発光を確認します。\n4. 手動公開はActions → Pages release → Run workflowでmainとexpected_sha（mainの完全SHA）を指定。復旧は[既存の公開・差し戻し手順](https://github.com/chameleonjp-lab/takkeu/blob/1179e5f821f5800e5b74134746d9f1a562d22cf4/docs/release.md)に従います。\n",
+    "title": "fix: 返球の中央偏りを修正し、発光ラリーを再照合",
+    "base": "main",
+    "base_sha": "547cec0654c18c8739752ae1ef322dde42086ee7",
+    "head": "fix/return-spread-glow-thresholds",
+    "head_sha": "1179e5f821f5800e5b74134746d9f1a562d22cf4",
+    "head_repo_id": 1429598143,
+    "head_repo_full_name": "chameleonjp-lab/takkeu",
+    "merge_commit_sha": "3e7ceba208200db931af645fdae1ccb271f4a7b7",
+    "user": {
+      "login": "chameleonjp-lab",
+      "name": "chameleonjp-lab",
+      "email": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/283055705?v=4",
+      "id": 283055705
+    },
+    "requested_reviewers": null,
+    "requested_team_reviewers": null,
+    "diff": null,
+    "comments": null,
+    "created_at": "2026-10-23T13:39:14Z",
+    "updated_at": "2026-10-23T14:32:56Z",
+    "closed_at": "2026-10-23T14:32:56Z",
+    "merged_at": "2026-10-23T14:32:56Z",
+    "commits": 3,
+    "changed_files": 209,
+    "additions": 130309,
+    "deletions": 24,
+    "display_url": "https://github.com/chameleonjp-lab/takkeu/pull/13",
+    "display_title": "fix: 返球の中央偏りを修正し、発光ラリーを再照合"
+  },
+  "isError": false
+}

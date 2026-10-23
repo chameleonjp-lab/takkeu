@@ -1,0 +1,96 @@
+{
+  "sourceSha": "2c3d95d62e019c60bc17a6d7b00f737e1a86f3ea",
+  "rows": [
+    {
+      "video": "chromium-direct-390.webm",
+      "source": "runs/final-affected-2c3d95d/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-chromium/video.webm",
+      "durationSeconds": 4.28,
+      "recordingSize": [
+        800,
+        450
+      ],
+      "sampleFps": 5,
+      "frameCount": 21,
+      "sheets": [
+        "chromium-direct-390-sequence-01.jpg",
+        "chromium-direct-390-sequence-02.jpg"
+      ]
+    },
+    {
+      "video": "chromium-three-rallies.webm",
+      "source": "runs/final-affected-2c3d95d/test-results/contact-見えている球にドラッグで合わせ、3ラリーをつなげる-chromium/video.webm",
+      "durationSeconds": 39.52,
+      "recordingSize": [
+        800,
+        450
+      ],
+      "sampleFps": 1,
+      "frameCount": 40,
+      "sheets": [
+        "chromium-three-rallies-sequence-01.jpg",
+        "chromium-three-rallies-sequence-02.jpg",
+        "chromium-three-rallies-sequence-03.jpg",
+        "chromium-three-rallies-sequence-04.jpg"
+      ]
+    },
+    {
+      "video": "chromium-two-finger.webm",
+      "source": "runs/final-affected-2c3d95d/test-results/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-chromium/video.webm",
+      "durationSeconds": 2.12,
+      "recordingSize": [
+        800,
+        450
+      ],
+      "sampleFps": 5,
+      "frameCount": 11,
+      "sheets": [
+        "chromium-two-finger-sequence-01.jpg"
+      ]
+    },
+    {
+      "video": "webkit-direct-390.webm",
+      "source": "runs/final-affected-2c3d95d/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-webkit/video.webm",
+      "durationSeconds": 5.92,
+      "recordingSize": [
+        390,
+        664
+      ],
+      "sampleFps": 5,
+      "frameCount": 30,
+      "sheets": [
+        "webkit-direct-390-sequence-01.jpg",
+        "webkit-direct-390-sequence-02.jpg",
+        "webkit-direct-390-sequence-03.jpg"
+      ]
+    },
+    {
+      "video": "webkit-three-rallies.webm",
+      "source": "runs/final-affected-2c3d95d/test-results/contact-見えている球にドラッグで合わせ、3ラリーをつなげる-webkit/video.webm",
+      "durationSeconds": 11.44,
+      "recordingSize": [
+        390,
+        664
+      ],
+      "sampleFps": 1,
+      "frameCount": 11,
+      "sheets": [
+        "webkit-three-rallies-sequence-01.jpg"
+      ]
+    },
+    {
+      "video": "webkit-two-finger.webm",
+      "source": "runs/final-affected-2c3d95d/test-results/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-webkit/video.webm",
+      "durationSeconds": 3.88,
+      "recordingSize": [
+        390,
+        664
+      ],
+      "sampleFps": 5,
+      "frameCount": 19,
+      "sheets": [
+        "webkit-two-finger-sequence-01.jpg",
+        "webkit-two-finger-sequence-02.jpg"
+      ]
+    }
+  ]
+}

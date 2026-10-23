@@ -16,7 +16,7 @@ export function createLoop(options: LoopOptions) {
     options.onPause('slow-frame');
     return true;
   };
-  const advance = (now: number): void => {
+  const advance = (now: number, preserveInputEndpoint = false): void => {
     now = Math.max(lastSimulation ?? now, now);
     const elapsed = lastSimulation === null ? 0 : Math.max(0, now - lastSimulation) / 1000;
     lastSimulation = now;
@@ -25,8 +25,11 @@ export function createLoop(options: LoopOptions) {
     // pointer events could consume as a burst of unseen ball movement.
     accumulator = Math.min(catchUpBudget(), accumulator + elapsed);
     while (accumulator + 1e-10 >= config.fixedDt && stepsSinceFrame < config.maxStepsPerFrame) {
+      // The pending pointer sample must get a chance to participate at its
+      // exact fixed boundary. A normal RAF still commits that boundary.
+      if (preserveInputEndpoint && accumulator <= config.fixedDt + 1e-10) break;
       const time = session.snapshot().simTime;
-      const result = session.step(config.fixedDt, timeline.sampleAt(time));
+      const result = session.step(config.fixedDt, timeline.take(time, time + config.fixedDt));
       pendingEvents.push(...result.events);
       options.onEvents(result.events);
       accumulator = Math.max(0, accumulator - config.fixedDt);
@@ -39,11 +42,15 @@ export function createLoop(options: LoopOptions) {
     toSimTime(timestamp: number) {
       const state = session.snapshot();
       if (state.phase !== 'running' || lastSimulation === null) return state.simTime;
-      return state.simTime + Math.min(catchUpBudget(), accumulator + Math.max(0, timestamp - lastSimulation) / 1000);
+      // Preserve the uncommitted remainder's wall-clock origin. Old delivered
+      // events (including pre-resume input) must not be retimed into a new tick.
+      const pending = accumulator + (timestamp - lastSimulation) / 1000;
+      if (!Number.isFinite(pending) || pending < -1e-10) return NaN;
+      return state.simTime + Math.min(catchUpBudget(), Math.max(0, pending));
     },
     // Flush chronological input before reading a release/recontact origin.
     // This does not render, reset the draw-delay clock, or consume draw events.
-    flushInput(now: number) { if (!pauseForDelay(now)) advance(now); },
+    flushInput(now: number) { if (!pauseForDelay(now)) advance(now, true); },
     frame(now: number): StepResult {
       if (pauseForDelay(now)) {
         lastFrame = now;stepsSinceFrame=0;

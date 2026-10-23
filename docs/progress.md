@@ -1,6 +1,14 @@
 # 実装の進行記録
 
-## 最新：バウンド後の左右配球と発光タイミングの照合（2026-10-23）
+2026-10-23のviewport全面化・直接操作については[今回の記録](verification/viewport-direct/README.md)を参照。下記の旧相対操作・固定画面・常設停止UIの履歴は当時の結果であり、新仕様の根拠にはしない。PR #13の発光報告は未再現のまま引き継ぐ。
+
+## viewport全面化・ラケット直接操作（2026-10-23）
+
+main/PR #13 merge `3e7ceba208200db931af645fdae1ccb271f4a7b7`から実装。canvasのviewport占有率100%、同条件の台・球・ラケット寸法1.18〜1.74倍を画像・測定で確認した。絶対座標の配置/drag/release保持、二本指タップ/Escape停止、明示再開、入力時刻と接触順序を整合させた。視点・可動範囲・球速・半径・配球値は変更していない。
+
+製品ソース`139f972314edc77194d10075ee1b804b57821d12`、最終検査ソース`d47753586136db8c4c20dd3a87bb89e912fb9f31`のCIで型・256unit・88browser・4配布検査が成功。3件の機能検査の時間枠変更と元timeoutを含め、[全ログ・画像動画・独立レビュー](verification/viewport-direct/README.md)を保存した。実時間性能のLinux参考目標は0/8達成。実機/VoiceOver/試聴/最終点滅安全性と、PR #13報告の未再現は引き継ぐ。提出は一つのDraft PRまでで、merge・自動merge・手動公開は行わない。最終headと提出後CIはPR本文/Checksで追跡する。
+
+## バウンド後の左右配球と発光タイミングの照合（2026-10-23、履歴）
 
 PR #12はmain `547cec0654c18c8739752ae1ef322dde42086ee7`へマージ・公開済みであることを、GitHubと実ページの`release.json`で照合した。この版を基準に`fix/return-spread-glow-thresholds`で修正する。
 

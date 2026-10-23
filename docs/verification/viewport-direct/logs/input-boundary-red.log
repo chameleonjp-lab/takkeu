@@ -1,0 +1,96 @@
+
+ RUN  v5.0.5 /workspace/takkeu-boundary
+
+ ❯ tests/unit/input-boundary.test.ts (2 tests | 2 failed) 55ms
+   × 未確定の固定境界にあるdownをbounce後・重なり評価前に適用する（配置先で重なる:false） 43ms
+   × 未確定の固定境界にあるdownをbounce後・重なり評価前に適用する（配置先で重なる:true） 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/input-boundary.test.ts > 未確定の固定境界にあるdownをbounce後・重なり評価前に適用する（配置先で重なる:false）
+AssertionError: expected [ { id: 'run-1:1', …(5) }, …(1) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "ballId": 1,
++     "id": "run-1:1",
++     "kind": "table-bounce",
++     "position": {
++       "x": 0,
++       "y": 0.044999999999999984,
++       "z": 0.8579999999999999,
++     },
++     "runId": "run-1",
++     "time": 1.44,
++   },
++   {
++     "ballId": 1,
++     "id": "run-1:2",
++     "kind": "player-hit",
++     "position": {
++       "x": 0.1460582218725413,
++       "y": 0.5841266719118804,
++       "z": 1.95,
++     },
++     "runId": "run-1",
++     "time": 1.44,
++   },
++ ]
+
+ ❯ tests/unit/input-boundary.test.ts:27:18
+     25|   const event = new MouseEvent('pointerdown', { clientX: 50, clientY: …
+     26|   Object.defineProperties(event, { pointerId: { value: 1 }, timeStamp:…
+     27|   expect(events).toEqual([]); // The handler must not commit this endp…
+       |                  ^
+     28|   loop.frame(config.fixedDt * 1000);
+     29|   expect(events.map(e => e.kind)).toEqual(overlap ? ['table-bounce', '…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/input-boundary.test.ts > 未確定の固定境界にあるdownをbounce後・重なり評価前に適用する（配置先で重なる:true）
+AssertionError: expected [ { id: 'run-2:1', …(5) } ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "ballId": 1,
++     "id": "run-2:1",
++     "kind": "table-bounce",
++     "position": {
++       "x": 0,
++       "y": 0.044999999999999984,
++       "z": 0.8579999999999999,
++     },
++     "runId": "run-2",
++     "time": 1.44,
++   },
++ ]
+
+ ❯ tests/unit/input-boundary.test.ts:27:18
+     25|   const event = new MouseEvent('pointerdown', { clientX: 50, clientY: …
+     26|   Object.defineProperties(event, { pointerId: { value: 1 }, timeStamp:…
+     27|   expect(events).toEqual([]); // The handler must not commit this endp…
+       |                  ^
+     28|   loop.frame(config.fixedDt * 1000);
+     29|   expect(events.map(e => e.kind)).toEqual(overlap ? ['table-bounce', '…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  19:46:16
+   Duration  1.66s (environment 66%, transform 25%, import 4%, tests 4%, worker 2%)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

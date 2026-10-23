@@ -1,0 +1,38 @@
+[WebServer] (node:18857) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:18870) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:18894) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/quality.spec.ts:86:1 › 450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する (3.1m)
+
+
+  1) [chromium] › tests/browser/quality.spec.ts:86:1 › 450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する ─────────
+
+    Test timeout of 180000ms exceeded.
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/quality-450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/quality-450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/quality-450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/quality-450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/quality.spec.ts:86:1 › 450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する ──────────
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

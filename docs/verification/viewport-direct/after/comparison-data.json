@@ -1,0 +1,4231 @@
+{
+  "beforeSha": "3e7ceba208200db931af645fdae1ccb271f4a7b7",
+  "afterSha": "2c3d95d62e019c60bc17a6d7b00f737e1a86f3ea",
+  "records": [
+    {
+      "id": "chromium-390x844-score0-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "browserVersion": "156.0.8078.4",
+      "before": {
+        "id": "chromium-390x844-score0-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "canvasRect": {
+          "x": 17,
+          "y": 158.796875,
+          "width": 356,
+          "height": 248.40625,
+          "top": 158.796875,
+          "right": 373,
+          "bottom": 407.203125,
+          "left": 17
+        },
+        "drawingSize": [
+          356,
+          248
+        ],
+        "canvasViewportAreaRatio": 0.26866151719528497,
+        "visibleCanvasViewportAreaRatio": 0.26866151719528497,
+        "tableFrontWidthCss": 318.10759340488397,
+        "tableDepthCss": 139.88405455985975,
+        "tableCanvasMarginCss": 14.496203297557978,
+        "tableViewportMarginCss": 31.496203297557976,
+        "paddleFaceCss": {
+          "left": 140.04333978717085,
+          "right": 184.66197956090758,
+          "top": 110.36752783174185,
+          "bottom": 149.64727933942893,
+          "width": 44.61863977373673,
+          "height": 39.27975150768708,
+          "minimumCanvasMargin": 98.75897066057107,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 148.4826418438691,
+        "paddleBoundaryCanvasMarginCss": 15.065401672792262,
+        "paddleBoundaryViewportMarginCss": 32.06540167279226,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 127.02484435891176,
+          "right": 138.2650101166106,
+          "top": 70.10000440336482,
+          "bottom": 80.89485180372475,
+          "width": 11.240165757698833,
+          "height": 10.794847400359927,
+          "minimumCanvasMargin": 70.10000440336482,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 32.48559507737487
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 88288,
+          "highLuminancePixels": 1709,
+          "highLuminanceViewportFraction": 0.005192003888686353,
+          "brightSaturatedPixels": 7011,
+          "brightSaturatedViewportFraction": 0.021299671892088954,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 89000
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "chromium-390x844-score0-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "drawingSize": [
+          390,
+          844
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 376.81159420289856,
+        "tableDepthCss": 165.6984451018035,
+        "tableCanvasMarginCss": 1.7192028985507064,
+        "tableViewportMarginCss": 1.7192028985507064,
+        "paddleFaceCss": {
+          "left": 150.4349758918954,
+          "right": 203.28759913282323,
+          "top": 405.6111632233662,
+          "bottom": 452.1396526161568,
+          "width": 52.85262324092784,
+          "height": 46.52848939279062,
+          "minimumCanvasMargin": 150.4349758918954,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 150.4349758918954,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 140.29447529906832,
+        "paddleBoundaryCanvasMarginCss": 2.393441903328992,
+        "paddleBoundaryViewportMarginCss": 2.393441903328992,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 135.0140299033419,
+          "right": 148.32847088517826,
+          "top": 357.9126171583657,
+          "bottom": 370.69956013752744,
+          "width": 13.314440981836356,
+          "height": 12.786942979161722,
+          "minimumCanvasMargin": 135.0140299033419,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "minimumViewportMargin": 135.0140299033419,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 30.13371200729881
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 329160,
+          "highLuminancePixels": 7725,
+          "highLuminanceViewportFraction": 0.0234688297484506,
+          "brightSaturatedPixels": 35687,
+          "brightSaturatedViewportFraction": 0.1084183983473083,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 329160
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.1845413376325686,
+        "tableDepth": 1.1845413376325686,
+        "paddleFaceWidth": 1.1845413376325686,
+        "paddleFaceHeight": 1.1845413376325702,
+        "firstBallWidth": 1.1845413376325673,
+        "firstBallHeight": 1.184541337632561
+      },
+      "maxScaleFactorSpread": 9.103828801926284e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 5.09014405933533,
+      "highLuminanceViewportAreaRatio": 4.52018724400234
+    },
+    {
+      "id": "chromium-390x844-score555-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "browserVersion": "156.0.8078.4",
+      "before": {
+        "id": "chromium-390x844-score555-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "canvasRect": {
+          "x": 17,
+          "y": 158.796875,
+          "width": 356,
+          "height": 248.40625,
+          "top": 158.796875,
+          "right": 373,
+          "bottom": 407.203125,
+          "left": 17
+        },
+        "drawingSize": [
+          356,
+          248
+        ],
+        "canvasViewportAreaRatio": 0.26866151719528497,
+        "visibleCanvasViewportAreaRatio": 0.26866151719528497,
+        "tableFrontWidthCss": 318.10759340488397,
+        "tableDepthCss": 139.88405455985975,
+        "tableCanvasMarginCss": 14.496203297557978,
+        "tableViewportMarginCss": 31.496203297557976,
+        "paddleFaceCss": {
+          "left": 140.04333978717085,
+          "right": 184.66197956090758,
+          "top": 110.36752783174185,
+          "bottom": 149.64727933942893,
+          "width": 44.61863977373673,
+          "height": 39.27975150768708,
+          "minimumCanvasMargin": 98.75897066057107,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 148.4826418438691,
+        "paddleBoundaryCanvasMarginCss": 15.065401672792262,
+        "paddleBoundaryViewportMarginCss": 32.06540167279226,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 127.01305826025079,
+          "right": 138.27314993124673,
+          "top": 70.10753147857014,
+          "bottom": 80.91182611144323,
+          "width": 11.260091670995948,
+          "height": 10.804294632873095,
+          "minimumCanvasMargin": 70.10753147857014,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 5.056010007850327
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 88288,
+          "highLuminancePixels": 32214,
+          "highLuminanceViewportFraction": 0.09786729857819905,
+          "brightSaturatedPixels": 71987,
+          "brightSaturatedViewportFraction": 0.2186991128934257,
+          "score0To555CanvasChangedPixels": 88117,
+          "score0To555CanvasBrighterPixels": 54587,
+          "fullCanvasScreenshotPixels": 89000
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "chromium-390x844-score555-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "drawingSize": [
+          390,
+          844
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 376.81159420289856,
+        "tableDepthCss": 165.6984451018035,
+        "tableCanvasMarginCss": 1.7192028985507064,
+        "tableViewportMarginCss": 1.7192028985507064,
+        "paddleFaceCss": {
+          "left": 150.4349758918954,
+          "right": 203.28759913282323,
+          "top": 405.6111632233662,
+          "bottom": 452.1396526161568,
+          "width": 52.85262324092784,
+          "height": 46.52848939279062,
+          "minimumCanvasMargin": 150.4349758918954,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 150.4349758918954,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 140.29447529906832,
+        "paddleBoundaryCanvasMarginCss": 2.393441903328992,
+        "paddleBoundaryViewportMarginCss": 2.393441903328992,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 135.00006878226853,
+          "right": 148.33811283209542,
+          "top": 357.9215332900978,
+          "bottom": 370.71966690669774,
+          "width": 13.338044049826891,
+          "height": 12.798133616599955,
+          "minimumCanvasMargin": 135.00006878226853,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "minimumViewportMargin": 135.00006878226853,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 28.109199227544572
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 329160,
+          "highLuminancePixels": 97337,
+          "highLuminanceViewportFraction": 0.29571333090290436,
+          "brightSaturatedPixels": 269864,
+          "brightSaturatedViewportFraction": 0.819856604690728,
+          "score0To555CanvasChangedPixels": 324052,
+          "score0To555CanvasBrighterPixels": 168573,
+          "fullCanvasScreenshotPixels": 329160
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.1845413376325686,
+        "tableDepth": 1.1845413376325686,
+        "paddleFaceWidth": 1.1845413376325686,
+        "paddleFaceHeight": 1.1845413376325702,
+        "firstBallWidth": 1.184541337632569,
+        "firstBallHeight": 1.1845413376325757
+      },
+      "maxScaleFactorSpread": 7.105427357601002e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 3.748787975606707,
+      "highLuminanceViewportAreaRatio": 3.021574470727013
+    },
+    {
+      "id": "chromium-844x390-score0-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "browserVersion": "156.0.8078.4",
+      "before": {
+        "id": "chromium-844x390-score0-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "canvasRect": {
+          "x": 176.046875,
+          "y": 110,
+          "width": 341.90625,
+          "height": 246,
+          "top": 110,
+          "right": 517.953125,
+          "bottom": 356,
+          "left": 176.046875
+        },
+        "drawingSize": [
+          341,
+          246
+        ],
+        "canvasViewportAreaRatio": 0.2555259979948961,
+        "visibleCanvasViewportAreaRatio": 0.2555259979948961,
+        "tableFrontWidthCss": 315.026163704019,
+        "tableDepthCss": 138.52903226760793,
+        "tableCanvasMarginCss": 9.16621502299049,
+        "tableViewportMarginCss": 94.32074693610522,
+        "paddleFaceCss": {
+          "left": 133.49720740520618,
+          "right": 177.68363743399667,
+          "top": 109.2984248448197,
+          "bottom": 148.19768309975905,
+          "width": 44.18643002879048,
+          "height": 38.89925825493934,
+          "minimumCanvasMargin": 97.80231690024095,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 108.38291343592422,
+        "paddleBoundaryCanvasMarginCss": 9.729899714127022,
+        "paddleBoundaryViewportMarginCss": 59.903060868373984,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 120.60481892725228,
+          "right": 131.73610397500738,
+          "top": 69.4209629718566,
+          "bottom": 80.11124335122926,
+          "width": 11.1312850477551,
+          "height": 10.690280379372666,
+          "minimumCanvasMargin": 69.4209629718566,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 32.17091514015539
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 84132,
+          "highLuminancePixels": 1439,
+          "highLuminanceViewportFraction": 0.004371734111070604,
+          "brightSaturatedPixels": 5859,
+          "brightSaturatedViewportFraction": 0.017799854174261758,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 84132
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "chromium-844x390-score0-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 844,
+          "height": 390,
+          "top": 0,
+          "right": 844,
+          "bottom": 390,
+          "left": 0
+        },
+        "drawingSize": [
+          844,
+          390
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 499.431722945396,
+        "tableDepthCss": 219.6191974974273,
+        "tableCanvasMarginCss": 74.75035004289371,
+        "tableViewportMarginCss": 74.75035004289371,
+        "paddleFaceCss": {
+          "left": 358.84424840154634,
+          "right": 428.895905764263,
+          "top": 173.277990607641,
+          "bottom": 234.94754637766678,
+          "width": 70.05165736271664,
+          "height": 61.669555770025795,
+          "minimumCanvasMargin": 155.05245362233322,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 155.05245362233322,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 117.92413105695306,
+        "paddleBoundaryCanvasMarginCss": 41.065828205958724,
+        "paddleBoundaryViewportMarginCss": 41.065828205958724,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 338.4050959364975,
+          "right": 356.05225515854823,
+          "top": 110.05762422367505,
+          "bottom": 127.00562970316831,
+          "width": 17.647159222050732,
+          "height": 16.94800547949326,
+          "minimumCanvasMargin": 110.05762422367505,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "minimumViewportMargin": 110.05762422367505,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 51.00267034414874
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 329160,
+          "highLuminancePixels": 9072,
+          "highLuminanceViewportFraction": 0.027561064527889173,
+          "brightSaturatedPixels": 65639,
+          "brightSaturatedViewportFraction": 0.1994136590108154,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 329160
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.5853658536585369,
+        "tableDepth": 1.5853658536585373,
+        "paddleFaceWidth": 1.585365853658537,
+        "paddleFaceHeight": 1.5853658536585369,
+        "firstBallWidth": 1.5853658536585333,
+        "firstBallHeight": 1.5853658536585375
+      },
+      "maxScaleFactorSpread": 4.218847493575595e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 11.203106332138589,
+      "highLuminanceViewportAreaRatio": 6.304378040305768
+    },
+    {
+      "id": "chromium-844x390-score555-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "browserVersion": "156.0.8078.4",
+      "before": {
+        "id": "chromium-844x390-score555-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "canvasRect": {
+          "x": 176.046875,
+          "y": 110,
+          "width": 341.90625,
+          "height": 246,
+          "top": 110,
+          "right": 517.953125,
+          "bottom": 356,
+          "left": 176.046875
+        },
+        "drawingSize": [
+          341,
+          246
+        ],
+        "canvasViewportAreaRatio": 0.2555259979948961,
+        "visibleCanvasViewportAreaRatio": 0.2555259979948961,
+        "tableFrontWidthCss": 315.026163704019,
+        "tableDepthCss": 138.52903226760793,
+        "tableCanvasMarginCss": 9.16621502299049,
+        "tableViewportMarginCss": 94.32074693610522,
+        "paddleFaceCss": {
+          "left": 133.49720740520618,
+          "right": 177.68363743399667,
+          "top": 109.2984248448197,
+          "bottom": 148.19768309975905,
+          "width": 44.18643002879048,
+          "height": 38.89925825493934,
+          "minimumCanvasMargin": 97.80231690024095,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 108.38291343592422,
+        "paddleBoundaryCanvasMarginCss": 9.729899714127022,
+        "paddleBoundaryViewportMarginCss": 59.903060868373984,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 120.59314699761846,
+          "right": 131.74416494126925,
+          "top": 69.4284171341432,
+          "bottom": 80.12805323302067,
+          "width": 11.151017943650785,
+          "height": 10.699636098877463,
+          "minimumCanvasMargin": 69.4284171341432,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 5.00703368748245
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 84132,
+          "highLuminancePixels": 31481,
+          "highLuminanceViewportFraction": 0.09564041803378297,
+          "brightSaturatedPixels": 68589,
+          "brightSaturatedViewportFraction": 0.2083758658403208,
+          "score0To555CanvasChangedPixels": 83919,
+          "score0To555CanvasBrighterPixels": 52481,
+          "fullCanvasScreenshotPixels": 84132
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "chromium-844x390-score555-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 844,
+          "height": 390,
+          "top": 0,
+          "right": 844,
+          "bottom": 390,
+          "left": 0
+        },
+        "drawingSize": [
+          844,
+          390
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 499.431722945396,
+        "tableDepthCss": 219.6191974974273,
+        "tableCanvasMarginCss": 74.75035004289371,
+        "tableViewportMarginCss": 74.75035004289371,
+        "paddleFaceCss": {
+          "left": 358.84424840154634,
+          "right": 428.895905764263,
+          "top": 173.277990607641,
+          "bottom": 234.94754637766678,
+          "width": 70.05165736271664,
+          "height": 61.669555770025795,
+          "minimumCanvasMargin": 155.05245362233322,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 155.05245362233322,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 117.92413105695306,
+        "paddleBoundaryCanvasMarginCss": 41.065828205958724,
+        "paddleBoundaryViewportMarginCss": 41.065828205958724,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 338.38659165780973,
+          "right": 356.0650347392073,
+          "top": 110.06944179803186,
+          "bottom": 127.03227951576444,
+          "width": 17.678443081397575,
+          "height": 16.962837717732583,
+          "minimumCanvasMargin": 110.06944179803186,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "minimumViewportMargin": 110.06944179803186,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 7.9379802362526215
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 329160,
+          "highLuminancePixels": 116010,
+          "highLuminanceViewportFraction": 0.3524425811155669,
+          "brightSaturatedPixels": 288664,
+          "brightSaturatedViewportFraction": 0.8769716855024912,
+          "score0To555CanvasChangedPixels": 323227,
+          "score0To555CanvasBrighterPixels": 191226,
+          "fullCanvasScreenshotPixels": 329160
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.5853658536585369,
+        "tableDepth": 1.5853658536585373,
+        "paddleFaceWidth": 1.585365853658537,
+        "paddleFaceHeight": 1.5853658536585369,
+        "firstBallWidth": 1.5853658536585356,
+        "firstBallHeight": 1.5853658536585384
+      },
+      "maxScaleFactorSpread": 2.886579864025407e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 4.208604878333261,
+      "highLuminanceViewportAreaRatio": 3.685079889457133
+    },
+    {
+      "id": "chromium-1280x720-score0-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "browserVersion": "156.0.8078.4",
+      "before": {
+        "id": "chromium-1280x720-score0-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "canvasRect": {
+          "x": 340.0625,
+          "y": 173.296875,
+          "width": 599.859375,
+          "height": 414.703125,
+          "top": 173.296875,
+          "right": 939.921875,
+          "bottom": 588,
+          "left": 340.0625
+        },
+        "drawingSize": [
+          599,
+          414
+        ],
+        "canvasViewportAreaRatio": 0.2699257349967957,
+        "visibleCanvasViewportAreaRatio": 0.2699257349967957,
+        "tableFrontWidthCss": 531.066400588692,
+        "tableDepthCss": 233.53017310814178,
+        "tableCanvasMarginCss": 26.898245018153933,
+        "tableViewportMarginCss": 233.6878140517764,
+        "paddleFaceCss": {
+          "left": 236.49357459236546,
+          "right": 310.9823982327445,
+          "top": 184.25365179156248,
+          "bottom": 249.8294402407714,
+          "width": 74.48882364037905,
+          "height": 65.57578844920891,
+          "minimumCanvasMargin": 164.8736847592286,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 257.393604262123,
+        "paddleBoundaryCanvasMarginCss": 27.84849624957254,
+        "paddleBoundaryViewportMarginCss": 175.6669930454467,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 214.75977869593675,
+          "right": 233.52473273890342,
+          "top": 117.02882229649678,
+          "bottom": 135.0503372576839,
+          "width": 18.76495404296668,
+          "height": 18.021514961187123,
+          "minimumCanvasMargin": 117.02882229649678,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 54.23324814118797
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 249000,
+          "highLuminancePixels": 4568,
+          "highLuminanceViewportFraction": 0.0049565972222222225,
+          "brightSaturatedPixels": 20054,
+          "brightSaturatedViewportFraction": 0.02175998263888889,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 249000
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "chromium-1280x720-score0-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "left": 0
+        },
+        "drawingSize": [
+          1280,
+          720
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 922.0277962068849,
+        "tableDepthCss": 405.45082614909643,
+        "tableCanvasMarginCss": 138.00064623303464,
+        "tableViewportMarginCss": 138.00064623303464,
+        "paddleFaceCss": {
+          "left": 526.881689356701,
+          "right": 656.2078260263318,
+          "top": 319.89782881410645,
+          "bottom": 433.74931638953865,
+          "width": 129.32613666963073,
+          "height": 113.8514875754322,
+          "minimumCanvasMargin": 286.25068361046135,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 286.25068361046135,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 217.7060881051441,
+        "paddleBoundaryCanvasMarginCss": 75.81383668792387,
+        "paddleBoundaryViewportMarginCss": 75.81383668792387,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 489.1478694212262,
+          "right": 521.7272402927044,
+          "top": 203.1833062590925,
+          "bottom": 234.47193175969542,
+          "width": 32.57937087147826,
+          "height": 31.288625500602933,
+          "minimumCanvasMargin": 203.1833062590925,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "minimumViewportMargin": 203.1833062590925,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 94.158776019967
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 921600,
+          "highLuminancePixels": 22926,
+          "highLuminanceViewportFraction": 0.024876302083333333,
+          "brightSaturatedPixels": 132806,
+          "brightSaturatedViewportFraction": 0.1441037326388889,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 921600
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.736181756527637,
+        "tableDepth": 1.7361817565276356,
+        "paddleFaceWidth": 1.7361817565276376,
+        "paddleFaceHeight": 1.736181756527636,
+        "firstBallWidth": 1.7361817565276365,
+        "firstBallHeight": 1.736181756527636
+      },
+      "maxScaleFactorSpread": 1.9984014443252818e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 6.6224194674379175,
+      "highLuminanceViewportAreaRatio": 5.018826619964973
+    },
+    {
+      "id": "chromium-1280x720-score555-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "browserVersion": "156.0.8078.4",
+      "before": {
+        "id": "chromium-1280x720-score555-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "canvasRect": {
+          "x": 340.0625,
+          "y": 173.296875,
+          "width": 599.859375,
+          "height": 414.703125,
+          "top": 173.296875,
+          "right": 939.921875,
+          "bottom": 588,
+          "left": 340.0625
+        },
+        "drawingSize": [
+          599,
+          414
+        ],
+        "canvasViewportAreaRatio": 0.2699257349967957,
+        "visibleCanvasViewportAreaRatio": 0.2699257349967957,
+        "tableFrontWidthCss": 531.066400588692,
+        "tableDepthCss": 233.53017310814178,
+        "tableCanvasMarginCss": 26.898245018153933,
+        "tableViewportMarginCss": 233.6878140517764,
+        "paddleFaceCss": {
+          "left": 236.49357459236546,
+          "right": 310.9823982327445,
+          "top": 184.25365179156248,
+          "bottom": 249.8294402407714,
+          "width": 74.48882364037905,
+          "height": 65.57578844920891,
+          "minimumCanvasMargin": 164.8736847592286,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 257.393604262123,
+        "paddleBoundaryCanvasMarginCss": 27.84849624957254,
+        "paddleBoundaryViewportMarginCss": 175.6669930454467,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 214.74010233132725,
+          "right": 233.53832179540473,
+          "top": 117.04138841192162,
+          "bottom": 135.07867510528462,
+          "width": 18.798219464077476,
+          "height": 18.037286693363,
+          "minimumCanvasMargin": 117.04138841192162,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 8.440782590159488
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 249000,
+          "highLuminancePixels": 91413,
+          "highLuminanceViewportFraction": 0.099189453125,
+          "brightSaturatedPixels": 204156,
+          "brightSaturatedViewportFraction": 0.2215234375,
+          "score0To555CanvasChangedPixels": 248646,
+          "score0To555CanvasBrighterPixels": 154443,
+          "fullCanvasScreenshotPixels": 249000
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "chromium-1280x720-score555-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "left": 0
+        },
+        "drawingSize": [
+          1280,
+          720
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 922.0277962068849,
+        "tableDepthCss": 405.45082614909643,
+        "tableCanvasMarginCss": 138.00064623303464,
+        "tableViewportMarginCss": 138.00064623303464,
+        "paddleFaceCss": {
+          "left": 526.881689356701,
+          "right": 656.2078260263318,
+          "top": 319.89782881410645,
+          "bottom": 433.74931638953865,
+          "width": 129.32613666963073,
+          "height": 113.8514875754322,
+          "minimumCanvasMargin": 286.25068361046135,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 286.25068361046135,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 217.7060881051441,
+        "paddleBoundaryCanvasMarginCss": 75.81383668792387,
+        "paddleBoundaryViewportMarginCss": 75.81383668792387,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 489.11370767595645,
+          "right": 521.7508333646904,
+          "top": 203.20512331944352,
+          "bottom": 234.52113141371902,
+          "width": 32.63712568873393,
+          "height": 31.316008094275503,
+          "minimumCanvasMargin": 203.20512331944352,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "minimumViewportMargin": 203.20512331944352,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 14.654732743851074
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 921600,
+          "highLuminancePixels": 334997,
+          "highLuminanceViewportFraction": 0.36349500868055556,
+          "brightSaturatedPixels": 790743,
+          "brightSaturatedViewportFraction": 0.8580110677083334,
+          "score0To555CanvasChangedPixels": 912888,
+          "score0To555CanvasBrighterPixels": 551766,
+          "fullCanvasScreenshotPixels": 921600
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.736181756527637,
+        "tableDepth": 1.7361817565276356,
+        "paddleFaceWidth": 1.7361817565276376,
+        "paddleFaceHeight": 1.736181756527636,
+        "firstBallWidth": 1.7361817565276307,
+        "firstBallHeight": 1.7361817565276345
+      },
+      "maxScaleFactorSpread": 6.8833827526759706e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 3.873229295244813,
+      "highLuminanceViewportAreaRatio": 3.6646538238543753
+    },
+    {
+      "id": "chromium-320x568-score0-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "browserVersion": "156.0.8078.4",
+      "before": {
+        "id": "chromium-320x568-score0-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "canvasRect": {
+          "x": 17,
+          "y": 158.796875,
+          "width": 286,
+          "height": 199.5625,
+          "top": 158.796875,
+          "right": 303,
+          "bottom": 358.359375,
+          "left": 17
+        },
+        "drawingSize": [
+          286,
+          199
+        ],
+        "canvasViewportAreaRatio": 0.3140122964348592,
+        "visibleCanvasViewportAreaRatio": 0.3140122964348592,
+        "tableFrontWidthCss": 255.55857233407843,
+        "tableDepthCss": 112.37886179635984,
+        "tableCanvasMarginCss": 11.645713832960755,
+        "tableViewportMarginCss": 28.645713832960755,
+        "paddleFaceCss": {
+          "left": 112.50670435034256,
+          "right": 148.3520476130275,
+          "top": 88.66612564265989,
+          "bottom": 120.22235826664904,
+          "width": 35.84534326268495,
+          "height": 31.556232623989146,
+          "minimumCanvasMargin": 79.34014173335096,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 122.62928366020226,
+        "paddleBoundaryCanvasMarginCss": 12.102991581639342,
+        "paddleBoundaryViewportMarginCss": 29.102991581639344,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 102.04801623801868,
+          "right": 111.07804498737892,
+          "top": 56.31634521573629,
+          "bottom": 64.98861789138084,
+          "width": 9.030028749360241,
+          "height": 8.67227267564455,
+          "minimumCanvasMargin": 56.31634521573629,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 26.098001027062008
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 56914,
+          "highLuminancePixels": 1210,
+          "highLuminanceViewportFraction": 0.006657130281690141,
+          "brightSaturatedPixels": 4512,
+          "brightSaturatedViewportFraction": 0.024823943661971833,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 57486
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "chromium-320x568-score0-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 568,
+          "top": 0,
+          "right": 320,
+          "bottom": 568,
+          "left": 0
+        },
+        "drawingSize": [
+          320,
+          568
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 309.17874396135267,
+        "tableDepthCss": 135.95769854506952,
+        "tableCanvasMarginCss": 1.4106280193236564,
+        "tableViewportMarginCss": 1.4106280193236564,
+        "paddleFaceCss": {
+          "left": 123.43382637283725,
+          "right": 166.80008133975238,
+          "top": 270.55274931147994,
+          "bottom": 308.7299713773594,
+          "width": 43.366254966915136,
+          "height": 38.17722206587945,
+          "minimumCanvasMargin": 123.43382637283725,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 123.43382637283725,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 115.11341563000478,
+        "paddleBoundaryCanvasMarginCss": 1.9638497668340449,
+        "paddleBoundaryViewportMarginCss": 1.9638497668340449,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 110.78074248479336,
+          "right": 121.70541200835139,
+          "top": 231.41548074532565,
+          "bottom": 241.9073313948943,
+          "width": 10.924669523558023,
+          "height": 10.491850649568647,
+          "minimumCanvasMargin": 110.78074248479336,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "minimumViewportMargin": 110.78074248479336,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 24.725097031629787
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 181760,
+          "highLuminancePixels": 5184,
+          "highLuminanceViewportFraction": 0.02852112676056338,
+          "brightSaturatedPixels": 9249,
+          "brightSaturatedViewportFraction": 0.05088578345070423,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 181760
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.2098155860613409,
+        "tableDepth": 1.2098155860613409,
+        "paddleFaceWidth": 1.209815586061341,
+        "paddleFaceHeight": 1.2098155860613413,
+        "firstBallWidth": 1.2098155860613415,
+        "firstBallHeight": 1.209815586061339
+      },
+      "maxScaleFactorSpread": 2.4424906541753444e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 2.049867021276596,
+      "highLuminanceViewportAreaRatio": 4.284297520661157
+    },
+    {
+      "id": "chromium-320x568-score555-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "browserVersion": "156.0.8078.4",
+      "before": {
+        "id": "chromium-320x568-score555-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "canvasRect": {
+          "x": 17,
+          "y": 158.796875,
+          "width": 286,
+          "height": 199.5625,
+          "top": 158.796875,
+          "right": 303,
+          "bottom": 358.359375,
+          "left": 17
+        },
+        "drawingSize": [
+          286,
+          199
+        ],
+        "canvasViewportAreaRatio": 0.3140122964348592,
+        "visibleCanvasViewportAreaRatio": 0.3140122964348592,
+        "tableFrontWidthCss": 255.55857233407843,
+        "tableDepthCss": 112.37886179635984,
+        "tableCanvasMarginCss": 11.645713832960755,
+        "tableViewportMarginCss": 28.645713832960755,
+        "paddleFaceCss": {
+          "left": 112.50670435034256,
+          "right": 148.3520476130275,
+          "top": 88.66612564265989,
+          "bottom": 120.22235826664904,
+          "width": 35.84534326268495,
+          "height": 31.556232623989146,
+          "minimumCanvasMargin": 79.34014173335096,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 122.62928366020226,
+        "paddleBoundaryCanvasMarginCss": 12.102991581639342,
+        "paddleBoundaryViewportMarginCss": 29.102991581639344,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 102.03854762233759,
+          "right": 111.0845842824181,
+          "top": 56.32239225338393,
+          "bottom": 65.00225456631985,
+          "width": 9.046036660080517,
+          "height": 8.679862312935917,
+          "minimumCanvasMargin": 56.32239225338393,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 4.061854309992728
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 56914,
+          "highLuminancePixels": 20888,
+          "highLuminanceViewportFraction": 0.11492077464788733,
+          "brightSaturatedPixels": 46470,
+          "brightSaturatedViewportFraction": 0.2556668133802817,
+          "score0To555CanvasChangedPixels": 56773,
+          "score0To555CanvasBrighterPixels": 35102,
+          "fullCanvasScreenshotPixels": 57486
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "chromium-320x568-score555-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 568,
+          "top": 0,
+          "right": 320,
+          "bottom": 568,
+          "left": 0
+        },
+        "drawingSize": [
+          320,
+          568
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 309.17874396135267,
+        "tableDepthCss": 135.95769854506952,
+        "tableCanvasMarginCss": 1.4106280193236564,
+        "tableViewportMarginCss": 1.4106280193236564,
+        "paddleFaceCss": {
+          "left": 123.43382637283725,
+          "right": 166.80008133975238,
+          "top": 270.55274931147994,
+          "bottom": 308.7299713773594,
+          "width": 43.366254966915136,
+          "height": 38.17722206587945,
+          "minimumCanvasMargin": 123.43382637283725,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 123.43382637283725,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 115.11341563000478,
+        "paddleBoundaryCanvasMarginCss": 1.9638497668340449,
+        "paddleBoundaryViewportMarginCss": 1.9638497668340449,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 110.76928720596392,
+          "right": 121.71332334941162,
+          "top": 231.42279654572127,
+          "bottom": 241.92382925677757,
+          "width": 10.944036143447704,
+          "height": 10.501032711056297,
+          "minimumCanvasMargin": 110.76928720596392,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "minimumViewportMargin": 110.76928720596392,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 23.06395834054939
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 181760,
+          "highLuminancePixels": 56297,
+          "highLuminanceViewportFraction": 0.3097326144366197,
+          "brightSaturatedPixels": 141380,
+          "brightSaturatedViewportFraction": 0.7778389084507042,
+          "score0To555CanvasChangedPixels": 178072,
+          "score0To555CanvasBrighterPixels": 95273,
+          "fullCanvasScreenshotPixels": 181760
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.2098155860613409,
+        "tableDepth": 1.2098155860613409,
+        "paddleFaceWidth": 1.209815586061341,
+        "paddleFaceHeight": 1.2098155860613413,
+        "firstBallWidth": 1.2098155860613429,
+        "firstBallHeight": 1.209815586061339
+      },
+      "maxScaleFactorSpread": 3.774758283725532e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 3.0423929416828064,
+      "highLuminanceViewportAreaRatio": 2.6951838376101107
+    },
+    {
+      "id": "chromium-280x360-score0-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 280,
+        "height": 360
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "browserVersion": "156.0.8078.4",
+      "before": {
+        "id": "chromium-280x360-score0-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 280,
+          "height": 360
+        },
+        "canvasRect": {
+          "x": 17,
+          "y": 210.796875,
+          "width": 246,
+          "height": 171.640625,
+          "top": 210.796875,
+          "right": 263,
+          "bottom": 382.4375,
+          "left": 17
+        },
+        "drawingSize": [
+          246,
+          171
+        ],
+        "canvasViewportAreaRatio": 0.4188848586309524,
+        "visibleCanvasViewportAreaRatio": 0.36412667410714283,
+        "tableFrontWidthCss": 219.80198223378108,
+        "tableDepthCss": 96.65532389860735,
+        "tableCanvasMarginCss": 10.024008883109472,
+        "tableViewportMarginCss": 19.649860587723282,
+        "paddleFaceCss": {
+          "left": 96.77298953088889,
+          "right": 127.60301581812617,
+          "top": 76.26036565805033,
+          "bottom": 103.40139410892105,
+          "width": 30.830026287237274,
+          "height": 27.14102845087072,
+          "minimumCanvasMargin": 68.23923089107895,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 29.4614014287111,
+        "paddleBoundaryCanvasMarginCss": 10.41730641436802,
+        "paddleBoundaryViewportMarginCss": -4.364257898940053,
+        "paddleBoundaryPlacementsOutsideViewport": 113,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 87.77763336788561,
+          "right": 95.54422167134024,
+          "top": 48.43681899427366,
+          "bottom": 55.89570682248814,
+          "width": 7.7665883034546255,
+          "height": 7.458887828214479,
+          "minimumCanvasMargin": 48.43681899427366,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 22.446487729586295
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 36654,
+          "highLuminancePixels": 620,
+          "highLuminanceViewportFraction": 0.006150793650793651,
+          "brightSaturatedPixels": 2725,
+          "brightSaturatedViewportFraction": 0.02703373015873016,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 42558
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "chromium-280x360-score0-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 280,
+          "height": 360
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 280,
+          "height": 360,
+          "top": 0,
+          "right": 280,
+          "bottom": 360,
+          "left": 0
+        },
+        "drawingSize": [
+          280,
+          360
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 270.5314009661836,
+        "tableDepthCss": 118.96298622693583,
+        "tableCanvasMarginCss": 1.2342995169081994,
+        "tableViewportMarginCss": 1.2342995169081994,
+        "paddleFaceCss": {
+          "left": 108.00459807623258,
+          "right": 145.95007117228334,
+          "top": 168.2336556475449,
+          "bottom": 201.63872495518942,
+          "width": 37.94547309605076,
+          "height": 33.40506930764451,
+          "minimumCanvasMargin": 108.00459807623258,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 108.00459807623258,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 100.72423867625419,
+        "paddleBoundaryCanvasMarginCss": 1.7183685459797893,
+        "paddleBoundaryViewportMarginCss": 1.7183685459797893,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 96.93314967419418,
+          "right": 106.49223550730747,
+          "top": 133.98854565215993,
+          "bottom": 143.1689149705325,
+          "width": 9.559085833113286,
+          "height": 9.180369318372584,
+          "minimumCanvasMargin": 96.93314967419418,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "minimumViewportMargin": 96.93314967419418,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 21.6344599026761
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 100800,
+          "highLuminancePixels": 4032,
+          "highLuminanceViewportFraction": 0.04,
+          "brightSaturatedPixels": 5741,
+          "brightSaturatedViewportFraction": 0.05695436507936508,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 100800
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.2307960020053266,
+        "tableDepth": 1.2307960020053266,
+        "paddleFaceWidth": 1.2307960020053266,
+        "paddleFaceHeight": 1.2307960020053268,
+        "firstBallWidth": 1.2307960020053268,
+        "firstBallHeight": 1.230796002005328
+      },
+      "maxScaleFactorSpread": 1.3322676295501878e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 2.106788990825688,
+      "highLuminanceViewportAreaRatio": 6.5032258064516135
+    },
+    {
+      "id": "chromium-280x360-score555-t1.25",
+      "engine": "chromium",
+      "viewport": {
+        "width": 280,
+        "height": 360
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "browserVersion": "156.0.8078.4",
+      "before": {
+        "id": "chromium-280x360-score555-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 280,
+          "height": 360
+        },
+        "canvasRect": {
+          "x": 17,
+          "y": 278.796875,
+          "width": 246,
+          "height": 171.640625,
+          "top": 278.796875,
+          "right": 263,
+          "bottom": 450.4375,
+          "left": 17
+        },
+        "drawingSize": [
+          246,
+          171
+        ],
+        "canvasViewportAreaRatio": 0.4188848586309524,
+        "visibleCanvasViewportAreaRatio": 0.1981742931547619,
+        "tableFrontWidthCss": 219.80198223378108,
+        "tableDepthCss": 96.65532389860735,
+        "tableCanvasMarginCss": 10.024008883109472,
+        "tableViewportMarginCss": -48.35013941227672,
+        "paddleFaceCss": {
+          "left": 96.77298953088889,
+          "right": 127.60301581812617,
+          "top": 76.26036565805033,
+          "bottom": 103.40139410892105,
+          "width": 30.830026287237274,
+          "height": 27.14102845087072,
+          "minimumCanvasMargin": 68.23923089107895,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": -38.5385985712889,
+        "paddleBoundaryCanvasMarginCss": 10.41730641436802,
+        "paddleBoundaryViewportMarginCss": -72.36425789894005,
+        "paddleBoundaryPlacementsOutsideViewport": 299,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 87.76948955773398,
+          "right": 95.54984601803656,
+          "top": 48.44201995798798,
+          "bottom": 55.90743551605258,
+          "width": 7.780356460302585,
+          "height": 7.465415558064599,
+          "minimumCanvasMargin": 48.44201995798798,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 3.4935381768924296
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 19926,
+          "highLuminancePixels": 9239,
+          "highLuminanceViewportFraction": 0.09165674603174603,
+          "brightSaturatedPixels": 18779,
+          "brightSaturatedViewportFraction": 0.18629960317460317,
+          "score0To555CanvasChangedPixels": 41931,
+          "score0To555CanvasBrighterPixels": 26153,
+          "fullCanvasScreenshotPixels": 42558
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "chromium-280x360-score555-t1.25",
+        "engine": "chromium",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 280,
+          "height": 360
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 280,
+          "height": 360,
+          "top": 0,
+          "right": 280,
+          "bottom": 360,
+          "left": 0
+        },
+        "drawingSize": [
+          280,
+          360
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 270.5314009661836,
+        "tableDepthCss": 118.96298622693583,
+        "tableCanvasMarginCss": 1.2342995169081994,
+        "tableViewportMarginCss": 1.2342995169081994,
+        "paddleFaceCss": {
+          "left": 108.00459807623258,
+          "right": 145.95007117228334,
+          "top": 168.2336556475449,
+          "bottom": 201.63872495518942,
+          "width": 37.94547309605076,
+          "height": 33.40506930764451,
+          "minimumCanvasMargin": 108.00459807623258,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 108.00459807623258,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 100.72423867625419,
+        "paddleBoundaryCanvasMarginCss": 1.7183685459797893,
+        "paddleBoundaryViewportMarginCss": 1.7183685459797893,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 96.92312630521843,
+          "right": 106.49915793073517,
+          "top": 133.9949469775061,
+          "bottom": 143.18335059968035,
+          "width": 9.576031625516734,
+          "height": 9.188403622174263,
+          "minimumCanvasMargin": 96.92312630521843,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "minimumViewportMargin": 96.92312630521843,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 20.180963547980717
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 100800,
+          "highLuminancePixels": 33585,
+          "highLuminanceViewportFraction": 0.3331845238095238,
+          "brightSaturatedPixels": 72279,
+          "brightSaturatedViewportFraction": 0.7170535714285714,
+          "score0To555CanvasChangedPixels": 97983,
+          "score0To555CanvasBrighterPixels": 54986,
+          "fullCanvasScreenshotPixels": 100800
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.2307960020053266,
+        "tableDepth": 1.2307960020053266,
+        "paddleFaceWidth": 1.2307960020053266,
+        "paddleFaceHeight": 1.2307960020053268,
+        "firstBallWidth": 1.2307960020053264,
+        "firstBallHeight": 1.2307960020053252
+      },
+      "maxScaleFactorSpread": 1.5543122344752192e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 3.8489269929176206,
+      "highLuminanceViewportAreaRatio": 3.635133672475376
+    },
+    {
+      "id": "webkit-390x844-score0-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "browserVersion": "27.2",
+      "before": {
+        "id": "webkit-390x844-score0-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "canvasRect": {
+          "x": 17,
+          "y": 158.796875,
+          "width": 356,
+          "height": 248.40625,
+          "top": 158.796875,
+          "right": 373,
+          "bottom": 407.203125,
+          "left": 17
+        },
+        "drawingSize": [
+          356,
+          248
+        ],
+        "canvasViewportAreaRatio": 0.26866151719528497,
+        "visibleCanvasViewportAreaRatio": 0.26866151719528497,
+        "tableFrontWidthCss": 318.10759340488397,
+        "tableDepthCss": 139.88405455985975,
+        "tableCanvasMarginCss": 14.496203297557978,
+        "tableViewportMarginCss": 31.496203297557976,
+        "paddleFaceCss": {
+          "left": 140.04333978717085,
+          "right": 184.66197956090758,
+          "top": 110.36752783174185,
+          "bottom": 149.64727933942893,
+          "width": 44.61863977373673,
+          "height": 39.27975150768708,
+          "minimumCanvasMargin": 98.75897066057107,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 148.4826418438691,
+        "paddleBoundaryCanvasMarginCss": 15.065401672792262,
+        "paddleBoundaryViewportMarginCss": 32.06540167279226,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 127.02484435891176,
+          "right": 138.2650101166106,
+          "top": 70.10000440336482,
+          "bottom": 80.89485180372475,
+          "width": 11.240165757698833,
+          "height": 10.794847400359927,
+          "minimumCanvasMargin": 70.10000440336482,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 32.48559507737487
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 88288,
+          "highLuminancePixels": 1996,
+          "highLuminanceViewportFraction": 0.00606392028192976,
+          "brightSaturatedPixels": 6789,
+          "brightSaturatedViewportFraction": 0.020625227852716005,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 89000
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "webkit-390x844-score0-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "drawingSize": [
+          390,
+          844
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 376.81159420289856,
+        "tableDepthCss": 165.6984451018035,
+        "tableCanvasMarginCss": 1.7192028985507064,
+        "tableViewportMarginCss": 1.7192028985507064,
+        "paddleFaceCss": {
+          "left": 150.4349758918954,
+          "right": 203.28759913282323,
+          "top": 405.6111632233662,
+          "bottom": 452.1396526161568,
+          "width": 52.85262324092784,
+          "height": 46.52848939279062,
+          "minimumCanvasMargin": 150.4349758918954,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 150.4349758918954,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 140.29447529906832,
+        "paddleBoundaryCanvasMarginCss": 2.393441903328992,
+        "paddleBoundaryViewportMarginCss": 2.393441903328992,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 135.0140299033419,
+          "right": 148.32847088517826,
+          "top": 357.9126171583657,
+          "bottom": 370.69956013752744,
+          "width": 13.314440981836356,
+          "height": 12.786942979161722,
+          "minimumCanvasMargin": 135.0140299033419,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "minimumViewportMargin": 135.0140299033419,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 30.13371200729881
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 329160,
+          "highLuminancePixels": 7652,
+          "highLuminanceViewportFraction": 0.02324705310487301,
+          "brightSaturatedPixels": 35266,
+          "brightSaturatedViewportFraction": 0.1071393851014704,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 329160
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.1845413376325686,
+        "tableDepth": 1.1845413376325686,
+        "paddleFaceWidth": 1.1845413376325686,
+        "paddleFaceHeight": 1.1845413376325702,
+        "firstBallWidth": 1.1845413376325673,
+        "firstBallHeight": 1.184541337632561
+      },
+      "maxScaleFactorSpread": 9.103828801926284e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 5.194579466784504,
+      "highLuminanceViewportAreaRatio": 3.8336673346693386
+    },
+    {
+      "id": "webkit-390x844-score555-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "browserVersion": "27.2",
+      "before": {
+        "id": "webkit-390x844-score555-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "canvasRect": {
+          "x": 17,
+          "y": 158.796875,
+          "width": 356,
+          "height": 248.40625,
+          "top": 158.796875,
+          "right": 373,
+          "bottom": 407.203125,
+          "left": 17
+        },
+        "drawingSize": [
+          356,
+          248
+        ],
+        "canvasViewportAreaRatio": 0.26866151719528497,
+        "visibleCanvasViewportAreaRatio": 0.26866151719528497,
+        "tableFrontWidthCss": 318.10759340488397,
+        "tableDepthCss": 139.88405455985975,
+        "tableCanvasMarginCss": 14.496203297557978,
+        "tableViewportMarginCss": 31.496203297557976,
+        "paddleFaceCss": {
+          "left": 140.04333978717085,
+          "right": 184.66197956090758,
+          "top": 110.36752783174185,
+          "bottom": 149.64727933942893,
+          "width": 44.61863977373673,
+          "height": 39.27975150768708,
+          "minimumCanvasMargin": 98.75897066057107,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 148.4826418438691,
+        "paddleBoundaryCanvasMarginCss": 15.065401672792262,
+        "paddleBoundaryViewportMarginCss": 32.06540167279226,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 127.01305826025079,
+          "right": 138.27314993124673,
+          "top": 70.10753147857014,
+          "bottom": 80.91182611144323,
+          "width": 11.260091670995948,
+          "height": 10.804294632873095,
+          "minimumCanvasMargin": 70.10753147857014,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 5.056010007850327
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 88288,
+          "highLuminancePixels": 32249,
+          "highLuminanceViewportFraction": 0.09797362984566776,
+          "brightSaturatedPixels": 71903,
+          "brightSaturatedViewportFraction": 0.2184439178515008,
+          "score0To555CanvasChangedPixels": 88034,
+          "score0To555CanvasBrighterPixels": 54585,
+          "fullCanvasScreenshotPixels": 89000
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "webkit-390x844-score555-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "right": 390,
+          "bottom": 844,
+          "left": 0
+        },
+        "drawingSize": [
+          390,
+          844
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 376.81159420289856,
+        "tableDepthCss": 165.6984451018035,
+        "tableCanvasMarginCss": 1.7192028985507064,
+        "tableViewportMarginCss": 1.7192028985507064,
+        "paddleFaceCss": {
+          "left": 150.4349758918954,
+          "right": 203.28759913282323,
+          "top": 405.6111632233662,
+          "bottom": 452.1396526161568,
+          "width": 52.85262324092784,
+          "height": 46.52848939279062,
+          "minimumCanvasMargin": 150.4349758918954,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 150.4349758918954,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 140.29447529906832,
+        "paddleBoundaryCanvasMarginCss": 2.393441903328992,
+        "paddleBoundaryViewportMarginCss": 2.393441903328992,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 135.00006878226853,
+          "right": 148.33811283209542,
+          "top": 357.9215332900978,
+          "bottom": 370.71966690669774,
+          "width": 13.338044049826891,
+          "height": 12.798133616599955,
+          "minimumCanvasMargin": 135.00006878226853,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "minimumViewportMargin": 135.00006878226853,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 28.109199227544572
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 329160,
+          "highLuminancePixels": 97235,
+          "highLuminanceViewportFraction": 0.2954034512091384,
+          "brightSaturatedPixels": 269723,
+          "brightSaturatedViewportFraction": 0.8194282415846397,
+          "score0To555CanvasChangedPixels": 324070,
+          "score0To555CanvasBrighterPixels": 168614,
+          "fullCanvasScreenshotPixels": 329160
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.1845413376325686,
+        "tableDepth": 1.1845413376325686,
+        "paddleFaceWidth": 1.1845413376325686,
+        "paddleFaceHeight": 1.1845413376325702,
+        "firstBallWidth": 1.184541337632569,
+        "firstBallHeight": 1.1845413376325757
+      },
+      "maxScaleFactorSpread": 7.105427357601002e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 3.7512064865165566,
+      "highLuminanceViewportAreaRatio": 3.0151322521628576
+    },
+    {
+      "id": "webkit-844x390-score0-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "browserVersion": "27.2",
+      "before": {
+        "id": "webkit-844x390-score0-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "canvasRect": {
+          "x": 176.046875,
+          "y": 110,
+          "width": 341.90625,
+          "height": 246,
+          "top": 110,
+          "right": 517.953125,
+          "bottom": 356,
+          "left": 176.046875
+        },
+        "drawingSize": [
+          341,
+          246
+        ],
+        "canvasViewportAreaRatio": 0.2555259979948961,
+        "visibleCanvasViewportAreaRatio": 0.2555259979948961,
+        "tableFrontWidthCss": 315.026163704019,
+        "tableDepthCss": 138.52903226760793,
+        "tableCanvasMarginCss": 9.16621502299049,
+        "tableViewportMarginCss": 94.32074693610522,
+        "paddleFaceCss": {
+          "left": 133.49720740520618,
+          "right": 177.68363743399667,
+          "top": 109.2984248448197,
+          "bottom": 148.19768309975905,
+          "width": 44.18643002879048,
+          "height": 38.89925825493934,
+          "minimumCanvasMargin": 97.80231690024095,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 108.38291343592422,
+        "paddleBoundaryCanvasMarginCss": 9.729899714127022,
+        "paddleBoundaryViewportMarginCss": 59.903060868373984,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 120.60481892725228,
+          "right": 131.73610397500738,
+          "top": 69.4209629718566,
+          "bottom": 80.11124335122926,
+          "width": 11.1312850477551,
+          "height": 10.690280379372666,
+          "minimumCanvasMargin": 69.4209629718566,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 32.17091514015539
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 84132,
+          "highLuminancePixels": 1436,
+          "highLuminanceViewportFraction": 0.004362620002430429,
+          "brightSaturatedPixels": 5812,
+          "brightSaturatedViewportFraction": 0.01765706647223235,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 84132
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "webkit-844x390-score0-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 844,
+          "height": 390,
+          "top": 0,
+          "right": 844,
+          "bottom": 390,
+          "left": 0
+        },
+        "drawingSize": [
+          844,
+          390
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 499.431722945396,
+        "tableDepthCss": 219.6191974974273,
+        "tableCanvasMarginCss": 74.75035004289371,
+        "tableViewportMarginCss": 74.75035004289371,
+        "paddleFaceCss": {
+          "left": 358.84424840154634,
+          "right": 428.895905764263,
+          "top": 173.277990607641,
+          "bottom": 234.94754637766678,
+          "width": 70.05165736271664,
+          "height": 61.669555770025795,
+          "minimumCanvasMargin": 155.05245362233322,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 155.05245362233322,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 117.92413105695306,
+        "paddleBoundaryCanvasMarginCss": 41.065828205958724,
+        "paddleBoundaryViewportMarginCss": 41.065828205958724,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 338.4050959364975,
+          "right": 356.05225515854823,
+          "top": 110.05762422367505,
+          "bottom": 127.00562970316831,
+          "width": 17.647159222050732,
+          "height": 16.94800547949326,
+          "minimumCanvasMargin": 110.05762422367505,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "minimumViewportMargin": 110.05762422367505,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 51.00267034414874
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 329160,
+          "highLuminancePixels": 8990,
+          "highLuminanceViewportFraction": 0.027311945558391056,
+          "brightSaturatedPixels": 65478,
+          "brightSaturatedViewportFraction": 0.19892453518045936,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 329160
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.5853658536585369,
+        "tableDepth": 1.5853658536585373,
+        "paddleFaceWidth": 1.585365853658537,
+        "paddleFaceHeight": 1.5853658536585369,
+        "firstBallWidth": 1.5853658536585333,
+        "firstBallHeight": 1.5853658536585375
+      },
+      "maxScaleFactorSpread": 4.218847493575595e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 11.26600137646249,
+      "highLuminanceViewportAreaRatio": 6.260445682451253
+    },
+    {
+      "id": "webkit-844x390-score555-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "browserVersion": "27.2",
+      "before": {
+        "id": "webkit-844x390-score555-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "canvasRect": {
+          "x": 176.046875,
+          "y": 110,
+          "width": 341.90625,
+          "height": 246,
+          "top": 110,
+          "right": 517.953125,
+          "bottom": 356,
+          "left": 176.046875
+        },
+        "drawingSize": [
+          341,
+          246
+        ],
+        "canvasViewportAreaRatio": 0.2555259979948961,
+        "visibleCanvasViewportAreaRatio": 0.2555259979948961,
+        "tableFrontWidthCss": 315.026163704019,
+        "tableDepthCss": 138.52903226760793,
+        "tableCanvasMarginCss": 9.16621502299049,
+        "tableViewportMarginCss": 94.32074693610522,
+        "paddleFaceCss": {
+          "left": 133.49720740520618,
+          "right": 177.68363743399667,
+          "top": 109.2984248448197,
+          "bottom": 148.19768309975905,
+          "width": 44.18643002879048,
+          "height": 38.89925825493934,
+          "minimumCanvasMargin": 97.80231690024095,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 108.38291343592422,
+        "paddleBoundaryCanvasMarginCss": 9.729899714127022,
+        "paddleBoundaryViewportMarginCss": 59.903060868373984,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 120.59314699761846,
+          "right": 131.74416494126925,
+          "top": 69.4284171341432,
+          "bottom": 80.12805323302067,
+          "width": 11.151017943650785,
+          "height": 10.699636098877463,
+          "minimumCanvasMargin": 69.4284171341432,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 5.00703368748245
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 84132,
+          "highLuminancePixels": 31393,
+          "highLuminanceViewportFraction": 0.0953730708470045,
+          "brightSaturatedPixels": 68533,
+          "brightSaturatedViewportFraction": 0.2082057358123709,
+          "score0To555CanvasChangedPixels": 83912,
+          "score0To555CanvasBrighterPixels": 52486,
+          "fullCanvasScreenshotPixels": 84132
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "webkit-844x390-score555-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 844,
+          "height": 390,
+          "top": 0,
+          "right": 844,
+          "bottom": 390,
+          "left": 0
+        },
+        "drawingSize": [
+          844,
+          390
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 499.431722945396,
+        "tableDepthCss": 219.6191974974273,
+        "tableCanvasMarginCss": 74.75035004289371,
+        "tableViewportMarginCss": 74.75035004289371,
+        "paddleFaceCss": {
+          "left": 358.84424840154634,
+          "right": 428.895905764263,
+          "top": 173.277990607641,
+          "bottom": 234.94754637766678,
+          "width": 70.05165736271664,
+          "height": 61.669555770025795,
+          "minimumCanvasMargin": 155.05245362233322,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 155.05245362233322,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 117.92413105695306,
+        "paddleBoundaryCanvasMarginCss": 41.065828205958724,
+        "paddleBoundaryViewportMarginCss": 41.065828205958724,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 338.38659165780973,
+          "right": 356.0650347392073,
+          "top": 110.06944179803186,
+          "bottom": 127.03227951576444,
+          "width": 17.678443081397575,
+          "height": 16.962837717732583,
+          "minimumCanvasMargin": 110.06944179803186,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "minimumViewportMargin": 110.06944179803186,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 7.9379802362526215
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 329160,
+          "highLuminancePixels": 115807,
+          "highLuminanceViewportFraction": 0.3518258597642484,
+          "brightSaturatedPixels": 288401,
+          "brightSaturatedViewportFraction": 0.8761726819783692,
+          "score0To555CanvasChangedPixels": 323279,
+          "score0To555CanvasBrighterPixels": 191329,
+          "fullCanvasScreenshotPixels": 329160
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.5853658536585369,
+        "tableDepth": 1.5853658536585373,
+        "paddleFaceWidth": 1.585365853658537,
+        "paddleFaceHeight": 1.5853658536585369,
+        "firstBallWidth": 1.5853658536585356,
+        "firstBallHeight": 1.5853658536585384
+      },
+      "maxScaleFactorSpread": 2.886579864025407e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 4.208206265594677,
+      "highLuminanceViewportAreaRatio": 3.6889433950243684
+    },
+    {
+      "id": "webkit-1280x720-score0-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "browserVersion": "27.2",
+      "before": {
+        "id": "webkit-1280x720-score0-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "canvasRect": {
+          "x": 340.0625,
+          "y": 173.296875,
+          "width": 599.859375,
+          "height": 414.703125,
+          "top": 173.296875,
+          "right": 939.921875,
+          "bottom": 588,
+          "left": 340.0625
+        },
+        "drawingSize": [
+          599,
+          414
+        ],
+        "canvasViewportAreaRatio": 0.2699257349967957,
+        "visibleCanvasViewportAreaRatio": 0.2699257349967957,
+        "tableFrontWidthCss": 531.066400588692,
+        "tableDepthCss": 233.53017310814178,
+        "tableCanvasMarginCss": 26.898245018153933,
+        "tableViewportMarginCss": 233.6878140517764,
+        "paddleFaceCss": {
+          "left": 236.49357459236546,
+          "right": 310.9823982327445,
+          "top": 184.25365179156248,
+          "bottom": 249.8294402407714,
+          "width": 74.48882364037905,
+          "height": 65.57578844920891,
+          "minimumCanvasMargin": 164.8736847592286,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 257.393604262123,
+        "paddleBoundaryCanvasMarginCss": 27.84849624957254,
+        "paddleBoundaryViewportMarginCss": 175.6669930454467,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 214.75977869593675,
+          "right": 233.52473273890342,
+          "top": 117.02882229649678,
+          "bottom": 135.0503372576839,
+          "width": 18.76495404296668,
+          "height": 18.021514961187123,
+          "minimumCanvasMargin": 117.02882229649678,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 54.23324814118797
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 249000,
+          "highLuminancePixels": 4559,
+          "highLuminanceViewportFraction": 0.004946831597222222,
+          "brightSaturatedPixels": 19949,
+          "brightSaturatedViewportFraction": 0.021646050347222223,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 249000
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "webkit-1280x720-score0-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "left": 0
+        },
+        "drawingSize": [
+          1280,
+          720
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 922.0277962068849,
+        "tableDepthCss": 405.45082614909643,
+        "tableCanvasMarginCss": 138.00064623303464,
+        "tableViewportMarginCss": 138.00064623303464,
+        "paddleFaceCss": {
+          "left": 526.881689356701,
+          "right": 656.2078260263318,
+          "top": 319.89782881410645,
+          "bottom": 433.74931638953865,
+          "width": 129.32613666963073,
+          "height": 113.8514875754322,
+          "minimumCanvasMargin": 286.25068361046135,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 286.25068361046135,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 217.7060881051441,
+        "paddleBoundaryCanvasMarginCss": 75.81383668792387,
+        "paddleBoundaryViewportMarginCss": 75.81383668792387,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 489.1478694212262,
+          "right": 521.7272402927044,
+          "top": 203.1833062590925,
+          "bottom": 234.47193175969542,
+          "width": 32.57937087147826,
+          "height": 31.288625500602933,
+          "minimumCanvasMargin": 203.1833062590925,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "minimumViewportMargin": 203.1833062590925,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 94.158776019967
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 921600,
+          "highLuminancePixels": 22862,
+          "highLuminanceViewportFraction": 0.024806857638888888,
+          "brightSaturatedPixels": 132355,
+          "brightSaturatedViewportFraction": 0.14361436631944444,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 921600
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.736181756527637,
+        "tableDepth": 1.7361817565276356,
+        "paddleFaceWidth": 1.7361817565276376,
+        "paddleFaceHeight": 1.736181756527636,
+        "firstBallWidth": 1.7361817565276365,
+        "firstBallHeight": 1.736181756527636
+      },
+      "maxScaleFactorSpread": 1.9984014443252818e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 6.6346684044313,
+      "highLuminanceViewportAreaRatio": 5.014696205308182
+    },
+    {
+      "id": "webkit-1280x720-score555-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "browserVersion": "27.2",
+      "before": {
+        "id": "webkit-1280x720-score555-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "canvasRect": {
+          "x": 340.0625,
+          "y": 173.296875,
+          "width": 599.859375,
+          "height": 414.703125,
+          "top": 173.296875,
+          "right": 939.921875,
+          "bottom": 588,
+          "left": 340.0625
+        },
+        "drawingSize": [
+          599,
+          414
+        ],
+        "canvasViewportAreaRatio": 0.2699257349967957,
+        "visibleCanvasViewportAreaRatio": 0.2699257349967957,
+        "tableFrontWidthCss": 531.066400588692,
+        "tableDepthCss": 233.53017310814178,
+        "tableCanvasMarginCss": 26.898245018153933,
+        "tableViewportMarginCss": 233.6878140517764,
+        "paddleFaceCss": {
+          "left": 236.49357459236546,
+          "right": 310.9823982327445,
+          "top": 184.25365179156248,
+          "bottom": 249.8294402407714,
+          "width": 74.48882364037905,
+          "height": 65.57578844920891,
+          "minimumCanvasMargin": 164.8736847592286,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 257.393604262123,
+        "paddleBoundaryCanvasMarginCss": 27.84849624957254,
+        "paddleBoundaryViewportMarginCss": 175.6669930454467,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 214.74010233132725,
+          "right": 233.53832179540473,
+          "top": 117.04138841192162,
+          "bottom": 135.07867510528462,
+          "width": 18.798219464077476,
+          "height": 18.037286693363,
+          "minimumCanvasMargin": 117.04138841192162,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 8.440782590159488
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 249000,
+          "highLuminancePixels": 91383,
+          "highLuminanceViewportFraction": 0.09915690104166666,
+          "brightSaturatedPixels": 204135,
+          "brightSaturatedViewportFraction": 0.22150065104166666,
+          "score0To555CanvasChangedPixels": 248647,
+          "score0To555CanvasBrighterPixels": 154471,
+          "fullCanvasScreenshotPixels": 249000
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "webkit-1280x720-score555-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "left": 0
+        },
+        "drawingSize": [
+          1280,
+          720
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 922.0277962068849,
+        "tableDepthCss": 405.45082614909643,
+        "tableCanvasMarginCss": 138.00064623303464,
+        "tableViewportMarginCss": 138.00064623303464,
+        "paddleFaceCss": {
+          "left": 526.881689356701,
+          "right": 656.2078260263318,
+          "top": 319.89782881410645,
+          "bottom": 433.74931638953865,
+          "width": 129.32613666963073,
+          "height": 113.8514875754322,
+          "minimumCanvasMargin": 286.25068361046135,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 286.25068361046135,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 217.7060881051441,
+        "paddleBoundaryCanvasMarginCss": 75.81383668792387,
+        "paddleBoundaryViewportMarginCss": 75.81383668792387,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 489.11370767595645,
+          "right": 521.7508333646904,
+          "top": 203.20512331944352,
+          "bottom": 234.52113141371902,
+          "width": 32.63712568873393,
+          "height": 31.316008094275503,
+          "minimumCanvasMargin": 203.20512331944352,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "minimumViewportMargin": 203.20512331944352,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 14.654732743851074
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 921600,
+          "highLuminancePixels": 334879,
+          "highLuminanceViewportFraction": 0.3633669704861111,
+          "brightSaturatedPixels": 790330,
+          "brightSaturatedViewportFraction": 0.8575629340277777,
+          "score0To555CanvasChangedPixels": 912931,
+          "score0To555CanvasBrighterPixels": 551989,
+          "fullCanvasScreenshotPixels": 921600
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.736181756527637,
+        "tableDepth": 1.7361817565276356,
+        "paddleFaceWidth": 1.7361817565276376,
+        "paddleFaceHeight": 1.736181756527636,
+        "firstBallWidth": 1.7361817565276307,
+        "firstBallHeight": 1.7361817565276345
+      },
+      "maxScaleFactorSpread": 6.8833827526759706e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 3.871604575403532,
+      "highLuminanceViewportAreaRatio": 3.664565619425933
+    },
+    {
+      "id": "webkit-320x568-score0-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "browserVersion": "27.2",
+      "before": {
+        "id": "webkit-320x568-score0-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "canvasRect": {
+          "x": 17,
+          "y": 158.796875,
+          "width": 286,
+          "height": 199.5625,
+          "top": 158.796875,
+          "right": 303,
+          "bottom": 358.359375,
+          "left": 17
+        },
+        "drawingSize": [
+          286,
+          199
+        ],
+        "canvasViewportAreaRatio": 0.3140122964348592,
+        "visibleCanvasViewportAreaRatio": 0.3140122964348592,
+        "tableFrontWidthCss": 255.55857233407843,
+        "tableDepthCss": 112.37886179635984,
+        "tableCanvasMarginCss": 11.645713832960755,
+        "tableViewportMarginCss": 28.645713832960755,
+        "paddleFaceCss": {
+          "left": 112.50670435034256,
+          "right": 148.3520476130275,
+          "top": 88.66612564265989,
+          "bottom": 120.22235826664904,
+          "width": 35.84534326268495,
+          "height": 31.556232623989146,
+          "minimumCanvasMargin": 79.34014173335096,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 122.62928366020226,
+        "paddleBoundaryCanvasMarginCss": 12.102991581639342,
+        "paddleBoundaryViewportMarginCss": 29.102991581639344,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 102.04801623801868,
+          "right": 111.07804498737892,
+          "top": 56.31634521573629,
+          "bottom": 64.98861789138084,
+          "width": 9.030028749360241,
+          "height": 8.67227267564455,
+          "minimumCanvasMargin": 56.31634521573629,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 26.098001027062008
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 56914,
+          "highLuminancePixels": 933,
+          "highLuminanceViewportFraction": 0.005133142605633803,
+          "brightSaturatedPixels": 4476,
+          "brightSaturatedViewportFraction": 0.02462588028169014,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 57486
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "webkit-320x568-score0-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 568,
+          "top": 0,
+          "right": 320,
+          "bottom": 568,
+          "left": 0
+        },
+        "drawingSize": [
+          320,
+          568
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 309.17874396135267,
+        "tableDepthCss": 135.95769854506952,
+        "tableCanvasMarginCss": 1.4106280193236564,
+        "tableViewportMarginCss": 1.4106280193236564,
+        "paddleFaceCss": {
+          "left": 123.43382637283725,
+          "right": 166.80008133975238,
+          "top": 270.55274931147994,
+          "bottom": 308.7299713773594,
+          "width": 43.366254966915136,
+          "height": 38.17722206587945,
+          "minimumCanvasMargin": 123.43382637283725,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 123.43382637283725,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 115.11341563000478,
+        "paddleBoundaryCanvasMarginCss": 1.9638497668340449,
+        "paddleBoundaryViewportMarginCss": 1.9638497668340449,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 110.78074248479336,
+          "right": 121.70541200835139,
+          "top": 231.41548074532565,
+          "bottom": 241.9073313948943,
+          "width": 10.924669523558023,
+          "height": 10.491850649568647,
+          "minimumCanvasMargin": 110.78074248479336,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "minimumViewportMargin": 110.78074248479336,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 24.725097031629787
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 181760,
+          "highLuminancePixels": 5137,
+          "highLuminanceViewportFraction": 0.02826254401408451,
+          "brightSaturatedPixels": 9079,
+          "brightSaturatedViewportFraction": 0.04995048415492958,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 181760
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.2098155860613409,
+        "tableDepth": 1.2098155860613409,
+        "paddleFaceWidth": 1.209815586061341,
+        "paddleFaceHeight": 1.2098155860613413,
+        "firstBallWidth": 1.2098155860613415,
+        "firstBallHeight": 1.209815586061339
+      },
+      "maxScaleFactorSpread": 2.4424906541753444e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 2.028373547810545,
+      "highLuminanceViewportAreaRatio": 5.505894962486603
+    },
+    {
+      "id": "webkit-320x568-score555-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "browserVersion": "27.2",
+      "before": {
+        "id": "webkit-320x568-score555-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "canvasRect": {
+          "x": 17,
+          "y": 158.796875,
+          "width": 286,
+          "height": 199.5625,
+          "top": 158.796875,
+          "right": 303,
+          "bottom": 358.359375,
+          "left": 17
+        },
+        "drawingSize": [
+          286,
+          199
+        ],
+        "canvasViewportAreaRatio": 0.3140122964348592,
+        "visibleCanvasViewportAreaRatio": 0.3140122964348592,
+        "tableFrontWidthCss": 255.55857233407843,
+        "tableDepthCss": 112.37886179635984,
+        "tableCanvasMarginCss": 11.645713832960755,
+        "tableViewportMarginCss": 28.645713832960755,
+        "paddleFaceCss": {
+          "left": 112.50670435034256,
+          "right": 148.3520476130275,
+          "top": 88.66612564265989,
+          "bottom": 120.22235826664904,
+          "width": 35.84534326268495,
+          "height": 31.556232623989146,
+          "minimumCanvasMargin": 79.34014173335096,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 122.62928366020226,
+        "paddleBoundaryCanvasMarginCss": 12.102991581639342,
+        "paddleBoundaryViewportMarginCss": 29.102991581639344,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 102.03854762233759,
+          "right": 111.0845842824181,
+          "top": 56.32239225338393,
+          "bottom": 65.00225456631985,
+          "width": 9.046036660080517,
+          "height": 8.679862312935917,
+          "minimumCanvasMargin": 56.32239225338393,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 4.061854309992728
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 56914,
+          "highLuminancePixels": 20862,
+          "highLuminanceViewportFraction": 0.11477772887323943,
+          "brightSaturatedPixels": 46371,
+          "brightSaturatedViewportFraction": 0.25512213908450704,
+          "score0To555CanvasChangedPixels": 56775,
+          "score0To555CanvasBrighterPixels": 35312,
+          "fullCanvasScreenshotPixels": 57486
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "webkit-320x568-score555-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 568,
+          "top": 0,
+          "right": 320,
+          "bottom": 568,
+          "left": 0
+        },
+        "drawingSize": [
+          320,
+          568
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 309.17874396135267,
+        "tableDepthCss": 135.95769854506952,
+        "tableCanvasMarginCss": 1.4106280193236564,
+        "tableViewportMarginCss": 1.4106280193236564,
+        "paddleFaceCss": {
+          "left": 123.43382637283725,
+          "right": 166.80008133975238,
+          "top": 270.55274931147994,
+          "bottom": 308.7299713773594,
+          "width": 43.366254966915136,
+          "height": 38.17722206587945,
+          "minimumCanvasMargin": 123.43382637283725,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 123.43382637283725,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 115.11341563000478,
+        "paddleBoundaryCanvasMarginCss": 1.9638497668340449,
+        "paddleBoundaryViewportMarginCss": 1.9638497668340449,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 110.76928720596392,
+          "right": 121.71332334941162,
+          "top": 231.42279654572127,
+          "bottom": 241.92382925677757,
+          "width": 10.944036143447704,
+          "height": 10.501032711056297,
+          "minimumCanvasMargin": 110.76928720596392,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "minimumViewportMargin": 110.76928720596392,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 23.06395834054939
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 181760,
+          "highLuminancePixels": 56291,
+          "highLuminanceViewportFraction": 0.3096996038732394,
+          "brightSaturatedPixels": 141169,
+          "brightSaturatedViewportFraction": 0.776678036971831,
+          "score0To555CanvasChangedPixels": 178092,
+          "score0To555CanvasBrighterPixels": 95275,
+          "fullCanvasScreenshotPixels": 181760
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.2098155860613409,
+        "tableDepth": 1.2098155860613409,
+        "paddleFaceWidth": 1.209815586061341,
+        "paddleFaceHeight": 1.2098155860613413,
+        "firstBallWidth": 1.2098155860613429,
+        "firstBallHeight": 1.209815586061339
+      },
+      "maxScaleFactorSpread": 3.774758283725532e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 3.044338056112657,
+      "highLuminanceViewportAreaRatio": 2.698255200843639
+    },
+    {
+      "id": "webkit-280x360-score0-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 280,
+        "height": 360
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "browserVersion": "27.2",
+      "before": {
+        "id": "webkit-280x360-score0-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 280,
+          "height": 360
+        },
+        "canvasRect": {
+          "x": 17,
+          "y": 210.796875,
+          "width": 246,
+          "height": 171.640625,
+          "top": 210.796875,
+          "right": 263,
+          "bottom": 382.4375,
+          "left": 17
+        },
+        "drawingSize": [
+          246,
+          171
+        ],
+        "canvasViewportAreaRatio": 0.4188848586309524,
+        "visibleCanvasViewportAreaRatio": 0.36412667410714283,
+        "tableFrontWidthCss": 219.80198223378108,
+        "tableDepthCss": 96.65532389860735,
+        "tableCanvasMarginCss": 10.024008883109472,
+        "tableViewportMarginCss": 19.649860587723282,
+        "paddleFaceCss": {
+          "left": 96.77298953088889,
+          "right": 127.60301581812617,
+          "top": 76.26036565805033,
+          "bottom": 103.40139410892105,
+          "width": 30.830026287237274,
+          "height": 27.14102845087072,
+          "minimumCanvasMargin": 68.23923089107895,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 29.4614014287111,
+        "paddleBoundaryCanvasMarginCss": 10.41730641436802,
+        "paddleBoundaryViewportMarginCss": -4.364257898940053,
+        "paddleBoundaryPlacementsOutsideViewport": 113,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 87.77763336788561,
+          "right": 95.54422167134024,
+          "top": 48.43681899427366,
+          "bottom": 55.89570682248814,
+          "width": 7.7665883034546255,
+          "height": 7.458887828214479,
+          "minimumCanvasMargin": 48.43681899427366,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 22.446487729586295
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 36654,
+          "highLuminancePixels": 732,
+          "highLuminanceViewportFraction": 0.007261904761904762,
+          "brightSaturatedPixels": 2724,
+          "brightSaturatedViewportFraction": 0.027023809523809523,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 42558
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "webkit-280x360-score0-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 0,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 280,
+          "height": 360
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 280,
+          "height": 360,
+          "top": 0,
+          "right": 280,
+          "bottom": 360,
+          "left": 0
+        },
+        "drawingSize": [
+          280,
+          360
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 270.5314009661836,
+        "tableDepthCss": 118.96298622693583,
+        "tableCanvasMarginCss": 1.2342995169081994,
+        "tableViewportMarginCss": 1.2342995169081994,
+        "paddleFaceCss": {
+          "left": 108.00459807623258,
+          "right": 145.95007117228334,
+          "top": 168.2336556475449,
+          "bottom": 201.63872495518942,
+          "width": 37.94547309605076,
+          "height": 33.40506930764451,
+          "minimumCanvasMargin": 108.00459807623258,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 108.00459807623258,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 100.72423867625419,
+        "paddleBoundaryCanvasMarginCss": 1.7183685459797893,
+        "paddleBoundaryViewportMarginCss": 1.7183685459797893,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 1,
+        "firstBallCss": {
+          "left": 96.93314967419418,
+          "right": 106.49223550730747,
+          "top": 133.98854565215993,
+          "bottom": 143.1689149705325,
+          "width": 9.559085833113286,
+          "height": 9.180369318372584,
+          "minimumCanvasMargin": 96.93314967419418,
+          "clippedVertexCount": 0,
+          "vertexCount": 222,
+          "minimumViewportMargin": 96.93314967419418,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 25728,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 21.6344599026761
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 100800,
+          "highLuminancePixels": 4001,
+          "highLuminanceViewportFraction": 0.03969246031746032,
+          "brightSaturatedPixels": 5722,
+          "brightSaturatedViewportFraction": 0.05676587301587301,
+          "score0To555CanvasChangedPixels": null,
+          "score0To555CanvasBrighterPixels": null,
+          "fullCanvasScreenshotPixels": 100800
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.2307960020053266,
+        "tableDepth": 1.2307960020053266,
+        "paddleFaceWidth": 1.2307960020053266,
+        "paddleFaceHeight": 1.2307960020053268,
+        "firstBallWidth": 1.2307960020053268,
+        "firstBallHeight": 1.230796002005328
+      },
+      "maxScaleFactorSpread": 1.3322676295501878e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 2.1005873715124816,
+      "highLuminanceViewportAreaRatio": 5.46584699453552
+    },
+    {
+      "id": "webkit-280x360-score555-t1.25",
+      "engine": "webkit",
+      "viewport": {
+        "width": 280,
+        "height": 360
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "browserVersion": "27.2",
+      "before": {
+        "id": "webkit-280x360-score555-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 280,
+          "height": 360
+        },
+        "canvasRect": {
+          "x": 17,
+          "y": 278.796875,
+          "width": 246,
+          "height": 171.640625,
+          "top": 278.796875,
+          "right": 263,
+          "bottom": 450.4375,
+          "left": 17
+        },
+        "drawingSize": [
+          246,
+          171
+        ],
+        "canvasViewportAreaRatio": 0.4188848586309524,
+        "visibleCanvasViewportAreaRatio": 0.1981742931547619,
+        "tableFrontWidthCss": 219.80198223378108,
+        "tableDepthCss": 96.65532389860735,
+        "tableCanvasMarginCss": 10.024008883109472,
+        "tableViewportMarginCss": -48.35013941227672,
+        "paddleFaceCss": {
+          "left": 96.77298953088889,
+          "right": 127.60301581812617,
+          "top": 76.26036565805033,
+          "bottom": 103.40139410892105,
+          "width": 30.830026287237274,
+          "height": 27.14102845087072,
+          "minimumCanvasMargin": 68.23923089107895,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": -38.5385985712889,
+        "paddleBoundaryCanvasMarginCss": 10.41730641436802,
+        "paddleBoundaryViewportMarginCss": -72.36425789894005,
+        "paddleBoundaryPlacementsOutsideViewport": 299,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 87.76948955773398,
+          "right": 95.54984601803656,
+          "top": 48.44201995798798,
+          "bottom": 55.90743551605258,
+          "width": 7.780356460302585,
+          "height": 7.465415558064599,
+          "minimumCanvasMargin": 48.44201995798798,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 3.4935381768924296
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 19926,
+          "highLuminancePixels": 9201,
+          "highLuminanceViewportFraction": 0.0912797619047619,
+          "brightSaturatedPixels": 18721,
+          "brightSaturatedViewportFraction": 0.18572420634920636,
+          "score0To555CanvasChangedPixels": 41920,
+          "score0To555CanvasBrighterPixels": 25932,
+          "fullCanvasScreenshotPixels": 42558
+        },
+        "pageErrors": []
+      },
+      "after": {
+        "id": "webkit-280x360-score555-t1.25",
+        "engine": "webkit",
+        "state": {
+          "score": 555,
+          "time": 1.25
+        },
+        "viewport": {
+          "width": 280,
+          "height": 360
+        },
+        "canvasRect": {
+          "x": 0,
+          "y": 0,
+          "width": 280,
+          "height": 360,
+          "top": 0,
+          "right": 280,
+          "bottom": 360,
+          "left": 0
+        },
+        "drawingSize": [
+          280,
+          360
+        ],
+        "canvasViewportAreaRatio": 1,
+        "visibleCanvasViewportAreaRatio": 1.0,
+        "tableFrontWidthCss": 270.5314009661836,
+        "tableDepthCss": 118.96298622693583,
+        "tableCanvasMarginCss": 1.2342995169081994,
+        "tableViewportMarginCss": 1.2342995169081994,
+        "paddleFaceCss": {
+          "left": 108.00459807623258,
+          "right": 145.95007117228334,
+          "top": 168.2336556475449,
+          "bottom": 201.63872495518942,
+          "width": 37.94547309605076,
+          "height": 33.40506930764451,
+          "minimumCanvasMargin": 108.00459807623258,
+          "clippedVertexCount": 0,
+          "vertexCount": 50,
+          "minimumViewportMargin": 108.00459807623258,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "paddleInitialViewportMarginCss": 100.72423867625419,
+        "paddleBoundaryCanvasMarginCss": 1.7183685459797893,
+        "paddleBoundaryViewportMarginCss": 1.7183685459797893,
+        "paddleBoundaryPlacementsOutsideViewport": 0,
+        "visibleBallCount": 8,
+        "firstBallCss": {
+          "left": 96.92312630521843,
+          "right": 106.49915793073517,
+          "top": 133.9949469775061,
+          "bottom": 143.18335059968035,
+          "width": 9.576031625516734,
+          "height": 9.188403622174263,
+          "minimumCanvasMargin": 96.92312630521843,
+          "clippedVertexCount": 0,
+          "vertexCount": 362,
+          "minimumViewportMargin": 96.92312630521843,
+          "outsideViewport": false,
+          "clippedWitnesses": []
+        },
+        "trajectorySummary": {
+          "paths": 128,
+          "visibleSamples": 51328,
+          "centerClippedSamples": 0,
+          "sphereClippedSamples": 0,
+          "minimumSphereMargin": 20.180963547980717
+        },
+        "pixelArea": {
+          "visibleCanvasPixels": 100800,
+          "highLuminancePixels": 33598,
+          "highLuminanceViewportFraction": 0.3333134920634921,
+          "brightSaturatedPixels": 72160,
+          "brightSaturatedViewportFraction": 0.7158730158730159,
+          "score0To555CanvasChangedPixels": 97984,
+          "score0To555CanvasBrighterPixels": 55069,
+          "fullCanvasScreenshotPixels": 100800
+        },
+        "pageErrors": []
+      },
+      "scaleFactors": {
+        "tableFrontWidth": 1.2307960020053266,
+        "tableDepth": 1.2307960020053266,
+        "paddleFaceWidth": 1.2307960020053266,
+        "paddleFaceHeight": 1.2307960020053268,
+        "firstBallWidth": 1.2307960020053264,
+        "firstBallHeight": 1.2307960020053252
+      },
+      "maxScaleFactorSpread": 1.5543122344752192e-15,
+      "frozenParametersEqual": {
+        "config": true,
+        "viewpoint": true,
+        "referenceAspect": true,
+        "cameraPoseAndClip": true,
+        "initialPaddle": true,
+        "paddleMeshVertices": true,
+        "clampedBoundaryPoints": true,
+        "ballSnapshots": true,
+        "trajectoryPlans": true,
+        "trajectoryWorldSamples": true,
+        "browserVersion": true
+      },
+      "viewportCoverageMaxCssError": 0,
+      "allTableCornersInsideViewport": true,
+      "allPaddleBoundaryVerticesInsideViewport": true,
+      "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+      "brightSaturatedViewportAreaRatio": 3.8544949521927245,
+      "highLuminanceViewportAreaRatio": 3.6515596130855346
+    }
+  ],
+  "webkitMinusChromium": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "tableWidthDifferenceCss": 0.0,
+      "tableDepthDifferenceCss": 0.0,
+      "paddleFaceWidthDifferenceCss": 0.0,
+      "brightSaturatedViewportFractionDifference": -0.001279013245837901,
+      "highLuminanceViewportFractionDifference": -0.00022177664357759044
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "tableWidthDifferenceCss": 0.0,
+      "tableDepthDifferenceCss": 0.0,
+      "paddleFaceWidthDifferenceCss": 0.0,
+      "brightSaturatedViewportFractionDifference": -0.000428363106088292,
+      "highLuminanceViewportFractionDifference": -0.0003098796937659465
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "tableWidthDifferenceCss": 0.0,
+      "tableDepthDifferenceCss": 0.0,
+      "paddleFaceWidthDifferenceCss": 0.0,
+      "brightSaturatedViewportFractionDifference": -0.0004891238303560419,
+      "highLuminanceViewportFractionDifference": -0.00024911896949811677
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "tableWidthDifferenceCss": 0.0,
+      "tableDepthDifferenceCss": 0.0,
+      "paddleFaceWidthDifferenceCss": 0.0,
+      "brightSaturatedViewportFractionDifference": -0.0007990035241219884,
+      "highLuminanceViewportFractionDifference": -0.0006167213513185166
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "tableWidthDifferenceCss": 0.0,
+      "tableDepthDifferenceCss": 0.0,
+      "paddleFaceWidthDifferenceCss": 0.0,
+      "brightSaturatedViewportFractionDifference": -0.000489366319444462,
+      "highLuminanceViewportFractionDifference": -6.944444444444489e-05
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "tableWidthDifferenceCss": 0.0,
+      "tableDepthDifferenceCss": 0.0,
+      "paddleFaceWidthDifferenceCss": 0.0,
+      "brightSaturatedViewportFractionDifference": -0.0004481336805556291,
+      "highLuminanceViewportFractionDifference": -0.00012803819444445752
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "tableWidthDifferenceCss": 0.0,
+      "tableDepthDifferenceCss": 0.0,
+      "paddleFaceWidthDifferenceCss": 0.0,
+      "brightSaturatedViewportFractionDifference": -0.0009352992957746484,
+      "highLuminanceViewportFractionDifference": -0.00025858274647887203
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "tableWidthDifferenceCss": 0.0,
+      "tableDepthDifferenceCss": 0.0,
+      "paddleFaceWidthDifferenceCss": 0.0,
+      "brightSaturatedViewportFractionDifference": -0.0011608714788732266,
+      "highLuminanceViewportFractionDifference": -3.301056338028685e-05
+    },
+    {
+      "viewport": {
+        "width": 280,
+        "height": 360
+      },
+      "state": {
+        "score": 0,
+        "time": 1.25
+      },
+      "tableWidthDifferenceCss": 0.0,
+      "tableDepthDifferenceCss": 0.0,
+      "paddleFaceWidthDifferenceCss": 0.0,
+      "brightSaturatedViewportFractionDifference": -0.0001884920634920642,
+      "highLuminanceViewportFractionDifference": -0.00030753968253968006
+    },
+    {
+      "viewport": {
+        "width": 280,
+        "height": 360
+      },
+      "state": {
+        "score": 555,
+        "time": 1.25
+      },
+      "tableWidthDifferenceCss": 0.0,
+      "tableDepthDifferenceCss": 0.0,
+      "paddleFaceWidthDifferenceCss": 0.0,
+      "brightSaturatedViewportFractionDifference": -0.001180555555555518,
+      "highLuminanceViewportFractionDifference": 0.00012896825396829792
+    }
+  ],
+  "summary": {
+    "matchedRecords": 20,
+    "captureFailures": [],
+    "allFrozenParametersEqual": true,
+    "maximumViewportCoverageErrorCss": 0,
+    "minimumLinearScale": 1.184541337632561,
+    "maximumLinearScale": 1.7361817565276376,
+    "maximumScaleFactorSpread": 9.103828801926284e-15,
+    "allTableCornersInsideViewport": true,
+    "allPaddleBoundaryVerticesInsideViewport": true,
+    "allSampledVisibleTrajectorySpheresInsideCanvas": true,
+    "pageErrors": []
+  }
+}

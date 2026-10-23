@@ -1,0 +1,19 @@
+{
+  "baselineSha": "3e7ceba208200db931af645fdae1ccb271f4a7b7",
+  "requestedAfterSha": "2c3d95d62e019c60bc17a6d7b00f737e1a86f3ea",
+  "observedHead": "2c3d95d62e019c60bc17a6d7b00f737e1a86f3ea",
+  "port": 4178,
+  "fileSha256": {
+    "tests/helpers/viewportEvidence.mjs": "1a23bb790af1fbf03791dcf3324328366901dcec05a750f6d82a463eb4a4a042",
+    "tests/helpers/viewportEvidenceAnalysis.py": "a91ad8b5c1fa2f98896b207e49469363d5dfb8b718bf68a1953f02b9de919ea0",
+    "src/game/config.ts": "33b136eb51e8caf3bd2397ea6e2c38403a58be713c672fb35a7c5be23c37de43",
+    "src/game/viewpoint.ts": "1e5bea55f6b62fc37c9dce79f2b266d938d08e3fd663a925540e7b39dc9ad3f9",
+    "src/render/camera.ts": "21bbe2f2ecd39520e72ffdca080a0936414b7131f06ded2d5a85f1aa21fd31ac",
+    "src/render/paddle.ts": "9b88815c5b00032957a222f43b5b13dae1004fa144a92ec05fe8e1f32944c9dd",
+    "src/render/objects.ts": "819e3b5de8ad23589e374c01072615ea58cdc6e9e7be1ddc9b03a19fde32b063",
+    "src/render/balls.ts": "dad9399341352e1a8ffc13801b70e2568a64a5410ff4eaefc97c17f754d9052a",
+    "src/render/presentation.ts": "0d5c7fd8f69eefca1708d3893332c79a05e63347d449a2515d7460909c32cf48"
+  },
+  "gpuOrdering": "Root notified GPU使用可 before server/browser start; root stopped GPU/browser work for the capture.",
+  "scope": "Capture and analysis only; no unit/performance runs; no source or test edits."
+}

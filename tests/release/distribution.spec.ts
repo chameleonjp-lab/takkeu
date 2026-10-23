@@ -19,7 +19,7 @@ for (const [port, base] of [[4174, '/'], [4175, '/takkeu/']] as const) {
     await page.getByRole('button', { name: 'はじめる', exact: true }).click();
     await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('0');
     await expect(page.getByLabel('残球数', { exact: true })).toHaveText('1');
-    await page.getByRole('button', { name: '一時停止', exact: true }).click();
+    await page.keyboard.press('Escape');
     expect(failures).toEqual([]);
     for (const path of ['tests/fixtures/stage2.html', 'tests/fixtures/stage3.html', 'src/main.ts', '@vite/client']) expect((await request.get(origin + base + path)).status()).toBe(404);
     expect(await page.evaluate(() => 'stage2' in window || 'stage3' in window)).toBe(false);

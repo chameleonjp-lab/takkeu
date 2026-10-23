@@ -1,0 +1,2490 @@
+[
+  {
+    "engine": "chromium",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 1,
+    "points": [
+      {
+        "x": 112,
+        "y": 437
+      },
+      {
+        "x": 245,
+        "y": 397
+      },
+      {
+        "x": 92,
+        "y": 386
+      }
+    ],
+    "samples": [
+      {
+        "label": "down/place",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.041666666666666664,
+          "paddle": {
+            "x": -0.29854429607043137,
+            "y": 0.451603526179465
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.5261716070816187,
+                "z": -1.86875
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.06666666666666667,
+          "paddle": {
+            "x": -0.23626420872296977,
+            "y": 0.4720461861280971
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.5407493141289438,
+                "z": -1.8199999999999998
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.08333333333333333,
+          "paddle": {
+            "x": -0.1745304121038304,
+            "y": 0.49230953297573987
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.5499989283264746,
+                "z": -1.7875
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.11666666666666665,
+          "paddle": {
+            "x": -0.11333581753236027,
+            "y": 0.5123959156917499
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.5673728995198902,
+                "z": -1.7225
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.13333333333333333,
+          "paddle": {
+            "x": -0.05267325759685315,
+            "y": 0.5323076423957575
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.575497256515775,
+                "z": -1.69
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.16666666666666666,
+          "paddle": {
+            "x": 0.007464109876930469,
+            "y": 0.5520469812418187
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.5906207133058985,
+                "z": -1.625
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.18333333333333332,
+          "paddle": {
+            "x": 0.06708307585529694,
+            "y": 0.571616161279701
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.5976198131001371,
+                "z": -1.5925
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.21666666666666665,
+          "paddle": {
+            "x": 0.12619031472683506,
+            "y": 0.5910173732939947
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6104927554869685,
+                "z": -1.5275
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.24999999999999997,
+          "paddle": {
+            "x": 0.18479232060869666,
+            "y": 0.6102527706217039
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6218653549382716,
+                "z": -1.4625
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.2583333333333333,
+          "paddle": {
+            "x": 0.24289567479380408,
+            "y": 0.6293244699489726
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6244740762174211,
+                "z": -1.44625
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.29166666666666674,
+          "paddle": {
+            "x": 0.3005066501616831,
+            "y": 0.6482345520875438
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6339712469993141,
+                "z": -1.3812499999999999
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.30833333333333346,
+          "paddle": {
+            "x": 0.23482823005529885,
+            "y": 0.6534067926275777
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6381572037894376,
+                "z": -1.3487499999999997
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.3416666666666669,
+          "paddle": {
+            "x": 0.16930251206264763,
+            "y": 0.6585670077251312
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6454038601680384,
+                "z": -1.2837499999999995
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.3583333333333336,
+          "paddle": {
+            "x": 0.10392902204458135,
+            "y": 0.6637150966081231
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6484645597565157,
+                "z": -1.2512499999999993
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.39166666666666705,
+          "paddle": {
+            "x": 0.03870711279295491,
+            "y": 0.6688513866270321
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6534607017318245,
+                "z": -1.1862499999999994
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.40833333333333377,
+          "paddle": {
+            "x": -0.026363682734698357,
+            "y": 0.6739757762903549
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6553961441186558,
+                "z": -1.1537499999999992
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.4416666666666672,
+          "paddle": {
+            "x": -0.09128388910753027,
+            "y": 0.6790883069084306
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6581417716906722,
+                "z": -1.0887499999999988
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.4666666666666673,
+          "paddle": {
+            "x": -0.15605402846954425,
+            "y": 0.684189019600618
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6592163923182441,
+                "z": -1.0399999999999987
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.483333333333334,
+          "paddle": {
+            "x": -0.22067460600200978,
+            "y": 0.6892778142765317
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6594639489026064,
+                "z": -1.0074999999999985
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.5166666666666673,
+          "paddle": {
+            "x": -0.28514613775165704,
+            "y": 0.6943550140416266
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6588338048696845,
+                "z": -0.9424999999999988
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.5333333333333339,
+          "paddle": {
+            "x": -0.3494691870103191,
+            "y": 0.6994205181028746
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6579561042524005,
+                "z": -0.9099999999999988
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "release",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.5666666666666671,
+          "paddle": {
+            "x": -0.3494691870103191,
+            "y": 0.6994205181028746
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6550754458161865,
+                "z": -0.8449999999999991
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "hover after release",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.5833333333333337,
+          "paddle": {
+            "x": -0.3494691870103191,
+            "y": 0.6994205181028746
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6530724879972565,
+                "z": -0.8124999999999993
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "engine": "webkit",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 1,
+    "points": [
+      {
+        "x": 112,
+        "y": 437
+      },
+      {
+        "x": 245,
+        "y": 397
+      },
+      {
+        "x": 92,
+        "y": 386
+      }
+    ],
+    "samples": [
+      {
+        "label": "down/place",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.041666666666666664,
+          "paddle": {
+            "x": -0.29854429607043137,
+            "y": 0.451603526179465
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.5261716070816187,
+                "z": -1.86875
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.05833333333333333,
+          "paddle": {
+            "x": -0.23760558861178233,
+            "y": 0.4720461861280971
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.5359838498799725,
+                "z": -1.83625
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.09166666666666666,
+          "paddle": {
+            "x": -0.17720140594746886,
+            "y": 0.49230953297573976
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.5544830782750343,
+                "z": -1.77125
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.12499999999999999,
+          "paddle": {
+            "x": -0.11732474589886793,
+            "y": 0.5123959156917499
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.5714819637345678,
+                "z": -1.70625
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.13333333333333333,
+          "paddle": {
+            "x": -0.05355582478456272,
+            "y": 0.5323076423957576
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.575497256515775,
+                "z": -1.69
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.16666666666666666,
+          "paddle": {
+            "x": 0.005267209532866135,
+            "y": 0.5520469812418186
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.5906207133058985,
+                "z": -1.625
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.18333333333333332,
+          "paddle": {
+            "x": 0.06358317228670518,
+            "y": 0.571616161279701
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.5976198131001371,
+                "z": -1.5925
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.21666666666666665,
+          "paddle": {
+            "x": 0.125754679398838,
+            "y": 0.5910173732939946
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6104927554869685,
+                "z": -1.5275
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.2333333333333333,
+          "paddle": {
+            "x": 0.18305735808058496,
+            "y": 0.610252770621704
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6163665980795611,
+                "z": -1.495
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.26666666666666666,
+          "paddle": {
+            "x": 0.23987237675924863,
+            "y": 0.6293244699489726
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6269890260631001,
+                "z": -1.43
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.2833333333333334,
+          "paddle": {
+            "x": 0.3005066501616831,
+            "y": 0.6482345520875438
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6317376114540466,
+                "z": -1.3975
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.3166666666666668,
+          "paddle": {
+            "x": 0.23192415886905945,
+            "y": 0.6576296273419725
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6401095250342936,
+                "z": -1.3324999999999996
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.3416666666666669,
+          "paddle": {
+            "x": 0.16773189315481637,
+            "y": 0.6623122843237067
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6454038601680384,
+                "z": -1.2837499999999995
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.3583333333333336,
+          "paddle": {
+            "x": 0.1036750480022473,
+            "y": 0.6669850627315732
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6484645597565157,
+                "z": -1.2512499999999993
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.39166666666666705,
+          "paddle": {
+            "x": 0.035475137563540426,
+            "y": 0.6716479937925217
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6534607017318245,
+                "z": -1.1862499999999994
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.40833333333333377,
+          "paddle": {
+            "x": -0.028307645874175502,
+            "y": 0.6763011086020259
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6553961441186558,
+                "z": -1.1537499999999992
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.4416666666666672,
+          "paddle": {
+            "x": -0.09195629704747266,
+            "y": 0.6809444381247752
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6581417716906722,
+                "z": -1.0887499999999988
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.4583333333333339,
+          "paddle": {
+            "x": -0.15973581573173457,
+            "y": 0.6855780131953596
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6589519568758573,
+                "z": -1.0562499999999988
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.49166666666666736,
+          "paddle": {
+            "x": -0.22311299390709155,
+            "y": 0.6902018645189563
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6594470700445816,
+                "z": -0.9912499999999986
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.5250000000000006,
+          "paddle": {
+            "x": -0.2863573118856096,
+            "y": 0.6948160226720017
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6584418402777776,
+                "z": -0.9262499999999989
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "drag",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.5333333333333339,
+          "paddle": {
+            "x": -0.3494691870103191,
+            "y": 0.6994205181028746
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6579561042524005,
+                "z": -0.9099999999999988
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "release",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.5666666666666671,
+          "paddle": {
+            "x": -0.3494691870103191,
+            "y": 0.6994205181028746
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6550754458161865,
+                "z": -0.8449999999999991
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      },
+      {
+        "label": "hover after release",
+        "state": {
+          "runId": "run-2",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 0,
+          "simTime": 0.5833333333333337,
+          "paddle": {
+            "x": -0.3494691870103191,
+            "y": 0.6994205181028746
+          },
+          "opponentPaddle": {
+            "x": 0,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "incoming",
+              "position": {
+                "x": 0,
+                "y": 0.6530724879972565,
+                "z": -0.8124999999999993
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [],
+            "ballGlowUntil": null,
+            "awardedBallCount": 0
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 1,
+              "departAt": 0,
+              "netCrossAt": 1,
+              "arriveAt": 2,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 1,
+              "landingZ": 1.95,
+              "bounceY": 0.045,
+              "speedScore": 0
+            }
+          ]
+        }
+      }
+    ],
+    "errors": []
+  }
+]

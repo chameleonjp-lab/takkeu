@@ -1,0 +1,21 @@
+{
+  "sourceSha": "d47753586136db8c4c20dd3a87bb89e912fb9f31",
+  "typescriptVersion": "7.0.2",
+  "method": "tsc CLI --ignoreConfig --noCheck --noResolve --removeComments --target ES2022 --module esnext; emitted JavaScript byte comparison (not a substitute for typecheck)",
+  "checks": [
+    {
+      "path": "tests/browser/quality.spec.ts",
+      "beforeSourceSha256": "c356018a0167c03d72d3d0c5241ddd739db232efbec8e33bb09b876cd355a730",
+      "afterSourceSha256": "4440f358abda8f4323797b06c0fb1b0893a3de4cae4de5abc4021eda436fe716",
+      "emittedJsSha256": "152187394ff9139732b38a3b01266faa3a8f7c291be9e750e158f98a1b7b9175",
+      "identicalAfterRemoveComments": true
+    },
+    {
+      "path": "tests/browser/extended.spec.ts",
+      "beforeSourceSha256": "29ba2599fd28f2d6ec25e354bd5098cb4870b7424cf6d6ba08cc42a90872ad9a",
+      "afterSourceSha256": "165327a4a543dce8581cbdde75e65c2da3904aa75171314cd8edf092e2b91fe1",
+      "emittedJsSha256": "2d75f9c3db7ebc53b449e7ef0fdce48860826a59eef3697045a9c965f776e13a",
+      "identicalAfterRemoveComments": true
+    }
+  ]
+}

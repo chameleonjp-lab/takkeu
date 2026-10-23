@@ -1,0 +1,47 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/direct-contact.test.ts (15 tests | 1 failed) 20ms
+   × 同時刻の複数球はバウンドを先に、同種はball id順で処理する（反転false） 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/direct-contact.test.ts > 同時刻の複数球はバウンドを先に、同種はball id順で処理する（反転false）
+AssertionError: expected [ [ 'table-bounce', 2 ], …(3) ] to deeply equal [ [ 'table-bounce', 1 ], …(3) ]
+
+- Expected
++ Received
+
+@@ -1,13 +1,13 @@
+  [
+    [
+      "table-bounce",
+-     1,
++     2,
+    ],
+    [
+      "table-bounce",
+-     2,
++     1,
+    ],
+    [
+      "player-hit",
+      1,
+    ],
+
+ ❯ tests/unit/direct-contact.test.ts:121:115
+    119|   const t = bounceTime(first.plan), target = projectBall(sampleReturn(…
+    120|   const result = step(s, [{ kind: 'place', at: t, target }]);
+    121|   expect(result.events.filter(e => ['table-bounce', 'player-hit'].incl…
+       |                                                                                                                   ^
+    122|     ['table-bounce', 1], ['table-bounce', 2], ['player-hit', 1], ['pla…
+    123|   ]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 14 passed (15)
+   Start at  19:20:43
+   Duration  192ms (transform 51%, tests 23%, import 22%, worker 4%)
+

@@ -1,0 +1,976 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/takkeu/node_modules/.bin/playwright",
+      "test",
+      "tests/browser/direct-input.spec.ts",
+      "tests/browser/basic-play.spec.ts",
+      "tests/browser/lifecycle.spec.ts",
+      "--grep",
+      "実canvas|二本指|情報上|タッチの絶対|通常の指離れ"
+    ],
+    "configFile": "/workspace/takkeu/playwright.config.ts",
+    "rootDir": "/workspace/takkeu/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/takkeu/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/workspace/takkeu/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/takkeu/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/workspace/takkeu/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/takkeu/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/workspace/takkeu/tests/browser",
+        "snapshotDir": "/workspace/takkeu/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "launchOptions": {
+            "args": [
+              "--enable-unsafe-swiftshader",
+              "--use-angle=swiftshader"
+            ]
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/takkeu/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "/workspace/takkeu/tests/browser",
+        "snapshotDir": "/workspace/takkeu/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+          "viewport": {
+            "width": 390,
+            "height": 664
+          },
+          "screen": {
+            "width": 390,
+            "height": 844
+          },
+          "deviceScaleFactor": 3,
+          "isMobile": true,
+          "hasTouch": true,
+          "defaultBrowserType": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 4173 --strictPort",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "basic-play.spec.ts",
+      "file": "basic-play.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "タッチの絶対位置ドラッグでラケットを動かせる",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9883,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:29:14.932Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/basic-play-タッチの絶対位置ドラッグでラケットを動かせる-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "47eb5363c489fcf9a6d4-2d337e9c52e332e25419",
+          "file": "basic-play.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "タッチの絶対位置ドラッグでラケットを動かせる",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5185,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:29:46.993Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/basic-play-タッチの絶対位置ドラッグでラケットを動かせる-webkit/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "47eb5363c489fcf9a6d4-415a9a5fe094d78e537d",
+          "file": "basic-play.spec.ts",
+          "line": 64,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "direct-input.spec.ts",
+      "file": "direct-input.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3681,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:29:25.186Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "direct-input-state.json",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6MzkwLCJoZWlnaHQiOjg0NH0sImJveCI6eyJ4IjowLCJ5IjowLCJ3aWR0aCI6MzkwLCJoZWlnaHQiOjg0NH0sImhlbGQiOnsicnVuSWQiOiJydW4tMiIsInBoYXNlIjoicnVubmluZyIsInBhdXNlUmVhc29uIjpudWxsLCJzY29yZSI6MCwic2ltVGltZSI6MC45MjQ5OTk5OTk5OTk5OTkyLCJwYWRkbGUiOnsieCI6LTAuNTQ2OTY2OTgwMzM3MzY1MywieSI6MC44NX0sIm9wcG9uZW50UGFkZGxlIjp7IngiOjAsInkiOjAuNX0sImJhbGxzIjpbeyJpZCI6MSwicGhhc2UiOiJpbmNvbWluZyIsInBvc2l0aW9uIjp7IngiOjAsInkiOjAuNTI5MzUyMzM0MTA0OTM4OCwieiI6LTAuMTQ2MjUwMDAwMDAwMDAxNTV9LCJzbWFzaCI6ZmFsc2V9XSwicHJvZ3Jlc3Npb24iOnsiYXBwbGllZE1pbGVzdG9uZXMiOltdLCJiYWxsR2xvd1VudGlsIjpudWxsLCJhd2FyZGVkQmFsbENvdW50IjowfSwic2NoZWR1bGVkUmV0dXJucyI6W3siYmFsbElkIjoxLCJkZXBhcnRBdCI6MCwibmV0Q3Jvc3NBdCI6MSwiYXJyaXZlQXQiOjIsInRhcmdldCI6eyJ4IjowLCJ5IjowLjV9LCJzbWFzaCI6ZmFsc2UsIndhcm5pbmdBdCI6bnVsbCwic3BlZWRNdWx0aXBsaWVyIjoxLCJsYW5kaW5nWiI6MS45NSwiYm91bmNlWSI6MC4wNDUsInNwZWVkU2NvcmUiOjB9XX19"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "266cbc03b9a15973a14a-8b0deaaeebfc0334b464",
+          "file": "direct-input.spec.ts",
+          "line": 33,
+          "column": 3
+        },
+        {
+          "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3296,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:29:28.899Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "direct-input-state.json",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6ODQ0LCJoZWlnaHQiOjM5MH0sImJveCI6eyJ4IjowLCJ5IjowLCJ3aWR0aCI6ODQ0LCJoZWlnaHQiOjM5MH0sImhlbGQiOnsicnVuSWQiOiJydW4tMiIsInBoYXNlIjoicnVubmluZyIsInBhdXNlUmVhc29uIjpudWxsLCJzY29yZSI6MCwic2ltVGltZSI6MC45MjQ5OTk5OTk5OTk5OTkyLCJwYWRkbGUiOnsieCI6LTAuNTQ2OTY2OTgwMzM3MzY1MywieSI6MC44NX0sIm9wcG9uZW50UGFkZGxlIjp7IngiOjAsInkiOjAuNX0sImJhbGxzIjpbeyJpZCI6MSwicGhhc2UiOiJpbmNvbWluZyIsInBvc2l0aW9uIjp7IngiOjAsInkiOjAuNTI5MzUyMzM0MTA0OTM4OCwieiI6LTAuMTQ2MjUwMDAwMDAwMDAxNTV9LCJzbWFzaCI6ZmFsc2V9XSwicHJvZ3Jlc3Npb24iOnsiYXBwbGllZE1pbGVzdG9uZXMiOltdLCJiYWxsR2xvd1VudGlsIjpudWxsLCJhd2FyZGVkQmFsbENvdW50IjowfSwic2NoZWR1bGVkUmV0dXJucyI6W3siYmFsbElkIjoxLCJkZXBhcnRBdCI6MCwibmV0Q3Jvc3NBdCI6MSwiYXJyaXZlQXQiOjIsInRhcmdldCI6eyJ4IjowLCJ5IjowLjV9LCJzbWFzaCI6ZmFsc2UsIndhcm5pbmdBdCI6bnVsbCwic3BlZWRNdWx0aXBsaWVyIjoxLCJsYW5kaW5nWiI6MS45NSwiYm91bmNlWSI6MC4wNDUsInNwZWVkU2NvcmUiOjB9XX19"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-844×390-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "266cbc03b9a15973a14a-11797ec597dff0e37f76",
+          "file": "direct-input.spec.ts",
+          "line": 33,
+          "column": 3
+        },
+        {
+          "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5788,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:29:32.207Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "direct-input-state.json",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6MTI4MCwiaGVpZ2h0Ijo3MjB9LCJib3giOnsieCI6MCwieSI6MCwid2lkdGgiOjEyODAsImhlaWdodCI6NzIwfSwiaGVsZCI6eyJydW5JZCI6InJ1bi0yIiwicGhhc2UiOiJydW5uaW5nIiwicGF1c2VSZWFzb24iOm51bGwsInNjb3JlIjowLCJzaW1UaW1lIjowLjkyNDk5OTk5OTk5OTk5OTIsInBhZGRsZSI6eyJ4IjotMC41NDY5NjY5ODAzMzczNjUzLCJ5IjowLjg1fSwib3Bwb25lbnRQYWRkbGUiOnsieCI6MCwieSI6MC41fSwiYmFsbHMiOlt7ImlkIjoxLCJwaGFzZSI6ImluY29taW5nIiwicG9zaXRpb24iOnsieCI6MCwieSI6MC41MjkzNTIzMzQxMDQ5Mzg4LCJ6IjotMC4xNDYyNTAwMDAwMDAwMDE1NX0sInNtYXNoIjpmYWxzZX1dLCJwcm9ncmVzc2lvbiI6eyJhcHBsaWVkTWlsZXN0b25lcyI6W10sImJhbGxHbG93VW50aWwiOm51bGwsImF3YXJkZWRCYWxsQ291bnQiOjB9LCJzY2hlZHVsZWRSZXR1cm5zIjpbeyJiYWxsSWQiOjEsImRlcGFydEF0IjowLCJuZXRDcm9zc0F0IjoxLCJhcnJpdmVBdCI6MiwidGFyZ2V0Ijp7IngiOjAsInkiOjAuNX0sInNtYXNoIjpmYWxzZSwid2FybmluZ0F0IjpudWxsLCJzcGVlZE11bHRpcGxpZXIiOjEsImxhbmRpbmdaIjoxLjk1LCJib3VuY2VZIjowLjA0NSwic3BlZWRTY29yZSI6MH1dfX0="
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "266cbc03b9a15973a14a-ee0ac87f3808a5955563",
+          "file": "direct-input.spec.ts",
+          "line": 33,
+          "column": 3
+        },
+        {
+          "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2024,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:29:38.007Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "direct-input-state.json",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6MjgwLCJoZWlnaHQiOjM2MH0sImJveCI6eyJ4IjowLCJ5IjowLCJ3aWR0aCI6MjgwLCJoZWlnaHQiOjM2MH0sImhlbGQiOnsicnVuSWQiOiJydW4tMiIsInBoYXNlIjoicnVubmluZyIsInBhdXNlUmVhc29uIjpudWxsLCJzY29yZSI6MCwic2ltVGltZSI6MC45MjQ5OTk5OTk5OTk5OTkyLCJwYWRkbGUiOnsieCI6LTAuNTQ2OTY2OTgwMzM3MzY1MywieSI6MC44NX0sIm9wcG9uZW50UGFkZGxlIjp7IngiOjAsInkiOjAuNX0sImJhbGxzIjpbeyJpZCI6MSwicGhhc2UiOiJpbmNvbWluZyIsInBvc2l0aW9uIjp7IngiOjAsInkiOjAuNTI5MzUyMzM0MTA0OTM4OCwieiI6LTAuMTQ2MjUwMDAwMDAwMDAxNTV9LCJzbWFzaCI6ZmFsc2V9XSwicHJvZ3Jlc3Npb24iOnsiYXBwbGllZE1pbGVzdG9uZXMiOltdLCJiYWxsR2xvd1VudGlsIjpudWxsLCJhd2FyZGVkQmFsbENvdW50IjowfSwic2NoZWR1bGVkUmV0dXJucyI6W3siYmFsbElkIjoxLCJkZXBhcnRBdCI6MCwibmV0Q3Jvc3NBdCI6MSwiYXJyaXZlQXQiOjIsInRhcmdldCI6eyJ4IjowLCJ5IjowLjV9LCJzbWFzaCI6ZmFsc2UsIndhcm5pbmdBdCI6bnVsbCwic3BlZWRNdWx0aXBsaWVyIjoxLCJsYW5kaW5nWiI6MS45NSwiYm91bmNlWSI6MC4wNDUsInNwZWVkU2NvcmUiOjB9XX19"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "266cbc03b9a15973a14a-a34ad2cc6e56925b1ce4",
+          "file": "direct-input.spec.ts",
+          "line": 33,
+          "column": 3
+        },
+        {
+          "title": "二本指は両releaseで停止し、追加指やドラッグでは停止しない",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1202,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:29:40.040Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "266cbc03b9a15973a14a-d9a21dbe1a77d2e3a22a",
+          "file": "direct-input.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "情報上の入力・safe area・resize連発・メニューに古い入力が残らない",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1207,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:29:41.252Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/direct-input-情報上の入力・safe-area・resize連発・メニューに古い入力が残らない-chromium/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "266cbc03b9a15973a14a-d52a16fccec372fb84c8",
+          "file": "direct-input.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5709,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:29:52.557Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "direct-input-state.json",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6MzkwLCJoZWlnaHQiOjg0NH0sImJveCI6eyJ4IjowLCJ5IjowLCJ3aWR0aCI6MzkwLCJoZWlnaHQiOjg0NH0sImhlbGQiOnsicnVuSWQiOiJydW4tMiIsInBoYXNlIjoicnVubmluZyIsInBhdXNlUmVhc29uIjpudWxsLCJzY29yZSI6MCwic2ltVGltZSI6MC45MjQ5OTk5OTk5OTk5OTkyLCJwYWRkbGUiOnsieCI6LTAuNTQ2OTY2OTgwMzM3MzY1MywieSI6MC44NX0sIm9wcG9uZW50UGFkZGxlIjp7IngiOjAsInkiOjAuNX0sImJhbGxzIjpbeyJpZCI6MSwicGhhc2UiOiJpbmNvbWluZyIsInBvc2l0aW9uIjp7IngiOjAsInkiOjAuNTI5MzUyMzM0MTA0OTM4OCwieiI6LTAuMTQ2MjUwMDAwMDAwMDAxNTV9LCJzbWFzaCI6ZmFsc2V9XSwicHJvZ3Jlc3Npb24iOnsiYXBwbGllZE1pbGVzdG9uZXMiOltdLCJiYWxsR2xvd1VudGlsIjpudWxsLCJhd2FyZGVkQmFsbENvdW50IjowfSwic2NoZWR1bGVkUmV0dXJucyI6W3siYmFsbElkIjoxLCJkZXBhcnRBdCI6MCwibmV0Q3Jvc3NBdCI6MSwiYXJyaXZlQXQiOjIsInRhcmdldCI6eyJ4IjowLCJ5IjowLjV9LCJzbWFzaCI6ZmFsc2UsIndhcm5pbmdBdCI6bnVsbCwic3BlZWRNdWx0aXBsaWVyIjoxLCJsYW5kaW5nWiI6MS45NSwiYm91bmNlWSI6MC4wNDUsInNwZWVkU2NvcmUiOjB9XX19"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-webkit/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "266cbc03b9a15973a14a-abff8375cef5d5115e33",
+          "file": "direct-input.spec.ts",
+          "line": 33,
+          "column": 3
+        },
+        {
+          "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5963,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:29:58.282Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "direct-input-state.json",
+                      "contentType": "application/json",
+                      "body": "eyJ2aWV3cG9ydCI6eyJ3aWR0aCI6ODQ0LCJoZWlnaHQiOjM5MH0sImJveCI6eyJ4IjowLCJ5IjowLCJ3aWR0aCI6ODQ0LCJoZWlnaHQiOjM5MH0sImhlbGQiOnsicnVuSWQiOiJydW4tMiIsInBoYXNlIjoicnVubmluZyIsInBhdXNlUmVhc29uIjpudWxsLCJzY29yZSI6MCwic2ltVGltZSI6MC45MjQ5OTk5OTk5OTk5OTkyLCJwYWRkbGUiOnsieCI6LTAuNTQ2OTY2OTgwMzM3MzY1MywieSI6MC44NX0sIm9wcG9uZW50UGFkZGxlIjp7IngiOjAsInkiOjAuNX0sImJhbGxzIjpbeyJpZCI6MSwicGhhc2UiOiJpbmNvbWluZyIsInBvc2l0aW9uIjp7IngiOjAsInkiOjAuNTI5MzUyMzM0MTA0OTM4OCwieiI6LTAuMTQ2MjUwMDAwMDAwMDAxNTV9LCJzbWFzaCI6ZmFsc2V9XSwicHJvZ3Jlc3Npb24iOnsiYXBwbGllZE1pbGVzdG9uZXMiOltdLCJiYWxsR2xvd1VudGlsIjpudWxsLCJhd2FyZGVkQmFsbENvdW50IjowfSwic2NoZWR1bGVkUmV0dXJucyI6W3siYmFsbElkIjoxLCJkZXBhcnRBdCI6MCwibmV0Q3Jvc3NBdCI6MSwiYXJyaXZlQXQiOjIsInRhcmdldCI6eyJ4IjowLCJ5IjowLjV9LCJzbWFzaCI6ZmFsc2UsIndhcm5pbmdBdCI6bnVsbCwic3BlZWRNdWx0aXBsaWVyIjoxLCJsYW5kaW5nWiI6MS45NSwiYm91bmNlWSI6MC4wNDUsInNwZWVkU2NvcmUiOjB9XX19"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-844×390-webkit/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "266cbc03b9a15973a14a-67448e97c4ffd22e5f14",
+          "file": "direct-input.spec.ts",
+          "line": 33,
+          "column": 3
+        },
+        {
+          "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4810,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m1\u001b[39m\nReceived:   \u001b[31m1.0623677568735979\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m1\u001b[39m\nReceived:   \u001b[31m1.0623677568735979\u001b[39m\n    at aligned (/workspace/takkeu/tests/browser/direct-input.spec.ts:29:68)\n    at /workspace/takkeu/tests/browser/direct-input.spec.ts:45:61",
+                    "location": {
+                      "file": "/workspace/takkeu/tests/browser/direct-input.spec.ts",
+                      "column": 68,
+                      "line": 29
+                    },
+                    "snippet": "  27 |   const paddle = await page.evaluate(() => window.stage3.snapshot().paddle);\n  28 |   const screen = await projection(page, paddle, false);\n> 29 |   expect(Math.hypot(screen.x - expected.x, screen.y - expected.y)).toBeLessThan(1);\n     |                                                                    ^\n  30 | }\n  31 |\n  32 | for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 1280, height: 720 }, { width: 280, height: 360 }]) {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/takkeu/tests/browser/direct-input.spec.ts",
+                        "column": 68,
+                        "line": 29
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m1\u001b[39m\nReceived:   \u001b[31m1.0623677568735979\u001b[39m\n\n  27 |   const paddle = await page.evaluate(() => window.stage3.snapshot().paddle);\n  28 |   const screen = await projection(page, paddle, false);\n> 29 |   expect(Math.hypot(screen.x - expected.x, screen.y - expected.y)).toBeLessThan(1);\n     |                                                                    ^\n  30 | }\n  31 |\n  32 | for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 1280, height: 720 }, { width: 280, height: 360 }]) {\n    at aligned (/workspace/takkeu/tests/browser/direct-input.spec.ts:29:68)\n    at /workspace/takkeu/tests/browser/direct-input.spec.ts:45:61"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:30:04.256Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/takkeu/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-webkit/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-webkit/video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/takkeu/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-webkit/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/takkeu/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-webkit/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/takkeu/tests/browser/direct-input.spec.ts",
+                    "column": 68,
+                    "line": 29
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "266cbc03b9a15973a14a-979a77111faeeaa1e7aa",
+          "file": "direct-input.spec.ts",
+          "line": 33,
+          "column": 3
+        },
+        {
+          "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2808,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m1\u001b[39m\nReceived:   \u001b[31m1.0867987553907947\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m1\u001b[39m\nReceived:   \u001b[31m1.0867987553907947\u001b[39m\n    at aligned (/workspace/takkeu/tests/browser/direct-input.spec.ts:29:68)\n    at /workspace/takkeu/tests/browser/direct-input.spec.ts:47:75",
+                    "location": {
+                      "file": "/workspace/takkeu/tests/browser/direct-input.spec.ts",
+                      "column": 68,
+                      "line": 29
+                    },
+                    "snippet": "  27 |   const paddle = await page.evaluate(() => window.stage3.snapshot().paddle);\n  28 |   const screen = await projection(page, paddle, false);\n> 29 |   expect(Math.hypot(screen.x - expected.x, screen.y - expected.y)).toBeLessThan(1);\n     |                                                                    ^\n  30 | }\n  31 |\n  32 | for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 1280, height: 720 }, { width: 280, height: 360 }]) {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/takkeu/tests/browser/direct-input.spec.ts",
+                        "column": 68,
+                        "line": 29
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m1\u001b[39m\nReceived:   \u001b[31m1.0867987553907947\u001b[39m\n\n  27 |   const paddle = await page.evaluate(() => window.stage3.snapshot().paddle);\n  28 |   const screen = await projection(page, paddle, false);\n> 29 |   expect(Math.hypot(screen.x - expected.x, screen.y - expected.y)).toBeLessThan(1);\n     |                                                                    ^\n  30 | }\n  31 |\n  32 | for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { width: 1280, height: 720 }, { width: 280, height: 360 }]) {\n    at aligned (/workspace/takkeu/tests/browser/direct-input.spec.ts:29:68)\n    at /workspace/takkeu/tests/browser/direct-input.spec.ts:47:75"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:30:09.673Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/takkeu/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-webkit/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-webkit/video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/takkeu/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-webkit/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/takkeu/test-results/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-webkit/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/takkeu/tests/browser/direct-input.spec.ts",
+                    "column": 68,
+                    "line": 29
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "266cbc03b9a15973a14a-2572f647f321d7884a7a",
+          "file": "direct-input.spec.ts",
+          "line": 33,
+          "column": 3
+        },
+        {
+          "title": "二本指は両releaseで停止し、追加指やドラッグでは停止しない",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3411,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:30:13.354Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-webkit/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "266cbc03b9a15973a14a-a1dbbe1149bd36a7d10b",
+          "file": "direct-input.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "情報上の入力・safe area・resize連発・メニューに古い入力が残らない",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3475,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:30:17.099Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu/test-results/direct-input-情報上の入力・safe-area・resize連発・メニューに古い入力が残らない-webkit/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "266cbc03b9a15973a14a-1637e8bf658ad110a578",
+          "file": "direct-input.spec.ts",
+          "line": 93,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "lifecycle.spec.ts",
+      "file": "lifecycle.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "通常の指離れ・2本目・追跡喪失・回転で入力が残らない",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3420,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:29:42.869Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1f1785dee40219527314-9f53c5f3da3885ed7566",
+          "file": "lifecycle.spec.ts",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "通常の指離れ・2本目・追跡喪失・回転で入力が残らない",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5551,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:30:21.016Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1f1785dee40219527314-4a552179c3f82b495a11",
+          "file": "lifecycle.spec.ts",
+          "line": 11,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-23T19:29:13.398Z",
+    "duration": 73594.45999999999,
+    "expected": 14,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

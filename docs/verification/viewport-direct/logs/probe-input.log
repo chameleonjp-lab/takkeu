@@ -1,0 +1,176 @@
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+{
+  "events": [
+    {
+      "type": "pointermove",
+      "at": 3,
+      "now": 3,
+      "buttons": 0,
+      "primary": true,
+      "x": 100,
+      "y": 450,
+      "target": "CANVAS",
+      "state": {
+        "runId": "run-2",
+        "phase": "running",
+        "pauseReason": null,
+        "score": 0,
+        "simTime": 0,
+        "paddle": {
+          "x": 0,
+          "y": 0.5
+        },
+        "opponentPaddle": {
+          "x": 0,
+          "y": 0.5
+        },
+        "balls": [
+          {
+            "id": 1,
+            "phase": "queued",
+            "position": {
+              "x": 0,
+              "y": 0.5,
+              "z": -1.95
+            },
+            "smash": false
+          }
+        ],
+        "progression": {
+          "appliedMilestones": [],
+          "ballGlowUntil": null,
+          "awardedBallCount": 0
+        },
+        "scheduledReturns": [
+          {
+            "ballId": 1,
+            "departAt": 0,
+            "netCrossAt": 1,
+            "arriveAt": 2,
+            "target": {
+              "x": 0,
+              "y": 0.5
+            },
+            "smash": false,
+            "warningAt": null,
+            "speedMultiplier": 1,
+            "landingZ": 1.95,
+            "bounceY": 0.045,
+            "speedScore": 0
+          }
+        ]
+      }
+    },
+    {
+      "type": "pointerdown",
+      "at": 15,
+      "now": 15,
+      "buttons": 1,
+      "primary": true,
+      "x": 100,
+      "y": 450,
+      "target": "CANVAS",
+      "state": {
+        "runId": "run-2",
+        "phase": "running",
+        "pauseReason": null,
+        "score": 0,
+        "simTime": 0.008333333333333333,
+        "paddle": {
+          "x": 0,
+          "y": 0.5
+        },
+        "opponentPaddle": {
+          "x": 0,
+          "y": 0.5
+        },
+        "balls": [
+          {
+            "id": 1,
+            "phase": "incoming",
+            "position": {
+              "x": 0,
+              "y": 0.5054218642832647,
+              "z": -1.9337499999999999
+            },
+            "smash": false
+          }
+        ],
+        "progression": {
+          "appliedMilestones": [],
+          "ballGlowUntil": null,
+          "awardedBallCount": 0
+        },
+        "scheduledReturns": [
+          {
+            "ballId": 1,
+            "departAt": 0,
+            "netCrossAt": 1,
+            "arriveAt": 2,
+            "target": {
+              "x": 0,
+              "y": 0.5
+            },
+            "smash": false,
+            "warningAt": null,
+            "speedMultiplier": 1,
+            "landingZ": 1.95,
+            "bounceY": 0.045,
+            "speedScore": 0
+          }
+        ]
+      }
+    }
+  ],
+  "state": {
+    "runId": "run-2",
+    "phase": "running",
+    "pauseReason": null,
+    "score": 0,
+    "simTime": 0.008333333333333333,
+    "paddle": {
+      "x": 0,
+      "y": 0.5
+    },
+    "opponentPaddle": {
+      "x": 0,
+      "y": 0.5
+    },
+    "balls": [
+      {
+        "id": 1,
+        "phase": "incoming",
+        "position": {
+          "x": 0,
+          "y": 0.5054218642832647,
+          "z": -1.9337499999999999
+        },
+        "smash": false
+      }
+    ],
+    "progression": {
+      "appliedMilestones": [],
+      "ballGlowUntil": null,
+      "awardedBallCount": 0
+    },
+    "scheduledReturns": [
+      {
+        "ballId": 1,
+        "departAt": 0,
+        "netCrossAt": 1,
+        "arriveAt": 2,
+        "target": {
+          "x": 0,
+          "y": 0.5
+        },
+        "smash": false,
+        "warningAt": null,
+        "speedMultiplier": 1,
+        "landingZ": 1.95,
+        "bounceY": 0.045,
+        "speedScore": 0
+      }
+    ]
+  },
+  "now": 27
+}

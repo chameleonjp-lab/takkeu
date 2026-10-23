@@ -1,0 +1,54 @@
+[
+  {
+    "engine": "chromium",
+    "capture": "baseline",
+    "roi": "canvas x[0,40), y[0,100)",
+    "criterion": "max(R,G,B)<=20",
+    "pixelCount": 0,
+    "bounds": {
+      "left": null,
+      "top": null,
+      "right": null,
+      "bottom": null
+    }
+  },
+  {
+    "engine": "chromium",
+    "capture": "after",
+    "roi": "canvas x[0,40), y[0,100)",
+    "criterion": "max(R,G,B)<=20",
+    "pixelCount": 719,
+    "bounds": {
+      "left": 0,
+      "top": 0,
+      "right": 22,
+      "bottom": 65
+    }
+  },
+  {
+    "engine": "webkit",
+    "capture": "baseline",
+    "roi": "canvas x[0,40), y[0,100)",
+    "criterion": "max(R,G,B)<=20",
+    "pixelCount": 0,
+    "bounds": {
+      "left": null,
+      "top": null,
+      "right": null,
+      "bottom": null
+    }
+  },
+  {
+    "engine": "webkit",
+    "capture": "after",
+    "roi": "canvas x[0,40), y[0,100)",
+    "criterion": "max(R,G,B)<=20",
+    "pixelCount": 719,
+    "bounds": {
+      "left": 0,
+      "top": 0,
+      "right": 22,
+      "bottom": 65
+    }
+  }
+]

@@ -88,3 +88,23 @@ it.each([[900, 390], [360, 440], [600, 220]])('全解放後の相手の姿と両
   }
   objects.dispose();
 });
+
+it.each([[390, 844], [844, 390], [1280, 720], [320, 568], [280, 360]])('viewport %ix%iで台と高さ別の全可動域を切らない', (w, h) => {
+  const camera = createCamera(); fitCamera(camera, w, h, DEFAULT_CONFIG);
+  const objects = createObjects(DEFAULT_CONFIG);
+  for (const y of [.15, .25, .5, .7, .85]) for (const x of [-2, 2]) {
+    const paddle = clampPaddle({ x, y }, DEFAULT_CONFIG);
+    objects.playerPaddle.position.set(paddle.x, paddle.y, DEFAULT_CONFIG.paddleZ);
+    objects.playerPaddle.updateMatrixWorld(true);
+    objects.playerPaddle.traverse(child => {
+      if (!(child instanceof Mesh)) return;
+      const positions = child.geometry.attributes.position!;
+      for (let i = 0; i < positions.count; i++) {
+        const p = new Vector3().fromBufferAttribute(positions, i).applyMatrix4(child.matrixWorld).project(camera);
+        expect(Math.abs(p.x), `x boundary ${x}, ${y}`).toBeLessThanOrEqual(1);
+        expect(Math.abs(p.y), `y boundary ${x}, ${y}`).toBeLessThanOrEqual(1);
+      }
+    });
+  }
+  objects.dispose();
+});
