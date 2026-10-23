@@ -1,0 +1,36 @@
+
+Running 14 tests using 1 worker
+
+(node:109727) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/audio.spec.ts:24:1 › 打球ノード生成失敗を案内し、ゲームを進めたまま音ボタンで復旧できる (9.3s)
+  ✓   2 [chromium] › tests/browser/audio.spec.ts:53:1 › 開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰 (10.2s)
+  ✓   3 [chromium] › tests/browser/audio.spec.ts:75:1 › 音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える (6.9s)
+  ✓   4 [chromium] › tests/browser/audio.spec.ts:93:1 › 実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査 (1.2s)
+  ✓   5 [chromium] › tests/browser/glow-timing.spec.ts:4:1 › 指定された発光ラリーの直前・到達時を同一画角で撮影する (7.1s)
+(node:110977) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   6 [chromium] › tests/browser/contact.spec.ts:5:1 › ワンバウンド後の見える球にラケットを合わせれば返球できる (6.9s)
+  ✓   7 [chromium] › tests/browser/contact.spec.ts:32:1 › 見えている球にドラッグで合わせ、3ラリーをつなげる (18.9s)
+(node:111215) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   8 [webkit] › tests/browser/audio.spec.ts:24:1 › 打球ノード生成失敗を案内し、ゲームを進めたまま音ボタンで復旧できる (8.4s)
+  ✓   9 [webkit] › tests/browser/audio.spec.ts:53:1 › 開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰 (8.8s)
+  ✓  10 [webkit] › tests/browser/audio.spec.ts:75:1 › 音声再開拒否でも無音で継続し、ミュートと音ボタンの再試行が使える (6.2s)
+  ✓  11 [webkit] › tests/browser/audio.spec.ts:93:1 › 実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査 (1.7s)
+  ✓  12 [webkit] › tests/browser/glow-timing.spec.ts:4:1 › 指定された発光ラリーの直前・到達時を同一画角で撮影する (12.6s)
+(node:111981) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  13 [webkit] › tests/browser/contact.spec.ts:5:1 › ワンバウンド後の見える球にラケットを合わせれば返球できる (5.9s)
+  ✓  14 [webkit] › tests/browser/contact.spec.ts:32:1 › 見えている球にドラッグで合わせ、3ラリーをつなげる (10.1s)
+
+  14 passed (2.0m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

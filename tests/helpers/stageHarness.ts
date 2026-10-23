@@ -38,7 +38,9 @@ function show(score: number, time = 0, glowUntil: number | null = null) {
 }
 function beginSmash(score = 450) {
   simulation = scenario(score, 0); simulation.state.randomState = 2; emitted.length = 0;
-  const ball = incoming(1, 0.001, { x: 0, y: 0.5 }, 0, 2.5);
+  // A right-lane return fits before the already reserved right-side arrival.
+  // This fixture begins inside the warning, independently of random routing.
+  const ball = incoming(1, 0.001, { x: 0.8, y: 0.5 }, 0, 2.5);
   const existing2 = incoming(2, 2.2, { x: 0.8, y: 0.5 }, 0, 2.4);
   const existing3 = incoming(3, 2.8, { x: -0.7, y: 0.7 }, 0, 3.2);
   const queued = incoming(4, 3.8, { x: 0, y: 0.5 }, 0, 1.2);

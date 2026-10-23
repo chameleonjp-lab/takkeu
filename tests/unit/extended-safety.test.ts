@@ -3,7 +3,7 @@ import { DEFAULT_CONFIG, INITIAL_PADDLE } from '../../src/game/config';
 import { flightDuration, speedMultiplier } from '../../src/game/difficulty';
 import { retimeFlight } from '../../src/game/flightSpeed';
 import { scheduleReturn } from '../../src/game/scheduler';
-import { choosePlayerTarget } from '../../src/game/targets';
+import { chooseOpponentTarget, choosePlayerTarget } from '../../src/game/targets';
 import { sampleReturn } from '../../src/game/trajectory';
 import { createLoop } from '../../src/app/loop';
 import { createSession } from '../../src/game/session';
@@ -14,7 +14,7 @@ describe('加速・予告・入力の境界',()=>{
   it('到着点は左右3帯へ散り、同じ帯を連続せず全て操作範囲へ収まる',()=>{
     const source={randomState:12345,lastTargetBand:1},bands=new Set<number>(),xs:number[]=[];
     for(let i=0;i<300;i++){
-      const old=source.lastTargetBand,p=choosePlayerTarget(source,DEFAULT_CONFIG);
+      const old=source.lastTargetBand,from=chooseOpponentTarget(source,DEFAULT_CONFIG),p=choosePlayerTarget(source,DEFAULT_CONFIG,from);
       expect(source.lastTargetBand).not.toBe(old);bands.add(source.lastTargetBand);xs.push(p.x);
       expect(p.y).toBeGreaterThanOrEqual(.32);expect(p.y).toBeLessThanOrEqual(.64);
     }

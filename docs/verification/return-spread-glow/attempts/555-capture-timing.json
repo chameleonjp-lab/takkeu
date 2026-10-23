@@ -1,0 +1,1545 @@
+[
+  {
+    "method": "click",
+    "duration_ms": 221.73,
+    "params": {
+      "selector": "internal:role=button[name=\"\u306f\u3058\u3081\u308b\"s]",
+      "strict": true
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 13.89,
+    "params": {
+      "expression": "() => {\n    window.stage3.show(555);\n    window.stage3.autoPlay(true);\n  }",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 1519.72,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 8.74,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 437.43,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 81.48,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 365.63,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 5.51,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 395.46,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 16.61,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 766.2,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 12.51,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 878.48,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 6.5,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 1319.33,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 36.74,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 956.26,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 10.78,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 5113.04,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 13.05,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 7733.52,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 13.89,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 10970.45,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 7.66,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 5008.42,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 6.9,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 2241.11,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 63.03,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 3805.05,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 23.35,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 6202.66,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 33.14,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 6336.53,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 10.85,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 933.01,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 15.81,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 4894.02,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 9.12,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 4452.76,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 27.93,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 12584.97,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 14.9,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 8095.14,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 7.09,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 5347.48,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 25.91,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 8683.12,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 16.79,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 7010.85,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 15.2,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 5483.35,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 12.67,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 6079.7,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 9.7,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 4480.53,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 6.35,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 14280.93,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 6.04,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 421.62,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 8.8,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 14401.23,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 15.69,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 291.24,
+    "params": {
+      "expression": "() => window.stage3.snapshot()",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 651.97,
+    "params": {
+      "expression": "() => window.stage3.metrics().events",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 111.45,
+    "params": {
+      "expression": "() => window.stage3.metrics().smashDepartures",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "screenshot",
+    "duration_ms": 43809.11,
+    "params": {
+      "type": "png"
+    },
+    "error": null
+  },
+  {
+    "method": "click",
+    "duration_ms": 54.18,
+    "params": {
+      "selector": "internal:role=link[name=\"\u30bf\u30c3\u30b1\u30a6\"i]",
+      "strict": true
+    },
+    "error": null
+  },
+  {
+    "method": "click",
+    "duration_ms": 218.97,
+    "params": {
+      "selector": "internal:role=button[name=\"\u306f\u3058\u3081\u308b\"s]",
+      "strict": true
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 12.21,
+    "params": {
+      "expression": "() => {\n    window.stage3.show(555);\n    window.stage3.autoPlay(true);\n  }",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 1518.82,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 6.66,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 436.53,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 75.04,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 365.17,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 3.95,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 395.07,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 10.79,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 765.73,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 8.93,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 878.09,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 4.63,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 1317.35,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 13.4,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 955.72,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 4.85,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 5110.06,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 11.62,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 7731.04,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 10.14,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 10968.53,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 5.29,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 5004.77,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 4.92,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 2240.05,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 45.69,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 3804.32,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 13.28,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 6201.53,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 26.14,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 6335.27,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 8.46,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 932.39,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 12.58,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 4893.32,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 6.07,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 4452.04,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 22.89,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 12583.81,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 11.95,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 8093.97,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 5.31,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 5346.58,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 23.32,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 8682.14,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 14.8,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 7009.93,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 13.23,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 5480.26,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 8.14,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 6078.95,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 6.05,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 4479.81,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 4.69,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 14280.46,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 4.22,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 420.67,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 5.36,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "clockRunFor",
+    "duration_ms": 14400.47,
+    "params": {
+      "ticksNumber": 1000
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 9.11,
+    "params": {
+      "expression": "() => ({\n      score: window.stage3.snapshot().score,\n      balls: window.stage3.snapshot().balls.length,\n      phase: window.stage3.snapshot().phase,\n      resources: window.stage3.resources()\n    })",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 254.82,
+    "params": {
+      "expression": "() => window.stage3.snapshot()",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 117.42,
+    "params": {
+      "expression": "() => window.stage3.metrics().events",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "evaluateExpression",
+    "duration_ms": 97.66,
+    "params": {
+      "expression": "() => window.stage3.metrics().smashDepartures",
+      "isFunction": true,
+      "arg": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      }
+    },
+    "error": null
+  },
+  {
+    "method": "screenshot",
+    "duration_ms": 43802.02,
+    "params": {
+      "type": "png"
+    },
+    "error": null
+  }
+]

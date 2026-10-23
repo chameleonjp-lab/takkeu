@@ -22,8 +22,8 @@ test.beforeEach(async ({ page }) => {
 declare global { interface Window { audioProbe: { contexts: AudioContext[]; started: string[]; live: Set<OscillatorNode>; failResume: boolean; failNodes: boolean } } }
 
 test('打球ノード生成失敗を案内し、ゲームを進めたまま音ボタンで復旧できる', async ({ page }) => {
-  // Seed 7 returns the next ball into the resting paddle at about 5.10s.
-  // Use this path to distinguish a valid later hit from replayed failed audio.
+  // Seed 7 returns the next ball to a wing. Keeping the paddle in the centre
+  // must not produce a second player hit or replay the failed first hit.
   await page.clock.install({ time: new Date(-1000) }); await page.clock.pauseAt(new Date(7));
   await page.goto('/'); await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   await expect.poll(() => page.evaluate(() => window.audioProbe.contexts[0]?.state)).toBe('running');
@@ -46,8 +46,8 @@ test('打球ノード生成失敗を案内し、ゲームを進めたまま音�
   expect(await page.evaluate(() => window.audioProbe.started)).toEqual(['sine']);
   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('1');
   await page.clock.runFor(2600 - elapsed);
-  await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('2');
-  expect(await page.evaluate(() => window.audioProbe.started)).toEqual(['sine', 'triangle']);
+  await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('1');
+  expect(await page.evaluate(() => window.audioProbe.started)).toEqual(['sine']);
 });
 
 test('開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰', async ({ page }, info) => {

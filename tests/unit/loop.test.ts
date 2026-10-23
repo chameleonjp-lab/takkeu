@@ -9,7 +9,8 @@ describe('実際の固定刻みループ', () => {
   function run(hz: number) {
     const session = createSession(DEFAULT_CONFIG, 7);
     const timeline = createInputTimeline(INITIAL_PADDLE);
-    timeline.enqueue({ at: 5.43, target: { x: 1.05, y: 0.15 } });
+    timeline.enqueue({ at: 4.7, target: { x: -0.5, y: 0.55 } });
+    timeline.enqueue({ at: 6, target: { x: 1.05, y: 0.15 } });
     const events: GameEvent[] = [];
     const loop = createLoop({ session, timeline, config: DEFAULT_CONFIG, onEvents: e => events.push(...e), onPause() {} });
     session.start(); loop.resetClock(0);
