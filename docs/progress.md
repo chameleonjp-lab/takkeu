@@ -12,7 +12,7 @@
 
 公開画面の未反映は版を照合して確認した。調査開始時、公開は旧`01ef27f`で、PR #10のmain `df6eb63`はPages検証中。[run 39889118163](https://github.com/chameleonjp-lab/takkeu/actions/runs/39889118163)完了後、公開SHAの一致と実公開WebKit縦横の開始・保存・停止/再開・再挑戦・ホーム・開発経路404を確認。縦の画像も開き、相手側の暗闇を確認した。Chromiumの公開URLは環境プロキシCAにより未確認（TLS検査は無効化していない）。
 
-**今回の早い増球は別の変更で、PR提出時点では未公開。** [受入表・正式ログ・画像動画・音・SHA・配布候補](verification/ball-cadence/README.md)を新しいDraft PRにまとめる。mainへのマージはユーザー操作、以後は既存の自動Pagesが確定mainの同じSHAを検証・ビルド・配布する。CIと最終提出headはPR本文・Checksで追跡する。自動マージ・手動公開・課金変更・オンラインランキング追加は実施しない。
+**今回の早い増球は別の変更で、PR提出時点では未公開。** [受入表・正式ログ・画像動画・音・SHA・配布候補](verification/ball-cadence/README.md)を新しいDraft PRにまとめる。mainへのマージはユーザー操作、以後は既存の自動Pagesが確定mainの同じSHAを検証・ビルド・配布する。[Draft PR #11](https://github.com/chameleonjp-lab/takkeu/pull/11)を作成。CIと最終提出headはPR本文・Checksで追跡する。自動マージ・手動公開・課金変更・オンラインランキング追加は実施しない。
 
 ## 再提示されたラリー要件の反映（2026-10-22、履歴）
 

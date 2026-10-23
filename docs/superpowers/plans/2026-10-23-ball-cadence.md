@@ -52,7 +52,7 @@ Files: 受入記録・進捗文書。GitHub: 新規Draft PR、既存mainのPages
 
 - [x] 別コンテキストの全体レビューを実施し、必要な修正は失敗→成功で確認する。
 - [x] PR #10の公開処理完了と公開SHAを確認し、公開実画面で暗闇の反映を確認する。
-- [ ] 最新mainを再確認してDraft PRを提出。CIと、今回の増球変更が公開されているかを実SHAで報告する。自動マージしない。
+- [x] 最新mainを再確認して[Draft PR #11](https://github.com/chameleonjp-lab/takkeu/pull/11)を提出。CI・提出head・今回の増球変更の公開状態はPR本文とChecksで追跡。自動マージしない。
 
 ## 調査・判断記録
 
