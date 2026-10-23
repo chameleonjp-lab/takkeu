@@ -46,7 +46,7 @@ export function startSimulation(state: SimulationState, config: GameConfig): voi
     plan: scheduleReturn({ ballId: 1, earliestDepartAt: 0, preferredTarget: INITIAL_PADDLE, speedMultiplier: 1, smash: false }, [], config) });
 }
 
-type Action = { kind: 'bounce' | 'hit' | 'lost' | 'ready' | 'warning' | 'depart'; time: number; ball: SimulationBall; position?: Point3 };
+type Action = { kind: 'bounce' | 'hit' | 'lost' | 'ready' | 'warning' | 'depart'; time: number; ball: SimulationBall; position?: Point3; paddleFraction?: number };
 
 /** Advance an uncommitted part of a fixed tick, including zero-time input paths. */
 function advanceSegment(state: SimulationState, config: GameConfig, dt: number, target: PaddlePoint, deferEndContact = false): StepResult {
@@ -89,20 +89,20 @@ function advanceSegment(state: SimulationState, config: GameConfig, dt: number, 
     }
     if (hit !== null && !(deferEndContact && hit >= 1 - 1e-10)) {
       const time = state.simTime + hit * dt;
-      actions.push({ kind: 'hit', time, ball, position: sampleReturn(ball.plan, ball.from, time) });
+      actions.push({ kind: 'hit', time, ball, position: sampleReturn(ball.plan, ball.from, time), paddleFraction: hit });
     } else if (hit === null && lostFraction !== null && !(deferEndContact && lostFraction >= 1 - 1e-10)) {
       actions.push({ kind: 'lost', time: state.simTime + lostFraction * dt, ball });
     }
   }
   while (actions.length) {
     actions.sort((a, b) => a.time - b.time || Number(b.kind === 'bounce') - Number(a.kind === 'bounce') || a.ball.id - b.ball.id);
-    const { kind, time, ball, position } = actions.shift()!;
+    const { kind, time, ball, position, paddleFraction } = actions.shift()!;
     if (kind === 'bounce') {
       ball.bounceEmitted = true;
       emit('table-bounce', time, ball.id, undefined, position, ball.phase === 'incoming' && state.score >= 530 ? 'bounce-firework' : undefined);
     } else if (kind === 'hit') {
       state.score++;
-      const at = dt > 0 ? Math.max(0, Math.min(1, (time - state.simTime) / dt)) : 1;
+      const at = paddleFraction!;
       const centre = { x: previousPaddle.x + (state.paddle.x - previousPaddle.x) * at,
         y: previousPaddle.y + (state.paddle.y - previousPaddle.y) * at, z: config.paddleZ };
       emit('player-hit', time, ball.id, undefined, centre, state.score >= 520 ? 'racket-firework' : undefined);
@@ -202,6 +202,9 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
     } else if (sample.kind === 'release') {
       // Prior accepted move has already completed; release cannot invent a path.
       target = state.paddle;
+      // Settle its endpoint before a subsequent same-time recontact can place
+      // elsewhere. Bounce has already been processed by the preceding segment.
+      advance(sample.at);
     } else {
       target = clampPaddle(sample.target, config); moving = true;
     }

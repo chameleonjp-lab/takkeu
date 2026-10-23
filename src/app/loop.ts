@@ -39,7 +39,11 @@ export function createLoop(options: LoopOptions) {
     toSimTime(timestamp: number) {
       const state = session.snapshot();
       if (state.phase !== 'running' || lastSimulation === null) return state.simTime;
-      return state.simTime + Math.min(catchUpBudget(), accumulator + Math.max(0, timestamp - lastSimulation) / 1000);
+      // Preserve the uncommitted remainder's wall-clock origin. Old delivered
+      // events (including pre-resume input) must not be retimed into a new tick.
+      const pending = accumulator + (timestamp - lastSimulation) / 1000;
+      if (!Number.isFinite(pending) || pending < -1e-10) return NaN;
+      return state.simTime + Math.min(catchUpBudget(), Math.max(0, pending));
     },
     // Flush chronological input before reading a release/recontact origin.
     // This does not render, reset the draw-delay clock, or consume draw events.

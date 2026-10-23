@@ -136,7 +136,8 @@ for (const engine of engines) {
               return { id: ball.id, phase: ball.phase, position: ball.position, visible: true, center: project(ball.position), core, glow, displayed: glow ?? core };
             });
             const source = { randomState: 7, lastTargetBand: 1 };
-            const sphereOffsets = objects.balls.values().next().value?.core.geometry.attributes.position;
+            const firstVisual = objects.balls.values().next().value;
+            const sphereOffsets = (firstVisual?.glow.visible ? firstVisual.glow : firstVisual?.core)?.geometry.attributes.position;
             const silhouette = [];
             if (sphereOffsets) for (let i = 0; i < sphereOffsets.count; i++) silhouette.push({ x: sphereOffsets.getX(i), y: sphereOffsets.getY(i), z: sphereOffsets.getZ(i) });
             const trajectories = [];
@@ -181,7 +182,7 @@ for (const engine of engines) {
               paddle: { meshGeometry: meshVertices, initial: paddleAt(snapshot.paddle, true),
                 boundarySampling: '101 y-levels at each clamped horizontal edge and 99 interior points on each top/bottom edge; all unique face, wood, handle, grip and rim vertices at every point',
                 boundary, minimumBoundaryMargin: Math.min(...boundary.map(p => p.bounds.minimumCanvasMargin)), clippedBoundaryPlacements: boundary.filter(p => p.bounds.clippedVertexCount > 0).length },
-              balls, trajectories, trajectorySummary: { paths: trajectories.length, visibleSamples: trajectories.reduce((sum, path) => sum + path.visibleSamples.length, 0),
+              balls, trajectorySphereMesh: firstVisual?.glow.visible ? 'glow SphereGeometry(24,16)' : 'core SphereGeometry(20,12)', trajectories, trajectorySummary: { paths: trajectories.length, visibleSamples: trajectories.reduce((sum, path) => sum + path.visibleSamples.length, 0),
                 centerClippedSamples: trajectories.reduce((sum, path) => sum + path.centerClipped, 0), sphereClippedSamples: trajectories.reduce((sum, path) => sum + path.sphereClipped, 0),
                 minimumSphereMargin: Math.min(...trajectories.map(path => path.worstMargin)) },
               layout: styles, resources: window.stage2.resources(),

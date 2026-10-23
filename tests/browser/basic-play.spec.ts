@@ -66,10 +66,10 @@ test('タッチの絶対位置ドラッグでラケットを動かせる', async
   const surface = page.getByTestId('input-surface');
   const box = (await surface.boundingBox())!;
   const position = { x: box.x + box.width * 0.15, y: box.y + box.height * 0.8 };
-  await surface.dispatchEvent('pointerdown', { pointerId: 10, pointerType: 'touch', clientX: position.x, clientY: position.y, button: 0 });
-  await surface.dispatchEvent('pointermove', { pointerId: 10, pointerType: 'touch', clientX: position.x + box.width * 0.8, clientY: position.y - 100 });
+  await surface.dispatchEvent('pointerdown', { pointerId: 10, pointerType: 'touch', isPrimary: true, clientX: position.x, clientY: position.y, button: 0 });
+  await surface.dispatchEvent('pointermove', { pointerId: 10, pointerType: 'touch', isPrimary: true, clientX: position.x + box.width * 0.8, clientY: position.y - 100 });
   await page.clock.runFor(300);
-  await surface.dispatchEvent('pointerup', { pointerId: 10, pointerType: 'touch', clientX: position.x + box.width * 0.8, clientY: position.y - 100 });
+  await surface.dispatchEvent('pointerup', { pointerId: 10, pointerType: 'touch', isPrimary: true, clientX: position.x + box.width * 0.8, clientY: position.y - 100 });
   await page.clock.runFor(2700);
   await expect(page.getByRole('heading', { name: 'ナイスラリー！' })).toBeVisible();
   await expect(page.getByLabel('今回のラリー数')).toHaveText('0');

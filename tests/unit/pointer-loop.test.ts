@@ -100,3 +100,30 @@ it('1刻み未満で離した入力を捨てず、次の固定境界で最後の
   loop.frame(1000 / 60); expect(session.snapshot().paddle).toEqual({ x: .5, y: .5 });
   controller.dispose(); element.remove();
 });
+
+it('配送が遅れたmove/release/downと停止前のイベントを新しい時刻へ付け替えない', () => {
+  const element = document.createElement('canvas'); document.body.append(element);
+  const session = createSession(DEFAULT_CONFIG, 7); session.start();
+  const timeline = createInputTimeline(INITIAL_PADDLE);
+  const loop = createLoop({ session, timeline, config: DEFAULT_CONFIG, onEvents() {}, onPause() {} }); loop.resetClock(0);
+  const controller = createControls(element, { session, timeline, loop, config: DEFAULT_CONFIG,
+    mapping: { screen: { left: 0, top: 0, width: 200, height: 100 }, toWorld: x => ({ x: (x - 100) / 100, y: .5 }) }, onInterruption() {} });
+  function pointer(type: string, at: number, x: number) {
+    const event = new MouseEvent(type, { clientX: x, clientY: 50, button: 0, buttons: type === 'pointerup' ? 0 : 1, bubbles: true });
+    Object.defineProperties(event, { pointerId: { value: 1 }, timeStamp: { value: at } }); element.dispatchEvent(event);
+  }
+  pointer('pointerdown', 1, 50); loop.frame(100);
+  const held = session.snapshot().paddle;
+  pointer('pointermove', 5, 170); pointer('pointerup', 6, 170); pointer('pointerdown', 7, 170);
+  loop.frame(120); expect(session.snapshot().paddle).toEqual(held);
+  // A genuinely new contact still works after stale release/recontact.
+  pointer('pointerdown', 121, 160); pointer('pointerup', 122, 160); loop.frame(140);
+  expect(session.snapshot().paddle.x).toBeCloseTo(.6);
+  session.pause('user'); controller.cancel(); timeline.clear(session.snapshot().paddle);
+  session.resume(); loop.resetClock(1000);
+  pointer('pointerdown', 999, 20); loop.frame(1020);
+  expect(session.snapshot().paddle.x).toBeCloseTo(.6);
+  pointer('pointerdown', 1021, 80); pointer('pointerup', 1022, 80); loop.frame(1040);
+  expect(session.snapshot().paddle.x).toBeCloseTo(-.2);
+  controller.dispose(); element.remove();
+});

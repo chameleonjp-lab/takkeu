@@ -2,6 +2,8 @@ import { expect, test, type Page } from '@playwright/test';
 import type {} from '../helpers/appHarness';
 
 test.use({ video: 'on' });
+// 25ms = one 60Hz render interval + one 120Hz physics interval. A 12ms
+// clock advance can end before the first eligible render; this is not a latency allowance.
 async function begin(page: Page, size = { width: 390, height: 844 }) {
   await page.setViewportSize(size);
   await page.clock.install({ time: new Date('2026-10-23T14:00:00Z') });
@@ -35,21 +37,23 @@ for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { 
     expect(box).toEqual({ x: 0, y: 0, width: size.width, height: size.height });
     await expect(canvas).toBeFocused();
     await expect(page.locator('[data-game] button:visible, [data-game] a:visible')).toHaveCount(0);
+    // Use integer CSS pixels: WebKit mouse protocol truncates fractional points.
+    // The independent projected target and <1px acceptance remain unchanged.
     for (const y of [.15, .5, .85]) for (const x of [-2, 0, 2]) {
       const p = await projection(page, { x, y });
       const before = await page.evaluate(() => window.stage3.snapshot().paddle);
-      await page.mouse.move(p.x, p.y); await page.clock.runFor(12);
+      await page.mouse.move(Math.round(p.x), Math.round(p.y)); await page.clock.runFor(25);
       expect(await page.evaluate(() => window.stage3.snapshot().paddle)).toEqual(before);
-      await page.mouse.down(); await page.clock.runFor(12); await aligned(page, p);
+      await page.mouse.down(); await page.clock.runFor(25); await aligned(page, p);
       const next = await projection(page, { x: x === 0 ? .35 : 0, y: .5 });
-      await page.mouse.move(next.x, next.y); await page.clock.runFor(12); await aligned(page, next);
+      await page.mouse.move(Math.round(next.x), Math.round(next.y)); await page.clock.runFor(25); await aligned(page, next);
       await page.mouse.up(); const held = await page.evaluate(() => window.stage3.snapshot().paddle);
-      await page.clock.runFor(12); expect(await page.evaluate(() => window.stage3.snapshot().paddle)).toEqual(held);
+      await page.clock.runFor(25); expect(await page.evaluate(() => window.stage3.snapshot().paddle)).toEqual(held);
     }
     // Outside drag follows capture, clamps, and releases without cancelling.
     const p = await projection(page, { x: 0, y: .5 });
-    await page.mouse.move(p.x, p.y); await page.mouse.down();
-    await page.mouse.move(-80, -80); await page.clock.runFor(12); await page.mouse.up();
+    await page.mouse.move(Math.round(p.x), Math.round(p.y)); await page.mouse.down();
+    await page.mouse.move(-80, -80); await page.clock.runFor(25); await page.mouse.up();
     const held = await page.evaluate(() => window.stage3.snapshot());
     expect(held.phase).toBe('running');
     const edge = await projection(page, { x: -100, y: 100 }); await aligned(page, edge);
@@ -62,8 +66,8 @@ for (const size of [{ width: 390, height: 844 }, { width: 844, height: 390 }, { 
 test('二本指は両releaseで停止し、追加指やドラッグでは停止しない', async ({ page }, info) => {
   await begin(page);
   const canvas = page.locator('canvas');
-  const a = { pointerId: 21, pointerType: 'touch', button: 0, clientX: 150, clientY: 450 };
-  const b = { ...a, pointerId: 22, clientX: 250 };
+  const a = { pointerId: 21, pointerType: 'touch', isPrimary: true, button: 0, clientX: 150, clientY: 450 };
+  const b = { ...a, pointerId: 22, isPrimary: false, clientX: 250 };
   await canvas.dispatchEvent('pointerdown', a); await page.clock.runFor(20);
   await canvas.dispatchEvent('pointerdown', b); await page.clock.runFor(20);
   expect(await page.evaluate(() => window.stage3.snapshot().phase)).toBe('running');
@@ -92,11 +96,15 @@ test('情報上の入力・safe area・resize連発・メニューに古い入�
   await begin(page);
   await page.addStyleTag({ content: ':root { --safe-top: 44px; --safe-bottom: 34px; --safe-left: 8px; --safe-right: 8px; }' });
   const hud = await page.locator('.hud').boundingBox();
+  expect(hud!.y).toBeGreaterThanOrEqual(44);
+  expect(hud!.x).toBeGreaterThanOrEqual(8);
+  expect(await page.locator('canvas').boundingBox()).toEqual({ x: 0, y: 0, width: 390, height: 844 });
   expect(await page.locator('.hud').evaluate(e => getComputedStyle(e).pointerEvents)).toBe('none');
-  await page.mouse.click(hud!.x + 8, hud!.y + 8); await page.clock.runFor(12);
+  await page.mouse.click(hud!.x + 8, hud!.y + 8); await page.clock.runFor(25);
   const inputState = await page.evaluate(() => window.stage3.snapshot());
   expect(inputState.paddle).not.toEqual({ x: 0, y: .5 });
   await page.keyboard.press('Escape');
+  expect(await page.getByRole('dialog').evaluate(e => Number.parseFloat(getComputedStyle(e).paddingBottom))).toBeGreaterThanOrEqual(34);
   const paused = await page.evaluate(() => ({ state: window.stage3.snapshot(), renders: window.stage3.metrics().viewRenders }));
   await page.evaluate(() => { for (let i = 0; i < 20; i++) window.dispatchEvent(new Event('resize')); });
   await page.clock.runFor(300);
@@ -109,7 +117,7 @@ test('情報上の入力・safe area・resize連発・メニューに古い入�
   await page.setViewportSize({ width: 844, height: 390 }); await page.clock.runFor(200);
   expect(await page.evaluate(() => window.stage3.snapshot().simTime)).toBe(paused.state.simTime);
   await page.getByRole('button', { name: 'つづける', exact: true }).click();
-  await page.locator('canvas').dispatchEvent('pointermove', { pointerId: 1, pointerType: 'touch', clientX: 100, clientY: 100 });
-  await page.clock.runFor(12); expect(await page.evaluate(() => window.stage3.snapshot().paddle)).toEqual(paused.state.paddle);
+  await page.locator('canvas').dispatchEvent('pointermove', { pointerId: 1, pointerType: 'touch', isPrimary: true, clientX: 100, clientY: 100 });
+  await page.clock.runFor(25); expect(await page.evaluate(() => window.stage3.snapshot().paddle)).toEqual(paused.state.paddle);
   await page.screenshot({ path: info.outputPath('resized-resumed.png') });
 });

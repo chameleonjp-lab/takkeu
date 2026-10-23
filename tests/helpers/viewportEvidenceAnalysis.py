@@ -70,7 +70,9 @@ for item in manifest["records"]:
     if compare is not None:
         if canvas_image.size != compare.size:
             raise ValueError(f'Matched canvas dimensions changed with score: {item["id"]}')
-        for before, after in zip(compare.getdata(), canvas_image.getdata()):
+        before_pixels = getattr(compare, "get_flattened_data", compare.getdata)()
+        after_pixels = getattr(canvas_image, "get_flattened_data", canvas_image.getdata)()
+        for before, after in zip(before_pixels, after_pixels):
             changed += max(abs(a - b) for a, b in zip(after, before)) >= 32
             brighter += luminance(after) - luminance(before) >= 0.1
     total_pixels = viewport["width"] * viewport["height"]

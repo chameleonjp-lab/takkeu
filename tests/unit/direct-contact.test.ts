@@ -56,6 +56,26 @@ describe('時刻付き絶対操作と可視接触', () => {
     expect(result.events.filter(e => e.kind === 'player-hit')).toHaveLength(1);
     expect(result.snapshot.paddle).toEqual(point(.7));
   });
+  it.each([1, 2])('release→同時刻の再配置でも直前のドラッグ終端接触を確定する（%i球）', count => {
+    const s = fixture(), t = 1.994, ball = s.state.balls[0]!;
+    if (count === 2) s.state.balls.push({ ...ball, id: 2, plan: { ...ball.plan, ballId: 2 } });
+    const p = projectBall(sampleReturn(ball.plan, ball.from, t), config);
+    const tangent = { x: p.x - config.paddleRadius - p.radius, y: p.y };
+    const result = step(s, [{ kind: 'move', at: 1.99, target: tangent }, { kind: 'release', at: t, target: tangent }, sample('place', t, .7, .85)]);
+    const hits = result.events.filter(e => e.kind === 'player-hit');
+    expect(hits.map(e => e.ballId)).toEqual(count === 2 ? [1, 2] : [1]);
+    for (const hit of hits) expect(hit.time).toBeCloseTo(t, 12);
+    expect(result.snapshot.paddle).toEqual(point(.7, .85));
+  });
+  it('同時刻ドラッグの発光位置も終点ではなく接触時のラケット中心を使う', () => {
+    const s = fixture(); s.state.score = 519;
+    const ball = s.state.balls[0]!, p = projectBall(ball.position, config);
+    const result = step(s, [sample('move', 1.99, .7), sample('release', 1.99, .7)]);
+    const hit = result.events.find(e => e.kind === 'player-hit')!;
+    expect(hit.effect).toBe('racket-firework');
+    expect(hit.position!.x).toBeLessThan(0);
+    expect(Math.hypot(hit.position!.x - p.x, hit.position!.y - p.y)).toBeCloseTo(config.paddleRadius + p.radius, 10);
+  });
   it('離した後も最終位置のラケットで接触できる', () => {
     const s = fixture(1.42), t = s.state.simTime;
     const p = projectBall(sampleReturn(s.state.balls[0]!.plan, s.state.balls[0]!.from, 1.44), config);

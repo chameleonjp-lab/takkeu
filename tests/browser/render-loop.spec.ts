@@ -12,11 +12,12 @@ test('停止・終了中は同じ3D画面を繰り返し描かず、回転と再
   await page.clock.runFor(500);
   expect(await page.evaluate(() => window.stage3.metrics().viewRenders)).toBe(before.count);
   expect(await page.evaluate(() => window.stage3.snapshot())).toEqual(before.state);
+  await page.evaluate(() => { (window as Window & { resized?: boolean }).resized = false; window.addEventListener('resize', () => { (window as Window & { resized?: boolean }).resized = true; }, { once: true }); });
   await page.setViewportSize({ width: 844, height: 390 });
-  await page.clock.runFor(32);
-  // Viewport emulation can finish before the native resize event is delivered.
-  // Wait for that event's render; advancing the fake clock alone cannot await it.
-  await expect.poll(() => page.evaluate(() => window.stage3.metrics().viewRenders)).toBeGreaterThan(before.count);
+  // Observe native resize first, then run the new 100ms coalescing timer.
+  await expect.poll(() => page.evaluate(() => (window as Window & { resized?: boolean }).resized)).toBe(true);
+  await page.clock.runFor(120);
+  expect(await page.evaluate(() => window.stage3.metrics().viewRenders)).toBeGreaterThan(before.count);
   const resized = await page.evaluate(() => window.stage3.metrics().viewRenders);
   await page.clock.runFor(500);
   expect(await page.evaluate(() => window.stage3.metrics().viewRenders)).toBe(resized);
