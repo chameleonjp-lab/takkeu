@@ -1,0 +1,93 @@
+[WebServer] (node:94996) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:95009) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:95033) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/occlusion.spec.ts:3:1 › 球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない (1.5s)
+(node:95146) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  2 [webkit] › tests/browser/occlusion.spec.ts:3:1 › 球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない (2.8s)
+
+
+  1) [chromium] › tests/browser/occlusion.spec.ts:3:1 › 球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない ──────────
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 191
+    Received:   141
+
+       5 |   const pixels=await page.evaluate(()=>window.occlusion.netGlowProbe());
+       6 |   await info.attach('net-glow-depth.json',{body:JSON.stringify(pixels),contentType:'application/json'});
+    >  7 |   expect(pixels.front[0]!).toBeGreaterThan(pixels.behind[0]!+50);
+         |                            ^
+       8 | });
+       9 |
+      10 | test('球と虹色の輪郭はラケットとの前後関係を守る', async ({ page }, testInfo) => {
+        at /workspace/takkeu-audit/tests/browser/occlusion.spec.ts:7:28
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/occlusion-球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/occlusion-球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/occlusion-球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない-chromium/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/occlusion-球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/occlusion-球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit] › tests/browser/occlusion.spec.ts:3:1 › 球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない ────────────
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 192
+    Received:   142
+
+       5 |   const pixels=await page.evaluate(()=>window.occlusion.netGlowProbe());
+       6 |   await info.attach('net-glow-depth.json',{body:JSON.stringify(pixels),contentType:'application/json'});
+    >  7 |   expect(pixels.front[0]!).toBeGreaterThan(pixels.behind[0]!+50);
+         |                            ^
+       8 | });
+       9 |
+      10 | test('球と虹色の輪郭はラケットとの前後関係を守る', async ({ page }, testInfo) => {
+        at /workspace/takkeu-audit/tests/browser/occlusion.spec.ts:7:28
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/occlusion-球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/occlusion-球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/occlusion-球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない-webkit/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/occlusion-球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/occlusion-球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/browser/occlusion.spec.ts:3:1 › 球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない ───────────
+    [webkit] › tests/browser/occlusion.spec.ts:3:1 › 球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない ─────────────
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

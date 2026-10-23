@@ -1,5 +1,12 @@
 import { expect, test } from '@playwright/test';
 
+test('球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない',async({page},info)=>{
+  await page.goto('/tests/fixtures/occlusion.html');await page.waitForFunction(()=>!!window.occlusion);
+  const pixels=await page.evaluate(()=>window.occlusion.netGlowProbe());
+  await info.attach('net-glow-depth.json',{body:JSON.stringify(pixels),contentType:'application/json'});
+  expect(pixels.front[0]!).toBeGreaterThan(pixels.behind[0]!+50);
+});
+
 test('球と虹色の輪郭はラケットとの前後関係を守る', async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 660, height: 460 });
   await page.goto('/tests/fixtures/occlusion.html');

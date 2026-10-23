@@ -1,0 +1,50 @@
+{
+  "baseline": "0082ce8b877bc93a1e4969110543c8c3ab5b6f75",
+  "product": "45106aace7340820da8b5eaafba8efc1d0ea7af1",
+  "unchangedSourceSha256": {
+    "src/app/controls.ts": "c147c8ac4bee8e5d346aa2712eff142ff2bc6ae15101650093918940e4fa6f75",
+    "src/app/lifecycle.ts": "c96e07477994c190d3607d7ce4ba9cc0f62032585221475b605e73cba41440bb",
+    "src/audio/audio.ts": "07ecded33b8e41b3282aa91c4cef1e7022e8938b2626a6c2ff6d7dcff3db28ce",
+    "src/audio/tones.ts": "04f65b7879d442cc30515c66846166c336d643e5cdfd088170d5d1558f893368",
+    "src/game/collision.ts": "8e5ad013fcafcc33d7aabf57d9ccdae0dd99fa6db4f1aefb5cd75a1730074c1c",
+    "src/game/progression.ts": "97ceca2fb5ee365dc7aa2e7c77e1dde3119b182c70869cf839a25d1ef837b39c",
+    "src/game/session.ts": "5c6fdc5f690b3addaeb8484d9f962276f4b3f60623e12acb1d4968909ad0c93a",
+    "src/game/viewpoint.ts": "1e5bea55f6b62fc37c9dce79f2b266d938d08e3fd663a925540e7b39dc9ad3f9",
+    "src/input/swipe.ts": "b462c1a4a517dca2d3f37a5d62239588954a00f6f65312f1e8569db51f5b5904",
+    "src/input/timeline.ts": "f2fc08142866529028d06bd407918cedc99958fc39dcfbbbec664136412fcd17",
+    "src/main.ts": "1f32056096aa7d74eb8db4129d8a599515e6c88fa2691fa699477580938d3bcf",
+    "src/render/camera.ts": "21bbe2f2ecd39520e72ffdca080a0936414b7131f06ded2d5a85f1aa21fd31ac",
+    "src/render/materials.ts": "762098367b45770052d30790e2fc76ce02939ad912a6a07a6d96831c11ba5c85",
+    "src/render/paddle.ts": "9b88815c5b00032957a222f43b5b13dae1004fa144a92ec05fe8e1f32944c9dd",
+    "src/render/quality.ts": "8b7797fc97658f3877c4c5ab0c7162c176368cf46ee1a5d325f4eb3047212763",
+    "src/storage/preferences.ts": "d1413a7c858fdef151919d1a8a31c9c2511b8c97723cabb11be1ede0b9599d37",
+    "src/ui/court-preview.png": "08f9fb9d7067af221769f957cec4a9d38362adfa0a8fe6acdf62f2b33765d4c4",
+    "src/ui/screens.ts": "585a4ceb14d6a9c1c5e8132013beb748d8198ec88ac1354cc2c40e9c85975720",
+    "src/ui/styles.css": "21c0567a43f6b21a4314abc89bad5c769c04d888e380c68c9aa0da7909969b3a"
+  },
+  "changed": [
+    "src/app/createApp.ts",
+    "src/app/loop.ts",
+    "src/game/config.ts",
+    "src/game/difficulty.ts",
+    "src/game/milestones.ts",
+    "src/game/opponent.ts",
+    "src/game/scheduler.ts",
+    "src/game/simulation.ts",
+    "src/game/trajectory.ts",
+    "src/game/types.ts",
+    "src/render/balls.ts",
+    "src/render/createView.ts",
+    "src/render/environment.ts",
+    "src/render/objects.ts",
+    "src/render/opponentView.ts",
+    "src/render/presentation.ts",
+    "src/render/rainbow.ts"
+  ],
+  "new": [
+    "src/game/flightSpeed.ts",
+    "src/game/targets.ts",
+    "src/render/field.ts",
+    "src/render/particles.ts"
+  ]
+}

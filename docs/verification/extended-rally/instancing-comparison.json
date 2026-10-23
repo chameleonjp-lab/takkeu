@@ -1,0 +1,45 @@
+{
+  "beforeCommit": "1fef770dc77cb9627bbd315d75bebd253cd1cc7a",
+  "after": {
+    "chromium": {
+      "score": 668,
+      "balls": 148,
+      "first": {
+        "geometries": 30,
+        "textures": 4,
+        "programs": 14,
+        "drawCalls": 30,
+        "particles": 48,
+        "particleCapacity": 1536
+      },
+      "last": {
+        "geometries": 30,
+        "textures": 4,
+        "programs": 14,
+        "drawCalls": 30,
+        "particles": 144,
+        "particleCapacity": 1536
+      }
+    },
+    "webkit": {
+      "score": 668,
+      "balls": 148,
+      "first": {
+        "geometries": 30,
+        "textures": 4,
+        "programs": 14,
+        "drawCalls": 30,
+        "particles": 48,
+        "particleCapacity": 1536
+      },
+      "last": {
+        "geometries": 30,
+        "textures": 4,
+        "programs": 14,
+        "drawCalls": 30,
+        "particles": 144,
+        "particleCapacity": 1536
+      }
+    }
+  }
+}

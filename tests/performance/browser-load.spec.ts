@@ -1,11 +1,11 @@
 import { expect, test } from '@playwright/test';
 import type {} from '../helpers/appHarness';
 
-test('Linuxの実フレーム60秒を記録し、実機の性能判定とは分ける', async ({ page }, info) => {
+for(const startingScore of [450,555])test(`${startingScore}からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける`, async ({ page }, info) => {
   const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
-  await page.evaluate(() => { window.stage3.show(450); window.stage3.autoPlay(true); });
+  await page.evaluate(score => { window.stage3.show(score); window.stage3.autoPlay(true); },startingScore);
   const result = await page.evaluate(() => new Promise<object>(resolve => {
     let previous = performance.now(); const start = previous, intervals: number[] = [];
     const first = window.stage3.snapshot(), initialResources = window.stage3.resources();
@@ -15,6 +15,7 @@ test('Linuxの実フレーム60秒を記録し、実機の性能判定とは分�
       const sorted = [...intervals].sort((a, b) => a - b), final = window.stage3.snapshot();
       resolve({ initialBalls: first.balls.length, initialScore: first.score, environment: 'Linux Playwright browser, not iPhone 17 Pro hardware', userAgent: navigator.userAgent,
         viewport: { width: innerWidth, height: innerHeight, deviceRatio: devicePixelRatio },
+        drawingSize:{width:document.querySelector('canvas')!.width,height:document.querySelector('canvas')!.height},quality:'standard',
         durationMs: now - start, frames: intervals.length, p95Ms: sorted[Math.ceil(sorted.length * 0.95) - 1],
         fractionAtMost25ms: intervals.filter(n => n <= 25).length / intervals.length,
         runningSimulationSeconds: final.simTime - first.simTime, finalPhase: final.phase, pauseReason: final.pauseReason,
@@ -27,5 +28,5 @@ test('Linuxの実フレーム60秒を記録し、実機の性能判定とは分�
     requestAnimationFrame(frame);
   }));
   expect(errors).toEqual([]);
-  await info.attach('browser-performance-60s.json', { body: JSON.stringify(result, null, 2), contentType: 'application/json' });
+  await info.attach(`browser-performance-60s-${startingScore}.json`, { body: JSON.stringify(result, null, 2), contentType: 'application/json' });
 });

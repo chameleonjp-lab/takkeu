@@ -5,8 +5,10 @@ export function createLoop(options: LoopOptions) {
   let lastSimulation: number | null = null;
   let lastFrame: number | null = null;
   let accumulator = 0;
+  let stepsSinceFrame=0;
   let pendingEvents: GameEvent[] = [];
   const { session, config, timeline } = options;
+  const catchUpBudget = () => config.fixedDt * Math.max(0,config.maxStepsPerFrame-stepsSinceFrame);
   const pauseForDelay = (now: number): boolean => {
     if (session.snapshot().phase !== 'running' || lastFrame === null || (now - lastFrame) / 1000 <= config.slowFrameSeconds + 1e-10) return false;
     accumulator = 0; pendingEvents = []; lastSimulation = now;
@@ -19,35 +21,37 @@ export function createLoop(options: LoopOptions) {
     const elapsed = lastSimulation === null ? 0 : Math.max(0, now - lastSimulation) / 1000;
     lastSimulation = now;
     if (session.snapshot().phase !== 'running') { accumulator = 0; return; }
-    accumulator += elapsed;
-    let steps = 0;
-    while (accumulator + 1e-10 >= config.fixedDt && steps < config.maxStepsPerFrame) {
+    // A short stall slows this frame instead of storing a debt that later
+    // pointer events could consume as a burst of unseen ball movement.
+    accumulator = Math.min(catchUpBudget(), accumulator + elapsed);
+    while (accumulator + 1e-10 >= config.fixedDt && stepsSinceFrame < config.maxStepsPerFrame) {
       const time = session.snapshot().simTime;
       const result = session.step(config.fixedDt, timeline.sampleAt(time));
       pendingEvents.push(...result.events);
       options.onEvents(result.events);
       accumulator = Math.max(0, accumulator - config.fixedDt);
-      steps++;
+      stepsSinceFrame++;
       if (result.snapshot.phase !== 'running') { accumulator = 0; break; }
     }
   };
   return {
-    resetClock(now: number) { lastSimulation = now; lastFrame = now; accumulator = 0; pendingEvents = []; },
+    resetClock(now: number) { lastSimulation = now; lastFrame = now; accumulator = 0; stepsSinceFrame=0; pendingEvents = []; },
     toSimTime(timestamp: number) {
       const state = session.snapshot();
       if (state.phase !== 'running' || lastSimulation === null) return state.simTime;
-      return state.simTime + accumulator + Math.max(0, timestamp - lastSimulation) / 1000;
+      return state.simTime + Math.min(catchUpBudget(), accumulator + Math.max(0, timestamp - lastSimulation) / 1000);
     },
     // Flush chronological input before reading a release/recontact origin.
     // This does not render, reset the draw-delay clock, or consume draw events.
     flushInput(now: number) { if (!pauseForDelay(now)) advance(now); },
     frame(now: number): StepResult {
       if (pauseForDelay(now)) {
-        lastFrame = now;
+        lastFrame = now;stepsSinceFrame=0;
         return { snapshot: session.snapshot(), events: [] };
       }
       lastFrame = now;
       advance(now);
+      stepsSinceFrame=0;
       const events = pendingEvents;
       pendingEvents = [];
       return { snapshot: session.snapshot(), events };

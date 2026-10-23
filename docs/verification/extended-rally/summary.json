@@ -1,0 +1,732 @@
+{
+  "commit": "45106aace7340820da8b5eaafba8efc1d0ea7af1",
+  "startedAt": "2026-10-23T11:13:45.414Z",
+  "endedAt": "2026-10-23T11:35:01.282Z",
+  "unit": {
+    "passed": 175,
+    "failed": 0,
+    "pending": 0,
+    "files": 30
+  },
+  "browser": {
+    "startTime": "2026-10-23T11:13:56.480Z",
+    "duration": 988483.222,
+    "expected": 74,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "release": {
+    "startTime": "2026-10-23T11:30:30.831Z",
+    "duration": 11910.278999999999,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "load": {
+    "chromium": {
+      "verdict": "成功（固定時計の自動操作。実機性能ではない）",
+      "initialScore": 450,
+      "initialBalls": 47,
+      "finalScore": 543,
+      "simulationSeconds": 29.991666666665605,
+      "finalPhase": "running",
+      "finalLiveBalls": 85,
+      "phaseCounts": {
+        "queued": 27,
+        "waiting-return": 54,
+        "incoming": 1,
+        "outgoing": 3,
+        "lost": 0
+      },
+      "resources": {
+        "geometries": {
+          "min": 46,
+          "max": 48
+        },
+        "textures": {
+          "min": 4,
+          "max": 4
+        },
+        "programs": {
+          "min": 13,
+          "max": 14
+        },
+        "drawCalls": {
+          "min": 30,
+          "max": 46
+        },
+        "particles": {
+          "min": 0,
+          "max": 144
+        },
+        "particleCapacity": {
+          "min": 1536,
+          "max": 1536
+        }
+      },
+      "first47ServedAndSmashExecuted": "passing test assertions (source hash in formal manifest)"
+    },
+    "webkit": {
+      "verdict": "成功（固定時計の自動操作。実機性能ではない）",
+      "initialScore": 450,
+      "initialBalls": 47,
+      "finalScore": 543,
+      "simulationSeconds": 29.991666666665605,
+      "finalPhase": "running",
+      "finalLiveBalls": 85,
+      "phaseCounts": {
+        "queued": 27,
+        "waiting-return": 54,
+        "incoming": 1,
+        "outgoing": 3,
+        "lost": 0
+      },
+      "resources": {
+        "geometries": {
+          "min": 46,
+          "max": 48
+        },
+        "textures": {
+          "min": 4,
+          "max": 4
+        },
+        "programs": {
+          "min": 13,
+          "max": 14
+        },
+        "drawCalls": {
+          "min": 30,
+          "max": 46
+        },
+        "particles": {
+          "min": 0,
+          "max": 144
+        },
+        "particleCapacity": {
+          "min": 1536,
+          "max": 1536
+        }
+      },
+      "first47ServedAndSmashExecuted": "passing test assertions (source hash in formal manifest)"
+    }
+  },
+  "extendedLoad": {
+    "chromium": {
+      "initialScore": 555,
+      "initialBalls": 91,
+      "finalScore": 668,
+      "finalBalls": 148,
+      "simulationSeconds": 29.991666666665605,
+      "finalPhase": "running",
+      "resources": {
+        "geometries": {
+          "min": 30,
+          "max": 30
+        },
+        "textures": {
+          "min": 4,
+          "max": 4
+        },
+        "programs": {
+          "min": 14,
+          "max": 14
+        },
+        "drawCalls": {
+          "min": 30,
+          "max": 30
+        },
+        "particles": {
+          "min": 48,
+          "max": 168
+        },
+        "particleCapacity": {
+          "min": 1536,
+          "max": 1536
+        }
+      },
+      "allOpponentReturnsSmashes": true
+    },
+    "webkit": {
+      "initialScore": 555,
+      "initialBalls": 91,
+      "finalScore": 668,
+      "finalBalls": 148,
+      "simulationSeconds": 29.991666666665605,
+      "finalPhase": "running",
+      "resources": {
+        "geometries": {
+          "min": 30,
+          "max": 30
+        },
+        "textures": {
+          "min": 4,
+          "max": 4
+        },
+        "programs": {
+          "min": 14,
+          "max": 14
+        },
+        "drawCalls": {
+          "min": 30,
+          "max": 30
+        },
+        "particles": {
+          "min": 48,
+          "max": 168
+        },
+        "particleCapacity": {
+          "min": 1536,
+          "max": 1536
+        }
+      },
+      "allOpponentReturnsSmashes": true
+    }
+  },
+  "retry": {
+    "chromium": {
+      "baseline": {
+        "listeners": 22,
+        "pendingFrames": 1,
+        "audioContexts": 1,
+        "resources": {
+          "geometries": 30,
+          "textures": 4,
+          "programs": 14,
+          "drawCalls": 25,
+          "particles": 0,
+          "particleCapacity": 1536
+        },
+        "views": 1
+      },
+      "cycles": 40,
+      "allEqual": true,
+      "disposed": {
+        "listeners": 0,
+        "pendingFrames": 0,
+        "audioContexts": 1
+      }
+    },
+    "webkit": {
+      "baseline": {
+        "listeners": 22,
+        "pendingFrames": 1,
+        "audioContexts": 1,
+        "resources": {
+          "geometries": 30,
+          "textures": 4,
+          "programs": 14,
+          "drawCalls": 25,
+          "particles": 0,
+          "particleCapacity": 1536
+        },
+        "views": 1
+      },
+      "cycles": 40,
+      "allEqual": true,
+      "disposed": {
+        "listeners": 0,
+        "pendingFrames": 0,
+        "audioContexts": 1
+      }
+    }
+  },
+  "audio": {
+    "chromium": [
+      {
+        "mode": "player",
+        "peak": 0.04950965940952301,
+        "rms": 0.004125981697002195
+      },
+      {
+        "mode": "opponent",
+        "peak": 0.051308270543813705,
+        "rms": 0.0060941537672499786
+      },
+      {
+        "mode": "warning",
+        "peak": 0.035144589841365814,
+        "rms": 0.004076965309607706
+      },
+      {
+        "mode": "four",
+        "peak": 0.14236870408058167,
+        "rms": 0.010900207314797185
+      },
+      {
+        "mode": "sixteen",
+        "peak": 0.5928182601928711,
+        "rms": 0.043914678443284144
+      }
+    ],
+    "webkit": [
+      {
+        "mode": "player",
+        "peak": 0.04950965568423271,
+        "rms": 0.004125981777827266
+      },
+      {
+        "mode": "opponent",
+        "peak": 0.051308270543813705,
+        "rms": 0.006094153967635045
+      },
+      {
+        "mode": "warning",
+        "peak": 0.035144589841365814,
+        "rms": 0.004076965424246247
+      },
+      {
+        "mode": "four",
+        "peak": 0.14236873388290405,
+        "rms": 0.010900207732324623
+      },
+      {
+        "mode": "sixteen",
+        "peak": 0.5928183197975159,
+        "rms": 0.04391468039265967
+      }
+    ]
+  },
+  "emission": {
+    "chromium": [
+      {
+        "id": "selfCourtRight",
+        "threshold": 160,
+        "x": 414,
+        "y": 215,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            40,
+            235,
+            237,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "opponentCourtRight",
+        "threshold": 190,
+        "x": 402,
+        "y": 313,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            40,
+            233,
+            238,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "opponentFloor",
+        "threshold": 380,
+        "x": 357,
+        "y": 301,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            40,
+            237,
+            155,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "selfFloor",
+        "threshold": 410,
+        "x": 332,
+        "y": 135,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            208,
+            40,
+            237,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "opponentWall",
+        "threshold": 420,
+        "x": 365,
+        "y": 398,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            78,
+            237,
+            51,
+            255
+          ]
+        ]
+      }
+    ],
+    "webkit": [
+      {
+        "id": "selfCourtRight",
+        "threshold": 160,
+        "x": 414,
+        "y": 215,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            40,
+            235,
+            237,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "opponentCourtRight",
+        "threshold": 190,
+        "x": 402,
+        "y": 313,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            40,
+            233,
+            238,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "opponentFloor",
+        "threshold": 380,
+        "x": 357,
+        "y": 301,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            40,
+            237,
+            155,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "selfFloor",
+        "threshold": 410,
+        "x": 332,
+        "y": 135,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            208,
+            40,
+            237,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "opponentWall",
+        "threshold": 420,
+        "x": 365,
+        "y": 398,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            78,
+            237,
+            51,
+            255
+          ]
+        ]
+      }
+    ]
+  },
+  "realtime": {
+    "chromium": {
+      "450": {
+        "initialBalls": 47,
+        "initialScore": 450,
+        "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "deviceRatio": 1
+        },
+        "drawingSize": {
+          "width": 599,
+          "height": 414
+        },
+        "quality": "standard",
+        "durationMs": 60001.99999999404,
+        "frames": 600,
+        "p95Ms": 233.29999999999927,
+        "fractionAtMost25ms": 0.15,
+        "runningSimulationSeconds": 43.97499999999815,
+        "finalPhase": "running",
+        "pauseReason": null,
+        "remaining": 109,
+        "score": 590,
+        "opponentHits": 141,
+        "smashHits": 141,
+        "initialResources": {
+          "geometries": 25,
+          "textures": 4,
+          "programs": 6,
+          "drawCalls": 25,
+          "particles": 0,
+          "particleCapacity": 1536
+        },
+        "finalResources": {
+          "geometries": 48,
+          "textures": 4,
+          "programs": 14,
+          "drawCalls": 30,
+          "particles": 72,
+          "particleCapacity": 1536
+        },
+        "targetHardwareVerdict": "未確認",
+        "continuousPlayVerdict": "失敗（性能基準未達。停止なし）"
+      },
+      "555": {
+        "initialBalls": 91,
+        "initialScore": 555,
+        "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "deviceRatio": 1
+        },
+        "drawingSize": {
+          "width": 599,
+          "height": 414
+        },
+        "quality": "standard",
+        "durationMs": 60169.99999999702,
+        "frames": 573,
+        "p95Ms": 250,
+        "fractionAtMost25ms": 0.15532286212914484,
+        "runningSimulationSeconds": 41.574999999998276,
+        "finalPhase": "running",
+        "pauseReason": null,
+        "remaining": 172,
+        "score": 716,
+        "opponentHits": 163,
+        "smashHits": 163,
+        "initialResources": {
+          "geometries": 27,
+          "textures": 4,
+          "programs": 11,
+          "drawCalls": 27,
+          "particles": 0,
+          "particleCapacity": 1536
+        },
+        "finalResources": {
+          "geometries": 30,
+          "textures": 4,
+          "programs": 14,
+          "drawCalls": 30,
+          "particles": 120,
+          "particleCapacity": 1536
+        },
+        "targetHardwareVerdict": "未確認",
+        "continuousPlayVerdict": "失敗（性能基準未達。停止なし）"
+      }
+    },
+    "webkit": {
+      "450": {
+        "initialBalls": 47,
+        "initialScore": 450,
+        "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+        "viewport": {
+          "width": 390,
+          "height": 664,
+          "deviceRatio": 3
+        },
+        "drawingSize": {
+          "width": 534,
+          "height": 372
+        },
+        "quality": "standard",
+        "durationMs": 60013,
+        "frames": 1474,
+        "p95Ms": 73,
+        "fractionAtMost25ms": 0.06648575305291723,
+        "runningSimulationSeconds": 56.5166666666641,
+        "finalPhase": "running",
+        "pauseReason": null,
+        "remaining": 131,
+        "score": 635,
+        "opponentHits": 187,
+        "smashHits": 187,
+        "initialResources": {
+          "geometries": 25,
+          "textures": 4,
+          "programs": 6,
+          "drawCalls": 25,
+          "particles": 0,
+          "particleCapacity": 1536
+        },
+        "finalResources": {
+          "geometries": 48,
+          "textures": 4,
+          "programs": 14,
+          "drawCalls": 30,
+          "particles": 144,
+          "particleCapacity": 1536
+        },
+        "targetHardwareVerdict": "未確認",
+        "continuousPlayVerdict": "失敗（性能基準未達。停止なし）"
+      },
+      "555": {
+        "initialBalls": 91,
+        "initialScore": 555,
+        "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+        "viewport": {
+          "width": 390,
+          "height": 664,
+          "deviceRatio": 3
+        },
+        "drawingSize": {
+          "width": 534,
+          "height": 372
+        },
+        "quality": "standard",
+        "durationMs": 60162,
+        "frames": 1250,
+        "p95Ms": 82,
+        "fractionAtMost25ms": 0.1376,
+        "runningSimulationSeconds": 54.808333333330864,
+        "finalPhase": "running",
+        "pauseReason": null,
+        "remaining": 201,
+        "score": 774,
+        "opponentHits": 221,
+        "smashHits": 221,
+        "initialResources": {
+          "geometries": 25,
+          "textures": 4,
+          "programs": 6,
+          "drawCalls": 25,
+          "particles": 0,
+          "particleCapacity": 1536
+        },
+        "finalResources": {
+          "geometries": 30,
+          "textures": 4,
+          "programs": 14,
+          "drawCalls": 30,
+          "particles": 120,
+          "particleCapacity": 1536
+        },
+        "targetHardwareVerdict": "未確認",
+        "continuousPlayVerdict": "失敗（性能基準未達。停止なし）"
+      }
+    }
+  },
+  "hardwareVerdict": "未確認",
+  "humanListeningVerdict": "未確認",
+  "finalFlashingVerdict": "未確認",
+  "cadence": {
+    "chromium": {
+      "thresholds": [
+        {
+          "threshold": 5,
+          "actualScore": 5,
+          "balls": 2
+        },
+        {
+          "threshold": 10,
+          "actualScore": 10,
+          "balls": 3
+        },
+        {
+          "threshold": 20,
+          "actualScore": 20,
+          "balls": 4
+        }
+      ],
+      "finalScore": 21,
+      "finalBalls": 4,
+      "scoreWasReplaced": false
+    },
+    "webkit": {
+      "thresholds": [
+        {
+          "threshold": 5,
+          "actualScore": 5,
+          "balls": 2
+        },
+        {
+          "threshold": 10,
+          "actualScore": 10,
+          "balls": 3
+        },
+        {
+          "threshold": 20,
+          "actualScore": 20,
+          "balls": 4
+        }
+      ],
+      "finalScore": 21,
+      "finalBalls": 4,
+      "scoreWasReplaced": false
+    }
+  }
+}

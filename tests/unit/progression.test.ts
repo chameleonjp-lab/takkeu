@@ -24,14 +24,14 @@ describe('累計の進行', () => {
     expect(all.crossed).toEqual([5, ...Array.from({ length: 45 }, (_, i) => (i + 1) * 10)]);
     expect(all.addedBalls).toBe(46);
   });
-  it('毎ラリー加速し、5の倍数の倍率と上限2.2を保つ', () => {
+  it('毎ラリー加速し、初期調整値と上限2.6を保つ', () => {
     expect(speedMultiplier(0)).toBe(1);
     expect(speedMultiplier(1)).toBeGreaterThan(1);
     expect(speedMultiplier(2)).toBeGreaterThan(speedMultiplier(1));
     expect(speedMultiplier(4)).toBeLessThan(speedMultiplier(5));
-    expect(speedMultiplier(5)).toBeCloseTo(1 + 1.2 * (1 - Math.exp(-1 / 40)), 12);
-    expect(speedMultiplier(450)).toBeLessThan(2.2);
-    expect(speedMultiplier(10000)).toBeLessThanOrEqual(2.2);
+    expect(speedMultiplier(5)).toBeCloseTo(1 + 1.6 * (1 - Math.exp(-5 / 90)), 12);
+    expect(speedMultiplier(450)).toBeLessThan(2.6);
+    expect(speedMultiplier(10000)).toBeLessThanOrEqual(2.6);
     expect(speedMultiplier(10) - speedMultiplier(5)).toBeLessThan(speedMultiplier(5) - speedMultiplier(0));
   });
 });

@@ -20,7 +20,7 @@ describe('1球のラリー', () => {
   it('不可視と無関係に相手は必ず返球し、相手の打球や台バウンドは加点しない', () => {
     const session = createSession(DEFAULT_CONFIG, 7);
     session.start();
-    const events = advance(session, 5.3);
+    const events = advance(session, 4.0);
     expect(events.filter(e => e.kind === 'opponent-hit')).toHaveLength(2);
     expect(events.filter(e => e.kind === 'player-hit')).toHaveLength(1);
     expect(session.snapshot().score).toBe(1);

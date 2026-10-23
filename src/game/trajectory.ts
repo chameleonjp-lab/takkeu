@@ -1,4 +1,4 @@
-import type { Point3, ReturnPlan } from './types';
+import type { GameConfig, Point3, ReturnPlan } from './types';
 import { DEFAULT_CONFIG, TRAJECTORY } from './config';
 
 export function bounceTime(plan: ReturnPlan): number {
@@ -17,5 +17,16 @@ export function sampleReturn(plan: ReturnPlan, from: Point3, time: number): Poin
     const v = (u - TRAJECTORY.bounceFraction) / (1 - TRAJECTORY.bounceFraction);
     y = bounceY + (plan.target.y - bounceY) * v + TRAJECTORY.bounceArcHeight * 4 * v * (1 - v);
   }
-  return { x: from.x + (plan.target.x - from.x) * u, y, z: from.z + (endZ - from.z) * u };
+  const x = plan.bounceX === undefined ? from.x + (plan.target.x - from.x) * u
+    : u <= TRAJECTORY.bounceFraction ? from.x + (plan.bounceX - from.x) * u / TRAJECTORY.bounceFraction
+    : plan.bounceX + (plan.target.x - plan.bounceX) * (u - TRAJECTORY.bounceFraction) / (1 - TRAJECTORY.bounceFraction);
+  return { x, y, z: from.z + (endZ - from.z) * u };
+}
+
+/** A continuous kink at the table, with the landing point safely inside it. */
+export function deflectBounce(plan: ReturnPlan, from: Point3, randomValue: number, config: GameConfig): ReturnPlan {
+  const direction = plan.target.x >= from.x ? 1 : -1;
+  const edge = config.tableHalfWidth - config.ballRadius * 1.5;
+  const bounceX = Math.max(-edge, Math.min(edge, plan.target.x + direction * (0.18 + randomValue * 0.22)));
+  return { ...plan, bounceX };
 }

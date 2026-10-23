@@ -1,0 +1,43 @@
+{
+  "commit": "45106aace7340820da8b5eaafba8efc1d0ea7af1",
+  "startedAt": "2026-10-23T11:35:30.297Z",
+  "endedAt": "2026-10-23T11:35:30.564Z",
+  "result": "passed",
+  "checks": [
+    {
+      "folder": "artifacts/root-dist",
+      "base": "/",
+      "release": {
+        "commit": "45106aace7340820da8b5eaafba8efc1d0ea7af1",
+        "base": "/"
+      },
+      "absentBundleTokens": true,
+      "paths": {
+        "tests/fixtures/occlusion.html": 404,
+        "tests/fixtures/stage2.html": 404,
+        "tests/fixtures/stage3.html": 404,
+        "tests/helpers/stageHarness.ts": 404,
+        "tests/helpers/appHarness.ts": 404,
+        "src/game/simulation.ts": 404
+      }
+    },
+    {
+      "folder": "dist",
+      "base": "/takkeu/",
+      "release": {
+        "commit": "45106aace7340820da8b5eaafba8efc1d0ea7af1",
+        "base": "/takkeu/"
+      },
+      "absentBundleTokens": true,
+      "paths": {
+        "tests/fixtures/occlusion.html": 404,
+        "tests/fixtures/stage2.html": 404,
+        "tests/fixtures/stage3.html": 404,
+        "tests/helpers/stageHarness.ts": 404,
+        "tests/helpers/appHarness.ts": 404,
+        "src/game/simulation.ts": 404
+      }
+    }
+  ],
+  "distributionHashesMatchFormal": true
+}

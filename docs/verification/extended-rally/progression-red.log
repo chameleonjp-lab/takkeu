@@ -1,0 +1,253 @@
+
+ RUN  v5.0.5 /workspace/takkeu-audit
+
+ ❯ tests/unit/extended-progression.test.ts (17 tests | 12 failed) 78ms
+   ❯ 470以後の2ラリー増球 (14)
+     × 472では累計50球 26ms
+     × 480では累計54球 1ms
+     × 490では累計59球 1ms
+     × 500では累計64球 1ms
+     × 510では累計69球 1ms
+     × 520では累計74球 0ms
+     × 530では累計79球 3ms
+     × 540では累計84球 0ms
+     × 555では累計91球 0ms
+     × 470を跨ぐ複数加点と再評価で二重追加しない 16ms
+     × 落球は補充せず飛び越した報酬だけを数える 1ms
+   ❯ 555から曲がるバウンド (1)
+     × 新しい返球はバウンドで横方向を変え、位置は連続し台上に落ちる 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 12 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/extended-progression.test.ts > 470以後の2ラリー増球 > 472では累計50球
+AssertionError: expected 49 to be 50 // Object.is equality
+
+- Expected
++ Received
+
+- 50
++ 49
+
+ ❯ tests/unit/extended-progression.test.ts:9:185
+      7|
+      8| describe('470以後の2ラリー増球', () => {
+      9|   it.each([[469,48],[470,49],[471,49],[472,50],[480,54],[490,59],[500,…
+       |                                                                                                                                                                                         ^
+     10|   it('470を跨ぐ複数加点と再評価で二重追加しない', () => {
+     11|     const s = scenario(469); s.state.balls = [1,2,3,4].map(id => incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯
+
+ FAIL  tests/unit/extended-progression.test.ts > 470以後の2ラリー増球 > 480では累計54球
+AssertionError: expected 50 to be 54 // Object.is equality
+
+- Expected
++ Received
+
+- 54
++ 50
+
+ ❯ tests/unit/extended-progression.test.ts:9:185
+      7|
+      8| describe('470以後の2ラリー増球', () => {
+      9|   it.each([[469,48],[470,49],[471,49],[472,50],[480,54],[490,59],[500,…
+       |                                                                                                                                                                                         ^
+     10|   it('470を跨ぐ複数加点と再評価で二重追加しない', () => {
+     11|     const s = scenario(469); s.state.balls = [1,2,3,4].map(id => incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯
+
+ FAIL  tests/unit/extended-progression.test.ts > 470以後の2ラリー増球 > 490では累計59球
+AssertionError: expected 51 to be 59 // Object.is equality
+
+- Expected
++ Received
+
+- 59
++ 51
+
+ ❯ tests/unit/extended-progression.test.ts:9:185
+      7|
+      8| describe('470以後の2ラリー増球', () => {
+      9|   it.each([[469,48],[470,49],[471,49],[472,50],[480,54],[490,59],[500,…
+       |                                                                                                                                                                                         ^
+     10|   it('470を跨ぐ複数加点と再評価で二重追加しない', () => {
+     11|     const s = scenario(469); s.state.balls = [1,2,3,4].map(id => incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/12]⎯
+
+ FAIL  tests/unit/extended-progression.test.ts > 470以後の2ラリー増球 > 500では累計64球
+AssertionError: expected 52 to be 64 // Object.is equality
+
+- Expected
++ Received
+
+- 64
++ 52
+
+ ❯ tests/unit/extended-progression.test.ts:9:185
+      7|
+      8| describe('470以後の2ラリー増球', () => {
+      9|   it.each([[469,48],[470,49],[471,49],[472,50],[480,54],[490,59],[500,…
+       |                                                                                                                                                                                         ^
+     10|   it('470を跨ぐ複数加点と再評価で二重追加しない', () => {
+     11|     const s = scenario(469); s.state.balls = [1,2,3,4].map(id => incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/12]⎯
+
+ FAIL  tests/unit/extended-progression.test.ts > 470以後の2ラリー増球 > 510では累計69球
+AssertionError: expected 53 to be 69 // Object.is equality
+
+- Expected
++ Received
+
+- 69
++ 53
+
+ ❯ tests/unit/extended-progression.test.ts:9:185
+      7|
+      8| describe('470以後の2ラリー増球', () => {
+      9|   it.each([[469,48],[470,49],[471,49],[472,50],[480,54],[490,59],[500,…
+       |                                                                                                                                                                                         ^
+     10|   it('470を跨ぐ複数加点と再評価で二重追加しない', () => {
+     11|     const s = scenario(469); s.state.balls = [1,2,3,4].map(id => incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/12]⎯
+
+ FAIL  tests/unit/extended-progression.test.ts > 470以後の2ラリー増球 > 520では累計74球
+AssertionError: expected 54 to be 74 // Object.is equality
+
+- Expected
++ Received
+
+- 74
++ 54
+
+ ❯ tests/unit/extended-progression.test.ts:9:185
+      7|
+      8| describe('470以後の2ラリー増球', () => {
+      9|   it.each([[469,48],[470,49],[471,49],[472,50],[480,54],[490,59],[500,…
+       |                                                                                                                                                                                         ^
+     10|   it('470を跨ぐ複数加点と再評価で二重追加しない', () => {
+     11|     const s = scenario(469); s.state.balls = [1,2,3,4].map(id => incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/12]⎯
+
+ FAIL  tests/unit/extended-progression.test.ts > 470以後の2ラリー増球 > 530では累計79球
+AssertionError: expected 55 to be 79 // Object.is equality
+
+- Expected
++ Received
+
+- 79
++ 55
+
+ ❯ tests/unit/extended-progression.test.ts:9:185
+      7|
+      8| describe('470以後の2ラリー増球', () => {
+      9|   it.each([[469,48],[470,49],[471,49],[472,50],[480,54],[490,59],[500,…
+       |                                                                                                                                                                                         ^
+     10|   it('470を跨ぐ複数加点と再評価で二重追加しない', () => {
+     11|     const s = scenario(469); s.state.balls = [1,2,3,4].map(id => incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/12]⎯
+
+ FAIL  tests/unit/extended-progression.test.ts > 470以後の2ラリー増球 > 540では累計84球
+AssertionError: expected 56 to be 84 // Object.is equality
+
+- Expected
++ Received
+
+- 84
++ 56
+
+ ❯ tests/unit/extended-progression.test.ts:9:185
+      7|
+      8| describe('470以後の2ラリー増球', () => {
+      9|   it.each([[469,48],[470,49],[471,49],[472,50],[480,54],[490,59],[500,…
+       |                                                                                                                                                                                         ^
+     10|   it('470を跨ぐ複数加点と再評価で二重追加しない', () => {
+     11|     const s = scenario(469); s.state.balls = [1,2,3,4].map(id => incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/12]⎯
+
+ FAIL  tests/unit/extended-progression.test.ts > 470以後の2ラリー増球 > 555では累計91球
+AssertionError: expected 57 to be 91 // Object.is equality
+
+- Expected
++ Received
+
+- 91
++ 57
+
+ ❯ tests/unit/extended-progression.test.ts:9:185
+      7|
+      8| describe('470以後の2ラリー増球', () => {
+      9|   it.each([[469,48],[470,49],[471,49],[472,50],[480,54],[490,59],[500,…
+       |                                                                                                                                                                                         ^
+     10|   it('470を跨ぐ複数加点と再評価で二重追加しない', () => {
+     11|     const s = scenario(469); s.state.balls = [1,2,3,4].map(id => incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/12]⎯
+
+ FAIL  tests/unit/extended-progression.test.ts > 470以後の2ラリー増球 > 470を跨ぐ複数加点と再評価で二重追加しない
+AssertionError: expected [ …(5) ] to have a length of 6 but got 5
+
+- Expected
++ Received
+
+- 6
++ 5
+
+ ❯ tests/unit/extended-progression.test.ts:12:101
+     10|   it('470を跨ぐ複数加点と再評価で二重追加しない', () => {
+     11|     const s = scenario(469); s.state.balls = [1,2,3,4].map(id => incom…
+     12|     const result = s.step(); expect(result.snapshot.score).toBe(473); …
+       |                                                                                                     ^
+     13|     expect(result.events.filter(e => e.kind === 'milestone').map(e => …
+     14|     expect(s.step().snapshot.balls).toHaveLength(6);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/12]⎯
+
+ FAIL  tests/unit/extended-progression.test.ts > 470以後の2ラリー増球 > 落球は補充せず飛び越した報酬だけを数える
+AssertionError: expected 2 to be 6 // Object.is equality
+
+- Expected
++ Received
+
+- 6
++ 2
+
+ ❯ tests/unit/extended-progression.test.ts:20:31
+     18|   it('落球は補充せず飛び越した報酬だけを数える', () => {
+     19|     const s = scenario(469); const update = advanceProgression(s.state…
+     20|     expect(update.addedBalls).toBe(6);
+       |                               ^
+     21|     expect(advanceProgression(update.state, 480, 480, 20).addedBalls).…
+     22|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/12]⎯
+
+ FAIL  tests/unit/extended-progression.test.ts > 555から曲がるバウンド > 新しい返球はバウンドで横方向を変え、位置は連続し台上に落ちる
+AssertionError: expected undefined to be defined
+ ❯ tests/unit/extended-progression.test.ts:49:31
+     47|     const s = scenario(555); s.state.balls = [incoming(1,20.001)]; s.s…
+     48|     const ball = s.state.balls[0]!, at = bounceTime(ball.plan), epsilo…
+     49|     expect(ball.plan.bounceX).toBeDefined();
+       |                               ^
+     50|     const before = sampleReturn(ball.plan,ball.from,at-epsilon), bounc…
+     51|     expect((bounce.x-before.x)*(after.x-bounce.x)).toBeLessThan(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/12]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  12 failed | 5 passed (17)
+   Start at  10:24:05
+   Duration  439ms (tests 42%, transform 42%, import 14%, worker 2%)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

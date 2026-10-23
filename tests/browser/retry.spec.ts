@@ -9,9 +9,10 @@ test('再挑戦20回・ホーム往復20回でループ・購読・描画資源�
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   // Warm every shader/geometry once before comparing the same running state.
-  await page.evaluate(() => window.stage3.show(450)); await page.clock.runFor(32);
+  await page.evaluate(() => {window.stage3.show(555);window.stage3.autoPlay(true);}); await page.clock.runFor(1000);
   await page.getByRole('button', { name: '一時停止', exact: true }).click();
   await page.getByRole('button', { name: '最初からやり直す', exact: true }).click(); await page.clock.runFor(32);
+  await page.evaluate(()=>window.stage3.autoPlay(false));
   const measure = () => page.evaluate(() => ({ ...window.runtimeProbe.counts(), resources: window.stage3.resources(), views: window.stage3.metrics().viewCreates }));
   const baseline = await measure(), rows = [];
   expect(baseline.audioContexts).toBe(1);

@@ -1,0 +1,121 @@
+
+> takkeu@0.1.0 verify:release
+> node scripts/verify-release.mjs
+
+
+> takkeu@0.1.0 build
+> npm run typecheck && vite build
+
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 44 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/release.json                         0.07 kB │ gzip:   0.09 kB
+dist/index.html                           0.61 kB │ gzip:   0.43 kB
+dist/assets/court-preview-Bzxbrgc7.png   60.33 kB
+dist/assets/index-DHYvWzW-.css           11.62 kB │ gzip:   3.44 kB
+dist/assets/index-CgVj4uHe.js           595.68 kB │ gzip: 154.18 kB
+
+✓ built in 316ms
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+{
+  "status": "passed",
+  "commit": "45106aace7340820da8b5eaafba8efc1d0ea7af1",
+  "base": "/",
+  "files": [
+    "assets/court-preview-Bzxbrgc7.png",
+    "assets/index-CgVj4uHe.js",
+    "assets/index-DHYvWzW-.css",
+    "index.html",
+    "release.json"
+  ]
+}
+
+> takkeu@0.1.0 build:pages
+> npm run typecheck && vite build --base=/takkeu/
+
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 44 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/release.json                         0.08 kB │ gzip:   0.09 kB
+dist/index.html                           0.63 kB │ gzip:   0.43 kB
+dist/assets/court-preview-Bzxbrgc7.png   60.33 kB
+dist/assets/index-DHYvWzW-.css           11.62 kB │ gzip:   3.44 kB
+dist/assets/index-DIPsr4kq.js           595.68 kB │ gzip: 154.19 kB
+
+✓ built in 265ms
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+{
+  "status": "passed",
+  "commit": "45106aace7340820da8b5eaafba8efc1d0ea7af1",
+  "base": "/takkeu/",
+  "files": [
+    "assets/court-preview-Bzxbrgc7.png",
+    "assets/index-DHYvWzW-.css",
+    "assets/index-DIPsr4kq.js",
+    "index.html",
+    "release.json"
+  ]
+}
+
+> takkeu@0.1.0 test:release
+> playwright test --config=playwright.release.config.ts
+
+[WebServer] (node:105034) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:105043) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:105051) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  1 [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 (1.2s)
+  ✓  2 [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 (847ms)
+(node:105158) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  3 [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 (3.8s)
+  ✓  4 [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 (2.8s)
+
+  4 passed (11.9s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

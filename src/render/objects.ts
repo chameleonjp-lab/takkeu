@@ -1,9 +1,11 @@
-import { BoxGeometry, BufferGeometry, CylinderGeometry, Group, LineBasicMaterial, LineSegments, Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, SphereGeometry, Texture } from 'three';
+import { BoxGeometry, BufferGeometry, CylinderGeometry, Group, LineSegments, Mesh, PlaneGeometry, SphereGeometry, Texture } from 'three';
 import type { GameConfig } from '../game/types';
 import { createBallPool } from './balls';
 import { lineMaterial, lines, standard, tableTexture } from './materials';
 import { createPaddle, RUBBER_FACE_DEPTH } from './paddle';
 import { createEnvironment } from './environment';
+import { createOpponentField } from './field';
+import type { Material } from 'three';
 
 export function createObjects(config: GameConfig) {
   const root = new Group();
@@ -59,22 +61,23 @@ export function createObjects(config: GameConfig) {
     clamp.position.set(x, -0.012, 0); net.add(clamp);
   }
   const environment = createEnvironment(config); root.add(environment.root);
+  const opponentField=createOpponentField(config);root.add(opponentField.root);
   const parts = {
     selfCourtRight: self.right, selfCourtLeft: self.left,
     opponentCourtRight: opponent.right, opponentCourtLeft: opponent.left,
-    selfFloor: environment.selfFloor, opponentFloor: environment.opponentFloor, opponentWall: environment.opponentWall,
+    selfFloor: environment.selfFloor, opponentFloor: environment.opponentFloor, opponentWall: environment.opponentWall, structure:environment.structure,
     courtEdges, net, playerRacketBody: player.body, playerRacketEdge: player.rim,
     opponentRacketBody: other.body, opponentRacketEdge: other.rim, opponentBody,
   };
   const pool = createBallPool(config); root.add(pool.root);
   root.add(self.group, opponent.group, courtEdges, player.group, other.group, opponentBody, net);
   return {
-    root, parts, balls: pool.balls, syncBalls: pool.sync, tableY: config.tableY, tableHalfLength: config.tableHalfLength, tableHalfWidth: config.tableHalfWidth,
+    root, parts, opponentField, balls: pool.balls, syncBalls: pool.sync, commitBalls:pool.commit, tableY: config.tableY, tableHalfLength: config.tableHalfLength, tableHalfWidth: config.tableHalfWidth,
     playerCourt: self.group, opponentCourt: opponent.group, playerEdges, opponentEdges,
     playerPaddle: player.group, opponentPaddle: other.group, opponentBody, opponentArm, net, rimMaterial: player.rim.material,
     dispose() {
       const geometries = new Set<BufferGeometry>();
-      const materials = new Set<MeshStandardMaterial | MeshBasicMaterial | LineBasicMaterial>();
+      const materials = new Set<Material>();
       const textures = new Set<Texture>();
       root.traverse(object => {
         if (object instanceof Mesh || object instanceof LineSegments) {

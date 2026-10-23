@@ -1,32 +1,29 @@
 import { clampPaddle, DIFFICULTY, INITIAL_PADDLE } from './config';
 import { paddleExitFraction, sweepPaddleHit } from './collision';
-import { speedMultiplier } from './difficulty';
+import { flightDuration, speedMultiplier } from './difficulty';
+import { refreshFlightSpeeds } from './flightSpeed';
+import { chooseOpponentTarget, choosePlayerTarget, randomUnit } from './targets';
 import { advanceProgression } from './progression';
 import { scheduleReturn } from './scheduler';
-import { bounceTime, sampleReturn } from './trajectory';
+import { bounceTime, deflectBounce, sampleReturn } from './trajectory';
 import { planOpponentReturn } from './opponent';
 import type { BallPhase, GameConfig, GameEvent, GameEventKind, GamePhase, GameSnapshot, InputFrame, PaddlePoint, PauseReason, Point3, ProgressionState, ReturnPlan, StepResult } from './types';
 
 export type SimulationBall = {
   id: number; phase: BallPhase; position: Point3; from: Point3; plan: ReturnPlan; warningSent: boolean;
+  warningEmittedAt?: number; bounceEmitted?: boolean;
 };
 export type SimulationState = {
-  runId: string; nextBallId: number; randomState: number; eventNumber: number; phase: GamePhase; pauseReason: PauseReason | null;
-  committedSmashDepartures: number[]; score: number; simTime: number; paddle: PaddlePoint; balls: SimulationBall[]; progression: ProgressionState;
+  runId: string; nextBallId: number; randomState: number; lastTargetBand: number; eventNumber: number; phase: GamePhase; pauseReason: PauseReason | null;
+  committedSmashDepartures: number[]; score: number; simTime: number; paddle: PaddlePoint; opponentPaddle: PaddlePoint; balls: SimulationBall[]; progression: ProgressionState;
 };
 let nextRunId = 0;
 export function createSimulationState(seed: number): SimulationState {
   return {
-    runId: `run-${++nextRunId}`, nextBallId: 2, randomState: seed >>> 0 || 1, eventNumber: 0,
+    runId: `run-${++nextRunId}`, nextBallId: 2, randomState: seed >>> 0 || 1, lastTargetBand: 1, eventNumber: 0,
     phase: 'ready', pauseReason: null, committedSmashDepartures: [], score: 0, simTime: 0, paddle: { ...INITIAL_PADDLE }, balls: [],
-    progression: { appliedMilestones: [], ballGlowUntil: null, awardedBallCount: 0 },
+    opponentPaddle: { ...INITIAL_PADDLE }, progression: { appliedMilestones: [], ballGlowUntil: null, awardedBallCount: 0 },
   };
-}
-function random(state: SimulationState): number {
-  state.randomState ^= state.randomState << 13;
-  state.randomState ^= state.randomState >>> 17;
-  state.randomState ^= state.randomState << 5;
-  return (state.randomState >>> 0) / 4294967296;
 }
 function reservations(state: SimulationState): ReturnPlan[] {
   return state.balls.filter(b => b.phase === 'queued' || b.phase === 'waiting-return' || b.phase === 'incoming')
@@ -35,7 +32,7 @@ function reservations(state: SimulationState): ReturnPlan[] {
 export function snapshotSimulation(state: SimulationState): GameSnapshot {
   return {
     runId: state.runId, phase: state.phase, pauseReason: state.pauseReason, score: state.score, simTime: state.simTime,
-    paddle: { ...state.paddle },
+    paddle: { ...state.paddle }, opponentPaddle: { ...state.opponentPaddle },
     balls: state.balls.map(b => ({ id: b.id, phase: b.phase, position: { ...b.position }, smash: b.plan.smash })),
     progression: { ...state.progression, appliedMilestones: [...state.progression.appliedMilestones] },
     scheduledReturns: reservations(state).map(p => ({ ...p, target: { ...p.target } })),
@@ -49,18 +46,20 @@ export function startSimulation(state: SimulationState, config: GameConfig): voi
     plan: scheduleReturn({ ballId: 1, earliestDepartAt: 0, preferredTarget: INITIAL_PADDLE, speedMultiplier: 1, smash: false }, [], config) });
 }
 
-type Action = { kind: 'hit' | 'lost' | 'ready' | 'warning' | 'depart'; time: number; ball: SimulationBall; position?: Point3 };
+type Action = { kind: 'bounce' | 'hit' | 'lost' | 'ready' | 'warning' | 'depart'; time: number; ball: SimulationBall; position?: Point3 };
 
 /** Domain state only: neither rendering nor sound can feed back into the simulation. */
 export function stepSimulation(state: SimulationState, config: GameConfig, dt: number, input: InputFrame): StepResult {
   if (state.phase !== 'running') return { snapshot: snapshotSimulation(state), events: [] };
   if (!Number.isFinite(dt) || dt <= 0 || dt > config.fixedDt + 1e-12) throw new RangeError('Use a positive fixed simulation step.');
   const events: GameEvent[] = [];
-  const emit = (kind: GameEventKind, time: number, ballId?: number, milestone?: number): void => {
+  const emit = (kind: GameEventKind, time: number, ballId?: number, milestone?: number, position?: Point3, effect?: GameEvent['effect']): void => {
     events.push({ id: `${state.runId}:${++state.eventNumber}`, runId: state.runId, kind, time,
-      ...(ballId === undefined ? {} : { ballId }), ...(milestone === undefined ? {} : { milestone }) });
+      ...(ballId === undefined ? {} : { ballId }), ...(milestone === undefined ? {} : { milestone }),
+      ...(position ? { position: { ...position } } : {}), ...(effect ? { effect } : {}) });
   };
   const end = state.simTime + dt;
+  const oldScore = state.score;
   state.committedSmashDepartures = state.committedSmashDepartures.filter(time => time >= state.simTime - DIFFICULTY.smashSeparation);
   const previousPaddle = state.paddle;
   const target = clampPaddle(input.target, config);
@@ -75,6 +74,10 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
   for (const ball of state.balls) {
     if (ball.phase === 'queued' || ball.phase === 'waiting-return') { enqueueDeparture(ball); continue; }
     if (ball.phase === 'lost') continue;
+    const bounce = bounceTime(ball.plan);
+    if (!ball.bounceEmitted && bounce >= state.simTime - 1e-12 && bounce <= end + 1e-12) {
+      actions.push({ kind: 'bounce', time: bounce, ball, position: sampleReturn(ball.plan, ball.from, bounce) });
+    }
     if (ball.phase === 'outgoing') {
       if (ball.plan.arriveAt <= end + 1e-12) actions.push({ kind: 'ready', time: ball.plan.arriveAt, ball });
       continue;
@@ -99,18 +102,26 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
     }
   }
   while (actions.length) {
-    actions.sort((a, b) => a.time - b.time || a.ball.id - b.ball.id || (a.kind === 'hit' ? -1 : 1));
+    actions.sort((a, b) => a.time - b.time || (a.kind === 'bounce' ? -1 : b.kind === 'bounce' ? 1 : a.ball.id - b.ball.id));
     const { kind, time, ball, position } = actions.shift()!;
-    if (kind === 'hit') {
+    if (kind === 'bounce') {
+      ball.bounceEmitted = true;
+      emit('table-bounce', time, ball.id, undefined, position, ball.phase === 'incoming' && state.score >= 530 ? 'bounce-firework' : undefined);
+    } else if (kind === 'hit') {
       state.score++;
-      emit('player-hit', time, ball.id);
+      const at = Math.max(0, Math.min(1, (time - state.simTime) / dt));
+      const centre = { x: previousPaddle.x + (state.paddle.x - previousPaddle.x) * at,
+        y: previousPaddle.y + (state.paddle.y - previousPaddle.y) * at, z: config.paddleZ };
+      emit('player-hit', time, ball.id, undefined, centre, state.score >= 520 ? 'racket-firework' : undefined);
       ball.phase = 'outgoing';
       ball.from = position!;
       // Outgoing flights are generated to reach the opponent without a second contact.
-      const duration = 2 * Math.max(config.minimumVisibleSeconds, config.normalVisibleSeconds);
+      const duration = flightDuration(config, state.score, false);
       ball.plan = { ballId: ball.id, departAt: time, netCrossAt: time + duration / 2, arriveAt: time + duration,
-        target: { x: 0, y: 0.5 }, smash: false, warningAt: null, speedMultiplier: 1,
+        target: chooseOpponentTarget(state, config), smash: false, warningAt: null, speedMultiplier: speedMultiplier(state.score), speedScore: state.score,
         landingZ: -config.paddleZ, bounceY: config.tableY + config.ballRadius };
+      ball.bounceEmitted = false;
+      if (state.score >= 555) ball.plan = deflectBounce(ball.plan, ball.from, randomUnit(state), config);
       const update = advanceProgression(state.progression, state.score - 1, state.score, time);
       state.progression = update.state;
       for (const milestone of update.crossed) emit('milestone', time, undefined, milestone);
@@ -118,9 +129,10 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
         const id = state.balls.reduce((next, ball) => Math.max(next, ball.id + 1), state.nextBallId);
         state.nextBallId = id + 1;
         const from = { x: 0, y: 0.5, z: -config.paddleZ };
-        const plan = scheduleReturn({ ballId: id, earliestDepartAt: time, earliestArriveAt: time + DIFFICULTY.addedBallDelay,
-          preferredTarget: { x: (random(state) * 2 - 1) * 0.75, y: 0.25 + random(state) * 0.5 },
-          speedMultiplier: speedMultiplier(state.score), smash: false }, reservations(state), config);
+        let plan = planOpponentReturn({ ballId: id, earliestDepartAt: time + DIFFICULTY.addedBallDelay,
+          preferredTarget: choosePlayerTarget(state, config), speedMultiplier: speedMultiplier(state.score), score: state.score,
+          randomValue: randomUnit(state) }, reservations(state), state.committedSmashDepartures, config);
+        if (state.score >= 555) plan = deflectBounce(plan, from, randomUnit(state), config);
         const extra: SimulationBall = { id, phase: 'queued', from, position: from, plan, warningSent: false };
         state.balls.push(extra); enqueueDeparture(extra);
       }
@@ -131,19 +143,29 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
       ball.position = ball.from;
       // Process ready actions in chronological order; this preserves waiting order.
       ball.plan = planOpponentReturn({ ballId: ball.id, earliestDepartAt: time,
-        preferredTarget: { x: (random(state) * 2 - 1) * 0.75, y: 0.25 + random(state) * 0.5 },
-        speedMultiplier: speedMultiplier(state.score), score: state.score, randomValue: random(state) }, reservations(state), state.committedSmashDepartures, config);
+        preferredTarget: choosePlayerTarget(state, config),
+        speedMultiplier: speedMultiplier(state.score), score: state.score, randomValue: randomUnit(state) }, reservations(state), state.committedSmashDepartures, config);
       if (ball.plan.smash) state.committedSmashDepartures.push(ball.plan.departAt);
-      ball.warningSent = false; ball.phase = 'waiting-return'; enqueueDeparture(ball);
+      if (state.score >= 555) ball.plan = deflectBounce(ball.plan, ball.from, randomUnit(state), config);
+      ball.warningSent = false; delete ball.warningEmittedAt; ball.bounceEmitted = false;
+      ball.phase = 'waiting-return'; enqueueDeparture(ball);
     } else if (kind === 'warning') {
-      ball.warningSent = true; emit('smash-warning', time, ball.id);
+      if (!ball.warningSent) { ball.warningSent = true; ball.warningEmittedAt = time; emit('smash-warning', time, ball.id); }
     } else {
+      // A different ball may cross 450 earlier in this same fixed step.
+      if (state.score >= 450 && !ball.plan.smash) {
+        ball.plan = planOpponentReturn({ ballId: ball.id, earliestDepartAt: time, preferredTarget: ball.plan.target,
+          speedMultiplier: speedMultiplier(state.score), score: state.score, randomValue: 0 }, reservations(state).filter(p => p.ballId !== ball.id), [], config);
+        ball.warningSent = false; delete ball.warningEmittedAt; enqueueDeparture(ball); continue;
+      }
+      state.opponentPaddle = { x: ball.from.x, y: ball.from.y };
       ball.phase = 'incoming'; emit('opponent-hit', time, ball.id);
     }
   }
   for (const ball of state.balls) {
     if (ball.phase === 'incoming' || ball.phase === 'outgoing') ball.position = sampleReturn(ball.plan, ball.from, end);
   }
+  refreshFlightSpeeds(state, oldScore, end, config);
   if (state.balls.length && state.balls.every(b => b.phase === 'lost')) {
     state.phase = 'gameover';
     emit('game-over', events.at(-1)?.time ?? end);

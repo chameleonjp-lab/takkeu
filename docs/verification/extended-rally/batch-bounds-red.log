@@ -1,0 +1,31 @@
+
+ RUN  v5.0.5 /workspace/takkeu-audit
+
+ ❯ tests/unit/ball-instancing.test.ts (2 tests | 1 failed) 119ms
+   × 移動・再挑戦後の透明物の並び順に古い球位置の境界球を使わない 18ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/ball-instancing.test.ts > 移動・再挑戦後の透明物の並び順に古い球位置の境界球を使わない
+AssertionError: expected -1 to be close to 1, received difference is 2, but expected 5e-7
+ ❯ tests/unit/ball-instancing.test.ts:35:120
+     33|   for(const b of batches)if(b.count)b.computeBoundingSphere();
+     34|   show(1);
+     35|   for(const b of batches)if(b.count){if(!b.boundingSphere)b.computeBou…
+       |                                                                                                                        ^
+     36|   objects.dispose();
+     37| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  10:58:49
+   Duration  500ms (tests 46%, transform 30%, import 23%, worker 2%)
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

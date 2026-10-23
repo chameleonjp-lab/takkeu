@@ -1,0 +1,58 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run --reporter=default --reporter=json --outputFile=docs/verification/extended-rally/final-unit.json
+
+
+ RUN  v5.0.5 /workspace/takkeu-audit
+
+ ✓ tests/unit/audio-events.test.ts (11 tests) 18ms
+ ✓ tests/unit/opponent.test.ts (7 tests) 32ms
+ ✓ tests/unit/presentation.test.ts (10 tests) 175ms
+ ✓ tests/unit/extended-core.test.ts (10 tests) 47ms
+ ✓ tests/unit/camera.test.ts (11 tests) 267ms
+ ✓ tests/unit/session.test.ts (6 tests) 115ms
+ ✓ tests/unit/multiball.test.ts (14 tests) 1014ms
+   ✓ 多球の接触・落球・累計到達 (12)
+     ✓ 4球・上限速度でも決められた中心へ順に移動すれば継続できる 437ms
+   ✓ 450の無落球47球を30ゲーム秒継続し、追加・スマッシュ・到着余裕を守る 544ms
+ ✓ tests/unit/progression.test.ts (27 tests) 12ms
+ ✓ tests/unit/extended-safety.test.ts (6 tests) 26ms
+ ✓ tests/unit/extended-render.test.ts (4 tests) 64ms
+ ✓ tests/unit/loop.test.ts (5 tests) 62ms
+ ✓ tests/unit/extended-progression.test.ts (17 tests) 19ms
+ ✓ tests/unit/bounce-contact.test.ts (4 tests) 119ms
+ ✓ tests/unit/scheduler.test.ts (4 tests) 7ms
+ ✓ tests/unit/simulation-isolation.test.ts (1 test) 214ms
+ ✓ tests/unit/swipe.test.ts (4 tests) 44ms
+ ✓ tests/unit/ball-pool.test.ts (2 tests) 103ms
+ ✓ tests/unit/collision.test.ts (5 tests) 6ms
+ ✓ tests/unit/pointer-loop.test.ts (2 tests) 44ms
+ ✓ tests/unit/storage.test.ts (11 tests) 10ms
+ ✓ tests/unit/ball-instancing.test.ts (2 tests) 144ms
+ ✓ tests/unit/paddle.test.ts (3 tests) 63ms
+ ✓ tests/unit/release-revision.test.ts (1 test) 342ms
+   ✓ 公開の照合は完全SHA・main選択・checkout・最新mainの全一致だけを許す 341ms
+ ✓ tests/unit/growing-replay.test.ts (1 test) 1519ms
+   ✓ 47球から増球・加速・スマッシュを含む同じ入力で30/60/120Hzの結果が一致する 1517ms
+ ✓ tests/unit/render-assets.test.ts (1 test) 54ms
+ ✓ tests/unit/input-timeline.test.ts (2 tests) 8ms
+ ✓ tests/unit/warning-ui.test.ts (1 test) 445ms
+   ✓ 音が消えていても状態から予告を復元し、390の強弱から独立して表示する 443ms
+ ✓ tests/unit/trajectory.test.ts (1 test) 4ms
+ ✓ tests/unit/quality.test.ts (1 test) 9ms
+ ✓ tests/unit/replay.test.ts (1 test) 25ms
+
+ Test Files  30 passed (30)
+      Tests  175 passed (175)
+   Start at  11:13:50
+   Duration  5.42s (tests 47%, environment 24%, import 16%, transform 11%, worker 2%)
+
+    Isolate  30 workers spawned · ~248ms startup each (spawn + environment, per file)
+             at least ~2.23s faster with isolate: false — reuses workers across files instead of one per file
+
+JSON report written to /workspace/takkeu-audit/docs/verification/extended-rally/final-unit.json
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
