@@ -1,9 +1,9 @@
 import { expect, test } from '@playwright/test';
 
 test.use({ video: 'on' });
-const scores = [0, 5, 10, 30, 50, 70, 100, 130, 150, 160, 190, 210, 240, 270, 300, 330, 360, 390, 420, 450];
+const scores = [0, 1, 10, 30, 40, 70, 100, 130, 150, 160, 190, 210, 240, 270, 300, 330, 360, 380, 390, 410, 420, 450];
 
-test('専用状態で全19行の表示と発光終了を撮影する', async ({ page }, info) => {
+test('専用状態で全21行の表示と発光終了を撮影する', async ({ page }, info) => {
   test.setTimeout(90_000);
   const errors: string[] = [];
   page.on('pageerror', e => errors.push(e.message));
@@ -13,15 +13,20 @@ test('専用状態で全19行の表示と発光終了を撮影する', async ({ 
     await page.evaluate(score => window.stage2.show(score, 0, score === 10 ? 5 : null), score);
     await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText(String(score));
     const parts = await page.evaluate(() => window.stage2.presentation());
-    expect(parts.opponentEdgesVisible).toBe(true);
+    expect(parts.opponentEdgesVisible).toBe(score >= 70);
     expect(parts.parts.courtEdges.rainbow).toBe(score >= 70);
-    expect(parts.parts.opponentCourtRight.visible).toBe(true);
+    expect(parts.parts.opponentCourtRight.visible).toBe(score >= 190);
     expect(parts.parts.opponentCourtRight.rainbow).toBe(score >= 190);
-    expect(parts.parts.opponentCourtLeft.visible).toBe(true);
+    expect(parts.parts.opponentCourtLeft.visible).toBe(score >= 240);
     expect(parts.parts.opponentCourtLeft.rainbow).toBe(score >= 240);
-    expect(parts.parts.opponentRacketBody.visible).toBe(true);
+    expect(parts.parts.opponentRacketBody.visible).toBe(score >= 330);
     expect(parts.parts.opponentRacketBody.rainbow).toBe(score >= 330);
     expect(parts.parts.opponentBody.visible).toBe(score >= 360);
+    expect(parts.parts.opponentFloor.visible).toBe(score >= 380);
+    expect(parts.parts.opponentWall.visible).toBe(score >= 420);
+    expect(parts.parts.selfFloor.rainbow).toBe(score >= 410);
+    const expected = score < 30 ? 1 : score < 40 ? 2 : score < 150 ? 3 : 4 + Math.floor((score - 150) / 10);
+    await expect(page.getByLabel('残球数', { exact: true })).toContainText(String(expected));
     await page.screenshot({ path: info.outputPath(`milestone-${String(score).padStart(3, '0')}.png`) });
   }
   await page.evaluate(() => window.stage2.show(10, 5, 5));

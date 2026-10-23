@@ -11,15 +11,15 @@ export type SimulationBall = {
   id: number; phase: BallPhase; position: Point3; from: Point3; plan: ReturnPlan; warningSent: boolean;
 };
 export type SimulationState = {
-  runId: string; randomState: number; eventNumber: number; phase: GamePhase; pauseReason: PauseReason | null;
+  runId: string; nextBallId: number; randomState: number; eventNumber: number; phase: GamePhase; pauseReason: PauseReason | null;
   committedSmashDepartures: number[]; score: number; simTime: number; paddle: PaddlePoint; balls: SimulationBall[]; progression: ProgressionState;
 };
 let nextRunId = 0;
 export function createSimulationState(seed: number): SimulationState {
   return {
-    runId: `run-${++nextRunId}`, randomState: seed >>> 0 || 1, eventNumber: 0,
+    runId: `run-${++nextRunId}`, nextBallId: 2, randomState: seed >>> 0 || 1, eventNumber: 0,
     phase: 'ready', pauseReason: null, committedSmashDepartures: [], score: 0, simTime: 0, paddle: { ...INITIAL_PADDLE }, balls: [],
-    progression: { appliedMilestones: [], ballGlowUntil: null },
+    progression: { appliedMilestones: [], ballGlowUntil: null, awardedBallCount: 0 },
   };
 }
 function random(state: SimulationState): number {
@@ -37,7 +37,7 @@ export function snapshotSimulation(state: SimulationState): GameSnapshot {
     runId: state.runId, phase: state.phase, pauseReason: state.pauseReason, score: state.score, simTime: state.simTime,
     paddle: { ...state.paddle },
     balls: state.balls.map(b => ({ id: b.id, phase: b.phase, position: { ...b.position }, smash: b.plan.smash })),
-    progression: { appliedMilestones: [...state.progression.appliedMilestones], ballGlowUntil: state.progression.ballGlowUntil },
+    progression: { ...state.progression, appliedMilestones: [...state.progression.appliedMilestones] },
     scheduledReturns: reservations(state).map(p => ({ ...p, target: { ...p.target } })),
   };
 }
@@ -114,8 +114,9 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
       const update = advanceProgression(state.progression, state.score - 1, state.score, time);
       state.progression = update.state;
       for (const milestone of update.crossed) emit('milestone', time, undefined, milestone);
-      for (let added = 0; added < update.addedBalls && state.balls.length < config.maxBalls; added++) {
-        const id = Math.max(0, ...state.balls.map(b => b.id)) + 1;
+      for (let added = 0; added < update.addedBalls; added++) {
+        const id = state.balls.reduce((next, ball) => Math.max(next, ball.id + 1), state.nextBallId);
+        state.nextBallId = id + 1;
         const from = { x: 0, y: 0.5, z: -config.paddleZ };
         const plan = scheduleReturn({ ballId: id, earliestDepartAt: time, earliestArriveAt: time + DIFFICULTY.addedBallDelay,
           preferredTarget: { x: (random(state) * 2 - 1) * 0.75, y: 0.25 + random(state) * 0.5 },
@@ -147,6 +148,8 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
     state.phase = 'gameover';
     emit('game-over', events.at(-1)?.time ?? end);
   }
+  // The loss event is sufficient history. Do not retain every lost ball forever.
+  state.balls = state.balls.filter(ball => ball.phase !== 'lost');
   state.simTime = end;
   return { snapshot: snapshotSimulation(state), events };
 }

@@ -1,0 +1,294 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/progression.test.ts tests/unit/multiball.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-audit
+
+ ❯ tests/unit/progression.test.ts (7 tests | 7 failed) 30ms
+   ❯ 累計の進行 (5)
+     × 29→31で30を一度だけ処理する 14ms
+     × 39→41で40を一度だけ処理する 2ms
+     × 149→151で150を一度だけ処理する 1ms
+     × 全節目を昇順に処理し、5秒と常時発光を競合させない 4ms
+     × 毎ラリー加速し、5の倍数の倍率と上限2.2を保つ 1ms
+   × 150以降は10ごとに増球し、表面解放と両方を一度だけ適用する 2ms
+   × 新しい床と壁の節目も順序どおり処理する 1ms
+ ❯ tests/unit/multiball.test.ts (10 tests | 4 failed) 115ms
+   ❯ 多球の接触・落球・累計到達 (9)
+     × 39から同時接触で閾値40を飛び越しても追加は1球 15ms
+     × 途中の落球を補充せず、40では残り1球から2球になる 2ms
+     × 4球・上限速度でも決められた中心へ順に移動すれば継続できる 72ms
+   × 160で4球を超えて増え、落球した球を配列に残さずIDを再利用しない 2ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 11 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/multiball.test.ts > 多球の接触・落球・累計到達 > 39から同時接触で閾値40を飛び越しても追加は1球
+AssertionError: expected [ …(2) ] to have a length of 3 but got 2
+
+- Expected
++ Received
+
+- 3
++ 2
+
+ ❯ tests/unit/multiball.test.ts:12:35
+     10|     const result = s.step();
+     11|     expect(result.snapshot.score).toBe(score + 2);
+     12|     expect(result.snapshot.balls).toHaveLength(3);
+       |                                   ^
+     13|     expect(['queued', 'incoming']).toContain(result.snapshot.balls[2]!…
+     14|     expect(result.events.filter(e => e.kind === 'player-hit')).toHaveL…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/11]⎯
+
+ FAIL  tests/unit/multiball.test.ts > 多球の接触・落球・累計到達 > 途中の落球を補充せず、40では残り1球から2球になる
+AssertionError: expected [ { id: 2, phase: 'outgoing', …(2) } ] to have a length of 2 but got 1
+
+- Expected
++ Received
+
+- 2
++ 1
+
+ ❯ tests/unit/multiball.test.ts:26:64
+     24|     s.state.balls = [{ ...lost, phase: 'lost' }, incoming(2, 20.005)];
+     25|     s.step();
+     26|     expect(s.snapshot().balls.filter(b => b.phase !== 'lost')).toHaveL…
+       |                                                                ^
+     27|     expect(s.snapshot().progression.appliedMilestones).toContain(40);
+     28|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/11]⎯
+
+ FAIL  tests/unit/multiball.test.ts > 多球の接触・落球・累計到達 > 4球・上限速度でも決められた中心へ順に移動すれば継続できる
+AssertionError: expected [ …(4) ] to have a length of 5 but got 4
+
+- Expected
++ Received
+
+- 5
++ 4
+
+ ❯ tests/unit/multiball.test.ts:70:61
+     68|       const next = s.snapshot().scheduledReturns[0];
+     69|       warnings += s.step(next?.target ?? s.state.paddle).events.filter…
+     70|       expect(s.state.balls.filter(b => b.phase !== 'lost')).toHaveLeng…
+       |                                                             ^
+     71|     }
+     72|     expect(s.state.score).toBeGreaterThan(10030);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/11]⎯
+
+ FAIL  tests/unit/multiball.test.ts > 160で4球を超えて増え、落球した球を配列に残さずIDを再利用しない
+AssertionError: expected [ …(4) ] to have a length of 5 but got 4
+
+- Expected
++ Received
+
+- 5
++ 4
+
+ ❯ tests/unit/multiball.test.ts:93:33
+     91|   let result = s.step();
+     92|   expect(result.snapshot.score).toBe(160);
+     93|   expect(result.snapshot.balls).toHaveLength(5);
+       |                                 ^
+     94|   expect(result.events.filter(e => e.kind === 'milestone').map(e => e.…
+     95|   const old = s.state.balls.find(b => b.id === 5)!; old.phase = 'lost';
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/11]⎯
+
+ FAIL  tests/unit/progression.test.ts > 累計の進行 > 29→31で30を一度だけ処理する
+AssertionError: expected 6 to be 31 // Object.is equality
+
+- Expected
++ Received
+
+- 31
++ 6
+
+ ❯ tests/unit/progression.test.ts:12:29
+     10|     expect(first.crossed).toEqual([threshold]);
+     11|     expect(first.addedBalls).toBe(1);
+     12|     expect(first.speedTier).toBe(after);
+       |                             ^
+     13|     expect(advanceProgression(first.state, before, after, 13).addedBal…
+     14|     expect(advanceProgression(first.state, after, after + 1, 14).cross…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/11]⎯
+
+ FAIL  tests/unit/progression.test.ts > 累計の進行 > 39→41で40を一度だけ処理する
+AssertionError: expected [] to deeply equal [ 40 ]
+
+- Expected
++ Received
+
+- [
+-   40,
+- ]
++ []
+
+ ❯ tests/unit/progression.test.ts:10:27
+      8|   it.each([[29, 31, 30], [39, 41, 40], [149, 151, 150]])('%i→%iで%iを一度だ…
+      9|     const first = advanceProgression(empty(), before, after, 12);
+     10|     expect(first.crossed).toEqual([threshold]);
+       |                           ^
+     11|     expect(first.addedBalls).toBe(1);
+     12|     expect(first.speedTier).toBe(after);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/11]⎯
+
+ FAIL  tests/unit/progression.test.ts > 累計の進行 > 149→151で150を一度だけ処理する
+AssertionError: expected 30 to be 151 // Object.is equality
+
+- Expected
++ Received
+
+- 151
++ 30
+
+ ❯ tests/unit/progression.test.ts:12:29
+     10|     expect(first.crossed).toEqual([threshold]);
+     11|     expect(first.addedBalls).toBe(1);
+     12|     expect(first.speedTier).toBe(after);
+       |                             ^
+     13|     expect(advanceProgression(first.state, before, after, 13).addedBal…
+     14|     expect(advanceProgression(first.state, after, after + 1, 14).cross…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/11]⎯
+
+ FAIL  tests/unit/progression.test.ts > 累計の進行 > 全節目を昇順に処理し、5秒と常時発光を競合させない
+AssertionError: expected [ Array(18) ] to deeply equal [ Array(37) ]
+
+- Expected
++ Received
+
+  [
+    10,
+    30,
+-   40,
++   50,
+    70,
+    100,
+    130,
+    150,
+    160,
+-   170,
+-   180,
+    190,
+-   200,
+    210,
+-   220,
+-   230,
+    240,
+-   250,
+-   260,
+    270,
+-   280,
+-   290,
+    300,
+-   310,
+-   320,
+    330,
+-   340,
+-   350,
+    360,
+-   370,
+-   380,
+    390,
+-   400,
+-   410,
+    420,
+-   430,
+-   440,
+    450,
+  ]
+
+ ❯ tests/unit/progression.test.ts:23:25
+     21|     expect(thirty.state.appliedMilestones).toEqual([10, 30]);
+     22|     const all = advanceProgression(empty(), 0, 451, 20);
+     23|     expect(all.crossed).toEqual(Array.from(new Set([10, 30, 40, 70, 10…
+       |                         ^
+     24|     expect(all.addedBalls).toBe(33);
+     25|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/11]⎯
+
+ FAIL  tests/unit/progression.test.ts > 累計の進行 > 毎ラリー加速し、5の倍数の倍率と上限2.2を保つ
+AssertionError: expected 1 to be greater than 1
+ ❯ tests/unit/progression.test.ts:28:32
+     26|   it('毎ラリー加速し、5の倍数の倍率と上限2.2を保つ', () => {
+     27|     expect(speedMultiplier(0)).toBe(1);
+     28|     expect(speedMultiplier(1)).toBeGreaterThan(1);
+       |                                ^
+     29|     expect(speedMultiplier(2)).toBeGreaterThan(speedMultiplier(1));
+     30|     expect(speedMultiplier(4)).toBeLessThan(speedMultiplier(5));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/11]⎯
+
+ FAIL  tests/unit/progression.test.ts > 150以降は10ごとに増球し、表面解放と両方を一度だけ適用する
+AssertionError: expected 1 to be 3 // Object.is equality
+
+- Expected
++ Received
+
+- 3
++ 1
+
+ ❯ tests/unit/progression.test.ts:41:28
+     39| it('150以降は10ごとに増球し、表面解放と両方を一度だけ適用する', () => {
+     40|   const first = advanceProgression(empty(), 149, 171, 12);
+     41|   expect(first.addedBalls).toBe(3);
+       |                            ^
+     42|   expect(first.crossed).toEqual([150, 160, 170]);
+     43|   expect(first.state.appliedMilestones).toEqual([150, 160]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/11]⎯
+
+ FAIL  tests/unit/progression.test.ts > 新しい床と壁の節目も順序どおり処理する
+AssertionError: expected [ Array(18) ] to deeply equal [ Array(20) ]
+
+- Expected
++ Received
+
+@@ -1,9 +1,9 @@
+  [
+    10,
+    30,
+-   40,
++   50,
+    70,
+    100,
+    130,
+    150,
+    160,
+@@ -12,11 +12,9 @@
+    240,
+    270,
+    300,
+    330,
+    360,
+-   380,
+    390,
+-   410,
+    420,
+    450,
+  ]
+
+ ❯ tests/unit/progression.test.ts:54:39
+     52| it('新しい床と壁の節目も順序どおり処理する', () => {
+     53|   const all = advanceProgression(empty(), 0, 450, 12);
+     54|   expect(all.state.appliedMilestones).toEqual([10, 30, 40, 70, 100, 13…
+       |                                       ^
+     55|   expect(all.state.awardedBallCount).toBe(33);
+     56| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/11]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  11 failed | 6 passed (17)
+   Start at  20:56:37
+   Duration  465ms (tests 43%, transform 39%, import 15%, worker 3%)
+

@@ -1,0 +1,40 @@
+{
+  "reviewedAt": "2026-10-22T19:19:55.465Z",
+  "baseMain": "01ef27f2f521a8a09a82da385c928ba47b2355f7",
+  "implementation": "77f21a5f213d2f3d848a81fc743fcad890c77d6c",
+  "reviewedPullRequests": [
+    {
+      "number": 2,
+      "url": "https://github.com/chameleonjp-lab/takkeu/pull/2",
+      "head": "87a82014c7fa9870b043cd75bfeeb3daeb96f827",
+      "mergedCommit": "e6e5e9d8a4eaa4fbf5c04c616f6b7a92ce02f8c9",
+      "mergedAt": "2026-10-22T12:33:14Z",
+      "title": "feat: \u7b2c1\u6bb5\u968e\uff08T01\u301cT03\uff09\u57fa\u672c\u30e9\u30ea\u30fc\u30fb\u76f8\u5bfe\u64cd\u4f5c\u30fb\u8fd4\u7403SE"
+    },
+    {
+      "number": 3,
+      "url": "https://github.com/chameleonjp-lab/takkeu/pull/3",
+      "head": "873ae0a7ddf76a1492a8e29a4c46c8cfbf646c6f",
+      "mergedCommit": "c6e59a2e5400c34c464ce2e6f56fda1abd13437d",
+      "mergedAt": "2026-10-22T13:28:28Z",
+      "title": "feat: \u7b2c2\u6bb5\u968e\uff08T04\u301cT06\uff09\u591a\u7403\u30fb\u5168\u6f14\u51fa\u30fb\u4e88\u544a\u4ed8\u304d\u30b9\u30de\u30c3\u30b7\u30e5"
+    }
+  ],
+  "formalDocuments": [
+    "docs/superpowers/specs/2026-10-22-takkeu-design.md",
+    "docs/superpowers/plans/2026-10-22-takkeu-implementation.md",
+    "docs/progress.md",
+    "docs/verification/stage1/README.md",
+    "docs/verification/stage2/README.md",
+    "docs/verification/acceptance.md"
+  ],
+  "laterRequirements": "Keep the reference-image camera, initial full table/red and blue paddles, and projected contact only after the own-court bounce. Do not restore superseded B-mode initial hiding or a narrow z-only contact plane.",
+  "findings": [
+    "Round handle exceeded the rubber surfaces and protruded through them.",
+    "Ball and rainbow shell bypassed the depth buffer, painting a far ball over the paddle.",
+    "The rainbow ball core was still yellow, violating the Stage 2 white-centre requirement.",
+    "The opponent flight endpoint and racket model shared the same centre plane, embedding the ball by 0.063. Place the model behind the ball surface without changing its flight."
+  ],
+  "gameRulesInputAudioChanged": false,
+  "initialImplementation": "6fa4b34db31b751e6e91ef7ece02e85dfc2ef444"
+}

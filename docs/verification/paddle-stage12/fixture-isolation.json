@@ -1,0 +1,35 @@
+{
+  "commit": "77f21a5f213d2f3d848a81fc743fcad890c77d6c",
+  "startedAt": "2026-10-22T19:48:29.654Z",
+  "endedAt": "2026-10-22T19:48:29.889Z",
+  "result": "passed",
+  "checks": [
+    {
+      "folder": "artifacts/root-dist",
+      "base": "/",
+      "release": {
+        "commit": "77f21a5f213d2f3d848a81fc743fcad890c77d6c",
+        "base": "/"
+      },
+      "absentBundleTokens": true,
+      "paths": {
+        "tests/fixtures/occlusion.html": 404,
+        "tests/helpers/occlusionHarness.ts": 404
+      }
+    },
+    {
+      "folder": "dist",
+      "base": "/takkeu/",
+      "release": {
+        "commit": "77f21a5f213d2f3d848a81fc743fcad890c77d6c",
+        "base": "/takkeu/"
+      },
+      "absentBundleTokens": true,
+      "paths": {
+        "tests/fixtures/occlusion.html": 404,
+        "tests/helpers/occlusionHarness.ts": 404
+      }
+    }
+  ],
+  "distributionHashesMatchFormal": true
+}

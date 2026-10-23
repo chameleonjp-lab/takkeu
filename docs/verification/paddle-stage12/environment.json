@@ -1,0 +1,48 @@
+{
+  "capturedAt": "2026-10-22T19:26:45.036Z",
+  "platform": "linux",
+  "arch": "x64",
+  "osRelease": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"\nNAME=\"Debian GNU/Linux\"\nVERSION_ID=\"13\"\nVERSION=\"13 (trixie)\"\nVERSION_CODENAME=trixie\nDEBIAN_VERSION_FULL=13.6\nID=debian\nHOME_URL=\"https://www.debian.org/\"\nSUPPORT_URL=\"https://www.debian.org/support\"\nBUG_REPORT_URL=\"https://bugs.debian.org/\"\n",
+  "node": "v24.19.0",
+  "browserInstall": [
+    {
+      "name": "chromium",
+      "revision": "1248",
+      "installByDefault": true,
+      "browserVersion": "156.0.8078.4",
+      "title": "Chrome for Testing"
+    },
+    {
+      "name": "chromium-headless-shell",
+      "revision": "1248",
+      "installByDefault": true,
+      "browserVersion": "156.0.8078.4",
+      "title": "Chrome Headless Shell"
+    },
+    {
+      "name": "webkit",
+      "revision": "2370",
+      "installByDefault": true,
+      "revisionOverrides": {
+        "mac14": "2251",
+        "mac14-arm64": "2251"
+      },
+      "browserVersion": "27.2",
+      "title": "WebKit"
+    }
+  ],
+  "profiles": {
+    "chromium": "Desktop Chrome 1280x720",
+    "webkit": "iPhone 13 emulation 390x664, DPR 3; Linux WebKit; not an iPhone device"
+  },
+  "additionalViewports": [
+    "402x874",
+    "874x402",
+    "1280x720",
+    "390x844"
+  ],
+  "gpuTestViewport": "660x460, canvas 600x419 CSS pixels",
+  "browserPath": "/tmp/takkeu-browsers",
+  "hostValidationSkipped": true,
+  "note": "The actual browser executables and Web Audio/WebGL contexts run; host validation skip is not a hardware or performance result."
+}

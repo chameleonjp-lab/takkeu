@@ -1,0 +1,67 @@
+[WebServer] (node:69148) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:69161) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 7 tests using 1 worker
+
+(node:69185) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  1 [chromium] › tests/browser/milestones.spec.ts:6:1 › 専用状態で全21行の表示と発光終了を撮影する (4.6s)
+  ✓  2 [chromium] › tests/browser/milestones.spec.ts:38:1 › 390の強弱を実描画で比較し、0.6秒の動きを保存する (5.2s)
+(node:69472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  3 [chromium] › tests/browser/occlusion.spec.ts:3:1 › 球と虹色の輪郭はラケットとの前後関係を守る (3.5s)
+  ✘  4 [chromium] › tests/browser/occlusion.spec.ts:30:1 › 虹色は照明がなくても発光し、相手床・壁は閾値まで暗い (1.3s)
+(node:69609) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  5 [chromium] › tests/browser/quality.spec.ts:5:1 › 縦横・44pxボタン・200%文字・ラベル・安全余白を確認 (3.1s)
+  ✓  6 [chromium] › tests/browser/quality.spec.ts:41:1 › 450の34球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する (1.8m)
+  ✓  7 [chromium] › tests/browser/quality.spec.ts:62:1 › WebGL初期化不可と復旧失敗でもホームと自己ベストを保つ (10.8s)
+
+
+  1) [chromium] › tests/browser/occlusion.spec.ts:30:1 › 虹色は照明がなくても発光し、相手床・壁は閾値まで暗い ────────────────
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 419
+    Received:   451
+
+      37 |   for (const row of results) {
+      38 |     expect(row.x).toBeGreaterThan(0); expect(row.x).toBeLessThan(600);
+    > 39 |     expect(row.y).toBeGreaterThan(0); expect(row.y).toBeLessThan(419);
+         |                                                     ^
+      40 |     expect(Math.max(...row.pixels[0]!.slice(0, 3)), `${row.id} before`).toBeLessThan(8);
+      41 |     expect(Math.max(...row.pixels[1]!.slice(0, 3)), `${row.id} emitted light`).toBeGreaterThan(150);
+      42 |     for (let i = 0; i < row.captures.length; i++) await info.attach(`${row.id}-${i ? 'glowing' : 'before'}`, { body: Buffer.from(row.captures[i]!.split(',')[1]!, 'base64'), contentType: 'image/png' });
+        at /workspace/takkeu-audit/tests/browser/occlusion.spec.ts:39:53
+
+    attachment #9: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/occlusion-虹色は照明がなくても発光し、相手床・壁は閾値まで暗い-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #10: video (video/webm) ─────────────────────────────────────────────────────────────
+    test-results/occlusion-虹色は照明がなくても発光し、相手床・壁は閾値まで暗い-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/occlusion-虹色は照明がなくても発光し、相手床・壁は閾値まで暗い-chromium/error-context.md
+
+    attachment #12: trace (application/zip) ────────────────────────────────────────────────────────
+    test-results/occlusion-虹色は照明がなくても発光し、相手床・壁は閾値まで暗い-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/occlusion-虹色は照明がなくても発光し、相手床・壁は閾値まで暗い-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/occlusion.spec.ts:30:1 › 虹色は照明がなくても発光し、相手床・壁は閾値まで暗い ─────────────────
+  6 passed (2.3m)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

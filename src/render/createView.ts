@@ -23,7 +23,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
   const renderer = new WebGLRenderer({ canvas, context, antialias: true });
   renderer.toneMapping = ACESFilmicToneMapping; renderer.toneMappingExposure = 1.15;
   const scene = new Scene();
-  scene.background = new Color(0xc7a374);
+  scene.background = new Color(0x02040a);
   const camera = createCamera();
   scene.add(new HemisphereLight(0xfff9eb, 0x5b5446, 2.0));
   const light = new DirectionalLight(0xfff7e2, 2.8);

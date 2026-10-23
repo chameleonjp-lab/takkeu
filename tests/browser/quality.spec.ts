@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { ballCountAtScore } from '../../src/game/milestones';
 import type {} from '../helpers/appHarness';
 
 test('縦横・44pxボタン・200%文字・ラベル・安全余白を確認', async ({ page }, info) => {
@@ -37,22 +38,25 @@ test('縦横・44pxボタン・200%文字・ラベル・安全余白を確認', 
   await info.attach('menu-accessibility.yml', { body: await page.locator('main').ariaSnapshot(), contentType: 'text/yaml' });
 });
 
-test('品質変更は解像度だけに作用し、4球・390・420・450・高速接触を維持する', async ({ page }, info) => {
-  test.setTimeout(120_000);
+test('450の34球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する', async ({ page }, info) => {
+  test.setTimeout(180_000);
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   await page.evaluate(() => { window.stage3.show(450); window.stage3.autoPlay(true); });
+  expect(await page.evaluate(() => window.stage3.snapshot().balls.length)).toBe(34);
   const samples = [];
   for (let i = 0; i < 30; i++) {
     await page.clock.runFor(1000);
     const row = await page.evaluate(() => ({ state: window.stage3.snapshot(), resources: window.stage3.resources() }));
-    expect(row.state.phase).toBe('running'); expect(row.state.balls.filter(b => b.phase !== 'lost')).toHaveLength(4);
-    expect(row.resources!.drawCalls).toBeLessThan(100); samples.push(row);
+    expect(row.state.phase).toBe('running'); expect(row.state.balls.filter(b => b.phase !== 'lost')).toHaveLength(ballCountAtScore(row.state.score));
+    expect(row.resources!.drawCalls).toBeLessThan(160); samples.push(row);
   }
-  expect(samples.at(-1)!.state.score).toBeGreaterThan(470);
+  expect(samples.at(-1)!.state.score).toBeGreaterThan(500);
+  const servedIds = await page.evaluate(() => [...new Set(window.stage3.metrics().events.filter(e => e.kind === 'opponent-hit').map(e => e.ballId))]);
+  for (let id = 1; id <= 34; id++) expect(servedIds).toContain(id);
   expect(await page.evaluate(() => window.stage3.metrics().smashDepartures)).toBeGreaterThan(0);
-  await info.attach('four-ball-load.json', { body: JSON.stringify(samples, null, 2), contentType: 'application/json' });
+  await info.attach('growing-ball-load.json', { body: JSON.stringify(samples, null, 2), contentType: 'application/json' });
 });
 
 test('WebGL初期化不可と復旧失敗でもホームと自己ベストを保つ', async ({ page }) => {

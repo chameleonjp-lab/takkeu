@@ -1,0 +1,4 @@
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+{"engine":"chromium","warmed":true,"warmPauses":[{"time":0.4583333333333339,"reason":"slow-frame"}],"verdict":"失敗（この準備済みLinux条件）","durationMs":309.4999999992551,"simSeconds":0.20000000000000062,"score":450,"phase":"paused","reason":"slow-frame","errors":[]}
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+{"engine":"webkit","warmed":true,"warmPauses":[{"time":0,"reason":"slow-frame"},{"time":0.041666666666666664,"reason":"slow-frame"},{"time":0.08333333333333333,"reason":"slow-frame"}],"verdict":"失敗（この準備済みLinux条件）","durationMs":580,"simSeconds":0.31666666666666626,"score":450,"phase":"paused","reason":"slow-frame","errors":[]}

@@ -1,0 +1,42 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/presentation.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-audit
+
+ ❯ tests/unit/presentation.test.ts (10 tests | 1 failed) 118ms
+   × 270の本体は単色で発光し、390から非球部品として虹色の強弱へ移る 16ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/presentation.test.ts > 270の本体は単色で発光し、390から非球部品として虹色の強弱へ移る
+AssertionError: expected [ 13345652, 15672622, 2500650, …(2) ] to deeply equal [ 15672622 ]
+
+- Expected
++ Received
+
+  [
++   13345652,
+    15672622,
++   2500650,
++   13738862,
++   12093777,
+  ]
+
+ ❯ tests/unit/presentation.test.ts:158:26
+    156|     if (child instanceof Mesh && child.material instanceof MeshStandar…
+    157|   });
+    158|   expect([...emissions]).toEqual([0xef252e]);
+       |                          ^
+    159|   applyPresentation(objects, scenario(390).snapshot());
+    160|   expect(rubber.material.vertexColors).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 passed (10)
+   Start at  21:12:32
+   Duration  386ms (tests 47%, transform 29%, import 23%, worker 2%)
+

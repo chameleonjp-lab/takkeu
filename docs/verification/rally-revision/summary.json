@@ -1,0 +1,482 @@
+{
+  "commit": "eb02cb0c63f122a2410ddc4c8e0cbb9955f34d5d",
+  "startedAt": "2026-10-22T21:13:27.913Z",
+  "endedAt": "2026-10-22T21:24:15.093Z",
+  "unit": {
+    "passed": 113,
+    "failed": 0,
+    "pending": 0,
+    "files": 25
+  },
+  "browser": {
+    "startTime": "2026-10-22T21:13:36.305Z",
+    "duration": 496078.204,
+    "expected": 62,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "release": {
+    "startTime": "2026-10-22T21:21:57.251Z",
+    "duration": 10712.971000000001,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "load": {
+    "chromium": {
+      "verdict": "成功（固定時計の自動操作。実機性能ではない）",
+      "initialScore": 450,
+      "initialBalls": 34,
+      "finalScore": 579,
+      "simulationSeconds": 29.991666666665605,
+      "finalPhase": "running",
+      "finalLiveBalls": 46,
+      "phaseCounts": {
+        "queued": 2,
+        "waiting-return": 28,
+        "incoming": 4,
+        "outgoing": 12,
+        "lost": 0
+      },
+      "resources": {
+        "geometries": {
+          "min": 45,
+          "max": 45
+        },
+        "textures": {
+          "min": 4,
+          "max": 4
+        },
+        "programs": {
+          "min": 11,
+          "max": 11
+        },
+        "drawCalls": {
+          "min": 48,
+          "max": 69
+        }
+      },
+      "first34ServedAndSmashExecuted": "passing test assertions (source hash in formal manifest)"
+    },
+    "webkit": {
+      "verdict": "成功（固定時計の自動操作。実機性能ではない）",
+      "initialScore": 450,
+      "initialBalls": 34,
+      "finalScore": 579,
+      "simulationSeconds": 29.991666666665605,
+      "finalPhase": "running",
+      "finalLiveBalls": 46,
+      "phaseCounts": {
+        "queued": 2,
+        "waiting-return": 28,
+        "incoming": 4,
+        "outgoing": 12,
+        "lost": 0
+      },
+      "resources": {
+        "geometries": {
+          "min": 45,
+          "max": 45
+        },
+        "textures": {
+          "min": 4,
+          "max": 4
+        },
+        "programs": {
+          "min": 11,
+          "max": 11
+        },
+        "drawCalls": {
+          "min": 48,
+          "max": 69
+        }
+      },
+      "first34ServedAndSmashExecuted": "passing test assertions (source hash in formal manifest)"
+    }
+  },
+  "retry": {
+    "chromium": {
+      "baseline": {
+        "listeners": 22,
+        "pendingFrames": 1,
+        "audioContexts": 1,
+        "resources": {
+          "geometries": 42,
+          "textures": 4,
+          "programs": 9,
+          "drawCalls": 24
+        },
+        "views": 1
+      },
+      "cycles": 40,
+      "allEqual": true,
+      "disposed": {
+        "listeners": 0,
+        "pendingFrames": 0,
+        "audioContexts": 1
+      }
+    },
+    "webkit": {
+      "baseline": {
+        "listeners": 22,
+        "pendingFrames": 1,
+        "audioContexts": 1,
+        "resources": {
+          "geometries": 42,
+          "textures": 4,
+          "programs": 9,
+          "drawCalls": 24
+        },
+        "views": 1
+      },
+      "cycles": 40,
+      "allEqual": true,
+      "disposed": {
+        "listeners": 0,
+        "pendingFrames": 0,
+        "audioContexts": 1
+      }
+    }
+  },
+  "audio": {
+    "chromium": [
+      {
+        "mode": "player",
+        "peak": 0.04950965940952301,
+        "rms": 0.004125981697002195
+      },
+      {
+        "mode": "opponent",
+        "peak": 0.051308270543813705,
+        "rms": 0.0060941537672499786
+      },
+      {
+        "mode": "warning",
+        "peak": 0.035144589841365814,
+        "rms": 0.004076965309607706
+      },
+      {
+        "mode": "four",
+        "peak": 0.14236870408058167,
+        "rms": 0.01090020730791032
+      },
+      {
+        "mode": "sixteen",
+        "peak": 0.5928182005882263,
+        "rms": 0.043914678502143825
+      }
+    ],
+    "webkit": [
+      {
+        "mode": "player",
+        "peak": 0.04950965568423271,
+        "rms": 0.004125981777827266
+      },
+      {
+        "mode": "opponent",
+        "peak": 0.051308270543813705,
+        "rms": 0.006094153967635045
+      },
+      {
+        "mode": "warning",
+        "peak": 0.035144589841365814,
+        "rms": 0.004076965424246247
+      },
+      {
+        "mode": "four",
+        "peak": 0.14236873388290405,
+        "rms": 0.010900207732328478
+      },
+      {
+        "mode": "sixteen",
+        "peak": 0.5928183197975159,
+        "rms": 0.043914680392560336
+      }
+    ]
+  },
+  "emission": {
+    "chromium": [
+      {
+        "id": "selfCourtRight",
+        "threshold": 160,
+        "x": 414,
+        "y": 215,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            40,
+            235,
+            237,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "opponentCourtRight",
+        "threshold": 190,
+        "x": 402,
+        "y": 313,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            40,
+            233,
+            238,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "opponentFloor",
+        "threshold": 380,
+        "x": 357,
+        "y": 301,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            40,
+            237,
+            155,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "selfFloor",
+        "threshold": 410,
+        "x": 332,
+        "y": 135,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            208,
+            40,
+            237,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "opponentWall",
+        "threshold": 420,
+        "x": 365,
+        "y": 398,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            78,
+            237,
+            51,
+            255
+          ]
+        ]
+      }
+    ],
+    "webkit": [
+      {
+        "id": "selfCourtRight",
+        "threshold": 160,
+        "x": 414,
+        "y": 215,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            40,
+            235,
+            237,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "opponentCourtRight",
+        "threshold": 190,
+        "x": 402,
+        "y": 313,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            40,
+            233,
+            238,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "opponentFloor",
+        "threshold": 380,
+        "x": 357,
+        "y": 301,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            40,
+            237,
+            155,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "selfFloor",
+        "threshold": 410,
+        "x": 332,
+        "y": 135,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            208,
+            40,
+            237,
+            255
+          ]
+        ]
+      },
+      {
+        "id": "opponentWall",
+        "threshold": 420,
+        "x": 365,
+        "y": 398,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            255
+          ],
+          [
+            78,
+            237,
+            51,
+            255
+          ]
+        ]
+      }
+    ]
+  },
+  "realtime": {
+    "chromium": {
+      "initialBalls": 34,
+      "initialScore": 450,
+      "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "durationMs": 60013.69999999776,
+      "frames": 3551,
+      "p95Ms": 16.799999999995634,
+      "fractionAtMost25ms": 0.9991551675584343,
+      "runningSimulationSeconds": 0.15833333333333333,
+      "finalPhase": "paused",
+      "pauseReason": "slow-frame",
+      "remaining": 34,
+      "score": 450,
+      "opponentHits": 1,
+      "smashHits": 0,
+      "initialResources": {
+        "geometries": 24,
+        "textures": 4,
+        "programs": 5,
+        "drawCalls": 24
+      },
+      "finalResources": {
+        "geometries": 42,
+        "textures": 4,
+        "programs": 9,
+        "drawCalls": 42
+      },
+      "targetHardwareVerdict": "未確認",
+      "continuousPlayVerdict": "失敗（このLinux条件の連続プレイ）"
+    },
+    "webkit": {
+      "initialBalls": 34,
+      "initialScore": 450,
+      "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+      "viewport": {
+        "width": 390,
+        "height": 664,
+        "deviceRatio": 3
+      },
+      "durationMs": 60007,
+      "frames": 3676,
+      "p95Ms": 17,
+      "fractionAtMost25ms": 0.999455930359086,
+      "runningSimulationSeconds": 0,
+      "finalPhase": "paused",
+      "pauseReason": "slow-frame",
+      "remaining": 34,
+      "score": 450,
+      "opponentHits": 0,
+      "smashHits": 0,
+      "initialResources": {
+        "geometries": 24,
+        "textures": 4,
+        "programs": 5,
+        "drawCalls": 24
+      },
+      "finalResources": {
+        "geometries": 42,
+        "textures": 4,
+        "programs": 9,
+        "drawCalls": 42
+      },
+      "targetHardwareVerdict": "未確認",
+      "continuousPlayVerdict": "失敗（このLinux条件の連続プレイ）"
+    }
+  },
+  "hardwareVerdict": "未確認",
+  "humanListeningVerdict": "未確認",
+  "finalFlashingVerdict": "未確認"
+}

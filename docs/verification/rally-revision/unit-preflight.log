@@ -1,0 +1,46 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu-audit
+
+ ❯ tests/unit/opponent.test.ts (7 tests | 1 failed) 16ms
+   ❯ 450以降の相手の返球 (7)
+     × 449→450の接触後の新規予約からスマッシュを使い、予告と打球と加点を1回ずつ出す 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/opponent.test.ts > 450以降の相手の返球 > 449→450の接触後の新規予約からスマッシュを使い、予告と打球と加点を1回ずつ出す
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/opponent.test.ts:68:29
+     66|     const committed = s.snapshot().scheduledReturns.find(p => p.ballId…
+     67|     expect(s.state.score).toBe(450);
+     68|     expect(committed.smash).toBe(true);
+       |                             ^
+     69|     expect(resolveOpponentPose(s.snapshot()).preparing).toBe(true);
+     70|     expect(resolvePresentation(s.snapshot()).balls[2]!.visible).toBe(f…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 23 passed (24)
+      Tests  1 failed | 109 passed (110)
+   Start at  20:59:41
+   Duration  3.03s (environment 41%, tests 36%, import 13%, transform 7%, worker 2%)
+
+    Isolate  24 workers spawned · ~224ms startup each (spawn + environment, per file)
+             at least ~1.56s faster with isolate: false — reuses workers across files instead of one per file
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

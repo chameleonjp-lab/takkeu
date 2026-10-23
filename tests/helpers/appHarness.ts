@@ -1,11 +1,14 @@
 import { createApp } from '../../src/app/createApp';
+import { ballCountAtScore } from '../../src/game/milestones';
+import { speedMultiplier } from '../../src/game/difficulty';
+import { scheduleReturn } from '../../src/game/scheduler';
 import { DEFAULT_CONFIG } from '../../src/game/config';
 import { createSession } from '../../src/game/session';
 import { createView } from '../../src/render/createView';
 import { createAudio } from '../../src/audio/audio';
 import type { GameSession, GameSnapshot, GameEvent } from '../../src/game/types';
 import { createSimulationState, snapshotSimulation, startSimulation, stepSimulation } from '../../src/game/simulation';
-import { scenario, incoming } from './scenarios';
+import { scenario } from './scenarios';
 import '../../src/ui/styles.css';
 
 let state = createSimulationState(7);
@@ -40,13 +43,17 @@ const app = createApp(document.querySelector<HTMLElement>('#app')!, {
 function show(score: number) {
   state = scenario(score, 0).state;
   currentAudio?.reset(state.runId); metrics.events.length = 0; metrics.smashDepartures = 0;
-  state.balls = [1, 2, 3, 4].map((id, i) => incoming(id, 1.5 + i * 0.5, { x: [-0.7, 0.7, 0, 0.4][i]!, y: 0.5 }, 0, 2.5));
-  if (score === 10) state.progression = { ...state.progression, ballGlowUntil: 5 };
-  if (score >= 450) {
-    const ball = state.balls[0]!;
-    ball.phase = 'waiting-return'; ball.warningSent = true;
-    ball.plan = { ...ball.plan!, smash: true, warningAt: 0, departAt: 0.4, netCrossAt: 0.7, arriveAt: 1.3 };
+  state.balls = [];
+  for (let id = 1; id <= ballCountAtScore(score); id++) {
+    const smash = score >= 450 && id === 1;
+    const plan = scheduleReturn({ ballId: id, earliestDepartAt: 0,
+      preferredTarget: { x: [-0.7, 0.7, 0, 0.4][(id - 1) % 4]!, y: 0.5 },
+      speedMultiplier: speedMultiplier(score), smash }, session.snapshot().scheduledReturns, DEFAULT_CONFIG);
+    const from = { x: 0, y: 0.5, z: -DEFAULT_CONFIG.paddleZ };
+    state.balls.push({ id, phase: smash ? 'waiting-return' : 'queued', position: from, from, plan, warningSent: smash });
   }
+  state.nextBallId = state.balls.length + 1;
+  if (score === 10) state.progression = { ...state.progression, ballGlowUntil: 5 };
 }
 function restore() { const canvas = document.querySelector('canvas')!; canvas.dispatchEvent(new Event('webglcontextrestored')); }
 const harness = { snapshot: (): GameSnapshot => session.snapshot(), show, restore, metrics: () => metrics,

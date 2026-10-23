@@ -2,6 +2,15 @@ import { BufferGeometry, DataTexture, LinearFilter, LineBasicMaterial, LineSegme
 
 export function standard(color: number, roughness = 0.65, emissive = 0, intensity = 0): MeshStandardMaterial {
   const material = new MeshStandardMaterial({ color, roughness, emissive, emissiveIntensity: intensity });
+  // Match self-emitted light to the spatial rainbow, instead of applying one
+  // uniform hue to every vertex or relying on scene illumination.
+  material.onBeforeCompile = shader => {
+    shader.fragmentShader = shader.fragmentShader.replace('#include <emissivemap_fragment>', `#include <emissivemap_fragment>
+#ifdef USE_COLOR
+  totalEmissiveRadiance *= vColor.rgb;
+#endif`);
+  };
+  material.customProgramCacheKey = () => 'takkeu-vertex-emission-v1';
   material.userData.baseColor = material.color.clone();
   material.userData.baseEmissive = material.emissive.clone();
   material.userData.baseIntensity = intensity;

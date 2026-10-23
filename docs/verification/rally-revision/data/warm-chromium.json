@@ -1,0 +1,2735 @@
+{
+  "productCommit": "eb02cb0c63f122a2410ddc4c8e0cbb9955f34d5d",
+  "checkedOutCommit": "eb02cb0c63f122a2410ddc4c8e0cbb9955f34d5d",
+  "sourceHashesMatchFormal": true,
+  "engine": "chromium",
+  "browserVersion": "156.0.8078.4",
+  "profile": "Desktop Chrome",
+  "environment": "Debian 13 Playwright / software WebGL, not iPhone hardware",
+  "startedAt": "2026-10-22T21:27:13.759Z",
+  "endedAt": "2026-10-22T21:27:20.139Z",
+  "conditions": "390で3ゲーム秒の描画準備後450へ変更。準備中だけ手動再開。450の計測中は一度も再開せず、中断で終了。速度・解像度・停止閾値は変更しない。",
+  "warmed": true,
+  "warmPauses": [
+    {
+      "time": 0.4583333333333339,
+      "reason": "slow-frame"
+    }
+  ],
+  "errors": [],
+  "verdict": "失敗（この準備済みLinux条件）",
+  "hardwareVerdict": "未確認",
+  "result": {
+    "durationMs": 309.4999999992551,
+    "frames": 6,
+    "intervals": [
+      26.199999999254942,
+      66.69999999999982,
+      50,
+      16.600000000000364,
+      33.399999999999636,
+      116.60000000000036
+    ],
+    "samples": [
+      {
+        "elapsed": 26.199999999254942,
+        "state": {
+          "runId": "run-4",
+          "phase": "running",
+          "pauseReason": null,
+          "score": 450,
+          "simTime": 0.3166666666666668,
+          "paddle": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "balls": [
+            {
+              "id": 1,
+              "phase": "waiting-return",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": true
+            },
+            {
+              "id": 2,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 3,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 4,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 5,
+              "phase": "incoming",
+              "position": {
+                "x": -0.16764542570710778,
+                "y": 0.6584264070378207,
+                "z": -0.9256806603202727
+              },
+              "smash": false
+            },
+            {
+              "id": 6,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 7,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 8,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 9,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 10,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 11,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 12,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 13,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 14,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 15,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 16,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 17,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 18,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 19,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 20,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 21,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 22,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 23,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 24,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 25,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 26,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 27,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 28,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 29,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 30,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 31,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 32,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 33,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            },
+            {
+              "id": 34,
+              "phase": "queued",
+              "position": {
+                "x": 0,
+                "y": 0.5,
+                "z": -1.95
+              },
+              "smash": false
+            }
+          ],
+          "progression": {
+            "appliedMilestones": [
+              10,
+              30,
+              40,
+              70,
+              100,
+              130,
+              150,
+              160,
+              190,
+              210,
+              240,
+              270,
+              300,
+              330,
+              360,
+              380,
+              390,
+              410,
+              420,
+              450
+            ],
+            "ballGlowUntil": null,
+            "awardedBallCount": 33
+          },
+          "scheduledReturns": [
+            {
+              "ballId": 5,
+              "departAt": 0,
+              "netCrossAt": 0.6028393451919725,
+              "arriveAt": 1.205678690383945,
+              "target": {
+                "x": -0.6382942652065406,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 1,
+              "departAt": 0.3999999999999999,
+              "netCrossAt": 0.9023661209933103,
+              "arriveAt": 1.4047322419866206,
+              "target": {
+                "x": -0.6382942652065406,
+                "y": 0.5
+              },
+              "smash": true,
+              "warningAt": -1.1102230246251565e-16,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 2,
+              "departAt": 0.5421025958037657,
+              "netCrossAt": 1.1449419409957382,
+              "arriveAt": 1.7477812861877107,
+              "target": {
+                "x": 0.7,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 3,
+              "departAt": 0.7787692624704323,
+              "netCrossAt": 1.3816086076624048,
+              "arriveAt": 1.9844479528543773,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 4,
+              "departAt": 0.9654359291370991,
+              "netCrossAt": 1.5682752743290715,
+              "arriveAt": 2.171114619521044,
+              "target": {
+                "x": 0.4,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 6,
+              "departAt": 1.135435929137099,
+              "netCrossAt": 1.7382752743290715,
+              "arriveAt": 2.341114619521044,
+              "target": {
+                "x": 0.7,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 7,
+              "departAt": 1.3721025958037658,
+              "netCrossAt": 1.9749419409957383,
+              "arriveAt": 2.5777812861877107,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 8,
+              "departAt": 1.5587692624704323,
+              "netCrossAt": 2.161608607662405,
+              "arriveAt": 2.7644479528543773,
+              "target": {
+                "x": 0.4,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 9,
+              "departAt": 1.8518183066715226,
+              "netCrossAt": 2.454657651863495,
+              "arriveAt": 3.0574969970554675,
+              "target": {
+                "x": -0.6382942652065406,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 10,
+              "departAt": 2.1948673508726126,
+              "netCrossAt": 2.7977066960645853,
+              "arriveAt": 3.4005460412565576,
+              "target": {
+                "x": 0.7,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 11,
+              "departAt": 2.4315340175392794,
+              "netCrossAt": 3.0343733627312517,
+              "arriveAt": 3.6372127079232244,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 12,
+              "departAt": 2.618200684205946,
+              "netCrossAt": 3.2210400293979182,
+              "arriveAt": 3.823879374589891,
+              "target": {
+                "x": 0.4,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 13,
+              "departAt": 2.911249728407036,
+              "netCrossAt": 3.514089073599009,
+              "arriveAt": 4.116928418790981,
+              "target": {
+                "x": -0.6382942652065406,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 14,
+              "departAt": 3.2542987726081267,
+              "netCrossAt": 3.8571381178000994,
+              "arriveAt": 4.459977462992072,
+              "target": {
+                "x": 0.7,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 15,
+              "departAt": 3.490965439274793,
+              "netCrossAt": 4.093804784466766,
+              "arriveAt": 4.696644129658738,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 16,
+              "departAt": 3.6776321059414596,
+              "netCrossAt": 4.280471451133432,
+              "arriveAt": 4.8833107963254045,
+              "target": {
+                "x": 0.4,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 17,
+              "departAt": 3.9706811501425494,
+              "netCrossAt": 4.573520495334522,
+              "arriveAt": 5.176359840526494,
+              "target": {
+                "x": -0.6382942652065406,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 18,
+              "departAt": 4.3137301943436395,
+              "netCrossAt": 4.916569539535612,
+              "arriveAt": 5.519408884727584,
+              "target": {
+                "x": 0.7,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 19,
+              "departAt": 4.550396861010306,
+              "netCrossAt": 5.153236206202278,
+              "arriveAt": 5.75607555139425,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 20,
+              "departAt": 4.7370635276769715,
+              "netCrossAt": 5.339902872868944,
+              "arriveAt": 5.942742218060917,
+              "target": {
+                "x": 0.4,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 21,
+              "departAt": 5.030112571878062,
+              "netCrossAt": 5.632951917070034,
+              "arriveAt": 6.235791262262007,
+              "target": {
+                "x": -0.6382942652065406,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 22,
+              "departAt": 5.373161616079152,
+              "netCrossAt": 5.976000961271124,
+              "arriveAt": 6.578840306463096,
+              "target": {
+                "x": 0.7,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 23,
+              "departAt": 5.609828282745818,
+              "netCrossAt": 6.21266762793779,
+              "arriveAt": 6.815506973129763,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 24,
+              "departAt": 5.796494949412484,
+              "netCrossAt": 6.399334294604456,
+              "arriveAt": 7.002173639796429,
+              "target": {
+                "x": 0.4,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 25,
+              "departAt": 6.0895439936135745,
+              "netCrossAt": 6.692383338805547,
+              "arriveAt": 7.295222683997519,
+              "target": {
+                "x": -0.6382942652065406,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 26,
+              "departAt": 6.432593037814664,
+              "netCrossAt": 7.035432383006636,
+              "arriveAt": 7.638271728198609,
+              "target": {
+                "x": 0.7,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 27,
+              "departAt": 6.66925970448133,
+              "netCrossAt": 7.272099049673303,
+              "arriveAt": 7.874938394865275,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 28,
+              "departAt": 6.855926371147998,
+              "netCrossAt": 7.45876571633997,
+              "arriveAt": 8.061605061531942,
+              "target": {
+                "x": 0.4,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 29,
+              "departAt": 7.1489754153490885,
+              "netCrossAt": 7.751814760541061,
+              "arriveAt": 8.354654105733033,
+              "target": {
+                "x": -0.6382942652065406,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 30,
+              "departAt": 7.492024459550178,
+              "netCrossAt": 8.09486380474215,
+              "arriveAt": 8.697703149934123,
+              "target": {
+                "x": 0.7,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 31,
+              "departAt": 7.7286911262168445,
+              "netCrossAt": 8.331530471408817,
+              "arriveAt": 8.934369816600789,
+              "target": {
+                "x": 0,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 32,
+              "departAt": 7.915357792883512,
+              "netCrossAt": 8.518197138075484,
+              "arriveAt": 9.121036483267456,
+              "target": {
+                "x": 0.4,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 33,
+              "departAt": 8.208406837084603,
+              "netCrossAt": 8.811246182276575,
+              "arriveAt": 9.414085527468547,
+              "target": {
+                "x": -0.6382942652065406,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            },
+            {
+              "ballId": 34,
+              "departAt": 8.551455881285692,
+              "netCrossAt": 9.154295226477664,
+              "arriveAt": 9.757134571669637,
+              "target": {
+                "x": 0.7,
+                "y": 0.5
+              },
+              "smash": false,
+              "warningAt": null,
+              "speedMultiplier": 2.0735209305257625,
+              "landingZ": 1.95,
+              "bounceY": 0.045
+            }
+          ]
+        },
+        "resources": {
+          "geometries": 45,
+          "textures": 4,
+          "programs": 11,
+          "drawCalls": 42
+        }
+      }
+    ],
+    "p95Ms": 116.60000000000036,
+    "fractionAtMost25ms": 0.16666666666666666,
+    "runningSimulationSeconds": 0.20000000000000062,
+    "first": {
+      "runId": "run-4",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 450,
+      "simTime": 0.2833333333333334,
+      "paddle": {
+        "x": -0.6382942652065406,
+        "y": 0.5
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "waiting-return",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": true
+        },
+        {
+          "id": 2,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 5,
+          "phase": "incoming",
+          "position": {
+            "x": -0.14999853879057007,
+            "y": 0.6592958689576927,
+            "z": -1.0335037487076129
+          },
+          "smash": false
+        },
+        {
+          "id": 6,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 7,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 8,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 9,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 10,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 11,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 12,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 13,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 14,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 15,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 16,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 17,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 18,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 19,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 20,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 21,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 22,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 23,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 24,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 25,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 26,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 27,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 28,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 29,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 30,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 31,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 32,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 33,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 34,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          40,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          380,
+          390,
+          410,
+          420,
+          450
+        ],
+        "ballGlowUntil": null,
+        "awardedBallCount": 33
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 5,
+          "departAt": 0,
+          "netCrossAt": 0.6028393451919725,
+          "arriveAt": 1.205678690383945,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 1,
+          "departAt": 0.3999999999999999,
+          "netCrossAt": 0.9023661209933103,
+          "arriveAt": 1.4047322419866206,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": true,
+          "warningAt": -1.1102230246251565e-16,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 2,
+          "departAt": 0.5421025958037657,
+          "netCrossAt": 1.1449419409957382,
+          "arriveAt": 1.7477812861877107,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 3,
+          "departAt": 0.7787692624704323,
+          "netCrossAt": 1.3816086076624048,
+          "arriveAt": 1.9844479528543773,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 4,
+          "departAt": 0.9654359291370991,
+          "netCrossAt": 1.5682752743290715,
+          "arriveAt": 2.171114619521044,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 6,
+          "departAt": 1.135435929137099,
+          "netCrossAt": 1.7382752743290715,
+          "arriveAt": 2.341114619521044,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 7,
+          "departAt": 1.3721025958037658,
+          "netCrossAt": 1.9749419409957383,
+          "arriveAt": 2.5777812861877107,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 8,
+          "departAt": 1.5587692624704323,
+          "netCrossAt": 2.161608607662405,
+          "arriveAt": 2.7644479528543773,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 9,
+          "departAt": 1.8518183066715226,
+          "netCrossAt": 2.454657651863495,
+          "arriveAt": 3.0574969970554675,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 10,
+          "departAt": 2.1948673508726126,
+          "netCrossAt": 2.7977066960645853,
+          "arriveAt": 3.4005460412565576,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 11,
+          "departAt": 2.4315340175392794,
+          "netCrossAt": 3.0343733627312517,
+          "arriveAt": 3.6372127079232244,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 12,
+          "departAt": 2.618200684205946,
+          "netCrossAt": 3.2210400293979182,
+          "arriveAt": 3.823879374589891,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 13,
+          "departAt": 2.911249728407036,
+          "netCrossAt": 3.514089073599009,
+          "arriveAt": 4.116928418790981,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 14,
+          "departAt": 3.2542987726081267,
+          "netCrossAt": 3.8571381178000994,
+          "arriveAt": 4.459977462992072,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 15,
+          "departAt": 3.490965439274793,
+          "netCrossAt": 4.093804784466766,
+          "arriveAt": 4.696644129658738,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 16,
+          "departAt": 3.6776321059414596,
+          "netCrossAt": 4.280471451133432,
+          "arriveAt": 4.8833107963254045,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 17,
+          "departAt": 3.9706811501425494,
+          "netCrossAt": 4.573520495334522,
+          "arriveAt": 5.176359840526494,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 18,
+          "departAt": 4.3137301943436395,
+          "netCrossAt": 4.916569539535612,
+          "arriveAt": 5.519408884727584,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 19,
+          "departAt": 4.550396861010306,
+          "netCrossAt": 5.153236206202278,
+          "arriveAt": 5.75607555139425,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 20,
+          "departAt": 4.7370635276769715,
+          "netCrossAt": 5.339902872868944,
+          "arriveAt": 5.942742218060917,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 21,
+          "departAt": 5.030112571878062,
+          "netCrossAt": 5.632951917070034,
+          "arriveAt": 6.235791262262007,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 22,
+          "departAt": 5.373161616079152,
+          "netCrossAt": 5.976000961271124,
+          "arriveAt": 6.578840306463096,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 23,
+          "departAt": 5.609828282745818,
+          "netCrossAt": 6.21266762793779,
+          "arriveAt": 6.815506973129763,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 24,
+          "departAt": 5.796494949412484,
+          "netCrossAt": 6.399334294604456,
+          "arriveAt": 7.002173639796429,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 25,
+          "departAt": 6.0895439936135745,
+          "netCrossAt": 6.692383338805547,
+          "arriveAt": 7.295222683997519,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 26,
+          "departAt": 6.432593037814664,
+          "netCrossAt": 7.035432383006636,
+          "arriveAt": 7.638271728198609,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 27,
+          "departAt": 6.66925970448133,
+          "netCrossAt": 7.272099049673303,
+          "arriveAt": 7.874938394865275,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 28,
+          "departAt": 6.855926371147998,
+          "netCrossAt": 7.45876571633997,
+          "arriveAt": 8.061605061531942,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 29,
+          "departAt": 7.1489754153490885,
+          "netCrossAt": 7.751814760541061,
+          "arriveAt": 8.354654105733033,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 30,
+          "departAt": 7.492024459550178,
+          "netCrossAt": 8.09486380474215,
+          "arriveAt": 8.697703149934123,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 31,
+          "departAt": 7.7286911262168445,
+          "netCrossAt": 8.331530471408817,
+          "arriveAt": 8.934369816600789,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 32,
+          "departAt": 7.915357792883512,
+          "netCrossAt": 8.518197138075484,
+          "arriveAt": 9.121036483267456,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 33,
+          "departAt": 8.208406837084603,
+          "netCrossAt": 8.811246182276575,
+          "arriveAt": 9.414085527468547,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 34,
+          "departAt": 8.551455881285692,
+          "netCrossAt": 9.154295226477664,
+          "arriveAt": 9.757134571669637,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "final": {
+      "runId": "run-4",
+      "phase": "paused",
+      "pauseReason": "slow-frame",
+      "score": 450,
+      "simTime": 0.483333333333334,
+      "paddle": {
+        "x": -0.6382942652065406,
+        "y": 0.5
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": -0.05294066074961344,
+            "y": 0.5902818097505668,
+            "z": -1.626530734837978
+          },
+          "smash": true
+        },
+        {
+          "id": 2,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 3,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 4,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 5,
+          "phase": "incoming",
+          "position": {
+            "x": -0.2558798602897963,
+            "y": 0.5921523004316726,
+            "z": -0.38656521838357305
+          },
+          "smash": false
+        },
+        {
+          "id": 6,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 7,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 8,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 9,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 10,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 11,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 12,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 13,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 14,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 15,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 16,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 17,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 18,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 19,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 20,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 21,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 22,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 23,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 24,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 25,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 26,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 27,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 28,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 29,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 30,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 31,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 32,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 33,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        },
+        {
+          "id": 34,
+          "phase": "queued",
+          "position": {
+            "x": 0,
+            "y": 0.5,
+            "z": -1.95
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          40,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          380,
+          390,
+          410,
+          420,
+          450
+        ],
+        "ballGlowUntil": null,
+        "awardedBallCount": 33
+      },
+      "scheduledReturns": [
+        {
+          "ballId": 5,
+          "departAt": 0,
+          "netCrossAt": 0.6028393451919725,
+          "arriveAt": 1.205678690383945,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 1,
+          "departAt": 0.3999999999999999,
+          "netCrossAt": 0.9023661209933103,
+          "arriveAt": 1.4047322419866206,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": true,
+          "warningAt": -1.1102230246251565e-16,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 2,
+          "departAt": 0.5421025958037657,
+          "netCrossAt": 1.1449419409957382,
+          "arriveAt": 1.7477812861877107,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 3,
+          "departAt": 0.7787692624704323,
+          "netCrossAt": 1.3816086076624048,
+          "arriveAt": 1.9844479528543773,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 4,
+          "departAt": 0.9654359291370991,
+          "netCrossAt": 1.5682752743290715,
+          "arriveAt": 2.171114619521044,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 6,
+          "departAt": 1.135435929137099,
+          "netCrossAt": 1.7382752743290715,
+          "arriveAt": 2.341114619521044,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 7,
+          "departAt": 1.3721025958037658,
+          "netCrossAt": 1.9749419409957383,
+          "arriveAt": 2.5777812861877107,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 8,
+          "departAt": 1.5587692624704323,
+          "netCrossAt": 2.161608607662405,
+          "arriveAt": 2.7644479528543773,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 9,
+          "departAt": 1.8518183066715226,
+          "netCrossAt": 2.454657651863495,
+          "arriveAt": 3.0574969970554675,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 10,
+          "departAt": 2.1948673508726126,
+          "netCrossAt": 2.7977066960645853,
+          "arriveAt": 3.4005460412565576,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 11,
+          "departAt": 2.4315340175392794,
+          "netCrossAt": 3.0343733627312517,
+          "arriveAt": 3.6372127079232244,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 12,
+          "departAt": 2.618200684205946,
+          "netCrossAt": 3.2210400293979182,
+          "arriveAt": 3.823879374589891,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 13,
+          "departAt": 2.911249728407036,
+          "netCrossAt": 3.514089073599009,
+          "arriveAt": 4.116928418790981,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 14,
+          "departAt": 3.2542987726081267,
+          "netCrossAt": 3.8571381178000994,
+          "arriveAt": 4.459977462992072,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 15,
+          "departAt": 3.490965439274793,
+          "netCrossAt": 4.093804784466766,
+          "arriveAt": 4.696644129658738,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 16,
+          "departAt": 3.6776321059414596,
+          "netCrossAt": 4.280471451133432,
+          "arriveAt": 4.8833107963254045,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 17,
+          "departAt": 3.9706811501425494,
+          "netCrossAt": 4.573520495334522,
+          "arriveAt": 5.176359840526494,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 18,
+          "departAt": 4.3137301943436395,
+          "netCrossAt": 4.916569539535612,
+          "arriveAt": 5.519408884727584,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 19,
+          "departAt": 4.550396861010306,
+          "netCrossAt": 5.153236206202278,
+          "arriveAt": 5.75607555139425,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 20,
+          "departAt": 4.7370635276769715,
+          "netCrossAt": 5.339902872868944,
+          "arriveAt": 5.942742218060917,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 21,
+          "departAt": 5.030112571878062,
+          "netCrossAt": 5.632951917070034,
+          "arriveAt": 6.235791262262007,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 22,
+          "departAt": 5.373161616079152,
+          "netCrossAt": 5.976000961271124,
+          "arriveAt": 6.578840306463096,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 23,
+          "departAt": 5.609828282745818,
+          "netCrossAt": 6.21266762793779,
+          "arriveAt": 6.815506973129763,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 24,
+          "departAt": 5.796494949412484,
+          "netCrossAt": 6.399334294604456,
+          "arriveAt": 7.002173639796429,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 25,
+          "departAt": 6.0895439936135745,
+          "netCrossAt": 6.692383338805547,
+          "arriveAt": 7.295222683997519,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 26,
+          "departAt": 6.432593037814664,
+          "netCrossAt": 7.035432383006636,
+          "arriveAt": 7.638271728198609,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 27,
+          "departAt": 6.66925970448133,
+          "netCrossAt": 7.272099049673303,
+          "arriveAt": 7.874938394865275,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 28,
+          "departAt": 6.855926371147998,
+          "netCrossAt": 7.45876571633997,
+          "arriveAt": 8.061605061531942,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 29,
+          "departAt": 7.1489754153490885,
+          "netCrossAt": 7.751814760541061,
+          "arriveAt": 8.354654105733033,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 30,
+          "departAt": 7.492024459550178,
+          "netCrossAt": 8.09486380474215,
+          "arriveAt": 8.697703149934123,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 31,
+          "departAt": 7.7286911262168445,
+          "netCrossAt": 8.331530471408817,
+          "arriveAt": 8.934369816600789,
+          "target": {
+            "x": 0,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 32,
+          "departAt": 7.915357792883512,
+          "netCrossAt": 8.518197138075484,
+          "arriveAt": 9.121036483267456,
+          "target": {
+            "x": 0.4,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 33,
+          "departAt": 8.208406837084603,
+          "netCrossAt": 8.811246182276575,
+          "arriveAt": 9.414085527468547,
+          "target": {
+            "x": -0.6382942652065406,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        },
+        {
+          "ballId": 34,
+          "departAt": 8.551455881285692,
+          "netCrossAt": 9.154295226477664,
+          "arriveAt": 9.757134571669637,
+          "target": {
+            "x": 0.7,
+            "y": 0.5
+          },
+          "smash": false,
+          "warningAt": null,
+          "speedMultiplier": 2.0735209305257625,
+          "landingZ": 1.95,
+          "bounceY": 0.045
+        }
+      ]
+    },
+    "initialResources": {
+      "geometries": 45,
+      "textures": 4,
+      "programs": 11,
+      "drawCalls": 42
+    },
+    "finalResources": {
+      "geometries": 45,
+      "textures": 4,
+      "programs": 11,
+      "drawCalls": 42
+    },
+    "opponentHits": 1,
+    "smashHits": 1
+  }
+}

@@ -1,0 +1,362 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/takkeu-audit/node_modules/.bin/playwright",
+      "test",
+      "tests/browser/occlusion.spec.ts"
+    ],
+    "configFile": "/workspace/takkeu-audit/playwright.config.ts",
+    "rootDir": "/workspace/takkeu-audit/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/takkeu-audit/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/workspace/takkeu-audit/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/takkeu-audit/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/workspace/takkeu-audit/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/takkeu-audit/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/workspace/takkeu-audit/tests/browser",
+        "snapshotDir": "/workspace/takkeu-audit/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "launchOptions": {
+            "args": [
+              "--enable-unsafe-swiftshader",
+              "--use-angle=swiftshader"
+            ]
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/takkeu-audit/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "/workspace/takkeu-audit/tests/browser",
+        "snapshotDir": "/workspace/takkeu-audit/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+          "viewport": {
+            "width": 390,
+            "height": 664
+          },
+          "screen": {
+            "width": 390,
+            "height": 844
+          },
+          "deviceScaleFactor": 3,
+          "isMobile": true,
+          "hasTouch": true,
+          "defaultBrowserType": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 4173 --strictPort",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "occlusion.spec.ts",
+      "file": "occlusion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "球と虹色の輪郭はラケットとの前後関係を守る",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2582,
+                  "error": {
+                    "message": "Error: 奥の球・発光がラバー面を透過しない\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   209,\u001b[39m\n\u001b[32m-   0,\u001b[39m\n\u001b[32m-   27,\u001b[39m\n\u001b[31m+   235,\u001b[39m\n\u001b[31m+   227,\u001b[39m\n\u001b[31m+   163,\u001b[39m\n\u001b[2m    255,\u001b[22m\n\u001b[2m  ]\u001b[22m",
+                    "stack": "Error: 奥の球・発光がラバー面を透過しない\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   209,\u001b[39m\n\u001b[32m-   0,\u001b[39m\n\u001b[32m-   27,\u001b[39m\n\u001b[31m+   235,\u001b[39m\n\u001b[31m+   227,\u001b[39m\n\u001b[31m+   163,\u001b[39m\n\u001b[2m    255,\u001b[22m\n\u001b[2m  ]\u001b[22m\n    at /workspace/takkeu-audit/tests/browser/occlusion.spec.ts:13:48",
+                    "location": {
+                      "file": "/workspace/takkeu-audit/tests/browser/occlusion.spec.ts",
+                      "column": 48,
+                      "line": 13
+                    },
+                    "snippet": "  11 |     }), score);\n  12 |     results.push(pixels);\n> 13 |     expect(pixels.behind, '奥の球・発光がラバー面を透過しない').toEqual(pixels.absent);\n     |                                                ^\n  14 |     expect(pixels.front, '手前へ来た球は表示する').not.toEqual(pixels.absent);\n  15 |     await page.evaluate(score => window.occlusion.show('behind', score), score);\n  16 |     await page.screenshot({ path: testInfo.outputPath(`behind-${score}.png`) });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/takkeu-audit/tests/browser/occlusion.spec.ts",
+                        "column": 48,
+                        "line": 13
+                      },
+                      "message": "Error: 奥の球・発光がラバー面を透過しない\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   209,\u001b[39m\n\u001b[32m-   0,\u001b[39m\n\u001b[32m-   27,\u001b[39m\n\u001b[31m+   235,\u001b[39m\n\u001b[31m+   227,\u001b[39m\n\u001b[31m+   163,\u001b[39m\n\u001b[2m    255,\u001b[22m\n\u001b[2m  ]\u001b[22m\n\n  11 |     }), score);\n  12 |     results.push(pixels);\n> 13 |     expect(pixels.behind, '奥の球・発光がラバー面を透過しない').toEqual(pixels.absent);\n     |                                                ^\n  14 |     expect(pixels.front, '手前へ来た球は表示する').not.toEqual(pixels.absent);\n  15 |     await page.evaluate(score => window.occlusion.show('behind', score), score);\n  16 |     await page.screenshot({ path: testInfo.outputPath(`behind-${score}.png`) });\n    at /workspace/takkeu-audit/tests/browser/occlusion.spec.ts:13:48"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-22T19:13:06.278Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/takkeu-audit/test-results/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu-audit/test-results/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/takkeu-audit/test-results/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/takkeu-audit/test-results/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/takkeu-audit/tests/browser/occlusion.spec.ts",
+                    "column": 48,
+                    "line": 13
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f8155c1441739c34084c-5a1cf583c6ab146118d5",
+          "file": "occlusion.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "球と虹色の輪郭はラケットとの前後関係を守る",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2341,
+                  "error": {
+                    "message": "Error: 奥の球・発光がラバー面を透過しない\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   209,\u001b[39m\n\u001b[32m-   0,\u001b[39m\n\u001b[32m-   27,\u001b[39m\n\u001b[31m+   235,\u001b[39m\n\u001b[31m+   226,\u001b[39m\n\u001b[31m+   162,\u001b[39m\n\u001b[2m    255,\u001b[22m\n\u001b[2m  ]\u001b[22m",
+                    "stack": "Error: 奥の球・発光がラバー面を透過しない\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   209,\u001b[39m\n\u001b[32m-   0,\u001b[39m\n\u001b[32m-   27,\u001b[39m\n\u001b[31m+   235,\u001b[39m\n\u001b[31m+   226,\u001b[39m\n\u001b[31m+   162,\u001b[39m\n\u001b[2m    255,\u001b[22m\n\u001b[2m  ]\u001b[22m\n    at /workspace/takkeu-audit/tests/browser/occlusion.spec.ts:13:48",
+                    "location": {
+                      "file": "/workspace/takkeu-audit/tests/browser/occlusion.spec.ts",
+                      "column": 48,
+                      "line": 13
+                    },
+                    "snippet": "  11 |     }), score);\n  12 |     results.push(pixels);\n> 13 |     expect(pixels.behind, '奥の球・発光がラバー面を透過しない').toEqual(pixels.absent);\n     |                                                ^\n  14 |     expect(pixels.front, '手前へ来た球は表示する').not.toEqual(pixels.absent);\n  15 |     await page.evaluate(score => window.occlusion.show('behind', score), score);\n  16 |     await page.screenshot({ path: testInfo.outputPath(`behind-${score}.png`) });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/takkeu-audit/tests/browser/occlusion.spec.ts",
+                        "column": 48,
+                        "line": 13
+                      },
+                      "message": "Error: 奥の球・発光がラバー面を透過しない\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   209,\u001b[39m\n\u001b[32m-   0,\u001b[39m\n\u001b[32m-   27,\u001b[39m\n\u001b[31m+   235,\u001b[39m\n\u001b[31m+   226,\u001b[39m\n\u001b[31m+   162,\u001b[39m\n\u001b[2m    255,\u001b[22m\n\u001b[2m  ]\u001b[22m\n\n  11 |     }), score);\n  12 |     results.push(pixels);\n> 13 |     expect(pixels.behind, '奥の球・発光がラバー面を透過しない').toEqual(pixels.absent);\n     |                                                ^\n  14 |     expect(pixels.front, '手前へ来た球は表示する').not.toEqual(pixels.absent);\n  15 |     await page.evaluate(score => window.occlusion.show('behind', score), score);\n  16 |     await page.screenshot({ path: testInfo.outputPath(`behind-${score}.png`) });\n    at /workspace/takkeu-audit/tests/browser/occlusion.spec.ts:13:48"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-22T19:13:10.487Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/workspace/takkeu-audit/test-results/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-webkit/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/workspace/takkeu-audit/test-results/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-webkit/video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/takkeu-audit/test-results/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-webkit/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/takkeu-audit/test-results/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-webkit/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/takkeu-audit/tests/browser/occlusion.spec.ts",
+                    "column": 48,
+                    "line": 13
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f8155c1441739c34084c-4abf94354ba249662eb1",
+          "file": "occlusion.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-22T19:13:04.602Z",
+    "duration": 8730.651000000002,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

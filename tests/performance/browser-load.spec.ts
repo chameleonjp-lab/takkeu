@@ -13,7 +13,7 @@ test('Linuxの実フレーム60秒を記録し、実機の性能判定とは分�
       intervals.push(now - previous); previous = now;
       if (now - start < 60_000) { requestAnimationFrame(frame); return; }
       const sorted = [...intervals].sort((a, b) => a - b), final = window.stage3.snapshot();
-      resolve({ environment: 'Linux Playwright browser, not iPhone 17 Pro hardware', userAgent: navigator.userAgent,
+      resolve({ initialBalls: first.balls.length, initialScore: first.score, environment: 'Linux Playwright browser, not iPhone 17 Pro hardware', userAgent: navigator.userAgent,
         viewport: { width: innerWidth, height: innerHeight, deviceRatio: devicePixelRatio },
         durationMs: now - start, frames: intervals.length, p95Ms: sorted[Math.ceil(sorted.length * 0.95) - 1],
         fractionAtMost25ms: intervals.filter(n => n <= 25).length / intervals.length,
