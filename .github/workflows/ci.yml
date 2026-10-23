@@ -6,7 +6,7 @@ on:
 permissions:
   contents: read
 jobs:
-  verify:
+  core:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
@@ -54,14 +54,15 @@ jobs:
             playwright-report/
 
   browser:
-    name: Browser (${{ matrix.project }})
-    needs: verify
+    name: Browser (${{ matrix.project }}, ${{ matrix.suite }})
+    needs: core
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     strategy:
       fail-fast: false
       matrix:
         project: [chromium, webkit]
+        suite: [interaction, load]
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v6
@@ -81,7 +82,12 @@ jobs:
       - name: Browser tests
         run: |
           set -o pipefail
-          npm run test:browser -- --project=${{ matrix.project }} 2>&1 | tee artifacts/browser.log
+          takkeu_load_pattern='開始から実際|450の47球|555の91球'
+          if [ '${{ matrix.suite }}' = 'load' ]; then
+            npm run test:browser -- --project=${{ matrix.project }} --grep "$takkeu_load_pattern" 2>&1 | tee artifacts/browser.log
+          else
+            npm run test:browser -- --project=${{ matrix.project }} --grep-invert "$takkeu_load_pattern" 2>&1 | tee artifacts/browser.log
+          fi
       - name: Record revision
         if: always()
         run: |
@@ -91,9 +97,21 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: verification-browser-${{ matrix.project }}-${{ github.sha }}
+          name: verification-browser-${{ matrix.project }}-${{ matrix.suite }}-${{ github.sha }}
           retention-days: 30
           path: |
             artifacts/
             test-results/
             playwright-report/
+
+  # Keep the original required-check name tied to every browser group.
+  verify:
+    needs: [core, browser]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    steps:
+      - name: Require all validation jobs
+        run: |
+          test '${{ needs.core.result }}' = 'success'
+          test '${{ needs.browser.result }}' = 'success'

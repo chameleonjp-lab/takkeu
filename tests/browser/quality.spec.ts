@@ -13,7 +13,10 @@ import type { GameSnapshot } from '../../src/game/types';
 test.use({ video: 'off', trace: { mode: 'retain-on-failure', screenshots: false, snapshots: true, sources: true } });
 
 test('開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む', async ({ page }, info) => {
-  test.setTimeout(180_000);
+  // Full-viewport SwiftShader has ~3.7x the old PC pixel workload. CI traces
+  // exceeded 180s in GPU readback; this is a functional completion budget,
+  // not the unchanged 25ms/95% real-time performance acceptance criterion.
+  test.setTimeout(360_000);
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   // Only input is automated: start the real session without replacing its score or balls.
@@ -93,7 +96,9 @@ test('縦横・44pxボタン・200%文字・ラベル・安全余白を確認', 
 });
 
 test('450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する', async ({ page }, info) => {
-  test.setTimeout(180_000);
+  // Same 30 simulated seconds, rendering resolution and assertions. See the
+  // viewport verification ledger for retained 180s CI failures and rationale.
+  test.setTimeout(360_000);
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();

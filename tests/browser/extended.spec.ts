@@ -54,9 +54,10 @@ test('返球・台面の花火を実際の接触イベントで描き、停止�
 test('555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する',async({page},info)=>{
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
   page.on('console',message=>{if(message.type()==='error')errors.push(message.text());});
-  // Includes software GPU readback/video teardown; this is a 30-game-second
-  // functional test. Real-time performance uses the separate performance suite.
-  test.setTimeout(240_000);await page.clock.install();await page.clock.pauseAt(new Date(Date.now()+1000));
+  // Full-viewport CI completed the 30-game-second state, then exceeded 240s
+  // during software GPU readback/video teardown. Preserve all frames/assertions
+  // with a 360s completion budget; real-time performance is assessed separately.
+  test.setTimeout(360_000);await page.clock.install();await page.clock.pauseAt(new Date(Date.now()+1000));
   await page.goto('/tests/fixtures/stage3.html');await page.getByRole('button',{name:'はじめる',exact:true}).click();
   await page.evaluate(()=>{window.stage3.show(555);window.stage3.autoPlay(true);});
   const rows=[];
