@@ -60,3 +60,5 @@ d47753586136db8c4c20dd3a87bb89e912fb9f31では機能検査3件の実行猶予を
 照合実装の補足: この環境のTypeScript 7.0.2は旧`transpileModule` APIを公開せず、esbuildも依存にないため、その2方式は実行できなかった。追加パッケージは導入せず、既存tsc CLIの`--removeComments`で両ファイルを生成し、出力bytes一致を確認した。これは型検査の代替ではなく、コメント修正の同一性検査である。型検査は別の正式CIで成功した。
 
 最終ソースd477535のCI [40023104678](https://github.com/chameleonjp-lab/takkeu/actions/runs/40023104678)はcore・Chromium通常/負荷・WebKit通常/負荷・集約verifyの6job全成功。型・256unit・4配布検査・各engine44browserが成功した。Chromiumの長時間3件は555が3.2分、21ラリーが2.6分、450が2.3分で完了した。過去のtimeoutを消さず、今回の完了を別の結果として記録する。全6jobログ、job/run metadata、5artifactの全内容とarchive hashを保存した。製品コードは139f972から変更なし。Linux実時間性能0/8、実機/VoiceOver/試聴/最終点滅安全性未確認は維持する。
+
+証拠追加commit 9ada432299bbdffe46114229dce58a9caf7af927では全証拠を展開して保存したため、baseからの変更が3037filesとなった。PRのコード差分を確認しやすいよう、続く証拠配置commitでd477535の5artifactのみ元のZIPへまとめた。全entryを既存展開ファイルとbyte比較し、ZIP CRCと元archive SHA256も一致した。内容の省略・再圧縮はない。ログ、一覧、全entry metadataは展開したまま保持する。製品/テスト/CIコードに追加変更はない。最終headはPR本文で記録する。
