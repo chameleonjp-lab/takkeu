@@ -7,7 +7,7 @@ test('停止・終了中は同じ3D画面を繰り返し描かず、回転と再
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   await page.clock.runFor(100);
-  await page.getByRole('button', { name: '一時停止', exact: true }).click();
+  await page.keyboard.press('Escape');
   const before = await page.evaluate(() => ({ count: window.stage3.metrics().viewRenders, state: window.stage3.snapshot() }));
   await page.clock.runFor(500);
   expect(await page.evaluate(() => window.stage3.metrics().viewRenders)).toBe(before.count);

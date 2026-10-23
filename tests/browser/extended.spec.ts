@@ -38,7 +38,7 @@ test('返球・台面の花火を実際の接触イベントで描き、停止�
   await page.evaluate(()=>window.stage2.animate(.28));
   expect(await page.evaluate(()=>window.stage2.events().some(e=>e.effect==='racket-firework'))).toBe(true);
   await page.screenshot({path:info.outputPath('racket-firework.png')});
-  await page.getByRole('button',{name:'一時停止',exact:true}).click();
+  await page.keyboard.press('Escape');
   const before=await page.locator('canvas').screenshot(), resources=await page.evaluate(()=>window.stage2.resources());
   await page.evaluate(()=>window.stage2.advance(2));
   expect(before.equals(await page.locator('canvas').screenshot())).toBe(true);
@@ -70,7 +70,7 @@ test('555の91球から毎ラリー加速・全スマッシュ・増球を30ゲ�
   expect(errors).toEqual([]);
   await page.screenshot({path:info.outputPath('555-multiball.png')});
   await info.attach('extended-highload.json',{body:JSON.stringify({rows,final:state,eventCount:events.length},null,2),contentType:'application/json'});
-  await page.getByRole('link',{name:'タッケウ'}).click();
+  await page.keyboard.press('Escape');await page.getByRole('button',{name:'ホームへ',exact:true}).click();
   expect(await page.evaluate(()=>window.stage3.resources()!.particles)).toBe(0);
 });
 
@@ -79,7 +79,7 @@ test('実アプリのホーム遷移で花火を直ちに消し、再挑戦へ�
   await page.goto('/tests/fixtures/stage3.html');await page.getByRole('button',{name:'はじめる',exact:true}).click();
   await page.evaluate(()=>{window.stage3.show(555);window.stage3.autoPlay(true);});await page.clock.runFor(1000);
   expect(await page.evaluate(()=>window.stage3.resources()!.particles)).toBeGreaterThan(0);
-  await page.getByRole('link',{name:'タッケウ'}).click();expect(await page.evaluate(()=>window.stage3.resources()!.particles)).toBe(0);
+  await page.keyboard.press('Escape');await page.getByRole('button',{name:'ホームへ',exact:true}).click();expect(await page.evaluate(()=>window.stage3.resources()!.particles)).toBe(0);
   await page.getByRole('button',{name:'はじめる',exact:true}).click();await page.clock.runFor(32);
   expect(await page.evaluate(()=>window.stage3.resources()!.particles)).toBe(0);
 });

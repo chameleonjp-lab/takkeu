@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('参考画像の構図をPC・縦・横の実描画に保つ', async ({ page }, info) => {
+test('viewport全体の実描画でPC・縦・横の台を最大限収める', async ({ page }, info) => {
   const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
   await page.goto('/');
   await expect(page.locator('.home-art img')).toBeVisible();
@@ -26,11 +26,13 @@ test('参考画像の構図をPC・縦・横の実描画に保つ', async ({ pag
         perspective: (fr.x - fl.x) / (br.x - bl.x), depthFraction: (fl.y - bl.y) / (fr.x - fl.x),
         noOverflow: document.documentElement.scrollWidth <= innerWidth, corners: { fl, fr, bl, br } };
     });
-    expect(metrics.frontFraction).toBeGreaterThan(0.78);
+    expect(metrics.width).toBe(width); expect(metrics.height).toBe(height);
+    expect(metrics.frontFraction * metrics.width).toBeGreaterThan(Math.min(width!, height! * 225 / 157) * .8);
     expect(metrics.perspective).toBeGreaterThan(2.5);
     expect(metrics.depthFraction).toBeLessThan(0.49);
     expect(metrics.noOverflow).toBe(true);
-    await expect(page.getByRole('button', { name: '一時停止', exact: true })).toBeInViewport();
+    await expect(page.locator('.game-header, .input-pad, .game-hint')).toHaveCount(0);
+    await expect(page.locator('canvas')).toBeFocused();
     await canvas.screenshot({ path: info.outputPath(`court-${width}x${height}.png`) });
     await page.screenshot({ path: info.outputPath(`screen-${width}x${height}.png`) });
     results.push({ viewport: { width, height }, ...metrics });

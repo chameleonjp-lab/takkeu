@@ -17,6 +17,9 @@ it('音が消えていても状態から予告を復元し、390の強弱から�
   expect(warning!.hidden).toBe(false);
   expect(warning!.textContent).toContain('スマッシュ');
   const before = warning!.outerHTML;
+  screens.render({ ...base, phase: 'paused', pauseReason: 'user', scheduledReturns: [plan] });
+  expect(warning!.hidden).toBe(false);
+  expect(root.querySelector<HTMLElement>('.hud')!.inert).toBe(true);
   screens.render({ ...base, simTime: 20.3, scheduledReturns: [plan] });
   expect(warning!.outerHTML).toBe(before);
   screens.render({ ...base, simTime: plan.departAt, scheduledReturns: [plan] });

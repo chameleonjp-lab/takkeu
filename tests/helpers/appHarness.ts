@@ -22,7 +22,7 @@ const session: GameSession = {
   snapshot: () => snapshotSimulation(state), start() { startSimulation(state, DEFAULT_CONFIG); },
   step(dt, input) {
     const target = autoPlay ? session.snapshot().scheduledReturns[0]?.target ?? state.paddle : input.target;
-    const result = stepSimulation(state, DEFAULT_CONFIG, dt, { target }); metrics.events.push(...result.events);
+    const result = stepSimulation(state, DEFAULT_CONFIG, dt, autoPlay ? { target } : input); metrics.events.push(...result.events);
     metrics.smashDepartures += result.events.filter(event => event.kind === 'opponent-hit' && result.snapshot.balls.find(ball => ball.id === event.ballId)?.smash).length;
     return result;
   },

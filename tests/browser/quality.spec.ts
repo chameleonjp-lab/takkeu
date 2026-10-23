@@ -45,32 +45,40 @@ test('縦横・44pxボタン・200%文字・ラベル・安全余白を確認', 
   await page.addStyleTag({ content: 'html { font-size: 200%; }' });
   await page.getByRole('button', { name: '設定', exact: true }).click();
   await expect(page.getByRole('heading', { name: '設定', exact: true })).toBeVisible();
-  await expect(page.getByLabel('操作感度', { exact: true })).toBeVisible();
+  await expect(page.getByLabel('操作感度', { exact: true })).toHaveCount(0);
+  await expect(page.locator('[data-settings]').getByLabel('効果音の音量', { exact: true })).toBeVisible();
+  await expect(page.getByLabel('描画品質', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: '戻る', exact: true }).click();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: info.outputPath('home-text-200.png'), fullPage: true });
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
-  await page.getByRole('button', { name: '一時停止', exact: true }).click();
+  await page.keyboard.press('Escape');
   await page.screenshot({ path: info.outputPath('paused-text-200.png'), fullPage: true });
   const dialog = page.getByRole('dialog');
   await expect(dialog).toHaveAttribute('aria-modal', 'true');
   await expect(page.getByRole('button', { name: 'つづける', exact: true })).toBeFocused();
-  await page.keyboard.press('Shift+Tab'); await expect(page.getByRole('button', { name: 'ホームへ', exact: true })).toBeFocused();
+  await page.keyboard.press('Shift+Tab'); await expect(dialog.getByLabel('効果音の音量', { exact: true })).toBeFocused();
+  await page.keyboard.press('Tab'); await expect(page.getByRole('button', { name: 'つづける', exact: true })).toBeFocused();
   await page.getByRole('button', { name: 'ホームへ', exact: true }).click();
   await page.addStyleTag({ content: 'html { font-size: 100%; }' });
   for (const size of [{ width: 402, height: 874 }, { width: 874, height: 402 }, { width: 1280, height: 720 }]) {
     await page.setViewportSize(size); await page.clock.runFor(32);
     await page.getByRole('button', { name: 'はじめる', exact: true }).click();
     await page.clock.runFor(32);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth && document.documentElement.scrollHeight <= innerHeight + 1)).toBe(true);
+    await page.screenshot({ path: info.outputPath(`game-${size.width}x${size.height}.png`) });
+    await page.keyboard.press('Escape');
     for (const button of await page.getByRole('button').all()) {
       if (!await button.isVisible()) continue;
+      await button.scrollIntoViewIfNeeded();
       const box = (await button.boundingBox())!;
       expect(box.height).toBeGreaterThanOrEqual(44); expect(box.width).toBeGreaterThanOrEqual(44);
       expect(box.x).toBeGreaterThanOrEqual(12); expect(box.x + box.width).toBeLessThanOrEqual(size.width - 12);
+      await expect(button).toBeInViewport();
     }
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth && document.documentElement.scrollHeight <= innerHeight + 1)).toBe(true);
-    await page.screenshot({ path: info.outputPath(`game-${size.width}x${size.height}.png`) });
-    await page.getByRole('link', { name: 'タッケウ' }).click();
+    await dialog.getByLabel('効果音の音量', { exact: true }).scrollIntoViewIfNeeded();
+    await expect(dialog.getByLabel('効果音の音量', { exact: true })).toBeInViewport();
+    await page.getByRole('button', { name: 'ホームへ', exact: true }).click();
   }
   await info.attach('menu-accessibility.yml', { body: await page.locator('main').ariaSnapshot(), contentType: 'text/yaml' });
 });

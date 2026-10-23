@@ -4,8 +4,8 @@ export type BallPhase = 'queued' | 'incoming' | 'outgoing' | 'waiting-return' | 
 export type GameEventKind = 'player-hit' | 'opponent-hit' | 'ball-lost' | 'milestone' | 'smash-warning' | 'game-over' | 'table-bounce';
 export type Point3 = Readonly<{ x: number; y: number; z: number }>;
 export type PaddlePoint = Readonly<{ x: number; y: number }>;
-export type InputFrame = Readonly<{ target: PaddlePoint }>;
-export type InputSample = Readonly<{ at: number; target: PaddlePoint }>;
+export type InputFrame = Readonly<{ target: PaddlePoint; samples?: readonly InputSample[] }>;
+export type InputSample = Readonly<{ at: number; target: PaddlePoint; kind?: 'place' | 'move' | 'release' }>;
 export type GameEvent = Readonly<{
   id: string; runId: string; kind: GameEventKind; time: number;
   ballId?: number; milestone?: number;

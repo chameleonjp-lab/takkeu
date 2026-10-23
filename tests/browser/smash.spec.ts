@@ -10,7 +10,9 @@ test('450の予告はミュート・390・420・落球後4球・停止中でも�
   await page.evaluate(() => window.stage2.beginSmash(450));
   const plan = await page.evaluate(() => window.stage2.snapshot().scheduledReturns.find(p => p.ballId === 1)!);
   expect(plan.smash).toBe(true);
+  await page.keyboard.press('Escape');
   await page.getByRole('button', { name: '音：オン', exact: true }).click();
+  await page.getByRole('button', { name: 'つづける', exact: true }).click();
   expect(await page.evaluate(() => window.stage2.muted())).toBe(true);
   const warning = page.locator('[data-smash-warning]');
   await expect(warning).toBeVisible();
@@ -21,7 +23,7 @@ test('450の予告はミュート・390・420・落球後4球・停止中でも�
   const beforePulse = await warning.screenshot();
   await page.evaluate(() => window.stage2.advance(0.15));
   expect(beforePulse.equals(await warning.screenshot())).toBe(true);
-  await page.getByRole('button', { name: '一時停止', exact: true }).click();
+  await page.keyboard.press('Escape');
   const paused = await page.evaluate(() => window.stage2.snapshot());
   await page.evaluate(() => window.stage2.advance(2));
   expect(await page.evaluate(() => window.stage2.snapshot())).toEqual(paused);

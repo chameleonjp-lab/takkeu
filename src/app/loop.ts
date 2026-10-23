@@ -26,7 +26,7 @@ export function createLoop(options: LoopOptions) {
     accumulator = Math.min(catchUpBudget(), accumulator + elapsed);
     while (accumulator + 1e-10 >= config.fixedDt && stepsSinceFrame < config.maxStepsPerFrame) {
       const time = session.snapshot().simTime;
-      const result = session.step(config.fixedDt, timeline.sampleAt(time));
+      const result = session.step(config.fixedDt, timeline.take(time, time + config.fixedDt));
       pendingEvents.push(...result.events);
       options.onEvents(result.events);
       accumulator = Math.max(0, accumulator - config.fixedDt);

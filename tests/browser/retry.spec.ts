@@ -10,7 +10,7 @@ test('再挑戦20回・ホーム往復20回でループ・購読・描画資源�
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   // Warm every shader/geometry once before comparing the same running state.
   await page.evaluate(() => {window.stage3.show(555);window.stage3.autoPlay(true);}); await page.clock.runFor(1000);
-  await page.getByRole('button', { name: '一時停止', exact: true }).click();
+  await page.keyboard.press('Escape');
   await page.getByRole('button', { name: '最初からやり直す', exact: true }).click(); await page.clock.runFor(32);
   await page.evaluate(()=>window.stage3.autoPlay(false));
   const measure = () => page.evaluate(() => ({ ...window.runtimeProbe.counts(), resources: window.stage3.resources(), views: window.stage3.metrics().viewCreates }));
@@ -25,7 +25,8 @@ test('再挑戦20回・ホーム往復20回でループ・購読・描画資源�
     expect(await page.evaluate(() => window.stage3.snapshot().score)).toBe(0);
   }
   for (let i = 0; i < 20; i++) {
-    await page.getByRole('link', { name: 'タッケウ' }).click();
+    await page.keyboard.press('Escape');
+    await page.getByRole('button', { name: 'ホームへ', exact: true }).click();
     await page.getByRole('button', { name: 'はじめる', exact: true }).click(); await page.clock.runFor(32);
     const row = await measure(); rows.push({ kind: 'home', i, ...row }); expect(row).toEqual(baseline);
     expect(await page.evaluate(() => window.runtimeProbe.liveVoices())).toBeLessThanOrEqual(1);

@@ -34,7 +34,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     start, retry: start, pause: () => pause('user'), resume, home,
     toggleSound() { updatePreferences({ muted: !preferences.muted }); if (!preferences.muted) void unlockAudio(); },
     volume(value) { updatePreferences({ volume: value }); void unlockAudio(); },
-    sensitivity(value) { updatePreferences({ sensitivity: value }); },
+    retryAudio() { void unlockAudio(); },
     quality(value) { updatePreferences({ quality: value }); resizeView(); },
   });
   function persist(): void { screens.setStorageAvailable(savePreferences(storage, preferences)); }
@@ -51,22 +51,28 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   }
   const loop = createLoop({ session, timeline, config, onEvents: events => audio.consume(events), onPause: pause });
   const swipe = createControls(screens.surface, {
-    session, timeline, loop, config, sensitivity: () => preferences.sensitivity,
-    mapping: { screen: { left: 0, top: 0, width: 1, height: 1 }, world: { minX: config.paddleMinX, maxX: config.paddleMaxX, minY: config.paddleMinY, maxY: config.paddleMaxY } },
+    session, timeline, loop, config,
+    mapping: { screen: { left: 0, top: 0, width: 0, height: 0 }, toWorld: () => null },
     onInterruption: () => pause('input-lost'),
+    onPauseGesture: () => pause('user'),
   });
   async function unlockAudio(): Promise<void> {
     const attempt = ++unlockAttempt;
     const ready = await audio.unlock();
     if (!disposed && attempt === unlockAttempt) screens.setAudioReady(ready || preferences.muted);
   }
+  let fitted = '';
   function resizeView(): void {
     if (!view || !contextAvailable) return;
     const rect = screens.canvasWrap.getBoundingClientRect();
+    const key = `${rect.left}:${rect.top}:${rect.width}:${rect.height}:${window.devicePixelRatio}:${preferences.quality}`;
+    if (key === fitted) return;
     view.resize(rect.width, rect.height); swipe.updateMapping(view.inputMapping());
+    fitted = key;
     view.render(session.snapshot(), []);
   }
   function makeView(): GameView {
+    fitted = '';
     const next = (services.createView ?? createView)(screens.canvas, config);
     next.setQuality(preferences.quality); return next;
   }
@@ -79,11 +85,12 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     rememberBest(); persist();
     swipe.cancel(); session.reset(seed()); session.start();
     timeline.clear(INITIAL_PADDLE); audio.reset(session.snapshot().runId);
-    screens.setError(''); screens.render(session.snapshot()); resizeView();
+    fitted = ''; screens.setError(''); screens.render(session.snapshot()); resizeView();
     loop.resetClock(performance.now()); observedPhase = 'running'; void unlockAudio();
   }
   function silence(): void { unlockAttempt++; audio.suspend(); }
   function pause(reason: PauseReason): void {
+    if (session.snapshot().phase === 'paused' && observedPhase === 'paused') return;
     if (session.snapshot().phase === 'running') session.pause(reason);
     if (session.snapshot().phase !== 'paused') return;
     swipe.cancel(); timeline.clear(session.snapshot().paddle); silence(); rememberBest(); persist();
