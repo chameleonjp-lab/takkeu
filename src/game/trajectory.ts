@@ -25,8 +25,11 @@ export function sampleReturn(plan: ReturnPlan, from: Point3, time: number): Poin
 
 /** A continuous kink at the table, with the landing point safely inside it. */
 export function deflectBounce(plan: ReturnPlan, from: Point3, randomValue: number, config: GameConfig): ReturnPlan {
-  const direction = plan.target.x >= from.x ? 1 : -1;
+  // Put the turn outside both endpoints on the target's side. Overshooting
+  // toward the centre made every left-wing return catchable at the centre.
+  const direction = plan.target.x >= 0 ? 1 : -1;
+  const outside = direction > 0 ? Math.max(from.x, plan.target.x) : Math.min(from.x, plan.target.x);
   const edge = config.tableHalfWidth - config.ballRadius * 1.5;
-  const bounceX = Math.max(-edge, Math.min(edge, plan.target.x + direction * (0.18 + randomValue * 0.22)));
+  const bounceX = Math.max(-edge, Math.min(edge, outside + direction * (0.18 + randomValue * 0.22)));
   return { ...plan, bounceX };
 }
