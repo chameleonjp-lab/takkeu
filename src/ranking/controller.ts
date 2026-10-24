@@ -2,6 +2,7 @@ import { RANKING_CONFIG as config } from './config';
 import { createRankingClient, RankingError, validScore, validUuid } from './client';
 import type { PendingResult, Play, RankingApi } from './client';
 import type { StorageLike } from '../storage/preferences';
+import { createGuestPlayCounter } from './guestPlays';
 
 export type SubmissionStatus = 'idle' | 'submitting' | 'submitted' | 'retryable_failed' | 'permanent_failed';
 export type RankingState = Readonly<{ status: SubmissionStatus; pendingCount: number }>;
@@ -16,6 +17,7 @@ function isPending(value: unknown): value is PendingResult {
   return !!play && validUuid(play.startId) && validUuid(play.playId) && typeof play.displayName === 'string' && play.displayName.length > 0 && [...play.displayName].length <= config.maxNameLength && typeof play.normalizedName === 'string' && validUuid(row.submissionId) && validScore(row.score) && ['game_over', 'retire'].includes(row.resultType ?? '') && row.clientVersion === config.clientVersion;
 }
 export function createRankingController(storage: StorageLike, api: RankingApi = createRankingClient(), onChange: (state: RankingState) => void = () => {}) {
+  const guests = createGuestPlayCounter(storage, api);
   const read = (key: string): unknown => { try { return JSON.parse(storage.getItem(key) ?? 'null'); } catch { return null; } };
   const save = (key: string, value: unknown): void => { try { storage.setItem(key, JSON.stringify(value)); } catch { /* Keep the in-memory record and send immediately. */ } };
   const stored = read(config.pendingKey);
@@ -56,7 +58,7 @@ export function createRankingController(storage: StorageLike, api: RankingApi = 
     name(): string { const name = read(config.nameKey); try { return typeof name === 'string' ? validateName(name) : ''; } catch { return ''; } },
     async start(value: string): Promise<Play | null> {
       const displayName = validateName(value); save(config.nameKey, displayName);
-      if (!displayName) return null;
+      if (!displayName) { guests.record(); return null; }
       if (!pendingStart || pendingStart.displayName !== displayName) pendingStart = { startId: crypto.randomUUID(), displayName };
       save(config.startKey, pendingStart);
       const request = pendingStart;
@@ -71,6 +73,6 @@ export function createRankingController(storage: StorageLike, api: RankingApi = 
       pending.push({ play, submissionId: crypto.randomUUID(), score, resultType, clientVersion: config.clientVersion });
       persist(); void retry();
     },
-    retry,
+    async retry(): Promise<void> { await Promise.all([retry(), guests.retry()]); },
   };
 }

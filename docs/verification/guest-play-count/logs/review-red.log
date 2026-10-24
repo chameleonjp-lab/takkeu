@@ -1,0 +1,68 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/ranking.test.ts (23 tests | 3 failed) 56ms
+   × preserves offline guest starts from two tabs that opened before either starts 7ms
+   × an acknowledgement in one tab cannot erase another tabs offline start 4ms
+   × a new play requests a bounded follow-up drain when an older in-flight request fails 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/ranking.test.ts > preserves offline guest starts from two tabs that opened before either starts
+AssertionError: expected [ Array(1) ] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+  [
+-   "76297916-761c-4e11-b137-692cf220a951",
+    "de8c071b-4224-4420-83d4-ef7a82d76230",
+  ]
+
+ ❯ tests/unit/ranking.test.ts:107:71
+    105|   const ids = [offlineA.startGuest.mock.calls[0]![0], offlineB.startGu…
+    106|   const recovered = api(); await createRankingController(local, recove…
+    107|   expect(recovered.startGuest.mock.calls.map(args => args[0]).sort()).…
+       |                                                                       ^
+    108| });
+    109|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/ranking.test.ts > an acknowledgement in one tab cannot erase another tabs offline start
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/ranking.test.ts:119:77
+    117|   release(); await a.retry();
+    118|   const recovered = api(); await createRankingController(local, recove…
+    119|   expect(recovered.startGuest.mock.calls.some(args => args[0] === othe…
+       |                                                                             ^
+    120| });
+    121|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/ranking.test.ts > a new play requests a bounded follow-up drain when an older in-flight request fails
+AssertionError: expected "vi.fn()" to be called 3 times, but got 1 times
+ ❯ tests/unit/ranking.test.ts:128:29
+    126|   await controller.start(''); await controller.start('');
+    127|   reject(new RankingError(true, 'response lost')); await controller.re…
+    128|   expect(remote.startGuest).toHaveBeenCalledTimes(3);
+       |                             ^
+    129|   const ids = remote.startGuest.mock.calls.map(args => args[0]);
+    130|   expect(ids[0]).toBe(ids[1]); expect(ids[2]).not.toBe(ids[0]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 20 passed (23)
+   Start at  10:06:44
+   Duration  225ms (tests 47%, transform 38%, import 12%, worker 3%)
+

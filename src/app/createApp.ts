@@ -18,7 +18,11 @@ import { createRankingController, validateName } from '../ranking/controller';
 type AppServices = { createSession: typeof createSession; createView: typeof createView; createAudio: typeof createAudio; storage: StorageLike; rankingApi: RankingApi };
 export function createApp(root: HTMLElement, services: Partial<AppServices> = {}) {
   const config = DEFAULT_CONFIG;
-  const storage = services.storage ?? { getItem: key => window.localStorage.getItem(key), setItem: (key, value) => window.localStorage.setItem(key, value) };
+  const storage = services.storage ?? {
+    getItem: key => window.localStorage.getItem(key), setItem: (key, value) => window.localStorage.setItem(key, value),
+    removeItem: (key: string) => window.localStorage.removeItem(key), key: (index: number) => window.localStorage.key(index),
+    get length() { return window.localStorage.length; },
+  };
   let preferences = loadPreferences(storage);
   const seed = (): number => Date.now() >>> 0;
   const session = (services.createSession ?? createSession)(config, seed());
@@ -178,6 +182,12 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   });
   screens.setSound(preferences.muted); screens.setPreferences(preferences); persist(); screens.render(session.snapshot());
   void ranking.retry();
+  const retryOnline = () => {
+    // The connection can recover before an old request reports its failure.
+    // Retry again after that in-flight attempt settles so the event is not lost.
+    void ranking.retry().then(() => { if (!disposed) void ranking.retry(); });
+  };
+  window.addEventListener('online', retryOnline);
   let frameId = 0;
   const frame = (now: number): void => {
     if (disposed) return;
@@ -201,6 +211,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
       if (disposed) return;
       rememberBest(); persist(); disposed = true; unlockAttempt++;
       cancelAnimationFrame(frameId); swipe.dispose(); unbindLifecycle();
+      window.removeEventListener('online', retryOnline);
       view?.dispose(); void audio.dispose(); screens.dispose();
     },
   };

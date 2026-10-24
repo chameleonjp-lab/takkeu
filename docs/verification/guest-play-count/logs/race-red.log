@@ -1,0 +1,50 @@
+[WebServer] (node:14747) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:14771) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/ranking.spec.ts:99:1 › online復帰が古い通信の失敗より先でも送信待ちを再開する (6.0s)
+
+
+  1) [chromium] › tests/browser/ranking.spec.ts:99:1 › online復帰が古い通信の失敗より先でも送信待ちを再開する ──────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 2
+    Received: 1
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      107 |   await expect.poll(() => starts.length).toBe(1);
+      108 |   await page.evaluate(() => window.dispatchEvent(new Event('online'))); release();
+    > 109 |   await expect.poll(() => starts.length).toBe(2);
+          |                                          ^
+      110 |   expect(starts[1]).toEqual(starts[0]);
+      111 | });
+      112 |
+        at /workspace/takkeu/tests/browser/ranking.spec.ts:109:42
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    artifacts/guest-count/race-red/ranking-online復帰が古い通信の失敗より先でも送信待ちを再開する-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    artifacts/guest-count/race-red/ranking-online復帰が古い通信の失敗より先でも送信待ちを再開する-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: artifacts/guest-count/race-red/ranking-online復帰が古い通信の失敗より先でも送信待ちを再開する-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/guest-count/race-red/ranking-online復帰が古い通信の失敗より先でも送信待ちを再開する-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/guest-count/race-red/ranking-online復帰が古い通信の失敗より先でも送信待ちを再開する-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/ranking.spec.ts:99:1 › online復帰が古い通信の失敗より先でも送信待ちを再開する ───────────────

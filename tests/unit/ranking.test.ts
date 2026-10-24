@@ -9,12 +9,16 @@ const playId = '22222222-2222-4222-8222-222222222222';
 const submissionId = '33333333-3333-4333-8333-333333333333';
 const play = { startId, playId, displayName: 'テスト', normalizedName: 'テスト' };
 const pending = { play, submissionId, score: 42, resultType: 'game_over' as const, clientVersion: RANKING_CONFIG.clientVersion };
-const storage = () => { const data = new Map<string, string>(); return { getItem: (key: string) => data.get(key) ?? null, setItem: (key: string, value: string) => { data.set(key, value); } }; };
+const storage = () => { const data = new Map<string, string>(); return {
+  getItem: (key: string) => data.get(key) ?? null, setItem: (key: string, value: string) => { data.set(key, value); },
+  removeItem: (key: string) => { data.delete(key); }, key: (index: number) => [...data.keys()][index] ?? null,
+  get length() { return data.size; },
+}; };
 const acceptedStart = { accepted: true, start_id: startId, play_id: playId, display_name: 'テスト', normalized_name: 'テスト', game_slug: 'takkeu', client_version: RANKING_CONFIG.clientVersion };
 const acceptedFinish = { accepted: true, play_id: playId, game_slug: 'takkeu', result_type: 'game_over', reached_wave: 1, score: 42 };
 const acceptedScore = [{ accepted: true, result_submission_id: submissionId, result_play_id: playId, result_display_name: 'テスト', result_normalized_name: 'テスト', result_first_score: 42, result_best_score: 42, result_play_count: 1 }];
 const response = (data: unknown, status = 200) => new Response(JSON.stringify(data), { status });
-function api() { return { start: vi.fn(async (_startId: string, _name: string) => play), finish: vi.fn(async (_result: PendingResult) => {}), submit: vi.fn(async (_result: PendingResult) => {}), top: vi.fn(async () => []) }; }
+function api() { return { start: vi.fn(async (_startId: string, _name: string) => play), startGuest: vi.fn(async (_startId: string) => {}), finish: vi.fn(async (_result: PendingResult) => {}), submit: vi.fn(async (_result: PendingResult) => {}), top: vi.fn(async () => []) }; }
 afterEach(() => vi.useRealTimers());
 
 it('accepts guests, trims names and counts Unicode characters without silently truncating', () => {
@@ -24,14 +28,106 @@ it('accepts guests, trims names and counts Unicode characters without silently t
   expect(() => validateName('あ'.repeat(21))).toThrow('20');
 });
 
-it('a guest starts without any ranking request, even with unavailable storage', async () => {
+it('counts a guest start without a name or score, even with unavailable storage', async () => {
   const remote = api();
   const local = { getItem() { throw Error('blocked'); }, setItem() { throw Error('blocked'); } };
   const controller = createRankingController(local, remote);
   expect(await controller.start('')).toBeNull();
   controller.finish(null, 8, 'game_over');
   await controller.retry();
+  expect(remote.startGuest).toHaveBeenCalledTimes(1);
+  expect(remote.startGuest.mock.calls[0]![0]).toMatch(/^[0-9a-f-]{36}$/);
   expect(remote.start).not.toHaveBeenCalled(); expect(remote.submit).not.toHaveBeenCalled();
+  expect(remote.finish).not.toHaveBeenCalled();
+});
+
+it('queues distinct guest plays while an earlier count is awaiting acknowledgement', async () => {
+  const local = storage(), remote = api(); let release!: () => void;
+  remote.startGuest.mockImplementationOnce(() => new Promise<void>(resolve => { release = resolve; }));
+  const controller = createRankingController(local, remote);
+  expect(await controller.start('')).toBeNull(); expect(await controller.start('')).toBeNull();
+  expect(remote.startGuest).toHaveBeenCalledTimes(1);
+  release(); await controller.retry();
+  expect(remote.startGuest).toHaveBeenCalledTimes(2);
+  expect(new Set(remote.startGuest.mock.calls.map(args => args[0])).size).toBe(2);
+  expect(remote.start).not.toHaveBeenCalled(); expect(remote.submit).not.toHaveBeenCalled();
+});
+
+it('retries an acknowledged guest with the same ID after a lost response and reload', async () => {
+  const local = storage(), remote = api(), counted = new Set<string>();
+  remote.startGuest.mockImplementationOnce(async id => { counted.add(id); throw new RankingError(true, 'response lost'); });
+  remote.startGuest.mockImplementation(async id => { counted.add(id); });
+  const controller = createRankingController(local, remote);
+  await controller.start(''); await Promise.resolve(); await Promise.resolve();
+  const original = remote.startGuest.mock.calls[0]![0];
+  const reloaded = createRankingController(local, remote); await reloaded.retry();
+  expect(remote.startGuest.mock.calls.map(args => args[0])).toEqual([original, original]);
+  expect(counted.size).toBe(1);
+  await reloaded.retry(); expect(remote.startGuest).toHaveBeenCalledTimes(2);
+});
+
+it('keeps failed guest counts separate from named scores and does not block named starts', async () => {
+  const remote = api(); remote.startGuest.mockRejectedValue(new RankingError(true, 'offline'));
+  const controller = createRankingController(storage(), remote);
+  await controller.start(''); expect(await controller.start('テスト')).toEqual(play);
+  controller.finish(play, 42, 'game_over'); await controller.retry();
+  expect(remote.submit.mock.calls.map(args => args[0].score)).toEqual([42]);
+  expect(controller.state()).toEqual({ status: 'submitted', pendingCount: 0 });
+});
+
+it('continues later guest counts after one permanently rejected count', async () => {
+  const remote = api(); let reject!: (error: Error) => void;
+  remote.startGuest.mockImplementationOnce(() => new Promise((_resolve, no) => { reject = no; }));
+  const controller = createRankingController(storage(), remote);
+  await controller.start(''); await controller.start('');
+  reject(new RankingError(false, 'invalid')); await controller.retry();
+  expect(remote.startGuest).toHaveBeenCalledTimes(2);
+  await controller.retry(); expect(remote.startGuest).toHaveBeenCalledTimes(2);
+});
+
+it('sends guest count-only RPC fields and validates its acknowledgement', async () => {
+  const calls: unknown[] = [];
+  const client = createRankingClient(async (_input, init) => {
+    calls.push(JSON.parse(String(init!.body)));
+    return response({ accepted: true, start_id: startId, play_id: playId, game_slug: 'takkeu', client_version: RANKING_CONFIG.clientVersion });
+  });
+  await client.startGuest(startId);
+  expect(calls).toEqual([{ p_start_id: startId, p_game_slug: 'takkeu', p_client_version: RANKING_CONFIG.clientVersion }]);
+  const wrong = createRankingClient(async () => response({ accepted: true, start_id: submissionId, play_id: playId, game_slug: 'takkeu', client_version: RANKING_CONFIG.clientVersion }));
+  await expect(wrong.startGuest(startId)).rejects.toMatchObject({ retryable: false });
+});
+
+it('preserves offline guest starts from two tabs that opened before either starts', async () => {
+  const local = storage(), offlineA = api(), offlineB = api();
+  offlineA.startGuest.mockRejectedValue(new RankingError(true, 'offline')); offlineB.startGuest.mockRejectedValue(new RankingError(true, 'offline'));
+  const a = createRankingController(local, offlineA), b = createRankingController(local, offlineB);
+  await a.start(''); await b.start(''); await Promise.resolve(); await Promise.resolve();
+  const ids = [offlineA.startGuest.mock.calls[0]![0], offlineB.startGuest.mock.calls[0]![0]];
+  const recovered = api(); await createRankingController(local, recovered).retry();
+  expect(recovered.startGuest.mock.calls.map(args => args[0]).sort()).toEqual(ids.sort());
+});
+
+it('an acknowledgement in one tab cannot erase another tabs offline start', async () => {
+  const local = storage(), first = api(), offline = api(); let release!: () => void;
+  first.startGuest.mockImplementationOnce(() => new Promise<void>(resolve => { release = resolve; }));
+  offline.startGuest.mockRejectedValue(new RankingError(true, 'offline'));
+  const a = createRankingController(local, first), b = createRankingController(local, offline);
+  await a.start(''); await b.start(''); await Promise.resolve(); await Promise.resolve();
+  const otherId = offline.startGuest.mock.calls[0]![0];
+  release(); await a.retry();
+  const recovered = api(); await createRankingController(local, recovered).retry();
+  expect(recovered.startGuest.mock.calls.some(args => args[0] === otherId)).toBe(true);
+});
+
+it('a new play requests a bounded follow-up drain when an older in-flight request fails', async () => {
+  const remote = api(); let reject!: (reason: Error) => void;
+  remote.startGuest.mockImplementationOnce(() => new Promise<void>((_ok, no) => { reject = no; }));
+  const controller = createRankingController(storage(), remote);
+  await controller.start(''); await controller.start('');
+  reject(new RankingError(true, 'response lost')); await controller.retry();
+  expect(remote.startGuest).toHaveBeenCalledTimes(3);
+  const ids = remote.startGuest.mock.calls.map(args => args[0]);
+  expect(ids[0]).toBe(ids[1]); expect(ids[2]).not.toBe(ids[0]);
 });
 
 it('reuses the start identifier after an ambiguous failure and across reloads', async () => {
