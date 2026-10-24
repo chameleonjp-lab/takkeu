@@ -28,14 +28,15 @@ describe('累計の進行', () => {
       ...Array.from({ length: 172 }, (_, i) => 280 + i)])].sort((a,b) => a-b));
     expect(all.addedBalls).toBe(461);
   });
-  it('毎ラリー加速し、初期調整値と上限2.6を保つ', () => {
+  it('毎ラリー加速し、初期調整値と後半の有限上限を保つ', () => {
     expect(speedMultiplier(0)).toBe(1);
     expect(speedMultiplier(1)).toBeGreaterThan(1);
     expect(speedMultiplier(2)).toBeGreaterThan(speedMultiplier(1));
     expect(speedMultiplier(4)).toBeLessThan(speedMultiplier(5));
     expect(speedMultiplier(5)).toBeCloseTo(1 + 1.6 * (1 - Math.exp(-5 / 90)), 12);
     expect(speedMultiplier(450)).toBeLessThan(2.6);
-    expect(speedMultiplier(10000)).toBeLessThanOrEqual(2.6);
+    expect(speedMultiplier(299)).toBeCloseTo(2.542283869875054, 12);
+    expect(speedMultiplier(10000)).toBeCloseTo(2.605771613012495, 12);
     expect(speedMultiplier(10) - speedMultiplier(5)).toBeLessThan(speedMultiplier(5) - speedMultiplier(0));
   });
 });

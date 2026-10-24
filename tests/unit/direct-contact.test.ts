@@ -119,10 +119,10 @@ describe('時刻付き絶対操作と可視接触', () => {
   });
   it('現行最速の漸近球速・540以後スマッシュでも有効接触を拾い二重得点しない', () => {
     const duration = flightDuration(config, Infinity, true);
-    expect(duration).toBeCloseTo(2 / 2.6 / 1.6, 10);
+    expect(duration).toBeCloseTo(0.47970435849321924, 10);
     const s = fixture(2 - duration * .12);
     s.state.balls = [incoming(1, 2, point(0), s.state.simTime, duration)];
-    s.state.balls[0]!.plan = { ...s.state.balls[0]!.plan, smash: true, speedScore: 10000, speedMultiplier: 2.6, smashMultiplier: 1.6 };
+    s.state.balls[0]!.plan = { ...s.state.balls[0]!.plan, smash: true, speedScore: 10000, speedMultiplier: 2.605771613012495, smashMultiplier: 1.6 };
     const t = s.state.simTime + .002;
     const p = projectBall(sampleReturn(s.state.balls[0]!.plan, s.state.balls[0]!.from, t), config);
     const result = step(s, [{ kind: 'place', at: t, target: p }]);

@@ -35,18 +35,28 @@ it('1ラリーで複数球を得ても報酬スコアと視覚節目は一度だ
   expect(result.events.filter(e => e.kind === 'milestone').map(e => e.milestone)).toEqual([390]);
 });
 
-it.each([99, 100, 101, 419, 420, 479, 480, 490, 555])('%iの相手コートの待機球と飛行球の表示', score => {
+it.each([
+  [99, false], [100, false], [101, false], [419, true], [420, false],
+  [479, false], [480, true], [490, true], [555, true],
+])('%iの相手コートの待機球を隠し虹色の上の飛行球だけ表示', (score, flyingVisible) => {
   const base = scenario(score).snapshot(), objects = createObjects(DEFAULT_CONFIG);
   for (const phase of ['queued', 'waiting-return', 'incoming', 'outgoing', 'lost'] as const) {
     for (const x of [-0.5, 0.5]) {
       const ball = { id: 1, phase, position: { x, y: 0.5, z: -1 }, smash: false };
-      const snapshot = { ...base, balls: [ball] }, visible = score >= 100 && phase !== 'lost';
+      const snapshot = { ...base, balls: [ball] }, visible = flyingVisible && (phase === 'incoming' || phase === 'outgoing');
       expect(isBallVisible(ball, snapshot)).toBe(visible);
       applyPresentation(objects, snapshot);
       expect(objects.balls.size).toBe(visible ? 1 : 0);
     }
   }
   objects.dispose();
+});
+
+it.each([
+  [299, 0.7866942097611996], [300, 0.7864771901625253], [301, 0.7862626862718127],
+  [400, 0.7736636156854885], [450, 0.6168287475897574], [540, 0.48050883024859936],
+])('%iの実飛行時間は300目からの増速分1.1倍を反映する', (score, duration) => {
+  expect(measureFlight(score, 2).duration).toBeCloseTo(duration, 10);
 });
 
 it.each([99, 100, 101, 450, 500, 540, 555])('%iの実際の飛行は残球1球だけ1.2倍になる', score => {
