@@ -1,0 +1,214 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/ball-pool.test.ts (2 tests | 1 failed) 100ms
+   × 420の相手球・未解放面の影・落球を漏らさず、次の通常球は黄色へ戻す 20ms
+ ❯ tests/unit/presentation.test.ts (10 tests | 2 failed) 158ms
+   × 10の発光は5秒ちょうどで終わり、30の常時虹色が優先する 6ms
+   × 30〜419でも既存返球待ちと初回待ちを隠す 2ms
+ ❯ tests/unit/waiting-visibility.test.ts (30 tests | 23 failed) 311ms
+   × 0ラリーの待機球・失球は位置や全面虹色に関係なく描画されない 48ms
+   × 10ラリーの待機球・失球は位置や全面虹色に関係なく描画されない 11ms
+   × 30ラリーの待機球・失球は位置や全面虹色に関係なく描画されない 18ms
+   × 70ラリーの待機球・失球は位置や全面虹色に関係なく描画されない 32ms
+   × 189ラリーの待機球・失球は位置や全面虹色に関係なく描画されない 26ms
+   × 190ラリーの待機球・失球は位置や全面虹色に関係なく描画されない 18ms
+   × 239ラリーの待機球・失球は位置や全面虹色に関係なく描画されない 15ms
+   × 240ラリーの待機球・失球は位置や全面虹色に関係なく描画されない 14ms
+   × 419ラリーの待機球・失球は位置や全面虹色に関係なく描画されない 18ms
+   × 420ラリーの待機球・失球は位置や全面虹色に関係なく描画されない 24ms
+   × 479ラリーの待機球・失球は位置や全面虹色に関係なく描画されない 25ms
+   × 480ラリーの待機球・失球は位置や全面虹色に関係なく描画されない 20ms
+   × 490ラリーの待機球・失球は位置や全面虹色に関係なく描画されない 14ms
+   × 555ラリーの待機球・失球は位置や全面虹色に関係なく描画されない 20ms
+   × 相手側の飛行球は解放コートだけ（30） 0ms
+   × 相手側の飛行球は解放コートだけ（70） 0ms
+   × 相手側の飛行球は解放コートだけ（189） 0ms
+   × 相手側の飛行球は解放コートだけ（190） 1ms
+   × 相手側の飛行球は解放コートだけ（239） 1ms
+   × 相手到達前→到達→待機→打球→自側まで表示と残球を同期する（70） 1ms
+   × 相手到達前→到達→待機→打球→自側まで表示と残球を同期する（190） 2ms
+   × 相手到達前→到達→待機→打球→自側まで表示と残球を同期する（240） 1ms
+   × 相手到達前→到達→待機→打球→自側まで表示と残球を同期する（490） 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 26 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/ball-pool.test.ts > 420の相手球・未解放面の影・落球を漏らさず、次の通常球は黄色へ戻す
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ tests/unit/ball-pool.test.ts:38:30
+     36|   const snapshot = scenario(30).snapshot();
+     37|   applyPresentation(objects, { ...snapshot, balls: [{ ...balls(1, 1)[0…
+     38|   expect(objects.balls.size).toBe(0);
+       |                              ^
+     39|   applyPresentation(objects, { ...scenario(190).snapshot(), balls: [{ …
+     40|   expect(objects.balls.get(1)!.shadow.visible).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/26]⎯
+
+ FAIL  tests/unit/presentation.test.ts > 10の発光は5秒ちょうどで終わり、30の常時虹色が優先する
+AssertionError: expected { visible: true, rainbow: false } to deeply equal { visible: false, rainbow: false }
+
+- Expected
++ Received
+
+  {
+    "rainbow": false,
+-   "visible": false,
++   "visible": true,
+  }
+
+ ❯ tests/unit/presentation.test.ts:57:49
+     55|   expect(resolvePresentation(state()).balls[1]).toEqual({ visible: tru…
+     56|   s.state.simTime = 25;
+     57|   expect(resolvePresentation(state()).balls[1]).toEqual({ visible: fal…
+       |                                                 ^
+     58|   s.state.progression = { ...s.state.progression, appliedMilestones: […
+     59|   expect(resolvePresentation(state()).balls[1]).toEqual({ visible: tru…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/26]⎯
+
+ FAIL  tests/unit/presentation.test.ts > 30〜419でも既存返球待ちと初回待ちを隠す
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/presentation.test.ts:85:74
+     83|   const s = scenario(30).snapshot();
+     84|   const ball = { id: 1, phase: 'waiting-return', position: { x: 0, y: …
+     85|   expect(resolvePresentation({ ...s, balls: [ball] }).balls[1]!.visibl…
+       |                                                                          ^
+     86|   expect(resolvePresentation({ ...s, balls: [{ ...ball, phase: 'queued…
+     87| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/26]⎯
+
+ FAIL  tests/unit/waiting-visibility.test.ts > 0ラリーの待機球・失球は位置や全面虹色に関係なく描画されない
+ FAIL  tests/unit/waiting-visibility.test.ts > 10ラリーの待機球・失球は位置や全面虹色に関係なく描画されない
+ FAIL  tests/unit/waiting-visibility.test.ts > 30ラリーの待機球・失球は位置や全面虹色に関係なく描画されない
+ FAIL  tests/unit/waiting-visibility.test.ts > 70ラリーの待機球・失球は位置や全面虹色に関係なく描画されない
+ FAIL  tests/unit/waiting-visibility.test.ts > 189ラリーの待機球・失球は位置や全面虹色に関係なく描画されない
+ FAIL  tests/unit/waiting-visibility.test.ts > 190ラリーの待機球・失球は位置や全面虹色に関係なく描画されない
+ FAIL  tests/unit/waiting-visibility.test.ts > 239ラリーの待機球・失球は位置や全面虹色に関係なく描画されない
+ FAIL  tests/unit/waiting-visibility.test.ts > 240ラリーの待機球・失球は位置や全面虹色に関係なく描画されない
+ FAIL  tests/unit/waiting-visibility.test.ts > 419ラリーの待機球・失球は位置や全面虹色に関係なく描画されない
+ FAIL  tests/unit/waiting-visibility.test.ts > 420ラリーの待機球・失球は位置や全面虹色に関係なく描画されない
+ FAIL  tests/unit/waiting-visibility.test.ts > 479ラリーの待機球・失球は位置や全面虹色に関係なく描画されない
+ FAIL  tests/unit/waiting-visibility.test.ts > 480ラリーの待機球・失球は位置や全面虹色に関係なく描画されない
+ FAIL  tests/unit/waiting-visibility.test.ts > 490ラリーの待機球・失球は位置や全面虹色に関係なく描画されない
+ FAIL  tests/unit/waiting-visibility.test.ts > 555ラリーの待機球・失球は位置や全面虹色に関係なく描画されない
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/waiting-visibility.test.ts:23:57
+     21|     expect(batches.some(b => b.count > 0)).toBe(true);
+     22|     const snapshot = { ...base, balls: [ball(phase, 0.5, z)] }, before…
+     23|     expect(isBallVisible(snapshot.balls[0]!, snapshot)).toBe(false);
+       |                                                         ^
+     24|     applyPresentation(objects, snapshot);
+     25|     expect(objects.balls.size).toBe(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/26]⎯
+
+ FAIL  tests/unit/waiting-visibility.test.ts > 相手側の飛行球は解放コートだけ（30）
+ FAIL  tests/unit/waiting-visibility.test.ts > 相手側の飛行球は解放コートだけ（70）
+ FAIL  tests/unit/waiting-visibility.test.ts > 相手側の飛行球は解放コートだけ（189）
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/waiting-visibility.test.ts:39:51
+     37|   const base = scenario(score as number).snapshot();
+     38|   for (const phase of ['incoming', 'outgoing'] as const) {
+     39|     expect(isBallVisible(ball(phase, 0.5), base)).toBe(right);
+       |                                                   ^
+     40|     expect(isBallVisible(ball(phase, -0.5), base)).toBe(left);
+     41|     expect(isBallVisible(ball(phase, 0.5, 0), base)).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/26]⎯
+
+ FAIL  tests/unit/waiting-visibility.test.ts > 相手側の飛行球は解放コートだけ（190）
+ FAIL  tests/unit/waiting-visibility.test.ts > 相手側の飛行球は解放コートだけ（239）
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/waiting-visibility.test.ts:40:52
+     38|   for (const phase of ['incoming', 'outgoing'] as const) {
+     39|     expect(isBallVisible(ball(phase, 0.5), base)).toBe(right);
+     40|     expect(isBallVisible(ball(phase, -0.5), base)).toBe(left);
+       |                                                    ^
+     41|     expect(isBallVisible(ball(phase, 0.5, 0), base)).toBe(true);
+     42|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/26]⎯
+
+ FAIL  tests/unit/waiting-visibility.test.ts > 相手到達前→到達→待機→打球→自側まで表示と残球を同期する（70）
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/waiting-visibility.test.ts:52:63
+     50|   s.state.balls = [{ ...out, phase: 'outgoing', position: sampleReturn…
+     51|     incoming(2, 20.02 + duration, { x: 0.5, y: 0.6 })];
+     52|   expect(isBallVisible(s.snapshot().balls[0]!, s.snapshot())).toBe(sco…
+       |                                                               ^
+     53|   while (s.state.balls[0]!.phase === 'outgoing') s.step(missPaddle);
+     54|   expect(s.state.balls[0]!.phase).toBe('waiting-return');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/26]⎯
+
+ FAIL  tests/unit/waiting-visibility.test.ts > 相手到達前→到達→待機→打球→自側まで表示と残球を同期する（190）
+ FAIL  tests/unit/waiting-visibility.test.ts > 相手到達前→到達→待機→打球→自側まで表示と残球を同期する（240）
+ FAIL  tests/unit/waiting-visibility.test.ts > 相手到達前→到達→待機→打球→自側まで表示と残球を同期する（490）
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/waiting-visibility.test.ts:55:63
+     53|   while (s.state.balls[0]!.phase === 'outgoing') s.step(missPaddle);
+     54|   expect(s.state.balls[0]!.phase).toBe('waiting-return');
+     55|   expect(isBallVisible(s.snapshot().balls[0]!, s.snapshot())).toBe(fal…
+       |                                                               ^
+     56|   const target = s.state.balls[0]!, waiting = structuredClone(target.p…
+     57|   while (s.state.simTime + DEFAULT_CONFIG.fixedDt < departAt - 1e-10) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/26]⎯
+
+
+ Test Files  3 failed (3)
+      Tests  26 failed | 16 passed (42)
+   Start at  08:30:43
+   Duration  589ms (tests 61%, transform 21%, import 17%, worker 1%)
+

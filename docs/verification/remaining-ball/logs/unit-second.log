@@ -1,0 +1,38 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit
+
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/remaining-ball-speed.test.ts (50 tests | 1 failed) 82ms
+   ❯ 残球数による実際の飛行時間 (36)
+     × 既存の最短時間へ達しても追加2倍が実速度へ反映される 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 既存の最短時間へ達しても追加2倍が実速度へ反映される
+AssertionError: expected 0.9619495347225993 to be close to 1.4, received difference is 0.43805046527740066, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:22:52
+     20|   it('既存の最短時間へ達しても追加2倍が実速度へ反映される', () => {
+     21|     const config = { ...DEFAULT_CONFIG, minimumVisibleSeconds: 0.7 };
+     22|     expect(measureFlight(101, 4, config).duration).toBeCloseTo(1.4, 8);
+       |                                                    ^
+     23|     expect(measureFlight(101, 1, config).duration).toBeCloseTo(0.7, 8);
+     24|     expect(measureFlight(540, 4).duration / measureFlight(540, 1).dura…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 40 passed (41)
+      Tests  1 failed | 354 passed (355)
+   Start at  08:32:33
+   Duration  5.80s (tests 50%, environment 36%, import 9%, transform 4%, worker 1%)
+
+    Isolate  41 workers spawned · ~213ms startup each (spawn + environment, per file)
+             at least ~2.69s faster with isolate: false — reuses workers across files instead of one per file
+

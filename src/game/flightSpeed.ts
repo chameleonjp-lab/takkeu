@@ -8,7 +8,8 @@ import type { GameConfig, ReturnPlan } from './types';
 
 /** Keep the same normalized trajectory point when the entire rally accelerates. */
 export function retimeFlight(plan: ReturnPlan, time: number, oldScore: number, score: number, config: GameConfig): ReturnPlan {
-  const ratio = flightDuration(config, oldScore, plan.smash) / flightDuration(config, score, plan.smash);
+  const ratio = flightDuration(config, oldScore, plan.smash, undefined, plan.remainingBallMultiplier)
+    / flightDuration(config, score, plan.smash, undefined, plan.remainingBallMultiplier);
   return { ...plan, departAt: time + (plan.departAt - time) / ratio,
     netCrossAt: time + (plan.netCrossAt - time) / ratio, arriveAt: time + (plan.arriveAt - time) / ratio,
     speedMultiplier: speedMultiplier(score), speedScore: score,

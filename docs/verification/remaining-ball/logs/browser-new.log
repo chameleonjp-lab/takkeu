@@ -1,0 +1,101 @@
+[WebServer] (node:4153) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:4177) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/remaining-ball.spec.ts:7:1 › iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する (1.2s)
+(node:4264) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  2 [chromium] › tests/browser/remaining-ball.spec.ts:47:1 › 実アプリで加速球の一時停止・手動再開・リトライを保つ (1.7s)
+  ✓  3 [chromium] › tests/browser/remaining-ball.spec.ts:71:1 › ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる (745ms)
+(node:4414) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  4 [webkit] › tests/browser/remaining-ball.spec.ts:7:1 › iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する (2.8s)
+(node:4500) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  5 [webkit] › tests/browser/remaining-ball.spec.ts:47:1 › 実アプリで加速球の一時停止・手動再開・リトライを保つ (3.2s)
+  ✓  6 [webkit] › tests/browser/remaining-ball.spec.ts:71:1 › ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる (1.0s)
+
+
+  1) [chromium] › tests/browser/remaining-ball.spec.ts:7:1 › iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する 
+
+    Error: 70/queued must have no residual pixels
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      14 |     for (const phase of ['queued', 'waiting-return', 'lost'] as const) {
+      15 |       await page.evaluate(({ score, phase }) => window.remaining.show(score, phase), { score, phase });
+    > 16 |       expect((await page.locator('canvas').screenshot()).equals(absent), `${score}/${phase} must have no residual pixels`).toBe(true);
+         |                                                                                                                            ^
+      17 |       expect(await page.evaluate(() => window.remaining.presentation().balls[1]!.visible)).toBe(false);
+      18 |       if (phase === 'waiting-return') await page.screenshot({ path: info.outputPath(`iphone-${score}-waiting.png`) });
+      19 |     }
+        at /workspace/takkeu/tests/browser/remaining-ball.spec.ts:16:124
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    artifacts/remaining-ball/browser-new/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    artifacts/remaining-ball/browser-new/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: artifacts/remaining-ball/browser-new/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/remaining-ball/browser-new/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/remaining-ball/browser-new/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit] › tests/browser/remaining-ball.spec.ts:7:1 › iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する ─
+
+    Error: 70/queued must have no residual pixels
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      14 |     for (const phase of ['queued', 'waiting-return', 'lost'] as const) {
+      15 |       await page.evaluate(({ score, phase }) => window.remaining.show(score, phase), { score, phase });
+    > 16 |       expect((await page.locator('canvas').screenshot()).equals(absent), `${score}/${phase} must have no residual pixels`).toBe(true);
+         |                                                                                                                            ^
+      17 |       expect(await page.evaluate(() => window.remaining.presentation().balls[1]!.visible)).toBe(false);
+      18 |       if (phase === 'waiting-return') await page.screenshot({ path: info.outputPath(`iphone-${score}-waiting.png`) });
+      19 |     }
+        at /workspace/takkeu/tests/browser/remaining-ball.spec.ts:16:124
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    artifacts/remaining-ball/browser-new/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    artifacts/remaining-ball/browser-new/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: artifacts/remaining-ball/browser-new/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/remaining-ball/browser-new/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/remaining-ball/browser-new/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/browser/remaining-ball.spec.ts:7:1 › iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する 
+    [webkit] › tests/browser/remaining-ball.spec.ts:7:1 › iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する ──
+  4 passed (13.9s)

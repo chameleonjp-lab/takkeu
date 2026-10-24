@@ -1,0 +1,114 @@
+{
+  "snapshot": {
+    "runId": "run-28",
+    "phase": "running",
+    "pauseReason": null,
+    "score": 490,
+    "simTime": 21.033333333333275,
+    "paddle": {
+      "x": -0.716574795094405,
+      "y": 0.2
+    },
+    "opponentPaddle": {
+      "x": 0.5,
+      "y": 0.6
+    },
+    "balls": [
+      {
+        "id": 1,
+        "phase": "incoming",
+        "position": {
+          "x": 0.5401767774723839,
+          "y": 0.4806079033666509,
+          "z": 0.0766227989960091
+        },
+        "smash": true
+      }
+    ],
+    "progression": {
+      "appliedMilestones": [
+        10,
+        30,
+        40,
+        70,
+        100,
+        130,
+        150,
+        160,
+        190,
+        210,
+        240,
+        270,
+        300,
+        330,
+        360,
+        380,
+        390,
+        410,
+        420,
+        450,
+        460,
+        470,
+        480,
+        490
+      ],
+      "ballGlowUntil": null,
+      "awardedBallCount": 58
+    },
+    "scheduledReturns": [
+      {
+        "ballId": 1,
+        "departAt": 20.87301576653377,
+        "netCrossAt": 21.027272027449172,
+        "arriveAt": 21.18152828836458,
+        "target": {
+          "x": 0.577315538056673,
+          "y": 0.32014100842177867
+        },
+        "smash": true,
+        "warningAt": 20.267340751979898,
+        "speedMultiplier": 2.5930876168414496,
+        "landingZ": 1.95,
+        "bounceY": 0.045,
+        "speedScore": 490,
+        "remainingBallMultiplier": 2,
+        "smashMultiplier": 1.25
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "run-28:1",
+      "runId": "run-28",
+      "kind": "smash-warning",
+      "time": 20.267340751979898,
+      "ballId": 1
+    },
+    {
+      "id": "run-28:2",
+      "runId": "run-28",
+      "kind": "table-bounce",
+      "time": 20.30102504366162,
+      "ballId": 2,
+      "position": {
+        "x": 0.5,
+        "y": 0.04500000000000379,
+        "z": 0.8580000000000043
+      }
+    },
+    {
+      "id": "run-28:3",
+      "runId": "run-28",
+      "kind": "ball-lost",
+      "time": 20.841463996978273,
+      "ballId": 2
+    },
+    {
+      "id": "run-28:4",
+      "runId": "run-28",
+      "kind": "opponent-hit",
+      "time": 20.87301576653377,
+      "ballId": 1
+    }
+  ]
+}

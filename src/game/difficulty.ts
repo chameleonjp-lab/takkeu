@@ -9,7 +9,14 @@ export function smashMultiplier(score: number): number {
   return score >= 540 ? DIFFICULTY.lateSmashSpeed : DIFFICULTY.smashSpeed;
 }
 
-export function flightDuration(config: GameConfig, score: number, smash: boolean, multiplier = speedMultiplier(score)): number {
+export function remainingBallMultiplier(score: number, count: number): number {
+  if (score < 100 || count >= 4) return 1;
+  return count === 1 ? 2 : count === 2 ? 1.5 : count === 3 ? 1.25 : 1;
+}
+
+export function flightDuration(config: GameConfig, score: number, smash: boolean, multiplier = speedMultiplier(score), remainingMultiplier = 1): number {
+  // Preserve the existing base/smash floor, then apply the independent bonus.
+  // Putting the bonus inside max() would silently cap the requested speed.
   return 2 * Math.max(smash ? DIFFICULTY.smashMinimumVisible : config.minimumVisibleSeconds,
-    config.normalVisibleSeconds / (multiplier * (smash ? smashMultiplier(score) : 1)));
+    config.normalVisibleSeconds / (multiplier * (smash ? smashMultiplier(score) : 1))) / remainingMultiplier;
 }
