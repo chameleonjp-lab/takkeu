@@ -9,6 +9,9 @@ export type InputSample = Readonly<{ at: number; target: PaddlePoint; kind?: 'pl
 export type GameEvent = Readonly<{
   id: string; runId: string; kind: GameEventKind; time: number;
   ballId?: number; milestone?: number;
+  /** Player contact facts, copied before replacing the incoming plan.
+   * Legacy events without these fields use the normal, base-stage sound. */
+  smashReturn?: boolean; rallyScore?: number;
   position?: Point3; effect?: 'racket-firework' | 'bounce-firework';
 }>;
 export type BallSnapshot = Readonly<{ id: number; phase: BallPhase; position: Point3; smash: boolean }>;

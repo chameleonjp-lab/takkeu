@@ -5,7 +5,9 @@ import type { GameEvent, GameEventKind } from '../../src/game/types';
 import { fakeAudioContext } from '../helpers/audioContext';
 
 const event = (kind: GameEventKind, id: string, runId = 'run-1'): GameEvent => ({ id, runId, kind, time: 0, ballId: 1 });
-describe('接触イベントから自他の音を生成', () => {
+// This legacy double intentionally lacks layered Web Audio nodes: fallback coverage.
+// Full-node path, bounds and fault injection live in layered-tones.test.ts.
+describe('接触イベントから自他の音を生成（保守的な単音fallback）', () => {
   it('不可視に関係なく自他で異なる波形と高さを作り、同じ接触は一度だけ発音する', async () => {
     const { context, voices } = fakeAudioContext();
     const audio = createAudio(DEFAULT_CONFIG, () => context);
@@ -63,10 +65,12 @@ it('4球を個別発音し、9音目では終了間近の音を短く消して�
   // The shorter player voice ends before the older warning voice.
   audio.consume([event('smash-warning', 'w'), ...Array.from({ length: 7 }, (_, i) => event('player-hit', String(i)))]);
   expect(voices).toHaveLength(8);
+  const naturalZeroRamps = ramps.filter(value => value === 0).length;
   audio.consume([event('opponent-hit', 'ninth')]);
   expect(voices).toHaveLength(9);
   // Natural stop is already scheduled for all voices; fade is observed via the gain ramp.
-  expect(ramps.filter(value => value === 0)).toHaveLength(1);
+  // One new natural envelope reaches zero plus the replaced voice's fade.
+  expect(ramps.filter(value => value === 0)).toHaveLength(naturalZeroRamps + 2);
   expect(voices[0]!.stops).toHaveLength(1);
   expect(voices[1]!.stops).toHaveLength(2);
   expect(voices[1]!.disconnected).toBe(false);

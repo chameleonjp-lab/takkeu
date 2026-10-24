@@ -45,11 +45,11 @@ test('打球ノード生成失敗を案内し、一時停止メニューから�
   }
   // Recovery must wait for the next new opponent hit, without replaying the
   // earlier failed player hit. Observe it before the next legitimate return.
-  expect(await page.evaluate(() => window.audioProbe.started)).toEqual(['sine']);
+  expect(await page.evaluate(() => window.audioProbe.started)).toEqual(['sine', 'triangle', 'square']);
   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('1');
   await page.clock.runFor(2600 - elapsed);
   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('1');
-  expect(await page.evaluate(() => window.audioProbe.started)).toEqual(['sine']);
+  expect(await page.evaluate(() => window.audioProbe.started)).toEqual(['sine', 'triangle', 'square']);
 });
 
 test('開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰', async ({ page }, info) => {

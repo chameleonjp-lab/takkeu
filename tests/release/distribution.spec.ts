@@ -1,6 +1,39 @@
 import { expect, test } from '../helpers/browserTest';
 import { execFileSync } from 'node:child_process';
 for (const [port, base] of [[4174, '/'], [4175, '/takkeu/']] as const) {
+  test(`実配布物 ${base} の初期HTMLに静的なOG・XカードがありPNGを配信する`, async ({ page, request }) => {
+    const origin = `http://127.0.0.1:${port}`;
+    const response = await request.get(origin + base);
+    expect(response.ok()).toBe(true);
+    const metadata = await page.evaluate(source => {
+      const html = new DOMParser().parseFromString(source, 'text/html');
+      return {
+        canonical: html.querySelector('link[rel="canonical"]')?.getAttribute('href'),
+        meta: Object.fromEntries([...html.querySelectorAll('meta[name], meta[property]')].map(node => [node.getAttribute('name') ?? node.getAttribute('property'), node.getAttribute('content')])),
+      };
+    }, await response.text());
+    const canonical = 'https://chameleonjp-lab.github.io/takkeu/';
+    expect(metadata.canonical).toBe(canonical);
+    expect(metadata.meta['og:url']).toBe(canonical);
+    expect(metadata.meta['og:type']).toBe('website');
+    expect(metadata.meta['og:locale']).toBe('ja_JP');
+    expect(metadata.meta['og:title']).toBe('タッケウ — つなげ、ラリー。');
+    expect(metadata.meta['twitter:title']).toBe('タッケウ — つなげ、ラリー。');
+    expect(metadata.meta['twitter:card']).toBe('summary_large_image');
+    for (const key of ['description', 'og:description', 'twitter:description']) expect(metadata.meta[key]).toBe('タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」。何ラリーつなげられる？');
+    for (const key of ['og:image:alt', 'twitter:image:alt']) expect(metadata.meta[key]).toBe('緑の卓球台と赤いラケットが映る卓球ゲーム「タッケウ」の画面。つなげ、ラリー。');
+    for (const key of ['og:image', 'og:image:secure_url', 'twitter:image']) expect(metadata.meta[key]).toBe(canonical + 'og-takkeu-v1.png');
+    expect(metadata.meta['og:image:type']).toBe('image/png');
+    expect(metadata.meta['og:image:width']).toBe('1200');
+    expect(metadata.meta['og:image:height']).toBe('630');
+    const image = await request.get(origin + base + 'og-takkeu-v1.png');
+    expect(image.ok()).toBe(true);
+    expect(image.headers()['content-type']).toContain('image/png');
+    const bytes = await image.body();
+    expect(bytes.subarray(0, 8).toString('hex')).toBe('89504e470d0a1a0a');
+    expect([bytes.readUInt32BE(16), bytes.readUInt32BE(20)]).toEqual([1200, 630]);
+  });
+
   test(`実配布物 ${base} の参照・開始・保存と開発機能の非混入`, async ({ page, request }) => {
     await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
     const origin = `http://127.0.0.1:${port}`, failures: string[] = [];

@@ -10,8 +10,8 @@ export function smashMultiplier(score: number): number {
 }
 
 export function remainingBallMultiplier(score: number, count: number): number {
-  if (score < 100 || count >= 4) return 1;
-  return count === 1 ? 2 : count === 2 ? 1.5 : count === 3 ? 1.25 : 1;
+  if (!Number.isInteger(score) || score < 100 || !Number.isInteger(count) || count < 1 || count >= 5) return 1;
+  return count === 1 ? 1.4 : count === 2 ? 1.3 : count === 3 ? 1.2 : 1.1;
 }
 
 export function flightDuration(config: GameConfig, score: number, smash: boolean, multiplier = speedMultiplier(score), remainingMultiplier = 1): number {

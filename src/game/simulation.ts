@@ -51,10 +51,10 @@ type Action = { kind: 'bounce' | 'hit' | 'lost' | 'ready' | 'warning' | 'depart'
 /** Advance an uncommitted part of a fixed tick, including zero-time input paths. */
 function advanceSegment(state: SimulationState, config: GameConfig, dt: number, target: PaddlePoint, deferEndContact = false): StepResult {
   const events: GameEvent[] = [];
-  const emit = (kind: GameEventKind, time: number, ballId?: number, milestone?: number, position?: Point3, effect?: GameEvent['effect']): void => {
+  const emit = (kind: GameEventKind, time: number, ballId?: number, milestone?: number, position?: Point3, effect?: GameEvent['effect'], contact?: Pick<GameEvent, 'smashReturn' | 'rallyScore'>): void => {
     events.push({ id: `${state.runId}:${++state.eventNumber}`, runId: state.runId, kind, time,
       ...(ballId === undefined ? {} : { ballId }), ...(milestone === undefined ? {} : { milestone }),
-      ...(position ? { position: { ...position } } : {}), ...(effect ? { effect } : {}) });
+      ...(position ? { position: { ...position } } : {}), ...(effect ? { effect } : {}), ...contact });
   };
   const end = state.simTime + dt;
   const previousPaddle = state.paddle;
@@ -101,11 +101,12 @@ function advanceSegment(state: SimulationState, config: GameConfig, dt: number, 
       ball.bounceEmitted = true;
       emit('table-bounce', time, ball.id, undefined, position, ball.phase === 'incoming' && state.score >= 530 ? 'bounce-firework' : undefined);
     } else if (kind === 'hit') {
+      const smashReturn = ball.plan.smash;
       state.score++;
       const at = paddleFraction!;
       const centre = { x: previousPaddle.x + (state.paddle.x - previousPaddle.x) * at,
         y: previousPaddle.y + (state.paddle.y - previousPaddle.y) * at, z: config.paddleZ };
-      emit('player-hit', time, ball.id, undefined, centre, state.score >= 520 ? 'racket-firework' : undefined);
+      emit('player-hit', time, ball.id, undefined, centre, state.score >= 520 ? 'racket-firework' : undefined, { smashReturn, rallyScore: state.score });
       ball.phase = 'outgoing';
       ball.from = position!;
       // Outgoing flights are generated to reach the opponent without a second contact.
