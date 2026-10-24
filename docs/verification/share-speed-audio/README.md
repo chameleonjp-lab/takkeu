@@ -1,6 +1,8 @@
 # X共有・残球速度・多層効果音の検証
 
-Draft PR: https://github.com/chameleonjp-lab/takkeu/pull/19 。merge・自動merge・手動公開・本番ランキング送信・実際のX投稿は行わない。
+> 状態更新（2026-10-24 15:37UTCのGitHub再確認）: PR #19はDraftとして作成した後、15:20:11UTCにアカウントchameleonjp-labによりmerge済みとなっていた。merge commitはb9b16af8400d63bc2657ef9b043bbc7a61e8440f、PR headは検証ソース9155b19b2d3cedaf24e7130d8d134f370b136728。assistantはmerge/auto-merge/手動公開を実行していない。追加の証拠commitは専用branch上で、mainへは未反映。#19本文から参照でき、新たなPR・revert・main書込みは行わない。
+
+PR: https://github.com/chameleonjp-lab/takkeu/pull/19 。以下の「Draft」は作成時の状態と依頼の方針を表す。assistantによるmerge・自動merge・手動公開・本番ランキング送信・実際のX投稿は行っていない。
 
 基準mainは依頼の `27ebee8fb5fa0d29f7f82e15244dd1fbd1a88de1` と一致。GitHubのopen PRなし、remote既存branchを確認して、新規partial cloneのclean作業ツリーから `feat/share-speed-layered-audio` を作成した。過去の大容量媒体は取得対象を絞り、既存証拠は削除していない。[計画](../../superpowers/plans/2026-10-24-share-speed-audio.md)、[経過・判断](progress.md)、[独立レビュー](review.md)を参照。
 

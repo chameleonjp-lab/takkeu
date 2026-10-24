@@ -58,4 +58,4 @@ Files: `src/audio/tones.ts`, `src/audio/audio.ts`, `src/game/{types,simulation}.
 - [x] 最終diffの独立レビュー、重要指摘は修正＋再検査。
 - [x] 文書・画像・音声・ログを追加し、一つのDraft PRを作成。base/head完全SHA・CI状態・未確認と公開後手順を記載。
 
-実行記録: [今回の検証](../../verification/share-speed-audio/README.md)。最終ソース9155b19、全unit477、配布8、CIブラウザ130。ローカル重複全件は63成功時に中止（exit130）し、CI完走と区別した。性能は測定完了・25ms目標未達。Draft PR#19を維持する。
+実行記録: [今回の検証](../../verification/share-speed-audio/README.md)。最終ソース9155b19、全unit477、配布8、CIブラウザ130。ローカル重複全件は63成功時に中止（exit130）し、CI完走と区別した。性能は測定完了・25ms目標未達。Draft PR#19として作成。作業中にGitHub側でmerge済みへ変更されたことを最終確認し、assistantはmergeを行わず証拠branchへのリンクを同PR本文へ残した。

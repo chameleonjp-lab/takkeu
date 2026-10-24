@@ -5,7 +5,6 @@
   "testTree": "be4205f6c21610c6b64d7ffdb2c7b3f11de3bfde",
   "recordedAt": "2026-10-24T15:29:02.538435+00:00",
   "pr": "https://github.com/chameleonjp-lab/takkeu/pull/19",
-  "draft": true,
   "evidenceHead": "See PR metadata/body; evidence-only commit retains source/test trees above.",
   "localChecks": {
     "unit": {
@@ -188,5 +187,17 @@
     "databaseAuthBillingChanges": false,
     "actualXPost": false
   },
-  "npm": "11.9.0"
+  "npm": "11.9.0",
+  "draftAtCreation": true,
+  "observedPrState": {
+    "state": "closed",
+    "merged": true,
+    "draft": false,
+    "mergedAt": "2026-10-24T15:20:11Z",
+    "mergedBy": "chameleonjp-lab",
+    "mergeCommit": "b9b16af8400d63bc2657ef9b043bbc7a61e8440f",
+    "prHead": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+    "observation": "External GitHub state observed after evidence push; no merge/auto-merge/deploy action invoked by assistant."
+  },
+  "evidenceDisposition": "Pushed only to feat/share-speed-layered-audio, linked from closed PR19 body, not merged into main. No second PR or revert."
 }
