@@ -92,7 +92,7 @@ jobs:
       - name: Browser tests
         run: |
           set -o pipefail
-          takkeu_load_pattern='開始から実際|450の459球|555の774球'
+          takkeu_load_pattern='開始から実際|450の30球|555の30球'
           if [ '${{ matrix.suite }}' = 'load' ]; then
             npm run test:browser -- --project=${{ matrix.project }} --grep "$takkeu_load_pattern" 2>&1 | tee artifacts/browser.log
           else

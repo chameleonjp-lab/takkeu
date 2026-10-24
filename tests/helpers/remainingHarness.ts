@@ -56,6 +56,6 @@ const harness = { show, begin, until, snapshot: () => current, presentation: () 
     const hash = await crypto.subtle.digest('SHA-256', pixels);
     return Array.from(new Uint8Array(hash), b => b.toString(16).padStart(2, '0')).join('');
   },
-  measure: () => [99, 100, 101, 450, 499, 500, 501, 539, 540, 555].flatMap(score => [1, 2, 3, 4, 5, 8].map(count => measureFlight(score, count))) };
+  measure: () => [99, 100, 101, 299, 300, 301, 450, 499, 500, 501, 539, 540, 555].flatMap(score => [1, 2, 3, 4, 5, 8].map(count => measureFlight(score, count))) };
 declare global { interface Window { remaining: typeof harness } }
 window.remaining = harness; show(490, 'waiting-return');

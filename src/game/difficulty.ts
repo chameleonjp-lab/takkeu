@@ -1,8 +1,16 @@
 import { DIFFICULTY } from './config';
 import type { GameConfig } from './types';
 
-export function speedMultiplier(score: number): number {
+function baseSpeedMultiplier(score: number): number {
   return 1 + DIFFICULTY.speedGain * (1 - Math.exp(-Math.floor(score / DIFFICULTY.scoreInterval) / DIFFICULTY.speedDecay));
+}
+
+export function speedMultiplier(score: number): number {
+  const speed = baseSpeedMultiplier(score);
+  if (score < 300) return speed;
+  // Boost each increment starting with rally 300, preserving the speed at 299.
+  const before = baseSpeedMultiplier(299);
+  return before + 1.1 * (speed - before);
 }
 
 export function smashMultiplier(score: number): number {

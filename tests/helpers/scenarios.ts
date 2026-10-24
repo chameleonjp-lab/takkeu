@@ -1,5 +1,5 @@
 import { DEFAULT_CONFIG, INITIAL_PADDLE } from '../../src/game/config';
-import { ballCountAtScore, MILESTONES } from '../../src/game/milestones';
+import { earnedBallCountAtScore, MILESTONES } from '../../src/game/milestones';
 import { createSimulationState, snapshotSimulation, startSimulation, stepSimulation } from '../../src/game/simulation';
 import { sampleReturn } from '../../src/game/trajectory';
 import type { ReturnPlan } from '../../src/game/types';
@@ -10,7 +10,7 @@ export function scenario(score: number, time = 20) {
   startSimulation(state, DEFAULT_CONFIG);
   state.score = score;
   state.simTime = time;
-  state.progression = { appliedMilestones: MILESTONES.filter(n => n <= score), ballGlowUntil: null, awardedBallCount: ballCountAtScore(score) - 1 };
+  state.progression = { appliedMilestones: MILESTONES.filter(n => n <= score), ballGlowUntil: null, awardedBallCount: earnedBallCountAtScore(score) - 1 };
   state.balls = [];
   const snapshot = () => snapshotSimulation(state);
   const step = (target = INITIAL_PADDLE) => stepSimulation(state, DEFAULT_CONFIG, DEFAULT_CONFIG.fixedDt, { target });

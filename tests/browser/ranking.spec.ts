@@ -44,8 +44,8 @@ test('名前なしで遊べて結果には上位30名と正式URLのXシェア�
   await expect(page.locator('[data-ranking-participation]')).toContainText('名前なし');
   await expect(page.locator('[data-ranking-participation]')).toContainText('プレイ回数のみ');
   const share = new URL(await page.locator('[data-share-x]').getAttribute('href') ?? '');
-  expect(share.searchParams.get('text')).toContain('12ラリー');
-  expect(share.searchParams.get('url')).toBe('https://chameleonjp-lab.github.io/takkeu/');
+  expect(share.searchParams.get('text')).toBe('タッケウで12ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
+  expect(share.searchParams.has('url')).toBe(false);
   const positions = await page.evaluate(() => ({ score: document.querySelector('[data-result-score]')!.getBoundingClientRect().bottom, replay: document.querySelector('[data-result] [data-action="retry"]')!.getBoundingClientRect().top, best: document.querySelector('[data-result] [data-best]')!.getBoundingClientRect().top }));
   expect(positions.replay).toBeGreaterThanOrEqual(positions.score); expect(positions.replay).toBeLessThan(positions.best);
   await page.getByRole('button', { name: 'もう一度', exact: true }).click(); await page.clock.runFor(16);

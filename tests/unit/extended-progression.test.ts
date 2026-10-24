@@ -1,24 +1,32 @@
 import { describe, expect, it } from 'vitest';
 import { DEFAULT_CONFIG, INITIAL_PADDLE } from '../../src/game/config';
-import { ballCountAtScore, ballRewardScore, MILESTONES } from '../../src/game/milestones';
+import { ballCountAtScore, ballRewardScore, earnedBallCountAtScore, MILESTONES } from '../../src/game/milestones';
 import { advanceProgression } from '../../src/game/progression';
 import { bounceTime, sampleReturn } from '../../src/game/trajectory';
 import { incoming, scenario } from '../helpers/scenarios';
 
-describe('470以後も1ラリー3球の増球を継続', () => {
-  it.each([[469,516],[470,519],[471,522],[472,525],[480,549],[490,579],[500,609],[510,639],[520,669],[530,699],[540,729],[555,774]])('%iでは累計%i球', (score, count) => expect(ballCountAtScore(score)).toBe(count));
+describe('470以後も3ラリー1球の報酬と所持上限を継続', () => {
+  it.each([[469,139],[470,139],[471,140],[472,140],[480,143],[490,146],[500,149],[510,153],[520,156],[530,159],[540,163],[555,168]])('%iでは累計%i球を獲得し所持は30球まで', (score, count) => {
+    expect(earnedBallCountAtScore(score)).toBe(count);
+    expect(ballCountAtScore(score)).toBe(30);
+    expect(scenario(score).state.progression.awardedBallCount).toBe(count - 1);
+  });
   it('470を跨ぐ複数加点と再評価で二重追加しない', () => {
     const s = scenario(469); s.state.balls = [1,2,3,4].map(id => incoming(id, 20.001));
-    const result = s.step(); expect(result.snapshot.score).toBe(473); expect(result.snapshot.balls).toHaveLength(16);
-    expect(result.events.filter(e => e.kind === 'milestone').map(e => e.milestone)).toEqual([470,471,472,473]);
-    expect(s.step().snapshot.balls).toHaveLength(16);
-    expect(ballRewardScore(516)).toBe(470); expect(ballRewardScore(519)).toBe(471);
+    const result = s.step(); expect(result.snapshot.score).toBe(473); expect(result.snapshot.balls).toHaveLength(5);
+    expect(result.events.filter(e => e.kind === 'milestone').map(e => e.milestone)).toEqual([470,471]);
+    expect(s.step().snapshot.balls).toHaveLength(5);
+    expect(ballRewardScore(139)).toBe(471); expect(ballRewardScore(140)).toBe(474);
     expect(MILESTONES).toContain(555);
   });
   it('落球は補充せず飛び越した報酬だけを数える', () => {
     const s = scenario(469); const update = advanceProgression(s.state.progression, 469, 480, 20);
-    expect(update.addedBalls).toBe(33);
+    expect(update.addedBalls).toBe(4);
+    expect(update.state.awardedBallCount).toBe(142);
     expect(advanceProgression(update.state, 480, 480, 20).addedBalls).toBe(0);
+    expect(advanceProgression(update.state, 480, 481, 20).addedBalls).toBe(0);
+    expect(advanceProgression(update.state, 481, 482, 20).addedBalls).toBe(0);
+    expect(advanceProgression(update.state, 482, 483, 20).addedBalls).toBe(1);
   });
 });
 

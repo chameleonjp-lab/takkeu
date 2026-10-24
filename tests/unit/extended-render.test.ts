@@ -8,14 +8,14 @@ import { scenario } from '../helpers/scenarios';
 import type { GameEvent } from '../../src/game/types';
 
 describe('後半の発光表示', () => {
-  it('460から足、480でも相手の球を維持し、490から相手の輪郭を消す', () => {
+  it('460から足、480から相手の球を再表示し、490から相手の輪郭を消す', () => {
     const view = (score:number) => {
       const s=scenario(score); const base=s.snapshot();
       return resolvePresentation({...base,balls:[{id:999,phase:'incoming',smash:true,position:{x:0,y:.5,z:-1}}]});
     };
     expect(view(459).parts.structure.rainbow).toBe(false);
     expect(view(460).parts.structure.rainbow).toBe(true);
-    expect(view(479).balls[999]!.visible).toBe(true);
+    expect(view(479).balls[999]!.visible).toBe(false);
     expect(view(480).balls[999]).toEqual({visible:true,rainbow:true});
     expect(view(489).opponentField).toBe(false);
     const last=view(490); expect(last.opponentField).toBe(true);

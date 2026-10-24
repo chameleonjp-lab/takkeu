@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import { DEFAULT_CONFIG, INITIAL_PADDLE } from '../../src/game/config';
-import { ballCountAtScore, MILESTONES } from '../../src/game/milestones';
+import { MILESTONES } from '../../src/game/milestones';
 import { scheduleReturn } from '../../src/game/scheduler';
 import { incoming, scenario } from '../helpers/scenarios';
 
 describe('多球の接触・落球・累計到達', () => {
-  it.each([[4, 5], [9, 10], [19, 20], [29, 30], [39, 40], [148, 149]])('%iから同時接触で閾値%iを飛び越しても追加は1球', (score, milestone) => {
+  it.each([[4, 5], [9, 10], [19, 20], [29, 30], [39, 40], [148, 150]])('%iから同時接触で閾値%iを飛び越しても追加は1球', (score, milestone) => {
     const s = scenario(score);
     s.state.balls = [incoming(1, 20.005), incoming(2, 20.005)];
     const result = s.step();
@@ -57,21 +57,32 @@ describe('多球の接触・落球・累計到達', () => {
     expect(s.step().events.filter(e => e.kind === 'player-hit')).toHaveLength(0);
     expect(s.snapshot().progression.appliedMilestones).toContain(390);
   });
-  it('4球・上限速度でも決められた中心へ順に移動すれば継続できる', () => {
+  it('上限速度の4球でも同時の取り逃しを実際の失球として数えながら継続できる', () => {
     const s = scenario(10000);
     for (let id = 1; id <= 4; id++) {
       const plan = scheduleReturn({ ballId: id, earliestDepartAt: 20, preferredTarget: { x: id % 2 ? -1.05 : 1.05, y: id % 2 ? 0.15 : 0.85 }, speedMultiplier: 2.6, score:s.state.score, smash: true }, s.snapshot().scheduledReturns, DEFAULT_CONFIG);
       const from = { x: 0, y: 0.5, z: -DEFAULT_CONFIG.paddleZ };
       s.state.balls.push({ id, phase: 'queued', position: from, from, plan, warningSent: false });
     }
-    let warnings = 0;
+    s.state.nextBallId = 5;
+    let warnings = 0, losses = 0, additions = 0;
+    const seen = new Set(s.state.balls.map(ball => ball.id));
     for (let tick = 0; tick < 120 * 30; tick++) {
       const next = s.snapshot().scheduledReturns[0];
-      warnings += s.step(next?.target ?? s.state.paddle).events.filter(e => e.kind === 'smash-warning').length;
-      expect(s.state.balls.filter(b => b.phase !== 'lost')).toHaveLength(4 + ballCountAtScore(s.state.score) - ballCountAtScore(10000));
+      // Hold one wing through the first wave so opposite-wing balls really miss.
+      const result = s.step(tick < 240 ? { x: -1.05, y: 0.15 } : next?.target ?? s.state.paddle);
+      warnings += result.events.filter(e => e.kind === 'smash-warning').length;
+      losses += result.events.filter(e => e.kind === 'ball-lost').length;
+      for (const ball of result.snapshot.balls) if (!seen.has(ball.id)) { seen.add(ball.id); additions++; }
+      expect(result.snapshot.balls).toHaveLength(4 + additions - losses);
+      expect(result.snapshot.balls.length).toBeLessThanOrEqual(30);
+      expect(result.snapshot.phase).toBe('running');
     }
-    expect(s.state.score).toBeGreaterThan(10030);
+    expect(s.state.score).toBeGreaterThan(10010);
+    expect(s.state.simTime).toBeCloseTo(50, 8);
     expect(warnings).toBeGreaterThan(0);
+    expect(losses).toBeGreaterThan(0);
+    expect(additions).toBeGreaterThan(0);
   });
   it('落球でも解放を維持し、飛行中の別球も加速する', () => {
     const s = scenario(149);
@@ -88,17 +99,17 @@ describe('多球の接触・落球・累計到達', () => {
 });
 
 
-it('161で4球を超えて増え、落球した球を配列に残さずIDを再利用しない', () => {
-  const s = scenario(160);
+it('162で4球を超えて増え、落球した球を配列に残さずIDを再利用しない', () => {
+  const s = scenario(161);
   s.state.balls = [1, 2, 3, 4].map(id => incoming(id, id === 1 ? 20.005 : 24 + id));
   let result = s.step();
-  expect(result.snapshot.score).toBe(161);
+  expect(result.snapshot.score).toBe(162);
   expect(result.snapshot.balls).toHaveLength(5);
-  expect(result.events.filter(e => e.kind === 'milestone').map(e => e.milestone)).toEqual([161]);
+  expect(result.events.filter(e => e.kind === 'milestone').map(e => e.milestone)).toEqual([162]);
   const old = s.state.balls.find(b => b.id === 5)!; old.phase = 'lost';
   s.step();
   expect(s.snapshot().balls.some(b => b.id === 5)).toBe(false);
-  s.state.score = 169;
+  s.state.score = 170;
   s.state.balls[0] = incoming(1, s.state.simTime + 0.005, INITIAL_PADDLE, s.state.simTime);
   result = s.step();
   expect(result.snapshot.balls.some(b => b.id === 6)).toBe(true);
@@ -107,28 +118,40 @@ it('161で4球を超えて増え、落球した球を配列に残さずIDを再�
 });
 
 
-it('450の無落球459球を30ゲーム秒継続し、追加・スマッシュ・到着余裕を守る', () => {
+it('450の30球が全て同時に返り、失球と増球を反映して30ゲーム秒継続する', () => {
   const s = scenario(450);
-  for (let id = 1; id <= 459; id++) {
+  for (let id = 1; id <= 30; id++) {
     const plan = scheduleReturn({ ballId: id, earliestDepartAt: 20, preferredTarget: { x: id % 2 ? -0.7 : 0.7, y: 0.5 }, speedMultiplier: 2.6, score:s.state.score, smash: true }, s.snapshot().scheduledReturns, DEFAULT_CONFIG);
     const from = { x: 0, y: 0.5, z: -DEFAULT_CONFIG.paddleZ };
     s.state.balls.push({ id, phase: 'queued', position: from, from, plan, warningSent: false });
   }
-  let smashes = 0;
+  s.state.nextBallId = 31;
+  let smashes = 0, losses = 0, additions = 0, peakFlying = 0;
+  const seen = new Set(s.state.balls.map(ball => ball.id));
+  const initialDepartures = new Map<number, number>();
   for (let tick = 0; tick < 120 * 30; tick++) {
-    const result = s.step(s.snapshot().scheduledReturns[0]?.target ?? s.state.paddle);
+    // Catch one half of the opening simultaneous wave, then track later returns.
+    const target = tick < 240 ? { x: -0.7, y: 0.5 } : s.snapshot().scheduledReturns[0]?.target ?? s.state.paddle;
+    const result = s.step(target);
     smashes += result.events.filter(e => e.kind === 'smash-warning').length;
-    expect(result.snapshot.phase).toBe('running');
-    expect(result.snapshot.balls).toHaveLength(ballCountAtScore(result.snapshot.score));
-    if (tick % 120 === 0) {
-      const plans = result.snapshot.scheduledReturns;
-      for (let i = 1; i < plans.length; i++) {
-        const a = plans[i - 1]!, b = plans[i]!;
-        expect(b.arriveAt - a.arriveAt + 1e-10).toBeGreaterThanOrEqual(0.12 + Math.hypot(a.target.x - b.target.x, a.target.y - b.target.y) / 6);
-      }
+    losses += result.events.filter(e => e.kind === 'ball-lost').length;
+    for (const event of result.events) {
+      if (event.kind === 'opponent-hit' && event.ballId! <= 30 && !initialDepartures.has(event.ballId!)) initialDepartures.set(event.ballId!, event.time);
     }
+    for (const ball of result.snapshot.balls) if (!seen.has(ball.id)) { seen.add(ball.id); additions++; }
+    peakFlying = Math.max(peakFlying, result.snapshot.balls.filter(ball => ball.phase === 'incoming' || ball.phase === 'outgoing').length);
+    expect(result.snapshot.phase).toBe('running');
+    expect(result.snapshot.balls).toHaveLength(30 + additions - losses);
+    expect(result.snapshot.balls.length).toBeLessThanOrEqual(30);
+    expect(new Set(result.snapshot.balls.map(ball => ball.id)).size).toBe(result.snapshot.balls.length);
   }
+  expect([...initialDepartures.keys()].sort((a, b) => a - b)).toEqual(Array.from({ length: 30 }, (_, index) => index + 1));
+  expect(new Set(initialDepartures.values()).size).toBe(1);
+  expect(peakFlying).toBe(30);
   expect(s.state.score).toBeGreaterThan(500);
+  expect(s.state.simTime).toBeCloseTo(50, 8);
   expect(smashes).toBeGreaterThan(0);
+  expect(losses).toBeGreaterThan(0);
+  expect(additions).toBeGreaterThan(0);
   expect(s.state.progression.appliedMilestones.length).toBe(MILESTONES.filter(n => n<=s.state.score).length);
 }, 20_000);

@@ -21,7 +21,7 @@ async function expectIntent(link: Locator, text: string) {
   await expect(link).toHaveAttribute('rel', 'noopener noreferrer');
   const url = new URL(await link.getAttribute('href') ?? '');
   expect(url.origin + url.pathname).toBe('https://twitter.com/intent/tweet');
-  expect(url.searchParams.get('url')).toBe(canonicalUrl);
+  expect(url.searchParams.get('url')).toBe(await link.getAttribute('data-share-x') === null ? canonicalUrl : null);
   expect(url.searchParams.get('text')).toBe(text);
 }
 
@@ -96,17 +96,17 @@ test('自己ベストと今回の結果を区別し、通信失敗・再挑戦�
   await page.getByRole('button', { name: 'もう一度', exact: true }).focus();
   await page.keyboard.press('Tab');
   await expect(result).toBeFocused();
-  await activateIntent(page, result, 'タッケウで37ラリー達成！\n何ラリーつなげられる？ #タッケウ', true);
+  await activateIntent(page, result, 'タッケウで37ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/', true);
   await page.getByRole('button', { name: 'もう一度', exact: true }).click();
   await page.clock.runFor(16);
   await expect(result).not.toHaveAttribute('href');
   await finish(page, 0);
-  await activateIntent(page, result, 'タッケウで0ラリー達成！\n何ラリーつなげられる？ #タッケウ');
+  await activateIntent(page, result, 'タッケウで0ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
   await page.locator('[data-result] [data-action="home"]').click();
   await expect(result).not.toHaveAttribute('href');
   await expectIntent(home, bestText);
   await renderLargeResult(page, 1234567890);
-  await activateIntent(page, result, 'タッケウで1234567890ラリー達成！\n何ラリーつなげられる？ #タッケウ');
+  await activateIntent(page, result, 'タッケウで1234567890ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
   await page.locator('[data-result] [data-action="home"]').click();
   await expectIntent(home, '卓球ゲーム「タッケウ」で自己ベスト1234567890ラリー！\n何ラリーつなげられる？ #タッケウ');
   expect(intents).toHaveLength(4);
@@ -139,7 +139,7 @@ for (const [width, height] of [[320, 568], [568, 320], [1280, 720]] as const) {
       expect(bounds!.x).toBeGreaterThanOrEqual(0);
       expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(width);
       await page.screenshot({ path: info.outputPath(`result-${width}x${height}-${textScale}.png`) });
-      await activateIntent(page, result, 'タッケウで1234567890ラリー達成！\n何ラリーつなげられる？ #タッケウ');
+      await activateIntent(page, result, 'タッケウで1234567890ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
       expect(intents).toHaveLength(2);
     });
   }
