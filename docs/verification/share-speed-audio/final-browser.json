@@ -1,0 +1,21 @@
+{
+  "command": [
+    "npm",
+    "run",
+    "test:browser",
+    "--",
+    "--output=docs/verification/share-speed-audio/verified-browser-artifacts"
+  ],
+  "sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+  "sourceTree": "b6dc05493c176417a54071d5a6d107132124fac4",
+  "testTree": "be4205f6c21610c6b64d7ffdb2c7b3f11de3bfde",
+  "productOrTestDirty": false,
+  "startedAt": "2026-10-24T15:09:11.453Z",
+  "node": "v24.19.0",
+  "environment": "local Linux managed executor; automatic; real Playwright engines, not iPhone hardware",
+  "browserDependencyValidation": "system ldconfig check skipped; official dependencies supplied in browser bundle; engine actually launched",
+  "endedAt": "2026-10-24T15:21:29.690Z",
+  "exitCode": 130,
+  "signal": null,
+  "logSha256": "bdfd3fe5c1f8baa2d07ee82da2dfcaa1a2b756ecb4c606ce21cfb27ef47e09a4"
+}

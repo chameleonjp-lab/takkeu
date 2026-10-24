@@ -1,0 +1,65 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/sharing.spec.ts --project=chromium --reporter=list --output=docs/verification/share-speed-audio/a-browser-artifacts
+
+[WebServer] (node:3564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:3612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/sharing.spec.ts:54:1 › 自己ベストなしのホームから通常リンクで正式URLと汎用文を開ける (1.2s)
+  ✘  2 [chromium] › tests/browser/sharing.spec.ts:67:1 › 自己ベストと今回の結果を区別し、通信失敗・再挑戦・0点・大きな値・ホームでも共有値を保つ (53.2s)
+
+
+  1) [chromium] › tests/browser/sharing.spec.ts:67:1 › 自己ベストと今回の結果を区別し、通信失敗・再挑戦・0点・大きな値・ホームでも共有値を保つ 
+
+    Test was interrupted.
+
+    Error: page.evaluate: Test ended.
+
+      47 |
+      48 | async function finish(page: Page, score: number) {
+    > 49 |   await page.evaluate(value => { window.stage3.show(value); window.stage3.finish(); }, score);
+         |              ^
+      50 |   await page.clock.runFor(16);
+      51 |   await expect(page.locator('[data-result-score]')).toHaveText(String(score));
+      52 | }
+        at finish (/workspace/takkeu/tests/browser/sharing.spec.ts:49:14)
+        at /workspace/takkeu/tests/browser/sharing.spec.ts:92:9
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/a-browser-artifacts/sharing-自己ベストと今回の結果を区別し、通信失敗・再挑戦・0点・大きな値・ホームでも共有値を保つ-chromium/video-2.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/a-browser-artifacts/sharing-自己ベストと今回の結果を区別し、通信失敗・再挑戦・0点・大きな値・ホームでも共有値を保つ-chromium/video-1.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/a-browser-artifacts/sharing-自己ベストと今回の結果を区別し、通信失敗・再挑戦・0点・大きな値・ホームでも共有値を保つ-chromium/video-3.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/a-browser-artifacts/sharing-自己ベストと今回の結果を区別し、通信失敗・再挑戦・0点・大きな値・ホームでも共有値を保つ-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs/verification/share-speed-audio/a-browser-artifacts/sharing-自己ベストと今回の結果を区別し、通信失敗・再挑戦・0点・大きな値・ホームでも共有値を保つ-chromium/error-context.md
+
+    attachment #6: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/a-browser-artifacts/sharing-自己ベストと今回の結果を区別し、通信失敗・再挑戦・0点・大きな値・ホームでも共有値を保つ-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/verification/share-speed-audio/a-browser-artifacts/sharing-自己ベストと今回の結果を区別し、通信失敗・再挑戦・0点・大きな値・ホームでも共有値を保つ-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 interrupted
+    [chromium] › tests/browser/sharing.spec.ts:67:1 › 自己ベストと今回の結果を区別し、通信失敗・再挑戦・0点・大きな値・ホームでも共有値を保つ ─
+  6 did not run
+  1 passed (56.3s)
+
+Exit code: 130
+
+Run interrupted (130): large score sent to stage3.show allocated unrelated per-reward balls. Corrected sharing browser test to render production screens with a normal snapshot for huge values; common fixture unchanged.

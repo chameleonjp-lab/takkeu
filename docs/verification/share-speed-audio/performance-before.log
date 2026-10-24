@@ -1,0 +1,115 @@
+
+> takkeu@0.1.0 test:performance
+> playwright test --config=playwright.performance.config.ts
+
+[WebServer] (node:4057) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:4095) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/performance/browser-load.spec.ts:6:90 › standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける (1.0m)
+  ✓  2 [chromium] › tests/performance/browser-load.spec.ts:6:90 › standard・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける (1.1m)
+  ✓  3 [chromium] › tests/performance/browser-load.spec.ts:6:90 › low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける (1.0m)
+  ✓  4 [chromium] › tests/performance/browser-load.spec.ts:6:90 › low・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける (1.0m)
+(node:5174) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  5 [webkit] › tests/performance/browser-load.spec.ts:6:90 › standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける (2ms)
+(node:5581) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  6 [webkit] › tests/performance/browser-load.spec.ts:6:90 › standard・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける (2ms)
+(node:5988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  7 [webkit] › tests/performance/browser-load.spec.ts:6:90 › low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける (2ms)
+(node:6395) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  8 [webkit] › tests/performance/browser-load.spec.ts:6:90 › low・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける (2ms)
+
+
+  1) [webkit] › tests/performance/browser-load.spec.ts:6:90 › standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける 
+
+    Error: browserType.launch: 
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libhidapi-hidraw.so.0                            ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: artifacts/performance-tests/browser-load-standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/performance-tests/browser-load-standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/performance-tests/browser-load-standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit] › tests/performance/browser-load.spec.ts:6:90 › standard・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける 
+
+    Error: browserType.launch: 
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libhidapi-hidraw.so.0                            ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: artifacts/performance-tests/browser-load-standard・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/performance-tests/browser-load-standard・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/performance-tests/browser-load-standard・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit] › tests/performance/browser-load.spec.ts:6:90 › low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける 
+
+    Error: browserType.launch: 
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libhidapi-hidraw.so.0                            ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: artifacts/performance-tests/browser-load-low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/performance-tests/browser-load-low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/performance-tests/browser-load-low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [webkit] › tests/performance/browser-load.spec.ts:6:90 › low・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける 
+
+    Error: browserType.launch: 
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libhidapi-hidraw.so.0                            ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: artifacts/performance-tests/browser-load-low・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/performance-tests/browser-load-low・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/performance-tests/browser-load-low・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [webkit] › tests/performance/browser-load.spec.ts:6:90 › standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける 
+    [webkit] › tests/performance/browser-load.spec.ts:6:90 › standard・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける 
+    [webkit] › tests/performance/browser-load.spec.ts:6:90 › low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける 
+    [webkit] › tests/performance/browser-load.spec.ts:6:90 › low・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける 
+  4 passed (4.3m)

@@ -1,0 +1,51 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/retry.spec.ts --project=chromium --reporter=list --output=docs/verification/share-speed-audio/retry-initial-artifacts
+
+[WebServer] (node:15375) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:15418) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/retry.spec.ts:5:1 › 再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない (6.9s)
+
+
+  1) [chromium] › tests/browser/retry.spec.ts:5:1 › 再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない ──────────────
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    3
+
+      22 |     await page.getByRole('button', { name: 'もう一度', exact: true }).click(); await page.clock.runFor(32);
+      23 |     const row = await measure(); rows.push({ kind: 'retry', i, ...row }); expect(row).toEqual(baseline);
+    > 24 |     expect(await page.evaluate(() => window.runtimeProbe.liveVoices())).toBeLessThanOrEqual(1);
+         |                                                                         ^
+      25 |     expect(await page.evaluate(() => window.stage3.snapshot().score)).toBe(0);
+      26 |   }
+      27 |   for (let i = 0; i < 20; i++) {
+        at /workspace/takkeu/tests/browser/retry.spec.ts:24:73
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/retry-initial-artifacts/retry-再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/retry-initial-artifacts/retry-再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs/verification/share-speed-audio/retry-initial-artifacts/retry-再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/retry-initial-artifacts/retry-再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/verification/share-speed-audio/retry-initial-artifacts/retry-再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser/retry.spec.ts:5:1 › 再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない ───────────────

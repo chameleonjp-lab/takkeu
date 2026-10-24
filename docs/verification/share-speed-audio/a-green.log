@@ -1,0 +1,19 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit tests/unit/sharing.test.ts tests/unit/ranking-screens.test.ts tests/unit/sharing-metadata.test.ts tests/unit/screens-direct.test.ts
+
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/sharing.test.ts tests/unit/ranking-screens.test.ts tests/unit/sharing-metadata.test.ts tests/unit/screens-direct.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+
+ Test Files  4 passed (4)
+      Tests  52 passed (52)
+   Start at  14:33:52
+   Duration  1.16s (environment 64%, tests 30%, transform 3%, import 3%, worker 1%)
+
+
+Exit code: 0

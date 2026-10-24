@@ -30,30 +30,32 @@
 ### A: 共有と静的カード
 
 Files: `src/ranking/config.ts`, `src/ui/screens.ts`, `index.html`, 関連unit/browser/release検査。
-- [ ] 共有文・無効値・結果0／ホームbest有無のREDテストを作り実行。
-- [ ] `scoreShareUrl(score): string | null`と`homeShareUrl(bestScore): string`へ集約。既存リンクを更新、ホームfooterへ通常リンクを追加。結果はgameoverのみ更新。
-- [ ] 既存PNGを実見して再利用可否を判断。HTMLのdescription/altを整合し初期HTMLと配布パスを検査。
-- [ ] リンク遷移要求、キーボード、縦横／文字拡大、retry/home、ランキング失敗を検査してcommit。
+- [x] 共有文・無効値・結果0／ホームbest有無のREDテストを作り実行。
+- [x] `scoreShareUrl(score): string | null`と`homeShareUrl(bestScore): string`へ集約。既存リンクを更新、ホームfooterへ通常リンクを追加。結果はgameoverのみ更新。
+- [x] 既存PNGを実見して再利用可否を判断。HTMLのdescription/altを整合し初期HTMLと配布パスを検査。
+- [x] リンク遷移要求、キーボード、縦横／文字拡大、retry/home、ランキング失敗を検査してcommit。
 
 ### B: 残球速度
 
 Files: `src/game/difficulty.ts`, existing remaining-ball unit/browser fixtures, 現行文書。
-- [ ] 99/100/101 × 1/2/3/4/5/8、新旧対応・不正値のRED検査。基準Dは5球以上とする。
-- [ ] 新倍率へ置換し、既存シミュレーションを通したD/倍率、固定・再評価・通常加速・outgoing非適用を確認。
-- [ ] 5→4・4→3・2→1・1→増球、同時刻順、予告・間隔・高速接触・30/60/120Hzを検査してcommit。
+- [x] 99/100/101 × 1/2/3/4/5/8、新旧対応・不正値のRED検査。基準Dは5球以上とする。
+- [x] 新倍率へ置換し、既存シミュレーションを通したD/倍率、固定・再評価・通常加速・outgoing非適用を確認。
+- [x] 5→4・4→3・2→1・1→増球、同時刻順、予告・間隔・高速接触・30/60/120Hzを検査してcommit。
 
 ### C: 多層音響
 
 Files: `src/audio/tones.ts`, `src/audio/audio.ts`, `src/game/{types,simulation}.ts`, 関連fixtures/tests。
-- [ ] 球別smash/score、段階、通常経路／fallback、部分失敗と後始末のRED検査。
-- [ ] 多層tone builderとcontextキャッシュを実装。kick・中域・ノイズ・WaveShaper・高速arp・成功／警告を区別。最大10音源以下、低負荷／上限時の装飾縮減。
-- [ ] 全source完了を数え一度だけ通知、fade置換と即時silenceを分離。master graphの例外／contextライフサイクルを処理。
-- [ ] scoreはイベントの確定値から取得、古い／重複イベントは破棄、mute/0/復旧で過去音を再生しない。
-- [ ] OfflineAudioContextの44.1/48kHz波形・peak/RMS/終端無音、実Web Audio資源、比較WAV（元音量とRMS整合）を保存してcommit。
+- [x] 球別smash/score、段階、通常経路／fallback、部分失敗と後始末のRED検査。
+- [x] 多層tone builderとcontextキャッシュを実装。kick・中域・ノイズ・WaveShaper・高速arp・成功／警告を区別。最大10音源以下、低負荷／上限時の装飾縮減。
+- [x] 全source完了を数え一度だけ通知、fade置換と即時silenceを分離。master graphの例外／contextライフサイクルを処理。
+- [x] scoreはイベントの確定値から取得、古い／重複イベントは破棄、mute/0/復旧で過去音を再生しない。
+- [x] OfflineAudioContextの44.1/48kHz波形・peak/RMS/終端無音、実Web Audio資源、比較WAV（元音量とRMS整合）を保存してcommit。
 
 ### 統合・提出
 
-- [ ] 型・全unit・Chromium/WebKit・実時間performance・verify:releaseを実在scriptsで実行。失敗・trace・再検査と対象SHAを保存。
-- [ ] baseとheadで450/555実時間を同条件比較。生のframe間隔／実経過／simTime／pause／voice・source数を分離。
-- [ ] 最終diffの独立レビュー、重要指摘は修正＋再検査。
-- [ ] 文書・画像・音声・ログを追加し、一つのDraft PRを作成。base/head完全SHA・CI状態・未確認と公開後手順を記載。
+- [x] 型・全unit・Chromium/WebKit・実時間performance・verify:releaseを実在scriptsで実行。失敗・trace・再検査と対象SHAを保存。
+- [x] baseとheadで450/555実時間を同条件比較。生のframe間隔／実経過／simTime／pause／voice・source数を分離。
+- [x] 最終diffの独立レビュー、重要指摘は修正＋再検査。
+- [x] 文書・画像・音声・ログを追加し、一つのDraft PRを作成。base/head完全SHA・CI状態・未確認と公開後手順を記載。
+
+実行記録: [今回の検証](../../verification/share-speed-audio/README.md)。最終ソース9155b19、全unit477、配布8、CIブラウザ130。ローカル重複全件は63成功時に中止（exit130）し、CI完走と区別した。性能は測定完了・25ms目標未達。Draft PR#19を維持する。

@@ -1,0 +1,3137 @@
+{
+  "purpose": "Large duplicate full-run media remains in workspace, logs/JSON/failure traces and required sharing/audio media are permanent in Git. Full successful130-case CI media is separately referenced in ci-source-artifacts.json (30-day existing retention).",
+  "files": [
+    {
+      "path": "verified-browser-artifacts/.last-run.json",
+      "bytes": 3286,
+      "sha256": "2131e34ad56a2a164c2ce1cadddb94386525a1fcf47888c0dd0939272ffc50ee",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/quality-開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む-chromium/cadence-5.png",
+      "bytes": 160378,
+      "sha256": "fb74c931a653dfee77b37330f23de2d6ff35a9db4a75cc395ec89199a6a8651b",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/quality-開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む-chromium/cadence-after-020.png",
+      "bytes": 159752,
+      "sha256": "a83703d55bed416494b2f721c77001a6992df697902b8df5e5c63bee8693089c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/quality-開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む-chromium/cadence-10.png",
+      "bytes": 163168,
+      "sha256": "0e650c5cf90159d424bbf7d4780792f595ff69f81dd316cce9f18f0b03a285ba",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/quality-開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む-chromium/cadence-20.png",
+      "bytes": 161564,
+      "sha256": "f07e2367cbb1a721200aacc1903728907323c233d22866e8fb9ff97a06d8cfd0",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/lifecycle-通常の指離れ・2本目・追跡喪失・回転で入力が残らない-chromium/rotated-paused.png",
+      "bytes": 35844,
+      "sha256": "784833128e453ef274ab1a508fcd93d34e3433c29b9e1f4917790bfc7316776c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/sharing-共有リンクは320x568・文字100-でも読めて操作できる-chromium/result-320x568-1.png",
+      "bytes": 31696,
+      "sha256": "9a345a6dd06e25e05528f5089ac7cfbc6b47e57679bbfa745af67a2fd1b55880",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/sharing-共有リンクは320x568・文字100-でも読めて操作できる-chromium/home-320x568-1.png",
+      "bytes": 41830,
+      "sha256": "97105741e3caec579a103d78397e71fdba307162473d426cbb743485fad1b839",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-chromium/two-finger-paused.png",
+      "bytes": 36364,
+      "sha256": "79ba05d343275fbba1e466b56d969ab1a3162b4bbec080b944f776b764943f91",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/direct-input-二本指は両releaseで停止し、追加指やドラッグでは停止しない-chromium/video.webm",
+      "bytes": 77071,
+      "sha256": "f4f6f7e267682d9b739c9bba7ea9ee5783993fe86da05600c5e6193093cb325b",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-chromium/555-multiball.png",
+      "bytes": 316677,
+      "sha256": "8cac0db7ab390c1521b5980ac5030fb3c80ac74c003ee481fcccb22d1d55a089",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する-chromium/video.webm",
+      "bytes": 10677426,
+      "sha256": "1c6808fb05ed1123ea24c2b5c39b3de94c4e7ecd0d12c633def7bbbf13d31563",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/reference-viewport全体の実描画でPC・縦・横の台を最大限収める-chromium/court-874x402.png",
+      "bytes": 85530,
+      "sha256": "a82699f08fc8ba2b12e1fe191544a883fe626c2e8f411f4568e65d8228084daf",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/reference-viewport全体の実描画でPC・縦・横の台を最大限収める-chromium/screen-1280x720.png",
+      "bytes": 161043,
+      "sha256": "198ecb0ff19d60251952e586daf23dd80507ace8a7ffc508f2b3770524a2043e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/reference-viewport全体の実描画でPC・縦・横の台を最大限収める-chromium/court-390x844.png",
+      "bytes": 95610,
+      "sha256": "74298c28c97b5dbd6f3cc5a5d89727a7fcffd1a6daaecd84a07041d0af211970",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/reference-viewport全体の実描画でPC・縦・横の台を最大限収める-chromium/screen-874x402.png",
+      "bytes": 85530,
+      "sha256": "a82699f08fc8ba2b12e1fe191544a883fe626c2e8f411f4568e65d8228084daf",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/reference-viewport全体の実描画でPC・縦・横の台を最大限収める-chromium/court-1280x720.png",
+      "bytes": 161043,
+      "sha256": "198ecb0ff19d60251952e586daf23dd80507ace8a7ffc508f2b3770524a2043e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/reference-viewport全体の実描画でPC・縦・横の台を最大限収める-chromium/screen-390x844.png",
+      "bytes": 95610,
+      "sha256": "74298c28c97b5dbd6f3cc5a5d89727a7fcffd1a6daaecd84a07041d0af211970",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-390の強弱を実描画で比較し、0-6秒の動きを保存する-chromium/video.webm",
+      "bytes": 931326,
+      "sha256": "d5a680687541a94c4a58f5842e5fafbe11e39a235061c00f63f4628c5d48f5ae",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-190-outgoing.png",
+      "bytes": 121840,
+      "sha256": "34abd731ff5994f600371524f303f0b7a5928fb318113958aae97df04edd5173",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-490-waiting.png",
+      "bytes": 129620,
+      "sha256": "3165bae14ec62c2b7082e4abf0627aed358273f8bf0d179e7bf055b34874dcb8",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-490-arrived-hidden.png",
+      "bytes": 129653,
+      "sha256": "00b6ba85b927cafbd6d61b8ba7ded49d806b5b2fc5f8e6299b9a61f4c4b4339e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-240-own-incoming.png",
+      "bytes": 132789,
+      "sha256": "60841e7672832bbe1515a1b778e299e7be5bbbd8a25af8ea9fcbc6820d29e6e4",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-190-arrived-hidden.png",
+      "bytes": 120415,
+      "sha256": "59266e75b3d970533e164985e2a5582946eff2c852cf500fc376c9d924ae4c30",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-240-outgoing.png",
+      "bytes": 131696,
+      "sha256": "4c8df8ac080e07c342bde6bc4a48bc39a20c34b9a9017fd93dd5e4f6fa229cc2",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-190-left-incoming.png",
+      "bytes": 121169,
+      "sha256": "a32a4928e050af8c70b45b2677d4993b2ba8be72660e7f919519047a2d2f461c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-490-left-incoming.png",
+      "bytes": 129866,
+      "sha256": "cce0a7f0f29708161961e43d8e34869af28e80f8133d054130abe9a15083d42a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/transitions-240.json",
+      "bytes": 2256,
+      "sha256": "550dbe280b0ace4a8711be9439e8674beb987f001abe4f5366364d14a8dfd762",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-240-arrived-hidden.png",
+      "bytes": 132295,
+      "sha256": "5caf3d279fdf940d1ab53f9599e905ab627856b10d5f5491255337082afecca3",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-190-opponent-hit.png",
+      "bytes": 120425,
+      "sha256": "1a4fc5ebc2b096c0b809f6ed1753a38f8d24128e0979ffe18bf2f71d981b607a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-240-left-incoming.png",
+      "bytes": 131212,
+      "sha256": "0b5d5ec2c60b5133d08dbfb62799ce90facd3d46c91d1d8493d2c16c072862c6",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/transitions-190.json",
+      "bytes": 2228,
+      "sha256": "d87cee761d6fa829f3545a1cdaeeda95fe9a29361384ff7f27533b9e59bf5b16",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-240-right-incoming.png",
+      "bytes": 131230,
+      "sha256": "39955ed838ee7b1b2abc2baec10b1220fac34a2c3064131cd206c80d74714cf5",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-240-opponent-hit.png",
+      "bytes": 132423,
+      "sha256": "0cdb3f051d41667e2b2c017e2cd52a8aaf56cdb7ec09de0348462b2e5e2ccb64",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-490-outgoing.png",
+      "bytes": 130431,
+      "sha256": "c2cef435d094ce0ec2153875a0cb2381b42516acdccc9644fcaefabd51ee1994",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-190-right-incoming.png",
+      "bytes": 121420,
+      "sha256": "71b6229c82728ff2258479920f6400a4f4132f35e33619b6bfaa847bd1f1e765",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-190-own-incoming.png",
+      "bytes": 121085,
+      "sha256": "6234c53c4f70fdc7936f18257b8b65f7783f9e610d558c42c7fb1e124976948a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-70-left-incoming.png",
+      "bytes": 102135,
+      "sha256": "e71f3e2363dd4de569dd26b97d70150258e1a7ae9101a20b302e696a015128a9",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-490-own-incoming.png",
+      "bytes": 122520,
+      "sha256": "8bda62add2c4f59448ff3253c583dec13b6b98ef925ab4d038a501a2b9a37da1",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-70-right-incoming.png",
+      "bytes": 102135,
+      "sha256": "e71f3e2363dd4de569dd26b97d70150258e1a7ae9101a20b302e696a015128a9",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-490-right-incoming.png",
+      "bytes": 129872,
+      "sha256": "120ed5e020ceef227a36683c1176fdd1f2b25e4282e78cc88256b3da5b04e37d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-490-opponent-hit.png",
+      "bytes": 124530,
+      "sha256": "0149b4b8c2e4cc0cf13d10868eef6633de4d7b8dc72970bdebf9dd2ec40bbe36",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-70-waiting.png",
+      "bytes": 102135,
+      "sha256": "e71f3e2363dd4de569dd26b97d70150258e1a7ae9101a20b302e696a015128a9",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/transitions-490.json",
+      "bytes": 2206,
+      "sha256": "eb35b239470b25fb7b3675964067b14826d12328037d22ea6f657f7970353464",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-190-waiting.png",
+      "bytes": 121169,
+      "sha256": "a32a4928e050af8c70b45b2677d4993b2ba8be72660e7f919519047a2d2f461c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-240-waiting.png",
+      "bytes": 130968,
+      "sha256": "365afbe98e2e5512684757b2e04c719a24b6bbd30c857eab595ee7953b2fb75a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-warning.wav",
+      "bytes": 44144,
+      "sha256": "6c76f99982afef1e9332151b060061d0a7b6fc0c2a178289b35f19b20849e5d2",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-fallback.wav",
+      "bytes": 48044,
+      "sha256": "37329db7563f88641be2391f6ac3b3075bfc11be876f97fe8d7b952f858d56c1",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-opponent.wav",
+      "bytes": 48044,
+      "sha256": "02b24adb85d1b119085d3d1afd383e0637b38e9bdab3223ffc60c5d408157bf6",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-player10.wav",
+      "bytes": 48044,
+      "sha256": "27489f2850479aec350961f2fdec71ddadc44cbdb4243805ca6937aadf8b6201",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-success10.wav",
+      "bytes": 44144,
+      "sha256": "1e51b51152bb746017928f0709d9151b42eded213e4ed3fcd5864ca4720c888a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-player4.wav",
+      "bytes": 48044,
+      "sha256": "75985003053bb0440a8f686c428abecb75169360a66380714bdc7cd9b9bf891e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-sixteen-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "74a7892dd4e20f77d9cff0c8dfde78d1fe8e2d463c326fb2032402907ac1010d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-full-quality-sixteen.wav",
+      "bytes": 48044,
+      "sha256": "99492a1c9aa39b73078b77e1614b737354ede32c246aa050063a49b83e20e58c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-player-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "9a9ff3ba2b5a0c30cc40e438fee8f16e4bb8ea2dbd2d6046b8fe8556dce47984",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-player1.wav",
+      "bytes": 48044,
+      "sha256": "75985003053bb0440a8f686c428abecb75169360a66380714bdc7cd9b9bf891e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-sixteen-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "9140cbb95adda76773419fa7348de630e8b9e4555772bafb45daa50b880c9ccb",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-player5.wav",
+      "bytes": 48044,
+      "sha256": "7e9b6cb25db047632aafd1fa02f28ccf72c6466c3df2fe1133128397de7c8fe3",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-player1-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "b0c1303b5f87432f5b8af9137c0f911b37a03215e1d5f77aa6a3fc26a571f080",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-sixteen-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "870f2b4bca48999eb012d33d2a65e686780b9e5ad45bc00525d2cf2dff7f0194",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-zero.wav",
+      "bytes": 48044,
+      "sha256": "92e19540f656c3af507bd038e72cfb6c1279bf1ddf21cf8c5002090691323a4b",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-player-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "1fc01b9fe6d0c27fef071da13fc224cdb67a9d929b79c68f6c7484b88266c77d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-player1.wav",
+      "bytes": 44144,
+      "sha256": "af4c2ac6c774dce2ce44f5c22b6460d8da1d4f0c65b156ae3d72ebea034ff5db",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-sixteen.wav",
+      "bytes": 44144,
+      "sha256": "b923584629189b31aeb7b505a2e6e2ba2169c757f59da5fa9af387a682aaa3bd",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-player9.wav",
+      "bytes": 48044,
+      "sha256": "7e9b6cb25db047632aafd1fa02f28ccf72c6466c3df2fe1133128397de7c8fe3",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-sixteen.wav",
+      "bytes": 48044,
+      "sha256": "2160720d0a775fa81fff85c26b1a3fa26b925f0360c2f92cacd2978cce63d881",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-player.wav",
+      "bytes": 48044,
+      "sha256": "3ea9370dae9a7505d9c9fc0bd1d30b3395937feb1d2156ef89cdd7fdff9013f9",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-success10.wav",
+      "bytes": 48044,
+      "sha256": "86456e157005cd241e9370ff8ab5a6a116d3510dae67bb93b3f6357c6be4cf8a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-player4.wav",
+      "bytes": 44144,
+      "sha256": "af4c2ac6c774dce2ce44f5c22b6460d8da1d4f0c65b156ae3d72ebea034ff5db",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-opponent.wav",
+      "bytes": 44144,
+      "sha256": "a3a1c9f337b886f8b1ae241c84e4c9c0897b09afcf3fd0c668fdf0af97382d14",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-warning-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "a77455dc0ab3179fc486521cf5c6775e2a43268ace94f642a8af141b35bcfb9e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-opponent.wav",
+      "bytes": 44144,
+      "sha256": "0e197f1d5009ba732c88e571b6bd9032606b47dcbe9fcf9724d164ceae15f993",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-warning.wav",
+      "bytes": 48044,
+      "sha256": "7926889ce094ee418f6560c9619de661015c860ae9c58203ff0547c2570fa6fc",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-player1-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "eb954824baa89582972b7903f708a773e65091dbfea390ba75121e6e38e3c21a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-warning.wav",
+      "bytes": 48044,
+      "sha256": "0fb8566ea5a5c7a12fe2eff60c4456bf39a64953ce68134564b200b14bce4cc9",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-sixteen-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "1423dffad3ff4a790204a58b2218af420030b40f6b017a69a14df00fbc84ed5d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-opponent-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "7aaa1d433b9901ff3d7cbb00759b384df695c4bef883f484fbc09b5e8e464a3c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-muted.wav",
+      "bytes": 44144,
+      "sha256": "ce7c9897b9dfd2e4dcaab1e85ef68fff88b919f06c3ca57d1f7667c06e1caa51",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-quiet.wav",
+      "bytes": 44144,
+      "sha256": "5b2f2b4c4ee82d1e770668490eb7ab3b9d5960de16ed0a36644abfdc7f147b35",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-quiet.wav",
+      "bytes": 48044,
+      "sha256": "61a300621448f4562be5b82531195d7c8b14e0bd932a739e714b9c26b064d1a5",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-fallback.wav",
+      "bytes": 44144,
+      "sha256": "e36fa1a0ed7e962735ff4bd76b27e5108dc34cce7684eb543ea906fcd8dbdbab",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-muted.wav",
+      "bytes": 48044,
+      "sha256": "92e19540f656c3af507bd038e72cfb6c1279bf1ddf21cf8c5002090691323a4b",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-warning-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "41ee86a35c3abf6828fe71fe1070bf61a9f461225be40c5bc84ba2325979c4f6",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-opponent-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "08c17c922a1744a2236a04bf95248cfc36335c9ea7dc3baa82b4157c875536f8",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-opponent-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "65cca0054a78056753cc55073d4981c81bf6f3e8a10661cfc6930a0b5173d7ba",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-sixteen.wav",
+      "bytes": 44144,
+      "sha256": "4209718d7cb8bf97c377c6be0b58f3df8feef4fa2e55f3843682f7a92370ba31",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-player9.wav",
+      "bytes": 44144,
+      "sha256": "a3aab746b787e3d23a26423735fe3ed48db218fe451c491393843b0ab67a2906",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-warning-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "30c791a2c640eeb8fce342a1d1a286296fb8bab6e6b07955fbf60e5cccc55686",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-opponent.wav",
+      "bytes": 48044,
+      "sha256": "c4c43ef963070ff06858017beea0dbc1a6788360136ec5be971b7875f3cf473a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-zero.wav",
+      "bytes": 44144,
+      "sha256": "ce7c9897b9dfd2e4dcaab1e85ef68fff88b919f06c3ca57d1f7667c06e1caa51",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-warning-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "5d7db08f72d820d6b2f5608eab91385d836d2b47e909fa1ba210af78a024199a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-opponent-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "d0e14193ded205f4224fef83ea36677cc8f6f0eda52c0b6592df5285cbfcbca6",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-sixteen.wav",
+      "bytes": 48044,
+      "sha256": "9b507c7be70fc37a9a2829f06bad7136e635fbe53d0c32412a65ce6c01f2daaf",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-player10.wav",
+      "bytes": 44144,
+      "sha256": "e7b859a612a5e7f109c4c08e809acdc517a6d85a524dfb5c31ca742a2894295f",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-player5.wav",
+      "bytes": 44144,
+      "sha256": "a3aab746b787e3d23a26423735fe3ed48db218fe451c491393843b0ab67a2906",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/waveform-measurements.json",
+      "bytes": 5537,
+      "sha256": "40999d394df58b97cdfebde682377cefde30396c2dc73d3cd52068bce8f1b016",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-player.wav",
+      "bytes": 44144,
+      "sha256": "3bafd90ccb820ef9309b2e0572cbe9ad31255455bb9ba36b319c155d84b0ca74",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-warning.wav",
+      "bytes": 44144,
+      "sha256": "a4a2ed59f5b8af98f64559d9766322a2d4d2ff160bb30cb4798539dbcae48dc4",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/lifecycle-実際のWEBGL-lose-contextによる喪失と復旧でも手動再開を待つ-chromium/native-webgl-restored.png",
+      "bytes": 126567,
+      "sha256": "4b747ff3884eb35e1440832a5abc14e67236e3dfe05290168fdf355a32a125d4",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-chromium/video.webm",
+      "bytes": 100110,
+      "sha256": "b54b81ac9b0d7936b321a779cd0b6bb096c4dc89c7b6ae3bf1986c6ab109c808",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-390×844-chromium/direct-held.png",
+      "bytes": 96038,
+      "sha256": "4ccf31ebffa7dd7c7b04ba69b40e2d55b97d8a34585ca56aadc0381e4c0cddca",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/sharing-共有リンクは568x320・文字100-でも読めて操作できる-chromium/result-568x320-1.png",
+      "bytes": 13499,
+      "sha256": "e2872ed1052c2813f84da27c3ca9aa84dca5454a531cecd52feebd7da08637d5",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/sharing-共有リンクは568x320・文字100-でも読めて操作できる-chromium/home-568x320-1.png",
+      "bytes": 23708,
+      "sha256": "bafb3218b8db1efc151d1a9ed9d7d8e4a5a40d6fc43827c2bb4abcc00d55e93b",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-返球・台面の花火を実際の接触イベントで描き、停止・リトライで過去の粒子を残さない-chromium/bounce-firework.png",
+      "bytes": 288880,
+      "sha256": "25ac0b8dbd037286496992810887860a4bfd59b89fa429800c7ed1dff64235f0",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-返球・台面の花火を実際の接触イベントで描き、停止・リトライで過去の粒子を残さない-chromium/racket-firework.png",
+      "bytes": 282473,
+      "sha256": "96467653a2bf3b1a0a38b66b267edd1fae6e5188680c66149906ca0886efaa15",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-返球・台面の花火を実際の接触イベントで描き、停止・リトライで過去の粒子を残さない-chromium/video.webm",
+      "bytes": 706332,
+      "sha256": "150ff5232b0eb8107b34cabf1cb4efc1bc40a12ad79f00d66a682ad33019d114",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/quality-縦横・44pxボタン・200-文字・ラベル・安全余白を確認-chromium/home-text-200.png",
+      "bytes": 225472,
+      "sha256": "cecb79e02c1edc43c74dc6b18d93528c3f79cd0c22670c187f6b223d285f070d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/quality-縦横・44pxボタン・200-文字・ラベル・安全余白を確認-chromium/game-874x402.png",
+      "bytes": 84955,
+      "sha256": "eea327b6c85a8e8c004489cde6a5b4536fe897c1f2265f77944b1840fa67b350",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/quality-縦横・44pxボタン・200-文字・ラベル・安全余白を確認-chromium/game-1280x720.png",
+      "bytes": 159633,
+      "sha256": "e2049ef4b2f714a1e557f24319cfa4bac4f0c27e73e23f9483e5bef27a119fb6",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/quality-縦横・44pxボタン・200-文字・ラベル・安全余白を確認-chromium/game-402x874.png",
+      "bytes": 98744,
+      "sha256": "b4c0d9385d09763c3f4c542d3334172d16853cb5738b4fac93f6e888c577ab29",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/quality-縦横・44pxボタン・200-文字・ラベル・安全余白を確認-chromium/paused-text-200.png",
+      "bytes": 78128,
+      "sha256": "e72d4cca07972001f41cb0b4bbb1f8c4d2164a3989d2d70ec92cf570f50d90dd",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-音声再開拒否でも無音で継続し、ミュートと明示的な音声の再試行が使える-chromium/audio-unavailable.png",
+      "bytes": 152361,
+      "sha256": "f145b7e1ed89aa210d4465c3c82e988b7bab1ced85e64be30553fce0441f0119",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-100.png",
+      "bytes": 194726,
+      "sha256": "da54b8bcc73f3925a0e089389bf4f04fbc6ac4fe8ac73c2d33c0cefc5ac77b01",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-240.png",
+      "bytes": 311956,
+      "sha256": "6eceb3af77a1abce0b28b64ad54a035147cbcfc2dcb67fa9f062e056be68301d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-450.png",
+      "bytes": 393797,
+      "sha256": "411b16f21987b58acfe687e59364d3d3e4ab56b8df540f64aac0a5b05a569c2f",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-020.png",
+      "bytes": 163518,
+      "sha256": "1ce71d65242d284be9523c3064b47bf9e6c8e64fb5f81bda63bc9dc1dcad15a5",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-420.png",
+      "bytes": 390915,
+      "sha256": "c7ffb9e1e839c927f0b6389b89471d013869acd940992e904e04acb5e08d3d11",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-190.png",
+      "bytes": 266693,
+      "sha256": "0812d5367e1d27e3ce8b509d82901cba23ff5eba7edba46a4f4f4ef8a8a83ee2",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-000.png",
+      "bytes": 161043,
+      "sha256": "198ecb0ff19d60251952e586daf23dd80507ace8a7ffc508f2b3770524a2043e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-150.png",
+      "bytes": 210819,
+      "sha256": "66e7793302405bd5b5887ac3437a1119f49fdf625448d9165a2d9439ef74f561",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-360.png",
+      "bytes": 328661,
+      "sha256": "7d2a224792a8b0df80e8ba55c1852e1475d0782fd3d2c8e9c4cf35f6f6ad81a3",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-021.png",
+      "bytes": 162548,
+      "sha256": "c5c42fd1794725b59d56eabc4397070dc94c5ef3c88d48cb7928e87ff264dd52",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-010.png",
+      "bytes": 160229,
+      "sha256": "356592c312f7684c50474c797e0968cd704c450fade499b10e2a8317dcedf3a3",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-380.png",
+      "bytes": 399008,
+      "sha256": "7eb0ee331c51c64b1c6e031acca4860752feb1ea5bf30daf00487db807487d60",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-270.png",
+      "bytes": 312449,
+      "sha256": "859b2cd20730ca30f0868d722ad1ed7504b0743683e2beb441b40d507facb2b7",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/video.webm",
+      "bytes": 627844,
+      "sha256": "ad466b27acd40014cee49ddbf24e49109a40fa1d7bdb1582e9fc2d890189d1be",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-330.png",
+      "bytes": 322956,
+      "sha256": "0aaa99b844a1b7e7eac524d6e7b1c921e5819dd836da8eb62087811b989f5082",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-130.png",
+      "bytes": 210390,
+      "sha256": "7c02d1aff8e25ceabf327148efeb96e0af38ee42df1ecf275c93a852905784ab",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-410.png",
+      "bytes": 388322,
+      "sha256": "6fce1cc21225a78978a6c1f3d74e71235930d9d21f9abee67b30ddad3672b40f",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-030.png",
+      "bytes": 165124,
+      "sha256": "cfbf4852cfd221bfd357d238cb16196e718b0d0c73addc13160459018db63714",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-004.png",
+      "bytes": 160390,
+      "sha256": "225698e9f2a33f7773418acae4ef1d7c4b361a43470f9ab64732ae81b63b58fe",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-001.png",
+      "bytes": 159963,
+      "sha256": "7bbc5b70973a7e04bf4e71a44f7adcf773890c6ce25763bc962bd5b43884a1c2",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-300.png",
+      "bytes": 316563,
+      "sha256": "9a124772db86d478ad0e066cdf9bcdd56a81d022bf717ba4498af1ae357d6eb9",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-019.png",
+      "bytes": 163055,
+      "sha256": "9e4383110b95fa544b4cc202bacc7e141f329fa9fccf8f8166b48e3f726f3ce7",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-009.png",
+      "bytes": 161299,
+      "sha256": "8f8b7521ec93ead17c8a0daa02d290316017761e683afb9b09c099be2a1ca0d2",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-160.png",
+      "bytes": 248843,
+      "sha256": "41baa9478c508d4dc0087e4e4f1453dc45fd283cf398028ddd8541d83a8f4c1c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-040.png",
+      "bytes": 164852,
+      "sha256": "babea130cec9af13f0c0c96c7482f419573e8e685459dd447d67b4e43161ffad",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-210.png",
+      "bytes": 295773,
+      "sha256": "8b18f290b391d776e090de0f586f064cec6471a8f17c07a53bfe393c7e6f2044",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-010-ended.png",
+      "bytes": 160229,
+      "sha256": "356592c312f7684c50474c797e0968cd704c450fade499b10e2a8317dcedf3a3",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-070.png",
+      "bytes": 193423,
+      "sha256": "8f406ef51b4b66a802a4e8ca59dc898c3c62bcaa27f383be32da8e2de62f5247",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-005.png",
+      "bytes": 160887,
+      "sha256": "5d4263525125dd1a3ca2f5c203e7c6309b83c4c303c4aef77f594f455618c5b3",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/milestones-専用状態で増球の境界と全演出の表示・発光終了を撮影する-chromium/milestone-390.png",
+      "bytes": 413560,
+      "sha256": "2c116cbb540aaa091ddd31b9e7bb08fcddd21e21530c06128924d562866045ff",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/sharing-共有リンクは568x320・文字200-でも読めて操作できる-chromium/home-568x320-2.png",
+      "bytes": 34149,
+      "sha256": "46fa59d14565c76361ca35ca3ee920e4cc0a6367437aadefe484baa687571a65",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/sharing-共有リンクは568x320・文字200-でも読めて操作できる-chromium/result-568x320-2.png",
+      "bytes": 15218,
+      "sha256": "005981b77a4047e2db8e665a1a8efd533668c82f49febb1391aa511a67954558",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/sharing-共有リンクは1280x720・文字200-でも読めて操作できる-chromium/result-1280x720-2.png",
+      "bytes": 47768,
+      "sha256": "44d0c941ccf580128e5ab843442f46c56db236781962954b2840138f323d6cd0",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/sharing-共有リンクは1280x720・文字200-でも読めて操作できる-chromium/home-1280x720-2.png",
+      "bytes": 120191,
+      "sha256": "6decb5158360f6fae732775486516847bfc3e6373234b11ddc465ba91c7fac84",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/sharing-共有リンクは1280x720・文字100-でも読めて操作できる-chromium/home-1280x720-1.png",
+      "bytes": 133272,
+      "sha256": "bfe5c8192a875732fb2546a3e6ca9a9a9f60a40823234ffdece2cf76efb42654",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/sharing-共有リンクは1280x720・文字100-でも読めて操作できる-chromium/result-1280x720-1.png",
+      "bytes": 38476,
+      "sha256": "535fb4c64a2cbc54a0be2354b7dbfa64f8641654983078ccde0292ffa3e442e8",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/basic-play-開始→直接配置・ドラッグ→返球→失球→結果→再挑戦-chromium/playing.png",
+      "bytes": 158323,
+      "sha256": "6d34f7a7bb648d7f180dac67b4cdb1ebf6ae546159db1b807e2b472c718fd30f",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/basic-play-開始→直接配置・ドラッグ→返球→失球→結果→再挑戦-chromium/video.webm",
+      "bytes": 698758,
+      "sha256": "d5fe119b92bb1a9e5193f6f1408f5b917fb659ef334c4b810bb32fa2dad3b5c1",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/contact-見えている球にドラッグで合わせ、3ラリーをつなげる-chromium/video.webm",
+      "bytes": 1310373,
+      "sha256": "4285339475c20fabf67c5f57acad6e0eef6cc4be57d41807171d1c334e0b2564",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/contact-見えている球にドラッグで合わせ、3ラリーをつなげる-chromium/three-visible-returns.png",
+      "bytes": 157956,
+      "sha256": "c28003648b81c483db4f67ac5d1761203f0c5100b6be2c12f0666a064ffde6db",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/direct-input-情報上の入力・safe-area・resize連発・メニューに古い入力が残らない-chromium/resized-resumed.png",
+      "bytes": 82775,
+      "sha256": "afede80d8d0b9d4002bed633fc53794416651d1a2e6c1ef9915d7492103d23b7",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/direct-input-情報上の入力・safe-area・resize連発・メニューに古い入力が残らない-chromium/video.webm",
+      "bytes": 126909,
+      "sha256": "3af28406d59526037159bd8b81b3bebcb47702e855e714b19669894b3102591e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-実アプリのホーム遷移で花火を直ちに消し、再挑戦へ持ち越さない-chromium/video.webm",
+      "bytes": 574314,
+      "sha256": "22bf4b7dd063585ddb3a463c98e27529c06fbb60ee9ee93b25aaa4180e9bd4b3",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/contact-ワンバウンド後の見える球にラケットを合わせれば返球できる-chromium/returned.png",
+      "bytes": 156411,
+      "sha256": "9c209ec50de9f2a02db0246fe0974f45a211e1f2074876619ad9661889736f5d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/contact-ワンバウンド後の見える球にラケットを合わせれば返球できる-chromium/video.webm",
+      "bytes": 390405,
+      "sha256": "fb1fddf022f92614942e61805b891021cd54ddcb3e4146e3e1c9f9508c33dde7",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/contact-ワンバウンド後の見える球にラケットを合わせれば返球できる-chromium/before-bounce.png",
+      "bytes": 160306,
+      "sha256": "f0dfc279134a1e47436a355ab92ae337fc479de81f7e8ba3c3f67264e2ce450c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-472.png",
+      "bytes": 383170,
+      "sha256": "882a4660a40e26d819364be73ced10b315ae63209b51658bd361ecbf4e9884d7",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-480.png",
+      "bytes": 386838,
+      "sha256": "6bd489cef91fc8add9d56f9c73979b66453e9177b22453d06b838114ac3b8aff",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-470.png",
+      "bytes": 383568,
+      "sha256": "9dd7366d8198ed36e29798910b577ae17459b302943c7bc4ee62602f04d9c4b5",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-479.png",
+      "bytes": 383551,
+      "sha256": "3e0c7ed9fd2dcfc3218057289f864e6456fead21593470f01d7ea64a5fde610d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-519.png",
+      "bytes": 322025,
+      "sha256": "a6812572d905d3db36196a10dc40883882dfedd76477a4e46b398b9f32036730",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-530.png",
+      "bytes": 305025,
+      "sha256": "683316f60e0713cf09f13387e2326e709380d432fae11d19d60df4c3dadf4237",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-555.png",
+      "bytes": 285896,
+      "sha256": "cea29ba3a86a885b82ef13f63c417ea86a98574d953b5e66070ed33e54eb8eb0",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/video.webm",
+      "bytes": 2934726,
+      "sha256": "fc996476d78250b267c86dbbc63ec4d3153b36f756e0f42adb3b0d36f5e003ac",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-489.png",
+      "bytes": 387089,
+      "sha256": "a526e1ec164976ce028b443f92c537b2872ef609c667a546526d643e33677f92",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-469.png",
+      "bytes": 409115,
+      "sha256": "d675c440246f84cc088730cb277efff669c5589bd45f42513571ed6b6ae04326",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-471.png",
+      "bytes": 382398,
+      "sha256": "cad9025f121e95297494d3f5b5f17bf8de68d03b3709e10811fc8627396b4d07",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-500.png",
+      "bytes": 290365,
+      "sha256": "722a5fd4cac26deba32d1822671b47a5789ecdb26527889c0954e1318205e4cf",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-499.png",
+      "bytes": 292163,
+      "sha256": "38c8767067a19fa8fe357be71e6f9b651e2b73e0645eaf7178093a7288c66b12",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-529.png",
+      "bytes": 299778,
+      "sha256": "184d56655221c9f73037dd6dc8a79d838bd3050e780c8f4d03601c59552179f7",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-554.png",
+      "bytes": 328669,
+      "sha256": "b8262084ceb7e67d6ec45d64d3ed777f71ce244e5da1448a72887f04a84c8b87",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-459.png",
+      "bytes": 393740,
+      "sha256": "d70c3284f96ecff233b237eeb2381e572fbc4c85f81a2a235f47f6bfd88dc221",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-520.png",
+      "bytes": 292610,
+      "sha256": "4280bbd7bbe5191de5c299111716a504a8c004f3e8e33081beea909a429ecbe3",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-510.png",
+      "bytes": 280663,
+      "sha256": "5e6245571dfc234cab42ee626e75ed3c8a134db1e0267c110a5db486c4501963",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-460.png",
+      "bytes": 409144,
+      "sha256": "502dd149575411f92f62076fbd273691fd835df896e743b7639d1f865e0b1843",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-539.png",
+      "bytes": 304019,
+      "sha256": "e5e034ac5318ba2e707829e4a8680940f5fc12313b1b21dcc0df6759ae9407da",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-509.png",
+      "bytes": 295089,
+      "sha256": "29f4f03428ae1009ea838f075af2ad423bf8e7b7e54d5075ecce0db1025c5450",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-490.png",
+      "bytes": 292361,
+      "sha256": "c80ad924aaf15a77abde12229a610ce7aa6c4ee9a802181affb7dfd294ffc3c2",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/extended-460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する-chromium/extended-540.png",
+      "bytes": 301859,
+      "sha256": "9b57a66fe8283526d75f09de7c0985540304d2d55970ac2f03f68bf6c5dd0dfc",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-chromium/video.webm",
+      "bytes": 96644,
+      "sha256": "e19dcb62347e29ea9dce61308c26279d7f20df9d3179f8078f6270b193376ce5",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-280×360-chromium/direct-held.png",
+      "bytes": 39791,
+      "sha256": "45fb7de4dd81b7645fe9b23bf5c9522e8501c670a83413f17702e3d5b8839daf",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/basic-play-タッチの絶対位置ドラッグでラケットを動かせる-chromium/video.webm",
+      "bytes": 243983,
+      "sha256": "b5d0f6718e9fa369e85e118e045253af62270dafb9d07a021a672bc3651ca9b8",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-844×390-chromium/video.webm",
+      "bytes": 203538,
+      "sha256": "3ac548e92fa560448f4b4dbda22f3f4d4697411a43bfd027641266da305d4090",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-844×390-chromium/direct-held.png",
+      "bytes": 82655,
+      "sha256": "407af25d5ba13665c225f4f648b9f8bead120d44fe0f2f77e96e0e5303a6269d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/evidence-画面の証拠-縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す-chromium/home.png",
+      "bytes": 148271,
+      "sha256": "46e13f8acaf80dd254e79b77ab2e127dd5c57064bcc1273c34c65a51313e2e8f",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/evidence-画面の証拠-縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す-chromium/playing.png",
+      "bytes": 160618,
+      "sha256": "5ff05e9ccb15c297d4467fbe87c635827777a4ad0968550b78df675e4c35bad5",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/evidence-画面の証拠-縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す-chromium/video.webm",
+      "bytes": 504148,
+      "sha256": "9757f3b854c38693d6a2975e39e19b32d1c5501d57773e9dd9b9ee21502f5ff2",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/evidence-画面の証拠-縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す-chromium/paused.png",
+      "bytes": 63008,
+      "sha256": "d28b4fd66487668ced517c1164f3300e81b90587d6f41b66320d11e338dd53a7",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/evidence-画面の証拠-縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す-chromium/result.png",
+      "bytes": 47862,
+      "sha256": "827627098629ef4c7e1d0a8483077a092e5c1b6dd3d7b0416104d5601c800b97",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/evidence-画面の証拠-縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す-chromium/landscape.png",
+      "bytes": 81708,
+      "sha256": "ba05ea6b84e1099b0ec4e39bf02c8190b969e77b0c6b181d4ce48ffbdfb4dcb1",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-実AudioContex-b5bc7-run切替と部分失敗を繰り返し、予約音とnodeを回収-chromium/native-audio-resources.json",
+      "bytes": 20359,
+      "sha256": "2311e13d14433c806b8cf587db40c9ec4afbb5468d6f0b39a6e0ab2c7395b269",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-chromium/smash-warning-paused.png",
+      "bytes": 119846,
+      "sha256": "2333f4c3d4c47f30879466caa57a4e8aca1f83af75bbf653161adf5f7152cf6d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-chromium/video.webm",
+      "bytes": 1317297,
+      "sha256": "7166ac1280bc821a8661fde2c961891bac28358001321596c0b71b1f7f99f80c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-chromium/smash-warning-muted.png",
+      "bytes": 366216,
+      "sha256": "b3711f6b0772c3c3a00a3ab8cb356d8f7ab08ce50dc737e96106c4e958008618",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-chromium/smash-own-side.png",
+      "bytes": 372432,
+      "sha256": "a429dc959bdfc17f2950ffbf184291c33c8ca570783c91639e90b568cd92e77b",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/smash-450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない-chromium/smash-departure-hidden.png",
+      "bytes": 361922,
+      "sha256": "1db05ae39a1ae0cfca75f178d90da4dfd0609b1ab7f8134d0ae1fe9cedc58d5d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/evidence-実際のWeb-Audioで自分用・相手用の異なる短音を合成できる-chromium/video.webm",
+      "bytes": 79479,
+      "sha256": "b734184a4ccf19b1ee9d904d8835eec95047f577cc62a392b59127f5d2c405ce",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/smash-予告音を実際のWeb-Audioで合成して保存する-chromium/video.webm",
+      "bytes": 80119,
+      "sha256": "469f49f156a37ac54a69a798866d3b6d642e95280c409081f4ffe903d8e5303c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-実アプリで加速球の一時停止・手動再開・リトライを保つ-chromium/pause-resume-retry.json",
+      "bytes": 3972,
+      "sha256": "6d0697b111b575a87764c7c12305563a54da0e7591fcfdb7db35c02165ba0c78",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-実アプリで加速球の一時停止・手動再開・リトライを保つ-chromium/iphone-540-paused.png",
+      "bytes": 54581,
+      "sha256": "92494612e0332bdf5df7fb8cb225b666866f7a5fb4efe30a723f7b70d63a24b0",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-実アプリで加速球の一時停止・手動再開・リトライを保つ-chromium/iphone-retry-initial.png",
+      "bytes": 94712,
+      "sha256": "155f9337a210715b701751f03cf53d60689e67ff15d9d26437794bba3a20731d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/lifecycle-WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する-chromium/context-restored-warning.png",
+      "bytes": 126567,
+      "sha256": "4b747ff3884eb35e1440832a5abc14e67236e3dfe05290168fdf355a32a125d4",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-300-300.png",
+      "bytes": 316563,
+      "sha256": "9a124772db86d478ad0e066cdf9bcdd56a81d022bf717ba4498af1ae357d6eb9",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-390-390.png",
+      "bytes": 413560,
+      "sha256": "2c116cbb540aaa091ddd31b9e7bb08fcddd21e21530c06128924d562866045ff",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-210-210.png",
+      "bytes": 295773,
+      "sha256": "8b18f290b391d776e090de0f586f064cec6471a8f17c07a53bfe393c7e6f2044",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-330-329.png",
+      "bytes": 318712,
+      "sha256": "4870c52ecc1a400dfd0df9bdb8110ffa9b5dd49d663259ca112499004095dd78",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-130-130.png",
+      "bytes": 210390,
+      "sha256": "7c02d1aff8e25ceabf327148efeb96e0af38ee42df1ecf275c93a852905784ab",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-410-409.png",
+      "bytes": 413765,
+      "sha256": "4e1596fa735636a8486f02ada9db04d93091b2af74c507d013be7f6fd645cbc9",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-420-420.png",
+      "bytes": 390915,
+      "sha256": "c7ffb9e1e839c927f0b6389b89471d013869acd940992e904e04acb5e08d3d11",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-100-99.png",
+      "bytes": 194945,
+      "sha256": "3898a937825a073d8032ae53f340eda6438523f13382977cbb35dfa37cb517aa",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-380-379.png",
+      "bytes": 328680,
+      "sha256": "b1d9a0657b784c40e891b68bc7ffbc93036c2f7843994775f74dacb7c470bf3d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-410-410.png",
+      "bytes": 388322,
+      "sha256": "6fce1cc21225a78978a6c1f3d74e71235930d9d21f9abee67b30ddad3672b40f",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-380-380.png",
+      "bytes": 399008,
+      "sha256": "7eb0ee331c51c64b1c6e031acca4860752feb1ea5bf30daf00487db807487d60",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-360-360.png",
+      "bytes": 328661,
+      "sha256": "7d2a224792a8b0df80e8ba55c1852e1475d0782fd3d2c8e9c4cf35f6f6ad81a3",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-330-330.png",
+      "bytes": 322956,
+      "sha256": "0aaa99b844a1b7e7eac524d6e7b1c921e5819dd836da8eb62087811b989f5082",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-460-460.png",
+      "bytes": 409144,
+      "sha256": "502dd149575411f92f62076fbd273691fd835df896e743b7639d1f865e0b1843",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-270-270.png",
+      "bytes": 312449,
+      "sha256": "859b2cd20730ca30f0868d722ad1ed7504b0743683e2beb441b40d507facb2b7",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-240-240.png",
+      "bytes": 311956,
+      "sha256": "6eceb3af77a1abce0b28b64ad54a035147cbcfc2dcb67fa9f062e056be68301d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-240-239.png",
+      "bytes": 299000,
+      "sha256": "90c298413285d4a238571d98689de3548e3052333c3c47c1112b3c1051c3c223",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-70-69.png",
+      "bytes": 166782,
+      "sha256": "b869cac98ff624445bdb4a0a96052dd65705ca126ca0ebf7a713e46aa8e84515",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-360-359.png",
+      "bytes": 325642,
+      "sha256": "a6b0f21d6a09f500d1ce5629cc7ca8671adedb466146f449c5d62e5d97a59ae5",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-130-129.png",
+      "bytes": 196496,
+      "sha256": "edc160dc5f5612551f4dbb9fc6afdb684718d5419385f5980e4cdafc96865e9e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-460-459.png",
+      "bytes": 393740,
+      "sha256": "d70c3284f96ecff233b237eeb2381e572fbc4c85f81a2a235f47f6bfd88dc221",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-190-190.png",
+      "bytes": 266693,
+      "sha256": "0812d5367e1d27e3ce8b509d82901cba23ff5eba7edba46a4f4f4ef8a8a83ee2",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-100-100.png",
+      "bytes": 194726,
+      "sha256": "da54b8bcc73f3925a0e089389bf4f04fbc6ac4fe8ac73c2d33c0cefc5ac77b01",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-190-189.png",
+      "bytes": 250617,
+      "sha256": "5cb1203404a54cee7c22246db0e8b6b81b35e33db10d50e01abe2a3d1d11bde6",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-70-70.png",
+      "bytes": 193423,
+      "sha256": "8f406ef51b4b66a802a4e8ca59dc898c3c62bcaa27f383be32da8e2de62f5247",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-210-209.png",
+      "bytes": 268098,
+      "sha256": "da287609bedc0683415205ffa5de994b2c11b881ae391bc92bc3808ab086c1c7",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-420-419.png",
+      "bytes": 388216,
+      "sha256": "bc87e8bd16574938dcb20b0fdb73a5a8f25d580cfc1325108e806a5b0059d87c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-390-389.png",
+      "bytes": 398984,
+      "sha256": "9e49dc106b76a91193a84b3f3f36b98c6a90d1fb75ee3660d3511f0586b029c4",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-300-299.png",
+      "bytes": 314371,
+      "sha256": "257a756900f432c3387741292738b24f5ef630104abd6c1f00597eba3c8b201e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-270-269.png",
+      "bytes": 313484,
+      "sha256": "369c72dd4faa5e768c640ded562627671be856882d7ade6b89a9e9c86c7da746",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-160-160.png",
+      "bytes": 248843,
+      "sha256": "41baa9478c508d4dc0087e4e4f1453dc45fd283cf398028ddd8541d83a8f4c1c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-160-159.png",
+      "bytes": 210784,
+      "sha256": "7a9eb9ef9bf1158aa2826d251267504ef9cb77c4738f1ba356f2de9822dbeb9e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/behind-30.png",
+      "bytes": 59102,
+      "sha256": "9ca4449788caecd0e1c516be18672e5bdea15baf15bf24741f76d5dd8ce5e66f",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/front-10.png",
+      "bytes": 61112,
+      "sha256": "689a03a7475ab0166b81e33b2c020002c7799d65b236e631aea8d86b8022ac43",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/front-30.png",
+      "bytes": 61112,
+      "sha256": "689a03a7475ab0166b81e33b2c020002c7799d65b236e631aea8d86b8022ac43",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/behind-390.png",
+      "bytes": 142768,
+      "sha256": "017119a38bfebb563b48db2d5511bb7a18c93a9233f11f8f2c6cb1e8a21e4a5e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/behind-10.png",
+      "bytes": 59102,
+      "sha256": "9ca4449788caecd0e1c516be18672e5bdea15baf15bf24741f76d5dd8ce5e66f",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/behind-0.png",
+      "bytes": 59102,
+      "sha256": "9ca4449788caecd0e1c516be18672e5bdea15baf15bf24741f76d5dd8ce5e66f",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/front-390.png",
+      "bytes": 143398,
+      "sha256": "18aa44c389ccb358ab3611ee32d60c029f3ada3bf4ae95d64289e4476ef1fb10",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/front-0.png",
+      "bytes": 60879,
+      "sha256": "d55594a9b9a1515a42ebf480cfdc04e686b451eadf3cd2f29d88ac803be2d618",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-chromium/video.webm",
+      "bytes": 373190,
+      "sha256": "7d78764609c7119f4225b730323ccc2cf502dffa70c419a9bb4daf4b1d16dd5a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/direct-input-実canvasのtap-drag-releaseが投影位置に一致し保持する-1280×720-chromium/direct-held.png",
+      "bytes": 161832,
+      "sha256": "4db6f70257d7a017433981312726cf50c1b498d67e4d36c2f7a71207f2fb7408",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる-chromium/measured-flights.json",
+      "bytes": 8325,
+      "sha256": "7d4dd40d691bd1fcc217bc022a7c972bb7664f3e148bcd0b8ff9629ca7a223dc",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/preferences-全設定と自己ベストが再読込・リトライを越えて残る-chromium/settings.png",
+      "bytes": 34723,
+      "sha256": "5a0fae5be7ffe0ebaaff90cbb74e14593334b31b67a73d6e521f9e234ff01c2c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/sharing-共有リンクは320x568・文字200-でも読めて操作できる-chromium/home-320x568-2.png",
+      "bytes": 36584,
+      "sha256": "2b59bc2e7ddc6d96321e965ffad670667d3a203e58cfb8e59935e3fc6b06943c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/sharing-共有リンクは320x568・文字200-でも読めて操作できる-chromium/result-320x568-2.png",
+      "bytes": 23364,
+      "sha256": "ea55af8cfc1360bd870ca7db7e8a560297f0d879666b87d698404fbb1cb0e9f3",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/basic-play-停止中は描画を保持し、再開操作でだけ進む-chromium/video.webm",
+      "bytes": 501764,
+      "sha256": "0dac0f9b2d83e6d3fd9d693b048fc99b21ec1b2add694ae2b63e01fce4b11181",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/ranking-匿名開始の応答喪失後もすぐ遊べてonline復帰時は同じIDで再送する-chromium/guest-count-result.png",
+      "bytes": 31256,
+      "sha256": "573d184fa951d225abe234e513ce415050a6a7ec3454badbe9fba5625a2b53cb",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/quality-450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する-chromium/trace.zip",
+      "bytes": 217667,
+      "sha256": "26c07f902bdc5e89555c3b8ac722c9996d51a90929e927757b04f0b97f7570cb",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/quality-450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する-chromium/error-context.md",
+      "bytes": 10077,
+      "sha256": "a1f66ba2ea83ddbdf623854fce22b1b78357a98424fd9143a42823d220352b0c",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/attachments/transitions-190-json-26174e7a815ab35fd777db5131e9c325239c5265.json",
+      "bytes": 2228,
+      "sha256": "d87cee761d6fa829f3545a1cdaeeda95fe9a29361384ff7f27533b9e59bf5b16",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/attachments/transitions-490-json-ccc74950db5d5b38f1395345645f8c1e93460121.json",
+      "bytes": 2206,
+      "sha256": "eb35b239470b25fb7b3675964067b14826d12328037d22ea6f657f7970353464",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/attachments/transitions-240-json-939eb69ba007a47e5e60fc3b55900e59d991c453.json",
+      "bytes": 2256,
+      "sha256": "550dbe280b0ace4a8711be9439e8674beb987f001abe4f5366364d14a8dfd762",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-player1-wav-7428d67f22fdfdaab075be45c7040e1b0be16e7b.wav",
+      "bytes": 44144,
+      "sha256": "af4c2ac6c774dce2ce44f5c22b6460d8da1d4f0c65b156ae3d72ebea034ff5db",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-sixteen-rms-matched-wav-8e849c4207748dc3990496609894643df0559233.wav",
+      "bytes": 48044,
+      "sha256": "74a7892dd4e20f77d9cff0c8dfde78d1fe8e2d463c326fb2032402907ac1010d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-warning-wav-f228a487752208e0153c7a677e6ad3e269b7066e.wav",
+      "bytes": 48044,
+      "sha256": "0fb8566ea5a5c7a12fe2eff60c4456bf39a64953ce68134564b200b14bce4cc9",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-muted-wav-c89c93c7068df0b6de3cc6cae500f679459001ff.wav",
+      "bytes": 48044,
+      "sha256": "92e19540f656c3af507bd038e72cfb6c1279bf1ddf21cf8c5002090691323a4b",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-quiet-wav-0ec7f59845a927400150a091c65f49cc047066fa.wav",
+      "bytes": 48044,
+      "sha256": "61a300621448f4562be5b82531195d7c8b14e0bd932a739e714b9c26b064d1a5",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-warning-rms-matched-wav-daa7dc7e0785e78e3a60545559a4cf8ac8c0d0fc.wav",
+      "bytes": 48044,
+      "sha256": "5d7db08f72d820d6b2f5608eab91385d836d2b47e909fa1ba210af78a024199a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-opponent-rms-matched-wav-d031f29f8b440239804f731189958b1fac8c3097.wav",
+      "bytes": 48044,
+      "sha256": "65cca0054a78056753cc55073d4981c81bf6f3e8a10661cfc6930a0b5173d7ba",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/waveform-measurements-json-777d4934e1395a8abe8f9da518bfa5c9d7e5544c.json",
+      "bytes": 5537,
+      "sha256": "40999d394df58b97cdfebde682377cefde30396c2dc73d3cd52068bce8f1b016",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-sixteen-rms-matched-wav-d45e8e0113eafabad64f4af4c28db34da3146602.wav",
+      "bytes": 44144,
+      "sha256": "1423dffad3ff4a790204a58b2218af420030b40f6b017a69a14df00fbc84ed5d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-player1-rms-matched-wav-5108d0771072aa918e5d9a1b3d31c4adebfce744.wav",
+      "bytes": 44144,
+      "sha256": "eb954824baa89582972b7903f708a773e65091dbfea390ba75121e6e38e3c21a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-opponent-rms-matched-wav-386fd69106f9f20d8284a8ed57e75db644ed13b1.wav",
+      "bytes": 44144,
+      "sha256": "08c17c922a1744a2236a04bf95248cfc36335c9ea7dc3baa82b4157c875536f8",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-warning-wav-1f12576e6b32b7f9c074106327e78fd3d6391946.wav",
+      "bytes": 48044,
+      "sha256": "7926889ce094ee418f6560c9619de661015c860ae9c58203ff0547c2570fa6fc",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-warning-rms-matched-wav-03c486aa19ba6aba7e28725af2a7749382453ab1.wav",
+      "bytes": 44144,
+      "sha256": "41ee86a35c3abf6828fe71fe1070bf61a9f461225be40c5bc84ba2325979c4f6",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-sixteen-wav-84fa71378f4371a9eb9d97626b8a22abcc23075a.wav",
+      "bytes": 44144,
+      "sha256": "4209718d7cb8bf97c377c6be0b58f3df8feef4fa2e55f3843682f7a92370ba31",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-player-wav-621ee8cb7c61883de9120e5a1eae3cff448f38ad.wav",
+      "bytes": 48044,
+      "sha256": "3ea9370dae9a7505d9c9fc0bd1d30b3395937feb1d2156ef89cdd7fdff9013f9",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-player4-wav-45c291a736336bf1049198960381aa24156cd495.wav",
+      "bytes": 44144,
+      "sha256": "af4c2ac6c774dce2ce44f5c22b6460d8da1d4f0c65b156ae3d72ebea034ff5db",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-sixteen-wav-faabbbad98624fb20d7bbd284e92d6e6d02b5ff7.wav",
+      "bytes": 48044,
+      "sha256": "9b507c7be70fc37a9a2829f06bad7136e635fbe53d0c32412a65ce6c01f2daaf",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-player5-wav-32ee6b3d20dbb88c5f8138434a143d23725f7517.wav",
+      "bytes": 44144,
+      "sha256": "a3aab746b787e3d23a26423735fe3ed48db218fe451c491393843b0ab67a2906",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-player-rms-matched-wav-a48c26fcde4d63070f75c259982e3028a9ca1997.wav",
+      "bytes": 48044,
+      "sha256": "9a9ff3ba2b5a0c30cc40e438fee8f16e4bb8ea2dbd2d6046b8fe8556dce47984",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-warning-wav-544d7038a81fbc96d8027bd5769bafd0b54dbba8.wav",
+      "bytes": 44144,
+      "sha256": "a4a2ed59f5b8af98f64559d9766322a2d4d2ff160bb30cb4798539dbcae48dc4",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-player10-wav-d4c646e0e15bab1e4d74a8ff5909a04b592cd660.wav",
+      "bytes": 44144,
+      "sha256": "e7b859a612a5e7f109c4c08e809acdc517a6d85a524dfb5c31ca742a2894295f",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-opponent-rms-matched-wav-9553f0f4c83d6bce6d79d3561b512d443ef3a090.wav",
+      "bytes": 44144,
+      "sha256": "7aaa1d433b9901ff3d7cbb00759b384df695c4bef883f484fbc09b5e8e464a3c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-zero-wav-a53c6cf909978aa30ed49184828757965c4473df.wav",
+      "bytes": 44144,
+      "sha256": "ce7c9897b9dfd2e4dcaab1e85ef68fff88b919f06c3ca57d1f7667c06e1caa51",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-opponent-wav-ed4fbf5c177284d516360932465ae19b151b4f84.wav",
+      "bytes": 48044,
+      "sha256": "02b24adb85d1b119085d3d1afd383e0637b38e9bdab3223ffc60c5d408157bf6",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-player1-rms-matched-wav-dd9335300e861311acad014bb0aa36dbf3771ef0.wav",
+      "bytes": 48044,
+      "sha256": "b0c1303b5f87432f5b8af9137c0f911b37a03215e1d5f77aa6a3fc26a571f080",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-success10-wav-16a25dab8cdd26b67e8566a3853682a817337b42.wav",
+      "bytes": 48044,
+      "sha256": "86456e157005cd241e9370ff8ab5a6a116d3510dae67bb93b3f6357c6be4cf8a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-player-wav-c4d7842781735d9760666eac7a2b16d951544538.wav",
+      "bytes": 44144,
+      "sha256": "3bafd90ccb820ef9309b2e0572cbe9ad31255455bb9ba36b319c155d84b0ca74",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-fallback-wav-9bbb4022dd6ffa87bf7ef1878e2545dfe2f47822.wav",
+      "bytes": 44144,
+      "sha256": "e36fa1a0ed7e962735ff4bd76b27e5108dc34cce7684eb543ea906fcd8dbdbab",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-warning-rms-matched-wav-4f6c265f32b928943b64564422e9071ec7f551f7.wav",
+      "bytes": 48044,
+      "sha256": "30c791a2c640eeb8fce342a1d1a286296fb8bab6e6b07955fbf60e5cccc55686",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-opponent-wav-d19923a20ba16f045914a871be233bee208ea70d.wav",
+      "bytes": 44144,
+      "sha256": "a3a1c9f337b886f8b1ae241c84e4c9c0897b09afcf3fd0c668fdf0af97382d14",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-player9-wav-b68c0e1444b5b25f2594ff9087bd47e9aeb7ebd6.wav",
+      "bytes": 44144,
+      "sha256": "a3aab746b787e3d23a26423735fe3ed48db218fe451c491393843b0ab67a2906",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-player5-wav-1ce981997d2659129e23958ea51227b01ca70d42.wav",
+      "bytes": 48044,
+      "sha256": "7e9b6cb25db047632aafd1fa02f28ccf72c6466c3df2fe1133128397de7c8fe3",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-sixteen-wav-275b569435ebc6777bd6bdea88abf359586a7770.wav",
+      "bytes": 44144,
+      "sha256": "b923584629189b31aeb7b505a2e6e2ba2169c757f59da5fa9af387a682aaa3bd",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-quiet-wav-8529743722e7bd3ee3fc3e1385fba15bed6250e5.wav",
+      "bytes": 44144,
+      "sha256": "5b2f2b4c4ee82d1e770668490eb7ab3b9d5960de16ed0a36644abfdc7f147b35",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-opponent-rms-matched-wav-45fd9356cac093ce756bcb9d994778b3563b1e9a.wav",
+      "bytes": 48044,
+      "sha256": "d0e14193ded205f4224fef83ea36677cc8f6f0eda52c0b6592df5285cbfcbca6",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-player10-wav-4511fac37b20c028687991b7cd5503d031354c9c.wav",
+      "bytes": 48044,
+      "sha256": "27489f2850479aec350961f2fdec71ddadc44cbdb4243805ca6937aadf8b6201",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-muted-wav-86e06c4caf4a58ef6b381a052c13332f0f417e5c.wav",
+      "bytes": 44144,
+      "sha256": "ce7c9897b9dfd2e4dcaab1e85ef68fff88b919f06c3ca57d1f7667c06e1caa51",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-warning-rms-matched-wav-71aaa038224992999ffa9fec5e6548205755dbee.wav",
+      "bytes": 44144,
+      "sha256": "a77455dc0ab3179fc486521cf5c6775e2a43268ace94f642a8af141b35bcfb9e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-zero-wav-60d1ed4c523a6dfa9ddcceb1023a8ed5aea0d04e.wav",
+      "bytes": 48044,
+      "sha256": "92e19540f656c3af507bd038e72cfb6c1279bf1ddf21cf8c5002090691323a4b",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-opponent-wav-0f04f1d120c24b3761fdf70b47a257af23427fe0.wav",
+      "bytes": 48044,
+      "sha256": "c4c43ef963070ff06858017beea0dbc1a6788360136ec5be971b7875f3cf473a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-player9-wav-85c8995ce0a57387d2fdf577e5600fb293eb98de.wav",
+      "bytes": 48044,
+      "sha256": "7e9b6cb25db047632aafd1fa02f28ccf72c6466c3df2fe1133128397de7c8fe3",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-opponent-wav-c64a3a72262f088252b9630bd7515da13b0f13d7.wav",
+      "bytes": 44144,
+      "sha256": "0e197f1d5009ba732c88e571b6bd9032606b47dcbe9fcf9724d164ceae15f993",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-player4-wav-df64f7521410a45047582b474592fd9306d2ec3a.wav",
+      "bytes": 48044,
+      "sha256": "75985003053bb0440a8f686c428abecb75169360a66380714bdc7cd9b9bf891e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-player-rms-matched-wav-ad3332825c1ea307c2f79c0ed5274f2a906a2f92.wav",
+      "bytes": 44144,
+      "sha256": "1fc01b9fe6d0c27fef071da13fc224cdb67a9d929b79c68f6c7484b88266c77d",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-sixteen-rms-matched-wav-fca55bd0d0d8740d529623ec54fb08189321b442.wav",
+      "bytes": 48044,
+      "sha256": "870f2b4bca48999eb012d33d2a65e686780b9e5ad45bc00525d2cf2dff7f0194",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-fallback-wav-f6c237ba8dd4eee13fe31934a132aadcbfcc1543.wav",
+      "bytes": 48044,
+      "sha256": "37329db7563f88641be2391f6ac3b3075bfc11be876f97fe8d7b952f858d56c1",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-success10-wav-82edc25258dc170ccd59fa0d2eff9dd562146a4d.wav",
+      "bytes": 44144,
+      "sha256": "1e51b51152bb746017928f0709d9151b42eded213e4ed3fcd5864ca4720c888a",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-warning-wav-4bcc36ec8472bb59b460cb262adbae64522a6615.wav",
+      "bytes": 44144,
+      "sha256": "6c76f99982afef1e9332151b060061d0a7b6fc0c2a178289b35f19b20849e5d2",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-full-quality-sixteen-wav-bb3cbe0e02f806d9e451158e923bc416b87b6cdc.wav",
+      "bytes": 48044,
+      "sha256": "99492a1c9aa39b73078b77e1614b737354ede32c246aa050063a49b83e20e58c",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-sixteen-wav-07c45149ebd09b562ac392658b3e6298fe40683b.wav",
+      "bytes": 48044,
+      "sha256": "2160720d0a775fa81fff85c26b1a3fa26b925f0360c2f92cacd2978cce63d881",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-player1-wav-766f5eed2d7dd1198247e95fc1709c2bfa608543.wav",
+      "bytes": 48044,
+      "sha256": "75985003053bb0440a8f686c428abecb75169360a66380714bdc7cd9b9bf891e",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-sixteen-rms-matched-wav-fde5c49aa188dc7f20c111b5e0c795b821bcf0e1.wav",
+      "bytes": 44144,
+      "sha256": "9140cbb95adda76773419fa7348de630e8b9e4555772bafb45daa50b880c9ccb",
+      "includedInGit": false
+    },
+    {
+      "path": "verified-browser-artifacts/audio-layered-実AudioContex-b5bc7-run切替と部分失敗を繰り返し、予約音とnodeを回収-chromium/attachments/native-audio-resources-json-0ae235e324afcb7f75a34151b5d8b13f75c450ae.json",
+      "bytes": 20359,
+      "sha256": "2311e13d14433c806b8cf587db40c9ec4afbb5468d6f0b39a6e0ab2c7395b269",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-実アプリで加速球の一時停止・手動再開・リトライを保つ-chromium/attachments/pause-resume-retry-json-5c7fe4541671f41193a8726628a750d652624944.json",
+      "bytes": 3972,
+      "sha256": "6d0697b111b575a87764c7c12305563a54da0e7591fcfdb7db35c02165ba0c78",
+      "includedInGit": true
+    },
+    {
+      "path": "verified-browser-artifacts/remaining-ball-ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる-chromium/attachments/measured-flights-json-18554437c4eb9059cf4f1fa2029263076175e544.json",
+      "bytes": 8325,
+      "sha256": "7d4dd40d691bd1fcc217bc022a7c972bb7664f3e148bcd0b8ff9629ca7a223dc",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/.last-run.json",
+      "bytes": 4511,
+      "sha256": "4ddcb7bef0e5d7a6b9907a9fa11541263e1000028bed518d5287917c21e8c134",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/lifecycle-通常の指離れ・2本目・追跡喪失・回転で入力が残らない-chromium/rotated-paused.png",
+      "bytes": 35844,
+      "sha256": "784833128e453ef274ab1a508fcd93d34e3433c29b9e1f4917790bfc7316776c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは320x568・文字100-でも読めて操作できる-chromium/result-320x568-1.png",
+      "bytes": 31696,
+      "sha256": "9a345a6dd06e25e05528f5089ac7cfbc6b47e57679bbfa745af67a2fd1b55880",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは320x568・文字100-でも読めて操作できる-chromium/home-320x568-1.png",
+      "bytes": 41830,
+      "sha256": "97105741e3caec579a103d78397e71fdba307162473d426cbb743485fad1b839",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/reference-viewport全体の実描画でPC・縦・横の台を最大限収める-chromium/court-874x402.png",
+      "bytes": 85530,
+      "sha256": "a82699f08fc8ba2b12e1fe191544a883fe626c2e8f411f4568e65d8228084daf",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/reference-viewport全体の実描画でPC・縦・横の台を最大限収める-chromium/screen-1280x720.png",
+      "bytes": 161043,
+      "sha256": "198ecb0ff19d60251952e586daf23dd80507ace8a7ffc508f2b3770524a2043e",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/reference-viewport全体の実描画でPC・縦・横の台を最大限収める-chromium/court-390x844.png",
+      "bytes": 95610,
+      "sha256": "74298c28c97b5dbd6f3cc5a5d89727a7fcffd1a6daaecd84a07041d0af211970",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/reference-viewport全体の実描画でPC・縦・横の台を最大限収める-chromium/screen-874x402.png",
+      "bytes": 85530,
+      "sha256": "a82699f08fc8ba2b12e1fe191544a883fe626c2e8f411f4568e65d8228084daf",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/reference-viewport全体の実描画でPC・縦・横の台を最大限収める-chromium/court-1280x720.png",
+      "bytes": 161043,
+      "sha256": "198ecb0ff19d60251952e586daf23dd80507ace8a7ffc508f2b3770524a2043e",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/reference-viewport全体の実描画でPC・縦・横の台を最大限収める-chromium/screen-390x844.png",
+      "bytes": 95610,
+      "sha256": "74298c28c97b5dbd6f3cc5a5d89727a7fcffd1a6daaecd84a07041d0af211970",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-190-outgoing.png",
+      "bytes": 121840,
+      "sha256": "34abd731ff5994f600371524f303f0b7a5928fb318113958aae97df04edd5173",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-490-waiting.png",
+      "bytes": 129620,
+      "sha256": "3165bae14ec62c2b7082e4abf0627aed358273f8bf0d179e7bf055b34874dcb8",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-490-arrived-hidden.png",
+      "bytes": 129653,
+      "sha256": "00b6ba85b927cafbd6d61b8ba7ded49d806b5b2fc5f8e6299b9a61f4c4b4339e",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-240-own-incoming.png",
+      "bytes": 132789,
+      "sha256": "60841e7672832bbe1515a1b778e299e7be5bbbd8a25af8ea9fcbc6820d29e6e4",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-190-arrived-hidden.png",
+      "bytes": 120415,
+      "sha256": "59266e75b3d970533e164985e2a5582946eff2c852cf500fc376c9d924ae4c30",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-240-outgoing.png",
+      "bytes": 131696,
+      "sha256": "4c8df8ac080e07c342bde6bc4a48bc39a20c34b9a9017fd93dd5e4f6fa229cc2",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-190-left-incoming.png",
+      "bytes": 121169,
+      "sha256": "a32a4928e050af8c70b45b2677d4993b2ba8be72660e7f919519047a2d2f461c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-490-left-incoming.png",
+      "bytes": 129866,
+      "sha256": "cce0a7f0f29708161961e43d8e34869af28e80f8133d054130abe9a15083d42a",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/transitions-240.json",
+      "bytes": 2256,
+      "sha256": "550dbe280b0ace4a8711be9439e8674beb987f001abe4f5366364d14a8dfd762",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-240-arrived-hidden.png",
+      "bytes": 132295,
+      "sha256": "5caf3d279fdf940d1ab53f9599e905ab627856b10d5f5491255337082afecca3",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-190-opponent-hit.png",
+      "bytes": 120425,
+      "sha256": "1a4fc5ebc2b096c0b809f6ed1753a38f8d24128e0979ffe18bf2f71d981b607a",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-240-left-incoming.png",
+      "bytes": 131212,
+      "sha256": "0b5d5ec2c60b5133d08dbfb62799ce90facd3d46c91d1d8493d2c16c072862c6",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/transitions-190.json",
+      "bytes": 2228,
+      "sha256": "d87cee761d6fa829f3545a1cdaeeda95fe9a29361384ff7f27533b9e59bf5b16",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-240-right-incoming.png",
+      "bytes": 131230,
+      "sha256": "39955ed838ee7b1b2abc2baec10b1220fac34a2c3064131cd206c80d74714cf5",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-240-opponent-hit.png",
+      "bytes": 132423,
+      "sha256": "0cdb3f051d41667e2b2c017e2cd52a8aaf56cdb7ec09de0348462b2e5e2ccb64",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-490-outgoing.png",
+      "bytes": 130431,
+      "sha256": "c2cef435d094ce0ec2153875a0cb2381b42516acdccc9644fcaefabd51ee1994",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-190-right-incoming.png",
+      "bytes": 121420,
+      "sha256": "71b6229c82728ff2258479920f6400a4f4132f35e33619b6bfaa847bd1f1e765",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-190-own-incoming.png",
+      "bytes": 121085,
+      "sha256": "6234c53c4f70fdc7936f18257b8b65f7783f9e610d558c42c7fb1e124976948a",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-70-left-incoming.png",
+      "bytes": 102135,
+      "sha256": "e71f3e2363dd4de569dd26b97d70150258e1a7ae9101a20b302e696a015128a9",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-490-own-incoming.png",
+      "bytes": 122520,
+      "sha256": "8bda62add2c4f59448ff3253c583dec13b6b98ef925ab4d038a501a2b9a37da1",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-70-right-incoming.png",
+      "bytes": 102135,
+      "sha256": "e71f3e2363dd4de569dd26b97d70150258e1a7ae9101a20b302e696a015128a9",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-490-right-incoming.png",
+      "bytes": 129872,
+      "sha256": "120ed5e020ceef227a36683c1176fdd1f2b25e4282e78cc88256b3da5b04e37d",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-490-opponent-hit.png",
+      "bytes": 124530,
+      "sha256": "0149b4b8c2e4cc0cf13d10868eef6633de4d7b8dc72970bdebf9dd2ec40bbe36",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-70-waiting.png",
+      "bytes": 102135,
+      "sha256": "e71f3e2363dd4de569dd26b97d70150258e1a7ae9101a20b302e696a015128a9",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/transitions-490.json",
+      "bytes": 2206,
+      "sha256": "eb35b239470b25fb7b3675964067b14826d12328037d22ea6f657f7970353464",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-190-waiting.png",
+      "bytes": 121169,
+      "sha256": "a32a4928e050af8c70b45b2677d4993b2ba8be72660e7f919519047a2d2f461c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/iphone-240-waiting.png",
+      "bytes": 130968,
+      "sha256": "365afbe98e2e5512684757b2e04c719a24b6bbd30c857eab595ee7953b2fb75a",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-warning.wav",
+      "bytes": 44144,
+      "sha256": "e3ee38e773ec949975a73c5d3aaa5153b88baf29868315e76199f360cb2c795b",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-fallback.wav",
+      "bytes": 48044,
+      "sha256": "37329db7563f88641be2391f6ac3b3075bfc11be876f97fe8d7b952f858d56c1",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-opponent.wav",
+      "bytes": 48044,
+      "sha256": "02b24adb85d1b119085d3d1afd383e0637b38e9bdab3223ffc60c5d408157bf6",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-player10.wav",
+      "bytes": 48044,
+      "sha256": "27489f2850479aec350961f2fdec71ddadc44cbdb4243805ca6937aadf8b6201",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-success10.wav",
+      "bytes": 44144,
+      "sha256": "1e51b51152bb746017928f0709d9151b42eded213e4ed3fcd5864ca4720c888a",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-player4.wav",
+      "bytes": 48044,
+      "sha256": "75985003053bb0440a8f686c428abecb75169360a66380714bdc7cd9b9bf891e",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-sixteen-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "c64e7a3958be753373e221db9ccec418ad109742ccff2a7f53232bb7cc67cc8f",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-full-quality-sixteen.wav",
+      "bytes": 48044,
+      "sha256": "99492a1c9aa39b73078b77e1614b737354ede32c246aa050063a49b83e20e58c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-player-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "9a9ff3ba2b5a0c30cc40e438fee8f16e4bb8ea2dbd2d6046b8fe8556dce47984",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-player1.wav",
+      "bytes": 48044,
+      "sha256": "75985003053bb0440a8f686c428abecb75169360a66380714bdc7cd9b9bf891e",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-sixteen-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "6016e2c3e9d9d735c882ccc848037eb0fb6705bc4911db6f381d77b0e0a732cd",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-player5.wav",
+      "bytes": 48044,
+      "sha256": "7e9b6cb25db047632aafd1fa02f28ccf72c6466c3df2fe1133128397de7c8fe3",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-player1-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "b0c1303b5f87432f5b8af9137c0f911b37a03215e1d5f77aa6a3fc26a571f080",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-sixteen-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "870f2b4bca48999eb012d33d2a65e686780b9e5ad45bc00525d2cf2dff7f0194",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-zero.wav",
+      "bytes": 48044,
+      "sha256": "92e19540f656c3af507bd038e72cfb6c1279bf1ddf21cf8c5002090691323a4b",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-player-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "1fc01b9fe6d0c27fef071da13fc224cdb67a9d929b79c68f6c7484b88266c77d",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-player1.wav",
+      "bytes": 44144,
+      "sha256": "af4c2ac6c774dce2ce44f5c22b6460d8da1d4f0c65b156ae3d72ebea034ff5db",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-sixteen.wav",
+      "bytes": 44144,
+      "sha256": "dcd74bbac21397cd3bf7bf5f635cb3d5d502ed5e7ab17a883f40e8695f20b56c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-player9.wav",
+      "bytes": 48044,
+      "sha256": "7e9b6cb25db047632aafd1fa02f28ccf72c6466c3df2fe1133128397de7c8fe3",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-sixteen.wav",
+      "bytes": 48044,
+      "sha256": "c7f916130d469c1c4fc50137650d394d5efd6dd77d773f7c563b72b1dabe64da",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-player.wav",
+      "bytes": 48044,
+      "sha256": "3ea9370dae9a7505d9c9fc0bd1d30b3395937feb1d2156ef89cdd7fdff9013f9",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-success10.wav",
+      "bytes": 48044,
+      "sha256": "86456e157005cd241e9370ff8ab5a6a116d3510dae67bb93b3f6357c6be4cf8a",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-player4.wav",
+      "bytes": 44144,
+      "sha256": "af4c2ac6c774dce2ce44f5c22b6460d8da1d4f0c65b156ae3d72ebea034ff5db",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-opponent.wav",
+      "bytes": 44144,
+      "sha256": "a3a1c9f337b886f8b1ae241c84e4c9c0897b09afcf3fd0c668fdf0af97382d14",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-warning-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "ab8da558a0069e096c2aaa898b7c8669630eff6454c76d5e60c5acd9aa14ae7d",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-opponent.wav",
+      "bytes": 44144,
+      "sha256": "0e197f1d5009ba732c88e571b6bd9032606b47dcbe9fcf9724d164ceae15f993",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-warning.wav",
+      "bytes": 48044,
+      "sha256": "4b248aa4bbc6d18dc50290594301e1fbcde6ad624d7e65a02b4d754886a2da5c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-player1-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "eb954824baa89582972b7903f708a773e65091dbfea390ba75121e6e38e3c21a",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-warning.wav",
+      "bytes": 48044,
+      "sha256": "0fb8566ea5a5c7a12fe2eff60c4456bf39a64953ce68134564b200b14bce4cc9",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-sixteen-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "1423dffad3ff4a790204a58b2218af420030b40f6b017a69a14df00fbc84ed5d",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-opponent-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "7aaa1d433b9901ff3d7cbb00759b384df695c4bef883f484fbc09b5e8e464a3c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-muted.wav",
+      "bytes": 44144,
+      "sha256": "ce7c9897b9dfd2e4dcaab1e85ef68fff88b919f06c3ca57d1f7667c06e1caa51",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-quiet.wav",
+      "bytes": 44144,
+      "sha256": "5b2f2b4c4ee82d1e770668490eb7ab3b9d5960de16ed0a36644abfdc7f147b35",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-quiet.wav",
+      "bytes": 48044,
+      "sha256": "61a300621448f4562be5b82531195d7c8b14e0bd932a739e714b9c26b064d1a5",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-fallback.wav",
+      "bytes": 44144,
+      "sha256": "e36fa1a0ed7e962735ff4bd76b27e5108dc34cce7684eb543ea906fcd8dbdbab",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-muted.wav",
+      "bytes": 48044,
+      "sha256": "92e19540f656c3af507bd038e72cfb6c1279bf1ddf21cf8c5002090691323a4b",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-warning-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "41ee86a35c3abf6828fe71fe1070bf61a9f461225be40c5bc84ba2325979c4f6",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-opponent-rms-matched.wav",
+      "bytes": 44144,
+      "sha256": "e5a78021657ea2d2547c6d91bd9179f4abf868f6dd0350f553414187c4490de7",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-opponent-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "65cca0054a78056753cc55073d4981c81bf6f3e8a10661cfc6930a0b5173d7ba",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-sixteen.wav",
+      "bytes": 44144,
+      "sha256": "4209718d7cb8bf97c377c6be0b58f3df8feef4fa2e55f3843682f7a92370ba31",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-player9.wav",
+      "bytes": 44144,
+      "sha256": "a3aab746b787e3d23a26423735fe3ed48db218fe451c491393843b0ab67a2906",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-warning-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "8343787f37609a6854e0d3d1b62ee69e5873b069514d9f70087cb0afba4ffb2e",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-opponent.wav",
+      "bytes": 48044,
+      "sha256": "c4c43ef963070ff06858017beea0dbc1a6788360136ec5be971b7875f3cf473a",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-zero.wav",
+      "bytes": 44144,
+      "sha256": "ce7c9897b9dfd2e4dcaab1e85ef68fff88b919f06c3ca57d1f7667c06e1caa51",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-warning-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "5d7db08f72d820d6b2f5608eab91385d836d2b47e909fa1ba210af78a024199a",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-opponent-rms-matched.wav",
+      "bytes": 48044,
+      "sha256": "d0e14193ded205f4224fef83ea36677cc8f6f0eda52c0b6592df5285cbfcbca6",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/48000-old-sixteen.wav",
+      "bytes": 48044,
+      "sha256": "9b507c7be70fc37a9a2829f06bad7136e635fbe53d0c32412a65ce6c01f2daaf",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-player10.wav",
+      "bytes": 44144,
+      "sha256": "e7b859a612a5e7f109c4c08e809acdc517a6d85a524dfb5c31ca742a2894295f",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-player5.wav",
+      "bytes": 44144,
+      "sha256": "a3aab746b787e3d23a26423735fe3ed48db218fe451c491393843b0ab67a2906",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/waveform-measurements.json",
+      "bytes": 5539,
+      "sha256": "bde3540e2b5cae1ed006a774ee593a8c029139a9b60115027d765c7d5adf578a",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-player.wav",
+      "bytes": 44144,
+      "sha256": "3bafd90ccb820ef9309b2e0572cbe9ad31255455bb9ba36b319c155d84b0ca74",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/44100-old-warning.wav",
+      "bytes": 44144,
+      "sha256": "a4a2ed59f5b8af98f64559d9766322a2d4d2ff160bb30cb4798539dbcae48dc4",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/lifecycle-実際のWEBGL-lose-contextによる喪失と復旧でも手動再開を待つ-chromium/native-webgl-restored.png",
+      "bytes": 126567,
+      "sha256": "4b747ff3884eb35e1440832a5abc14e67236e3dfe05290168fdf355a32a125d4",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは568x320・文字100-でも読めて操作できる-chromium/result-568x320-1.png",
+      "bytes": 13499,
+      "sha256": "e2872ed1052c2813f84da27c3ca9aa84dca5454a531cecd52feebd7da08637d5",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは568x320・文字100-でも読めて操作できる-chromium/home-568x320-1.png",
+      "bytes": 23708,
+      "sha256": "bafb3218b8db1efc151d1a9ed9d7d8e4a5a40d6fc43827c2bb4abcc00d55e93b",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-音声再開拒否でも無音で継続し、ミュートと明示的な音声の再試行が使える-chromium/audio-unavailable.png",
+      "bytes": 152361,
+      "sha256": "f145b7e1ed89aa210d4465c3c82e988b7bab1ced85e64be30553fce0441f0119",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは568x320・文字200-でも読めて操作できる-chromium/home-568x320-2.png",
+      "bytes": 34149,
+      "sha256": "46fa59d14565c76361ca35ca3ee920e4cc0a6367437aadefe484baa687571a65",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは568x320・文字200-でも読めて操作できる-chromium/result-568x320-2.png",
+      "bytes": 15218,
+      "sha256": "005981b77a4047e2db8e665a1a8efd533668c82f49febb1391aa511a67954558",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは1280x720・文字100-でも読めて操作できる-chromium/video-1.webm",
+      "bytes": 1457,
+      "sha256": "36b9e1f6f61535ad0503466b880015ba724eb1626a70d03ac63eb5e580907e50",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは1280x720・文字100-でも読めて操作できる-chromium/trace.zip",
+      "bytes": 596214,
+      "sha256": "e27bbabe9fd679b6681fb88d2376be46a020c25fa41338eca709f91386cfd5c3",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは1280x720・文字100-でも読めて操作できる-chromium/home-1280x720-1.png",
+      "bytes": 133272,
+      "sha256": "bfe5c8192a875732fb2546a3e6ca9a9a9f60a40823234ffdece2cf76efb42654",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは1280x720・文字100-でも読めて操作できる-chromium/video.webm",
+      "bytes": 133067,
+      "sha256": "2957022cdc62f40d0990d86725b309bc4d4a9779c352a65aeff3ff7df2a62d35",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは1280x720・文字100-でも読めて操作できる-chromium/test-failed-1.png",
+      "bytes": 38476,
+      "sha256": "535fb4c64a2cbc54a0be2354b7dbfa64f8641654983078ccde0292ffa3e442e8",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは1280x720・文字100-でも読めて操作できる-chromium/result-1280x720-1.png",
+      "bytes": 38476,
+      "sha256": "535fb4c64a2cbc54a0be2354b7dbfa64f8641654983078ccde0292ffa3e442e8",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは1280x720・文字100-でも読めて操作できる-chromium/error-context.md",
+      "bytes": 9175,
+      "sha256": "df97e413ac5d9b4ffd3e10e17c3d93ffd3a2743b988397b395c3eee36b141149",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-実AudioContex-b5bc7-run切替と部分失敗を繰り返し、予約音とnodeを回収-chromium/native-audio-resources.json",
+      "bytes": 20359,
+      "sha256": "2311e13d14433c806b8cf587db40c9ec4afbb5468d6f0b39a6e0ab2c7395b269",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-実アプリで加速球の一時停止・手動再開・リトライを保つ-chromium/pause-resume-retry.json",
+      "bytes": 3972,
+      "sha256": "6d0697b111b575a87764c7c12305563a54da0e7591fcfdb7db35c02165ba0c78",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-実アプリで加速球の一時停止・手動再開・リトライを保つ-chromium/iphone-540-paused.png",
+      "bytes": 54581,
+      "sha256": "92494612e0332bdf5df7fb8cb225b666866f7a5fb4efe30a723f7b70d63a24b0",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-実アプリで加速球の一時停止・手動再開・リトライを保つ-chromium/iphone-retry-initial.png",
+      "bytes": 94712,
+      "sha256": "155f9337a210715b701751f03cf53d60689e67ff15d9d26437794bba3a20731d",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/lifecycle-WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する-chromium/context-restored-warning.png",
+      "bytes": 126567,
+      "sha256": "4b747ff3884eb35e1440832a5abc14e67236e3dfe05290168fdf355a32a125d4",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-300-300.png",
+      "bytes": 316563,
+      "sha256": "9a124772db86d478ad0e066cdf9bcdd56a81d022bf717ba4498af1ae357d6eb9",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-390-390.png",
+      "bytes": 413560,
+      "sha256": "2c116cbb540aaa091ddd31b9e7bb08fcddd21e21530c06128924d562866045ff",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-210-210.png",
+      "bytes": 295773,
+      "sha256": "8b18f290b391d776e090de0f586f064cec6471a8f17c07a53bfe393c7e6f2044",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-330-329.png",
+      "bytes": 318712,
+      "sha256": "4870c52ecc1a400dfd0df9bdb8110ffa9b5dd49d663259ca112499004095dd78",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-130-130.png",
+      "bytes": 210390,
+      "sha256": "7c02d1aff8e25ceabf327148efeb96e0af38ee42df1ecf275c93a852905784ab",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-410-409.png",
+      "bytes": 413765,
+      "sha256": "4e1596fa735636a8486f02ada9db04d93091b2af74c507d013be7f6fd645cbc9",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-420-420.png",
+      "bytes": 390915,
+      "sha256": "c7ffb9e1e839c927f0b6389b89471d013869acd940992e904e04acb5e08d3d11",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-100-99.png",
+      "bytes": 194945,
+      "sha256": "3898a937825a073d8032ae53f340eda6438523f13382977cbb35dfa37cb517aa",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-380-379.png",
+      "bytes": 328680,
+      "sha256": "b1d9a0657b784c40e891b68bc7ffbc93036c2f7843994775f74dacb7c470bf3d",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-410-410.png",
+      "bytes": 388322,
+      "sha256": "6fce1cc21225a78978a6c1f3d74e71235930d9d21f9abee67b30ddad3672b40f",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-380-380.png",
+      "bytes": 399008,
+      "sha256": "7eb0ee331c51c64b1c6e031acca4860752feb1ea5bf30daf00487db807487d60",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-360-360.png",
+      "bytes": 328661,
+      "sha256": "7d2a224792a8b0df80e8ba55c1852e1475d0782fd3d2c8e9c4cf35f6f6ad81a3",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-330-330.png",
+      "bytes": 322956,
+      "sha256": "0aaa99b844a1b7e7eac524d6e7b1c921e5819dd836da8eb62087811b989f5082",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-460-460.png",
+      "bytes": 409144,
+      "sha256": "502dd149575411f92f62076fbd273691fd835df896e743b7639d1f865e0b1843",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-270-270.png",
+      "bytes": 312449,
+      "sha256": "859b2cd20730ca30f0868d722ad1ed7504b0743683e2beb441b40d507facb2b7",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-240-240.png",
+      "bytes": 311956,
+      "sha256": "6eceb3af77a1abce0b28b64ad54a035147cbcfc2dcb67fa9f062e056be68301d",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-240-239.png",
+      "bytes": 299000,
+      "sha256": "90c298413285d4a238571d98689de3548e3052333c3c47c1112b3c1051c3c223",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-70-69.png",
+      "bytes": 166782,
+      "sha256": "b869cac98ff624445bdb4a0a96052dd65705ca126ca0ebf7a713e46aa8e84515",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-360-359.png",
+      "bytes": 325642,
+      "sha256": "a6b0f21d6a09f500d1ce5629cc7ca8671adedb466146f449c5d62e5d97a59ae5",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-130-129.png",
+      "bytes": 196496,
+      "sha256": "edc160dc5f5612551f4dbb9fc6afdb684718d5419385f5980e4cdafc96865e9e",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-460-459.png",
+      "bytes": 393740,
+      "sha256": "d70c3284f96ecff233b237eeb2381e572fbc4c85f81a2a235f47f6bfd88dc221",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-190-190.png",
+      "bytes": 266693,
+      "sha256": "0812d5367e1d27e3ce8b509d82901cba23ff5eba7edba46a4f4f4ef8a8a83ee2",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-100-100.png",
+      "bytes": 194726,
+      "sha256": "da54b8bcc73f3925a0e089389bf4f04fbc6ac4fe8ac73c2d33c0cefc5ac77b01",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-190-189.png",
+      "bytes": 250617,
+      "sha256": "5cb1203404a54cee7c22246db0e8b6b81b35e33db10d50e01abe2a3d1d11bde6",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-70-70.png",
+      "bytes": 193423,
+      "sha256": "8f406ef51b4b66a802a4e8ca59dc898c3c62bcaa27f383be32da8e2de62f5247",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-210-209.png",
+      "bytes": 268098,
+      "sha256": "da287609bedc0683415205ffa5de994b2c11b881ae391bc92bc3808ab086c1c7",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-420-419.png",
+      "bytes": 388216,
+      "sha256": "bc87e8bd16574938dcb20b0fdb73a5a8f25d580cfc1325108e806a5b0059d87c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-390-389.png",
+      "bytes": 398984,
+      "sha256": "9e49dc106b76a91193a84b3f3f36b98c6a90d1fb75ee3660d3511f0586b029c4",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-300-299.png",
+      "bytes": 314371,
+      "sha256": "257a756900f432c3387741292738b24f5ef630104abd6c1f00597eba3c8b201e",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-270-269.png",
+      "bytes": 313484,
+      "sha256": "369c72dd4faa5e768c640ded562627671be856882d7ade6b89a9e9c86c7da746",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-160-160.png",
+      "bytes": 248843,
+      "sha256": "41baa9478c508d4dc0087e4e4f1453dc45fd283cf398028ddd8541d83a8f4c1c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/glow-timing-指定された発光ラリーの直前・到達時を同一画角で撮影する-chromium/glow-160-159.png",
+      "bytes": 210784,
+      "sha256": "7a9eb9ef9bf1158aa2826d251267504ef9cb77c4738f1ba356f2de9822dbeb9e",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/behind-30.png",
+      "bytes": 59102,
+      "sha256": "9ca4449788caecd0e1c516be18672e5bdea15baf15bf24741f76d5dd8ce5e66f",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/front-10.png",
+      "bytes": 61112,
+      "sha256": "689a03a7475ab0166b81e33b2c020002c7799d65b236e631aea8d86b8022ac43",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/front-30.png",
+      "bytes": 61112,
+      "sha256": "689a03a7475ab0166b81e33b2c020002c7799d65b236e631aea8d86b8022ac43",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/behind-390.png",
+      "bytes": 142768,
+      "sha256": "017119a38bfebb563b48db2d5511bb7a18c93a9233f11f8f2c6cb1e8a21e4a5e",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/behind-10.png",
+      "bytes": 59102,
+      "sha256": "9ca4449788caecd0e1c516be18672e5bdea15baf15bf24741f76d5dd8ce5e66f",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/behind-0.png",
+      "bytes": 59102,
+      "sha256": "9ca4449788caecd0e1c516be18672e5bdea15baf15bf24741f76d5dd8ce5e66f",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/front-390.png",
+      "bytes": 143398,
+      "sha256": "18aa44c389ccb358ab3611ee32d60c029f3ada3bf4ae95d64289e4476ef1fb10",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/occlusion-球と虹色の輪郭はラケットとの前後関係を守る-chromium/front-0.png",
+      "bytes": 60879,
+      "sha256": "d55594a9b9a1515a42ebf480cfdc04e686b451eadf3cd2f29d88ac803be2d618",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる-chromium/measured-flights.json",
+      "bytes": 8325,
+      "sha256": "7d4dd40d691bd1fcc217bc022a7c972bb7664f3e148bcd0b8ff9629ca7a223dc",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/preferences-全設定と自己ベストが再読込・リトライを越えて残る-chromium/settings.png",
+      "bytes": 34723,
+      "sha256": "5a0fae5be7ffe0ebaaff90cbb74e14593334b31b67a73d6e521f9e234ff01c2c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは320x568・文字200-でも読めて操作できる-chromium/home-320x568-2.png",
+      "bytes": 36584,
+      "sha256": "2b59bc2e7ddc6d96321e965ffad670667d3a203e58cfb8e59935e3fc6b06943c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/sharing-共有リンクは320x568・文字200-でも読めて操作できる-chromium/result-320x568-2.png",
+      "bytes": 23364,
+      "sha256": "ea55af8cfc1360bd870ca7db7e8a560297f0d879666b87d698404fbb1cb0e9f3",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/ranking-匿名開始の応答喪失後もすぐ遊べてonline復帰時は同じIDで再送する-chromium/guest-count-result.png",
+      "bytes": 31256,
+      "sha256": "573d184fa951d225abe234e513ce415050a6a7ec3454badbe9fba5625a2b53cb",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/attachments/transitions-240-json-96b6ed1075f6c8f57daff5cc7db435d13bdeba9a.json",
+      "bytes": 2256,
+      "sha256": "550dbe280b0ace4a8711be9439e8674beb987f001abe4f5366364d14a8dfd762",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/attachments/transitions-190-json-ad7f7147e0bab3a3f4c99699af07c178558d8553.json",
+      "bytes": 2228,
+      "sha256": "d87cee761d6fa829f3545a1cdaeeda95fe9a29361384ff7f27533b9e59bf5b16",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/attachments/transitions-490-json-88fcce3d870d18d3b6a0a6ebbe1baa9184089bc0.json",
+      "bytes": 2206,
+      "sha256": "eb35b239470b25fb7b3675964067b14826d12328037d22ea6f657f7970353464",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-sixteen-rms-matched-wav-8a8bc137bb891bada5b036cc1a23a8a56606080b.wav",
+      "bytes": 44144,
+      "sha256": "6016e2c3e9d9d735c882ccc848037eb0fb6705bc4911db6f381d77b0e0a732cd",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-sixteen-rms-matched-wav-3823692134fcc54852c778b24610d96951b33b6d.wav",
+      "bytes": 48044,
+      "sha256": "870f2b4bca48999eb012d33d2a65e686780b9e5ad45bc00525d2cf2dff7f0194",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-opponent-wav-e932719c2848d818c2dce9d35b81cee3181debb4.wav",
+      "bytes": 48044,
+      "sha256": "c4c43ef963070ff06858017beea0dbc1a6788360136ec5be971b7875f3cf473a",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-muted-wav-413066b4f524c1590ecb091f69afe82478df859e.wav",
+      "bytes": 44144,
+      "sha256": "ce7c9897b9dfd2e4dcaab1e85ef68fff88b919f06c3ca57d1f7667c06e1caa51",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-player1-rms-matched-wav-f0c646348cf7dc1e59fbc6b1cd91fcf416f75026.wav",
+      "bytes": 48044,
+      "sha256": "b0c1303b5f87432f5b8af9137c0f911b37a03215e1d5f77aa6a3fc26a571f080",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-success10-wav-c510d888949974bad6a2a4ec8be837f12f5df87f.wav",
+      "bytes": 48044,
+      "sha256": "86456e157005cd241e9370ff8ab5a6a116d3510dae67bb93b3f6357c6be4cf8a",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-warning-rms-matched-wav-4682092c19a4f7e1605ce0ff6bbf22e37ea61cbf.wav",
+      "bytes": 44144,
+      "sha256": "ab8da558a0069e096c2aaa898b7c8669630eff6454c76d5e60c5acd9aa14ae7d",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-opponent-wav-5e5902a04d8add6cb2fc6a1911a0958ad2b4b494.wav",
+      "bytes": 48044,
+      "sha256": "02b24adb85d1b119085d3d1afd383e0637b38e9bdab3223ffc60c5d408157bf6",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-player-wav-75bbf2cf4d6d95897e6682d009a7bd8b080b57cd.wav",
+      "bytes": 44144,
+      "sha256": "3bafd90ccb820ef9309b2e0572cbe9ad31255455bb9ba36b319c155d84b0ca74",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-player5-wav-28f7808a038e8aaf16622a0fd6309e0c8434cdcd.wav",
+      "bytes": 48044,
+      "sha256": "7e9b6cb25db047632aafd1fa02f28ccf72c6466c3df2fe1133128397de7c8fe3",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-player4-wav-9ba6e997aaf430b23ef6d1028130fe05d78c172a.wav",
+      "bytes": 44144,
+      "sha256": "af4c2ac6c774dce2ce44f5c22b6460d8da1d4f0c65b156ae3d72ebea034ff5db",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-warning-wav-c4b2770cc16d0893ffdca7d531d319bab25618cf.wav",
+      "bytes": 44144,
+      "sha256": "a4a2ed59f5b8af98f64559d9766322a2d4d2ff160bb30cb4798539dbcae48dc4",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-fallback-wav-10f6f440be52768197724201417716caad5cfc16.wav",
+      "bytes": 44144,
+      "sha256": "e36fa1a0ed7e962735ff4bd76b27e5108dc34cce7684eb543ea906fcd8dbdbab",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-player1-rms-matched-wav-57d34751d62db9f5d215863657e84432ffeeab4d.wav",
+      "bytes": 44144,
+      "sha256": "eb954824baa89582972b7903f708a773e65091dbfea390ba75121e6e38e3c21a",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-zero-wav-b998f0d78f313b90bf38cd75e12d2a3b05269c43.wav",
+      "bytes": 48044,
+      "sha256": "92e19540f656c3af507bd038e72cfb6c1279bf1ddf21cf8c5002090691323a4b",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-warning-wav-51e9a30768999b75e584ce258d361dc80a1a7b90.wav",
+      "bytes": 44144,
+      "sha256": "e3ee38e773ec949975a73c5d3aaa5153b88baf29868315e76199f360cb2c795b",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-warning-rms-matched-wav-d87f092b619a39b936214b46c24d634ad3c78319.wav",
+      "bytes": 44144,
+      "sha256": "41ee86a35c3abf6828fe71fe1070bf61a9f461225be40c5bc84ba2325979c4f6",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-sixteen-wav-dddab08d6c7b8e3703626132a37b683873499b74.wav",
+      "bytes": 48044,
+      "sha256": "c7f916130d469c1c4fc50137650d394d5efd6dd77d773f7c563b72b1dabe64da",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-full-quality-sixteen-wav-ceb3f4b5fe1be61a5345469dfec0766156d326d2.wav",
+      "bytes": 48044,
+      "sha256": "99492a1c9aa39b73078b77e1614b737354ede32c246aa050063a49b83e20e58c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-opponent-rms-matched-wav-82cc99865fbc661c6d33b62a650af3ee784b3bcf.wav",
+      "bytes": 48044,
+      "sha256": "d0e14193ded205f4224fef83ea36677cc8f6f0eda52c0b6592df5285cbfcbca6",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-quiet-wav-b57aeb5c0d440e0c9542c1247e2b8b2e0ac2a3e5.wav",
+      "bytes": 44144,
+      "sha256": "5b2f2b4c4ee82d1e770668490eb7ab3b9d5960de16ed0a36644abfdc7f147b35",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-opponent-wav-a32db9d63c0593432c405a9b9b020aa3c6ff8100.wav",
+      "bytes": 44144,
+      "sha256": "a3a1c9f337b886f8b1ae241c84e4c9c0897b09afcf3fd0c668fdf0af97382d14",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-muted-wav-056975c5a4f362f47521a5e88963f83e53c0d989.wav",
+      "bytes": 48044,
+      "sha256": "92e19540f656c3af507bd038e72cfb6c1279bf1ddf21cf8c5002090691323a4b",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-quiet-wav-3d8631323d28bca79b285452f9c72c3a061d444c.wav",
+      "bytes": 48044,
+      "sha256": "61a300621448f4562be5b82531195d7c8b14e0bd932a739e714b9c26b064d1a5",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/waveform-measurements-json-a6e4f9b304b8559eb3f0bfd2fe328534bd2bcbd1.json",
+      "bytes": 5539,
+      "sha256": "bde3540e2b5cae1ed006a774ee593a8c029139a9b60115027d765c7d5adf578a",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-player-rms-matched-wav-674978860ee725081cc17ed10680a22da2bc2038.wav",
+      "bytes": 48044,
+      "sha256": "9a9ff3ba2b5a0c30cc40e438fee8f16e4bb8ea2dbd2d6046b8fe8556dce47984",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-player10-wav-d02bc50fb5da0e1b55b6a13a37beefebed27c186.wav",
+      "bytes": 48044,
+      "sha256": "27489f2850479aec350961f2fdec71ddadc44cbdb4243805ca6937aadf8b6201",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-opponent-rms-matched-wav-5a2f1f5a6694059e1e30df424133121af417d1fc.wav",
+      "bytes": 44144,
+      "sha256": "7aaa1d433b9901ff3d7cbb00759b384df695c4bef883f484fbc09b5e8e464a3c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-sixteen-rms-matched-wav-ba6f6588aaffa85fc2ef7a5941e1cd0bb4d81a76.wav",
+      "bytes": 48044,
+      "sha256": "c64e7a3958be753373e221db9ccec418ad109742ccff2a7f53232bb7cc67cc8f",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-player5-wav-08152f84bc7d2b5c060279d451db1cf4f07fe4b3.wav",
+      "bytes": 44144,
+      "sha256": "a3aab746b787e3d23a26423735fe3ed48db218fe451c491393843b0ab67a2906",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-sixteen-wav-bb30a7937590575718f2200efcf2475934a395fc.wav",
+      "bytes": 44144,
+      "sha256": "4209718d7cb8bf97c377c6be0b58f3df8feef4fa2e55f3843682f7a92370ba31",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-warning-wav-e259b255cce487ea758412bd7a8e567599ba89fa.wav",
+      "bytes": 48044,
+      "sha256": "4b248aa4bbc6d18dc50290594301e1fbcde6ad624d7e65a02b4d754886a2da5c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-player-rms-matched-wav-719265d4458964edcb56e4a373f515a3234aa279.wav",
+      "bytes": 44144,
+      "sha256": "1fc01b9fe6d0c27fef071da13fc224cdb67a9d929b79c68f6c7484b88266c77d",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-player9-wav-663a9fb1a7f9568d82a061edd339ac0e77dbbc28.wav",
+      "bytes": 48044,
+      "sha256": "7e9b6cb25db047632aafd1fa02f28ccf72c6466c3df2fe1133128397de7c8fe3",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-old-sixteen-rms-matched-wav-6d70ff59e0a3619a9e72df1948b70cbd9f3e83f0.wav",
+      "bytes": 44144,
+      "sha256": "1423dffad3ff4a790204a58b2218af420030b40f6b017a69a14df00fbc84ed5d",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-opponent-rms-matched-wav-d2678d6979504861b5f4dcd292c6578bc0c1cbc8.wav",
+      "bytes": 44144,
+      "sha256": "e5a78021657ea2d2547c6d91bd9179f4abf868f6dd0350f553414187c4490de7",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-warning-rms-matched-wav-cfeb203e940bd2b70d6cc49abc8aa7f0d6271dee.wav",
+      "bytes": 48044,
+      "sha256": "8343787f37609a6854e0d3d1b62ee69e5873b069514d9f70087cb0afba4ffb2e",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-sixteen-wav-ef100d7288b09e519fb1a451acdf83279bdcc591.wav",
+      "bytes": 44144,
+      "sha256": "dcd74bbac21397cd3bf7bf5f635cb3d5d502ed5e7ab17a883f40e8695f20b56c",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-player1-wav-7e851f5a3cfbf09dbe3b41feea97614f53a6aa76.wav",
+      "bytes": 48044,
+      "sha256": "75985003053bb0440a8f686c428abecb75169360a66380714bdc7cd9b9bf891e",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-player1-wav-24db71e6265e850b3aedeee69cece81293960a63.wav",
+      "bytes": 44144,
+      "sha256": "af4c2ac6c774dce2ce44f5c22b6460d8da1d4f0c65b156ae3d72ebea034ff5db",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-opponent-wav-6330e46a270146288eb332ff579c12a989cfd637.wav",
+      "bytes": 44144,
+      "sha256": "0e197f1d5009ba732c88e571b6bd9032606b47dcbe9fcf9724d164ceae15f993",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-warning-rms-matched-wav-7cce8c4292936decdd4dfb77d4870c258c1eccb9.wav",
+      "bytes": 48044,
+      "sha256": "5d7db08f72d820d6b2f5608eab91385d836d2b47e909fa1ba210af78a024199a",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-player10-wav-276fcffa6737c4f36a73b4a7147df3b714729ca2.wav",
+      "bytes": 44144,
+      "sha256": "e7b859a612a5e7f109c4c08e809acdc517a6d85a524dfb5c31ca742a2894295f",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-opponent-rms-matched-wav-6ceac8cf5453cf82e6fddef29012ea8ba69daa75.wav",
+      "bytes": 48044,
+      "sha256": "65cca0054a78056753cc55073d4981c81bf6f3e8a10661cfc6930a0b5173d7ba",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-warning-wav-de191e1fa7a7dfe042dd355ee25e79445ff90971.wav",
+      "bytes": 48044,
+      "sha256": "0fb8566ea5a5c7a12fe2eff60c4456bf39a64953ce68134564b200b14bce4cc9",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-fallback-wav-95f17c0169c8aa8a85500129117ffe49aa8b0e4e.wav",
+      "bytes": 48044,
+      "sha256": "37329db7563f88641be2391f6ac3b3075bfc11be876f97fe8d7b952f858d56c1",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-sixteen-wav-64bc5be3a6867b5c9a155c549deb1674d7b1da50.wav",
+      "bytes": 48044,
+      "sha256": "9b507c7be70fc37a9a2829f06bad7136e635fbe53d0c32412a65ce6c01f2daaf",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-zero-wav-96ad99205773ba915c660149f33e139b9672ddc0.wav",
+      "bytes": 44144,
+      "sha256": "ce7c9897b9dfd2e4dcaab1e85ef68fff88b919f06c3ca57d1f7667c06e1caa51",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-success10-wav-3c06d959a024bcd1111c75dabfc3d3de917289f8.wav",
+      "bytes": 44144,
+      "sha256": "1e51b51152bb746017928f0709d9151b42eded213e4ed3fcd5864ca4720c888a",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-player4-wav-c09da1eba2f3aa96a9db4a7bfa8b15f4487eba47.wav",
+      "bytes": 48044,
+      "sha256": "75985003053bb0440a8f686c428abecb75169360a66380714bdc7cd9b9bf891e",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/44100-player9-wav-9a9a5895622c0dcffc940799dafa0588008287d0.wav",
+      "bytes": 44144,
+      "sha256": "a3aab746b787e3d23a26423735fe3ed48db218fe451c491393843b0ab67a2906",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/attachments/48000-old-player-wav-8a3176ba23e5b099eb1bbd93575a7dcbdd1b6ac6.wav",
+      "bytes": 48044,
+      "sha256": "3ea9370dae9a7505d9c9fc0bd1d30b3395937feb1d2156ef89cdd7fdff9013f9",
+      "includedInGit": false
+    },
+    {
+      "path": "final-browser-artifacts/audio-layered-実AudioContex-b5bc7-run切替と部分失敗を繰り返し、予約音とnodeを回収-chromium/attachments/native-audio-resources-json-dd755d03dbff3d848799b19055ae89e43855c613.json",
+      "bytes": 20359,
+      "sha256": "2311e13d14433c806b8cf587db40c9ec4afbb5468d6f0b39a6e0ab2c7395b269",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-実アプリで加速球の一時停止・手動再開・リトライを保つ-chromium/attachments/pause-resume-retry-json-dd1002484f46417a61ba99b95cf152a35c80d1f5.json",
+      "bytes": 3972,
+      "sha256": "6d0697b111b575a87764c7c12305563a54da0e7591fcfdb7db35c02165ba0c78",
+      "includedInGit": true
+    },
+    {
+      "path": "final-browser-artifacts/remaining-ball-ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる-chromium/attachments/measured-flights-json-27c15bd2a6734852cd2de09a6ecefa273f117115.json",
+      "bytes": 8325,
+      "sha256": "7d4dd40d691bd1fcc217bc022a7c972bb7664f3e148bcd0b8ff9629ca7a223dc",
+      "includedInGit": true
+    }
+  ]
+}

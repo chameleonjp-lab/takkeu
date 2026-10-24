@@ -1,0 +1,23 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/sharing.spec.ts --project=chromium --reporter=list --output=docs/verification/share-speed-audio/a-browser-artifacts
+
+[WebServer] (node:9361) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:9385) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/sharing.spec.ts:71:1 › 自己ベストなしのホームから通常リンクで正式URLと汎用文を開ける (1.2s)
+  ✓  2 [chromium] › tests/browser/sharing.spec.ts:84:1 › 自己ベストと今回の結果を区別し、通信失敗・再挑戦・0点・大きな値・ホームでも共有値を保つ (2.3s)
+  ✓  3 [chromium] › tests/browser/sharing.spec.ts:117:5 › 共有リンクは320x568・文字100%でも読めて操作できる (1.2s)
+  ✓  4 [chromium] › tests/browser/sharing.spec.ts:117:5 › 共有リンクは320x568・文字200%でも読めて操作できる (1.2s)
+  ✓  5 [chromium] › tests/browser/sharing.spec.ts:117:5 › 共有リンクは568x320・文字100%でも読めて操作できる (1.2s)
+  ✓  6 [chromium] › tests/browser/sharing.spec.ts:117:5 › 共有リンクは568x320・文字200%でも読めて操作できる (1.2s)
+  ✓  7 [chromium] › tests/browser/sharing.spec.ts:117:5 › 共有リンクは1280x720・文字100%でも読めて操作できる (1.3s)
+  ✓  8 [chromium] › tests/browser/sharing.spec.ts:117:5 › 共有リンクは1280x720・文字200%でも読めて操作できる (1.3s)
+
+  8 passed (12.1s)
+
+Exit code: 0

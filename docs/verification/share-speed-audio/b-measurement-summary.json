@@ -1,0 +1,127 @@
+{
+  "method": "Browser production simulation; interpolate actual ball z crossings at net and paddle plane",
+  "baselineAliveCount": 5,
+  "rowsPerEngine": 42,
+  "engines": {
+    "chromium": {
+      "rowCount": 42,
+      "maximumRatioError": 1.2878587085651816e-14,
+      "examples": [
+        {
+          "score": 100,
+          "count": 1,
+          "departed": 20,
+          "net": 20.344517792563384,
+          "arrived": 20.689035585126764,
+          "duration": 0.6890355851267636,
+          "visible": 0.34451779256338
+        },
+        {
+          "score": 100,
+          "count": 4,
+          "departed": 20,
+          "net": 20.438477190535213,
+          "arrived": 20.876954381070426,
+          "duration": 0.8769543810704263,
+          "visible": 0.43847719053521317
+        },
+        {
+          "score": 100,
+          "count": 5,
+          "departed": 20,
+          "net": 20.482324909588737,
+          "arrived": 20.96464981917747,
+          "duration": 0.9646498191774704,
+          "visible": 0.4823249095887334
+        },
+        {
+          "score": 540,
+          "count": 1,
+          "departed": 20,
+          "net": 20.171965610630473,
+          "arrived": 20.343931221260945,
+          "duration": 0.3439312212609451,
+          "visible": 0.17196561063047255
+        },
+        {
+          "score": 540,
+          "count": 4,
+          "departed": 20,
+          "net": 20.218865322620605,
+          "arrived": 20.437730645241206,
+          "duration": 0.4377306452412064,
+          "visible": 0.21886532262060143
+        },
+        {
+          "score": 540,
+          "count": 5,
+          "departed": 20,
+          "net": 20.24075185488266,
+          "arrived": 20.481503709765324,
+          "duration": 0.48150370976532386,
+          "visible": 0.2407518548826637
+        }
+      ]
+    },
+    "webkit": {
+      "rowCount": 42,
+      "maximumRatioError": 1.2878587085651816e-14,
+      "examples": [
+        {
+          "score": 100,
+          "count": 1,
+          "departed": 20,
+          "net": 20.344517792563384,
+          "arrived": 20.689035585126764,
+          "duration": 0.6890355851267636,
+          "visible": 0.34451779256338
+        },
+        {
+          "score": 100,
+          "count": 4,
+          "departed": 20,
+          "net": 20.438477190535213,
+          "arrived": 20.876954381070426,
+          "duration": 0.8769543810704263,
+          "visible": 0.43847719053521317
+        },
+        {
+          "score": 100,
+          "count": 5,
+          "departed": 20,
+          "net": 20.482324909588737,
+          "arrived": 20.96464981917747,
+          "duration": 0.9646498191774704,
+          "visible": 0.4823249095887334
+        },
+        {
+          "score": 540,
+          "count": 1,
+          "departed": 20,
+          "net": 20.171965610630473,
+          "arrived": 20.343931221260945,
+          "duration": 0.3439312212609451,
+          "visible": 0.17196561063047255
+        },
+        {
+          "score": 540,
+          "count": 4,
+          "departed": 20,
+          "net": 20.218865322620605,
+          "arrived": 20.437730645241206,
+          "duration": 0.4377306452412064,
+          "visible": 0.21886532262060143
+        },
+        {
+          "score": 540,
+          "count": 5,
+          "departed": 20,
+          "net": 20.24075185488266,
+          "arrived": 20.481503709765324,
+          "duration": 0.48150370976532386,
+          "visible": 0.2407518548826637
+        }
+      ]
+    }
+  }
+}

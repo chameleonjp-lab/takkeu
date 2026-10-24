@@ -1,0 +1,25 @@
+{
+  "base": "27ebee8fb5fa0d29f7f82e15244dd1fbd1a88de1",
+  "allProductSourceFilesCompared": 45,
+  "mismatches": [],
+  "instrumentation": "tests/helpers/audioProbe.ts and performance spec identical in both trees; native node counts added; fixed clock never installed",
+  "performanceCommands": "npm run test:performance (base Chromium); npm run test:performance -- --project=webkit (base WebKit recheck)",
+  "instrumentationHashes": {
+    "tests/helpers/audioProbe.ts": {
+      "identical": true,
+      "sha256": "db0d115d5ffd73afa9a78384227fad2c41398c3db9dddba3afde2b3dd3012689"
+    },
+    "tests/performance/browser-load.spec.ts": {
+      "identical": true,
+      "sha256": "ca6cc3815dfbf4fff6bc381e409a574f2b8aa3c0b7dfaf3f59e4a3d506d2d7fa"
+    },
+    "tests/helpers/appHarness.ts": {
+      "identical": true,
+      "sha256": "a0ab220dc9218a37e016685c2b224a266dcbaf8b31526ec8f2e246cf5aa8fd33"
+    },
+    "tests/helpers/scenarios.ts": {
+      "identical": true,
+      "sha256": "c93d45fef606a07cb49a6271b6d608062ecce11744ccb50d294efc655c8cab66"
+    }
+  }
+}

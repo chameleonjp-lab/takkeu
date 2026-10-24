@@ -1,0 +1,167 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit
+
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/layered-tones.test.ts (7 tests | 7 failed) 20ms
+   × player layers include kick, distortion, noise and delayed arpeggio; buffers/curve are reused 5ms
+   × 音階と重なりは確定ラリー1/4/5/9/10/上限へ連動する 1ms
+   × 全音源の終了を待ち、複数stop/disconnect/古い完了でも通知は一度 4ms
+   × mute/0/未解放/失敗中も確定scoreを失わず復帰時に古い音を再生しない 3ms
+   × 予告された別球の通常接触・同球次往復を成功音と推測しない 1ms
+   × 91球の連続イベントでも8active+8fade以下、音源160以下、終了で全切断 5ms
+   × 低負荷では重要な4種類の音を保ち1voice5音源以下 0ms
+ ❯ tests/unit/release-revision.test.ts (1 test | 1 failed) 93ms
+   × 公開の照合は完全SHA・main選択・checkout・最新mainの全一致だけを許す 92ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/layered-tones.test.ts > player layers include kick, distortion, noise and delayed arpeggio; buffers/curve are reused
+AssertionError: expected 1 to be greater than or equal to 7
+ ❯ tests/unit/layered-tones.test.ts:12:28
+     10|   const t = layeredAudioContext();
+     11|   const a = tones.playPlayerHit(t.context, t.context.destination);
+     12|   expect(t.sources.length).toBeGreaterThanOrEqual(7);
+       |                            ^
+     13|   expect(t.sources.length).toBeLessThanOrEqual(10);
+     14|   expect(t.nodes.some(n => n.kind === 'shaper')).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+ FAIL  tests/unit/layered-tones.test.ts > 音階と重なりは確定ラリー1/4/5/9/10/上限へ連動する
+TypeError: audioStage is not a function
+ ❯ tests/unit/layered-tones.test.ts:26:52
+     24|
+     25| it('音階と重なりは確定ラリー1/4/5/9/10/上限へ連動する', () => {
+     26|   expect([1,4,5,9,10,100000,NaN,-1].map(n => tones.audioStage(n))).toE…
+       |                                                    ^
+     27|     { semitones:0, accents:0 }, { semitones:0, accents:0 }, { semitone…
+     28|     { semitones:4, accents:2 }, { semitones:16, accents:2 }, { semiton…
+ ❯ tests/unit/layered-tones.test.ts:26:37
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  tests/unit/layered-tones.test.ts > 全音源の終了を待ち、複数stop/disconnect/古い完了でも通知は一度
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ tests/unit/layered-tones.test.ts:36:49
+     34|   const voice = tones.playPlayerHit(t.context, t.context.destination, …
+     35|   const late = t.sources.at(-1)!.ended!;
+     36|   t.finish(t.sources.length - 1); expect(ended).toBe(0);
+       |                                                 ^
+     37|   voice.stop(); voice.stop(); expect(t.nodes.some(n => !n.disconnected…
+     38|   t.finishAll(); expect(ended).toBe(1); expect(t.nodes.every(n => n.di…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  tests/unit/layered-tones.test.ts > mute/0/未解放/失敗中も確定scoreを失わず復帰時に古い音を再生しない
+AssertionError: expected [ { kind: 'oscillator', …(6) } ] to have a length of +0 but got 1
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ tests/unit/layered-tones.test.ts:48:21
+     46|   expect(t.sources).toHaveLength(0);
+     47|   audio.setVolume(0); audio.consume([hit(9)]); audio.setVolume(.65); a…
+     48|   expect(t.sources).toHaveLength(0);
+       |                     ^
+     49|   audio.consume([hit(10)]); expect(t.sources).toHaveLength(9);
+     50|   const count = t.sources.length;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  tests/unit/layered-tones.test.ts > 予告された別球の通常接触・同球次往復を成功音と推測しない
+AssertionError: expected 1150 to be 260 // Object.is equality
+
+- Expected
++ Received
+
+- 260
++ 1150
+
+ ❯ tests/unit/layered-tones.test.ts:61:70
+     59|   audio.consume([{ kind:'smash-warning', time:0, runId:'run', id:'warn…
+     60|   let offset = t.sources.length;
+     61|   audio.consume([hit(1)]); expect(t.sources[offset]!.frequencies[0]).t…
+       |                                                                      ^
+     62|   offset = t.sources.length;
+     63|   audio.consume([{ ...hit(2,true), ballId:2 }]); expect(t.sources[offs…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  tests/unit/layered-tones.test.ts > 91球の連続イベントでも8active+8fade以下、音源160以下、終了で全切断
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/layered-tones.test.ts:77:75
+     75|     expect(t.nodes.filter(s => s.kind==='shaper' && !s.disconnected).l…
+     76|   }
+     77|   audio.setVolume(0); expect(t.sources.every(s => s.record.disconnecte…
+       |                                                                           ^
+     78|   await audio.dispose(); expect(t.nodes.every(n => n.disconnected)).to…
+     79| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  tests/unit/layered-tones.test.ts > 低負荷では重要な4種類の音を保ち1voice5音源以下
+AssertionError: expected 1 to be greater than or equal to 3
+ ❯ tests/unit/layered-tones.test.ts:84:30
+     82|   for (const fn of [tones.playPlayerHit, tones.playOpponentHit, tones.…
+     83|     const t = layeredAudioContext(); const voice = fn(t.context, t.con…
+     84|     expect(t.sources.length).toBeGreaterThanOrEqual(3); expect(t.sourc…
+       |                              ^
+     85|     voice.disconnect(); expect(t.nodes.every(n => n.disconnected)).toB…
+     86|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+ FAIL  tests/unit/release-revision.test.ts > 公開の照合は完全SHA・main選択・checkout・最新mainの全一致だけを許す
+AssertionError: expected { status: 1, stdout: '', …(2) } to deeply equal { status: +0, …(3) }
+
+- Expected
++ Received
+
+  {
+    "expected": "60083820b01b0a85b095681e171eeb745f24a828",
+-   "status": 0,
++   "status": 1,
+    "stderr": "",
+    "stdout": "",
+  }
+
+ ❯ tests/unit/release-revision.test.ts:16:103
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯
+
+
+ Test Files  2 failed | 42 passed (44)
+      Tests  8 failed | 453 passed (461)
+   Start at  14:24:01
+   Duration  6.55s (tests 46%, environment 41%, import 8%, transform 3%, worker 1%)
+
+    Isolate  44 workers spawned · ~242ms startup each (spawn + environment, per file)
+             at least ~3.31s faster with isolate: false — reuses workers across files instead of one per file
+
+
+COMMAND_EXIT_CODE=1

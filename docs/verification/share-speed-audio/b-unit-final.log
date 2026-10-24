@@ -1,0 +1,15 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/remaining-ball-speed.test.ts tests/unit/growing-replay.test.ts tests/unit/pointer-loop.test.ts tests/unit/extended-safety.test.ts tests/unit/waiting-visibility.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+
+ Test Files  5 passed (5)
+      Tests  151 passed (151)
+   Start at  14:28:33
+   Duration  2.26s (tests 63%, environment 23%, transform 7%, import 5%, worker 1%)
+
+
+COMMAND_EXIT_CODE=0

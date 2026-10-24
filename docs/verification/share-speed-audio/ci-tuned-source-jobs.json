@@ -1,0 +1,653 @@
+{
+  "total_count": 6,
+  "jobs": [
+    {
+      "id": 120904768998,
+      "run_id": 40105005643,
+      "workflow_name": "CI",
+      "head_branch": "feat/share-speed-layered-audio",
+      "run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/runs/40105005643",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVTXvv88AAAAcJnxd5g",
+      "head_sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+      "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/jobs/120904768998",
+      "html_url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40105005643/job/120904768998",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-24T15:00:30Z",
+      "started_at": "2026-10-24T15:00:32Z",
+      "completed_at": "2026-10-24T15:02:11Z",
+      "name": "core",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-24T15:00:33Z",
+          "completed_at": "2026-10-24T15:00:33Z"
+        },
+        {
+          "name": "Run actions/checkout@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-24T15:00:33Z",
+          "completed_at": "2026-10-24T15:00:56Z"
+        },
+        {
+          "name": "Run actions/setup-node@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-24T15:00:56Z",
+          "completed_at": "2026-10-24T15:01:06Z"
+        },
+        {
+          "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-24T15:01:06Z",
+          "completed_at": "2026-10-24T15:01:06Z"
+        },
+        {
+          "name": "Dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-24T15:01:06Z",
+          "completed_at": "2026-10-24T15:01:50Z"
+        },
+        {
+          "name": "Typecheck",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-24T15:01:50Z",
+          "completed_at": "2026-10-24T15:01:51Z"
+        },
+        {
+          "name": "Unit tests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-24T15:01:51Z",
+          "completed_at": "2026-10-24T15:01:56Z"
+        },
+        {
+          "name": "Build and test root and Pages distributions",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-24T15:01:56Z",
+          "completed_at": "2026-10-24T15:02:07Z"
+        },
+        {
+          "name": "Record revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-24T15:02:07Z",
+          "completed_at": "2026-10-24T15:02:07Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-24T15:02:07Z",
+          "completed_at": "2026-10-24T15:02:09Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19,
+          "started_at": "2026-10-24T15:02:09Z",
+          "completed_at": "2026-10-24T15:02:09Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20,
+          "started_at": "2026-10-24T15:02:09Z",
+          "completed_at": "2026-10-24T15:02:09Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21,
+          "started_at": "2026-10-24T15:02:09Z",
+          "completed_at": "2026-10-24T15:02:09Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/check-runs/120904768998",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000013671,
+      "runner_name": "GitHub Actions 1000013671",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 120905159186,
+      "run_id": 40105005643,
+      "workflow_name": "CI",
+      "head_branch": "feat/share-speed-layered-audio",
+      "run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/runs/40105005643",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVTXvv88AAAAcJoJSEg",
+      "head_sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+      "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/jobs/120905159186",
+      "html_url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40105005643/job/120905159186",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-24T15:02:11Z",
+      "started_at": "2026-10-24T15:02:13Z",
+      "completed_at": "2026-10-24T15:08:34Z",
+      "name": "Browser (webkit, interaction)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-24T15:02:14Z",
+          "completed_at": "2026-10-24T15:02:15Z"
+        },
+        {
+          "name": "Run actions/checkout@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-24T15:02:15Z",
+          "completed_at": "2026-10-24T15:02:47Z"
+        },
+        {
+          "name": "Run actions/setup-node@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-24T15:02:47Z",
+          "completed_at": "2026-10-24T15:02:54Z"
+        },
+        {
+          "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-24T15:02:54Z",
+          "completed_at": "2026-10-24T15:02:54Z"
+        },
+        {
+          "name": "Dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-24T15:02:54Z",
+          "completed_at": "2026-10-24T15:04:13Z"
+        },
+        {
+          "name": "Browser tests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-24T15:04:13Z",
+          "completed_at": "2026-10-24T15:08:28Z"
+        },
+        {
+          "name": "Record revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-24T15:08:28Z",
+          "completed_at": "2026-10-24T15:08:28Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-24T15:08:28Z",
+          "completed_at": "2026-10-24T15:08:32Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-10-24T15:08:32Z",
+          "completed_at": "2026-10-24T15:08:32Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-10-24T15:08:32Z",
+          "completed_at": "2026-10-24T15:08:32Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-10-24T15:08:32Z",
+          "completed_at": "2026-10-24T15:08:32Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/check-runs/120905159186",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000013672,
+      "runner_name": "GitHub Actions 1000013672",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 120905159188,
+      "run_id": 40105005643,
+      "workflow_name": "CI",
+      "head_branch": "feat/share-speed-layered-audio",
+      "run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/runs/40105005643",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVTXvv88AAAAcJoJSFA",
+      "head_sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+      "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/jobs/120905159188",
+      "html_url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40105005643/job/120905159188",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-24T15:02:11Z",
+      "started_at": "2026-10-24T15:02:13Z",
+      "completed_at": "2026-10-24T15:11:48Z",
+      "name": "Browser (chromium, interaction)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-24T15:02:13Z",
+          "completed_at": "2026-10-24T15:02:14Z"
+        },
+        {
+          "name": "Run actions/checkout@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-24T15:02:14Z",
+          "completed_at": "2026-10-24T15:02:37Z"
+        },
+        {
+          "name": "Run actions/setup-node@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-24T15:02:37Z",
+          "completed_at": "2026-10-24T15:02:42Z"
+        },
+        {
+          "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-24T15:02:42Z",
+          "completed_at": "2026-10-24T15:02:42Z"
+        },
+        {
+          "name": "Dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-24T15:02:42Z",
+          "completed_at": "2026-10-24T15:03:11Z"
+        },
+        {
+          "name": "Browser tests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-24T15:03:11Z",
+          "completed_at": "2026-10-24T15:11:43Z"
+        },
+        {
+          "name": "Record revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-24T15:11:43Z",
+          "completed_at": "2026-10-24T15:11:43Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-24T15:11:43Z",
+          "completed_at": "2026-10-24T15:11:47Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-10-24T15:11:47Z",
+          "completed_at": "2026-10-24T15:11:47Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-10-24T15:11:47Z",
+          "completed_at": "2026-10-24T15:11:47Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-10-24T15:11:47Z",
+          "completed_at": "2026-10-24T15:11:47Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/check-runs/120905159188",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000013673,
+      "runner_name": "GitHub Actions 1000013673",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 120905159221,
+      "run_id": 40105005643,
+      "workflow_name": "CI",
+      "head_branch": "feat/share-speed-layered-audio",
+      "run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/runs/40105005643",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVTXvv88AAAAcJoJSNQ",
+      "head_sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+      "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/jobs/120905159221",
+      "html_url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40105005643/job/120905159221",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-24T15:02:11Z",
+      "started_at": "2026-10-24T15:02:14Z",
+      "completed_at": "2026-10-24T15:07:22Z",
+      "name": "Browser (webkit, load)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-24T15:02:15Z",
+          "completed_at": "2026-10-24T15:02:16Z"
+        },
+        {
+          "name": "Run actions/checkout@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-24T15:02:16Z",
+          "completed_at": "2026-10-24T15:02:45Z"
+        },
+        {
+          "name": "Run actions/setup-node@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-24T15:02:45Z",
+          "completed_at": "2026-10-24T15:02:55Z"
+        },
+        {
+          "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-24T15:02:55Z",
+          "completed_at": "2026-10-24T15:02:55Z"
+        },
+        {
+          "name": "Dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-24T15:02:55Z",
+          "completed_at": "2026-10-24T15:04:05Z"
+        },
+        {
+          "name": "Browser tests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-24T15:04:05Z",
+          "completed_at": "2026-10-24T15:07:16Z"
+        },
+        {
+          "name": "Record revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-24T15:07:16Z",
+          "completed_at": "2026-10-24T15:07:16Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-24T15:07:16Z",
+          "completed_at": "2026-10-24T15:07:19Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-10-24T15:07:19Z",
+          "completed_at": "2026-10-24T15:07:19Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-10-24T15:07:19Z",
+          "completed_at": "2026-10-24T15:07:19Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-10-24T15:07:19Z",
+          "completed_at": "2026-10-24T15:07:19Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/check-runs/120905159221",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000013674,
+      "runner_name": "GitHub Actions 1000013674",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 120905159224,
+      "run_id": 40105005643,
+      "workflow_name": "CI",
+      "head_branch": "feat/share-speed-layered-audio",
+      "run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/runs/40105005643",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVTXvv88AAAAcJoJSOA",
+      "head_sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+      "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/jobs/120905159224",
+      "html_url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40105005643/job/120905159224",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-24T15:02:11Z",
+      "started_at": "2026-10-24T15:02:18Z",
+      "completed_at": "2026-10-24T15:11:31Z",
+      "name": "Browser (chromium, load)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-24T15:02:19Z",
+          "completed_at": "2026-10-24T15:02:20Z"
+        },
+        {
+          "name": "Run actions/checkout@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-24T15:02:20Z",
+          "completed_at": "2026-10-24T15:02:46Z"
+        },
+        {
+          "name": "Run actions/setup-node@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-24T15:02:46Z",
+          "completed_at": "2026-10-24T15:02:52Z"
+        },
+        {
+          "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-24T15:02:52Z",
+          "completed_at": "2026-10-24T15:02:52Z"
+        },
+        {
+          "name": "Dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-24T15:02:52Z",
+          "completed_at": "2026-10-24T15:03:29Z"
+        },
+        {
+          "name": "Browser tests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-24T15:03:29Z",
+          "completed_at": "2026-10-24T15:11:26Z"
+        },
+        {
+          "name": "Record revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-24T15:11:26Z",
+          "completed_at": "2026-10-24T15:11:26Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-24T15:11:26Z",
+          "completed_at": "2026-10-24T15:11:28Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-10-24T15:11:28Z",
+          "completed_at": "2026-10-24T15:11:28Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-10-24T15:11:28Z",
+          "completed_at": "2026-10-24T15:11:29Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-10-24T15:11:29Z",
+          "completed_at": "2026-10-24T15:11:29Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/check-runs/120905159224",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000013675,
+      "runner_name": "GitHub Actions 1000013675",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 120907287676,
+      "run_id": 40105005643,
+      "workflow_name": "CI",
+      "head_branch": "feat/share-speed-layered-audio",
+      "run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/runs/40105005643",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVTXvv88AAAAcJqLMfA",
+      "head_sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+      "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/jobs/120907287676",
+      "html_url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40105005643/job/120907287676",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-24T15:11:49Z",
+      "started_at": "2026-10-24T15:11:51Z",
+      "completed_at": "2026-10-24T15:11:53Z",
+      "name": "verify",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-24T15:11:51Z",
+          "completed_at": "2026-10-24T15:11:51Z"
+        },
+        {
+          "name": "Require all validation jobs",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-24T15:11:51Z",
+          "completed_at": "2026-10-24T15:11:52Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-24T15:11:52Z",
+          "completed_at": "2026-10-24T15:11:52Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/check-runs/120907287676",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000013680,
+      "runner_name": "GitHub Actions 1000013680",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

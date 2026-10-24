@@ -1,0 +1,37 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/audio-contact.test.ts (2 tests | 1 failed) 123ms
+   × 接触前の球別smashと加点後scoreをplayer-hitへコピーし、次往復へ持ち越さない 15ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/audio-contact.test.ts > 接触前の球別smashと加点後scoreをplayer-hitへコピーし、次往復へ持ち越さない
+AssertionError: expected { id: 'run-1:1', runId: 'run-1', …(4) } to match object { ballId: 1, smashReturn: false, …(1) }
+(8 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "ballId": 1,
+-   "rallyScore": 4,
+-   "smashReturn": false,
+  }
+
+ ❯ tests/unit/audio-contact.test.ts:13:17
+     11|   s.state.balls = [normal, smash];
+     12|   const first = s.step().events.find(e => e.kind==='player-hit')!;
+     13|   expect(first).toMatchObject({ballId:1, smashReturn:false, rallyScore…
+       |                 ^
+     14|   let second;
+     15|   for (let i=0;i<60 && !second;i++) second = s.step({x:.6,y:.5}).event…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  14:26:23
+   Duration  421ms (tests 46%, transform 43%, import 10%, worker 1%)
+

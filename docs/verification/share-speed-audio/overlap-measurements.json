@@ -1,0 +1,273 @@
+{
+  "sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+  "sourceTree": "b6dc05493c176417a54071d5a6d107132124fac4",
+  "method": "Native OfflineAudioContext suspend/resume at quantized render times; 8 previous voices + 8 new strokes, production graph at final volume1; no page.clock",
+  "recordedAt": "2026-10-24T15:10:00.805Z",
+  "maximumPeak": 0.25593069195747375,
+  "cases": [
+    {
+      "engine": "chromium",
+      "rate": 44100,
+      "kind": "success",
+      "requestedAt": 0.006,
+      "actualAt": 0.008707482993197279,
+      "finite": true,
+      "peak": 0.16997036337852478,
+      "rms": 0.02496480314235283,
+      "tailPeak": 0
+    },
+    {
+      "engine": "chromium",
+      "rate": 44100,
+      "kind": "warning",
+      "requestedAt": 0.006,
+      "actualAt": 0.008707482993197279,
+      "finite": true,
+      "peak": 0.17252233624458313,
+      "rms": 0.01765284958997236,
+      "tailPeak": 0
+    },
+    {
+      "engine": "chromium",
+      "rate": 44100,
+      "kind": "success",
+      "requestedAt": 0.025,
+      "actualAt": 0.026122448979591838,
+      "finite": true,
+      "peak": 0.21896758675575256,
+      "rms": 0.03435056109596457,
+      "tailPeak": 0
+    },
+    {
+      "engine": "chromium",
+      "rate": 44100,
+      "kind": "warning",
+      "requestedAt": 0.025,
+      "actualAt": 0.026122448979591838,
+      "finite": true,
+      "peak": 0.17391450703144073,
+      "rms": 0.018459324437059537,
+      "tailPeak": 0
+    },
+    {
+      "engine": "chromium",
+      "rate": 44100,
+      "kind": "success",
+      "requestedAt": 0.06,
+      "actualAt": 0.06095238095238095,
+      "finite": true,
+      "peak": 0.25592440366744995,
+      "rms": 0.0398328291922094,
+      "tailPeak": 0
+    },
+    {
+      "engine": "chromium",
+      "rate": 44100,
+      "kind": "warning",
+      "requestedAt": 0.06,
+      "actualAt": 0.06095238095238095,
+      "finite": true,
+      "peak": 0.1905549317598343,
+      "rms": 0.020656842085356324,
+      "tailPeak": 0
+    },
+    {
+      "engine": "chromium",
+      "rate": 48000,
+      "kind": "success",
+      "requestedAt": 0.006,
+      "actualAt": 0.008,
+      "finite": true,
+      "peak": 0.16266091167926788,
+      "rms": 0.02466722928946651,
+      "tailPeak": 0
+    },
+    {
+      "engine": "chromium",
+      "rate": 48000,
+      "kind": "warning",
+      "requestedAt": 0.006,
+      "actualAt": 0.008,
+      "finite": true,
+      "peak": 0.17234653234481812,
+      "rms": 0.017775977061440646,
+      "tailPeak": 0
+    },
+    {
+      "engine": "chromium",
+      "rate": 48000,
+      "kind": "success",
+      "requestedAt": 0.025,
+      "actualAt": 0.02666666666666667,
+      "finite": true,
+      "peak": 0.2188795953989029,
+      "rms": 0.03430358468104787,
+      "tailPeak": 0
+    },
+    {
+      "engine": "chromium",
+      "rate": 48000,
+      "kind": "warning",
+      "requestedAt": 0.025,
+      "actualAt": 0.02666666666666667,
+      "finite": true,
+      "peak": 0.17699676752090454,
+      "rms": 0.018584178104957532,
+      "tailPeak": 0
+    },
+    {
+      "engine": "chromium",
+      "rate": 48000,
+      "kind": "success",
+      "requestedAt": 0.06,
+      "actualAt": 0.06133333333333333,
+      "finite": true,
+      "peak": 0.24915987253189087,
+      "rms": 0.04015476628065935,
+      "tailPeak": 0
+    },
+    {
+      "engine": "chromium",
+      "rate": 48000,
+      "kind": "warning",
+      "requestedAt": 0.06,
+      "actualAt": 0.06133333333333333,
+      "finite": true,
+      "peak": 0.1952143907546997,
+      "rms": 0.02083581792984832,
+      "tailPeak": 0
+    },
+    {
+      "engine": "webkit",
+      "rate": 44100,
+      "kind": "success",
+      "requestedAt": 0.006,
+      "actualAt": 0.008707482993197279,
+      "finite": true,
+      "peak": 0.16999000310897827,
+      "rms": 0.02496237257851811,
+      "tailPeak": 0
+    },
+    {
+      "engine": "webkit",
+      "rate": 44100,
+      "kind": "warning",
+      "requestedAt": 0.006,
+      "actualAt": 0.008707482993197279,
+      "finite": true,
+      "peak": 0.17167039215564728,
+      "rms": 0.017660997419461737,
+      "tailPeak": 0
+    },
+    {
+      "engine": "webkit",
+      "rate": 44100,
+      "kind": "success",
+      "requestedAt": 0.025,
+      "actualAt": 0.026122448979591838,
+      "finite": true,
+      "peak": 0.21889251470565796,
+      "rms": 0.03434549528117934,
+      "tailPeak": 0
+    },
+    {
+      "engine": "webkit",
+      "rate": 44100,
+      "kind": "warning",
+      "requestedAt": 0.025,
+      "actualAt": 0.026122448979591838,
+      "finite": true,
+      "peak": 0.17284773290157318,
+      "rms": 0.018467516368047197,
+      "tailPeak": 0
+    },
+    {
+      "engine": "webkit",
+      "rate": 44100,
+      "kind": "success",
+      "requestedAt": 0.06,
+      "actualAt": 0.06095238095238095,
+      "finite": true,
+      "peak": 0.25593069195747375,
+      "rms": 0.039830105241036036,
+      "tailPeak": 0
+    },
+    {
+      "engine": "webkit",
+      "rate": 44100,
+      "kind": "warning",
+      "requestedAt": 0.06,
+      "actualAt": 0.06095238095238095,
+      "finite": true,
+      "peak": 0.1903948336839676,
+      "rms": 0.02065470954818665,
+      "tailPeak": 0
+    },
+    {
+      "engine": "webkit",
+      "rate": 48000,
+      "kind": "success",
+      "requestedAt": 0.006,
+      "actualAt": 0.008,
+      "finite": true,
+      "peak": 0.16266091167926788,
+      "rms": 0.024667229900584724,
+      "tailPeak": 0
+    },
+    {
+      "engine": "webkit",
+      "rate": 48000,
+      "kind": "warning",
+      "requestedAt": 0.006,
+      "actualAt": 0.008,
+      "finite": true,
+      "peak": 0.172317773103714,
+      "rms": 0.017776031395119463,
+      "tailPeak": 0
+    },
+    {
+      "engine": "webkit",
+      "rate": 48000,
+      "kind": "success",
+      "requestedAt": 0.025,
+      "actualAt": 0.02666666666666667,
+      "finite": true,
+      "peak": 0.2188795953989029,
+      "rms": 0.034305217316004874,
+      "tailPeak": 0
+    },
+    {
+      "engine": "webkit",
+      "rate": 48000,
+      "kind": "warning",
+      "requestedAt": 0.025,
+      "actualAt": 0.02666666666666667,
+      "finite": true,
+      "peak": 0.175207257270813,
+      "rms": 0.018585363190068673,
+      "tailPeak": 0
+    },
+    {
+      "engine": "webkit",
+      "rate": 48000,
+      "kind": "success",
+      "requestedAt": 0.06,
+      "actualAt": 0.06133333333333333,
+      "finite": true,
+      "peak": 0.24915987253189087,
+      "rms": 0.040154737806290426,
+      "tailPeak": 0
+    },
+    {
+      "engine": "webkit",
+      "rate": 48000,
+      "kind": "warning",
+      "requestedAt": 0.06,
+      "actualAt": 0.06133333333333333,
+      "finite": true,
+      "peak": 0.19492767751216888,
+      "rms": 0.020853367817613266,
+      "tailPeak": 0
+    }
+  ]
+}

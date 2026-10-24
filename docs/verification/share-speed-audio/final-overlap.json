@@ -1,0 +1,18 @@
+{
+  "command": [
+    "node",
+    "docs/verification/share-speed-audio/check-overlap.mjs"
+  ],
+  "sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+  "sourceTree": "b6dc05493c176417a54071d5a6d107132124fac4",
+  "testTree": "be4205f6c21610c6b64d7ffdb2c7b3f11de3bfde",
+  "productOrTestDirty": false,
+  "startedAt": "2026-10-24T15:09:53.612Z",
+  "node": "v24.19.0",
+  "environment": "local Linux managed executor; automatic; real Playwright engines, not iPhone hardware",
+  "browserDependencyValidation": "system ldconfig check skipped; official dependencies supplied in browser bundle; engine actually launched",
+  "endedAt": "2026-10-24T15:10:00.839Z",
+  "exitCode": 0,
+  "signal": null,
+  "logSha256": "e003c5872ad8bf14a13d0dc46aabbd20d1232cdcee1aa53e190405fbbc19c5ca"
+}

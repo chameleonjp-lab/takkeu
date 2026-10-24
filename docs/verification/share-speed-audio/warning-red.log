@@ -1,0 +1,90 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/smash.spec.ts --grep 予告音を実際 --reporter=list --output=docs/verification/share-speed-audio/warning-red-artifacts
+
+[WebServer] (node:19407) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:19431) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/smash.spec.ts:60:1 › 予告音を実際のWeb Audioで合成して保存する (937ms)
+(node:19550) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  2 [webkit] › tests/browser/smash.spec.ts:60:1 › 予告音を実際のWeb Audioで合成して保存する (1.3s)
+
+
+  1) [chromium] › tests/browser/smash.spec.ts:60:1 › 予告音を実際のWeb Audioで合成して保存する ─────────────────────
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0.01
+    Received:   0.009881948881516424
+
+      67 |     return Array.from((await context.startRendering()).getChannelData(0));
+      68 |   });
+    > 69 |   expect(Math.sqrt(signal.reduce((sum, value) => sum + value * value, 0) / signal.length)).toBeGreaterThan(0.01);
+         |                                                                                            ^
+      70 |   const wav = Buffer.alloc(44 + signal.length * 2);
+      71 |   wav.write('RIFF'); wav.writeUInt32LE(wav.length - 8, 4); wav.write('WAVEfmt ', 8);
+      72 |   wav.writeUInt32LE(16, 16); wav.writeUInt16LE(1, 20); wav.writeUInt16LE(1, 22);
+        at /workspace/takkeu/tests/browser/smash.spec.ts:69:92
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/warning-red-artifacts/smash-予告音を実際のWeb-Audioで合成して保存する-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/warning-red-artifacts/smash-予告音を実際のWeb-Audioで合成して保存する-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs/verification/share-speed-audio/warning-red-artifacts/smash-予告音を実際のWeb-Audioで合成して保存する-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/warning-red-artifacts/smash-予告音を実際のWeb-Audioで合成して保存する-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/verification/share-speed-audio/warning-red-artifacts/smash-予告音を実際のWeb-Audioで合成して保存する-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit] › tests/browser/smash.spec.ts:60:1 › 予告音を実際のWeb Audioで合成して保存する ───────────────────────
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0.01
+    Received:   0.009881416218005765
+
+      67 |     return Array.from((await context.startRendering()).getChannelData(0));
+      68 |   });
+    > 69 |   expect(Math.sqrt(signal.reduce((sum, value) => sum + value * value, 0) / signal.length)).toBeGreaterThan(0.01);
+         |                                                                                            ^
+      70 |   const wav = Buffer.alloc(44 + signal.length * 2);
+      71 |   wav.write('RIFF'); wav.writeUInt32LE(wav.length - 8, 4); wav.write('WAVEfmt ', 8);
+      72 |   wav.writeUInt32LE(16, 16); wav.writeUInt16LE(1, 20); wav.writeUInt16LE(1, 22);
+        at /workspace/takkeu/tests/browser/smash.spec.ts:69:92
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/warning-red-artifacts/smash-予告音を実際のWeb-Audioで合成して保存する-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/warning-red-artifacts/smash-予告音を実際のWeb-Audioで合成して保存する-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs/verification/share-speed-audio/warning-red-artifacts/smash-予告音を実際のWeb-Audioで合成して保存する-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/warning-red-artifacts/smash-予告音を実際のWeb-Audioで合成して保存する-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/verification/share-speed-audio/warning-red-artifacts/smash-予告音を実際のWeb-Audioで合成して保存する-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/browser/smash.spec.ts:60:1 › 予告音を実際のWeb Audioで合成して保存する ──────────────────────
+    [webkit] › tests/browser/smash.spec.ts:60:1 › 予告音を実際のWeb Audioで合成して保存する ────────────────────────

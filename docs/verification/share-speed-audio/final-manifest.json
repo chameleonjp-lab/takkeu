@@ -1,0 +1,192 @@
+{
+  "base": "27ebee8fb5fa0d29f7f82e15244dd1fbd1a88de1",
+  "verifiedSourceHead": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+  "sourceTree": "b6dc05493c176417a54071d5a6d107132124fac4",
+  "testTree": "be4205f6c21610c6b64d7ffdb2c7b3f11de3bfde",
+  "recordedAt": "2026-10-24T15:29:02.538435+00:00",
+  "pr": "https://github.com/chameleonjp-lab/takkeu/pull/19",
+  "draft": true,
+  "evidenceHead": "See PR metadata/body; evidence-only commit retains source/test trees above.",
+  "localChecks": {
+    "unit": {
+      "command": [
+        "npm",
+        "test"
+      ],
+      "sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+      "sourceTree": "b6dc05493c176417a54071d5a6d107132124fac4",
+      "testTree": "be4205f6c21610c6b64d7ffdb2c7b3f11de3bfde",
+      "productOrTestDirty": false,
+      "startedAt": "2026-10-24T15:00:31.736Z",
+      "node": "v24.19.0",
+      "environment": "local Linux managed executor; automatic; real Playwright engines, not iPhone hardware",
+      "browserDependencyValidation": "normal",
+      "endedAt": "2026-10-24T15:00:39.057Z",
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "303e6eecb0de492a4bc64a48b674e40f063cae64f5de6eb8b428ead7988b57c9"
+    },
+    "release": {
+      "command": [
+        "npm",
+        "run",
+        "verify:release"
+      ],
+      "sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+      "sourceTree": "b6dc05493c176417a54071d5a6d107132124fac4",
+      "testTree": "be4205f6c21610c6b64d7ffdb2c7b3f11de3bfde",
+      "productOrTestDirty": false,
+      "startedAt": "2026-10-24T15:00:39.118Z",
+      "node": "v24.19.0",
+      "environment": "local Linux managed executor; automatic; real Playwright engines, not iPhone hardware",
+      "browserDependencyValidation": "system ldconfig check skipped; official dependencies supplied in browser bundle; engine actually launched",
+      "endedAt": "2026-10-24T15:00:49.672Z",
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "8554c22c5d29153a1dd3d3ca2d52159a3006a6b91cc1adc5ebe54e5cec6c7be0"
+    },
+    "performance": {
+      "command": [
+        "npm",
+        "run",
+        "test:performance"
+      ],
+      "sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+      "sourceTree": "b6dc05493c176417a54071d5a6d107132124fac4",
+      "testTree": "be4205f6c21610c6b64d7ffdb2c7b3f11de3bfde",
+      "productOrTestDirty": false,
+      "startedAt": "2026-10-24T15:00:49.731Z",
+      "node": "v24.19.0",
+      "environment": "local Linux managed executor; automatic; real Playwright engines, not iPhone hardware",
+      "browserDependencyValidation": "system ldconfig check skipped; official dependencies supplied in browser bundle; engine actually launched",
+      "endedAt": "2026-10-24T15:09:11.372Z",
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "9b61c81d53170abdeed81b18db1abb4397ee61decb4e52eef8fe02ee22cb13e4"
+    },
+    "overlap": {
+      "command": [
+        "node",
+        "docs/verification/share-speed-audio/check-overlap.mjs"
+      ],
+      "sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+      "sourceTree": "b6dc05493c176417a54071d5a6d107132124fac4",
+      "testTree": "be4205f6c21610c6b64d7ffdb2c7b3f11de3bfde",
+      "productOrTestDirty": false,
+      "startedAt": "2026-10-24T15:09:53.612Z",
+      "node": "v24.19.0",
+      "environment": "local Linux managed executor; automatic; real Playwright engines, not iPhone hardware",
+      "browserDependencyValidation": "system ldconfig check skipped; official dependencies supplied in browser bundle; engine actually launched",
+      "endedAt": "2026-10-24T15:10:00.839Z",
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "e003c5872ad8bf14a13d0dc46aabbd20d1232cdcee1aa53e190405fbbc19c5ca"
+    },
+    "flight-order": {
+      "command": [
+        "node",
+        "docs/verification/share-speed-audio/check-flight-order.mjs"
+      ],
+      "sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+      "sourceTree": "b6dc05493c176417a54071d5a6d107132124fac4",
+      "testTree": "be4205f6c21610c6b64d7ffdb2c7b3f11de3bfde",
+      "productOrTestDirty": false,
+      "startedAt": "2026-10-24T15:26:53.920Z",
+      "node": "v24.19.0",
+      "environment": "local Linux managed executor; automatic; real Playwright engines, not iPhone hardware",
+      "browserDependencyValidation": "system ldconfig check skipped; official dependencies supplied in browser bundle; engine actually launched",
+      "endedAt": "2026-10-24T15:26:56.262Z",
+      "exitCode": 0,
+      "signal": null,
+      "logSha256": "23e15d22c2539d10e521fea4467cf7c6d53c6cc0232d26b612121e957b0776f8"
+    },
+    "browser": {
+      "command": [
+        "npm",
+        "run",
+        "test:browser",
+        "--",
+        "--output=docs/verification/share-speed-audio/verified-browser-artifacts"
+      ],
+      "sha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+      "sourceTree": "b6dc05493c176417a54071d5a6d107132124fac4",
+      "testTree": "be4205f6c21610c6b64d7ffdb2c7b3f11de3bfde",
+      "productOrTestDirty": false,
+      "startedAt": "2026-10-24T15:09:11.453Z",
+      "node": "v24.19.0",
+      "environment": "local Linux managed executor; automatic; real Playwright engines, not iPhone hardware",
+      "browserDependencyValidation": "system ldconfig check skipped; official dependencies supplied in browser bundle; engine actually launched",
+      "endedAt": "2026-10-24T15:21:29.690Z",
+      "exitCode": 130,
+      "signal": null,
+      "logSha256": "bdfd3fe5c1f8baa2d07ee82da2dfcaa1a2b756ecb4c606ce21cfb27ef47e09a4"
+    }
+  },
+  "localBrowserDisposition": {
+    "passed": 63,
+    "interrupted": 1,
+    "notRun": 66,
+    "exitCode": 130,
+    "reason": "Stopped duplicate local full run after same-source push and PR CI both passed full130; not a local full-suite success claim."
+  },
+  "browserCoverage": {
+    "kind": "CI automatic actual Chromium/WebKit on Ubuntu24.04",
+    "headSha": "9155b19b2d3cedaf24e7130d8d134f370b136728",
+    "checkoutSha": "231268dc73d79d80c820a80d10b0f9336d5ca94f",
+    "pullRequestRun": 40105005643,
+    "pushRun": 40105001318,
+    "conclusion": "success",
+    "chromium": {
+      "interaction": 62,
+      "load": 3
+    },
+    "webkit": {
+      "interaction": 62,
+      "load": 3
+    },
+    "totalPassed": 130,
+    "logs": [
+      "ci-source-chromium-interaction.log",
+      "ci-source-chromium-load.log",
+      "ci-source-webkit-interaction.log",
+      "ci-source-webkit-load.log"
+    ]
+  },
+  "counts": {
+    "unit": 477,
+    "release": 8,
+    "finalPerformanceMeasurements": 8,
+    "basePerformanceMeasurements": 8,
+    "overlapConditions": 24,
+    "flightEventOrderConditions": 84
+  },
+  "waveforms": {
+    "measurements": 70,
+    "rates": [
+      44100,
+      48000
+    ],
+    "allFinite": true,
+    "maximumPeak": 0.4396677315235138,
+    "productionOnsetOverlapPeak": 0.15519411861896515,
+    "productionDecayingOverlapPeak": 0.25593069195747375,
+    "allTailPeakZero": true,
+    "muteAndZeroSilent": true
+  },
+  "performanceVerdict": "25ms reference target NOT met before/after on all8 conditions; recording exit0 is not target success; see performance-results.md",
+  "unconfirmed": [
+    "Human listening and comfort/recognition on speakers/earphones",
+    "iPhone Safari physical device input/audio/recovery/performance",
+    "Prior final flashing assessment on physical hardware",
+    "Actual X card/cache preview after publication"
+  ],
+  "forbiddenActionsPerformed": {
+    "merge": false,
+    "autoMerge": false,
+    "manualProductionDeploy": false,
+    "productionRankingTestWrites": false,
+    "databaseAuthBillingChanges": false,
+    "actualXPost": false
+  },
+  "npm": "11.9.0"
+}

@@ -1,0 +1,33 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/layered-tones.test.ts (12 tests | 1 failed) 88ms
+   × 音声suspend/closeの同期例外でも停止・破棄を完了する 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/layered-tones.test.ts > 音声suspend/closeの同期例外でも停止・破棄を完了する
+AssertionError: expected [Function] to not throw an error but 'Error: suspend sync' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: suspend sync"
+
+ ❯ tests/unit/layered-tones.test.ts:119:35
+    117|   t.context.suspend=()=>{throw new Error('suspend sync');};
+    118|   t.context.close=()=>{throw new Error('close sync');};
+    119|   expect(()=>audio.suspend()).not.toThrow(); await expect(audio.dispos…
+       |                                   ^
+    120|   expect(t.nodes.every(n=>n.disconnected)).toBe(true);
+    121| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 passed (12)
+   Start at  14:27:50
+   Duration  361ms (tests 46%, transform 28%, import 16%, worker 9%)
+

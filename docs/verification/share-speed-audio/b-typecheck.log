@@ -1,0 +1,9 @@
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+tests/unit/layered-tones.test.ts(7,149): error TS2353: Object literal may only specify known properties, and 'rallyScore' does not exist in type 'Readonly<{ id: string; runId: string; kind: GameEventKind; time: number; ballId?: number; milestone?: number; position?: Readonly<{ x: number; y: number; z: number; }>; effect?: "bounce-firework" | "racket-firework"; }>'.
+tests/unit/layered-tones.test.ts(26,52): error TS2339: Property 'audioStage' does not exist on type 'typeof import("/workspace/takkeu/src/audio/tones")'.
+tests/unit/layered-tones.test.ts(82,95): error TS2339: Property 'playSmashSuccess' does not exist on type 'typeof import("/workspace/takkeu/src/audio/tones")'.
+
+COMMAND_EXIT_CODE=1

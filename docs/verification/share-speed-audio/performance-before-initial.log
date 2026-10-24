@@ -1,0 +1,72 @@
+
+> takkeu@0.1.0 test:performance
+> playwright test --config=playwright.performance.config.ts
+
+[WebServer] (node:2120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:2147) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/performance/browser-load.spec.ts:6:90 › standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける (33.1s)
+(node:2424) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [chromium] › tests/performance/browser-load.spec.ts:6:90 › standard・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける (1.0m)
+  ✘  3 [chromium] › tests/performance/browser-load.spec.ts:6:90 › low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける (27.5s)
+
+
+  1) [chromium] › tests/performance/browser-load.spec.ts:6:90 › standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける 
+
+    Error: page.evaluate: Execution context was destroyed, most likely because of a navigation.
+
+      12 |   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+      13 |   await page.evaluate(score => { window.stage3.show(score); window.stage3.autoPlay(true); },startingScore);
+    > 14 |   const result = await page.evaluate(quality => new Promise<object>(resolve => {
+         |                             ^
+      15 |     let previous = performance.now(); const start = previous, intervals: number[] = [];
+      16 |     const first = window.stage3.snapshot(), initialResources = window.stage3.resources();
+      17 |     const frames: { wallMs: number; intervalMs: number; simTime: number; phase: string; pauseReason: string | null; audio: ReturnType<Window['audioResources']> }[] = [];
+        at /workspace/takkeu/tests/performance/browser-load.spec.ts:14:29
+
+    Error Context: artifacts/performance-tests/browser-load-standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/performance-tests/browser-load-standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/performance-tests/browser-load-standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/performance/browser-load.spec.ts:6:90 › low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける 
+
+    Test was interrupted.
+
+    Error: page.evaluate: Test ended.
+
+      12 |   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+      13 |   await page.evaluate(score => { window.stage3.show(score); window.stage3.autoPlay(true); },startingScore);
+    > 14 |   const result = await page.evaluate(quality => new Promise<object>(resolve => {
+         |                             ^
+      15 |     let previous = performance.now(); const start = previous, intervals: number[] = [];
+      16 |     const first = window.stage3.snapshot(), initialResources = window.stage3.resources();
+      17 |     const frames: { wallMs: number; intervalMs: number; simTime: number; phase: string; pauseReason: string | null; audio: ReturnType<Window['audioResources']> }[] = [];
+        at /workspace/takkeu/tests/performance/browser-load.spec.ts:14:29
+
+    Error Context: artifacts/performance-tests/browser-load-low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/performance-tests/browser-load-low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/performance-tests/browser-load-low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/performance/browser-load.spec.ts:6:90 › standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける 
+  1 interrupted
+    [chromium] › tests/performance/browser-load.spec.ts:6:90 › low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける 
+  5 did not run
+  1 passed (2.1m)

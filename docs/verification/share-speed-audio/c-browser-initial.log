@@ -1,0 +1,97 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/audio-layered.spec.ts tests/browser/audio.spec.ts --reporter=list --output=docs/verification/share-speed-audio/c-browser-artifacts
+
+[WebServer] (node:12332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 1 worker
+
+(node:12356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘   1 [chromium] › tests/browser/audio-layered.spec.ts:5:1 › 多層音と最終出力を44.1/48kHzで合成、単発と上限+減衰の波形を保存 (906ms)
+(node:12470) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   2 [chromium] › tests/browser/audio-layered.spec.ts:71:1 › 実AudioContextで多球・停止・復旧・run切替と部分失敗を繰り返し、予約音とnodeを回収 (2.7s)
+  ✓   3 [chromium] › tests/browser/audio.spec.ts:24:1 › 打球ノード生成失敗を案内し、一時停止メニューから明示的に音声を再試行できる (11.6s)
+  ✓   4 [chromium] › tests/browser/audio.spec.ts:55:1 › 開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰 (23.3s)
+  ✓   5 [chromium] › tests/browser/audio.spec.ts:82:1 › 音声再開拒否でも無音で継続し、ミュートと明示的な音声の再試行が使える (12.8s)
+  ✓   6 [chromium] › tests/browser/audio.spec.ts:109:1 › 実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査 (1.1s)
+(node:12726) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘   7 [webkit] › tests/browser/audio-layered.spec.ts:5:1 › 多層音と最終出力を44.1/48kHzで合成、単発と上限+減衰の波形を保存 (1.2s)
+(node:12812) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   8 [webkit] › tests/browser/audio-layered.spec.ts:71:1 › 実AudioContextで多球・停止・復旧・run切替と部分失敗を繰り返し、予約音とnodeを回収 (3.4s)
+  ✓   9 [webkit] › tests/browser/audio.spec.ts:24:1 › 打球ノード生成失敗を案内し、一時停止メニューから明示的に音声を再試行できる (8.1s)
+  ✓  10 [webkit] › tests/browser/audio.spec.ts:55:1 › 開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰 (8.4s)
+  ✓  11 [webkit] › tests/browser/audio.spec.ts:82:1 › 音声再開拒否でも無音で継続し、ミュートと明示的な音声の再試行が使える (6.0s)
+  ✓  12 [webkit] › tests/browser/audio.spec.ts:109:1 › 実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査 (1.5s)
+
+
+  1) [chromium] › tests/browser/audio-layered.spec.ts:5:1 › 多層音と最終出力を44.1/48kHzで合成、単発と上限+減衰の波形を保存 ──
+
+    Error: page.evaluate: Error: Offline lifecycle adaptation failed
+        at eval (eval at evaluate (:370:30), <anonymous>:36:44)
+        at async <anonymous>:396:30
+        at eval (eval at evaluate (:370:30), <anonymous>:36:44)
+        at async <anonymous>:396:30
+        at /workspace/takkeu/tests/browser/audio-layered.spec.ts:7:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/c-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/c-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs/verification/share-speed-audio/c-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/c-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/verification/share-speed-audio/c-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit] › tests/browser/audio-layered.spec.ts:5:1 › 多層音と最終出力を44.1/48kHzで合成、単発と上限+減衰の波形を保存 ────
+
+    Error: page.evaluate: Error: Offline lifecycle adaptation failed
+
+       5 | test('多層音と最終出力を44.1/48kHzで合成、単発と上限+減衰の波形を保存', async ({ page }, info) => {
+       6 |   await page.goto('/');
+    >  7 |   const rows = await page.evaluate(async () => {
+         |                           ^
+       8 |     const audioUrl='/src/audio/audio.ts', toneUrl='/src/audio/tones.ts', oldUrl='/tests/helpers/legacyTones.ts', configUrl='/src/game/config.ts';
+       9 |     const { createAudio }=await import(/* @vite-ignore */ audioUrl);
+      10 |     const tones=await import(/* @vite-ignore */ toneUrl), legacy=await import(/* @vite-ignore */ oldUrl);
+        at /workspace/takkeu/tests/browser/audio-layered.spec.ts:7:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/c-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/c-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs/verification/share-speed-audio/c-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/verification/share-speed-audio/c-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/verification/share-speed-audio/c-browser-artifacts/audio-layered-多層音と最終出力を44-1-48kHzで合成、単発と上限-減衰の波形を保存-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/browser/audio-layered.spec.ts:5:1 › 多層音と最終出力を44.1/48kHzで合成、単発と上限+減衰の波形を保存 ───
+    [webkit] › tests/browser/audio-layered.spec.ts:5:1 › 多層音と最終出力を44.1/48kHzで合成、単発と上限+減衰の波形を保存 ─────
+  10 passed (1.4m)

@@ -1,0 +1,33 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/audio-events.test.ts (11 tests | 1 failed) 46ms
+   × 4球を個別発音し、9音目では終了間近の音を短く消して切断する 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/audio-events.test.ts > 4球を個別発音し、9音目では終了間近の音を短く消して切断する
+AssertionError: expected [ Array(10) ] to have a length of 1 but got 10
+
+- Expected
++ Received
+
+- 1
++ 10
+
+ ❯ tests/unit/audio-events.test.ts:69:46
+     67|   expect(voices).toHaveLength(9);
+     68|   // Natural stop is already scheduled for all voices; fade is observe…
+     69|   expect(ramps.filter(value => value === 0)).toHaveLength(1);
+       |                                              ^
+     70|   expect(voices[0]!.stops).toHaveLength(1);
+     71|   expect(voices[1]!.stops).toHaveLength(2);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 19 passed (20)
+   Start at  14:26:55
+   Duration  428ms (tests 43%, transform 35%, import 19%, worker 4%)
+

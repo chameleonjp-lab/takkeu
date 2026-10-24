@@ -1,0 +1,14 @@
+{
+  "initialCheckDateUtc": "2026-10-24",
+  "remote": "https://github.com/chameleonjp-lab/takkeu.git",
+  "requestedBase": "27ebee8fb5fa0d29f7f82e15244dd1fbd1a88de1",
+  "observedRemoteMain": "27ebee8fb5fa0d29f7f82e15244dd1fbd1a88de1",
+  "mainAdvancedAtStart": false,
+  "initialOpenPullRequests": [],
+  "initialWorkingTree": "new partial clone; clean before plan/product edits; no prior local edits",
+  "branch": "feat/share-speed-layered-audio",
+  "productCommit": "6615e88c1d1c4514536c518d652a0fcfaca80b01",
+  "verificationHead": "a380a431198c2c8209ed6809f8e2eb62851273c0",
+  "preexistingRemoteBranches": ["docs/reference-threejs-verification", "docs/takkeu-implementation-plan-20261022", "feat/anonymous-play-count", "feat/extended-rally", "feat/pages-auto-release", "feat/ranking-share", "feat/reference-threejs", "feat/remaining-ball-speed", "feat/stage1-basic-rally", "feat/stage2-multiball-effects-smash", "feat/stage3-quality-release", "feat/viewport-direct-paddle", "fix/bounce-contact", "fix/browser-ranking-isolation", "fix/paddle-stage12", "fix/pages-dependency-mirror", "fix/rally-ball-cadence", "fix/return-spread-glow-thresholds", "main"],
+  "decision": "No open overlapping PR. Existing sharing/remaining speed implementations are already in main and extended in one new draft PR. No preexisting branch was modified."
+}

@@ -1,0 +1,18 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/remaining-ball-speed.test.ts tests/unit/growing-replay.test.ts tests/unit/pointer-loop.test.ts tests/unit/extended-safety.test.ts tests/unit/waiting-visibility.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+
+ Test Files  5 passed (5)
+      Tests  149 passed (149)
+   Start at  14:26:05
+   Duration  2.22s (tests 62%, environment 22%, transform 9%, import 7%)
+
+    Isolate  5 workers spawned · ~385ms startup each (spawn + environment, per file)
+             at least ~257ms faster with isolate: false — reuses workers across files instead of one per file
+
+
+COMMAND_EXIT_CODE=0

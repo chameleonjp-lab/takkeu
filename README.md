@@ -68,3 +68,5 @@ npm run preview -- --host 0.0.0.0
 
 各段階を個別のプルリクエストとして提出します。今回の依頼により、初回計画外だったオンラインランキング・SNS共有を追加しました。連携値は[ranking-manifest.json](ranking-manifest.json)、今回の設計は[追加仕様](docs/superpowers/specs/2026-10-23-ranking-share-design.md)を参照してください。
 
+
+最新のX共有・残球倍率・多層効果音と検証記録は[今回の検証](docs/verification/share-speed-audio/README.md)を参照してください。実機・試聴・Xカードの未確認とLinux描画目標の未達は、その記録で区別しています。

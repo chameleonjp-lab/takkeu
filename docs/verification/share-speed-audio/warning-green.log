@@ -1,0 +1,31 @@
+
+> takkeu@0.1.0 test:browser
+> playwright test tests/browser/smash.spec.ts tests/browser/audio-layered.spec.ts --reporter=list --output=docs/verification/share-speed-audio/warning-green-artifacts
+
+[WebServer] (node:19690) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:19714) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  1 [chromium] › tests/browser/audio-layered.spec.ts:12:1 › 多層音と最終出力を44.1/48kHzで合成、単発と上限+減衰の波形を保存 (4.7s)
+  ✓  2 [chromium] › tests/browser/audio-layered.spec.ts:78:1 › 実AudioContextで多球・停止・復旧・run切替と部分失敗を繰り返し、予約音とnodeを回収 (2.4s)
+(node:19918) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  3 [chromium] › tests/browser/smash.spec.ts:5:1 › 450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない (12.6s)
+  ✓  4 [chromium] › tests/browser/smash.spec.ts:60:1 › 予告音を実際のWeb Audioで合成して保存する (761ms)
+(node:20180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  5 [webkit] › tests/browser/audio-layered.spec.ts:12:1 › 多層音と最終出力を44.1/48kHzで合成、単発と上限+減衰の波形を保存 (5.6s)
+  ✓  6 [webkit] › tests/browser/audio-layered.spec.ts:78:1 › 実AudioContextで多球・停止・復旧・run切替と部分失敗を繰り返し、予約音とnodeを回収 (2.4s)
+(node:20372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  7 [webkit] › tests/browser/smash.spec.ts:5:1 › 450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない (5.9s)
+  ✓  8 [webkit] › tests/browser/smash.spec.ts:60:1 › 予告音を実際のWeb Audioで合成して保存する (1.2s)
+
+  8 passed (38.3s)
