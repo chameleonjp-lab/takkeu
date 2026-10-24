@@ -22,6 +22,9 @@ test('再挑戦20回・ホーム往復20回でループ・購読・描画資源�
     await page.getByRole('button', { name: 'もう一度', exact: true }).click(); await page.clock.runFor(32);
     const row = await measure(); rows.push({ kind: 'retry', i, ...row }); expect(row).toEqual(baseline);
     expect(await page.evaluate(() => window.runtimeProbe.liveVoices())).toBeLessThanOrEqual(1);
+    // One new opponent hit: at most kick + mid + square + noise, including
+    // allocated/delayed sources; neither old run's sources nor tails survive.
+    expect(await page.evaluate(() => window.runtimeProbe.liveSources())).toBeLessThanOrEqual(4);
     expect(await page.evaluate(() => window.stage3.snapshot().score)).toBe(0);
   }
   for (let i = 0; i < 20; i++) {
@@ -30,6 +33,9 @@ test('再挑戦20回・ホーム往復20回でループ・購読・描画資源�
     await page.getByRole('button', { name: 'はじめる', exact: true }).click(); await page.clock.runFor(32);
     const row = await measure(); rows.push({ kind: 'home', i, ...row }); expect(row).toEqual(baseline);
     expect(await page.evaluate(() => window.runtimeProbe.liveVoices())).toBeLessThanOrEqual(1);
+    // One new opponent hit: at most kick + mid + square + noise, including
+    // allocated/delayed sources; neither old run's sources nor tails survive.
+    expect(await page.evaluate(() => window.runtimeProbe.liveSources())).toBeLessThanOrEqual(4);
   }
   const firstRun = await page.evaluate(() => window.stage3.snapshot().runId);
   const events = await page.evaluate(() => window.stage3.metrics().events.filter(e => e.runId === window.stage3.snapshot().runId));
@@ -38,5 +44,6 @@ test('再挑戦20回・ホーム往復20回でループ・購読・描画資源�
   const disposed = await page.evaluate(() => window.runtimeProbe.counts());
   expect(disposed.pendingFrames).toBe(0); expect(disposed.listeners).toBeLessThan(baseline.listeners);
   expect(await page.evaluate(() => window.runtimeProbe.liveVoices())).toBe(0);
+  expect(await page.evaluate(() => window.runtimeProbe.liveSources())).toBe(0);
   await info.attach('retry-resources.json', { body: JSON.stringify({ baseline, rows, disposed, firstRun }, null, 2), contentType: 'application/json' });
 });

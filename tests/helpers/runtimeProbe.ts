@@ -23,19 +23,27 @@ export function installRuntimeProbe() {
   };
   window.cancelAnimationFrame = id => { pending.delete(id); cancel(id); };
   let audioContexts = 0;
-  const liveVoices = new Set<OscillatorNode>(), Native = window.AudioContext;
+  const liveVoices = new Set<WaveShaperNode>(), liveSources = new Set<AudioNode>(), Native = window.AudioContext;
+  const source = <T extends AudioNode>(node: T): T => {
+    liveSources.add(node); const disconnect = node.disconnect.bind(node);
+    node.disconnect = () => { liveSources.delete(node); disconnect(); }; return node;
+  };
   window.AudioContext = class extends Native {
     constructor() { super(); audioContexts++; }
     override createOscillator() {
-      const voice = super.createOscillator(), start = voice.start.bind(voice), disconnect = voice.disconnect.bind(voice);
-      voice.start = time => { liveVoices.add(voice); start(time); };
-      voice.disconnect = () => { liveVoices.delete(voice); disconnect(); };
-      return voice;
+      return source(super.createOscillator());
+    }
+    override createBufferSource() { return source(super.createBufferSource()); }
+    override createWaveShaper() {
+      // Exactly one shaper belongs to each full-quality OR low-quality voice.
+      // Oscillators and noise buffers are sources inside that voice, not voices.
+      const voice=super.createWaveShaper(), disconnect=voice.disconnect.bind(voice);
+      liveVoices.add(voice); voice.disconnect=()=>{liveVoices.delete(voice);disconnect();};return voice;
     }
   };
   Object.assign(window, { runtimeProbe: { counts: () => ({
     listeners: [...subscriptions.values()].reduce((n, types) => n + [...types.values()].reduce((s, set) => s + set.size, 0), 0),
     pendingFrames: pending.size, audioContexts,
-  }), liveVoices: () => liveVoices.size } });
+  }), liveVoices: () => liveVoices.size, liveSources: () => liveSources.size } });
 }
-declare global { interface Window { runtimeProbe: { counts(): { listeners: number; pendingFrames: number; audioContexts: number }; liveVoices(): number } } }
+declare global { interface Window { runtimeProbe: { counts(): { listeners: number; pendingFrames: number; audioContexts: number }; liveVoices(): number; liveSources(): number } } }
