@@ -1,0 +1,25 @@
+{
+  "revision": {
+    "commit": "f5bc00f20f467cd468adfb96139ecb0b99bbbd83",
+    "base": "/takkeu/"
+  },
+  "stats": {
+    "total_play_count": 122,
+    "player_count": 1
+  },
+  "labCount": "122回",
+  "rankingNote": "1〜3位",
+  "calls": [
+    {
+      "rpc": "get_game_play_stats",
+      "status": 200
+    },
+    {
+      "rpc": "get_best_score_ranking",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "environment": "Linux Chromium 390x844, TLS-verified proxy; accordion opened through normal UI",
+  "testDataCleanup": "119 pre-deployment test rows retained pending explicit approval; backed up by exact ID"
+}

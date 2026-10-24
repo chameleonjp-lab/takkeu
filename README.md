@@ -45,6 +45,8 @@ npm run test:performance
 npm run preview -- --host 0.0.0.0
 ```
 
+ブラウザ検査では `tests/helpers/browserTest.ts` の `test` / `expect` を使います。通常の開始・再プレイを含むSupabase通信は検査内で応答し、本番DBへ送信しません。ランキング固有の応答・通信障害は各検査の `page.route` で明示します。未知のRPCは遮断して検査を失敗させます。
+
 ゲーム計算は `src/game/`、入力は `src/input/`、Three.jsの表示は `src/render/`、Web Audioは `src/audio/`、画面は `src/ui/` に分離し、`src/app/` が接続します。固定計算刻みは1/120秒です。画面更新が1.50秒を超えた場合は停止します。短い遅延は最大0.10秒だけ計算し、余分な時間を捨てます。
 
 [実装記録](docs/progress.md)と[第3段階の検証記録](docs/verification/stage3/README.md)で、対象コミット、正式ログ、画面・動画・音生成の証拠、未確認範囲を追跡します。CIは型・単体・画面・ビルドを検査し、全文ログと対象SHAを成果物に保存します。

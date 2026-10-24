@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../helpers/browserTest';
 import { installRuntimeProbe } from '../helpers/runtimeProbe';
 import type {} from '../helpers/appHarness';
 

@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../helpers/browserTest';
 
 test('球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない',async({page},info)=>{
   await page.goto('/tests/fixtures/occlusion.html');await page.waitForFunction(()=>!!window.occlusion);

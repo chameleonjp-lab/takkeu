@@ -1,0 +1,54 @@
+[WebServer] (node:19300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 1 test using 1 worker
+
+(node:19324) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] [chromium] › tests/browser/ranking-isolation.spec.ts:3:1 › 通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す
+[chromium] › tests/browser/ranking-isolation.spec.ts:3:1 › 通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+
+  1) [chromium] › tests/browser/ranking-isolation.spec.ts:3:1 › 通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す ─
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+       8 |   const pending = () => page.evaluate(() => Object.keys(localStorage).filter(key => key.startsWith('takkeu.guest-starts.v1.')).length);
+       9 |   await expect.poll(() => starts().length).toBe(1);
+    > 10 |   await expect.poll(pending).toBe(0);
+         |                              ^
+      11 |   await page.keyboard.press('Escape');
+      12 |   await page.getByRole('button', { name: '最初からやり直す', exact: true }).click();
+      13 |   await expect.poll(() => starts().length).toBe(2);
+        at /workspace/takkeu/tests/browser/ranking-isolation.spec.ts:10:30
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ranking-isolation-通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ranking-isolation-通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/ranking-isolation-通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ranking-isolation-通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ranking-isolation-通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  1 failed
+    [chromium] › tests/browser/ranking-isolation.spec.ts:3:1 › 通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す ──

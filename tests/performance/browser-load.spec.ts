@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../helpers/browserTest';
 import type {} from '../helpers/appHarness';
 
 for (const quality of ['standard', 'low'] as const) for(const startingScore of [450,555])test(`${quality}・${startingScore}からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける`, async ({ page }, info) => {

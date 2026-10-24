@@ -1,0 +1,40 @@
+{
+  "revision": {
+    "commit": "f5bc00f20f467cd468adfb96139ecb0b99bbbd83",
+    "base": "/takkeu/"
+  },
+  "before": {
+    "total_play_count": 120,
+    "player_count": 1
+  },
+  "calls": [
+    {
+      "rpc": "start_takkeu_guest_play_v1",
+      "body": {
+        "p_start_id": "7ab961d4-6abf-4455-bda0-84fa0352dd8b",
+        "p_game_slug": "takkeu",
+        "p_client_version": "takkeu-web-ranking-1"
+      },
+      "status": 200
+    },
+    {
+      "rpc": "start_takkeu_guest_play_v1",
+      "body": {
+        "p_start_id": "7a973420-24a0-46df-98e5-7c64172de287",
+        "p_game_slug": "takkeu",
+        "p_client_version": "takkeu-web-ranking-1"
+      },
+      "status": 200
+    },
+    {
+      "rpc": "get_best_score_ranking",
+      "body": {
+        "p_game_slug": "takkeu",
+        "p_limit": 30
+      },
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "failure": "locator.scrollIntoViewIfNeeded: Timeout 29090.811999999998ms exceeded.\nCall log:\n\u001b[2m  - attempting scroll into view action\u001b[22m\n\u001b[2m    2 × waiting for element to be stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying scroll into view action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying scroll into view action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    56 × waiting for element to be stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying scroll into view action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at /workspace/takkeu/artifacts/guest-count/verify-live.mjs:65:38"
+}

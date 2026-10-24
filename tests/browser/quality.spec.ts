@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../helpers/browserTest';
 import { ballCountAtScore } from '../../src/game/milestones';
 import type {} from '../helpers/appHarness';
 import type { GameSnapshot } from '../../src/game/types';
