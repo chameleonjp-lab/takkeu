@@ -2,7 +2,7 @@ import courtPreviewUrl from './court-preview.png';
 import type { GameSnapshot, PauseReason } from '../game/types';
 import { DEFAULT_PREFERENCES } from '../storage/preferences';
 import type { Preferences, Quality } from '../storage/preferences';
-import { RANKING_CONFIG, scoreShareUrl } from '../ranking/config';
+import { RANKING_CONFIG, homeShareUrl, scoreShareUrl } from '../ranking/config';
 import type { RankingEntry } from '../ranking/client';
 import type { RankingState } from '../ranking/controller';
 
@@ -36,7 +36,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
           <div><span class="step-number">02</span><p><strong>ドラッグで動かす</strong><span>押している間は、その位置について動きます。</span></p></div>
           <div><span class="step-number">03</span><p><strong>離すと止まる</strong><span>最後の位置を保ち、自分の返球で +1。</span></p></div>
         </div>
-        <footer class="home-footer"><p>自己ベスト <output aria-label="自己ベスト" data-best>0</output> ラリー</p><a href="${RANKING_CONFIG.labUrl}">カメレオンの実験場</a><button type="button" class="button subtle" data-action="settings">設定</button></footer>
+        <footer class="home-footer"><p>自己ベスト <output aria-label="自己ベスト" data-best>0</output> ラリー</p><a data-share-home-x href="${homeShareUrl(0)}" target="_blank" rel="noopener noreferrer">Xでシェア</a><a href="${RANKING_CONFIG.labUrl}">カメレオンの実験場</a><button type="button" class="button subtle" data-action="settings">設定</button></footer>
         <div data-home-notices></div>
       </section>
 
@@ -49,7 +49,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
         <div class="pause-overlay" role="dialog" aria-modal="true" aria-labelledby="pause-title" aria-describedby="pause-description" tabindex="-1" hidden inert><div class="pause-card"><p class="eyebrow">PAUSE</p><h2 id="pause-title">ひと休み</h2><p id="pause-description" data-pause-message></p><div data-pause-notices></div><button type="button" class="button primary" data-action="resume">つづける <span aria-hidden="true">→</span></button><button type="button" class="button subtle" data-action="retry">最初からやり直す</button><button type="button" class="text-button" data-action="home">ホームへ</button>${soundControls}</div></div>
       </section>
 
-      <section class="result-screen" data-result hidden inert><span class="brand-mark" aria-hidden="true">t.</span><p class="eyebrow">RALLY COMPLETE</p><h2>ナイスラリー！</h2><p class="result-label">今回のラリー数</p><output class="result-score" aria-label="今回のラリー数" data-result-score>0</output><button type="button" class="button primary" data-action="retry">もう一度 <span aria-hidden="true">↗</span></button><p>自己ベスト <output aria-label="自己ベスト" data-best>0</output> ラリー</p><p class="result-message" data-ranking-participation>もう1ラリー、つないでみよう。</p><a class="button share-button" data-share-x href="${scoreShareUrl(0)}" target="_blank" rel="noopener noreferrer">Xでスコアをシェア <span aria-hidden="true">↗</span></a><button type="button" class="button subtle" data-action="home">ホームへ</button><div data-result-notices></div><section class="ranking-panel" aria-labelledby="ranking-title"><p class="eyebrow">LEADERBOARD</p><h3 id="ranking-title">ランキング TOP 30</h3><p class="ranking-caption">最高ラリー数で競う、みんなの記録</p><p data-ranking-message role="status">ランキングを読み込んでいます。</p><div class="ranking-table-wrap"><table data-ranking-table hidden><caption class="sr-only">最高ラリー数の上位30名</caption><thead><tr><th scope="col">順位</th><th scope="col">名前</th><th scope="col">ラリー</th><th scope="col">回数</th></tr></thead><tbody data-ranking-body></tbody></table></div><button type="button" class="button subtle" data-action="ranking-refresh">ランキングを更新</button><a class="lab-link" href="${RANKING_CONFIG.labUrl}ranking.html?game=${RANKING_CONFIG.gameSlug}">実験場で詳しいランキングを見る ↗</a></section></section>
+      <section class="result-screen" data-result hidden inert><span class="brand-mark" aria-hidden="true">t.</span><p class="eyebrow">RALLY COMPLETE</p><h2>ナイスラリー！</h2><p class="result-label">今回のラリー数</p><output class="result-score" aria-label="今回のラリー数" data-result-score>0</output><button type="button" class="button primary" data-action="retry">もう一度 <span aria-hidden="true">↗</span></button><p>自己ベスト <output aria-label="自己ベスト" data-best>0</output> ラリー</p><p class="result-message" data-ranking-participation>もう1ラリー、つないでみよう。</p><a class="button share-button" data-share-x aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer">Xでスコアをシェア <span aria-hidden="true">↗</span></a><button type="button" class="button subtle" data-action="home">ホームへ</button><div data-result-notices></div><section class="ranking-panel" aria-labelledby="ranking-title"><p class="eyebrow">LEADERBOARD</p><h3 id="ranking-title">ランキング TOP 30</h3><p class="ranking-caption">最高ラリー数で競う、みんなの記録</p><p data-ranking-message role="status">ランキングを読み込んでいます。</p><div class="ranking-table-wrap"><table data-ranking-table hidden><caption class="sr-only">最高ラリー数の上位30名</caption><thead><tr><th scope="col">順位</th><th scope="col">名前</th><th scope="col">ラリー</th><th scope="col">回数</th></tr></thead><tbody data-ranking-body></tbody></table></div><button type="button" class="button subtle" data-action="ranking-refresh">ランキングを更新</button><a class="lab-link" href="${RANKING_CONFIG.labUrl}ranking.html?game=${RANKING_CONFIG.gameSlug}">実験場で詳しいランキングを見る ↗</a></section></section>
       <div class="screen-notices" data-notices>
         <div class="ranking-notice" data-ranking-notice hidden><p data-ranking-status role="status"></p><button type="button" class="button subtle" data-action="ranking-retry" hidden>記録を再送する</button></div>
         <p class="notice" data-audio-notice role="status" hidden>音声を利用できません。無音でも遊べます。設定または一時停止メニューの「音声を再試行」で再試行できます。</p>
@@ -70,7 +70,8 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   let lastPhase = '';
   let lastRemaining = -1;
   let settingsOpen = false;
-  let shareScore = -1;
+  const resultShare = get<HTMLAnchorElement>('[data-share-x]');
+  let shareScore: number | null = null;
   const setInert = (node: HTMLElement, value: boolean): void => {
     node.inert = value; node.toggleAttribute('inert', value);
   };
@@ -160,7 +161,16 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       get('[data-smash-warning]').hidden = !warning;
       const remaining = snapshot.balls.filter(ball => ball.phase !== 'lost').length;
       setText('[data-score]', String(snapshot.score)); setText('[data-balls]', String(remaining)); setText('[data-result-score]', String(snapshot.score));
-      if (shareScore !== snapshot.score) { get<HTMLAnchorElement>('[data-share-x]').href = scoreShareUrl(snapshot.score); shareScore = snapshot.score; }
+      const finalizedScore = snapshot.phase === 'gameover' ? snapshot.score : null;
+      if (!Object.is(shareScore, finalizedScore)) {
+        const url = finalizedScore === null ? null : scoreShareUrl(finalizedScore);
+        if (url) {
+          resultShare.href = url; resultShare.removeAttribute('aria-disabled'); resultShare.removeAttribute('tabindex');
+        } else {
+          resultShare.removeAttribute('href'); resultShare.setAttribute('aria-disabled', 'true'); resultShare.tabIndex = -1;
+        }
+        shareScore = finalizedScore;
+      }
       if (snapshot.phase === 'paused') setText('[data-pause-message]', pauseMessages[snapshot.pauseReason ?? 'user']);
       if (lastPhase !== snapshot.phase) {
         setText('[data-status]', snapshot.phase === 'paused' ? '一時停止中。再開ボタンで続けられます。' : snapshot.phase === 'gameover' ? `終了。${snapshot.score}ラリー。残球数0。` : snapshot.phase === 'running' ? `プレイ中。残球数${remaining}。` : 'ホーム');
@@ -182,6 +192,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       for (const volume of root.querySelectorAll<HTMLInputElement>('[data-volume]')) volume.value = String(value.volume);
       quality.value = value.quality;
       for (const best of root.querySelectorAll('[data-best]')) best.textContent = String(value.bestScore);
+      get<HTMLAnchorElement>('[data-share-home-x]').href = homeShareUrl(value.bestScore);
     },
     setStorageAvailable(available: boolean) { get('[data-storage-notice]').hidden = available; },
     setContextAvailable(available: boolean) {

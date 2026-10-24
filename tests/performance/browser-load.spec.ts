@@ -1,5 +1,7 @@
 import { expect, test } from '../helpers/browserTest';
 import type {} from '../helpers/appHarness';
+import { installAudioProbe } from '../helpers/audioProbe';
+test.beforeEach(async ({ page }) => { await page.addInitScript(installAudioProbe); });
 
 for (const quality of ['standard', 'low'] as const) for(const startingScore of [450,555])test(`${quality}・${startingScore}からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける`, async ({ page }, info) => {
   const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
@@ -12,12 +14,12 @@ for (const quality of ['standard', 'low'] as const) for(const startingScore of [
   const result = await page.evaluate(quality => new Promise<object>(resolve => {
     let previous = performance.now(); const start = previous, intervals: number[] = [];
     const first = window.stage3.snapshot(), initialResources = window.stage3.resources();
-    const frames: { wallMs: number; intervalMs: number; simTime: number; phase: string; pauseReason: string | null }[] = [];
+    const frames: { wallMs: number; intervalMs: number; simTime: number; phase: string; pauseReason: string | null; audio: ReturnType<Window['audioResources']> }[] = [];
     const runningIntervals: number[] = []; let previousPhase = first.phase;
     function frame(now: number) {
       const current = window.stage3.snapshot(), interval = now - previous;
       intervals.push(interval); previous = now;
-      frames.push({ wallMs: now - start, intervalMs: interval, simTime: current.simTime, phase: current.phase, pauseReason: current.pauseReason });
+      frames.push({ wallMs: now - start, intervalMs: interval, simTime: current.simTime, phase: current.phase, pauseReason: current.pauseReason, audio: window.audioResources() });
       if (previousPhase === 'running' && current.phase === 'running') runningIntervals.push(interval);
       previousPhase = current.phase;
       if (now - start < 60_000) { requestAnimationFrame(frame); return; }
@@ -31,7 +33,7 @@ for (const quality of ['standard', 'low'] as const) for(const startingScore of [
         remaining: final.balls.filter(b => b.phase !== 'lost').length, score: final.score,
         opponentHits: window.stage3.metrics().events.filter(e => e.kind === 'opponent-hit').length,
         smashHits: window.stage3.metrics().smashDepartures,
-        initialResources, finalResources: window.stage3.resources(), intervals, samples: frames,
+        audioResources: window.audioResources(), initialResources, finalResources: window.stage3.resources(), intervals, samples: frames,
         runningIntervals, runningP95Ms: [...runningIntervals].sort((a,b)=>a-b)[Math.ceil(runningIntervals.length * .95) - 1] ?? null,
         runningFractionAtMost25ms: runningIntervals.length ? runningIntervals.filter(n=>n<=25).length/runningIntervals.length : null,
         continuousRun: frames.every(f=>f.phase==='running'),

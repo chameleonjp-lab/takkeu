@@ -74,7 +74,7 @@ canvas:focus-visible { outline: 2px solid #7be2d1; outline-offset: -3px; }
 .result-screen .eyebrow { justify-content: center; color: #7ee0c8; margin-bottom: 0; }
 .result-screen h2 { font-size: 2rem; margin: 0 0 18px; letter-spacing: -.04em; }
 .result-label { font-size: .6875rem; color: #91a8b4; margin: 0; }
-.result-score { font: 400 100px/1.1 ui-monospace, monospace; letter-spacing: -.07em; color: #ff9778; }
+.result-score { font: 400 100px/1.1 ui-monospace, monospace; letter-spacing: -.07em; color: #ff9778; overflow-wrap: anywhere; }
 .result-message { font-size: .75rem; color: #7490a1; margin: 0 0 25px; }
 .result-screen .button { width: 100%; }
 .result-screen > p { margin-block: 0; }

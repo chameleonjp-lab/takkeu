@@ -1,20 +1,40 @@
 import type { GameConfig, GameEvent } from '../game/types';
-import { playOpponentHit, playPlayerHit, playSmashWarning } from './tones';
+import type { Quality } from '../storage/preferences';
+import { playOpponentHit, playPlayerHit, playSmashSuccess, playSmashWarning } from './tones';
 import type { Voice } from './tones';
-export interface GameAudio { unlock(): Promise<boolean>; consume(events: readonly GameEvent[]): void; setVolume(value: number): void; setMuted(value: boolean): void; suspend(): void; reset(runId: string): void; dispose(): Promise<void> }
+export interface GameAudio { unlock(): Promise<boolean>; consume(events: readonly GameEvent[]): void; setVolume(value: number): void; setMuted(value: boolean): void; setQuality?(value: Quality): void; suspend(): void; reset(runId: string): void; dispose(): Promise<void> }
 export function createAudio(config: GameConfig, contextFactory: () => AudioContext = () => new AudioContext(), onInterruption: () => void = () => {}, onUnavailable: () => void = () => {}): GameAudio {
-  let context: AudioContext | null = null, output: GainNode | null = null;
-  let runId = '', enabled = false, muted = false, disposed = false, volume = 0.65, generation = 0;
-  // The simulation emits chronological events. Only IDs at the newest timestamp
-  // need retaining; every older event is stale. History cannot grow with a run.
+  let context: AudioContext | null = null, output: GainNode | null = null, bus: AudioNode | null = null;
+  const graph = new Set<AudioNode>();
+  let runId = '', enabled = false, muted = false, disposed = false, volume = .65, generation = 0, quality: Quality = 'standard';
   let seenTime = -Infinity;
-  const seen = new Set<string>(), voices = new Set<Voice>(), retiring = new Set<Voice>();
-  const limit = Math.max(1, config.audioVoiceLimit);
-  // At most limit active voices + limit 8ms fade tails, each peak <= .16.
-  const headroom = Math.min(1, 0.85 / (2 * limit * 0.16));
-  const clearVoices = (): void => { for (const voice of [...voices, ...retiring]) { voice.stop(); voice.disconnect(); } voices.clear(); retiring.clear(); };
-  const setGain = (): void => { if (output) output.gain.value = muted ? 0 : volume * headroom; };
-  const ended = (voice: Voice): void => { voices.delete(voice); retiring.delete(voice); };
+  const seen = new Set<string>(), voices = new Map<Voice, boolean>(), retiring = new Set<Voice>();
+  const limit = Number.isFinite(config.audioVoiceLimit) ? Math.max(1, Math.min(8, Math.floor(config.audioVoiceLimit))) : 8;
+  // .12 voice output + low-pass overshoot margin (.16). Bound active + fade
+  // tails by a linear sum; compression is additional shaping, never the bound.
+  const headroom = Math.min(1, .8 / (2 * limit * .16));
+  const quietly = (work: () => void) => { try { work(); } catch { /* Closing/partial graph. */ } };
+  const clearVoices = () => {
+    for (const voice of [...voices.keys(), ...retiring]) voice.disconnect();
+    voices.clear(); retiring.clear();
+  };
+  const clearGraph = () => { for (const node of graph) quietly(() => node.disconnect()); graph.clear(); output = null; bus = null; };
+  const setGain = () => { if (output) output.gain.value = muted ? 0 : volume * headroom; };
+  const ended = (voice: Voice) => { voices.delete(voice); retiring.delete(voice); };
+  const buildGraph = (ctx: AudioContext) => {
+    const own = <T extends AudioNode>(node: T): T => { graph.add(node); return node; };
+    try {
+      output = own(ctx.createGain()); setGain();
+      // If compression is unsupported, tones still use their conservative bound.
+      if (typeof ctx.createDynamicsCompressor === 'function') {
+        const compressor = own(ctx.createDynamicsCompressor());
+        compressor.threshold.value = -14; compressor.knee.value = 12; compressor.ratio.value = 4;
+        compressor.attack.value = .002; compressor.release.value = .08;
+        compressor.connect(output); bus = compressor;
+      } else bus = output;
+      output.connect(ctx.destination);
+    } catch (error) { clearGraph(); throw error; }
+  };
   return {
     async unlock() {
       if (disposed) return false;
@@ -22,56 +42,61 @@ export function createAudio(config: GameConfig, contextFactory: () => AudioConte
       try {
         if (!context || context.state === 'closed') {
           if (context) context.onstatechange = null;
-          output?.disconnect(); context = contextFactory();
-          output = null;
-          context.onstatechange = () => {
-            if (enabled && context?.state !== 'running') {
+          clearVoices(); clearGraph(); context = contextFactory();
+          const ctx = context;
+          ctx.onstatechange = () => {
+            if (context === ctx && enabled && ctx.state !== 'running') {
               generation++; enabled = false; clearVoices(); onInterruption();
             }
           };
         }
-        if (!output) {
-          const nextOutput = context.createGain();
-          try { nextOutput.connect(context.destination); } catch (error) { nextOutput.disconnect(); throw error; }
-          output = nextOutput; setGain();
-        }
-        await context.resume();
-        if (current !== generation || disposed) return false;
-        enabled = context.state === 'running'; return enabled;
-      } catch { if (current === generation) { enabled = false; clearVoices(); } return false; }
+        const ctx = context;
+        if (!output) buildGraph(ctx);
+        await ctx.resume();
+        if (current !== generation || disposed || context !== ctx) return false;
+        enabled = ctx.state === 'running'; return enabled;
+      } catch { if (current === generation) { enabled = false; clearVoices(); clearGraph(); } return false; }
     },
     consume(events) {
       if (disposed) return;
       for (const event of events) {
-        if (event.runId !== runId || event.time < seenTime || (event.time === seenTime && seen.has(event.id))) continue;
+        if (event.runId !== runId || !Number.isFinite(event.time) || event.time < seenTime || (event.time === seenTime && seen.has(event.id))) continue;
         if (event.time > seenTime) { seen.clear(); seenTime = event.time; }
         seen.add(event.id);
         if (event.kind === 'game-over') { generation++; enabled = false; clearVoices(); continue; }
-        if (!enabled || muted || !context || !output || context.state !== 'running') continue;
+        if (!enabled || muted || volume === 0 || !context || !bus || context.state !== 'running') continue;
         if (event.kind !== 'player-hit' && event.kind !== 'opponent-hit' && event.kind !== 'smash-warning') continue;
         try {
           if (voices.size >= limit) {
-            const soonest = [...voices].sort((a, b) => a.endsAt - b.endsAt)[0]!;
-            voices.delete(soonest); soonest.stop(); retiring.add(soonest);
+            // Preserve warnings ahead of old hits. If every voice is a warning,
+            // the newest stroke still replaces the soonest finishing warning.
+            const hits = [...voices.keys()].filter(v => !voices.get(v));
+            const soonest = (hits.length ? hits : [...voices.keys()]).sort((a,b) => a.endsAt - b.endsAt)[0]!;
+            voices.delete(soonest); retiring.add(soonest); soonest.stop();
             if (retiring.size > limit) { const tail = retiring.values().next().value!; tail.disconnect(); retiring.delete(tail); }
           }
-          const voice = event.kind === 'player-hit' ? playPlayerHit(context, output, ended)
-            : event.kind === 'smash-warning' ? playSmashWarning(context, output, ended) : playOpponentHit(context, output, ended);
-          voices.add(voice);
+          // At dense event rates, retain attack/kick/noise and reduce arpeggios.
+          const options = { score: event.rallyScore ?? 0, quality: quality === 'low' || voices.size >= Math.ceil(limit / 2) ? 'low' as const : 'standard' as const };
+          const play = event.kind === 'player-hit' ? (event.smashReturn === true ? playSmashSuccess : playPlayerHit)
+            : event.kind === 'smash-warning' ? playSmashWarning : playOpponentHit;
+          const voice = play(context, bus, ended, options);
+          voices.set(voice, event.kind === 'smash-warning');
         } catch { enabled = false; clearVoices(); onUnavailable(); }
       }
     },
-    setVolume(value) { if (Number.isFinite(value)) volume = Math.max(0, Math.min(1, value)); setGain(); },
+    setVolume(value) { if (Number.isFinite(value)) volume = Math.max(0, Math.min(1, value)); if (volume === 0) clearVoices(); setGain(); },
     setMuted(value) { muted = value; if (muted) clearVoices(); setGain(); },
+    setQuality(value) { quality = value === 'low' ? 'low' : 'standard'; },
     suspend() {
       generation++; enabled = false; clearVoices();
-      if (context && context.state !== 'closed') void context.suspend().catch(() => {});
+      if (context && context.state !== 'closed') quietly(() => { void context!.suspend().catch(() => {}); });
     },
     reset(nextRunId) { generation++; runId = nextRunId; seenTime = -Infinity; seen.clear(); clearVoices(); },
     async dispose() {
-      if (disposed) return; disposed = true; generation++; enabled = false; clearVoices(); output?.disconnect();
-      if (context) { context.onstatechange = null; if (context.state !== 'closed') await context.close().catch(() => {}); }
-      output = null; context = null; seen.clear();
+      if (disposed) return; disposed = true; generation++; enabled = false; clearVoices(); clearGraph();
+      const ctx = context; context = null;
+      if (ctx) { ctx.onstatechange = null; if (ctx.state !== 'closed') { try { await ctx.close(); } catch { /* Already interrupted or closed. */ } } }
+      seen.clear();
     },
   };
 }

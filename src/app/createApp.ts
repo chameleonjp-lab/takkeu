@@ -31,7 +31,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     if (!disposed) { unlockAttempt++; screens.setAudioReady(preferences.muted); }
   });
   audio.reset(session.snapshot().runId);
-  audio.setVolume(preferences.volume); audio.setMuted(preferences.muted);
+  audio.setVolume(preferences.volume); audio.setMuted(preferences.muted); audio.setQuality?.(preferences.quality);
   let view: GameView | null = null;
   let disposed = false;
   let contextAvailable = true;
@@ -69,7 +69,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   function persist(): void { screens.setStorageAvailable(savePreferences(storage, preferences)); }
   function updatePreferences(update: Partial<Preferences>): void {
     preferences = { ...preferences, ...update };
-    audio.setVolume(preferences.volume); audio.setMuted(preferences.muted);
+    audio.setVolume(preferences.volume); audio.setMuted(preferences.muted); audio.setQuality?.(preferences.quality);
     screens.setSound(preferences.muted); screens.setPreferences(preferences);
     if (preferences.muted) screens.setAudioReady(true);
     view?.setQuality(preferences.quality); persist();

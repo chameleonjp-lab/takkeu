@@ -1,8 +1,16 @@
+import { writeFile } from 'node:fs/promises';
+import type { TestInfo } from '@playwright/test';
 import { expect, test } from '../helpers/browserTest';
 import type {} from '../helpers/remainingHarness';
 import type {} from '../helpers/appHarness';
 
 test.use({ viewport: { width: 390, height: 844 } });
+
+async function attachJson(info: TestInfo, name: string, value: unknown): Promise<void> {
+  const path = info.outputPath(name);
+  await writeFile(path, JSON.stringify(value, null, 2));
+  await info.attach(name, { path, contentType: 'application/json' });
+}
 
 test('iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する', async ({ page }, info) => {
   test.setTimeout(120_000);
@@ -40,7 +48,7 @@ test('iPhone縦画面で待機球の本体・影・発光を隠し解放コー�
     await page.evaluate(() => window.remaining.until('own'));
     expect(await page.evaluate(() => window.remaining.presentation().balls[1]!.visible)).toBe(true);
     await page.screenshot({ path: info.outputPath(`iphone-${score}-own-incoming.png`) });
-    await info.attach(`transitions-${score}.json`, { body: JSON.stringify(await page.evaluate(() => ({ snapshot: window.remaining.snapshot(), events: window.remaining.events() })), null, 2), contentType: 'application/json' });
+    await attachJson(info, `transitions-${score}.json`, await page.evaluate(() => ({ snapshot: window.remaining.snapshot(), events: window.remaining.events() })));
   }
   expect(errors).toEqual([]);
 });
@@ -52,7 +60,7 @@ test('実アプリで加速球の一時停止・手動再開・リトライを�
   await page.evaluate(() => window.stage3.remaining(540, 1)); await page.clock.runFor(64);
   const before = await page.evaluate(() => window.stage3.snapshot());
   expect(before.balls[0]!.phase).toBe('incoming');
-  expect(before.scheduledReturns[0]!.remainingBallMultiplier).toBe(2);
+  expect(before.scheduledReturns[0]!.remainingBallMultiplier).toBe(1.4);
   await page.keyboard.press('Escape');
   const paused = await page.evaluate(() => window.stage3.snapshot());
   expect(paused.phase).toBe('paused'); await page.clock.runFor(1000);
@@ -66,17 +74,17 @@ test('実アプリで加速球の一時停止・手動再開・リトライを�
   const initial = retried.scheduledReturns[0]!;
   expect(initial.arriveAt - initial.departAt).toBe(2); expect(initial.remainingBallMultiplier).toBe(1);
   await page.screenshot({ path: info.outputPath('iphone-retry-initial.png') });
-  await info.attach('pause-resume-retry.json', { body: JSON.stringify({ before, paused, retried }, null, 2), contentType: 'application/json' });
+  await attachJson(info, 'pause-resume-retry.json', { before, paused, retried });
 });
 
 test('ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる', async ({ page }, info) => {
   await page.goto('/tests/fixtures/remaining-ball.html'); await page.waitForFunction(() => !!window.remaining);
   const rows = await page.evaluate(() => window.remaining.measure());
   for (const row of rows) {
-    const baseline = rows.find(r => r.score === row.score && r.count === 4)!;
-    const ratio = row.score < 100 || row.count >= 4 ? 1 : ({ 1: 2, 2: 1.5, 3: 1.25 })[row.count as 1 | 2 | 3];
+    const baseline = rows.find(r => r.score === row.score && r.count === 5)!;
+    const ratio = row.score < 100 || row.count >= 5 ? 1 : ({ 1: 1.4, 2: 1.3, 3: 1.2, 4: 1.1 })[row.count as 1 | 2 | 3 | 4];
     expect(baseline.duration / row.duration).toBeCloseTo(ratio, 8);
     expect(baseline.visible / row.visible).toBeCloseTo(ratio, 8);
   }
-  await info.attach('measured-flights.json', { body: JSON.stringify(rows, null, 2), contentType: 'application/json' });
+  await attachJson(info, 'measured-flights.json', rows);
 });

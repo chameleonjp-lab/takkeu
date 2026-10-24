@@ -24,7 +24,21 @@ export const RANKING_CONFIG = Object.freeze({
   publishableKey: "sb_publishable_drzcy0v97knU6FgjqSgBHw_0A9XPdFM",
 });
 
-export function scoreShareUrl(score: number): string {
-  const params = new URLSearchParams({ text: `タッケウで${score}ラリー！\nもう1ラリー、つないでみよう。 #タッケウ`, url: RANKING_CONFIG.canonicalUrl });
+function validShareScore(score: number): boolean {
+  return Number.isFinite(score) && Number.isInteger(score) && score >= 0;
+}
+
+function shareUrl(text: string): string {
+  const params = new URLSearchParams({ text, url: RANKING_CONFIG.canonicalUrl });
   return `https://twitter.com/intent/tweet?${params}`;
+}
+
+export function scoreShareUrl(score: number): string | null {
+  return validShareScore(score) ? shareUrl(`タッケウで${score}ラリー達成！\n何ラリーつなげられる？ #タッケウ`) : null;
+}
+
+export function homeShareUrl(bestScore: number): string {
+  return shareUrl(validShareScore(bestScore) && bestScore >= 1
+    ? `卓球ゲーム「タッケウ」で自己ベスト${bestScore}ラリー！\n何ラリーつなげられる？ #タッケウ`
+    : 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ');
 }
