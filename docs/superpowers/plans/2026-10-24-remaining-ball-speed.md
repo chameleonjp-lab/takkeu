@@ -22,17 +22,17 @@
 ### Task 1: Flight timing and departure commitment
 **Files:** `src/game/{types,difficulty,flightSpeed,scheduler,simulation}.ts`, `tests/unit/remaining-ball-speed.test.ts`.
 **Interfaces:** ReturnPlan/ReturnRequest.remainingBallMultiplier?: number; remainingBallMultiplier(score, count); flightDurationの第5引数は独立倍率。
-- [ ] 実飛行時間、出発時の残数、飛行途中の失球、重複予約、450/540/555、位置保存・接触・停止/再開/リトライの検査を作成し、未実装による失敗を保存する。
-- [ ] 打球時再予約と独立倍率を実装し、対象unitと全unit・型検査を成功させる。
+- [x] 実飛行時間、出発時の残数、飛行途中の失球、重複予約、450/540/555、位置保存・接触・停止/再開/リトライの検査を作成し、未実装による失敗を保存する。
+- [x] 打球時再予約と独立倍率を実装し、対象unitと全unit・型検査を成功させる。
 
 ### Task 2: Visibility and evidence
 **Files:** `src/render/presentation.ts`, `tests/unit/presentation.test.ts`, `tests/unit/waiting-visibility.test.ts`, `tests/helpers/*`, `tests/browser/remaining-ball.spec.ts`.
 **Interfaces:** isBallVisibleは飛行状態・発光・解放領域を同時に満たす時だけtrue。
-- [ ] 待機と領域解放の失敗検査を先に作成する。旧仕様を明示した2つの既存検査は新仕様へ更新する。
-- [ ] 共通ゲートを修正し、描画インスタンスも検査する。
-- [ ] iPhone縦WebKit画像、実飛行時間の記録、全既存検査の結果と失敗原因を保存する。
+- [x] 待機と領域解放の失敗検査を先に作成する。旧仕様を明示した2つの既存検査は新仕様へ更新する。
+- [x] 共通ゲートを修正し、描画インスタンスも検査する。
+- [x] iPhone縦WebKit画像、実飛行時間の記録、全既存検査の結果と失敗原因を保存する。
 
 ### Task 3: Review and delivery
-- [ ] 全差分をレビューし、必要な修正を再現テストとともに実施する。
-- [ ] 型・unit・browser・root/Pages配布を検証する。検証結果・未確認事項を文書化する。
-- [ ] コミットをpushしDraft PRを作成する。CIの結果を確認し、mergeしない。
+- [x] 全差分をレビューし、必要な修正を再現テストとともに実施する。
+- [x] 型・unit・browser・root/Pages配布を検証する。検証結果・未確認事項を文書化する。
+- [x] コミットをpushしDraft PRを作成する。CIの結果を確認し、mergeしない。
