@@ -18,7 +18,7 @@ PR: https://github.com/chameleonjp-lab/takkeu/pull/19 。以下の「Draft」は
 
 いずれも `https://chameleonjp-lab.github.io/takkeu/`。URLSearchParamsを一度だけ適用する。名前・ID・ランキング情報を含めず、通常の安全な新規タブリンクとして動作する。[共有の記録](a-results.md)とa-*ログ・画像を参照。
 
-既存画像を実際に開いて、現在の台とラケット・読みやすい文字を確認し再利用。初期HTMLにOG/Twitter Card/canonicalの各指定があり、descriptionとaltを整合した。ビルドHTML・画像PNG/実寸/MIME/ルートと `/takkeu/` の確認は配布検査。公開GETは別に [public-fetch.json](public-fetch.json)、ヘッダー、取得HTML・releaseを保存した。公開画像200/image/png/1200×630/630382bytes、SHA256 `826313cf164cfc8da1c37121f9516efa038aee35c19a04bfe044f6817f6b0caf` はローカルと同一。公開中はbase版で、今回のHTMLはまだ公開されていない。**実際のXカード表示・キャッシュは未確認。**
+既存画像を実際に開いて、現在の台とラケット・読みやすい文字を確認し再利用。初期HTMLにOG/Twitter Card/canonicalの各指定があり、descriptionとaltを整合した。ビルドHTML・画像PNG/実寸/MIME/ルートと `/takkeu/` の確認は配布検査。公開GETは別に [public-fetch.json](public-fetch.json)、ヘッダー、取得HTML・releaseを保存した。公開画像200/image/png/1200×630/630382bytes、SHA256 `826313cf164cfc8da1c37121f9516efa038aee35c19a04bfe044f6817f6b0caf` はローカルと同一。公開GET時点（14:34UTC）はbase版だった。以後の自動配備・新HTMLの公開状態は未確認であり、merge済みという現在の状態とは分ける。**実際のXカード表示・キャッシュは未確認。**
 
 ## B: 残球速度
 

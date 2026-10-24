@@ -12,7 +12,7 @@
 
 共有に使うスコアは有限の非負整数だけを受け付ける。結果はgameover時のみ有効にし、0も共有する。無効・未確定の結果とretry/homeへの移動時はhrefを除去し、`aria-disabled="true"`・`tabindex="-1"` にする。自己ベストと今回の結果は別々に更新する。長い結果数値は折り返し、横方向のはみ出しを防ぐ。
 
-HTMLのdescription／OG／X description、および両カードの画像altを統一した。既存の `public/og-takkeu-v1.png`（1200×630）を変更せず再利用する。[公開画像の取得記録](public-fetch.json)ではHTTP 200、ローカル画像とのSHA-256一致を確認している。SHA-256は `826313cf164cfc8da1c37121f9516efa038aee35c19a04bfe044f6817f6b0caf`。[公開release](public-release-before.json)は基準SHA `27ebee8fb5fa0d29f7f82e15244dd1fbd1a88de1` のままで、新HTMLは未公開。
+HTMLのdescription／OG／X description、および両カードの画像altを統一した。既存の `public/og-takkeu-v1.png`（1200×630）を変更せず再利用する。[公開画像の取得記録](public-fetch.json)ではHTTP 200、ローカル画像とのSHA-256一致を確認している。SHA-256は `826313cf164cfc8da1c37121f9516efa038aee35c19a04bfe044f6817f6b0caf`。[公開release](public-release-before.json)は基準SHA `27ebee8fb5fa0d29f7f82e15244dd1fbd1a88de1` であり、その取得時点では新HTMLは未公開だった。以後の配備状態はこの取得記録からは判断しない。
 
 | 実行済み検証 | 結果・記録 |
 | --- | --- |
