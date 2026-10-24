@@ -1,0 +1,108 @@
+{
+  "snapshot": {
+    "runId": "run-26",
+    "phase": "running",
+    "pauseReason": null,
+    "score": 190,
+    "simTime": 20.774999999999956,
+    "paddle": {
+      "x": -0.716574795094405,
+      "y": 0.2
+    },
+    "opponentPaddle": {
+      "x": 0.5,
+      "y": 0.6
+    },
+    "balls": [
+      {
+        "id": 1,
+        "phase": "incoming",
+        "position": {
+          "x": 0.5389196750831884,
+          "y": 0.506447517754099,
+          "z": 0.013211233338032313
+        },
+        "smash": false
+      },
+      {
+        "id": 2,
+        "phase": "incoming",
+        "position": {
+          "x": 0.5,
+          "y": 0.5443014136984109,
+          "z": 1.7024340868112
+        },
+        "smash": false
+      }
+    ],
+    "progression": {
+      "appliedMilestones": [
+        10,
+        30,
+        40,
+        70,
+        100,
+        130,
+        150,
+        160,
+        190
+      ],
+      "ballGlowUntil": null,
+      "awardedBallCount": 20
+    },
+    "scheduledReturns": [
+      {
+        "ballId": 2,
+        "departAt": 19.651174127134972,
+        "netCrossAt": 20.25117412713497,
+        "arriveAt": 20.85117412713497,
+        "target": {
+          "x": 0.5,
+          "y": 0.6
+        },
+        "smash": false,
+        "warningAt": null,
+        "speedMultiplier": 2.2,
+        "landingZ": 1.95
+      },
+      {
+        "ballId": 1,
+        "departAt": 20.496064891751868,
+        "netCrossAt": 20.773122934130193,
+        "arriveAt": 21.050180976508518,
+        "target": {
+          "x": 0.577315538056673,
+          "y": 0.32014100842177867
+        },
+        "smash": false,
+        "warningAt": null,
+        "speedMultiplier": 2.4062346681722726,
+        "landingZ": 1.95,
+        "bounceY": 0.045,
+        "speedScore": 190,
+        "remainingBallMultiplier": 1.5
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "run-26:1",
+      "runId": "run-26",
+      "kind": "opponent-hit",
+      "time": 20.496064891751868,
+      "ballId": 1
+    },
+    {
+      "id": "run-26:2",
+      "runId": "run-26",
+      "kind": "table-bounce",
+      "time": 20.515174127134973,
+      "ballId": 2,
+      "position": {
+        "x": 0.5,
+        "y": 0.04500000000000379,
+        "z": 0.8580000000000043
+      }
+    }
+  ]
+}

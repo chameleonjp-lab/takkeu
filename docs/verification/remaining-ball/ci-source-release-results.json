@@ -1,0 +1,419 @@
+{
+  "config": {
+    "argv": [
+      "/opt/hostedtoolcache/node/24.19.0/x64/bin/node",
+      "/home/runner/work/takkeu/takkeu/node_modules/.bin/playwright",
+      "test",
+      "--config=playwright.release.config.ts"
+    ],
+    "configFile": "/home/runner/work/takkeu/takkeu/playwright.release.config.ts",
+    "rootDir": "/home/runner/work/takkeu/takkeu/tests/release",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/chameleonjp-lab/takkeu/commit/fec6de40b1288eec0e55d015990658c91ceeb20c",
+        "commitHash": "fec6de40b1288eec0e55d015990658c91ceeb20c",
+        "prHref": "https://github.com/chameleonjp-lab/takkeu/pull/16",
+        "prTitle": "100ラリー以降の残球加速と相手側の待機球非表示を追加",
+        "prBaseHash": "8f2a025df2f2f538c4e0f0484d862eb843df0331",
+        "buildHref": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40079161871"
+      },
+      "gitCommit": {
+        "shortHash": "fec6de4",
+        "hash": "fec6de40b1288eec0e55d015990658c91ceeb20c",
+        "subject": "Merge 436bf8f5125dcdbb830973e7a4d65bbb7397ec49 into 8f2a025df2f2f538c4e0f0484d862eb843df0331",
+        "body": "Merge 436bf8f5125dcdbb830973e7a4d65bbb7397ec49 into 8f2a025df2f2f538c4e0f0484d862eb843df0331\n",
+        "author": {
+          "name": "chameleonJP",
+          "email": "chameleonjp00@gmail.com",
+          "time": 1792831417000
+        },
+        "committer": {
+          "name": "GitHub",
+          "email": "noreply@github.com",
+          "time": 1792831417000
+        },
+        "branch": "HEAD"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/takkeu/takkeu/artifacts/release-tests",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/chameleonjp-lab/takkeu/commit/fec6de40b1288eec0e55d015990658c91ceeb20c",
+            "commitHash": "fec6de40b1288eec0e55d015990658c91ceeb20c",
+            "prHref": "https://github.com/chameleonjp-lab/takkeu/pull/16",
+            "prTitle": "100ラリー以降の残球加速と相手側の待機球非表示を追加",
+            "prBaseHash": "8f2a025df2f2f538c4e0f0484d862eb843df0331",
+            "buildHref": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40079161871"
+          },
+          "gitCommit": {
+            "shortHash": "fec6de4",
+            "hash": "fec6de40b1288eec0e55d015990658c91ceeb20c",
+            "subject": "Merge 436bf8f5125dcdbb830973e7a4d65bbb7397ec49 into 8f2a025df2f2f538c4e0f0484d862eb843df0331",
+            "body": "Merge 436bf8f5125dcdbb830973e7a4d65bbb7397ec49 into 8f2a025df2f2f538c4e0f0484d862eb843df0331\n",
+            "author": {
+              "name": "chameleonJP",
+              "email": "chameleonjp00@gmail.com",
+              "time": 1792831417000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792831417000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/takkeu/takkeu/tests/release",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/takkeu/takkeu/artifacts/release-tests",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/chameleonjp-lab/takkeu/commit/fec6de40b1288eec0e55d015990658c91ceeb20c",
+            "commitHash": "fec6de40b1288eec0e55d015990658c91ceeb20c",
+            "prHref": "https://github.com/chameleonjp-lab/takkeu/pull/16",
+            "prTitle": "100ラリー以降の残球加速と相手側の待機球非表示を追加",
+            "prBaseHash": "8f2a025df2f2f538c4e0f0484d862eb843df0331",
+            "buildHref": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40079161871"
+          },
+          "gitCommit": {
+            "shortHash": "fec6de4",
+            "hash": "fec6de40b1288eec0e55d015990658c91ceeb20c",
+            "subject": "Merge 436bf8f5125dcdbb830973e7a4d65bbb7397ec49 into 8f2a025df2f2f538c4e0f0484d862eb843df0331",
+            "body": "Merge 436bf8f5125dcdbb830973e7a4d65bbb7397ec49 into 8f2a025df2f2f538c4e0f0484d862eb843df0331\n",
+            "author": {
+              "name": "chameleonJP",
+              "email": "chameleonjp00@gmail.com",
+              "time": 1792831417000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792831417000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/runner/work/takkeu/takkeu/tests/release",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/runner/work/takkeu/takkeu/artifacts/release-tests",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/chameleonjp-lab/takkeu/commit/fec6de40b1288eec0e55d015990658c91ceeb20c",
+            "commitHash": "fec6de40b1288eec0e55d015990658c91ceeb20c",
+            "prHref": "https://github.com/chameleonjp-lab/takkeu/pull/16",
+            "prTitle": "100ラリー以降の残球加速と相手側の待機球非表示を追加",
+            "prBaseHash": "8f2a025df2f2f538c4e0f0484d862eb843df0331",
+            "buildHref": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40079161871"
+          },
+          "gitCommit": {
+            "shortHash": "fec6de4",
+            "hash": "fec6de40b1288eec0e55d015990658c91ceeb20c",
+            "subject": "Merge 436bf8f5125dcdbb830973e7a4d65bbb7397ec49 into 8f2a025df2f2f538c4e0f0484d862eb843df0331",
+            "body": "Merge 436bf8f5125dcdbb830973e7a4d65bbb7397ec49 into 8f2a025df2f2f538c4e0f0484d862eb843df0331\n",
+            "author": {
+              "name": "chameleonJP",
+              "email": "chameleonjp00@gmail.com",
+              "time": 1792831417000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792831417000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/home/runner/work/takkeu/takkeu/tests/release",
+        "snapshotDir": "/home/runner/work/takkeu/takkeu/tests/release",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "browserName": "chromium",
+          "launchOptions": {
+            "args": [
+              "--enable-unsafe-swiftshader",
+              "--use-angle=swiftshader"
+            ]
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/runner/work/takkeu/takkeu/artifacts/release-tests",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/chameleonjp-lab/takkeu/commit/fec6de40b1288eec0e55d015990658c91ceeb20c",
+            "commitHash": "fec6de40b1288eec0e55d015990658c91ceeb20c",
+            "prHref": "https://github.com/chameleonjp-lab/takkeu/pull/16",
+            "prTitle": "100ラリー以降の残球加速と相手側の待機球非表示を追加",
+            "prBaseHash": "8f2a025df2f2f538c4e0f0484d862eb843df0331",
+            "buildHref": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40079161871"
+          },
+          "gitCommit": {
+            "shortHash": "fec6de4",
+            "hash": "fec6de40b1288eec0e55d015990658c91ceeb20c",
+            "subject": "Merge 436bf8f5125dcdbb830973e7a4d65bbb7397ec49 into 8f2a025df2f2f538c4e0f0484d862eb843df0331",
+            "body": "Merge 436bf8f5125dcdbb830973e7a4d65bbb7397ec49 into 8f2a025df2f2f538c4e0f0484d862eb843df0331\n",
+            "author": {
+              "name": "chameleonJP",
+              "email": "chameleonjp00@gmail.com",
+              "time": 1792831417000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792831417000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "/home/runner/work/takkeu/takkeu/tests/release",
+        "snapshotDir": "/home/runner/work/takkeu/takkeu/tests/release",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "browserName": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/release-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "distribution.spec.ts",
+      "file": "distribution.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "実配布物 / の参照・開始・保存と開発機能の非混入",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1191,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T08:45:25.354Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "50fea97024d96f5f2763-2e4c2fdaaa9ff2f8ffc3",
+          "file": "distribution.spec.ts",
+          "line": 4,
+          "column": 3
+        },
+        {
+          "title": "実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 956,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T08:45:27.533Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "50fea97024d96f5f2763-10e69e1ee5f4eae4c2e9",
+          "file": "distribution.spec.ts",
+          "line": 4,
+          "column": 3
+        },
+        {
+          "title": "実配布物 / の参照・開始・保存と開発機能の非混入",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5630,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T08:45:28.957Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "50fea97024d96f5f2763-d37c0c841f3282e02f43",
+          "file": "distribution.spec.ts",
+          "line": 4,
+          "column": 3
+        },
+        {
+          "title": "実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1299,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T08:45:35.228Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "50fea97024d96f5f2763-e82a177aa77239678d6b",
+          "file": "distribution.spec.ts",
+          "line": 4,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-24T08:45:21.620Z",
+    "duration": 14988.332,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

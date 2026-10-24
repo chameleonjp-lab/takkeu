@@ -1,0 +1,404 @@
+{
+  "stats": {
+    "startTime": "2026-10-24T08:57:40.169Z",
+    "duration": 497301.66,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "rows": [
+    {
+      "initialBalls": 47,
+      "initialScore": 450,
+      "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "durationMs": 60050.60000000014,
+      "frames": 718,
+      "p95Ms": 150,
+      "fractionAtMost25ms": 0.13509749303621169,
+      "runningSimulationSeconds": 52.09166666666435,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "remaining": 122,
+      "score": 616,
+      "opponentHits": 167,
+      "smashHits": 167,
+      "initialResources": {
+        "geometries": 25,
+        "textures": 4,
+        "programs": 6,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 48,
+        "textures": 4,
+        "programs": 14,
+        "drawCalls": 30,
+        "particles": 144,
+        "particleCapacity": 1536
+      },
+      "runningP95Ms": 150,
+      "runningFractionAtMost25ms": 0.13509749303621169,
+      "continuousRun": true,
+      "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+      "targetHardwareVerdict": "未確認",
+      "project": "chromium"
+    },
+    {
+      "initialBalls": 91,
+      "initialScore": 555,
+      "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "durationMs": 60010.300000000185,
+      "frames": 784,
+      "p95Ms": 150,
+      "fractionAtMost25ms": 0.14923469387755103,
+      "runningSimulationSeconds": 54.391666666664214,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "remaining": 208,
+      "score": 788,
+      "opponentHits": 234,
+      "smashHits": 234,
+      "initialResources": {
+        "geometries": 27,
+        "textures": 4,
+        "programs": 11,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 30,
+        "textures": 4,
+        "programs": 14,
+        "drawCalls": 30,
+        "particles": 192,
+        "particleCapacity": 1536
+      },
+      "runningP95Ms": 150,
+      "runningFractionAtMost25ms": 0.14923469387755103,
+      "continuousRun": true,
+      "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+      "targetHardwareVerdict": "未確認",
+      "project": "chromium"
+    },
+    {
+      "initialBalls": 47,
+      "initialScore": 450,
+      "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "durationMs": 60020.700000000186,
+      "frames": 712,
+      "p95Ms": 166.59999999999854,
+      "fractionAtMost25ms": 0.1544943820224719,
+      "runningSimulationSeconds": 51.1416666666644,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "remaining": 120,
+      "score": 612,
+      "opponentHits": 164,
+      "smashHits": 164,
+      "initialResources": {
+        "geometries": 43,
+        "textures": 4,
+        "programs": 10,
+        "drawCalls": 43,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 48,
+        "textures": 4,
+        "programs": 14,
+        "drawCalls": 30,
+        "particles": 72,
+        "particleCapacity": 1536
+      },
+      "runningP95Ms": 166.59999999999854,
+      "runningFractionAtMost25ms": 0.1544943820224719,
+      "continuousRun": true,
+      "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+      "targetHardwareVerdict": "未確認",
+      "project": "chromium"
+    },
+    {
+      "initialBalls": 91,
+      "initialScore": 555,
+      "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "durationMs": 60073.30000000009,
+      "frames": 778,
+      "p95Ms": 150,
+      "fractionAtMost25ms": 0.14910025706940874,
+      "runningSimulationSeconds": 53.48333333333093,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "remaining": 205,
+      "score": 782,
+      "opponentHits": 230,
+      "smashHits": 230,
+      "initialResources": {
+        "geometries": 27,
+        "textures": 4,
+        "programs": 11,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 30,
+        "textures": 4,
+        "programs": 14,
+        "drawCalls": 30,
+        "particles": 84,
+        "particleCapacity": 1536
+      },
+      "runningP95Ms": 150,
+      "runningFractionAtMost25ms": 0.14910025706940874,
+      "continuousRun": true,
+      "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+      "targetHardwareVerdict": "未確認",
+      "project": "chromium"
+    },
+    {
+      "initialBalls": 47,
+      "initialScore": 450,
+      "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+      "viewport": {
+        "width": 390,
+        "height": 664,
+        "deviceRatio": 3
+      },
+      "drawingSize": {
+        "width": 585,
+        "height": 996
+      },
+      "quality": "standard",
+      "durationMs": 60009,
+      "frames": 1577,
+      "p95Ms": 50,
+      "fractionAtMost25ms": 0.008877615726062143,
+      "runningSimulationSeconds": 60.049999999997226,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "remaining": 140,
+      "score": 652,
+      "opponentHits": 204,
+      "smashHits": 204,
+      "initialResources": {
+        "geometries": 43,
+        "textures": 4,
+        "programs": 10,
+        "drawCalls": 43,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 48,
+        "textures": 4,
+        "programs": 14,
+        "drawCalls": 30,
+        "particles": 192,
+        "particleCapacity": 1536
+      },
+      "runningP95Ms": 50,
+      "runningFractionAtMost25ms": 0.008877615726062143,
+      "continuousRun": true,
+      "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+      "targetHardwareVerdict": "未確認",
+      "project": "webkit"
+    },
+    {
+      "initialBalls": 91,
+      "initialScore": 555,
+      "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+      "viewport": {
+        "width": 390,
+        "height": 664,
+        "deviceRatio": 3
+      },
+      "drawingSize": {
+        "width": 585,
+        "height": 996
+      },
+      "quality": "standard",
+      "durationMs": 60002,
+      "frames": 1598,
+      "p95Ms": 49,
+      "fractionAtMost25ms": 0.0050062578222778474,
+      "runningSimulationSeconds": 60.0666666666639,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "remaining": 220,
+      "score": 813,
+      "opponentHits": 260,
+      "smashHits": 260,
+      "initialResources": {
+        "geometries": 27,
+        "textures": 4,
+        "programs": 11,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 30,
+        "textures": 4,
+        "programs": 14,
+        "drawCalls": 30,
+        "particles": 168,
+        "particleCapacity": 1536
+      },
+      "runningP95Ms": 49,
+      "runningFractionAtMost25ms": 0.0050062578222778474,
+      "continuousRun": true,
+      "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+      "targetHardwareVerdict": "未確認",
+      "project": "webkit"
+    },
+    {
+      "initialBalls": 47,
+      "initialScore": 450,
+      "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+      "viewport": {
+        "width": 390,
+        "height": 664,
+        "deviceRatio": 3
+      },
+      "drawingSize": {
+        "width": 390,
+        "height": 664
+      },
+      "quality": "low",
+      "durationMs": 60020,
+      "frames": 1829,
+      "p95Ms": 45,
+      "fractionAtMost25ms": 0.11372334609075997,
+      "runningSimulationSeconds": 60.05833333333056,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "remaining": 140,
+      "score": 652,
+      "opponentHits": 204,
+      "smashHits": 204,
+      "initialResources": {
+        "geometries": 43,
+        "textures": 4,
+        "programs": 10,
+        "drawCalls": 43,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 48,
+        "textures": 4,
+        "programs": 14,
+        "drawCalls": 30,
+        "particles": 96,
+        "particleCapacity": 1536
+      },
+      "runningP95Ms": 45,
+      "runningFractionAtMost25ms": 0.11372334609075997,
+      "continuousRun": true,
+      "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+      "targetHardwareVerdict": "未確認",
+      "project": "webkit"
+    },
+    {
+      "initialBalls": 91,
+      "initialScore": 555,
+      "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+      "viewport": {
+        "width": 390,
+        "height": 664,
+        "deviceRatio": 3
+      },
+      "drawingSize": {
+        "width": 390,
+        "height": 664
+      },
+      "quality": "low",
+      "durationMs": 60038,
+      "frames": 1827,
+      "p95Ms": 47,
+      "fractionAtMost25ms": 0.10290093048713739,
+      "runningSimulationSeconds": 60.074999999997225,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "remaining": 220,
+      "score": 813,
+      "opponentHits": 260,
+      "smashHits": 260,
+      "initialResources": {
+        "geometries": 27,
+        "textures": 4,
+        "programs": 11,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 30,
+        "textures": 4,
+        "programs": 14,
+        "drawCalls": 30,
+        "particles": 84,
+        "particleCapacity": 1536
+      },
+      "runningP95Ms": 47,
+      "runningFractionAtMost25ms": 0.10290093048713739,
+      "continuousRun": true,
+      "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+      "targetHardwareVerdict": "未確認",
+      "project": "webkit"
+    }
+  ]
+}

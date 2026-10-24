@@ -11,6 +11,7 @@ import type { GameSession, GameSnapshot, GameEvent } from '../../src/game/types'
 import { createSimulationState, snapshotSimulation, startSimulation, stepSimulation } from '../../src/game/simulation';
 import { scenario } from './scenarios';
 import { deflectBounce } from '../../src/game/trajectory';
+import { remainingScenario } from './remainingBall';
 import '../../src/ui/styles.css';
 
 let state = createSimulationState(7);
@@ -66,6 +67,15 @@ function show(score: number) {
 }
 function restore() { const canvas = document.querySelector('canvas')!; canvas.dispatchEvent(new Event('webglcontextrestored')); }
 const harness = { snapshot: (): GameSnapshot => session.snapshot(), show, restore, metrics: () => metrics,
+  remaining(score: number, count: number) {
+    state = remainingScenario(score, count, 20.05).state;
+    state.simTime = 0;
+    for (const ball of state.balls) ball.plan = { ...ball.plan, departAt: ball.plan.departAt - 20,
+      netCrossAt: ball.plan.netCrossAt - 20, arriveAt: ball.plan.arriveAt - 20,
+      warningAt: ball.plan.warningAt === null ? null : ball.plan.warningAt - 20 };
+    for (const ball of state.balls) if (ball.warningEmittedAt !== undefined) ball.warningEmittedAt -= 20;
+    currentAudio?.reset(state.runId); metrics.events.length = 0;
+  },
   resources: () => currentView?.resources(),
   failNextView() { failNextView = true; },
   finish() { state.phase = 'gameover'; state.balls.forEach(ball => { ball.phase = 'lost'; }); },

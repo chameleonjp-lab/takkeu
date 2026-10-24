@@ -1,0 +1,88 @@
+
+> takkeu@0.1.0 verify:release
+> node scripts/verify-release.mjs
+
+
+> takkeu@0.1.0 build
+> npm run typecheck && vite build
+
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+[36mvite v8.3.5 [32mbuilding client environment for production...[36m[39m
+transforming...
+✓ 49 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/release.json                         0.07 kB │ gzip:   0.09 kB
+dist/ranking-manifest.json                1.39 kB │ gzip:   0.69 kB
+dist/index.html                           2.40 kB │ gzip:   0.85 kB
+dist/assets/court-preview-Bzxbrgc7.png   60.33 kB
+dist/assets/index-j3za3wJr.css           10.41 kB │ gzip:   3.16 kB
+dist/assets/index--ttAx2kE.js           613.57 kB │ gzip: 160.54 kB
+
+[32m✓ built in 237ms[39m
+{
+  "status": "passed",
+  "commit": "fec6de40b1288eec0e55d015990658c91ceeb20c",
+  "base": "/",
+  "files": [
+    "assets/court-preview-Bzxbrgc7.png",
+    "assets/index--ttAx2kE.js",
+    "assets/index-j3za3wJr.css",
+    "index.html",
+    "og-takkeu-v1.png",
+    "ranking-manifest.json",
+    "release.json"
+  ]
+}
+
+> takkeu@0.1.0 build:pages
+> npm run typecheck && vite build --base=/takkeu/
+
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+[36mvite v8.3.5 [32mbuilding client environment for production...[36m[39m
+transforming...
+✓ 49 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/release.json                         0.08 kB │ gzip:   0.09 kB
+dist/ranking-manifest.json                1.39 kB │ gzip:   0.69 kB
+dist/index.html                           2.41 kB │ gzip:   0.85 kB
+dist/assets/court-preview-Bzxbrgc7.png   60.33 kB
+dist/assets/index-j3za3wJr.css           10.41 kB │ gzip:   3.16 kB
+dist/assets/index-86DrOk4s.js           613.58 kB │ gzip: 160.54 kB
+
+[32m✓ built in 234ms[39m
+{
+  "status": "passed",
+  "commit": "fec6de40b1288eec0e55d015990658c91ceeb20c",
+  "base": "/takkeu/",
+  "files": [
+    "assets/court-preview-Bzxbrgc7.png",
+    "assets/index-86DrOk4s.js",
+    "assets/index-j3za3wJr.css",
+    "index.html",
+    "og-takkeu-v1.png",
+    "ranking-manifest.json",
+    "release.json"
+  ]
+}
+
+> takkeu@0.1.0 test:release
+> playwright test --config=playwright.release.config.ts
+
+GitCommitInfo: timeout of 3000ms exceeded while running "git fetch origin 8f2a025df2f2f538c4e0f0484d862eb843df0331 --no-auto-maintenance --no-auto-gc --no-tags --no-recurse-submodules --depth=1"
+
+Running 4 tests using 1 worker
+
+  ✓  1 [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 (1.2s)
+  ✓  2 [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 (956ms)
+  ✓  3 [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 (5.6s)
+  ✓  4 [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 (1.3s)
+
+  4 passed (15.0s)

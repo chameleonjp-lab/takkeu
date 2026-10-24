@@ -35,7 +35,9 @@ it('420の相手球・未解放面の影・落球を漏らさず、次の通常�
   const objects = createObjects(DEFAULT_CONFIG);
   const snapshot = scenario(30).snapshot();
   applyPresentation(objects, { ...snapshot, balls: [{ ...balls(1, 1)[0]!, position: { x: 0.5, y: 0.5, z: -0.7 } }] });
-  expect(objects.balls.get(1)!.shadow.visible).toBe(false);
+  expect(objects.balls.size).toBe(0);
+  applyPresentation(objects, { ...scenario(190).snapshot(), balls: [{ ...balls(1, 1)[0]!, position: { x: 0.5, y: 0.5, z: -0.7 } }] });
+  expect(objects.balls.get(1)!.shadow.visible).toBe(true);
   applyPresentation(objects, { ...scenario(420).snapshot(), balls: [{ ...balls(1, 1)[0]!, position: { x: 0.5, y: 0.5, z: -0.7 } }] });
   expect(objects.balls.size).toBe(0);
   applyPresentation(objects, { ...scenario(0).snapshot(), balls: balls(99, 1) });

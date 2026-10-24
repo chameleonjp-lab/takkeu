@@ -1,0 +1,217 @@
+{
+  "before": {
+    "runId": "run-3",
+    "phase": "running",
+    "pauseReason": null,
+    "score": 540,
+    "simTime": 0.05833333333333333,
+    "paddle": {
+      "x": 0,
+      "y": 0.5
+    },
+    "opponentPaddle": {
+      "x": 0.5,
+      "y": 0.6
+    },
+    "balls": [
+      {
+        "id": 1,
+        "phase": "incoming",
+        "position": {
+          "x": 0.5,
+          "y": 0.6373874765931323,
+          "z": -1.8150062321811107
+        },
+        "smash": true
+      }
+    ],
+    "progression": {
+      "appliedMilestones": [
+        10,
+        30,
+        40,
+        70,
+        100,
+        130,
+        150,
+        160,
+        190,
+        210,
+        240,
+        270,
+        300,
+        330,
+        360,
+        380,
+        390,
+        410,
+        420,
+        450,
+        460,
+        470,
+        480,
+        490,
+        500,
+        510,
+        520,
+        530,
+        540
+      ],
+      "ballGlowUntil": null,
+      "awardedBallCount": 83
+    },
+    "scheduledReturns": [
+      {
+        "ballId": 1,
+        "departAt": 0.05000000000000074,
+        "netCrossAt": 0.17037592744133206,
+        "arriveAt": 0.2907518548826634,
+        "target": {
+          "x": 0.5,
+          "y": 0.6
+        },
+        "smash": true,
+        "warningAt": -0.34999999999999787,
+        "speedMultiplier": 2.596033996517334,
+        "landingZ": 1.95,
+        "bounceY": 0.045,
+        "speedScore": 540,
+        "remainingBallMultiplier": 2,
+        "smashMultiplier": 1.6
+      }
+    ]
+  },
+  "paused": {
+    "runId": "run-3",
+    "phase": "paused",
+    "pauseReason": "user",
+    "score": 540,
+    "simTime": 0.05833333333333333,
+    "paddle": {
+      "x": 0,
+      "y": 0.5
+    },
+    "opponentPaddle": {
+      "x": 0.5,
+      "y": 0.6
+    },
+    "balls": [
+      {
+        "id": 1,
+        "phase": "incoming",
+        "position": {
+          "x": 0.5,
+          "y": 0.6373874765931323,
+          "z": -1.8150062321811107
+        },
+        "smash": true
+      }
+    ],
+    "progression": {
+      "appliedMilestones": [
+        10,
+        30,
+        40,
+        70,
+        100,
+        130,
+        150,
+        160,
+        190,
+        210,
+        240,
+        270,
+        300,
+        330,
+        360,
+        380,
+        390,
+        410,
+        420,
+        450,
+        460,
+        470,
+        480,
+        490,
+        500,
+        510,
+        520,
+        530,
+        540
+      ],
+      "ballGlowUntil": null,
+      "awardedBallCount": 83
+    },
+    "scheduledReturns": [
+      {
+        "ballId": 1,
+        "departAt": 0.05000000000000074,
+        "netCrossAt": 0.17037592744133206,
+        "arriveAt": 0.2907518548826634,
+        "target": {
+          "x": 0.5,
+          "y": 0.6
+        },
+        "smash": true,
+        "warningAt": -0.34999999999999787,
+        "speedMultiplier": 2.596033996517334,
+        "landingZ": 1.95,
+        "bounceY": 0.045,
+        "speedScore": 540,
+        "remainingBallMultiplier": 2,
+        "smashMultiplier": 1.6
+      }
+    ]
+  },
+  "retried": {
+    "runId": "run-4",
+    "phase": "running",
+    "pauseReason": null,
+    "score": 0,
+    "simTime": 0,
+    "paddle": {
+      "x": 0,
+      "y": 0.5
+    },
+    "opponentPaddle": {
+      "x": 0,
+      "y": 0.5
+    },
+    "balls": [
+      {
+        "id": 1,
+        "phase": "queued",
+        "position": {
+          "x": 0,
+          "y": 0.5,
+          "z": -1.95
+        },
+        "smash": false
+      }
+    ],
+    "progression": {
+      "appliedMilestones": [],
+      "ballGlowUntil": null,
+      "awardedBallCount": 0
+    },
+    "scheduledReturns": [
+      {
+        "ballId": 1,
+        "departAt": 0,
+        "netCrossAt": 1,
+        "arriveAt": 2,
+        "target": {
+          "x": 0,
+          "y": 0.5
+        },
+        "smash": false,
+        "warningAt": null,
+        "speedMultiplier": 1,
+        "landingZ": 1.95,
+        "bounceY": 0.045,
+        "speedScore": 0,
+        "remainingBallMultiplier": 1
+      }
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 import { clampPaddle, DIFFICULTY, INITIAL_PADDLE } from './config';
 import { paddleExitFraction, sweepPaddleHit } from './collision';
-import { flightDuration, speedMultiplier } from './difficulty';
+import { flightDuration, remainingBallMultiplier, speedMultiplier } from './difficulty';
 import { refreshFlightSpeeds } from './flightSpeed';
 import { chooseOpponentTarget, choosePlayerTarget, randomUnit } from './targets';
 import { advanceProgression } from './progression';
@@ -150,6 +150,19 @@ function advanceSegment(state: SimulationState, config: GameConfig, dt: number, 
         ball.plan = planOpponentReturn({ ballId: ball.id, earliestDepartAt: time, preferredTarget: ball.plan.target,
           speedMultiplier: speedMultiplier(state.score), score: state.score, randomValue: 0 }, reservations(state).filter(p => p.ballId !== ball.id), [], config);
         ball.warningSent = false; delete ball.warningEmittedAt; enqueueDeparture(ball); continue;
+      }
+      // Waiting reservations are provisional: losses, added balls or a hit in
+      // this tick may have changed the bonus since the plan was queued. Commit
+      // using the live count at the actual stroke, without moving flying balls.
+      const previous = ball.plan;
+      const bonus = remainingBallMultiplier(state.score, state.balls.filter(b => b.phase !== 'lost').length);
+      if ((previous.remainingBallMultiplier ?? 1) !== bonus) {
+        ball.plan = scheduleReturn({ ballId: ball.id, earliestDepartAt: time - (previous.smash ? DIFFICULTY.smashWarning : 0),
+          preferredTarget: previous.target, speedMultiplier: previous.speedMultiplier, score: previous.speedScore ?? state.score, smash: previous.smash,
+          remainingBallMultiplier: bonus }, reservations(state).filter(p => p.ballId !== ball.id), config);
+        if (previous.bounceX !== undefined) ball.plan = { ...ball.plan, bounceX: previous.bounceX };
+        if (ball.warningEmittedAt !== undefined) ball.plan = { ...ball.plan, warningAt: ball.warningEmittedAt };
+        if (ball.plan.departAt > time + 1e-12) { enqueueDeparture(ball); continue; }
       }
       state.opponentPaddle = { x: ball.from.x, y: ball.from.y };
       ball.phase = 'incoming'; emit('opponent-hit', time, ball.id);

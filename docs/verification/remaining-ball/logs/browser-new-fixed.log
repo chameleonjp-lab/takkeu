@@ -1,0 +1,19 @@
+[WebServer] (node:4755) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:4779) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  1 [chromium] › tests/browser/remaining-ball.spec.ts:7:1 › iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する (4.5s)
+  ✓  2 [chromium] › tests/browser/remaining-ball.spec.ts:48:1 › 実アプリで加速球の一時停止・手動再開・リトライを保つ (1.6s)
+  ✓  3 [chromium] › tests/browser/remaining-ball.spec.ts:72:1 › ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる (831ms)
+(node:4970) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  4 [webkit] › tests/browser/remaining-ball.spec.ts:7:1 › iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する (9.8s)
+  ✓  5 [webkit] › tests/browser/remaining-ball.spec.ts:48:1 › 実アプリで加速球の一時停止・手動再開・リトライを保つ (2.7s)
+  ✓  6 [webkit] › tests/browser/remaining-ball.spec.ts:72:1 › ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる (1.0s)
+
+  6 passed (21.9s)

@@ -17,6 +17,8 @@ export type ReturnPlan = Readonly<{
   ballId: number; departAt: number; netCrossAt: number; arriveAt: number;
   target: PaddlePoint; smash: boolean; warningAt: number | null; speedMultiplier: number;
   landingZ?: number; bounceY?: number; bounceX?: number; speedScore?: number; smashMultiplier?: number;
+  /** Independent opponent-only bonus, fixed at departure; never folded into speedMultiplier. */
+  remainingBallMultiplier?: number;
 }>;
 export type GameSnapshot = Readonly<{
   runId: string; phase: GamePhase; score: number; simTime: number;

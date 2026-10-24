@@ -1,0 +1,27 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/remaining-ball-speed.test.ts (53 tests | 1 failed) 60ms
+   ❯ 相手の打球時に固定する倍率 (17)
+     × 同一tickで打球後に起きた失球はその飛行へ遡及しない 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 同一tickで打球後に起きた失球はその飛行へ遡及しない
+AssertionError: expected 20 to be greater than 20.001
+ ❯ tests/unit/remaining-ball-speed.test.ts:55:78
+     53|     lost.position = sampleReturn(lost.plan, lost.from, 20); s.state.ba…
+     54|     const result = s.step(missPaddle), hit = result.events.find(e => e…
+     55|     expect(hit).toBeDefined(); expect(loss).toBeDefined(); expect(loss…
+       |                                                                              ^
+     56|     const plan = s.state.balls[0]!.plan;
+     57|     expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(D…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 52 passed (53)
+   Start at  08:35:45
+   Duration  266ms (transform 45%, tests 40%, import 13%, worker 2%)
+

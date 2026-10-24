@@ -50,11 +50,11 @@ it('最新21行の進行表の部位を順に解放し、未解放の本体を�
 it('10の発光は5秒ちょうどで終わり、30の常時虹色が優先する', () => {
   const s = scenario(10, 24.999);
   s.state.progression = { ...s.state.progression, appliedMilestones: [10], ballGlowUntil: 25 };
-  const ball: BallSnapshot = { id: 1, phase: 'incoming', position: { x: 0, y: 0.5, z: -0.01 }, smash: false };
+  const ball: BallSnapshot = { id: 1, phase: 'incoming', position: { x: 0, y: 0.5, z: 0.01 }, smash: false };
   const state = () => ({ ...s.snapshot(), balls: [ball] });
   expect(resolvePresentation(state()).balls[1]).toEqual({ visible: true, rainbow: true });
   s.state.simTime = 25;
-  expect(resolvePresentation(state()).balls[1]).toEqual({ visible: false, rainbow: false });
+  expect(resolvePresentation(state()).balls[1]).toEqual({ visible: true, rainbow: false });
   s.state.progression = { ...s.state.progression, appliedMilestones: [10, 30], ballGlowUntil: 25 };
   expect(resolvePresentation(state()).balls[1]).toEqual({ visible: true, rainbow: true });
 });
@@ -79,10 +79,10 @@ it('419→420では相手側の球由来の部品だけを隠し、境界と返�
   objects.dispose();
 });
 
-it('30〜419の既存返球待ちは見え、初回待ちだけが隠れる', () => {
+it('30〜419でも既存返球待ちと初回待ちを隠す', () => {
   const s = scenario(30).snapshot();
   const ball = { id: 1, phase: 'waiting-return', position: { x: 0, y: 0.5, z: -1.95 }, smash: false } satisfies BallSnapshot;
-  expect(resolvePresentation({ ...s, balls: [ball] }).balls[1]!.visible).toBe(true);
+  expect(resolvePresentation({ ...s, balls: [ball] }).balls[1]!.visible).toBe(false);
   expect(resolvePresentation({ ...s, balls: [{ ...ball, phase: 'queued' }] }).balls[1]!.visible).toBe(false);
 });
 

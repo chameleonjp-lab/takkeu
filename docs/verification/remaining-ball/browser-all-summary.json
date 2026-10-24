@@ -1,0 +1,1440 @@
+{
+  "stats": {
+    "startTime": "2026-10-24T08:38:14.209Z",
+    "duration": 1096885.9610000001,
+    "expected": 102,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "打球ノード生成失敗を案内し、一時停止メニューから明示的に音声を再試行できる",
+      "file": "audio.spec.ts",
+      "line": 24,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12280,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰",
+      "file": "audio.spec.ts",
+      "line": 55,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 22066,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "音声再開拒否でも無音で継続し、ミュートと明示的な音声の再試行が使える",
+      "file": "audio.spec.ts",
+      "line": 82,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 11353,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+      "file": "audio.spec.ts",
+      "line": 109,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 859,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "打球ノード生成失敗を案内し、一時停止メニューから明示的に音声を再試行できる",
+      "file": "audio.spec.ts",
+      "line": 24,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7616,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰",
+      "file": "audio.spec.ts",
+      "line": 55,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7946,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "音声再開拒否でも無音で継続し、ミュートと明示的な音声の再試行が使える",
+      "file": "audio.spec.ts",
+      "line": 82,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5077,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査",
+      "file": "audio.spec.ts",
+      "line": 109,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1138,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "開始→直接配置・ドラッグ→返球→失球→結果→再挑戦",
+      "file": "basic-play.spec.ts",
+      "line": 12,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19209,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "停止中は描画を保持し、再開操作でだけ進む",
+      "file": "basic-play.spec.ts",
+      "line": 48,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 25806,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "タッチの絶対位置ドラッグでラケットを動かせる",
+      "file": "basic-play.spec.ts",
+      "line": 64,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8072,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "開始→直接配置・ドラッグ→返球→失球→結果→再挑戦",
+      "file": "basic-play.spec.ts",
+      "line": 12,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12565,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "停止中は描画を保持し、再開操作でだけ進む",
+      "file": "basic-play.spec.ts",
+      "line": 48,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7466,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "タッチの絶対位置ドラッグでラケットを動かせる",
+      "file": "basic-play.spec.ts",
+      "line": 64,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4093,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "ホームにタイトルと開始ボタンを表示し、自動で開始しない",
+      "file": "boot.spec.ts",
+      "line": 3,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 573,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "ホームにタイトルと開始ボタンを表示し、自動で開始しない",
+      "file": "boot.spec.ts",
+      "line": 3,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 989,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "ワンバウンド後の見える球にラケットを合わせれば返球できる",
+      "file": "contact.spec.ts",
+      "line": 35,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12241,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "見えている球にドラッグで合わせ、3ラリーをつなげる",
+      "file": "contact.spec.ts",
+      "line": 56,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 34842,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "ワンバウンド後の見える球にラケットを合わせれば返球できる",
+      "file": "contact.spec.ts",
+      "line": 35,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4673,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "見えている球にドラッグで合わせ、3ラリーをつなげる",
+      "file": "contact.spec.ts",
+      "line": 56,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9819,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844",
+      "file": "direct-input.spec.ts",
+      "line": 33,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3226,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390",
+      "file": "direct-input.spec.ts",
+      "line": 33,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3378,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720",
+      "file": "direct-input.spec.ts",
+      "line": 33,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5985,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360",
+      "file": "direct-input.spec.ts",
+      "line": 33,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2281,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "二本指は両releaseで停止し、追加指やドラッグでは停止しない",
+      "file": "direct-input.spec.ts",
+      "line": 66,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1268,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "情報上の入力・safe area・resize連発・メニューに古い入力が残らない",
+      "file": "direct-input.spec.ts",
+      "line": 95,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1173,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844",
+      "file": "direct-input.spec.ts",
+      "line": 33,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4520,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390",
+      "file": "direct-input.spec.ts",
+      "line": 33,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4469,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720",
+      "file": "direct-input.spec.ts",
+      "line": 33,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7471,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360",
+      "file": "direct-input.spec.ts",
+      "line": 33,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3229,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "二本指は両releaseで停止し、追加指やドラッグでは停止しない",
+      "file": "direct-input.spec.ts",
+      "line": 66,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2414,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "情報上の入力・safe area・resize連発・メニューに古い入力が残らない",
+      "file": "direct-input.spec.ts",
+      "line": 95,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2576,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実際のWeb Audioで自分用・相手用の異なる短音を合成できる",
+      "file": "evidence.spec.ts",
+      "line": 43,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 666,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実際のWeb Audioで自分用・相手用の異なる短音を合成できる",
+      "file": "evidence.spec.ts",
+      "line": 43,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1010,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す",
+      "file": "evidence.spec.ts",
+      "line": 6,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9617,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す",
+      "file": "evidence.spec.ts",
+      "line": 6,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6196,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する",
+      "file": "extended.spec.ts",
+      "line": 6,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19219,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "返球・台面の花火を実際の接触イベントで描き、停止・リトライで過去の粒子を残さない",
+      "file": "extended.spec.ts",
+      "line": 31,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6067,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する",
+      "file": "extended.spec.ts",
+      "line": 54,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 127581,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実アプリのホーム遷移で花火を直ちに消し、再挑戦へ持ち越さない",
+      "file": "extended.spec.ts",
+      "line": 78,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5777,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する",
+      "file": "extended.spec.ts",
+      "line": 6,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 15268,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "返球・台面の花火を実際の接触イベントで描き、停止・リトライで過去の粒子を残さない",
+      "file": "extended.spec.ts",
+      "line": 31,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3483,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "555の91球から毎ラリー加速・全スマッシュ・増球を30ゲーム秒継続する",
+      "file": "extended.spec.ts",
+      "line": 54,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 47429,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実アプリのホーム遷移で花火を直ちに消し、再挑戦へ持ち越さない",
+      "file": "extended.spec.ts",
+      "line": 78,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3451,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "指定された発光ラリーの直前・到達時を同一画角で撮影する",
+      "file": "glow-timing.spec.ts",
+      "line": 4,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8384,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "指定された発光ラリーの直前・到達時を同一画角で撮影する",
+      "file": "glow-timing.spec.ts",
+      "line": 4,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12413,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "通常の指離れ・2本目・追跡喪失・回転で入力が残らない",
+      "file": "lifecycle.spec.ts",
+      "line": 11,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2796,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開",
+      "file": "lifecycle.spec.ts",
+      "line": 41,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3808,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する",
+      "file": "lifecycle.spec.ts",
+      "line": 58,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3848,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実際のWEBGL_lose_contextによる喪失と復旧でも手動再開を待つ",
+      "file": "lifecycle.spec.ts",
+      "line": 76,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2594,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "描画再作成の失敗時も状態を壊さずホームへ戻れる",
+      "file": "lifecycle.spec.ts",
+      "line": 94,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1308,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "通常の指離れ・2本目・追跡喪失・回転で入力が残らない",
+      "file": "lifecycle.spec.ts",
+      "line": 11,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4616,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開",
+      "file": "lifecycle.spec.ts",
+      "line": 41,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6733,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する",
+      "file": "lifecycle.spec.ts",
+      "line": 58,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5171,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実際のWEBGL_lose_contextによる喪失と復旧でも手動再開を待つ",
+      "file": "lifecycle.spec.ts",
+      "line": 76,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3187,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "描画再作成の失敗時も状態を壊さずホームへ戻れる",
+      "file": "lifecycle.spec.ts",
+      "line": 94,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1885,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "専用状態で増球の境界と全演出の表示・発光終了を撮影する",
+      "file": "milestones.spec.ts",
+      "line": 6,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7320,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "390の強弱を実描画で比較し、0.6秒の動きを保存する",
+      "file": "milestones.spec.ts",
+      "line": 38,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6248,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "専用状態で増球の境界と全演出の表示・発光終了を撮影する",
+      "file": "milestones.spec.ts",
+      "line": 6,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10641,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "390の強弱を実描画で比較し、0.6秒の動きを保存する",
+      "file": "milestones.spec.ts",
+      "line": 38,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4236,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない",
+      "file": "occlusion.spec.ts",
+      "line": 3,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 889,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "球と虹色の輪郭はラケットとの前後関係を守る",
+      "file": "occlusion.spec.ts",
+      "line": 10,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2708,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "虹色は照明がなくても発光し、相手床・壁は閾値まで暗い",
+      "file": "occlusion.spec.ts",
+      "line": 37,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1175,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない",
+      "file": "occlusion.spec.ts",
+      "line": 3,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1365,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "球と虹色の輪郭はラケットとの前後関係を守る",
+      "file": "occlusion.spec.ts",
+      "line": 10,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2247,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "虹色は照明がなくても発光し、相手床・壁は閾値まで暗い",
+      "file": "occlusion.spec.ts",
+      "line": 37,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1192,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "全設定と自己ベストが再読込・リトライを越えて残る",
+      "file": "preferences.spec.ts",
+      "line": 4,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12871,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "保存拒否でも設定と自己ベストをメモリに保持して遊べる",
+      "file": "preferences.spec.ts",
+      "line": 39,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1408,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "全設定と自己ベストが再読込・リトライを越えて残る",
+      "file": "preferences.spec.ts",
+      "line": 4,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5245,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "保存拒否でも設定と自己ベストをメモリに保持して遊べる",
+      "file": "preferences.spec.ts",
+      "line": 39,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1959,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む",
+      "file": "quality.spec.ts",
+      "line": 15,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 132892,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "縦横・44pxボタン・200%文字・ラベル・安全余白を確認",
+      "file": "quality.spec.ts",
+      "line": 54,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4328,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する",
+      "file": "quality.spec.ts",
+      "line": 98,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 118896,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "WebGL初期化不可と復旧失敗でもホームと自己ベストを保つ",
+      "file": "quality.spec.ts",
+      "line": 121,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 37328,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む",
+      "file": "quality.spec.ts",
+      "line": 15,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 38572,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "縦横・44pxボタン・200%文字・ラベル・安全余白を確認",
+      "file": "quality.spec.ts",
+      "line": 54,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6131,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する",
+      "file": "quality.spec.ts",
+      "line": 98,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 45031,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "WebGL初期化不可と復旧失敗でもホームと自己ベストを保つ",
+      "file": "quality.spec.ts",
+      "line": 121,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1023,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "名前なしで遊べて結果には上位30名と正式URLのXシェアが表示される",
+      "file": "ranking.spec.ts",
+      "line": 33,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1216,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "名前ありは開始時に一度記録し通常終了を自動送信する",
+      "file": "ranking.spec.ts",
+      "line": 50,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1034,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "送信失敗後も結果と共有を保ち同じIDで再送する",
+      "file": "ranking.spec.ts",
+      "line": 64,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1035,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "通信停止中も名前なしのプレイと再プレイが使えランキングは再取得できる",
+      "file": "ranking.spec.ts",
+      "line": 78,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1104,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "名前なしで遊べて結果には上位30名と正式URLのXシェアが表示される",
+      "file": "ranking.spec.ts",
+      "line": 33,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1773,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "名前ありは開始時に一度記録し通常終了を自動送信する",
+      "file": "ranking.spec.ts",
+      "line": 50,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1688,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "送信失敗後も結果と共有を保ち同じIDで再送する",
+      "file": "ranking.spec.ts",
+      "line": 64,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1736,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "通信停止中も名前なしのプレイと再プレイが使えランキングは再取得できる",
+      "file": "ranking.spec.ts",
+      "line": 78,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1706,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "viewport全体の実描画でPC・縦・横の台を最大限収める",
+      "file": "reference.spec.ts",
+      "line": 3,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1907,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "viewport全体の実描画でPC・縦・横の台を最大限収める",
+      "file": "reference.spec.ts",
+      "line": 3,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4200,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する",
+      "file": "remaining-ball.spec.ts",
+      "line": 7,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4367,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実アプリで加速球の一時停止・手動再開・リトライを保つ",
+      "file": "remaining-ball.spec.ts",
+      "line": 48,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1456,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる",
+      "file": "remaining-ball.spec.ts",
+      "line": 72,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 846,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する",
+      "file": "remaining-ball.spec.ts",
+      "line": 7,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10361,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "実アプリで加速球の一時停止・手動再開・リトライを保つ",
+      "file": "remaining-ball.spec.ts",
+      "line": 48,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2828,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる",
+      "file": "remaining-ball.spec.ts",
+      "line": 72,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1067,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する",
+      "file": "render-loop.spec.ts",
+      "line": 4,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1905,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する",
+      "file": "render-loop.spec.ts",
+      "line": 4,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2400,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない",
+      "file": "retry.spec.ts",
+      "line": 5,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 20382,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない",
+      "file": "retry.spec.ts",
+      "line": 5,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12254,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない",
+      "file": "smash.spec.ts",
+      "line": 5,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12196,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "予告音を実際のWeb Audioで合成して保存する",
+      "file": "smash.spec.ts",
+      "line": 60,
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 682,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "450の予告はミュート・390・420・落球後4球・停止中でも見え、球を暴露しない",
+      "file": "smash.spec.ts",
+      "line": 5,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5550,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "予告音を実際のWeb Audioで合成して保存する",
+      "file": "smash.spec.ts",
+      "line": 60,
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1024,
+          "retry": 0
+        }
+      ]
+    }
+  ]
+}
