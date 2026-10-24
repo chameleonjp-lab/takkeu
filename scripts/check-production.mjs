@@ -8,11 +8,11 @@ function walk(path) { for (const entry of readdirSync(path, { withFileTypes: tru
 walk(dir);
 for (const file of files) {
   const name = relative(dir, file);
-  if (/^assets\/court-preview-[\w-]+\.png$/.test(name)) {
+  if (/^assets\/court-preview-[\w-]+\.png$/.test(name) || name === 'og-takkeu-v1.png') {
     if (!readFileSync(file).subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) throw new Error(`invalid court preview: ${name}`);
     continue;
   }
-  if (!/^(index\.html|release\.json|assets\/[\w.-]+\.(js|css))$/.test(name)) throw new Error(`unexpected distribution file: ${name}`);
+  if (!/^(index\.html|release\.json|ranking-manifest\.json|assets\/[\w.-]+\.(js|css))$/.test(name)) throw new Error(`unexpected distribution file: ${name}`);
   const text = readFileSync(file, 'utf8');
   if (/tests\/fixtures|tests\/helpers|window\.stage[23]|setScore|scoreOverride|@vite\/client|playwright|\/src\/main\.ts/.test(text)) throw new Error(`development code in distribution: ${name}`);
 }

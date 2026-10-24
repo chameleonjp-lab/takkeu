@@ -12,7 +12,7 @@
 
 PRをレビューしてmainへマージすると、`Pages release`がmainへのpushを検出する。mainへの直接pushも同じ検査を通る。PRの自動マージ設定は使用しない。
 
-pushの`github.sha`を`EXPECTED_SHA`として固定し、そのコミットをcheckoutする。型・単体・Chromium/WebKit画面・ルート／`/takkeu/`配布検査を同じcheckoutで実行し、成功した`dist`だけをPagesへ配備する。失敗した変更は公開せず、直前の配布物を維持する。
+pushの`github.sha`を`EXPECTED_SHA`として固定し、そのコミットをcheckoutする。公開処理から再利用可能なCIを呼び出し、型・単体・Chromium/WebKitの操作／負荷を分割した各ジョブ・ルート／`/takkeu/`配布検査に成功した後、同じSHAの配布物を作ってPagesへ配備する。失敗した変更は公開せず、直前の配布物を維持する。
 
 検査前と配備直前に、checkout・対象SHA・現在のmainの全一致を検証する。mainが先へ進んだ古い実行は拒否し、新しいpushの実行で最新mainを検証して公開する。公開処理は直列化する。配備ジョブで再ビルドはしない。
 
@@ -20,7 +20,7 @@ pushの`github.sha`を`EXPECTED_SHA`として固定し、そのコミットをch
 
 マージ直後、公開検証が進行中ならページは直前の版を表示する。PRのCI成功とPagesの配備成功は別であり、[Pages releaseの実行一覧](https://github.com/chameleonjp-lab/takkeu/actions/workflows/deploy.yml)で対象mainのSHA・配備ジョブまでの成功を確認する。2026-10-23のPR #10も、検証中は旧版の明るい相手コートが配信され、完了後に暗闇の版へ更新された。[公開照合記録](verification/ball-cadence/README.md)へ実SHA・画像を保存した。
 
-今回の全面化・直接操作はDraft PRまでを対象とし、merge・自動merge・手動公開は行わない。[対象SHA・検証証拠](verification/viewport-direct/README.md)を参照する。
+全面化・直接操作のPR #14は2026-10-23にマージ済み。その公開ジョブ[40030215074](https://github.com/chameleonjp-lab/takkeu/actions/runs/40030215074)は、ブラウザ検証を一つのジョブで連続実行して20分の制限に達し、公開されなかった。今回のランキング・共有対応では、同じ検証をCIの分割ジョブで実行してこの時間切れを解消する。[今回の検証記録](ranking-share-verification.md)を参照する。
 
 ## 継続して確認する品質項目
 

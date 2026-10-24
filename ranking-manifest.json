@@ -1,0 +1,38 @@
+{
+  "schema_version": "chameleonjp-ranking-manifest-v1",
+  "game_id": "takkeu",
+  "title": "タッケウ",
+  "description": "タップとドラッグでラケットを動かし、ラリーをつなぐ卓球ゲーム。",
+  "share_text": "タッケウで、もう1ラリーつなごう。",
+  "canonical_url": "https://chameleonjp-lab.github.io/takkeu/",
+  "release_date": "2026-10-23",
+  "client_version": "takkeu-web-ranking-1",
+  "submission_mode": "shared",
+  "lab": { "representative_slug": "takkeu" },
+  "player_name": {
+    "required_before_start": false,
+    "required_for_ranking": true,
+    "min_length": 1,
+    "max_length": 20,
+    "storage_key": "chameleonjp_takkeu_player_name"
+  },
+  "play_count": { "count_at": "start", "rpc": "start_game_play_v1", "idempotency": true },
+  "submission": { "rpc": "submit_score_idempotent_v1", "automatic": true, "idempotency": true, "timeout_ms": 8000 },
+  "ranking_entries": [{
+    "mode_id": "rally",
+    "game_slug": "takkeu",
+    "title": "タッケウ",
+    "display_order": 61,
+    "top_ranking_type": "best",
+    "score_order": "desc",
+    "score_unit": "ラリー",
+    "score_scale": 1,
+    "score_decimals": 0,
+    "score_label": "ラリー数",
+    "first_score_label": "初回ラリー数",
+    "best_score_label": "最高ラリー数",
+    "score_min": 0,
+    "score_max": 100000000,
+    "ranked_results": ["game_over", "retire"]
+  }]
+}

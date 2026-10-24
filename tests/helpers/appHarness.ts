@@ -6,6 +6,7 @@ import { DEFAULT_CONFIG } from '../../src/game/config';
 import { createSession } from '../../src/game/session';
 import { createView } from '../../src/render/createView';
 import { createAudio } from '../../src/audio/audio';
+import { createRankingClient } from '../../src/ranking/client';
 import type { GameSession, GameSnapshot, GameEvent } from '../../src/game/types';
 import { createSimulationState, snapshotSimulation, startSimulation, stepSimulation } from '../../src/game/simulation';
 import { scenario } from './scenarios';
@@ -34,6 +35,12 @@ const session: GameSession = {
 const app = createApp(document.querySelector<HTMLElement>('#app')!, {
   createSession: () => session,
   storage: { getItem: () => null, setItem() {} },
+  // Ordinary gameplay tests use a deterministic empty leaderboard. Ranking tests
+  // explicitly opt into the real REST client and intercept its network boundary.
+  rankingApi: new URLSearchParams(location.search).has('ranking') ? createRankingClient() : {
+    start: async () => { throw new Error('Named ranking requires the ranking fixture option'); },
+    finish: async () => {}, submit: async () => {}, top: async () => [],
+  },
   createAudio(...args) { currentAudio = createAudio(...args); return currentAudio; },
   createView(canvas, config) {
     if (failNextView) { failNextView = false; throw new Error('verification: renderer creation failed'); }
