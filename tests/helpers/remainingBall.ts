@@ -16,7 +16,7 @@ export function waitingBall(id: number, score: number, departAt = 20, config: Ga
 }
 export function remainingScenario(score: number, count: number, departAt = 20, config: GameConfig = DEFAULT_CONFIG) {
   const s = scenario(score);
-  // The other balls are alive, hidden and scheduled far in the future.
+  // The other balls are alive and scheduled far in the future.
   s.state.balls = Array.from({ length: count }, (_, i) => ({ ...waitingBall(i + 1, score, i ? 1000 + i : departAt, config),
     phase: i % 2 ? 'queued' : 'waiting-return' }));
   return s;

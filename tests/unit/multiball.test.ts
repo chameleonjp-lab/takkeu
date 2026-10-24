@@ -5,7 +5,7 @@ import { scheduleReturn } from '../../src/game/scheduler';
 import { incoming, scenario } from '../helpers/scenarios';
 
 describe('多球の接触・落球・累計到達', () => {
-  it.each([[4, 5], [9, 10], [19, 20], [29, 30], [39, 40], [149, 150]])('%iから同時接触で閾値%iを飛び越しても追加は1球', (score, milestone) => {
+  it.each([[4, 5], [9, 10], [19, 20], [29, 30], [39, 40], [148, 149]])('%iから同時接触で閾値%iを飛び越しても追加は1球', (score, milestone) => {
     const s = scenario(score);
     s.state.balls = [incoming(1, 20.005), incoming(2, 20.005)];
     const result = s.step();
@@ -88,13 +88,13 @@ describe('多球の接触・落球・累計到達', () => {
 });
 
 
-it('160で4球を超えて増え、落球した球を配列に残さずIDを再利用しない', () => {
-  const s = scenario(159);
+it('161で4球を超えて増え、落球した球を配列に残さずIDを再利用しない', () => {
+  const s = scenario(160);
   s.state.balls = [1, 2, 3, 4].map(id => incoming(id, id === 1 ? 20.005 : 24 + id));
   let result = s.step();
-  expect(result.snapshot.score).toBe(160);
+  expect(result.snapshot.score).toBe(161);
   expect(result.snapshot.balls).toHaveLength(5);
-  expect(result.events.filter(e => e.kind === 'milestone').map(e => e.milestone)).toEqual([160]);
+  expect(result.events.filter(e => e.kind === 'milestone').map(e => e.milestone)).toEqual([161]);
   const old = s.state.balls.find(b => b.id === 5)!; old.phase = 'lost';
   s.step();
   expect(s.snapshot().balls.some(b => b.id === 5)).toBe(false);
@@ -107,9 +107,9 @@ it('160で4球を超えて増え、落球した球を配列に残さずIDを再�
 });
 
 
-it('450の無落球47球を30ゲーム秒継続し、追加・スマッシュ・到着余裕を守る', () => {
+it('450の無落球459球を30ゲーム秒継続し、追加・スマッシュ・到着余裕を守る', () => {
   const s = scenario(450);
-  for (let id = 1; id <= 47; id++) {
+  for (let id = 1; id <= 459; id++) {
     const plan = scheduleReturn({ ballId: id, earliestDepartAt: 20, preferredTarget: { x: id % 2 ? -0.7 : 0.7, y: 0.5 }, speedMultiplier: 2.6, score:s.state.score, smash: true }, s.snapshot().scheduledReturns, DEFAULT_CONFIG);
     const from = { x: 0, y: 0.5, z: -DEFAULT_CONFIG.paddleZ };
     s.state.balls.push({ id, phase: 'queued', position: from, from, plan, warningSent: false });
@@ -131,4 +131,4 @@ it('450の無落球47球を30ゲーム秒継続し、追加・スマッシュ・
   expect(s.state.score).toBeGreaterThan(500);
   expect(smashes).toBeGreaterThan(0);
   expect(s.state.progression.appliedMilestones.length).toBe(MILESTONES.filter(n => n<=s.state.score).length);
-});
+}, 20_000);

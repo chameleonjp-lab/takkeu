@@ -25,7 +25,9 @@ test('専用状態で増球の境界と全演出の表示・発光終了を撮�
     expect(parts.parts.opponentFloor.visible).toBe(score >= 380);
     expect(parts.parts.opponentWall.visible).toBe(score >= 420);
     expect(parts.parts.selfFloor.rainbow).toBe(score >= 410);
-    const expected = score < 5 ? 1 : 2 + Math.floor(score / 10);
+    const expected = new Map([[0,1],[1,1],[4,1],[5,2],[9,2],[10,3],[19,3],[20,4],[21,4],[30,5],[40,6],
+      [70,12],[100,19],[130,27],[150,33],[160,36],[190,46],[210,53],[240,67],[270,82],[300,107],
+      [330,158],[360,218],[380,258],[390,279],[410,339],[420,369],[450,459]]).get(score)!;
     await expect(page.getByLabel('残球数', { exact: true })).toContainText(String(expected));
     await page.screenshot({ path: info.outputPath(`milestone-${String(score).padStart(3, '0')}.png`) });
   }

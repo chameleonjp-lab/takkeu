@@ -31,15 +31,17 @@ it('47球以上を表示し、共通の形状・虹色材質を再利用して�
   expect(dispose).toHaveBeenCalledTimes(1);
 });
 
-it('420の相手球・未解放面の影・落球を漏らさず、次の通常球は黄色へ戻す', () => {
+it('100以降の相手球を表示し、未解放面の影を隠し、次の通常球は黄色へ戻す', () => {
   const objects = createObjects(DEFAULT_CONFIG);
   const snapshot = scenario(30).snapshot();
   applyPresentation(objects, { ...snapshot, balls: [{ ...balls(1, 1)[0]!, position: { x: 0.5, y: 0.5, z: -0.7 } }] });
   expect(objects.balls.size).toBe(0);
+  applyPresentation(objects, { ...scenario(100).snapshot(), balls: [{ ...balls(1, 1)[0]!, position: { x: 0.5, y: 0.5, z: -0.7 } }] });
+  expect(objects.balls.size).toBe(1); expect(objects.balls.get(1)!.shadow.visible).toBe(false);
   applyPresentation(objects, { ...scenario(190).snapshot(), balls: [{ ...balls(1, 1)[0]!, position: { x: 0.5, y: 0.5, z: -0.7 } }] });
   expect(objects.balls.get(1)!.shadow.visible).toBe(true);
   applyPresentation(objects, { ...scenario(420).snapshot(), balls: [{ ...balls(1, 1)[0]!, position: { x: 0.5, y: 0.5, z: -0.7 } }] });
-  expect(objects.balls.size).toBe(0);
+  expect(objects.balls.size).toBe(1);
   applyPresentation(objects, { ...scenario(0).snapshot(), balls: balls(99, 1) });
   const visual = objects.balls.get(99)!;
   expect(visual.core.material.color.getHex()).toBe(0xffec64);

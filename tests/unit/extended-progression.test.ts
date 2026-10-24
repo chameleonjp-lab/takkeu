@@ -5,19 +5,19 @@ import { advanceProgression } from '../../src/game/progression';
 import { bounceTime, sampleReturn } from '../../src/game/trajectory';
 import { incoming, scenario } from '../helpers/scenarios';
 
-describe('470以後の2ラリー増球', () => {
-  it.each([[469,48],[470,49],[471,49],[472,50],[480,54],[490,59],[500,64],[510,69],[520,74],[530,79],[540,84],[555,91]])('%iでは累計%i球', (score, count) => expect(ballCountAtScore(score)).toBe(count));
+describe('470以後も1ラリー3球の増球を継続', () => {
+  it.each([[469,516],[470,519],[471,522],[472,525],[480,549],[490,579],[500,609],[510,639],[520,669],[530,699],[540,729],[555,774]])('%iでは累計%i球', (score, count) => expect(ballCountAtScore(score)).toBe(count));
   it('470を跨ぐ複数加点と再評価で二重追加しない', () => {
     const s = scenario(469); s.state.balls = [1,2,3,4].map(id => incoming(id, 20.001));
-    const result = s.step(); expect(result.snapshot.score).toBe(473); expect(result.snapshot.balls).toHaveLength(6);
-    expect(result.events.filter(e => e.kind === 'milestone').map(e => e.milestone)).toEqual([470,472]);
-    expect(s.step().snapshot.balls).toHaveLength(6);
-    expect(ballRewardScore(48)).toBe(470); expect(ballRewardScore(49)).toBe(472);
+    const result = s.step(); expect(result.snapshot.score).toBe(473); expect(result.snapshot.balls).toHaveLength(16);
+    expect(result.events.filter(e => e.kind === 'milestone').map(e => e.milestone)).toEqual([470,471,472,473]);
+    expect(s.step().snapshot.balls).toHaveLength(16);
+    expect(ballRewardScore(516)).toBe(470); expect(ballRewardScore(519)).toBe(471);
     expect(MILESTONES).toContain(555);
   });
   it('落球は補充せず飛び越した報酬だけを数える', () => {
     const s = scenario(469); const update = advanceProgression(s.state.progression, 469, 480, 20);
-    expect(update.addedBalls).toBe(6);
+    expect(update.addedBalls).toBe(33);
     expect(advanceProgression(update.state, 480, 480, 20).addedBalls).toBe(0);
   });
 });

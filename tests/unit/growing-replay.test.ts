@@ -34,4 +34,6 @@ it('47球から増球・加速・スマッシュを含む同じ入力で30/60/12
     expect(eventData(events)).toEqual(eventData(expected));
     expect(s.state.randomState).toBe(baseline.state.randomState);
   }
-});
+// The new late-game cadence adds three balls per hit. Keep all four complete
+// 30-second replays; this is deterministic correctness, not a wall-clock benchmark.
+}, 20_000);

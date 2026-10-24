@@ -59,7 +59,7 @@ it('10の発光は5秒ちょうどで終わり、30の常時虹色が優先す�
   expect(resolvePresentation(state()).balls[1]).toEqual({ visible: true, rainbow: true });
 });
 
-it('419→420では相手側の球由来の部品だけを隠し、境界と返球待ちも扱う', () => {
+it('420でも相手側の生存球を表示し、失球だけを隠す', () => {
   const s = scenario(419);
   const base = { id: 1, phase: 'incoming', position: { x: 0, y: 0.5, z: -0.1 }, smash: true } satisfies BallSnapshot;
   const state = (balls: BallSnapshot[]) => ({ ...s.snapshot(), balls });
@@ -67,19 +67,20 @@ it('419→420では相手側の球由来の部品だけを隠し、境界と返�
   s.state.progression = { ...s.state.progression, appliedMilestones: [...s.state.progression.appliedMilestones, 420], ballGlowUntil: null };
   const before = structuredClone(state([base]));
   const parts = resolvePresentation(before).parts;
-  for (const phase of ['incoming', 'outgoing', 'waiting-return'] as const) expect(resolvePresentation(state([{ ...base, phase }])).balls[1]!.visible).toBe(false);
+  for (const phase of ['incoming', 'outgoing', 'waiting-return', 'queued'] as const) expect(resolvePresentation(state([{ ...base, phase }])).balls[1]!.visible).toBe(true);
   expect(resolvePresentation(state([{ ...base, position: { ...base.position, z: 0 } }])).balls[1]!.visible).toBe(true);
-  for (const phase of ['queued', 'lost'] as const) expect(resolvePresentation(state([{ ...base, phase, position: { ...base.position, z: 1 } }])).balls[1]!.visible).toBe(false);
+  for (const phase of ['lost'] as const) expect(resolvePresentation(state([{ ...base, phase, position: { ...base.position, z: 1 } }])).balls[1]!.visible).toBe(false);
   expect(resolvePresentation(state([base])).parts).toEqual(parts);
   expect(state([base])).toEqual(before);
   const objects = createObjects(DEFAULT_CONFIG);
   applyPresentation(objects, state([base]));
-  for (const visual of objects.balls.values()) expect(visual.root.visible).toBe(false);
+  expect(objects.balls.size).toBe(1);
+  for (const visual of objects.balls.values()) expect(visual.root.visible).toBe(true);
   expect(objects.opponentBody.visible).toBe(true);
   objects.dispose();
 });
 
-it('30〜419でも既存返球待ちと初回待ちを隠す', () => {
+it('100未満では既存返球待ちと初回待ちを隠す', () => {
   const s = scenario(30).snapshot();
   const ball = { id: 1, phase: 'waiting-return', position: { x: 0, y: 0.5, z: -1.95 }, smash: false } satisfies BallSnapshot;
   expect(resolvePresentation({ ...s, balls: [ball] }).balls[1]!.visible).toBe(false);

@@ -68,7 +68,7 @@ describe('450以降の相手の返球', () => {
     expect(committed.smash).toBe(true);
     while (s.state.simTime < committed.warningAt! + DEFAULT_CONFIG.fixedDt) all.push(...s.step(committed.target).events);
     expect(resolveOpponentPose(s.snapshot()).preparing).toBe(true);
-    expect(resolvePresentation(s.snapshot()).balls[2]!.visible).toBe(false);
+    expect(resolvePresentation(s.snapshot()).balls[2]!.visible).toBe(true);
     const { context, voices } = fakeAudioContext();
     const audio = createAudio(DEFAULT_CONFIG, () => context); audio.reset(s.state.runId); await audio.unlock();
     audio.consume(all);

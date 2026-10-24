@@ -46,6 +46,29 @@ function setup() {
 afterEach(() => { for (const controller of controllers.splice(0)) controller.dispose(); document.body.innerHTML = ''; });
 
 describe('direct paddle pointer ownership', () => {
+  it('can keep a held touch while mobile chrome changes the mapping', () => {
+    const { pointer, samples, state, controller, mapping, captures } = setup();
+    pointer('pointerdown', 70, 60, { type: 'touch', at: 100 });
+    pointer('pointermove', 120, 60, { type: 'touch', at: 110 });
+    controller.updateMapping({ ...mapping, toWorld: () => ({ x: .75, y: .4 }) }, true);
+    pointer('pointermove', 170, 60, { type: 'touch', at: 120 });
+    expect(samples.at(-1)).toEqual({ at: .12, kind: 'move', target: { x: .75, y: .4 } });
+    expect(captures.has(1)).toBe(true);
+    pointer('pointerup', 170, 60, { type: 'touch', at: 130 });
+    expect(samples.at(-1)).toEqual({ at: .13, kind: 'release', target: { x: .75, y: .4 } });
+    expect(state.interruptions).toBe(0);
+  });
+
+  it('a chrome mapping update cancels a partial two-finger pause gesture', () => {
+    const { pointer, state, controller, mapping } = setup();
+    pointer('pointerdown', 70, 60, { type: 'touch', at: 100 });
+    pointer('pointerdown', 170, 60, { type: 'touch', id: 2, primary: false, at: 120 });
+    controller.updateMapping(mapping, true);
+    pointer('pointerup', 70, 60, { type: 'touch', at: 140 });
+    pointer('pointerup', 170, 60, { type: 'touch', id: 2, primary: false, at: 150 });
+    expect(state.pauses).toBe(0);
+  });
+
   it.each(['mouse', 'touch', 'pen'])('places immediately at the primary %s pointer and follows absolute movement', type => {
     const { pointer, samples } = setup();
     pointer('pointerdown', 200, 100, { type, at: 100 });
