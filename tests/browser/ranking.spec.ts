@@ -5,14 +5,16 @@ const version = 'takkeu-web-ranking-1';
 const playId = '22222222-2222-4222-8222-222222222222';
 type RpcCall = { rpc: string; body: Record<string, unknown> };
 
-async function mockRanking(page: import('@playwright/test').Page, failScore = false) {
-  const calls: RpcCall[] = []; let failed = false;
+async function mockRanking(page: import('@playwright/test').Page, failScore = false, failGuest = false) {
+  const calls: RpcCall[] = []; let failed = false, guestFailed = false;
   await page.route('https://mlpnjgezrnhdxsxolyzj.supabase.co/rest/v1/rpc/**', async route => {
     const rpc = route.request().url().split('/').at(-1)!, body = route.request().postDataJSON() as Record<string, unknown>;
     calls.push({ rpc, body });
     if (rpc === 'submit_score_idempotent_v1' && failScore && !failed) { failed = true; await route.fulfill({ status: 503, json: { code: 'unavailable' } }); return; }
+    if (rpc === 'start_takkeu_guest_play_v1' && failGuest && !guestFailed) { guestFailed = true; await route.fulfill({ status: 503, json: { code: 'unavailable' } }); return; }
     let data: unknown;
     if (rpc === 'start_game_play_v1') data = { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', display_name: body.p_display_name, normalized_name: body.p_display_name, client_version: version };
+    if (rpc === 'start_takkeu_guest_play_v1') data = { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', client_version: version };
     if (rpc === 'finish_game_play_v1') data = { accepted: true, play_id: body.p_play_id, game_slug: 'takkeu', result_type: body.p_result_type, reached_wave: 1, score: body.p_score };
     if (rpc === 'submit_score_idempotent_v1') data = [{ accepted: true, result_submission_id: body.p_submission_id, result_play_id: body.p_play_id, result_display_name: body.p_display_name, result_normalized_name: body.p_display_name, result_first_score: body.p_score, result_best_score: body.p_score, result_play_count: 1 }];
     if (rpc === 'get_best_score_ranking') data = Array.from({ length: 30 }, (_, i) => ({ rank_no: i < 2 ? 1 : i + 1, display_name: `プレイヤー${i + 1}`, best_score: 100 - i, play_count: i + 1 }));
@@ -35,8 +37,12 @@ test('名前なしで遊べて結果には上位30名と正式URLのXシェア�
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   await finish(page, 12);
   await expect(page.locator('[data-ranking-body] tr')).toHaveCount(30);
-  expect(calls.filter(call => call.rpc !== 'get_best_score_ranking')).toEqual([]);
+  const starts = () => calls.filter(call => call.rpc === 'start_takkeu_guest_play_v1');
+  expect(starts()).toHaveLength(1);
+  expect(starts()[0]!.body).toEqual({ p_start_id: expect.stringMatching(/^[0-9a-f-]{36}$/), p_game_slug: 'takkeu', p_client_version: version });
+  expect(calls.filter(call => ['start_game_play_v1', 'finish_game_play_v1', 'submit_score_idempotent_v1'].includes(call.rpc))).toEqual([]);
   await expect(page.locator('[data-ranking-participation]')).toContainText('名前なし');
+  await expect(page.locator('[data-ranking-participation]')).toContainText('プレイ回数のみ');
   const share = new URL(await page.locator('[data-share-x]').getAttribute('href') ?? '');
   expect(share.searchParams.get('text')).toContain('12ラリー');
   expect(share.searchParams.get('url')).toBe('https://chameleonjp-lab.github.io/takkeu/');
@@ -45,6 +51,63 @@ test('名前なしで遊べて結果には上位30名と正式URLのXシェア�
   await page.getByRole('button', { name: 'もう一度', exact: true }).click(); await page.clock.runFor(16);
   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('0');
   expect(await page.evaluate(() => window.stage3.snapshot().simTime)).toBeLessThan(0.1);
+  await expect.poll(() => starts().length).toBe(2);
+  expect(starts()[0]!.body.p_start_id).not.toBe(starts()[1]!.body.p_start_id);
+});
+
+test('匿名開始の応答喪失後もすぐ遊べてonline復帰時は同じIDで再送する', async ({ page }, info) => {
+  const calls = await mockRanking(page, false, true); await open(page);
+  await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await expect(page.getByTestId('game-screen')).toBeVisible();
+  const starts = () => calls.filter(c => c.rpc === 'start_takkeu_guest_play_v1');
+  await expect.poll(() => starts().length).toBe(1);
+  const first = starts()[0]!.body;
+  await page.evaluate(() => window.dispatchEvent(new Event('online')));
+  await expect.poll(() => starts().length).toBe(2);
+  expect(starts()[1]!.body).toEqual(first);
+  await finish(page, 20);
+  expect(calls.some(c => c.rpc === 'finish_game_play_v1' || c.rpc === 'submit_score_idempotent_v1')).toBe(false);
+  await page.screenshot({ path: info.outputPath('guest-count-result.png') });
+});
+
+test('通信不能で始めた匿名2回の記録を再読込後も保ち復旧時に送る', async ({ page }) => {
+  let online = false;
+  const starts: Record<string, unknown>[] = [], accepted = new Set<string>();
+  await page.route('https://mlpnjgezrnhdxsxolyzj.supabase.co/rest/v1/rpc/**', async route => {
+    const rpc = route.request().url().split('/').at(-1)!, body = route.request().postDataJSON() as Record<string, unknown>;
+    if (rpc === 'start_takkeu_guest_play_v1') {
+      starts.push(body);
+      if (!online) { await route.abort(); return; }
+      accepted.add(String(body.p_start_id));
+      await route.fulfill({ json: { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', client_version: version } }); return;
+    }
+    expect(rpc).toBe('get_best_score_ranking'); await route.fulfill({ json: [] });
+  });
+  await open(page); await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await expect(page.getByTestId('game-screen')).toBeVisible(); await finish(page);
+  await page.getByRole('button', { name: 'もう一度', exact: true }).click();
+  const stored = await page.evaluate(() => Object.keys(localStorage).filter(k => k.startsWith('takkeu.guest-starts.v1.')).map(k => JSON.parse(localStorage.getItem(k)!)));
+  expect(stored).toHaveLength(2);
+  await page.reload(); await expect(page.getByRole('button', { name: 'はじめる', exact: true })).toBeVisible();
+  online = true; await page.evaluate(() => window.dispatchEvent(new Event('online')));
+  await expect.poll(() => accepted.size).toBe(2);
+  expect([...accepted].sort()).toEqual(stored.map((row: { startId: string }) => row.startId).sort());
+  expect(stored.map((row: { startId: string }) => row.startId)).toContain(starts[0]!.p_start_id);
+  await expect.poll(() => page.evaluate(() => Object.keys(localStorage).filter(k => k.startsWith('takkeu.guest-starts.v1.')).length)).toBe(0);
+});
+
+test('online復帰が古い通信の失敗より先でも送信待ちを再開する', async ({ page }) => {
+  const starts: Record<string, unknown>[] = []; let release!: () => void;
+  await page.route('https://mlpnjgezrnhdxsxolyzj.supabase.co/rest/v1/rpc/start_takkeu_guest_play_v1', async route => {
+    const body = route.request().postDataJSON() as Record<string, unknown>; starts.push(body);
+    if (starts.length === 1) { await new Promise<void>(resolve => { release = resolve; }); await route.abort(); return; }
+    await route.fulfill({ json: { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', client_version: version } });
+  });
+  await open(page); await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await expect.poll(() => starts.length).toBe(1);
+  await page.evaluate(() => window.dispatchEvent(new Event('online'))); release();
+  await expect.poll(() => starts.length).toBe(2);
+  expect(starts[1]).toEqual(starts[0]);
 });
 
 test('名前ありは開始時に一度記録し通常終了を自動送信する', async ({ page }) => {

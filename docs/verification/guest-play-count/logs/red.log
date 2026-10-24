@@ -1,0 +1,78 @@
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/ranking.test.ts (20 tests | 5 failed) 53ms
+   × counts a guest start without a name or score, even with unavailable storage 5ms
+   × queues distinct guest plays while an earlier count is awaiting acknowledgement 1ms
+   × retries an acknowledged guest with the same ID after a lost response and reload 1ms
+   × continues later guest counts after one permanently rejected count 1ms
+   × sends guest count-only RPC fields and validates its acknowledgement 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/ranking.test.ts > counts a guest start without a name or score, even with unavailable storage
+AssertionError: expected "vi.fn()" to be called 1 times, but got 0 times
+ ❯ tests/unit/ranking.test.ts:34:29
+     32|   controller.finish(null, 8, 'game_over');
+     33|   await controller.retry();
+     34|   expect(remote.startGuest).toHaveBeenCalledTimes(1);
+       |                             ^
+     35|   expect(remote.startGuest.mock.calls[0]![0]).toMatch(/^[0-9a-f-]{36}$…
+     36|   expect(remote.start).not.toHaveBeenCalled(); expect(remote.submit).n…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  tests/unit/ranking.test.ts > queues distinct guest plays while an earlier count is awaiting acknowledgement
+AssertionError: expected "vi.fn()" to be called 1 times, but got 0 times
+ ❯ tests/unit/ranking.test.ts:45:29
+     43|   const controller = createRankingController(local, remote);
+     44|   expect(await controller.start('')).toBeNull(); expect(await controll…
+     45|   expect(remote.startGuest).toHaveBeenCalledTimes(1);
+       |                             ^
+     46|   release(); await controller.retry();
+     47|   expect(remote.startGuest).toHaveBeenCalledTimes(2);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  tests/unit/ranking.test.ts > retries an acknowledged guest with the same ID after a lost response and reload
+TypeError: Cannot read properties of undefined (reading '0')
+ ❯ tests/unit/ranking.test.ts:58:51
+     56|   const controller = createRankingController(local, remote);
+     57|   await controller.start(''); await Promise.resolve(); await Promise.r…
+     58|   const original = remote.startGuest.mock.calls[0]![0];
+       |                                                   ^
+     59|   const reloaded = createRankingController(local, remote); await reloa…
+     60|   expect(remote.startGuest.mock.calls.map(args => args[0])).toEqual([o…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  tests/unit/ranking.test.ts > continues later guest counts after one permanently rejected count
+TypeError: reject is not a function
+ ❯ tests/unit/ranking.test.ts:79:3
+     77|   const controller = createRankingController(storage(), remote);
+     78|   await controller.start(''); await controller.start('');
+     79|   reject(new RankingError(false, 'invalid')); await controller.retry();
+       |   ^
+     80|   expect(remote.startGuest).toHaveBeenCalledTimes(2);
+     81|   await controller.retry(); expect(remote.startGuest).toHaveBeenCalled…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  tests/unit/ranking.test.ts > sends guest count-only RPC fields and validates its acknowledgement
+TypeError: client.startGuest is not a function
+ ❯ tests/unit/ranking.test.ts:90:16
+     88|     return response({ accepted: true, start_id: startId, play_id: play…
+     89|   });
+     90|   await client.startGuest(startId);
+       |                ^
+     91|   expect(calls).toEqual([{ p_start_id: startId, p_game_slug: 'takkeu',…
+     92|   const wrong = createRankingClient(async () => response({ accepted: t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed | 15 passed (20)
+   Start at  09:52:54
+   Duration  230ms (tests 47%, transform 38%, import 12%, worker 3%)
+

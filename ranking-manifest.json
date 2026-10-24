@@ -16,7 +16,7 @@
     "max_length": 20,
     "storage_key": "chameleonjp_takkeu_player_name"
   },
-  "play_count": { "count_at": "start", "rpc": "start_game_play_v1", "idempotency": true },
+  "play_count": { "count_at": "start", "rpc": "start_game_play_v1", "guest_rpc": "start_takkeu_guest_play_v1", "includes_guests": true, "guest_scores": false, "idempotency": true },
   "submission": { "rpc": "submit_score_idempotent_v1", "automatic": true, "idempotency": true, "timeout_ms": 8000 },
   "ranking_entries": [{
     "mode_id": "rally",

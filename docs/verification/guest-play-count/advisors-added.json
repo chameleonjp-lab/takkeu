@@ -1,0 +1,42 @@
+[
+  {
+    "name": "rls_enabled_no_policy",
+    "level": "INFO",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy",
+    "detail": "Table \\`private.takkeu_guest_plays_v1\\` has RLS enabled, but no policies exist",
+    "metadata": {
+      "name": "takkeu_guest_plays_v1",
+      "type": "table",
+      "schema": "private"
+    },
+    "observed_at": "2026-10-24T09:58:09.272Z"
+  },
+  {
+    "name": "anon_security_definer_function_executable",
+    "level": "WARN",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0028_anon_security_definer_function_executable",
+    "detail": "Function `public.start_takkeu_guest_play_v1(p_start_id uuid, p_game_slug text, p_client_version text)` can be executed by the `anon` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/start_takkeu_guest_play_v1`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+    "metadata": {
+      "name": "start_takkeu_guest_play_v1",
+      "schema": "public",
+      "language": "plpgsql",
+      "arguments": "p_start_id uuid, p_game_slug text, p_client_version text",
+      "security_definer": true
+    },
+    "observed_at": "2026-10-24T09:58:09.272Z"
+  },
+  {
+    "name": "authenticated_security_definer_function_executable",
+    "level": "WARN",
+    "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable",
+    "detail": "Function `public.start_takkeu_guest_play_v1(p_start_id uuid, p_game_slug text, p_client_version text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/start_takkeu_guest_play_v1`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+    "metadata": {
+      "name": "start_takkeu_guest_play_v1",
+      "schema": "public",
+      "language": "plpgsql",
+      "arguments": "p_start_id uuid, p_game_slug text, p_client_version text",
+      "security_definer": true
+    },
+    "observed_at": "2026-10-24T09:58:09.272Z"
+  }
+]

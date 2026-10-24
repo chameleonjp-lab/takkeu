@@ -25,7 +25,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
             <h1>タッケウ<span class="title-dot" aria-hidden="true">.</span></h1>
             <p class="hero-lead">ワンバウンドをとらえて、<br>ラリーをつなぐ。</p>
             <p class="hero-description">タップした位置にラケットを置き、ドラッグで球に合わせる。<br>自分の台で一度弾んだ球に触れれば、打ち返せます。</p>
-            <div class="player-field"><label for="player-name">ランキングの名前 <span>任意</span></label><input id="player-name" data-player-name type="text" maxlength="40" autocomplete="nickname" placeholder="名前なしでも遊べます" aria-describedby="name-note"><p id="name-note" data-name-note>20文字以内。入力すると名前と記録が公開され、カメレオンの実験場のランキングに参加します。同じ名前の記録は合算されます。</p></div>
+            <div class="player-field"><label for="player-name">ランキングの名前 <span>任意</span></label><input id="player-name" data-player-name type="text" maxlength="40" autocomplete="nickname" placeholder="名前なしでも遊べます" aria-describedby="name-note"><p id="name-note" data-name-note>20文字以内。入力すると名前と記録が公開され、カメレオンの実験場のランキングに参加します。同じ名前の記録は合算されます。名前なしのプレイも回数だけ記録します。</p></div>
             <button type="button" class="button primary start-button" data-action="start">はじめる <span aria-hidden="true">↗</span></button>
             <p class="start-note">2本指で短くタップ、またはEscキーで一時停止</p>
           </div>
@@ -135,7 +135,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       for (const button of root.querySelectorAll<HTMLButtonElement>('[data-action="start"], [data-action="retry"]')) { button.disabled = starting; button.setAttribute('aria-busy', String(starting)); }
       get<HTMLInputElement>('[data-player-name]').disabled = starting;
     },
-    setRankingParticipation(named: boolean) { setText('[data-ranking-participation]', named ? 'このプレイはランキングに参加しています。' : '名前なしのプレイです。ランキングへの記録は行いません。'); },
+    setRankingParticipation(named: boolean) { setText('[data-ranking-participation]', named ? 'このプレイはランキングに参加しています。' : '名前なしのプレイです。プレイ回数のみ記録し、ラリー記録は送信しません。'); },
     setRankingState(state: RankingState) {
       const messages = { idle: '', submitting: 'ランキングに記録しています。', submitted: 'ランキングに記録しました。', retryable_failed: '記録を送信できませんでした。通信を確認して再送できます。', permanent_failed: '記録を登録できませんでした。ゲームとシェアは引き続き利用できます。' };
       get('[data-ranking-notice]').hidden = state.status === 'idle';

@@ -1,0 +1,27 @@
+[WebServer] (node:16524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 14 tests using 1 worker
+
+(node:16548) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/ranking.spec.ts:35:1 › 名前なしで遊べて結果には上位30名と正式URLのXシェアが表示される (1.5s)
+  ✓   2 [chromium] › tests/browser/ranking.spec.ts:58:1 › 匿名開始の応答喪失後もすぐ遊べてonline復帰時は同じIDで再送する (1.1s)
+  ✓   3 [chromium] › tests/browser/ranking.spec.ts:73:1 › 通信不能で始めた匿名2回の記録を再読込後も保ち復旧時に送る (1.8s)
+  ✓   4 [chromium] › tests/browser/ranking.spec.ts:99:1 › online復帰が古い通信の失敗より先でも送信待ちを再開する (1.8s)
+  ✓   5 [chromium] › tests/browser/ranking.spec.ts:113:1 › 名前ありは開始時に一度記録し通常終了を自動送信する (2.0s)
+  ✓   6 [chromium] › tests/browser/ranking.spec.ts:127:1 › 送信失敗後も結果と共有を保ち同じIDで再送する (2.1s)
+  ✓   7 [chromium] › tests/browser/ranking.spec.ts:141:1 › 通信停止中も名前なしのプレイと再プレイが使えランキングは再取得できる (2.2s)
+(node:17135) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   8 [webkit] › tests/browser/ranking.spec.ts:35:1 › 名前なしで遊べて結果には上位30名と正式URLのXシェアが表示される (2.2s)
+  ✓   9 [webkit] › tests/browser/ranking.spec.ts:58:1 › 匿名開始の応答喪失後もすぐ遊べてonline復帰時は同じIDで再送する (1.7s)
+  ✓  10 [webkit] › tests/browser/ranking.spec.ts:73:1 › 通信不能で始めた匿名2回の記録を再読込後も保ち復旧時に送る (2.1s)
+  ✓  11 [webkit] › tests/browser/ranking.spec.ts:99:1 › online復帰が古い通信の失敗より先でも送信待ちを再開する (1.5s)
+  ✓  12 [webkit] › tests/browser/ranking.spec.ts:113:1 › 名前ありは開始時に一度記録し通常終了を自動送信する (1.6s)
+  ✓  13 [webkit] › tests/browser/ranking.spec.ts:127:1 › 送信失敗後も結果と共有を保ち同じIDで再送する (1.8s)
+  ✓  14 [webkit] › tests/browser/ranking.spec.ts:141:1 › 通信停止中も名前なしのプレイと再プレイが使えランキングは再取得できる (1.7s)
+
+  14 passed (27.1s)

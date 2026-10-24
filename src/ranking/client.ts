@@ -39,6 +39,12 @@ export function createRankingClient(fetchImpl: typeof fetch = (...args) => globa
   }
   const identity = (play: Play) => ({ p_display_name: play.displayName, p_game_slug: config.gameSlug, p_client_version: config.clientVersion });
   return {
+    async startGuest(startId: string): Promise<void> {
+      requireResponse(validUuid(startId));
+      const data = record(await rpc(config.guestStartRpc, { p_start_id: startId, p_game_slug: config.gameSlug, p_client_version: config.clientVersion }));
+      requireResponse(data.accepted === true && data.start_id === startId && validUuid(data.play_id)
+        && data.game_slug === config.gameSlug && data.client_version === config.clientVersion);
+    },
     async start(startId: string, displayName: string): Promise<Play> {
       requireResponse(validUuid(startId) && validName(displayName));
       const data = record(await rpc(config.startRpc, { p_start_id: startId, p_display_name: displayName, p_game_slug: config.gameSlug, p_client_version: config.clientVersion }));

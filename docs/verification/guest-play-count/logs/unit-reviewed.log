@@ -1,0 +1,20 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit
+
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+
+ Test Files  41 passed (41)
+      Tests  366 passed (366)
+   Start at  10:10:00
+   Duration  8.74s (tests 54%, environment 32%, import 9%, transform 3%, worker 1%)
+
+    Isolate  41 workers spawned · ~300ms startup each (spawn + environment, per file)
+             at least ~3.80s faster with isolate: false — reuses workers across files instead of one per file
+

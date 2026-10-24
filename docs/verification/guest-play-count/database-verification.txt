@@ -1,0 +1,6 @@
+Project: chameleonJP-Lab / mlpnjgezrnhdxsxolyzj
+Migration: 20261024095634_takkeu_guest_play_count
+Before migration: ASSERT failed: guest RPC missing
+After migration: tests/sql/guest-play-count.sql succeeded and ROLLBACK completed.
+Verified: guest start +1, duplicate +0, anon grant, no player/score/named-session row, other game unchanged.
+No test rows retained.

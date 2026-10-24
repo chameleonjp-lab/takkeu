@@ -35,10 +35,11 @@ const session: GameSession = {
 // Only this test entrypoint can replace the session. It is never a Vite build input.
 const app = createApp(document.querySelector<HTMLElement>('#app')!, {
   createSession: () => session,
-  storage: { getItem: () => null, setItem() {} },
+  storage: new URLSearchParams(location.search).has('ranking') ? window.localStorage : { getItem: () => null, setItem() {} },
   // Ordinary gameplay tests use a deterministic empty leaderboard. Ranking tests
   // explicitly opt into the real REST client and intercept its network boundary.
   rankingApi: new URLSearchParams(location.search).has('ranking') ? createRankingClient() : {
+    startGuest: async () => {},
     start: async () => { throw new Error('Named ranking requires the ranking fixture option'); },
     finish: async () => {}, submit: async () => {}, top: async () => [],
   },
