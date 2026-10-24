@@ -1,0 +1,41 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/remaining-ball-speed.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-speed500
+
+ ❯ tests/unit/remaining-ball-speed.test.ts (141 tests | 6 failed) 160ms
+   ❯ 相手の打球時に固定する倍率 (48)
+     × 重なる3球の予定を調停し予告と飛行中の予約を守る（499） 5ms
+     × 重なる3球の予定を調停し予告と飛行中の予約を守る（500） 1ms
+     × 重なる3球の予定を調停し予告と飛行中の予約を守る（501） 1ms
+     × 重なる3球の予定を調停し予告と飛行中の予約を守る（539） 1ms
+     × 重なる3球の予定を調停し予告と飛行中の予約を守る（540） 1ms
+     × 重なる3球の予定を調停し予告と飛行中の予約を守る（555） 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 重なる3球の予定を調停し予告と飛行中の予約を守る（499）
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 重なる3球の予定を調停し予告と飛行中の予約を守る（500）
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 重なる3球の予定を調停し予告と飛行中の予約を守る（501）
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 重なる3球の予定を調停し予告と飛行中の予約を守る（539）
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 重なる3球の予定を調停し予告と飛行中の予約を守る（540）
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 重なる3球の予定を調停し予告と飛行中の予約を守る（555）
+AssertionError: expected 0 to be greater than or equal to 0.1199999999
+ ❯ tests/unit/remaining-ball-speed.test.ts:272:96
+    270|     expect(hits).toHaveLength(3);
+    271|     const plans = [...committed.values()].sort((a, b) => a.arriveAt - …
+    272|     for (let i = 1; i < plans.length; i++) expect(plans[i]!.arriveAt -…
+       |                                                                                                ^
+    273|   });
+    274|   it.each([[100, 101], [499, 500], [500, 501], [539, 540], [554, 555],…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  6 failed | 135 passed (141)
+   Start at  17:00:36
+   Duration  440ms (tests 57%, transform 30%, import 12%, worker 1%)
+
