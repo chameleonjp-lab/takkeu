@@ -25,7 +25,7 @@ describe('450以降の相手の返球', () => {
     for (const committed of [8.001, 11.999]) expect(chooseReturnKind(450, 10, [committed], 0)).toBe('smash');
     expect(chooseReturnKind(450, 10, [8, 12], 0)).toBe('smash');
   });
-  it('4球全てスマッシュでも到着前後の移動余裕と予告を守る', () => {
+  it('4球全てスマッシュでも各球が同時に返り予告を守る', () => {
     const reserved: ReturnPlan[] = [], history: number[] = [];
     for (let id = 1; id <= 4; id++) {
       const plan = planOpponentReturn({ ...request(id), preferredTarget: { x: id % 2 ? -1.05 : 1.05, y: id % 2 ? 0.15 : 0.85 } }, reserved, history, DEFAULT_CONFIG);
@@ -34,16 +34,13 @@ describe('450以降の相手の返球', () => {
     expect(history.length).toBeGreaterThan(0);
     expect(reserved.every(p => p.smash)).toBe(true);
     const sorted = reserved.sort((a, b) => a.arriveAt - b.arriveAt);
-    for (let i = 1; i < sorted.length; i++) {
-      const a = sorted[i - 1]!, b = sorted[i]!;
-      expect(b.arriveAt - a.arriveAt + 1e-10).toBeGreaterThanOrEqual(0.12 + Math.hypot(a.target.x - b.target.x, a.target.y - b.target.y) / 6);
-    }
+    expect(new Set(sorted.map(p => p.departAt)).size).toBe(1);
     for (const plan of sorted.filter(p => p.smash)) {
       expect(plan.departAt - plan.warningAt!).toBeCloseTo(0.4, 10);
       expect(plan.arriveAt - plan.netCrossAt).toBeGreaterThanOrEqual(0.2 - 1e-10);
     }
   });
-  it('配球で打球を遅らせてもスマッシュを維持し、既存予約を変更しない', () => {
+  it('他球の予約があってもスマッシュを維持し、既存予約を変更しない', () => {
     const base = planOpponentReturn(request(2, 0), [], [], DEFAULT_CONFIG);
     const fixed = [1.4, 1.7, 4].map((arriveAt, i) => ({ ...base, ballId: i + 2, arriveAt, departAt: arriveAt - 1, target: { x: 1.05, y: 0.85 }, smash: i === 2 }));
     const plan = planOpponentReturn(request(1, 0), fixed, [3], DEFAULT_CONFIG);

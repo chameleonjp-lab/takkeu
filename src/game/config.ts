@@ -16,7 +16,7 @@ export const INITIAL_PADDLE: PaddlePoint = Object.freeze({ x: 0, y: 0.5 });
 export const TRAJECTORY = Object.freeze({ bounceFraction: 0.72, flightArcHeight: 0.35, bounceArcHeight: 0.10 });
 export const DIFFICULTY = Object.freeze({
   scoreInterval: 1, speedGain: 1.6, speedDecay: 90,
-  temporaryGlowSeconds: 5, arrivalGap: 0.12, addedBallDelay: 1,
+  temporaryGlowSeconds: 5, addedBallDelay: 1,
   smashProbability: 1, smashSpeed: 1.25, lateSmashSpeed: 1.60, smashMinimumVisible: 0.20,
   smashSeparation: 2, smashWarning: 0.40,
 });

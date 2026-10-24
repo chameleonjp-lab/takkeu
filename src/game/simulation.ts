@@ -4,6 +4,7 @@ import { flightDuration, remainingBallMultiplier, speedMultiplier } from './diff
 import { refreshFlightSpeeds } from './flightSpeed';
 import { chooseOpponentTarget, choosePlayerTarget, randomUnit } from './targets';
 import { advanceProgression } from './progression';
+import { MAX_BALLS } from './milestones';
 import { scheduleReturn } from './scheduler';
 import { bounceTime, deflectBounce, sampleReturn } from './trajectory';
 import { planOpponentReturn } from './opponent';
@@ -14,13 +15,13 @@ export type SimulationBall = {
   warningEmittedAt?: number; bounceEmitted?: boolean;
 };
 export type SimulationState = {
-  runId: string; nextBallId: number; randomState: number; lastTargetBand: number; eventNumber: number; phase: GamePhase; pauseReason: PauseReason | null;
+  runId: string; nextBallId: number; randomState: number; eventNumber: number; phase: GamePhase; pauseReason: PauseReason | null;
   committedSmashDepartures: number[]; score: number; simTime: number; paddle: PaddlePoint; opponentPaddle: PaddlePoint; balls: SimulationBall[]; progression: ProgressionState;
 };
 let nextRunId = 0;
 export function createSimulationState(seed: number): SimulationState {
   return {
-    runId: `run-${++nextRunId}`, nextBallId: 2, randomState: seed >>> 0 || 1, lastTargetBand: 1, eventNumber: 0,
+    runId: `run-${++nextRunId}`, nextBallId: 2, randomState: seed >>> 0 || 1, eventNumber: 0,
     phase: 'ready', pauseReason: null, committedSmashDepartures: [], score: 0, simTime: 0, paddle: { ...INITIAL_PADDLE }, balls: [],
     opponentPaddle: { ...INITIAL_PADDLE }, progression: { appliedMilestones: [], ballGlowUntil: null, awardedBallCount: 0 },
   };
@@ -119,7 +120,8 @@ function advanceSegment(state: SimulationState, config: GameConfig, dt: number, 
       const update = advanceProgression(state.progression, state.score - 1, state.score, time);
       state.progression = update.state;
       for (const milestone of update.crossed) emit('milestone', time, undefined, milestone);
-      for (let added = 0; added < update.addedBalls; added++) {
+      const slots = Math.max(0, MAX_BALLS - state.balls.filter(b => b.phase !== 'lost').length);
+      for (let added = 0; added < Math.min(update.addedBalls, slots); added++) {
         const id = state.balls.reduce((next, ball) => Math.max(next, ball.id + 1), state.nextBallId);
         state.nextBallId = id + 1;
         const from = { ...chooseOpponentTarget(state, config), z: -config.paddleZ };

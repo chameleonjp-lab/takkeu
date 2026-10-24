@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { advanceProgression } from '../../src/game/progression';
 import { speedMultiplier } from '../../src/game/difficulty';
-import { ballCountAtScore, ballRewardScore } from '../../src/game/milestones';
+import { ballCountAtScore, ballRewardScore, earnedBallCountAtScore, MAX_BALLS } from '../../src/game/milestones';
 
 const empty = () => ({ appliedMilestones: [] as number[], ballGlowUntil: null, awardedBallCount: 0 });
 
@@ -21,12 +21,10 @@ describe('累計の進行', () => {
     expect(thirty.state.ballGlowUntil).toBeNull();
     expect(thirty.state.appliedMilestones).toEqual([10, 30]);
     const all = advanceProgression(empty(), 0, 451, 20);
-    expect(all.crossed).toEqual([...new Set([5, 10, 20, 30, 40, 70, 100, 130, 150, 160, 190, 210, 240, 270,
+    expect(all.crossed).toEqual([...new Set([5, 10, 20, 30, 40, 70, 100, 130, 150, 160, 190, 210, 240, 270, 300, 330, 360, 380, 390, 410, 420, 450,
       ...Array.from({ length: 23 }, (_, i) => 50 + i * 4),
-      ...Array.from({ length: 27 }, (_, i) => 140 + i * 3),
-      ...Array.from({ length: 30 }, (_, i) => 220 + i * 2),
-      ...Array.from({ length: 172 }, (_, i) => 280 + i)])].sort((a,b) => a-b));
-    expect(all.addedBalls).toBe(461);
+      ...Array.from({ length: 104 }, (_, i) => 141 + i * 3)])].sort((a,b) => a-b));
+    expect(all.addedBalls).toBe(132);
   });
   it('毎ラリー加速し、初期調整値と後半の有限上限を保つ', () => {
     expect(speedMultiplier(0)).toBe(1);
@@ -44,30 +42,48 @@ describe('累計の進行', () => {
 
 it('3ラリーごとの増球と表面解放を両方一度だけ適用する', () => {
   const first = advanceProgression(empty(), 149, 171, 12);
-  expect(first.addedBalls).toBe(7);
-  expect(first.crossed).toEqual([150, 152, 155, 158, 160, 161, 164, 167, 170]);
+  expect(first.addedBalls).toBe(8);
+  expect(first.crossed).toEqual([150, 153, 156, 159, 160, 162, 165, 168, 171]);
   expect(first.state.appliedMilestones).toEqual([150, 160]);
   expect(first.state.awardedBallCount).toBe(39);
   expect(advanceProgression(first.state, 149, 171, 13).addedBalls).toBe(0);
   const later = advanceProgression(first.state, 171, 181, 14);
   expect(later.addedBalls).toBe(3);
-  expect(later.crossed).toEqual([173, 176, 179]);
+  expect(later.crossed).toEqual([174, 177, 180]);
   expect(later.state.appliedMilestones).toEqual([150, 160]);
 });
 
 it('新しい床と壁の節目も順序どおり処理する', () => {
   const all = advanceProgression(empty(), 0, 450, 12);
   expect(all.state.appliedMilestones).toEqual([10, 30, 40, 70, 100, 130, 150, 160, 190, 210, 240, 270, 300, 330, 360, 380, 390, 410, 420, 450]);
-  expect(all.state.awardedBallCount).toBe(458);
+  expect(all.state.awardedBallCount).toBe(132);
 });
 
 
 describe('最新指定の増球タイミング', () => {
-  it.each([[0, 1], [4, 1], [5, 2], [9, 2], [10, 3], [19, 3], [20, 4], [21, 4], [29, 4], [30, 5], [40, 6], [150, 33], [160, 36], [450, 459], [460, 489]])('%iラリーの無落球時は%i球', (score, count) => {
+  it.each([[0, 1], [4, 1], [5, 2], [9, 2], [10, 3], [19, 3], [20, 4], [21, 4], [29, 4], [30, 5], [40, 6], [138, 29], [139, 29], [140, 29], [141, 30], [143, 30], [144, 30], [150, 30], [160, 30], [450, 30], [460, 30], [10000, 30]])('%iラリーの無落球時は%i球', (score, count) => {
     expect(ballCountAtScore(score)).toBe(count);
+    expect(ballCountAtScore(score)).toBeLessThanOrEqual(MAX_BALLS);
+  });
+  it.each([[138, 29], [140, 29], [141, 30], [143, 30], [144, 31], [150, 33], [160, 36], [220, 56], [280, 76], [310, 86], [390, 113], [450, 133], [460, 136], [10000, 3316]])('%iラリーの累計獲得%i球は所持上限と独立して記録する', (score, count) => {
+    expect(earnedBallCountAtScore(score)).toBe(count);
   });
   it('初期報酬に続き段階表に沿って報酬スコアを逆引きする', () => {
-    expect([1, 2, 3, 4, 16, 46, 47].map(ballRewardScore)).toEqual([5, 10, 20, 30, 90, 191, 194]);
+    expect([1, 2, 3, 4, 16, 46, 47].map(ballRewardScore)).toEqual([5, 10, 20, 30, 90, 192, 195]);
+  });
+  it('30球を超えた報酬も各獲得スコアへ逆引きできる', () => {
+    expect([28, 29, 30, 55, 85, 112, 139, 167, 500].map(ballRewardScore)).toEqual([138, 141, 144, 219, 309, 390, 471, 555, 1554]);
+    for (let index = 1; index <= 500; index++) {
+      const score = ballRewardScore(index);
+      expect(earnedBallCountAtScore(score - 1)).toBe(index);
+      expect(earnedBallCountAtScore(score)).toBe(index + 1);
+    }
+  });
+  it('138からの切り替えを含む全報酬の間隔を3ラリー以上に保つ', () => {
+    for (let index = 2; index <= 5000; index++) {
+      expect(ballRewardScore(index) - ballRewardScore(index - 1)).toBeGreaterThanOrEqual(3);
+    }
+    expect([28, 29, 30, 31].map(ballRewardScore)).toEqual([138, 141, 144, 147]);
   });
   it('0→21でも5/10/20の3球だけを一度ずつ追加し、M10の発光を同時に開始する', () => {
     const first = advanceProgression(empty(), 0, 21, 12);

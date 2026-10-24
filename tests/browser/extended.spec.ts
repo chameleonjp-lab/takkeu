@@ -12,7 +12,7 @@ test('460〜555の追加段階を表示し、相手側の継ぎ目とランダ�
   for(const score of scores){
     await page.evaluate(score=>window.stage2.show(score),score);
     const state=await page.evaluate(()=>({s:window.stage2.snapshot(),p:window.stage2.presentation()}));
-    expect(state.s.balls.length).toBe(279 + (score - 390) * 3);
+    expect(state.s.balls.length).toBe(30);
     expect(state.p.parts.structure.rainbow).toBe(score>=460);
     expect(state.p.opponentField).toBe(score>=490);expect(state.p.opponentRandom).toBe(score>=500);expect(state.p.ownRandom).toBe(score>=510);
     expect(state.p.balls[2]!.visible).toBe(score>=480);

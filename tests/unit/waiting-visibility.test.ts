@@ -50,16 +50,20 @@ it.each([70, 190, 240, 490])('相手到達前→到達→待機→打球→自�
   s.state.balls = [{ ...out, phase: 'outgoing', position: sampleReturn(out.plan, out.from, 20) },
     incoming(2, 20.02 + duration, { x: 0.5, y: 0.6 })];
   expect(isBallVisible(s.snapshot().balls[0]!, s.snapshot())).toBe(score >= 190);
-  while (s.state.balls[0]!.phase === 'outgoing') s.step(missPaddle);
-  expect(s.state.balls[0]!.phase).toBe('waiting-return');
-  expect(isBallVisible(s.snapshot().balls[0]!, s.snapshot())).toBe(false);
+  let departed = false;
+  while (s.state.balls[0]!.phase === 'outgoing') {
+    const result = s.step(missPaddle);
+    departed ||= result.events.some(e => e.kind === 'opponent-hit' && e.ballId === 1);
+  }
+  expect(s.state.balls[0]!.phase).toBe(score >= 450 ? 'waiting-return' : 'incoming');
+  expect(isBallVisible(s.snapshot().balls[0]!, s.snapshot())).toBe(score >= 190 && score < 450);
   const target = s.state.balls[0]!, waiting = structuredClone(target.position), departAt = target.plan.departAt;
   while (s.state.simTime + DEFAULT_CONFIG.fixedDt < departAt - 1e-10) {
     s.step(missPaddle); expect(target.position).toEqual(waiting);
     expect(isBallVisible(s.snapshot().balls[0]!, s.snapshot())).toBe(false);
     expect(s.state.balls).toHaveLength(2);
   }
-  let departed = false, crossed = false;
+  let crossed = false;
   for (let i = 0; i < 500; i++) {
     const result = s.step(missPaddle);
     if (result.events.some(e => e.kind === 'opponent-hit' && e.ballId === 1)) {

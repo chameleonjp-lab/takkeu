@@ -37,11 +37,13 @@ test('iPhone縦画面で待機球の本体・影・発光を隠し解放コー�
   for (const score of [190, 240, 490]) {
     await page.evaluate(score => window.remaining.begin(score), score);
     await page.screenshot({ path: info.outputPath(`iphone-${score}-outgoing.png`) });
-    await page.evaluate(() => window.remaining.until('waiting'));
-    const waiting = await page.evaluate(() => ({ s: window.remaining.snapshot(), p: window.remaining.presentation() }));
-    expect(waiting.s.balls[0]!.phase).toBe('waiting-return'); expect(waiting.p.balls[1]!.visible).toBe(false);
-    expect(waiting.s.balls).toHaveLength(2);
-    await page.screenshot({ path: info.outputPath(`iphone-${score}-arrived-hidden.png`) });
+    if (score >= 450) {
+      await page.evaluate(() => window.remaining.until('waiting'));
+      const waiting = await page.evaluate(() => ({ s: window.remaining.snapshot(), p: window.remaining.presentation() }));
+      expect(waiting.s.balls[0]!.phase).toBe('waiting-return'); expect(waiting.p.balls[1]!.visible).toBe(false);
+      expect(waiting.s.balls).toHaveLength(2);
+      await page.screenshot({ path: info.outputPath(`iphone-${score}-arrived-hidden.png`) });
+    }
     await page.evaluate(() => window.remaining.until('departed'));
     expect(await page.evaluate(() => window.remaining.snapshot().balls[0]!.phase)).toBe('incoming');
     await page.screenshot({ path: info.outputPath(`iphone-${score}-opponent-hit.png`) });
