@@ -10,17 +10,20 @@ export function createAudio(config: GameConfig, contextFactory: () => AudioConte
   let seenTime = -Infinity;
   const seen = new Set<string>(), voices = new Map<Voice, boolean>(), retiring = new Set<Voice>();
   const limit = Number.isFinite(config.audioVoiceLimit) ? Math.max(1, Math.min(8, Math.floor(config.audioVoiceLimit))) : 8;
-  // .12 voice output + low-pass overshoot margin (.16). Bound active + fade
-  // tails by a linear sum; compression is additional shaping, never the bound.
-  const headroom = Math.min(1, .8 / (2 * limit * .16));
+  // Twice the former gain with up to `limit` voices. As fade tails overlap,
+  // lower the gain to keep the sum below .8, including filter overshoot (.16).
+  // Compression is additional shaping, never the peak bound.
   const quietly = (work: () => void) => { try { work(); } catch { /* Closing/partial graph. */ } };
   const clearVoices = () => {
     for (const voice of [...voices.keys(), ...retiring]) voice.disconnect();
     voices.clear(); retiring.clear();
   };
   const clearGraph = () => { for (const node of graph) quietly(() => node.disconnect()); graph.clear(); output = null; bus = null; };
-  const setGain = () => { if (output) output.gain.value = muted ? 0 : volume * headroom; };
-  const ended = (voice: Voice) => { voices.delete(voice); retiring.delete(voice); };
+  const setGain = () => {
+    const headroom = Math.min(1, .8 / (Math.max(limit, voices.size + retiring.size) * .16));
+    if (output) output.gain.value = muted ? 0 : volume * headroom;
+  };
+  const ended = (voice: Voice) => { voices.delete(voice); retiring.delete(voice); setGain(); };
   const buildGraph = (ctx: AudioContext) => {
     const own = <T extends AudioNode>(node: T): T => { graph.add(node); return node; };
     try {
@@ -81,6 +84,7 @@ export function createAudio(config: GameConfig, contextFactory: () => AudioConte
             : event.kind === 'smash-warning' ? playSmashWarning : playOpponentHit;
           const voice = play(context, bus, ended, options);
           voices.set(voice, event.kind === 'smash-warning');
+          setGain();
         } catch { enabled = false; clearVoices(); onUnavailable(); }
       }
     },

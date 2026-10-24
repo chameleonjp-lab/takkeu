@@ -17,13 +17,12 @@ function glowing(snapshot?: VisualSnapshot): boolean {
   return !!snapshot && (snapshot.progression.appliedMilestones.includes(480) || snapshot.progression.appliedMilestones.includes(30) || (snapshot.progression.ballGlowUntil !== null && snapshot.simTime < snapshot.progression.ballGlowUntil));
 }
 export function isBallVisible(ball: BallSnapshot, snapshot?: VisualSnapshot): boolean {
+  if (ball.phase === 'lost') return false;
+  // From 100 onward every live ball remains visible, including opponent-side
+  // queues. Court illumination and later wall effects do not hide it again.
+  if (snapshot?.progression.appliedMilestones.includes(100)) return true;
   if (ball.phase !== 'incoming' && ball.phase !== 'outgoing') return false;
-  if (ball.position.z >= 0) return true;
-  if (snapshot?.progression.appliedMilestones.includes(420) && !snapshot.progression.appliedMilestones.includes(480)) return false;
-  const reached = (n: number) => !!snapshot?.progression.appliedMilestones.includes(n);
-  // Glowing edges or a glowing ball cannot reveal an unreleased court half.
-  const courtVisible = reached(490) || reached(ball.position.x >= 0 ? 190 : 240);
-  return courtVisible && glowing(snapshot);
+  return ball.position.z >= 0;
 }
 export function resolvePresentation(snapshot: GameSnapshot): PresentationState {
   const reached = (n: number) => snapshot.progression.appliedMilestones.includes(n);

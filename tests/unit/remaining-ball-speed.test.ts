@@ -14,24 +14,24 @@ import { measureFlight, missPaddle, remainingScenario, waitingBall } from '../he
 
 describe('残球数による実際の飛行時間', () => {
   for (const score of [0, 99, 100, 101, 450, 499, 500, 501, 539, 540, 555]) {
-    it.each([[1, 1.1], [2, 1], [3, 1], [4, 1], [5, 1], [8, 1]])(`${score}ラリー・%i球`, (count, multiplier) => {
+    it.each([[1, 1.2], [2, 1], [3, 1], [4, 1], [5, 1], [8, 1]])(`${score}ラリー・%i球`, (count, multiplier) => {
       const baseline = measureFlight(score, 5), flight = measureFlight(score, count);
-      const ratio = score < 500 ? 1 : multiplier;
+      const ratio = score < 100 ? 1 : multiplier;
       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8);
       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
       expect(flight.departed).toBeLessThan(flight.net); expect(flight.net).toBeLessThan(flight.arrived);
     });
   }
-  it('基本飛行時間の下限を確定してから独立した1.1倍を適用する', () => {
+  it('基本飛行時間の下限を確定してから独立した1.2倍を適用する', () => {
     const config = { ...DEFAULT_CONFIG, minimumVisibleSeconds: 0.7 };
     const normal = scheduleReturn({ ballId: 1, score: 501, smash: false, speedMultiplier: speedMultiplier(501),
-      earliestDepartAt: 20, preferredTarget: INITIAL_PADDLE, remainingBallMultiplier: 1.1 }, [], config);
+      earliestDepartAt: 20, preferredTarget: INITIAL_PADDLE, remainingBallMultiplier: 1.2 }, [], config);
     expect(flightDuration(config, 501, false)).toBeCloseTo(1.4, 8);
-    expect(normal.arriveAt - normal.departAt).toBeCloseTo(1.2727272727272727, 8);
-    expect(measureFlight(540, 5).duration / measureFlight(540, 1).duration).toBeCloseTo(1.1, 8);
+    expect(normal.arriveAt - normal.departAt).toBeCloseTo(1.1666666666666667, 8);
+    expect(measureFlight(540, 5).duration / measureFlight(540, 1).duration).toBeCloseTo(1.2, 8);
     expect(measureFlight(540, 1).duration).toBeLessThan(measureFlight(539, 1).duration);
   });
-  it.each([0, 1, 98, 99, 100, 101, 450, 499])('%iラリーでは残球数による加速をしない', score => {
+  it.each([0, 1, 98, 99])('%iラリーでは残球数による加速をしない', score => {
     for (const count of [1, 2, 3, 4, 5, 8]) expect(remainingBallMultiplier(score, count)).toBe(1);
   });
   it.each([NaN, Infinity, -Infinity, -1, 99.5, 100.5, 499.5, 500.5])('不正なラリー数%sでは安全な等倍へ戻す', score => {
@@ -50,7 +50,7 @@ describe('残球数による実際の飛行時間', () => {
 });
 
 describe('相手の打球時に固定する倍率', () => {
-  it.each([[5, 4, 1], [4, 3, 1], [2, 1, 1.1]])('予約後の%i→%i球を実打球時に%s倍として確定する', (before, after, multiplier) => {
+  it.each([[5, 4, 1], [4, 3, 1], [2, 1, 1.2]])('予約後の%i→%i球を実打球時に%s倍として確定する', (before, after, multiplier) => {
     const s = remainingScenario(501, before, 20.05);
     s.step(missPaddle);
     expect(s.state.balls[0]!.plan.remainingBallMultiplier).toBe(1);
@@ -81,7 +81,7 @@ describe('相手の打球時に固定する倍率', () => {
   it.each([499, 500, 501, 540, 555])('飛行中の1→2球の増球では確定倍率を維持する（%i）', score => {
     const s = remainingScenario(score, 1); s.step(missPaddle);
     const ball = s.state.balls[0]!, committed = structuredClone(ball.plan);
-    expect(committed.remainingBallMultiplier).toBe(score < 500 ? 1 : 1.1);
+    expect(committed.remainingBallMultiplier).toBe(score < 100 ? 1 : 1.2);
     s.state.balls.push(waitingBall(2, score, 1000)); s.step(missPaddle);
     expect(s.state.balls).toHaveLength(2); expect(ball.plan).toEqual(committed);
   });
@@ -103,12 +103,12 @@ describe('相手の打球時に固定する倍率', () => {
     const events: GameEvent[] = [];
     for (let tick = 0; tick < 120 && ball.phase !== 'incoming'; tick++) events.push(...s.step(missPaddle).events);
     expect(ball.phase).toBe('incoming'); expect(s.state.balls).toHaveLength(1);
-    expect(ball.plan.remainingBallMultiplier).toBe(1.1);
-    expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, score, score >= 450) / 1.1, 8);
+    expect(ball.plan.remainingBallMultiplier).toBe(1.2);
+    expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, score, score >= 450) / 1.2, 8);
     if (score >= 450) expect(events.find(e => e.kind === 'opponent-hit' && e.ballId === 1)!.time - ball.warningEmittedAt!)
       .toBeGreaterThanOrEqual(0.4 - 1e-10);
   });
-  it.each([[1, 2, 1], [2, 1, 1.1]])('同時刻の打球ID%i・失球ID%iは球ID順の生存数で%s倍となる', (departingId, lostId, multiplier) => {
+  it.each([[1, 2, 1], [2, 1, 1.2]])('同時刻の打球ID%i・失球ID%iは球ID順の生存数で%s倍となる', (departingId, lostId, multiplier) => {
     const s = remainingScenario(501, 0);
     s.state.balls = [waitingBall(departingId, 501),
       { ...incoming(lostId, 19, missPaddle), position: { x: 0.5, y: -5, z: 5 } }];
@@ -129,7 +129,7 @@ describe('相手の打球時に固定する倍率', () => {
     ]);
     expect(s.state.balls[0]!.plan.remainingBallMultiplier).toBe(1);
   });
-  it('同時刻の99→100・増球・失球でも追加加速せず生存3球で打球する', () => {
+  it('同時刻の99→100と失球では生存2球で等倍打球する', () => {
     const s = remainingScenario(99, 0);
     s.state.balls = [waitingBall(3, 99), incoming(1, 20),
       { ...incoming(2, 19, missPaddle), position: { x: 0.5, y: -5, z: 5 } }];
@@ -137,7 +137,7 @@ describe('相手の打球時に固定する倍率', () => {
     expect(result.events.map(e => [e.kind, e.ballId, e.time])).toEqual([
       ['player-hit', 1, 20], ['milestone', undefined, 20], ['ball-lost', 2, 20], ['opponent-hit', 3, 20],
     ]);
-    expect(s.state.score).toBe(100); expect(s.state.balls).toHaveLength(3);
+    expect(s.state.score).toBe(100); expect(s.state.balls).toHaveLength(2);
     expect(plan.remainingBallMultiplier).toBe(1);
     expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, 100, false), 8);
   });
@@ -145,13 +145,13 @@ describe('相手の打球時に固定する倍率', () => {
     const s = remainingScenario(99, 2, 20.004);
     s.state.balls.push(incoming(3, 20.002));
     const result = s.step();
-    expect(s.state.score).toBe(100); expect(s.state.balls).toHaveLength(4);
+    expect(s.state.score).toBe(100); expect(s.state.balls).toHaveLength(3);
     const plan = s.state.balls[0]!.plan;
     expect(result.events.some(e => e.kind === 'opponent-hit' && e.ballId === 1)).toBe(true);
     expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, 100, false), 8);
-    // Three alive including the new ball also stays neutral below 500.
+    // Two live balls remain neutral at the new 100 threshold.
     const t = remainingScenario(99, 1, 20.004); t.state.balls.push(incoming(2, 20.002)); t.step();
-    expect(t.state.balls).toHaveLength(3);
+    expect(t.state.balls).toHaveLength(2);
     const accelerated = t.state.balls[0]!.plan;
     expect(accelerated.arriveAt - accelerated.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, 100, false), 8);
   });
@@ -159,7 +159,7 @@ describe('相手の打球時に固定する倍率', () => {
     const s = remainingScenario(499, 1, 20.004);
     s.state.balls.push(incoming(2, 20.002));
     const result = s.step();
-    expect(s.state.score).toBe(500); expect(s.state.balls).toHaveLength(3);
+    expect(s.state.score).toBe(500); expect(s.state.balls).toHaveLength(5);
     expect(result.events.some(e => e.kind === 'opponent-hit' && e.ballId === 1)).toBe(true);
     expect(s.state.balls[0]!.plan.remainingBallMultiplier).toBe(1);
     expect(s.state.balls[0]!.plan.arriveAt - s.state.balls[0]!.plan.departAt)
@@ -187,7 +187,7 @@ describe('相手の打球時に固定する倍率', () => {
       score: 539, speedMultiplier: speedMultiplier(539), smash, earliestDepartAt: 20, preferredTarget: { x: 0.4, y: 0.6 } });
     const a = scheduleReturn(request(1, 1, false), [], DEFAULT_CONFIG);
     const b = scheduleReturn(request(2, 1, true), [a], DEFAULT_CONFIG);
-    const c = scheduleReturn(request(3, 1.1, true), [a, b], DEFAULT_CONFIG);
+    const c = scheduleReturn(request(3, 1.2, true), [a, b], DEFAULT_CONFIG);
     const at = Math.max(a.departAt, b.departAt, c.departAt) + 0.001;
     const next = [a, b, c].map(p => retimeFlight(p, at, 539, 540, DEFAULT_CONFIG)).sort((x, y) => x.arriveAt - y.arriveAt);
     for (let i = 1; i < next.length; i++) expect(next[i]!.arriveAt - next[i - 1]!.arriveAt).toBeGreaterThanOrEqual(0.12 - 1e-10);
@@ -219,14 +219,14 @@ describe('相手の打球時に固定する倍率', () => {
       };
     } else s.state.balls[1]!.phase = phase;
     const result = s.step(missPaddle), plan = s.state.balls[0]!.plan;
-    const multiplier = phase === 'lost' ? 1.1 : 1;
+    const multiplier = phase === 'lost' ? 1.2 : 1;
     expect(result.events.some(e => e.kind === 'opponent-hit' && e.ballId === 1)).toBe(true);
     expect(plan.remainingBallMultiplier).toBe(multiplier);
     expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, 500, true) / multiplier, 8);
     expect(s.state.balls).toHaveLength(phase === 'lost' ? 1 : 2);
     if (phase !== 'lost') expect(s.state.balls[1]!.phase).toBe(phase);
   });
-  it('打球直前の失球を反映し、その直後の失球では飛行中の時間を変更しない', () => {
+  it('打球後の失球では確定速度を変えず、次の相手打球は増球後の生存数で判定する', () => {
     const s = remainingScenario(500, 3, 20.02);
     s.state.balls[2] = { ...incoming(3, 19, missPaddle), position: { x: 0.5, y: -5, z: 5 } };
     s.step(missPaddle); expect(s.state.balls).toHaveLength(2);
@@ -240,8 +240,9 @@ describe('相手の打球時に固定する倍率', () => {
     for (let tick = 0; tick < 500; tick++) {
       const result = s.step(ball.phase === 'incoming' ? ball.plan.target : INITIAL_PADDLE);
       if (result.events.some(e => e.kind === 'opponent-hit' && e.ballId === 1)) {
-        expect(ball.plan.remainingBallMultiplier).toBe(1.1);
-        expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, s.state.score, true) / 1.1, 8);
+        expect(ball.plan.remainingBallMultiplier).toBe(1);
+        expect(s.state.balls.length).toBeGreaterThan(1);
+        expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, s.state.score, true), 8);
         return;
       }
     }
@@ -252,15 +253,15 @@ describe('相手の打球時に固定する倍率', () => {
     s.state.balls[1] = { ...incoming(2, 19, missPaddle), position: { x: 0.5, y: -5, z: 5 } };
     const result = s.step(missPaddle), plan = s.state.balls[0]!.plan;
     expect(result.events.findIndex(e => e.kind === 'ball-lost')).toBeLessThan(result.events.findIndex(e => e.kind === 'opponent-hit'));
-    expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, 501, true) / 1.1, 8);
+    expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, 501, true) / 1.2, 8);
   });
-  it('返球予定時点の3球から待機中に1球へ減れば1.1倍で出発する', () => {
+  it('返球予定時点の3球から待機中に1球へ減れば1.2倍で出発する', () => {
     const s = remainingScenario(500, 3, 20.1);
     s.step(missPaddle);
     s.state.balls[1]!.phase = 'lost'; s.state.balls[2]!.phase = 'lost';
     while (s.state.balls[0]!.phase !== 'incoming') s.step(missPaddle);
     const plan = s.state.balls[0]!.plan;
-    expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, 500, true) / 1.1, 8);
+    expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, 500, true) / 1.2, 8);
   });
   it.each([499, 500, 501, 539, 540, 555])('重なる3球の予定を調停し予告と飛行中の予約を守る（%i）', score => {
     const s = remainingScenario(score, 3);
@@ -304,12 +305,12 @@ describe('相手の打球時に固定する倍率', () => {
     const ball = s.state.balls[0]!, old = structuredClone(ball.plan), at = s.state.simTime;
     const point = sampleReturn(old, ball.from, at);
     s.state.score = after; refreshFlightSpeeds(s.state, before, at, DEFAULT_CONFIG);
-    expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, after, old.smash) / (before < 500 ? 1 : 1.1), 8);
+    expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, after, old.smash) / (before < 100 ? 1 : 1.2), 8);
     expect(ball.plan.bounceX).toBe(old.bounceX);
     const next = sampleReturn(ball.plan, ball.from, at);
     for (const axis of ['x', 'y', 'z'] as const) expect(next[axis]).toBeCloseTo(point[axis], 10);
     refreshFlightSpeeds(s.state, before, at, DEFAULT_CONFIG);
-    expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, after, old.smash) / (before < 500 ? 1 : 1.1), 8);
+    expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, after, old.smash) / (before < 100 ? 1 : 1.2), 8);
   });
   it.each([499, 500, 501, 539, 540, 555])('プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（%i）', score => {
     const s = remainingScenario(score, 1); s.step(missPaddle);
@@ -317,14 +318,13 @@ describe('相手の打球時に固定する倍率', () => {
     for (let i = 0; i < 500; i++) {
       const ball = s.state.balls[0]!;
       const result = s.step(ball.phase === 'incoming' ? ball.plan.target : INITIAL_PADDLE);
-      if (result.events.some(e => e.kind === 'player-hit')) {
+      if (result.events.some(e => e.kind === 'player-hit' && e.ballId === 1)) {
         const duration = ball.plan.arriveAt - ball.plan.departAt;
         expect(duration).toBeCloseTo(flightDuration(DEFAULT_CONFIG, s.state.score, false), 8);
         expect(ball.plan.remainingBallMultiplier ?? 1).toBe(1);
         if (score >= 555) expect(ball.plan.bounceX).toBeDefined();
-        // Crossing 540/556 already adds a queued ball through progression.
-        if (s.state.balls.length === 1) s.state.balls.push(waitingBall(2, s.state.score, 1000));
-        expect(s.state.balls).toHaveLength(2); hit = true;
+        // Every hit here adds three queued balls through progression.
+        expect(s.state.balls).toHaveLength(4); hit = true;
       } else if (hit && result.events.some(e => e.kind === 'opponent-hit' && e.ballId === 1)) {
         expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, s.state.score, score >= 450), 8);
         if (score >= 555) expect(ball.plan.bounceX).toBeDefined();
@@ -339,7 +339,7 @@ describe('相手の打球時に固定する倍率', () => {
     expect(stepSimulation(s.state, DEFAULT_CONFIG, DEFAULT_CONFIG.fixedDt, { target: missPaddle }).snapshot).toEqual(before);
     s.state.phase = 'running'; s.step(missPaddle);
     const ball = s.state.balls[0]!;
-    expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, 540, true) / 1.1, 8);
+    expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, 540, true) / 1.2, 8);
     const session = createSession(DEFAULT_CONFIG, 7); session.start(); session.pause('user'); session.resume(); session.reset(7); session.start();
     const plan = session.snapshot().scheduledReturns[0]!;
     expect(plan.arriveAt - plan.departAt).toBe(2); expect(plan.speedMultiplier).toBe(speedMultiplier(0));
@@ -358,8 +358,8 @@ describe('相手の打球時に固定する倍率', () => {
       }
     }
     expect(baseline.state.score).toBeGreaterThanOrEqual(502);
-    expect(baseline.state.balls).toHaveLength(2);
-    expect([...bonuses].sort()).toEqual([1, 1.1]);
+    expect(baseline.state.balls).toHaveLength(1 + 3 * (baseline.state.score - 500));
+    expect([...bonuses].sort()).toEqual([1, 1.2]);
     const comparable = (s: ReturnType<typeof remainingScenario>) => {
       const { runId: _, ...snapshot } = s.snapshot(); return snapshot;
     };

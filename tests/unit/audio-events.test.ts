@@ -5,6 +5,20 @@ import type { GameEvent, GameEventKind } from '../../src/game/types';
 import { fakeAudioContext } from '../helpers/audioContext';
 
 const event = (kind: GameEventKind, id: string, runId = 'run-1'): GameEvent => ({ id, runId, kind, time: 0, ballId: 1 });
+
+it('通常のSEを2倍の出力にし、同時音と減衰尾が増えてもピーク余裕と消音を保つ', async () => {
+  const { context, gains } = fakeAudioContext();
+  const audio = createAudio(DEFAULT_CONFIG, () => context); audio.reset('run-1'); await audio.unlock();
+  const output = gains[0]!;
+  const formerGain = .65 * .8 / (16 * .16);
+  audio.consume([event('player-hit', 'one')]);
+  expect(output.gain.value / formerGain).toBeCloseTo(2, 10);
+  audio.consume(Array.from({ length: 15 }, (_, i) => event('opponent-hit', `burst-${i}`)));
+  expect(output.gain.value * 16 * .16).toBeLessThanOrEqual(.8);
+  audio.setMuted(true); expect(output.gain.value).toBe(0);
+  audio.setMuted(false); audio.setVolume(0); expect(output.gain.value).toBe(0);
+  await audio.dispose();
+});
 // This legacy double intentionally lacks layered Web Audio nodes: fallback coverage.
 // Full-node path, bounds and fault injection live in layered-tones.test.ts.
 describe('接触イベントから自他の音を生成（保守的な単音fallback）', () => {

@@ -96,7 +96,10 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     const rect = screens.canvasWrap.getBoundingClientRect();
     const key = `${rect.left}:${rect.top}:${rect.width}:${rect.height}:${window.devicePixelRatio}:${preferences.quality}`;
     if (key === fitted) return;
-    view.resize(rect.width, rect.height); swipe.updateMapping(view.inputMapping());
+    view.resize(rect.width, rect.height);
+    // Benign mobile chrome changes keep the held pointer. Real interruptions
+    // pause/cancel before refitting, so stale contacts still cannot resume play.
+    swipe.updateMapping(view.inputMapping(), session.snapshot().phase === 'running');
     fitted = key;
     view.render(session.snapshot(), []);
   }

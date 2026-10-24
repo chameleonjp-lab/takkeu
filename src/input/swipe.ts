@@ -11,7 +11,7 @@ export type SwipeOptions = {
   beforeInput?(eventTimestamp: number): void;
   onPauseGesture?: (() => void) | undefined;
 };
-export interface SwipeController { updateMapping(mapping: InputMapping): void; cancel(): void; dispose(): void }
+export interface SwipeController { updateMapping(mapping: InputMapping, preserveContact?: boolean): void; cancel(): void; dispose(): void }
 type Contact = { id: number; type: string; x: number; y: number; downAt: number; releasedAt: number | null };
 type Owner = { contact: Contact; target: PaddlePoint };
 type Tap = { first: Contact; second: Contact | null };
@@ -133,7 +133,11 @@ export function createSwipeController(element: HTMLElement, options: SwipeOption
   const contextMenu = (event: Event): void => event.preventDefault();
   element.addEventListener('contextmenu', contextMenu);
   return {
-    updateMapping(next) { clear(); mapping = next; },
+    updateMapping(next, preserveContact = false) {
+      if (preserveContact) { tap = null; revision++; }
+      else clear();
+      mapping = next;
+    },
     cancel: clear,
     dispose() {
       clear();

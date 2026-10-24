@@ -95,7 +95,7 @@ test('縦横・44pxボタン・200%文字・ラベル・安全余白を確認', 
   await info.attach('menu-accessibility.yml', { body: await page.locator('main').ariaSnapshot(), contentType: 'text/yaml' });
 });
 
-test('450の47球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する', async ({ page }, info) => {
+test('450の459球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する', async ({ page }, info) => {
   // Same 30 simulated seconds, rendering resolution and assertions. See the
   // viewport verification ledger for retained 180s CI failures and rationale.
   test.setTimeout(360_000);
@@ -103,14 +103,18 @@ test('450の47球と以後の増球・スマッシュ・高速接触を30ゲー�
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   await page.evaluate(() => { window.stage3.show(450); window.stage3.autoPlay(true); });
-  expect(await page.evaluate(() => window.stage3.snapshot().balls.length)).toBe(47);
+  expect(await page.evaluate(() => window.stage3.snapshot().balls.length)).toBe(459);
   const samples = [];
   for (let i = 0; i < 30; i++) {
-    await page.clock.runFor(1000);
+    // Functional load at 10Hz: all 120Hz physics steps run through createLoop.
+    // This does not substitute for the separate native FPS/performance suite.
+    for (let frame = 0; frame < 10; frame++) await page.clock.fastForward(100);
     const row = await page.evaluate(() => ({ state: window.stage3.snapshot(), resources: window.stage3.resources() }));
     expect(row.state.phase).toBe('running'); expect(row.state.balls.filter(b => b.phase !== 'lost')).toHaveLength(ballCountAtScore(row.state.score));
     expect(row.resources!.drawCalls).toBeLessThan(160); samples.push(row);
   }
+  expect(samples.at(-1)!.state.simTime).toBeGreaterThanOrEqual(29.9);
+  expect(samples.at(-1)!.state.simTime).toBeLessThanOrEqual(30.1);
   expect(samples.at(-1)!.state.score).toBeGreaterThan(500);
   const servedIds = await page.evaluate(() => [...new Set(window.stage3.metrics().events.filter(e => e.kind === 'opponent-hit').map(e => e.ballId))]);
   for (let id = 1; id <= 47; id++) expect(servedIds).toContain(id);
