@@ -38,7 +38,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
   let quality: Quality = 'standard';
   return {
     render(snapshot, events) {
-      if (snapshot.runId !== previousRunId) { flashUntil = 0; previousRunId = snapshot.runId; }
+      if (snapshot.runId !== previousRunId) { flashUntil = 0; renderer.renderLists.dispose(); previousRunId = snapshot.runId; }
       for (const event of events) if (event.kind === 'player-hit') flashUntil = event.time + 0.12;
       applyPresentation(objects, snapshot);
       updateOpponentView(objects, snapshot, events);

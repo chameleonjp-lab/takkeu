@@ -13,6 +13,16 @@ for (const [port, base] of [[4174, '/'], [4175, '/takkeu/']] as const) {
     const revision = await (await request.get(origin + base + 'release.json')).json();
     expect(revision.commit).toBe(execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim());
     expect(revision.base).toBe(base);
+    const manifest = await (await request.get(origin + base + 'ranking-manifest.json')).json();
+    expect(manifest.canonical_url).toBe('https://chameleonjp-lab.github.io/takkeu/');
+    expect(manifest.player_name.required_before_start).toBe(false);
+    await expect(page.locator('meta[name="chameleonjp-release"]')).toHaveAttribute('content', 'takkeu-20261023-01');
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', 'https://chameleonjp-lab.github.io/takkeu/og-takkeu-v1.png');
+    await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute('content', 'summary_large_image');
+    const image = await request.get(origin + base + 'og-takkeu-v1.png');
+    expect(image.ok()).toBe(true); expect(image.headers()['content-type']).toContain('image/png');
+    const imageBytes = await image.body();
+    expect([imageBytes.readUInt32BE(16), imageBytes.readUInt32BE(20)]).toEqual([1200, 630]);
     await page.getByRole('button', { name: '設定', exact: true }).click();
     await page.getByLabel('描画品質', { exact: true }).selectOption('low');
     await page.getByRole('button', { name: '戻る', exact: true }).click();

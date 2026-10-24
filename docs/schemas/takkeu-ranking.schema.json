@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "タッケウの任意参加ランキング契約",
+  "type": "object",
+  "required": ["schema_version", "game_id", "canonical_url", "client_version", "submission_mode", "player_name", "play_count", "submission", "ranking_entries"],
+  "properties": {
+    "schema_version": { "const": "chameleonjp-ranking-manifest-v1" },
+    "game_id": { "const": "takkeu" },
+    "canonical_url": { "const": "https://chameleonjp-lab.github.io/takkeu/" },
+    "client_version": { "const": "takkeu-web-ranking-1" },
+    "submission_mode": { "const": "shared" },
+    "player_name": {
+      "type": "object",
+      "required": ["required_before_start", "required_for_ranking", "min_length", "max_length", "storage_key"],
+      "properties": {
+        "required_before_start": { "const": false },
+        "required_for_ranking": { "const": true },
+        "min_length": { "const": 1 },
+        "max_length": { "const": 20 },
+        "storage_key": { "const": "chameleonjp_takkeu_player_name" }
+      }
+    },
+    "play_count": { "const": { "count_at": "start", "rpc": "start_game_play_v1", "idempotency": true } },
+    "submission": { "const": { "rpc": "submit_score_idempotent_v1", "automatic": true, "idempotency": true, "timeout_ms": 8000 } },
+    "ranking_entries": {
+      "type": "array", "minItems": 1, "maxItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["game_slug", "score_order", "score_unit", "score_scale", "score_decimals", "score_min", "score_max", "ranked_results"],
+        "properties": {
+          "game_slug": { "const": "takkeu" },
+          "score_order": { "const": "desc" },
+          "score_unit": { "const": "ラリー" },
+          "score_scale": { "const": 1 },
+          "score_decimals": { "const": 0 },
+          "score_min": { "const": 0 },
+          "score_max": { "const": 100000000 },
+          "ranked_results": { "const": ["game_over", "retire"] }
+        }
+      }
+    }
+  }
+}

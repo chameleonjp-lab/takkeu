@@ -16,7 +16,12 @@ concurrency:
   group: takkeu-pages
   cancel-in-progress: false
 jobs:
+  validation:
+    uses: ./.github/workflows/ci.yml
+    with:
+      expected_sha: ${{ github.event_name == 'push' && github.sha || inputs.expected_sha }}
   verify-build:
+    needs: validation
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     timeout-minutes: 20
@@ -48,9 +53,6 @@ jobs:
           set -euo pipefail
           npm ci 2>&1 | tee artifacts/install.log
           npx playwright install --with-deps chromium webkit 2>&1 | tee artifacts/browsers.log
-          npm run typecheck 2>&1 | tee artifacts/typecheck.log
-          npm run test:unit 2>&1 | tee artifacts/unit.log
-          npm run test:browser 2>&1 | tee artifacts/browser.log
           npm run verify:release 2>&1 | tee artifacts/distribution.log
           node -e "if (JSON.parse(require('fs').readFileSync('dist/release.json')).commit !== require('child_process').execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim()) process.exit(1)"
           find dist -type f -print0 | sort -z | xargs -0 sha256sum > artifacts/distribution-sha256.txt
