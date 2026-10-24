@@ -1,6 +1,6 @@
 # Remaining Ball Speed Implementation Plan
 
-> 先行実装の履歴。残球倍率は[共有・残球速度・多層効果音の計画](2026-10-24-share-speed-audio.md)Bと[現行設計](../specs/2026-10-24-remaining-ball-design.md)で1.4/1.3/1.2/1.1/1倍へ更新した。以下の2/1.5/1.25倍と4球基準は当時の仕様で、現行仕様ではない。
+> 先行実装の履歴。残球倍率は[共有・残球速度・多層効果音の計画](2026-10-24-share-speed-audio.md)Bと[現行設計](../specs/2026-10-24-remaining-ball-design.md)で一度1.4/1.3/1.2/1.1/1倍へ更新し、その後の依頼で500以上・1球だけ1.1倍へ変更した。以下の2/1.5/1.25倍と4球基準は当時の仕様で、現行仕様ではない。
 
 > **For agentic workers:** Use superpowers:executing-plans to implement task-by-task.
 

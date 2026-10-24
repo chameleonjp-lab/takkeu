@@ -1,5 +1,7 @@
 # 共有・残球速度・多層効果音 Implementation Plan
 
+> この統合計画の残球倍率は当時の履歴。現在は[残球速度の現行設計](../specs/2026-10-24-remaining-ball-design.md)に従い、500ラリー以上・1球だけ1.1倍。それ以外は追加等倍。
+
 > **For agentic workers:** Use superpowers:executing-plans. User supplied the complete specification and authorized implementation through one Draft PR; execute inline, then obtain a fresh branch review.
 
 **Goal:** ホーム／結果のX共有、新残球倍率、球別に正確で上限のある多層効果音を既存機能へ統合する。

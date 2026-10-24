@@ -60,7 +60,7 @@ test('実アプリで加速球の一時停止・手動再開・リトライを�
   await page.evaluate(() => window.stage3.remaining(540, 1)); await page.clock.runFor(64);
   const before = await page.evaluate(() => window.stage3.snapshot());
   expect(before.balls[0]!.phase).toBe('incoming');
-  expect(before.scheduledReturns[0]!.remainingBallMultiplier).toBe(1.4);
+  expect(before.scheduledReturns[0]!.remainingBallMultiplier).toBe(1.1);
   await page.keyboard.press('Escape');
   const paused = await page.evaluate(() => window.stage3.snapshot());
   expect(paused.phase).toBe('paused'); await page.clock.runFor(1000);
@@ -82,7 +82,7 @@ test('ブラウザの実シミュレーション飛行時間が境界・残球�
   const rows = await page.evaluate(() => window.remaining.measure());
   for (const row of rows) {
     const baseline = rows.find(r => r.score === row.score && r.count === 5)!;
-    const ratio = row.score < 100 || row.count >= 5 ? 1 : ({ 1: 1.4, 2: 1.3, 3: 1.2, 4: 1.1 })[row.count as 1 | 2 | 3 | 4];
+    const ratio = row.score >= 500 && row.count === 1 ? 1.1 : 1;
     expect(baseline.duration / row.duration).toBeCloseTo(ratio, 8);
     expect(baseline.visible / row.visible).toBeCloseTo(ratio, 8);
   }

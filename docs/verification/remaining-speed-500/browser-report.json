@@ -1,0 +1,456 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/takkeu-speed500/node_modules/.bin/playwright",
+      "test",
+      "tests/browser/remaining-ball.spec.ts",
+      "--reporter=list,json",
+      "--output=artifacts/remaining-speed-500-browser"
+    ],
+    "configFile": "/workspace/takkeu-speed500/playwright.config.ts",
+    "rootDir": "/workspace/takkeu-speed500/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/takkeu-speed500/artifacts/remaining-speed-500-browser",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/workspace/takkeu-speed500/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/takkeu-speed500/artifacts/remaining-speed-500-browser",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/workspace/takkeu-speed500/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/takkeu-speed500/artifacts/remaining-speed-500-browser",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/workspace/takkeu-speed500/tests/browser",
+        "snapshotDir": "/workspace/takkeu-speed500/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "launchOptions": {
+            "args": [
+              "--enable-unsafe-swiftshader",
+              "--use-angle=swiftshader"
+            ]
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/takkeu-speed500/artifacts/remaining-speed-500-browser",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "/workspace/takkeu-speed500/tests/browser",
+        "snapshotDir": "/workspace/takkeu-speed500/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+          "viewport": {
+            "width": 390,
+            "height": 664
+          },
+          "screen": {
+            "width": 390,
+            "height": 844
+          },
+          "deviceScaleFactor": 3,
+          "isMobile": true,
+          "hasTouch": true,
+          "defaultBrowserType": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 4173 --strictPort",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "remaining-ball.spec.ts",
+      "file": "remaining-ball.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5282,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-24T17:03:36.791Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "transitions-190.json",
+                      "contentType": "application/json",
+                      "path": "/workspace/takkeu-speed500/artifacts/remaining-speed-500-browser/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/attachments/transitions-190-json-94bce1d8d97374efce5d6c22a1960331c8044829.json"
+                    },
+                    {
+                      "name": "transitions-240.json",
+                      "contentType": "application/json",
+                      "path": "/workspace/takkeu-speed500/artifacts/remaining-speed-500-browser/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/attachments/transitions-240-json-b4ac58f6724e5c777a90b3450f14676a39042e68.json"
+                    },
+                    {
+                      "name": "transitions-490.json",
+                      "contentType": "application/json",
+                      "path": "/workspace/takkeu-speed500/artifacts/remaining-speed-500-browser/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-chromium/attachments/transitions-490-json-86fb21d81439298d6344d0e62c6e0fd72f5c6917.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2483c0d11abb524b036f-d9a1a82049f78511159d",
+          "file": "remaining-ball.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "実アプリで加速球の一時停止・手動再開・リトライを保つ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2076,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T17:03:42.242Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "pause-resume-retry.json",
+                      "contentType": "application/json",
+                      "path": "/workspace/takkeu-speed500/artifacts/remaining-speed-500-browser/remaining-ball-実アプリで加速球の一時停止・手動再開・リトライを保つ-chromium/attachments/pause-resume-retry-json-55236d33d19526ffdc35350ac41d714815ca8be0.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2483c0d11abb524b036f-9cca50e091fd55d551f6",
+          "file": "remaining-ball.spec.ts",
+          "line": 56,
+          "column": 1
+        },
+        {
+          "title": "ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1074,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T17:03:44.333Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "measured-flights.json",
+                      "contentType": "application/json",
+                      "path": "/workspace/takkeu-speed500/artifacts/remaining-speed-500-browser/remaining-ball-ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる-chromium/attachments/measured-flights-json-6defcba73018a743d1002d705ea8b64b0db62887.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2483c0d11abb524b036f-87e454b291de77bdcf12",
+          "file": "remaining-ball.spec.ts",
+          "line": 80,
+          "column": 1
+        },
+        {
+          "title": "iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12376,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-24T17:03:45.882Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "transitions-190.json",
+                      "contentType": "application/json",
+                      "path": "/workspace/takkeu-speed500/artifacts/remaining-speed-500-browser/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-webkit/attachments/transitions-190-json-8539d295eab304c85bd457c2a8ce135a4253c424.json"
+                    },
+                    {
+                      "name": "transitions-240.json",
+                      "contentType": "application/json",
+                      "path": "/workspace/takkeu-speed500/artifacts/remaining-speed-500-browser/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-webkit/attachments/transitions-240-json-808ef7b5282540ae70e71f5a63cd5d05b9d4bcf9.json"
+                    },
+                    {
+                      "name": "transitions-490.json",
+                      "contentType": "application/json",
+                      "path": "/workspace/takkeu-speed500/artifacts/remaining-speed-500-browser/remaining-ball-iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する-webkit/attachments/transitions-490-json-539da2e473a5c87c3b64ea2fd635d666882d2e59.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2483c0d11abb524b036f-8b89a16fc8683a4d12bf",
+          "file": "remaining-ball.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "実アプリで加速球の一時停止・手動再開・リトライを保つ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3222,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T17:03:58.399Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "pause-resume-retry.json",
+                      "contentType": "application/json",
+                      "path": "/workspace/takkeu-speed500/artifacts/remaining-speed-500-browser/remaining-ball-実アプリで加速球の一時停止・手動再開・リトライを保つ-webkit/attachments/pause-resume-retry-json-4b2672452183b4aef1241ef2db8afc17ddf2dbd8.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2483c0d11abb524b036f-c197575b9b4fd4a4df01",
+          "file": "remaining-ball.spec.ts",
+          "line": 56,
+          "column": 1
+        },
+        {
+          "title": "ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1367,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T17:04:01.632Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "measured-flights.json",
+                      "contentType": "application/json",
+                      "path": "/workspace/takkeu-speed500/artifacts/remaining-speed-500-browser/remaining-ball-ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる-webkit/attachments/measured-flights-json-ed1bf163e24cd4f7f6290a96718ba8a361229fa2.json"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2483c0d11abb524b036f-4ee96037baf50e5c0b0c",
+          "file": "remaining-ball.spec.ts",
+          "line": 80,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-24T17:03:35.107Z",
+    "duration": 27981.265,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

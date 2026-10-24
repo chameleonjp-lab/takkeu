@@ -1,0 +1,1101 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/remaining-ball-speed.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-speed500
+
+ ❯ tests/unit/remaining-ball-speed.test.ts (141 tests | 86 failed) 188ms
+   ❯ 残球数による実際の飛行時間 (93)
+     × 100ラリー・1球 6ms
+     × 100ラリー・2球 2ms
+     × 100ラリー・3球 1ms
+     × 100ラリー・4球 2ms
+     × 101ラリー・1球 1ms
+     × 101ラリー・2球 1ms
+     × 101ラリー・3球 1ms
+     × 101ラリー・4球 1ms
+     × 450ラリー・1球 2ms
+     × 450ラリー・2球 1ms
+     × 450ラリー・3球 1ms
+     × 450ラリー・4球 2ms
+     × 499ラリー・1球 1ms
+     × 499ラリー・2球 1ms
+     × 499ラリー・3球 1ms
+     × 499ラリー・4球 2ms
+     × 500ラリー・1球 1ms
+     × 500ラリー・2球 1ms
+     × 500ラリー・3球 2ms
+     × 500ラリー・4球 1ms
+     × 501ラリー・1球 1ms
+     × 501ラリー・2球 2ms
+     × 501ラリー・3球 1ms
+     × 501ラリー・4球 1ms
+     × 539ラリー・1球 1ms
+     × 539ラリー・2球 2ms
+     × 539ラリー・3球 1ms
+     × 539ラリー・4球 2ms
+     × 540ラリー・1球 1ms
+     × 540ラリー・2球 1ms
+     × 540ラリー・3球 1ms
+     × 540ラリー・4球 1ms
+     × 555ラリー・1球 1ms
+     × 555ラリー・2球 1ms
+     × 555ラリー・3球 1ms
+     × 555ラリー・4球 1ms
+     × 基本飛行時間の下限を確定してから独立した1.1倍を適用する 1ms
+     × 100ラリーでは残球数による加速をしない 3ms
+     × 101ラリーでは残球数による加速をしない 0ms
+     × 450ラリーでは残球数による加速をしない 0ms
+     × 499ラリーでは残球数による加速をしない 0ms
+   ❯ 相手の打球時に固定する倍率 (48)
+     × 予約後の5→4球を実打球時に1倍として確定する 1ms
+     × 予約後の4→3球を実打球時に1倍として確定する 1ms
+     × 予約後の2→1球を実打球時に1.1倍として確定する 0ms
+     × 打球後の4→3球は既に飛行中の1倍を変えない 0ms
+     × 打球後の2→1球は既に飛行中の1倍を変えない 0ms
+     × 待機中の1→2球を予約時の等倍から再評価して1.3倍で発射する 1ms
+     × 飛行中の1→2球の増球では確定した1.4倍を維持する（499） 0ms
+     × 飛行中の1→2球の増球では確定した1.4倍を維持する（500） 0ms
+     × 飛行中の1→2球の増球では確定した1.4倍を維持する（501） 0ms
+     × 飛行中の1→2球の増球では確定した1.4倍を維持する（540） 0ms
+     × 飛行中の1→2球の増球では確定した1.4倍を維持する（555） 0ms
+     × 予約衝突で延期した球も実打球時の2→1球を再判定する（500） 1ms
+     × 予約衝突で延期した球も実打球時の2→1球を再判定する（501） 1ms
+     × 予約衝突で延期した球も実打球時の2→1球を再判定する（540） 0ms
+     × 予約衝突で延期した球も実打球時の2→1球を再判定する（555） 1ms
+     × 同時刻の打球ID1・失球ID2は球ID順の生存数で1倍となる 1ms
+     × 同時刻の打球ID2・失球ID1は球ID順の生存数で1.1倍となる 1ms
+     × 同時刻のバウンドを球IDより先に処理してから打球・失球をID順に処理する 2ms
+     × 同時刻の99→100・増球・失球でも追加加速せず生存3球で打球する 1ms
+     × 同一tickで99→100になっても残球数による追加加速をしない 1ms
+     × 499→500と増球が同じtickなら追加された待機球も数えて等倍で打球する 1ms
+     × 同一tickで打球後に起きた失球はその飛行へ遡及しない 1ms
+     × 打球直前の失球を反映し、その直後の失球では飛行中の時間を変更しない 1ms
+     × 同一tick内で打球前に失われた球を数えない 0ms
+     × 返球予定時点の3球から待機中に1球へ減れば1.4倍で出発する 0ms
+     × 重なる3球の予定を調停し予告と飛行中の予約を守る（499） 1ms
+     × 重なる3球の予定を調停し予告と飛行中の予約を守る（500） 0ms
+     × 重なる3球の予定を調停し予告と飛行中の予約を守る（501） 1ms
+     × 重なる3球の予定を調停し予告と飛行中の予約を守る（539） 0ms
+     × 重なる3球の予定を調停し予告と飛行中の予約を守る（540） 0ms
+     × 重なる3球の予定を調停し予告と飛行中の予約を守る（555） 0ms
+     × 全球加速100→101でも位置・軌道・独立倍率を保持する 0ms
+     × 全球加速499→500でも位置・軌道・独立倍率を保持する 0ms
+     × 全球加速500→501でも位置・軌道・独立倍率を保持する 0ms
+     × 全球加速539→540でも位置・軌道・独立倍率を保持する 0ms
+     × 全球加速554→555でも位置・軌道・独立倍率を保持する 0ms
+     × 全球加速555→556でも位置・軌道・独立倍率を保持する 0ms
+     × プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（499） 2ms
+     × プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（500） 1ms
+     × プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（501） 2ms
+     × プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（539） 2ms
+     × プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（540） 1ms
+     × プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（555） 2ms
+     × 停止・再開は確定速度を維持しリトライは初速へ戻る 0ms
+     × 500→502の増球と新残球倍率も同じ時刻付き入力なら30/60/120Hzで一致する 4ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 86 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 100ラリー・1球
+AssertionError: expected 1.4000000000000021 to be close to 1, received difference is 0.40000000000000213, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 100ラリー・2球
+AssertionError: expected 1.3000000000000043 to be close to 1, received difference is 0.30000000000000426, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 100ラリー・3球
+AssertionError: expected 1.2000000000000026 to be close to 1, received difference is 0.20000000000000262, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 100ラリー・4球
+AssertionError: expected 1.1000000000000016 to be close to 1, received difference is 0.10000000000000164, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 101ラリー・1球
+AssertionError: expected 1.3999999999999948 to be close to 1, received difference is 0.3999999999999948, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 101ラリー・2球
+AssertionError: expected 1.300000000000001 to be close to 1, received difference is 0.30000000000000093, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 101ラリー・3球
+AssertionError: expected 1.1999999999999964 to be close to 1, received difference is 0.1999999999999964, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 101ラリー・4球
+AssertionError: expected 1.0999999999999972 to be close to 1, received difference is 0.0999999999999972, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 450ラリー・1球
+AssertionError: expected 1.4000000000000032 to be close to 1, received difference is 0.40000000000000324, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 450ラリー・2球
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 539ラリー・2球
+AssertionError: expected 1.300000000000006 to be close to 1, received difference is 0.30000000000000604, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 450ラリー・3球
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 555ラリー・3球
+AssertionError: expected 1.2 to be close to 1, received difference is 0.19999999999999996, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 450ラリー・4球
+AssertionError: expected 1.1000000000000012 to be close to 1, received difference is 0.1000000000000012, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 499ラリー・1球
+AssertionError: expected 1.3999999999999984 to be close to 1, received difference is 0.39999999999999836, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 499ラリー・2球
+AssertionError: expected 1.300000000000003 to be close to 1, received difference is 0.30000000000000293, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 499ラリー・3球
+AssertionError: expected 1.199999999999996 to be close to 1, received difference is 0.19999999999999596, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 499ラリー・4球
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 500ラリー・4球
+AssertionError: expected 1.0999999999999968 to be close to 1, received difference is 0.09999999999999676, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 500ラリー・1球
+AssertionError: expected 1.3999999999999968 to be close to 1.1, received difference is 0.2999999999999967, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 500ラリー・2球
+AssertionError: expected 1.2999999999999956 to be close to 1, received difference is 0.2999999999999956, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 500ラリー・3球
+AssertionError: expected 1.1999999999999986 to be close to 1, received difference is 0.19999999999999862, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 501ラリー・1球
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 539ラリー・1球
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 555ラリー・1球
+AssertionError: expected 1.4 to be close to 1.1, received difference is 0.2999999999999998, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 501ラリー・2球
+AssertionError: expected 1.3000000000000067 to be close to 1, received difference is 0.3000000000000067, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 501ラリー・3球
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 539ラリー・3球
+AssertionError: expected 1.2000000000000028 to be close to 1, received difference is 0.20000000000000284, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 501ラリー・4球
+AssertionError: expected 1.1000000000000005 to be close to 1, received difference is 0.10000000000000053, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 539ラリー・4球
+AssertionError: expected 1.1000000000000039 to be close to 1, received difference is 0.10000000000000386, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 540ラリー・1球
+AssertionError: expected 1.4000000000000021 to be close to 1.1, received difference is 0.30000000000000204, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 540ラリー・2球
+AssertionError: expected 1.2999999999999963 to be close to 1, received difference is 0.29999999999999627, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 540ラリー・3球
+AssertionError: expected 1.1999999999999946 to be close to 1, received difference is 0.19999999999999463, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 540ラリー・4球
+AssertionError: expected 1.0999999999999928 to be close to 1, received difference is 0.09999999999999276, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 555ラリー・2球
+AssertionError: expected 1.299999999999999 to be close to 1, received difference is 0.29999999999999893, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 555ラリー・4球
+AssertionError: expected 1.100000000000004 to be close to 1, received difference is 0.10000000000000409, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:20:51
+     18|       const baseline = measureFlight(score, 5), flight = measureFlight…
+     19|       const ratio = score < 500 ? 1 : multiplier;
+     20|       expect(baseline.duration / flight.duration).toBeCloseTo(ratio, 8…
+       |                                                   ^
+     21|       expect(baseline.visible / flight.visible).toBeCloseTo(ratio, 8);
+     22|       expect(flight.departed).toBeLessThan(flight.net); expect(flight.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 基本飛行時間の下限を確定してから独立した1.1倍を適用する
+AssertionError: expected 1.4000000000000021 to be close to 1.1, received difference is 0.30000000000000204, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:31:77
+     29|     expect(flightDuration(config, 501, false)).toBeCloseTo(1.4, 8);
+     30|     expect(normal.arriveAt - normal.departAt).toBeCloseTo(1.2727272727…
+     31|     expect(measureFlight(540, 5).duration / measureFlight(540, 1).dura…
+       |                                                                             ^
+     32|     expect(measureFlight(540, 1).duration).toBeLessThan(measureFlight(…
+     33|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 100ラリーでは残球数による加速をしない
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 101ラリーでは残球数による加速をしない
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 450ラリーでは残球数による加速をしない
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 残球数による実際の飛行時間 > 499ラリーでは残球数による加速をしない
+AssertionError: expected 1.4 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 1.4
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:35:91
+     33|   });
+     34|   it.each([0, 1, 98, 99, 100, 101, 450, 499])('%iラリーでは残球数による加速をしない', s…
+     35|     for (const count of [1, 2, 3, 4, 5, 8]) expect(remainingBallMultip…
+       |                                                                                           ^
+     36|   });
+     37|   it.each([NaN, Infinity, -Infinity, -1, 99.5, 100.5, 499.5, 500.5])('…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 予約後の5→4球を実打球時に1倍として確定する
+AssertionError: expected 1.1 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 1.1
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:61:42
+     59|     const plan = s.state.balls[0]!.plan;
+     60|     expect(s.state.balls).toHaveLength(after); expect(s.state.balls[0]…
+     61|     expect(plan.remainingBallMultiplier).toBe(multiplier);
+       |                                          ^
+     62|     expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(D…
+     63|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 予約後の4→3球を実打球時に1倍として確定する
+AssertionError: expected 1.2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 1.2
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:61:42
+     59|     const plan = s.state.balls[0]!.plan;
+     60|     expect(s.state.balls).toHaveLength(after); expect(s.state.balls[0]…
+     61|     expect(plan.remainingBallMultiplier).toBe(multiplier);
+       |                                          ^
+     62|     expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(D…
+     63|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 予約後の2→1球を実打球時に1.1倍として確定する
+AssertionError: expected 1.4 to be 1.1 // Object.is equality
+
+- Expected
++ Received
+
+- 1.1
++ 1.4
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:61:42
+     59|     const plan = s.state.balls[0]!.plan;
+     60|     expect(s.state.balls).toHaveLength(after); expect(s.state.balls[0]…
+     61|     expect(plan.remainingBallMultiplier).toBe(multiplier);
+       |                                          ^
+     62|     expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(D…
+     63|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 打球後の4→3球は既に飛行中の1倍を変えない
+AssertionError: expected 1.1 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 1.1
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:67:47
+     65|     const s = remainingScenario(501, before); s.step(missPaddle);
+     66|     const ball = s.state.balls[0]!, committed = structuredClone(ball.p…
+     67|     expect(committed.remainingBallMultiplier).toBe(multiplier);
+       |                                               ^
+     68|     for (const other of s.state.balls.slice(after)) other.phase = 'los…
+     69|     s.step(missPaddle);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 打球後の2→1球は既に飛行中の1倍を変えない
+AssertionError: expected 1.3 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 1.3
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:67:47
+     65|     const s = remainingScenario(501, before); s.step(missPaddle);
+     66|     const ball = s.state.balls[0]!, committed = structuredClone(ball.p…
+     67|     expect(committed.remainingBallMultiplier).toBe(multiplier);
+       |                                               ^
+     68|     for (const other of s.state.balls.slice(after)) other.phase = 'los…
+     69|     s.step(missPaddle);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 待機中の1→2球を予約時の等倍から再評価して1.3倍で発射する
+AssertionError: expected 1.3 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 1.3
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:77:60
+     75|     for (let tick = 0; tick < 120 && s.state.balls[0]!.phase !== 'inco…
+     76|     expect(s.state.balls[0]!.phase).toBe('incoming');
+     77|     expect(s.state.balls[0]!.plan.remainingBallMultiplier).toBe(1);
+       |                                                            ^
+     78|     expect(s.state.balls[0]!.plan.arriveAt - s.state.balls[0]!.plan.de…
+     79|       .toBeCloseTo(flightDuration(DEFAULT_CONFIG, 501, true) / 1, 8);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 飛行中の1→2球の増球では確定した1.4倍を維持する（499）
+AssertionError: expected 1.4 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 1.4
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:84:47
+     82|     const s = remainingScenario(score, 1); s.step(missPaddle);
+     83|     const ball = s.state.balls[0]!, committed = structuredClone(ball.p…
+     84|     expect(committed.remainingBallMultiplier).toBe(score < 500 ? 1 : 1…
+       |                                               ^
+     85|     s.state.balls.push(waitingBall(2, score, 1000)); s.step(missPaddle…
+     86|     expect(s.state.balls).toHaveLength(2); expect(ball.plan).toEqual(c…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 飛行中の1→2球の増球では確定した1.4倍を維持する（500）
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 飛行中の1→2球の増球では確定した1.4倍を維持する（501）
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 飛行中の1→2球の増球では確定した1.4倍を維持する（540）
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 飛行中の1→2球の増球では確定した1.4倍を維持する（555）
+AssertionError: expected 1.4 to be 1.1 // Object.is equality
+
+- Expected
++ Received
+
+- 1.1
++ 1.4
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:84:47
+     82|     const s = remainingScenario(score, 1); s.step(missPaddle);
+     83|     const ball = s.state.balls[0]!, committed = structuredClone(ball.p…
+     84|     expect(committed.remainingBallMultiplier).toBe(score < 500 ? 1 : 1…
+       |                                               ^
+     85|     s.state.balls.push(waitingBall(2, score, 1000)); s.step(missPaddle…
+     86|     expect(s.state.balls).toHaveLength(2); expect(ball.plan).toEqual(c…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[40/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 予約衝突で延期した球も実打球時の2→1球を再判定する（500）
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 予約衝突で延期した球も実打球時の2→1球を再判定する（501）
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 予約衝突で延期した球も実打球時の2→1球を再判定する（540）
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 予約衝突で延期した球も実打球時の2→1球を再判定する（555）
+AssertionError: expected 1.4 to be 1.1 // Object.is equality
+
+- Expected
++ Received
+
+- 1.1
++ 1.4
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:106:47
+    104|     for (let tick = 0; tick < 120 && ball.phase !== 'incoming'; tick++…
+    105|     expect(ball.phase).toBe('incoming'); expect(s.state.balls).toHaveL…
+    106|     expect(ball.plan.remainingBallMultiplier).toBe(1.1);
+       |                                               ^
+    107|     expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flight…
+    108|     if (score >= 450) expect(events.find(e => e.kind === 'opponent-hit…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[41/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 同時刻の打球ID1・失球ID2は球ID順の生存数で1倍となる
+AssertionError: expected 1.3 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 1.3
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:119:60
+    117|     expect(ordered.map(e => e.ballId)).toEqual([1, 2]);
+    118|     expect(ordered.map(e => e.time)).toEqual([20, 20]);
+    119|     expect(s.state.balls[0]!.plan.remainingBallMultiplier).toBe(multip…
+       |                                                            ^
+    120|   });
+    121|   it('同時刻のバウンドを球IDより先に処理してから打球・失球をID順に処理する', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[42/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 同時刻の打球ID2・失球ID1は球ID順の生存数で1.1倍となる
+AssertionError: expected 1.4 to be 1.1 // Object.is equality
+
+- Expected
++ Received
+
+- 1.1
++ 1.4
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:119:60
+    117|     expect(ordered.map(e => e.ballId)).toEqual([1, 2]);
+    118|     expect(ordered.map(e => e.time)).toEqual([20, 20]);
+    119|     expect(s.state.balls[0]!.plan.remainingBallMultiplier).toBe(multip…
+       |                                                            ^
+    120|   });
+    121|   it('同時刻のバウンドを球IDより先に処理してから打球・失球をID順に処理する', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[43/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 同時刻のバウンドを球IDより先に処理してから打球・失球をID順に処理する
+AssertionError: expected [ [ 'table-bounce', 99, 20 ], …(1) ] to deeply equal [ [ 'table-bounce', 99, 20 ], …(2) ]
+
+- Expected
++ Received
+
+@@ -3,15 +3,10 @@
+      "table-bounce",
+      99,
+      20,
+    ],
+    [
+-     "opponent-hit",
+-     1,
+-     20,
+-   ],
+-   [
+      "ball-lost",
+      2,
+      20,
+    ],
+  ]
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:127:64
+    125|       incoming(99, 20.35, { x: 0.6, y: 0.6 }, 20, 1.25)];
+    126|     const result = s.step(missPaddle);
+    127|     expect(result.events.map(e => [e.kind, e.ballId, e.time])).toEqual…
+       |                                                                ^
+    128|       ['table-bounce', 99, 20], ['opponent-hit', 1, 20], ['ball-lost',…
+    129|     ]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[44/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 同時刻の99→100・増球・失球でも追加加速せず生存3球で打球する
+AssertionError: expected 1.2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 1.2
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:141:42
+    139|     ]);
+    140|     expect(s.state.score).toBe(100); expect(s.state.balls).toHaveLengt…
+    141|     expect(plan.remainingBallMultiplier).toBe(1);
+       |                                          ^
+    142|     expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(D…
+    143|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[45/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 同一tickで99→100になっても残球数による追加加速をしない
+AssertionError: expected 0.8769543810704263 to be close to 0.9646498191774687, received difference is 0.08769543810704239, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:151:43
+    149|     const plan = s.state.balls[0]!.plan;
+    150|     expect(result.events.some(e => e.kind === 'opponent-hit' && e.ball…
+    151|     expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(D…
+       |                                           ^
+    152|     // Three alive including the new ball also stays neutral below 500.
+    153|     const t = remainingScenario(99, 1, 20.004); t.state.balls.push(inc…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[46/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 499→500と増球が同じtickなら追加された待機球も数えて等倍で打球する
+AssertionError: expected 1.2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 1.2
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:164:60
+    162|     expect(s.state.score).toBe(500); expect(s.state.balls).toHaveLengt…
+    163|     expect(result.events.some(e => e.kind === 'opponent-hit' && e.ball…
+    164|     expect(s.state.balls[0]!.plan.remainingBallMultiplier).toBe(1);
+       |                                                            ^
+    165|     expect(s.state.balls[0]!.plan.arriveAt - s.state.balls[0]!.plan.de…
+    166|       .toBeCloseTo(flightDuration(DEFAULT_CONFIG, 500, true), 8);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[47/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 同一tickで打球後に起きた失球はその飛行へ遡及しない
+AssertionError: expected 0.4744891308350212 to be close to 0.6168358700855294, received difference is 0.14234673925050823, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:183:43
+    181|     expect(hit).toBeDefined(); expect(loss).toBeDefined(); expect(loss…
+    182|     const plan = s.state.balls[0]!.plan;
+    183|     expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(D…
+       |                                           ^
+    184|   });
+    185|   it('異なる固定倍率の飛行球も539→540で到着間隔と位置を保つ', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[48/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 打球直前の失球を反映し、その直後の失球では飛行中の時間を変更しない
+AssertionError: expected 0.47450163363227205 to be close to 0.6168521237219527, received difference is 0.1423504900896807, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:219:53
+    217|     while (s.state.balls[0]!.phase !== 'incoming') s.step(missPaddle);
+    218|     const ball = s.state.balls[0]!, committed = structuredClone(ball.p…
+    219|     expect(committed.arriveAt - committed.departAt).toBeCloseTo(flight…
+       |                                                     ^
+    220|     s.state.balls[1] = { ...incoming(2, 19, missPaddle), position: { x…
+    221|     const next = s.step(missPaddle);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[49/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 同一tick内で打球前に失われた球を数えない
+AssertionError: expected 0.4405970500610934 to be close to 0.5607598818959358, received difference is 0.12016283183484244, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:239:43
+    237|     const result = s.step(missPaddle), plan = s.state.balls[0]!.plan;
+    238|     expect(result.events.findIndex(e => e.kind === 'ball-lost')).toBeL…
+    239|     expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(D…
+       |                                           ^
+    240|   });
+    241|   it('返球予定時点の3球から待機中に1球へ減れば1.4倍で出発する', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[50/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 返球予定時点の3球から待機中に1球へ減れば1.4倍で出発する
+AssertionError: expected 0.44060865980139496 to be close to 0.5607746579290479, received difference is 0.12016599812765294, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:247:43
+    245|     while (s.state.balls[0]!.phase !== 'incoming') s.step(missPaddle);
+    246|     const plan = s.state.balls[0]!.plan;
+    247|     expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(D…
+       |                                           ^
+    248|   });
+    249|   it.each([499, 500, 501, 539, 540, 555])('重なる3球の予定を調停し予告と飛行中の予約を守る（%i…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[51/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 重なる3球の予定を調停し予告と飛行中の予約を守る（499）
+AssertionError: expected 0.5140571331936457 to be close to 0.6168685598323732, received difference is 0.10281142663872755, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:264:59
+    262|         if (hits.length < 3) {
+    263|           hits.push(event.time); committed.set(ball.id, structuredClon…
+    264|           expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(…
+       |                                                           ^
+    265|           if (score >= 450) expect(event.time - ball.warningEmittedAt!…
+    266|         }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[52/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 重なる3球の予定を調停し予告と飛行中の予約を守る（500）
+AssertionError: expected 0.5140434364349602 to be close to 0.6168521237219527, received difference is 0.10280868728699255, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:264:59
+    262|         if (hits.length < 3) {
+    263|           hits.push(event.time); committed.set(ball.id, structuredClon…
+    264|           expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(…
+       |                                                           ^
+    265|           if (score >= 450) expect(event.time - ball.warningEmittedAt!…
+    266|         }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[53/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 重なる3球の予定を調停し予告と飛行中の予約を守る（501）
+AssertionError: expected 0.5140298917379411 to be close to 0.6168358700855294, received difference is 0.10280597834758831, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:264:59
+    262|         if (hits.length < 3) {
+    263|           hits.push(event.time); committed.set(ball.id, structuredClon…
+    264|           expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(…
+       |                                                           ^
+    265|           if (score >= 450) expect(event.time - ball.warningEmittedAt!…
+    266|         }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[54/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 重なる3球の予定を調停し予告と飛行中の予約を守る（539）
+AssertionError: expected 0.5136127240821082 to be close to 0.6163352688985304, received difference is 0.10272254481642218, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:264:59
+    262|         if (hits.length < 3) {
+    263|           hits.push(event.time); committed.set(ball.id, structuredClon…
+    264|           expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(…
+       |                                                           ^
+    265|           if (score >= 450) expect(event.time - ball.warningEmittedAt!…
+    266|         }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[55/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 重なる3球の予定を調停し予告と飛行中の予約を守る（540）
+AssertionError: expected 0.401253091471105 to be close to 0.48150370976532536, received difference is 0.08025061829422037, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:264:59
+    262|         if (hits.length < 3) {
+    263|           hits.push(event.time); committed.set(ball.id, structuredClon…
+    264|           expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(…
+       |                                                           ^
+    265|           if (score >= 450) expect(event.time - ball.warningEmittedAt!…
+    266|         }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[56/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 重なる3球の予定を調停し予告と飛行中の予約を守る（555）
+AssertionError: expected 0.40115900669729143 to be close to 0.4813908080367492, received difference is 0.08023180133945779, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:264:59
+    262|         if (hits.length < 3) {
+    263|           hits.push(event.time); committed.set(ball.id, structuredClon…
+    264|           expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(…
+       |                                                           ^
+    265|           if (score >= 450) expect(event.time - ball.warningEmittedAt!…
+    266|         }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[57/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 全球加速100→101でも位置・軌道・独立倍率を保持する
+AssertionError: expected 0.6871068105161413 to be close to 0.9619495347226006, received difference is 0.2748427242064593, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:282:53
+    280|     const point = sampleReturn(old, ball.from, at);
+    281|     s.state.score = after; refreshFlightSpeeds(s.state, before, at, DE…
+    282|     expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flight…
+       |                                                     ^
+    283|     expect(ball.plan.bounceX).toBe(old.bounceX);
+    284|     const next = sampleReturn(ball.plan, ball.from, at);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[58/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 全球加速499→500でも位置・軌道・独立倍率を保持する
+AssertionError: expected 0.44060865980139496 to be close to 0.6168521237219527, received difference is 0.17624346392055779, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:282:53
+    280|     const point = sampleReturn(old, ball.from, at);
+    281|     s.state.score = after; refreshFlightSpeeds(s.state, before, at, DE…
+    282|     expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flight…
+       |                                                     ^
+    283|     expect(ball.plan.bounceX).toBe(old.bounceX);
+    284|     const next = sampleReturn(ball.plan, ball.from, at);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[59/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 全球加速500→501でも位置・軌道・独立倍率を保持する
+AssertionError: expected 0.4405970500610934 to be close to 0.5607598818959358, received difference is 0.12016283183484244, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:282:53
+    280|     const point = sampleReturn(old, ball.from, at);
+    281|     s.state.score = after; refreshFlightSpeeds(s.state, before, at, DE…
+    282|     expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flight…
+       |                                                     ^
+    283|     expect(ball.plan.bounceX).toBe(old.bounceX);
+    284|     const next = sampleReturn(ball.plan, ball.from, at);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[60/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 全球加速539→540でも位置・軌道・独立倍率を保持する
+AssertionError: expected 0.34393122126094866 to be close to 0.43773064524120486, received difference is 0.0937994239802562, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:282:53
+    280|     const point = sampleReturn(old, ball.from, at);
+    281|     s.state.score = after; refreshFlightSpeeds(s.state, before, at, DE…
+    282|     expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flight…
+       |                                                     ^
+    283|     expect(ball.plan.bounceX).toBe(old.bounceX);
+    284|     const next = sampleReturn(ball.plan, ball.from, at);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[61/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 全球加速554→555でも位置・軌道・独立倍率を保持する
+AssertionError: expected 0.34385057716910694 to be close to 0.4376280073061356, received difference is 0.09377743013702866, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:282:53
+    280|     const point = sampleReturn(old, ball.from, at);
+    281|     s.state.score = after; refreshFlightSpeeds(s.state, before, at, DE…
+    282|     expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flight…
+       |                                                     ^
+    283|     expect(ball.plan.bounceX).toBe(old.bounceX);
+    284|     const next = sampleReturn(ball.plan, ball.from, at);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[62/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 全球加速555→556でも位置・軌道・独立倍率を保持する
+AssertionError: expected 0.3438456650488675 to be close to 0.437621755516742, received difference is 0.0937760904678745, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:282:53
+    280|     const point = sampleReturn(old, ball.from, at);
+    281|     s.state.score = after; refreshFlightSpeeds(s.state, before, at, DE…
+    282|     expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flight…
+       |                                                     ^
+    283|     expect(ball.plan.bounceX).toBe(old.bounceX);
+    284|     const next = sampleReturn(ball.plan, ball.from, at);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[63/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（499）
+AssertionError: expected 0.47450163363227205 to be close to 0.6168521237219527, received difference is 0.1423504900896807, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:304:57
+    302|         expect(s.state.balls).toHaveLength(2); hit = true;
+    303|       } else if (hit && result.events.some(e => e.kind === 'opponent-h…
+    304|         expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(fl…
+       |                                                         ^
+    305|         if (score >= 555) expect(ball.plan.bounceX).toBeDefined();
+    306|         return;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[64/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（500）
+AssertionError: expected 0.4744891308350212 to be close to 0.6168358700855294, received difference is 0.14234673925050823, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:304:57
+    302|         expect(s.state.balls).toHaveLength(2); hit = true;
+    303|       } else if (hit && result.events.some(e => e.kind === 'opponent-h…
+    304|         expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(fl…
+       |                                                         ^
+    305|         if (score >= 555) expect(ball.plan.bounceX).toBeDefined();
+    306|         return;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[65/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（501）
+AssertionError: expected 0.4744767668368013 to be close to 0.6168197968878394, received difference is 0.1423430300510381, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:304:57
+    302|         expect(s.state.balls).toHaveLength(2); hit = true;
+    303|       } else if (hit && result.events.some(e => e.kind === 'opponent-h…
+    304|         expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(fl…
+       |                                                         ^
+    305|         if (score >= 555) expect(ball.plan.bounceX).toBeDefined();
+    306|         return;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[66/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（539）
+AssertionError: expected 0.3703874690502502 to be close to 0.48150370976532536, received difference is 0.11111624071507514, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:304:57
+    302|         expect(s.state.balls).toHaveLength(2); hit = true;
+    303|       } else if (hit && result.events.some(e => e.kind === 'opponent-h…
+    304|         expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(fl…
+       |                                                         ^
+    305|         if (score >= 555) expect(ball.plan.bounceX).toBeDefined();
+    306|         return;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[67/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（540）
+AssertionError: expected 0.37038121676696534 to be close to 0.48149558179705426, received difference is 0.11111436503008892, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:304:57
+    302|         expect(s.state.balls).toHaveLength(2); hit = true;
+    303|       } else if (hit && result.events.some(e => e.kind === 'opponent-h…
+    304|         expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(fl…
+       |                                                         ^
+    305|         if (score >= 555) expect(ball.plan.bounceX).toBeDefined();
+    306|         return;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[68/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（555）
+AssertionError: expected 0.37029533159109107 to be close to 0.4813839310684162, received difference is 0.11108859947732513, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:304:57
+    302|         expect(s.state.balls).toHaveLength(2); hit = true;
+    303|       } else if (hit && result.events.some(e => e.kind === 'opponent-h…
+    304|         expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(fl…
+       |                                                         ^
+    305|         if (score >= 555) expect(ball.plan.bounceX).toBeDefined();
+    306|         return;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[69/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 停止・再開は確定速度を維持しリトライは初速へ戻る
+AssertionError: expected 0.3439312212609451 to be close to 0.43773064524120486, received difference is 0.09379942398025976, but expected 5e-9
+ ❯ tests/unit/remaining-ball-speed.test.ts:317:53
+    315|     s.state.phase = 'running'; s.step(missPaddle);
+    316|     const ball = s.state.balls[0]!;
+    317|     expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flight…
+       |                                                     ^
+    318|     const session = createSession(DEFAULT_CONFIG, 7); session.start();…
+    319|     const plan = session.snapshot().scheduledReturns[0]!;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[70/86]⎯
+
+ FAIL  tests/unit/remaining-ball-speed.test.ts > 相手の打球時に固定する倍率 > 500→502の増球と新残球倍率も同じ時刻付き入力なら30/60/120Hzで一致する
+AssertionError: expected [ 1.4 ] to deeply equal [ 1, 1.1 ]
+
+- Expected
++ Received
+
+  [
+-   1,
+-   1.1,
++   1.4,
+  ]
+
+ ❯ tests/unit/remaining-ball-speed.test.ts:337:33
+    335|     expect(baseline.state.score).toBeGreaterThanOrEqual(502);
+    336|     expect(baseline.state.balls).toHaveLength(2);
+    337|     expect([...bonuses].sort()).toEqual([1, 1.1]);
+       |                                 ^
+    338|     const comparable = (s: ReturnType<typeof remainingScenario>) => {
+    339|       const { runId: _, ...snapshot } = s.snapshot(); return snapshot;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[71/86]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  86 failed | 55 passed (141)
+   Start at  16:58:41
+   Duration  861ms (tests 50%, transform 40%, import 9%, worker 1%)
+
