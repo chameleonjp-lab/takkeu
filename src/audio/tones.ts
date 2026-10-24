@@ -124,7 +124,9 @@ function play(context: BaseAudioContext, output: AudioNode, kind: 'player' | 'op
   const layer = (type: Layer['type'], high: number, to: number, duration: number, peak: number, delay = 0): Layer => ({ type, high, low:to, duration, peak, delay });
   let layers: Layer[];
   if (kind === 'warning') {
-    layers = [0, .042, .084].map((delay,i) => layer('triangle', 850 + i * 300, 1250 + i * 400, .06, .18, delay));
+    // 159ms total: sustain the rising cue at conservative peaks. The former
+    // 60ms decays fell below the existing warning-energy check in both engines.
+    layers = [0, .042, .084].map((delay,i) => layer('triangle', 850 + i * 300, 1250 + i * 400, .075, .18, delay));
     layers.push(layer('noise', 3800, 3800, .025, .12));
   } else if (kind === 'opponent') {
     layers = [layer('sine',200,50,.09,.5), layer('triangle',680,220,.07,.22), layer('square',330,110,.035,.08), layer('noise',1300,1300,.025,.18)];
