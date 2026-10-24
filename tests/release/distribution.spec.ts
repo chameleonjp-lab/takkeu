@@ -1,15 +1,9 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../helpers/browserTest';
 import { execFileSync } from 'node:child_process';
 for (const [port, base] of [[4174, '/'], [4175, '/takkeu/']] as const) {
   test(`実配布物 ${base} の参照・開始・保存と開発機能の非混入`, async ({ page, request }) => {
     await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
     const origin = `http://127.0.0.1:${port}`, failures: string[] = [];
-    // Count-only guest requests are exercised separately against the real API.
-    // Distribution tests isolate asset delivery from external network latency.
-    await page.route('https://mlpnjgezrnhdxsxolyzj.supabase.co/rest/v1/rpc/start_takkeu_guest_play_v1', async route => {
-      const body = route.request().postDataJSON();
-      await route.fulfill({ json: { accepted: true, start_id: body.p_start_id, play_id: '22222222-2222-4222-8222-222222222222', game_slug: 'takkeu', client_version: body.p_client_version } });
-    });
     page.on('pageerror', e => failures.push(e.message));
     page.on('requestfailed', r => failures.push(r.url()));
     page.on('response', r => { if (r.status() >= 400) failures.push(`${r.status()} ${r.url()}`); });

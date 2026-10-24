@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../helpers/browserTest';
 
 test.use({ video: 'on' });
 const scores = [0, 1, 4, 5, 9, 10, 19, 20, 21, 30, 40, 70, 100, 130, 150, 160, 190, 210, 240, 270, 300, 330, 360, 380, 390, 410, 420, 450];

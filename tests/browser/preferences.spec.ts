@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../helpers/browserTest';
 import { DEFAULT_PREFERENCES, PREFERENCES_KEY } from '../../src/storage/preferences';
 
 test('全設定と自己ベストが再読込・リトライを越えて残る', async ({ page }, testInfo) => {

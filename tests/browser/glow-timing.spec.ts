@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../helpers/browserTest';
 import { GLOW_SCHEDULE } from '../helpers/glowSchedule';
 
 test('指定された発光ラリーの直前・到達時を同一画角で撮影する', async ({ page }, info) => {

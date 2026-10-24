@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../helpers/browserTest';
 import type {} from '../helpers/appHarness';
 
 test('停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する', async ({ page }) => {

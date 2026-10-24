@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../helpers/browserTest';
 
 test('ホームにタイトルと開始ボタンを表示し、自動で開始しない', async ({ page }) => {
   await page.goto('/');

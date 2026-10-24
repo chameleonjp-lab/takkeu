@@ -1,0 +1,57 @@
+[WebServer] (node:19612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 22 tests using 1 worker
+
+(node:19636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/22] [chromium] › tests/browser/basic-play.spec.ts:12:1 › 開始→直接配置・ドラッグ→返球→失球→結果→再挑戦
+[chromium] › tests/browser/basic-play.spec.ts:12:1 › 開始→直接配置・ドラッグ→返球→失球→結果→再挑戦
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+
+[2/22] [chromium] › tests/browser/basic-play.spec.ts:48:1 › 停止中は描画を保持し、再開操作でだけ進む
+[3/22] [chromium] › tests/browser/basic-play.spec.ts:64:1 › タッチの絶対位置ドラッグでラケットを動かせる
+(node:20315) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/22] [chromium] › tests/browser/ranking-isolation.spec.ts:3:1 › 通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す
+[chromium] › tests/browser/ranking-isolation.spec.ts:3:1 › 通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+
+[5/22] [chromium] › tests/browser/ranking.spec.ts:35:1 › 名前なしで遊べて結果には上位30名と正式URLのXシェアが表示される
+[6/22] [chromium] › tests/browser/ranking.spec.ts:58:1 › 匿名開始の応答喪失後もすぐ遊べてonline復帰時は同じIDで再送する
+[7/22] [chromium] › tests/browser/ranking.spec.ts:73:1 › 通信不能で始めた匿名2回の記録を再読込後も保ち復旧時に送る
+[8/22] [chromium] › tests/browser/ranking.spec.ts:99:1 › online復帰が古い通信の失敗より先でも送信待ちを再開する
+[9/22] [chromium] › tests/browser/ranking.spec.ts:113:1 › 名前ありは開始時に一度記録し通常終了を自動送信する
+[10/22] [chromium] › tests/browser/ranking.spec.ts:127:1 › 送信失敗後も結果と共有を保ち同じIDで再送する
+[11/22] [chromium] › tests/browser/ranking.spec.ts:141:1 › 通信停止中も名前なしのプレイと再プレイが使えランキングは再取得できる
+(node:20582) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[12/22] [webkit] › tests/browser/basic-play.spec.ts:12:1 › 開始→直接配置・ドラッグ→返球→失球→結果→再挑戦
+[webkit] › tests/browser/basic-play.spec.ts:12:1 › 開始→直接配置・ドラッグ→返球→失球→結果→再挑戦
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+
+[13/22] [webkit] › tests/browser/basic-play.spec.ts:48:1 › 停止中は描画を保持し、再開操作でだけ進む
+[14/22] [webkit] › tests/browser/basic-play.spec.ts:64:1 › タッチの絶対位置ドラッグでラケットを動かせる
+(node:20814) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[15/22] [webkit] › tests/browser/ranking-isolation.spec.ts:3:1 › 通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す
+[webkit] › tests/browser/ranking-isolation.spec.ts:3:1 › 通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+
+[16/22] [webkit] › tests/browser/ranking.spec.ts:35:1 › 名前なしで遊べて結果には上位30名と正式URLのXシェアが表示される
+[17/22] [webkit] › tests/browser/ranking.spec.ts:58:1 › 匿名開始の応答喪失後もすぐ遊べてonline復帰時は同じIDで再送する
+[18/22] [webkit] › tests/browser/ranking.spec.ts:73:1 › 通信不能で始めた匿名2回の記録を再読込後も保ち復旧時に送る
+[19/22] [webkit] › tests/browser/ranking.spec.ts:99:1 › online復帰が古い通信の失敗より先でも送信待ちを再開する
+[20/22] [webkit] › tests/browser/ranking.spec.ts:113:1 › 名前ありは開始時に一度記録し通常終了を自動送信する
+[21/22] [webkit] › tests/browser/ranking.spec.ts:127:1 › 送信失敗後も結果と共有を保ち同じIDで再送する
+[22/22] [webkit] › tests/browser/ranking.spec.ts:141:1 › 通信停止中も名前なしのプレイと再プレイが使えランキングは再取得できる
+  22 passed (2.1m)
