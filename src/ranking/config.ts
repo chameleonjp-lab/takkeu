@@ -19,7 +19,7 @@ export const RANKING_CONFIG = Object.freeze({
   minScore: entry.score_min,
   maxScore: entry.score_max,
   maxNameLength: manifest.player_name.max_length,
-  labUrl: 'https://chameleonjp-lab.github.io/chameleonjp_lab/',
+  rankingUrl: `https://chameleonjp-lab.github.io/chameleonjp_lab/ranking.html?game=${encodeURIComponent(entry.game_slug)}`,
   supabaseUrl: 'https://mlpnjgezrnhdxsxolyzj.supabase.co',
   publishableKey: "sb_publishable_drzcy0v97knU6FgjqSgBHw_0A9XPdFM",
 });
@@ -28,17 +28,18 @@ function validShareScore(score: number): boolean {
   return Number.isFinite(score) && Number.isInteger(score) && score >= 0;
 }
 
-function shareUrl(text: string): string {
-  const params = new URLSearchParams({ text, url: RANKING_CONFIG.canonicalUrl });
+function shareUrl(text: string, url?: string): string {
+  const params = new URLSearchParams({ text });
+  if (url) params.set('url', url);
   return `https://twitter.com/intent/tweet?${params}`;
 }
 
 export function scoreShareUrl(score: number): string | null {
-  return validShareScore(score) ? shareUrl(`タッケウで${score}ラリー達成！\n何ラリーつなげられる？ #タッケウ`) : null;
+  return validShareScore(score) ? shareUrl(`タッケウで${score}ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\n${RANKING_CONFIG.canonicalUrl}`) : null;
 }
 
 export function homeShareUrl(bestScore: number): string {
   return shareUrl(validShareScore(bestScore) && bestScore >= 1
     ? `卓球ゲーム「タッケウ」で自己ベスト${bestScore}ラリー！\n何ラリーつなげられる？ #タッケウ`
-    : 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ');
+    : 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ', RANKING_CONFIG.canonicalUrl);
 }
