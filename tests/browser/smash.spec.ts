@@ -2,7 +2,7 @@ import { expect, test } from '../helpers/browserTest';
 
 test.use({ video: 'on' });
 
-test('450の予告はミュート・落球後4球・停止中でも見え、相手側の球も表示する', async ({ page }, info) => {
+test('450の予告はミュート・落球後4球・停止中でも見え、相手側の球を隠す', async ({ page }, info) => {
   await page.goto('/tests/fixtures/stage2.html');
   await page.waitForFunction(() => !!window.stage2);
   await page.evaluate(() => window.stage2.beginSmash(449));
@@ -18,7 +18,7 @@ test('450の予告はミュート・落球後4球・停止中でも見え、相�
   await expect(warning).toBeVisible();
   await expect(page.getByLabel('残球数')).toContainText('4');
   expect(await page.evaluate(() => window.stage2.pose().preparing)).toBe(true);
-  expect(await page.evaluate(() => Object.values(window.stage2.presentation().balls).every(b => b.visible))).toBe(true);
+  expect(await page.evaluate(() => Object.values(window.stage2.presentation().balls).every(b => !b.visible))).toBe(true);
   await page.screenshot({ path: info.outputPath('smash-warning-muted.png') });
   // The rounded overlay's transparent corners now expose the animated court.
   // Compare its opaque content, while preserving the static-warning requirement.
@@ -45,7 +45,7 @@ test('450の予告はミュート・落球後4球・停止中でも見え、相�
   await page.screenshot({ path: info.outputPath('smash-warning-paused.png') });
   await page.getByRole('button', { name: 'つづける', exact: true }).click();
   await page.evaluate(() => window.stage2.animate(0.3));
-  await page.screenshot({ path: info.outputPath('smash-departure-visible.png') });
+  await page.screenshot({ path: info.outputPath('smash-departure-hidden.png') });
   await page.evaluate(() => window.stage2.animate(0.65));
   await page.screenshot({ path: info.outputPath('smash-own-side.png') });
   await page.evaluate(() => window.stage2.animate(1.3));

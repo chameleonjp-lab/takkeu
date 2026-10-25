@@ -30,8 +30,8 @@ it('places replay immediately under the score and shares the actual score and ca
   expect(get('[data-result-score]').nextElementSibling).toBe(get('[data-result] [data-action="retry"]'));
   const url = new URL(get<HTMLAnchorElement>('[data-share-x]').href);
   expect(url.hostname).toBe('twitter.com');
-  expect(url.searchParams.get('text')).toBe('タッケウで42ラリー達成！\n何ラリーつなげられる？ #タッケウ');
-  expect(url.searchParams.get('url')).toBe('https://chameleonjp-lab.github.io/takkeu/');
+  expect(url.searchParams.get('text')).toBe('タッケウで42ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
+  expect(url.searchParams.has('url')).toBe(false);
 });
 
 it('keeps home best and the current finalized result separate through retry and home', () => {
@@ -53,7 +53,7 @@ it('keeps home best and the current finalized result separate through retry and 
   screens.render({ ...scenario(37).snapshot(), phase: 'running' });
   expect(result.hasAttribute('href')).toBe(false);
   screens.render({ ...scenario(37).snapshot(), phase: 'gameover' });
-  expect(new URL(result.href).searchParams.get('text')).toBe('タッケウで37ラリー達成！\n何ラリーつなげられる？ #タッケウ');
+  expect(new URL(result.href).searchParams.get('text')).toBe('タッケウで37ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
   expect(result.hasAttribute('aria-disabled')).toBe(false);
   expect(result.tabIndex).toBe(0);
   screens.setPreferences({ ...DEFAULT_PREFERENCES, bestScore: 250 });
@@ -61,7 +61,7 @@ it('keeps home best and the current finalized result separate through retry and 
   screens.render({ ...scenario(0).snapshot(), phase: 'running' });
   expect(result.hasAttribute('href')).toBe(false);
   screens.render({ ...scenario(0).snapshot(), phase: 'gameover' });
-  expect(new URL(result.href).searchParams.get('text')).toBe('タッケウで0ラリー達成！\n何ラリーつなげられる？ #タッケウ');
+  expect(new URL(result.href).searchParams.get('text')).toBe('タッケウで0ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
   screens.render({ ...scenario(0).snapshot(), phase: 'ready' });
   expect(result.hasAttribute('href')).toBe(false);
   expect(new URL(home.href).searchParams.get('text')).toContain('自己ベスト250ラリー');
@@ -95,7 +95,7 @@ it('preserves the result share through leaderboard and submission failures', () 
   for (const status of ['retryable_failed', 'permanent_failed'] as const) {
     screens.setRankingState({ status, pendingCount: 1 });
     const link = get<HTMLAnchorElement>('[data-share-x]');
-    expect(new URL(link.href).searchParams.get('text')).toBe('タッケウで1234567890ラリー達成！\n何ラリーつなげられる？ #タッケウ');
+    expect(new URL(link.href).searchParams.get('text')).toBe('タッケウで1234567890ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
     expect(link.closest('[inert], [hidden]')).toBeNull();
   }
 });

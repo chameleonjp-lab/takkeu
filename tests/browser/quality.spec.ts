@@ -1,5 +1,4 @@
 import { expect, test } from '../helpers/browserTest';
-import { ballCountAtScore } from '../../src/game/milestones';
 import type {} from '../helpers/appHarness';
 import type { GameSnapshot } from '../../src/game/types';
 
@@ -95,30 +94,48 @@ test('縦横・44pxボタン・200%文字・ラベル・安全余白を確認', 
   await info.attach('menu-accessibility.yml', { body: await page.locator('main').ariaSnapshot(), contentType: 'text/yaml' });
 });
 
-test('450の459球と以後の増球・スマッシュ・高速接触を30ゲーム秒維持する', async ({ page }, info) => {
+test('450の30球と以後の同時返球・失球・増球・スマッシュを30ゲーム秒維持する', async ({ page }, info) => {
   // Same 30 simulated seconds, rendering resolution and assertions. See the
   // viewport verification ledger for retained 180s CI failures and rationale.
   test.setTimeout(360_000);
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
-  await page.evaluate(() => { window.stage3.show(450); window.stage3.autoPlay(true); });
-  expect(await page.evaluate(() => window.stage3.snapshot().balls.length)).toBe(459);
+  await page.evaluate(() => { window.stage3.show(450); window.stage3.autoPlay(false); });
+  expect(await page.evaluate(() => window.stage3.snapshot().balls.length)).toBe(30);
+  for (let frame = 0; frame < 5; frame++) await page.clock.fastForward(100);
+  const opening = await page.evaluate(() => ({ state: window.stage3.snapshot(), events: window.stage3.metrics().events }));
+  const firstServes = opening.events.filter(e => e.kind === 'opponent-hit');
+  expect(firstServes.map(e => e.ballId).sort((a, b) => a! - b!)).toEqual(Array.from({ length: 30 }, (_, i) => i + 1));
+  expect(new Set(firstServes.map(e => e.time)).size).toBe(1);
+  expect(firstServes.every(e => e.time <= 0.5)).toBe(true);
+  expect(opening.state.balls.filter(b => b.phase === 'incoming' || b.phase === 'outgoing')).toHaveLength(30);
   const samples = [];
+  const addedIds = new Set<number>();
   for (let i = 0; i < 30; i++) {
     // Functional load at 10Hz: all 120Hz physics steps run through createLoop.
     // This does not substitute for the separate native FPS/performance suite.
-    for (let frame = 0; frame < 10; frame++) await page.clock.fastForward(100);
-    const row = await page.evaluate(() => ({ state: window.stage3.snapshot(), resources: window.stage3.resources() }));
-    expect(row.state.phase).toBe('running'); expect(row.state.balls.filter(b => b.phase !== 'lost')).toHaveLength(ballCountAtScore(row.state.score));
+    for (let frame = 0; frame < (i === 0 ? 5 : 10); frame++) await page.clock.fastForward(100);
+    const row = await page.evaluate(() => ({ state: window.stage3.snapshot(), events: window.stage3.metrics().events, resources: window.stage3.resources() }));
+    for (const ball of row.state.balls) if (ball.id > 30) addedIds.add(ball.id);
+    for (const event of row.events) if (event.ballId !== undefined && event.ballId > 30) addedIds.add(event.ballId);
+    const losses = row.events.filter(e => e.kind === 'ball-lost').length;
+    expect(row.state.phase).toBe('running');
+    expect(row.state.balls.length).toBeLessThanOrEqual(30);
+    expect(row.state.balls).toHaveLength(30 + addedIds.size - losses);
     expect(row.resources!.drawCalls).toBeLessThan(160); samples.push(row);
+    // Keep the center paddle through the first wave to exercise real stock losses.
+    if (i === 1) await page.evaluate(() => window.stage3.autoPlay(true));
   }
   expect(samples.at(-1)!.state.simTime).toBeGreaterThanOrEqual(29.9);
   expect(samples.at(-1)!.state.simTime).toBeLessThanOrEqual(30.1);
   expect(samples.at(-1)!.state.score).toBeGreaterThan(500);
-  const servedIds = await page.evaluate(() => [...new Set(window.stage3.metrics().events.filter(e => e.kind === 'opponent-hit').map(e => e.ballId))]);
-  for (let id = 1; id <= 47; id++) expect(servedIds).toContain(id);
-  expect(await page.evaluate(() => window.stage3.metrics().smashDepartures)).toBeGreaterThan(0);
+  const events = await page.evaluate(() => window.stage3.metrics().events);
+  expect(events.filter(e => e.kind === 'player-hit')).toHaveLength(samples.at(-1)!.state.score - 450);
+  expect(events.filter(e => e.kind === 'ball-lost').length).toBeGreaterThan(0);
+  expect(events.some(e => e.kind === 'smash-warning')).toBe(true);
+  expect(addedIds.size).toBeGreaterThan(0);
+  expect(await page.evaluate(() => window.stage3.metrics().smashDepartures)).toBe(events.filter(e => e.kind === 'opponent-hit').length);
   await info.attach('growing-ball-load.json', { body: JSON.stringify(samples, null, 2), contentType: 'application/json' });
 });
 

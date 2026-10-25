@@ -85,20 +85,20 @@ describe('相手の打球時に固定する倍率', () => {
     s.state.balls.push(waitingBall(2, score, 1000)); s.step(missPaddle);
     expect(s.state.balls).toHaveLength(2); expect(ball.plan).toEqual(committed);
   });
-  it.each([500, 501, 540, 555])('予約衝突で延期した球も実打球時の2→1球を再判定する（%i）', score => {
+  it.each([500, 501, 540, 555])('自分の準備待ち中の球も実打球時の2→1球を再判定する（%i）', score => {
     const s = remainingScenario(score, 2), reserved = waitingBall(2, score);
     reserved.phase = 'incoming';
     reserved.plan = scheduleReturn({ ballId: 2, score, speedMultiplier: speedMultiplier(score), smash: score >= 450,
       earliestDepartAt: 20 - (score >= 450 ? 0.4 : 0), preferredTarget: { x: 0.5, y: 0.6 }, remainingBallMultiplier: 1 }, [], DEFAULT_CONFIG);
     reserved.position = sampleReturn(reserved.plan, reserved.from, 20); s.state.balls[1] = reserved;
-    // A real queue already respects existing reservations before stroke time.
+    // This ball has its own future stroke time, independent of the other flight.
     s.state.balls[0]!.plan = scheduleReturn({ ballId: 1, score, speedMultiplier: speedMultiplier(score),
-      smash: true, earliestDepartAt: 19.6, preferredTarget: { x: 0.5, y: 0.6 } }, [reserved.plan], DEFAULT_CONFIG);
+      smash: true, earliestDepartAt: 19.65, preferredTarget: { x: 0.5, y: 0.6 } }, [reserved.plan], DEFAULT_CONFIG);
     const first = s.step(missPaddle), ball = s.state.balls[0]!;
     expect(first.events.some(e => e.kind === 'opponent-hit' && e.ballId === 1)).toBe(false);
     expect(ball.phase).toBe('waiting-return'); expect(ball.plan.remainingBallMultiplier).toBe(1);
     expect(ball.plan.departAt).toBeGreaterThan(s.state.simTime);
-    expect(ball.plan.arriveAt - reserved.plan.arriveAt).toBeGreaterThanOrEqual(0.12 - 1e-10);
+    expect(ball.plan.departAt).toBeCloseTo(20.05, 10);
     reserved.phase = 'lost';
     const events: GameEvent[] = [];
     for (let tick = 0; tick < 120 && ball.phase !== 'incoming'; tick++) events.push(...s.step(missPaddle).events);
@@ -155,15 +155,15 @@ describe('相手の打球時に固定する倍率', () => {
     const accelerated = t.state.balls[0]!.plan;
     expect(accelerated.arriveAt - accelerated.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, 100, false), 8);
   });
-  it('499→500と増球が同じtickなら追加された待機球も数えて等倍で打球する', () => {
-    const s = remainingScenario(499, 1, 20.004);
+  it('500→501と増球が同じtickなら追加された待機球も数えて等倍で打球する', () => {
+    const s = remainingScenario(500, 1, 20.004);
     s.state.balls.push(incoming(2, 20.002));
     const result = s.step();
-    expect(s.state.score).toBe(500); expect(s.state.balls).toHaveLength(5);
+    expect(s.state.score).toBe(501); expect(s.state.balls).toHaveLength(3);
     expect(result.events.some(e => e.kind === 'opponent-hit' && e.ballId === 1)).toBe(true);
     expect(s.state.balls[0]!.plan.remainingBallMultiplier).toBe(1);
     expect(s.state.balls[0]!.plan.arriveAt - s.state.balls[0]!.plan.departAt)
-      .toBeCloseTo(flightDuration(DEFAULT_CONFIG, 500, true), 8);
+      .toBeCloseTo(flightDuration(DEFAULT_CONFIG, 501, true), 8);
   });
   it('同一tickで打球後に起きた失球はその飛行へ遡及しない', () => {
     const s = remainingScenario(501, 2, 20.001);
@@ -182,7 +182,7 @@ describe('相手の打球時に固定する倍率', () => {
     const plan = s.state.balls[0]!.plan;
     expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, 501, true), 8);
   });
-  it('異なる固定倍率の飛行球も539→540で到着間隔と位置を保つ', () => {
+  it('異なる固定倍率の飛行球も539→540で位置と倍率を保つ', () => {
     const request = (ballId: number, bonus: number, smash: boolean) => ({ ballId, remainingBallMultiplier: bonus,
       score: 539, speedMultiplier: speedMultiplier(539), smash, earliestDepartAt: 20, preferredTarget: { x: 0.4, y: 0.6 } });
     const a = scheduleReturn(request(1, 1, false), [], DEFAULT_CONFIG);
@@ -190,7 +190,7 @@ describe('相手の打球時に固定する倍率', () => {
     const c = scheduleReturn(request(3, 1.2, true), [a, b], DEFAULT_CONFIG);
     const at = Math.max(a.departAt, b.departAt, c.departAt) + 0.001;
     const next = [a, b, c].map(p => retimeFlight(p, at, 539, 540, DEFAULT_CONFIG)).sort((x, y) => x.arriveAt - y.arriveAt);
-    for (let i = 1; i < next.length; i++) expect(next[i]!.arriveAt - next[i - 1]!.arriveAt).toBeGreaterThanOrEqual(0.12 - 1e-10);
+    expect(next.every(p => p.arriveAt > at)).toBe(true);
     for (const plan of [a, b, c]) {
       const updated = next.find(p => p.ballId === plan.ballId)!, from = { x: 0.5, y: 0.6, z: -1.95 };
       expect(updated.remainingBallMultiplier).toBe(plan.remainingBallMultiplier);
@@ -263,7 +263,7 @@ describe('相手の打球時に固定する倍率', () => {
     const plan = s.state.balls[0]!.plan;
     expect(plan.arriveAt - plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, 500, true) / 1.2, 8);
   });
-  it.each([499, 500, 501, 539, 540, 555])('重なる3球の予定を調停し予告と飛行中の予約を守る（%i）', score => {
+  it.each([499, 500, 501, 539, 540, 555])('重なる3球を同時に返し予告と飛行中の軌道を守る（%i）', score => {
     const s = remainingScenario(score, 3);
     s.state.balls = [];
     // Model three simultaneous requests through the real queue builder. With
@@ -295,7 +295,8 @@ describe('相手の打球時に固定する倍率', () => {
     }
     expect(hits).toHaveLength(3);
     const plans = [...committed.values()].sort((a, b) => a.arriveAt - b.arriveAt);
-    for (let i = 1; i < plans.length; i++) expect(plans[i]!.arriveAt - plans[i - 1]!.arriveAt).toBeGreaterThanOrEqual(0.12 - 1e-10);
+    expect(new Set(hits).size).toBe(1);
+    expect(new Set(plans.map(p => p.arriveAt)).size).toBe(1);
   });
   it.each([[100, 101], [499, 500], [500, 501], [539, 540], [554, 555], [555, 556]])('全球加速%s→%sでも位置・軌道・独立倍率を保持する', (before, after) => {
     const s = remainingScenario(before, 1);
@@ -312,7 +313,7 @@ describe('相手の打球時に固定する倍率', () => {
     refreshFlightSpeeds(s.state, before, at, DEFAULT_CONFIG);
     expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, after, old.smash) / (before < 100 ? 1 : 1.2), 8);
   });
-  it.each([499, 500, 501, 539, 540, 555])('プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（%i）', score => {
+  it.each([[499, 0], [500, 1], [501, 0], [539, 1], [540, 0], [555, 0]])('プレイヤーの返球には追加倍率を持ち越さず、次の相手打球では再判定する（%i）', (score, added) => {
     const s = remainingScenario(score, 1); s.step(missPaddle);
     let hit = false;
     for (let i = 0; i < 500; i++) {
@@ -323,10 +324,10 @@ describe('相手の打球時に固定する倍率', () => {
         expect(duration).toBeCloseTo(flightDuration(DEFAULT_CONFIG, s.state.score, false), 8);
         expect(ball.plan.remainingBallMultiplier ?? 1).toBe(1);
         if (score >= 555) expect(ball.plan.bounceX).toBeDefined();
-        // Every hit here adds three queued balls through progression.
-        expect(s.state.balls).toHaveLength(4); hit = true;
+        // Only the eligible third rally adds a ball.
+        expect(s.state.balls).toHaveLength(1 + added); hit = true;
       } else if (hit && result.events.some(e => e.kind === 'opponent-hit' && e.ballId === 1)) {
-        expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, s.state.score, score >= 450), 8);
+        expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo(flightDuration(DEFAULT_CONFIG, s.state.score, score >= 450) / (added ? 1 : 1.2), 8);
         if (score >= 555) expect(ball.plan.bounceX).toBeDefined();
         return;
       }
@@ -344,7 +345,7 @@ describe('相手の打球時に固定する倍率', () => {
     const plan = session.snapshot().scheduledReturns[0]!;
     expect(plan.arriveAt - plan.departAt).toBe(2); expect(plan.speedMultiplier).toBe(speedMultiplier(0));
   });
-  it('500→502の増球と新残球倍率も同じ時刻付き入力なら30/60/120Hzで一致する', () => {
+  it('500→501の増球と新残球倍率も同じ時刻付き入力なら30/60/120Hzで一致する', () => {
     const baseline = remainingScenario(500, 1), input: InputFrame[] = [], expected: GameEvent[] = [];
     const bonuses = new Set<number>();
     for (let tick = 0; tick < 120 * 4; tick++) {
@@ -358,7 +359,7 @@ describe('相手の打球時に固定する倍率', () => {
       }
     }
     expect(baseline.state.score).toBeGreaterThanOrEqual(502);
-    expect(baseline.state.balls).toHaveLength(1 + 3 * (baseline.state.score - 500));
+    expect(baseline.state.balls).toHaveLength(1 + Math.floor((baseline.state.score - 498) / 3) - expected.filter(e => e.kind === 'ball-lost').length);
     expect([...bonuses].sort()).toEqual([1, 1.2]);
     const comparable = (s: ReturnType<typeof remainingScenario>) => {
       const { runId: _, ...snapshot } = s.snapshot(); return snapshot;

@@ -11,22 +11,22 @@ import { createInputTimeline } from '../../src/input/timeline';
 import { incoming, scenario } from '../helpers/scenarios';
 
 describe('加速・予告・入力の境界',()=>{
-  it('到着点は左右3帯へ散り、同じ帯を連続せず全て操作範囲へ収まる',()=>{
-    const source={randomState:12345,lastTargetBand:1},bands=new Set<number>(),xs:number[]=[];
+  it('連続する返球元から狙う点も操作範囲に収まる',()=>{
+    const source={randomState:12345},xs:number[]=[];
     for(let i=0;i<300;i++){
-      const old=source.lastTargetBand,from=chooseOpponentTarget(source,DEFAULT_CONFIG),p=choosePlayerTarget(source,DEFAULT_CONFIG,from);
-      expect(source.lastTargetBand).not.toBe(old);bands.add(source.lastTargetBand);xs.push(p.x);
-      expect(p.y).toBeGreaterThanOrEqual(.32);expect(p.y).toBeLessThanOrEqual(.64);
+      const from=chooseOpponentTarget(source,DEFAULT_CONFIG),p=choosePlayerTarget(source,DEFAULT_CONFIG,from);
+      xs.push(p.x);expect(p.y).toBeGreaterThanOrEqual(.32);expect(p.y).toBeLessThanOrEqual(.64);
+      expect(Number.isFinite(p.x)).toBe(true);
     }
-    expect(bands.size).toBe(3);expect(Math.min(...xs)).toBeLessThan(-.5);expect(Math.max(...xs)).toBeGreaterThan(.5);
+    expect(Math.min(...xs)).toBeLessThan(-.5);expect(Math.max(...xs)).toBeGreaterThan(.5);
   });
-  it.each([[false,true],[true,false]])('540の増速でも混在球(%s/%s)の前後の移動余裕が残る',(firstSmash,secondSmash)=>{
+  it.each([[false,true],[true,false]])('540の増速でも混在球(%s/%s)の独立した軌道と位置を保つ',(firstSmash,secondSmash)=>{
     const make=(ballId:number,smash:boolean,x:number)=>({ballId,smash,score:539,speedMultiplier:speedMultiplier(539),earliestDepartAt:20,preferredTarget:{x,y:.5}});
     const a=scheduleReturn(make(1,firstSmash,-.1),[],DEFAULT_CONFIG),b=scheduleReturn(make(2,secondSmash,.1),[a],DEFAULT_CONFIG);
     const time=Math.max(a.departAt,b.departAt)+.001;
     expect(time).toBeLessThan(Math.min(a.arriveAt,b.arriveAt));
     const next=[a,b].map(plan=>retimeFlight(plan,time,539,540,DEFAULT_CONFIG)).sort((x,y)=>x.arriveAt-y.arriveAt);
-    expect(next[1]!.arriveAt-next[0]!.arriveAt).toBeGreaterThanOrEqual(.12+.2/DEFAULT_CONFIG.paddleSpeed);
+    expect(next.every(p => p.arriveAt > time)).toBe(true);
     for(let i=0;i<2;i++){
       const old=[a,b][i]!,updated=next.find(p=>p.ballId===old.ballId)!,from={x:0,y:.5,z:-1.95};
       const before=sampleReturn(old,from,time),after=sampleReturn(updated,from,time);

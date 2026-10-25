@@ -55,15 +55,15 @@ describe('初速と全球の毎ラリー加速', () => {
     expect(speedMultiplier(50)).toBeGreaterThan(1.5);
     expect(speedMultiplier(101)).toBeGreaterThan(speedMultiplier(100));
   });
-  it('別の球の得点で飛行中の往復球も加速し、現在位置は変わらない', () => {
-    const s = scenario(1);
+  it.each([1, 299, 300])('別の球の得点で飛行中の往復球も加速し、現在位置は変わらない（%i）', score => {
+    const s = scenario(score);
     const back = incoming(2, 21);
     const out = { ...incoming(3, 21), phase: 'outgoing' as const, from: { x: 0.4, y: 0.5, z: DEFAULT_CONFIG.paddleZ } };
     out.plan = { ...out.plan, landingZ: -DEFAULT_CONFIG.paddleZ };
     s.state.balls = [incoming(1, 20.002), back, out];
     const at = 20 + DEFAULT_CONFIG.fixedDt;
     const original = [back, out].map(ball => ({ id: ball.id, plan: structuredClone(ball.plan), from: { ...ball.from }, position: sampleReturn(ball.plan, ball.from, at) }));
-    s.step(); expect(s.state.score).toBe(2);
+    s.step(); expect(s.state.score).toBe(score + 1);
     for (const old of original) {
       const ball = s.state.balls.find(b => b.id === old.id)!;
       expect(ball.position.x).toBeCloseTo(old.position.x, 10);
@@ -72,7 +72,7 @@ describe('初速と全球の毎ラリー加速', () => {
       const sampled = sampleReturn(ball.plan, ball.from, at);
       for (const axis of ['x','y','z'] as const) expect(sampled[axis]).toBeCloseTo(ball.position[axis],10);
       expect(ball.plan.arriveAt).toBeLessThan(old.plan.arriveAt);
-      expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo((old.plan.arriveAt - old.plan.departAt) * speedMultiplier(1) / speedMultiplier(2), 10);
+      expect(ball.plan.arriveAt - ball.plan.departAt).toBeCloseTo((old.plan.arriveAt - old.plan.departAt) * speedMultiplier(score) / speedMultiplier(score + 1), 10);
     }
   });
   it('自分から相手への返球地点も左右へランダムに散る', () => {
