@@ -48,6 +48,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   let pendingStart:AbortController|null=null,viewPrepared=false;
   let preparingPlay:Play|null=null;
   let loadingProgress:ReturnType<typeof createLoadingProgress>|null=null,loadingError:string|null=null;
+  let loadingShowAt=0;
   let observedPending = 0;
   const screens = createScreens(root, {
     start, retry: start, pause: () => pause('user'), resume, home,
@@ -138,7 +139,11 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     const epoch = ++startEpoch;
     pendingStart?.abort();const controller=new AbortController();pendingStart=controller;
     starting=true;loadingError=null;loadingProgress=createLoadingProgress();
-    screens.setStarting(true);screens.setPreparing(true);loadingScreen.show(loadingProgress.state());
+    // Cached starts need no display frames. Only show their instructions if
+    // audio, ranking or input readiness actually keeps the player waiting.
+    loadingShowAt=viewPrepared?performance.now()+150:0;
+    screens.setStarting(true);screens.setPreparing(true);
+    loadingScreen.show(viewPrepared?null:loadingProgress.state());
     // Start browser audio permission work inside the user's click. It must not
     // hold gameplay hostage when a browser refuses or never finishes resuming.
     unlockAttempt++;
@@ -155,9 +160,10 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   async function prepareStart(name:string,epoch:number,controller:AbortController,sound:Promise<boolean>):Promise<void>{
     const {signal}=controller,current=()=>!disposed&&epoch===startEpoch&&!signal.aborted;
     const progress=loadingProgress!;
+    const reuseCourt=viewPrepared;
     let preparingCourt=false;
     try{
-      await nextPaint(signal);
+      if(!reuseCourt)await nextPaint(signal);
       if(!current())return;
       if(!view)view=makeView();
       resizeView();preparingCourt=true;
@@ -176,7 +182,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
         if(current())preparingPlay=play;
       }else void ranking.start('');
       if(!current())return;progress.report('ranking',1);progress.report('controls',0);
-      await waitForPreparation(fitStartingInput(signal),5000,signal);
+      await waitForPreparation(fitStartingInput(signal,reuseCourt),5000,signal);
       if(!current()||!contextAvailable||document.hidden){retirePreparingPlay();throw new Error('画面に戻ってから、もう一度準備してください。');}
       progress.report('controls',1);progress.finish();
       preparingPlay=null;pendingStart=null;starting=false;loadingProgress=null;loadingScreen.show(null);
@@ -190,13 +196,19 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
       showLoadingError(error instanceof Error?error.message:'準備を完了できませんでした。もう一度お試しください。');
     }
   }
-  async function fitStartingInput(signal:AbortSignal):Promise<void>{
+  function startingInputReady():boolean{
+    const bounds=screens.canvasWrap.getBoundingClientRect();
+    const mapping=inputMapping,rect=mapping?.screen;
+    return !!(bounds.width>0&&bounds.height>0&&rect&&rect.width>0&&rect.height>0&&mapping.isCurrent?.()!==false
+      &&mapping.toWorld(rect.left+rect.width/2,rect.top+rect.height/2));
+  }
+  async function fitStartingInput(signal:AbortSignal,reuseCourt:boolean):Promise<void>{
+    if(reuseCourt){resizeView();if(startingInputReady())return;}
     let stable='';
     for(;;){
       await nextPaint(signal);resizeView();
       if(document.hidden||!contextAvailable)throw new Error('画面に戻ってから、もう一度準備してください。');
-      const mapping=inputMapping,rect=mapping?.screen;
-      if(rect&&rect.width>0&&rect.height>0&&mapping.isCurrent?.()!==false&&mapping.toWorld(rect.left+rect.width/2,rect.top+rect.height/2)){
+      if(startingInputReady()){
         if(stable===fitted)return;stable=fitted;
       }else stable='';
     }
@@ -269,7 +281,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   let frameId = 0;
   const frame = (now: number): void => {
     if (disposed) return;
-    if(starting&&loadingProgress)loadingScreen.show(loadingProgress.state());
+    if(starting&&loadingProgress&&now>=loadingShowAt)loadingScreen.show(loadingProgress.state());
     // Dynamic viewport/layout changes can resize the court without a window
     // resize event. Refresh its camera mapping before accepting the next frame.
     if (session.snapshot().phase === 'running') resizeView();

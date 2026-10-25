@@ -11,13 +11,14 @@ const virtualClocks=new WeakSet<Page>();
 export async function waitForStart(page:Page):Promise<void>{
   await expect.poll(async()=>{
     const screen=page.locator('[data-loading-screen]');
-    if(!await screen.isVisible())return true;
+    const ready=async()=>!await screen.isVisible()&&await page.locator('[data-action="start"]').getAttribute('aria-busy')!=='true';
+    if(await ready())return true;
     const error=screen.locator('[role="alert"]');
     if(await error.isVisible())throw new Error(await error.innerText());
     // Stay below the next animation frame: readiness itself must not consume
     // the first opponent stroke before a test can send input or inject a fault.
     if(virtualClocks.has(page))await page.clock.runFor(5);
-    return !await screen.isVisible();
+    return ready();
   },{timeout:30000,intervals:[1,5,10]}).toBe(true);
 }
 
