@@ -1,0 +1,13 @@
+WebSocket server error:
+Error: listen EPERM: operation not permitted 0.0.0.0:24678
+    at Server.setupListenHandle [as _listen2] (node:net:2145:21)
+    at listenInCluster (node:net:2224:12)
+    at Server.listen (node:net:2344:7)
+    at Object.listen (file:///workspace/takkeu-work/node_modules/vite/dist/node/chunks/node.js:24711:18)
+    at Object.listen (file:///workspace/takkeu-work/node_modules/vite/dist/node/chunks/node.js:25395:27)
+    at DevEnvironment.listen (file:///workspace/takkeu-work/node_modules/vite/dist/node/chunks/node.js:37149:12)
+    at file:///workspace/takkeu-work/node_modules/vite/dist/node/chunks/node.js:25100:95
+    at Array.map (<anonymous>)
+    at file:///workspace/takkeu-work/node_modules/vite/dist/node/chunks/node.js:25100:82
+    at async _createServer (file:///workspace/takkeu-work/node_modules/vite/dist/node/chunks/node.js:25117:9)
+Saved adversarial v3 geometry: 60 probes
