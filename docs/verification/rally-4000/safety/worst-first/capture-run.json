@@ -1,0 +1,62 @@
+{
+  "sequences": [
+    {
+      "name": "4000-standard-legacy100",
+      "score": 4000,
+      "loss": 100,
+      "legacyLossStreak": 100,
+      "quality": "standard",
+      "reducedMotion": false,
+      "fps": 60,
+      "seconds": 6,
+      "width": 1024,
+      "height": 768,
+      "frames": 360,
+      "syntheticStress": true
+    },
+    {
+      "name": "4000-low-legacy100",
+      "score": 4000,
+      "loss": 100,
+      "legacyLossStreak": 100,
+      "quality": "low",
+      "reducedMotion": false,
+      "fps": 60,
+      "seconds": 6,
+      "width": 1024,
+      "height": 768,
+      "frames": 360,
+      "syntheticStress": true
+    }
+  ],
+  "errors": [],
+  "unexpected": [],
+  "sourceHashes": {
+    "tests/helpers/rallyHarness.ts": "73c868b83ebc8429a78575f8c1ccd624f6c80052c198aed94a21cfabd563ec05",
+    "src/render/createView.ts": "424e79fde877b3537aa31bdd2b5722e085d17726b93d21650624e86ad6ebaf8c",
+    "src/render/rallyEffects.ts": "d39810c081ecc061a41a733441e529558c0d34dbdd40811ebbd7fa0d44a0d8ad",
+    "src/render/celebrations.ts": "de47e48a16832097c0abee46f6ed5694135ef862c5a6adb4e31cc75520a07fdc",
+    "src/render/presentation.ts": "fe5fd342cde8a88b59ed538d64d7e0126b714b800b12754cdf50441ec89c5772",
+    "src/render/field.ts": "33a224d11f907415d9064e9c9b9096a6cf84b7f7f71915d69f5810e43e31a452",
+    "src/render/rainbow.ts": "3789d9a0fdc078b95454fbecc14c194badea2b004911261bcae65d64cb628c80",
+    "src/game/rallyEffects.ts": "a94fad020f483cb0f6ded3321edc3164008e79fc0fffe6d5f1ee7720fc950150",
+    "src/game/celebrations.ts": "c3fe5cd55bdc5efabeaf1e511e76a71bb090fd964236ac043648e7620c525cfc"
+  },
+  "endSourceHashes": {
+    "tests/helpers/rallyHarness.ts": "73c868b83ebc8429a78575f8c1ccd624f6c80052c198aed94a21cfabd563ec05",
+    "src/render/createView.ts": "424e79fde877b3537aa31bdd2b5722e085d17726b93d21650624e86ad6ebaf8c",
+    "src/render/rallyEffects.ts": "d39810c081ecc061a41a733441e529558c0d34dbdd40811ebbd7fa0d44a0d8ad",
+    "src/render/celebrations.ts": "de47e48a16832097c0abee46f6ed5694135ef862c5a6adb4e31cc75520a07fdc",
+    "src/render/presentation.ts": "fe5fd342cde8a88b59ed538d64d7e0126b714b800b12754cdf50441ec89c5772",
+    "src/render/field.ts": "33a224d11f907415d9064e9c9b9096a6cf84b7f7f71915d69f5810e43e31a452",
+    "src/render/rainbow.ts": "3789d9a0fdc078b95454fbecc14c194badea2b004911261bcae65d64cb628c80",
+    "src/game/rallyEffects.ts": "a94fad020f483cb0f6ded3321edc3164008e79fc0fffe6d5f1ee7720fc950150",
+    "src/game/celebrations.ts": "c3fe5cd55bdc5efabeaf1e511e76a71bb090fd964236ac043648e7620c525cfc"
+  },
+  "sourceStable": true,
+  "limitations": [
+    "Canvas analysis excludes CSS HUD; its labels have single-arrival transitions, assessed separately.",
+    "Sampling at60Hz measures content clock, not monitor hardware artifacts.",
+    "Linux software rendering does not certify device/HDR behavior."
+  ]
+}
