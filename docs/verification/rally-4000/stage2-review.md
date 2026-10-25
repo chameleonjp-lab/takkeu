@@ -20,6 +20,8 @@ Reviewed 2026-10-25: `git diff 3bc1c9a -- src/render/rallyEffects.ts tests/unit/
 
 The follow-up also adds tricolor perimeter/net channels at 1500, keeps a visible floor-traveling wave, makes the meteor path horizontal, constrains 4000 expansion/overlap radii to the supported camera, and fades an older arrival over `.35` seconds when a newer major arrives. The arrival fading multiplies only newly appended geometry, leaves event facts intact, resets batch opacity afterward, and does not extend original deadlines. Tests verify all four 4000 phases contain projected visible arrival vertices; the overlap phase has visible vertices from each of its four rings in the unchanged landscape camera. These geometric checks remain distinct from observed screenshot/motion acceptance.
 
+The final scoped recheck also accepts the expired-major replay correction: the highest confirmed major score suppresses older retained arrivals after the newer arrival has been pruned. This derives from retained controller facts rather than renderer-only memory, so recreating the renderer cannot resurrect the older 1000 shockwave after a shorter 2000 transition. The added test checks both the existing view and a newly reconstructed view. No remaining concrete defect was found in these scoped stage 2 corrections.
+
 ## Checked behavior and evidence limits
 
 - The 1250 meteor uses a four-second cycle; 1500 tricolor strokes have distinct widths, tail lengths and periods. Motion/alpha are computed continuously rather than random frame flashes. The 1750 floor waves use a four-second cycle and are removed at 2500. Side halos use a three-second cycle and are replaced at 3500. Background single halo is replaced at 2750; meteors are replaced by the swarm at 3250; center density increases from 3750 and disappears at 4000.
@@ -33,6 +35,7 @@ The follow-up also adds tricolor perimeter/net channels at 1500, keeps a visible
 - `logs/render-stage2-green.log`: 52 renderer tests passed.
 - `logs/render-stage2-shapes-green.log`: 57 renderer tests passed after shape corrections.
 - `logs/render-stage2-priority-green.log`: 58 renderer tests passed after arrival-priority correction.
+- `logs/render-stage2-replay-green.log`: 59 renderer tests passed after the expired-major/context-reconstruction replay correction.
 - `logs/render-stage2-typecheck.log`: typecheck completed without diagnostics.
 - `logs/render-stage2-suite.log`: 907 tests passed and one `release-revision.test.ts` assertion failed (908 total). This is not a full-suite green result and must remain reported until resolved or isolated with evidence; it was not a failure in the stage 2 renderer tests.
 - `logs/render-stage1-exact-green.log`: 22 stage 1 renderer tests passed after the two earlier findings were fixed.

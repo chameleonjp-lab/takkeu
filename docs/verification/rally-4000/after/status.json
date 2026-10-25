@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-25T22:20:34.782657+00:00",
+  "sourceCommit": "0285168e455b5ec71f4197b1acbf68f29b5d46a5",
+  "sourceTree": "8c18959dd3e5741e99a2117a639117474500147b",
+  "conditions": 16,
+  "executionStatus": "16/16 measurements passed",
+  "linuxReferenceTarget": "0/16 met; all16 NOT met",
+  "continuousRunningCases": 16,
+  "thirtyBallsThroughoutCases": 16,
+  "unexpectedPauses": [],
+  "pageErrors": [],
+  "blockedRequests": [],
+  "sourceAndHarnessStable": true,
+  "guardRelaxation": false,
+  "automaticResume": false,
+  "targetHardwareVerdict": "unverified",
+  "report": "../performance-report.md",
+  "summary": "chromium/summary.json",
+  "rawData": "chromium/*.json.gz"
+}

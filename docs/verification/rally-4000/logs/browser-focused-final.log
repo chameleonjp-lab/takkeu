@@ -1,0 +1,25 @@
+[WebServer] (node:22262) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 1 worker
+
+(node:22286) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/rally-effects.spec.ts:19:1 › all 23 thresholds: preserve before/arrival/during/after camera evidence and fixed resources (23.5s)
+  ✓   2 [chromium] › tests/browser/rally-effects.spec.ts:48:1 › moving background/electricity/rings: time sequences, deterministic restore and reduced motion (20.0s)
+  ✓   3 [chromium] › tests/browser/rally-effects.spec.ts:77:1 › losses keep actual distinct positions, number lifetimes and final drawing without advancing balls (12.7s)
+  ✓   4 [chromium] › tests/browser/rally-effects.spec.ts:108:1 › mobile, landscape, 200% text, best and smash warning keep controls and readable four-digit scores (4.9s)
+  ✓   5 [chromium] › tests/browser/rally-effects.spec.ts:128:1 › major labels fit at their largest initial scale with 200% text on 320px screens (2.9s)
+  ✓   6 [chromium] › tests/browser/rally-effects.spec.ts:147:1 › 300 gold rays visibly radiate behind the rally number at age0.65 (1.9s)
+(node:23030) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   7 [webkit] › tests/browser/rally-effects.spec.ts:19:1 › all 23 thresholds: preserve before/arrival/during/after camera evidence and fixed resources (1.0m)
+  ✓   8 [webkit] › tests/browser/rally-effects.spec.ts:48:1 › moving background/electricity/rings: time sequences, deterministic restore and reduced motion (54.2s)
+  ✓   9 [webkit] › tests/browser/rally-effects.spec.ts:77:1 › losses keep actual distinct positions, number lifetimes and final drawing without advancing balls (19.3s)
+  ✓  10 [webkit] › tests/browser/rally-effects.spec.ts:108:1 › mobile, landscape, 200% text, best and smash warning keep controls and readable four-digit scores (4.9s)
+  ✓  11 [webkit] › tests/browser/rally-effects.spec.ts:128:1 › major labels fit at their largest initial scale with 200% text on 320px screens (3.8s)
+  ✓  12 [webkit] › tests/browser/rally-effects.spec.ts:147:1 › 300 gold rays visibly radiate behind the rally number at age0.65 (2.8s)
+
+  12 passed (3.6m)

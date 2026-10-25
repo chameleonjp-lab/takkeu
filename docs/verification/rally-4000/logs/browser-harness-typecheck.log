@@ -1,0 +1,5 @@
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+tests/unit/rally-render.test.ts(72,10): error TS2339: Property 'prepare' does not exist on type '{ worldRoot: Group<Object3DEventMap>; update(snapshot: Readonly<{ runId: string; phase: GamePhase; score: number; simTime: number; lostBallCount: number; pauseReason: PauseReason | null; ... 5 more ...; scheduledReturns: readonly Readonly<...>[]; }>, state?: Readonly<...> | undefined, quality?: Quality, reducedMotio...'.

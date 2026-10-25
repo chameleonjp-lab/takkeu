@@ -1,0 +1,113 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/home/runner/work/takkeu/takkeu[39m
+
+ [32m✓[39m tests/unit/ranking.test.ts [2m([22m[2m23 tests[22m[2m)[22m[32m 69[2mms[22m[39m
+ [32m✓[39m tests/unit/remaining-ball-speed.test.ts [2m([22m[2m142 tests[22m[2m)[22m[33m 331[2mms[22m[39m
+ [32m✓[39m tests/unit/rally-effects.test.ts [2m([22m[2m53 tests[22m[2m)[22m[32m 153[2mms[22m[39m
+ [32m✓[39m tests/unit/swipe.test.ts [2m([22m[2m32 tests[22m[2m)[22m[32m 119[2mms[22m[39m
+ [32m✓[39m tests/unit/direct-contact.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+ [32m✓[39m tests/unit/rally-render.test.ts [2m([22m[2m93 tests[22m[2m)[22m[33m 1822[2mms[22m[39m
+   [32m✓[39m bounded rally world renderer, 0–1000 [2m(22)[22m
+     [33m[2m✓[22m[39m keeps fixed GPU buffers through replay, quality changes, pauses and repeated disposal[33m 736[2mms[22m[39m
+   [32m✓[39m late rally world replacements and arrivals [2m(41)[22m
+     [33m[2m✓[22m[39m has fixed resources at every later tier, lower density in low quality and static distinguishable reduced-motion worlds[33m 728[2mms[22m[39m
+ [32m✓[39m tests/unit/presentation.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 194[2mms[22m[39m
+ [32m✓[39m tests/unit/rally-audio.test.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 63[2mms[22m[39m
+ [32m✓[39m tests/unit/audio-events.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 26[2mms[22m[39m
+ [32m✓[39m tests/unit/layered-tones.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 136[2mms[22m[39m
+ [32m✓[39m tests/unit/screens-direct.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 816[2mms[22m[39m
+ [32m✓[39m tests/unit/multiball.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 1288[2mms[22m[39m
+   [32m✓[39m 多球の接触・落球・累計到達 [2m(12)[22m
+     [33m[2m✓[22m[39m 上限速度の4球でも同時の取り逃しを実際の失球として数えながら継続できる[33m 570[2mms[22m[39m
+   [33m[2m✓[22m[39m 450の30球が全て同時に返り、失球と増球を反映して30ゲーム秒継続する[33m 694[2mms[22m[39m
+ [32m✓[39m tests/unit/audio-prepare.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 39[2mms[22m[39m
+ [32m✓[39m tests/unit/audio-fanfare.test.ts [2m([22m[2m24 tests[22m[2m)[22m[32m 162[2mms[22m[39m
+ [32m✓[39m tests/unit/loading-screen.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 433[2mms[22m[39m
+ [32m✓[39m tests/unit/pointer-loop.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 84[2mms[22m[39m
+ [32m✓[39m tests/unit/ranking-screens.test.ts [2m([22m[2m15 tests[22m[2m)[22m[33m 871[2mms[22m[39m
+ [32m✓[39m tests/unit/extended-core.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 33[2mms[22m[39m
+ [32m✓[39m tests/unit/result-position.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 66[2mms[22m[39m
+ [32m✓[39m tests/unit/opponent.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 43[2mms[22m[39m
+ [32m✓[39m tests/unit/rally-through-play.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 3010[2mms[22m[39m
+   [33m[2m✓[22m[39m plays from zero through4001 with real physics and identical RNG with/without presentation[33m 3007[2mms[22m[39m
+ [32m✓[39m tests/unit/pointer-mapping.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 449[2mms[22m[39m
+ [32m✓[39m tests/unit/progression.test.ts [2m([22m[2m49 tests[22m[2m)[22m[32m 97[2mms[22m[39m
+ [32m✓[39m tests/unit/camera.test.ts [2m([22m[2m16 tests[22m[2m)[22m[33m 1031[2mms[22m[39m
+ [32m✓[39m tests/unit/session.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 191[2mms[22m[39m
+ [32m✓[39m tests/unit/loss-limit.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 51[2mms[22m[39m
+ [32m✓[39m tests/unit/result-effects.test.ts [2m([22m[2m15 tests[22m[2m)[22m[33m 964[2mms[22m[39m
+ [32m✓[39m tests/unit/waiting-visibility.test.ts [2m([22m[2m30 tests[22m[2m)[22m[33m 673[2mms[22m[39m
+ [32m✓[39m tests/unit/extended-progression.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m tests/unit/extended-safety.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+ [32m✓[39m tests/unit/loop.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 98[2mms[22m[39m
+ [32m✓[39m tests/unit/extended-render.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 115[2mms[22m[39m
+ [32m✓[39m tests/unit/celebrations.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m tests/unit/rally-balance.test.ts [2m([22m[2m69 tests[22m[2m)[22m[33m 399[2mms[22m[39m
+ [32m✓[39m tests/unit/growing-replay.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 1212[2mms[22m[39m
+   [33m[2m✓[22m[39m 30球から同時返球・失球・増球・スマッシュを含む30秒の入力が30/60/120Hzで一致する[33m 1209[2mms[22m[39m
+ [32m✓[39m tests/unit/rally-notice.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 42[2mms[22m[39m
+ [32m✓[39m tests/unit/startup-app.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 11878[2mms[22m[39m
+   [33m[2m✓[22m[39m 準備済みならpauseから案内を出さず次の描画フレームを待たず開始する[33m 509[2mms[22m[39m
+   [33m[2m✓[22m[39m 準備済みならresultから案内を出さず次の描画フレームを待たず開始する[33m 1562[2mms[22m[39m
+   [33m[2m✓[22m[39m 準備済み開始の案内表示前の中断・表示後のキャンセルで遅い応答から開始しない（表示済みfalse）[33m 551[2mms[22m[39m
+   [33m[2m✓[22m[39m 準備済み開始の案内表示前の中断・表示後のキャンセルで遅い応答から開始しない（表示済みtrue）[33m 665[2mms[22m[39m
+   [33m[2m✓[22m[39m 準備済みでも現在のコート寸法が0なら古い有効な操作座標で開始しない[33m 344[2mms[22m[39m
+   [33m[2m✓[22m[39m 音声の準備が返らなくても期限後は無音で開始し、操作の準備を完了する[33m 895[2mms[22m[39m
+   [33m[2m✓[22m[39m キャンセル後の同名開始で古い応答が新しいプレイの得点を終了させない（旧応答先行false）[33m 1486[2mms[22m[39m
+   [33m[2m✓[22m[39m キャンセル後の同名開始で古い応答が新しいプレイの得点を終了させない（旧応答先行true）[33m 1179[2mms[22m[39m
+   [33m[2m✓[22m[39m ランキング開始後に操作座標の準備をキャンセルしても開始済み記録を一度だけ閉じる[33m 1946[2mms[22m[39m
+   [33m[2m✓[22m[39m 表示サイズが確定しない場合は期限で再試行へ進み、開始済み記録と準備用RAFを回収する[33m 2100[2mms[22m[39m
+ [32m✓[39m tests/unit/thirty-ball-returns.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 57[2mms[22m[39m
+ [32m✓[39m tests/unit/prepare-render.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m tests/unit/bounce-contact.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 388[2mms[22m[39m
+   [32m✓[39m ワンバウンド後の見える接触 [2m(4)[22m
+     [33m[2m✓[22m[39m 到着目標を知らなくても、見えている球に合わせ続ければラリーが続く[33m 343[2mms[22m[39m
+ [32m✓[39m tests/unit/return-spread.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 975[2mms[22m[39m
+   [33m[2m✓[22m[39m 450の実シミュレーションでも左右の配球を中央固定で拾えない[33m 405[2mms[22m[39m
+ [32m✓[39m tests/unit/celebration-render.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 310[2mms[22m[39m
+ [32m✓[39m tests/unit/glow-timing.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 363[2mms[22m[39m
+   [33m[2m✓[22m[39m 実接触で0から555へ進め、全発光の直前・当日・翌ラリーと描画材質が指定表に一致する[33m 361[2mms[22m[39m
+ [32m✓[39m tests/unit/reduced-world.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 237[2mms[22m[39m
+ [32m✓[39m tests/unit/lifecycle-resize.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m tests/unit/ball-pool.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 191[2mms[22m[39m
+ [32m✓[39m tests/unit/loading-progress.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/unit/simulation-isolation.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 410[2mms[22m[39m
+   [33m[2m✓[22m[39m 4球・スマッシュで描画頻度や消音を変えても、計算・時刻・予約・イベントが一致する[33m 408[2mms[22m[39m
+ [32m✓[39m tests/unit/ranking-position-sql.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 3349[2mms[22m[39m
+   [33m[2m✓[22m[39m runs the migration in PostgreSQL: ties, all ranks, eligibility, totals, bests and public privileges[33m 3346[2mms[22m[39m
+ [32m✓[39m tests/unit/collision.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/unit/legacy-flash-safety.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 190[2mms[22m[39m
+ [32m✓[39m tests/unit/finish-presentation.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/unit/ball-instancing.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 176[2mms[22m[39m
+ [32m✓[39m tests/unit/wide-field-color-safety.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 126[2mms[22m[39m
+ [32m✓[39m tests/unit/scheduler.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m tests/unit/input-boundary.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m tests/unit/audio-contact.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 100[2mms[22m[39m
+ [32m✓[39m tests/unit/storage.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/unit/loss-position.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/unit/paddle.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 91[2mms[22m[39m
+ [32m✓[39m tests/unit/result-layout.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 427[2mms[22m[39m
+ [32m✓[39m tests/unit/input-timeline.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/unit/sharing.test.ts [2m([22m[2m28 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/unit/release-revision.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 259[2mms[22m[39m
+ [32m✓[39m tests/unit/render-assets.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 47[2mms[22m[39m
+ [32m✓[39m tests/unit/trajectory.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/unit/warning-ui.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 316[2mms[22m[39m
+   [33m[2m✓[22m[39m 音が消えていても状態から予告を復元し、390の強弱から独立して表示する[33m 314[2mms[22m[39m
+ [32m✓[39m tests/unit/quality.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/unit/replay.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 57[2mms[22m[39m
+ [32m✓[39m tests/unit/sharing-metadata.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 32[2mms[22m[39m
+ [32m✓[39m tests/unit/result-comments.test.ts [2m([22m[2m44 tests[22m[2m)[22m[33m 1260[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m71 passed[39m[22m[90m (71)[39m
+[2m      Tests [22m [1m[32m958 passed[39m[22m[90m (958)[39m
+[2m   Start at [22m 22:53:56
+[2m   Duration [22m 22.49s[2m (tests 67%, environment 23%, import 6%, transform 4%, worker 1%)[22m
+
+[2m    Isolate [22m [33m71 workers spawned[39m[2m · ~317ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~7.18s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+

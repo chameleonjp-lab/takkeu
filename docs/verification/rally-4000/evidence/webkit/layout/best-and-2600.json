@@ -1,0 +1,686 @@
+[
+  {
+    "name": "best-before",
+    "snapshot": {
+      "celebrations": {
+        "lastLossAt": null,
+        "lossStreak": 0,
+        "numberNotices": [],
+        "repdigitAt": null,
+        "centuryAt": null,
+        "centuryScore": 0
+      },
+      "runId": "run-11",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 99,
+      "simTime": 20,
+      "lostBallCount": 0,
+      "paddle": {
+        "x": 0.1,
+        "y": 0.5
+      },
+      "opponentPaddle": {
+        "x": 0,
+        "y": 0.5
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": -0.4,
+            "y": 0.43,
+            "z": 1.25
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.45,
+            "y": 0.62,
+            "z": -0.35
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          40,
+          70
+        ],
+        "ballGlowUntil": null,
+        "awardedBallCount": 18
+      },
+      "scheduledReturns": []
+    },
+    "effects": {
+      "runId": "run-11",
+      "score": 99,
+      "bestAtStart": 99,
+      "best": null,
+      "lostBallCount": 0,
+      "stage": [],
+      "arrivals": [],
+      "hits": [
+        {
+          "id": "run-11:fixture-1",
+          "score": 99,
+          "at": 0,
+          "smashReturn": false
+        }
+      ],
+      "losses": [],
+      "cues": []
+    },
+    "notice": {
+      "text": "",
+      "hidden": true
+    },
+    "aura": {
+      "kind": "gold",
+      "hidden": true
+    },
+    "live": "4000 RALLY"
+  },
+  {
+    "name": "best-during",
+    "snapshot": {
+      "celebrations": {
+        "lastLossAt": null,
+        "lossStreak": 0,
+        "numberNotices": [],
+        "repdigitAt": null,
+        "centuryAt": 20,
+        "centuryScore": 100
+      },
+      "runId": "run-11",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 100,
+      "simTime": 20.65,
+      "lostBallCount": 0,
+      "paddle": {
+        "x": 0.1,
+        "y": 0.5
+      },
+      "opponentPaddle": {
+        "x": 0,
+        "y": 0.5
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": -0.4,
+            "y": 0.43,
+            "z": 1.25
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.45,
+            "y": 0.62,
+            "z": -0.35
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          40,
+          70,
+          100
+        ],
+        "ballGlowUntil": null,
+        "awardedBallCount": 18
+      },
+      "scheduledReturns": []
+    },
+    "effects": {
+      "runId": "run-11",
+      "score": 100,
+      "bestAtStart": 99,
+      "best": {
+        "score": 100,
+        "at": 20,
+        "position": {
+          "x": 0.1,
+          "y": 0.5,
+          "z": 1.95
+        }
+      },
+      "lostBallCount": 0,
+      "stage": [],
+      "arrivals": [
+        {
+          "id": "run-11:fixture-2",
+          "threshold": 100,
+          "at": 20,
+          "config": {
+            "threshold": 100,
+            "kind": "B",
+            "effect": "perimeter",
+            "duration": 1.2,
+            "color": "green",
+            "priority": 10,
+            "replaces": []
+          },
+          "position": {
+            "x": 0.1,
+            "y": 0.5,
+            "z": 1.95
+          }
+        }
+      ],
+      "hits": [
+        {
+          "id": "run-11:fixture-2",
+          "score": 100,
+          "at": 20,
+          "smashReturn": false,
+          "position": {
+            "x": 0.1,
+            "y": 0.5,
+            "z": 1.95
+          }
+        }
+      ],
+      "losses": [],
+      "cues": [
+        {
+          "id": "run-11:fixture-2:notice",
+          "kind": "notice",
+          "value": 100,
+          "at": 20,
+          "duration": 1.8,
+          "priority": 10,
+          "position": {
+            "x": 0.1,
+            "y": 0.5,
+            "z": 1.95
+          }
+        },
+        {
+          "id": "run-11:fixture-2:best-record",
+          "kind": "best-record",
+          "value": 100,
+          "at": 20,
+          "duration": 2,
+          "priority": 50,
+          "position": {
+            "x": 0.1,
+            "y": 0.5,
+            "z": 1.95
+          }
+        }
+      ]
+    },
+    "notice": {
+      "text": "自己ベスト更新！",
+      "hidden": false
+    },
+    "aura": {
+      "kind": "best",
+      "hidden": false
+    },
+    "live": "自己ベスト更新！"
+  },
+  {
+    "name": "best-after",
+    "snapshot": {
+      "celebrations": {
+        "lastLossAt": null,
+        "lossStreak": 0,
+        "numberNotices": [],
+        "repdigitAt": null,
+        "centuryAt": 20,
+        "centuryScore": 100
+      },
+      "runId": "run-11",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 100,
+      "simTime": 22.01,
+      "lostBallCount": 0,
+      "paddle": {
+        "x": 0.1,
+        "y": 0.5
+      },
+      "opponentPaddle": {
+        "x": 0,
+        "y": 0.5
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": -0.4,
+            "y": 0.43,
+            "z": 1.25
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.45,
+            "y": 0.62,
+            "z": -0.35
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          40,
+          70,
+          100
+        ],
+        "ballGlowUntil": null,
+        "awardedBallCount": 18
+      },
+      "scheduledReturns": []
+    },
+    "effects": {
+      "runId": "run-11",
+      "score": 100,
+      "bestAtStart": 99,
+      "best": {
+        "score": 100,
+        "at": 20,
+        "position": {
+          "x": 0.1,
+          "y": 0.5,
+          "z": 1.95
+        }
+      },
+      "lostBallCount": 0,
+      "stage": [],
+      "arrivals": [
+        {
+          "id": "run-11:fixture-2",
+          "threshold": 100,
+          "at": 20,
+          "config": {
+            "threshold": 100,
+            "kind": "B",
+            "effect": "perimeter",
+            "duration": 1.2,
+            "color": "green",
+            "priority": 10,
+            "replaces": []
+          },
+          "position": {
+            "x": 0.1,
+            "y": 0.5,
+            "z": 1.95
+          }
+        }
+      ],
+      "hits": [
+        {
+          "id": "run-11:fixture-2",
+          "score": 100,
+          "at": 20,
+          "smashReturn": false,
+          "position": {
+            "x": 0.1,
+            "y": 0.5,
+            "z": 1.95
+          }
+        }
+      ],
+      "losses": [],
+      "cues": [
+        {
+          "id": "run-11:fixture-2:notice",
+          "kind": "notice",
+          "value": 100,
+          "at": 20,
+          "duration": 1.8,
+          "priority": 10,
+          "position": {
+            "x": 0.1,
+            "y": 0.5,
+            "z": 1.95
+          }
+        },
+        {
+          "id": "run-11:fixture-2:best-record",
+          "kind": "best-record",
+          "value": 100,
+          "at": 20,
+          "duration": 2,
+          "priority": 50,
+          "position": {
+            "x": 0.1,
+            "y": 0.5,
+            "z": 1.95
+          }
+        }
+      ]
+    },
+    "notice": {
+      "text": "",
+      "hidden": true
+    },
+    "aura": {
+      "kind": "gold",
+      "hidden": true
+    },
+    "live": "自己ベスト更新！"
+  },
+  {
+    "name": "best-no-repeat",
+    "snapshot": {
+      "celebrations": {
+        "lastLossAt": null,
+        "lossStreak": 0,
+        "numberNotices": [],
+        "repdigitAt": null,
+        "centuryAt": 20,
+        "centuryScore": 100
+      },
+      "runId": "run-11",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 101,
+      "simTime": 23,
+      "lostBallCount": 0,
+      "paddle": {
+        "x": 0.1,
+        "y": 0.5
+      },
+      "opponentPaddle": {
+        "x": 0,
+        "y": 0.5
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": -0.4,
+            "y": 0.43,
+            "z": 1.25
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.45,
+            "y": 0.62,
+            "z": -0.35
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          40,
+          70,
+          100
+        ],
+        "ballGlowUntil": null,
+        "awardedBallCount": 18
+      },
+      "scheduledReturns": []
+    },
+    "effects": {
+      "runId": "run-11",
+      "score": 101,
+      "bestAtStart": 99,
+      "best": {
+        "score": 100,
+        "at": 20,
+        "position": {
+          "x": 0.1,
+          "y": 0.5,
+          "z": 1.95
+        }
+      },
+      "lostBallCount": 0,
+      "stage": [],
+      "arrivals": [],
+      "hits": [
+        {
+          "id": "run-11:fixture-3",
+          "score": 101,
+          "at": 23,
+          "smashReturn": false,
+          "position": {
+            "x": 0.1,
+            "y": 0.5,
+            "z": 1.95
+          }
+        }
+      ],
+      "losses": [],
+      "cues": []
+    },
+    "notice": {
+      "text": "",
+      "hidden": true
+    },
+    "aura": {
+      "kind": "gold",
+      "hidden": true
+    },
+    "live": "自己ベスト更新！"
+  },
+  {
+    "name": "ordinary-2600",
+    "snapshot": {
+      "celebrations": {
+        "lastLossAt": null,
+        "lossStreak": 0,
+        "numberNotices": [],
+        "repdigitAt": null,
+        "centuryAt": 20,
+        "centuryScore": 2600
+      },
+      "runId": "run-14",
+      "phase": "running",
+      "pauseReason": null,
+      "score": 2600,
+      "simTime": 20.65,
+      "lostBallCount": 0,
+      "paddle": {
+        "x": 0.1,
+        "y": 0.5
+      },
+      "opponentPaddle": {
+        "x": 0,
+        "y": 0.5
+      },
+      "balls": [
+        {
+          "id": 1,
+          "phase": "incoming",
+          "position": {
+            "x": -0.4,
+            "y": 0.43,
+            "z": 1.25
+          },
+          "smash": false
+        },
+        {
+          "id": 2,
+          "phase": "outgoing",
+          "position": {
+            "x": 0.45,
+            "y": 0.62,
+            "z": -0.35
+          },
+          "smash": false
+        }
+      ],
+      "progression": {
+        "appliedMilestones": [
+          10,
+          30,
+          40,
+          70,
+          100,
+          130,
+          150,
+          160,
+          190,
+          210,
+          240,
+          270,
+          300,
+          330,
+          360,
+          380,
+          390,
+          410,
+          420,
+          450,
+          460,
+          470,
+          480,
+          490,
+          500,
+          510,
+          520,
+          530,
+          540,
+          555
+        ],
+        "ballGlowUntil": null,
+        "awardedBallCount": 848
+      },
+      "scheduledReturns": []
+    },
+    "effects": {
+      "runId": "run-14",
+      "score": 2600,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 0,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        },
+        {
+          "threshold": 2250,
+          "kind": "A",
+          "effect": "side-halos",
+          "duration": 3,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2500,
+          "kind": "A",
+          "effect": "orbit-ribbon",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "floor-wave"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [
+        {
+          "id": "run-14:fixture-2",
+          "score": 2600,
+          "at": 20,
+          "smashReturn": false,
+          "position": {
+            "x": 0.1,
+            "y": 0.5,
+            "z": 1.95
+          }
+        }
+      ],
+      "losses": [],
+      "cues": [
+        {
+          "id": "run-14:fixture-2:notice",
+          "kind": "notice",
+          "value": 2600,
+          "at": 20,
+          "duration": 1.8,
+          "priority": 10,
+          "position": {
+            "x": 0.1,
+            "y": 0.5,
+            "z": 1.95
+          }
+        }
+      ]
+    },
+    "notice": {
+      "text": "2600 RALLY",
+      "hidden": false
+    },
+    "aura": {
+      "kind": "gold",
+      "hidden": true
+    },
+    "live": "自己ベスト更新！"
+  }
+]

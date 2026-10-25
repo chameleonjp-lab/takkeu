@@ -21,7 +21,7 @@ GitHubのファイル上限を避けるため、動画/旧画像アーカイブ�
 ```sh
 cat capture-lossless.mp4.part-* > capture-lossless.mp4
 sha256sum capture-lossless.mp4
-ffmpeg -i capture-lossless.mp4 -pix_fmt rgb24 %04d.png
+ffmpeg -i capture-lossless.mp4 -pix_fmt rgb24 -start_number 0 %04d.png
 ```
 
 復元動画のSHA256はpartsマニフェストと一致する必要がある。PNG再生成時の圧縮バイトは元PNGと異なり得るため、画素の一致は`lossless-verification.json`の連結RGB24ハッシュと復号長で確認する。元画像ごとのハッシュも省略せず残す。元フレームの解像度・数・時間・イベントを減らして圧縮することはしない。

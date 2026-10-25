@@ -1,0 +1,762 @@
+{
+  "checkedAt": "2026-10-25T22:50:11.909409+00:00",
+  "canonicalRuntimeCommit": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+  "optimizationCommit": "72c1920354a53e234ebf2b4ab156538081536731",
+  "gitSourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+  "gitTestsTree": "097b10b95f55aded9d77af6dd4ed6b85925b9684",
+  "manifestSha256": "c17f05683a802f4d3024db030cddf07b6fe69631bd6ab469f04fbb809c092816",
+  "files": [
+    {
+      "path": "src/app/controls.ts",
+      "sha256": "03aa789baa922d3c26daaa5257f3e5d1a3bab51a15dcb924de753b480fe99594"
+    },
+    {
+      "path": "src/app/createApp.ts",
+      "sha256": "394c211e48602524f1a619e2579af075834e646dfb65d3b46f07b953810bc788"
+    },
+    {
+      "path": "src/app/finishPresentation.ts",
+      "sha256": "f05c475431aa8253950a7a85a9f0ca1014205708d80a2dec66626e368ab65815"
+    },
+    {
+      "path": "src/app/lifecycle.ts",
+      "sha256": "2876ad70a94f13c2bec2a45065e346e5dbc8d6c5a34684debf58d39ab0a01bd7"
+    },
+    {
+      "path": "src/app/loadingProgress.ts",
+      "sha256": "bba9ed80bff250f65cf8457ccc4c419b6f1917041bd564416dbb2dad9d19f92e"
+    },
+    {
+      "path": "src/app/loop.ts",
+      "sha256": "86ad8c723a5f36559259bb46b3998b0b8af96cf97665373129b56794d76e4f22"
+    },
+    {
+      "path": "src/audio/audio.ts",
+      "sha256": "c9a4d5a2208501833835187efd34867cdeae5d1876b7cf0e11d046168155e3f5"
+    },
+    {
+      "path": "src/audio/tones.ts",
+      "sha256": "863c9c0d72d26da763de260974e90298ec48e8da40c7662b1ce9fead015f6127"
+    },
+    {
+      "path": "src/game/celebrations.ts",
+      "sha256": "c3fe5cd55bdc5efabeaf1e511e76a71bb090fd964236ac043648e7620c525cfc"
+    },
+    {
+      "path": "src/game/collision.ts",
+      "sha256": "8e5ad013fcafcc33d7aabf57d9ccdae0dd99fa6db4f1aefb5cd75a1730074c1c"
+    },
+    {
+      "path": "src/game/config.ts",
+      "sha256": "ae3dbfc881325461879df2526e850a1673f6c7b918efab6b377741347c7acfc1"
+    },
+    {
+      "path": "src/game/difficulty.ts",
+      "sha256": "edd4db4b76a67d862d2febe96ffe2b498ad4f09ac4f089ec2796a96b15ea757b"
+    },
+    {
+      "path": "src/game/flightSpeed.ts",
+      "sha256": "8020ff1fd1e6d843dd47a7b854e6c4f14c6110caa9c4e90210f0dfc61b5721d6"
+    },
+    {
+      "path": "src/game/milestones.ts",
+      "sha256": "8c06f67752be261f12250d8136bbca60f2e709019b4cb4066f33aa284d69ca6c"
+    },
+    {
+      "path": "src/game/opponent.ts",
+      "sha256": "69f800055694bf5745d89428086fbab15538116406b7d6b8487ca0c99c20f3e9"
+    },
+    {
+      "path": "src/game/progression.ts",
+      "sha256": "95ac4b6393e413702a11c6c786c2e8d118c59150ddd51e45926622129f5e951a"
+    },
+    {
+      "path": "src/game/rallyEffects.ts",
+      "sha256": "a94fad020f483cb0f6ded3321edc3164008e79fc0fffe6d5f1ee7720fc950150"
+    },
+    {
+      "path": "src/game/scheduler.ts",
+      "sha256": "75fd289e244e6de2b610d79751d80217379822e1fc2fe64c657e477ad6eb8830"
+    },
+    {
+      "path": "src/game/session.ts",
+      "sha256": "5c6fdc5f690b3addaeb8484d9f962276f4b3f60623e12acb1d4968909ad0c93a"
+    },
+    {
+      "path": "src/game/simulation.ts",
+      "sha256": "3044f72b803fd366428e51a1346d7ef3a269c60d60901b2058cbbf9668629fab"
+    },
+    {
+      "path": "src/game/targets.ts",
+      "sha256": "19ddd59cebbcb0b12ae09341f34df93ad8ef61628a70a064948747e69e89b8ec"
+    },
+    {
+      "path": "src/game/trajectory.ts",
+      "sha256": "2e985214f496ceac6955d9e21a011232513dde662f1ecea3df40ffdd94fcb924"
+    },
+    {
+      "path": "src/game/types.ts",
+      "sha256": "ed1128d511bf80a01d9ae88c1bc4ac04f59c7e255b59cf708da9acd363094a14"
+    },
+    {
+      "path": "src/game/viewpoint.ts",
+      "sha256": "1e5bea55f6b62fc37c9dce79f2b266d938d08e3fd663a925540e7b39dc9ad3f9"
+    },
+    {
+      "path": "src/input/mapping.ts",
+      "sha256": "80199b8f730a6339e6a106bf8cedec28308062e72dd878e080b38ce6b022ef32"
+    },
+    {
+      "path": "src/input/swipe.ts",
+      "sha256": "cde8301accea83b7a2588ace83dda2db63943252e9fbf252c65ea9460cfe885c"
+    },
+    {
+      "path": "src/input/timeline.ts",
+      "sha256": "f1d8aa89893bb444fd0c3cdf6426c90e647eb02027aaf51773e14f45edea9461"
+    },
+    {
+      "path": "src/main.ts",
+      "sha256": "1f32056096aa7d74eb8db4129d8a599515e6c88fa2691fa699477580938d3bcf"
+    },
+    {
+      "path": "src/ranking/client.ts",
+      "sha256": "80607781333a2e1ed319337b4f17cdfdd3d902b82c61ed8f85deec099e1a2121"
+    },
+    {
+      "path": "src/ranking/config.ts",
+      "sha256": "827ac17fed6c111d58568015754a1a0b13c7bd4b274b5b6fbc86d11c2eec7d97"
+    },
+    {
+      "path": "src/ranking/controller.ts",
+      "sha256": "d32422daa9a417e966f89d1158c76a0a1be986470bd8a60f3a400bdaeb96560f"
+    },
+    {
+      "path": "src/ranking/guestPlays.ts",
+      "sha256": "4bc324b102521abfe0f407b79920ba17539ec949fa48100e472dd1f89a916270"
+    },
+    {
+      "path": "src/ranking/resultPosition.ts",
+      "sha256": "1a3bf05686ffcc88e6b50678d662c3cc5abb2dbda45a87b4bd966ac005f1c051"
+    },
+    {
+      "path": "src/render/balls.ts",
+      "sha256": "dad9399341352e1a8ffc13801b70e2568a64a5410ff4eaefc97c17f754d9052a"
+    },
+    {
+      "path": "src/render/camera.ts",
+      "sha256": "21bbe2f2ecd39520e72ffdca080a0936414b7131f06ded2d5a85f1aa21fd31ac"
+    },
+    {
+      "path": "src/render/celebrations.ts",
+      "sha256": "7a480052b4af0310a8e84e208120278f4ae4716b49bad2a7ec90221d00210f3c"
+    },
+    {
+      "path": "src/render/createView.ts",
+      "sha256": "498dc86f0331201acdbd2e69c01300d0dbe51f32e80f1fbab4ccbdef32870450"
+    },
+    {
+      "path": "src/render/environment.ts",
+      "sha256": "089bb1539b6cb324697c8eb2d57f78919bfbeaf393a079572ea883efe641ab3e"
+    },
+    {
+      "path": "src/render/field.ts",
+      "sha256": "33a224d11f907415d9064e9c9b9096a6cf84b7f7f71915d69f5810e43e31a452"
+    },
+    {
+      "path": "src/render/materials.ts",
+      "sha256": "762098367b45770052d30790e2fc76ce02939ad912a6a07a6d96831c11ba5c85"
+    },
+    {
+      "path": "src/render/objects.ts",
+      "sha256": "6b9bb96e3e6199c6c4fd17b0a96ac3d9946c29036d69d206fd3ddba2fbc21c5c"
+    },
+    {
+      "path": "src/render/opponentView.ts",
+      "sha256": "18b3fd0fc7fabc45a7137c8ba544306208c626405cd85b497efb6af50a448658"
+    },
+    {
+      "path": "src/render/paddle.ts",
+      "sha256": "9b88815c5b00032957a222f43b5b13dae1004fa144a92ec05fe8e1f32944c9dd"
+    },
+    {
+      "path": "src/render/particles.ts",
+      "sha256": "6ec5c56a5ef87dbb5d861baa918de7915b1ca7120c7deac74d63430929430129"
+    },
+    {
+      "path": "src/render/prepare.ts",
+      "sha256": "1be3dacde68f5df22a0b296f141a3a179c8c289a4d79e95398266f456c1bb6e2"
+    },
+    {
+      "path": "src/render/presentation.ts",
+      "sha256": "fc5d249f6021215d638c2962629afbdba83eba3216e4595ddd880bc4fd1155ad"
+    },
+    {
+      "path": "src/render/quality.ts",
+      "sha256": "8b7797fc97658f3877c4c5ab0c7162c176368cf46ee1a5d325f4eb3047212763"
+    },
+    {
+      "path": "src/render/rainbow.ts",
+      "sha256": "0b6d3bed0975942d7f220fc8b527f4a6e2831a5374e87e09c4974d55f305e180"
+    },
+    {
+      "path": "src/render/rallyEffects.ts",
+      "sha256": "a1c545094d4066a717802c4b640b726a123db0629ab3896bc2dabdb78062327a"
+    },
+    {
+      "path": "src/storage/preferences.ts",
+      "sha256": "d1413a7c858fdef151919d1a8a31c9c2511b8c97723cabb11be1ede0b9599d37"
+    },
+    {
+      "path": "src/ui/court-preview.png",
+      "sha256": "08f9fb9d7067af221769f957cec4a9d38362adfa0a8fe6acdf62f2b33765d4c4"
+    },
+    {
+      "path": "src/ui/loading.css",
+      "sha256": "a1eddf9655a06c16b052f9f49d342ca54a4db47bafd80da5f2e2eafdc1a51ef1"
+    },
+    {
+      "path": "src/ui/loading.ts",
+      "sha256": "cf6961d85da761d3043a84765c5b343de89b39741f9c9acf6d72c189bd99bc2d"
+    },
+    {
+      "path": "src/ui/rallyNotice.css",
+      "sha256": "470701d28b065fdc3edff7c9b8733f7252db2a58ef1b2cec12825485531169e0"
+    },
+    {
+      "path": "src/ui/rallyNotice.ts",
+      "sha256": "1e8bd14e34d0af1164b176150ba4ec30a10d08eedabe27ffa884d255369d9a66"
+    },
+    {
+      "path": "src/ui/result.css",
+      "sha256": "51a2949c717e982d566441fbaa581dc327496d0c42fc27ac54d3a7a0778bee8d"
+    },
+    {
+      "path": "src/ui/resultComments.ts",
+      "sha256": "e6b24fb9e55228bccfe9ec1fe5cbc521f9395001a1a344706cba871359ba32fe"
+    },
+    {
+      "path": "src/ui/resultEffects.ts",
+      "sha256": "9d844ab60e804e3ddf3e0acfefa136566de30147ba4aa6b54039897073871c72"
+    },
+    {
+      "path": "src/ui/screens.ts",
+      "sha256": "5abf6d5966f926cb0705c3557af027d548df4301144b587daa407b896d104de3"
+    },
+    {
+      "path": "src/ui/styles.css",
+      "sha256": "ef14a54dd6ed64f528640d48e36aaff8268b3053cc40065df53f389b6ab61229"
+    }
+  ],
+  "runtimeManifestSha256": "a2057a63716fe21337dc464563fd123a93c7f47cca21e026da0fe704234eafcb",
+  "runtimeFiles": [
+    {
+      "path": "package-lock.json",
+      "sha256": "52ba2daba720b1177c74da7a9a530c96e49d6ccdb26c3d139690ac5480d24c94"
+    },
+    {
+      "path": "package.json",
+      "sha256": "407b468383097781632a23196d6d232e7066e6413f35d47046f0519c433e55c7"
+    },
+    {
+      "path": "playwright.performance.config.ts",
+      "sha256": "e378be6ffeec242932170471701294eec606a77bf512b28550f098d7b73d6a46"
+    },
+    {
+      "path": "src/app/controls.ts",
+      "sha256": "03aa789baa922d3c26daaa5257f3e5d1a3bab51a15dcb924de753b480fe99594"
+    },
+    {
+      "path": "src/app/createApp.ts",
+      "sha256": "394c211e48602524f1a619e2579af075834e646dfb65d3b46f07b953810bc788"
+    },
+    {
+      "path": "src/app/finishPresentation.ts",
+      "sha256": "f05c475431aa8253950a7a85a9f0ca1014205708d80a2dec66626e368ab65815"
+    },
+    {
+      "path": "src/app/lifecycle.ts",
+      "sha256": "2876ad70a94f13c2bec2a45065e346e5dbc8d6c5a34684debf58d39ab0a01bd7"
+    },
+    {
+      "path": "src/app/loadingProgress.ts",
+      "sha256": "bba9ed80bff250f65cf8457ccc4c419b6f1917041bd564416dbb2dad9d19f92e"
+    },
+    {
+      "path": "src/app/loop.ts",
+      "sha256": "86ad8c723a5f36559259bb46b3998b0b8af96cf97665373129b56794d76e4f22"
+    },
+    {
+      "path": "src/audio/audio.ts",
+      "sha256": "c9a4d5a2208501833835187efd34867cdeae5d1876b7cf0e11d046168155e3f5"
+    },
+    {
+      "path": "src/audio/tones.ts",
+      "sha256": "863c9c0d72d26da763de260974e90298ec48e8da40c7662b1ce9fead015f6127"
+    },
+    {
+      "path": "src/game/celebrations.ts",
+      "sha256": "c3fe5cd55bdc5efabeaf1e511e76a71bb090fd964236ac043648e7620c525cfc"
+    },
+    {
+      "path": "src/game/collision.ts",
+      "sha256": "8e5ad013fcafcc33d7aabf57d9ccdae0dd99fa6db4f1aefb5cd75a1730074c1c"
+    },
+    {
+      "path": "src/game/config.ts",
+      "sha256": "ae3dbfc881325461879df2526e850a1673f6c7b918efab6b377741347c7acfc1"
+    },
+    {
+      "path": "src/game/difficulty.ts",
+      "sha256": "edd4db4b76a67d862d2febe96ffe2b498ad4f09ac4f089ec2796a96b15ea757b"
+    },
+    {
+      "path": "src/game/flightSpeed.ts",
+      "sha256": "8020ff1fd1e6d843dd47a7b854e6c4f14c6110caa9c4e90210f0dfc61b5721d6"
+    },
+    {
+      "path": "src/game/milestones.ts",
+      "sha256": "8c06f67752be261f12250d8136bbca60f2e709019b4cb4066f33aa284d69ca6c"
+    },
+    {
+      "path": "src/game/opponent.ts",
+      "sha256": "69f800055694bf5745d89428086fbab15538116406b7d6b8487ca0c99c20f3e9"
+    },
+    {
+      "path": "src/game/progression.ts",
+      "sha256": "95ac4b6393e413702a11c6c786c2e8d118c59150ddd51e45926622129f5e951a"
+    },
+    {
+      "path": "src/game/rallyEffects.ts",
+      "sha256": "a94fad020f483cb0f6ded3321edc3164008e79fc0fffe6d5f1ee7720fc950150"
+    },
+    {
+      "path": "src/game/scheduler.ts",
+      "sha256": "75fd289e244e6de2b610d79751d80217379822e1fc2fe64c657e477ad6eb8830"
+    },
+    {
+      "path": "src/game/session.ts",
+      "sha256": "5c6fdc5f690b3addaeb8484d9f962276f4b3f60623e12acb1d4968909ad0c93a"
+    },
+    {
+      "path": "src/game/simulation.ts",
+      "sha256": "3044f72b803fd366428e51a1346d7ef3a269c60d60901b2058cbbf9668629fab"
+    },
+    {
+      "path": "src/game/targets.ts",
+      "sha256": "19ddd59cebbcb0b12ae09341f34df93ad8ef61628a70a064948747e69e89b8ec"
+    },
+    {
+      "path": "src/game/trajectory.ts",
+      "sha256": "2e985214f496ceac6955d9e21a011232513dde662f1ecea3df40ffdd94fcb924"
+    },
+    {
+      "path": "src/game/types.ts",
+      "sha256": "ed1128d511bf80a01d9ae88c1bc4ac04f59c7e255b59cf708da9acd363094a14"
+    },
+    {
+      "path": "src/game/viewpoint.ts",
+      "sha256": "1e5bea55f6b62fc37c9dce79f2b266d938d08e3fd663a925540e7b39dc9ad3f9"
+    },
+    {
+      "path": "src/input/mapping.ts",
+      "sha256": "80199b8f730a6339e6a106bf8cedec28308062e72dd878e080b38ce6b022ef32"
+    },
+    {
+      "path": "src/input/swipe.ts",
+      "sha256": "cde8301accea83b7a2588ace83dda2db63943252e9fbf252c65ea9460cfe885c"
+    },
+    {
+      "path": "src/input/timeline.ts",
+      "sha256": "f1d8aa89893bb444fd0c3cdf6426c90e647eb02027aaf51773e14f45edea9461"
+    },
+    {
+      "path": "src/main.ts",
+      "sha256": "1f32056096aa7d74eb8db4129d8a599515e6c88fa2691fa699477580938d3bcf"
+    },
+    {
+      "path": "src/ranking/client.ts",
+      "sha256": "80607781333a2e1ed319337b4f17cdfdd3d902b82c61ed8f85deec099e1a2121"
+    },
+    {
+      "path": "src/ranking/config.ts",
+      "sha256": "827ac17fed6c111d58568015754a1a0b13c7bd4b274b5b6fbc86d11c2eec7d97"
+    },
+    {
+      "path": "src/ranking/controller.ts",
+      "sha256": "d32422daa9a417e966f89d1158c76a0a1be986470bd8a60f3a400bdaeb96560f"
+    },
+    {
+      "path": "src/ranking/guestPlays.ts",
+      "sha256": "4bc324b102521abfe0f407b79920ba17539ec949fa48100e472dd1f89a916270"
+    },
+    {
+      "path": "src/ranking/resultPosition.ts",
+      "sha256": "1a3bf05686ffcc88e6b50678d662c3cc5abb2dbda45a87b4bd966ac005f1c051"
+    },
+    {
+      "path": "src/render/balls.ts",
+      "sha256": "dad9399341352e1a8ffc13801b70e2568a64a5410ff4eaefc97c17f754d9052a"
+    },
+    {
+      "path": "src/render/camera.ts",
+      "sha256": "21bbe2f2ecd39520e72ffdca080a0936414b7131f06ded2d5a85f1aa21fd31ac"
+    },
+    {
+      "path": "src/render/celebrations.ts",
+      "sha256": "7a480052b4af0310a8e84e208120278f4ae4716b49bad2a7ec90221d00210f3c"
+    },
+    {
+      "path": "src/render/createView.ts",
+      "sha256": "498dc86f0331201acdbd2e69c01300d0dbe51f32e80f1fbab4ccbdef32870450"
+    },
+    {
+      "path": "src/render/environment.ts",
+      "sha256": "089bb1539b6cb324697c8eb2d57f78919bfbeaf393a079572ea883efe641ab3e"
+    },
+    {
+      "path": "src/render/field.ts",
+      "sha256": "33a224d11f907415d9064e9c9b9096a6cf84b7f7f71915d69f5810e43e31a452"
+    },
+    {
+      "path": "src/render/materials.ts",
+      "sha256": "762098367b45770052d30790e2fc76ce02939ad912a6a07a6d96831c11ba5c85"
+    },
+    {
+      "path": "src/render/objects.ts",
+      "sha256": "6b9bb96e3e6199c6c4fd17b0a96ac3d9946c29036d69d206fd3ddba2fbc21c5c"
+    },
+    {
+      "path": "src/render/opponentView.ts",
+      "sha256": "18b3fd0fc7fabc45a7137c8ba544306208c626405cd85b497efb6af50a448658"
+    },
+    {
+      "path": "src/render/paddle.ts",
+      "sha256": "9b88815c5b00032957a222f43b5b13dae1004fa144a92ec05fe8e1f32944c9dd"
+    },
+    {
+      "path": "src/render/particles.ts",
+      "sha256": "6ec5c56a5ef87dbb5d861baa918de7915b1ca7120c7deac74d63430929430129"
+    },
+    {
+      "path": "src/render/prepare.ts",
+      "sha256": "1be3dacde68f5df22a0b296f141a3a179c8c289a4d79e95398266f456c1bb6e2"
+    },
+    {
+      "path": "src/render/presentation.ts",
+      "sha256": "fc5d249f6021215d638c2962629afbdba83eba3216e4595ddd880bc4fd1155ad"
+    },
+    {
+      "path": "src/render/quality.ts",
+      "sha256": "8b7797fc97658f3877c4c5ab0c7162c176368cf46ee1a5d325f4eb3047212763"
+    },
+    {
+      "path": "src/render/rainbow.ts",
+      "sha256": "0b6d3bed0975942d7f220fc8b527f4a6e2831a5374e87e09c4974d55f305e180"
+    },
+    {
+      "path": "src/render/rallyEffects.ts",
+      "sha256": "a1c545094d4066a717802c4b640b726a123db0629ab3896bc2dabdb78062327a"
+    },
+    {
+      "path": "src/storage/preferences.ts",
+      "sha256": "d1413a7c858fdef151919d1a8a31c9c2511b8c97723cabb11be1ede0b9599d37"
+    },
+    {
+      "path": "src/ui/court-preview.png",
+      "sha256": "08f9fb9d7067af221769f957cec4a9d38362adfa0a8fe6acdf62f2b33765d4c4"
+    },
+    {
+      "path": "src/ui/loading.css",
+      "sha256": "a1eddf9655a06c16b052f9f49d342ca54a4db47bafd80da5f2e2eafdc1a51ef1"
+    },
+    {
+      "path": "src/ui/loading.ts",
+      "sha256": "cf6961d85da761d3043a84765c5b343de89b39741f9c9acf6d72c189bd99bc2d"
+    },
+    {
+      "path": "src/ui/rallyNotice.css",
+      "sha256": "470701d28b065fdc3edff7c9b8733f7252db2a58ef1b2cec12825485531169e0"
+    },
+    {
+      "path": "src/ui/rallyNotice.ts",
+      "sha256": "1e8bd14e34d0af1164b176150ba4ec30a10d08eedabe27ffa884d255369d9a66"
+    },
+    {
+      "path": "src/ui/result.css",
+      "sha256": "51a2949c717e982d566441fbaa581dc327496d0c42fc27ac54d3a7a0778bee8d"
+    },
+    {
+      "path": "src/ui/resultComments.ts",
+      "sha256": "e6b24fb9e55228bccfe9ec1fe5cbc521f9395001a1a344706cba871359ba32fe"
+    },
+    {
+      "path": "src/ui/resultEffects.ts",
+      "sha256": "9d844ab60e804e3ddf3e0acfefa136566de30147ba4aa6b54039897073871c72"
+    },
+    {
+      "path": "src/ui/screens.ts",
+      "sha256": "5abf6d5966f926cb0705c3557af027d548df4301144b587daa407b896d104de3"
+    },
+    {
+      "path": "src/ui/styles.css",
+      "sha256": "ef14a54dd6ed64f528640d48e36aaff8268b3053cc40065df53f389b6ab61229"
+    },
+    {
+      "path": "tests/fixtures/audio-fanfare.html",
+      "sha256": "b1180f953f5d568bacffbaff2710f6d3776f555002fee6783a849564daa482e4"
+    },
+    {
+      "path": "tests/fixtures/celebrations.html",
+      "sha256": "146307fcf47c3069936883d1763b49a1458af38104d693d2cdbb40394c73df40"
+    },
+    {
+      "path": "tests/fixtures/occlusion.html",
+      "sha256": "da2159078fd64962e0ccc65ada6b967c09e82eac7053a8ac43ef1c8919dd66fb"
+    },
+    {
+      "path": "tests/fixtures/rally-gl.html",
+      "sha256": "1256b0b26c6409346b05242623fd9ad8714e2e86977b65789321ff9db3cdfe96"
+    },
+    {
+      "path": "tests/fixtures/rally.html",
+      "sha256": "d38b1c657f832f4a61f3e413a0edc3df2fd842f0da680721e8de5c7395067fd8"
+    },
+    {
+      "path": "tests/fixtures/remaining-ball.html",
+      "sha256": "709510f5687937219b27b6b6c14c5be4598d96f138382eb8676a62fbeab35276"
+    },
+    {
+      "path": "tests/fixtures/result.html",
+      "sha256": "9a88529403fdfee3aa6daee9edb2876ef23ac346048eb36ffb2f0fd4b902b657"
+    },
+    {
+      "path": "tests/fixtures/stage2.html",
+      "sha256": "4077177da6097a5776955bd7b2df1e1a0e9348cf7692a2a249b302ab16e419f2"
+    },
+    {
+      "path": "tests/fixtures/stage3.html",
+      "sha256": "31bc16f8a66dc916e83a90b027c69fc8716b22fb8f8174d19be3cf82d5fd7b46"
+    },
+    {
+      "path": "tests/helpers/__pycache__/rallyFlashAnalysis.cpython-312.pyc",
+      "sha256": "5aa4e4a6d0df8b1cc8fd5ddb21cf7f3d5447f5e6cd628dd815f0d78df189a335"
+    },
+    {
+      "path": "tests/helpers/appHarness.ts",
+      "sha256": "b39a71478352315af0308d9f6239d37488961e4543c73828c98183145cfc491e"
+    },
+    {
+      "path": "tests/helpers/audioContext.ts",
+      "sha256": "2fe3d4907c53b5fe3f1837eb6260c1a8d99abc28079d666617869610d75829c4"
+    },
+    {
+      "path": "tests/helpers/audioProbe.ts",
+      "sha256": "db0d115d5ffd73afa9a78384227fad2c41398c3db9dddba3afde2b3dd3012689"
+    },
+    {
+      "path": "tests/helpers/browserTest.ts",
+      "sha256": "d3126746954c205c4bc3ed4ceb4f80f638e01bc26c892cef2682e4a2e377ed25"
+    },
+    {
+      "path": "tests/helpers/captureRallyFlashFrames.mjs",
+      "sha256": "78a76e5da3ce76ebf654e7d70b4b70089fb56f7bb6585c12a871bfeae57a7eb5"
+    },
+    {
+      "path": "tests/helpers/celebrationHarness.ts",
+      "sha256": "2bdb211474dfea59993c03a1e733069c30372593710222b49d8a90655e6302be"
+    },
+    {
+      "path": "tests/helpers/collectRallyPerformance.mjs",
+      "sha256": "39fb668a2157eca1eb340f21b0a8ff49e0fed8e964543ed5af5c21764483a9be"
+    },
+    {
+      "path": "tests/helpers/compareRallyPerformance.mjs",
+      "sha256": "8c634348b08e545f100fff1e76e35eccd3cf0c441837bf648f8ee5b6da9f6b99"
+    },
+    {
+      "path": "tests/helpers/fixtures.ts",
+      "sha256": "2a51053b7ff46c6f6e717bea05cc58512e2f96cb3159004640f330b9721c80c8"
+    },
+    {
+      "path": "tests/helpers/glowSchedule.ts",
+      "sha256": "2dfcfbc223eea204e9c83874f022c0929f315b5a993bc9882d91ada8e3506816"
+    },
+    {
+      "path": "tests/helpers/legacyTones.ts",
+      "sha256": "6d8da5236c1a20d133cd2245528b43efa37beab0800ca9b6fa4fd30afef948e1"
+    },
+    {
+      "path": "tests/helpers/losses.ts",
+      "sha256": "28185ad1cb3ea979dd5b08787b6d49419e52681ebec172673b198e7c0435f12e"
+    },
+    {
+      "path": "tests/helpers/occlusionHarness.ts",
+      "sha256": "61358ec0ecf5702182e764ec09dd7c34ce57e00566fd9e05f31745d43d3971cc"
+    },
+    {
+      "path": "tests/helpers/packRallyFlashEvidence.py",
+      "sha256": "fc076b11bb9b87796851cde6bafcde20d4264fbeeaef93dbd0b800213c606c1f"
+    },
+    {
+      "path": "tests/helpers/pngPixels.ts",
+      "sha256": "fdd44c65a749ec8345019c0b14e19de7bcd88e08ac9e47271ce597dec454d8f2"
+    },
+    {
+      "path": "tests/helpers/processRallySafetyBatch.py",
+      "sha256": "051115e45834bd7c56d40781c3f84b700b6a5b4f6cea6e116caefaa2173a8d98"
+    },
+    {
+      "path": "tests/helpers/rallyEvidenceAnalysis.py",
+      "sha256": "f5013404f9f5639ab99a137d0e6f6494c49ec35790febb320d3b4c6073928f5a"
+    },
+    {
+      "path": "tests/helpers/rallyFixedFieldAnalysis.py",
+      "sha256": "c3727d55e209e58313490a6a8f7033ed3e8c3eec76643c7e8ce33ccc1bcf2d7f"
+    },
+    {
+      "path": "tests/helpers/rallyFlashAnalysis.py",
+      "sha256": "daf77a431d9585044b30b64fa6d2f2e2a452f6c0ca621e2c4466dd64d2551f5d"
+    },
+    {
+      "path": "tests/helpers/rallyGlHarness.ts",
+      "sha256": "0ba21c04f3f1294b12261fa33de076fcaaa9825b7631565d552e77947fcced0b"
+    },
+    {
+      "path": "tests/helpers/rallyHarness.ts",
+      "sha256": "9badb4f8be19523eba0061409029d1f9da34c4415e2cf6665bce5ee9faad1992"
+    },
+    {
+      "path": "tests/helpers/rallyPerformanceReplay.ts",
+      "sha256": "cf6785c64ecd123f44b5dcc8f56f820c0d77574abd7914c7ecdb031877f74f86"
+    },
+    {
+      "path": "tests/helpers/remainingBall.ts",
+      "sha256": "8cd2b8cdc6d824bf45cf5a1b70575062936893e2a12f21b55a038b8cee17be91"
+    },
+    {
+      "path": "tests/helpers/remainingHarness.ts",
+      "sha256": "8ade649a71b68f7da26bd3814926fe437e76420924c1a2bcc47ffcf72420bf16"
+    },
+    {
+      "path": "tests/helpers/repackRallyMovie.py",
+      "sha256": "74ba9f2c366ecc55c2e947a86b531764a812bdf47be2d668f79c7a3c5c51265c"
+    },
+    {
+      "path": "tests/helpers/replay.ts",
+      "sha256": "6eb36e76f77284c5fe55f8af0365576bf53ce0f3c3fbf2ecd04a9dae3f38a9d5"
+    },
+    {
+      "path": "tests/helpers/resultCases.ts",
+      "sha256": "a9cb88d6f41f0c177e2c80531975b6164d4b8911d4bec0138bf8cadf362e0b92"
+    },
+    {
+      "path": "tests/helpers/resultHarness.ts",
+      "sha256": "aab2cd31656338dd25943c40639632036939749d31dbc5a289b9e78394dfe68b"
+    },
+    {
+      "path": "tests/helpers/runtimeProbe.ts",
+      "sha256": "65dc384ff71e2291d19a8006e0de4dfaa69005c2647eb371e671489adc2aacd5"
+    },
+    {
+      "path": "tests/helpers/scenarios.ts",
+      "sha256": "1abc90056c6c59dcd3cb3557c9b7a0bc9ce967ccd6ad4ee0f1203bd5f4186bdf"
+    },
+    {
+      "path": "tests/helpers/splitRallyArtifact.py",
+      "sha256": "09385c6849ee5b01f82837b998ba658a2ac9c7da7ffde2bbd7c725a7d082df3f"
+    },
+    {
+      "path": "tests/helpers/stageHarness.ts",
+      "sha256": "900328b26bb0b3788945ed91f516a9d1f2d9067b030a745b8a4583fde9658f7e"
+    },
+    {
+      "path": "tests/helpers/viewportEvidence.mjs",
+      "sha256": "1a23bb790af1fbf03791dcf3324328366901dcec05a750f6d82a463eb4a4a042"
+    },
+    {
+      "path": "tests/helpers/viewportEvidenceAnalysis.py",
+      "sha256": "a91ad8b5c1fa2f98896b207e49469363d5dfb8b718bf68a1953f02b9de919ea0"
+    },
+    {
+      "path": "tests/helpers/wav.ts",
+      "sha256": "4e2f5b732e9c829f38ca1656d1766d48fe45746bd1ba6069a91bc035388e4aac"
+    },
+    {
+      "path": "tests/performance/browser-load.spec.ts",
+      "sha256": "51430c20ea163f941d7f56dff199e3ff2389af75087303139351d842ffdd41cd"
+    },
+    {
+      "path": "tests/performance/rally-4000.spec.ts",
+      "sha256": "df08441bc64dca76791f448f5fabeec8915e74e4ccb7f4668c198be6dde45dc7"
+    },
+    {
+      "path": "tests/performance/rally-gl.spec.ts",
+      "sha256": "8f3077f1306d1e0d144c27db58548f7b4ba09381396208fbd91ec3058dc90bf8"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "6f59e309ca0e9cf7faa0278d2b0c0859b463f12684680ebd185d311387ca5598"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "a3513162fc39aa2daa70c25475feca1d66588363dac8543b02981dd92ae87d89"
+    }
+  ],
+  "fixtures": [
+    {
+      "path": "tests/performance/rally-4000.spec.ts",
+      "baselineSha256": "df08441bc64dca76791f448f5fabeec8915e74e4ccb7f4668c198be6dde45dc7",
+      "afterSha256": "df08441bc64dca76791f448f5fabeec8915e74e4ccb7f4668c198be6dde45dc7",
+      "identical": true
+    },
+    {
+      "path": "tests/helpers/appHarness.ts",
+      "baselineSha256": "b39a71478352315af0308d9f6239d37488961e4543c73828c98183145cfc491e",
+      "afterSha256": "b39a71478352315af0308d9f6239d37488961e4543c73828c98183145cfc491e",
+      "identical": true
+    },
+    {
+      "path": "tests/helpers/browserTest.ts",
+      "baselineSha256": "d3126746954c205c4bc3ed4ceb4f80f638e01bc26c892cef2682e4a2e377ed25",
+      "afterSha256": "d3126746954c205c4bc3ed4ceb4f80f638e01bc26c892cef2682e4a2e377ed25",
+      "identical": true
+    },
+    {
+      "path": "tests/helpers/audioProbe.ts",
+      "baselineSha256": "db0d115d5ffd73afa9a78384227fad2c41398c3db9dddba3afde2b3dd3012689",
+      "afterSha256": "db0d115d5ffd73afa9a78384227fad2c41398c3db9dddba3afde2b3dd3012689",
+      "identical": true
+    },
+    {
+      "path": "tests/helpers/scenarios.ts",
+      "baselineSha256": "1abc90056c6c59dcd3cb3557c9b7a0bc9ce967ccd6ad4ee0f1203bd5f4186bdf",
+      "afterSha256": "1abc90056c6c59dcd3cb3557c9b7a0bc9ce967ccd6ad4ee0f1203bd5f4186bdf",
+      "identical": true
+    },
+    {
+      "path": "tests/fixtures/stage3.html",
+      "baselineSha256": "31bc16f8a66dc916e83a90b027c69fc8716b22fb8f8174d19be3cf82d5fd7b46",
+      "afterSha256": "31bc16f8a66dc916e83a90b027c69fc8716b22fb8f8174d19be3cf82d5fd7b46",
+      "identical": true
+    },
+    {
+      "path": "playwright.performance.config.ts",
+      "baselineSha256": "e378be6ffeec242932170471701294eec606a77bf512b28550f098d7b73d6a46",
+      "afterSha256": "e378be6ffeec242932170471701294eec606a77bf512b28550f098d7b73d6a46",
+      "identical": true
+    }
+  ],
+  "allFixtureFilesIdenticalToBaseline": true,
+  "browserPath": "/workspace/pw-browsers",
+  "kernel": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "machine": "x86_64",
+  "cpuCount": 5,
+  "command": "PLAYWRIGHT_BROWSERS_PATH=/workspace/pw-browsers npx playwright test --config=playwright.performance.config.ts tests/performance/rally-4000.spec.ts --project=chromium",
+  "workingDirectory": "/workspace/takkeu-work",
+  "guardRelaxation": false,
+  "automaticResume": false,
+  "sustainedStageFixture": true,
+  "optimization": "forceSinglePass:true on four rally batch materials; all other production input unchanged from initial measurement",
+  "concurrency": "Wait for root quiet release; external CI may execute remotely, local archive downloads/packing/git staging/browser capture suspended during measurement",
+  "targetHardwareVerdict": "unverified"
+}

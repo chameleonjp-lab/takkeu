@@ -1,0 +1,43 @@
+[WebServer] (node:34664) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 16 tests using 1 worker
+
+(node:34688) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 10:00:50 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   1 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 standard score1500 repeat1 (1.0m)
+[WebServer] 10:01:54 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   2 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 standard score1500 repeat2 (1.1m)
+[WebServer] 10:02:58 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   3 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 standard score2000 repeat1 (1.1m)
+[WebServer] 10:04:02 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   4 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 standard score2000 repeat2 (1.1m)
+[WebServer] 10:05:06 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   5 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 standard score3000 repeat1 (1.1m)
+[WebServer] 10:06:10 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   6 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 standard score3000 repeat2 (1.1m)
+[WebServer] 10:07:14 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   7 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 standard score4000 repeat1 (1.1m)
+[WebServer] 10:08:19 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   8 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 standard score4000 repeat2 (1.1m)
+[WebServer] 10:09:23 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   9 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 low score1500 repeat1 (1.1m)
+[WebServer] 10:10:27 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓  10 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 low score1500 repeat2 (1.1m)
+[WebServer] 10:11:31 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓  11 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 low score2000 repeat1 (1.1m)
+[WebServer] 10:12:35 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓  12 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 low score2000 repeat2 (1.1m)
+[WebServer] 10:13:39 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓  13 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 low score3000 repeat1 (1.1m)
+[WebServer] 10:14:43 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓  14 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 low score3000 repeat2 (1.1m)
+[WebServer] 10:15:47 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓  15 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 low score4000 repeat1 (1.1m)
+[WebServer] 10:16:52 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓  16 [chromium] › tests/performance/rally-4000.spec.ts:10:32 › rally4000 low score4000 repeat2 (1.1m)
+
+  Slow test file: [chromium] › tests/performance/rally-4000.spec.ts (17.1m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  16 passed (17.1m)

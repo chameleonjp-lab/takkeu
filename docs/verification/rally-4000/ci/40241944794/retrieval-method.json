@@ -1,0 +1,12 @@
+{
+  "runId": 40241944794,
+  "repo": "chameleonjp-lab/takkeu",
+  "metadataAndOriginalWorkflowZip": "Existing configured gh api; original API responses and original ZIP bytes retained.",
+  "originalArtifacts": "GitHub connector download_workflow_artifact for all5artifact IDs; small returned files via download_file, >32MiB files via authorized returned download URL. No URL credential stored.",
+  "completeJobLogs": "Each canonical combined-job ZIP member copied byte-for-byte to job-ID.log.",
+  "archivePreservation": "All original ZIP bytes partitioned <=32MiB without recompression. All Github artifact digests matched; concat compared byte-for-byte to original; all ZIP members extracted and compared byte-for-byte; complete SHA/CRC manifests retained.",
+  "originalsOutsideRepository": "/workspace/rally-ci-originals/40241944794",
+  "quietLockReleasedAt": "2026-10-25T23:15:17Z",
+  "quietPolicy": "Only small metadata/status at120s during isolated performance. No job logs/artifacts/ZIP/hash/largeIO until explicit release.",
+  "mutations": "Evidence files only; no production source, assertions, Git staging or commits."
+}

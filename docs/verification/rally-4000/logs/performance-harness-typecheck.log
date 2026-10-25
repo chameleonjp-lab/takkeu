@@ -1,0 +1,50 @@
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+tests/unit/loss-position.test.ts(24,28): error TS2339: Property 'lossCount' does not exist on type 'Readonly<{ id: string; runId: string; kind: GameEventKind; time: number; ballId?: number; milestone?: number; smashReturn?: boolean; rallyScore?: number; position?: Readonly<{ x: number; y: number; z: number; }>; effect?: "bounce-firework" | "racket-firework"; }>'.
+tests/unit/rally-effects.test.ts(2,10): error TS2305: Module '"../../src/game/rallyEffects"' has no exported member 'createRallyEffects'.
+tests/unit/rally-effects.test.ts(8,158): error TS2353: Object literal may only specify known properties, and 'lossCount' does not exist in type 'Readonly<{ id: string; runId: string; kind: GameEventKind; time: number; ballId?: number; milestone?: number; smashReturn?: boolean; rallyScore?: number; position?: Readonly<{ x: number; y: number; z: number; }>; effect?: "bounce-firework" | "racket-firework"; }>'.
+tests/unit/rally-effects.test.ts(27,40): error TS7006: Parameter 'a' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(31,87): error TS7006: Parameter 'a' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(32,42): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(32,103): error TS7006: Parameter 'h' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(34,52): error TS7006: Parameter 'a' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(36,42): error TS7006: Parameter 'a' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(45,39): error TS7006: Parameter 'a' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(46,35): error TS7006: Parameter 'h' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(61,38): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(71,38): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(71,68): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(72,44): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(73,19): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(74,21): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(75,38): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(75,70): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(82,36): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(84,36): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(85,36): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(87,36): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(88,36): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(89,36): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(90,36): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(91,36): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(104,38): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(107,27): error TS7006: Parameter 'l' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(109,28): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(109,63): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(110,28): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(110,64): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(123,37): error TS7006: Parameter 'l' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(125,22): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(125,55): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(126,20): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(127,22): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(127,57): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(128,22): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(128,58): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(129,20): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(130,20): error TS7006: Parameter 'c' implicitly has an 'any' type.
+tests/unit/rally-effects.test.ts(142,27): error TS7006: Parameter 'h' implicitly has an 'any' type.
+tests/unit/rally-notice.test.ts(3,35): error TS2307: Cannot find module '../../src/ui/rallyNotice' or its corresponding type declarations.
+tests/unit/rally-render.test.ts(59,122): error TS2322: Type 'string' is not assignable to type 'RallyEffectKind'.

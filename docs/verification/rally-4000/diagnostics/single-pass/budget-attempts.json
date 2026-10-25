@@ -1,0 +1,42 @@
+{
+  "initial": {
+    "formalLog": "../../logs/single-pass-browser-initial-budget.log",
+    "formalJSON": "../../logs/single-pass-browser-initial-budget.json",
+    "passedChromiumCases": 6,
+    "webkitThresholdStatus": "infrastructure timeout240s, no pixel mismatch",
+    "webkitMotionStatus": "deliberately interrupted after first timeout to avoid repeating insufficient original capture budget",
+    "otherWebkitCases": "not run",
+    "partialEvidence": "attempt-initial-budget/webkit"
+  },
+  "rerun": {
+    "scope": "all six existing WebKit cases only; Chromium six retained from initial run",
+    "budget": "only RALLY_SINGLE_PASS_AB multiplies ordinary capture timeout by4; ordinary CI budgets, pixel/state assertions and independent frame-time acceptance unchanged",
+    "files": [
+      {
+        "file": "tests/browser/rally-effects.spec.ts",
+        "sha256": "20ffe04c37901e090dd7e6086d326db06f1157ccd31b8d99663b2b89633b65de"
+      },
+      {
+        "file": "tests/helpers/rallyHarness.ts",
+        "sha256": "9badb4f8be19523eba0061409029d1f9da34c4415e2cf6665bce5ee9faad1992"
+      },
+      {
+        "file": "tests/helpers/pngPixels.ts",
+        "sha256": "fdd44c65a749ec8345019c0b14e19de7bcd88e08ac9e47271ce597dec454d8f2"
+      },
+      {
+        "file": "playwright.rally-pixels.config.ts",
+        "sha256": "74eab10e3b4e2a35601945cd6d660d5929e3600596cb867d28330f7127e75ce8"
+      },
+      {
+        "file": "src/render/rallyEffects.ts",
+        "sha256": "a1c545094d4066a717802c4b640b726a123db0629ab3896bc2dabdb78062327a"
+      },
+      {
+        "file": "src/render/createView.ts",
+        "sha256": "498dc86f0331201acdbd2e69c01300d0dbe51f32e80f1fbab4ccbdef32870450"
+      }
+    ]
+  },
+  "updatedAt": "2026-10-25T22:47:15.029816+00:00"
+}

@@ -1,0 +1,40 @@
+			}
+
+		}
+
+		function renderObject( object, scene, camera, geometry, material, group ) {
+
+			if ( _nodesHandler !== null && material.isNodeMaterial ) _nodesHandler.setObject( object, material );
+			object.onBeforeRender( _this, scene, camera, geometry, material, group );
+
+			object.modelViewMatrix.multiplyMatrices( camera.matrixWorldInverse, object.matrixWorld );
+			object.normalMatrix.getNormalMatrix( object.modelViewMatrix );
+
+			material.onBeforeRender( _this, scene, camera, geometry, object, group );
+
+			if ( material.transparent === true && material.side === DoubleSide && material.forceSinglePass === false ) {
+
+				material.side = BackSide;
+				material.needsUpdate = true;
+				_this.renderBufferDirect( camera, scene, geometry, material, object, group );
+
+				material.side = FrontSide;
+				material.needsUpdate = true;
+				_this.renderBufferDirect( camera, scene, geometry, material, object, group );
+
+				material.side = DoubleSide;
+
+			} else {
+
+				_this.renderBufferDirect( camera, scene, geometry, material, object, group );
+
+			}
+
+			object.onAfterRender( _this, scene, camera, geometry, material, group );
+
+		}
+
+		function getProgram( material, scene, object ) {
+
+			if ( scene.isScene !== true ) scene = _emptyScene; // scene could be a Mesh, Line, Points, ...
+

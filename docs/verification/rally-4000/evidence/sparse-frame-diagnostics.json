@@ -1,0 +1,2581 @@
+{
+  "scope": "Sparse milestone frames, diagnostic only. Cannot count flashes or establish WCAG 2.3.1 compliance. Human visual review and dense temporal analysis are separate.",
+  "rows": [
+    {
+      "engine": "chromium",
+      "threshold": 50,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/50-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.12441019713878632,
+      "p99_linear_luminance": 0.6320712566375732,
+      "fraction_luminance_above_0_8": 0.006859885769838377,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 50,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/50-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.12503768503665924,
+      "p99_linear_luminance": 0.6320712566375732,
+      "fraction_luminance_above_0_8": 0.0069479888200267344,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 50,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/50-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.12531492114067078,
+      "p99_linear_luminance": 0.6320712566375732,
+      "fraction_luminance_above_0_8": 0.006960140964880302,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 50,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/50-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.12440506368875504,
+      "p99_linear_luminance": 0.6320712566375732,
+      "fraction_luminance_above_0_8": 0.00686596184226516,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 100,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/100-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.12202338874340057,
+      "p99_linear_luminance": 0.6320712566375732,
+      "fraction_luminance_above_0_8": 0.0011362255438084822,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 100,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/100-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.12337720394134521,
+      "p99_linear_luminance": 0.6320712566375732,
+      "fraction_luminance_above_0_8": 0.0014673714910681736,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 100,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/100-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.5239841341972351,
+      "p99_linear_luminance": 0.6700204610824585,
+      "fraction_luminance_above_0_8": 0.0018562401263823064,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 100,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/100-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.12324618548154831,
+      "p99_linear_luminance": 0.6320712566375732,
+      "fraction_luminance_above_0_8": 0.001382306477093207,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 200,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/200-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.13702473044395447,
+      "p99_linear_luminance": 0.6942659616470337,
+      "fraction_luminance_above_0_8": 0.0014005346943735569,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 200,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/200-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.13801491260528564,
+      "p99_linear_luminance": 0.6958416104316711,
+      "fraction_luminance_above_0_8": 0.0015585125774699234,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 200,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/200-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.5356009602546692,
+      "p99_linear_luminance": 0.7073287963867188,
+      "fraction_luminance_above_0_8": 0.0019747235387045812,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 200,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/200-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.14952132105827332,
+      "p99_linear_luminance": 0.7272582650184631,
+      "fraction_luminance_above_0_8": 0.0014400291651476486,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 300,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/300-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.14834333956241608,
+      "p99_linear_luminance": 0.7107810378074646,
+      "fraction_luminance_above_0_8": 0.0014400291651476486,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 300,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/300-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.14952503144741058,
+      "p99_linear_luminance": 0.7121824622154236,
+      "fraction_luminance_above_0_8": 0.0015554745412565318,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 300,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/300-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.5375407934188843,
+      "p99_linear_luminance": 0.7245844006538391,
+      "fraction_luminance_above_0_8": 0.0017590229675537733,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 300,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/300-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.17260707914829254,
+      "p99_linear_luminance": 0.7405642867088318,
+      "fraction_luminance_above_0_8": 0.0014278770202940819,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 400,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/400-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.17815692722797394,
+      "p99_linear_luminance": 0.7031428813934326,
+      "fraction_luminance_above_0_8": 0.0014309150565074737,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 400,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/400-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.17362511157989502,
+      "p99_linear_luminance": 0.6910070776939392,
+      "fraction_luminance_above_0_8": 0.0015615506136833152,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 400,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/400-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.5449147820472717,
+      "p99_linear_luminance": 0.7013934850692749,
+      "fraction_luminance_above_0_8": 0.0018197836918216065,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 400,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/400-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.22484344244003296,
+      "p99_linear_luminance": 0.7405642867088318,
+      "fraction_luminance_above_0_8": 0.0014612954186413903,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 500,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/500-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.36206239461898804,
+      "p99_linear_luminance": 0.7255343198776245,
+      "fraction_luminance_above_0_8": 0.001616235265524365,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 500,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/500-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.31249377131462097,
+      "p99_linear_luminance": 0.7039512991905212,
+      "fraction_luminance_above_0_8": 0.00332361161745048,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 500,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/500-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.5965436697006226,
+      "p99_linear_luminance": 0.7088139653205872,
+      "fraction_luminance_above_0_8": 0.0036577956009235632,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 500,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/500-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.34502479434013367,
+      "p99_linear_luminance": 0.8983128666877747,
+      "fraction_luminance_above_0_8": 0.046709806780896826,
+      "fraction_saturated_red_above_0_2_luminance": 0.02687750637987605
+    },
+    {
+      "engine": "chromium",
+      "threshold": 600,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/600-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.3043714165687561,
+      "p99_linear_luminance": 0.7307540774345398,
+      "fraction_luminance_above_0_8": 0.0029590472718434803,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 600,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/600-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.2880301773548126,
+      "p99_linear_luminance": 0.7021100521087646,
+      "fraction_luminance_above_0_8": 0.003144367480860372,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 600,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/600-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.5889496803283691,
+      "p99_linear_luminance": 0.71454918384552,
+      "fraction_luminance_above_0_8": 0.004286669097095637,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 600,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/600-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.3545015752315521,
+      "p99_linear_luminance": 0.8953767418861389,
+      "fraction_luminance_above_0_8": 0.044218617085915665,
+      "fraction_saturated_red_above_0_2_luminance": 0.029295783205735813
+    },
+    {
+      "engine": "chromium",
+      "threshold": 700,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/700-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.31717753410339355,
+      "p99_linear_luminance": 0.7298747897148132,
+      "fraction_luminance_above_0_8": 0.0035909588042289465,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 700,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/700-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.2904229462146759,
+      "p99_linear_luminance": 0.719845712184906,
+      "fraction_luminance_above_0_8": 0.00368817596305748,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 700,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/700-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.5775711536407471,
+      "p99_linear_luminance": 0.7273531556129456,
+      "fraction_luminance_above_0_8": 0.005480617328958561,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 700,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/700-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.45383885502815247,
+      "p99_linear_luminance": 0.8902557492256165,
+      "fraction_luminance_above_0_8": 0.04229250212662535,
+      "fraction_saturated_red_above_0_2_luminance": 0.03362194677360554
+    },
+    {
+      "engine": "chromium",
+      "threshold": 800,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/800-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.31070661544799805,
+      "p99_linear_luminance": 0.7294203042984009,
+      "fraction_luminance_above_0_8": 0.0029833515615506137,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 800,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/800-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.2752983272075653,
+      "p99_linear_luminance": 0.718224287033081,
+      "fraction_luminance_above_0_8": 0.0032962692915299552,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 800,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/800-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.6017192602157593,
+      "p99_linear_luminance": 0.7472293972969055,
+      "fraction_luminance_above_0_8": 0.006398104265402844,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 800,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/800-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.3616803288459778,
+      "p99_linear_luminance": 0.8964437246322632,
+      "fraction_luminance_above_0_8": 0.04330416818568477,
+      "fraction_saturated_red_above_0_2_luminance": 0.03796026248632884
+    },
+    {
+      "engine": "chromium",
+      "threshold": 900,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/900-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.41051170229911804,
+      "p99_linear_luminance": 0.7357367873191833,
+      "fraction_luminance_above_0_8": 0.0035453882610280716,
+      "fraction_saturated_red_above_0_2_luminance": 3.0380362133916637e-06
+    },
+    {
+      "engine": "chromium",
+      "threshold": 900,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/900-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.3514050543308258,
+      "p99_linear_luminance": 0.7172335982322693,
+      "fraction_luminance_above_0_8": 0.003584882731802163,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 900,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/900-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.5978075861930847,
+      "p99_linear_luminance": 0.7214765548706055,
+      "fraction_luminance_above_0_8": 0.0050401020780167696,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 900,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/900-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.403562992811203,
+      "p99_linear_luminance": 0.897102952003479,
+      "fraction_luminance_above_0_8": 0.04584092842386681,
+      "fraction_saturated_red_above_0_2_luminance": 0.027512455948474904
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1000,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1000-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.29837512969970703,
+      "p99_linear_luminance": 0.7320760488510132,
+      "fraction_luminance_above_0_8": 0.005164661562765828,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1000,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1000-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.2825928330421448,
+      "p99_linear_luminance": 0.750088095664978,
+      "fraction_luminance_above_0_8": 0.007932312553165633,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1000,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1000-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.6119046807289124,
+      "p99_linear_luminance": 0.7255343198776245,
+      "fraction_luminance_above_0_8": 0.005207194069753312,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1000,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1000-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.3134804666042328,
+      "p99_linear_luminance": 0.8738044500350952,
+      "fraction_luminance_above_0_8": 0.02319236845303196,
+      "fraction_saturated_red_above_0_2_luminance": 0.026783327257260906
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1250,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1250-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.4065604507923126,
+      "p99_linear_luminance": 0.7357367873191833,
+      "fraction_luminance_above_0_8": 0.003821849556446713,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1250,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1250-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.4005952775478363,
+      "p99_linear_luminance": 0.7225373983383179,
+      "fraction_luminance_above_0_8": 0.003748936687325313,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1250,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1250-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.40573549270629883,
+      "p99_linear_luminance": 0.7155932784080505,
+      "fraction_luminance_above_0_8": 0.003587920768015555,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1250,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1250-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.4240764379501343,
+      "p99_linear_luminance": 0.8953767418861389,
+      "fraction_luminance_above_0_8": 0.04106513549641512,
+      "fraction_saturated_red_above_0_2_luminance": 0.03184773362498481
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1500,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1500-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.36366894841194153,
+      "p99_linear_luminance": 0.7341436147689819,
+      "fraction_luminance_above_0_8": 0.004481103414752704,
+      "fraction_saturated_red_above_0_2_luminance": 6.0760724267833275e-06
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1500,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1500-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.32005026936531067,
+      "p99_linear_luminance": 0.7136873006820679,
+      "fraction_luminance_above_0_8": 0.0021904241098553894,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1500,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1500-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.5971436500549316,
+      "p99_linear_luminance": 0.7064504623413086,
+      "fraction_luminance_above_0_8": 0.0038704581358609794,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1500,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1500-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.41542619466781616,
+      "p99_linear_luminance": 0.88407963514328,
+      "fraction_luminance_above_0_8": 0.03619820148256167,
+      "fraction_saturated_red_above_0_2_luminance": 0.024185806294811034
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1750,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1750-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.3342735469341278,
+      "p99_linear_luminance": 0.7290419936180115,
+      "fraction_luminance_above_0_8": 0.0025944829262364807,
+      "fraction_saturated_red_above_0_2_luminance": 1.5190181066958317e-05
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1750,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1750-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.32451680302619934,
+      "p99_linear_luminance": 0.7206982970237732,
+      "fraction_luminance_above_0_8": 0.0024729614777008143,
+      "fraction_saturated_red_above_0_2_luminance": 1.2152144853566655e-05
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1750,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1750-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.2932855188846588,
+      "p99_linear_luminance": 0.7131850123405457,
+      "fraction_luminance_above_0_8": 0.0034360189573459715,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 1750,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/1750-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.443950355052948,
+      "p99_linear_luminance": 0.8964437246322632,
+      "fraction_luminance_above_0_8": 0.04575282537367845,
+      "fraction_saturated_red_above_0_2_luminance": 0.040129420342690486
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2000,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2000-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.3796370029449463,
+      "p99_linear_luminance": 0.7278645634651184,
+      "fraction_luminance_above_0_8": 0.0023332118118847976,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2000,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2000-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.33403483033180237,
+      "p99_linear_luminance": 0.719343900680542,
+      "fraction_luminance_above_0_8": 0.005817839348645036,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2000,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2000-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.5028626918792725,
+      "p99_linear_luminance": 0.7039759159088135,
+      "fraction_luminance_above_0_8": 0.0027038522299185808,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2000,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2000-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.21845588088035583,
+      "p99_linear_luminance": 0.8408970832824707,
+      "fraction_luminance_above_0_8": 0.014691943127962086,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2250,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2250-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.17684610188007355,
+      "p99_linear_luminance": 0.7172873020172119,
+      "fraction_luminance_above_0_8": 0.0022542228703366146,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2250,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2250-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.17484809458255768,
+      "p99_linear_luminance": 0.7132656574249268,
+      "fraction_luminance_above_0_8": 0.0022268805444160896,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2250,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2250-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.171287402510643,
+      "p99_linear_luminance": 0.7033668756484985,
+      "fraction_luminance_above_0_8": 0.001950419248997448,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2250,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2250-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.3002960681915283,
+      "p99_linear_luminance": 0.8326891660690308,
+      "fraction_luminance_above_0_8": 0.01265645886498967,
+      "fraction_saturated_red_above_0_2_luminance": 0.003685137926844088
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2500,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2500-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.1950111985206604,
+      "p99_linear_luminance": 0.7241494059562683,
+      "fraction_luminance_above_0_8": 0.0022359946530562643,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2500,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2500-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.1922817975282669,
+      "p99_linear_luminance": 0.7204961776733398,
+      "fraction_luminance_above_0_8": 0.002357516101591931,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2500,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2500-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.38627710938453674,
+      "p99_linear_luminance": 0.7392451763153076,
+      "fraction_luminance_above_0_8": 0.006267468708227002,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2500,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2500-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.25320497155189514,
+      "p99_linear_luminance": 0.8359333276748657,
+      "fraction_luminance_above_0_8": 0.014330416818568477,
+      "fraction_saturated_red_above_0_2_luminance": 0.003393486450358488
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2750,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2750-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.18728899955749512,
+      "p99_linear_luminance": 0.7242298126220703,
+      "fraction_luminance_above_0_8": 0.002791955280106939,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2750,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2750-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.1862315684556961,
+      "p99_linear_luminance": 0.7186590433120728,
+      "fraction_luminance_above_0_8": 0.002658281686717706,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2750,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2750-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.2053433358669281,
+      "p99_linear_luminance": 0.71571284532547,
+      "fraction_luminance_above_0_8": 0.0025154939846882976,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 2750,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/2750-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.26112857460975647,
+      "p99_linear_luminance": 0.74897301197052,
+      "fraction_luminance_above_0_8": 0.001950419248997448,
+      "fraction_saturated_red_above_0_2_luminance": 0.014646372584761211
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3000,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3000-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.18145757913589478,
+      "p99_linear_luminance": 0.7206982970237732,
+      "fraction_luminance_above_0_8": 0.0029013245837890386,
+      "fraction_saturated_red_above_0_2_luminance": 3.34183983473083e-05
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3000,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3000-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.18239951133728027,
+      "p99_linear_luminance": 0.7228853702545166,
+      "fraction_luminance_above_0_8": 0.006176327621825252,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3000,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3000-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.3603874146938324,
+      "p99_linear_luminance": 0.7121145129203796,
+      "fraction_luminance_above_0_8": 0.0037853931218860127,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3000,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3000-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.18659986555576324,
+      "p99_linear_luminance": 0.8227031826972961,
+      "fraction_luminance_above_0_8": 0.013273180216308179,
+      "fraction_saturated_red_above_0_2_luminance": 0.005055292259083728
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3250,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3250-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.19566208124160767,
+      "p99_linear_luminance": 0.7113918662071228,
+      "fraction_luminance_above_0_8": 0.002229918580629481,
+      "fraction_saturated_red_above_0_2_luminance": 0.00015493984688297484
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3250,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3250-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.20113448798656464,
+      "p99_linear_luminance": 0.7034792304039001,
+      "fraction_luminance_above_0_8": 0.002220804471989306,
+      "fraction_saturated_red_above_0_2_luminance": 0.0001427877020294082
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3250,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3250-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.2486836314201355,
+      "p99_linear_luminance": 0.7004815936088562,
+      "fraction_luminance_above_0_8": 0.00325069874832908,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3250,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3250-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.2555122673511505,
+      "p99_linear_luminance": 0.7620425224304199,
+      "fraction_luminance_above_0_8": 0.006015311702515494,
+      "fraction_saturated_red_above_0_2_luminance": 0.008339409405760117
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3500,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3500-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.2646700143814087,
+      "p99_linear_luminance": 0.7162998914718628,
+      "fraction_luminance_above_0_8": 0.0026673957953578806,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3500,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3500-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.23861923813819885,
+      "p99_linear_luminance": 0.715366780757904,
+      "fraction_luminance_above_0_8": 0.0029134767286426054,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3500,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3500-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.37639138102531433,
+      "p99_linear_luminance": 0.9069465398788452,
+      "fraction_luminance_above_0_8": 0.02185867055535302,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3500,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3500-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.19531238079071045,
+      "p99_linear_luminance": 0.783054530620575,
+      "fraction_luminance_above_0_8": 0.0076285089318264675,
+      "fraction_saturated_red_above_0_2_luminance": 0.00536820998906307
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3750,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3750-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.15637557208538055,
+      "p99_linear_luminance": 0.7236788868904114,
+      "fraction_luminance_above_0_8": 0.0032081662413415966,
+      "fraction_saturated_red_above_0_2_luminance": 3.0380362133916635e-05
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3750,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3750-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.1554071307182312,
+      "p99_linear_luminance": 0.720464289188385,
+      "fraction_luminance_above_0_8": 0.0031109490825130637,
+      "fraction_saturated_red_above_0_2_luminance": 1.822821728034998e-05
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3750,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3750-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.18414291739463806,
+      "p99_linear_luminance": 0.718224287033081,
+      "fraction_luminance_above_0_8": 0.004168185684773363,
+      "fraction_saturated_red_above_0_2_luminance": 6.076072426783327e-05
+    },
+    {
+      "engine": "chromium",
+      "threshold": 3750,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/3750-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.2923648953437805,
+      "p99_linear_luminance": 0.7528175115585327,
+      "fraction_luminance_above_0_8": 0.0036820998906306962,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 4000,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/4000-before.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.19713403284549713,
+      "p99_linear_luminance": 0.7314962148666382,
+      "fraction_luminance_above_0_8": 0.003970713330902905,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 4000,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/4000-arrival.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.19607821106910706,
+      "p99_linear_luminance": 0.7288054823875427,
+      "fraction_luminance_above_0_8": 0.006832543443917851,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 4000,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/4000-during.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.40187931060791016,
+      "p99_linear_luminance": 0.7828900218009949,
+      "fraction_luminance_above_0_8": 0.007677117511240734,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "chromium",
+      "threshold": 4000,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/chromium/thresholds/4000-after.png",
+      "size": [
+        390,
+        844
+      ],
+      "mean_linear_luminance": 0.283495157957077,
+      "p99_linear_luminance": 0.8064711093902588,
+      "fraction_luminance_above_0_8": 0.010599708348523515,
+      "fraction_saturated_red_above_0_2_luminance": 0.009885769838376473
+    },
+    {
+      "engine": "webkit",
+      "threshold": 50,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/50-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.12395907193422318,
+      "p99_linear_luminance": 0.6320712566375732,
+      "fraction_luminance_above_0_8": 0.005471165660739121,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 50,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/50-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.12470227479934692,
+      "p99_linear_luminance": 0.6320712566375732,
+      "fraction_luminance_above_0_8": 0.0061172546954537475,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 50,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/50-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.12498147785663605,
+      "p99_linear_luminance": 0.6320712566375732,
+      "fraction_luminance_above_0_8": 0.006136833151051161,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 50,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/50-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.12395860999822617,
+      "p99_linear_luminance": 0.6320712566375732,
+      "fraction_luminance_above_0_8": 0.005474541256531778,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 100,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/100-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.12166573107242584,
+      "p99_linear_luminance": 0.6320712566375732,
+      "fraction_luminance_above_0_8": 0.0016010450844574067,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 100,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/100-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.12313848733901978,
+      "p99_linear_luminance": 0.6320712566375732,
+      "fraction_luminance_above_0_8": 0.002410512955536652,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 100,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/100-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.5228793621063232,
+      "p99_linear_luminance": 0.6658190488815308,
+      "fraction_luminance_above_0_8": 0.0025546508958831232,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 100,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/100-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.12274647504091263,
+      "p99_linear_luminance": 0.6320712566375732,
+      "fraction_luminance_above_0_8": 0.0017029880773956603,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 200,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/200-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.13637351989746094,
+      "p99_linear_luminance": 0.6872102618217468,
+      "fraction_luminance_above_0_8": 0.0017870404126328298,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 200,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/200-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.1376747041940689,
+      "p99_linear_luminance": 0.6942659616470337,
+      "fraction_luminance_above_0_8": 0.002520219818798018,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 200,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/200-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.5340583920478821,
+      "p99_linear_luminance": 0.7027872204780579,
+      "fraction_luminance_above_0_8": 0.002746384736906064,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 200,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/200-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.14884521067142487,
+      "p99_linear_luminance": 0.7242118716239929,
+      "fraction_luminance_above_0_8": 0.0018771688202967823,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 300,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/300-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.14811843633651733,
+      "p99_linear_luminance": 0.7096765637397766,
+      "fraction_luminance_above_0_8": 0.001915313052753811,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 300,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/300-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.14948073029518127,
+      "p99_linear_luminance": 0.7119484543800354,
+      "fraction_luminance_above_0_8": 0.0026235130500533344,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 300,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/300-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.5357101559638977,
+      "p99_linear_luminance": 0.7245476841926575,
+      "fraction_luminance_above_0_8": 0.002707565385290504,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 300,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/300-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.17245744168758392,
+      "p99_linear_luminance": 0.7392160296440125,
+      "fraction_luminance_above_0_8": 0.0018613035200712926,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 400,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/400-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.17791570723056793,
+      "p99_linear_luminance": 0.7016968727111816,
+      "fraction_luminance_above_0_8": 0.0019159881719123426,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 400,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/400-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.17366908490657806,
+      "p99_linear_luminance": 0.6908441781997681,
+      "fraction_luminance_above_0_8": 0.0025573513725172495,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 400,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/400-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.5434678196907043,
+      "p99_linear_luminance": 0.7000964879989624,
+      "fraction_luminance_above_0_8": 0.0026883244892723568,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 400,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/400-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.22489149868488312,
+      "p99_linear_luminance": 0.7395641207695007,
+      "fraction_luminance_above_0_8": 0.0018653542350224816,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 500,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/500-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.36223945021629333,
+      "p99_linear_luminance": 0.7247809767723083,
+      "fraction_luminance_above_0_8": 0.0019770864557594413,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 500,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/500-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.3129960298538208,
+      "p99_linear_luminance": 0.702541708946228,
+      "fraction_luminance_above_0_8": 0.003967000175530981,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 500,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/500-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.5966464877128601,
+      "p99_linear_luminance": 0.7077822089195251,
+      "fraction_luminance_above_0_8": 0.004107762520084795,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 500,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/500-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.34435364603996277,
+      "p99_linear_luminance": 0.8988387584686279,
+      "fraction_luminance_above_0_8": 0.04731640134483736,
+      "fraction_saturated_red_above_0_2_luminance": 0.026750246418492864
+    },
+    {
+      "engine": "webkit",
+      "threshold": 600,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/600-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.3036167621612549,
+      "p99_linear_luminance": 0.7309854030609131,
+      "fraction_luminance_above_0_8": 0.003318548223761494,
+      "fraction_saturated_red_above_0_2_luminance": 1.0126787377972212e-06
+    },
+    {
+      "engine": "webkit",
+      "threshold": 600,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/600-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.2877573072910309,
+      "p99_linear_luminance": 0.7000470757484436,
+      "fraction_luminance_above_0_8": 0.004125653177785879,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 600,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/600-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.588942289352417,
+      "p99_linear_luminance": 0.7137359380722046,
+      "fraction_luminance_above_0_8": 0.004783556797774808,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 600,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/600-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.3540104627609253,
+      "p99_linear_luminance": 0.8964437246322632,
+      "fraction_luminance_above_0_8": 0.044706390677954656,
+      "fraction_saturated_red_above_0_2_luminance": 0.029197553368169482
+    },
+    {
+      "engine": "webkit",
+      "threshold": 700,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/700-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.31673887372016907,
+      "p99_linear_luminance": 0.7298747897148132,
+      "fraction_luminance_above_0_8": 0.004035862329701192,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 700,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/700-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.29047486186027527,
+      "p99_linear_luminance": 0.720464289188385,
+      "fraction_luminance_above_0_8": 0.004495280917081865,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 700,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/700-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.5780668258666992,
+      "p99_linear_luminance": 0.7246680855751038,
+      "fraction_luminance_above_0_8": 0.005976829910479199,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 700,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/700-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.45326319336891174,
+      "p99_linear_luminance": 0.8902557492256165,
+      "fraction_luminance_above_0_8": 0.04169974750543471,
+      "fraction_saturated_red_above_0_2_luminance": 0.033535869080892775
+    },
+    {
+      "engine": "webkit",
+      "threshold": 800,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/800-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.31031182408332825,
+      "p99_linear_luminance": 0.7280237674713135,
+      "fraction_luminance_above_0_8": 0.0030360108559160694,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 800,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/800-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.27569374442100525,
+      "p99_linear_luminance": 0.718224287033081,
+      "fraction_luminance_above_0_8": 0.004087846504908116,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 800,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/800-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.6015859246253967,
+      "p99_linear_luminance": 0.750983715057373,
+      "fraction_luminance_above_0_8": 0.007297362984566776,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 800,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/800-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.36127394437789917,
+      "p99_linear_luminance": 0.897102952003479,
+      "fraction_luminance_above_0_8": 0.04384055035713803,
+      "fraction_saturated_red_above_0_2_luminance": 0.037862032648762506
+    },
+    {
+      "engine": "webkit",
+      "threshold": 900,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/900-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.4104060232639313,
+      "p99_linear_luminance": 0.7338452935218811,
+      "fraction_luminance_above_0_8": 0.003790456515574999,
+      "fraction_saturated_red_above_0_2_luminance": 1.3502383170629616e-06
+    },
+    {
+      "engine": "webkit",
+      "threshold": 900,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/900-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.3524681627750397,
+      "p99_linear_luminance": 0.716151773929596,
+      "fraction_luminance_above_0_8": 0.004377810183497388,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 900,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/900-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.5978129506111145,
+      "p99_linear_luminance": 0.7196142077445984,
+      "fraction_luminance_above_0_8": 0.005787458986511119,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 900,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/900-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.40283605456352234,
+      "p99_linear_luminance": 0.8988387584686279,
+      "fraction_luminance_above_0_8": 0.04621595711643105,
+      "fraction_saturated_red_above_0_2_luminance": 0.027408825157640322
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1000,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1000-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.2979569733142853,
+      "p99_linear_luminance": 0.7325598001480103,
+      "fraction_luminance_above_0_8": 0.005435721904916218,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1000,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1000-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.2824114263057709,
+      "p99_linear_luminance": 0.7526262998580933,
+      "fraction_luminance_above_0_8": 0.00842076126436316,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1000,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1000-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.6121025085449219,
+      "p99_linear_luminance": 0.7231168746948242,
+      "fraction_luminance_above_0_8": 0.005620704554353844,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1000,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1000-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.3133810758590698,
+      "p99_linear_luminance": 0.8770190477371216,
+      "fraction_luminance_above_0_8": 0.023620056439961654,
+      "fraction_saturated_red_above_0_2_luminance": 0.02677049999324881
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1250,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1250-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.40640416741371155,
+      "p99_linear_luminance": 0.735008955001831,
+      "fraction_luminance_above_0_8": 0.0040351872105426605,
+      "fraction_saturated_red_above_0_2_luminance": 1.687797896328702e-06
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1250,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1250-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.40043169260025024,
+      "p99_linear_luminance": 0.7215797901153564,
+      "fraction_luminance_above_0_8": 0.003946071481616505,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1250,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1250-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.40575137734413147,
+      "p99_linear_luminance": 0.7139163017272949,
+      "fraction_luminance_above_0_8": 0.0036351791091127584,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1250,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1250-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.4231060743331909,
+      "p99_linear_luminance": 0.8953767418861389,
+      "fraction_luminance_above_0_8": 0.04134125923225449,
+      "fraction_saturated_red_above_0_2_luminance": 0.03286648843520881
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1500,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1500-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.36328086256980896,
+      "p99_linear_luminance": 0.7357367873191833,
+      "fraction_luminance_above_0_8": 0.004704905415805889,
+      "fraction_saturated_red_above_0_2_luminance": 3.0380362133916637e-06
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1500,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1500-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.32052889466285706,
+      "p99_linear_luminance": 0.7139163017272949,
+      "fraction_luminance_above_0_8": 0.003124789025262959,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1500,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1500-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.5972802042961121,
+      "p99_linear_luminance": 0.7027759552001953,
+      "fraction_luminance_above_0_8": 0.004588784920538475,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1500,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1500-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.4146289825439453,
+      "p99_linear_luminance": 0.88407963514328,
+      "fraction_luminance_above_0_8": 0.0362974439988658,
+      "fraction_saturated_red_above_0_2_luminance": 0.025010464346957237
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1750,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1750-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.3337358832359314,
+      "p99_linear_luminance": 0.727640688419342,
+      "fraction_luminance_above_0_8": 0.0026741469869431956,
+      "fraction_saturated_red_above_0_2_luminance": 4.725834109720366e-06
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1750,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1750-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.32398319244384766,
+      "p99_linear_luminance": 0.719845712184906,
+      "fraction_luminance_above_0_8": 0.0025742293514805364,
+      "fraction_saturated_red_above_0_2_luminance": 2.0253574755944423e-06
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1750,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1750-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.29290035367012024,
+      "p99_linear_luminance": 0.7097977995872498,
+      "fraction_luminance_above_0_8": 0.003524797126692861,
+      "fraction_saturated_red_above_0_2_luminance": 3.375595792657404e-07
+    },
+    {
+      "engine": "webkit",
+      "threshold": 1750,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/1750-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.443571001291275,
+      "p99_linear_luminance": 0.8964437246322632,
+      "fraction_luminance_above_0_8": 0.045402438530400616,
+      "fraction_saturated_red_above_0_2_luminance": 0.040676266861100985
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2000,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2000-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.37921109795570374,
+      "p99_linear_luminance": 0.7263734340667725,
+      "fraction_luminance_above_0_8": 0.002517519342163892,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2000,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2000-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.33382874727249146,
+      "p99_linear_luminance": 0.7174625992774963,
+      "fraction_luminance_above_0_8": 0.006450426000189033,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2000,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2000-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.5027788877487183,
+      "p99_linear_luminance": 0.700194239616394,
+      "fraction_luminance_above_0_8": 0.0032817542296215284,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2000,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2000-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.21795906126499176,
+      "p99_linear_luminance": 0.8465496301651001,
+      "fraction_luminance_above_0_8": 0.01514494808333671,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2250,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2250-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.17631736397743225,
+      "p99_linear_luminance": 0.7141478061676025,
+      "fraction_luminance_above_0_8": 0.0023321991331470004,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2250,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2250-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.17422859370708466,
+      "p99_linear_luminance": 0.7093570828437805,
+      "fraction_luminance_above_0_8": 0.002326460620299483,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2250,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2250-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.17061062157154083,
+      "p99_linear_luminance": 0.69858717918396,
+      "fraction_luminance_above_0_8": 0.002164769581831193,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2250,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2250-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.29930251836776733,
+      "p99_linear_luminance": 0.8359333276748657,
+      "fraction_luminance_above_0_8": 0.01283637812073831,
+      "fraction_saturated_red_above_0_2_luminance": 0.0035683423124181417
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2500,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2500-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.19493843615055084,
+      "p99_linear_luminance": 0.7231168746948242,
+      "fraction_luminance_above_0_8": 0.0026140613818338935,
+      "fraction_saturated_red_above_0_2_luminance": 3.375595792657404e-07
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2500,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2500-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.19242723286151886,
+      "p99_linear_luminance": 0.719845712184906,
+      "fraction_luminance_above_0_8": 0.003016769959897922,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2500,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2500-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.38624781370162964,
+      "p99_linear_luminance": 0.7331956624984741,
+      "fraction_luminance_above_0_8": 0.007049594253385722,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2500,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2500-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.25244712829589844,
+      "p99_linear_luminance": 0.8395065665245056,
+      "fraction_luminance_above_0_8": 0.014493795654933096,
+      "fraction_saturated_red_above_0_2_luminance": 0.003271965001822822
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2750,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2750-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.1866413950920105,
+      "p99_linear_luminance": 0.7230076789855957,
+      "fraction_luminance_above_0_8": 0.0028689188641795277,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2750,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2750-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.18546120822429657,
+      "p99_linear_luminance": 0.7172335982322693,
+      "fraction_luminance_above_0_8": 0.002801744507905645,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2750,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2750-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.2047368288040161,
+      "p99_linear_luminance": 0.7141914367675781,
+      "fraction_luminance_above_0_8": 0.0026758347848395243,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 2750,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/2750-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.26070716977119446,
+      "p99_linear_luminance": 0.7481750249862671,
+      "fraction_luminance_above_0_8": 0.0022451087616964394,
+      "fraction_saturated_red_above_0_2_luminance": 0.014506960478524459
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3000,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3000-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.18132667243480682,
+      "p99_linear_luminance": 0.7206982970237732,
+      "fraction_luminance_above_0_8": 0.0030923833056534476,
+      "fraction_saturated_red_above_0_2_luminance": 4.0844709091154586e-05
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3000,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3000-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.18212106823921204,
+      "p99_linear_luminance": 0.7236788868904114,
+      "fraction_luminance_above_0_8": 0.0067120346741199825,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3000,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3000-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.3600475788116455,
+      "p99_linear_luminance": 0.7089024186134338,
+      "fraction_luminance_above_0_8": 0.004317724578388086,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3000,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3000-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.18622460961341858,
+      "p99_linear_luminance": 0.8260951638221741,
+      "fraction_luminance_above_0_8": 0.013637069442756647,
+      "fraction_saturated_red_above_0_2_luminance": 0.004843304843304843
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3250,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3250-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.19525866210460663,
+      "p99_linear_luminance": 0.7091198563575745,
+      "fraction_luminance_above_0_8": 0.002565452802419627,
+      "fraction_saturated_red_above_0_2_luminance": 0.0001505515723525202
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3250,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3250-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.20063480734825134,
+      "p99_linear_luminance": 0.7000470757484436,
+      "fraction_luminance_above_0_8": 0.0025482372638770743,
+      "fraction_saturated_red_above_0_2_luminance": 0.00013907454665748506
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3250,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3250-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.2482934445142746,
+      "p99_linear_luminance": 0.6977354288101196,
+      "fraction_luminance_above_0_8": 0.0035764437423205196,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3250,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3250-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.2555462419986725,
+      "p99_linear_luminance": 0.7616814374923706,
+      "fraction_luminance_above_0_8": 0.006263080433696547,
+      "fraction_saturated_red_above_0_2_luminance": 0.008270884811169171
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3500,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3500-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.26424920558929443,
+      "p99_linear_luminance": 0.7140343189239502,
+      "fraction_luminance_above_0_8": 0.0029489204844655083,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3500,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3500-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.23869234323501587,
+      "p99_linear_luminance": 0.7129560112953186,
+      "fraction_luminance_above_0_8": 0.0033597304924319143,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3500,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3500-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.37602439522743225,
+      "p99_linear_luminance": 0.889208197593689,
+      "fraction_luminance_above_0_8": 0.02261210353627415,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3500,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3500-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.19454000890254974,
+      "p99_linear_luminance": 0.783054530620575,
+      "fraction_luminance_above_0_8": 0.007701421800947867,
+      "fraction_saturated_red_above_0_2_luminance": 0.005275043545185726
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3750,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3750-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.15593476593494415,
+      "p99_linear_luminance": 0.7231168746948242,
+      "fraction_luminance_above_0_8": 0.003374245554340341,
+      "fraction_saturated_red_above_0_2_luminance": 2.531696844493053e-05
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3750,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3750-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.15484388172626495,
+      "p99_linear_luminance": 0.7196142077445984,
+      "fraction_luminance_above_0_8": 0.003289855659523906,
+      "fraction_saturated_red_above_0_2_luminance": 1.3164823591363876e-05
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3750,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3750-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.18357618153095245,
+      "p99_linear_luminance": 0.7172335982322693,
+      "fraction_luminance_above_0_8": 0.004550978247660712,
+      "fraction_saturated_red_above_0_2_luminance": 5.907292637150457e-05
+    },
+    {
+      "engine": "webkit",
+      "threshold": 3750,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/3750-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.29157736897468567,
+      "p99_linear_luminance": 0.7511487007141113,
+      "fraction_luminance_above_0_8": 0.003697965190856186,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 4000,
+      "phase": "before",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/4000-before.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.19687356054782867,
+      "p99_linear_luminance": 0.7294203042984009,
+      "fraction_luminance_above_0_8": 0.004053752987402276,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 4000,
+      "phase": "arrival",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/4000-arrival.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.19580776989459991,
+      "p99_linear_luminance": 0.7268965244293213,
+      "fraction_luminance_above_0_8": 0.007242678332725726,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 4000,
+      "phase": "during",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/4000-during.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.4016183018684387,
+      "p99_linear_luminance": 0.7846934795379639,
+      "fraction_luminance_above_0_8": 0.008045057452640392,
+      "fraction_saturated_red_above_0_2_luminance": 0.0
+    },
+    {
+      "engine": "webkit",
+      "threshold": 4000,
+      "phase": "after",
+      "file": "docs/verification/rally-4000/evidence/webkit/thresholds/4000-after.png",
+      "size": [
+        1170,
+        2532
+      ],
+      "mean_linear_luminance": 0.2836504578590393,
+      "p99_linear_luminance": 0.8070971369743347,
+      "fraction_luminance_above_0_8": 0.010661819311108411,
+      "fraction_saturated_red_above_0_2_luminance": 0.009758847436572555
+    }
+  ]
+}

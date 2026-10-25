@@ -1,0 +1,5612 @@
+[
+  {
+    "count": 1,
+    "offset": 0.05,
+    "state": {
+      "runId": "run-3",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 1,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-3:fixture-2",
+          "count": 1,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-3:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 1,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks"
+      ],
+      "tableQuads": 136,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 1,
+    "offset": 0.25,
+    "state": {
+      "runId": "run-3",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 1,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-3:fixture-2",
+          "count": 1,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-3:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 1,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks"
+      ],
+      "tableQuads": 136,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 1,
+    "offset": 0.65,
+    "state": {
+      "runId": "run-3",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 1,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-3:fixture-2",
+          "count": 1,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-3:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 1,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world"
+      ],
+      "tableQuads": 137,
+      "worldQuads": 934,
+      "particleCount": 161,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 4,
+    "offset": 0.05,
+    "state": {
+      "runId": "run-4",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 4,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-4:fixture-2",
+          "count": 1,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-4:fixture-3",
+          "count": 2,
+          "at": 20,
+          "rollingCount": 2,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-4:fixture-4",
+          "count": 3,
+          "at": 20,
+          "rollingCount": 3,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-4:fixture-5",
+          "count": 4,
+          "at": 20,
+          "rollingCount": 4,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-4:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 1,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-4:fixture-3:loss-spark",
+          "kind": "loss-spark",
+          "value": 2,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-4:fixture-4:loss-spark",
+          "kind": "loss-spark",
+          "value": 3,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-4:fixture-5:loss-spark",
+          "kind": "loss-spark",
+          "value": 4,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-4:fixture-5:loss-impact",
+          "kind": "loss-impact",
+          "value": 4,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 80,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-impact"
+      ],
+      "tableQuads": 136,
+      "worldQuads": 998,
+      "particleCount": 225,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 4,
+    "offset": 0.25,
+    "state": {
+      "runId": "run-4",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 4,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-4:fixture-2",
+          "count": 1,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-4:fixture-3",
+          "count": 2,
+          "at": 20,
+          "rollingCount": 2,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-4:fixture-4",
+          "count": 3,
+          "at": 20,
+          "rollingCount": 3,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-4:fixture-5",
+          "count": 4,
+          "at": 20,
+          "rollingCount": 4,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-4:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 1,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-4:fixture-3:loss-spark",
+          "kind": "loss-spark",
+          "value": 2,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-4:fixture-4:loss-spark",
+          "kind": "loss-spark",
+          "value": 3,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-4:fixture-5:loss-spark",
+          "kind": "loss-spark",
+          "value": 4,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-4:fixture-5:loss-impact",
+          "kind": "loss-impact",
+          "value": 4,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 80,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-impact"
+      ],
+      "tableQuads": 136,
+      "worldQuads": 998,
+      "particleCount": 225,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 4,
+    "offset": 0.65,
+    "state": {
+      "runId": "run-4",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 4,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-4:fixture-2",
+          "count": 1,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-4:fixture-3",
+          "count": 2,
+          "at": 20,
+          "rollingCount": 2,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-4:fixture-4",
+          "count": 3,
+          "at": 20,
+          "rollingCount": 3,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-4:fixture-5",
+          "count": 4,
+          "at": 20,
+          "rollingCount": 4,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-4:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 1,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-4:fixture-3:loss-spark",
+          "kind": "loss-spark",
+          "value": 2,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-4:fixture-4:loss-spark",
+          "kind": "loss-spark",
+          "value": 3,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-4:fixture-5:loss-spark",
+          "kind": "loss-spark",
+          "value": 4,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-4:fixture-5:loss-impact",
+          "kind": "loss-impact",
+          "value": 4,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 80,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world"
+      ],
+      "tableQuads": 137,
+      "worldQuads": 934,
+      "particleCount": 161,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 10,
+    "offset": 0.05,
+    "state": {
+      "runId": "run-5",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 10,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-5:fixture-2",
+          "count": 10,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-5:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 10,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-5:fixture-2:loss-wave",
+          "kind": "loss-wave",
+          "value": 10,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-wave"
+      ],
+      "tableQuads": 200,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 10,
+    "offset": 0.25,
+    "state": {
+      "runId": "run-5",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 10,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-5:fixture-2",
+          "count": 10,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-5:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 10,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-5:fixture-2:loss-wave",
+          "kind": "loss-wave",
+          "value": 10,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-wave"
+      ],
+      "tableQuads": 200,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 10,
+    "offset": 0.65,
+    "state": {
+      "runId": "run-5",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 10,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-5:fixture-2",
+          "count": 10,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-5:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 10,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-5:fixture-2:loss-wave",
+          "kind": "loss-wave",
+          "value": 10,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-wave"
+      ],
+      "tableQuads": 201,
+      "worldQuads": 934,
+      "particleCount": 161,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 20,
+    "offset": 0.05,
+    "state": {
+      "runId": "run-6",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 20,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-6:fixture-2",
+          "count": 20,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-6:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 20,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-6:fixture-2:loss-wave",
+          "kind": "loss-wave",
+          "value": 20,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-wave"
+      ],
+      "tableQuads": 200,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 20,
+    "offset": 0.25,
+    "state": {
+      "runId": "run-6",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 20,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-6:fixture-2",
+          "count": 20,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-6:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 20,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-6:fixture-2:loss-wave",
+          "kind": "loss-wave",
+          "value": 20,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-wave"
+      ],
+      "tableQuads": 200,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 20,
+    "offset": 0.65,
+    "state": {
+      "runId": "run-6",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 20,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-6:fixture-2",
+          "count": 20,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-6:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 20,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-6:fixture-2:loss-wave",
+          "kind": "loss-wave",
+          "value": 20,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-wave"
+      ],
+      "tableQuads": 201,
+      "worldQuads": 934,
+      "particleCount": 161,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 30,
+    "offset": 0.05,
+    "state": {
+      "runId": "run-7",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 30,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-7:fixture-2",
+          "count": 30,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-7:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 30,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-7:fixture-2:loss-wave",
+          "kind": "loss-wave",
+          "value": 30,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-wave"
+      ],
+      "tableQuads": 200,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 30,
+    "offset": 0.25,
+    "state": {
+      "runId": "run-7",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 30,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-7:fixture-2",
+          "count": 30,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-7:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 30,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-7:fixture-2:loss-wave",
+          "kind": "loss-wave",
+          "value": 30,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-wave"
+      ],
+      "tableQuads": 200,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 30,
+    "offset": 0.65,
+    "state": {
+      "runId": "run-7",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 30,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-7:fixture-2",
+          "count": 30,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-7:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 30,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-7:fixture-2:loss-wave",
+          "kind": "loss-wave",
+          "value": 30,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-wave"
+      ],
+      "tableQuads": 201,
+      "worldQuads": 934,
+      "particleCount": 161,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 40,
+    "offset": 0.05,
+    "state": {
+      "runId": "run-8",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 40,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-8:fixture-2",
+          "count": 40,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-8:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 40,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-8:fixture-2:loss-wave",
+          "kind": "loss-wave",
+          "value": 40,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-wave"
+      ],
+      "tableQuads": 200,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 40,
+    "offset": 0.25,
+    "state": {
+      "runId": "run-8",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 40,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-8:fixture-2",
+          "count": 40,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-8:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 40,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-8:fixture-2:loss-wave",
+          "kind": "loss-wave",
+          "value": 40,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-wave"
+      ],
+      "tableQuads": 200,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 40,
+    "offset": 0.65,
+    "state": {
+      "runId": "run-8",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 40,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-8:fixture-2",
+          "count": 40,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-8:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 40,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-8:fixture-2:loss-wave",
+          "kind": "loss-wave",
+          "value": 40,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-wave"
+      ],
+      "tableQuads": 201,
+      "worldQuads": 934,
+      "particleCount": 161,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 50,
+    "offset": 0.05,
+    "state": {
+      "runId": "run-9",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 50,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-9:fixture-2",
+          "count": 50,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-9:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 50,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-9:fixture-2:loss-net",
+          "kind": "loss-net",
+          "value": 50,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-net"
+      ],
+      "tableQuads": 200,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 50,
+    "offset": 0.25,
+    "state": {
+      "runId": "run-9",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 50,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-9:fixture-2",
+          "count": 50,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-9:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 50,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-9:fixture-2:loss-net",
+          "kind": "loss-net",
+          "value": 50,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-net"
+      ],
+      "tableQuads": 200,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 50,
+    "offset": 0.65,
+    "state": {
+      "runId": "run-9",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 50,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-9:fixture-2",
+          "count": 50,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-9:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 50,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-9:fixture-2:loss-net",
+          "kind": "loss-net",
+          "value": 50,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-net"
+      ],
+      "tableQuads": 201,
+      "worldQuads": 934,
+      "particleCount": 161,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 55,
+    "offset": 0.05,
+    "state": {
+      "runId": "run-10",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 55,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-10:fixture-2",
+          "count": 55,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-10:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 55,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-10:fixture-2:loss-number",
+          "kind": "loss-number",
+          "value": 55,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-number-halos"
+      ],
+      "tableQuads": 168,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 55,
+    "offset": 0.25,
+    "state": {
+      "runId": "run-10",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 55,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-10:fixture-2",
+          "count": 55,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-10:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 55,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-10:fixture-2:loss-number",
+          "kind": "loss-number",
+          "value": 55,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-number-halos"
+      ],
+      "tableQuads": 168,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 55,
+    "offset": 0.65,
+    "state": {
+      "runId": "run-10",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 55,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-10:fixture-2",
+          "count": 55,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-10:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 55,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-10:fixture-2:loss-number",
+          "kind": "loss-number",
+          "value": 55,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-number-halos"
+      ],
+      "tableQuads": 169,
+      "worldQuads": 934,
+      "particleCount": 161,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 77,
+    "offset": 0.05,
+    "state": {
+      "runId": "run-11",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 77,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-11:fixture-2",
+          "count": 77,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-11:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 77,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-11:fixture-2:loss-number",
+          "kind": "loss-number",
+          "value": 77,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-number-halos"
+      ],
+      "tableQuads": 168,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 77,
+    "offset": 0.25,
+    "state": {
+      "runId": "run-11",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 77,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-11:fixture-2",
+          "count": 77,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-11:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 77,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-11:fixture-2:loss-number",
+          "kind": "loss-number",
+          "value": 77,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-number-halos"
+      ],
+      "tableQuads": 168,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 77,
+    "offset": 0.65,
+    "state": {
+      "runId": "run-11",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 77,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-11:fixture-2",
+          "count": 77,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-11:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 77,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-11:fixture-2:loss-number",
+          "kind": "loss-number",
+          "value": 77,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-number-halos"
+      ],
+      "tableQuads": 169,
+      "worldQuads": 934,
+      "particleCount": 161,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 88,
+    "offset": 0.05,
+    "state": {
+      "runId": "run-12",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 88,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-12:fixture-2",
+          "count": 88,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-12:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 88,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-12:fixture-2:loss-number",
+          "kind": "loss-number",
+          "value": 88,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-number-halos"
+      ],
+      "tableQuads": 168,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 88,
+    "offset": 0.25,
+    "state": {
+      "runId": "run-12",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 88,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-12:fixture-2",
+          "count": 88,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-12:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 88,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-12:fixture-2:loss-number",
+          "kind": "loss-number",
+          "value": 88,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-number-halos"
+      ],
+      "tableQuads": 168,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 88,
+    "offset": 0.65,
+    "state": {
+      "runId": "run-12",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 88,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-12:fixture-2",
+          "count": 88,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-12:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 88,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-12:fixture-2:loss-number",
+          "kind": "loss-number",
+          "value": 88,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-number-halos"
+      ],
+      "tableQuads": 169,
+      "worldQuads": 934,
+      "particleCount": 161,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 90,
+    "offset": 0.05,
+    "state": {
+      "runId": "run-13",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 90,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-13:fixture-2",
+          "count": 90,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-13:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 90,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-13:fixture-2:loss-warning",
+          "kind": "loss-warning",
+          "value": 90,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-warning-posts"
+      ],
+      "tableQuads": 218,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 90,
+    "offset": 0.25,
+    "state": {
+      "runId": "run-13",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 90,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-13:fixture-2",
+          "count": 90,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-13:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 90,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-13:fixture-2:loss-warning",
+          "kind": "loss-warning",
+          "value": 90,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-warning-posts"
+      ],
+      "tableQuads": 218,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 90,
+    "offset": 0.65,
+    "state": {
+      "runId": "run-13",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 90,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-13:fixture-2",
+          "count": 90,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-13:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 90,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-13:fixture-2:loss-warning",
+          "kind": "loss-warning",
+          "value": 90,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-warning-posts"
+      ],
+      "tableQuads": 219,
+      "worldQuads": 934,
+      "particleCount": 161,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 99,
+    "offset": 0.05,
+    "state": {
+      "runId": "run-14",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 99,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-14:fixture-2",
+          "count": 99,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-14:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 99,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-14:fixture-2:loss-warning",
+          "kind": "loss-warning",
+          "value": 99,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-14:fixture-2:loss-gold",
+          "kind": "loss-gold",
+          "value": 99,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 90,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-warning-posts",
+        "loss-gold"
+      ],
+      "tableQuads": 282,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 99,
+    "offset": 0.25,
+    "state": {
+      "runId": "run-14",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 99,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-14:fixture-2",
+          "count": 99,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-14:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 99,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-14:fixture-2:loss-warning",
+          "kind": "loss-warning",
+          "value": 99,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-14:fixture-2:loss-gold",
+          "kind": "loss-gold",
+          "value": 99,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 90,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-warning-posts",
+        "loss-gold"
+      ],
+      "tableQuads": 282,
+      "worldQuads": 946,
+      "particleCount": 173,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 99,
+    "offset": 0.65,
+    "state": {
+      "runId": "run-14",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 99,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-14:fixture-2",
+          "count": 99,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-14:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 99,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-14:fixture-2:loss-warning",
+          "kind": "loss-warning",
+          "value": 99,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-14:fixture-2:loss-gold",
+          "kind": "loss-gold",
+          "value": 99,
+          "at": 20,
+          "duration": 1.2,
+          "priority": 90,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-warning-posts",
+        "loss-gold"
+      ],
+      "tableQuads": 283,
+      "worldQuads": 934,
+      "particleCount": 161,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 100,
+    "offset": 0.05,
+    "state": {
+      "runId": "run-15",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 100,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-15:fixture-2",
+          "count": 97,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-3",
+          "count": 98,
+          "at": 20.04,
+          "rollingCount": 2,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-15:fixture-4",
+          "count": 99,
+          "at": 20.08,
+          "rollingCount": 3,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-15:fixture-5",
+          "count": 100,
+          "at": 20.12,
+          "rollingCount": 4,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-15:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 97,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-2:loss-warning",
+          "kind": "loss-warning",
+          "value": 97,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-3:loss-spark",
+          "kind": "loss-spark",
+          "value": 98,
+          "at": 20.04,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-15:fixture-3:loss-warning",
+          "kind": "loss-warning",
+          "value": 98,
+          "at": 20.04,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-15:fixture-4:loss-spark",
+          "kind": "loss-spark",
+          "value": 99,
+          "at": 20.08,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-15:fixture-4:loss-warning",
+          "kind": "loss-warning",
+          "value": 99,
+          "at": 20.08,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-15:fixture-4:loss-gold",
+          "kind": "loss-gold",
+          "value": 99,
+          "at": 20.08,
+          "duration": 1.2,
+          "priority": 90,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-15:fixture-5:loss-spark",
+          "kind": "loss-spark",
+          "value": 100,
+          "at": 20.12,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-5:loss-impact",
+          "kind": "loss-impact",
+          "value": 100,
+          "at": 20.12,
+          "duration": 0.5,
+          "priority": 80,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-5:loss-final",
+          "kind": "loss-final",
+          "value": 100,
+          "at": 20.12,
+          "duration": 2,
+          "priority": 100,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-gold",
+        "loss-impact",
+        "loss-final"
+      ],
+      "tableQuads": 247,
+      "worldQuads": 1110,
+      "particleCount": 225,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 100,
+    "offset": 0.25,
+    "state": {
+      "runId": "run-15",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 100,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-15:fixture-2",
+          "count": 97,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-3",
+          "count": 98,
+          "at": 20.04,
+          "rollingCount": 2,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-15:fixture-4",
+          "count": 99,
+          "at": 20.08,
+          "rollingCount": 3,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-15:fixture-5",
+          "count": 100,
+          "at": 20.12,
+          "rollingCount": 4,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-15:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 97,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-2:loss-warning",
+          "kind": "loss-warning",
+          "value": 97,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-3:loss-spark",
+          "kind": "loss-spark",
+          "value": 98,
+          "at": 20.04,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-15:fixture-3:loss-warning",
+          "kind": "loss-warning",
+          "value": 98,
+          "at": 20.04,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-15:fixture-4:loss-spark",
+          "kind": "loss-spark",
+          "value": 99,
+          "at": 20.08,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-15:fixture-4:loss-warning",
+          "kind": "loss-warning",
+          "value": 99,
+          "at": 20.08,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-15:fixture-4:loss-gold",
+          "kind": "loss-gold",
+          "value": 99,
+          "at": 20.08,
+          "duration": 1.2,
+          "priority": 90,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-15:fixture-5:loss-spark",
+          "kind": "loss-spark",
+          "value": 100,
+          "at": 20.12,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-5:loss-impact",
+          "kind": "loss-impact",
+          "value": 100,
+          "at": 20.12,
+          "duration": 0.5,
+          "priority": 80,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-5:loss-final",
+          "kind": "loss-final",
+          "value": 100,
+          "at": 20.12,
+          "duration": 2,
+          "priority": 100,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-sparks",
+        "loss-gold",
+        "loss-impact",
+        "loss-final"
+      ],
+      "tableQuads": 247,
+      "worldQuads": 1110,
+      "particleCount": 225,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  },
+  {
+    "count": 100,
+    "offset": 0.65,
+    "state": {
+      "runId": "run-15",
+      "score": 2000,
+      "bestAtStart": 0,
+      "best": null,
+      "lostBallCount": 100,
+      "stage": [
+        {
+          "threshold": 700,
+          "kind": "A",
+          "effect": "background-halo",
+          "duration": null,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1250,
+          "kind": "A",
+          "effect": "meteor",
+          "duration": 4,
+          "color": "green-blue",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 1500,
+          "kind": "A",
+          "effect": "tricolor-network",
+          "duration": null,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": [
+            "green-perimeter",
+            "green-net",
+            "green-blue-world"
+          ]
+        },
+        {
+          "threshold": 1750,
+          "kind": "A",
+          "effect": "floor-wave",
+          "duration": 4,
+          "color": "green-blue-red",
+          "priority": 10,
+          "replaces": []
+        },
+        {
+          "threshold": 2000,
+          "kind": "A",
+          "effect": "star-world",
+          "duration": 2.5,
+          "color": "green-blue-red",
+          "priority": 100,
+          "replaces": [
+            "background-threads"
+          ]
+        }
+      ],
+      "arrivals": [],
+      "hits": [],
+      "losses": [
+        {
+          "id": "run-15:fixture-2",
+          "count": 97,
+          "at": 20,
+          "rollingCount": 1,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-3",
+          "count": 98,
+          "at": 20.04,
+          "rollingCount": 2,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-15:fixture-4",
+          "count": 99,
+          "at": 20.08,
+          "rollingCount": 3,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-15:fixture-5",
+          "count": 100,
+          "at": 20.12,
+          "rollingCount": 4,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ],
+      "cues": [
+        {
+          "id": "run-15:fixture-2:loss-spark",
+          "kind": "loss-spark",
+          "value": 97,
+          "at": 20,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-2:loss-warning",
+          "kind": "loss-warning",
+          "value": 97,
+          "at": 20,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-3:loss-spark",
+          "kind": "loss-spark",
+          "value": 98,
+          "at": 20.04,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-15:fixture-3:loss-warning",
+          "kind": "loss-warning",
+          "value": 98,
+          "at": 20.04,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.38
+          }
+        },
+        {
+          "id": "run-15:fixture-4:loss-spark",
+          "kind": "loss-spark",
+          "value": 99,
+          "at": 20.08,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-15:fixture-4:loss-warning",
+          "kind": "loss-warning",
+          "value": 99,
+          "at": 20.08,
+          "duration": 0.8,
+          "priority": 80,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-15:fixture-4:loss-gold",
+          "kind": "loss-gold",
+          "value": 99,
+          "at": 20.08,
+          "duration": 1.2,
+          "priority": 90,
+          "position": {
+            "x": -0.72,
+            "y": 0.16,
+            "z": 2.3
+          }
+        },
+        {
+          "id": "run-15:fixture-5:loss-spark",
+          "kind": "loss-spark",
+          "value": 100,
+          "at": 20.12,
+          "duration": 0.5,
+          "priority": 10,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-5:loss-impact",
+          "kind": "loss-impact",
+          "value": 100,
+          "at": 20.12,
+          "duration": 0.5,
+          "priority": 80,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        },
+        {
+          "id": "run-15:fixture-5:loss-final",
+          "kind": "loss-final",
+          "value": 100,
+          "at": 20.12,
+          "duration": 2,
+          "priority": 100,
+          "position": {
+            "x": 0.72,
+            "y": 0.16,
+            "z": 2.34
+          }
+        }
+      ]
+    },
+    "stats": {
+      "activeEffects": [
+        "single-halo",
+        "meteor",
+        "tricolor-crossing",
+        "floor-wave",
+        "star-world",
+        "loss-gold",
+        "loss-final"
+      ],
+      "tableQuads": 248,
+      "worldQuads": 1046,
+      "particleCount": 161,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 4,
+      "disposed": false
+    }
+  }
+]

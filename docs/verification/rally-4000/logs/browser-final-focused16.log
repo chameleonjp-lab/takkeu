@@ -1,0 +1,29 @@
+[WebServer] (node:33116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 16 tests using 1 worker
+
+(node:33151) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/celebrations.spec.ts:5:1 › 落球電撃の増大・4球目の揺れと全14種類の落球数字を描き、指定色へ点滅する (5.5s)
+  ✓   2 [chromium] › tests/browser/celebrations.spec.ts:33:1 › ゾロ目の緑電撃と100単位の床壁点滅が5秒で消え、停止・復旧・新規プレイを尊重する (10.6s)
+  ✓   3 [chromium] › tests/browser/rally-effects.spec.ts:19:1 › all 23 thresholds: preserve before/arrival/during/after camera evidence and fixed resources (21.7s)
+  ✓   4 [chromium] › tests/browser/rally-effects.spec.ts:48:1 › moving background/electricity/rings: time sequences, deterministic restore and reduced motion (11.3s)
+  ✓   5 [chromium] › tests/browser/rally-effects.spec.ts:77:1 › losses keep actual distinct positions, number lifetimes and final drawing without advancing balls (6.9s)
+  ✓   6 [chromium] › tests/browser/rally-effects.spec.ts:108:1 › mobile, landscape, 200% text, best and smash warning keep controls and readable four-digit scores (2.5s)
+  ✓   7 [chromium] › tests/browser/rally-effects.spec.ts:128:1 › major labels fit at their largest initial scale with 200% text on 320px screens (1.8s)
+  ✓   8 [chromium] › tests/browser/rally-effects.spec.ts:147:1 › 300 gold rays visibly radiate behind the rally number at age0.65 (1.3s)
+(node:33485) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   9 [webkit] › tests/browser/celebrations.spec.ts:5:1 › 落球電撃の増大・4球目の揺れと全14種類の落球数字を描き、指定色へ点滅する (12.0s)
+  ✓  10 [webkit] › tests/browser/celebrations.spec.ts:33:1 › ゾロ目の緑電撃と100単位の床壁点滅が5秒で消え、停止・復旧・新規プレイを尊重する (12.7s)
+  ✓  11 [webkit] › tests/browser/rally-effects.spec.ts:19:1 › all 23 thresholds: preserve before/arrival/during/after camera evidence and fixed resources (37.7s)
+  ✓  12 [webkit] › tests/browser/rally-effects.spec.ts:48:1 › moving background/electricity/rings: time sequences, deterministic restore and reduced motion (29.7s)
+  ✓  13 [webkit] › tests/browser/rally-effects.spec.ts:77:1 › losses keep actual distinct positions, number lifetimes and final drawing without advancing balls (20.2s)
+  ✓  14 [webkit] › tests/browser/rally-effects.spec.ts:108:1 › mobile, landscape, 200% text, best and smash warning keep controls and readable four-digit scores (6.6s)
+  ✓  15 [webkit] › tests/browser/rally-effects.spec.ts:128:1 › major labels fit at their largest initial scale with 200% text on 320px screens (4.3s)
+  ✓  16 [webkit] › tests/browser/rally-effects.spec.ts:147:1 › 300 gold rays visibly radiate behind the rally number at age0.65 (3.7s)
+
+  16 passed (3.2m)

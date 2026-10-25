@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-10-25T22:21:07.756779+00:00",
+  "status": "passed",
+  "reporters": [
+    {
+      "directory": "baseline/chromium",
+      "reporterBytesIdentical": true,
+      "rawReporterSha256": "93a1613694ca25e1bf21f5ae40ee1e8868e3acadc6fc0bd9694ed3fc82dbee18",
+      "completeMeasurementBodies": 16,
+      "allDurationsAtLeast60Seconds": true,
+      "allInitialBalls30": true
+    },
+    {
+      "directory": "baseline/chromium-clean-repeat1",
+      "reporterBytesIdentical": true,
+      "rawReporterSha256": "389d4782ac189e5a698acf619276ecd5db5032506176e09a77960f4345b3a2b7",
+      "completeMeasurementBodies": 1,
+      "allDurationsAtLeast60Seconds": true,
+      "allInitialBalls30": true
+    },
+    {
+      "directory": "after/chromium",
+      "reporterBytesIdentical": true,
+      "rawReporterSha256": "2913380faea91074626ed3ac0730cd28dace23b23ec82ee10a45aba053570abe",
+      "completeMeasurementBodies": 16,
+      "allDurationsAtLeast60Seconds": true,
+      "allInitialBalls30": true
+    }
+  ],
+  "completeRawMeasurements": 33,
+  "canonicalBeforeAfterConditions": 16,
+  "originalControlReplacementRetained": true
+}

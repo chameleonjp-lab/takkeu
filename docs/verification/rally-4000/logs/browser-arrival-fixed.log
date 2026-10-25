@@ -1,0 +1,15 @@
+[WebServer] (node:18271) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:18345) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  1 [chromium] › tests/browser/rally-effects.spec.ts:127:1 › major labels fit at their largest initial scale with 200% text on 320px screens (3.8s)
+(node:18658) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  2 [webkit] › tests/browser/rally-effects.spec.ts:127:1 › major labels fit at their largest initial scale with 200% text on 320px screens (4.0s)
+
+  2 passed (10.7s)

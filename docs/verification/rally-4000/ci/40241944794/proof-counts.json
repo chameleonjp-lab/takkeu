@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "ciRun": 40241944794,
+  "canonicalCommit": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+  "sourceTreeSHA": "47bd0f370ad169de00c77b37bb74429b63020d44",
+  "testsTreeSHA": "097b10b95f55aded9d77af6dd4ed6b85925b9684",
+  "jobs": {
+    "total": 6,
+    "successful": 6,
+    "failed": 0,
+    "skipped": 0
+  },
+  "checks": [
+    {
+      "check": "unit",
+      "filesPassed": 71,
+      "passed": 958,
+      "skipped": 0,
+      "failed": 0,
+      "flaky": null,
+      "retriedCases": null,
+      "errors": null,
+      "provenance": "selected/12617231515/artifacts/unit.log",
+      "reportLimit": "Vitest console report supplies71files/958tests allpassed and no skip/failure; it has no separate flaky/retry/error stats fields."
+    },
+    {
+      "check": "webkit-interaction",
+      "passed": 94,
+      "skipped": 0,
+      "failed": 0,
+      "flaky": 0,
+      "retriedCases": 0,
+      "errors": 0,
+      "attemptStatuses": {
+        "passed": 94
+      },
+      "provenance": "selected/12617182250/test-results/results.json"
+    },
+    {
+      "check": "release",
+      "passed": 8,
+      "skipped": 0,
+      "failed": 0,
+      "flaky": 0,
+      "retriedCases": 0,
+      "errors": 0,
+      "attemptStatuses": {
+        "passed": 8
+      },
+      "provenance": "selected/12617231515/artifacts/release-results.json"
+    },
+    {
+      "check": "chromium-load",
+      "passed": 3,
+      "skipped": 0,
+      "failed": 0,
+      "flaky": 0,
+      "retriedCases": 0,
+      "errors": 0,
+      "attemptStatuses": {
+        "passed": 3
+      },
+      "provenance": "selected/12617242568/test-results/results.json"
+    },
+    {
+      "check": "chromium-interaction",
+      "passed": 94,
+      "skipped": 0,
+      "failed": 0,
+      "flaky": 0,
+      "retriedCases": 0,
+      "errors": 0,
+      "attemptStatuses": {
+        "passed": 94
+      },
+      "provenance": "selected/12617532732/test-results/results.json"
+    },
+    {
+      "check": "webkit-load",
+      "passed": 3,
+      "skipped": 0,
+      "failed": 0,
+      "flaky": 0,
+      "retriedCases": 0,
+      "errors": 0,
+      "attemptStatuses": {
+        "passed": 3
+      },
+      "provenance": "selected/12617701130/test-results/results.json"
+    }
+  ],
+  "totals": {
+    "unitTestsPassed": 958,
+    "unitFilesPassed": 71,
+    "browserExecutionsPassed": 194,
+    "releaseExecutionsPassed": 8,
+    "testExecutionsPassed": 1160,
+    "playwrightSkipped": 0,
+    "playwrightFlaky": 0,
+    "playwrightUnexpected": 0,
+    "playwrightRetriedCases": 0,
+    "playwrightTopLevelErrors": 0
+  },
+  "notes": [
+    "Browser/release counts are executions across projects, not unique source test definitions.",
+    "Source/test tree IDs read from the exact canonical commit via git rev-parse.",
+    "CI validates canonical C; subsequent documentation-only D relies on the separate runtime byte/mode equality proof.",
+    "No production score submission, test weakening, source mutation, staging or commit performed by this archival task."
+  ]
+}

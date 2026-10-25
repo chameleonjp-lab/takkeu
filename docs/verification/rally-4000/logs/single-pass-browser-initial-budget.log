@@ -1,0 +1,95 @@
+[WebServer] (node:38705) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 1 worker
+
+(node:38729) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/rally-effects.spec.ts:61:1 › all 23 thresholds: preserve before/arrival/during/after camera evidence and fixed resources (59.3s)
+  ✓   2 [chromium] › tests/browser/rally-effects.spec.ts:90:1 › moving background/electricity/rings: time sequences, deterministic restore and reduced motion (42.1s)
+  ✓   3 [chromium] › tests/browser/rally-effects.spec.ts:119:1 › losses keep actual distinct positions, number lifetimes and final drawing without advancing balls (29.2s)
+  ✓   4 [chromium] › tests/browser/rally-effects.spec.ts:150:1 › mobile, landscape, 200% text, best and smash warning keep controls and readable four-digit scores (7.1s)
+  ✓   5 [chromium] › tests/browser/rally-effects.spec.ts:198:1 › major labels fit at their largest initial scale with 200% text on 320px screens (3.4s)
+  ✓   6 [chromium] › tests/browser/rally-effects.spec.ts:217:1 › 300 gold rays visibly radiate behind the rally number at age0.65 (1.2s)
+(node:38994) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘   7 [webkit] › tests/browser/rally-effects.spec.ts:61:1 › all 23 thresholds: preserve before/arrival/during/after camera evidence and fixed resources (4.0m)
+(node:39431) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘   8 [webkit] › tests/browser/rally-effects.spec.ts:90:1 › moving background/electricity/rings: time sequences, deterministic restore and reduced motion (39.6s)
+
+
+  1) [webkit] › tests/browser/rally-effects.spec.ts:61:1 › all 23 thresholds: preserve before/arrival/during/after camera evidence and fixed resources 
+
+    Test timeout of 240000ms exceeded.
+
+    Error: page.evaluate: Test timeout of 240000ms exceeded.
+
+      22 |     const control=await page.evaluate(quality=>window.rally.singlePass(false,quality),quality);
+      23 |     const oldPNG=await page.screenshot(),oldPixels=pngPixels(oldPNG);
+    > 24 |     const optimized=await page.evaluate(quality=>window.rally.singlePass(true,quality),quality);
+         |                                ^
+      25 |     const newPNG=await page.screenshot(),newPixels=pngPixels(newPNG);
+      26 |     const oldHash=createHash('sha256').update(oldPixels.pixels).digest('hex'),newHash=createHash('sha256').update(newPixels.pixels).digest('hex');
+      27 |     let changedPixels=0,maxChannelDelta=0;
+        at cameraScreenshot (/workspace/takkeu-work/tests/browser/rally-effects.spec.ts:24:32)
+        at /workspace/takkeu-work/tests/browser/rally-effects.spec.ts:81:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs/verification/rally-4000/failures/single-pass-browser-attempt/rally-effects-all-23-thres-8a1cc-vidence-and-fixed-resources-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs/verification/rally-4000/failures/single-pass-browser-attempt/rally-effects-all-23-thres-8a1cc-vidence-and-fixed-resources-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/verification/rally-4000/failures/single-pass-browser-attempt/rally-effects-all-23-thres-8a1cc-vidence-and-fixed-resources-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/verification/rally-4000/failures/single-pass-browser-attempt/rally-effects-all-23-thres-8a1cc-vidence-and-fixed-resources-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit] › tests/browser/rally-effects.spec.ts:90:1 › moving background/electricity/rings: time sequences, deterministic restore and reduced motion 
+
+    Test was interrupted.
+
+    Error: page.screenshot: Test ended.
+    Call log:
+      - taking page screenshot
+      - waiting for fonts to load...
+      - fonts loaded
+
+
+      23 |   const records=singlePassRows.get(info.testId)??[];singlePassRows.set(info.testId,records);
+      24 |   const before=await page.evaluate(()=>({snapshot:window.rally.snapshot(),state:window.rally.state()}));
+    > 25 |   for(const quality of ['standard','low'] as const){
+         |                             ^
+      26 |     const control=await page.evaluate(quality=>window.rally.singlePass(false,quality),quality);
+      27 |     const oldPNG=await page.screenshot(),oldPixels=pngPixels(oldPNG);
+      28 |     const optimized=await page.evaluate(quality=>window.rally.singlePass(true,quality),quality);
+        at cameraScreenshot (/workspace/takkeu-work/tests/browser/rally-effects.spec.ts:25:29)
+        at /workspace/takkeu-work/tests/browser/rally-effects.spec.ts:100:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs/verification/rally-4000/failures/single-pass-browser-attempt/rally-effects-moving-backg-d21c3--restore-and-reduced-motion-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs/verification/rally-4000/failures/single-pass-browser-attempt/rally-effects-moving-backg-d21c3--restore-and-reduced-motion-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/verification/rally-4000/failures/single-pass-browser-attempt/rally-effects-moving-backg-d21c3--restore-and-reduced-motion-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/verification/rally-4000/failures/single-pass-browser-attempt/rally-effects-moving-backg-d21c3--restore-and-reduced-motion-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit] › tests/browser/rally-effects.spec.ts:61:1 › all 23 thresholds: preserve before/arrival/during/after camera evidence and fixed resources 
+  1 interrupted
+    [webkit] › tests/browser/rally-effects.spec.ts:90:1 › moving background/electricity/rings: time sequences, deterministic restore and reduced motion 
+  4 did not run
+  6 passed (7.1m)

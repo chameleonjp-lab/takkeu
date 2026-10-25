@@ -1,0 +1,24 @@
+import { AdditiveBlending, BufferAttribute, BufferGeometry, DoubleSide, DynamicDrawUsage, Group, Mesh, MeshBasicMaterial, NormalBlending } from 'three';
+import type { GameConfig, GameSnapshot } from '../game/types';
+import type { RallyCue, RallyEffectsState } from '../game/rallyEffects';
+import { celebrationFrame } from '../game/celebrations';
+import type { Quality } from '../storage/preferences';
+import { sampleRainbow } from './rainbow';
+
+/** Four reused batches. Draw ranges and upload ranges contain only this frame's vertices. */
+function createBatch(capacity:number,name:string,additive=true) {
+  const geometry=new BufferGeometry();
+  const position=new BufferAttribute(new Float32Array(capacity*18),3).setUsage(DynamicDrawUsage);
+  const color=new BufferAttribute(new Float32Array(capacity*24),4).setUsage(DynamicDrawUsage);
+  geometry.setAttribute('position',position);geometry.setAttribute('color',color);geometry.setDrawRange(0,0);
+  const material=new MeshBasicMaterial({vertexColors:true,transparent:true,depthTest:true,depthWrite:false,
+    side:DoubleSide,forceSinglePass:true,blending:additive?AdditiveBlending:NormalBlending,toneMapped:false});
+  const mesh=new Mesh(geometry,material);mesh.name=name;mesh.frustumCulled=false;mesh.renderOrder=2;
+  let count=0,opacity=1;
+  return {mesh,capacity,get count(){return count;},clear(){count=0;opacity=1;},setOpacity(value:number){opacity=value;},
+    rect(left:number,bottom:number,right:number,top:number,z:number,r:number,g:number,b:number,a:number,bottomAlpha=a){
+      a*=opacity;bottomAlpha*=opacity;if(count>=capacity||a<=0)return;let v=count++*6;
+      position.setXYZ(v,left,bottom,z);position.setXYZ(v+1,right,bottom,z);position.setXYZ(v+2,left,top,z);
+      position.setXYZ(v+3,right,bottom,z);position.setXYZ(v+4,right,top,z);position.setXYZ(v+5,left,top,z);
+      for(let i=0;i<6;i++)color.setXYZW(v++,r,g,b,i===0||i===1||i===3?bottomAlpha:a);
+    },
