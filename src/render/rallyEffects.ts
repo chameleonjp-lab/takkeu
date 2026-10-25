@@ -295,8 +295,8 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
         impact?.012:.008,impact?.25:.6,impact?.7:.95,impact?1:.8,alpha);particleCount++;
     }
   }
-  function lossWave(age:number,duration:number){
-    const t=reduced?.4:age/duration,alpha=envelope(age,duration)*.45;
+  function lossWave(age:number,duration:number,opacity:number){
+    const t=reduced?.4:age/duration,alpha=envelope(age,duration)*.45*opacity;
     const w=config.tableHalfWidth+.04+t*.38,l=config.tableHalfLength+.04+t*.5,y=config.tableY+.025;
     for(let side=0;side<4;side++)for(let i=0;i<16*density;i++){
       const a=i/(16*density)*2-1,b=(i+1)/(16*density)*2-1;
@@ -348,11 +348,20 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
     }
     ring(world,0,-.18,-4.5,.3+t*2.8,64*density,.018,alpha*.4,now,0,0,0,true,false,0,.25);
   }
-  function lossCue(snapshot:GameSnapshot,cue:RallyCue){
+  function firstActiveWave(cues:readonly RallyCue[],index:number,time:number){
+    const cue=cues[index]!;
+    if(cue.kind!=='loss-wave'||time<cue.at||time>=cue.at+cue.duration)return false;
+    for(let i=0;i<index;i++){
+      const previous=cues[i]!;
+      if(previous.kind==='loss-wave'&&previous.at===cue.at&&time<previous.at+previous.duration)return false;
+    }
+    return true;
+  }
+  function lossCue(snapshot:GameSnapshot,cue:RallyCue,waveOpacity=1){
     const age=snapshot.simTime-cue.at;
     if(age<0||snapshot.simTime>=cue.at+cue.duration)return;
     if(cue.kind==='loss-impact'&&cue.position){active('loss-impact');spark(cue.position.x,cue.position.y,cue.position.z,cue.value,age,true);}
-    else if(cue.kind==='loss-wave'){active('loss-wave');lossWave(age,cue.duration);}
+    else if(cue.kind==='loss-wave'&&waveOpacity>0){active('loss-wave');lossWave(age,cue.duration,waveOpacity);}
     else if(cue.kind==='loss-net'){active('loss-net');lossNet(age,cue.duration);}
     else if(cue.kind==='loss-number')numberHalo(snapshot,cue.value,age,cue.duration);
     else if(cue.kind==='loss-gold'){active('loss-gold');lossNet(age,cue.duration,true);}
@@ -451,7 +460,20 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
           active('loss-sparks');spark(loss.position.x,loss.position.y,loss.position.z,loss.count,age);
         }
         if(state.lostBallCount>=90&&state.lostBallCount<=99){active('loss-warning-posts');warningPosts();}
-        for(const cue of state.cues)lossCue(snapshot,cue);
+        // Simultaneous count milestones describe one identical outline. Keep all
+        // cue facts, draw it once, and share one continuous alpha budget between
+        // different-time outlines so additive overlap cannot amplify brightness.
+        let waveEnvelope=0;
+        for(let i=0;i<state.cues.length;i++)if(firstActiveWave(state.cues,i,snapshot.simTime)){
+          const cue=state.cues[i]!;waveEnvelope+=envelope(snapshot.simTime-cue.at,cue.duration);
+        }
+        const wavePriority=latestFinal===-Infinity?(state.lostBallCount>=100?0:1):clamp(1-(snapshot.simTime-latestFinal)/.35);
+        const waveOpacity=wavePriority/Math.max(1,waveEnvelope);
+        for(let i=0;i<state.cues.length;i++){
+          const cue=state.cues[i]!;
+          if(cue.kind==='loss-wave'&&!firstActiveWave(state.cues,i,snapshot.simTime))continue;
+          lossCue(snapshot,cue,waveOpacity);
+        }
       }
       for(const target of batches)target.finish();
     },

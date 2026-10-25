@@ -70,6 +70,9 @@ class TurningDetector:
 
 def maximum_window_area(mask,width,height):
     """Exact maximum summed area over every valid placement of reference window."""
+    # Exact zero fast path: every possible spatial window has sum0. Most late
+    # frames/red-frequency masks are empty; no threshold or output is changed.
+    if not np.any(mask):return 0,[0,0]
     integral=np.pad(mask.astype(np.int32),((1,0),(1,0))).cumsum(0,dtype=np.int32).cumsum(1,dtype=np.int32)
     sums=integral[height:,width:]-integral[:-height,width:]-integral[height:,:-width]+integral[:-height,:-width]
     index=int(np.argmax(sums));row,col=np.unravel_index(index,sums.shape)
@@ -138,6 +141,10 @@ class AnalyzerTests(unittest.TestCase):
         result=screen(self.sequence(2));self.assertFalse(result['flagged']);self.assertLessEqual(result['maxGeneralPixelFlashCount'],3)
     def test_small_six_hz_patch_stays_below_area_threshold(self):
         result=screen(self.sequence(6,patch=True));self.assertFalse(result['flagged']);self.assertGreater(result['maxGeneralPixelFlashCount'],3)
+    def test_spatial_max_matches_independent_brute_force_including_empty(self):
+        for mask in [np.zeros((6,8),dtype=bool),np.random.default_rng(7).random((6,8))>.6]:
+            candidates=[(int(mask[y:y+2,x:x+3].sum()),[x,y]) for y in range(5) for x in range(6)]
+            expected=max(candidates,key=lambda row:row[0]);self.assertEqual(maximum_window_area(mask,3,2),(expected[0],expected[1]))
 
 def analyze_directory(directory):
     paths=sorted(directory.glob('[0-9][0-9][0-9][0-9].png'))

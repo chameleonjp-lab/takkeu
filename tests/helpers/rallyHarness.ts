@@ -23,6 +23,7 @@ let eventNumber=0,quality:Quality='standard';
 let finish=createFinishPresentation();
 let finishing=false;
 let drawingWallTime=20_000;
+let canvasCapture=false;
 let lastEvents:readonly GameEvent[]=[];
 let confirmedHit:GameEvent|null=null;
 const screens=createScreens(root,{
@@ -60,7 +61,7 @@ function render() {
   if(fitKey!==fitted){view.resize(rectangle.width,rectangle.height);fitCamera(camera,rectangle.width,rectangle.height,DEFAULT_CONFIG);fitted=fitKey;}
   const state=controller.state();
   view.render(presentation.snapshot,lastEvents,state);
-  diagnostic.update(presentation.snapshot,state,quality,matchMedia('(prefers-reduced-motion: reduce)').matches);
+  if(!canvasCapture)diagnostic.update(presentation.snapshot,state,quality,matchMedia('(prefers-reduced-motion: reduce)').matches);
   const cues=state.cues.filter(cue=>(cue.kind==='notice'||cue.kind==='major')&&presentation.snapshot.simTime>=cue.at&&presentation.snapshot.simTime<cue.at+cue.duration);
   const cue=cues.sort((a,b)=>b.priority-a.priority||b.at-a.at)[0];
   notice.update(presentation.snapshot,{notice:cue?{score:cue.value,at:cue.at,major:cue.kind==='major'}:null,bestAt:state.best?.at??null,goldAt:state.arrivals.find(a=>a.threshold===300)?.at??null},finishing);
@@ -116,8 +117,14 @@ const harness={
     }
     current={...current,lostBallCount:loss,celebrations};render();
   },
+  ablate(kind:'no-legacy'|'no-random'|'no-repdigit'){
+    // Diagnostic fixtures only: never an acceptance scene or production option.
+    current=kind==='no-legacy'?{...current,celebrations:createCelebrations()}:kind==='no-repdigit'?{...current,celebrations:{...current.celebrations,repdigitAt:null}}:
+      {...current,progression:{...current.progression,appliedMilestones:current.progression.appliedMilestones.filter(score=>score!==500&&score!==510)}};
+    render();
+  },
   finish(){current={...current,phase:'gameover',balls:current.balls.map(b=>({...b,phase:'lost'}))};render();},
-  snapshot:()=>current,state:()=>controller.state(),stats:()=>diagnostic.stats(),resources:()=>view.resources(),finishing:()=>finishing,
+  snapshot:()=>current,state:()=>controller.state(),stats:()=>view.resources().rallyEffects??diagnostic.stats(),resources:()=>view.resources(),finishing:()=>finishing,
   project(position:Point3){const point=new Vector3(position.x,position.y,position.z).project(camera);return {x:(point.x+1)*viewport.width/2,y:(1-point.y)*viewport.height/2,inView:Math.abs(point.x)<=1&&Math.abs(point.y)<=1};},
   geometry(){
     const rows:{name:string;vertices:number;sample:number[];bounds:{min:number[];max:number[]}}[]=[];
@@ -132,7 +139,8 @@ const harness={
     return rows;
   },
   capture(simTime:number){
-    harness.time(simTime);
+    canvasCapture=true;
+    try{harness.time(simTime);}finally{canvasCapture=false;}
     captureContext.drawImage(screens.canvas,0,0,1024,768);
     return captureCanvas.toDataURL('image/png');
   },

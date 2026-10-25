@@ -1,0 +1,39 @@
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/legacy-flash-safety.test.ts (2 tests | 2 failed) 102ms
+   × keeps the maximum legacy net burst near the net with a fixed visible density 36ms
+   × uses a damped low-frequency shake without frame-to-frame table jumps 64ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/legacy-flash-safety.test.ts > keeps the maximum legacy net burst near the net with a fixed visible density
+AssertionError: expected 204 to be less than or equal to 24
+ ❯ tests/unit/legacy-flash-safety.test.ts:17:33
+     15| it('keeps the maximum legacy net burst near the net with a fixed visib…
+     16|   const {objects,view,snapshot}=stress();view.update(snapshot);
+     17|   expect(view.stats().netBolts).toBeLessThanOrEqual(24);
+       |                                 ^
+     18|   const p=view.lightning.geometry.getAttribute('position');
+     19|   let maxY=-Infinity;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/legacy-flash-safety.test.ts > uses a damped low-frequency shake without frame-to-frame table jumps
+AssertionError: expected 0.06677793812120045 to be less than 0.012
+ ❯ tests/unit/legacy-flash-safety.test.ts:33:23
+     31|     previous.copy(objects.tableRig.position);
+     32|   }
+     33|   expect(maximumStep).toBeLessThan(.012);view.dispose();objects.dispos…
+       |                       ^
+     34| });
+     35|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  20:51:28
+   Duration  320ms (tests 49%, transform 25%, import 23%, worker 2%)
+

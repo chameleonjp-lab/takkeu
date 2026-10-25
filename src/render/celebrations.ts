@@ -57,10 +57,13 @@ export function createCelebrationView(config: GameConfig, tableRig: Group) {
   let stats={netBolts:0,edgeBolts:0,numbers:[] as number[],environment:null as 'rainbow'|'gold'|null};
   let disposed=false;
   function bolt(origin: Point3,size: number,seed: number,time: number,color: RGB,opacity: number,width: number) {
-    const flicker=Math.floor(time*18),angle=hash(seed)*Math.PI*2;
+    // Interpolate dedicated deterministic noise; hard 18 Hz shape replacements
+    // combined with the large loss burst produced unsafe flashes in captured video.
+    const step=time*1.2,flicker=Math.floor(step),fraction=step-flicker;
+    const blend=fraction*fraction*(3-2*fraction),angle=hash(seed)*Math.PI*2;
     let previous=origin;
     for(let j=1;j<=8;j++){
-      const t=j/8,jitter=(hash(seed+j*13+flicker*19)-.5)*size*.38;
+      const t=j/8,jitter=((1-blend)*hash(seed+j*13+flicker*19)+blend*hash(seed+j*13+(flicker+1)*19)-.5)*size*.38;
       const point={x:origin.x+Math.cos(angle)*size*t+jitter,y:origin.y+size*(t*.8+Math.sin(t*Math.PI)*.25),z:origin.z+Math.sin(angle)*size*t+jitter*.4};
       ribbon(electricGlow,previous,point,width*5,{...color,a:opacity*.16});
       ribbon(electric,previous,point,width,{...color,a:opacity});previous=point;
@@ -93,8 +96,11 @@ export function createCelebrationView(config: GameConfig, tableRig: Group) {
       if(disposed)return;
       const time=snapshot.simTime,frame=celebrationFrame(snapshot.celebrations,time),motionTime=reducedMotion?0:time;
       electric.clear();electricGlow.clear();digits.clear();digitGlow.clear();environment.clear();
-      for(let i=0;i<frame.netBolts;i++)bolt({x:(hash(i+5)*2-1)*config.tableHalfWidth,y:config.tableY+.18,z:0},
-        (reducedMotion&&frame.strength?frame.netSize/frame.strength:frame.netSize)*(.6+hash(i+50)*.4),i+1,motionTime,{r:.34,g:.78,b:1},frame.strength,.007+Math.min(100,snapshot.celebrations.lossStreak)*.00065);
+      // The event count and number notices are unchanged. Bound the visual
+      // footprint instead of allowing 204 overlapping full-background bolts.
+      const netBolts=Math.min(24,frame.netBolts);
+      for(let i=0;i<netBolts;i++)bolt({x:(hash(i+5)*2-1)*config.tableHalfWidth,y:config.tableY+.18,z:0},
+        Math.min(.7,frame.strength?frame.netSize/frame.strength:0)*(.6+hash(i+50)*.4),i+1,motionTime,{r:.34,g:.78,b:1},frame.strength*.55,Math.min(.02,.007+Math.min(100,snapshot.celebrations.lossStreak)*.00065));
       if(frame.edgeElectric)for(let i=0;i<48;i++){
         const side=Math.floor(i/12),t=(i%12)/11;
         const origin=side<2?{x:(side===0?-1:1)*config.tableHalfWidth,y:config.tableY+.015,z:(t*2-1)*config.tableHalfLength}
@@ -109,10 +115,10 @@ export function createCelebrationView(config: GameConfig, tableRig: Group) {
         environment.quad({x:x1,y:y-.01,z:-6.08},{x:x2,y:y-.01,z:-6.08},{x:x2,y:y+12,z:-6.08},{x:x1,y:y+12,z:-6.08},rgba);
       }
       const shake=reducedMotion?0:frame.shake;
-      tableRig.position.set(Math.sin(time*93)*shake,Math.sin(time*117)*shake*.28,Math.cos(time*81)*shake*.35);
-      tableRig.rotation.z=shake?Math.sin(time*107)*shake*.28:0;
+      tableRig.position.set(Math.sin(time*5)*shake,Math.sin(time*6)*shake*.28,Math.cos(time*4.5)*shake*.35);
+      tableRig.rotation.z=shake?Math.sin(time*5.5)*shake*.28:0;
       for(const target of [electric,electricGlow,digits,digitGlow,environment])target.finish();
-      stats={netBolts:frame.netBolts,edgeBolts:frame.edgeElectric?48:0,numbers:frame.numbers.map(n=>n.value),environment:frame.environment};
+      stats={netBolts,edgeBolts:frame.edgeElectric?48:0,numbers:frame.numbers.map(n=>n.value),environment:frame.environment};
     },
     dispose(){if(disposed)return;disposed=true;for(const target of [electric,electricGlow,digits,digitGlow,environment])target.dispose();tableRoot.removeFromParent();worldRoot.removeFromParent();tableRig.position.set(0,0,0);tableRig.rotation.z=0;},
   };

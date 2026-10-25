@@ -220,6 +220,39 @@ describe('loss renderer follows immutable event facts through the finish clock',
     view.update(snapshot(4000,20.2),state,'standard',true);expect(geometryValues(view.worldRoot)).toEqual(first);
     expect(view.stats().geometries).toBe(4);view.dispose();
   });
+
+  it('coalesces same-time perimeter waves into one drawing while retaining every source cue',()=>{
+    const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig);
+    const cues=[10,20,30,40].map(value=>cue('loss-wave',value,1.2)),state=effectState(0,{cues}),original=JSON.stringify(state);
+    const mesh=rig.getObjectByName('rally-table-lines') as Mesh;
+    view.update(snapshot(0,20.3),effectState(0,{cues:[cues[0]!]}));
+    const count=mesh.geometry.drawRange.count,positions=geometryValues(rig),colors=Array.from(mesh.geometry.getAttribute('color').array.slice(0,count*4));
+    view.update(snapshot(0,20.3),state);
+    expect(mesh.geometry.drawRange.count).toBe(count);expect(geometryValues(rig)).toEqual(positions);
+    expect(Array.from(mesh.geometry.getAttribute('color').array.slice(0,count*4))).toEqual(colors);
+    expect(JSON.stringify(state)).toBe(original);expect(state.cues).toHaveLength(4);view.dispose();
+  });
+
+  it('budgets overlapping different-time wave opacity continuously rather than adding four full-strength outlines',()=>{
+    const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig),mesh=rig.getObjectByName('rally-table-lines') as Mesh;
+    const cues=[10,20,30,40].map((value,i)=>cue('loss-wave',value,1.2,20+i*.05)),state=effectState(0,{cues});
+    view.update(snapshot(0,20.4),state);const colors=mesh.geometry.getAttribute('color');let summedAlpha=0;
+    for(let i=0;i<mesh.geometry.drawRange.count;i+=6)summedAlpha+=colors.getW(i);
+    // Four sides × sixteen independent segments per outline. Summing their
+    // per-outline opacity gives an upper bound even if every outline overlaps.
+    expect(summedAlpha/64).toBeLessThanOrEqual(.450001);expect(state.cues).toHaveLength(4);
+    const staggered=effectState(0,{cues:[cue('loss-wave',10,1.2),cue('loss-wave',20,1.2,20.2)]});
+    view.update(snapshot(0,20.199),staggered);const before=colors.getW(0);
+    view.update(snapshot(0,20.201),staggered);expect(Math.abs(colors.getW(0)-before)).toBeLessThan(.01);view.dispose();
+  });
+
+  it('fades lower-priority perimeter waves away for the final loss without deleting wave facts',()=>{
+    const view=createRallyEffectView(DEFAULT_CONFIG,new Group());
+    const state=effectState(0,{lostBallCount:100,cues:[...[10,20,30,40].map(value=>cue('loss-wave',value,1.2)),cue('loss-final',100,2)]});
+    view.update({...snapshot(0,20.4),phase:'gameover'},state);
+    expect(view.stats().activeEffects).not.toContain('loss-wave');expect(view.stats().activeEffects).toContain('loss-final');
+    expect(state.cues.filter(c=>c.kind==='loss-wave')).toHaveLength(4);view.dispose();
+  });
 });
 
 describe('late rally world replacements and arrivals',()=>{

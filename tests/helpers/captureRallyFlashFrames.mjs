@@ -20,8 +20,10 @@ await context.route('**/*',route=>{
 const page=await context.newPage();const errors=[];page.on('pageerror',error=>errors.push(error.message));
 await page.goto(`${baseURL}/tests/fixtures/rally.html`);await page.waitForFunction(()=>!!window.rally);
 const fps=60,seconds=6,sequences=[];
+const qualities=process.env.RALLY_FLASH_QUALITY?[process.env.RALLY_FLASH_QUALITY]:['standard','low'];
+if(qualities.some(quality=>quality!=='standard'&&quality!=='low'))throw new Error('Invalid capture quality');
 try{
-  if(process.env.RALLY_FLASH_MODE!=='worst-only')for(const quality of ['standard','low'])for(const score of [1500,2000,3000,4000]){
+  if(process.env.RALLY_FLASH_MODE!=='worst-only')for(const quality of qualities)for(const score of [1500,2000,3000,4000]){
     const name=`${score}-${quality}`,directory=resolve(output,name);mkdirSync(directory,{recursive:true});
     await page.emulateMedia({reducedMotion:'no-preference'});
     await page.evaluate(({score,quality})=>{window.rally.setQuality(quality);window.rally.overlap(score,99);},{score,quality});
@@ -35,7 +37,7 @@ try{
     writeFileSync(resolve(directory,'capture.json'),JSON.stringify(sequence,null,2));sequences.push(sequence);
     process.stdout.write(`${name}: ${fps*seconds} frames captured\n`);
   }
-  if(process.env.RALLY_FLASH_MODE!=='worst-only')for(const quality of ['standard','low']){
+  if(process.env.RALLY_FLASH_MODE!=='worst-only')for(const quality of qualities){
     const name=`4000-${quality}-reduced`,directory=resolve(output,name);mkdirSync(directory,{recursive:true});
     await page.emulateMedia({reducedMotion:'reduce'});
     await page.evaluate(quality=>{window.rally.setQuality(quality);window.rally.overlap(4000,99);},quality);
@@ -47,15 +49,20 @@ try{
     writeFileSync(resolve(directory,'capture.json'),JSON.stringify(sequence,null,2));sequences.push(sequence);
     process.stdout.write(`${name}: ${fps*seconds} frames captured\n`);
   }
-  for(const quality of ['standard','low']){
+  if(process.env.RALLY_FLASH_MODE!=='regular-only')for(const quality of qualities){
     const name=`4000-${quality}-legacy100`,directory=resolve(output,name);mkdirSync(directory,{recursive:true});
     await page.emulateMedia({reducedMotion:'no-preference'});
     await page.evaluate(quality=>{window.rally.setQuality(quality);window.rally.overlap(4000,100,100);},quality);
+    if(process.env.RALLY_FLASH_ABLATION){
+      if(!['no-legacy','no-random','no-repdigit'].includes(process.env.RALLY_FLASH_ABLATION))throw new Error('Invalid diagnostic ablation');
+      await page.evaluate(kind=>window.rally.ablate(kind),process.env.RALLY_FLASH_ABLATION);
+    }
     for(let frame=0;frame<fps*seconds;frame++){
       const png=await page.evaluate(time=>window.rally.capture(time),20+frame/fps);
       writeFileSync(resolve(directory,`${String(frame).padStart(4,'0')}.png`),Buffer.from(png.split(',')[1],'base64'));
     }
-    const sequence={name,score:4000,loss:100,legacyLossStreak:100,quality,reducedMotion:false,fps,seconds,width:1024,height:768,frames:fps*seconds,syntheticStress:true};
+    const facts=await page.evaluate(()=>({snapshot:window.rally.snapshot(),state:window.rally.state(),stats:window.rally.stats(),resources:window.rally.resources(),userAgent:navigator.userAgent}));
+    const sequence={name,score:4000,loss:100,legacyLossStreak:100,quality,reducedMotion:false,fps,seconds,width:1024,height:768,frames:fps*seconds,syntheticStress:true,diagnosticAblation:process.env.RALLY_FLASH_ABLATION??null,acceptanceScene:!process.env.RALLY_FLASH_ABLATION,...facts};
     writeFileSync(resolve(directory,'capture.json'),JSON.stringify(sequence,null,2));sequences.push(sequence);
     process.stdout.write(`${name}: ${fps*seconds} frames captured\n`);
   }

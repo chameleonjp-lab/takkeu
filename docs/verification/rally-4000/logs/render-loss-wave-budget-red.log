@@ -1,0 +1,64 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-render.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-render.test.ts (86 tests | 3 failed) 1006ms
+   ❯ loss renderer follows immutable event facts through the finish clock (23)
+     × coalesces same-time perimeter waves into one drawing while retaining every source cue 8ms
+     × budgets overlapping different-time wave opacity continuously rather than adding four full-strength outlines 1ms
+     × fades lower-priority perimeter waves away for the final loss without deleting wave facts 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > coalesces same-time perimeter waves into one drawing while retaining every source cue
+AssertionError: expected 1536 to be 384 // Object.is equality
+
+- Expected
++ Received
+
+- 384
++ 1536
+
+ ❯ tests/unit/rally-render.test.ts:231:43
+    229|     const count=mesh.geometry.drawRange.count,positions=geometryValues…
+    230|     view.update(snapshot(0,20.3),state);
+    231|     expect(mesh.geometry.drawRange.count).toBe(count);expect(geometryV…
+       |                                           ^
+    232|     expect(Array.from(mesh.geometry.getAttribute('color').array.slice(…
+    233|     expect(JSON.stringify(state)).toBe(original);expect(state.cues).to…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > budgets overlapping different-time wave opacity continuously rather than adding four full-strength outlines
+AssertionError: expected 1.7999999523162842 to be less than or equal to 0.450001
+ ❯ tests/unit/rally-render.test.ts:243:28
+    241|     // Four sides × sixteen independent segments per outline. Summing …
+    242|     // per-outline opacity gives an upper bound even if every outline …
+    243|     expect(summedAlpha/64).toBeLessThanOrEqual(.450001);expect(state.c…
+       |                            ^
+    244|     const staggered=effectState(0,{cues:[cue('loss-wave',10,1.2),cue('…
+    245|     view.update(snapshot(0,20.199),staggered);const before=colors.getW…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > fades lower-priority perimeter waves away for the final loss without deleting wave facts
+AssertionError: expected [ 'loss-wave', 'loss-final' ] to not include 'loss-wave'
+ ❯ tests/unit/rally-render.test.ts:253:44
+    251|     const state=effectState(0,{lostBallCount:100,cues:[...[10,20,30,40…
+    252|     view.update({...snapshot(0,20.4),phase:'gameover'},state);
+    253|     expect(view.stats().activeEffects).not.toContain('loss-wave');expe…
+       |                                            ^
+    254|     expect(state.cues.filter(c=>c.kind==='loss-wave')).toHaveLength(4)…
+    255|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 83 passed (86)
+   Start at  21:05:50
+   Duration  1.29s (tests 86%, transform 9%, import 5%, worker 1%)
+
