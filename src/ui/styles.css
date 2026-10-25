@@ -73,8 +73,8 @@ canvas:focus-visible { outline: 2px solid #7be2d1; outline-offset: -3px; }
 .pause-card h2 { font-size: 2rem; margin: 0; }
 .pause-card > p:not(.eyebrow) { font-size: .8125rem; color: #94abba; margin: 0; }
 .text-button { background: none; border: 0; color: #91a8b4; min-height: 44px; font-size: .8125rem; }
-.result-screen { max-width: 380px; margin: 6vh auto; text-align: center; display: flex; flex-direction: column; gap: 14px; align-items: stretch; }
-.result-screen .brand-mark { align-self: center; margin-bottom: 32px; }
+.result-screen { max-width: 560px; margin: 18px auto; text-align: center; display: flex; flex-direction: column; gap: 14px; align-items: stretch; }
+.result-screen .brand-mark { align-self: center; margin: 0; }
 .result-screen .eyebrow { justify-content: center; color: #7ee0c8; margin-bottom: 0; }
 
 .result-label { font-size: .6875rem; color: #91a8b4; margin: 0; }

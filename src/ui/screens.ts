@@ -53,7 +53,26 @@ export function createScreens(root: HTMLElement, actions: Actions) {
         <div class="pause-overlay" role="dialog" aria-modal="true" aria-labelledby="pause-title" aria-describedby="pause-description" tabindex="-1" hidden inert><div class="pause-card"><p class="eyebrow">PAUSE</p><h2 id="pause-title">ひと休み</h2><p id="pause-description" data-pause-message></p><div data-pause-notices></div><button type="button" class="button primary" data-action="resume">つづける <span aria-hidden="true">→</span></button><button type="button" class="button subtle" data-action="retry">最初からやり直す</button><button type="button" class="text-button" data-action="home">ホームへ</button>${soundControls}</div></div>
       </section>
 
-      <section class="result-screen" data-result hidden inert><span class="brand-mark" aria-hidden="true">t.</span><p class="eyebrow">RALLY COMPLETE</p><h2>ナイスラリー！</h2><p class="result-label">今回のラリー数</p><div class="result-score-stage" data-result-effects><output class="result-score" aria-label="今回のラリー数" data-result-score>0</output></div><div class="result-position" data-result-position hidden><p data-position-message role="status" aria-live="polite" aria-atomic="true"></p><span class="result-top100" data-top100 hidden>TOP 100入り！</span><p class="position-note" data-position-note></p><button type="button" class="button subtle" data-action="position-retry" hidden>順位を再取得</button></div><button type="button" class="button primary" data-action="retry">もう一度 <span aria-hidden="true">↗</span></button><p>自己ベスト <output aria-label="自己ベスト" data-best>0</output> ラリー</p><p class="result-message" data-loss-limit-message hidden>累計${MAX_LOST_BALLS}球の落球で終了しました。</p><p class="result-message" data-ranking-participation>もう1ラリー、つないでみよう。</p><a class="button share-button" data-share-x aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer">Xでスコアをシェア <span aria-hidden="true">↗</span></a><button type="button" class="button subtle" data-action="home">ホームへ</button><div data-result-notices></div><section class="ranking-panel" aria-labelledby="ranking-title"><p class="eyebrow">LEADERBOARD</p><h3 id="ranking-title">ランキング TOP 30</h3><p class="ranking-caption">最高ラリー数で競う、みんなの記録</p><p data-ranking-message role="status">ランキングを読み込んでいます。</p><div class="ranking-table-wrap"><table data-ranking-table hidden><caption class="sr-only">最高ラリー数の上位30名</caption><thead><tr><th scope="col">順位</th><th scope="col">名前</th><th scope="col">ラリー</th><th scope="col">回数</th></tr></thead><tbody data-ranking-body></tbody></table></div><button type="button" class="button subtle" data-action="ranking-refresh">ランキングを更新</button><a class="lab-link" href="${RANKING_CONFIG.rankingUrl}">実験場で詳しいランキングを見る ↗</a></section></section>
+      <section class="result-screen" data-result hidden inert aria-label="ゲーム結果">
+        <header class="result-header"><span class="brand-mark" aria-hidden="true">t.</span><p class="eyebrow">RALLY COMPLETE</p></header>
+        <p class="result-label">今回のラリー数</p>
+        <div class="result-score-stage" data-result-effects><output class="result-score" aria-label="今回のラリー数" data-result-score>0</output><span class="result-unit" aria-hidden="true">RALLY</span></div>
+        <h2 data-result-comment>次こそ決めよう！</h2>
+        <div class="result-position" data-result-position hidden role="group" aria-label="自己ベストの全登録順位">
+          <p data-position-message role="status" aria-live="polite" aria-atomic="true"></p><span class="result-top100" data-top100 hidden>TOP 100入り！</span>
+          <p class="position-note" data-position-note></p><button type="button" class="button subtle" data-action="position-retry" hidden>順位を再取得</button>
+        </div>
+        <p class="result-best">自己ベスト <output aria-label="自己ベスト" data-best>0</output> <span>ラリー</span></p>
+        <div class="result-actions"><button type="button" class="button primary" data-action="retry">もう一度 <span aria-hidden="true">↗</span></button>
+          <a class="button share-button" data-share-x aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer">Xでスコアをシェア <span aria-hidden="true">↗</span></a>
+          <button type="button" class="button subtle" data-action="home">ホームへ</button></div>
+        <p class="result-message" data-loss-limit-message hidden>累計${MAX_LOST_BALLS}球の落球で終了しました。</p><p class="result-message" data-ranking-participation>もう1ラリー、つないでみよう。</p>
+        <div data-result-notices></div>
+        <section class="ranking-panel" aria-labelledby="ranking-title"><p class="eyebrow">LEADERBOARD</p><h3 id="ranking-title">ランキング TOP 30</h3><p class="ranking-caption">最高ラリー数で競う、みんなの記録</p><p data-ranking-message role="status">ランキングを読み込んでいます。</p>
+          <div class="ranking-table-wrap"><table data-ranking-table hidden><caption class="sr-only">最高ラリー数の上位30名</caption><thead><tr><th scope="col">順位</th><th scope="col">名前</th><th scope="col">ラリー</th><th scope="col">回数</th></tr></thead><tbody data-ranking-body></tbody></table></div>
+          <button type="button" class="button subtle" data-action="ranking-refresh">ランキングを更新</button><a class="lab-link" href="${RANKING_CONFIG.rankingUrl}">実験場で詳しいランキングを見る ↗</a>
+        </section>
+      </section>
       <div class="screen-notices" data-notices>
         <div class="ranking-notice" data-ranking-notice hidden><p data-ranking-status role="status"></p><button type="button" class="button subtle" data-action="ranking-retry" hidden>記録を再送する</button></div>
         <p class="notice" data-audio-notice role="status" hidden>音声を利用できません。無音でも遊べます。設定または一時停止メニューの「音声を再試行」で再試行できます。</p>

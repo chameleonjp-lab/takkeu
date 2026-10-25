@@ -9,6 +9,6 @@ function show(score: number) {
   screens.setAudioReady(true); screens.setStorageAvailable(true); screens.setLeaderboard('loaded');
   screens.render({ ...snapshot, score, phase: 'gameover' });
 }
-const resultHarness = { show, hide, dispose: () => screens.dispose() };
+const resultHarness = { show, hide, position: screens.setResultPosition, dispose: () => screens.dispose() };
 declare global { interface Window { resultHarness: typeof resultHarness } }
 window.resultHarness = resultHarness;

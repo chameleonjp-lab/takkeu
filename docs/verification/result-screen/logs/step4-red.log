@@ -1,0 +1,32 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/result-layout.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/result-layout.test.ts (2 tests | 1 failed) 136ms
+   × presents score, comment, position, best, actions, TOP30 in that DOM/reading order 89ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/result-layout.test.ts > presents score, comment, position, best, actions, TOP30 in that DOM/reading order
+AssertionError: expected 2 to be 4 // Object.is equality
+
+- Expected
++ Received
+
+- 4
++ 2
+
+ ❯ tests/unit/result-layout.test.ts:17:97
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  18:44:39
+   Duration  564ms (environment 62%, tests 28%, transform 7%, import 3%, worker 1%)
+
