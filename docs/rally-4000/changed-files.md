@@ -1,12 +1,12 @@
 # 変更ファイル一覧（作業ツリー時点）
 
-生成時刻: `2026-10-25T23:35:07.686534+00:00`。比較先: ローカル `main` = `aff31169fd6feaad7bad35f22fe3de26429296cf`。
+生成時刻: `2026-10-25T23:42:02.422655+00:00`。比較先: ローカル `main` = `aff31169fd6feaad7bad35f22fe3de26429296cf`。
 
 `git diff --name-status --no-renames main` の追跡済み変更に、`git ls-files --others --exclude-standard` の未追跡ファイルを加えた実測一覧。コミット済みブランチ変更と未コミット変更の両方を含む。`M`=変更、`A`=追加、`D`=削除、`U`=未追跡。証拠取得や最終修正の後に再生成する。
 
 再生成: `python docs/rally-4000/refresh-report-index.py`。同時に `docs/verification/rally-4000/protected-integrity.json` を更新する。
 
-合計 **3013** ファイル。実装・検証基盤・記録を別々に列挙し、件数を要件達成数として扱わない。
+合計 **3018** ファイル。実装・検証基盤・記録を別々に列挙し、件数を要件達成数として扱わない。
 
 ## アプリ実装（15）
 
@@ -68,7 +68,7 @@
 | A | `tests/unit/reduced-world.test.ts` |
 | A | `tests/unit/wide-field-color-safety.test.ts` |
 
-## 設計・記録・証拠（2963）
+## 設計・記録・証拠（2968）
 
 | 状態 | ファイル |
 | --- | --- |
@@ -2162,8 +2162,13 @@
 | A | `docs/verification/rally-4000/failures/star-band-first-manifest.json` |
 | A | `docs/verification/rally-4000/failures/webkit-major-clipped.png` |
 | A | `docs/verification/rally-4000/flash-fix.md` |
+| A | `docs/verification/rally-4000/github/archive-d1-provenance-check.json` |
+| A | `docs/verification/rally-4000/github/archive-head-runs.json` |
 | A | `docs/verification/rally-4000/github/existing-task-prs.json` |
 | A | `docs/verification/rally-4000/github/main-before-draft.json` |
+| A | `docs/verification/rally-4000/github/pr-create-connector.json` |
+| A | `docs/verification/rally-4000/github/pr-created-rest.json` |
+| A | `docs/verification/rally-4000/github/pr-post-create-check.json` |
 | A | `docs/verification/rally-4000/github/pr26-before-draft.json` |
 | A | `docs/verification/rally-4000/logs/after-performance-chromium.log` |
 | A | `docs/verification/rally-4000/logs/after-performance-collect.log` |

@@ -1,5 +1,7 @@
 # 0–4000ラリー演出拡張：検証結果と未解決事項
 
+Draft PR: [#27](https://github.com/chameleonjp-lab/takkeu/pull/27)（main向け・性能P1未解消・マージ/公開なし）。
+
 **総合受入は未達。Linux性能targetはbaseline・initial・finalの各16条件すべて未達で、4000の遅延悪化はP1 FAILED（未解決）。GPU診断は96/96 queryを取得し完了。性能悪化の完全な因果帰属は未立証。** CI成功、draw call削減、画素一致を遅延改善へ読み替えない。Draft PR用の記録で、マージ・公開・DB変更は行わない。
 
 canonical Cは[`d30aa196f2faccd88fab36de4b94bb585c21b464`](https://github.com/chameleonjp-lab/takkeu/commit/d30aa196f2faccd88fab36de4b94bb585c21b464)、production tree `47bd0f370ad169de00c77b37bb74429b63020d44`、tests tree `097b10b95f55aded9d77af6dd4ed6b85925b9684`。4つのflat/unlit materialへのsingle-pass最適化は`72c1920…`で導入し、Cのruntime/source/tests/configを固定した。
@@ -119,4 +121,10 @@ canonical Cは[`d30aa196f2faccd88fab36de4b94bb585c21b464`](https://github.com/ch
 
 本記録を格納する最終archive-only commitには`[skip ci]`を付け、そのCIを**意図的にskip（成功ではない）**として扱う。正式な成功はcanonical CのCI4として識別し、最新docs HEADへ成功と偽って付け替えない。
 
-[archive-provenance.json](archive-provenance.json) / [正式log](logs/archive-provenance.log)は**239 execution inputs一致**を確認済み。canonical/head manifest SHA256はともに`595a0c039b59140997d66a565f8054d506f82c72b9d8e436bed39caeeba93f98`。対象は全tracked non-docと2つのintegrity checkerで、mode/blob/working bytesを比較した。文書archive前の一致は証明済みで、record commit後にread-onlyで再確認する。自己参照を避け、最終archive commitのSHAはこの文書へ埋めず、PR metadata/最終返信で記録する。性能P1 FAILED、音声総合/規範的SC/物理端末の未確認は維持する。
+[archive-provenance.json](archive-provenance.json) / [正式log](logs/archive-provenance.log)は**239 execution inputs一致**を確認済み。canonical/head manifest SHA256はともに`595a0c039b59140997d66a565f8054d506f82c72b9d8e436bed39caeeba93f98`。対象は全tracked non-docと2つのintegrity checkerで、mode/blob/working bytesを比較した。文書archive前と最初の記録コミット後の一致を確認済み。最終の記録追加後にも、同じcheckerをread-onlyで実行する。自己参照を避け、最終archive commitのSHAはこの文書へ埋めず、PR metadata/最終返信で記録する。性能P1 FAILED、音声総合/規範的SC/物理端末の未確認は維持する。
+
+再確認コマンド:
+
+```sh
+python docs/rally-4000/verify-archive-provenance.py d30aa196f2faccd88fab36de4b94bb585c21b464
+```
