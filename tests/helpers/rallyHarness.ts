@@ -1,4 +1,5 @@
-import { Group, Vector3 } from 'three';
+import { DoubleSide, Group, Mesh, Vector3 } from 'three';
+import type { Material } from 'three';
 import { DEFAULT_CONFIG } from '../../src/game/config';
 import { createCelebrations, lossCelebration, rallyCelebration } from '../../src/game/celebrations';
 import { createRallyEffects } from '../../src/game/rallyEffects';
@@ -26,6 +27,22 @@ let drawingWallTime=20_000;
 let canvasCapture=false;
 let lastEvents:readonly GameEvent[]=[];
 let confirmedHit:GameEvent|null=null;
+// Test-only A/B of the four actual rendered flat batches. Three calls this
+// hook before choosing its transparent DoubleSide one/two-pass path. Keeping
+// the override here avoids a production debug API or a second fake renderer.
+let singlePassOverride:boolean|null=null;
+const originalSinglePass=new WeakMap<Material,boolean>();
+const touchedSinglePass=new Set<string>();
+const meshBeforeRender=Mesh.prototype.onBeforeRender;
+Mesh.prototype.onBeforeRender=function(this:Mesh,...args:Parameters<Mesh['onBeforeRender']>){
+  const material=args[4];
+  if(/^rally-(table|world)-(lines|glow)$/.test(this.name)&&material.transparent&&material.side===DoubleSide){
+    if(!originalSinglePass.has(material))originalSinglePass.set(material,material.forceSinglePass);
+    material.forceSinglePass=singlePassOverride??originalSinglePass.get(material)!;
+    touchedSinglePass.add(this.name);
+  }
+  meshBeforeRender.apply(this,args);
+};
 const screens=createScreens(root,{
   start(){},retry(){reset(0);},home(){reset(0);current={...current,phase:'ready'};render();},
   pause(){current={...current,phase:'paused',pauseReason:'user'};render();},
@@ -90,6 +107,10 @@ const harness={
   pause(){current={...current,phase:'paused',pauseReason:'user'};render();},
   resume(){current={...current,phase:'running',pauseReason:null};render();},
   redraw(){render();},
+  singlePass(value:boolean|null,nextQuality:Quality=quality){
+    singlePassOverride=value;quality=nextQuality;touchedSinglePass.clear();render();
+    return {override:value,quality,materials:[...touchedSinglePass].sort(),resources:view.resources()};
+  },
   replayHit(){if(confirmedHit)controller.consume([confirmedHit]);render();},
   restore(){view.dispose();diagnostic.dispose();view=createView(screens.canvas,DEFAULT_CONFIG);diagnostic=createRallyEffectView(DEFAULT_CONFIG,diagnosticRig);fitted='';render();},
   setQuality(next:Quality){quality=next;render();},

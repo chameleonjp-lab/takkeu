@@ -72,7 +72,8 @@ try{
     await page.emulateMedia({reducedMotion:'no-preference'});
     const seed=await page.evaluate(quality=>{window.rally.setQuality(quality);window.rally.overlap(4000,99);return window.rally.legacyFireworks();},quality);
     const expected=quality==='standard'?1536:768;
-    if(seed.resources.particles!==expected)throw new Error(`Existing particle-pool stress expected${expected},got${seed.resources.particles}`);
+    const newParticles=seed.resources.rallyEffects?.particleCount??0,legacyParticles=seed.resources.particles-newParticles;
+    if(legacyParticles!==expected)throw new Error(`Existing particle-pool stress expected${expected},got${legacyParticles}`);
     for(let frame=0;frame<fps*seconds;frame++){
       const png=await page.evaluate(time=>window.rally.capture(time),20+frame/fps);
       writeFileSync(resolve(directory,`${String(frame).padStart(4,'0')}.png`),Buffer.from(png.split(',')[1],'base64'));
@@ -80,10 +81,10 @@ try{
     }
     const facts=await page.evaluate(()=>({snapshot:window.rally.snapshot(),state:window.rally.state(),resources:window.rally.resources(),stats:window.rally.stats(),userAgent:navigator.userAgent}));
     const sequence={name,score:4000,quality,reducedMotion:false,fps,seconds,width:1024,height:768,frames:fps*seconds,
-      syntheticStress:true,physicalReplay:false,fireworkFacts:64,distinctBallIds:30,initialLegacyParticleCount:seed.resources.particles,
+      syntheticStress:true,physicalReplay:false,fireworkFacts:64,distinctBallIds:30,initialLegacyParticleCount:legacyParticles,initialNewParticleCount:newParticles,initialTotalParticleCount:seed.resources.particles,
       source:'Actual racket-firework/bounce-firework consumer, positions on contact/bounce planes.64factsatonce deliberately exceed physically reachable timing;30ballIDs.',...facts};
     writeFileSync(resolve(directory,'capture.json'),JSON.stringify(sequence,null,2));sequences.push(sequence);
-    process.stdout.write(`${name}: ${fps*seconds} frames captured,legacy particles${seed.resources.particles}\n`);
+    process.stdout.write(`${name}: ${fps*seconds} frames captured,legacy particles${legacyParticles}\n`);
   }
   const endSourceHashes=hashes(),sourceStable=JSON.stringify(sourceHashes)===JSON.stringify(endSourceHashes);
   writeFileSync(resolve(output,'capture-run.json'),JSON.stringify({sequences,errors,unexpected,sourceHashes,endSourceHashes,sourceStable,limitations:['Canvas analysis excludes CSS HUD; its labels have single-arrival transitions, assessed separately.','Sampling at60Hz measures content clock, not monitor hardware artifacts.','Linux software rendering does not certify device/HDR behavior.']},null,2));

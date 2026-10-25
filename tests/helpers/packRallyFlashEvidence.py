@@ -4,7 +4,8 @@ import hashlib,json,shutil,subprocess,sys
 from PIL import Image
 
 root=Path(sys.argv[1])
-for directory in sorted(path for path in root.iterdir() if path.is_dir() and (path/'analysis.json').exists()):
+directories=[root] if (root/'analysis.json').exists() else sorted(path for path in root.iterdir() if path.is_dir() and (path/'analysis.json').exists())
+for directory in directories:
     paths=sorted(directory.glob('[0-9][0-9][0-9][0-9].png'))
     if not paths:continue
     capture=json.loads((directory/'capture.json').read_text());analysis=json.loads((directory/'analysis.json').read_text())
@@ -14,11 +15,11 @@ for directory in sorted(path for path in root.iterdir() if path.is_dir() and (pa
         manifest.append({'frame':int(path.stem),'pngSHA256':hashlib.sha256(path.read_bytes()).hexdigest()})
     if source.hexdigest()!=analysis['sourcePixelRGB24SHA256']:raise RuntimeError(f'Analyzer source mismatch {directory}')
     video=directory/'capture-lossless.mp4'
-    command=['ffmpeg','-y','-framerate',str(capture['fps']),'-i',str(directory/'%04d.png'),'-c:v','libx264rgb','-crf','0','-preset','medium','-pix_fmt','rgb24',str(video)]
+    command=['ffmpeg','-y','-framerate',str(capture['fps']),'-i',str(directory/'%04d.png'),'-c:v','libx264rgb','-crf','0','-preset','medium','-threads','2','-pix_fmt','rgb24',str(video)]
     with (directory/'ffmpeg-encode.log').open('wb') as log:subprocess.run(command,stdout=log,stderr=subprocess.STDOUT,check=True)
     digest=hashlib.sha256();count=0
     with (directory/'ffmpeg-decode.log').open('wb') as log:
-        process=subprocess.Popen(['ffmpeg','-v','error','-i',str(video),'-f','rawvideo','-pix_fmt','rgb24','-'],stdout=subprocess.PIPE,stderr=log)
+        process=subprocess.Popen(['ffmpeg','-v','error','-threads','2','-i',str(video),'-f','rawvideo','-pix_fmt','rgb24','-'],stdout=subprocess.PIPE,stderr=log)
         while True:
             chunk=process.stdout.read(1024*1024)
             if not chunk:break
