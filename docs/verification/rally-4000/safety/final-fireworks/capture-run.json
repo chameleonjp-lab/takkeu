@@ -1,0 +1,1570 @@
+{
+  "sequences": [
+    {
+      "name": "4000-standard-legacy-fireworks",
+      "score": 4000,
+      "quality": "standard",
+      "reducedMotion": false,
+      "fps": 60,
+      "seconds": 6,
+      "width": 1024,
+      "height": 768,
+      "frames": 360,
+      "syntheticStress": true,
+      "physicalReplay": false,
+      "fireworkFacts": 64,
+      "distinctBallIds": 30,
+      "initialLegacyParticleCount": 1536,
+      "initialNewParticleCount": 312,
+      "initialTotalParticleCount": 1848,
+      "source": "Actual racket-firework/bounce-firework consumer, positions on contact/bounce planes.64factsatonce deliberately exceed physically reachable timing;30ballIDs.",
+      "snapshot": {
+        "celebrations": {
+          "lastLossAt": 20,
+          "lossStreak": 4,
+          "numberNotices": [
+            {
+              "value": 99,
+              "at": 20
+            }
+          ],
+          "repdigitAt": 20,
+          "centuryAt": 20,
+          "centuryScore": 4000
+        },
+        "runId": "run-3",
+        "phase": "running",
+        "pauseReason": null,
+        "score": 4000,
+        "simTime": 25.983333333333334,
+        "lostBallCount": 99,
+        "paddle": {
+          "x": 0.1,
+          "y": 0.5
+        },
+        "opponentPaddle": {
+          "x": 0,
+          "y": 0.5
+        },
+        "balls": [
+          {
+            "id": 1,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 2,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 3,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 4,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 5,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 6,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 7,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 8,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 9,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 10,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 11,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 12,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 13,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 14,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 15,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 16,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 17,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 18,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 19,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 20,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 21,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 22,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 23,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 24,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 25,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 26,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 27,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 28,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 29,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 30,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.6,
+              "z": 1.3
+            }
+          }
+        ],
+        "progression": {
+          "appliedMilestones": [
+            10,
+            30,
+            40,
+            70,
+            100,
+            130,
+            150,
+            160,
+            190,
+            210,
+            240,
+            270,
+            300,
+            330,
+            360,
+            380,
+            390,
+            410,
+            420,
+            450,
+            460,
+            470,
+            480,
+            490,
+            500,
+            510,
+            520,
+            530,
+            540,
+            555
+          ],
+          "ballGlowUntil": null,
+          "awardedBallCount": 1315
+        },
+        "scheduledReturns": [
+          {
+            "ballId": 1,
+            "departAt": 20.2,
+            "netCrossAt": 20.4,
+            "arriveAt": 20.6,
+            "target": {
+              "x": 0,
+              "y": 0.5
+            },
+            "smash": true,
+            "warningAt": 19.9,
+            "speedMultiplier": 2.5
+          }
+        ]
+      },
+      "state": {
+        "runId": "run-3",
+        "score": 4000,
+        "bestAtStart": 0,
+        "best": null,
+        "lostBallCount": 99,
+        "stage": [
+          {
+            "threshold": 1500,
+            "kind": "A",
+            "effect": "tricolor-network",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "green-perimeter",
+              "green-net",
+              "green-blue-world"
+            ]
+          },
+          {
+            "threshold": 2000,
+            "kind": "A",
+            "effect": "star-world",
+            "duration": 2.5,
+            "color": "green-blue-red",
+            "priority": 100,
+            "replaces": [
+              "background-threads"
+            ]
+          },
+          {
+            "threshold": 2500,
+            "kind": "A",
+            "effect": "orbit-ribbon",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "floor-wave"
+            ]
+          },
+          {
+            "threshold": 2750,
+            "kind": "A",
+            "effect": "multi-halos",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "background-halo"
+            ]
+          },
+          {
+            "threshold": 3250,
+            "kind": "A",
+            "effect": "meteor-swarm",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "meteor"
+            ]
+          },
+          {
+            "threshold": 3500,
+            "kind": "A",
+            "effect": "double-table-halos",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "side-halos"
+            ]
+          },
+          {
+            "threshold": 4000,
+            "kind": "A",
+            "effect": "final-world",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": []
+          }
+        ],
+        "arrivals": [
+          {
+            "id": "run-3:fixture-2",
+            "threshold": 4000,
+            "at": 20,
+            "config": {
+              "threshold": 4000,
+              "kind": "B",
+              "effect": "final-assembly",
+              "duration": 4,
+              "color": "green-blue-red",
+              "priority": 100,
+              "replaces": [
+                "center-density"
+              ]
+            },
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          }
+        ],
+        "hits": [
+          {
+            "id": "run-3:fixture-2",
+            "score": 4000,
+            "at": 20,
+            "smashReturn": false,
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          }
+        ],
+        "losses": [
+          {
+            "id": "run-3:fixture-3",
+            "count": 96,
+            "at": 20,
+            "rollingCount": 1,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-4",
+            "count": 97,
+            "at": 20,
+            "rollingCount": 2,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-5",
+            "count": 98,
+            "at": 20,
+            "rollingCount": 3,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-6",
+            "count": 99,
+            "at": 20,
+            "rollingCount": 4,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          }
+        ],
+        "cues": [
+          {
+            "id": "run-3:fixture-2:major",
+            "kind": "major",
+            "value": 4000,
+            "at": 20,
+            "duration": 2.5,
+            "priority": 100,
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          },
+          {
+            "id": "run-3:fixture-3:loss-spark",
+            "kind": "loss-spark",
+            "value": 96,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-3:loss-warning",
+            "kind": "loss-warning",
+            "value": 96,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-4:loss-spark",
+            "kind": "loss-spark",
+            "value": 97,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-4:loss-warning",
+            "kind": "loss-warning",
+            "value": 97,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-5:loss-spark",
+            "kind": "loss-spark",
+            "value": 98,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-5:loss-warning",
+            "kind": "loss-warning",
+            "value": 98,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-6:loss-spark",
+            "kind": "loss-spark",
+            "value": 99,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-6:loss-impact",
+            "kind": "loss-impact",
+            "value": 99,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-6:loss-warning",
+            "kind": "loss-warning",
+            "value": 99,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-6:loss-gold",
+            "kind": "loss-gold",
+            "value": 99,
+            "at": 20,
+            "duration": 1.2,
+            "priority": 90,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          }
+        ]
+      },
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 38,
+        "particles": 248,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "loss-warning-posts"
+          ],
+          "tableQuads": 841,
+          "worldQuads": 1466,
+          "particleCount": 248,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "stats": {
+        "activeEffects": [
+          "tricolor-crossing",
+          "star-world",
+          "orbit-ribbon",
+          "multi-halos",
+          "meteor-swarm",
+          "double-table-halos",
+          "final-world",
+          "loss-warning-posts"
+        ],
+        "tableQuads": 841,
+        "worldQuads": 1466,
+        "particleCount": 248,
+        "finalPhase": null,
+        "capacity": 10240,
+        "geometries": 4,
+        "materials": 4,
+        "nodes": 6,
+        "drawCalls": 4,
+        "disposed": false
+      },
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+    },
+    {
+      "name": "4000-low-legacy-fireworks",
+      "score": 4000,
+      "quality": "low",
+      "reducedMotion": false,
+      "fps": 60,
+      "seconds": 6,
+      "width": 1024,
+      "height": 768,
+      "frames": 360,
+      "syntheticStress": true,
+      "physicalReplay": false,
+      "fireworkFacts": 64,
+      "distinctBallIds": 30,
+      "initialLegacyParticleCount": 768,
+      "initialNewParticleCount": 156,
+      "initialTotalParticleCount": 924,
+      "source": "Actual racket-firework/bounce-firework consumer, positions on contact/bounce planes.64factsatonce deliberately exceed physically reachable timing;30ballIDs.",
+      "snapshot": {
+        "celebrations": {
+          "lastLossAt": 20,
+          "lossStreak": 4,
+          "numberNotices": [
+            {
+              "value": 99,
+              "at": 20
+            }
+          ],
+          "repdigitAt": 20,
+          "centuryAt": 20,
+          "centuryScore": 4000
+        },
+        "runId": "run-5",
+        "phase": "running",
+        "pauseReason": null,
+        "score": 4000,
+        "simTime": 25.983333333333334,
+        "lostBallCount": 99,
+        "paddle": {
+          "x": 0.1,
+          "y": 0.5
+        },
+        "opponentPaddle": {
+          "x": 0,
+          "y": 0.5
+        },
+        "balls": [
+          {
+            "id": 1,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 2,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 3,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 4,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 5,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 6,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 7,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 8,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 9,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 10,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 11,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 12,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 13,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 14,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 15,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 16,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 17,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 18,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 19,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 20,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 21,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 22,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 23,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 24,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 25,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 26,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 27,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 28,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 29,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 30,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.6,
+              "z": 1.3
+            }
+          }
+        ],
+        "progression": {
+          "appliedMilestones": [
+            10,
+            30,
+            40,
+            70,
+            100,
+            130,
+            150,
+            160,
+            190,
+            210,
+            240,
+            270,
+            300,
+            330,
+            360,
+            380,
+            390,
+            410,
+            420,
+            450,
+            460,
+            470,
+            480,
+            490,
+            500,
+            510,
+            520,
+            530,
+            540,
+            555
+          ],
+          "ballGlowUntil": null,
+          "awardedBallCount": 1315
+        },
+        "scheduledReturns": [
+          {
+            "ballId": 1,
+            "departAt": 20.2,
+            "netCrossAt": 20.4,
+            "arriveAt": 20.6,
+            "target": {
+              "x": 0,
+              "y": 0.5
+            },
+            "smash": true,
+            "warningAt": 19.9,
+            "speedMultiplier": 2.5
+          }
+        ]
+      },
+      "state": {
+        "runId": "run-5",
+        "score": 4000,
+        "bestAtStart": 0,
+        "best": null,
+        "lostBallCount": 99,
+        "stage": [
+          {
+            "threshold": 1500,
+            "kind": "A",
+            "effect": "tricolor-network",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "green-perimeter",
+              "green-net",
+              "green-blue-world"
+            ]
+          },
+          {
+            "threshold": 2000,
+            "kind": "A",
+            "effect": "star-world",
+            "duration": 2.5,
+            "color": "green-blue-red",
+            "priority": 100,
+            "replaces": [
+              "background-threads"
+            ]
+          },
+          {
+            "threshold": 2500,
+            "kind": "A",
+            "effect": "orbit-ribbon",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "floor-wave"
+            ]
+          },
+          {
+            "threshold": 2750,
+            "kind": "A",
+            "effect": "multi-halos",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "background-halo"
+            ]
+          },
+          {
+            "threshold": 3250,
+            "kind": "A",
+            "effect": "meteor-swarm",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "meteor"
+            ]
+          },
+          {
+            "threshold": 3500,
+            "kind": "A",
+            "effect": "double-table-halos",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "side-halos"
+            ]
+          },
+          {
+            "threshold": 4000,
+            "kind": "A",
+            "effect": "final-world",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": []
+          }
+        ],
+        "arrivals": [
+          {
+            "id": "run-5:fixture-2",
+            "threshold": 4000,
+            "at": 20,
+            "config": {
+              "threshold": 4000,
+              "kind": "B",
+              "effect": "final-assembly",
+              "duration": 4,
+              "color": "green-blue-red",
+              "priority": 100,
+              "replaces": [
+                "center-density"
+              ]
+            },
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          }
+        ],
+        "hits": [
+          {
+            "id": "run-5:fixture-2",
+            "score": 4000,
+            "at": 20,
+            "smashReturn": false,
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          }
+        ],
+        "losses": [
+          {
+            "id": "run-5:fixture-3",
+            "count": 96,
+            "at": 20,
+            "rollingCount": 1,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-4",
+            "count": 97,
+            "at": 20,
+            "rollingCount": 2,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-5",
+            "count": 98,
+            "at": 20,
+            "rollingCount": 3,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-6",
+            "count": 99,
+            "at": 20,
+            "rollingCount": 4,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          }
+        ],
+        "cues": [
+          {
+            "id": "run-5:fixture-2:major",
+            "kind": "major",
+            "value": 4000,
+            "at": 20,
+            "duration": 2.5,
+            "priority": 100,
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          },
+          {
+            "id": "run-5:fixture-3:loss-spark",
+            "kind": "loss-spark",
+            "value": 96,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-3:loss-warning",
+            "kind": "loss-warning",
+            "value": 96,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-4:loss-spark",
+            "kind": "loss-spark",
+            "value": 97,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-4:loss-warning",
+            "kind": "loss-warning",
+            "value": 97,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-5:loss-spark",
+            "kind": "loss-spark",
+            "value": 98,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-5:loss-warning",
+            "kind": "loss-warning",
+            "value": 98,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-6:loss-spark",
+            "kind": "loss-spark",
+            "value": 99,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-6:loss-impact",
+            "kind": "loss-impact",
+            "value": 99,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-6:loss-warning",
+            "kind": "loss-warning",
+            "value": 99,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-6:loss-gold",
+            "kind": "loss-gold",
+            "value": 99,
+            "at": 20,
+            "duration": 1.2,
+            "priority": 90,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          }
+        ]
+      },
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 38,
+        "particles": 124,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "loss-warning-posts"
+          ],
+          "tableQuads": 422,
+          "worldQuads": 714,
+          "particleCount": 124,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "stats": {
+        "activeEffects": [
+          "tricolor-crossing",
+          "star-world",
+          "orbit-ribbon",
+          "multi-halos",
+          "meteor-swarm",
+          "double-table-halos",
+          "final-world",
+          "loss-warning-posts"
+        ],
+        "tableQuads": 422,
+        "worldQuads": 714,
+        "particleCount": 124,
+        "finalPhase": null,
+        "capacity": 10240,
+        "geometries": 4,
+        "materials": 4,
+        "nodes": 6,
+        "drawCalls": 4,
+        "disposed": false
+      },
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+    }
+  ],
+  "errors": [],
+  "unexpected": [],
+  "sourceHashes": {
+    "tests/helpers/rallyHarness.ts": "edd9b7dc96f09a8d3fc41ef0d15deba18272222c9faabe5268fde8a7a6d306b4",
+    "src/render/createView.ts": "498dc86f0331201acdbd2e69c01300d0dbe51f32e80f1fbab4ccbdef32870450",
+    "src/render/rallyEffects.ts": "16000d9e7ddbcbda11836f2d596f8417573c803241a0c90303b0344bae5d44af",
+    "src/render/celebrations.ts": "7a480052b4af0310a8e84e208120278f4ae4716b49bad2a7ec90221d00210f3c",
+    "src/render/particles.ts": "6ec5c56a5ef87dbb5d861baa918de7915b1ca7120c7deac74d63430929430129",
+    "src/render/presentation.ts": "fc5d249f6021215d638c2962629afbdba83eba3216e4595ddd880bc4fd1155ad",
+    "src/render/field.ts": "33a224d11f907415d9064e9c9b9096a6cf84b7f7f71915d69f5810e43e31a452",
+    "src/render/rainbow.ts": "0b6d3bed0975942d7f220fc8b527f4a6e2831a5374e87e09c4974d55f305e180",
+    "src/game/rallyEffects.ts": "a94fad020f483cb0f6ded3321edc3164008e79fc0fffe6d5f1ee7720fc950150",
+    "src/game/celebrations.ts": "c3fe5cd55bdc5efabeaf1e511e76a71bb090fd964236ac043648e7620c525cfc"
+  },
+  "endSourceHashes": {
+    "tests/helpers/rallyHarness.ts": "edd9b7dc96f09a8d3fc41ef0d15deba18272222c9faabe5268fde8a7a6d306b4",
+    "src/render/createView.ts": "498dc86f0331201acdbd2e69c01300d0dbe51f32e80f1fbab4ccbdef32870450",
+    "src/render/rallyEffects.ts": "16000d9e7ddbcbda11836f2d596f8417573c803241a0c90303b0344bae5d44af",
+    "src/render/celebrations.ts": "7a480052b4af0310a8e84e208120278f4ae4716b49bad2a7ec90221d00210f3c",
+    "src/render/particles.ts": "6ec5c56a5ef87dbb5d861baa918de7915b1ca7120c7deac74d63430929430129",
+    "src/render/presentation.ts": "fc5d249f6021215d638c2962629afbdba83eba3216e4595ddd880bc4fd1155ad",
+    "src/render/field.ts": "33a224d11f907415d9064e9c9b9096a6cf84b7f7f71915d69f5810e43e31a452",
+    "src/render/rainbow.ts": "0b6d3bed0975942d7f220fc8b527f4a6e2831a5374e87e09c4974d55f305e180",
+    "src/game/rallyEffects.ts": "a94fad020f483cb0f6ded3321edc3164008e79fc0fffe6d5f1ee7720fc950150",
+    "src/game/celebrations.ts": "c3fe5cd55bdc5efabeaf1e511e76a71bb090fd964236ac043648e7620c525cfc"
+  },
+  "sourceStable": true,
+  "limitations": [
+    "Canvas analysis excludes CSS HUD; its labels have single-arrival transitions, assessed separately.",
+    "Sampling at60Hz measures content clock, not monitor hardware artifacts.",
+    "Linux software rendering does not certify device/HDR behavior."
+  ]
+}
