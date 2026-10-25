@@ -60,3 +60,10 @@ it('stops, restarts once, respects live motion preference, and disposes all reso
   screens.setPreparing(false); expect(frames.size).toBe(1);
   screens.dispose(); expect(frames.size).toBe(0); expect(listeners.size).toBe(0);
 });
+it('stops while the tab is hidden and resumes only one loop when visible', () => {
+  const { render, tick, frames } = setup(); render(1500); tick(100); expect(frames.size).toBe(1);
+  const visibility = vi.spyOn(document, 'hidden', 'get').mockReturnValue(true);
+  document.dispatchEvent(new Event('visibilitychange')); expect(frames.size).toBe(0);
+  visibility.mockReturnValue(false); document.dispatchEvent(new Event('visibilitychange')); tick(100); expect(frames.size).toBe(1);
+  visibility.mockRestore();
+});

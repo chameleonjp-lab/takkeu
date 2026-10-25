@@ -48,7 +48,12 @@ export function createRankingController(storage: StorageLike, api: RankingApi = 
           submission(next, 'submitted');
         } catch (error) {
           const retryable = !(error instanceof RankingError) || error.retryable;
-          if (retryable) { submission(next, 'retryable_failed'); status = 'retryable_failed'; notify(); return; }
+          if (retryable) {
+            // This failure blocks every later result too. Report each affected
+            // identifier without implying that any of them was acknowledged.
+            for (const waiting of pending) if (!waiting.permanentFailure) submission(waiting, 'retryable_failed');
+            status = 'retryable_failed'; notify(); return;
+          }
           pending = pending.map(row => row === next ? { ...row, permanentFailure: true } : row); persist();
           submission(next, 'permanent_failed');
           // Keep the rejected record for diagnosis and continue with later plays.

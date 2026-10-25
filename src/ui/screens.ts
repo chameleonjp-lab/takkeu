@@ -62,7 +62,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
           <p data-position-message role="status" aria-live="polite" aria-atomic="true"></p><span class="result-top100" data-top100 hidden>TOP 100入り！</span>
           <p class="position-note" data-position-note></p><button type="button" class="button subtle" data-action="position-retry" hidden>順位を再取得</button>
         </div>
-        <p class="result-best">自己ベスト <output aria-label="自己ベスト" data-best>0</output> <span>ラリー</span></p>
+        <p class="result-best">この端末の自己ベスト <output aria-label="自己ベスト" data-best>0</output> <span>ラリー</span></p>
         <div class="result-actions"><button type="button" class="button primary" data-action="retry">もう一度 <span aria-hidden="true">↗</span></button>
           <a class="button share-button" data-share-x aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer">Xでスコアをシェア <span aria-hidden="true">↗</span></a>
           <button type="button" class="button subtle" data-action="home">ホームへ</button></div>

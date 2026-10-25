@@ -13,3 +13,4 @@
 - DB監査: 既存の公開ランキング同様、追加RPCがanon/authenticatedから実行可能なSECURITY DEFINERであるため意図した警告が各1増加。RLSテーブルへのSELECTは許可せず、takkeu限定の公開順位/総数/ベストのみ、固定空search_path、PUBLIC実行権限は剥奪。その他の既存警告は変更なし。詳細JSONを保存。
 - 回帰修正: 隠れた順位再試行ボタンが先頭buttonになり、終了後のfocusを奪った。既存失敗テストを再現し、再挑戦を明示して修正。全suite GREEN。
 - Task 4: complete — 全775 unit tests、typecheck、28関連browser tests成功。スコア→コメント→順位→ベスト→操作→TOP30。320×568と402×874の全44文言が2行以内、順位が画面内、横スクロールなし。9桁スコア/200%文字拡大/44pxタップを確認。証跡画像/測定JSONを保存。
+- Final review: 別コンテキスト担当の独立レビュー（26 unit testsも独立成功）。詳細review.md。旧キュー失敗で今回の順位表示が待機のままになる件を通信要件に照らして修正し、2プレイ統合RED→GREEN。ローカルbest文言・両幅の拡大検証も改善。全体browser初回は修正前に正常中断しログ/JSONを保持、最終版を再実行。

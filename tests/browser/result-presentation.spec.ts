@@ -34,3 +34,23 @@ test('数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で�
   await expect(page.locator('[data-bolt]')).toHaveCount(0);
   await info.attach('animation-observations', { body: JSON.stringify({ distinctShapes: shapes.size, distinctOrigins: locations.size, viewport: '402x874, browser emulation; not real iPhone Safari' }), contentType: 'application/json' });
 });
+
+test('結果電撃の実フレームを記録し、5本上限と継続発生を確認する', async ({ page }, info) => {
+  const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
+  await page.goto('/tests/fixtures/result.html'); await page.evaluate(() => window.resultHarness.show(2000));
+  const result = await page.evaluate(() => new Promise<{ frames: number; p95Ms: number; maxBolts: number; shapes: number; colors: string[]; intervals: number[] }>(resolve => {
+    const intervals: number[] = [], shapes = new Set<string>(), colors = new Set<string>();
+    let previous = performance.now(), start = previous, maxBolts = 0;
+    function frame(now: number) {
+      intervals.push(now - previous); previous = now;
+      const bolts = [...document.querySelectorAll('[data-bolt]')]; maxBolts = Math.max(maxBolts, bolts.length);
+      for (const bolt of bolts) { colors.add(bolt.getAttribute('data-bolt')!); shapes.add(bolt.querySelector('path')?.getAttribute('d') ?? ''); }
+      if (now - start < 5000) { requestAnimationFrame(frame); return; }
+      const sorted = [...intervals].sort((a,b) => a-b);
+      resolve({ frames: intervals.length, p95Ms: sorted[Math.ceil(sorted.length * .95)-1]!, maxBolts, shapes: shapes.size, colors: [...colors].sort(), intervals });
+    }
+    requestAnimationFrame(frame);
+  }));
+  expect(result.maxBolts).toBeLessThanOrEqual(5); expect(result.shapes).toBeGreaterThan(20); expect(result.colors).toEqual(['blue','green','red']); expect(errors).toEqual([]);
+  await info.attach('result-animation-performance', { body: JSON.stringify({ environment: 'Linux Playwright reference; not iPhone hardware acceptance', ...result }), contentType: 'application/json' });
+});
