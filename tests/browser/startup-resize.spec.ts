@@ -1,4 +1,4 @@
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 import type {} from '../helpers/appHarness';
 
 test.use({ viewport: { width: 390, height: 600 }, screen: { width: 390, height: 600 }, isMobile: true, hasTouch: true });
@@ -7,6 +7,7 @@ test('スマホの高さ変更をまたいで同じ指のドラッグを継続�
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   const canvas = page.locator('canvas');
   const finger = { pointerId: 51, pointerType: 'touch', isPrimary: true, button: 0, clientX: 140, clientY: 360 };
   await canvas.dispatchEvent('pointerdown', finger); await page.clock.runFor(25);
@@ -34,6 +35,7 @@ test('開始直後のresizeとキーボードを閉じる高さ変更ではポ�
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await page.evaluate(() => window.dispatchEvent(new Event('resize')));
   await page.setViewportSize({ width: 390, height: 844 });
   await page.clock.runFor(500);

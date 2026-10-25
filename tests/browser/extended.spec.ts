@@ -1,4 +1,4 @@
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 import type {} from '../helpers/stageHarness';
 import type {} from '../helpers/appHarness';
 
@@ -54,9 +54,10 @@ test('返球・台面の花火を実際の接触イベントで描き、停止�
 test('実アプリのホーム遷移で花火を直ちに消し、再挑戦へ持ち越さない',async({page})=>{
   await page.clock.install();await page.clock.pauseAt(new Date(Date.now()+1000));
   await page.goto('/tests/fixtures/stage3.html');await page.getByRole('button',{name:'はじめる',exact:true}).click();
+  await waitForStart(page);
   await page.evaluate(()=>{window.stage3.show(555);window.stage3.autoPlay(true);});await page.clock.runFor(1000);
   expect(await page.evaluate(()=>window.stage3.resources()!.particles)).toBeGreaterThan(0);
   await page.keyboard.press('Escape');await page.getByRole('button',{name:'ホームへ',exact:true}).click();expect(await page.evaluate(()=>window.stage3.resources()!.particles)).toBe(0);
-  await page.getByRole('button',{name:'はじめる',exact:true}).click();await page.clock.runFor(32);
+  await page.getByRole('button',{name:'はじめる',exact:true}).click(); await waitForStart(page);await page.clock.runFor(32);
   expect(await page.evaluate(()=>window.stage3.resources()!.particles)).toBe(0);
 });

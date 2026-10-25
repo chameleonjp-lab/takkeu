@@ -1,6 +1,6 @@
 import { writeFile } from 'node:fs/promises';
 import type { TestInfo } from '@playwright/test';
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 import { wav } from '../helpers/wav';
 import { installAudioProbe } from '../helpers/audioProbe';
 
@@ -78,6 +78,7 @@ test('多層音と最終出力を44.1/48kHzで合成、単発と上限+減衰の
 test('実AudioContextで多球・停止・復旧・run切替と部分失敗を繰り返し、予約音とnodeを回収', async({page},info)=>{
   await page.addInitScript(installAudioProbe);
   await page.goto('/'); await page.getByRole('button',{name:'はじめる',exact:true}).click();
+  await waitForStart(page);
   await page.keyboard.press('Escape');
   const metrics=await page.evaluate(async()=>{
     const audioUrl='/src/audio/audio.ts', configUrl='/src/game/config.ts';

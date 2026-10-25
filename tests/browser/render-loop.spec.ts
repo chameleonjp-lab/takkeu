@@ -1,4 +1,4 @@
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 import type {} from '../helpers/appHarness';
 
 test('停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する', async ({ page }) => {
@@ -6,6 +6,7 @@ test('停止・終了中は同じ3D画面を繰り返し描かず、回転と再
   await page.clock.install({ time: now }); await page.clock.pauseAt(new Date(+now + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await page.clock.runFor(100);
   await page.keyboard.press('Escape');
   const before = await page.evaluate(() => ({ count: window.stage3.metrics().viewRenders, state: window.stage3.snapshot() }));

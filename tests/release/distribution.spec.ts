@@ -1,4 +1,4 @@
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 import { execFileSync } from 'node:child_process';
 for (const [port, base] of [[4174, '/'], [4175, '/takkeu/']] as const) {
   test(`実配布物 ${base} の初期HTMLに静的なOG・XカードがありPNGを配信する`, async ({ page, request }) => {
@@ -60,6 +60,7 @@ for (const [port, base] of [[4174, '/'], [4175, '/takkeu/']] as const) {
     await page.getByLabel('描画品質', { exact: true }).selectOption('low');
     await page.getByRole('button', { name: '戻る', exact: true }).click();
     await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+    await waitForStart(page);
     await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('0');
     await expect(page.getByLabel('残球数', { exact: true })).toHaveText('1');
     await page.keyboard.press('Escape');

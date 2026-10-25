@@ -1,4 +1,4 @@
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 import type {} from '../helpers/appHarness';
 import { installAudioProbe } from '../helpers/audioProbe';
 test.beforeEach(async ({ page }) => { await page.addInitScript(installAudioProbe); });
@@ -10,6 +10,7 @@ for (const quality of ['standard', 'low'] as const) for(const startingScore of [
   await page.getByLabel('描画品質', { exact: true }).selectOption(quality);
   await page.getByRole('button', { name: '戻る', exact: true }).click();
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await page.evaluate(score => { window.stage3.show(score); window.stage3.autoPlay(true); },startingScore);
   const result = await page.evaluate(quality => new Promise<object>(resolve => {
     let previous = performance.now(); const start = previous, intervals: number[] = [];

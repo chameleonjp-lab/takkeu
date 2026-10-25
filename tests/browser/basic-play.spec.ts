@@ -1,4 +1,4 @@
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 
 test.use({ video: 'on' });
 
@@ -11,6 +11,7 @@ test.beforeEach(async ({ page }) => {
 
 test('開始→直接配置・ドラッグ→返球→失球→結果→再挑戦', async ({ page }, testInfo) => {
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   const surface = page.getByTestId('input-surface');
   await expect(surface).toBeVisible();
   const box = (await surface.boundingBox())!;
@@ -39,6 +40,7 @@ test('開始→直接配置・ドラッグ→返球→失球→結果→再挑�
   await expect(page.getByRole('heading', { name: 'ナイスラリー！' })).toBeVisible();
   await expect(page.getByLabel('今回のラリー数')).toHaveText('1');
   await page.getByRole('button', { name: 'もう一度', exact: true }).click();
+  await waitForStart(page);
   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('0');
   await expect(page.getByLabel('残球数')).toContainText('1');
   await page.clock.runFor(2700);
@@ -47,6 +49,7 @@ test('開始→直接配置・ドラッグ→返球→失球→結果→再挑�
 
 test('停止中は描画を保持し、再開操作でだけ進む', async ({ page }, testInfo) => {
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await page.clock.runFor(1800);
   await page.keyboard.press('Escape');
   await expect(page.getByRole('heading', { name: 'ひと休み' })).toBeVisible();
@@ -63,6 +66,7 @@ test('停止中は描画を保持し、再開操作でだけ進む', async ({ pa
 
 test('タッチの絶対位置ドラッグでラケットを動かせる', async ({ page }) => {
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   const surface = page.getByTestId('input-surface');
   const box = (await surface.boundingBox())!;
   const position = { x: box.x + box.width * 0.15, y: box.y + box.height * 0.8 };

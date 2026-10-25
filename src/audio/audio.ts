@@ -1,9 +1,9 @@
 import type { GameConfig, GameEvent } from '../game/types';
 import type { Quality } from '../storage/preferences';
-import { playMilestoneFanfare, playOpponentHit, playPlayerHit, playSmashSuccess, playSmashWarning } from './tones';
+import { playMilestoneFanfare, playOpponentHit, playPlayerHit, playSmashSuccess, playSmashWarning, prepareTones } from './tones';
 import type { Voice } from './tones';
 type VoicePriority = 'hit' | 'warning' | 'fanfare';
-export interface GameAudio { unlock(): Promise<boolean>; consume(events: readonly GameEvent[]): void; setVolume(value: number): void; setMuted(value: boolean): void; setQuality?(value: Quality): void; suspend(): void; reset(runId: string): void; dispose(): Promise<void> }
+export interface GameAudio { unlock(): Promise<boolean>; prepare?(): Promise<boolean>; consume(events: readonly GameEvent[]): void; setVolume(value: number): void; setMuted(value: boolean): void; setQuality?(value: Quality): void; suspend(): void; reset(runId: string): void; dispose(): Promise<void> }
 export function createAudio(config: GameConfig, contextFactory: () => AudioContext = () => new AudioContext(), onInterruption: () => void = () => {}, onUnavailable: () => void = () => {}): GameAudio {
   let context: AudioContext | null = null, output: GainNode | null = null, bus: AudioNode | null = null;
   const graph = new Set<AudioNode>();
@@ -59,28 +59,33 @@ export function createAudio(config: GameConfig, contextFactory: () => AudioConte
       output.connect(ctx.destination);
     } catch (error) { clearGraph(); throw error; }
   };
-  return {
-    async unlock() {
-      if (disposed) return false;
-      const current = ++generation;
-      try {
-        if (!context || context.state === 'closed') {
-          if (context) context.onstatechange = null;
-          clearVoices(); clearGraph(); context = contextFactory();
-          const ctx = context;
-          ctx.onstatechange = () => {
-            if (context === ctx && enabled && ctx.state !== 'running') {
-              generation++; enabled = false; clearVoices(); onInterruption();
-            }
-          };
-        }
+  const unlock = async (prepare: boolean): Promise<boolean> => {
+    if (disposed) return false;
+    const current = ++generation;
+    try {
+      if (!context || context.state === 'closed') {
+        if (context) context.onstatechange = null;
+        clearVoices(); clearGraph(); context = contextFactory();
         const ctx = context;
-        if (!output) buildGraph(ctx);
-        await ctx.resume();
-        if (current !== generation || disposed || context !== ctx) return false;
-        enabled = ctx.state === 'running'; return enabled;
-      } catch { if (current === generation) { enabled = false; clearVoices(); clearGraph(); } return false; }
-    },
+        ctx.onstatechange = () => {
+          if (context === ctx && enabled && ctx.state !== 'running') {
+            generation++; enabled = false; clearVoices(); onInterruption();
+          }
+        };
+      }
+      const ctx = context;
+      if (!output) buildGraph(ctx);
+      // Resume must run before the first await to retain the initiating gesture.
+      await ctx.resume();
+      if (current !== generation || disposed || context !== ctx) return false;
+      enabled = ctx.state === 'running';
+      if (enabled && prepare) prepareTones(ctx);
+      return enabled;
+    } catch { if (current === generation) { enabled = false; clearVoices(); clearGraph(); } return false; }
+  };
+  return {
+    unlock() { return unlock(false); },
+    prepare() { return unlock(true); },
     consume(events) {
       if (disposed) return;
       for (const event of events) {
@@ -102,7 +107,7 @@ export function createAudio(config: GameConfig, contextFactory: () => AudioConte
       }
     },
     setVolume(value) { if (Number.isFinite(value)) volume = Math.max(0, Math.min(1, value)); if (volume === 0) clearVoices(); setGain(); },
-    setMuted(value) { muted = value; if (muted) clearVoices(); setGain(); },
+    setMuted(value) { muted = value; if (muted) { generation++; clearVoices(); } setGain(); },
     setQuality(value) { quality = value === 'low' ? 'low' : 'standard'; },
     suspend() {
       generation++; enabled = false; clearVoices();

@@ -1,4 +1,4 @@
-import { expect, test, type Page } from '../helpers/browserTest';
+import { expect, test, type Page, waitForStart } from '../helpers/browserTest';
 import type {} from '../helpers/appHarness';
 
 test.use({ video: 'on' });
@@ -10,6 +10,7 @@ async function begin(page: Page, size = { width: 390, height: 844 }) {
   await page.clock.pauseAt(new Date('2026-10-23T14:00:01Z'));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
 }
 async function projection(page: Page, point: { x: number; y: number }, clamp = true) {
   return page.evaluate(async ({ point, clamp }) => {

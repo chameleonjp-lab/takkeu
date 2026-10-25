@@ -56,6 +56,9 @@ export function createRankingController(storage: StorageLike, api: RankingApi = 
     state,
     clearResult(): void { if (pending.length === 0) { status = 'idle'; notify(); } },
     name(): string { const name = read(config.nameKey); try { return typeof name === 'string' ? validateName(name) : ''; } catch { return ''; } },
+    // A canceled preparation no longer owns the next same-name start. A late
+    // response can then be retired without closing the replacement's play.
+    abandonStart():void { pendingStart=null;save(config.startKey,null); },
     async start(value: string): Promise<Play | null> {
       const displayName = validateName(value); save(config.nameKey, displayName);
       if (!displayName) { guests.record(); return null; }

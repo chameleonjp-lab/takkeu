@@ -1,4 +1,4 @@
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 import type {} from '../helpers/appHarness';
 
 test.beforeEach(async ({ page }) => {
@@ -6,6 +6,7 @@ test.beforeEach(async ({ page }) => {
   await page.clock.install({ time: now }); await page.clock.pauseAt(new Date(now.getTime() + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
 });
 
 test('通常の指離れ・2本目・追跡喪失・回転で入力が残らない', async ({ page }, testInfo) => {

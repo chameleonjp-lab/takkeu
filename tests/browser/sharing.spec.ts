@@ -1,4 +1,4 @@
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 import type { BrowserContext, Locator, Page } from '@playwright/test';
 import type {} from '../helpers/appHarness';
 
@@ -89,6 +89,7 @@ test('自己ベストと今回の結果を区別し、通信失敗・再挑戦�
   const bestText = '卓球ゲーム「タッケウ」で自己ベスト200ラリー！\n何ラリーつなげられる？ #タッケウ';
   await activateIntent(page, home, bestText);
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await expect(result).not.toHaveAttribute('href');
   await finish(page, 37);
   await expect(page.locator('[data-result] [data-best]')).toHaveText('200');
@@ -98,6 +99,7 @@ test('自己ベストと今回の結果を区別し、通信失敗・再挑戦�
   await expect(result).toBeFocused();
   await activateIntent(page, result, 'タッケウで37ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/', true);
   await page.getByRole('button', { name: 'もう一度', exact: true }).click();
+  await waitForStart(page);
   await page.clock.runFor(16);
   await expect(result).not.toHaveAttribute('href');
   await finish(page, 0);

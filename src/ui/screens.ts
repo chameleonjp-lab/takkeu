@@ -69,6 +69,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   const doc = root.ownerDocument;
   let phase: GameSnapshot['phase'] = 'ready';
   let finishing = false, lastFinishing = false;
+  let preparing = false;
   let lastPhase = '';
   let lastRemaining = -1;
   let settingsOpen = false;
@@ -79,10 +80,10 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   };
   const show = (node: HTMLElement, visible: boolean): void => { node.hidden = !visible; setInert(node, !visible); };
   const updateVisibility = (): void => {
-    show(home, phase === 'ready' && !settingsOpen); show(settings, phase === 'ready' && settingsOpen);
-    show(game, phase === 'running' || phase === 'paused' || finishing); show(result, phase === 'gameover' && !finishing); show(overlay, phase === 'paused');
+    show(home, !preparing && phase === 'ready' && !settingsOpen); show(settings, !preparing && phase === 'ready' && settingsOpen);
+    show(game, preparing || phase === 'running' || phase === 'paused' || finishing); show(result, !preparing && phase === 'gameover' && !finishing); show(overlay, !preparing && phase === 'paused');
     get('[data-finishing]').hidden = !finishing;
-    setInert(surface, phase !== 'running'); setInert(hud, phase === 'paused');
+    setInert(surface, preparing || phase !== 'running'); setInert(hud, preparing || phase === 'paused');
     const host = get(phase === 'paused' ? '[data-pause-notices]' : phase === 'running' || finishing ? '[data-game-notices]' : phase === 'gameover' ? '[data-result-notices]' : settingsOpen ? '[data-settings-notices]' : '[data-home-notices]');
     if (notices.parentElement !== host) host.append(notices);
   };
@@ -134,6 +135,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   return {
     canvas, surface, canvasWrap: get<HTMLElement>('.canvas-wrap'),
     playerName() { return get<HTMLInputElement>('[data-player-name]').value; },
+    setPreparing(value:boolean) { preparing=value;updateVisibility(); },
     setPlayerName(value: string) { get<HTMLInputElement>('[data-player-name]').value = value; },
     setStarting(starting: boolean) {
       for (const button of root.querySelectorAll<HTMLButtonElement>('[data-action="start"], [data-action="retry"]')) { button.disabled = starting; button.setAttribute('aria-busy', String(starting)); }

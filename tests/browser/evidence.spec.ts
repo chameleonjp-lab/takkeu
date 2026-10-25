@@ -1,4 +1,4 @@
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 
 test.use({ video: 'on' });
 
@@ -13,6 +13,7 @@ test.describe('画面の証拠', () => {
     await page.screenshot({ path: testInfo.outputPath('home.png'), fullPage: true });
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+    await waitForStart(page);
     // Observe before the faster first bounce (1.44s), then deliberately miss it.
     await page.clock.runFor(1250);
     await page.screenshot({ path: testInfo.outputPath('playing.png') });

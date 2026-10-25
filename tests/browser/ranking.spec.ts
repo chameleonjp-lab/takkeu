@@ -1,4 +1,4 @@
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 import type {} from '../helpers/appHarness';
 
 const version = 'takkeu-web-ranking-1';
@@ -35,6 +35,7 @@ async function finish(page: import('@playwright/test').Page, score = 12) {
 test('名前なしで遊べて結果には上位30名と正式URLのXシェアが表示される', async ({ page }) => {
   const calls = await mockRanking(page); await open(page);
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await finish(page, 12);
   await expect(page.locator('[data-ranking-body] tr')).toHaveCount(30);
   const starts = () => calls.filter(call => call.rpc === 'start_takkeu_guest_play_v1');
@@ -48,7 +49,7 @@ test('名前なしで遊べて結果には上位30名と正式URLのXシェア�
   expect(share.searchParams.has('url')).toBe(false);
   const positions = await page.evaluate(() => ({ score: document.querySelector('[data-result-score]')!.getBoundingClientRect().bottom, replay: document.querySelector('[data-result] [data-action="retry"]')!.getBoundingClientRect().top, best: document.querySelector('[data-result] [data-best]')!.getBoundingClientRect().top }));
   expect(positions.replay).toBeGreaterThanOrEqual(positions.score); expect(positions.replay).toBeLessThan(positions.best);
-  await page.getByRole('button', { name: 'もう一度', exact: true }).click(); await page.clock.runFor(16);
+  await page.getByRole('button', { name: 'もう一度', exact: true }).click(); await waitForStart(page); await page.clock.runFor(16);
   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('0');
   expect(await page.evaluate(() => window.stage3.snapshot().simTime)).toBeLessThan(0.1);
   await expect.poll(() => starts().length).toBe(2);
@@ -58,6 +59,7 @@ test('名前なしで遊べて結果には上位30名と正式URLのXシェア�
 test('匿名開始の応答喪失後もすぐ遊べてonline復帰時は同じIDで再送する', async ({ page }, info) => {
   const calls = await mockRanking(page, false, true); await open(page);
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await expect(page.getByTestId('game-screen')).toBeVisible();
   const starts = () => calls.filter(c => c.rpc === 'start_takkeu_guest_play_v1');
   await expect.poll(() => starts().length).toBe(1);
@@ -84,8 +86,10 @@ test('通信不能で始めた匿名2回の記録を再読込後も保ち復旧�
     expect(rpc).toBe('get_best_score_ranking'); await route.fulfill({ json: [] });
   });
   await open(page); await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await expect(page.getByTestId('game-screen')).toBeVisible(); await finish(page);
   await page.getByRole('button', { name: 'もう一度', exact: true }).click();
+  await waitForStart(page);
   const stored = await page.evaluate(() => Object.keys(localStorage).filter(k => k.startsWith('takkeu.guest-starts.v1.')).map(k => JSON.parse(localStorage.getItem(k)!)));
   expect(stored).toHaveLength(2);
   await page.reload(); await expect(page.getByRole('button', { name: 'はじめる', exact: true })).toBeVisible();
@@ -104,6 +108,7 @@ test('online復帰が古い通信の失敗より先でも送信待ちを再開�
     await route.fulfill({ json: { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', client_version: version } });
   });
   await open(page); await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await expect.poll(() => starts.length).toBe(1);
   await page.evaluate(() => window.dispatchEvent(new Event('online'))); release();
   await expect.poll(() => starts.length).toBe(2);
@@ -114,6 +119,7 @@ test('名前ありは開始時に一度記録し通常終了を自動送信す�
   const calls = await mockRanking(page); await open(page);
   await page.getByLabel('ランキングの名前').fill(' テスト ');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await expect(page.getByTestId('game-screen')).toBeVisible();
   expect(calls.filter(call => call.rpc === 'start_game_play_v1')).toHaveLength(1);
   expect(calls[0]!.body.p_display_name).toBe('テスト');
@@ -128,6 +134,7 @@ test('送信失敗後も結果と共有を保ち同じIDで再送する', async 
   const calls = await mockRanking(page, true); await open(page);
   await page.getByLabel('ランキングの名前').fill('再送テスト');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await expect(page.getByTestId('game-screen')).toBeVisible(); await finish(page, 7);
   const retry = page.getByRole('button', { name: '記録を再送する' }); await expect(retry).toBeVisible();
   await expect(page.locator('[data-result-score]')).toHaveText('7');
@@ -140,9 +147,10 @@ test('送信失敗後も結果と共有を保ち同じIDで再送する', async 
 
 test('通信停止中も名前なしのプレイと再プレイが使えランキングは再取得できる', async ({ page }) => {
   await page.route('https://mlpnjgezrnhdxsxolyzj.supabase.co/**', route => route.abort());
-  await open(page); await page.getByRole('button', { name: 'はじめる', exact: true }).click(); await finish(page);
+  await open(page); await page.getByRole('button', { name: 'はじめる', exact: true }).click(); await waitForStart(page); await finish(page);
   await expect(page.locator('[data-ranking-message]')).toContainText('取得できません');
   await expect(page.locator('[data-share-x]')).toBeVisible();
   await page.getByRole('button', { name: 'もう一度', exact: true }).click();
+  await waitForStart(page);
   await expect(page.getByTestId('game-screen')).toBeVisible();
 });
