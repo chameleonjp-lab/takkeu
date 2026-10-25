@@ -1,6 +1,47 @@
 import { expect,test,waitForStart } from '../helpers/browserTest';
 import type {} from '../helpers/appHarness';
 
+for(const from of ['pause','result','home'] as const){
+  test(`準備済みなら${from}から次のRAFを待たず、案内を一度も出さずに開始する`,async({page})=>{
+    await page.clock.install();await page.clock.pauseAt(new Date(Date.now()+1000));
+    await page.goto('/tests/fixtures/stage3.html');
+    await page.getByRole('button',{name:'はじめる',exact:true}).click();await waitForStart(page);
+    const previous=await page.evaluate(()=>window.stage3.snapshot());
+    if(from==='result'){
+      await page.evaluate(()=>window.stage3.finish());await page.clock.runFor(16);
+      await expect(page.getByRole('heading',{name:'ナイスラリー！'})).toBeVisible();
+    }else{
+      await page.keyboard.press('Escape');
+      if(from==='home')await page.getByRole('button',{name:'ホームへ',exact:true}).click();
+    }
+    await page.evaluate(()=>{
+      const loader=document.querySelector<HTMLElement>('[data-loading-screen]')!;
+      document.body.dataset.loadingFlashed='false';
+      const observer=new MutationObserver(records=>{
+        // Setting hidden=true again also emits a mutation. Detect an actual
+        // visible state, including a removal/addition in the same microtask.
+        if(!loader.hidden||records.some(record=>record.oldValue===null))document.body.dataset.loadingFlashed='true';
+      });
+      observer.observe(loader,{attributes:true,attributeOldValue:true,attributeFilter:['hidden']});
+    });
+    await page.getByRole('button',{name:from==='home'?'はじめる':from==='result'?'もう一度':'最初からやり直す',exact:true}).click();
+    // Browser audio resume may settle asynchronously. The virtual RAF clock
+    // remains paused: no display frames or fixed display duration are needed.
+    await expect.poll(()=>page.evaluate(()=>window.stage3.snapshot().phase)).toBe('running');
+    const next=await page.evaluate(()=>window.stage3.snapshot());
+    expect(next.simTime).toBe(0);expect(next.score).toBe(0);expect(next.lostBallCount).toBe(0);
+    expect(next.balls).toHaveLength(1);expect(next.runId).not.toBe(previous.runId);
+    expect(await page.locator('body').getAttribute('data-loading-flashed')).toBe('false');
+    expect(await page.evaluate(()=>window.stage3.metrics().viewPrepares)).toBe(1);
+    // The new run also has a working, fresh input mapping immediately.
+    const surface=page.getByTestId('input-surface');
+    await expect(surface).not.toHaveAttribute('inert','');
+    const rect=await surface.boundingBox();
+    await page.mouse.click(rect!.x+rect!.width*.7,rect!.y+rect!.height*.6);await page.clock.runFor(16);
+    expect((await page.evaluate(()=>window.stage3.snapshot())).paddle).not.toEqual(next.paddle);
+  });
+}
+
 test('描画の準備中は進捗と中央のルールを表示し、ゲームと入力は開始しない',async({page},info)=>{
   await page.clock.install();await page.clock.pauseAt(new Date(Date.now()+1000));
   await page.goto('/tests/fixtures/stage3.html?loading=hold');
