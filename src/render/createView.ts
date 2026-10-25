@@ -10,8 +10,11 @@ import { computeDrawingSize } from './quality';
 import type { Quality } from '../storage/preferences';
 import { createFireworks, PARTICLE_LIMIT } from './particles';
 import { createCelebrationView } from './celebrations';
+import { prepareScene } from './prepare';
+import { MAX_BALLS } from '../game/milestones';
 
 export interface GameView {
+  prepare?(progress:(completed:number,total:number)=>void):Promise<void>;
   render(snapshot: GameSnapshot, events: readonly GameEvent[]): void;
   resize(width: number, height: number): void;
   inputMapping(): InputMapping;
@@ -38,7 +41,20 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
   let flashUntil = 0;
   let previousRunId = '';
   let quality: Quality = 'standard';
+  let preparation:Promise<void>|null=null,disposed=false;
   return {
+    prepare(progress){
+      if(!preparation)preparation=(async()=>{
+        // Reserve every live-ball slot once; subsequent plays reuse the pool.
+        const ids=Array.from({length:MAX_BALLS},(_,i)=>-i-1);
+        objects.syncBalls(ids,true,0);
+        for(const visual of objects.balls.values()){visual.root.visible=true;visual.glow.visible=true;visual.shadow.visible=true;}
+        objects.commitBalls();
+        try{await prepareScene(renderer,scene,camera,Object.values(objects.parts),fraction=>progress(fraction,1),()=>disposed);}
+        finally{if(!disposed){objects.syncBalls([],false,0);objects.commitBalls();}}
+      })();
+      return preparation;
+    },
     render(snapshot, events) {
       if (snapshot.runId !== previousRunId) { flashUntil = 0; renderer.renderLists.dispose(); previousRunId = snapshot.runId; }
       for (const event of events) if (event.kind === 'player-hit') flashUntil = event.time + 0.12;
@@ -60,6 +76,6 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
     inputMapping() { return createInputMapping(camera, () => canvas.getBoundingClientRect(), config); },
     setQuality(value) { quality = value; },
     resources() { return { geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures, programs: renderer.info.programs?.length ?? 0, drawCalls: renderer.info.render.calls,particles:fireworks.active(),particleCapacity:PARTICLE_LIMIT }; },
-    dispose() { celebrations.dispose(); fireworks.dispose(); objects.dispose(); renderer.dispose(); },
+    dispose() { if(disposed)return;disposed=true;celebrations.dispose(); fireworks.dispose(); objects.dispose(); renderer.dispose(); },
   };
 }

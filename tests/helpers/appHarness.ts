@@ -20,7 +20,8 @@ let currentView: ReturnType<typeof createView> | null = null;
 let currentAudio: ReturnType<typeof createAudio> | null = null;
 let autoPlay = false;
 let failNextView = false;
-const metrics = { viewCreates: 0, viewDisposes: 0, viewRenders: 0, smashDepartures: 0, events: [] as GameEvent[] };
+let releasePreparation:(()=>void)|null=null;
+const metrics = { viewCreates: 0, viewDisposes: 0, viewRenders: 0, viewPrepares:0, smashDepartures: 0, events: [] as GameEvent[] };
 const session: GameSession = {
   snapshot: () => snapshotSimulation(state), start() { startSimulation(state, DEFAULT_CONFIG); },
   step(dt, input) {
@@ -48,7 +49,13 @@ const app = createApp(document.querySelector<HTMLElement>('#app')!, {
   createView(canvas, config) {
     if (failNextView) { failNextView = false; throw new Error('verification: renderer creation failed'); }
     const view = createView(canvas, config); currentView = view; metrics.viewCreates++;
-    return { ...view, render(...args) { metrics.viewRenders++; view.render(...args); }, dispose() { metrics.viewDisposes++; view.dispose(); } };
+    return { ...view,
+      async prepare(progress:(completed:number,total:number)=>void){
+        metrics.viewPrepares++;
+        if(new URLSearchParams(location.search).get('loading')==='hold'&&metrics.viewPrepares===1)await new Promise<void>(resolve=>{releasePreparation=resolve;});
+        await view.prepare!(progress);
+      },
+      render(...args) { metrics.viewRenders++; view.render(...args); }, dispose() { metrics.viewDisposes++; view.dispose(); } };
   },
 });
 function show(score: number) {
@@ -69,6 +76,7 @@ function show(score: number) {
 }
 function restore() { const canvas = document.querySelector('canvas')!; canvas.dispatchEvent(new Event('webglcontextrestored')); }
 const harness = { snapshot: (): GameSnapshot => session.snapshot(), show, restore, metrics: () => metrics,
+  releasePreparation(){releasePreparation?.();releasePreparation=null;},
   lossLimit(count = 98) {
     state = lossLimitScenario(count, 340, 0).state;
     currentAudio?.reset(state.runId); metrics.events.length = 0;

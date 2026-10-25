@@ -1,10 +1,11 @@
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 import type {} from '../helpers/appHarness';
 
 test('99落球では継続し100球目で残球があっても結果へ進み再挑戦で0に戻る', async ({ page }, info) => {
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await page.evaluate(() => window.stage3.lossLimit());
   await page.clock.runFor(40);
   await expect(page.getByLabel('落球数', { exact: true })).toHaveText('99 / 100');
@@ -38,6 +39,7 @@ test('99落球では継続し100球目で残球があっても結果へ進み再
   expect(await page.evaluate(() => window.stage3.snapshot())).toEqual(ended);
   await page.screenshot({ path: info.outputPath('hundred-loss-result.png') });
   await page.getByRole('button', { name: 'もう一度', exact: true }).click();
+  await waitForStart(page);
   await page.clock.runFor(16);
   await expect(page.getByLabel('落球数', { exact: true })).toHaveText('0 / 100');
   await expect(page.getByLabel('残球数', { exact: true })).toHaveText('1');
@@ -51,6 +53,7 @@ test('狭い画面でもラリー・残球・落球数が重ならず表示さ�
   await page.goto('/tests/fixtures/stage3.html');
   await page.addStyleTag({ content: 'html { font-size: 200%; }' });
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await page.evaluate(() => window.stage3.lossLimit()); await page.clock.runFor(40);
   await expect(page.getByLabel('落球数', { exact: true })).toHaveText('99 / 100');
   const boxes = await page.locator('.hud > div').evaluateAll(nodes => nodes.map(node => {

@@ -1,6 +1,6 @@
 import { writeFile } from 'node:fs/promises';
 import type { TestInfo } from '@playwright/test';
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 import type {} from '../helpers/remainingHarness';
 import type {} from '../helpers/appHarness';
 
@@ -59,6 +59,7 @@ test('実アプリで加速球の一時停止・手動再開・リトライを�
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await page.evaluate(() => window.stage3.remaining(540, 1)); await page.clock.runFor(64);
   const before = await page.evaluate(() => window.stage3.snapshot());
   expect(before.balls[0]!.phase).toBe('incoming');
@@ -71,6 +72,7 @@ test('実アプリで加速球の一時停止・手動再開・リトライを�
   await page.getByRole('button', { name: 'つづける', exact: true }).click(); await page.clock.runFor(16);
   expect((await page.evaluate(() => window.stage3.snapshot())).scheduledReturns[0]).toEqual(before.scheduledReturns[0]);
   await page.keyboard.press('Escape'); await page.getByRole('button', { name: '最初からやり直す', exact: true }).click();
+  await waitForStart(page);
   const retried = await page.evaluate(() => window.stage3.snapshot());
   expect(retried.score).toBe(0); expect(retried.balls).toHaveLength(1); expect(retried.runId).not.toBe(before.runId);
   const initial = retried.scheduledReturns[0]!;

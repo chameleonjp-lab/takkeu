@@ -1,4 +1,4 @@
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 import type {} from '../helpers/appHarness';
 
 // Keep all 30 game seconds, state/resource checks and the final screenshot.
@@ -12,6 +12,7 @@ test('555の30球から同時返球・失球・増球・全スマッシュを30�
   // 120Hz physics step. Native realtime FPS is measured separately.
   test.setTimeout(360_000);await page.clock.install();await page.clock.pauseAt(new Date(Date.now()+1000));
   await page.goto('/tests/fixtures/stage3.html');await page.getByRole('button',{name:'はじめる',exact:true}).click();
+  await waitForStart(page);
   await page.evaluate(()=>{window.stage3.show(555);window.stage3.autoPlay(false);});
   expect(await page.evaluate(()=>window.stage3.snapshot().balls.length)).toBe(30);
   for(let frame=0;frame<5;frame++)await page.clock.fastForward(100);

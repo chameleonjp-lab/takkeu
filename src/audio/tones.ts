@@ -28,6 +28,10 @@ function cache(context: BaseAudioContext) {
 function supported(context: BaseAudioContext): boolean {
   return ['createWaveShaper', 'createBiquadFilter', 'createBufferSource', 'createBuffer', 'createDynamicsCompressor'].every(key => typeof (context as unknown as Record<string, unknown>)[key] === 'function');
 }
+/** Warm reusable synthesis data without allocating or scheduling any voice. */
+export function prepareTones(context: BaseAudioContext): void {
+  if (supported(context)) cache(context);
+}
 const quiet = (work: () => void): void => { try { work(); } catch { /* Already ended/closed or partial construction. */ } };
 
 /** Every created node is owned immediately; every source completes independently. */

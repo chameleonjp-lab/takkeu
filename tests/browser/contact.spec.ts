@@ -1,4 +1,4 @@
-import { expect, test, type Page } from '../helpers/browserTest';
+import { expect, test, type Page, waitForStart } from '../helpers/browserTest';
 import type {} from '../helpers/appHarness';
 
 test.use({ video: 'on' });
@@ -8,6 +8,7 @@ async function begin(page: Page) {
   await page.clock.install({ time: now }); await page.clock.pauseAt(new Date(+now + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   // Evidence-only cursor: records the native pointer position, never injects a target.
   await page.evaluate(() => {
     const dot = document.createElement('div'); dot.id = 'recorded-pointer';

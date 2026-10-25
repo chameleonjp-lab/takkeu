@@ -1,4 +1,4 @@
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 import type {} from '../helpers/appHarness';
 import type { GameSnapshot } from '../../src/game/types';
 
@@ -21,6 +21,7 @@ test('開始から実際に返球して5・10・20の増球を通過し、21ラ�
   // Only input is automated: start the real session without replacing its score or balls.
   await page.evaluate(() => window.stage3.autoPlay(true));
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   const checkpoints = [{ score: 5, balls: 2 }, { score: 10, balls: 3 }, { score: 20, balls: 4 }];
   const reached: { threshold: number; state: GameSnapshot }[] = [];
   for (let i = 0; i < 480; i++) {
@@ -63,6 +64,7 @@ test('縦横・44pxボタン・200%文字・ラベル・安全余白を確認', 
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: info.outputPath('home-text-200.png'), fullPage: true });
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await page.keyboard.press('Escape');
   await page.screenshot({ path: info.outputPath('paused-text-200.png'), fullPage: true });
   const dialog = page.getByRole('dialog');
@@ -75,6 +77,7 @@ test('縦横・44pxボタン・200%文字・ラベル・安全余白を確認', 
   for (const size of [{ width: 402, height: 874 }, { width: 874, height: 402 }, { width: 1280, height: 720 }]) {
     await page.setViewportSize(size); await page.clock.runFor(32);
     await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+    await waitForStart(page);
     await page.clock.runFor(32);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth && document.documentElement.scrollHeight <= innerHeight + 1)).toBe(true);
     await page.screenshot({ path: info.outputPath(`game-${size.width}x${size.height}.png`) });
@@ -101,6 +104,7 @@ test('450の30球と以後の同時返球・失球・増球・スマッシュを
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/tests/fixtures/stage3.html');
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await page.evaluate(() => { window.stage3.show(450); window.stage3.autoPlay(false); });
   expect(await page.evaluate(() => window.stage3.snapshot().balls.length)).toBe(30);
   for (let frame = 0; frame < 5; frame++) await page.clock.fastForward(100);
@@ -139,7 +143,7 @@ test('450の30球と以後の同時返球・失球・増球・スマッシュを
   await info.attach('growing-ball-load.json', { body: JSON.stringify(samples, null, 2), contentType: 'application/json' });
 });
 
-test('WebGL初期化不可と復旧失敗でもホームと自己ベストを保つ', async ({ page }) => {
+test('WebGL初期化不可でも再試行画面からホームへ戻り自己ベストを保つ', async ({ page }) => {
   await page.addInitScript(() => {
     const native = HTMLCanvasElement.prototype.getContext;
     HTMLCanvasElement.prototype.getContext = function(this: HTMLCanvasElement, ...args: Parameters<typeof native>) {
@@ -148,7 +152,10 @@ test('WebGL初期化不可と復旧失敗でもホームと自己ベストを保
     } as typeof native;
   });
   await page.goto('/'); await page.getByRole('button', { name: 'はじめる', exact: true }).click();
-  await expect(page.getByRole('alert')).toContainText('WebGL 2を利用できません');
+  await expect(page.locator('[data-loading-screen] [role="alert"]')).toContainText('WebGL 2を利用できません');
+  await expect(page.locator('[data-loading-screen]')).toBeVisible();
+  await expect(page.locator('[data-loading-end]')).toContainText('累計100球');
+  await page.locator('[data-loading-action="cancel"]').click();
   await expect(page.getByRole('heading', { name: 'タッケウ', exact: true })).toBeVisible();
   await expect(page.locator('[data-home]').getByLabel('自己ベスト', { exact: true })).toHaveText('0');
 });

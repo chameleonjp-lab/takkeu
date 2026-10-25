@@ -1,4 +1,4 @@
-import { expect, test } from '../helpers/browserTest';
+import { expect, test, waitForStart } from '../helpers/browserTest';
 import { wav } from '../helpers/wav';
 
 test.beforeEach(async ({ page }) => {
@@ -26,6 +26,7 @@ test('打球ノード生成失敗を案内し、一時停止メニューから�
   // must not produce a second player hit or replay the failed first hit.
   await page.clock.install({ time: new Date(-1000) }); await page.clock.pauseAt(new Date(7));
   await page.goto('/'); await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await expect.poll(() => page.evaluate(() => window.audioProbe.contexts[0]?.state)).toBe('running');
   await page.evaluate(() => { window.audioProbe.failNodes = true; });
   await page.clock.runFor(2700);
@@ -55,6 +56,7 @@ test('打球ノード生成失敗を案内し、一時停止メニューから�
 test('開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰', async ({ page }, info) => {
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/'); await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await expect.poll(() => page.evaluate(() => window.audioProbe.contexts[0]?.state)).toBe('running');
   await page.clock.runFor(2700);
   const types = await page.evaluate(() => window.audioProbe.started);
@@ -83,6 +85,7 @@ test('音声再開拒否でも無音で継続し、ミュートと明示的な�
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
   await page.goto('/'); await page.evaluate(() => { window.audioProbe.failResume = true; });
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
+  await waitForStart(page);
   await expect(page.locator('[data-audio-notice]')).toBeVisible();
   await page.clock.runFor(2700); await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('1');
   await page.screenshot({ path: info.outputPath('audio-unavailable.png') });
