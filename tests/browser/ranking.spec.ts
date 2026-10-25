@@ -29,7 +29,7 @@ async function open(page: import('@playwright/test').Page) {
 async function finish(page: import('@playwright/test').Page, score = 12) {
   await page.evaluate(score => { window.stage3.show(score); window.stage3.finish(); }, score);
   await page.clock.runFor(16);
-  await expect(page.getByRole('heading', { name: 'ナイスラリー！' })).toBeVisible();
+  await expect(page.locator('[data-result] h2')).toBeVisible();
 }
 
 test('名前なしで遊べて結果には上位30名と正式URLのXシェアが表示される', async ({ page }) => {

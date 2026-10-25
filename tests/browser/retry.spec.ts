@@ -19,7 +19,7 @@ test('再挑戦20回・ホーム往復20回でループ・購読・描画資源�
   expect(baseline.audioContexts).toBe(1);
   for (let i = 0; i < 20; i++) {
     await page.evaluate(() => window.stage3.finish()); await page.clock.runFor(16);
-    await expect(page.getByRole('heading', { name: 'ナイスラリー！' })).toBeVisible();
+    await expect(page.locator('[data-result] h2')).toBeVisible();
     await page.getByRole('button', { name: 'もう一度', exact: true }).click(); await waitForStart(page); await page.clock.runFor(32);
     const row = await measure(); rows.push({ kind: 'retry', i, ...row }); expect(row).toEqual(baseline);
     expect(await page.evaluate(() => window.runtimeProbe.liveVoices())).toBeLessThanOrEqual(1);

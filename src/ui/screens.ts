@@ -6,6 +6,7 @@ import type { Preferences, Quality } from '../storage/preferences';
 import { RANKING_CONFIG, homeShareUrl, scoreShareUrl } from '../ranking/config';
 import type { RankingEntry } from '../ranking/client';
 import type { RankingState } from '../ranking/controller';
+import { resultComment } from './resultComments';
 
 type Actions = { start(): void; pause(): void; resume(): void; retry(): void; home(): void; toggleSound(): void; retryAudio?(): void; volume(value: number): void; quality?(value: Quality): void; retryRanking?(): void; refreshRanking?(): void };
 const pauseMessages: Record<PauseReason, string> = {
@@ -166,6 +167,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       get('[data-smash-warning]').hidden = !warning;
       const remaining = snapshot.balls.filter(ball => ball.phase !== 'lost').length;
       setText('[data-score]', String(snapshot.score)); setText('[data-balls]', String(remaining)); setText('[data-result-score]', String(snapshot.score));
+      if (phase === 'gameover') setText('[data-result] h2', resultComment(snapshot.score));
       setText('[data-losses]', `${snapshot.lostBallCount} / ${MAX_LOST_BALLS}`);
       get('[data-loss-limit-message]').hidden = snapshot.phase !== 'gameover' || snapshot.lostBallCount < MAX_LOST_BALLS;
       const finalizedScore = snapshot.phase === 'gameover' ? snapshot.score : null;
