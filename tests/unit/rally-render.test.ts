@@ -4,7 +4,7 @@ import { DEFAULT_CONFIG } from '../../src/game/config';
 import type { RallyCue, RallyEffectsState } from '../../src/game/rallyEffects';
 import { RALLY_EFFECTS } from '../../src/game/rallyEffects';
 import { createCelebrations, lossCelebration } from '../../src/game/celebrations';
-import { createRallyEffectView } from '../../src/render/rallyEffects';
+import { createRallyEffectView, presentationPriority } from '../../src/render/rallyEffects';
 import { createCamera, fitCamera } from '../../src/render/camera';
 import { scenario } from '../helpers/scenarios';
 
@@ -20,6 +20,59 @@ function geometryValues(root:Group):number[] {
   }});
   return values;
 }
+
+describe('shared presentation priority budget',()=>{
+  it.each([1000,2000,3000,4000])('smoothly dims lower tiers during %i and restores them over the last .3 seconds',(threshold)=>{
+    const config=RALLY_EFFECTS.find(c=>c.threshold===threshold)!,duration=config.duration!;
+    const state=effectState(threshold,{arrivals:[{id:`major-${threshold}`,threshold,at:20,config}]});
+    expect(presentationPriority(snapshot(threshold,19.99),state)).toBe(1);
+    expect(presentationPriority(snapshot(threshold,20),state)).toBe(1);
+    expect(presentationPriority(snapshot(threshold,20.1),state)).toBeCloseTo(.725,6);
+    expect(presentationPriority(snapshot(threshold,20.2),state)).toBeCloseTo(.45,6);
+    expect(presentationPriority(snapshot(threshold,20+duration-.3),state)).toBeCloseTo(.45,6);
+    expect(presentationPriority(snapshot(threshold,20+duration-.15),state)).toBeCloseTo(.725,6);
+    expect(presentationPriority(snapshot(threshold,20+duration),state)).toBe(1);
+    expect(presentationPriority(snapshot(threshold,20.5),{...state,runId:'old'})).toBe(1);
+    expect(presentationPriority(snapshot(threshold,20.5))).toBe(1);
+  });
+
+  it('keeps the final background budget through termination even after the final cue is pruned',()=>{
+    const final:RallyCue={id:'final',kind:'loss-final',value:100,at:20,duration:2,priority:100};
+    const state=effectState(4000,{lostBallCount:100,cues:[final]});
+    expect(presentationPriority(snapshot(4000,20),state)).toBe(1);
+    expect(presentationPriority(snapshot(4000,20.2),state)).toBeCloseTo(.45,6);
+    expect(presentationPriority(snapshot(4000,23),state)).toBeCloseTo(.45,6);
+    expect(presentationPriority(snapshot(4000,23),{...state,cues:[]})).toBeCloseTo(.45,6);
+  });
+
+  it('dims actual ambient alpha while preserving cosmic backing, dedicated arrival alpha and geometry',()=>{
+    const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig),s=snapshot(4000,20.5);
+    const world=view.worldRoot.getObjectByName('rally-world-lines') as Mesh,backdrop=view.worldRoot.getObjectByName('rally-world-glow') as Mesh;
+    view.update(s,effectState(4000));const ambient=world.geometry.getAttribute('color').getW(0),dark=backdrop.geometry.getAttribute('color').getW(0),base=world.geometry.drawRange.count;
+    const positions=Array.from(world.geometry.getAttribute('position').array.slice(0,base*3));
+    const major=effectState(4000,{arrivals:[{id:'major',threshold:4000,at:20,config:RALLY_EFFECTS.find(c=>c.threshold===4000)!}]});
+    view.update(s,major);
+    expect(world.geometry.getAttribute('color').getW(0)).toBeCloseTo(ambient*.45,6);
+    expect(backdrop.geometry.getAttribute('color').getW(0)).toBe(dark);
+    expect(world.geometry.getAttribute('color').getW(base)).toBeCloseTo(.55,6);
+    expect(Array.from(world.geometry.getAttribute('position').array.slice(0,base*3))).toEqual(positions);
+    view.update(snapshot(4000,24.1),major);expect(world.geometry.getAttribute('color').getW(0)).toBeGreaterThan(ambient*.8);
+    expect(view.stats().geometries).toBe(4);view.dispose();
+  });
+
+  it('keeps the hundredth spark at its real position with nonzero lower-tier alpha while final geometry stays at full strength',()=>{
+    const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig),s=snapshot(0,20.2);
+    const loss={id:'100',count:100,at:20,rollingCount:4,position:{x:.7,y:.5,z:1.95}};
+    const world=view.worldRoot.getObjectByName('rally-world-lines') as Mesh;
+    view.update(s,effectState(0,{lostBallCount:99,losses:[loss]}));
+    const positions=Array.from(world.geometry.getAttribute('position').array.slice(0,12*6*3)),sparkAlpha=world.geometry.getAttribute('color').getW(0);
+    const state=effectState(0,{lostBallCount:100,losses:[loss],cues:[{id:'final',kind:'loss-final',value:100,at:20,duration:2,priority:100}]});
+    view.update({...s,phase:'gameover'},state);const colors=world.geometry.getAttribute('color');
+    expect(colors.getW(0)).toBeGreaterThan(0);expect(colors.getW(0)).toBeCloseTo(sparkAlpha*.45,6);
+    expect(Array.from(world.geometry.getAttribute('position').array.slice(0,12*6*3))).toEqual(positions);
+    expect(colors.getW(12*6)).toBeCloseTo(.45,6);expect(state.losses).toHaveLength(1);view.dispose();
+  });
+});
 
 describe('bounded rally world renderer, 0–1000',()=>{
   it.each([

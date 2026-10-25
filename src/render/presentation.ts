@@ -59,10 +59,13 @@ function colorVertices(geometry: BufferGeometry, time: number, randomSeed?:numbe
 export function applyPresentation(objects: ReturnType<typeof createObjects>, snapshot: GameSnapshot, reducedMotion=false): void {
   const state = resolvePresentation(snapshot);
   const motionTime=reducedMotion?0:snapshot.simTime;
+  // Preserve the legacy logical pulse/period, while narrowing only displayed
+  // wide-field material contrast to prevent composite full-surface flashes.
+  const presentationPulse=reducedMotion?1:.88+(state.pulseStrength-.65)*(.12/.35);
   let runSeed=0;
   for(const character of snapshot.runId)runSeed=(runSeed*31+character.charCodeAt(0))%65521;
   objects.opponentField.root.visible=state.opponentField;
-  if(state.opponentField)objects.opponentField.update(motionTime,state.opponentRandom,reducedMotion?1:state.pulseStrength,runSeed+490);
+  if(state.opponentField)objects.opponentField.update(motionTime,state.opponentRandom,presentationPulse,runSeed+490);
   let partIndex=0;
   for (const [id, object] of Object.entries(objects.parts)) {
     partIndex++;
@@ -77,9 +80,9 @@ export function applyPresentation(objects: ReturnType<typeof createObjects>, sna
         if (material.vertexColors !== part.rainbow) { material.vertexColors = part.rainbow; material.needsUpdate = true; }
         if (part.rainbow) {
           colorVertices(child.geometry, motionTime,state.ownRandom&&!id.startsWith('opponent')?runSeed+partIndex*31:undefined);
-          material.color.setRGB(1, 1, 1).multiplyScalar((material instanceof MeshStandardMaterial ? 0.16 : 1) * (reducedMotion?1:state.pulseStrength));
+          material.color.setRGB(1, 1, 1).multiplyScalar((material instanceof MeshStandardMaterial ? 0.16 : 1) * presentationPulse);
           if (material instanceof MeshStandardMaterial) {
-            material.emissive.setRGB(1, 1, 1); material.emissiveIntensity = 0.85 * (reducedMotion?1:state.pulseStrength);
+            material.emissive.setRGB(1, 1, 1); material.emissiveIntensity = 0.85 * presentationPulse;
           } else material.opacity = 0.9;
         } else {
           material.color.copy(material.userData.baseColor as Color);

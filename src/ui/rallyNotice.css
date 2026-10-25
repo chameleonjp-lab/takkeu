@@ -1,8 +1,9 @@
 .rally-score-host { position: relative; isolation: isolate; min-width: 0; }
+.rally-score-host[data-rally-aura="gold"]::before, .rally-score-host[data-rally-aura="best"]::before { content: ""; position: absolute; inset: -10px; z-index: -2; pointer-events: none; border-radius: 50%; background: radial-gradient(ellipse, #07162cf5 25%, #07162cf0 62%, transparent 88%); }
 .rally-score-anchor { position: relative; z-index: 1; max-width: 100%; overflow-wrap: anywhere; }
 .rally-score-aura { position: absolute; z-index: -1; inset: -8px; border-radius: 50%; pointer-events: none; opacity: var(--aura-opacity, 0); transform: scale(var(--aura-scale, 1)); }
 .rally-score-aura[data-kind="best"] { border: 2px solid #ffe7a2; box-shadow: 0 0 10px #eab95070; }
-.rally-score-aura[data-kind="gold"] { background: repeating-conic-gradient(from 0deg, #ffd665e6 0deg 8deg, transparent 8deg 30deg); mask-image: radial-gradient(ellipse, transparent 10%, #000 35%, transparent 72%); }
+.rally-score-aura[data-kind="gold"] { background: repeating-conic-gradient(from 0deg, #ffd700e6 0deg 8deg, transparent 8deg 30deg); mask-image: radial-gradient(ellipse, transparent 10%, #000 35%, transparent 72%); }
 .hud .rally-toast { flex-basis: 100%; align-self: flex-start; width: fit-content; max-width: min(100%, 26rem); margin: 0; color: #f9f0d6; font-size: .6875rem; line-height: 1.45; overflow-wrap: anywhere; pointer-events: none; transform-origin: left top; opacity: var(--notice-opacity, 1); text-shadow: 0 1px 4px #000; }
 .rally-toast-label { display: inline-block; max-width: 100%; transform-origin: left top; }
 .hud .rally-toast[data-kind="major"] { font-size: clamp(.875rem, 3.5vw, 1.25rem); font-weight: 800; letter-spacing: .08em; }

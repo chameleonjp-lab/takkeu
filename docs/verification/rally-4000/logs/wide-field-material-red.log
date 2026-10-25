@@ -1,0 +1,26 @@
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/wide-field-color-safety.test.ts (3 tests | 1 failed) 68ms
+   × keeps wide-field brightness modulation subtle while retaining its original period 31ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/wide-field-color-safety.test.ts > keeps wide-field brightness modulation subtle while retaining its original period
+AssertionError: expected 0.3500000000000001 to be less than or equal to 0.125
+ ❯ tests/unit/wide-field-color-safety.test.ts:26:51
+     24|   const value=(time:number)=>{applyPresentation(objects,{...base,simTi…
+     25|   const values=[0,.15,.3,.45,.6].map(value);
+     26|   expect(Math.max(...values)-Math.min(...values)).toBeLessThanOrEqual(…
+       |                                                   ^
+     27|   expect(value(0)).toBeCloseTo(value(2*DEFAULT_CONFIG.pulseHalfPeriod)…
+     28|   expect(value(0)).toBeGreaterThan(value(DEFAULT_CONFIG.pulseHalfPerio…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  21:14:43
+   Duration  305ms (tests 37%, import 31%, transform 30%, worker 2%)
+

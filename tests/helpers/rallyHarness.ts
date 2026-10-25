@@ -123,18 +123,33 @@ const harness={
       {...current,progression:{...current.progression,appliedMilestones:current.progression.appliedMilestones.filter(score=>score!==500&&score!==510)}};
     render();
   },
+  legacyFireworks(){
+    // Deliberately conservative pool-cap stress, not a physically reachable
+    // timing claim:64effect facts with only30distinct ball IDs, all atsimTime20.
+    // The positions use actual racket-contact/table-bounce planes.
+    const fireworks:GameEvent[]=Array.from({length:64},(_,index)=>{
+      const racket=index%2===0;
+      return {id:`${current.runId}:pool-${index}`,runId:current.runId,time:20,kind:racket?'player-hit':'table-bounce',ballId:index%30+1,
+        rallyScore:current.score,effect:racket?'racket-firework':'bounce-firework',
+        position:racket?{x:.1,y:.5,z:DEFAULT_CONFIG.paddleZ}:{x:(index%5-2)*.32,y:DEFAULT_CONFIG.tableY,z:.3+(index%6)*.2}};
+    });
+    current={...current,balls:Array.from({length:30},(_,index)=>({id:index+1,phase:'incoming',smash:false,
+      position:{x:(index%5-2)*.32,y:.35+Math.floor(index/5)*.05,z:.3+Math.floor(index/5)*.2}})),
+      scheduledReturns:[{ballId:1,departAt:20.2,netCrossAt:20.4,arriveAt:20.6,target:{x:0,y:.5},smash:true,warningAt:19.9,speedMultiplier:2.5}]};
+    lastEvents=fireworks;render();return {events:fireworks.length,distinctBallIds:30,resources:view.resources()};
+  },
   finish(){current={...current,phase:'gameover',balls:current.balls.map(b=>({...b,phase:'lost'}))};render();},
   snapshot:()=>current,state:()=>controller.state(),stats:()=>view.resources().rallyEffects??diagnostic.stats(),resources:()=>view.resources(),finishing:()=>finishing,
   project(position:Point3){const point=new Vector3(position.x,position.y,position.z).project(camera);return {x:(point.x+1)*viewport.width/2,y:(1-point.y)*viewport.height/2,inView:Math.abs(point.x)<=1&&Math.abs(point.y)<=1};},
   geometry(){
-    const rows:{name:string;vertices:number;sample:number[];bounds:{min:number[];max:number[]}}[]=[];
+    const rows:{name:string;vertices:number;sample:number[];colorSample:number[];bounds:{min:number[];max:number[]}}[]=[];
     for(const group of [diagnosticRig,diagnostic.worldRoot])group.traverse(node=>{
       if(!('geometry' in node))return;
-      const geometry=(node as unknown as {geometry:{attributes:{position:{array:ArrayLike<number>}};drawRange:{count:number}}}).geometry;
+      const geometry=(node as unknown as {geometry:{attributes:{position:{array:ArrayLike<number>};color:{array:ArrayLike<number>}};drawRange:{count:number}}}).geometry;
       const values=geometry.attributes.position.array,count=geometry.drawRange.count;
       if(!count)return;const min=[Infinity,Infinity,Infinity],max=[-Infinity,-Infinity,-Infinity];
       for(let i=0;i<count*3;i++){const k=i%3;min[k]=Math.min(min[k]!,values[i]!);max[k]=Math.max(max[k]!,values[i]!);}
-      rows.push({name:node.name,vertices:count,sample:Array.from(values).slice(0,Math.min(count*3,240)),bounds:{min,max}});
+      rows.push({name:node.name,vertices:count,sample:Array.from(values).slice(0,Math.min(count*3,240)),colorSample:Array.from(geometry.attributes.color.array).slice(0,Math.min(count*4,320)),bounds:{min,max}});
     });
     return rows;
   },

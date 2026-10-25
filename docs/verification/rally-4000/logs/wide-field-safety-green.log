@@ -1,0 +1,29 @@
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/presentation.test.ts (10 tests | 1 failed) 402ms
+   × 390の強→弱は0.3秒、周期は0.6秒で形と球の明るさを保つ 13ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/presentation.test.ts > 390の強→弱は0.3秒、周期は0.6秒で形と球の明るさを保つ
+AssertionError: expected 0.8799999999999999 to be close to 0.65, received difference is 0.22999999999999987, but expected 0.005
+ ❯ tests/unit/presentation.test.ts:103:28
+    101| it('390の強→弱は0.3秒、周期は0.6秒で形と球の明るさを保つ', () => {
+    102|   expect(samplePulse(0)).toBeCloseTo(1);
+    103|   expect(samplePulse(0.3)).toBeCloseTo(0.65);
+       |                            ^
+    104|   expect(samplePulse(0.6)).toBeCloseTo(1);
+    105|   expect(samplePulse(0.15)).toBeCloseTo(0.825);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 6 passed (7)
+      Tests  1 failed | 27 passed (28)
+   Start at  21:13:42
+   Duration  1.95s (tests 52%, import 28%, transform 19%, worker 2%)
+
+    Isolate  7 workers spawned · ~282ms startup each (spawn + environment, per file)
+             at least ~376ms faster with isolate: false — reuses workers across files instead of one per file
+

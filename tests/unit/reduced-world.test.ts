@@ -36,3 +36,8 @@ it('reduced motion retains a fading firework marker without particle travel',()=
   expect(Array.from(f.geometry.attributes.position!.array)).toEqual(positions);
   expect(f.active()).toBe(24);f.dispose();
 });
+it('dims ordinary fireworks for higher-priority cues without dropping their particles',()=>{
+  const f=createFireworks(),snapshot={...scenario(1000,20).snapshot(),runId:'priority'};
+  f.update(snapshot,[{id:'hit',runId:'priority',kind:'player-hit',time:20,position:{x:.2,y:.5,z:1.95},effect:'racket-firework'}],'standard',false,.4);
+  expect(f.active()).toBe(24);expect(f.geometry.getAttribute('opacity').getX(0)).toBeCloseTo(.32);f.dispose();
+});

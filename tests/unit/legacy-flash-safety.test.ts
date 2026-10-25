@@ -32,3 +32,12 @@ it('uses a damped low-frequency shake without frame-to-frame table jumps',()=>{
   }
   expect(maximumStep).toBeLessThan(.012);view.dispose();objects.dispose();
 });
+it('dims competing legacy electricity without dimming the protected loss digits',()=>{
+  const {objects,view,snapshot}=stress();view.update({...snapshot,simTime:20.31},false,.4);
+  const colors=view.lightning.geometry.getAttribute('color');
+  let alpha=0;for(let i=0;i<view.lightning.geometry.drawRange.count;i++)alpha=Math.max(alpha,colors.getW(i));
+  expect(alpha).toBeLessThanOrEqual(.361);
+  const digits=view.numbers.geometry.getAttribute('color');
+  let digitAlpha=0;for(let i=0;i<view.numbers.geometry.drawRange.count;i++)digitAlpha=Math.max(digitAlpha,digits.getW(i));
+  expect(digitAlpha).toBe(1);expect(view.stats().numbers).toHaveLength(14);view.dispose();objects.dispose();
+});

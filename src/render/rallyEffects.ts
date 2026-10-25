@@ -45,6 +45,24 @@ const hash=(n:number)=>{const x=Math.sin(n*127.1+311.7)*43758.5453;return x-Math
 const clamp=(n:number)=>Math.max(0,Math.min(1,n));
 const fraction=(n:number)=>n-Math.floor(n);
 function envelope(age:number,duration:number){return Math.min(1,Math.max(0,age)*8,Math.max(0,duration-age)*3);}
+/** Shared low-tier budget for both new overlays and legacy celebrations. It only
+ * reads confirmed presentation facts; it never changes an event or its lifetime. */
+export function presentationPriority(snapshot:Pick<GameSnapshot,'runId'|'simTime'>,state?:RallyEffectsState):number {
+  if(!state||state.runId!==snapshot.runId)return 1;
+  const time=snapshot.simTime,smooth=(value:number)=>{const t=clamp(value);return t*t*(3-2*t);};
+  const confirmedMajor=Math.min(4000,Math.floor(state.score/1000)*1000);
+  let majorAt=-Infinity,majorDuration=0,majorScore=0,finalAt=-Infinity;
+  for(const cue of state.arrivals){
+    if(cue.threshold<1000||cue.threshold>4000||cue.threshold%1000!==0||cue.at>time||cue.threshold<confirmedMajor)continue;
+    if(cue.at>majorAt||cue.at===majorAt&&cue.threshold>majorScore){majorAt=cue.at;majorDuration=cue.config.duration??0;majorScore=cue.threshold;}
+  }
+  let pressure=0;
+  if(majorDuration>0&&time<majorAt+majorDuration)pressure=Math.min(smooth((time-majorAt)/.2),smooth((majorAt+majorDuration-time)/.3));
+  for(const cue of state.cues)if(cue.kind==='loss-final'&&cue.at<=time)finalAt=Math.max(finalAt,cue.at);
+  if(finalAt!==-Infinity)pressure=Math.max(pressure,smooth((time-finalAt)/.2));
+  else if(state.lostBallCount>=100)pressure=1;
+  return 1-pressure*.55;
+}
 function ring(target:Batch,x:number,y:number,z:number,radius:number,segments:number,width:number,alpha:number,time:number,
   r=0,g=0,b=0,rainbow=false,horizontal=false,phase=0,aspect=1){
   for(let i=0;i<segments;i++){
@@ -63,7 +81,7 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
   tableRoot.add(tableGlow.mesh,table.mesh);worldRoot.add(worldGlow.mesh,world.mesh);
   const batches=[table,tableGlow,world,worldGlow];
   const activeEffects:string[]=[];
-  let disposed=false,particleCount=0,density=1,now=0,score=0,reduced=false,finishProgress=0;
+  let disposed=false,particleCount=0,density=1,now=0,score=0,reduced=false,finishProgress=0,lowTier=1;
   let finalPhase:'converge'|'assemble'|'expand'|'overlap-fade'|null=null;
   const active=(name:string)=>{if(!activeEffects.includes(name))activeEffects.push(name);};
   function line(target:Batch,ax:number,ay:number,az:number,bx:number,by:number,bz:number,width:number,r:number,g:number,b:number,a:number){
@@ -178,8 +196,10 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
     // Cover the portrait frustum's upper wall as well as the landscape horizon.
     // The short lower gradient ends above the far floor/wall seam; ordinary
     // opaque court and floor depth still occludes everything in front of it.
+    worldGlow.setOpacity(1);
     worldGlow.rect(-12,-.6,12,12,-5.93,.002,.006,.022,.94*transition);
     worldGlow.rect(-12,-.73,12,-.6,-5.93,.002,.006,.022,.94*transition,0);
+    worldGlow.setOpacity(lowTier);
     const count=Math.floor((score>=4000?240:160)*density);
     for(let i=0;i<count;i++){
       const lowerCount=count/2,x=(hash(i+401)*2-1)*3.6;
@@ -404,6 +424,8 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
       if(disposed)return;
       for(const target of batches)target.clear();activeEffects.length=0;particleCount=0;finalPhase=null;
       density=quality==='low'?.5:1;now=reducedMotion?0:snapshot.simTime;reduced=reducedMotion;score=snapshot.score;
+      lowTier=presentationPriority(snapshot,state);
+      for(const target of batches)target.setOpacity(lowTier);
       finishProgress=state?.runId===snapshot.runId&&state.lostBallCount>=100?(reduced?.45:1):0;
       if(state?.runId===snapshot.runId)for(const cue of state.cues)if(cue.kind==='loss-final'&&snapshot.simTime>=cue.at&&snapshot.simTime<cue.at+cue.duration)finishProgress=reduced?.45:clamp((snapshot.simTime-cue.at)/cue.duration);
       if(score>=400&&score<2000){active('background-threads');threads();}
@@ -450,10 +472,11 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
           const finishFade=latestFinal===-Infinity?(state.lostBallCount>=100?0:1):clamp(1-(snapshot.simTime-latestFinal)/.35);
           const priorityFade=(cue.at<newestMajor?clamp(1-(snapshot.simTime-newestMajor)/.35):1)*finishFade;
           if(priorityFade<=0)continue;
-          for(const target of batches)target.setOpacity(priorityFade);
+          const tier=cue.threshold>=1000&&cue.threshold%1000===0?1:lowTier;
+          for(const target of batches)target.setOpacity(priorityFade*tier);
           arrival(cue.threshold,age,duration);
         }
-        for(const target of batches)target.setOpacity(1);
+        for(const target of batches)target.setOpacity(lowTier);
         for(const loss of state.losses){
           const age=snapshot.simTime-loss.at;
           if(!loss.position||age<0||snapshot.simTime>=loss.at+.5)continue;
@@ -472,6 +495,7 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
         for(let i=0;i<state.cues.length;i++){
           const cue=state.cues[i]!;
           if(cue.kind==='loss-wave'&&!firstActiveWave(state.cues,i,snapshot.simTime))continue;
+          for(const target of batches)target.setOpacity(cue.kind==='loss-final'?1:lowTier);
           lossCue(snapshot,cue,waveOpacity);
         }
       }

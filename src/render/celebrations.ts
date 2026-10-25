@@ -92,7 +92,7 @@ export function createCelebrationView(config: GameConfig, tableRig: Group) {
   return {
     worldRoot,tableRoot,lightning:electric.mesh,numbers:digits.mesh,
     stats:()=>({...stats,numbers:[...stats.numbers]}),
-    update(snapshot:GameSnapshot,reducedMotion=false) {
+    update(snapshot:GameSnapshot,reducedMotion=false,lowPriorityOpacity=1) {
       if(disposed)return;
       const time=snapshot.simTime,frame=celebrationFrame(snapshot.celebrations,time),motionTime=reducedMotion?0:time;
       electric.clear();electricGlow.clear();digits.clear();digitGlow.clear();environment.clear();
@@ -100,17 +100,22 @@ export function createCelebrationView(config: GameConfig, tableRig: Group) {
       // footprint instead of allowing 204 overlapping full-background bolts.
       const netBolts=Math.min(24,frame.netBolts);
       for(let i=0;i<netBolts;i++)bolt({x:(hash(i+5)*2-1)*config.tableHalfWidth,y:config.tableY+.18,z:0},
-        Math.min(.7,frame.strength?frame.netSize/frame.strength:0)*(.6+hash(i+50)*.4),i+1,motionTime,{r:.34,g:.78,b:1},frame.strength*.55,Math.min(.02,.007+Math.min(100,snapshot.celebrations.lossStreak)*.00065));
+        Math.min(.7,frame.strength?frame.netSize/frame.strength:0)*(.6+hash(i+50)*.4),i+1,motionTime,{r:.34,g:.78,b:1},frame.strength*.55*lowPriorityOpacity,Math.min(.02,.007+Math.min(100,snapshot.celebrations.lossStreak)*.00065));
       if(frame.edgeElectric)for(let i=0;i<48;i++){
         const side=Math.floor(i/12),t=(i%12)/11;
         const origin=side<2?{x:(side===0?-1:1)*config.tableHalfWidth,y:config.tableY+.015,z:(t*2-1)*config.tableHalfLength}
           :{x:(t*2-1)*config.tableHalfWidth,y:config.tableY+.015,z:(side===2?-1:1)*config.tableHalfLength};
-        bolt(origin,.18+hash(i+9)*.25,i+301,motionTime,{r:.08,g:1,b:.22},.9,.009);
+        bolt(origin,.18+hash(i+9)*.25,i+301,motionTime,{r:.08,g:1,b:.22},.9*lowPriorityOpacity,.009);
       }
       frame.numbers.forEach((n,i)=>drawNumber(n.value,i,frame.numbers.length,motionTime,n.age,n.duration,reducedMotion?({55:'black',77:'blue',88:'green',99:'gold'} as Record<number,CelebrationPalette>)[n.value]??n.palette:n.palette,reducedMotion));
       if(frame.environment)for(let i=0;i<24;i++){
-        const x1=-9+i*.75,x2=x1+.75,color=paletteColor(reducedMotion?'rainbow':frame.environment,motionTime,i/24);
-        const rgba={...color,a:.9},y=config.tableY-.792;
+        const x1=-9+i*.75,x2=x1+.75,age=time-(snapshot.celebrations.centuryAt??time);
+        // The five-second century cue keeps its rainbow/gold intent, but broad
+        // surfaces crossfade instead of switching every .3s over moving colors.
+        const blend=reducedMotion?0:.5-.5*Math.cos(age*Math.PI*2/1.2);
+        const rainbow=paletteColor('rainbow',motionTime,i/24),gold=paletteColor('gold',motionTime,i/24);
+        const color={r:rainbow.r+(gold.r-rainbow.r)*blend,g:rainbow.g+(gold.g-rainbow.g)*blend,b:rainbow.b+(gold.b-rainbow.b)*blend};
+        const rgba={...color,a:.9*Math.min(1,Math.max(0,age)/.12,Math.max(0,5-age)/.25)},y=config.tableY-.792;
         environment.quad({x:x1,y,z:-9},{x:x2,y,z:-9},{x:x2,y,z:9},{x:x1,y,z:9},rgba);
         environment.quad({x:x1,y:y-.01,z:-6.08},{x:x2,y:y-.01,z:-6.08},{x:x2,y:y+12,z:-6.08},{x:x1,y:y+12,z:-6.08},rgba);
       }

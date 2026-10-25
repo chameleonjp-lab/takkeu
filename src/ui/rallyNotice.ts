@@ -50,10 +50,11 @@ export function createRallyNotice(root: HTMLElement) {
       if(key&&key!==announced){live.textContent=text;announced=key;}
       if(!visible){live.textContent='';announced='';}
       aura.hidden=!visible||(!best&&!gold);aura.dataset.kind=best?'best':'gold';
+      score.parentElement!.dataset.rallyAura=!aura.hidden?(best?'best':'gold'):'';
       const auraAge=t-(best?frame.bestAt!:frame.goldAt!);
       aura.style.setProperty('--aura-scale',String(1+Math.max(0,auraAge)*.3));
       aura.style.setProperty('--aura-opacity',String(Math.max(0,1-auraAge/(best?2:1.5))*(best?.6:.95)));
     },
-    dispose(){disposed=true;toast.remove();live.remove();aura.remove();score.classList.remove('rally-score-anchor');score.parentElement?.classList.remove('rally-score-host');},
+    dispose(){disposed=true;toast.remove();live.remove();aura.remove();score.classList.remove('rally-score-anchor');score.parentElement?.classList.remove('rally-score-host');if(score.parentElement)delete score.parentElement.dataset.rallyAura;},
   };
 }

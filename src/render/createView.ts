@@ -10,7 +10,7 @@ import { computeDrawingSize } from './quality';
 import type { Quality } from '../storage/preferences';
 import { createFireworks, PARTICLE_LIMIT } from './particles';
 import { createCelebrationView } from './celebrations';
-import { createRallyEffectView } from './rallyEffects';
+import { createRallyEffectView, presentationPriority } from './rallyEffects';
 import type { RallyEffectsState } from '../game/rallyEffects';
 import { prepareScene } from './prepare';
 import { MAX_BALLS } from '../game/milestones';
@@ -64,10 +64,11 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
       if (snapshot.runId !== previousRunId) { flashUntil = 0; renderer.renderLists.dispose(); previousRunId = snapshot.runId; }
       for (const event of events) if (event.kind === 'player-hit') flashUntil = event.time + 0.12;
       const reducedMotion=motionQuery?.matches??false;
+      const lowPriorityOpacity=presentationPriority(snapshot,effects);
       applyPresentation(objects, snapshot,reducedMotion);
       updateOpponentView(objects, snapshot, events);
-      fireworks.update(snapshot,events,quality,reducedMotion);
-      celebrations.update(snapshot,reducedMotion);
+      fireworks.update(snapshot,events,quality,reducedMotion,lowPriorityOpacity);
+      celebrations.update(snapshot,reducedMotion,lowPriorityOpacity);
       rallyEffects.update(snapshot,effects,quality,reducedMotion);
       if (!snapshot.progression.appliedMilestones.includes(100)) objects.rimMaterial.emissiveIntensity = snapshot.simTime < flashUntil ? 0.8 : 0.15;
       renderer.render(scene, camera);

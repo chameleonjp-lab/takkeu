@@ -1,0 +1,76 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-render.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-render.test.ts (93 tests | 7 failed) 1005ms
+   ❯ shared presentation priority budget (7)
+     × smoothly dims lower tiers during 1000 and restores them over the last .3 seconds 7ms
+     × smoothly dims lower tiers during 2000 and restores them over the last .3 seconds 1ms
+     × smoothly dims lower tiers during 3000 and restores them over the last .3 seconds 0ms
+     × smoothly dims lower tiers during 4000 and restores them over the last .3 seconds 0ms
+     × keeps the final background budget through termination even after the final cue is pruned 0ms
+     × dims actual ambient alpha while preserving cosmic backing, dedicated arrival alpha and geometry 11ms
+     × keeps the hundredth spark at its real position with nonzero lower-tier alpha while final geometry stays at full strength 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-render.test.ts > shared presentation priority budget > smoothly dims lower tiers during 1000 and restores them over the last .3 seconds
+ FAIL  tests/unit/rally-render.test.ts > shared presentation priority budget > smoothly dims lower tiers during 2000 and restores them over the last .3 seconds
+ FAIL  tests/unit/rally-render.test.ts > shared presentation priority budget > smoothly dims lower tiers during 3000 and restores them over the last .3 seconds
+ FAIL  tests/unit/rally-render.test.ts > shared presentation priority budget > smoothly dims lower tiers during 4000 and restores them over the last .3 seconds
+TypeError: presentationPriority is not a function
+ ❯ tests/unit/rally-render.test.ts:28:12
+     26|     const config=RALLY_EFFECTS.find(c=>c.threshold===threshold)!,durat…
+     27|     const state=effectState(threshold,{arrivals:[{id:`major-${threshol…
+     28|     expect(presentationPriority(snapshot(threshold,19.99),state)).toBe…
+       |            ^
+     29|     expect(presentationPriority(snapshot(threshold,20),state)).toBe(1);
+     30|     expect(presentationPriority(snapshot(threshold,20.1),state)).toBeC…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > shared presentation priority budget > keeps the final background budget through termination even after the final cue is pruned
+TypeError: presentationPriority is not a function
+ ❯ tests/unit/rally-render.test.ts:42:12
+     40|     const final:RallyCue={id:'final',kind:'loss-final',value:100,at:20…
+     41|     const state=effectState(4000,{lostBallCount:100,cues:[final]});
+     42|     expect(presentationPriority(snapshot(4000,20),state)).toBe(1);
+       |            ^
+     43|     expect(presentationPriority(snapshot(4000,20.2),state)).toBeCloseT…
+     44|     expect(presentationPriority(snapshot(4000,23),state)).toBeCloseTo(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > shared presentation priority budget > dims actual ambient alpha while preserving cosmic backing, dedicated arrival alpha and geometry
+AssertionError: expected 0.550000011920929 to be close to 0.24750000536441805, received difference is 0.3025000065565109, but expected 5e-7
+ ❯ tests/unit/rally-render.test.ts:55:58
+     53|     const major=effectState(4000,{arrivals:[{id:'major',threshold:4000…
+     54|     view.update(s,major);
+     55|     expect(world.geometry.getAttribute('color').getW(0)).toBeCloseTo(a…
+       |                                                          ^
+     56|     expect(backdrop.geometry.getAttribute('color').getW(0)).toBe(dark);
+     57|     expect(world.geometry.getAttribute('color').getW(base)).toBeCloseT…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > shared presentation priority budget > keeps the hundredth spark at its real position with nonzero lower-tier alpha while final geometry stays at full strength
+AssertionError: expected 0.33000001311302185 to be close to 0.14850000590085985, received difference is 0.181500007212162, but expected 5e-7
+ ❯ tests/unit/rally-render.test.ts:71:70
+     69|     const state=effectState(0,{lostBallCount:100,losses:[loss],cues:[{…
+     70|     view.update({...s,phase:'gameover'},state);const colors=world.geom…
+     71|     expect(colors.getW(0)).toBeGreaterThan(0);expect(colors.getW(0)).t…
+       |                                                                      ^
+     72|     expect(Array.from(world.geometry.getAttribute('position').array.sl…
+     73|     expect(colors.getW(12*6)).toBeCloseTo(.45,6);expect(state.losses).…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  7 failed | 86 passed (93)
+   Start at  21:24:35
+   Duration  1.28s (tests 86%, transform 9%, import 5%)
+
