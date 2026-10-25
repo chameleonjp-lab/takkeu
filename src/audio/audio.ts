@@ -3,7 +3,8 @@ import type { Quality } from '../storage/preferences';
 import { playMilestoneFanfare, playOpponentHit, playPlayerHit, playSmashSuccess, playSmashWarning, prepareTones } from './tones';
 import type { Voice } from './tones';
 type VoicePriority = 'hit' | 'warning' | 'fanfare';
-export interface GameAudio { unlock(): Promise<boolean>; prepare?(): Promise<boolean>; consume(events: readonly GameEvent[]): void; setVolume(value: number): void; setMuted(value: boolean): void; setQuality?(value: Quality): void; suspend(): void; reset(runId: string): void; dispose(): Promise<void> }
+export type AudioAchievement = { kind: 'best-record' | 'loss-impact'; id: string; runId: string; time: number };
+export interface GameAudio { unlock(): Promise<boolean>; prepare?(): Promise<boolean>; consume(events: readonly GameEvent[]): void; consumeAchievement?(cue: AudioAchievement): void; setVolume(value: number): void; setMuted(value: boolean): void; setQuality?(value: Quality): void; suspend(): void; reset(runId: string): void; dispose(): Promise<void> }
 export function createAudio(config: GameConfig, contextFactory: () => AudioContext = () => new AudioContext(), onInterruption: () => void = () => {}, onUnavailable: () => void = () => {}): GameAudio {
   let context: AudioContext | null = null, output: GainNode | null = null, bus: AudioNode | null = null;
   const graph = new Set<AudioNode>();

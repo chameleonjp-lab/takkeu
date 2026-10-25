@@ -1,0 +1,45 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-through-play.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-through-play.test.ts (1 test | 1 failed) 4086ms
+   × plays from zero through4001 with real physics and identical RNG with/without presentation 4084ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-through-play.test.ts > plays from zero through4001 with real physics and identical RNG with/without presentation
+AssertionError: expected [ Array(7) ] to deeply equal [ Array(8) ]
+
+- Expected
++ Received
+
+  [
+    100,
+    200,
+    300,
+    800,
+-   1000,
+    2000,
+    3000,
+    4000,
+  ]
+
+ ❯ tests/unit/rally-through-play.test.ts:89:58
+     87|     expect(lossEvents).toBe(snapshot.lostBallCount);
+     88|     expect([...thresholdCounts.values()]).toEqual(RALLY_EFFECTS.map(()…
+     89|     expect([...arrivalCounts.keys()].sort((a,b) => a-b)).toEqual([100,…
+       |                                                          ^
+     90|     expect([...arrivalCounts.values()].every(count => count === 1)).to…
+     91|     for (const config of RALLY_EFFECTS.filter(config => config.kind ==…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  20:20:19
+   Duration  4.58s (tests 96%, transform 4%, import 1%)
+

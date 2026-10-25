@@ -1,0 +1,24 @@
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+tests/unit/rally-audio.test.ts(42,25): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(43,11): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(45,11): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(48,11): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(48,67): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(49,11): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(50,33): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(55,60): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(56,11): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(60,11): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(61,11): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(62,11): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(64,11): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(94,60): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(95,31): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(95,91): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(97,48): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(97,108): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-audio.test.ts(99,31): error TS2339: Property 'consumeAchievement' does not exist on type 'GameAudio'.
+tests/unit/rally-render.test.ts(59,122): error TS2322: Type 'string' is not assignable to type 'RallyEffectKind'.

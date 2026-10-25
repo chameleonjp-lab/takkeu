@@ -1,0 +1,122 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-effects.test.ts tests/unit/loss-position.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-effects.test.ts (51 tests | 1 failed) 78ms
+   × ignores replayed score/loss facts completely, including their attempted time advance 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-effects.test.ts > ignores replayed score/loss facts completely, including their attempted time advance
+AssertionError: expected { runId: 'rally-test', …(9) } to deeply equal { runId: 'rally-test', …(9) }
+
+- Expected
++ Received
+
+  {
+-   "arrivals": [
+-     {
+-       "at": 1,
+-       "config": {
+-         "color": "green",
+-         "duration": 1.2,
+-         "effect": "perimeter",
+-         "kind": "B",
+-         "priority": 10,
+-         "replaces": [],
+-         "threshold": 100,
+-       },
+-       "id": "rally-test:h100",
+-       "position": {
+-         "x": 0.25,
+-         "y": 0.4,
+-         "z": 1.95,
+-       },
+-       "threshold": 100,
+-     },
+-   ],
++   "arrivals": [],
+    "best": null,
+    "bestAtStart": 0,
+-   "cues": [
+-     {
+-       "at": 1,
+-       "duration": 1.8,
+-       "id": "rally-test:h100:notice",
+-       "kind": "notice",
+-       "position": {
+-         "x": 0.25,
+-         "y": 0.4,
+-         "z": 1.95,
+-       },
+-       "priority": 10,
+-       "value": 100,
+-     },
+-     {
+-       "at": 1.1,
+-       "duration": 0.5,
+-       "id": "rally-test:l1:loss-spark",
+-       "kind": "loss-spark",
+-       "position": {
+-         "x": 0.01,
+-         "y": 0.3,
+-         "z": 2.2,
+-       },
+-       "priority": 10,
+-       "value": 1,
+-     },
+-   ],
+-   "hits": [
+-     {
+-       "at": 1,
+-       "id": "rally-test:h100",
+-       "position": {
+-         "x": 0.25,
+-         "y": 0.4,
+-         "z": 1.95,
+-       },
+-       "score": 100,
+-       "smashReturn": false,
+-     },
+-   ],
+-   "losses": [
+-     {
+-       "at": 1.1,
+-       "count": 1,
+-       "id": "rally-test:l1",
+-       "position": {
+-         "x": 0.01,
+-         "y": 0.3,
+-         "z": 2.2,
+-       },
+-       "rollingCount": 1,
+-     },
+-   ],
++   "cues": [],
++   "hits": [],
++   "losses": [],
+    "lostBallCount": 1,
+    "runId": "rally-test",
+    "score": 100,
+    "stage": [],
+  }
+
+ ❯ tests/unit/rally-effects.test.ts:157:27
+    155|   const before = effects.state();
+    156|   effects.consume([hit(100,999,{id:'replayed-score'}),loss(1,999,{id:'…
+    157|   expect(effects.state()).toEqual(before);
+       |                           ^
+    158| });
+    159|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 52 passed (53)
+   Start at  20:16:41
+   Duration  273ms (transform 46%, tests 35%, import 15%, worker 3%)
+

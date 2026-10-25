@@ -10,16 +10,18 @@ import { computeDrawingSize } from './quality';
 import type { Quality } from '../storage/preferences';
 import { createFireworks, PARTICLE_LIMIT } from './particles';
 import { createCelebrationView } from './celebrations';
+import { createRallyEffectView } from './rallyEffects';
+import type { RallyEffectsState } from '../game/rallyEffects';
 import { prepareScene } from './prepare';
 import { MAX_BALLS } from '../game/milestones';
 
 export interface GameView {
   prepare?(progress:(completed:number,total:number)=>void):Promise<void>;
-  render(snapshot: GameSnapshot, events: readonly GameEvent[]): void;
+  render(snapshot: GameSnapshot, events: readonly GameEvent[], effects?: RallyEffectsState): void;
   resize(width: number, height: number): void;
   inputMapping(): InputMapping;
   setQuality(quality: Quality): void;
-  resources(): { geometries: number; textures: number; programs: number; drawCalls: number; particles:number;particleCapacity:number };
+  resources(): { geometries: number; textures: number; programs: number; drawCalls: number; particles:number;particleCapacity:number; rallyEffects?: ReturnType<ReturnType<typeof createRallyEffectView>['stats']> };
   dispose(): void;
 }
 
@@ -38,6 +40,8 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
   scene.add(objects.root);
   const fireworks=createFireworks();scene.add(fireworks.root);
   const celebrations=createCelebrationView(config,objects.tableRig);scene.add(celebrations.worldRoot);
+  const rallyEffects=createRallyEffectView(config,objects.tableRig);scene.add(rallyEffects.worldRoot);
+  const motionQuery=typeof window.matchMedia==='function'?window.matchMedia('(prefers-reduced-motion: reduce)'):null;
   let flashUntil = 0;
   let previousRunId = '';
   let quality: Quality = 'standard';
@@ -50,18 +54,20 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
         objects.syncBalls(ids,true,0);
         for(const visual of objects.balls.values()){visual.root.visible=true;visual.glow.visible=true;visual.shadow.visible=true;}
         objects.commitBalls();
+        rallyEffects.prepare();
         try{await prepareScene(renderer,scene,camera,Object.values(objects.parts),fraction=>progress(fraction,1),()=>disposed);}
-        finally{if(!disposed){objects.syncBalls([],false,0);objects.commitBalls();}}
+        finally{if(!disposed){objects.syncBalls([],false,0);objects.commitBalls();rallyEffects.clear();}}
       })();
       return preparation;
     },
-    render(snapshot, events) {
+    render(snapshot, events, effects) {
       if (snapshot.runId !== previousRunId) { flashUntil = 0; renderer.renderLists.dispose(); previousRunId = snapshot.runId; }
       for (const event of events) if (event.kind === 'player-hit') flashUntil = event.time + 0.12;
       applyPresentation(objects, snapshot);
       updateOpponentView(objects, snapshot, events);
       fireworks.update(snapshot,events,quality);
       celebrations.update(snapshot);
+      rallyEffects.update(snapshot,effects,quality,motionQuery?.matches??false);
       if (!snapshot.progression.appliedMilestones.includes(100)) objects.rimMaterial.emissiveIntensity = snapshot.simTime < flashUntil ? 0.8 : 0.15;
       renderer.render(scene, camera);
     },
@@ -75,7 +81,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
     },
     inputMapping() { return createInputMapping(camera, () => canvas.getBoundingClientRect(), config); },
     setQuality(value) { quality = value; },
-    resources() { return { geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures, programs: renderer.info.programs?.length ?? 0, drawCalls: renderer.info.render.calls,particles:fireworks.active(),particleCapacity:PARTICLE_LIMIT }; },
-    dispose() { if(disposed)return;disposed=true;celebrations.dispose(); fireworks.dispose(); objects.dispose(); renderer.dispose(); },
+    resources() { return { geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures, programs: renderer.info.programs?.length ?? 0, drawCalls: renderer.info.render.calls,particles:fireworks.active()+rallyEffects.stats().particleCount,particleCapacity:PARTICLE_LIMIT+rallyEffects.stats().capacity,rallyEffects:rallyEffects.stats() }; },
+    dispose() { if(disposed)return;disposed=true;rallyEffects.dispose();celebrations.dispose(); fireworks.dispose(); objects.dispose(); renderer.dispose(); },
   };
 }

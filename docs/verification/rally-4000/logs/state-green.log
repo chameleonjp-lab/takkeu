@@ -1,0 +1,16 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-effects.test.ts tests/unit/loss-position.test.ts tests/unit/session.test.ts tests/unit/loss-limit.test.ts tests/unit/celebrations.test.ts tests/unit/replay.test.ts tests/unit/simulation-isolation.test.ts tests/unit/thirty-ball-returns.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+
+ Test Files  8 passed (8)
+      Tests  82 passed (82)
+   Start at  20:16:55
+   Duration  1.28s (tests 55%, transform 23%, import 18%, worker 4%)
+
+    Isolate  8 workers spawned · ~197ms startup each (spawn + environment, per file)
+             at least ~329ms faster with isolate: false — reuses workers across files instead of one per file
+

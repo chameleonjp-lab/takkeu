@@ -25,3 +25,13 @@ it('既存の5秒演出の残りだけを表示し、通常終了も電撃を見
   expect(finish.frame(empty,4000).finishing).toBe(true);
   expect(finish.frame(empty,4901).finishing).toBe(false);
 });
+// Additional presentation lifetimes must not delay score finality or move balls.
+it('new effects use the existing bounded finish drawing clock without changing final facts',()=>{
+  const finish=createFinishPresentation(),base=scenario(4000,20).snapshot();
+  const end={...base,phase:'gameover' as const,celebrations:createCelebrations()};
+  const first=finish.frame(end,1000,40);
+  expect(first.finishing).toBe(true);expect(first.snapshot.balls).toBe(end.balls);
+  expect(finish.frame(end,5999,40).finishing).toBe(true);
+  expect(finish.frame(end,6000,40)).toMatchObject({finishing:false,snapshot:{simTime:25,score:4000}});
+  expect(end.simTime).toBe(20);
+});

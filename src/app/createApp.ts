@@ -1,6 +1,8 @@
 import { createAudio } from '../audio/audio';
 import { DEFAULT_CONFIG, INITIAL_PADDLE } from '../game/config';
 import { createSession } from '../game/session';
+import { createRallyEffects } from '../game/rallyEffects';
+import { createRallyNotice } from '../ui/rallyNotice';
 import type { PauseReason } from '../game/types';
 import { createInputTimeline } from '../input/timeline';
 import { createView } from '../render/createView';
@@ -42,6 +44,8 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   let contextAvailable = true;
   let observedPhase = session.snapshot().phase;
   const finishPresentation = createFinishPresentation();
+  let effects = createRallyEffects(session.snapshot().runId, preferences.bestScore);
+  let effectState = effects.state();
   let wasFinishing = false;
   let unlockAttempt = 0;
   let activePlay: Play | null = null;
@@ -61,6 +65,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     refreshRanking() { void refreshLeaderboard(); void resultPosition.retry(); },
     retryPosition() { void ranking.retry().then(() => { if (!disposed && resultPosition.state().status === 'error') void resultPosition.retry(); }); },
   });
+  const rallyNotice = createRallyNotice(root);
   const loadingScreen=createLoadingScreen(root,{cancel:home,retry:start});
   const rankingApi = services.rankingApi ?? createRankingClient();
   const ranking = createRankingController(storage, rankingApi, state => {
@@ -92,7 +97,23 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     const score = session.snapshot().score;
     if (score > preferences.bestScore) { preferences = { ...preferences, bestScore: score }; screens.setPreferences(preferences); }
   }
-  const loop = createLoop({ session, timeline, config, onEvents: events => audio.consume(events), onPause: pause });
+  const loop = createLoop({ session, timeline, config, onEvents: events => {
+    if (effectState.runId !== session.snapshot().runId) {
+      effects = createRallyEffects(session.snapshot().runId, preferences.bestScore);
+    }
+    effects.consume(events); effectState = effects.state();
+    // Deliver before game-over retires ordinary voices. Audio owns cue deduplication.
+    for (const cue of effectState.cues) if (cue.kind === 'best-record' || cue.kind === 'loss-impact') {
+      audio.consumeAchievement?.({kind:cue.kind,id:cue.id,runId:effectState.runId,time:cue.at});
+    }
+    audio.consume(events);
+  }, onPause: pause });
+  function updateRallyNotice(snapshot: ReturnType<typeof session.snapshot>, finishing=false): void {
+    const active = effectState.cues.filter(cue => (cue.kind === 'major' || cue.kind === 'notice') && snapshot.simTime >= cue.at && snapshot.simTime < cue.at + cue.duration);
+    const cue = active.sort((a,b)=>b.priority-a.priority || b.at-a.at)[0];
+    const gold = effectState.arrivals.find(arrival=>arrival.threshold===300);
+    rallyNotice.update(snapshot,{notice:cue?{score:cue.value,at:cue.at,major:cue.kind==='major'}:null,bestAt:effectState.best?.at??null,goldAt:gold?.at??null},finishing);
+  }
   const swipe = createControls(screens.surface, {
     session, timeline, loop, config,
     mapping: { screen: { left: 0, top: 0, width: 0, height: 0 }, toWorld: () => null },
@@ -125,7 +146,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     inputMapping = view.inputMapping();
     swipe.updateMapping(inputMapping, session.snapshot().phase === 'running');
     fitted = key;
-    if(!starting&&!loadingError)view.render(finishPresentation.frame(session.snapshot(), performance.now()).snapshot, []);
+    if(!starting&&!loadingError)view.render(finishPresentation.frame(session.snapshot(), performance.now(), effects.endTime()).snapshot, [], effectState);
   }
   function makeView(): GameView {
     fitted = '';inputMapping=null;viewPrepared=false;
@@ -223,6 +244,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     ranking.clearResult(); screens.setRankingParticipation(!!play);
     rememberBest(); persist();
     swipe.cancel(); session.reset(seed()); session.start();
+    effects = createRallyEffects(session.snapshot().runId, preferences.bestScore); effectState = effects.state();
     timeline.clear(INITIAL_PADDLE); audio.reset(session.snapshot().runId);
     fitted = ''; screens.setError(''); screens.render(session.snapshot()); resizeView();
     loop.resetClock(performance.now()); observedPhase = 'running';
@@ -240,7 +262,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     if (session.snapshot().phase !== 'paused') return;
     swipe.cancel(); timeline.clear(session.snapshot().paddle); silence(); rememberBest(); persist();
     loop.resetClock(performance.now()); screens.render(session.snapshot());
-    if (view && contextAvailable) view.render(session.snapshot(), []);
+    if (view && contextAvailable) view.render(session.snapshot(), [], effectState);
     observedPhase = 'paused';
   }
   function resume(): void {
@@ -254,9 +276,10 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     startEpoch++; leaderboardEpoch++; starting = false; screens.setStarting(false); screens.setContextAvailable(contextAvailable);
     ranking.finish(activePlay, session.snapshot().score, 'retire'); activePlay = null;
     rememberBest(); persist(); swipe.cancel(); silence(); session.reset(seed());
+    effects = createRallyEffects(session.snapshot().runId, preferences.bestScore); effectState = effects.state();
     timeline.clear(INITIAL_PADDLE); audio.reset(session.snapshot().runId);
     loop.resetClock(performance.now()); screens.render(session.snapshot());
-    if(view&&contextAvailable)view.render(session.snapshot(),[]);
+    if(view&&contextAvailable)view.render(session.snapshot(),[],effectState);
   }
   const unbindLifecycle = bindLifecycle({
     canvas: screens.canvas, pause, resize: resizeView,
@@ -291,7 +314,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     // resize event. Refresh its camera mapping before accepting the next frame.
     if (session.snapshot().phase === 'running') resizeView();
     const result = loop.frame(now); rememberBest();
-    const presentation = finishPresentation.frame(result.snapshot, now);
+    const presentation = finishPresentation.frame(result.snapshot, now, effects.endTime());
     if (result.snapshot.phase === 'gameover' && observedPhase !== 'gameover') {
       swipe.cancel(); timeline.clear(result.snapshot.paddle); persist();
       if (!presentation.finishing) silence();
@@ -303,9 +326,9 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     // Continue the last celebration without advancing gameplay. Once it ends,
     // frozen scenes only draw on explicit resize/restore or screen changes.
     const needsFrame = result.snapshot.phase === 'running' || result.snapshot.phase !== observedPhase || presentation.finishing || wasFinishing;
-    if (view && contextAvailable && !starting && !loadingError && result.snapshot.phase !== 'ready' && needsFrame) view.render(presentation.snapshot, result.events);
+    if (view && contextAvailable && !starting && !loadingError && result.snapshot.phase !== 'ready' && needsFrame) view.render(presentation.snapshot, result.events, effectState);
     if (wasFinishing && !presentation.finishing) silence();
-    screens.render(result.snapshot, presentation.finishing); observedPhase = result.snapshot.phase; wasFinishing = presentation.finishing;
+    screens.render(result.snapshot, presentation.finishing); updateRallyNotice(presentation.snapshot,presentation.finishing); observedPhase = result.snapshot.phase; wasFinishing = presentation.finishing;
     frameId = requestAnimationFrame(frame);
   };
   frameId = requestAnimationFrame(frame);
@@ -318,7 +341,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
       cancelAnimationFrame(frameId); swipe.dispose(); unbindLifecycle();
       for(const event of pointerEvents)root.ownerDocument.removeEventListener(event,refreshInputLayout,true);
       window.removeEventListener('online', retryOnline);
-      view?.dispose(); void audio.dispose(); screens.dispose();
+      rallyNotice.dispose(); view?.dispose(); void audio.dispose(); screens.dispose();
     },
   };
 }

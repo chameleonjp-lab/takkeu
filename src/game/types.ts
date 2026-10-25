@@ -13,6 +13,8 @@ export type GameEvent = Readonly<{
   /** Player contact facts, copied before replacing the incoming plan.
    * Legacy events without these fields use the normal, base-stage sound. */
   smashReturn?: boolean; rallyScore?: number;
+  /** Confirmed cumulative loss count; position is copied at the exact loss time. */
+  lossCount?: number;
   position?: Point3; effect?: 'racket-firework' | 'bounce-firework';
 }>;
 export type BallSnapshot = Readonly<{ id: number; phase: BallPhase; position: Point3; smash: boolean }>;

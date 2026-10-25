@@ -57,7 +57,7 @@ type Action = { kind: 'bounce' | 'hit' | 'lost' | 'ready' | 'warning' | 'depart'
 /** Advance an uncommitted part of a fixed tick, including zero-time input paths. */
 function advanceSegment(state: SimulationState, config: GameConfig, dt: number, target: PaddlePoint, deferEndContact = false): StepResult {
   const events: GameEvent[] = [];
-  const emit = (kind: GameEventKind, time: number, ballId?: number, milestone?: number, position?: Point3, effect?: GameEvent['effect'], contact?: Pick<GameEvent, 'smashReturn' | 'rallyScore'>): void => {
+  const emit = (kind: GameEventKind, time: number, ballId?: number, milestone?: number, position?: Point3, effect?: GameEvent['effect'], contact?: Pick<GameEvent, 'smashReturn' | 'rallyScore' | 'lossCount'>): void => {
     events.push({ id: `${state.runId}:${++state.eventNumber}`, runId: state.runId, kind, time,
       ...(ballId === undefined ? {} : { ballId }), ...(milestone === undefined ? {} : { milestone }),
       ...(position ? { position: { ...position } } : {}), ...(effect ? { effect } : {}), ...contact });
@@ -140,7 +140,8 @@ function advanceSegment(state: SimulationState, config: GameConfig, dt: number, 
         state.balls.push(extra); enqueueDeparture(extra);
       }
     } else if (kind === 'lost') {
-      ball.phase = 'lost'; emit('ball-lost', time, ball.id);
+      ball.phase = 'lost';
+      emit('ball-lost', time, ball.id, undefined, sampleReturn(ball.plan, ball.from, time), undefined, { lossCount: state.lostBallCount + 1 });
       state.lostBallCount++;
       state.celebrations = lossCelebration(state.celebrations, state.lostBallCount, time);
       if (state.lostBallCount >= MAX_LOST_BALLS) {
