@@ -1,0 +1,11 @@
+Error: /tmp/takkeu-main-performance/playwright.performance.config.ts does not exist
+    at resolveConfigFile2 (/workspace/takkeu/node_modules/playwright/lib/common/index.js:1498:11)
+    at resolveConfigLocation (/workspace/takkeu/node_modules/playwright/lib/common/index.js:1479:30)
+    at Object.loadConfigFromFile (/workspace/takkeu/node_modules/playwright/lib/common/index.js:1508:27)
+    at runTests (/workspace/takkeu/node_modules/playwright/lib/cli/testActions.js:44:51)
+    at _Command.<anonymous> (/workspace/takkeu/node_modules/playwright/lib/program.js:55:45)
+    at _Command.listener [as _actionHandler] (/workspace/takkeu/node_modules/playwright-core/lib/utilsBundle.js:54088:17)
+    at /workspace/takkeu/node_modules/playwright-core/lib/utilsBundle.js:54946:20
+    at _Command._chainOrCall (/workspace/takkeu/node_modules/playwright-core/lib/utilsBundle.js:54854:12)
+    at _Command._parseCommand (/workspace/takkeu/node_modules/playwright-core/lib/utilsBundle.js:54944:27)
+    at /workspace/takkeu/node_modules/playwright-core/lib/utilsBundle.js:54755:27

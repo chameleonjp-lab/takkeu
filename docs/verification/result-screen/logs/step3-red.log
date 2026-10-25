@@ -1,0 +1,43 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/result-position.test.ts tests/unit/ranking-position-sql.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/result-position.test.ts (0 test)
+ ❯ tests/unit/ranking-position-sql.test.ts (1 test | 1 failed) 970ms
+   × runs the migration in PostgreSQL: ties, all ranks, eligibility, totals, bests and public privileges 969ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/result-position.test.ts [ tests/unit/result-position.test.ts ]
+Error: Cannot find module '../../src/ranking/resultPosition' imported from /workspace/takkeu/tests/unit/result-position.test.ts
+ ❯ tests/unit/result-position.test.ts:2:1
+      1| import { expect, it, vi } from 'vitest';
+      2| import { createResultPosition } from '../../src/ranking/resultPosition…
+       | ^
+      3| import { createRankingClient } from '../../src/ranking/client';
+      4| import { createRankingController } from '../../src/ranking/controller';
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/ranking-position-sql.test.ts > runs the migration in PostgreSQL: ties, all ranks, eligibility, totals, bests and public privileges
+error: function public.get_takkeu_player_position_v1(unknown) does not exist
+ ❯ pe.Oe node_modules/@electric-sql/pg-protocol/src/parser.ts:442:11
+ ❯ pe.tt node_modules/@electric-sql/pg-protocol/src/parser.ts:220:16
+ ❯ pe.parse node_modules/@electric-sql/pg-protocol/src/parser.ts:104:21
+ ❯ D.Ne node_modules/@electric-sql/pglite/src/pglite.ts:763:26
+ ❯ node_modules/@electric-sql/pglite/src/pglite.ts:716:14
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  1 failed (1)
+   Start at  18:39:43
+   Duration  1.15s (tests 95%, transform 2%, import 2%)
+

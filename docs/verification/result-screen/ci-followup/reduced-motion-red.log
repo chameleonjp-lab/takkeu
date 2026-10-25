@@ -1,0 +1,37 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/result-effects.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/result-effects.test.ts (15 tests | 1 failed) 366ms
+   × clears existing bolts when a frame observes reduced motion before the change event 15ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/result-effects.test.ts > clears existing bolts when a frame observes reduced motion before the change event
+AssertionError: expected 3 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 3
+
+ ❯ tests/unit/result-effects.test.ts:77:55
+     75|   reduce(true, false); tick(40);
+     76|   expect(frames.size).toBe(0);
+     77|   expect(root.querySelectorAll('[data-bolt]').length).toBe(0);
+       |                                                       ^
+     78|   reduce(false); tick(100);
+     79|   expect(frames.size).toBe(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 14 passed (15)
+   Start at  19:45:50
+   Duration  806ms (tests 50%, environment 43%, transform 4%, import 2%)
+

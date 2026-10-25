@@ -1,0 +1,21 @@
+
+> takkeu@0.1.0 build:pages
+> npm run typecheck && vite build --base=/takkeu/
+
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 60 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/release.json                         0.08 kB │ gzip:   0.09 kB
+dist/ranking-manifest.json                1.68 kB │ gzip:   0.79 kB
+dist/index.html                           2.39 kB │ gzip:   0.74 kB
+dist/assets/court-preview-Bzxbrgc7.png   60.33 kB
+dist/assets/index-CtfG0IHZ.css           18.26 kB │ gzip:   5.04 kB
+dist/assets/index-CUWyADzs.js           646.94 kB │ gzip: 172.68 kB
+
+✓ built in 343ms

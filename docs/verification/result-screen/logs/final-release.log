@@ -1,0 +1,101 @@
+
+> takkeu@0.1.0 verify:release
+> node scripts/verify-release.mjs
+
+
+> takkeu@0.1.0 build
+> npm run typecheck && vite build
+
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 60 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/release.json                         0.07 kB │ gzip:   0.09 kB
+dist/ranking-manifest.json                1.68 kB │ gzip:   0.79 kB
+dist/index.html                           2.38 kB │ gzip:   0.74 kB
+dist/assets/court-preview-Bzxbrgc7.png   60.33 kB
+dist/assets/index-CtfG0IHZ.css           18.26 kB │ gzip:   5.04 kB
+dist/assets/index-DoQPSqAq.js           646.93 kB │ gzip: 172.68 kB
+
+✓ built in 157ms
+{
+  "status": "passed",
+  "commit": "c143af80d2096f064f7c445449fcf82768278c72",
+  "base": "/",
+  "files": [
+    "assets/court-preview-Bzxbrgc7.png",
+    "assets/index-CtfG0IHZ.css",
+    "assets/index-DoQPSqAq.js",
+    "index.html",
+    "og-takkeu-v1.png",
+    "ranking-manifest.json",
+    "release.json"
+  ]
+}
+
+> takkeu@0.1.0 build:pages
+> npm run typecheck && vite build --base=/takkeu/
+
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 60 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/release.json                         0.08 kB │ gzip:   0.09 kB
+dist/ranking-manifest.json                1.68 kB │ gzip:   0.79 kB
+dist/index.html                           2.39 kB │ gzip:   0.74 kB
+dist/assets/court-preview-Bzxbrgc7.png   60.33 kB
+dist/assets/index-CtfG0IHZ.css           18.26 kB │ gzip:   5.04 kB
+dist/assets/index-CUWyADzs.js           646.94 kB │ gzip: 172.68 kB
+
+✓ built in 158ms
+{
+  "status": "passed",
+  "commit": "c143af80d2096f064f7c445449fcf82768278c72",
+  "base": "/takkeu/",
+  "files": [
+    "assets/court-preview-Bzxbrgc7.png",
+    "assets/index-CUWyADzs.js",
+    "assets/index-CtfG0IHZ.css",
+    "index.html",
+    "og-takkeu-v1.png",
+    "ranking-manifest.json",
+    "release.json"
+  ]
+}
+
+> takkeu@0.1.0 test:release
+> playwright test --config=playwright.release.config.ts
+
+[WebServer] (node:29188) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29197) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:29205) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  1 [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の初期HTMLに静的なOG・XカードがありPNGを配信する (110ms)
+  ✓  2 [chromium] › tests/release/distribution.spec.ts:37:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 (1.3s)
+  ✓  3 [chromium] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の初期HTMLに静的なOG・XカードがありPNGを配信する (93ms)
+  ✓  4 [chromium] › tests/release/distribution.spec.ts:37:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 (1.1s)
+(node:29337) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  5 [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 / の初期HTMLに静的なOG・XカードがありPNGを配信する (212ms)
+  ✓  6 [webkit] › tests/release/distribution.spec.ts:37:3 › 実配布物 / の参照・開始・保存と開発機能の非混入 (1.6s)
+  ✓  7 [webkit] › tests/release/distribution.spec.ts:4:3 › 実配布物 /takkeu/ の初期HTMLに静的なOG・XカードがありPNGを配信する (178ms)
+  ✓  8 [webkit] › tests/release/distribution.spec.ts:37:3 › 実配布物 /takkeu/ の参照・開始・保存と開発機能の非混入 (1.5s)
+
+  8 passed (7.1s)

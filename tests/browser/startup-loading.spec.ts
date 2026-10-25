@@ -9,7 +9,7 @@ for(const from of ['pause','result','home'] as const){
     const previous=await page.evaluate(()=>window.stage3.snapshot());
     if(from==='result'){
       await page.evaluate(()=>window.stage3.finish());await page.clock.runFor(16);
-      await expect(page.getByRole('heading',{name:'ナイスラリー！'})).toBeVisible();
+      await expect(page.locator('[data-result] h2')).toBeVisible();
     }else{
       await page.keyboard.press('Escape');
       if(from==='home')await page.getByRole('button',{name:'ホームへ',exact:true}).click();

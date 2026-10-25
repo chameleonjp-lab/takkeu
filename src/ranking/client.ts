@@ -3,6 +3,7 @@ import { RANKING_CONFIG as config } from './config';
 export type Play = Readonly<{ startId: string; playId: string; displayName: string; normalizedName: string }>;
 export type PendingResult = Readonly<{ play: Play; submissionId: string; score: number; resultType: 'game_over' | 'retire'; clientVersion: string; permanentFailure?: boolean }>;
 export type RankingEntry = Readonly<{ rank: number; displayName: string; score: number; playCount: number }>;
+export type PlayerPosition = Readonly<{ rank: number; total: number; bestScore: number }>;
 export type RankingApi = ReturnType<typeof createRankingClient>;
 export class RankingError extends Error {
   constructor(readonly retryable: boolean, message: string) { super(message); }
@@ -65,6 +66,16 @@ export function createRankingClient(fetchImpl: typeof fetch = (...args) => globa
       // Another play can change its spelling; the normalized identity stays fixed.
       const nameMatches = data.result_display_name === pending.play.displayName || (data.was_duplicate === true && validName(data.result_display_name));
       requireResponse(data.accepted === true && data.result_submission_id === pending.submissionId && data.result_play_id === pending.play.playId && nameMatches && data.result_normalized_name === pending.play.normalizedName && validScore(data.result_first_score) && validScore(data.result_best_score) && data.result_best_score >= pending.score && Number.isSafeInteger(data.result_play_count) && Number(data.result_play_count) >= 1);
+    },
+    async position(normalizedName: string): Promise<PlayerPosition | null> {
+      requireResponse(validName(normalizedName));
+      const rows = await rpc(config.positionRpc, { p_normalized_name: normalizedName });
+      requireResponse(Array.isArray(rows) && rows.length <= 1);
+      if (!rows.length) return null;
+      const row = record(rows[0]);
+      requireResponse(Number.isSafeInteger(row.rank_no) && Number(row.rank_no) >= 1
+        && Number.isSafeInteger(row.total_entries) && Number(row.total_entries) >= Number(row.rank_no) && validScore(row.best_score));
+      return { rank: Number(row.rank_no), total: Number(row.total_entries), bestScore: row.best_score };
     },
     async top(): Promise<RankingEntry[]> {
       const rows = await rpc(config.topRpc, { p_game_slug: config.gameSlug, p_limit: 30 });

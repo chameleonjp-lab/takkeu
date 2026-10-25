@@ -37,7 +37,7 @@ test('開始→直接配置・ドラッグ→返球→失球→結果→再挑�
   await page.clock.runFor(300);
   await page.mouse.up();
   await page.clock.runFor(5000);
-  await expect(page.getByRole('heading', { name: 'ナイスラリー！' })).toBeVisible();
+  await expect(page.locator('[data-result] h2')).toBeVisible();
   await expect(page.getByLabel('今回のラリー数')).toHaveText('1');
   await page.getByRole('button', { name: 'もう一度', exact: true }).click();
   await waitForStart(page);
@@ -79,6 +79,6 @@ test('タッチの絶対位置ドラッグでラケットを動かせる', async
   await expect(page.getByLabel('残球数', { exact: true })).toHaveText('0');
   // Gameplay has stopped; advance the drawing clock through the .9s net burst.
   await page.clock.runFor(1000);
-  await expect(page.getByRole('heading', { name: 'ナイスラリー！' })).toBeVisible();
+  await expect(page.locator('[data-result] h2')).toBeVisible();
   await expect(page.getByLabel('今回のラリー数')).toHaveText('0');
 });

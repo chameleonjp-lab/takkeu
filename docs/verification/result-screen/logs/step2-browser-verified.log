@@ -1,0 +1,50 @@
+[WebServer] (node:6010) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:6034) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  1 [chromium] › tests/browser/result-presentation.spec.ts:5:1 › 数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する (3.4s)
+(node:6471) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  2 [webkit] › tests/browser/result-presentation.spec.ts:5:1 › 数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する (1ms)
+
+
+  1) [webkit] › tests/browser/result-presentation.spec.ts:5:1 › 数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する 
+
+    Error: browserType.launch: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /home/agent/.cache/ms-playwright/webkit-2370/pw_run.sh --inspector-pipe --headless --no-startup-window
+    <launched> pid=6483
+    [pid=6483][err] /home/agent/.cache/ms-playwright/webkit-2370/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libharfbuzz-icu.so.0: cannot open shared object file: No such file or directory
+    Call log:
+      - <launching> /home/agent/.cache/ms-playwright/webkit-2370/pw_run.sh --inspector-pipe --headless --no-startup-window
+      - <launched> pid=6483
+      - [pid=6483][err] /home/agent/.cache/ms-playwright/webkit-2370/minibrowser-wpe/bin/MiniBrowser: error while loading shared libraries: libharfbuzz-icu.so.0: cannot open shared object file: No such file or directory
+      - [pid=6483] <gracefully close start>
+      - [pid=6483] <kill>
+      - [pid=6483] <will force kill>
+      - [pid=6483] exception while trying to kill process: Error: kill ESRCH
+      - [pid=6483] <process did exit: exitCode=127, signal=null>
+      - [pid=6483] starting temporary directories cleanup
+      - [pid=6483] finished temporary directories cleanup
+      - [pid=6483] <gracefully close end>
+
+
+    Error Context: test-results/result-presentation-数字の全段階と継続する電撃をiPhone-17-Pro相当の画面で検証する-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/result-presentation-数字の全段階と継続する電撃をiPhone-17-Pro相当の画面で検証する-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/result-presentation-数字の全段階と継続する電撃をiPhone-17-Pro相当の画面で検証する-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit] › tests/browser/result-presentation.spec.ts:5:1 › 数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する 
+  1 passed (4.4s)

@@ -24,10 +24,10 @@ it('makes the optional public name clear and permits an empty-name start', () =>
   get('[data-action="start"]').click(); expect(actions.start).toHaveBeenCalledTimes(1);
 });
 
-it('places replay immediately under the score and shares the actual score and canonical URL', () => {
+it('keeps replay after the result information and shares the actual score and canonical URL', () => {
   const { screens, get } = setup();
   screens.render({ ...scenario(42).snapshot(), phase: 'gameover' });
-  expect(get('[data-result-score]').nextElementSibling).toBe(get('[data-result] [data-action="retry"]'));
+  expect(get('[data-result-position]').compareDocumentPosition(get('[data-result] [data-action="retry"]'))).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
   const url = new URL(get<HTMLAnchorElement>('[data-share-x]').href);
   expect(url.hostname).toBe('twitter.com');
   expect(url.searchParams.get('text')).toBe('タッケウで42ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');

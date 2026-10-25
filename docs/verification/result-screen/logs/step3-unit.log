@@ -1,0 +1,61 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit
+
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/screens-direct.test.ts (10 tests | 1 failed) 246ms
+   × 最後の演出中は入力を無効にし、結果へ移ってから再挑戦にフォーカスする 27ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/screens-direct.test.ts > 最後の演出中は入力を無効にし、結果へ移ってから再挑戦にフォーカスする
+AssertionError: expected <p class="finish-label" …(3)></p> to be <button type="button" …(2)>…(1)</button> // Object.is equality
+
+- Expected
++ Received
+
+- <button
+-   class="button primary"
+-   data-action="retry"
+-   type="button"
+- >
+-   もう一度 
+-   <span
+-     aria-hidden="true"
++ <p
++   class="finish-label"
++   data-finishing=""
++   hidden=""
++   tabindex="-1"
+  >
+-     ↗
+-   </span>
+- </button>
++   ゲーム終了
++ </p>
+
+ ❯ tests/unit/screens-direct.test.ts:49:34
+     47|   screens.render(end,false);
+     48|   expect(get('[data-game]').hidden).toBe(true);expect(get('[data-resul…
+     49|   expect(document.activeElement).toBe(get('[data-result] [data-action=…
+       |                                  ^
+     50| });
+     51|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 60 passed (61)
+      Tests  1 failed | 772 passed (773)
+   Start at  18:41:57
+   Duration  7.42s (tests 60%, environment 24%, transform 9%, import 6%, worker 1%)
+
+    Isolate  61 workers spawned · ~137ms startup each (spawn + environment, per file)
+             at least ~2.65s faster with isolate: false — reuses workers across files instead of one per file
+

@@ -1,0 +1,40 @@
+[WebServer] (node:3236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:3263) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/result-presentation.spec.ts:5:1 › 数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する (3.4s)
+(node:3747) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [webkit] › tests/browser/result-presentation.spec.ts:5:1 › 数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する (1ms)
+
+
+  1) [webkit] › tests/browser/result-presentation.spec.ts:5:1 › 数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する 
+
+    Error: browserType.launch: 
+    ╔══════════════════════════════════════════════════════╗
+    ║ Host system is missing dependencies to run browsers. ║
+    ║ Missing libraries:                                   ║
+    ║     libgtk-4.so.1                                    ║
+    ║     libgraphene-1.0.so.0                             ║
+    ║     libharfbuzz-icu.so.0                             ║
+    ║     libmanette-0.2.so.0                              ║
+    ║     libhyphen.so.0                                   ║
+    ║     libGLESv2.so.2                                   ║
+    ╚══════════════════════════════════════════════════════╝
+
+    Error Context: test-results/result-presentation-数字の全段階と継続する電撃をiPhone-17-Pro相当の画面で検証する-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/result-presentation-数字の全段階と継続する電撃をiPhone-17-Pro相当の画面で検証する-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/result-presentation-数字の全段階と継続する電撃をiPhone-17-Pro相当の画面で検証する-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit] › tests/browser/result-presentation.spec.ts:5:1 › 数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する 
+  1 passed (5.0s)

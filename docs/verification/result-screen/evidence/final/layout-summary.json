@@ -1,0 +1,60 @@
+[
+  {
+    "browser": "chromium",
+    "normalCases": 88,
+    "viewportWidths": [
+      320,
+      402
+    ],
+    "maxCommentLines": 1.9992236024844718,
+    "allRanksInitiallyVisible": true,
+    "allWithinViewportWidth": true,
+    "expandedCases": [
+      {
+        "requestedWidth": 320,
+        "textEnlargement": "root font 200% + longest heading computed size x2; not hardware/browser zoom",
+        "viewport": 320,
+        "documentWidth": 320,
+        "titleBottom": 465.75,
+        "rankTop": 485.75
+      },
+      {
+        "requestedWidth": 402,
+        "textEnlargement": "root font 200% + longest heading computed size x2; not hardware/browser zoom",
+        "viewport": 402,
+        "documentWidth": 402,
+        "titleBottom": 431.4375,
+        "rankTop": 451.4375
+      }
+    ]
+  },
+  {
+    "browser": "webkit",
+    "normalCases": 88,
+    "viewportWidths": [
+      320,
+      402
+    ],
+    "maxCommentLines": 0.9996117701983922,
+    "allRanksInitiallyVisible": true,
+    "allWithinViewportWidth": true,
+    "expandedCases": [
+      {
+        "requestedWidth": 320,
+        "textEnlargement": "root font 200% + longest heading computed size x2; not hardware/browser zoom",
+        "viewport": 320,
+        "documentWidth": 320,
+        "titleBottom": 465.75,
+        "rankTop": 485.75
+      },
+      {
+        "requestedWidth": 402,
+        "textEnlargement": "root font 200% + longest heading computed size x2; not hardware/browser zoom",
+        "viewport": 402,
+        "documentWidth": 402,
+        "titleBottom": 431.390625,
+        "rankTop": 451.390625
+      }
+    ]
+  }
+]

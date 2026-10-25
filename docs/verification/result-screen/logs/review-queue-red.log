@@ -1,0 +1,39 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/result-position.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/result-position.test.ts (13 tests | 1 failed) 65ms
+   × reports a blocked current submission when an older queued request fails, without accepting its success 12ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/result-position.test.ts > reports a blocked current submission when an older queued request fails, without accepting its success
+AssertionError: expected { status: 'loading' } to deeply equal { status: 'error' }
+
+- Expected
++ Received
+
+  {
+-   "status": "error",
++   "status": "loading",
+  }
+
+ ❯ tests/unit/result-position.test.ts:83:26
+     81|   result.show(play); ranking.finish(play, 12, 'game_over');
+     82|   const sending = ranking.retry(); rejectOld(Error('offline')); await …
+     83|   expect(result.state()).toEqual({ status: 'error' }); expect(remote.p…
+       |                          ^
+     84|   await ranking.retry(); await vi.waitFor(() => expect(result.state())…
+     85|   expect(remote.position).toHaveBeenCalledTimes(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 passed (13)
+   Start at  18:50:26
+   Duration  290ms (tests 45%, transform 40%, import 12%, worker 3%)
+

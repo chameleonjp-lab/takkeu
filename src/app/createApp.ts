@@ -14,6 +14,7 @@ import { bindLifecycle } from './lifecycle';
 import { createRankingClient } from '../ranking/client';
 import type { Play, RankingApi } from '../ranking/client';
 import { createRankingController, validateName } from '../ranking/controller';
+import { createResultPosition } from '../ranking/resultPosition';
 import { createFinishPresentation } from './finishPresentation';
 import type { InputMapping } from '../input/mapping';
 import { createLoadingScreen } from '../ui/loading';
@@ -57,7 +58,8 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     retryAudio() { void unlockAudio(); },
     quality(value) { updatePreferences({ quality: value }); resizeView(); },
     retryRanking() { void ranking.retry(); },
-    refreshRanking() { void refreshLeaderboard(); },
+    refreshRanking() { void refreshLeaderboard(); void resultPosition.retry(); },
+    retryPosition() { void ranking.retry().then(() => { if (!disposed && resultPosition.state().status === 'error') void resultPosition.retry(); }); },
   });
   const loadingScreen=createLoadingScreen(root,{cancel:home,retry:start});
   const rankingApi = services.rankingApi ?? createRankingClient();
@@ -66,7 +68,8 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     screens.setRankingState(state);
     const recorded = state.pendingCount < observedPending; observedPending = state.pendingCount;
     if ((state.status === 'submitted' || recorded) && session.snapshot().phase === 'gameover') void refreshLeaderboard();
-  });
+  }, event => { if (!disposed) void resultPosition.submission(event); });
+  const resultPosition = createResultPosition(rankingApi, state => { if (!disposed) screens.setResultPosition(state); });
   observedPending = ranking.state().pendingCount;
   screens.setPlayerName(ranking.name()); screens.setRankingState(ranking.state());
   async function refreshLeaderboard(): Promise<void> {
@@ -138,6 +141,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     screens.setPlayerName(name); screens.setError('');
     const epoch = ++startEpoch;
     pendingStart?.abort();const controller=new AbortController();pendingStart=controller;
+    resultPosition.clear();
     starting=true;loadingError=null;loadingProgress=createLoadingProgress();
     // Cached starts need no display frames. Only show their instructions if
     // audio, ranking or input readiness actually keeps the player waiting.
@@ -245,6 +249,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     session.resume(); loop.resetClock(performance.now()); screens.render(session.snapshot()); void unlockAudio();
   }
   function home(): void {
+    resultPosition.clear();
     if(starting)ranking.abandonStart();pendingStart?.abort();pendingStart=null;retirePreparingPlay();loadingProgress=null;loadingError=null;loadingScreen.show(null);screens.setPreparing(false);
     startEpoch++; leaderboardEpoch++; starting = false; screens.setStarting(false); screens.setContextAvailable(contextAvailable);
     ranking.finish(activePlay, session.snapshot().score, 'retire'); activePlay = null;
@@ -291,6 +296,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
       swipe.cancel(); timeline.clear(result.snapshot.paddle); persist();
       if (!presentation.finishing) silence();
       screens.setRankingParticipation(!!activePlay);
+      resultPosition.show(activePlay);
       ranking.finish(activePlay, result.snapshot.score, 'game_over'); activePlay = null;
       void refreshLeaderboard();
     }
@@ -308,6 +314,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
       if (disposed) return;
       rememberBest(); persist(); disposed = true; unlockAttempt++;
       if(starting)ranking.abandonStart();pendingStart?.abort();pendingStart=null;retirePreparingPlay();loadingScreen.dispose();
+      resultPosition.dispose();
       cancelAnimationFrame(frameId); swipe.dispose(); unbindLifecycle();
       for(const event of pointerEvents)root.ownerDocument.removeEventListener(event,refreshInputLayout,true);
       window.removeEventListener('online', retryOnline);

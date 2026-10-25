@@ -6,6 +6,7 @@ import { createGuestPlayCounter } from './guestPlays';
 
 export type SubmissionStatus = 'idle' | 'submitting' | 'submitted' | 'retryable_failed' | 'permanent_failed';
 export type RankingState = Readonly<{ status: SubmissionStatus; pendingCount: number }>;
+export type SubmissionEvent = Readonly<{ playId: string; submissionId: string; status: Exclude<SubmissionStatus, 'idle'> }>;
 export function validateName(value: string): string {
   const name = value.trim();
   if ([...name].length > config.maxNameLength) throw new RankingError(false, '名前は20文字以内で入力してください。');
@@ -16,7 +17,7 @@ function isPending(value: unknown): value is PendingResult {
   const row = value as Partial<PendingResult>, play = row.play;
   return !!play && validUuid(play.startId) && validUuid(play.playId) && typeof play.displayName === 'string' && play.displayName.length > 0 && [...play.displayName].length <= config.maxNameLength && typeof play.normalizedName === 'string' && validUuid(row.submissionId) && validScore(row.score) && ['game_over', 'retire'].includes(row.resultType ?? '') && row.clientVersion === config.clientVersion;
 }
-export function createRankingController(storage: StorageLike, api: RankingApi = createRankingClient(), onChange: (state: RankingState) => void = () => {}) {
+export function createRankingController(storage: StorageLike, api: RankingApi = createRankingClient(), onChange: (state: RankingState) => void = () => {}, onSubmission: (event: SubmissionEvent) => void = () => {}) {
   const guests = createGuestPlayCounter(storage, api);
   const read = (key: string): unknown => { try { return JSON.parse(storage.getItem(key) ?? 'null'); } catch { return null; } };
   const save = (key: string, value: unknown): void => { try { storage.setItem(key, JSON.stringify(value)); } catch { /* Keep the in-memory record and send immediately. */ } };
@@ -31,6 +32,7 @@ export function createRankingController(storage: StorageLike, api: RankingApi = 
   const state = (): RankingState => ({ status, pendingCount: pending.length });
   const notify = () => onChange(state());
   const persist = () => save(config.pendingKey, pending);
+  const submission = (row: PendingResult, status: SubmissionEvent['status']) => onSubmission({ playId: row.play.playId, submissionId: row.submissionId, status });
   function retry(): Promise<void> {
     if (inFlight) return inFlight;
     if (!pending.some(row => !row.permanentFailure)) return Promise.resolve();
@@ -39,13 +41,21 @@ export function createRankingController(storage: StorageLike, api: RankingApi = 
       for (;;) {
         const next = pending.find(row => !row.permanentFailure);
         if (!next) { status = pending.length ? 'permanent_failed' : 'submitted'; notify(); return; }
+        submission(next, 'submitting');
         try {
           await api.finish(next); await api.submit(next);
           pending = pending.filter(row => row.submissionId !== next.submissionId); persist();
+          submission(next, 'submitted');
         } catch (error) {
           const retryable = !(error instanceof RankingError) || error.retryable;
-          if (retryable) { status = 'retryable_failed'; notify(); return; }
+          if (retryable) {
+            // This failure blocks every later result too. Report each affected
+            // identifier without implying that any of them was acknowledged.
+            for (const waiting of pending) if (!waiting.permanentFailure) submission(waiting, 'retryable_failed');
+            status = 'retryable_failed'; notify(); return;
+          }
           pending = pending.map(row => row === next ? { ...row, permanentFailure: true } : row); persist();
+          submission(next, 'permanent_failed');
           // Keep the rejected record for diagnosis and continue with later plays.
         }
       }
@@ -74,6 +84,7 @@ export function createRankingController(storage: StorageLike, api: RankingApi = 
       if (!validScore(score)) { status = 'permanent_failed'; notify(); return; }
       finished.add(play.playId);
       pending.push({ play, submissionId: crypto.randomUUID(), score, resultType, clientVersion: config.clientVersion });
+      submission(pending.at(-1)!, 'submitting');
       persist(); void retry();
     },
     async retry(): Promise<void> { await Promise.all([retry(), guests.retry()]); },

@@ -17,6 +17,7 @@ async function mockRanking(page: import('@playwright/test').Page, failScore = fa
     if (rpc === 'start_takkeu_guest_play_v1') data = { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', client_version: version };
     if (rpc === 'finish_game_play_v1') data = { accepted: true, play_id: body.p_play_id, game_slug: 'takkeu', result_type: body.p_result_type, reached_wave: 1, score: body.p_score };
     if (rpc === 'submit_score_idempotent_v1') data = [{ accepted: true, result_submission_id: body.p_submission_id, result_play_id: body.p_play_id, result_display_name: body.p_display_name, result_normalized_name: body.p_display_name, result_first_score: body.p_score, result_best_score: body.p_score, result_play_count: 1 }];
+    if (rpc === 'get_takkeu_player_position_v1') data = [{ rank_no: 123, total_entries: 250, best_score: 1500 }];
     if (rpc === 'get_best_score_ranking') data = Array.from({ length: 30 }, (_, i) => ({ rank_no: i < 2 ? 1 : i + 1, display_name: `プレイヤー${i + 1}`, best_score: 100 - i, play_count: i + 1 }));
     await route.fulfill({ json: data });
   });
@@ -29,7 +30,7 @@ async function open(page: import('@playwright/test').Page) {
 async function finish(page: import('@playwright/test').Page, score = 12) {
   await page.evaluate(score => { window.stage3.show(score); window.stage3.finish(); }, score);
   await page.clock.runFor(16);
-  await expect(page.getByRole('heading', { name: 'ナイスラリー！' })).toBeVisible();
+  await expect(page.locator('[data-result] h2')).toBeVisible();
 }
 
 test('名前なしで遊べて結果には上位30名と正式URLのXシェアが表示される', async ({ page }) => {
@@ -48,7 +49,7 @@ test('名前なしで遊べて結果には上位30名と正式URLのXシェア�
   expect(share.searchParams.get('text')).toBe('タッケウで12ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
   expect(share.searchParams.has('url')).toBe(false);
   const positions = await page.evaluate(() => ({ score: document.querySelector('[data-result-score]')!.getBoundingClientRect().bottom, replay: document.querySelector('[data-result] [data-action="retry"]')!.getBoundingClientRect().top, best: document.querySelector('[data-result] [data-best]')!.getBoundingClientRect().top }));
-  expect(positions.replay).toBeGreaterThanOrEqual(positions.score); expect(positions.replay).toBeLessThan(positions.best);
+  expect(positions.replay).toBeGreaterThanOrEqual(positions.score); expect(positions.replay).toBeGreaterThan(positions.best);
   await page.getByRole('button', { name: 'もう一度', exact: true }).click(); await waitForStart(page); await page.clock.runFor(16);
   await expect(page.getByLabel('ラリー数', { exact: true })).toHaveText('0');
   expect(await page.evaluate(() => window.stage3.snapshot().simTime)).toBeLessThan(0.1);

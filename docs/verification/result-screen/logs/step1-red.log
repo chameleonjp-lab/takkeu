@@ -1,0 +1,765 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/result-comments.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/result-comments.test.ts (44 tests | 44 failed) 394ms
+   × shows the exact comment at both ends of 0–4 80ms
+   × shows the exact comment at both ends of 5–9 14ms
+   × shows the exact comment at both ends of 10–14 10ms
+   × shows the exact comment at both ends of 15–19 14ms
+   × shows the exact comment at both ends of 20–24 9ms
+   × shows the exact comment at both ends of 25–29 8ms
+   × shows the exact comment at both ends of 30–34 8ms
+   × shows the exact comment at both ends of 35–39 7ms
+   × shows the exact comment at both ends of 40–44 7ms
+   × shows the exact comment at both ends of 45–49 7ms
+   × shows the exact comment at both ends of 50–59 7ms
+   × shows the exact comment at both ends of 60–69 10ms
+   × shows the exact comment at both ends of 70–79 7ms
+   × shows the exact comment at both ends of 80–89 7ms
+   × shows the exact comment at both ends of 90–99 6ms
+   × shows the exact comment at both ends of 100–109 7ms
+   × shows the exact comment at both ends of 110–119 6ms
+   × shows the exact comment at both ends of 120–129 7ms
+   × shows the exact comment at both ends of 130–139 7ms
+   × shows the exact comment at both ends of 140–149 7ms
+   × shows the exact comment at both ends of 150–159 6ms
+   × shows the exact comment at both ends of 160–169 6ms
+   × shows the exact comment at both ends of 170–179 7ms
+   × shows the exact comment at both ends of 180–189 7ms
+   × shows the exact comment at both ends of 190–199 7ms
+   × shows the exact comment at both ends of 200–299 7ms
+   × shows the exact comment at both ends of 300–399 7ms
+   × shows the exact comment at both ends of 400–499 7ms
+   × shows the exact comment at both ends of 500–599 7ms
+   × shows the exact comment at both ends of 600–699 7ms
+   × shows the exact comment at both ends of 700–799 7ms
+   × shows the exact comment at both ends of 800–899 7ms
+   × shows the exact comment at both ends of 900–999 8ms
+   × shows the exact comment at both ends of 1000–1099 6ms
+   × shows the exact comment at both ends of 1100–1199 6ms
+   × shows the exact comment at both ends of 1200–1299 6ms
+   × shows the exact comment at both ends of 1300–1399 6ms
+   × shows the exact comment at both ends of 1400–1499 6ms
+   × shows the exact comment at both ends of 1500–1599 6ms
+   × shows the exact comment at both ends of 1600–1699 6ms
+   × shows the exact comment at both ends of 1700–1799 6ms
+   × shows the exact comment at both ends of 1800–1899 6ms
+   × shows the exact comment at both ends of 1900–1999 7ms
+   × shows the exact comment at both ends of 2000–100000000 7ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 44 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 0–4
+AssertionError: expected 'ナイスラリー！' to be '次こそ決めよう！' // Object.is equality
+
+Expected: "次こそ決めよう！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 5–9
+AssertionError: expected 'ナイスラリー！' to be 'ラリー、開幕！' // Object.is equality
+
+Expected: "ラリー、開幕！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 10–14
+AssertionError: expected 'ナイスラリー！' to be 'いいぞ、つながる！' // Object.is equality
+
+Expected: "いいぞ、つながる！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 15–19
+AssertionError: expected 'ナイスラリー！' to be 'コツをつかんだ！' // Object.is equality
+
+Expected: "コツをつかんだ！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 20–24
+AssertionError: expected 'ナイスラリー！' to be '返球センスあり！' // Object.is equality
+
+Expected: "返球センスあり！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 25–29
+AssertionError: expected 'ナイスラリー！' to be 'いい手応え！' // Object.is equality
+
+Expected: "いい手応え！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 30–34
+AssertionError: expected 'ナイスラリー！' to be '打ち返し上手！' // Object.is equality
+
+Expected: "打ち返し上手！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 35–39
+AssertionError: expected 'ナイスラリー！' to be 'リズムに乗ってきた！' // Object.is equality
+
+Expected: "リズムに乗ってきた！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 40–44
+AssertionError: expected 'ナイスラリー！' to be 'ラリーが止まらない！' // Object.is equality
+
+Expected: "ラリーが止まらない！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 45–49
+AssertionError: expected 'ナイスラリー！' to be '50が見えてきた！' // Object.is equality
+
+Expected: "50が見えてきた！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 50–59
+AssertionError: expected 'ナイスラリー！' to be '50の壁、突破！' // Object.is equality
+
+Expected: "50の壁、突破！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 60–69
+AssertionError: expected 'ナイスラリー！' to be 'ラケットが冴える！' // Object.is equality
+
+Expected: "ラケットが冴える！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 70–79
+AssertionError: expected 'ナイスラリー！' to be '反応速度がすごい！' // Object.is equality
+
+Expected: "反応速度がすごい！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 80–89
+AssertionError: expected 'ナイスラリー！' to be '流れを完全につかんだ！' // Object.is equality
+
+Expected: "流れを完全につかんだ！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 90–99
+AssertionError: expected 'ナイスラリー！' to be '100まであと少し！' // Object.is equality
+
+Expected: "100まであと少し！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 100–109
+AssertionError: expected 'ナイスラリー！' to be '3桁の世界へ突入！' // Object.is equality
+
+Expected: "3桁の世界へ突入！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 110–119
+AssertionError: expected 'ナイスラリー！' to be '止まらない絶好調！' // Object.is equality
+
+Expected: "止まらない絶好調！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 120–129
+AssertionError: expected 'ナイスラリー！' to be '驚異の集中力！' // Object.is equality
+
+Expected: "驚異の集中力！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 130–139
+AssertionError: expected 'ナイスラリー！' to be '返球マスター！' // Object.is equality
+
+Expected: "返球マスター！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 140–149
+AssertionError: expected 'ナイスラリー！' to be '全部返すつもり！？' // Object.is equality
+
+Expected: "全部返すつもり！？"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 150–159
+AssertionError: expected 'ナイスラリー！' to be '完全にゾーン突入！' // Object.is equality
+
+Expected: "完全にゾーン突入！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 160–169
+AssertionError: expected 'ナイスラリー！' to be '目が追いつかない！' // Object.is equality
+
+Expected: "目が追いつかない！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 170–179
+AssertionError: expected 'ナイスラリー！' to be 'ここまで来るか！' // Object.is equality
+
+Expected: "ここまで来るか！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 180–189
+AssertionError: expected 'ナイスラリー！' to be '反射神経、覚醒！' // Object.is equality
+
+Expected: "反射神経、覚醒！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 190–199
+AssertionError: expected 'ナイスラリー！' to be '200目前の猛攻！' // Object.is equality
+
+Expected: "200目前の猛攻！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 200–299
+AssertionError: expected 'ナイスラリー！' to be 'ここから超人級！' // Object.is equality
+
+Expected: "ここから超人級！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 300–399
+AssertionError: expected 'ナイスラリー！' to be 'ラリーの猛者、現る！' // Object.is equality
+
+Expected: "ラリーの猛者、現る！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 400–499
+AssertionError: expected 'ナイスラリー！' to be '人間離れしてきた！' // Object.is equality
+
+Expected: "人間離れしてきた！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 500–599
+AssertionError: expected 'ナイスラリー！' to be '卓球の化身！' // Object.is equality
+
+Expected: "卓球の化身！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 600–699
+AssertionError: expected 'ナイスラリー！' to be '卓球台が休みたがってる！' // Object.is equality
+
+Expected: "卓球台が休みたがってる！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 700–799
+AssertionError: expected 'ナイスラリー！' to be '無限ラリーモード！' // Object.is equality
+
+Expected: "無限ラリーモード！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 800–899
+AssertionError: expected 'ナイスラリー！' to be '反射神経、異常値！' // Object.is equality
+
+Expected: "反射神経、異常値！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 900–999
+AssertionError: expected 'ナイスラリー！' to be '伝説まであと一歩！' // Object.is equality
+
+Expected: "伝説まであと一歩！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 1000–1099
+AssertionError: expected 'ナイスラリー！' to be '4桁の怪物、誕生！' // Object.is equality
+
+Expected: "4桁の怪物、誕生！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 1100–1199
+AssertionError: expected 'ナイスラリー！' to be '常識を置き去り！' // Object.is equality
+
+Expected: "常識を置き去り！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 1200–1299
+AssertionError: expected 'ナイスラリー！' to be 'ボールを完全支配！' // Object.is equality
+
+Expected: "ボールを完全支配！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 1300–1399
+AssertionError: expected 'ナイスラリー！' to be '未来が見えてる！？' // Object.is equality
+
+Expected: "未来が見えてる！？"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 1400–1499
+AssertionError: expected 'ナイスラリー！' to be '重力さえ味方する！' // Object.is equality
+
+Expected: "重力さえ味方する！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 1500–1599
+AssertionError: expected 'ナイスラリー！' to be '卓球の次元を突破！' // Object.is equality
+
+Expected: "卓球の次元を突破！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 1600–1699
+AssertionError: expected 'ナイスラリー！' to be 'これは記録じゃない、事件！' // Object.is equality
+
+Expected: "これは記録じゃない、事件！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[40/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 1700–1799
+AssertionError: expected 'ナイスラリー！' to be '人類の限界を更新！' // Object.is equality
+
+Expected: "人類の限界を更新！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[41/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 1800–1899
+AssertionError: expected 'ナイスラリー！' to be '神速ラリーの領域！' // Object.is equality
+
+Expected: "神速ラリーの領域！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[42/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 1900–1999
+AssertionError: expected 'ナイスラリー！' to be '神話まで、あと一歩！' // Object.is equality
+
+Expected: "神話まで、あと一歩！"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[43/44]⎯
+
+ FAIL  tests/unit/result-comments.test.ts > shows the exact comment at both ends of 2000–100000000
+AssertionError: expected 'ナイスラリー！' to be 'ラリーの神、降臨。' // Object.is equality
+
+Expected: "ラリーの神、降臨。"
+Received: "ナイスラリー！"
+
+ ❯ tests/unit/result-comments.test.ts:30:33
+     28|     screens.render({ ...snapshot, score, phase: 'gameover' });
+     29|     const heading = root.querySelector('[data-result] h2')!;
+     30|     expect(heading.textContent).toBe(comment);
+       |                                 ^
+     31|     expect(heading.closest('[hidden], [aria-hidden="true"]')).toBeNull…
+     32|     expect(root.querySelector('[data-result-score]')!.textContent).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[44/44]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  44 failed (44)
+   Start at  18:29:54
+   Duration  835ms (tests 55%, environment 39%, transform 4%, import 2%)
+
