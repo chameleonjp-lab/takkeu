@@ -1,0 +1,730 @@
+framesread 360
+{
+  "reproducedArea": 31808,
+  "bands": [
+    {
+      "y": [
+        473,
+        549
+      ],
+      "highFrequencyPixelsInWorst341PixelWideWindow": 3770,
+      "regionPixels": 26257
+    },
+    {
+      "y": [
+        550,
+        599
+      ],
+      "highFrequencyPixelsInWorst341PixelWideWindow": 5564,
+      "regionPixels": 17050
+    },
+    {
+      "y": [
+        600,
+        649
+      ],
+      "highFrequencyPixelsInWorst341PixelWideWindow": 7242,
+      "regionPixels": 17050
+    },
+    {
+      "y": [
+        650,
+        728
+      ],
+      "highFrequencyPixelsInWorst341PixelWideWindow": 15232,
+      "regionPixels": 26939
+    }
+  ],
+  "lowerFloorTopProbes": [
+    {
+      "xy": [
+        160,
+        650
+      ],
+      "minLuma": 0.16818208992481232,
+      "maxLuma": 1.0,
+      "lumaRange": 0.8318179100751877,
+      "generalClosingFrames": [
+        10,
+        17,
+        23,
+        27,
+        33,
+        48,
+        53,
+        90,
+        122,
+        180,
+        216,
+        252,
+        351
+      ],
+      "generalClosingTimes": [
+        20.166667,
+        20.283333,
+        20.383333,
+        20.45,
+        20.55,
+        20.8,
+        20.883333,
+        21.5,
+        22.033333,
+        23.0,
+        23.6,
+        24.2,
+        25.85
+      ],
+      "maxGeneralFlashesInInclusiveOneSecond": 7,
+      "maxGeneralWindowEndFrame": 53,
+      "generalCountAtFrame72": 6,
+      "maxRedFlashesInInclusiveOneSecond": 0,
+      "redClosingFrames": [],
+      "luminanceDominantFrequenciesHz": [
+        {
+          "hz": 0.16666666666666666,
+          "relativePower": 0.24049035806048916
+        },
+        {
+          "hz": 1.8333333333333333,
+          "relativePower": 0.14473185111277667
+        },
+        {
+          "hz": 0.5,
+          "relativePower": 0.13120493961977558
+        },
+        {
+          "hz": 0.3333333333333333,
+          "relativePower": 0.11463268736791465
+        },
+        {
+          "hz": 1.5,
+          "relativePower": 0.0659127149751092
+        }
+      ],
+      "rgbAtFrame72": [
+        255,
+        78,
+        160
+      ],
+      "lumaAtFrame72": 0.29246845841407776
+    },
+    {
+      "xy": [
+        200,
+        650
+      ],
+      "minLuma": 0.1538960337638855,
+      "maxLuma": 1.0,
+      "lumaRange": 0.8461039662361145,
+      "generalClosingFrames": [
+        18,
+        23,
+        33,
+        42,
+        51,
+        54,
+        90,
+        115,
+        151,
+        180,
+        213,
+        240,
+        343
+      ],
+      "generalClosingTimes": [
+        20.3,
+        20.383333,
+        20.55,
+        20.7,
+        20.85,
+        20.9,
+        21.5,
+        21.916667,
+        22.516667,
+        23.0,
+        23.55,
+        24.0,
+        25.716667
+      ],
+      "maxGeneralFlashesInInclusiveOneSecond": 6,
+      "maxGeneralWindowEndFrame": 54,
+      "generalCountAtFrame72": 6,
+      "maxRedFlashesInInclusiveOneSecond": 0,
+      "redClosingFrames": [],
+      "luminanceDominantFrequenciesHz": [
+        {
+          "hz": 0.16666666666666666,
+          "relativePower": 0.39653517206203676
+        },
+        {
+          "hz": 0.5,
+          "relativePower": 0.15329130676630445
+        },
+        {
+          "hz": 1.8333333333333333,
+          "relativePower": 0.1130675299557046
+        },
+        {
+          "hz": 0.3333333333333333,
+          "relativePower": 0.06987151198380966
+        },
+        {
+          "hz": 1.6666666666666665,
+          "relativePower": 0.04085322846107838
+        }
+      ],
+      "rgbAtFrame72": [
+        253,
+        56,
+        152
+      ],
+      "lumaAtFrame72": 0.2597799301147461
+    },
+    {
+      "xy": [
+        64,
+        700
+      ],
+      "minLuma": 0.18582303822040558,
+      "maxLuma": 1.0,
+      "lumaRange": 0.8141769617795944,
+      "generalClosingFrames": [
+        12,
+        18,
+        22,
+        25,
+        40,
+        54,
+        90,
+        120,
+        151,
+        180,
+        216,
+        252,
+        352
+      ],
+      "generalClosingTimes": [
+        20.2,
+        20.3,
+        20.366667,
+        20.416667,
+        20.666667,
+        20.9,
+        21.5,
+        22.0,
+        22.516667,
+        23.0,
+        23.6,
+        24.2,
+        25.866667
+      ],
+      "maxGeneralFlashesInInclusiveOneSecond": 6,
+      "maxGeneralWindowEndFrame": 54,
+      "generalCountAtFrame72": 6,
+      "maxRedFlashesInInclusiveOneSecond": 0,
+      "redClosingFrames": [],
+      "luminanceDominantFrequenciesHz": [
+        {
+          "hz": 0.5,
+          "relativePower": 0.21837159525485494
+        },
+        {
+          "hz": 0.16666666666666666,
+          "relativePower": 0.15644914904282642
+        },
+        {
+          "hz": 0.3333333333333333,
+          "relativePower": 0.10775511716559741
+        },
+        {
+          "hz": 0.6666666666666666,
+          "relativePower": 0.06946912832275526
+        },
+        {
+          "hz": 1.3333333333333333,
+          "relativePower": 0.054112777847053324
+        }
+      ],
+      "rgbAtFrame72": [
+        255,
+        85,
+        177
+      ],
+      "lumaAtFrame72": 0.30931326746940613
+    },
+    {
+      "xy": [
+        896,
+        740
+      ],
+      "minLuma": 0.15555165708065033,
+      "maxLuma": 1.0,
+      "lumaRange": 0.8444483429193497,
+      "generalClosingFrames": [
+        13,
+        19,
+        23,
+        29,
+        57,
+        72,
+        91,
+        126,
+        163,
+        195,
+        235,
+        267,
+        299
+      ],
+      "generalClosingTimes": [
+        20.216667,
+        20.316667,
+        20.383333,
+        20.483333,
+        20.95,
+        21.2,
+        21.516667,
+        22.1,
+        22.716667,
+        23.25,
+        23.916667,
+        24.45,
+        24.983333
+      ],
+      "maxGeneralFlashesInInclusiveOneSecond": 6,
+      "maxGeneralWindowEndFrame": 72,
+      "generalCountAtFrame72": 6,
+      "maxRedFlashesInInclusiveOneSecond": 0,
+      "redClosingFrames": [],
+      "luminanceDominantFrequenciesHz": [
+        {
+          "hz": 0.16666666666666666,
+          "relativePower": 0.5317412900055559
+        },
+        {
+          "hz": 0.3333333333333333,
+          "relativePower": 0.1745036061678493
+        },
+        {
+          "hz": 0.5,
+          "relativePower": 0.0439832474362175
+        },
+        {
+          "hz": 0.6666666666666666,
+          "relativePower": 0.0407355005475025
+        },
+        {
+          "hz": 1.3333333333333333,
+          "relativePower": 0.027051818333999833
+        }
+      ],
+      "rgbAtFrame72": [
+        255,
+        217,
+        118
+      ],
+      "lumaAtFrame72": 0.7219372391700745
+    },
+    {
+      "xy": [
+        96,
+        700
+      ],
+      "minLuma": 0.17557159066200256,
+      "maxLuma": 1.0,
+      "lumaRange": 0.8244284093379974,
+      "generalClosingFrames": [
+        15,
+        23,
+        28,
+        40,
+        54,
+        90,
+        122,
+        180,
+        216,
+        252,
+        351
+      ],
+      "generalClosingTimes": [
+        20.25,
+        20.383333,
+        20.466667,
+        20.666667,
+        20.9,
+        21.5,
+        22.033333,
+        23.0,
+        23.6,
+        24.2,
+        25.85
+      ],
+      "maxGeneralFlashesInInclusiveOneSecond": 5,
+      "maxGeneralWindowEndFrame": 54,
+      "generalCountAtFrame72": 5,
+      "maxRedFlashesInInclusiveOneSecond": 0,
+      "redClosingFrames": [],
+      "luminanceDominantFrequenciesHz": [
+        {
+          "hz": 0.16666666666666666,
+          "relativePower": 0.19183180803426853
+        },
+        {
+          "hz": 0.5,
+          "relativePower": 0.14044284307759902
+        },
+        {
+          "hz": 0.3333333333333333,
+          "relativePower": 0.10471508793182817
+        },
+        {
+          "hz": 1.8333333333333333,
+          "relativePower": 0.08745167482625149
+        },
+        {
+          "hz": 1.5,
+          "relativePower": 0.05799523835095113
+        }
+      ],
+      "rgbAtFrame72": [
+        255,
+        79,
+        162
+      ],
+      "lumaAtFrame72": 0.2946060001850128
+    },
+    {
+      "xy": [
+        128,
+        700
+      ],
+      "minLuma": 0.16382288932800293,
+      "maxLuma": 1.0,
+      "lumaRange": 0.8361771106719971,
+      "generalClosingFrames": [
+        18,
+        23,
+        27,
+        40,
+        54,
+        90,
+        120,
+        180,
+        216,
+        252,
+        352
+      ],
+      "generalClosingTimes": [
+        20.3,
+        20.383333,
+        20.45,
+        20.666667,
+        20.9,
+        21.5,
+        22.0,
+        23.0,
+        23.6,
+        24.2,
+        25.866667
+      ],
+      "maxGeneralFlashesInInclusiveOneSecond": 5,
+      "maxGeneralWindowEndFrame": 54,
+      "generalCountAtFrame72": 5,
+      "maxRedFlashesInInclusiveOneSecond": 0,
+      "redClosingFrames": [],
+      "luminanceDominantFrequenciesHz": [
+        {
+          "hz": 0.16666666666666666,
+          "relativePower": 0.3138673626635514
+        },
+        {
+          "hz": 0.5,
+          "relativePower": 0.15868657553340745
+        },
+        {
+          "hz": 0.3333333333333333,
+          "relativePower": 0.08302400654435192
+        },
+        {
+          "hz": 1.8333333333333333,
+          "relativePower": 0.07118581073029992
+        },
+        {
+          "hz": 1.5,
+          "relativePower": 0.043404903860069434
+        }
+      ],
+      "rgbAtFrame72": [
+        253,
+        46,
+        144
+      ],
+      "lumaAtFrame72": 0.24850255250930786
+    },
+    {
+      "xy": [
+        200,
+        700
+      ],
+      "minLuma": 0.1357925534248352,
+      "maxLuma": 1.0,
+      "lumaRange": 0.8642074465751648,
+      "generalClosingFrames": [
+        18,
+        24,
+        33,
+        40,
+        49,
+        90,
+        121,
+        180,
+        216,
+        252,
+        351
+      ],
+      "generalClosingTimes": [
+        20.3,
+        20.4,
+        20.55,
+        20.666667,
+        20.816667,
+        21.5,
+        22.016667,
+        23.0,
+        23.6,
+        24.2,
+        25.85
+      ],
+      "maxGeneralFlashesInInclusiveOneSecond": 5,
+      "maxGeneralWindowEndFrame": 49,
+      "generalCountAtFrame72": 5,
+      "maxRedFlashesInInclusiveOneSecond": 0,
+      "redClosingFrames": [],
+      "luminanceDominantFrequenciesHz": [
+        {
+          "hz": 0.16666666666666666,
+          "relativePower": 0.29865317857043483
+        },
+        {
+          "hz": 0.5,
+          "relativePower": 0.16730888568256383
+        },
+        {
+          "hz": 0.3333333333333333,
+          "relativePower": 0.10361587801908739
+        },
+        {
+          "hz": 1.8333333333333333,
+          "relativePower": 0.10237983901214463
+        },
+        {
+          "hz": 0.6666666666666666,
+          "relativePower": 0.0350096614480888
+        }
+      ],
+      "rgbAtFrame72": [
+        248,
+        44,
+        141
+      ],
+      "lumaAtFrame72": 0.2368091344833374
+    },
+    {
+      "xy": [
+        768,
+        700
+      ],
+      "minLuma": 0.06094856560230255,
+      "maxLuma": 1.0,
+      "lumaRange": 0.9390514343976974,
+      "generalClosingFrames": [
+        14,
+        18,
+        20,
+        41,
+        54,
+        75,
+        144,
+        180,
+        282,
+        355
+      ],
+      "generalClosingTimes": [
+        20.233333,
+        20.3,
+        20.333333,
+        20.683333,
+        20.9,
+        21.25,
+        22.4,
+        23.0,
+        24.7,
+        25.916667
+      ],
+      "maxGeneralFlashesInInclusiveOneSecond": 5,
+      "maxGeneralWindowEndFrame": 54,
+      "generalCountAtFrame72": 5,
+      "maxRedFlashesInInclusiveOneSecond": 0,
+      "redClosingFrames": [],
+      "luminanceDominantFrequenciesHz": [
+        {
+          "hz": 0.16666666666666666,
+          "relativePower": 0.37741863318926466
+        },
+        {
+          "hz": 0.5,
+          "relativePower": 0.16703522944481308
+        },
+        {
+          "hz": 0.3333333333333333,
+          "relativePower": 0.1399479377308529
+        },
+        {
+          "hz": 1.3333333333333333,
+          "relativePower": 0.07324301161420398
+        },
+        {
+          "hz": 0.6666666666666666,
+          "relativePower": 0.04184321605827734
+        }
+      ],
+      "rgbAtFrame72": [
+        252,
+        137,
+        55
+      ],
+      "lumaAtFrame72": 0.3886261284351349
+    },
+    {
+      "xy": [
+        128,
+        650
+      ],
+      "minLuma": 0.17827622592449188,
+      "maxLuma": 1.0,
+      "lumaRange": 0.8217237740755081,
+      "generalClosingFrames": [
+        15,
+        18,
+        27,
+        54,
+        90,
+        120,
+        180,
+        216,
+        252,
+        322,
+        351
+      ],
+      "generalClosingTimes": [
+        20.25,
+        20.3,
+        20.45,
+        20.9,
+        21.5,
+        22.0,
+        23.0,
+        23.6,
+        24.2,
+        25.366667,
+        25.85
+      ],
+      "maxGeneralFlashesInInclusiveOneSecond": 4,
+      "maxGeneralWindowEndFrame": 54,
+      "generalCountAtFrame72": 4,
+      "maxRedFlashesInInclusiveOneSecond": 0,
+      "redClosingFrames": [],
+      "luminanceDominantFrequenciesHz": [
+        {
+          "hz": 0.16666666666666666,
+          "relativePower": 0.3147851423583589
+        },
+        {
+          "hz": 0.5,
+          "relativePower": 0.14005668403177304
+        },
+        {
+          "hz": 1.8333333333333333,
+          "relativePower": 0.12811531159137912
+        },
+        {
+          "hz": 1.5,
+          "relativePower": 0.07593268984280276
+        },
+        {
+          "hz": 1.3333333333333333,
+          "relativePower": 0.05746138301532839
+        }
+      ],
+      "rgbAtFrame72": [
+        251,
+        45,
+        144
+      ],
+      "lumaAtFrame72": 0.24399620294570923
+    },
+    {
+      "xy": [
+        160,
+        700
+      ],
+      "minLuma": 0.15137861669063568,
+      "maxLuma": 1.0,
+      "lumaRange": 0.8486213833093643,
+      "generalClosingFrames": [
+        20,
+        24,
+        44,
+        72,
+        108,
+        162,
+        198,
+        234,
+        300
+      ],
+      "generalClosingTimes": [
+        20.333333,
+        20.4,
+        20.733333,
+        21.2,
+        21.8,
+        22.7,
+        23.3,
+        23.9,
+        25.0
+      ],
+      "maxGeneralFlashesInInclusiveOneSecond": 4,
+      "maxGeneralWindowEndFrame": 72,
+      "generalCountAtFrame72": 4,
+      "maxRedFlashesInInclusiveOneSecond": 0,
+      "redClosingFrames": [],
+      "luminanceDominantFrequenciesHz": [
+        {
+          "hz": 0.16666666666666666,
+          "relativePower": 0.3449580234977444
+        },
+        {
+          "hz": 0.5,
+          "relativePower": 0.14996693448131923
+        },
+        {
+          "hz": 0.3333333333333333,
+          "relativePower": 0.08165123682674871
+        },
+        {
+          "hz": 1.8333333333333333,
+          "relativePower": 0.07642870425103311
+        },
+        {
+          "hz": 1.5,
+          "relativePower": 0.039535521230682824
+        }
+      ],
+      "rgbAtFrame72": [
+        249,
+        45,
+        142
+      ],
+      "lumaAtFrame72": 0.23969504237174988
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "sequence": "4000-standard-legacy100",
+    "fps": 60,
+    "frames": 360,
+    "width": 1024,
+    "height": 768,
+    "referenceWindow": [
+      341,
+      256
+    ],
+    "areaThreshold25Percent": 21824.0,
+    "maxGeneralPixelFlashCount": 9,
+    "maxRedPixelFlashCount": 3,
+    "maxGeneralHighFrequencyArea": 10822,
+    "maxRedHighFrequencyArea": 0,
+    "maxGeneralLargeClosingFramesPerSecond": 1,
+    "maxRedLargeClosingFramesPerSecond": 0,
+    "screeningVerdict": "no threshold exceedance detected in sampled SDR canvas; limitations apply",
+    "flagged": false,
+    "sourcePixelRGB24SHA256": "2ca4da0333a674d6cd29f8f6248cee32cf99b2679a142cf127aaaa9b92f89ff2"
+  }
+]

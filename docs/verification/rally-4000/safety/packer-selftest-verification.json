@@ -1,0 +1,78 @@
+{
+  "sourceFrames": 12,
+  "fps": 60,
+  "width": 64,
+  "height": 48,
+  "sourceRGB24SHA256": "188cc0d827cd7dbe7290e5df49ae216f21fccc789dfa6f46fe35ee06897e3425",
+  "decodedRGB24SHA256": "188cc0d827cd7dbe7290e5df49ae216f21fccc789dfa6f46fe35ee06897e3425",
+  "decodedBytes": 110592,
+  "expectedBytes": 110592,
+  "videoSHA256": "b6297f290e9d9d3a3ea4a27d769ff5cc811de08c13afa1688eb9370d9f955809",
+  "videoBytes": 2584,
+  "losslessRGBBytesMatch": true,
+  "originalPNGs": [
+    {
+      "frame": 0,
+      "pngSHA256": "38eaf98080905c8ab9d33ca362482e137a40cd265c6562a1e17c29aaf119a226"
+    },
+    {
+      "frame": 1,
+      "pngSHA256": "a330df2c8c31178680444657a220d1b3cb9cbb70c8ed09560551eebbf83c4f80"
+    },
+    {
+      "frame": 2,
+      "pngSHA256": "bad3c712fe89fde49ce208e6a0adec2ae82e356b6b3cbbd95172a454f4a2cb30"
+    },
+    {
+      "frame": 3,
+      "pngSHA256": "d40f025edb4a6ee1631b09f9c6ac32cac344f57e7d5d3adef007979931560cda"
+    },
+    {
+      "frame": 4,
+      "pngSHA256": "e4954701b244f1d42d9785d6aa70a8be9169bf76972989243ff3b7bac4a1d0d2"
+    },
+    {
+      "frame": 5,
+      "pngSHA256": "7d23244a21e221c8652903f39a4018d62a1e5018e268ae42780f506d4a23cda7"
+    },
+    {
+      "frame": 6,
+      "pngSHA256": "a46b6d16b945dd2e2c098f00a997e3e3bf909f766a561aa7e05a6257a8e1f52a"
+    },
+    {
+      "frame": 7,
+      "pngSHA256": "0ba78bdbf199ee8ea94081d759451ac2fb410ae6176807c942e6435402fef607"
+    },
+    {
+      "frame": 8,
+      "pngSHA256": "89e49e650d02ec154adee35e6bbeee2c698e03d0691b5902a4c859f291e8ca1f"
+    },
+    {
+      "frame": 9,
+      "pngSHA256": "cad57fa54814961a06965c13298e52c17e48a702eab277235c5a9ad30c8ea5eb"
+    },
+    {
+      "frame": 10,
+      "pngSHA256": "0c07671f7301ad150b1ce21283efa2f7185d3c41d5e46dabb53c14c02902be55"
+    },
+    {
+      "frame": 11,
+      "pngSHA256": "dceef58b5eb8521bf634b9449f0b35e4176d79b4e18ec72931e093c7220172ed"
+    }
+  ],
+  "command": [
+    "ffmpeg",
+    "-y",
+    "-framerate",
+    "60",
+    "-i",
+    "/workspace/rally-pack-selftest/synthetic/%04d.png",
+    "-c:v",
+    "ffv1",
+    "-level",
+    "3",
+    "-pix_fmt",
+    "bgr0",
+    "/workspace/rally-pack-selftest/synthetic/capture-lossless.mkv"
+  ]
+}

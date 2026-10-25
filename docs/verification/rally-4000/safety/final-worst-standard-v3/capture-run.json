@@ -1,0 +1,4301 @@
+{
+  "sequences": [
+    {
+      "name": "4000-standard-legacy100",
+      "score": 4000,
+      "loss": 100,
+      "legacyLossStreak": 100,
+      "quality": "standard",
+      "reducedMotion": false,
+      "fps": 60,
+      "seconds": 6,
+      "width": 1024,
+      "height": 768,
+      "frames": 360,
+      "syntheticStress": true,
+      "diagnosticAblation": null,
+      "acceptanceScene": true,
+      "snapshot": {
+        "celebrations": {
+          "lastLossAt": 20,
+          "lossStreak": 100,
+          "numberNotices": [
+            {
+              "value": 10,
+              "at": 20
+            },
+            {
+              "value": 20,
+              "at": 20
+            },
+            {
+              "value": 30,
+              "at": 20
+            },
+            {
+              "value": 40,
+              "at": 20
+            },
+            {
+              "value": 50,
+              "at": 20
+            },
+            {
+              "value": 55,
+              "at": 20
+            },
+            {
+              "value": 60,
+              "at": 20
+            },
+            {
+              "value": 70,
+              "at": 20
+            },
+            {
+              "value": 77,
+              "at": 20
+            },
+            {
+              "value": 80,
+              "at": 20
+            },
+            {
+              "value": 88,
+              "at": 20
+            },
+            {
+              "value": 90,
+              "at": 20
+            },
+            {
+              "value": 99,
+              "at": 20
+            },
+            {
+              "value": 100,
+              "at": 20
+            }
+          ],
+          "repdigitAt": 20,
+          "centuryAt": 20,
+          "centuryScore": 4000
+        },
+        "runId": "run-3",
+        "phase": "running",
+        "pauseReason": null,
+        "score": 4000,
+        "simTime": 25.983333333333334,
+        "lostBallCount": 100,
+        "paddle": {
+          "x": 0.1,
+          "y": 0.5
+        },
+        "opponentPaddle": {
+          "x": 0,
+          "y": 0.5
+        },
+        "balls": [
+          {
+            "id": 1,
+            "phase": "incoming",
+            "position": {
+              "x": -0.4,
+              "y": 0.43,
+              "z": 1.25
+            },
+            "smash": false
+          },
+          {
+            "id": 2,
+            "phase": "outgoing",
+            "position": {
+              "x": 0.45,
+              "y": 0.62,
+              "z": -0.35
+            },
+            "smash": false
+          }
+        ],
+        "progression": {
+          "appliedMilestones": [
+            10,
+            30,
+            40,
+            70,
+            100,
+            130,
+            150,
+            160,
+            190,
+            210,
+            240,
+            270,
+            300,
+            330,
+            360,
+            380,
+            390,
+            410,
+            420,
+            450,
+            460,
+            470,
+            480,
+            490,
+            500,
+            510,
+            520,
+            530,
+            540,
+            555
+          ],
+          "ballGlowUntil": null,
+          "awardedBallCount": 1315
+        },
+        "scheduledReturns": []
+      },
+      "state": {
+        "runId": "run-3",
+        "score": 4000,
+        "bestAtStart": 0,
+        "best": null,
+        "lostBallCount": 100,
+        "stage": [
+          {
+            "threshold": 1500,
+            "kind": "A",
+            "effect": "tricolor-network",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "green-perimeter",
+              "green-net",
+              "green-blue-world"
+            ]
+          },
+          {
+            "threshold": 2000,
+            "kind": "A",
+            "effect": "star-world",
+            "duration": 2.5,
+            "color": "green-blue-red",
+            "priority": 100,
+            "replaces": [
+              "background-threads"
+            ]
+          },
+          {
+            "threshold": 2500,
+            "kind": "A",
+            "effect": "orbit-ribbon",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "floor-wave"
+            ]
+          },
+          {
+            "threshold": 2750,
+            "kind": "A",
+            "effect": "multi-halos",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "background-halo"
+            ]
+          },
+          {
+            "threshold": 3250,
+            "kind": "A",
+            "effect": "meteor-swarm",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "meteor"
+            ]
+          },
+          {
+            "threshold": 3500,
+            "kind": "A",
+            "effect": "double-table-halos",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "side-halos"
+            ]
+          },
+          {
+            "threshold": 4000,
+            "kind": "A",
+            "effect": "final-world",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": []
+          }
+        ],
+        "arrivals": [
+          {
+            "id": "run-3:fixture-2",
+            "threshold": 4000,
+            "at": 20,
+            "config": {
+              "threshold": 4000,
+              "kind": "B",
+              "effect": "final-assembly",
+              "duration": 4,
+              "color": "green-blue-red",
+              "priority": 100,
+              "replaces": [
+                "center-density"
+              ]
+            },
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          }
+        ],
+        "hits": [
+          {
+            "id": "run-3:fixture-2",
+            "score": 4000,
+            "at": 20,
+            "smashReturn": false,
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          }
+        ],
+        "losses": [
+          {
+            "id": "run-3:fixture-3",
+            "count": 1,
+            "at": 20,
+            "rollingCount": 1,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-4",
+            "count": 2,
+            "at": 20,
+            "rollingCount": 2,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-5",
+            "count": 3,
+            "at": 20,
+            "rollingCount": 3,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-6",
+            "count": 4,
+            "at": 20,
+            "rollingCount": 4,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-7",
+            "count": 5,
+            "at": 20,
+            "rollingCount": 5,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-8",
+            "count": 6,
+            "at": 20,
+            "rollingCount": 6,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-9",
+            "count": 7,
+            "at": 20,
+            "rollingCount": 7,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-10",
+            "count": 8,
+            "at": 20,
+            "rollingCount": 8,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-11",
+            "count": 9,
+            "at": 20,
+            "rollingCount": 9,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-12",
+            "count": 10,
+            "at": 20,
+            "rollingCount": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-13",
+            "count": 11,
+            "at": 20,
+            "rollingCount": 11,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-14",
+            "count": 12,
+            "at": 20,
+            "rollingCount": 12,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-15",
+            "count": 13,
+            "at": 20,
+            "rollingCount": 13,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-16",
+            "count": 14,
+            "at": 20,
+            "rollingCount": 14,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-17",
+            "count": 15,
+            "at": 20,
+            "rollingCount": 15,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-18",
+            "count": 16,
+            "at": 20,
+            "rollingCount": 16,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-19",
+            "count": 17,
+            "at": 20,
+            "rollingCount": 17,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-20",
+            "count": 18,
+            "at": 20,
+            "rollingCount": 18,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-21",
+            "count": 19,
+            "at": 20,
+            "rollingCount": 19,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-22",
+            "count": 20,
+            "at": 20,
+            "rollingCount": 20,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-23",
+            "count": 21,
+            "at": 20,
+            "rollingCount": 21,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-24",
+            "count": 22,
+            "at": 20,
+            "rollingCount": 22,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-25",
+            "count": 23,
+            "at": 20,
+            "rollingCount": 23,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-26",
+            "count": 24,
+            "at": 20,
+            "rollingCount": 24,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-27",
+            "count": 25,
+            "at": 20,
+            "rollingCount": 25,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-28",
+            "count": 26,
+            "at": 20,
+            "rollingCount": 26,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-29",
+            "count": 27,
+            "at": 20,
+            "rollingCount": 27,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-30",
+            "count": 28,
+            "at": 20,
+            "rollingCount": 28,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-31",
+            "count": 29,
+            "at": 20,
+            "rollingCount": 29,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-32",
+            "count": 30,
+            "at": 20,
+            "rollingCount": 30,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-33",
+            "count": 31,
+            "at": 20,
+            "rollingCount": 31,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-34",
+            "count": 32,
+            "at": 20,
+            "rollingCount": 32,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-35",
+            "count": 33,
+            "at": 20,
+            "rollingCount": 33,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-36",
+            "count": 34,
+            "at": 20,
+            "rollingCount": 34,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-37",
+            "count": 35,
+            "at": 20,
+            "rollingCount": 35,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-38",
+            "count": 36,
+            "at": 20,
+            "rollingCount": 36,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-39",
+            "count": 37,
+            "at": 20,
+            "rollingCount": 37,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-40",
+            "count": 38,
+            "at": 20,
+            "rollingCount": 38,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-41",
+            "count": 39,
+            "at": 20,
+            "rollingCount": 39,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-42",
+            "count": 40,
+            "at": 20,
+            "rollingCount": 40,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-43",
+            "count": 41,
+            "at": 20,
+            "rollingCount": 41,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-44",
+            "count": 42,
+            "at": 20,
+            "rollingCount": 42,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-45",
+            "count": 43,
+            "at": 20,
+            "rollingCount": 43,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-46",
+            "count": 44,
+            "at": 20,
+            "rollingCount": 44,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-47",
+            "count": 45,
+            "at": 20,
+            "rollingCount": 45,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-48",
+            "count": 46,
+            "at": 20,
+            "rollingCount": 46,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-49",
+            "count": 47,
+            "at": 20,
+            "rollingCount": 47,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-50",
+            "count": 48,
+            "at": 20,
+            "rollingCount": 48,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-51",
+            "count": 49,
+            "at": 20,
+            "rollingCount": 49,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-52",
+            "count": 50,
+            "at": 20,
+            "rollingCount": 50,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-53",
+            "count": 51,
+            "at": 20,
+            "rollingCount": 51,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-54",
+            "count": 52,
+            "at": 20,
+            "rollingCount": 52,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-55",
+            "count": 53,
+            "at": 20,
+            "rollingCount": 53,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-56",
+            "count": 54,
+            "at": 20,
+            "rollingCount": 54,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-57",
+            "count": 55,
+            "at": 20,
+            "rollingCount": 55,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-58",
+            "count": 56,
+            "at": 20,
+            "rollingCount": 56,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-59",
+            "count": 57,
+            "at": 20,
+            "rollingCount": 57,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-60",
+            "count": 58,
+            "at": 20,
+            "rollingCount": 58,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-61",
+            "count": 59,
+            "at": 20,
+            "rollingCount": 59,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-62",
+            "count": 60,
+            "at": 20,
+            "rollingCount": 60,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-63",
+            "count": 61,
+            "at": 20,
+            "rollingCount": 61,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-64",
+            "count": 62,
+            "at": 20,
+            "rollingCount": 62,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-65",
+            "count": 63,
+            "at": 20,
+            "rollingCount": 63,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-66",
+            "count": 64,
+            "at": 20,
+            "rollingCount": 64,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-67",
+            "count": 65,
+            "at": 20,
+            "rollingCount": 65,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-68",
+            "count": 66,
+            "at": 20,
+            "rollingCount": 66,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-69",
+            "count": 67,
+            "at": 20,
+            "rollingCount": 67,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-70",
+            "count": 68,
+            "at": 20,
+            "rollingCount": 68,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-71",
+            "count": 69,
+            "at": 20,
+            "rollingCount": 69,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-72",
+            "count": 70,
+            "at": 20,
+            "rollingCount": 70,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-73",
+            "count": 71,
+            "at": 20,
+            "rollingCount": 71,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-74",
+            "count": 72,
+            "at": 20,
+            "rollingCount": 72,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-75",
+            "count": 73,
+            "at": 20,
+            "rollingCount": 73,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-76",
+            "count": 74,
+            "at": 20,
+            "rollingCount": 74,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-77",
+            "count": 75,
+            "at": 20,
+            "rollingCount": 75,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-78",
+            "count": 76,
+            "at": 20,
+            "rollingCount": 76,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-79",
+            "count": 77,
+            "at": 20,
+            "rollingCount": 77,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-80",
+            "count": 78,
+            "at": 20,
+            "rollingCount": 78,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-81",
+            "count": 79,
+            "at": 20,
+            "rollingCount": 79,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-82",
+            "count": 80,
+            "at": 20,
+            "rollingCount": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-83",
+            "count": 81,
+            "at": 20,
+            "rollingCount": 81,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-84",
+            "count": 82,
+            "at": 20,
+            "rollingCount": 82,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-85",
+            "count": 83,
+            "at": 20,
+            "rollingCount": 83,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-86",
+            "count": 84,
+            "at": 20,
+            "rollingCount": 84,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-87",
+            "count": 85,
+            "at": 20,
+            "rollingCount": 85,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-88",
+            "count": 86,
+            "at": 20,
+            "rollingCount": 86,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-89",
+            "count": 87,
+            "at": 20,
+            "rollingCount": 87,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-90",
+            "count": 88,
+            "at": 20,
+            "rollingCount": 88,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-91",
+            "count": 89,
+            "at": 20,
+            "rollingCount": 89,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-92",
+            "count": 90,
+            "at": 20,
+            "rollingCount": 90,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-93",
+            "count": 91,
+            "at": 20,
+            "rollingCount": 91,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-94",
+            "count": 92,
+            "at": 20,
+            "rollingCount": 92,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-95",
+            "count": 93,
+            "at": 20,
+            "rollingCount": 93,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-96",
+            "count": 94,
+            "at": 20,
+            "rollingCount": 94,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-97",
+            "count": 95,
+            "at": 20,
+            "rollingCount": 95,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-98",
+            "count": 96,
+            "at": 20,
+            "rollingCount": 96,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-99",
+            "count": 97,
+            "at": 20,
+            "rollingCount": 97,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-100",
+            "count": 98,
+            "at": 20,
+            "rollingCount": 98,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-101",
+            "count": 99,
+            "at": 20,
+            "rollingCount": 99,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-102",
+            "count": 100,
+            "at": 20,
+            "rollingCount": 100,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          }
+        ],
+        "cues": [
+          {
+            "id": "run-3:fixture-2:major",
+            "kind": "major",
+            "value": 4000,
+            "at": 20,
+            "duration": 2.5,
+            "priority": 100,
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          },
+          {
+            "id": "run-3:fixture-3:loss-spark",
+            "kind": "loss-spark",
+            "value": 1,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-4:loss-spark",
+            "kind": "loss-spark",
+            "value": 2,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-5:loss-spark",
+            "kind": "loss-spark",
+            "value": 3,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-6:loss-spark",
+            "kind": "loss-spark",
+            "value": 4,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-6:loss-impact",
+            "kind": "loss-impact",
+            "value": 4,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-7:loss-spark",
+            "kind": "loss-spark",
+            "value": 5,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-7:loss-impact",
+            "kind": "loss-impact",
+            "value": 5,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-8:loss-spark",
+            "kind": "loss-spark",
+            "value": 6,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-8:loss-impact",
+            "kind": "loss-impact",
+            "value": 6,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-9:loss-spark",
+            "kind": "loss-spark",
+            "value": 7,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-9:loss-impact",
+            "kind": "loss-impact",
+            "value": 7,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-10:loss-spark",
+            "kind": "loss-spark",
+            "value": 8,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-10:loss-impact",
+            "kind": "loss-impact",
+            "value": 8,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-11:loss-spark",
+            "kind": "loss-spark",
+            "value": 9,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-11:loss-impact",
+            "kind": "loss-impact",
+            "value": 9,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-12:loss-spark",
+            "kind": "loss-spark",
+            "value": 10,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-12:loss-impact",
+            "kind": "loss-impact",
+            "value": 10,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-12:loss-wave",
+            "kind": "loss-wave",
+            "value": 10,
+            "at": 20,
+            "duration": 1.2,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-13:loss-spark",
+            "kind": "loss-spark",
+            "value": 11,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-13:loss-impact",
+            "kind": "loss-impact",
+            "value": 11,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-14:loss-spark",
+            "kind": "loss-spark",
+            "value": 12,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-14:loss-impact",
+            "kind": "loss-impact",
+            "value": 12,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-15:loss-spark",
+            "kind": "loss-spark",
+            "value": 13,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-15:loss-impact",
+            "kind": "loss-impact",
+            "value": 13,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-16:loss-spark",
+            "kind": "loss-spark",
+            "value": 14,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-16:loss-impact",
+            "kind": "loss-impact",
+            "value": 14,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-17:loss-spark",
+            "kind": "loss-spark",
+            "value": 15,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-17:loss-impact",
+            "kind": "loss-impact",
+            "value": 15,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-18:loss-spark",
+            "kind": "loss-spark",
+            "value": 16,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-18:loss-impact",
+            "kind": "loss-impact",
+            "value": 16,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-19:loss-spark",
+            "kind": "loss-spark",
+            "value": 17,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-19:loss-impact",
+            "kind": "loss-impact",
+            "value": 17,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-20:loss-spark",
+            "kind": "loss-spark",
+            "value": 18,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-20:loss-impact",
+            "kind": "loss-impact",
+            "value": 18,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-21:loss-spark",
+            "kind": "loss-spark",
+            "value": 19,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-21:loss-impact",
+            "kind": "loss-impact",
+            "value": 19,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-22:loss-spark",
+            "kind": "loss-spark",
+            "value": 20,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-22:loss-impact",
+            "kind": "loss-impact",
+            "value": 20,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-22:loss-wave",
+            "kind": "loss-wave",
+            "value": 20,
+            "at": 20,
+            "duration": 1.2,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-23:loss-spark",
+            "kind": "loss-spark",
+            "value": 21,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-23:loss-impact",
+            "kind": "loss-impact",
+            "value": 21,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-24:loss-spark",
+            "kind": "loss-spark",
+            "value": 22,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-24:loss-impact",
+            "kind": "loss-impact",
+            "value": 22,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-25:loss-spark",
+            "kind": "loss-spark",
+            "value": 23,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-25:loss-impact",
+            "kind": "loss-impact",
+            "value": 23,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-26:loss-spark",
+            "kind": "loss-spark",
+            "value": 24,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-26:loss-impact",
+            "kind": "loss-impact",
+            "value": 24,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-27:loss-spark",
+            "kind": "loss-spark",
+            "value": 25,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-27:loss-impact",
+            "kind": "loss-impact",
+            "value": 25,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-28:loss-spark",
+            "kind": "loss-spark",
+            "value": 26,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-28:loss-impact",
+            "kind": "loss-impact",
+            "value": 26,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-29:loss-spark",
+            "kind": "loss-spark",
+            "value": 27,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-29:loss-impact",
+            "kind": "loss-impact",
+            "value": 27,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-30:loss-spark",
+            "kind": "loss-spark",
+            "value": 28,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-30:loss-impact",
+            "kind": "loss-impact",
+            "value": 28,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-31:loss-spark",
+            "kind": "loss-spark",
+            "value": 29,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-31:loss-impact",
+            "kind": "loss-impact",
+            "value": 29,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-32:loss-spark",
+            "kind": "loss-spark",
+            "value": 30,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-32:loss-impact",
+            "kind": "loss-impact",
+            "value": 30,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-32:loss-wave",
+            "kind": "loss-wave",
+            "value": 30,
+            "at": 20,
+            "duration": 1.2,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-33:loss-spark",
+            "kind": "loss-spark",
+            "value": 31,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-33:loss-impact",
+            "kind": "loss-impact",
+            "value": 31,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-34:loss-spark",
+            "kind": "loss-spark",
+            "value": 32,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-34:loss-impact",
+            "kind": "loss-impact",
+            "value": 32,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-35:loss-spark",
+            "kind": "loss-spark",
+            "value": 33,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-35:loss-impact",
+            "kind": "loss-impact",
+            "value": 33,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-36:loss-spark",
+            "kind": "loss-spark",
+            "value": 34,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-36:loss-impact",
+            "kind": "loss-impact",
+            "value": 34,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-37:loss-spark",
+            "kind": "loss-spark",
+            "value": 35,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-37:loss-impact",
+            "kind": "loss-impact",
+            "value": 35,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-38:loss-spark",
+            "kind": "loss-spark",
+            "value": 36,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-38:loss-impact",
+            "kind": "loss-impact",
+            "value": 36,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-39:loss-spark",
+            "kind": "loss-spark",
+            "value": 37,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-39:loss-impact",
+            "kind": "loss-impact",
+            "value": 37,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-40:loss-spark",
+            "kind": "loss-spark",
+            "value": 38,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-40:loss-impact",
+            "kind": "loss-impact",
+            "value": 38,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-41:loss-spark",
+            "kind": "loss-spark",
+            "value": 39,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-41:loss-impact",
+            "kind": "loss-impact",
+            "value": 39,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-42:loss-spark",
+            "kind": "loss-spark",
+            "value": 40,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-42:loss-impact",
+            "kind": "loss-impact",
+            "value": 40,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-42:loss-wave",
+            "kind": "loss-wave",
+            "value": 40,
+            "at": 20,
+            "duration": 1.2,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-43:loss-spark",
+            "kind": "loss-spark",
+            "value": 41,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-43:loss-impact",
+            "kind": "loss-impact",
+            "value": 41,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-44:loss-spark",
+            "kind": "loss-spark",
+            "value": 42,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-44:loss-impact",
+            "kind": "loss-impact",
+            "value": 42,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-45:loss-spark",
+            "kind": "loss-spark",
+            "value": 43,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-45:loss-impact",
+            "kind": "loss-impact",
+            "value": 43,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-46:loss-spark",
+            "kind": "loss-spark",
+            "value": 44,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-46:loss-impact",
+            "kind": "loss-impact",
+            "value": 44,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-47:loss-spark",
+            "kind": "loss-spark",
+            "value": 45,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-47:loss-impact",
+            "kind": "loss-impact",
+            "value": 45,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-48:loss-spark",
+            "kind": "loss-spark",
+            "value": 46,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-48:loss-impact",
+            "kind": "loss-impact",
+            "value": 46,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-49:loss-spark",
+            "kind": "loss-spark",
+            "value": 47,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-49:loss-impact",
+            "kind": "loss-impact",
+            "value": 47,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-50:loss-spark",
+            "kind": "loss-spark",
+            "value": 48,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-50:loss-impact",
+            "kind": "loss-impact",
+            "value": 48,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-51:loss-spark",
+            "kind": "loss-spark",
+            "value": 49,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-51:loss-impact",
+            "kind": "loss-impact",
+            "value": 49,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-52:loss-spark",
+            "kind": "loss-spark",
+            "value": 50,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-52:loss-impact",
+            "kind": "loss-impact",
+            "value": 50,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-52:loss-net",
+            "kind": "loss-net",
+            "value": 50,
+            "at": 20,
+            "duration": 1.2,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-53:loss-spark",
+            "kind": "loss-spark",
+            "value": 51,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-53:loss-impact",
+            "kind": "loss-impact",
+            "value": 51,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-54:loss-spark",
+            "kind": "loss-spark",
+            "value": 52,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-54:loss-impact",
+            "kind": "loss-impact",
+            "value": 52,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-55:loss-spark",
+            "kind": "loss-spark",
+            "value": 53,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-55:loss-impact",
+            "kind": "loss-impact",
+            "value": 53,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-56:loss-spark",
+            "kind": "loss-spark",
+            "value": 54,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-56:loss-impact",
+            "kind": "loss-impact",
+            "value": 54,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-57:loss-spark",
+            "kind": "loss-spark",
+            "value": 55,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-57:loss-impact",
+            "kind": "loss-impact",
+            "value": 55,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-57:loss-number",
+            "kind": "loss-number",
+            "value": 55,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-58:loss-spark",
+            "kind": "loss-spark",
+            "value": 56,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-58:loss-impact",
+            "kind": "loss-impact",
+            "value": 56,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-59:loss-spark",
+            "kind": "loss-spark",
+            "value": 57,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-59:loss-impact",
+            "kind": "loss-impact",
+            "value": 57,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-60:loss-spark",
+            "kind": "loss-spark",
+            "value": 58,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-60:loss-impact",
+            "kind": "loss-impact",
+            "value": 58,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-61:loss-spark",
+            "kind": "loss-spark",
+            "value": 59,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-61:loss-impact",
+            "kind": "loss-impact",
+            "value": 59,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-62:loss-spark",
+            "kind": "loss-spark",
+            "value": 60,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-62:loss-impact",
+            "kind": "loss-impact",
+            "value": 60,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-63:loss-spark",
+            "kind": "loss-spark",
+            "value": 61,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-63:loss-impact",
+            "kind": "loss-impact",
+            "value": 61,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-64:loss-spark",
+            "kind": "loss-spark",
+            "value": 62,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-64:loss-impact",
+            "kind": "loss-impact",
+            "value": 62,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-65:loss-spark",
+            "kind": "loss-spark",
+            "value": 63,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-65:loss-impact",
+            "kind": "loss-impact",
+            "value": 63,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-66:loss-spark",
+            "kind": "loss-spark",
+            "value": 64,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-66:loss-impact",
+            "kind": "loss-impact",
+            "value": 64,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-67:loss-spark",
+            "kind": "loss-spark",
+            "value": 65,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-67:loss-impact",
+            "kind": "loss-impact",
+            "value": 65,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-68:loss-spark",
+            "kind": "loss-spark",
+            "value": 66,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-68:loss-impact",
+            "kind": "loss-impact",
+            "value": 66,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-69:loss-spark",
+            "kind": "loss-spark",
+            "value": 67,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-69:loss-impact",
+            "kind": "loss-impact",
+            "value": 67,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-70:loss-spark",
+            "kind": "loss-spark",
+            "value": 68,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-70:loss-impact",
+            "kind": "loss-impact",
+            "value": 68,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-71:loss-spark",
+            "kind": "loss-spark",
+            "value": 69,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-71:loss-impact",
+            "kind": "loss-impact",
+            "value": 69,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-72:loss-spark",
+            "kind": "loss-spark",
+            "value": 70,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-72:loss-impact",
+            "kind": "loss-impact",
+            "value": 70,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-73:loss-spark",
+            "kind": "loss-spark",
+            "value": 71,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-73:loss-impact",
+            "kind": "loss-impact",
+            "value": 71,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-74:loss-spark",
+            "kind": "loss-spark",
+            "value": 72,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-74:loss-impact",
+            "kind": "loss-impact",
+            "value": 72,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-75:loss-spark",
+            "kind": "loss-spark",
+            "value": 73,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-75:loss-impact",
+            "kind": "loss-impact",
+            "value": 73,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-76:loss-spark",
+            "kind": "loss-spark",
+            "value": 74,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-76:loss-impact",
+            "kind": "loss-impact",
+            "value": 74,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-77:loss-spark",
+            "kind": "loss-spark",
+            "value": 75,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-77:loss-impact",
+            "kind": "loss-impact",
+            "value": 75,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-78:loss-spark",
+            "kind": "loss-spark",
+            "value": 76,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-78:loss-impact",
+            "kind": "loss-impact",
+            "value": 76,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-79:loss-spark",
+            "kind": "loss-spark",
+            "value": 77,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-79:loss-impact",
+            "kind": "loss-impact",
+            "value": 77,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-79:loss-number",
+            "kind": "loss-number",
+            "value": 77,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-80:loss-spark",
+            "kind": "loss-spark",
+            "value": 78,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-80:loss-impact",
+            "kind": "loss-impact",
+            "value": 78,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-81:loss-spark",
+            "kind": "loss-spark",
+            "value": 79,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-81:loss-impact",
+            "kind": "loss-impact",
+            "value": 79,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-82:loss-spark",
+            "kind": "loss-spark",
+            "value": 80,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-82:loss-impact",
+            "kind": "loss-impact",
+            "value": 80,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-83:loss-spark",
+            "kind": "loss-spark",
+            "value": 81,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-83:loss-impact",
+            "kind": "loss-impact",
+            "value": 81,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-84:loss-spark",
+            "kind": "loss-spark",
+            "value": 82,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-84:loss-impact",
+            "kind": "loss-impact",
+            "value": 82,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-85:loss-spark",
+            "kind": "loss-spark",
+            "value": 83,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-85:loss-impact",
+            "kind": "loss-impact",
+            "value": 83,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-86:loss-spark",
+            "kind": "loss-spark",
+            "value": 84,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-86:loss-impact",
+            "kind": "loss-impact",
+            "value": 84,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-87:loss-spark",
+            "kind": "loss-spark",
+            "value": 85,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-87:loss-impact",
+            "kind": "loss-impact",
+            "value": 85,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-88:loss-spark",
+            "kind": "loss-spark",
+            "value": 86,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-88:loss-impact",
+            "kind": "loss-impact",
+            "value": 86,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-89:loss-spark",
+            "kind": "loss-spark",
+            "value": 87,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-89:loss-impact",
+            "kind": "loss-impact",
+            "value": 87,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-90:loss-spark",
+            "kind": "loss-spark",
+            "value": 88,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-90:loss-impact",
+            "kind": "loss-impact",
+            "value": 88,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-90:loss-number",
+            "kind": "loss-number",
+            "value": 88,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-91:loss-spark",
+            "kind": "loss-spark",
+            "value": 89,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-91:loss-impact",
+            "kind": "loss-impact",
+            "value": 89,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-92:loss-spark",
+            "kind": "loss-spark",
+            "value": 90,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-92:loss-impact",
+            "kind": "loss-impact",
+            "value": 90,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-92:loss-warning",
+            "kind": "loss-warning",
+            "value": 90,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-93:loss-spark",
+            "kind": "loss-spark",
+            "value": 91,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-93:loss-impact",
+            "kind": "loss-impact",
+            "value": 91,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-93:loss-warning",
+            "kind": "loss-warning",
+            "value": 91,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-94:loss-spark",
+            "kind": "loss-spark",
+            "value": 92,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-94:loss-impact",
+            "kind": "loss-impact",
+            "value": 92,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-94:loss-warning",
+            "kind": "loss-warning",
+            "value": 92,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-95:loss-spark",
+            "kind": "loss-spark",
+            "value": 93,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-95:loss-impact",
+            "kind": "loss-impact",
+            "value": 93,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-95:loss-warning",
+            "kind": "loss-warning",
+            "value": 93,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-96:loss-spark",
+            "kind": "loss-spark",
+            "value": 94,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-96:loss-impact",
+            "kind": "loss-impact",
+            "value": 94,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-96:loss-warning",
+            "kind": "loss-warning",
+            "value": 94,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-97:loss-spark",
+            "kind": "loss-spark",
+            "value": 95,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-97:loss-impact",
+            "kind": "loss-impact",
+            "value": 95,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-97:loss-warning",
+            "kind": "loss-warning",
+            "value": 95,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-98:loss-spark",
+            "kind": "loss-spark",
+            "value": 96,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-98:loss-impact",
+            "kind": "loss-impact",
+            "value": 96,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-98:loss-warning",
+            "kind": "loss-warning",
+            "value": 96,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-99:loss-spark",
+            "kind": "loss-spark",
+            "value": 97,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-99:loss-impact",
+            "kind": "loss-impact",
+            "value": 97,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-99:loss-warning",
+            "kind": "loss-warning",
+            "value": 97,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-100:loss-spark",
+            "kind": "loss-spark",
+            "value": 98,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-100:loss-impact",
+            "kind": "loss-impact",
+            "value": 98,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-100:loss-warning",
+            "kind": "loss-warning",
+            "value": 98,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-101:loss-spark",
+            "kind": "loss-spark",
+            "value": 99,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-101:loss-impact",
+            "kind": "loss-impact",
+            "value": 99,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-101:loss-warning",
+            "kind": "loss-warning",
+            "value": 99,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-101:loss-gold",
+            "kind": "loss-gold",
+            "value": 99,
+            "at": 20,
+            "duration": 1.2,
+            "priority": 90,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-102:loss-spark",
+            "kind": "loss-spark",
+            "value": 100,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-102:loss-impact",
+            "kind": "loss-impact",
+            "value": 100,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-102:loss-final",
+            "kind": "loss-final",
+            "value": 100,
+            "at": 20,
+            "duration": 2,
+            "priority": 100,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          }
+        ]
+      },
+      "stats": {
+        "activeEffects": [
+          "tricolor-crossing",
+          "star-world",
+          "orbit-ribbon",
+          "multi-halos",
+          "meteor-swarm",
+          "double-table-halos",
+          "final-world"
+        ],
+        "tableQuads": 759,
+        "worldQuads": 1466,
+        "particleCount": 248,
+        "finalPhase": null,
+        "capacity": 10240,
+        "geometries": 4,
+        "materials": 4,
+        "nodes": 6,
+        "drawCalls": 4,
+        "disposed": false
+      },
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 38,
+        "particles": 248,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world"
+          ],
+          "tableQuads": 759,
+          "worldQuads": 1466,
+          "particleCount": 248,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+    }
+  ],
+  "errors": [],
+  "unexpected": [],
+  "sourceHashes": {
+    "tests/helpers/rallyHarness.ts": "c8262893bba69fc9e0edb62cac80f2cd230668df61834d144cd926f67fd46813",
+    "src/render/createView.ts": "424e79fde877b3537aa31bdd2b5722e085d17726b93d21650624e86ad6ebaf8c",
+    "src/render/rallyEffects.ts": "a3803317481c8a5d1322d168aabcabc46a34b48d518dee5740a148cd7c23a741",
+    "src/render/celebrations.ts": "c6f75047829636ae1f009ab6fc0ac4ddeac73c08ab8f582ef100090d11b8d00a",
+    "src/render/presentation.ts": "fc5d249f6021215d638c2962629afbdba83eba3216e4595ddd880bc4fd1155ad",
+    "src/render/field.ts": "33a224d11f907415d9064e9c9b9096a6cf84b7f7f71915d69f5810e43e31a452",
+    "src/render/rainbow.ts": "0b6d3bed0975942d7f220fc8b527f4a6e2831a5374e87e09c4974d55f305e180",
+    "src/game/rallyEffects.ts": "a94fad020f483cb0f6ded3321edc3164008e79fc0fffe6d5f1ee7720fc950150",
+    "src/game/celebrations.ts": "c3fe5cd55bdc5efabeaf1e511e76a71bb090fd964236ac043648e7620c525cfc"
+  },
+  "endSourceHashes": {
+    "tests/helpers/rallyHarness.ts": "c8262893bba69fc9e0edb62cac80f2cd230668df61834d144cd926f67fd46813",
+    "src/render/createView.ts": "424e79fde877b3537aa31bdd2b5722e085d17726b93d21650624e86ad6ebaf8c",
+    "src/render/rallyEffects.ts": "a3803317481c8a5d1322d168aabcabc46a34b48d518dee5740a148cd7c23a741",
+    "src/render/celebrations.ts": "c6f75047829636ae1f009ab6fc0ac4ddeac73c08ab8f582ef100090d11b8d00a",
+    "src/render/presentation.ts": "fc5d249f6021215d638c2962629afbdba83eba3216e4595ddd880bc4fd1155ad",
+    "src/render/field.ts": "33a224d11f907415d9064e9c9b9096a6cf84b7f7f71915d69f5810e43e31a452",
+    "src/render/rainbow.ts": "0b6d3bed0975942d7f220fc8b527f4a6e2831a5374e87e09c4974d55f305e180",
+    "src/game/rallyEffects.ts": "a94fad020f483cb0f6ded3321edc3164008e79fc0fffe6d5f1ee7720fc950150",
+    "src/game/celebrations.ts": "c3fe5cd55bdc5efabeaf1e511e76a71bb090fd964236ac043648e7620c525cfc"
+  },
+  "sourceStable": true,
+  "limitations": [
+    "Canvas analysis excludes CSS HUD; its labels have single-arrival transitions, assessed separately.",
+    "Sampling at60Hz measures content clock, not monitor hardware artifacts.",
+    "Linux software rendering does not certify device/HDR behavior."
+  ]
+}
