@@ -170,3 +170,40 @@ export function playMilestoneFanfare(context: BaseAudioContext, output: AudioNod
   if (layered && !low) layers.push({ ...note(1046.5, .66, 1.14, true), type: 'triangle', peak: .1 });
   return synth(context, output, layers, onEnded, layered);
 }
+
+/** Dedicated musical phrases share the bounded synthesis/ownership path. */
+export function playRallyAchievement(context: BaseAudioContext, output: AudioNode, onEnded: Ended = () => {}, options: ToneOptions = {}): Voice {
+  const layered = supported(context), low = options.quality === 'low', score = options.score;
+  // 1000: rising fanfare; 3000: suspended bell blessing; 4000: falling pickup
+  // into an expanded final chord. These replace, rather than layer on, 100s.
+  const phrase = score === 3000 ? { type: 'sine', pitches: [659.25, 987.77, 1318.51, 1174.66], gap: .32, chord: [587.33, 739.99, 987.77], start: 1.28, duration: 1.32 }
+    : score === 4000 ? { type: 'triangle', pitches: [1046.5, 783.99, 659.25, 880, 1174.66], gap: .2, chord: [587.33, 783.99, 1174.66], start: 1.1, duration: 1.7 }
+    : { type: 'sawtooth', pitches: [392, 523.25, 659.25, 783.99], gap: .21, chord: [523.25, 659.25, 1046.5], start: .96, duration: 1.24 };
+  const note = (hz: number, delay: number, duration: number, chord = false): Layer => ({
+    type: layered ? phrase.type as OscillatorType : 'triangle', high: hz, low: hz, delay, duration,
+    peak: layered ? (chord ? .1 : .2) : (chord ? .016 : .022), attack: score === 3000 ? .045 : .025,
+    hold: chord ? .45 : .07,
+  });
+  const layers = phrase.pitches.map((hz, i) => note(hz, i * phrase.gap, score === 3000 ? .72 : .24));
+  layers.push(...phrase.chord.map(hz => note(hz, phrase.start, phrase.duration, true)));
+  if (layered && !low) layers.push({ ...note(phrase.chord[0]! * 2, phrase.start, phrase.duration, true), type: 'sine', peak: .065 });
+  return synth(context, output, layers, onEnded, layered);
+}
+
+/** A short upward success chime, dispatched once at the confirmed best crossing. */
+export function playBestRecord(context: BaseAudioContext, output: AudioNode, onEnded: Ended = () => {}, _options: ToneOptions = {}): Voice {
+  const layered = supported(context);
+  return synth(context, output, [784, 1046.5, 1568].map((hz, i) => ({
+    type: 'sine', high: hz, low: hz, delay: i * .11, duration: .38,
+    peak: layered ? .18 : .025, attack: .012, hold: .035,
+  })), onEnded, layered);
+}
+
+/** Low impact accompanies the controller's four-loss rolling-window fact. */
+export function playLossImpact(context: BaseAudioContext, output: AudioNode, onEnded: Ended = () => {}, _options: ToneOptions = {}): Voice {
+  const layered = supported(context);
+  return synth(context, output, [
+    { type: 'sine', high: 140, low: 42, duration: .24, peak: layered ? .38 : .045, attack: .008 },
+    { type: 'triangle', high: 230, low: 58, duration: .14, peak: layered ? .12 : .018, attack: .006 },
+  ], onEnded, layered);
+}

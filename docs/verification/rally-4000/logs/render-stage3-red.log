@@ -1,0 +1,167 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-render.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-render.test.ts (79 tests | 16 failed) 1703ms
+   ❯ loss renderer follows immutable event facts through the finish clock (19)
+     × draws each simultaneous loss at its own confirmed world coordinate and clears exactly at .5 seconds 11ms
+     × draws loss-impact 4 through its exact deadline 1ms
+     × draws loss-wave 10 through its exact deadline 1ms
+     × draws loss-wave 20 through its exact deadline 1ms
+     × draws loss-wave 30 through its exact deadline 1ms
+     × draws loss-wave 40 through its exact deadline 20ms
+     × draws loss-net 50 through its exact deadline 1ms
+     × draws loss-gold 99 through its exact deadline 1ms
+     × draws loss-final 100 through its exact deadline 1ms
+     × starts a .8 second halo from the existing special 55 number position 1ms
+     × starts a .8 second halo from the existing special 77 number position 1ms
+     × starts a .8 second halo from the existing special 88 number position 1ms
+     × uses the existing multi-number grid for simultaneous special-number halos without modifying it 1ms
+     × keeps warning posts persistent for loss count 90 3ms
+     × keeps warning posts persistent for loss count 99 1ms
+     × keeps the last real spark and outward finish visible after physics stops and releases them on a new run 3ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 16 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > draws each simultaneous loss at its own confirmed world coordinate and clears exactly at .5 seconds
+AssertionError: expected [] to include 'loss-sparks'
+ ❯ tests/unit/rally-render.test.ts:150:40
+    148|     const losses=[{id:'a',count:1,at:20,rollingCount:1,position:{x:-.6…
+    149|     const state=effectState(0,{losses,lostBallCount:2});view.update(sn…
+    150|     expect(view.stats().activeEffects).toContain('loss-sparks');const …
+       |                                        ^
+    151|     const x=points.filter((_,i)=>i%3===0);expect(Math.min(...x)).toBeL…
+    152|     for(let i=0;i<points.length;i+=3)expect(Math.min(...losses.map(los…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/16]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > draws loss-impact 4 through its exact deadline
+AssertionError: expected [] to include 'loss-impact'
+ ❯ tests/unit/rally-render.test.ts:164:99
+    162|     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,ri…
+    163|     view.update(snapshot(0,19.99),state);expect(view.stats().activeEff…
+    164|     view.update({...snapshot(0,20.15),phase:'gameover'},state);expect(…
+       |                                                                                                   ^
+    165|     expect(view.stats().tableQuads+view.stats().worldQuads).toBeGreate…
+    166|     view.update({...snapshot(0,20+duration),phase:'gameover'},state);e…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/16]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > draws loss-wave 10 through its exact deadline
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > draws loss-wave 20 through its exact deadline
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > draws loss-wave 30 through its exact deadline
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > draws loss-wave 40 through its exact deadline
+AssertionError: expected [] to include 'loss-wave'
+ ❯ tests/unit/rally-render.test.ts:164:99
+    162|     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,ri…
+    163|     view.update(snapshot(0,19.99),state);expect(view.stats().activeEff…
+    164|     view.update({...snapshot(0,20.15),phase:'gameover'},state);expect(…
+       |                                                                                                   ^
+    165|     expect(view.stats().tableQuads+view.stats().worldQuads).toBeGreate…
+    166|     view.update({...snapshot(0,20+duration),phase:'gameover'},state);e…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/16]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > draws loss-net 50 through its exact deadline
+AssertionError: expected [] to include 'loss-net'
+ ❯ tests/unit/rally-render.test.ts:164:99
+    162|     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,ri…
+    163|     view.update(snapshot(0,19.99),state);expect(view.stats().activeEff…
+    164|     view.update({...snapshot(0,20.15),phase:'gameover'},state);expect(…
+       |                                                                                                   ^
+    165|     expect(view.stats().tableQuads+view.stats().worldQuads).toBeGreate…
+    166|     view.update({...snapshot(0,20+duration),phase:'gameover'},state);e…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/16]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > draws loss-gold 99 through its exact deadline
+AssertionError: expected [] to include 'loss-gold'
+ ❯ tests/unit/rally-render.test.ts:164:99
+    162|     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,ri…
+    163|     view.update(snapshot(0,19.99),state);expect(view.stats().activeEff…
+    164|     view.update({...snapshot(0,20.15),phase:'gameover'},state);expect(…
+       |                                                                                                   ^
+    165|     expect(view.stats().tableQuads+view.stats().worldQuads).toBeGreate…
+    166|     view.update({...snapshot(0,20+duration),phase:'gameover'},state);e…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/16]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > draws loss-final 100 through its exact deadline
+AssertionError: expected [] to include 'loss-final'
+ ❯ tests/unit/rally-render.test.ts:164:99
+    162|     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,ri…
+    163|     view.update(snapshot(0,19.99),state);expect(view.stats().activeEff…
+    164|     view.update({...snapshot(0,20.15),phase:'gameover'},state);expect(…
+       |                                                                                                   ^
+    165|     expect(view.stats().tableQuads+view.stats().worldQuads).toBeGreate…
+    166|     view.update({...snapshot(0,20+duration),phase:'gameover'},state);e…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/16]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > starts a .8 second halo from the existing special 55 number position
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > starts a .8 second halo from the existing special 77 number position
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > starts a .8 second halo from the existing special 88 number position
+AssertionError: expected [] to include 'loss-number-halos'
+ ❯ tests/unit/rally-render.test.ts:173:94
+    171|     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,ri…
+    172|     const celebrations=lossCelebration(createCelebrations(),value,20);
+    173|     view.update({...snapshot(0,20.1),celebrations},state);expect(view.…
+       |                                                                                              ^
+    174|     const points=geometryValues(rig),z=points.filter((_,i)=>i%3===2);e…
+    175|     view.update({...snapshot(0,20.8),celebrations},state);expect(view.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/16]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > uses the existing multi-number grid for simultaneous special-number halos without modifying it
+AssertionError: expected 0 to be less than -0.3
+ ❯ tests/unit/rally-render.test.ts:184:25
+    182|     const mesh=rig.getObjectByName('rally-table-lines') as Mesh,p=mesh…
+    183|     const center=(offset:number)=>{let x=0,z=0;for(let i=offset;i<offs…
+    184|     expect(center(0).x).toBeLessThan(-.3);expect(center(32*6).x).toBeG…
+       |                         ^
+    185|     expect(center(0).z).toBeCloseTo(.93,2);expect(center(32*6).z).toBe…
+    186|     expect(JSON.stringify(celebrations)).toBe(original);view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/16]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > keeps warning posts persistent for loss count 90
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > keeps warning posts persistent for loss count 99
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/rally-render.test.ts:191:71
+    189|   it.each([[89,false],[90,true],[99,true],[100,false]])('keeps warning…
+    190|     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,ri…
+    191|     expect(view.stats().activeEffects.includes('loss-warning-posts')).…
+       |                                                                       ^
+    192|     if(on){const points=geometryValues(rig);expect(points.some((v,i)=>…
+    193|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/16]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > keeps the last real spark and outward finish visible after physics stops and releases them on a new run
+AssertionError: expected [ 'tricolor-crossing', …(6) ] to include 'loss-sparks'
+ ❯ tests/unit/rally-render.test.ts:199:101
+    197|     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());
+    198|     const state=effectState(4000,{lostBallCount:100,losses:[{id:'last'…
+    199|     view.update({...snapshot(4000,20.2),phase:'gameover'},state);expec…
+       |                                                                                                     ^
+    200|     view.update({...snapshot(4000,21.8),phase:'gameover'},state);expec…
+    201|     view.update({...snapshot(0,0),runId:'new',phase:'ready'},state);ex…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/16]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  16 failed | 63 passed (79)
+   Start at  20:34:19
+   Duration  2.15s (tests 87%, import 7%, transform 6%)
+

@@ -63,11 +63,12 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
     render(snapshot, events, effects) {
       if (snapshot.runId !== previousRunId) { flashUntil = 0; renderer.renderLists.dispose(); previousRunId = snapshot.runId; }
       for (const event of events) if (event.kind === 'player-hit') flashUntil = event.time + 0.12;
-      applyPresentation(objects, snapshot);
+      const reducedMotion=motionQuery?.matches??false;
+      applyPresentation(objects, snapshot,reducedMotion);
       updateOpponentView(objects, snapshot, events);
-      fireworks.update(snapshot,events,quality);
-      celebrations.update(snapshot);
-      rallyEffects.update(snapshot,effects,quality,motionQuery?.matches??false);
+      fireworks.update(snapshot,events,quality,reducedMotion);
+      celebrations.update(snapshot,reducedMotion);
+      rallyEffects.update(snapshot,effects,quality,reducedMotion);
       if (!snapshot.progression.appliedMilestones.includes(100)) objects.rimMaterial.emissiveIntensity = snapshot.simTime < flashUntil ? 0.8 : 0.15;
       renderer.render(scene, camera);
     },

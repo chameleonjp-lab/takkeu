@@ -1,0 +1,73 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+browserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Missing libraries:                                   ║
+║     liblzo2.so.2                                     ║
+║     libGLESv2.so.2                                   ║
+╚══════════════════════════════════════════════════════╝
+    at /tmp/rally-audio-probe.mjs:8:29 {
+  log: [],
+  name: 'Error'
+}
+
+Node.js v24.19.0
+00 muted
+render 44100 4000 zero
+render 44100 4000 fallback
+render 44100 4000 warning
+render 44100 4000 saturated-warning
+render 44100 4000 saturated-no-warning
+render 44100 4000 warning-only
+render 48000 1000 standard
+render 48000 1000 low
+render 48000 1000 quiet
+render 48000 1000 muted
+render 48000 1000 zero
+render 48000 1000 fallback
+render 48000 1000 warning
+render 48000 1000 saturated-warning
+render 48000 1000 saturated-no-warning
+render 48000 1000 warning-only
+render 48000 1000 best-record
+render 48000 1000 loss-impact
+render 48000 3000 standard
+render 48000 3000 low
+render 48000 3000 quiet
+render 48000 3000 muted
+render 48000 3000 zero
+render 48000 3000 fallback
+render 48000 3000 warning
+render 48000 3000 saturated-warning
+render 48000 3000 saturated-no-warning
+render 48000 3000 warning-only
+render 48000 4000 standard
+render 48000 4000 low
+render 48000 4000 quiet
+render 48000 4000 muted
+render 48000 4000 zero
+render 48000 4000 fallback
+render 48000 4000 warning
+render 48000 4000 saturated-warning
+render 48000 4000 saturated-no-warning
+render 48000 4000 warning-only
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+browserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Missing libraries:                                   ║
+║     liblzo2.so.2                                     ║
+║     libGLESv2.so.2                                   ║
+╚══════════════════════════════════════════════════════╝
+    at /tmp/rally-audio-probe.mjs:8:29 {
+  log: [],
+  name: 'Error'
+}
+
+Node.js v24.19.0

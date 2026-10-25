@@ -1,6 +1,7 @@
 import { AdditiveBlending, BufferAttribute, BufferGeometry, DoubleSide, DynamicDrawUsage, Group, Mesh, MeshBasicMaterial, NormalBlending } from 'three';
 import type { GameConfig, GameSnapshot } from '../game/types';
-import type { RallyEffectsState } from '../game/rallyEffects';
+import type { RallyCue, RallyEffectsState } from '../game/rallyEffects';
+import { celebrationFrame } from '../game/celebrations';
 import type { Quality } from '../storage/preferences';
 import { sampleRainbow } from './rainbow';
 
@@ -15,11 +16,11 @@ function createBatch(capacity:number,name:string,additive=true) {
   const mesh=new Mesh(geometry,material);mesh.name=name;mesh.frustumCulled=false;mesh.renderOrder=2;
   let count=0,opacity=1;
   return {mesh,capacity,get count(){return count;},clear(){count=0;opacity=1;},setOpacity(value:number){opacity=value;},
-    rect(left:number,bottom:number,right:number,top:number,z:number,r:number,g:number,b:number,a:number){
-      a*=opacity;if(count>=capacity||a<=0)return;let v=count++*6;
+    rect(left:number,bottom:number,right:number,top:number,z:number,r:number,g:number,b:number,a:number,bottomAlpha=a){
+      a*=opacity;bottomAlpha*=opacity;if(count>=capacity||a<=0)return;let v=count++*6;
       position.setXYZ(v,left,bottom,z);position.setXYZ(v+1,right,bottom,z);position.setXYZ(v+2,left,top,z);
       position.setXYZ(v+3,right,bottom,z);position.setXYZ(v+4,right,top,z);position.setXYZ(v+5,left,top,z);
-      for(let i=0;i<6;i++)color.setXYZW(v++,r,g,b,a);
+      for(let i=0;i<6;i++)color.setXYZW(v++,r,g,b,i===0||i===1||i===3?bottomAlpha:a);
     },
     line(ax:number,ay:number,az:number,bx:number,by:number,bz:number,width:number,r:number,g:number,b:number,a:number){
       a*=opacity;if(count>=capacity||a<=0)return;
@@ -62,14 +63,14 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
   tableRoot.add(tableGlow.mesh,table.mesh);worldRoot.add(worldGlow.mesh,world.mesh);
   const batches=[table,tableGlow,world,worldGlow];
   const activeEffects:string[]=[];
-  let disposed=false,particleCount=0,density=1,now=0,score=0,reduced=false;
+  let disposed=false,particleCount=0,density=1,now=0,score=0,reduced=false,finishProgress=0;
   let finalPhase:'converge'|'assemble'|'expand'|'overlap-fade'|null=null;
   const active=(name:string)=>{if(!activeEffects.includes(name))activeEffects.push(name);};
   function line(target:Batch,ax:number,ay:number,az:number,bx:number,by:number,bz:number,width:number,r:number,g:number,b:number,a:number){
     target.line(ax,ay,az,bx,by,bz,width,r,g,b,a);
   }
   function perimeter(time:number,opacity:number,lap=false,channel=-1,width=.011,tail=.32){
-    const segments=64*density,w=config.tableHalfWidth,l=config.tableHalfLength,y=config.tableY+.027;
+    const segments=64*density,w=config.tableHalfWidth*(1+finishProgress*.3),l=config.tableHalfLength*(1+finishProgress*.3),y=config.tableY+.027;
     const length=4*(w+l),head=fraction(time)*length;
     for(let i=0;i<segments;i++){
       const at=i/segments*length,next=(i+1)/segments*length;
@@ -109,7 +110,7 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
     const trails=score>=4000?9:colors===2?4:6;
     for(let k=0;k<trails*density;k++){
       const color=k%colors,period=color===0?3.7:color===1?4.9:6.1;
-      const phase=fraction(now/period+k*.23),head=-3.2+phase*6.4;
+      const phase=fraction(now/period+k*.23),head=(-3.2+phase*6.4)*(1+finishProgress*.8);
       const r=color===2?.85:.06,g=color===0?.9:color===1?.32:.07,b=color===1?1:color===0?.2:.13;
       const width=color===0?.011:color===1?.016:.021,tail=color===0?1.15:color===1?.86:.63;
       for(let j=0;j<18;j++){
@@ -174,12 +175,18 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
     }
   }
   function stars(transition:number){
-    // This shallow backdrop sits IN FRONT of the opaque far wall. The court's
-    // ordinary depth buffer still covers it. No camera or court material changes.
-    worldGlow.rect(-6,-1.2,6,.9,-5.93,.002,.006,.022,.94*transition);
+    // Cover the portrait frustum's upper wall as well as the landscape horizon.
+    // The short lower gradient ends above the far floor/wall seam; ordinary
+    // opaque court and floor depth still occludes everything in front of it.
+    worldGlow.rect(-12,-.6,12,12,-5.93,.002,.006,.022,.94*transition);
+    worldGlow.rect(-12,-.73,12,-.6,-5.93,.002,.006,.022,.94*transition,0);
     const count=Math.floor((score>=4000?240:160)*density);
     for(let i=0;i<count;i++){
-      const x=(hash(i+401)*2-1)*3.6,y=-.45+hash(i+809)*.75,z=-5.1+hash(i+1123)*.22;
+      const lowerCount=count/2,x=(hash(i+401)*2-1)*3.6;
+      // Half remain in the shallow landscape horizon; half are stratified over
+      // the tall portrait background instead of collecting in one narrow band.
+      const y=i<lowerCount?-.45+hash(i+809)*.75:.3+(i-lowerCount+hash(i+809))/lowerCount*6.7;
+      const z=-5.1+hash(i+1123)*.22;
       const size=.008+hash(i+719)*.012,light=.58+hash(i+157)*.28;
       const alpha=(.24+hash(i+167)*.3)*transition;
       line(world,x-size,y,z,x+size,y,z,.004,light,light+.1,1,alpha);
@@ -187,6 +194,9 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
       particleCount++;
     }
     ring(world,0,-.2,-5.35,2.45*(1+Math.sin(now*.12)*.04),96*density,.018,.2*transition,now,.12,.3,.7,false,false,now*.035,.23);
+    const upperHalos=score>=2750?3:1;
+    for(let i=0;i<upperHalos;i++)ring(world,.1,2.65,-5.4-i*.12,(2.2+i*.3)*(1+Math.sin(now*.12+i)*.035),64*density,
+      .015,(.14-i*.025)*transition,now,i===2?.6:.12,i===1?.5:i===2?.16:.3,i===1?.35:i===2?.22:.7,false,false,now*.025+i*.2,1.15);
   }
   function sideHalos(){
     const phase=reduced?.5:fraction(now/3);
@@ -274,6 +284,80 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
         fade*(1-u)*(.4-i*.065),now,0,0,0,true,false,i*.12,.28);
     }
   }
+  function spark(x:number,y:number,z:number,seed:number,age:number,impact=false){
+    const t=reduced?.35:age/.5,count=(impact?16:12)*density;
+    for(let i=0;i<count;i++){
+      const a=hash(seed*31+i+3)*TAU,speed=(impact?.38:.16)+hash(seed*13+i+91)*(impact?.32:.12);
+      const distance=speed*t,vertical=(.25+hash(i+seed*11)*.6)*distance;
+      const px=x+Math.cos(a)*distance,py=y+vertical-t*t*(impact?.09:.045),pz=z+Math.sin(a)*distance*.4;
+      const length=impact?.055:.025,alpha=(1-t)*(impact?.38:.55);
+      line(world,px,py,pz,px-Math.cos(a)*length,py-length*.55,pz-Math.sin(a)*length*.4,
+        impact?.012:.008,impact?.25:.6,impact?.7:.95,impact?1:.8,alpha);particleCount++;
+    }
+  }
+  function lossWave(age:number,duration:number){
+    const t=reduced?.4:age/duration,alpha=envelope(age,duration)*.45;
+    const w=config.tableHalfWidth+.04+t*.38,l=config.tableHalfLength+.04+t*.5,y=config.tableY+.025;
+    for(let side=0;side<4;side++)for(let i=0;i<16*density;i++){
+      const a=i/(16*density)*2-1,b=(i+1)/(16*density)*2-1;
+      if(side<2)line(table,a*w,y,(side?1:-1)*l,b*w,y,(side?1:-1)*l,.018,.7,.85,1,alpha);
+      else line(table,(side===2?-1:1)*w,y,a*l,(side===2?-1:1)*w,y,b*l,.018,.7,.85,1,alpha);
+    }
+  }
+  function lossNet(age:number,duration:number,gold=false){
+    const t=reduced?.4:age/duration,alpha=envelope(age,duration)*(1-t)*.65;
+    for(let side=-1;side<=1;side+=2)for(let bolt=0;bolt<4*density;bolt++){
+      let px=side*1.09,py=config.tableY+.16,pz=0;
+      const angle=(bolt/(4*density)*1.4+.2)*side;
+      for(let i=1;i<=8;i++){
+        const s=i/8,x=side*1.09+Math.cos(angle)*side*s*(.25+t*.4),y=config.tableY+.16+Math.sin(s*Math.PI)*(.18+t*.2)+Math.sin(i*2+now*2)*.016,z=-s*(.12+bolt*.05);
+        line(table,px,py,pz,x,y,z,gold?.016:.013,gold?1:.1,gold?.65:.6,gold?.06:1,alpha*(1-s*.5));px=x;py=y;pz=z;
+      }
+    }
+  }
+  function numberHalo(snapshot:GameSnapshot,value:number,age:number,duration:number){
+    const numbers=celebrationFrame(snapshot.celebrations,snapshot.simTime).numbers,index=numbers.findIndex(n=>n.value===value);
+    if(index<0)return;
+    const notice=numbers[index]!,columns=numbers.length===1?1:numbers.length<=4?2:3,rows=Math.ceil(numbers.length/columns);
+    const cellWidth=1.88/columns,cellDepth=1.5/rows;
+    const scale=Math.min(cellWidth/(String(value).length*.68),cellDepth)*(reduced?1:1+.06*Math.sin(notice.age*11));
+    const x=-.94+cellWidth*(index%columns)+cellWidth/2,z=.18+Math.floor(index/columns)*cellDepth+cellDepth/2;
+    const t=reduced?.4:age/duration;
+    active('loss-number-halos');
+    ring(table,x,config.tableY+.03,z,scale*(.36+t*.14),32*density,.012,envelope(age,duration)*(1-t)*.5,now,
+      value===55?.65:.08,value===88?.9:.35,value===77?1:.5,true,true,0,.85);
+  }
+  function warningPosts(){
+    const alpha=.24+(reduced?0:Math.sin(now*1.1)*.06);
+    for(let side=-1;side<=1;side+=2){
+      line(table,side*1.09,config.tableY-.01,0,side*1.09,config.tableY+.23,0,.023,.9,.45,.08,alpha);
+      ring(table,side*1.09,config.tableY+.1,.008,.075,24*density,.009,alpha,now,.9,.45,.08,false,false);
+      ring(tableGlow,side*1.09,config.tableY+.1,.009,.078,16*density,.035,alpha*.16,now,.9,.45,.08,false,false);
+    }
+  }
+  function lossFinal(age:number,duration:number){
+    const t=reduced?.45:age/duration,alpha=envelope(age,duration)*(1-t)*.5;
+    const count=48*density;
+    for(let i=0;i<count;i++){
+      const a=i/count*TAU,color=i%3,r=.25+t*3.2,tail=r+.3;
+      line(world,Math.cos(a)*r,-.18+Math.sin(a)*r*.25,-4.4,Math.cos(a)*tail,-.18+Math.sin(a)*tail*.25,-4.4,
+        .018,color===2?.8:.08,color===0?.85:.3,color===1?1:.2,alpha);
+      const x=Math.cos(a)*config.tableHalfWidth,z=Math.sin(a)*config.tableHalfLength;
+      line(table,x,config.tableY+.03,z,x+Math.cos(a)*t*.9,config.tableY+.03+t*.18,z+Math.sin(a)*t*1.2,
+        .012,color===2?.8:.08,color===0?.85:.3,color===1?1:.2,alpha*.7);
+    }
+    ring(world,0,-.18,-4.5,.3+t*2.8,64*density,.018,alpha*.4,now,0,0,0,true,false,0,.25);
+  }
+  function lossCue(snapshot:GameSnapshot,cue:RallyCue){
+    const age=snapshot.simTime-cue.at;
+    if(age<0||snapshot.simTime>=cue.at+cue.duration)return;
+    if(cue.kind==='loss-impact'&&cue.position){active('loss-impact');spark(cue.position.x,cue.position.y,cue.position.z,cue.value,age,true);}
+    else if(cue.kind==='loss-wave'){active('loss-wave');lossWave(age,cue.duration);}
+    else if(cue.kind==='loss-net'){active('loss-net');lossNet(age,cue.duration);}
+    else if(cue.kind==='loss-number')numberHalo(snapshot,cue.value,age,cue.duration);
+    else if(cue.kind==='loss-gold'){active('loss-gold');lossNet(age,cue.duration,true);}
+    else if(cue.kind==='loss-final'){active('loss-final');lossFinal(age,cue.duration);}
+  }
   function arrival(threshold:number,age:number,duration:number){
     const fade=envelope(age,duration),t=reduced?.45:age/duration;
     if(threshold===100){active('perimeter-lap');perimeter(t,fade*.8,true);}
@@ -311,6 +395,8 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
       if(disposed)return;
       for(const target of batches)target.clear();activeEffects.length=0;particleCount=0;finalPhase=null;
       density=quality==='low'?.5:1;now=reducedMotion?0:snapshot.simTime;reduced=reducedMotion;score=snapshot.score;
+      finishProgress=state?.runId===snapshot.runId&&state.lostBallCount>=100?(reduced?.45:1):0;
+      if(state?.runId===snapshot.runId)for(const cue of state.cues)if(cue.kind==='loss-final'&&snapshot.simTime>=cue.at&&snapshot.simTime<cue.at+cue.duration)finishProgress=reduced?.45:clamp((snapshot.simTime-cue.at)/cue.duration);
       if(score>=400&&score<2000){active('background-threads');threads();}
       if(score>=500&&score<1500){active('green-perimeter');perimeter(now*.21,.52);}
       if(score>=600&&score<1500){active('green-net');netCross(now*.25,.46);}
@@ -339,8 +425,9 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
           active('hit-ring');const t=reduced?.35:age/.3;
           ring(table,hit.position.x,hit.position.y,hit.position.z+.01,.075+t*.13,32*density,.009,(1-t)*.55,now,.18,.9,.55);
         }
-        let newestMajor=-Infinity;
+        let newestMajor=-Infinity,latestFinal=-Infinity;
         for(const cue of state.arrivals)if(cue.threshold%1000===0&&cue.at<=snapshot.simTime)newestMajor=Math.max(newestMajor,cue.at);
+        for(const cue of state.cues)if(cue.kind==='loss-final'&&cue.at<=snapshot.simTime)latestFinal=Math.max(latestFinal,cue.at);
         const newestMajorScore=Math.min(4000,Math.floor(state.score/1000)*1000);
         const newestMajorPresent=state.arrivals.some(cue=>cue.threshold===newestMajorScore&&cue.at<=snapshot.simTime);
         for(const cue of state.arrivals){
@@ -351,12 +438,20 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group) {
           // A newer shorter arrival may already have expired/pruned. Its confirmed
           // score still prevents an older long arrival replay after restoration.
           if(cue.threshold<newestMajorScore&&!newestMajorPresent)continue;
-          const priorityFade=cue.at<newestMajor?clamp(1-(snapshot.simTime-newestMajor)/.35):1;
+          const finishFade=latestFinal===-Infinity?(state.lostBallCount>=100?0:1):clamp(1-(snapshot.simTime-latestFinal)/.35);
+          const priorityFade=(cue.at<newestMajor?clamp(1-(snapshot.simTime-newestMajor)/.35):1)*finishFade;
           if(priorityFade<=0)continue;
           for(const target of batches)target.setOpacity(priorityFade);
           arrival(cue.threshold,age,duration);
         }
         for(const target of batches)target.setOpacity(1);
+        for(const loss of state.losses){
+          const age=snapshot.simTime-loss.at;
+          if(!loss.position||age<0||snapshot.simTime>=loss.at+.5)continue;
+          active('loss-sparks');spark(loss.position.x,loss.position.y,loss.position.z,loss.count,age);
+        }
+        if(state.lostBallCount>=90&&state.lostBallCount<=99){active('loss-warning-posts');warningPosts();}
+        for(const cue of state.cues)lossCue(snapshot,cue);
       }
       for(const target of batches)target.finish();
     },

@@ -1,0 +1,276 @@
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+starting chromium
+[vite] connecting...
+[vite] connected.
+render 44100 1000 standard
+render 44100 1000 low
+render 44100 1000 quiet
+render 44100 1000 muted
+render 44100 1000 zero
+render 44100 1000 fallback
+render 44100 1000 warning
+render 44100 1000 saturated-warning
+render 44100 1000 saturated-no-warning
+render 44100 1000 saturated-duck-only
+render 44100 1000 warning-only
+render 44100 1000 best-record
+render 44100 1000 loss-impact
+render 44100 3000 standard
+render 44100 3000 low
+render 44100 3000 quiet
+render 44100 3000 muted
+render 44100 3000 zero
+render 44100 3000 fallback
+render 44100 3000 warning
+render 44100 3000 saturated-warning
+render 44100 3000 saturated-no-warning
+render 44100 3000 saturated-duck-only
+render 44100 3000 warning-only
+render 44100 4000 standard
+render 44100 4000 low
+render 44100 4000 quiet
+render 44100 4000 muted
+render 44100 4000 zero
+render 44100 4000 fallback
+render 44100 4000 warning
+render 44100 4000 saturated-warning
+render 44100 4000 saturated-no-warning
+render 44100 4000 saturated-duck-only
+render 44100 4000 warning-only
+render 48000 1000 standard
+render 48000 1000 low
+render 48000 1000 quiet
+render 48000 1000 muted
+render 48000 1000 zero
+render 48000 1000 fallback
+render 48000 1000 warning
+render 48000 1000 saturated-warning
+render 48000 1000 saturated-no-warning
+render 48000 1000 saturated-duck-only
+render 48000 1000 warning-only
+render 48000 1000 best-record
+render 48000 1000 loss-impact
+render 48000 3000 standard
+render 48000 3000 low
+render 48000 3000 quiet
+render 48000 3000 muted
+render 48000 3000 zero
+render 48000 3000 fallback
+render 48000 3000 warning
+render 48000 3000 saturated-warning
+render 48000 3000 saturated-no-warning
+render 48000 3000 saturated-duck-only
+render 48000 3000 warning-only
+render 48000 4000 standard
+render 48000 4000 low
+render 48000 4000 quiet
+render 48000 4000 muted
+render 48000 4000 zero
+render 48000 4000 fallback
+render 48000 4000 warning
+render 48000 4000 saturated-warning
+render 48000 4000 saturated-no-warning
+render 48000 4000 saturated-duck-only
+render 48000 4000 warning-only
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+starting webkit
+[vite] connecting...
+[vite] connected.
+render 44100 1000 standard
+render 44100 1000 low
+render 44100 1000 quiet
+render 44100 1000 muted
+render 44100 1000 zero
+render 44100 1000 fallback
+render 44100 1000 warning
+render 44100 1000 saturated-warning
+render 44100 1000 saturated-no-warning
+render 44100 1000 saturated-duck-only
+render 44100 1000 warning-only
+render 44100 1000 best-record
+render 44100 1000 loss-impact
+render 44100 3000 standard
+render 44100 3000 low
+render 44100 3000 quiet
+render 44100 3000 muted
+render 44100 3000 zero
+render 44100 3000 fallback
+render 44100 3000 warning
+render 44100 3000 saturated-warning
+render 44100 3000 saturated-no-warning
+render 44100 3000 saturated-duck-only
+render 44100 3000 warning-only
+render 44100 4000 standard
+render 44100 4000 low
+render 44100 4000 quiet
+render 44100 4000 muted
+render 44100 4000 zero
+render 44100 4000 fallback
+render 44100 4000 warning
+render 44100 4000 saturated-warning
+render 44100 4000 saturated-no-warning
+render 44100 4000 saturated-duck-only
+render 44100 4000 warning-only
+render 48000 1000 standard
+render 48000 1000 low
+render 48000 1000 quiet
+render 48000 1000 muted
+render 48000 1000 zero
+render 48000 1000 fallback
+render 48000 1000 warning
+render 48000 1000 saturated-warning
+render 48000 1000 saturated-no-warning
+render 48000 1000 saturated-duck-only
+render 48000 1000 warning-only
+render 48000 1000 best-record
+render 48000 1000 loss-impact
+render 48000 3000 standard
+render 48000 3000 low
+render 48000 3000 quiet
+render 48000 3000 muted
+render 48000 3000 zero
+render 48000 3000 fallback
+render 48000 3000 warning
+render 48000 3000 saturated-warning
+render 48000 3000 saturated-no-warning
+render 48000 3000 saturated-duck-only
+render 48000 3000 warning-only
+render 48000 4000 standard
+render 48000 4000 low
+render 48000 4000 quiet
+render 48000 4000 muted
+render 48000 4000 zero
+render 48000 4000 fallback
+render 48000 4000 warning
+render 48000 4000 saturated-warning
+render 48000 4000 saturated-no-warning
+render 48000 4000 saturated-duck-only
+render 48000 4000 warning-only
+[
+  {
+    "engine": "chromium",
+    "renders": 70,
+    "maxPeak": 0.32245123386383057,
+    "maxVoicesIncludingFading": 16,
+    "allDisposed": true,
+    "warningPairs": [
+      {
+        "rate": 44100,
+        "score": 1000,
+        "warningResidualRms": 0.007812695439156322,
+        "warningRms": 0.008772746582842326,
+        "withoutWarningRms": 0.023875235872017626,
+        "warningDifference": 0.001954641525199448,
+        "withoutWarningDifference": 0.006738406708735408
+      },
+      {
+        "rate": 44100,
+        "score": 3000,
+        "warningResidualRms": 0.007731407063952169,
+        "warningRms": 0.008482128781442439,
+        "withoutWarningRms": 0.02240313032244305,
+        "warningDifference": 0.001824612771876447,
+        "withoutWarningDifference": 0.006101073858623513
+      },
+      {
+        "rate": 44100,
+        "score": 4000,
+        "warningResidualRms": 0.007790931872937874,
+        "warningRms": 0.008719706526410556,
+        "withoutWarningRms": 0.023540524335557825,
+        "warningDifference": 0.0018547440298486146,
+        "withoutWarningDifference": 0.0060560610609202165
+      },
+      {
+        "rate": 48000,
+        "score": 1000,
+        "warningResidualRms": 0.007812709668528366,
+        "warningRms": 0.00893622279399143,
+        "withoutWarningRms": 0.023397577561840677,
+        "warningDifference": 0.0017783187925708211,
+        "withoutWarningDifference": 0.006097772051152233
+      },
+      {
+        "rate": 48000,
+        "score": 3000,
+        "warningResidualRms": 0.0075539260730091325,
+        "warningRms": 0.008328415927965073,
+        "withoutWarningRms": 0.021742533150347368,
+        "warningDifference": 0.001596848244982042,
+        "withoutWarningDifference": 0.005406230207141196
+      },
+      {
+        "rate": 48000,
+        "score": 4000,
+        "warningResidualRms": 0.007554930062062986,
+        "warningRms": 0.008550002350268475,
+        "withoutWarningRms": 0.02316450690260793,
+        "warningDifference": 0.0016055926461236501,
+        "withoutWarningDifference": 0.005376378549452411
+      }
+    ]
+  },
+  {
+    "engine": "webkit",
+    "renders": 70,
+    "maxPeak": 0.32245123386383057,
+    "maxVoicesIncludingFading": 16,
+    "allDisposed": true,
+    "warningPairs": [
+      {
+        "rate": 44100,
+        "score": 1000,
+        "warningResidualRms": 0.007812730333795481,
+        "warningRms": 0.008774158086956462,
+        "withoutWarningRms": 0.023875236609863102,
+        "warningDifference": 0.001954560501965813,
+        "withoutWarningDifference": 0.006738407003161203
+      },
+      {
+        "rate": 44100,
+        "score": 3000,
+        "warningResidualRms": 0.0078104519637526605,
+        "warningRms": 0.008581730477090316,
+        "withoutWarningRms": 0.02240313097581719,
+        "warningDifference": 0.0018588708547164902,
+        "withoutWarningDifference": 0.006101074149514508
+      },
+      {
+        "rate": 44100,
+        "score": 4000,
+        "warningResidualRms": 0.007790966476353346,
+        "warningRms": 0.008719057641398454,
+        "withoutWarningRms": 0.023540525097107492,
+        "warningDifference": 0.0018545488042487279,
+        "withoutWarningDifference": 0.006056061212026316
+      },
+      {
+        "rate": 48000,
+        "score": 1000,
+        "warningResidualRms": 0.007818858092348712,
+        "warningRms": 0.008936223033695965,
+        "withoutWarningRms": 0.023397578526424358,
+        "warningDifference": 0.001778318856978626,
+        "withoutWarningDifference": 0.006097772022293383
+      },
+      {
+        "rate": 48000,
+        "score": 3000,
+        "warningResidualRms": 0.007803879343027344,
+        "warningRms": 0.008751824121438689,
+        "withoutWarningRms": 0.021742534357305384,
+        "warningDifference": 0.0016819344248484999,
+        "withoutWarningDifference": 0.005406230319771879
+      },
+      {
+        "rate": 48000,
+        "score": 4000,
+        "warningResidualRms": 0.007761629857911698,
+        "warningRms": 0.00890678952567052,
+        "withoutWarningRms": 0.023164506609318427,
+        "warningDifference": 0.0016763604080777036,
+        "withoutWarningDifference": 0.005376378230303567
+      }
+    ]
+  }
+]

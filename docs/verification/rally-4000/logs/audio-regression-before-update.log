@@ -1,0 +1,146 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/audio-events.test.ts tests/unit/audio-contact.test.ts tests/unit/audio-prepare.test.ts tests/unit/audio-fanfare.test.ts tests/unit/rally-audio.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/audio-fanfare.test.ts (24 tests | 2 failed) 459ms
+   ❯ rally milestone fanfare (24)
+     × protects an active fanfare from dense hits and warnings with voice limit 1 39ms
+     × clears contact sounds at game-over and lets the existing fanfare finish naturally 15ms
+ ❯ tests/unit/audio-prepare.test.ts (14 tests | 4 failed) 116ms
+   ❯ silent audio preparation (14)
+     × calls resume during the initiating gesture and warms data without creating any source 68ms
+     × reuses its context, graph and synthesis data over repeated preparation and replay 10ms
+     × uses basic oscillator fallback when reusable layered synthesis is unavailable 3ms
+     × does not let an old rejected preparation clear newer prepared audio 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/audio-fanfare.test.ts > rally milestone fanfare > protects an active fanfare from dense hits and warnings with voice limit 1
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/audio-fanfare.test.ts:57:97
+     55|     for (let i = 0; i < 120; i++) {
+     56|       audio.consume([event(101, `dense-${i}`, i % 3 === 0 ? 'smash-war…
+     57|       expect(fanfare.every(source => source.stops.length === 1 && !sou…
+       |                                                                                                 ^
+     58|       const activeVoices = t.nodes.filter(node => node.kind === 'shape…
+     59|       expect(activeVoices).toBeLessThanOrEqual(audioVoiceLimit * 2);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  tests/unit/audio-fanfare.test.ts > rally milestone fanfare > clears contact sounds at game-over and lets the existing fanfare finish naturally
+AssertionError: expected [ { kind: 'gain', …(3) }, …(2) ] to have a length of 2 but got 3
+
+- Expected
++ Received
+
+- 2
++ 3
+
+ ❯ tests/unit/audio-fanfare.test.ts:78:56
+     76|     expect(t.sources.filter(source => source.kind === 'buffer').every(…
+     77|     t.finishAll(); expect(t.sources.every(source => source.record.disc…
+     78|     expect(t.nodes.filter(node => !node.disconnected)).toHaveLength(2);
+       |                                                        ^
+     79|     await audio.dispose();
+     80|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  tests/unit/audio-prepare.test.ts > silent audio preparation > calls resume during the initiating gesture and warms data without creating any source
+AssertionError: expected [ 'compressor', 'gain', 'gain' ] to deeply equal [ 'compressor', 'gain' ]
+
+- Expected
++ Received
+
+  [
+    "compressor",
+    "gain",
++   "gain",
+  ]
+
+ ❯ tests/unit/audio-prepare.test.ts:29:51
+     27|     expect(buffers[0]!.getChannelData(0)).toHaveLength(2400);
+     28|     expect(t.sources).toHaveLength(0);
+     29|     expect(t.nodes.map(node => node.kind).sort()).toEqual(['compressor…
+       |                                                   ^
+     30|     audio.consume([hit('first')]);
+     31|     expect(t.sources.length).toBeGreaterThan(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  tests/unit/audio-prepare.test.ts > silent audio preparation > reuses its context, graph and synthesis data over repeated preparation and replay
+AssertionError: expected [ { kind: 'gain', …(3) }, …(2) ] to have a length of 2 but got 3
+
+- Expected
++ Received
+
+- 2
++ 3
+
+ ❯ tests/unit/audio-prepare.test.ts:66:58
+     64|       expect(t.sources.filter(source => !source.record.disconnected)).…
+     65|       audio.consume([hit('first', runId)]); t.finishAll(); audio.suspe…
+     66|       expect(t.nodes.filter(node => !node.disconnected)).toHaveLength(…
+       |                                                          ^
+     67|     }
+     68|     expect(contexts).toBe(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  tests/unit/audio-prepare.test.ts > silent audio preparation > uses basic oscillator fallback when reusable layered synthesis is unavailable
+AssertionError: expected [ { gain: { …(6) }, …(2) }, …(1) ] to have a length of 1 but got 2
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/unit/audio-prepare.test.ts:91:55
+     89|     expect(() => tones.prepareTones(t.context)).not.toThrow();
+     90|     audio.reset('run'); expect(await audio.prepare!()).toBe(true);
+     91|     expect(t.voices).toHaveLength(0); expect(t.gains).toHaveLength(1);
+       |                                                       ^
+     92|     audio.consume([hit('first')]); expect(t.voices).toHaveLength(1);
+     93|     await audio.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  tests/unit/audio-prepare.test.ts > silent audio preparation > does not let an old rejected preparation clear newer prepared audio
+AssertionError: expected [ { kind: 'gain', …(3) }, …(2) ] to have a length of 2 but got 3
+
+- Expected
++ Received
+
+- 2
++ 3
+
+ ❯ tests/unit/audio-prepare.test.ts:160:56
+    158|     expect(await audio.prepare!()).toBe(true);
+    159|     rejectOld(new Error('interrupted')); expect(await old).toBe(false);
+    160|     expect(t.nodes.filter(node => !node.disconnected)).toHaveLength(2);
+       |                                                        ^
+    161|     audio.consume([hit('first')]); expect(t.sources.length).toBeGreate…
+    162|     await audio.dispose(); expect(t.nodes.every(node => node.disconnec…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+
+
+ Test Files  2 failed | 3 passed (5)
+      Tests  6 failed | 58 passed (64)
+   Start at  20:16:17
+   Duration  1.71s (tests 52%, transform 30%, import 14%, worker 4%)
+
+    Isolate  5 workers spawned · ~470ms startup each (spawn + environment, per file)
+             at least ~313ms faster with isolate: false — reuses workers across files instead of one per file
+

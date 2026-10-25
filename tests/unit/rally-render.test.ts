@@ -1,8 +1,9 @@
 import { describe, expect, it, vi } from 'vitest';
 import { Group, Mesh, NormalBlending, Vector3 } from 'three';
 import { DEFAULT_CONFIG } from '../../src/game/config';
-import type { RallyEffectsState } from '../../src/game/rallyEffects';
+import type { RallyCue, RallyEffectsState } from '../../src/game/rallyEffects';
 import { RALLY_EFFECTS } from '../../src/game/rallyEffects';
+import { createCelebrations, lossCelebration } from '../../src/game/celebrations';
 import { createRallyEffectView } from '../../src/render/rallyEffects';
 import { createCamera, fitCamera } from '../../src/render/camera';
 import { scenario } from '../helpers/scenarios';
@@ -140,6 +141,87 @@ describe('bounded rally world renderer, 0–1000',()=>{
   });
 });
 
+describe('loss renderer follows immutable event facts through the finish clock',()=>{
+  const cue=(kind:RallyCue['kind'],value:number,duration:number,at=20):RallyCue=>({id:`${kind}-${value}`,kind,value,duration,at,priority:10,position:{x:.2,y:.5,z:1.95}});
+  it('draws each simultaneous loss at its own confirmed world coordinate and clears exactly at .5 seconds',()=>{
+    const view=createRallyEffectView(DEFAULT_CONFIG,new Group());
+    const losses=[{id:'a',count:1,at:20,rollingCount:1,position:{x:-.65,y:.3,z:1.95}},{id:'b',count:2,at:20,rollingCount:2,position:{x:.55,y:.75,z:1.95}}];
+    const state=effectState(0,{losses,lostBallCount:2});view.update(snapshot(0,20.12),state);
+    expect(view.stats().activeEffects).toContain('loss-sparks');const points=geometryValues(view.worldRoot);
+    const x=points.filter((_,i)=>i%3===0);expect(Math.min(...x)).toBeLessThan(-.6);expect(Math.max(...x)).toBeGreaterThan(.5);
+    for(let i=0;i<points.length;i+=3)expect(Math.min(...losses.map(loss=>Math.hypot(points[i]!-loss.position.x,points[i+1]!-loss.position.y,points[i+2]!-loss.position.z)))).toBeLessThan(.3);
+    view.update(snapshot(0,20.5),state);expect(view.stats().worldQuads).toBe(0);
+    view.update(snapshot(0,20.12),{...state,runId:'old'});expect(view.stats().worldQuads).toBe(0);view.dispose();
+  });
+
+  it.each([
+    ['loss-impact',4,.5,'loss-impact'],['loss-wave',10,1.2,'loss-wave'],['loss-wave',20,1.2,'loss-wave'],
+    ['loss-wave',30,1.2,'loss-wave'],['loss-wave',40,1.2,'loss-wave'],['loss-net',50,1.2,'loss-net'],
+    ['loss-gold',99,1.2,'loss-gold'],['loss-final',100,2,'loss-final'],
+  ] as const)('draws %s %i through its exact deadline',(kind,value,duration,name)=>{
+    const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig),state=effectState(0,{cues:[cue(kind,value,duration)]});
+    view.update(snapshot(0,19.99),state);expect(view.stats().activeEffects).not.toContain(name);
+    view.update({...snapshot(0,20.15),phase:'gameover'},state);expect(view.stats().activeEffects).toContain(name);
+    expect(view.stats().tableQuads+view.stats().worldQuads).toBeGreaterThan(0);
+    view.update({...snapshot(0,20+duration),phase:'gameover'},state);expect(view.stats().activeEffects).not.toContain(name);
+    expect(rig.position.toArray()).toEqual([0,0,0]);view.dispose();
+  });
+
+  it.each([55,77,88])('starts a .8 second halo from the existing special %i number position',(value)=>{
+    const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig),state=effectState(0,{cues:[cue('loss-number',value,.8)]});
+    const celebrations=lossCelebration(createCelebrations(),value,20);
+    view.update({...snapshot(0,20.1),celebrations},state);expect(view.stats().activeEffects).toContain('loss-number-halos');
+    const points=geometryValues(rig),z=points.filter((_,i)=>i%3===2);expect(Math.min(...z)).toBeGreaterThan(.15);expect(Math.max(...z)).toBeLessThan(1.75);
+    view.update({...snapshot(0,20.8),celebrations},state);expect(view.stats().activeEffects).not.toContain('loss-number-halos');view.dispose();
+  });
+
+  it('uses the existing multi-number grid for simultaneous special-number halos without modifying it',()=>{
+    const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig);
+    const celebrations=lossCelebration(lossCelebration(createCelebrations(),55,20),77,20),original=JSON.stringify(celebrations);
+    view.update({...snapshot(0,20.1),celebrations},effectState(0,{cues:[cue('loss-number',55,.8),cue('loss-number',77,.8)]}));
+    const mesh=rig.getObjectByName('rally-table-lines') as Mesh,p=mesh.geometry.getAttribute('position');
+    const center=(offset:number)=>{let x=0,z=0;for(let i=offset;i<offset+32*6;i++){x+=p.getX(i);z+=p.getZ(i);}return {x:x/(32*6),z:z/(32*6)};};
+    expect(center(0).x).toBeLessThan(-.3);expect(center(32*6).x).toBeGreaterThan(.3);
+    expect(center(0).z).toBeCloseTo(.93,2);expect(center(32*6).z).toBeCloseTo(.93,2);
+    expect(JSON.stringify(celebrations)).toBe(original);view.dispose();
+  });
+
+  it.each([[89,false],[90,true],[99,true],[100,false]])('keeps warning posts persistent for loss count %i',(count,on)=>{
+    const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig);view.update(snapshot(0,200),effectState(0,{lostBallCount:count}));
+    expect(view.stats().activeEffects.includes('loss-warning-posts')).toBe(on);
+    if(on){const points=geometryValues(rig);expect(points.some((v,i)=>i%3===0&&v< -1.05)).toBe(true);expect(points.some((v,i)=>i%3===0&&v>1.05)).toBe(true);}
+    view.dispose();
+  });
+
+  it('keeps the last real spark and outward finish visible after physics stops and releases them on a new run',()=>{
+    const view=createRallyEffectView(DEFAULT_CONFIG,new Group());
+    const state=effectState(4000,{lostBallCount:100,losses:[{id:'last',count:100,at:20,rollingCount:4,position:{x:.8,y:.3,z:1.95}}],cues:[cue('loss-final',100,2)]});
+    view.update({...snapshot(4000,20.2),phase:'gameover'},state);expect(view.stats().activeEffects).toContain('loss-sparks');expect(view.stats().activeEffects).toContain('loss-final');
+    view.update({...snapshot(4000,21.8),phase:'gameover'},state);expect(view.stats().activeEffects).toContain('loss-final');
+    view.update({...snapshot(0,0),runId:'new',phase:'ready'},state);expect(view.stats().activeEffects).toEqual([]);view.dispose();
+  });
+
+  it('lets the final loss take priority over major arrivals and never restores them after the loss cue expires',()=>{
+    const view=createRallyEffectView(DEFAULT_CONFIG,new Group());
+    const arrival={id:'4000',threshold:4000,at:20,config:RALLY_EFFECTS.find(c=>c.threshold===4000)!};
+    const state=effectState(4000,{lostBallCount:100,arrivals:[arrival],cues:[cue('loss-final',100,2,20.1)]});
+    view.update({...snapshot(4000,20.5),phase:'gameover'},state);expect(view.stats().activeEffects).not.toContain('final-assembly');expect(view.stats().activeEffects).toContain('loss-final');
+    view.update({...snapshot(4000,22.3),phase:'gameover'},{...state,cues:[]});expect(view.stats().activeEffects).not.toContain('final-assembly');view.dispose();
+  });
+
+  it('bounds simultaneous thirty-ball losses at 4000 and freezes reduced-motion spark positions',()=>{
+    const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig);
+    const losses=Array.from({length:30},(_,i)=>({id:`loss-${i}`,count:70+i,at:20,rollingCount:i+1,position:{x:(i%6-2.5)*.25,y:.3+Math.floor(i/6)*.08,z:1.95}}));
+    const cues=losses.map(loss=>({...cue('loss-impact',loss.count,.5),position:loss.position}));
+    const state=effectState(4000,{lostBallCount:99,losses,cues});
+    view.update(snapshot(4000,20.1),state);const standard=view.stats();expect(standard.tableQuads+standard.worldQuads).toBeLessThan(standard.capacity);
+    view.update(snapshot(4000,20.1),state,'low');expect(view.stats().tableQuads+view.stats().worldQuads).toBeLessThan(standard.tableQuads+standard.worldQuads);
+    view.update(snapshot(4000,20.1),state,'standard',true);const first=geometryValues(view.worldRoot);
+    view.update(snapshot(4000,20.2),state,'standard',true);expect(geometryValues(view.worldRoot)).toEqual(first);
+    expect(view.stats().geometries).toBe(4);view.dispose();
+  });
+});
+
 describe('late rally world replacements and arrivals',()=>{
   it.each([
     [1249,[],['meteor']],[1250,['meteor'],[]],[1499,['meteor','green-perimeter','green-net','green-blue-crossing'],['tricolor-crossing']],
@@ -181,15 +263,60 @@ describe('late rally world replacements and arrivals',()=>{
       expect(p.getZ(i)).toBeGreaterThan(-6);expect(p.getZ(i)).toBeLessThan(-3);
       projected.set(p.getX(i),p.getY(i),p.getZ(i)).project(camera);
       if(Math.abs(projected.x)<1&&Math.abs(projected.y)<1){
-        // Every ray reaches y=0 beyond the far edge, so the opaque table cannot hide it.
-        const crossing=camera.position.z+(p.getZ(i)-camera.position.z)*camera.position.y/(camera.position.y-p.getY(i));
-        expect(crossing).toBeLessThan(-DEFAULT_CONFIG.tableHalfLength);visible++;
+        if(p.getY(i)<0){
+          // Rays below the table reach its plane beyond the far edge.
+          const crossing=camera.position.z+(p.getZ(i)-camera.position.z)*camera.position.y/(camera.position.y-p.getY(i));
+          expect(crossing).toBeLessThan(-DEFAULT_CONFIG.tableHalfLength);
+        }else{
+          // Both endpoints are above y=0: the ray never crosses the opaque court.
+          expect(Math.min(camera.position.y,p.getY(i))).toBeGreaterThanOrEqual(0);
+        }
+        visible++;
       }
     }
     expect(visible).toBeGreaterThan(250);
     const backing=view.worldRoot.getObjectByName('rally-world-glow') as Mesh;
     expect((backing.material as {blending:number}).blending).toBe(NormalBlending);
     view.dispose();
+  });
+
+  it.each([[390,844],[1280,720]])('covers most of the upper background at %i×%i while preserving the floor seam',(width,height)=>{
+    const view=createRallyEffectView(DEFAULT_CONFIG,new Group()),camera=createCamera();fitCamera(camera,width,height,DEFAULT_CONFIG);view.update(snapshot(2000));
+    const mesh=view.worldRoot.getObjectByName('rally-world-glow') as Mesh,p=mesh.geometry.getAttribute('position');
+    const xs:number[]=[],ys:number[]=[];
+    for(let i=0;i<6;i++){xs.push(p.getX(i));ys.push(p.getY(i));}
+    const minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys),planeZ=p.getZ(0);
+    const seam=new Vector3(camera.position.x,-.8,-6.15).project(camera).y,ray=new Vector3();let covered=0;
+    for(const x of [-.8,-.4,0,.4,.8])for(const fraction of [.15,.4,.7,.95]){
+      ray.set(x,seam+(1-seam)*fraction,.5).unproject(camera);
+      const ratio=(planeZ-camera.position.z)/(ray.z-camera.position.z),worldX=camera.position.x+(ray.x-camera.position.x)*ratio,worldY=camera.position.y+(ray.y-camera.position.y)*ratio;
+      if(worldX>minX&&worldX<maxX&&worldY>minY&&worldY<maxY)covered++;
+    }
+    expect(covered).toBeGreaterThanOrEqual(18);
+    // Far-floor points are either in front of the backdrop or below its visible
+    // lower edge. The opaque rainbow floor therefore remains unobscured.
+    let lowestBackdrop=Infinity;
+    for(let i=0;i<mesh.geometry.drawRange.count;i++)lowestBackdrop=Math.min(lowestBackdrop,p.getY(i));
+    for(const z of [-2,-4,-6]){
+      const ratio=(planeZ-camera.position.z)/(z-camera.position.z),y=camera.position.y+(-.8-camera.position.y)*ratio;
+      expect(ratio>1||y<lowestBackdrop).toBe(true);
+    }
+    view.dispose();
+  });
+
+  it('distributes star points and a slow large halo across the portrait upper background',()=>{
+    const view=createRallyEffectView(DEFAULT_CONFIG,new Group()),camera=createCamera();fitCamera(camera,390,844,DEFAULT_CONFIG);view.update(snapshot(2000));
+    const mesh=view.worldRoot.getObjectByName('rally-world-lines') as Mesh,p=mesh.geometry.getAttribute('position'),c=mesh.geometry.getAttribute('color'),v=new Vector3();
+    const seam=new Vector3(camera.position.x,-.8,-6.15).project(camera).y,bands=[0,0,0],haloY:number[]=[];
+    for(let i=0;i<mesh.geometry.drawRange.count;i++){
+      v.set(p.getX(i),p.getY(i),p.getZ(i)).project(camera);if(Math.abs(v.x)>.95||v.y<=seam||v.y>=.98)continue;
+      if(c.getX(i)>.4&&c.getY(i)>.58&&c.getZ(i)>.8){
+        const band=Math.min(2,Math.floor((v.y-seam)/(1-seam)*3));bands[band]=bands[band]!+1;
+      }
+      if(p.getY(i)>1&&c.getX(i)<.2&&Math.abs(c.getY(i)-.3)<1e-6&&Math.abs(c.getZ(i)-.7)<1e-6)haloY.push(v.y);
+    }
+    for(const count of bands)expect(count).toBeGreaterThan(50);
+    expect(haloY.length).toBeGreaterThan(24);expect(Math.min(...haloY)).toBeLessThan(.6);expect(Math.max(...haloY)).toBeGreaterThan(.8);view.dispose();
   });
 
   it('gives green, blue and red lightning different widths and travel speeds with smooth motion and decay',()=>{

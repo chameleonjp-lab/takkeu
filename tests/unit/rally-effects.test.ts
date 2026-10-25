@@ -199,3 +199,21 @@ it('integrates the1000 green/blue world into the1500 tricolor lightning family w
     ['green-blue-world','green-perimeter','green-net','tricolor-network'].includes(effect));
   expect(lightningFamily).toEqual(['tricolor-network']);
 });
+
+it('treats2599/2600/2601 as the existing orbit stage with only the2600 normal numeric notice', () => {
+  const effects = createRallyEffects(runId,0);
+  effects.consume([hit(2599,10)]);
+  expect(effects.state().cues.filter(c => c.kind === 'notice')).toEqual([]);
+  effects.consume([hit(2600,10.1)]);
+  expect(effects.state().cues.filter(c => c.kind === 'notice')).toMatchObject([{value:2600,duration:1.8}]);
+  expect(effects.state().cues.filter(c => c.kind === 'major')).toEqual([]);
+  expect(effects.state().arrivals).toEqual([]);
+  const existingStage = effects.state().stage;
+  expect(existingStage.map(c => c.effect)).toContain('orbit-ribbon');
+  expect(existingStage.map(c => c.effect)).not.toContain('multi-halos');
+  expect(existingStage.some(c => c.threshold === 2600)).toBe(false);
+  effects.consume([hit(2601,10.2)]);
+  expect(effects.state().stage).toEqual(existingStage);
+  expect(effects.state().arrivals).toEqual([]);
+  expect(effects.state().cues.filter(c => c.kind === 'notice').map(c => c.value)).toEqual([2600]);
+});

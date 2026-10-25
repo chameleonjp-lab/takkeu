@@ -45,7 +45,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   let observedPhase = session.snapshot().phase;
   const finishPresentation = createFinishPresentation();
   let effects = createRallyEffects(session.snapshot().runId, preferences.bestScore);
-  let effectState = effects.state();
+  let effectState = effects.state(),effectEnd=0;
   let wasFinishing = false;
   let unlockAttempt = 0;
   let activePlay: Play | null = null;
@@ -98,10 +98,11 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     if (score > preferences.bestScore) { preferences = { ...preferences, bestScore: score }; screens.setPreferences(preferences); }
   }
   const loop = createLoop({ session, timeline, config, onEvents: events => {
+    if (!events.length) return;
     if (effectState.runId !== session.snapshot().runId) {
       effects = createRallyEffects(session.snapshot().runId, preferences.bestScore);
     }
-    effects.consume(events); effectState = effects.state();
+    effects.consume(events); effectState = effects.state(); effectEnd=effects.endTime();
     // Deliver before game-over retires ordinary voices. Audio owns cue deduplication.
     for (const cue of effectState.cues) if (cue.kind === 'best-record' || cue.kind === 'loss-impact') {
       audio.consumeAchievement?.({kind:cue.kind,id:cue.id,runId:effectState.runId,time:cue.at});
@@ -146,7 +147,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     inputMapping = view.inputMapping();
     swipe.updateMapping(inputMapping, session.snapshot().phase === 'running');
     fitted = key;
-    if(!starting&&!loadingError)view.render(finishPresentation.frame(session.snapshot(), performance.now(), effects.endTime()).snapshot, [], effectState);
+    if(!starting&&!loadingError)view.render(finishPresentation.frame(session.snapshot(), performance.now(), effectEnd).snapshot, [], effectState);
   }
   function makeView(): GameView {
     fitted = '';inputMapping=null;viewPrepared=false;
@@ -244,7 +245,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     ranking.clearResult(); screens.setRankingParticipation(!!play);
     rememberBest(); persist();
     swipe.cancel(); session.reset(seed()); session.start();
-    effects = createRallyEffects(session.snapshot().runId, preferences.bestScore); effectState = effects.state();
+    effects = createRallyEffects(session.snapshot().runId, preferences.bestScore); effectState = effects.state(); effectEnd=0;
     timeline.clear(INITIAL_PADDLE); audio.reset(session.snapshot().runId);
     fitted = ''; screens.setError(''); screens.render(session.snapshot()); resizeView();
     loop.resetClock(performance.now()); observedPhase = 'running';
@@ -276,7 +277,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     startEpoch++; leaderboardEpoch++; starting = false; screens.setStarting(false); screens.setContextAvailable(contextAvailable);
     ranking.finish(activePlay, session.snapshot().score, 'retire'); activePlay = null;
     rememberBest(); persist(); swipe.cancel(); silence(); session.reset(seed());
-    effects = createRallyEffects(session.snapshot().runId, preferences.bestScore); effectState = effects.state();
+    effects = createRallyEffects(session.snapshot().runId, preferences.bestScore); effectState = effects.state(); effectEnd=0;
     timeline.clear(INITIAL_PADDLE); audio.reset(session.snapshot().runId);
     loop.resetClock(performance.now()); screens.render(session.snapshot());
     if(view&&contextAvailable)view.render(session.snapshot(),[],effectState);
@@ -314,7 +315,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     // resize event. Refresh its camera mapping before accepting the next frame.
     if (session.snapshot().phase === 'running') resizeView();
     const result = loop.frame(now); rememberBest();
-    const presentation = finishPresentation.frame(result.snapshot, now, effects.endTime());
+    const presentation = finishPresentation.frame(result.snapshot, now, effectEnd);
     if (result.snapshot.phase === 'gameover' && observedPhase !== 'gameover') {
       swipe.cancel(); timeline.clear(result.snapshot.paddle); persist();
       if (!presentation.finishing) silence();

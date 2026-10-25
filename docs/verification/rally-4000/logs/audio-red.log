@@ -1,0 +1,156 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-audio.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-audio.test.ts (12 tests | 12 failed) 41ms
+   ❯ extended rally audio (12)
+     × replaces the ordinary hundred phrase at 1000 with a distinct longer cue exactly once 12ms
+     × replaces the ordinary hundred phrase at 3000 with a distinct longer cue exactly once 3ms
+     × replaces the ordinary hundred phrase at 4000 with a distinct longer cue exactly once 1ms
+     × keeps 2000 ordinary and gives 1000, 3000 and 4000 different musical contours 10ms
+     × plays a confirmed best once per run and does not replay consumed silent achievements 3ms
+     × plays bounded low impact only for unique, current confirmed loss groups 1ms
+     × keeps a warning audible when every live voice is a dedicated fanfare, limit 1 1ms
+     × keeps a warning audible when every live voice is a dedicated fanfare, limit 8 3ms
+     × ducks only the fanfare bus smoothly while a warning sounds and recovers afterwards 1ms
+     × respects zero volume, pause, and run reset for best-record 1ms
+     × respects zero volume, pause, and run reset for loss-impact 1ms
+     × preserves dedicated phrases with basic oscillator fallback and low quality 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 12 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > replaces the ordinary hundred phrase at 1000 with a distinct longer cue exactly once
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > replaces the ordinary hundred phrase at 3000 with a distinct longer cue exactly once
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > replaces the ordinary hundred phrase at 4000 with a distinct longer cue exactly once
+AssertionError: expected 1.7999999999999998 to be greater than 2
+ ❯ tests/unit/rally-audio.test.ts:20:64
+     18|     const notes = phrase(t), count = t.sources.length;
+     19|     expect(notes.length).toBeGreaterThanOrEqual(4);
+     20|     expect(Math.max(...notes.map(source => source.stops[0]!))).toBeGre…
+       |                                                                ^
+     21|     expect(notes.some(source => source.starts[0] === .66 && source.fre…
+     22|     audio.consume([hit(score)]); expect(t.sources).toHaveLength(count);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯
+
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > keeps 2000 ordinary and gives 1000, 3000 and 4000 different musical contours
+AssertionError: expected 1 to be 4 // Object.is equality
+
+- Expected
++ Received
+
+- 4
++ 1
+
+ ❯ tests/unit/rally-audio.test.ts:37:68
+     35|       await audio.dispose();
+     36|     }
+     37|     expect(new Set(contours.map(values => values.join(','))).size).toB…
+       |                                                                    ^
+     38|   });
+     39|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯
+
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > plays a confirmed best once per run and does not replay consumed silent achievements
+AssertionError: expected 'undefined' to be 'function' // Object.is equality
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ tests/unit/rally-audio.test.ts:42:45
+     40|   it('plays a confirmed best once per run and does not replay consumed…
+     41|     const { t, audio } = await boot();
+     42|     expect(typeof audio.consumeAchievement).toBe('function');
+       |                                             ^
+     43|     audio.consumeAchievement!(cue('best-record')); const first = t.sou…
+     44|     expect(first).toBeGreaterThan(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/12]⎯
+
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > plays bounded low impact only for unique, current confirmed loss groups
+AssertionError: expected 'undefined' to be 'function' // Object.is equality
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ tests/unit/rally-audio.test.ts:55:80
+     53|
+     54|   it('plays bounded low impact only for unique, current confirmed loss…
+     55|     const { t, audio } = await boot(); expect(typeof audio.consumeAchi…
+       |                                                                                ^
+     56|     audio.consumeAchievement!(cue('loss-impact', 'fourth', 2)); const …
+     57|     expect(count).toBeGreaterThan(0); expect(count).toBeLessThanOrEqua…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/12]⎯
+
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > keeps a warning audible when every live voice is a dedicated fanfare, limit 1
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > keeps a warning audible when every live voice is a dedicated fanfare, limit 8
+AssertionError: expected 0 to be greater than or equal to 3
+ ❯ tests/unit/rally-audio.test.ts:74:28
+     72|     audio.consume([{ kind: 'smash-warning', id: 'warning', runId: 'run…
+     73|     const warning = t.sources.slice(before);
+     74|     expect(warning.length).toBeGreaterThanOrEqual(3);
+       |                            ^
+     75|     expect(warning.some(source => source.frequencies[0] === 850)).toBe…
+     76|     for (let i = 0; i < 64; i++) audio.consume([{ kind: 'smash-warning…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/12]⎯
+
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > ducks only the fanfare bus smoothly while a warning sounds and recovers afterwards
+AssertionError: expected undefined to be 'gain' // Object.is equality
+
+- Expected:
+"gain"
+
++ Received:
+undefined
+
+ ❯ tests/unit/rally-audio.test.ts:84:23
+     82|     const { t, audio } = await boot();
+     83|     const bus = t.nodes[2];
+     84|     expect(bus?.kind).toBe('gain');
+       |                       ^
+     85|     const ramp = vi.spyOn(bus!.node.gain, 'linearRampToValueAtTime');
+     86|     audio.consume([hit(1000), { kind: 'smash-warning', id: 'duck', run…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/12]⎯
+
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > respects zero volume, pause, and run reset for best-record
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > respects zero volume, pause, and run reset for loss-impact
+AssertionError: expected 'undefined' to be 'function' // Object.is equality
+
+Expected: "function"
+Received: "undefined"
+
+ ❯ tests/unit/rally-audio.test.ts:94:80
+     92|
+     93|   it.each(['best-record', 'loss-impact'] as const)('respects zero volu…
+     94|     const { t, audio } = await boot(); expect(typeof audio.consumeAchi…
+       |                                                                                ^
+     95|     audio.setVolume(0); audio.consumeAchievement!(cue(kind)); audio.se…
+     96|     expect(t.sources).toHaveLength(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/12]⎯
+
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > preserves dedicated phrases with basic oscillator fallback and low quality
+AssertionError: expected 1.7999999999999998 to be greater than 2
+ ❯ tests/unit/rally-audio.test.ts:107:67
+    105|     const t = fakeAudioContext(), audio = createAudio(DEFAULT_CONFIG, …
+    106|     audio.reset('run'); await audio.unlock(); audio.setQuality!('low')…
+    107|     expect(Math.max(...t.voices.flatMap(source => source.stops))).toBe…
+       |                                                                   ^
+    108|     expect(t.voices.length).toBeLessThanOrEqual(20);
+    109|     await audio.dispose(); expect(t.voices.every(source => source.disc…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/12]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  12 failed (12)
+   Start at  20:15:34
+   Duration  399ms (import 37%, transform 36%, tests 23%, worker 4%)
+

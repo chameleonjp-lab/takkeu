@@ -81,7 +81,7 @@ test('naturally ends the protected fanfare after game-over and releases every na
   });
   expect(metrics.dense.layeredVoices).toBeLessThanOrEqual(16); expect(metrics.dense.liveSources).toBeLessThanOrEqual(160);
   expect(metrics.finishing.layeredVoices).toBe(1); expect(metrics.finishing.liveSources).toBeGreaterThanOrEqual(6);
-  expect(metrics.ended.liveSources).toBe(metrics.baseline.liveSources); expect(metrics.ended.liveNodes).toBe(metrics.baseline.liveNodes + 2);
+  expect(metrics.ended.liveSources).toBe(metrics.baseline.liveSources); expect(metrics.ended.liveNodes).toBe(metrics.baseline.liveNodes + 3);
   expect(metrics.disposed.liveNodes).toBe(metrics.baseline.liveNodes); expect(metrics.state).toBe('closed');
   const path = info.outputPath('native-fanfare-resources.json');
   await writeFile(path, JSON.stringify(metrics, null, 2)); await info.attach('native-fanfare-resources.json', { path, contentType: 'application/json' });

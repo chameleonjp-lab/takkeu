@@ -66,10 +66,10 @@ export function createCelebrationView(config: GameConfig, tableRig: Group) {
       ribbon(electric,previous,point,width,{...color,a:opacity});previous=point;
     }
   }
-  function drawNumber(value: number,index: number,total: number,time: number,age: number,duration: number,palette: CelebrationPalette) {
+  function drawNumber(value: number,index: number,total: number,time: number,age: number,duration: number,palette: CelebrationPalette,reducedMotion=false) {
     const columns=total===1?1:total<=4?2:3,rows=Math.ceil(total/columns);
     const cellWidth=1.88/columns,cellDepth=1.5/rows;
-    const text=String(value),pulse=1+.06*Math.sin(age*11),scale=Math.min(cellWidth/(text.length*.68),cellDepth)*pulse;
+    const text=String(value),pulse=reducedMotion?1:1+.06*Math.sin(age*11),scale=Math.min(cellWidth/(text.length*.68),cellDepth)*pulse;
     const left=-.94+cellWidth*(index%columns)+cellWidth/2-text.length*.68*scale/2;
     const top=.18+Math.floor(index/columns)*cellDepth+(cellDepth-scale)/2;
     const fade=Math.min(1,(duration-age)*5), entrance=Math.min(1,age/.15);
@@ -89,26 +89,26 @@ export function createCelebrationView(config: GameConfig, tableRig: Group) {
   return {
     worldRoot,tableRoot,lightning:electric.mesh,numbers:digits.mesh,
     stats:()=>({...stats,numbers:[...stats.numbers]}),
-    update(snapshot:GameSnapshot) {
+    update(snapshot:GameSnapshot,reducedMotion=false) {
       if(disposed)return;
-      const time=snapshot.simTime,frame=celebrationFrame(snapshot.celebrations,time);
+      const time=snapshot.simTime,frame=celebrationFrame(snapshot.celebrations,time),motionTime=reducedMotion?0:time;
       electric.clear();electricGlow.clear();digits.clear();digitGlow.clear();environment.clear();
       for(let i=0;i<frame.netBolts;i++)bolt({x:(hash(i+5)*2-1)*config.tableHalfWidth,y:config.tableY+.18,z:0},
-        frame.netSize*(.6+hash(i+50)*.4),i+1,time,{r:.34,g:.78,b:1},frame.strength,.007+Math.min(100,snapshot.celebrations.lossStreak)*.00065);
+        (reducedMotion&&frame.strength?frame.netSize/frame.strength:frame.netSize)*(.6+hash(i+50)*.4),i+1,motionTime,{r:.34,g:.78,b:1},frame.strength,.007+Math.min(100,snapshot.celebrations.lossStreak)*.00065);
       if(frame.edgeElectric)for(let i=0;i<48;i++){
         const side=Math.floor(i/12),t=(i%12)/11;
         const origin=side<2?{x:(side===0?-1:1)*config.tableHalfWidth,y:config.tableY+.015,z:(t*2-1)*config.tableHalfLength}
           :{x:(t*2-1)*config.tableHalfWidth,y:config.tableY+.015,z:(side===2?-1:1)*config.tableHalfLength};
-        bolt(origin,.18+hash(i+9)*.25,i+301,time,{r:.08,g:1,b:.22},.9,.009);
+        bolt(origin,.18+hash(i+9)*.25,i+301,motionTime,{r:.08,g:1,b:.22},.9,.009);
       }
-      frame.numbers.forEach((n,i)=>drawNumber(n.value,i,frame.numbers.length,time,n.age,n.duration,n.palette));
+      frame.numbers.forEach((n,i)=>drawNumber(n.value,i,frame.numbers.length,motionTime,n.age,n.duration,reducedMotion?({55:'black',77:'blue',88:'green',99:'gold'} as Record<number,CelebrationPalette>)[n.value]??n.palette:n.palette,reducedMotion));
       if(frame.environment)for(let i=0;i<24;i++){
-        const x1=-9+i*.75,x2=x1+.75,color=paletteColor(frame.environment,time,i/24);
+        const x1=-9+i*.75,x2=x1+.75,color=paletteColor(reducedMotion?'rainbow':frame.environment,motionTime,i/24);
         const rgba={...color,a:.9},y=config.tableY-.792;
         environment.quad({x:x1,y,z:-9},{x:x2,y,z:-9},{x:x2,y,z:9},{x:x1,y,z:9},rgba);
         environment.quad({x:x1,y:y-.01,z:-6.08},{x:x2,y:y-.01,z:-6.08},{x:x2,y:y+12,z:-6.08},{x:x1,y:y+12,z:-6.08},rgba);
       }
-      const shake=frame.shake;
+      const shake=reducedMotion?0:frame.shake;
       tableRig.position.set(Math.sin(time*93)*shake,Math.sin(time*117)*shake*.28,Math.cos(time*81)*shake*.35);
       tableRig.rotation.z=shake?Math.sin(time*107)*shake*.28:0;
       for(const target of [electric,electricGlow,digits,digitGlow,environment])target.finish();

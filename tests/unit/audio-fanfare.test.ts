@@ -47,14 +47,17 @@ describe('rally milestone fanfare', () => {
     await audio.dispose();
   });
 
-  it.each([1, 8])('protects an active fanfare from dense hits and warnings with voice limit %s', async audioVoiceLimit => {
+  it.each([1, 8])('protects an active fanfare from dense hits while allowing warnings with voice limit %s', async audioVoiceLimit => {
     const t = layeredAudioContext(), audio = createAudio({ ...DEFAULT_CONFIG, audioVoiceLimit }, () => t.context);
     audio.reset('run'); await audio.unlock(); audio.setVolume(1); audio.consume([event(100)]);
     const fanfare = longSources(t);
     expect(fanfare.length).toBeGreaterThan(0);
     for (let i = 0; i < 120; i++) {
-      audio.consume([event(101, `dense-${i}`, i % 3 === 0 ? 'smash-warning' : i % 2 === 0 ? 'player-hit' : 'opponent-hit')]);
-      expect(fanfare.every(source => source.stops.length === 1 && !source.record.disconnected)).toBe(true);
+      const warning = i % 3 === 0, before = t.sources.length;
+      audio.consume([event(101, `dense-${i}`, warning ? 'smash-warning' : i % 2 === 0 ? 'player-hit' : 'opponent-hit')]);
+      if (warning) expect(t.sources.slice(before).some(source => source.frequencies[0] === 850)).toBe(true);
+      if (audioVoiceLimit > 1) expect(fanfare.every(source => source.stops.length === 1 && !source.record.disconnected)).toBe(true);
+      else expect(fanfare.every(source => source.stops.length > 1)).toBe(true);
       const activeVoices = t.nodes.filter(node => node.kind === 'shaper' && !node.disconnected).length;
       expect(activeVoices).toBeLessThanOrEqual(audioVoiceLimit * 2);
       expect(t.sources.filter(source => !source.record.disconnected).length).toBeLessThanOrEqual(audioVoiceLimit * 20);
@@ -75,7 +78,7 @@ describe('rally milestone fanfare', () => {
     expect(t.sources.filter(source => !source.record.disconnected).every(source => source.kind === 'oscillator')).toBe(true);
     expect(t.sources.filter(source => source.kind === 'buffer').every(source => source.record.disconnected)).toBe(true);
     t.finishAll(); expect(t.sources.every(source => source.record.disconnected)).toBe(true);
-    expect(t.nodes.filter(node => !node.disconnected)).toHaveLength(2);
+    expect(t.nodes.filter(node => !node.disconnected)).toHaveLength(3);
     await audio.dispose();
   });
 
