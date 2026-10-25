@@ -24,7 +24,7 @@ export type ReturnPlan = Readonly<{
   remainingBallMultiplier?: number;
 }>;
 export type GameSnapshot = Readonly<{
-  runId: string; phase: GamePhase; score: number; simTime: number;
+  runId: string; phase: GamePhase; score: number; simTime: number; lostBallCount: number;
   pauseReason: PauseReason | null;
   paddle: PaddlePoint; balls: readonly BallSnapshot[];
   opponentPaddle?: PaddlePoint;

@@ -12,6 +12,7 @@ import { createSimulationState, snapshotSimulation, startSimulation, stepSimulat
 import { scenario } from './scenarios';
 import { deflectBounce } from '../../src/game/trajectory';
 import { remainingScenario } from './remainingBall';
+import { lossLimitScenario } from './losses';
 import '../../src/ui/styles.css';
 
 let state = createSimulationState(7);
@@ -68,6 +69,10 @@ function show(score: number) {
 }
 function restore() { const canvas = document.querySelector('canvas')!; canvas.dispatchEvent(new Event('webglcontextrestored')); }
 const harness = { snapshot: (): GameSnapshot => session.snapshot(), show, restore, metrics: () => metrics,
+  lossLimit(count = 98) {
+    state = lossLimitScenario(count, 340, 0).state;
+    currentAudio?.reset(state.runId); metrics.events.length = 0;
+  },
   remaining(score: number, count: number) {
     state = remainingScenario(score, count, 20.05).state;
     state.simTime = 0;

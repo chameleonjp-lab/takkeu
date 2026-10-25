@@ -59,6 +59,8 @@ canvas:focus-visible { outline: 2px solid #7be2d1; outline-offset: -3px; }
 .hud .eyebrow { margin-bottom: 2px; font-size: .5625rem; }
 .rally-number { display: block; font: 400 clamp(28px, 5vw, 42px)/1.1 ui-monospace, SFMono-Regular, monospace; letter-spacing: -.05em; color: #f4f8fa; }
 .balls-counter output { display: block; font: 400 24px/1.3 ui-monospace, monospace; }
+.losses-counter { white-space: nowrap; }
+.losses-counter output { display: block; font: 400 18px/1.3 ui-monospace, monospace; }
 .balls-counter output::before { content: ""; display: inline-block; width: 8px; height: 8px; background: #fff0d4; border-radius: 50%; margin-right: 10px; vertical-align: middle; }
 .smash-warning { margin: 0 0 0 auto; max-width: 100%; padding: 9px 12px; border: 1px solid #c9a34a; border-radius: 8px; background: #27251a; color: #fff0b8; font-size: .8125rem; font-weight: 700; overflow-wrap: anywhere; }
 .game-notices { position: absolute; z-index: 2; bottom: calc(12px + var(--safe-bottom)); left: calc(16px + var(--safe-left)); right: calc(16px + var(--safe-right)); max-width: 650px; margin-inline: auto; pointer-events: none; }
