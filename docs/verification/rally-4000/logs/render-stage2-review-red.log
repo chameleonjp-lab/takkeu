@@ -1,0 +1,42 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-render.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-render.test.ts (54 tests | 1 failed) 2167ms
+   ❯ late rally world replacements and arrivals (32)
+     × evolves the green perimeter and net into three intersecting traveling table channels at 1500 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > evolves the green perimeter and net into three intersecting traveling table channels at 1500
+AssertionError: expected [] to deeply equal [ 'blue', 'green', 'red' ]
+
+- Expected
++ Received
+
+- [
+-   "blue",
+-   "green",
+-   "red",
+- ]
++ []
+
+ ❯ tests/unit/rally-render.test.ts:237:35
+    235|       if(Math.abs(p.getZ(i))>1.75||Math.abs(p.getX(i))>.98)perimeter.a…
+    236|     }
+    237|     expect([...perimeter].sort()).toEqual(['blue','green','red']);expe…
+       |                                   ^
+    238|   });
+    239|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 53 passed (54)
+   Start at  20:27:26
+   Duration  2.64s (tests 89%, transform 7%, import 4%, worker 1%)
+

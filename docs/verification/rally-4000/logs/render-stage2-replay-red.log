@@ -1,0 +1,31 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-render.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-render.test.ts (59 tests | 1 failed) 3494ms
+   ❯ late rally world replacements and arrivals (37)
+     × does not resurrect an older longer arrival after the newer arrival expires, including context reconstruction 32ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > does not resurrect an older longer arrival after the newer arrival expires, including context reconstruction
+AssertionError: expected [ 'single-halo', 'meteor', …(4) ] to not include 'thousand-shockwave'
+ ❯ tests/unit/rally-render.test.ts:314:44
+    312|     view.update(snapshot(2000,20.6),effectState(2000,{arrivals:[old,la…
+    313|     view.update(snapshot(2000,22.8),effectState(2000,{arrivals:[old]})…
+    314|     expect(view.stats().activeEffects).not.toContain('thousand-shockwa…
+       |                                            ^
+    315|     const restored=createRallyEffectView(DEFAULT_CONFIG,new Group());
+    316|     restored.update(snapshot(2000,22.8),effectState(2000,{arrivals:[ol…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 58 passed (59)
+   Start at  20:30:55
+   Duration  4.14s (tests 91%, transform 5%, import 3%)
+

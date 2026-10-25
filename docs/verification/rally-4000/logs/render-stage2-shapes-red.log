@@ -1,0 +1,81 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-render.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-render.test.ts (57 tests | 4 failed) 3273ms
+   ❯ late rally world replacements and arrivals (35)
+     × evolves the green perimeter and net into three intersecting traveling table channels at 1500 26ms
+     × propagates electric strands along the 2500 orbit band instead of only drawing a smooth ellipse 2ms
+     × adds genuinely branching tricolor lightning to the 3250 meteor swarm 8ms
+     × intertwines the 3500 electric strands in three dimensions around the double table halos 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > evolves the green perimeter and net into three intersecting traveling table channels at 1500
+AssertionError: expected [] to deeply equal [ 'blue', 'green', 'red' ]
+
+- Expected
++ Received
+
+- [
+-   "blue",
+-   "green",
+-   "red",
+- ]
++ []
+
+ ❯ tests/unit/rally-render.test.ts:237:35
+    235|       if(Math.abs(p.getZ(i))>1.75||Math.abs(p.getX(i))>.98)perimeter.a…
+    236|     }
+    237|     expect([...perimeter].sort()).toEqual(['blue','green','red']);expe…
+       |                                   ^
+    238|   });
+    239|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > propagates electric strands along the 2500 orbit band instead of only drawing a smooth ellipse
+AssertionError: expected 0.0171307772397995 to be greater than 0.025
+ ❯ tests/unit/rally-render.test.ts:266:43
+    264|     const y:number[]=[];
+    265|     for(let i=0;i<mesh.geometry.drawRange.count;i++)if(p.getY(i)<-.025…
+    266|     expect(Math.max(...y)-Math.min(...y)).toBeGreaterThan(.025);view.d…
+       |                                           ^
+    267|   });
+    268|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > adds genuinely branching tricolor lightning to the 3250 meteor swarm
+AssertionError: expected 0 to be greater than or equal to 8
+ ❯ tests/unit/rally-render.test.ts:283:45
+    281|       return [...degree.values()].filter(value=>value>=3).length;
+    282|     };
+    283|     expect(junctions(3250)-junctions(3249)).toBeGreaterThanOrEqual(8);…
+       |                                             ^
+    284|   });
+    285|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > intertwines the 3500 electric strands in three dimensions around the double table halos
+AssertionError: expected 0.08494476974010468 to be greater than 0.24
+ ❯ tests/unit/rally-render.test.ts:291:45
+    289|     view.update(snapshot(3500));const p=mesh.geometry.getAttribute('po…
+    290|     for(let i=base;i<mesh.geometry.drawRange.count;i++)ys.push(p.getY(…
+    291|     expect(Math.max(...ys)-Math.min(...ys)).toBeGreaterThan(.24);view.…
+       |                                             ^
+    292|   });
+    293|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 53 passed (57)
+   Start at  20:28:36
+   Duration  3.99s (tests 91%, transform 4%, import 4%, worker 1%)
+
