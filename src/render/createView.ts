@@ -9,6 +9,7 @@ import { updateOpponentView } from './opponentView';
 import { computeDrawingSize } from './quality';
 import type { Quality } from '../storage/preferences';
 import { createFireworks, PARTICLE_LIMIT } from './particles';
+import { createCelebrationView } from './celebrations';
 
 export interface GameView {
   render(snapshot: GameSnapshot, events: readonly GameEvent[]): void;
@@ -33,6 +34,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
   const objects = createObjects(config);
   scene.add(objects.root);
   const fireworks=createFireworks();scene.add(fireworks.root);
+  const celebrations=createCelebrationView(config,objects.tableRig);scene.add(celebrations.worldRoot);
   let flashUntil = 0;
   let previousRunId = '';
   let quality: Quality = 'standard';
@@ -43,6 +45,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
       applyPresentation(objects, snapshot);
       updateOpponentView(objects, snapshot, events);
       fireworks.update(snapshot,events,quality);
+      celebrations.update(snapshot);
       if (!snapshot.progression.appliedMilestones.includes(100)) objects.rimMaterial.emissiveIntensity = snapshot.simTime < flashUntil ? 0.8 : 0.15;
       renderer.render(scene, camera);
     },
@@ -57,6 +60,6 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
     inputMapping() { return createInputMapping(camera, () => canvas.getBoundingClientRect(), config); },
     setQuality(value) { quality = value; },
     resources() { return { geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures, programs: renderer.info.programs?.length ?? 0, drawCalls: renderer.info.render.calls,particles:fireworks.active(),particleCapacity:PARTICLE_LIMIT }; },
-    dispose() { fireworks.dispose(); objects.dispose(); renderer.dispose(); },
+    dispose() { celebrations.dispose(); fireworks.dispose(); objects.dispose(); renderer.dispose(); },
   };
 }

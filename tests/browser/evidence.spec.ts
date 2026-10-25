@@ -32,6 +32,9 @@ test.describe('画面の証拠', () => {
     await page.mouse.move(box.x + box.width - 10, box.y + 20);
     await page.clock.runFor(300); await page.mouse.up();
     await page.clock.runFor(1500);
+    await expect(page.locator('[data-finishing]')).toBeVisible();
+    await page.screenshot({ path: testInfo.outputPath('final-electricity.png') });
+    await page.clock.runFor(1000);
     await expect(page.getByRole('heading', { name: 'ナイスラリー！' })).toBeVisible();
     await page.screenshot({ path: testInfo.outputPath('result.png'), fullPage: true });
     await page.getByRole('button', { name: 'ホームへ', exact: true }).click();

@@ -3,7 +3,7 @@ import type { Quality } from '../storage/preferences';
 export type Voice = { readonly endsAt: number; readonly sourceCount: number; stop(): void; disconnect(): void };
 export type ToneOptions = { score?: number; quality?: Quality };
 type Ended = (voice: Voice) => void;
-type Layer = { type: OscillatorType | 'noise'; high: number; low: number; duration: number; peak: number; delay?: number };
+type Layer = { type: OscillatorType | 'noise'; high: number; low: number; duration: number; peak: number; delay?: number; attack?: number; hold?: number };
 const SCALE = [0, 2, 4, 7, 9, 12, 14, 16] as const;
 export function audioStage(score = 0): { semitones: number; accents: number } {
   const rally = Number.isSafeInteger(score) && score >= 0 ? score : 0;
@@ -102,7 +102,8 @@ function synth(context: BaseAudioContext, output: AudioNode, layers: readonly La
       }
       gain.gain.setValueAtTime(0, now);
       gain.gain.setValueAtTime(.0001, start);
-      gain.gain.linearRampToValueAtTime(layer.peak, start + .003);
+      gain.gain.linearRampToValueAtTime(layer.peak, start + (layer.attack ?? .003));
+      if (layer.hold !== undefined) gain.gain.setValueAtTime(layer.peak, start + layer.hold);
       gain.gain.exponentialRampToValueAtTime(.0001, end - .002);
       gain.gain.linearRampToValueAtTime(0, end);
       gain.connect(mix); source.start(start); source.stop(end);
@@ -149,3 +150,19 @@ export const playPlayerHit = (context: BaseAudioContext, output: AudioNode, onEn
 export const playOpponentHit = (context: BaseAudioContext, output: AudioNode, onEnded: Ended = () => {}, options: ToneOptions = {}) => play(context, output, 'opponent', onEnded, options);
 export const playSmashWarning = (context: BaseAudioContext, output: AudioNode, onEnded: Ended = () => {}, options: ToneOptions = {}) => play(context, output, 'warning', onEnded, options);
 export const playSmashSuccess = (context: BaseAudioContext, output: AudioNode, onEnded: Ended = () => {}, options: ToneOptions = {}) => play(context, output, 'success', onEnded, options);
+
+/** A rising C-major brass phrase resolving to a held chord; one owned Voice. */
+export function playMilestoneFanfare(context: BaseAudioContext, output: AudioNode, onEnded: Ended = () => {}, options: ToneOptions = {}): Voice {
+  const layered = supported(context), low = options.quality === 'low';
+  const note = (hz: number, delay: number, duration: number, chord = false): Layer => ({
+    type: layered ? 'sawtooth' : 'triangle', high: hz, low: hz, delay, duration,
+    // The layered shaper/envelope has the same .16 conservative voice bound as
+    // contact sounds. Basic oscillators sum to <.08, including note overlap.
+    peak: layered ? (chord ? .12 : .24) : (chord ? .018 : .022),
+    attack: .018, hold: chord ? .5 : .07,
+  });
+  const layers = [note(523.25, 0, .16), note(659.25, .18, .16), note(783.99, .36, .26),
+    ...[523.25, 659.25, 783.99].map(hz => note(hz, .66, 1.14, true))];
+  if (layered && !low) layers.push({ ...note(1046.5, .66, 1.14, true), type: 'triangle', peak: .1 });
+  return synth(context, output, layers, onEnded, layered);
+}

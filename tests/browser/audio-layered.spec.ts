@@ -39,7 +39,7 @@ test('多層音と最終出力を44.1/48kHzで合成、単発と上限+減衰の
         const emit=(kind:string,score=10,smashReturn=false)=>audio.consume([{ kind, id:String(++next), runId:'offline', time:0, ballId:next, rallyScore:score, smashReturn }]);
         if(mode==='opponent') emit('opponent-hit');
         else if(mode==='warning') emit('smash-warning');
-        else if(mode==='sixteen') for(let i=0;i<16;i++) emit(i%3===0?'smash-warning':i%2===0?'player-hit':'opponent-hit',100,true);
+        else if(mode==='sixteen') for(let i=0;i<16;i++) emit(i%3===0?'smash-warning':i%2===0?'player-hit':'opponent-hit',101,true);
         else emit('player-hit',mode.startsWith('player') ? Number(mode.slice(6)) : 10,mode==='success10');
         if(mode==='muted') audio.setMuted(true);
       }

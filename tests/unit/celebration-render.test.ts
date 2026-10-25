@@ -1,0 +1,50 @@
+import { expect, it } from 'vitest';
+import { DEFAULT_CONFIG } from '../../src/game/config';
+import { createCelebrations, lossCelebration, rallyCelebration } from '../../src/game/celebrations';
+import { createObjects } from '../../src/render/objects';
+import { createCelebrationView } from '../../src/render/celebrations';
+import { scenario } from '../helpers/scenarios';
+
+it('ネット・台縁の電撃とコート数字を描画し、台だけ揺らし、期限に元へ戻す', () => {
+  const objects = createObjects(DEFAULT_CONFIG), view = createCelebrationView(DEFAULT_CONFIG, objects.tableRig);
+  let celebrations = createCelebrations();
+  for (let i=1;i<=4;i++) celebrations=lossCelebration(celebrations,i,20);
+  celebrations=lossCelebration(celebrations,55,20);
+  celebrations=rallyCelebration(rallyCelebration(celebrations,99,20),100,20);
+  const s={...scenario(100,20.05).snapshot(),celebrations};
+  view.update(s);
+  expect(view.stats()).toMatchObject({netBolts:14,edgeBolts:48,numbers:[55],environment:'rainbow'});
+  expect(objects.tableRig.position.length()).toBeGreaterThan(0);
+  expect(objects.parts.net.parent).toBe(objects.tableRig);
+  expect(objects.parts.structure.parent).toBe(objects.tableRig);
+  expect(objects.parts.selfFloor.parent).not.toBe(objects.tableRig);
+  expect(objects.playerPaddle.parent).not.toBe(objects.tableRig);
+  expect(objects.parts.selfFloor.position.y).toBe(-.8);
+  const paused=Array.from(view.lightning.geometry.attributes.position!.array);
+  view.update({...s,phase:'paused'});
+  expect(Array.from(view.lightning.geometry.attributes.position!.array)).toEqual(paused);
+  view.update({...s,simTime:25});
+  expect(view.stats()).toMatchObject({netBolts:0,edgeBolts:0,numbers:[],environment:null});
+  expect(objects.tableRig.position.length()).toBe(0);
+  expect(objects.tableRig.rotation.z).toBe(0);
+  view.dispose();objects.dispose();
+});
+
+it('大量の落球でも描画バッファを再利用し、黒の数字を不透明に表示して再開時に消す', () => {
+  const objects=createObjects(DEFAULT_CONFIG),view=createCelebrationView(DEFAULT_CONFIG,objects.tableRig);
+  const base=scenario(340).snapshot();
+  const geometry=view.lightning.geometry, positions=geometry.attributes.position!.array;
+  let celebrations=createCelebrations();
+  for(let i=1;i<=100;i++) celebrations=lossCelebration(celebrations,i,20);
+  for(let i=0;i<200;i++) view.update({...base,celebrations,simTime:20+i/1000});
+  expect(view.lightning.geometry).toBe(geometry);
+  expect(geometry.attributes.position!.array).toBe(positions);
+  expect(view.stats().numbers).toHaveLength(14);
+  const black=lossCelebration(createCelebrations(),55,20);
+  view.update({...base,celebrations:black,simTime:20.31});
+  const colors=view.numbers.geometry.attributes.color!;
+  expect([colors.getX(0),colors.getY(0),colors.getZ(0),colors.getW(0)]).toEqual([0,0,0,1]);
+  view.update({...base,runId:'new',celebrations:createCelebrations()});
+  expect(view.lightning.visible).toBe(false);expect(view.numbers.visible).toBe(false);
+  view.dispose();view.dispose();objects.dispose();
+});

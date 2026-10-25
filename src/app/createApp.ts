@@ -14,6 +14,7 @@ import { bindLifecycle } from './lifecycle';
 import { createRankingClient } from '../ranking/client';
 import type { Play, RankingApi } from '../ranking/client';
 import { createRankingController, validateName } from '../ranking/controller';
+import { createFinishPresentation } from './finishPresentation';
 
 type AppServices = { createSession: typeof createSession; createView: typeof createView; createAudio: typeof createAudio; storage: StorageLike; rankingApi: RankingApi };
 export function createApp(root: HTMLElement, services: Partial<AppServices> = {}) {
@@ -36,6 +37,8 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   let disposed = false;
   let contextAvailable = true;
   let observedPhase = session.snapshot().phase;
+  const finishPresentation = createFinishPresentation();
+  let wasFinishing = false;
   let unlockAttempt = 0;
   let activePlay: Play | null = null;
   let starting = false, startEpoch = 0, leaderboardEpoch = 0;
@@ -101,7 +104,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     // pause/cancel before refitting, so stale contacts still cannot resume play.
     swipe.updateMapping(view.inputMapping(), session.snapshot().phase === 'running');
     fitted = key;
-    view.render(session.snapshot(), []);
+    view.render(finishPresentation.frame(session.snapshot(), performance.now()).snapshot, []);
   }
   function makeView(): GameView {
     fitted = '';
@@ -145,6 +148,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   }
   function silence(): void { unlockAttempt++; audio.suspend(); }
   function pause(reason: PauseReason): void {
+    if (session.snapshot().phase === 'gameover') { silence(); return; }
     if (session.snapshot().phase === 'paused' && observedPhase === 'paused') return;
     if (session.snapshot().phase === 'running') session.pause(reason);
     if (session.snapshot().phase !== 'paused') return;
@@ -195,17 +199,20 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   const frame = (now: number): void => {
     if (disposed) return;
     const result = loop.frame(now); rememberBest();
+    const presentation = finishPresentation.frame(result.snapshot, now);
     if (result.snapshot.phase === 'gameover' && observedPhase !== 'gameover') {
-      swipe.cancel(); timeline.clear(result.snapshot.paddle); silence(); persist();
+      swipe.cancel(); timeline.clear(result.snapshot.paddle); persist();
+      if (!presentation.finishing) silence();
       screens.setRankingParticipation(!!activePlay);
       ranking.finish(activePlay, result.snapshot.score, 'game_over'); activePlay = null;
       void refreshLeaderboard();
     }
-    // Frozen scenes need no repeated GPU work. Resize, restore and pause render
-    // explicitly; a transition to the result screen may render once.
-    const needsFrame = result.snapshot.phase === 'running' || result.snapshot.phase !== observedPhase;
-    if (view && contextAvailable && result.snapshot.phase !== 'ready' && needsFrame) view.render(result.snapshot, result.events);
-    screens.render(result.snapshot); observedPhase = result.snapshot.phase;
+    // Continue the last celebration without advancing gameplay. Once it ends,
+    // frozen scenes only draw on explicit resize/restore or screen changes.
+    const needsFrame = result.snapshot.phase === 'running' || result.snapshot.phase !== observedPhase || presentation.finishing || wasFinishing;
+    if (view && contextAvailable && result.snapshot.phase !== 'ready' && needsFrame) view.render(presentation.snapshot, result.events);
+    if (wasFinishing && !presentation.finishing) silence();
+    screens.render(result.snapshot, presentation.finishing); observedPhase = result.snapshot.phase; wasFinishing = presentation.finishing;
     frameId = requestAnimationFrame(frame);
   };
   frameId = requestAnimationFrame(frame);

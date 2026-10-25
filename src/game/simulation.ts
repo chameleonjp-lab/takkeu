@@ -1,4 +1,4 @@
-import { clampPaddle, DIFFICULTY, INITIAL_PADDLE } from './config';
+import { clampPaddle, DIFFICULTY, INITIAL_PADDLE, MAX_LOST_BALLS } from './config';
 import { paddleExitFraction, sweepPaddleHit } from './collision';
 import { flightDuration, remainingBallMultiplier, speedMultiplier } from './difficulty';
 import { refreshFlightSpeeds } from './flightSpeed';
@@ -8,6 +8,8 @@ import { MAX_BALLS } from './milestones';
 import { scheduleReturn } from './scheduler';
 import { bounceTime, deflectBounce, sampleReturn } from './trajectory';
 import { planOpponentReturn } from './opponent';
+import { createCelebrations, lossCelebration, rallyCelebration } from './celebrations';
+import type { CelebrationState } from './celebrations';
 import type { BallPhase, GameConfig, GameEvent, GameEventKind, GamePhase, GameSnapshot, InputFrame, PaddlePoint, PauseReason, Point3, ProgressionState, ReturnPlan, StepResult } from './types';
 
 export type SimulationBall = {
@@ -15,14 +17,16 @@ export type SimulationBall = {
   warningEmittedAt?: number; bounceEmitted?: boolean;
 };
 export type SimulationState = {
+  celebrations: CelebrationState;
   runId: string; nextBallId: number; randomState: number; eventNumber: number; phase: GamePhase; pauseReason: PauseReason | null;
-  committedSmashDepartures: number[]; score: number; simTime: number; paddle: PaddlePoint; opponentPaddle: PaddlePoint; balls: SimulationBall[]; progression: ProgressionState;
+  committedSmashDepartures: number[]; score: number; simTime: number; lostBallCount: number; paddle: PaddlePoint; opponentPaddle: PaddlePoint; balls: SimulationBall[]; progression: ProgressionState;
 };
 let nextRunId = 0;
 export function createSimulationState(seed: number): SimulationState {
   return {
+    celebrations: createCelebrations(),
     runId: `run-${++nextRunId}`, nextBallId: 2, randomState: seed >>> 0 || 1, eventNumber: 0,
-    phase: 'ready', pauseReason: null, committedSmashDepartures: [], score: 0, simTime: 0, paddle: { ...INITIAL_PADDLE }, balls: [],
+    phase: 'ready', pauseReason: null, committedSmashDepartures: [], score: 0, simTime: 0, lostBallCount: 0, paddle: { ...INITIAL_PADDLE }, balls: [],
     opponentPaddle: { ...INITIAL_PADDLE }, progression: { appliedMilestones: [], ballGlowUntil: null, awardedBallCount: 0 },
   };
 }
@@ -32,7 +36,8 @@ function reservations(state: SimulationState): ReturnPlan[] {
 }
 export function snapshotSimulation(state: SimulationState): GameSnapshot {
   return {
-    runId: state.runId, phase: state.phase, pauseReason: state.pauseReason, score: state.score, simTime: state.simTime,
+    celebrations: { ...state.celebrations, numberNotices: state.celebrations.numberNotices.map(n => ({ ...n })) },
+    runId: state.runId, phase: state.phase, pauseReason: state.pauseReason, score: state.score, simTime: state.simTime, lostBallCount: state.lostBallCount,
     paddle: { ...state.paddle }, opponentPaddle: { ...state.opponentPaddle },
     balls: state.balls.map(b => ({ id: b.id, phase: b.phase, position: { ...b.position }, smash: b.plan.smash })),
     progression: { ...state.progression, appliedMilestones: [...state.progression.appliedMilestones] },
@@ -58,6 +63,7 @@ function advanceSegment(state: SimulationState, config: GameConfig, dt: number, 
       ...(position ? { position: { ...position } } : {}), ...(effect ? { effect } : {}), ...contact });
   };
   const end = state.simTime + dt;
+  let stoppedAt: number | undefined;
   const previousPaddle = state.paddle;
   state.paddle = clampPaddle(target, config);
   const actions: Action[] = [];
@@ -104,6 +110,7 @@ function advanceSegment(state: SimulationState, config: GameConfig, dt: number, 
     } else if (kind === 'hit') {
       const smashReturn = ball.plan.smash;
       state.score++;
+      state.celebrations = rallyCelebration(state.celebrations, state.score, time);
       const at = paddleFraction!;
       const centre = { x: previousPaddle.x + (state.paddle.x - previousPaddle.x) * at,
         y: previousPaddle.y + (state.paddle.y - previousPaddle.y) * at, z: config.paddleZ };
@@ -134,6 +141,12 @@ function advanceSegment(state: SimulationState, config: GameConfig, dt: number, 
       }
     } else if (kind === 'lost') {
       ball.phase = 'lost'; emit('ball-lost', time, ball.id);
+      state.lostBallCount++;
+      state.celebrations = lossCelebration(state.celebrations, state.lostBallCount, time);
+      if (state.lostBallCount >= MAX_LOST_BALLS) {
+        state.phase = 'gameover'; stoppedAt = time;
+        emit('game-over', time); break;
+      }
     } else if (kind === 'ready') {
       ball.from = sampleReturn(ball.plan, ball.from, time);
       ball.position = ball.from;
@@ -172,9 +185,9 @@ function advanceSegment(state: SimulationState, config: GameConfig, dt: number, 
     }
   }
   for (const ball of state.balls) {
-    if (ball.phase === 'incoming' || ball.phase === 'outgoing') ball.position = sampleReturn(ball.plan, ball.from, end);
+    if (ball.phase === 'incoming' || ball.phase === 'outgoing') ball.position = sampleReturn(ball.plan, ball.from, stoppedAt ?? end);
   }
-  if (state.balls.length && state.balls.every(b => b.phase === 'lost')) {
+  if (state.phase === 'running' && state.balls.length && state.balls.every(b => b.phase === 'lost')) {
     state.phase = 'gameover';
     emit('game-over', events.at(-1)?.time ?? end);
   }
@@ -228,6 +241,6 @@ export function stepSimulation(state: SimulationState, config: GameConfig, dt: n
   if (state.phase === 'running') advance(end);
   // Even game-over inside a tick commits that fixed interval, as before.
   state.simTime = end;
-  refreshFlightSpeeds(state, oldScore, end, config);
+  if (state.phase === 'running') refreshFlightSpeeds(state, oldScore, end, config);
   return { snapshot: snapshotSimulation(state), events };
 }

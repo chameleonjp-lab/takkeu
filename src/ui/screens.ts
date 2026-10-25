@@ -1,4 +1,5 @@
 import courtPreviewUrl from './court-preview.png';
+import { MAX_LOST_BALLS } from '../game/config';
 import type { GameSnapshot, PauseReason } from '../game/types';
 import { DEFAULT_PREFERENCES } from '../storage/preferences';
 import type { Preferences, Quality } from '../storage/preferences';
@@ -24,7 +25,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
             <p class="eyebrow"><span class="status-dot"></span> ONE BALL. ENDLESS RALLY.</p>
             <h1>タッケウ<span class="title-dot" aria-hidden="true">.</span></h1>
             <p class="hero-lead">ワンバウンドをとらえて、<br>ラリーをつなぐ。</p>
-            <p class="hero-description">タップした位置にラケットを置き、ドラッグで球に合わせる。<br>自分の台で一度弾んだ球に触れれば、打ち返せます。</p>
+            <p class="hero-description">タップした位置にラケットを置き、ドラッグで球に合わせる。<br>自分の台で一度弾んだ球に触れれば、打ち返せます。<br>残球が0になるか、累計${MAX_LOST_BALLS}球落とすとゲーム終了です。</p>
             <div class="player-field"><label for="player-name">ランキングの名前 <span>任意</span></label><input id="player-name" data-player-name type="text" maxlength="40" autocomplete="nickname" placeholder="名前なしでも遊べます" aria-describedby="name-note"><p id="name-note" data-name-note>20文字以内。入力すると名前と記録が公開され、カメレオンの実験場のランキングに参加します。同じ名前の記録は合算されます。名前なしのプレイも回数だけ記録します。</p></div>
             <button type="button" class="button primary start-button" data-action="start">はじめる <span aria-hidden="true">↗</span></button>
             <p class="start-note">2本指で短くタップ、またはEscキーで一時停止</p>
@@ -44,12 +45,12 @@ export function createScreens(root: HTMLElement, actions: Actions) {
 
       <section class="game-screen" data-testid="game-screen" data-game hidden inert>
         <div class="input-surface" data-testid="input-surface"><div class="canvas-wrap"><canvas tabindex="0" aria-label="卓球ゲームの描画領域" aria-keyshortcuts="Escape"></canvas></div></div>
-        <div class="hud"><div><span class="eyebrow">RALLY</span><output aria-label="ラリー数" aria-live="off" class="rally-number" data-score>0</output></div><div class="balls-counter"><span class="eyebrow">残球数</span><output aria-label="残球数" aria-live="off" data-balls>1</output></div><p class="smash-warning" data-smash-warning role="status" hidden>スマッシュがくる！</p></div>
-        <div class="game-notices" data-game-notices></div>
+        <div class="hud"><div><span class="eyebrow">RALLY</span><output aria-label="ラリー数" aria-live="off" class="rally-number" data-score>0</output></div><div class="balls-counter"><span class="eyebrow">残球数</span><output aria-label="残球数" aria-live="off" data-balls>1</output></div><div class="losses-counter"><span class="eyebrow">落球数</span><output aria-label="落球数" aria-live="off" data-losses>0 / ${MAX_LOST_BALLS}</output></div><p class="smash-warning" data-smash-warning role="status" hidden>スマッシュがくる！</p></div>
+        <div class="game-notices" data-game-notices></div><p class="finish-label" data-finishing tabindex="-1" hidden>ゲーム終了</p>
         <div class="pause-overlay" role="dialog" aria-modal="true" aria-labelledby="pause-title" aria-describedby="pause-description" tabindex="-1" hidden inert><div class="pause-card"><p class="eyebrow">PAUSE</p><h2 id="pause-title">ひと休み</h2><p id="pause-description" data-pause-message></p><div data-pause-notices></div><button type="button" class="button primary" data-action="resume">つづける <span aria-hidden="true">→</span></button><button type="button" class="button subtle" data-action="retry">最初からやり直す</button><button type="button" class="text-button" data-action="home">ホームへ</button>${soundControls}</div></div>
       </section>
 
-      <section class="result-screen" data-result hidden inert><span class="brand-mark" aria-hidden="true">t.</span><p class="eyebrow">RALLY COMPLETE</p><h2>ナイスラリー！</h2><p class="result-label">今回のラリー数</p><output class="result-score" aria-label="今回のラリー数" data-result-score>0</output><button type="button" class="button primary" data-action="retry">もう一度 <span aria-hidden="true">↗</span></button><p>自己ベスト <output aria-label="自己ベスト" data-best>0</output> ラリー</p><p class="result-message" data-ranking-participation>もう1ラリー、つないでみよう。</p><a class="button share-button" data-share-x aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer">Xでスコアをシェア <span aria-hidden="true">↗</span></a><button type="button" class="button subtle" data-action="home">ホームへ</button><div data-result-notices></div><section class="ranking-panel" aria-labelledby="ranking-title"><p class="eyebrow">LEADERBOARD</p><h3 id="ranking-title">ランキング TOP 30</h3><p class="ranking-caption">最高ラリー数で競う、みんなの記録</p><p data-ranking-message role="status">ランキングを読み込んでいます。</p><div class="ranking-table-wrap"><table data-ranking-table hidden><caption class="sr-only">最高ラリー数の上位30名</caption><thead><tr><th scope="col">順位</th><th scope="col">名前</th><th scope="col">ラリー</th><th scope="col">回数</th></tr></thead><tbody data-ranking-body></tbody></table></div><button type="button" class="button subtle" data-action="ranking-refresh">ランキングを更新</button><a class="lab-link" href="${RANKING_CONFIG.rankingUrl}">実験場で詳しいランキングを見る ↗</a></section></section>
+      <section class="result-screen" data-result hidden inert><span class="brand-mark" aria-hidden="true">t.</span><p class="eyebrow">RALLY COMPLETE</p><h2>ナイスラリー！</h2><p class="result-label">今回のラリー数</p><output class="result-score" aria-label="今回のラリー数" data-result-score>0</output><button type="button" class="button primary" data-action="retry">もう一度 <span aria-hidden="true">↗</span></button><p>自己ベスト <output aria-label="自己ベスト" data-best>0</output> ラリー</p><p class="result-message" data-loss-limit-message hidden>累計${MAX_LOST_BALLS}球の落球で終了しました。</p><p class="result-message" data-ranking-participation>もう1ラリー、つないでみよう。</p><a class="button share-button" data-share-x aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer">Xでスコアをシェア <span aria-hidden="true">↗</span></a><button type="button" class="button subtle" data-action="home">ホームへ</button><div data-result-notices></div><section class="ranking-panel" aria-labelledby="ranking-title"><p class="eyebrow">LEADERBOARD</p><h3 id="ranking-title">ランキング TOP 30</h3><p class="ranking-caption">最高ラリー数で競う、みんなの記録</p><p data-ranking-message role="status">ランキングを読み込んでいます。</p><div class="ranking-table-wrap"><table data-ranking-table hidden><caption class="sr-only">最高ラリー数の上位30名</caption><thead><tr><th scope="col">順位</th><th scope="col">名前</th><th scope="col">ラリー</th><th scope="col">回数</th></tr></thead><tbody data-ranking-body></tbody></table></div><button type="button" class="button subtle" data-action="ranking-refresh">ランキングを更新</button><a class="lab-link" href="${RANKING_CONFIG.rankingUrl}">実験場で詳しいランキングを見る ↗</a></section></section>
       <div class="screen-notices" data-notices>
         <div class="ranking-notice" data-ranking-notice hidden><p data-ranking-status role="status"></p><button type="button" class="button subtle" data-action="ranking-retry" hidden>記録を再送する</button></div>
         <p class="notice" data-audio-notice role="status" hidden>音声を利用できません。無音でも遊べます。設定または一時停止メニューの「音声を再試行」で再試行できます。</p>
@@ -67,6 +68,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   const hud = get('.hud'), notices = get('[data-notices]');
   const doc = root.ownerDocument;
   let phase: GameSnapshot['phase'] = 'ready';
+  let finishing = false, lastFinishing = false;
   let lastPhase = '';
   let lastRemaining = -1;
   let settingsOpen = false;
@@ -78,9 +80,10 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   const show = (node: HTMLElement, visible: boolean): void => { node.hidden = !visible; setInert(node, !visible); };
   const updateVisibility = (): void => {
     show(home, phase === 'ready' && !settingsOpen); show(settings, phase === 'ready' && settingsOpen);
-    show(game, phase === 'running' || phase === 'paused'); show(result, phase === 'gameover'); show(overlay, phase === 'paused');
+    show(game, phase === 'running' || phase === 'paused' || finishing); show(result, phase === 'gameover' && !finishing); show(overlay, phase === 'paused');
+    get('[data-finishing]').hidden = !finishing;
     setInert(surface, phase !== 'running'); setInert(hud, phase === 'paused');
-    const host = get(phase === 'paused' ? '[data-pause-notices]' : phase === 'running' ? '[data-game-notices]' : phase === 'gameover' ? '[data-result-notices]' : settingsOpen ? '[data-settings-notices]' : '[data-home-notices]');
+    const host = get(phase === 'paused' ? '[data-pause-notices]' : phase === 'running' || finishing ? '[data-game-notices]' : phase === 'gameover' ? '[data-result-notices]' : settingsOpen ? '[data-settings-notices]' : '[data-home-notices]');
     if (notices.parentElement !== host) host.append(notices);
   };
   const showSettings = (open: boolean): void => {
@@ -154,13 +157,15 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       setText('[data-ranking-message]', state === 'loading' ? 'ランキングを読み込んでいます。' : state === 'error' ? 'ランキングを取得できませんでした。時間をおいて更新してください。' : rows.length ? 'プレイ回数はゲーム開始時に数えます。' : 'まだ記録がありません。最初のラリーをつなごう。');
       get<HTMLButtonElement>('[data-action="ranking-refresh"]').disabled = state === 'loading';
     },
-    render(snapshot: GameSnapshot) {
+    render(snapshot: GameSnapshot, showingFinalEffects = false) {
       if (snapshot.phase !== 'ready') settingsOpen = false;
-      phase = snapshot.phase; updateVisibility();
+      phase = snapshot.phase; finishing = phase === 'gameover' && showingFinalEffects; updateVisibility();
       const warning = snapshot.scheduledReturns.some(plan => plan.smash && plan.warningAt !== null && plan.warningAt <= snapshot.simTime + 1e-10 && snapshot.simTime < plan.departAt);
       get('[data-smash-warning]').hidden = !warning;
       const remaining = snapshot.balls.filter(ball => ball.phase !== 'lost').length;
       setText('[data-score]', String(snapshot.score)); setText('[data-balls]', String(remaining)); setText('[data-result-score]', String(snapshot.score));
+      setText('[data-losses]', `${snapshot.lostBallCount} / ${MAX_LOST_BALLS}`);
+      get('[data-loss-limit-message]').hidden = snapshot.phase !== 'gameover' || snapshot.lostBallCount < MAX_LOST_BALLS;
       const finalizedScore = snapshot.phase === 'gameover' ? snapshot.score : null;
       if (!Object.is(shareScore, finalizedScore)) {
         const url = finalizedScore === null ? null : scoreShareUrl(finalizedScore);
@@ -173,10 +178,11 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       }
       if (snapshot.phase === 'paused') setText('[data-pause-message]', pauseMessages[snapshot.pauseReason ?? 'user']);
       if (lastPhase !== snapshot.phase) {
-        setText('[data-status]', snapshot.phase === 'paused' ? '一時停止中。再開ボタンで続けられます。' : snapshot.phase === 'gameover' ? `終了。${snapshot.score}ラリー。残球数0。` : snapshot.phase === 'running' ? `プレイ中。残球数${remaining}。` : 'ホーム');
+        const endMessage = `${snapshot.lostBallCount >= MAX_LOST_BALLS ? `累計${MAX_LOST_BALLS}球の落球で終了。` : '終了。'}${snapshot.score}ラリー。残球数${remaining}。`;
+        setText('[data-status]', snapshot.phase === 'paused' ? '一時停止中。再開ボタンで続けられます。' : snapshot.phase === 'gameover' ? endMessage : snapshot.phase === 'running' ? `プレイ中。残球数${remaining}。` : 'ホーム');
         if (snapshot.phase === 'paused') { overlay.scrollTop = 0; focusPause(); }
         else {
-          const focus = snapshot.phase === 'gameover' ? result.querySelector<HTMLElement>('button:not(:disabled)') : snapshot.phase === 'running' ? canvas : home.querySelector<HTMLElement>('[data-action="start"]');
+          const focus = snapshot.phase === 'gameover' ? finishing ? get<HTMLElement>('[data-finishing]') : result.querySelector<HTMLElement>('button:not(:disabled)') : snapshot.phase === 'running' ? canvas : home.querySelector<HTMLElement>('[data-action="start"]');
           focus?.focus({ preventScroll: true });
         }
         lastPhase = snapshot.phase;
@@ -184,6 +190,8 @@ export function createScreens(root: HTMLElement, actions: Actions) {
         setText('[data-status]', `残球数${remaining}。`);
       }
       lastRemaining = remaining;
+      if (lastFinishing && !finishing && phase === 'gameover') result.querySelector<HTMLElement>('button:not(:disabled)')?.focus({ preventScroll: true });
+      lastFinishing = finishing;
     },
     setSound(muted: boolean) { for (const button of root.querySelectorAll('[data-action="sound"]')) button.textContent = muted ? '音：オフ' : '音：オン'; },
     setAudioReady(ready: boolean) { get('[data-audio-notice]').hidden = ready; },

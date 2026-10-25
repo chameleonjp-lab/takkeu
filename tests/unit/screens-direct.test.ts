@@ -23,6 +23,32 @@ function key(target: HTMLElement, value: string, shiftKey = false) {
   target.dispatchEvent(event); return event;
 }
 
+it('100球落球の終了を残球数とともに読み上げ、新規開始では表示を戻す', () => {
+  const { screens, get } = setup();
+  const base = scenario(340).snapshot();
+  screens.render({ ...base, phase: 'gameover', lostBallCount: 100, balls: [{ id: 1, phase: 'queued', position: { x: 0, y: 0.5, z: -1.95 }, smash: false }] });
+  expect(get('[data-status]').textContent).toContain('100球');
+  expect(get('[data-status]').textContent).toContain('残球数1');
+  expect(get('[data-losses]').textContent).toBe('100 / 100');
+  expect(get('[data-loss-limit-message]').hidden).toBe(false);
+  screens.render(scenario(0).snapshot());
+  expect(get('[data-losses]').textContent).toBe('0 / 100');
+  expect(get('[data-loss-limit-message]').hidden).toBe(true);
+});
+
+it('最後の演出中は入力を無効にし、結果へ移ってから再挑戦にフォーカスする', () => {
+  const {screens,get,actions}=setup();const end={...scenario(340).snapshot(),phase:'gameover' as const,lostBallCount:100};
+  screens.render(end,true);
+  expect(get('[data-game]').hidden).toBe(false);expect(get('[data-result]').hidden).toBe(true);
+  expect(get('[data-testid="input-surface"]').inert).toBe(true);
+  expect(document.activeElement).toBe(get('[data-finishing]'));
+  key(get('[data-finishing]'),'Escape');expect(actions.pause).not.toHaveBeenCalled();
+  expect(get('[data-status]').textContent).toContain('100球');
+  screens.render(end,false);
+  expect(get('[data-game]').hidden).toBe(true);expect(get('[data-result]').hidden).toBe(false);
+  expect(document.activeElement).toBe(get('[data-result] [data-action="retry"]'));
+});
+
 it('running exposes the focusable canvas without a header, pad, links, or persistent controls', () => {
   const { root, screens, render, get } = setup(); render('running');
   expect(get('[data-game]').querySelector('.game-header, .input-pad, .game-hint, .wordmark, .court-caption, [data-action="pause"]')).toBeNull();
