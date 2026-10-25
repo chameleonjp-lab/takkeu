@@ -1,0 +1,39 @@
+[WebServer] (node:37155) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:37179) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 10:36:58 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✘  1 [chromium] › tests/performance/rally-gl.spec.ts:4:1 › default rally draw budget uses four actual GL submissions (1.8s)
+
+
+  1) [chromium] › tests/performance/rally-gl.spec.ts:4:1 › default rally draw budget uses four actual GL submissions 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 4
+    Received: 8
+
+       9 |   await info.attach('default-rally-draw-budget.json',{body:JSON.stringify(result,null,2),contentType:'application/json'});
+      10 |   expect(result.snapshot.balls).toBe(30);
+    > 11 |   expect(result.contribution).toBe(4);
+         |                               ^
+      12 | });
+      13 |
+      14 | for(const quality of ['standard','low'] as const)for(const frame of ['peak','middle'] as const){
+        at /workspace/takkeu-work/tests/performance/rally-gl.spec.ts:11:31
+
+    Error Context: artifacts/rally-gl-budget-red/rally-gl-default-rally-dra-ba72d--four-actual-GL-submissions-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/rally-gl-budget-red/rally-gl-default-rally-dra-ba72d--four-actual-GL-submissions-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/rally-gl-budget-red/rally-gl-default-rally-dra-ba72d--four-actual-GL-submissions-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/performance/rally-gl.spec.ts:4:1 › default rally draw budget uses four actual GL submissions 

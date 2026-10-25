@@ -1,0 +1,1874 @@
+{
+  "conditions": [
+    {
+      "quality": "standard",
+      "frame": "peak",
+      "snapshot": {
+        "score": 4030,
+        "simTime": 0.8499999999999994,
+        "balls": 30,
+        "phase": "running",
+        "activeHits": 30,
+        "index": 50
+      },
+      "timerQueryAvailable": true,
+      "pixelDifference": {
+        "changedChannels": 0,
+        "maxChannelDifference": 0,
+        "meanAbsoluteDifference": 0
+      },
+      "modes": [
+        {
+          "mode": "normal",
+          "samples": 16,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 2.7000000001862645,
+              "mean": 4.006250000093132,
+              "max": 8.900000000372529
+            },
+            "finishWaitMs": {
+              "median": 0.0,
+              "mean": 0.04999999993015081,
+              "max": 0.5
+            },
+            "totalMs": {
+              "median": 2.7000000001862645,
+              "mean": 4.056250000023283,
+              "max": 8.900000000372529
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 38.0,
+              "mean": 38,
+              "max": 38
+            },
+            "drawVertices": {
+              "median": 163302.0,
+              "mean": 163302,
+              "max": 163302
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.04375000006984919,
+              "max": 0.2000000011175871
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 39.0,
+              "mean": 39,
+              "max": 39
+            },
+            "bufferSubDataBytes": {
+              "median": 653004.0,
+              "mean": 653004,
+              "max": 653004
+            },
+            "uploadMs": {
+              "median": 0.049999999813735485,
+              "mean": 0.0812499999301508,
+              "max": 0.30000000074505806
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 38,
+            "particles": 1688,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world",
+                "hit-ring"
+              ],
+              "tableQuads": 1721,
+              "worldQuads": 1466,
+              "particleCount": 248,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3504": 3504,
+            "4116": 4116,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504,
+            "73728": 1728,
+            "98304": 2304,
+            "294912": 227736,
+            "393216": 303648
+          }
+        },
+        {
+          "mode": "single-pass",
+          "samples": 16,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 2.5499999998137355,
+              "mean": 2.993750000023283,
+              "max": 7
+            },
+            "finishWaitMs": {
+              "median": 0.0,
+              "mean": 0.08125000004656613,
+              "max": 1.300000000745058
+            },
+            "totalMs": {
+              "median": 2.5499999998137355,
+              "mean": 3.075000000069849,
+              "max": 7
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 34.0,
+              "mean": 34,
+              "max": 34
+            },
+            "drawVertices": {
+              "median": 144180.0,
+              "mean": 144180,
+              "max": 144180
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.018749999930150807,
+              "max": 0.09999999962747097
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 39.0,
+              "mean": 39,
+              "max": 39
+            },
+            "bufferSubDataBytes": {
+              "median": 653004.0,
+              "mean": 653004,
+              "max": 653004
+            },
+            "uploadMs": {
+              "median": 0.09999999962747097,
+              "mean": 0.16874999995343387,
+              "max": 1.699999999254942
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 34,
+            "particles": 1688,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world",
+                "hit-ring"
+              ],
+              "tableQuads": 1721,
+              "worldQuads": 1466,
+              "particleCount": 248,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3504": 3504,
+            "4116": 4116,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504,
+            "73728": 1728,
+            "98304": 2304,
+            "294912": 227736,
+            "393216": 303648
+          }
+        },
+        {
+          "mode": "hidden",
+          "samples": 8,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 1.6499999994412065,
+              "mean": 2.1375000001862645,
+              "max": 4.300000000745058
+            },
+            "finishWaitMs": {
+              "median": 0.0,
+              "mean": 0.024999999906867743,
+              "max": 0.09999999962747097
+            },
+            "totalMs": {
+              "median": 1.699999999254942,
+              "mean": 2.1625000000931323,
+              "max": 4.300000000745058
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 30.0,
+              "mean": 30,
+              "max": 30
+            },
+            "drawVertices": {
+              "median": 125058.0,
+              "mean": 125058,
+              "max": 125058
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.012500000186264515,
+              "max": 0.10000000149011612
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 31.0,
+              "mean": 31,
+              "max": 31
+            },
+            "bufferSubDataBytes": {
+              "median": 117588.0,
+              "mean": 117588,
+              "max": 117588
+            },
+            "uploadMs": {
+              "median": 0.09999999962747097,
+              "mean": 0.08749999990686774,
+              "max": 0.19999999925494194
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 30,
+            "particles": 1688,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world",
+                "hit-ring"
+              ],
+              "tableQuads": 1721,
+              "worldQuads": 1466,
+              "particleCount": 248,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3504": 3504,
+            "4116": 4116,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504
+          }
+        },
+        {
+          "mode": "scissor",
+          "samples": 8,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 1.8499999986961484,
+              "mean": 1.8499999993946403,
+              "max": 2
+            },
+            "finishWaitMs": {
+              "median": 0.049999999813735485,
+              "mean": 0.050000000512227416,
+              "max": 0.10000000149011612
+            },
+            "totalMs": {
+              "median": 1.900000000372529,
+              "mean": 1.8999999999068677,
+              "max": 2
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 38.0,
+              "mean": 38,
+              "max": 38
+            },
+            "drawVertices": {
+              "median": 163302.0,
+              "mean": 163302,
+              "max": 163302
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.012499999953433871,
+              "max": 0.09999999962747097
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 39.0,
+              "mean": 39,
+              "max": 39
+            },
+            "bufferSubDataBytes": {
+              "median": 653004.0,
+              "mean": 653004,
+              "max": 653004
+            },
+            "uploadMs": {
+              "median": 0.09999999962747097,
+              "mean": 0.08750000013969839,
+              "max": 0.2000000011175871
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 38,
+            "particles": 1688,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world",
+                "hit-ring"
+              ],
+              "tableQuads": 1721,
+              "worldQuads": 1466,
+              "particleCount": 248,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3504": 3504,
+            "4116": 4116,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504,
+            "73728": 1728,
+            "98304": 2304,
+            "294912": 227736,
+            "393216": 303648
+          }
+        }
+      ],
+      "executionStatus": "passed"
+    },
+    {
+      "quality": "standard",
+      "frame": "middle",
+      "snapshot": {
+        "score": 4270,
+        "simTime": 15.016666666666454,
+        "balls": 30,
+        "phase": "running",
+        "activeHits": 0,
+        "index": 900
+      },
+      "timerQueryAvailable": true,
+      "pixelDifference": {
+        "changedChannels": 0,
+        "maxChannelDifference": 0,
+        "meanAbsoluteDifference": 0
+      },
+      "modes": [
+        {
+          "mode": "normal",
+          "samples": 16,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 4.25,
+              "mean": 5.449999999953434,
+              "max": 11.800000000745058
+            },
+            "finishWaitMs": {
+              "median": 0.0,
+              "mean": 0.01875000004656613,
+              "max": 0.10000000149011612
+            },
+            "totalMs": {
+              "median": 4.2999999998137355,
+              "mean": 5.46875,
+              "max": 11.800000000745058
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 40.0,
+              "mean": 40,
+              "max": 40
+            },
+            "drawVertices": {
+              "median": 149994.0,
+              "mean": 149994,
+              "max": 149994
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.04999999993015081,
+              "max": 0.2999999988824129
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 41.0,
+              "mean": 41,
+              "max": 41
+            },
+            "bufferSubDataBytes": {
+              "median": 499284.0,
+              "mean": 499284,
+              "max": 499284
+            },
+            "uploadMs": {
+              "median": 0.09999999962747097,
+              "mean": 0.12500000011641532,
+              "max": 0.40000000037252903
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 40,
+            "particles": 440,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world"
+              ],
+              "tableQuads": 758,
+              "worldQuads": 1466,
+              "particleCount": 248,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3456": 3456,
+            "3504": 3504,
+            "4116": 4116,
+            "4608": 4608,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504,
+            "73728": 1584,
+            "98304": 2112,
+            "294912": 158544,
+            "393216": 211392
+          }
+        },
+        {
+          "mode": "single-pass",
+          "samples": 16,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 3.099999999627471,
+              "mean": 3.950000000069849,
+              "max": 10
+            },
+            "finishWaitMs": {
+              "median": 0.0,
+              "mean": 0.01875000004656613,
+              "max": 0.10000000149011612
+            },
+            "totalMs": {
+              "median": 3.099999999627471,
+              "mean": 3.9687500001164153,
+              "max": 10
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 36.0,
+              "mean": 36,
+              "max": 36
+            },
+            "drawVertices": {
+              "median": 136650.0,
+              "mean": 136650,
+              "max": 136650
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.0062500000931322575,
+              "max": 0.10000000149011612
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 41.0,
+              "mean": 41,
+              "max": 41
+            },
+            "bufferSubDataBytes": {
+              "median": 499284.0,
+              "mean": 499284,
+              "max": 499284
+            },
+            "uploadMs": {
+              "median": 0.09999999962747097,
+              "mean": 0.09375,
+              "max": 0.2000000011175871
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 36,
+            "particles": 440,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world"
+              ],
+              "tableQuads": 758,
+              "worldQuads": 1466,
+              "particleCount": 248,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3456": 3456,
+            "3504": 3504,
+            "4116": 4116,
+            "4608": 4608,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504,
+            "73728": 1584,
+            "98304": 2112,
+            "294912": 158544,
+            "393216": 211392
+          }
+        },
+        {
+          "mode": "hidden",
+          "samples": 8,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 2.2500000009313226,
+              "mean": 2.387499999953434,
+              "max": 3.199999999254942
+            },
+            "finishWaitMs": {
+              "median": 0.0,
+              "mean": 0.03750000009313226,
+              "max": 0.2000000011175871
+            },
+            "totalMs": {
+              "median": 2.300000000745058,
+              "mean": 2.425000000046566,
+              "max": 3.199999999254942
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 32.0,
+              "mean": 32,
+              "max": 32
+            },
+            "drawVertices": {
+              "median": 123306.0,
+              "mean": 123306,
+              "max": 123306
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.012499999953433871,
+              "max": 0.09999999962747097
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 33.0,
+              "mean": 33,
+              "max": 33
+            },
+            "bufferSubDataBytes": {
+              "median": 125652.0,
+              "mean": 125652,
+              "max": 125652
+            },
+            "uploadMs": {
+              "median": 0.049999999813735485,
+              "mean": 0.05000000004656613,
+              "max": 0.10000000149011612
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 32,
+            "particles": 440,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world"
+              ],
+              "tableQuads": 758,
+              "worldQuads": 1466,
+              "particleCount": 248,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3456": 3456,
+            "3504": 3504,
+            "4116": 4116,
+            "4608": 4608,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504
+          }
+        },
+        {
+          "mode": "scissor",
+          "samples": 8,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 4.3500000005587935,
+              "mean": 5.8125,
+              "max": 14.900000000372529
+            },
+            "finishWaitMs": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "totalMs": {
+              "median": 4.3500000005587935,
+              "mean": 5.8125,
+              "max": 14.900000000372529
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 40.0,
+              "mean": 40,
+              "max": 40
+            },
+            "drawVertices": {
+              "median": 149994.0,
+              "mean": 149994,
+              "max": 149994
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.03750000009313226,
+              "max": 0.10000000149011612
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 41.0,
+              "mean": 41,
+              "max": 41
+            },
+            "bufferSubDataBytes": {
+              "median": 499284.0,
+              "mean": 499284,
+              "max": 499284
+            },
+            "uploadMs": {
+              "median": 0.10000000055879354,
+              "mean": 0.1000000003259629,
+              "max": 0.2000000011175871
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 40,
+            "particles": 440,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world"
+              ],
+              "tableQuads": 758,
+              "worldQuads": 1466,
+              "particleCount": 248,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3456": 3456,
+            "3504": 3504,
+            "4116": 4116,
+            "4608": 4608,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504,
+            "73728": 1584,
+            "98304": 2112,
+            "294912": 158544,
+            "393216": 211392
+          }
+        }
+      ],
+      "executionStatus": "passed"
+    },
+    {
+      "quality": "low",
+      "frame": "peak",
+      "snapshot": {
+        "score": 4030,
+        "simTime": 0.8499999999999994,
+        "balls": 30,
+        "phase": "running",
+        "activeHits": 30,
+        "index": 50
+      },
+      "timerQueryAvailable": true,
+      "pixelDifference": {
+        "changedChannels": 0,
+        "maxChannelDifference": 0,
+        "meanAbsoluteDifference": 0
+      },
+      "modes": [
+        {
+          "mode": "normal",
+          "samples": 16,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 3.3999999994412065,
+              "mean": 3.825000000069849,
+              "max": 11.099999999627471
+            },
+            "finishWaitMs": {
+              "median": 0.0,
+              "mean": 0.024999999906867743,
+              "max": 0.19999999925494194
+            },
+            "totalMs": {
+              "median": 3.3999999994412065,
+              "mean": 3.849999999976717,
+              "max": 11.099999999627471
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 38.0,
+              "mean": 38,
+              "max": 38
+            },
+            "drawVertices": {
+              "median": 143238.0,
+              "mean": 143238,
+              "max": 143238
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.025000000139698386,
+              "max": 0.10000000149011612
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 39.0,
+              "mean": 39,
+              "max": 39
+            },
+            "bufferSubDataBytes": {
+              "median": 382188.0,
+              "mean": 382188,
+              "max": 382188
+            },
+            "uploadMs": {
+              "median": 0.09999999962747097,
+              "mean": 0.09999999986030161,
+              "max": 0.2999999988824129
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 38,
+            "particles": 844,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world",
+                "hit-ring"
+              ],
+              "tableQuads": 861,
+              "worldQuads": 714,
+              "particleCount": 124,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3504": 3504,
+            "4116": 4116,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504,
+            "73728": 936,
+            "98304": 1248,
+            "294912": 112464,
+            "393216": 149952
+          }
+        },
+        {
+          "mode": "single-pass",
+          "samples": 16,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 2.7999999998137355,
+              "mean": 4.087500000139698,
+              "max": 8.199999999254942
+            },
+            "finishWaitMs": {
+              "median": 0.0,
+              "mean": 0.018749999930150807,
+              "max": 0.09999999962747097
+            },
+            "totalMs": {
+              "median": 2.7999999998137355,
+              "mean": 4.106250000069849,
+              "max": 8.199999999254942
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 34.0,
+              "mean": 34,
+              "max": 34
+            },
+            "drawVertices": {
+              "median": 133788.0,
+              "mean": 133788,
+              "max": 133788
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.05624999990686774,
+              "max": 0.19999999925494194
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 39.0,
+              "mean": 39,
+              "max": 39
+            },
+            "bufferSubDataBytes": {
+              "median": 382188.0,
+              "mean": 382188,
+              "max": 382188
+            },
+            "uploadMs": {
+              "median": 0.09999999962747097,
+              "mean": 0.07499999995343387,
+              "max": 0.30000000074505806
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 34,
+            "particles": 844,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world",
+                "hit-ring"
+              ],
+              "tableQuads": 861,
+              "worldQuads": 714,
+              "particleCount": 124,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3504": 3504,
+            "4116": 4116,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504,
+            "73728": 936,
+            "98304": 1248,
+            "294912": 112464,
+            "393216": 149952
+          }
+        },
+        {
+          "mode": "hidden",
+          "samples": 8,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 2.5499999998137355,
+              "mean": 2.487500000046566,
+              "max": 3
+            },
+            "finishWaitMs": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "totalMs": {
+              "median": 2.5499999998137355,
+              "mean": 2.487500000046566,
+              "max": 3
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 30.0,
+              "mean": 30,
+              "max": 30
+            },
+            "drawVertices": {
+              "median": 124338.0,
+              "mean": 124338,
+              "max": 124338
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.012499999953433871,
+              "max": 0.09999999962747097
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 31.0,
+              "mean": 31,
+              "max": 31
+            },
+            "bufferSubDataBytes": {
+              "median": 117588.0,
+              "mean": 117588,
+              "max": 117588
+            },
+            "uploadMs": {
+              "median": 0.09999999962747097,
+              "mean": 0.08750000013969839,
+              "max": 0.2000000011175871
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 30,
+            "particles": 844,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world",
+                "hit-ring"
+              ],
+              "tableQuads": 861,
+              "worldQuads": 714,
+              "particleCount": 124,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3504": 3504,
+            "4116": 4116,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504
+          }
+        },
+        {
+          "mode": "scissor",
+          "samples": 8,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 2.2999999998137355,
+              "mean": 2.387499999953434,
+              "max": 3.099999999627471
+            },
+            "finishWaitMs": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "totalMs": {
+              "median": 2.2999999998137355,
+              "mean": 2.387499999953434,
+              "max": 3.099999999627471
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 38.0,
+              "mean": 38,
+              "max": 38
+            },
+            "drawVertices": {
+              "median": 143238.0,
+              "mean": 143238,
+              "max": 143238
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.05000000004656613,
+              "max": 0.2000000011175871
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 39.0,
+              "mean": 39,
+              "max": 39
+            },
+            "bufferSubDataBytes": {
+              "median": 382188.0,
+              "mean": 382188,
+              "max": 382188
+            },
+            "uploadMs": {
+              "median": 0.049999999813735485,
+              "mean": 0.0625,
+              "max": 0.2000000011175871
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 38,
+            "particles": 844,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world",
+                "hit-ring"
+              ],
+              "tableQuads": 861,
+              "worldQuads": 714,
+              "particleCount": 124,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3504": 3504,
+            "4116": 4116,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504,
+            "73728": 936,
+            "98304": 1248,
+            "294912": 112464,
+            "393216": 149952
+          }
+        }
+      ],
+      "executionStatus": "passed"
+    },
+    {
+      "quality": "low",
+      "frame": "middle",
+      "snapshot": {
+        "score": 4270,
+        "simTime": 15.016666666666454,
+        "balls": 30,
+        "phase": "running",
+        "activeHits": 0,
+        "index": 900
+      },
+      "timerQueryAvailable": true,
+      "pixelDifference": {
+        "changedChannels": 0,
+        "maxChannelDifference": 0,
+        "meanAbsoluteDifference": 0
+      },
+      "modes": [
+        {
+          "mode": "normal",
+          "samples": 16,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 3.3500000005587935,
+              "mean": 3.806249999674037,
+              "max": 6.5
+            },
+            "finishWaitMs": {
+              "median": 0.0,
+              "mean": 0.0375000003259629,
+              "max": 0.10000000149011612
+            },
+            "totalMs": {
+              "median": 3.3500000005587935,
+              "mean": 3.84375,
+              "max": 6.599999999627471
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 40.0,
+              "mean": 40,
+              "max": 40
+            },
+            "drawVertices": {
+              "median": 136314.0,
+              "mean": 136314,
+              "max": 136314
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.018749999930150807,
+              "max": 0.09999999962747097
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 41.0,
+              "mean": 41,
+              "max": 41
+            },
+            "bufferSubDataBytes": {
+              "median": 309108.0,
+              "mean": 309108,
+              "max": 309108
+            },
+            "uploadMs": {
+              "median": 0.09999999962747097,
+              "mean": 0.17499999969732016,
+              "max": 0.8999999985098839
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 40,
+            "particles": 220,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world"
+              ],
+              "tableQuads": 378,
+              "worldQuads": 714,
+              "particleCount": 124,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3456": 3456,
+            "3504": 3504,
+            "4116": 4116,
+            "4608": 4608,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504,
+            "73728": 864,
+            "98304": 1152,
+            "294912": 77760,
+            "393216": 103680
+          }
+        },
+        {
+          "mode": "single-pass",
+          "samples": 16,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 2.399999998509884,
+              "mean": 2.9437499998603016,
+              "max": 6.200000001117587
+            },
+            "finishWaitMs": {
+              "median": 0.0,
+              "mean": 0.025000000139698386,
+              "max": 0.10000000149011612
+            },
+            "totalMs": {
+              "median": 2.449999999254942,
+              "mean": 2.96875,
+              "max": 6.200000001117587
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 36.0,
+              "mean": 36,
+              "max": 36
+            },
+            "drawVertices": {
+              "median": 129762.0,
+              "mean": 129762,
+              "max": 129762
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.025000000023283064,
+              "max": 0.10000000149011612
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 41.0,
+              "mean": 41,
+              "max": 41
+            },
+            "bufferSubDataBytes": {
+              "median": 309108.0,
+              "mean": 309108,
+              "max": 309108
+            },
+            "uploadMs": {
+              "median": 0.09999999962747097,
+              "mean": 0.1062500000698492,
+              "max": 0.2000000011175871
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 36,
+            "particles": 220,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world"
+              ],
+              "tableQuads": 378,
+              "worldQuads": 714,
+              "particleCount": 124,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3456": 3456,
+            "3504": 3504,
+            "4116": 4116,
+            "4608": 4608,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504,
+            "73728": 864,
+            "98304": 1152,
+            "294912": 77760,
+            "393216": 103680
+          }
+        },
+        {
+          "mode": "hidden",
+          "samples": 8,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 2.0,
+              "mean": 2.0750000001862645,
+              "max": 2.900000000372529
+            },
+            "finishWaitMs": {
+              "median": 0.0,
+              "mean": 0.037499999860301614,
+              "max": 0.19999999925494194
+            },
+            "totalMs": {
+              "median": 2.099999999627471,
+              "mean": 2.112500000046566,
+              "max": 2.900000000372529
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 32.0,
+              "mean": 32,
+              "max": 32
+            },
+            "drawVertices": {
+              "median": 123210.0,
+              "mean": 123210,
+              "max": 123210
+            },
+            "drawMs": {
+              "median": 0.0,
+              "mean": 0.037499999860301614,
+              "max": 0.19999999925494194
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 33.0,
+              "mean": 33,
+              "max": 33
+            },
+            "bufferSubDataBytes": {
+              "median": 125652.0,
+              "mean": 125652,
+              "max": 125652
+            },
+            "uploadMs": {
+              "median": 0.049999999813735485,
+              "mean": 0.0874999996740371,
+              "max": 0.2999999988824129
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 32,
+            "particles": 220,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world"
+              ],
+              "tableQuads": 378,
+              "worldQuads": 714,
+              "particleCount": 124,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3456": 3456,
+            "3504": 3504,
+            "4116": 4116,
+            "4608": 4608,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504
+          }
+        },
+        {
+          "mode": "scissor",
+          "samples": 8,
+          "metrics": {
+            "renderSubmitMs": {
+              "median": 2.2999999998137355,
+              "mean": 4.199999999953434,
+              "max": 18.199999999254942
+            },
+            "finishWaitMs": {
+              "median": 0.09999999962747097,
+              "mean": 0.062499999767169356,
+              "max": 0.09999999962747097
+            },
+            "totalMs": {
+              "median": 2.2999999998137355,
+              "mean": 4.262499999720603,
+              "max": 18.199999999254942
+            },
+            "gpuMs": null,
+            "drawCalls": {
+              "median": 40.0,
+              "mean": 40,
+              "max": 40
+            },
+            "drawVertices": {
+              "median": 136314.0,
+              "mean": 136314,
+              "max": 136314
+            },
+            "drawMs": {
+              "median": 0.049999999813735485,
+              "mean": 0.05000000004656613,
+              "max": 0.10000000149011612
+            },
+            "bufferDataCalls": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferDataBytes": {
+              "median": 0.0,
+              "mean": 0,
+              "max": 0
+            },
+            "bufferSubDataCalls": {
+              "median": 41.0,
+              "mean": 41,
+              "max": 41
+            },
+            "bufferSubDataBytes": {
+              "median": 309108.0,
+              "mean": 309108,
+              "max": 309108
+            },
+            "uploadMs": {
+              "median": 0.10000000055879354,
+              "mean": 0.11250000051222742,
+              "max": 0.30000000074505806
+            }
+          },
+          "resources": {
+            "geometries": 57,
+            "textures": 4,
+            "programs": 16,
+            "drawCalls": 40,
+            "particles": 220,
+            "particleCapacity": 11776,
+            "rallyEffects": {
+              "activeEffects": [
+                "tricolor-crossing",
+                "star-world",
+                "orbit-ribbon",
+                "multi-halos",
+                "meteor-swarm",
+                "double-table-halos",
+                "final-world"
+              ],
+              "tableQuads": 378,
+              "worldQuads": 714,
+              "particleCount": 124,
+              "finalPhase": null,
+              "capacity": 10240,
+              "geometries": 4,
+              "materials": 4,
+              "nodes": 6,
+              "drawCalls": 4,
+              "disposed": false
+            }
+          },
+          "uploadsByCapacity": {
+            "288": 1728,
+            "384": 768,
+            "600": 1200,
+            "624": 1248,
+            "912": 1824,
+            "1836": 7344,
+            "2048": 6144,
+            "3456": 3456,
+            "3504": 3504,
+            "4116": 4116,
+            "4608": 4608,
+            "5100": 15300,
+            "6144": 6144,
+            "9900": 9900,
+            "18432": 36864,
+            "21504": 21504,
+            "73728": 864,
+            "98304": 1152,
+            "294912": 77760,
+            "393216": 103680
+          }
+        }
+      ],
+      "executionStatus": "passed"
+    }
+  ],
+  "sourceProductionTree": "8c18959dd3e5741e99a2117a639117474500147b",
+  "diagnosticOnly": true
+}

@@ -12,6 +12,8 @@ Repeated draws and paused snapshots at the same time produce identical geometry.
 
 When a newer major arrival starts, older arrivals fade over 0.35 seconds. Confirmed score prevents an older longer effect from returning after the newer shorter effect has been pruned, including reconstruction of the view. A final-loss cue has priority over major arrival geometry and cannot restore that geometry after its own cue is pruned. This changes drawing opacity only; the source events and their deadlines remain intact.
 
+`presentationPriority(snapshot, state?)` exports the shared lower-tier opacity budget for the new renderer and the legacy celebration/firework consumers. It smooths from 1 to 0.45 over the first 0.2 seconds of a major arrival, restores over its final 0.3 seconds, and keeps the final-loss background at 0.45 through termination. Permanent bright geometry, hit rings, sparks, and impact clouds use that factor. The dark cosmic backing and dedicated major/final geometry bypass it. The hundredth spark keeps its exact coordinate, geometry and nonzero opacity; existing digits are owned by the legacy consumer and are not included in this budget. This implements the centralized presentation priority contract exposed by the combined-layer worst-case safety investigation, rather than changing the image-analysis threshold.
+
 ## Score conditions
 
 | Score | Implemented geometry / owner | Substitution and duration |
@@ -64,6 +66,8 @@ The initial star-world implementation failed actual image review: its dark recta
 
 Number-ring placement reads `celebrationFrame` and derives the same cell width, row count, and centers used by the existing number renderer. It does not change the existing digit mesh, number notices, color schedule, or display duration. Tests cover simultaneous 55/77 placement and preservation of the source celebration data.
 
+Actual worst-case image analysis exposed additive amplification when loss milestones 10/20/30/40 occurred at the same simulation time: four identical outlines each used alpha 0.45, creating total source alpha 1.8 at the same pixels. The renderer now draws a single outline for identical-time wave cues while retaining all four source facts. Different-time outlines share one continuous envelope-normalized opacity budget of at most 0.45. A final-loss cue fades these lower-priority waves over 0.35 seconds without extending their lifetimes. Tests in `render-loss-wave-budget-{red,green,typecheck}.log` show 86 passing focused tests and typecheck exit 0. This is an implementation/geometry result; the follow-up worst-case pixel analysis must determine the resulting safety verdict.
+
 ## Fixed resources
 
 | Resource | New renderer bound |
@@ -79,11 +83,13 @@ Number-ring placement reads `celebrationFrame` and derives the same cell width, 
 
 Position and color attributes use dynamic update ranges covering only the active vertices. All GPU buffers, materials and scene nodes are created once. `prepare()` places black degenerate triangles in all four batches so the real scene preparation render compiles the RGBA material variants and uploads the buffers without visible pixels. `clear()` removes those draw ranges without a synthetic snapshot. Disposal removes both roots and disposes each owned geometry/material once.
 
+The four-draw bound applies after the measured single-pass optimization. The initial implementation counted four meshes but Three.js submitted eight draws because transparent double-sided materials default to two passes. The approved fix sets `forceSinglePass: true` on only these four unlit flat-batch materials. Controlled peak/middle standard/low comparisons showed zero changed image channels and four fewer actual draws, with unchanged uploads. See [renderer-performance-investigation.md](renderer-performance-investigation.md) for the measurements, caveats and remaining full-matrix/image-review gates.
+
 Low quality reduces segment and point density and retains every effect condition and all three lightning colors. Standard star counts are 160, rising to 240 in the final world; low quality uses 80/120. Reduced motion freezes permanent positions and travel phases, uses static positions for short bursts/rings, and preserves original event deadlines. It does not alter physics or scoring.
 
 ## Verification evidence
 
-- `tests/unit/rally-render.test.ts`: 83 focused tests pass after the cosmic-background coverage correction. Tests inspect actual buffer positions/colors, full perimeter travel, ring breathing, corner brightness, expiry boundaries, immutable real loss positions, multiple-number layout, portrait/landscape coverage and camera projection, branch junctions, nonplanar strands, smooth movement, opacity priority, pause/reconstruction, quality, fixed buffers, disposal, and a thirty-loss final-world stress case.
+- `tests/unit/rally-render.test.ts`: 93 focused tests pass after cosmic-background coverage, loss-wave compositing and shared presentation priority corrections. Tests inspect actual buffer positions/colors, full perimeter travel, ring breathing, corner brightness, expiry boundaries, immutable real loss positions, multiple-number layout, portrait/landscape coverage and camera projection, branch junctions, nonplanar strands, smooth movement, opacity priority and total wave budget, pause/reconstruction, quality, fixed buffers, disposal, and a thirty-loss final-world stress case. `render-priority-budget-{red,green,typecheck}.log` records the shared-factor cycle and typecheck result.
 - Stage 1 logs: `logs/render-stage1-red.log`, `render-stage1-green.log`, and the review/exact/clear RED/GREEN logs.
 - Stage 2 logs: `logs/render-stage2-red.log`, `render-stage2-shapes-{red,green}.log`, `render-stage2-priority-{red,green}.log`, `render-stage2-replay-{red,green}.log`, and `render-stage2-final-green.log` (60 tests at that gate).
 - Stage 3 logs: `logs/render-stage3-{red,green}.log`, `render-stage3-priority-{red,green}.log` (80 tests at handoff), and `render-stage3-typecheck.log` (exit 0).

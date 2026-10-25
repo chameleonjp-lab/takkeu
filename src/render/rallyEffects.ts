@@ -12,7 +12,7 @@ function createBatch(capacity:number,name:string,additive=true) {
   const color=new BufferAttribute(new Float32Array(capacity*24),4).setUsage(DynamicDrawUsage);
   geometry.setAttribute('position',position);geometry.setAttribute('color',color);geometry.setDrawRange(0,0);
   const material=new MeshBasicMaterial({vertexColors:true,transparent:true,depthTest:true,depthWrite:false,
-    side:DoubleSide,blending:additive?AdditiveBlending:NormalBlending,toneMapped:false});
+    side:DoubleSide,forceSinglePass:true,blending:additive?AdditiveBlending:NormalBlending,toneMapped:false});
   const mesh=new Mesh(geometry,material);mesh.name=name;mesh.frustumCulled=false;mesh.renderOrder=2;
   let count=0,opacity=1;
   return {mesh,capacity,get count(){return count;},clear(){count=0;opacity=1;},setOpacity(value:number){opacity=value;},

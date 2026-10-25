@@ -1,0 +1,227 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/takkeu-work/node_modules/.bin/playwright",
+      "test",
+      "--config=playwright.performance.config.ts",
+      "tests/performance/rally-gl.spec.ts",
+      "--project=chromium",
+      "--grep",
+      "default rally draw budget",
+      "--reporter=list,json",
+      "--output=artifacts/rally-gl-budget-red"
+    ],
+    "configFile": "/workspace/takkeu-work/playwright.performance.config.ts",
+    "rootDir": "/workspace/takkeu-work/tests/performance",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/takkeu-work/artifacts/rally-gl-budget-red",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/workspace/takkeu-work/tests/performance",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/workspace/takkeu-work/artifacts/rally-gl-budget-red",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/workspace/takkeu-work/tests/performance",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/takkeu-work/artifacts/rally-gl-budget-red",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/workspace/takkeu-work/tests/performance",
+        "snapshotDir": "/workspace/takkeu-work/tests/performance",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4176",
+          "video": "off",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "launchOptions": {
+            "args": [
+              "--enable-unsafe-swiftshader",
+              "--use-angle=swiftshader"
+            ]
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 4176 --strictPort",
+      "url": "http://127.0.0.1:4176",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "rally-gl.spec.ts",
+      "file": "rally-gl.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "default rally draw budget uses four actual GL submissions",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1765,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m4\u001b[39m\nReceived: \u001b[31m8\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m4\u001b[39m\nReceived: \u001b[31m8\u001b[39m\n    at /workspace/takkeu-work/tests/performance/rally-gl.spec.ts:11:31",
+                    "location": {
+                      "file": "/workspace/takkeu-work/tests/performance/rally-gl.spec.ts",
+                      "column": 31,
+                      "line": 11
+                    },
+                    "snippet": "   9 |   await info.attach('default-rally-draw-budget.json',{body:JSON.stringify(result,null,2),contentType:'application/json'});\n  10 |   expect(result.snapshot.balls).toBe(30);\n> 11 |   expect(result.contribution).toBe(4);\n     |                               ^\n  12 | });\n  13 |\n  14 | for(const quality of ['standard','low'] as const)for(const frame of ['peak','middle'] as const){"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/workspace/takkeu-work/tests/performance/rally-gl.spec.ts",
+                        "column": 31,
+                        "line": 11
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m4\u001b[39m\nReceived: \u001b[31m8\u001b[39m\n\n   9 |   await info.attach('default-rally-draw-budget.json',{body:JSON.stringify(result,null,2),contentType:'application/json'});\n  10 |   expect(result.snapshot.balls).toBe(30);\n> 11 |   expect(result.contribution).toBe(4);\n     |                               ^\n  12 | });\n  13 |\n  14 | for(const quality of ['standard','low'] as const)for(const frame of ['peak','middle'] as const){\n    at /workspace/takkeu-work/tests/performance/rally-gl.spec.ts:11:31"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-25T22:36:57.595Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "default-rally-draw-budget.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJ2aXNpYmxlIjogewogICAgImRyYXdDYWxscyI6IDQwLAogICAgImRyYXdWZXJ0aWNlcyI6IDE0OTk5NCwKICAgICJkcmF3TXMiOiAwLAogICAgImJ1ZmZlckRhdGFDYWxscyI6IDAsCiAgICAiYnVmZmVyRGF0YUJ5dGVzIjogMCwKICAgICJidWZmZXJTdWJEYXRhQ2FsbHMiOiA0MSwKICAgICJidWZmZXJTdWJEYXRhQnl0ZXMiOiA0OTkyODQsCiAgICAidXBsb2FkTXMiOiAwLAogICAgInVwbG9hZHNCeUNhcGFjaXR5IjogewogICAgICAiMjg4IjogMTcyOCwKICAgICAgIjM4NCI6IDc2OCwKICAgICAgIjYwMCI6IDEyMDAsCiAgICAgICI2MjQiOiAxMjQ4LAogICAgICAiOTEyIjogMTgyNCwKICAgICAgIjE4MzYiOiA3MzQ0LAogICAgICAiMjA0OCI6IDYxNDQsCiAgICAgICIzNDU2IjogMzQ1NiwKICAgICAgIjM1MDQiOiAzNTA0LAogICAgICAiNDExNiI6IDQxMTYsCiAgICAgICI0NjA4IjogNDYwOCwKICAgICAgIjUxMDAiOiAxNTMwMCwKICAgICAgIjYxNDQiOiA2MTQ0LAogICAgICAiOTkwMCI6IDk5MDAsCiAgICAgICIxODQzMiI6IDM2ODY0LAogICAgICAiMjE1MDQiOiAyMTUwNCwKICAgICAgIjczNzI4IjogMTU4NCwKICAgICAgIjk4MzA0IjogMjExMiwKICAgICAgIjI5NDkxMiI6IDE1ODU0NCwKICAgICAgIjM5MzIxNiI6IDIxMTM5MgogICAgfSwKICAgICJyZW5kZXJlckNhbGxzIjogNDAKICB9LAogICJoaWRkZW4iOiB7CiAgICAiZHJhd0NhbGxzIjogMzIsCiAgICAiZHJhd1ZlcnRpY2VzIjogMTIzMzA2LAogICAgImRyYXdNcyI6IDAsCiAgICAiYnVmZmVyRGF0YUNhbGxzIjogMCwKICAgICJidWZmZXJEYXRhQnl0ZXMiOiAwLAogICAgImJ1ZmZlclN1YkRhdGFDYWxscyI6IDMzLAogICAgImJ1ZmZlclN1YkRhdGFCeXRlcyI6IDEyNTY1MiwKICAgICJ1cGxvYWRNcyI6IDAuMDk5OTk5OTk5NjI3NDcwOTcsCiAgICAidXBsb2Fkc0J5Q2FwYWNpdHkiOiB7CiAgICAgICIyODgiOiAxNzI4LAogICAgICAiMzg0IjogNzY4LAogICAgICAiNjAwIjogMTIwMCwKICAgICAgIjYyNCI6IDEyNDgsCiAgICAgICI5MTIiOiAxODI0LAogICAgICAiMTgzNiI6IDczNDQsCiAgICAgICIyMDQ4IjogNjE0NCwKICAgICAgIjM0NTYiOiAzNDU2LAogICAgICAiMzUwNCI6IDM1MDQsCiAgICAgICI0MTE2IjogNDExNiwKICAgICAgIjQ2MDgiOiA0NjA4LAogICAgICAiNTEwMCI6IDE1MzAwLAogICAgICAiNjE0NCI6IDYxNDQsCiAgICAgICI5OTAwIjogOTkwMCwKICAgICAgIjE4NDMyIjogMzY4NjQsCiAgICAgICIyMTUwNCI6IDIxNTA0CiAgICB9LAogICAgInJlbmRlcmVyQ2FsbHMiOiAzMgogIH0sCiAgImNvbnRyaWJ1dGlvbiI6IDgsCiAgInNuYXBzaG90IjogewogICAgInNjb3JlIjogNDI3MCwKICAgICJzaW1UaW1lIjogMTUuMDE2NjY2NjY2NjY2NDU0LAogICAgImJhbGxzIjogMzAKICB9Cn0="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/takkeu-work/artifacts/rally-gl-budget-red/rally-gl-default-rally-dra-ba72d--four-actual-GL-submissions-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/takkeu-work/artifacts/rally-gl-budget-red/rally-gl-default-rally-dra-ba72d--four-actual-GL-submissions-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/workspace/takkeu-work/tests/performance/rally-gl.spec.ts",
+                    "column": 31,
+                    "line": 11
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "5b1f3b75dc55331c077f-5de52f3da327ff4c27bb",
+          "file": "rally-gl.spec.ts",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-25T22:36:56.525Z",
+    "duration": 3554.249,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}
