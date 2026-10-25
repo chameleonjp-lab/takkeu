@@ -17,6 +17,7 @@ async function mockRanking(page: import('@playwright/test').Page, failScore = fa
     if (rpc === 'start_takkeu_guest_play_v1') data = { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', client_version: version };
     if (rpc === 'finish_game_play_v1') data = { accepted: true, play_id: body.p_play_id, game_slug: 'takkeu', result_type: body.p_result_type, reached_wave: 1, score: body.p_score };
     if (rpc === 'submit_score_idempotent_v1') data = [{ accepted: true, result_submission_id: body.p_submission_id, result_play_id: body.p_play_id, result_display_name: body.p_display_name, result_normalized_name: body.p_display_name, result_first_score: body.p_score, result_best_score: body.p_score, result_play_count: 1 }];
+    if (rpc === 'get_takkeu_player_position_v1') data = [{ rank_no: 123, total_entries: 250, best_score: 1500 }];
     if (rpc === 'get_best_score_ranking') data = Array.from({ length: 30 }, (_, i) => ({ rank_no: i < 2 ? 1 : i + 1, display_name: `プレイヤー${i + 1}`, best_score: 100 - i, play_count: i + 1 }));
     await route.fulfill({ json: data });
   });

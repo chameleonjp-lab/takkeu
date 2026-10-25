@@ -41,7 +41,7 @@ const app = createApp(document.querySelector<HTMLElement>('#app')!, {
   // Ordinary gameplay tests use a deterministic empty leaderboard. Ranking tests
   // explicitly opt into the real REST client and intercept its network boundary.
   rankingApi: new URLSearchParams(location.search).has('ranking') ? createRankingClient() : {
-    startGuest: async () => {},
+    position: async () => null, startGuest: async () => {},
     start: async () => { throw new Error('Named ranking requires the ranking fixture option'); },
     finish: async () => {}, submit: async () => {}, top: async () => [],
   },

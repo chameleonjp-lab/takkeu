@@ -20,7 +20,7 @@ function setup({validLayout=true,silent=false,named=false,rankControlled=false}:
   const view:GameView={prepare:async()=>{},render(){},resize(){},inputMapping:()=>mapping,setQuality(){},resources:()=>({geometries:0,textures:0,programs:0,drawCalls:0,particles:0,particleCapacity:1536}),dispose(){}};
   const audio={prepare:()=>silent?new Promise<boolean>(()=>{}):Promise.resolve(true),unlock:async()=>true,consume(){},setVolume(){},setMuted(){},suspend(){},reset(){},dispose:async()=>{}};
   const app=createApp(root,{createSession:()=>session,createView:()=>view,createAudio:()=>audio,storage:{getItem:()=>null,setItem(){}},
-    rankingApi:{start:async startId=>{
+    rankingApi:{position:async()=>null,start:async startId=>{
       if(!rankControlled)return play;
       let record=accepted.get(startId);
       if(!record){record={...play,startId,playId:`22222222-2222-4222-8222-${String(accepted.size+1).padStart(12,'0')}`};accepted.set(startId,record);}

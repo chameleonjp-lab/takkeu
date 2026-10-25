@@ -18,7 +18,7 @@ const acceptedStart = { accepted: true, start_id: startId, play_id: playId, disp
 const acceptedFinish = { accepted: true, play_id: playId, game_slug: 'takkeu', result_type: 'game_over', reached_wave: 1, score: 42 };
 const acceptedScore = [{ accepted: true, result_submission_id: submissionId, result_play_id: playId, result_display_name: 'テスト', result_normalized_name: 'テスト', result_first_score: 42, result_best_score: 42, result_play_count: 1 }];
 const response = (data: unknown, status = 200) => new Response(JSON.stringify(data), { status });
-function api() { return { start: vi.fn(async (_startId: string, _name: string) => play), startGuest: vi.fn(async (_startId: string) => {}), finish: vi.fn(async (_result: PendingResult) => {}), submit: vi.fn(async (_result: PendingResult) => {}), top: vi.fn(async () => []) }; }
+function api() { return { position: vi.fn(async () => null), start: vi.fn(async (_startId: string, _name: string) => play), startGuest: vi.fn(async (_startId: string) => {}), finish: vi.fn(async (_result: PendingResult) => {}), submit: vi.fn(async (_result: PendingResult) => {}), top: vi.fn(async () => []) }; }
 afterEach(() => vi.useRealTimers());
 
 it('accepts guests, trims names and counts Unicode characters without silently truncating', () => {

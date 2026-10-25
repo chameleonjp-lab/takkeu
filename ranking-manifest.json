@@ -18,6 +18,7 @@
   },
   "play_count": { "count_at": "start", "rpc": "start_game_play_v1", "guest_rpc": "start_takkeu_guest_play_v1", "includes_guests": true, "guest_scores": false, "idempotency": true },
   "submission": { "rpc": "submit_score_idempotent_v1", "automatic": true, "idempotency": true, "timeout_ms": 8000 },
+  "player_position": { "rpc": "get_takkeu_player_position_v1", "basis": "best_score", "ties": "competition", "population_unit": "registered_names", "requires_submission_acknowledgement": true },
   "ranking_entries": [{
     "mode_id": "rally",
     "game_slug": "takkeu",

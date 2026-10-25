@@ -1,0 +1,49 @@
+[WebServer] (node:8565) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 24 tests using 1 worker
+
+(node:8592) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+[WebServer] 6:42:55 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   1 [chromium] › tests/browser/ranking.spec.ts:36:1 › 名前なしで遊べて結果には上位30名と正式URLのXシェアが表示される (1.5s)
+[WebServer] 6:42:56 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   2 [chromium] › tests/browser/ranking.spec.ts:60:1 › 匿名開始の応答喪失後もすぐ遊べてonline復帰時は同じIDで再送する (1.3s)
+[WebServer] 6:42:58 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   3 [chromium] › tests/browser/ranking.spec.ts:76:1 › 通信不能で始めた匿名2回の記録を再読込後も保ち復旧時に送る (1.8s)
+[WebServer] 6:42:59 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   4 [chromium] › tests/browser/ranking.spec.ts:104:1 › online復帰が古い通信の失敗より先でも送信待ちを再開する (1.2s)
+[WebServer] 6:43:01 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   5 [chromium] › tests/browser/ranking.spec.ts:119:1 › 名前ありは開始時に一度記録し通常終了を自動送信する (1.2s)
+[WebServer] 6:43:02 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   6 [chromium] › tests/browser/ranking.spec.ts:134:1 › 送信失敗後も結果と共有を保ち同じIDで再送する (1.3s)
+[WebServer] 6:43:03 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   7 [chromium] › tests/browser/ranking.spec.ts:149:1 › 通信停止中も名前なしのプレイと再プレイが使えランキングは再取得できる (1.4s)
+[WebServer] 6:43:04 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   8 [chromium] › tests/browser/result-position.spec.ts:41:1 › 登録確認前には取得せず、100位超でもDB自己ベストの順位を表示する (1.2s)
+[WebServer] 6:43:06 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   9 [chromium] › tests/browser/result-position.spec.ts:49:1 › スコア送信失敗時は順位を出さず同じIDの再送成功後に表示する (1.3s)
+[WebServer] 6:43:07 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓  10 [chromium] › tests/browser/result-position.spec.ts:56:1 › 順位通信失敗は再取得でき、TOP100の同順位も控えめに表示する (1.2s)
+[WebServer] 6:43:08 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓  11 [chromium] › tests/browser/result-position.spec.ts:63:1 › 順位応答待ちで再プレイしても古い順位は新プレイに表示しない (1.6s)
+[WebServer] 6:43:10 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓  12 [chromium] › tests/browser/result-position.spec.ts:71:1 › 集計対象外の名前には架空の順位を表示しない (1.2s)
+(node:8988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  13 [webkit] › tests/browser/ranking.spec.ts:36:1 › 名前なしで遊べて結果には上位30名と正式URLのXシェアが表示される (2.7s)
+  ✓  14 [webkit] › tests/browser/ranking.spec.ts:60:1 › 匿名開始の応答喪失後もすぐ遊べてonline復帰時は同じIDで再送する (1.8s)
+  ✓  15 [webkit] › tests/browser/ranking.spec.ts:76:1 › 通信不能で始めた匿名2回の記録を再読込後も保ち復旧時に送る (2.2s)
+  ✓  16 [webkit] › tests/browser/ranking.spec.ts:104:1 › online復帰が古い通信の失敗より先でも送信待ちを再開する (1.7s)
+  ✓  17 [webkit] › tests/browser/ranking.spec.ts:119:1 › 名前ありは開始時に一度記録し通常終了を自動送信する (1.8s)
+  ✓  18 [webkit] › tests/browser/ranking.spec.ts:134:1 › 送信失敗後も結果と共有を保ち同じIDで再送する (1.8s)
+  ✓  19 [webkit] › tests/browser/ranking.spec.ts:149:1 › 通信停止中も名前なしのプレイと再プレイが使えランキングは再取得できる (1.7s)
+  ✓  20 [webkit] › tests/browser/result-position.spec.ts:41:1 › 登録確認前には取得せず、100位超でもDB自己ベストの順位を表示する (1.7s)
+  ✓  21 [webkit] › tests/browser/result-position.spec.ts:49:1 › スコア送信失敗時は順位を出さず同じIDの再送成功後に表示する (1.7s)
+  ✓  22 [webkit] › tests/browser/result-position.spec.ts:56:1 › 順位通信失敗は再取得でき、TOP100の同順位も控えめに表示する (1.6s)
+  ✓  23 [webkit] › tests/browser/result-position.spec.ts:63:1 › 順位応答待ちで再プレイしても古い順位は新プレイに表示しない (1.8s)
+  ✓  24 [webkit] › tests/browser/result-position.spec.ts:71:1 › 集計対象外の名前には架空の順位を表示しない (1.6s)
+
+  24 passed (39.7s)
