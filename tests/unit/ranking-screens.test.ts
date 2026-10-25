@@ -27,7 +27,7 @@ it('makes the optional public name clear and permits an empty-name start', () =>
 it('places replay immediately under the score and shares the actual score and canonical URL', () => {
   const { screens, get } = setup();
   screens.render({ ...scenario(42).snapshot(), phase: 'gameover' });
-  expect(get('[data-result-score]').nextElementSibling).toBe(get('[data-result] [data-action="retry"]'));
+  expect(get('[data-result-effects]').nextElementSibling).toBe(get('[data-result] [data-action="retry"]'));
   const url = new URL(get<HTMLAnchorElement>('[data-share-x]').href);
   expect(url.hostname).toBe('twitter.com');
   expect(url.searchParams.get('text')).toBe('タッケウで42ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');

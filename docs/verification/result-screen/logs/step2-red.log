@@ -1,0 +1,126 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/result-effects.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/result-effects.test.ts (13 tests | 13 failed) 234ms
+   × uses the exact color/electricity boundary at 299 81ms
+   × uses the exact color/electricity boundary at 300 15ms
+   × uses the exact color/electricity boundary at 499 13ms
+   × uses the exact color/electricity boundary at 500 13ms
+   × uses the exact color/electricity boundary at 799 14ms
+   × uses the exact color/electricity boundary at 800 9ms
+   × uses the exact color/electricity boundary at 999 9ms
+   × uses the exact color/electricity boundary at 1000 8ms
+   × uses the exact color/electricity boundary at 1499 8ms
+   × uses the exact color/electricity boundary at 1500 8ms
+   × uses the exact color/electricity boundary at 2000 8ms
+   × changes paths and emission points continuously with bounded, independently colored layers 32ms
+   × stops, restarts once, respects live motion preference, and disposes all resources 15ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 13 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/result-effects.test.ts > uses the exact color/electricity boundary at 299
+AssertionError: expected null to be 'normal' // Object.is equality
+
+- Expected:
+"normal"
+
++ Received:
+null
+
+ ❯ tests/unit/result-effects.test.ts:31:81
+     29| ('uses the exact color/electricity boundary at %i', (score, color, col…
+     30|   const { root, render, tick, frames } = setup(); render(score); tick(…
+     31|   expect(root.querySelector('[data-result]')!.getAttribute('data-score…
+       |                                                                                 ^
+     32|   expect([...new Set([...root.querySelectorAll('[data-bolt]')].map(nod…
+     33|   expect(frames.size).toBe(colors.length ? 1 : 0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/13]⎯
+
+ FAIL  tests/unit/result-effects.test.ts > uses the exact color/electricity boundary at 300
+ FAIL  tests/unit/result-effects.test.ts > uses the exact color/electricity boundary at 499
+ FAIL  tests/unit/result-effects.test.ts > uses the exact color/electricity boundary at 500
+ FAIL  tests/unit/result-effects.test.ts > uses the exact color/electricity boundary at 799
+AssertionError: expected null to be 'gold' // Object.is equality
+
+- Expected:
+"gold"
+
++ Received:
+null
+
+ ❯ tests/unit/result-effects.test.ts:31:81
+     29| ('uses the exact color/electricity boundary at %i', (score, color, col…
+     30|   const { root, render, tick, frames } = setup(); render(score); tick(…
+     31|   expect(root.querySelector('[data-result]')!.getAttribute('data-score…
+       |                                                                                 ^
+     32|   expect([...new Set([...root.querySelectorAll('[data-bolt]')].map(nod…
+     33|   expect(frames.size).toBe(colors.length ? 1 : 0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/13]⎯
+
+ FAIL  tests/unit/result-effects.test.ts > uses the exact color/electricity boundary at 800
+ FAIL  tests/unit/result-effects.test.ts > uses the exact color/electricity boundary at 999
+ FAIL  tests/unit/result-effects.test.ts > uses the exact color/electricity boundary at 1000
+ FAIL  tests/unit/result-effects.test.ts > uses the exact color/electricity boundary at 1499
+ FAIL  tests/unit/result-effects.test.ts > uses the exact color/electricity boundary at 1500
+ FAIL  tests/unit/result-effects.test.ts > uses the exact color/electricity boundary at 2000
+AssertionError: expected null to be 'rainbow' // Object.is equality
+
+- Expected:
+"rainbow"
+
++ Received:
+null
+
+ ❯ tests/unit/result-effects.test.ts:31:81
+     29| ('uses the exact color/electricity boundary at %i', (score, color, col…
+     30|   const { root, render, tick, frames } = setup(); render(score); tick(…
+     31|   expect(root.querySelector('[data-result]')!.getAttribute('data-score…
+       |                                                                                 ^
+     32|   expect([...new Set([...root.querySelectorAll('[data-bolt]')].map(nod…
+     33|   expect(frames.size).toBe(colors.length ? 1 : 0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/13]⎯
+
+ FAIL  tests/unit/result-effects.test.ts > changes paths and emission points continuously with bounded, independently colored layers
+AssertionError: expected 0 to be greater than 100
+ ❯ tests/unit/result-effects.test.ts:47:23
+     45|     }
+     46|   }
+     47|   expect(shapes.size).toBeGreaterThan(100); expect(origins.size).toBeG…
+       |                       ^
+     48|   expect(front / (front + back)).toBeGreaterThan(.15); expect(front / …
+     49| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/13]⎯
+
+ FAIL  tests/unit/result-effects.test.ts > stops, restarts once, respects live motion preference, and disposes all resources
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/unit/result-effects.test.ts:54:76
+     52|   const { root, screens, render, tick, frames, reduce, listeners } = s…
+     53|   render(1500, 'gameover', true); expect(frames.size).toBe(0);
+     54|   render(1500); tick(100); render(1500); render(1500); expect(frames.s…
+       |                                                                            ^
+     55|   render(0, 'running'); expect(frames.size).toBe(0); expect(root.query…
+     56|   render(1500); tick(100); expect(frames.size).toBe(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/13]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  13 failed (13)
+   Start at  18:31:30
+   Duration  737ms (environment 55%, tests 37%, transform 5%, import 2%)
+
