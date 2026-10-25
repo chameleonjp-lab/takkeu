@@ -1,0 +1,11 @@
+{
+  "runMetadata": "gh api repos/chameleonjp-lab/takkeu/actions/runs/40232449369",
+  "jobs": "gh api repos/chameleonjp-lab/takkeu/actions/runs/40232449369/jobs?per_page=100",
+  "artifactMetadata": "gh api repos/chameleonjp-lab/takkeu/actions/runs/40232449369/artifacts?per_page=100",
+  "canonicalWorkflowLogs": "gh api repos/chameleonjp-lab/takkeu/actions/runs/40232449369/logs -> workflow-logs.zip; all17 entries extracted byte-identically",
+  "canonicalArtifact": "GitHub connector download_workflow_artifact12613761920; downloaded returned Sediment file -> artifact-12613761920.zip; SHA256 matches GitHub digest; all6 entries extracted byte-identically",
+  "auxiliaryIndividualLogs": "GitHub connector fetch_workflow_job_logs121286868724 and121287293635 decoded text",
+  "directGhPerJobAndArtifactTransport": "Temporary blob redirect returned Forbidden; connector fallback succeeded. Temporary signed URLs are not retained. No original workflow log or artifact was omitted.",
+  "credentials": "Used existing configured gh/connector authentication; no credential files read.",
+  "mutations": "Only new evidence files under docs/verification/rally-4000/ci/40232449369; no production source edits."
+}

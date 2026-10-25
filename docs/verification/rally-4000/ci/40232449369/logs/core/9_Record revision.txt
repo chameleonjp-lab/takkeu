@@ -1,0 +1,6 @@
+﻿2026-10-25T20:49:40.3926329Z ##[group]Run git rev-parse HEAD > artifacts/commit.txt
+2026-10-25T20:49:40.3926769Z [36;1mgit rev-parse HEAD > artifacts/commit.txt[0m
+2026-10-25T20:49:40.3927114Z [36;1mnode --version > artifacts/node.txt[0m
+2026-10-25T20:49:40.3927461Z [36;1mnpm --version > artifacts/npm.txt[0m
+2026-10-25T20:49:40.3991318Z shell: /usr/bin/bash -e {0}
+2026-10-25T20:49:40.3991591Z ##[endgroup]

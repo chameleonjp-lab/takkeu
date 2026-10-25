@@ -1,0 +1,61 @@
+{
+  "baselineCommit": "aff31169fd6feaad7bad35f22fe3de26429296cf",
+  "sourceWorktree": "/workspace/takkeu-baseline",
+  "productionSourceUnchanged": true,
+  "performanceFixture": "sustained stage via real app loop; threshold-arrival burst and dedicated boundary audio are separate evidence",
+  "typecheck": {
+    "status": "passed",
+    "log": "../logs/baseline-typecheck.log"
+  },
+  "typecheckWithPerformanceHarness": {
+    "status": "passed",
+    "log": "../logs/baseline-performance-harness-typecheck.log"
+  },
+  "unit": {
+    "status": "passed in network-enabled sandbox",
+    "files": 62,
+    "tests": 778,
+    "log": "../logs/baseline-unit-network-sandbox.log",
+    "retainedFailedAttempts": [
+      "../logs/baseline-unit.log",
+      "../logs/baseline-unit-release-retry.log"
+    ],
+    "failedAttemptCause": "Restricted sandbox child-process EPERM in release revision fixture; unchanged suite passed when rerun with networking permitted."
+  },
+  "browserSetup": {
+    "binaries": "/workspace/pw-browsers",
+    "localLibraries": "/workspace/pw-deps",
+    "systemPackageInstallation": false,
+    "webkitSmoke": "passed: title rendered and WebGL2 context created",
+    "webkitEnvironment": "PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=1 PLAYWRIGHT_BROWSERS_PATH=/workspace/pw-browsers",
+    "hostValidationSkipReason": "ldconfig-based validation cannot find workspace-only libGLESv2; actual dynamic linking, launch and WebGL smoke passed."
+  },
+  "performance": {
+    "chromium": "completed16cases plus clean first-case control; all raw attempts retained",
+    "webkit": "performance unmeasured; chosen before/after browser is Chromium, compatibility tests are separate",
+    "executionVerdict": "16/16 original matrix and1/1 clean control passed measurement execution",
+    "linuxReferenceTargetVerdict": "0/16 canonical comparison conditions met; all original/control attempts NOT met",
+    "targetHardwareVerdict": "unverified",
+    "guardRelaxation": false,
+    "automaticResume": false,
+    "concurrencyCaveat": "The baseline full-unit retry overlapped the beginning of Chromium standard1500 repeat1 for 27.86s. Shared host scheduling and implementation activity may affect all measurements. All raw attempts retained.",
+    "measurementSummary": "chromium/summary.json",
+    "runningP95RangeMs": [
+      233.29999999999927,
+      633.3000000000029
+    ],
+    "continuous30BallsCases": 16,
+    "simulatedSecondsRange": [
+      21.24999999999943,
+      44.991666666664756
+    ],
+    "cleanControlSummary": "chromium-clean-repeat1/summary.json",
+    "canonicalComparison": "standard1500repeat1 uses clean control; other15 rows use original matrix",
+    "performanceSpecSha256": "df08441bc64dca76791f448f5fabeec8915e74e4ccb7f4668c198be6dde45dc7",
+    "baselineSourceDiff": "git diff --exit-code returned0 after all17 measurements"
+  },
+  "workingTreeTypecheckDuringConcurrentRed": {
+    "status": "failed while other agents had RED tests and unfinished source; not the immutable baseline verdict",
+    "log": "../logs/performance-harness-typecheck.log"
+  }
+}

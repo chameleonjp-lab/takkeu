@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-10-25T20:38:03.679258+00:00",
+  "files": [
+    {
+      "path": "tests/performance/rally-4000.spec.ts",
+      "baselineSha256": "df08441bc64dca76791f448f5fabeec8915e74e4ccb7f4668c198be6dde45dc7",
+      "workingSha256": "df08441bc64dca76791f448f5fabeec8915e74e4ccb7f4668c198be6dde45dc7",
+      "identical": true
+    },
+    {
+      "path": "tests/helpers/appHarness.ts",
+      "baselineSha256": "b39a71478352315af0308d9f6239d37488961e4543c73828c98183145cfc491e",
+      "workingSha256": "b39a71478352315af0308d9f6239d37488961e4543c73828c98183145cfc491e",
+      "identical": true
+    },
+    {
+      "path": "tests/helpers/browserTest.ts",
+      "baselineSha256": "d3126746954c205c4bc3ed4ceb4f80f638e01bc26c892cef2682e4a2e377ed25",
+      "workingSha256": "d3126746954c205c4bc3ed4ceb4f80f638e01bc26c892cef2682e4a2e377ed25",
+      "identical": true
+    },
+    {
+      "path": "tests/helpers/audioProbe.ts",
+      "baselineSha256": "db0d115d5ffd73afa9a78384227fad2c41398c3db9dddba3afde2b3dd3012689",
+      "workingSha256": "db0d115d5ffd73afa9a78384227fad2c41398c3db9dddba3afde2b3dd3012689",
+      "identical": true
+    },
+    {
+      "path": "tests/helpers/scenarios.ts",
+      "baselineSha256": "1abc90056c6c59dcd3cb3557c9b7a0bc9ce967ccd6ad4ee0f1203bd5f4186bdf",
+      "workingSha256": "1abc90056c6c59dcd3cb3557c9b7a0bc9ce967ccd6ad4ee0f1203bd5f4186bdf",
+      "identical": true
+    },
+    {
+      "path": "tests/fixtures/stage3.html",
+      "baselineSha256": "31bc16f8a66dc916e83a90b027c69fc8716b22fb8f8174d19be3cf82d5fd7b46",
+      "workingSha256": "31bc16f8a66dc916e83a90b027c69fc8716b22fb8f8174d19be3cf82d5fd7b46",
+      "identical": true
+    },
+    {
+      "path": "playwright.performance.config.ts",
+      "baselineSha256": "e378be6ffeec242932170471701294eec606a77bf512b28550f098d7b73d6a46",
+      "workingSha256": "e378be6ffeec242932170471701294eec606a77bf512b28550f098d7b73d6a46",
+      "identical": true
+    }
+  ],
+  "allIdentical": true
+}

@@ -1,0 +1,32 @@
+{
+  "baselineCommit": "aff31169fd6feaad7bad35f22fe3de26429296cf",
+  "baselinePath": "/workspace/takkeu-baseline",
+  "node": "v24.19.0",
+  "npm": "11.9.0",
+  "kernel": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "machine": "x86_64",
+  "cpuCount": 5,
+  "browserPath": "/workspace/pw-browsers",
+  "browserDirectories": [
+    ".links",
+    "chromium-1248",
+    "chromium_headless_shell-1248",
+    "ffmpeg-1013",
+    "webkit-2370"
+  ],
+  "concurrency": "one Playwright performance worker; unit baseline retry overlapped the beginning of first Chromium run; no other browser suite intended during measurements",
+  "statuses": {
+    "typecheck": "passed",
+    "typecheckWithPerformanceHarness": "passed in detached baseline",
+    "unitRestrictedSandbox": "777 passed, 1 failed due to release fixture subprocess EPERM",
+    "unitNetworkEnabledSandbox": "778 passed / 62 files"
+  },
+  "limits": [
+    "Linux reference only; target hardware unverified",
+    "CPU scheduling shared with implementation agents",
+    "No guard relaxation or automatic resume"
+  ],
+  "workingTreeSource": "detached baseline production files unchanged",
+  "chromiumRendering": "Playwright Desktop Chrome preset, 1280x720 viewport, devicePixelRatio 1, headless SwiftShader via --enable-unsafe-swiftshader --use-angle=swiftshader",
+  "performanceFixture": "sustained stage; threshold-arrival bursts and dedicated boundary audio require separate confirmed-event evidence"
+}

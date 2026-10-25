@@ -1,0 +1,5 @@
+﻿2026-10-25T20:48:26.3424620Z ##[group]Run test -f /etc/apt/apt-mirrors.txt
+2026-10-25T20:48:26.3425064Z [36;1mtest -f /etc/apt/apt-mirrors.txt[0m
+2026-10-25T20:48:26.3425648Z [36;1mprintf '%s\n' 'https://archive.ubuntu.com/ubuntu' | sudo tee /etc/apt/apt-mirrors.txt > /dev/null[0m
+2026-10-25T20:48:26.3708274Z shell: /usr/bin/bash -e {0}
+2026-10-25T20:48:26.3708587Z ##[endgroup]

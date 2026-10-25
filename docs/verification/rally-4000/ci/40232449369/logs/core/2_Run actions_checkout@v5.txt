@@ -1,0 +1,161 @@
+﻿2026-10-25T20:47:57.6000321Z ##[group]Run actions/checkout@v5
+2026-10-25T20:47:57.6001193Z with:
+2026-10-25T20:47:57.6001666Z   ref: 7aa8333892746f9909b71bec479ffc30c2d2aa2f
+2026-10-25T20:47:57.6002687Z   repository: chameleonjp-lab/takkeu
+2026-10-25T20:47:57.6006321Z   token: ***
+2026-10-25T20:47:57.6006741Z   ssh-strict: true
+2026-10-25T20:47:57.6007173Z   ssh-user: git
+2026-10-25T20:47:57.6007607Z   persist-credentials: true
+2026-10-25T20:47:57.6008084Z   clean: true
+2026-10-25T20:47:57.6008520Z   sparse-checkout-cone-mode: true
+2026-10-25T20:47:57.6009083Z   fetch-depth: 1
+2026-10-25T20:47:57.6009511Z   fetch-tags: false
+2026-10-25T20:47:57.6009939Z   show-progress: true
+2026-10-25T20:47:57.6010371Z   lfs: false
+2026-10-25T20:47:57.6010764Z   submodules: false
+2026-10-25T20:47:57.6011197Z   set-safe-directory: true
+2026-10-25T20:47:57.6011692Z   allow-unsafe-pr-checkout: false
+2026-10-25T20:47:57.6012759Z ##[endgroup]
+2026-10-25T20:47:57.7134649Z Syncing repository: chameleonjp-lab/takkeu
+2026-10-25T20:47:57.7137647Z ##[group]Getting Git version info
+2026-10-25T20:47:57.7138666Z Working directory is '/home/runner/work/takkeu/takkeu'
+2026-10-25T20:47:57.7139667Z [command]/usr/bin/git version
+2026-10-25T20:47:57.7263789Z git version 2.55.0
+2026-10-25T20:47:57.7332049Z ##[endgroup]
+2026-10-25T20:47:57.7349705Z Temporarily overriding HOME='/home/runner/work/_temp/f1ef941a-1f89-472b-8e02-c941b2de9e17' before making global git config changes
+2026-10-25T20:47:57.7355734Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-25T20:47:57.7357774Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/takkeu/takkeu
+2026-10-25T20:47:57.7394863Z Deleting the contents of '/home/runner/work/takkeu/takkeu'
+2026-10-25T20:47:57.7405584Z ##[group]Initializing the repository
+2026-10-25T20:47:57.7462765Z [command]/usr/bin/git init /home/runner/work/takkeu/takkeu
+2026-10-25T20:47:57.7661488Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-25T20:47:57.7668985Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-25T20:47:57.7671594Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-25T20:47:57.7673668Z hint: call:
+2026-10-25T20:47:57.7674613Z hint:
+2026-10-25T20:47:57.7675774Z hint: 	git config --global init.defaultBranch <name>
+2026-10-25T20:47:57.7677047Z hint:
+2026-10-25T20:47:57.7678538Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-25T20:47:57.7680329Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-25T20:47:57.7681811Z hint:
+2026-10-25T20:47:57.7682980Z hint: 	git branch -m <name>
+2026-10-25T20:47:57.7683910Z hint:
+2026-10-25T20:47:57.7685139Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-25T20:47:57.7687135Z Initialized empty Git repository in /home/runner/work/takkeu/takkeu/.git/
+2026-10-25T20:47:57.7713739Z [command]/usr/bin/git remote add origin https://github.com/chameleonjp-lab/takkeu
+2026-10-25T20:47:57.7857542Z ##[endgroup]
+2026-10-25T20:47:57.7859543Z ##[group]Disabling automatic garbage collection
+2026-10-25T20:47:57.7861366Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-25T20:47:57.7906888Z ##[endgroup]
+2026-10-25T20:47:57.7908705Z ##[group]Setting up auth
+2026-10-25T20:47:57.7910357Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-25T20:47:57.7964214Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-25T20:47:57.8448541Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-25T20:47:57.8491771Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-25T20:47:57.8731644Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-25T20:47:57.8774176Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-25T20:47:57.8999700Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-25T20:47:57.9043260Z ##[endgroup]
+2026-10-25T20:47:57.9044076Z ##[group]Fetching the repository
+2026-10-25T20:47:57.9053249Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 7aa8333892746f9909b71bec479ffc30c2d2aa2f
+2026-10-25T20:48:13.4041518Z From https://github.com/chameleonjp-lab/takkeu
+2026-10-25T20:48:13.4044222Z  * branch            7aa8333892746f9909b71bec479ffc30c2d2aa2f -> FETCH_HEAD
+2026-10-25T20:48:13.4062548Z ##[endgroup]
+2026-10-25T20:48:13.4065112Z ##[group]Determining the checkout info
+2026-10-25T20:48:13.4067706Z ##[endgroup]
+2026-10-25T20:48:13.4069634Z [command]/usr/bin/git sparse-checkout disable
+2026-10-25T20:48:13.4120911Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-25T20:48:13.4153626Z ##[group]Checking out the ref
+2026-10-25T20:48:13.4158513Z [command]/usr/bin/git checkout --progress --force 7aa8333892746f9909b71bec479ffc30c2d2aa2f
+2026-10-25T20:48:14.4726024Z Updating files:  34% (1703/4905)
+2026-10-25T20:48:14.4947189Z Updating files:  35% (1717/4905)
+2026-10-25T20:48:14.5250740Z Updating files:  36% (1766/4905)
+2026-10-25T20:48:14.5339176Z Updating files:  37% (1815/4905)
+2026-10-25T20:48:14.5576614Z Updating files:  38% (1864/4905)
+2026-10-25T20:48:14.5829299Z Updating files:  39% (1913/4905)
+2026-10-25T20:48:14.5901934Z Updating files:  40% (1962/4905)
+2026-10-25T20:48:14.6073567Z Updating files:  41% (2012/4905)
+2026-10-25T20:48:14.6251030Z Updating files:  42% (2061/4905)
+2026-10-25T20:48:14.7136274Z Updating files:  43% (2110/4905)
+2026-10-25T20:48:14.8465944Z Updating files:  44% (2159/4905)
+2026-10-25T20:48:14.9164563Z Updating files:  45% (2208/4905)
+2026-10-25T20:48:14.9507324Z Updating files:  46% (2257/4905)
+2026-10-25T20:48:15.0064935Z Updating files:  47% (2306/4905)
+2026-10-25T20:48:15.0985768Z Updating files:  48% (2355/4905)
+2026-10-25T20:48:15.1429452Z Updating files:  49% (2404/4905)
+2026-10-25T20:48:15.2327988Z Updating files:  50% (2453/4905)
+2026-10-25T20:48:15.2573709Z Updating files:  51% (2502/4905)
+2026-10-25T20:48:15.2857547Z Updating files:  52% (2551/4905)
+2026-10-25T20:48:15.3355222Z Updating files:  53% (2600/4905)
+2026-10-25T20:48:15.4183384Z Updating files:  54% (2649/4905)
+2026-10-25T20:48:15.4475161Z Updating files:  55% (2698/4905)
+2026-10-25T20:48:15.4808386Z Updating files:  55% (2718/4905)
+2026-10-25T20:48:15.5262151Z Updating files:  56% (2747/4905)
+2026-10-25T20:48:15.5668082Z Updating files:  57% (2796/4905)
+2026-10-25T20:48:15.6620928Z Updating files:  58% (2845/4905)
+2026-10-25T20:48:15.6881338Z Updating files:  59% (2894/4905)
+2026-10-25T20:48:15.7308547Z Updating files:  60% (2943/4905)
+2026-10-25T20:48:15.8049306Z Updating files:  61% (2993/4905)
+2026-10-25T20:48:15.8829006Z Updating files:  62% (3042/4905)
+2026-10-25T20:48:15.9125034Z Updating files:  63% (3091/4905)
+2026-10-25T20:48:15.9407269Z Updating files:  64% (3140/4905)
+2026-10-25T20:48:15.9727980Z Updating files:  65% (3189/4905)
+2026-10-25T20:48:16.0330732Z Updating files:  66% (3238/4905)
+2026-10-25T20:48:16.1061384Z Updating files:  67% (3287/4905)
+2026-10-25T20:48:16.1542389Z Updating files:  68% (3336/4905)
+2026-10-25T20:48:16.1918174Z Updating files:  69% (3385/4905)
+2026-10-25T20:48:16.2299413Z Updating files:  70% (3434/4905)
+2026-10-25T20:48:16.3254112Z Updating files:  71% (3483/4905)
+2026-10-25T20:48:16.4872700Z Updating files:  72% (3532/4905)
+2026-10-25T20:48:16.5241377Z Updating files:  72% (3539/4905)
+2026-10-25T20:48:16.5267567Z Updating files:  73% (3581/4905)
+2026-10-25T20:48:16.5292074Z Updating files:  74% (3630/4905)
+2026-10-25T20:48:16.5361509Z Updating files:  75% (3679/4905)
+2026-10-25T20:48:16.5469901Z Updating files:  76% (3728/4905)
+2026-10-25T20:48:16.5539042Z Updating files:  77% (3777/4905)
+2026-10-25T20:48:16.5630587Z Updating files:  78% (3826/4905)
+2026-10-25T20:48:16.6091129Z Updating files:  79% (3875/4905)
+2026-10-25T20:48:16.6538979Z Updating files:  80% (3924/4905)
+2026-10-25T20:48:16.6999885Z Updating files:  81% (3974/4905)
+2026-10-25T20:48:16.7316393Z Updating files:  82% (4023/4905)
+2026-10-25T20:48:16.7614261Z Updating files:  83% (4072/4905)
+2026-10-25T20:48:16.8800699Z Updating files:  84% (4121/4905)
+2026-10-25T20:48:16.9311398Z Updating files:  85% (4170/4905)
+2026-10-25T20:48:16.9692791Z Updating files:  86% (4219/4905)
+2026-10-25T20:48:16.9998891Z Updating files:  87% (4268/4905)
+2026-10-25T20:48:17.1177016Z Updating files:  88% (4317/4905)
+2026-10-25T20:48:17.1713710Z Updating files:  89% (4366/4905)
+2026-10-25T20:48:17.2057340Z Updating files:  90% (4415/4905)
+2026-10-25T20:48:17.2859018Z Updating files:  91% (4464/4905)
+2026-10-25T20:48:17.3293049Z Updating files:  92% (4513/4905)
+2026-10-25T20:48:17.3558952Z Updating files:  93% (4562/4905)
+2026-10-25T20:48:17.4398048Z Updating files:  94% (4611/4905)
+2026-10-25T20:48:17.4551019Z Updating files:  95% (4660/4905)
+2026-10-25T20:48:17.4898182Z Updating files:  95% (4672/4905)
+2026-10-25T20:48:17.4926368Z Updating files:  96% (4709/4905)
+2026-10-25T20:48:17.4954563Z Updating files:  97% (4758/4905)
+2026-10-25T20:48:17.4980904Z Updating files:  98% (4807/4905)
+2026-10-25T20:48:17.5008738Z Updating files:  99% (4856/4905)
+2026-10-25T20:48:17.5009442Z Updating files: 100% (4905/4905)
+2026-10-25T20:48:17.5009900Z Updating files: 100% (4905/4905), done.
+2026-10-25T20:48:17.5312172Z Note: switching to '7aa8333892746f9909b71bec479ffc30c2d2aa2f'.
+2026-10-25T20:48:17.5313112Z 
+2026-10-25T20:48:17.5313713Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-25T20:48:17.5314823Z changes and commit them, and you can discard any commits you make in this
+2026-10-25T20:48:17.5316226Z state without impacting any branches by switching back to a branch.
+2026-10-25T20:48:17.5316942Z 
+2026-10-25T20:48:17.5317518Z If you want to create a new branch to retain commits you create, you may
+2026-10-25T20:48:17.5318523Z do so (now or later) by using -c with the switch command. Example:
+2026-10-25T20:48:17.5319073Z 
+2026-10-25T20:48:17.5319377Z   git switch -c <new-branch-name>
+2026-10-25T20:48:17.5319814Z 
+2026-10-25T20:48:17.5320219Z Or undo this operation with:
+2026-10-25T20:48:17.5320598Z 
+2026-10-25T20:48:17.5320787Z   git switch -
+2026-10-25T20:48:17.5321059Z 
+2026-10-25T20:48:17.5321530Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-25T20:48:17.5322416Z 
+2026-10-25T20:48:17.5323012Z HEAD is now at 7aa8333 feat: finish loss effects, achievement audio and reduced motion
+2026-10-25T20:48:17.5497059Z ##[endgroup]
+2026-10-25T20:48:17.5544018Z [command]/usr/bin/git log -1 --format=%H
+2026-10-25T20:48:17.5574718Z 7aa8333892746f9909b71bec479ffc30c2d2aa2f

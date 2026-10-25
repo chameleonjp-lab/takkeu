@@ -1,0 +1,6 @@
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+tests/browser/rally-effects.spec.ts(5,34): error TS2307: Cannot find module '../helpers/pngPixels' or its corresponding type declarations.
+tests/browser/rally-effects.spec.ts(161,36): error TS7006: Parameter 'count' implicitly has an 'any' type.
