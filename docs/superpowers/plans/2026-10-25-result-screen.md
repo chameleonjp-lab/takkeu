@@ -45,4 +45,4 @@
 - [x] 全unit/typecheck/browser/release build/performance/audit。失敗を調査修正しログ保存。
 - [x] Chromium/WebKit 402×874/320px、全44文言、主要演出動画または連続スクリーンショット。実機未確認を明記。
 - [x] 独立した最終コードレビュー、指摘修正と全体検証、証跡とPR本文作成。
-- [ ] 専用ブランチpush、1件Draft PR、mainへはmergeしない。
+- [x] 専用ブランチpush、1件Draft PR、mainへはmergeしない。

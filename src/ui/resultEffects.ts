@@ -85,7 +85,9 @@ export function createResultEffects(host: HTMLElement, scoreNode: HTMLElement) {
   }
   function draw(now: number): void {
     frame = 0;
-    if (disposed || !visible || doc.hidden || media?.matches || !colors.length) return;
+    // A frame can observe the new preference before the media/visibility
+    // change event. Stopping must also remove already drawn geometry.
+    if (disposed || !visible || doc.hidden || media?.matches || !colors.length) { stop(); return; }
     if (now - lastDraw >= 1000 / 30) {
       lastDraw = now;
       bolts = bolts.filter(bolt => {

@@ -101,3 +101,7 @@ npm audit --json
 全測定・全フレーム: `final-performance-results.json.gz`, `baseline-main-performance-*.json`, `evidence/performance/`。参考目安は各フレーム25ms以内が95%以上。実行テストが成功していても、測定の `measurementVerdict` は未達であることを上表に明示した。
 
 大きな正式JSON・全フレーム記録は内容を省略せずgzip化し、PRのソース差分を読める形にした。`compressed-artifacts.json` に元サイズ・SHA256を記録し、全ファイルの展開一致を検証済み。`gzip -dk <file>.json.gz` で元のJSONを取り出せる。監査・要約・通常ログはそのまま読める。
+
+## PR CIの追補
+
+初回CIのChromiumでreduce-motion切替と描画フレームの順序によりSVGが残るケースを検出。回帰テストでRED確認後、停止時の解放処理を統一した。追補後unit778件とブラウザ反復20件が成功。初回失敗ログと修正内容は [ci-followup/README.md](ci-followup/README.md)。

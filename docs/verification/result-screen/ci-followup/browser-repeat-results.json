@@ -1,0 +1,1037 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/takkeu/node_modules/.bin/playwright",
+      "test",
+      "tests/browser/result-presentation.spec.ts",
+      "--repeat-each=5"
+    ],
+    "configFile": "/workspace/takkeu/playwright.config.ts",
+    "rootDir": "/workspace/takkeu/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/takkeu/test-results",
+        "repeatEach": 5,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/workspace/takkeu/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/takkeu/test-results",
+        "repeatEach": 5,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/workspace/takkeu/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/takkeu/test-results",
+        "repeatEach": 5,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/workspace/takkeu/tests/browser",
+        "snapshotDir": "/workspace/takkeu/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "launchOptions": {
+            "args": [
+              "--enable-unsafe-swiftshader",
+              "--use-angle=swiftshader"
+            ]
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/takkeu/test-results",
+        "repeatEach": 5,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "/workspace/takkeu/tests/browser",
+        "snapshotDir": "/workspace/takkeu/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "video": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+          "viewport": {
+            "width": 390,
+            "height": 664
+          },
+          "screen": {
+            "width": 390,
+            "height": 844
+          },
+          "deviceScaleFactor": 3,
+          "isMobile": true,
+          "hasTouch": true,
+          "defaultBrowserType": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 4173 --strictPort",
+      "url": "http://127.0.0.1:4173",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "result-presentation.spec.ts",
+      "file": "result-presentation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3988,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:46:34.853Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "animation-observations",
+                      "contentType": "application/json",
+                      "body": "eyJkaXN0aW5jdFNoYXBlcyI6NjEsImRpc3RpbmN0T3JpZ2lucyI6MjcsInZpZXdwb3J0IjoiNDAyeDg3NCwgYnJvd3NlciBlbXVsYXRpb247IG5vdCByZWFsIGlQaG9uZSBTYWZhcmkifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-f8667b88e13a1656f7a5",
+          "file": "result-presentation.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "結果電撃の実フレームを記録し、5本上限と継続発生を確認する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5242,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:46:38.920Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "result-animation-performance",
+                      "contentType": "application/json",
+                      "body": "eyJlbnZpcm9ubWVudCI6IkxpbnV4IFBsYXl3cmlnaHQgcmVmZXJlbmNlOyBub3QgaVBob25lIGhhcmR3YXJlIGFjY2VwdGFuY2UiLCJmcmFtZXMiOjMwMSwicDk1TXMiOjE2LjcwMDAwMDAwMDAwMDcyOCwibWF4Qm9sdHMiOjUsInNoYXBlcyI6MzE4LCJjb2xvcnMiOlsiYmx1ZSIsImdyZWVuIiwicmVkIl0sImludGVydmFscyI6WzExLjEwMDAwMDAwMDM3MjUxOCwxNi43MDAwMDAwMDAwMDAwMTcsMTYuNjk5OTk5OTk5OTk5OTksMTYuNTk5OTk5OTk5OTk5OTk0LDE2LjcwMDAwMDAwMDAwMDAxNywxNi41OTk5OTk5OTk5OTk5OTQsMTYuNjk5OTk5OTk5OTk5OTksMTYuNzAwMDAwMDAwMDAwMDE3LDE2LjU5OTk5OTk5OTk5OTk5NCwxNi42OTk5OTk5OTk5OTk5OSwxNi42OTk5OTk5OTk5OTk5OSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTY2LDE2LjY5OTk5OTk5OTk5OTk5LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42OTk5OTk5OTk5OTk5OSwxNi42OTk5OTk5OTk5OTk5OSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTksMTYuNjk5OTk5OTk5OTk5OTksMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTk2NiwxNi42OTk5OTk5OTk5OTk5OSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjY5OTk5OTk5OTk5OTkzMiwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNzk5OTk5OTk5OTk5OTU1LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42MDAwMDAwMDAwMDAwMjMsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjY5OTk5OTk5OTk5OTkzMiwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNzk5OTk5OTk5OTk5OTU1LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42MDAwMDAwMDAwMDAwMjMsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjk5OTk5OTk5OTk5OTMyLDE2LjYwMDAwMDAwMDAwMDAyMywxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjk5OTk5OTk5OTk5OTMyLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTMyLDE2LjYwMDAwMDAwMDAwMDAyMywxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi41OTk5OTk5OTk5OTk5MSwxNi44MDAwMDAwMDAwMDAxODIsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2Ljc5OTk5OTk5OTk5OTk1NSwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjU5OTk5OTk5OTk5OTkxLDE2Ljc5OTk5OTk5OTk5OTcyNywxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzk5OTk5OTk5OTk5NzI3LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzk5OTk5OTk5OTk5NzI3LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjgwMDAwMDAwMDAwMDE4MiwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuODAwMDAwMDAwMDAwMTgyLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDcyOCwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDcyOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5NDU0LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDcyOCwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjgwMDAwMDAwMDAwMDE4MiwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5NDU0LDE2LjcwMDAwMDAwMDAwMDcyOCwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDcyOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5NDU0LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi44MDAwMDAwMDAwMDAxODIsMTYuNTk5OTk5OTk5OTk5NDU0LDE2LjcwMDAwMDAwMDAwMDcyOCwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjgwMDAwMDAwMDAwMDE4MiwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjgwMDAwMDAwMDAwMDE4MiwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDcyOCwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDcyOCwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDcyOCwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDcyOCwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjgwMDAwMDAwMDAwMDE4MiwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDcyOCwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NF19"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-87c9eba787444451819c",
+          "file": "result-presentation.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3545,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:46:44.458Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "animation-observations",
+                      "contentType": "application/json",
+                      "body": "eyJkaXN0aW5jdFNoYXBlcyI6NTYsImRpc3RpbmN0T3JpZ2lucyI6MjUsInZpZXdwb3J0IjoiNDAyeDg3NCwgYnJvd3NlciBlbXVsYXRpb247IG5vdCByZWFsIGlQaG9uZSBTYWZhcmkifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-b51c37fadd27da866dbc",
+          "file": "result-presentation.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "結果電撃の実フレームを記録し、5本上限と継続発生を確認する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5196,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:46:48.050Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "result-animation-performance",
+                      "contentType": "application/json",
+                      "body": "eyJlbnZpcm9ubWVudCI6IkxpbnV4IFBsYXl3cmlnaHQgcmVmZXJlbmNlOyBub3QgaVBob25lIGhhcmR3YXJlIGFjY2VwdGFuY2UiLCJmcmFtZXMiOjMwMSwicDk1TXMiOjE2Ljc5OTk5OTk5OTk5OTI3MiwibWF4Qm9sdHMiOjUsInNoYXBlcyI6MzMwLCJjb2xvcnMiOlsiYmx1ZSIsImdyZWVuIiwicmVkIl0sImludGVydmFscyI6WzMuNjAwMDAwMDAwNTU4NzkzNSwxNi41OTk5OTk5OTk5OTk5OTQsMTYuNzAwMDAwMDAwMDAwMDAzLDE2LjcwMDAwMDAwMDAwMDAwMywxNi41OTk5OTk5OTk5OTk5OTQsMTYuNzAwMDAwMDAwMDAwMDE3LDE2LjY5OTk5OTk5OTk5OTk5LDE2LjY5OTk5OTk5OTk5OTk5LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42OTk5OTk5OTk5OTk5OSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTksMTYuNTk5OTk5OTk5OTk5OTY2LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42OTk5OTk5OTk5OTk5OSwxNi42OTk5OTk5OTk5OTk5OSwxNi42OTk5OTk5OTk5OTk5OSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTksMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjY5OTk5OTk5OTk5OTk5LDE2LjU5OTk5OTk5OTk5OTk2NiwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTY2LDE2LjgwMDAwMDAwMDAwMDAxLDE2LjYwMDAwMDAwMDAwMDAyMywxNi42OTk5OTk5OTk5OTk5MzIsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjUsMTYuNzk5OTk5OTk5OTk5OTU1LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42OTk5OTk5OTk5OTk5MzIsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42OTk5OTk5OTk5OTk5MzIsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42OTk5OTk5OTk5OTk5MzIsMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42OTk5OTk5OTk5OTk5MzIsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTMyLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTMyLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTMyLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42OTk5OTk5OTk5OTk5MzIsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNzk5OTk5OTk5OTk5OTU1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMTM2LDE2Ljc5OTk5OTk5OTk5OTk1NSwxNi41OTk5OTk5OTk5OTk5MSwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNzk5OTk5OTk5OTk5OTU1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi41OTk5OTk5OTk5OTk5MSwxNi44MDAwMDAwMDAwMDAxODIsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjgwMDAwMDAwMDAwMDE4MiwxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjgwMDAwMDAwMDAwMDE4MiwxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNzk5OTk5OTk5OTk5NzI3LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjAwMDAwMDAwMDAwMzY0LDE2Ljc5OTk5OTk5OTk5OTcyNywxNi41OTk5OTk5OTk5OTk5MSwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi43OTk5OTk5OTk5OTk3MjcsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi41OTk5OTk5OTk5OTk5MSwxNi44MDAwMDAwMDAwMDAxODIsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjgwMDAwMDAwMDAwMDE4MiwxNi41OTk5OTk5OTk5OTk5MSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjgwMDAwMDAwMDAwMDE4MiwxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNzk5OTk5OTk5OTk5MjcyLDE2LjUsMTYuNzAwMDAwMDAwMDAwNzI4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNzAwMDAwMDAwMDAwNzI4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk0NTQsMTYuODAwMDAwMDAwMDAwMTgyLDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNzAwMDAwMDAwMDAwNzI4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi41OTk5OTk5OTk5OTk0NTQsMTYuNzAwMDAwMDAwMDAwNzI4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NF19"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-71abe5efcb1f72f0648a",
+          "file": "result-presentation.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3411,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:46:53.527Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "animation-observations",
+                      "contentType": "application/json",
+                      "body": "eyJkaXN0aW5jdFNoYXBlcyI6NDcsImRpc3RpbmN0T3JpZ2lucyI6MjIsInZpZXdwb3J0IjoiNDAyeDg3NCwgYnJvd3NlciBlbXVsYXRpb247IG5vdCByZWFsIGlQaG9uZSBTYWZhcmkifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-ba73c2eefe3d52e88983",
+          "file": "result-presentation.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "結果電撃の実フレームを記録し、5本上限と継続発生を確認する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5239,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:46:56.987Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "result-animation-performance",
+                      "contentType": "application/json",
+                      "body": "eyJlbnZpcm9ubWVudCI6IkxpbnV4IFBsYXl3cmlnaHQgcmVmZXJlbmNlOyBub3QgaVBob25lIGhhcmR3YXJlIGFjY2VwdGFuY2UiLCJmcmFtZXMiOjMwMSwicDk1TXMiOjE2LjcwMDAwMDAwMDAwMDcyOCwibWF4Qm9sdHMiOjUsInNoYXBlcyI6MzM1LCJjb2xvcnMiOlsiYmx1ZSIsImdyZWVuIiwicmVkIl0sImludGVydmFscyI6WzEzLjcwMDAwMDAwMDM3MjU0LDE2LjY5OTk5OTk5OTk5OTk5LDE2LjY5OTk5OTk5OTk5OTk5LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42OTk5OTk5OTk5OTk5OSwxNi42OTk5OTk5OTk5OTk5OSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTksMTYuNjk5OTk5OTk5OTk5OTksMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjY5OTk5OTk5OTk5OTk5LDE2LjY5OTk5OTk5OTk5OTk5LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42OTk5OTk5OTk5OTk5OSwxNi42OTk5OTk5OTk5OTk5OSwxNi42OTk5OTk5OTk5OTk5OSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjY5OTk5OTk5OTk5OTk5LDE2LjY5OTk5OTk5OTk5OTk5LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42OTk5OTk5OTk5OTk5OSwxNi42OTk5OTk5OTk5OTk5OSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTMyLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42OTk5OTk5OTk5OTk5MzIsMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjgwMDAwMDAwMDAwMDA2OCwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjY5OTk5OTk5OTk5OTkzMiwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjYwMDAwMDAwMDAwMDAyMywxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjk5OTk5OTk5OTk5OTMyLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTMyLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTMyLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTMyLDE2LjYwMDAwMDAwMDAwMDAyMywxNi44MDAwMDAwMDAwMDAwNjgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNzk5OTk5OTk5OTk5OTU1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjYwMDAwMDAwMDAwMDEzNiwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMTM2LDE2Ljc5OTk5OTk5OTk5OTk1NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNzk5OTk5OTk5OTk5OTU1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuODAwMDAwMDAwMDAwMTgyLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuODAwMDAwMDAwMDAwMTgyLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjgwMDAwMDAwMDAwMDE4MiwxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNzk5OTk5OTk5OTk5NzI3LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41LDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi43OTk5OTk5OTk5OTkyNzIsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi43OTk5OTk5OTk5OTkyNzIsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi43OTk5OTk5OTk5OTkyNzIsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5NDU0LDE2LjcwMDAwMDAwMDAwMDcyOCwxNi43OTk5OTk5OTk5OTkyNzIsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi43OTk5OTk5OTk5OTkyNzIsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi43OTk5OTk5OTk5OTkyNzIsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNTk5OTk5OTk5OTk5NDU0LDE2LjcwMDAwMDAwMDAwMDcyOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5NDU0LDE2LjcwMDAwMDAwMDAwMDcyOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOF19"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-de3ba5aabe9a83dc1824",
+          "file": "result-presentation.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3327,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:47:02.500Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "animation-observations",
+                      "contentType": "application/json",
+                      "body": "eyJkaXN0aW5jdFNoYXBlcyI6NTksImRpc3RpbmN0T3JpZ2lucyI6MjcsInZpZXdwb3J0IjoiNDAyeDg3NCwgYnJvd3NlciBlbXVsYXRpb247IG5vdCByZWFsIGlQaG9uZSBTYWZhcmkifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-15db5af93ed5d011b0e5",
+          "file": "result-presentation.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "結果電撃の実フレームを記録し、5本上限と継続発生を確認する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5215,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:47:05.875Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "result-animation-performance",
+                      "contentType": "application/json",
+                      "body": "eyJlbnZpcm9ubWVudCI6IkxpbnV4IFBsYXl3cmlnaHQgcmVmZXJlbmNlOyBub3QgaVBob25lIGhhcmR3YXJlIGFjY2VwdGFuY2UiLCJmcmFtZXMiOjI5NywicDk1TXMiOjE2Ljc5OTk5OTk5OTk5OTcyNywibWF4Qm9sdHMiOjUsInNoYXBlcyI6MzM1LCJjb2xvcnMiOlsiYmx1ZSIsImdyZWVuIiwicmVkIl0sImludGVydmFscyI6WzguMjk5OTk5OTk5NjI3NDc0LDE2LjcwMDAwMDAwMDAwMDAwMywxNi41OTk5OTk5OTk5OTk5OTQsMTYuNjk5OTk5OTk5OTk5OTksMTYuNzAwMDAwMDAwMDAwMDE3LDE2LjU5OTk5OTk5OTk5OTk5NCwxNi41OTk5OTk5OTk5OTk5OTQsMTYuODAwMDAwMDAwMDAwMDEsMTYuNTk5OTk5OTk5OTk5OTk0LDE2LjYwMDAwMDAwMDAwMDAyMywxNi43OTk5OTk5OTk5OTk5NTUsMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjYwMDAwMDAwMDAwMDAyMywxNi43OTk5OTk5OTk5OTk5NTUsMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjYwMDAwMDAwMDAwMDAyMywxNi43OTk5OTk5OTk5OTk5NTUsMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjY5OTk5OTk5OTk5OTk5LDE2LjY5OTk5OTk5OTk5OTk5LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTksMTYuNjk5OTk5OTk5OTk5OTksMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjY5OTk5OTk5OTk5OTkzMiwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjY5OTk5OTk5OTk5OTkzMiwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMDIzLDE2Ljc5OTk5OTk5OTk5OTk1NSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjY5OTk5OTk5OTk5OTkzMiwxNi42MDAwMDAwMDAwMDAwMjMsMTYuODAwMDAwMDAwMDAwMDY4LDE2LjY5OTk5OTk5OTk5OTkzMiwxNi41LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42OTk5OTk5OTk5OTk5MzIsMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42OTk5OTk5OTk5OTk5MzIsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjY5OTk5OTk5OTk5OTkzMiwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjY5OTk5OTk5OTk5OTkzMiwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjY5OTk5OTk5OTk5OTkzMiwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjYwMDAwMDAwMDAwMDEzNiwxNi43OTk5OTk5OTk5OTk5NTUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi43OTk5OTk5OTk5OTk5NTUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2Ljc5OTk5OTk5OTk5OTk1NSwxNi41OTk5OTk5OTk5OTk5MSwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi43OTk5OTk5OTk5OTk5NTUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjYwMDAwMDAwMDAwMDEzNiwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjAwMDAwMDAwMDAwMTM2LDE2Ljc5OTk5OTk5OTk5OTk1NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNzk5OTk5OTk5OTk5NzI3LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNSwxNi43OTk5OTk5OTk5OTk3MjcsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjgwMDAwMDAwMDAwMDE4MiwxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjYwMDAwMDAwMDAwMDM2NCwxNi43OTk5OTk5OTk5OTk3MjcsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCw4My4yMDAwMDAwMDAwMDAyNywxNi43OTk5OTk5OTk5OTk3MjcsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNzk5OTk5OTk5OTk5NzI3LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNzk5OTk5OTk5OTk5MjcyLDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTQ1NCwxNi44MDAwMDAwMDAwMDAxODIsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNzk5OTk5OTk5OTk5MjcyLDE2LjUsMTYuNzAwMDAwMDAwMDAwNzI4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MThdfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-2b4e2b8abaee93072118",
+          "file": "result-presentation.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3524,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:47:11.370Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "animation-observations",
+                      "contentType": "application/json",
+                      "body": "eyJkaXN0aW5jdFNoYXBlcyI6NTcsImRpc3RpbmN0T3JpZ2lucyI6MjksInZpZXdwb3J0IjoiNDAyeDg3NCwgYnJvd3NlciBlbXVsYXRpb247IG5vdCByZWFsIGlQaG9uZSBTYWZhcmkifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-8ea907547ffe464712a7",
+          "file": "result-presentation.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "結果電撃の実フレームを記録し、5本上限と継続発生を確認する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5242,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:47:14.945Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "result-animation-performance",
+                      "contentType": "application/json",
+                      "body": "eyJlbnZpcm9ubWVudCI6IkxpbnV4IFBsYXl3cmlnaHQgcmVmZXJlbmNlOyBub3QgaVBob25lIGhhcmR3YXJlIGFjY2VwdGFuY2UiLCJmcmFtZXMiOjMwMSwicDk1TXMiOjE2Ljc5OTk5OTk5OTk5OTcyNywibWF4Qm9sdHMiOjUsInNoYXBlcyI6MzI2LCJjb2xvcnMiOlsiYmx1ZSIsImdyZWVuIiwicmVkIl0sImludGVydmFscyI6WzMuMDAwMDAwMDAwMTg2Mjc2LDE2LjY5OTk5OTk5OTk5OTk5LDE2LjU5OTk5OTk5OTk5OTk5NCwxNi43MDAwMDAwMDAwMDAwMTcsMTYuNjk5OTk5OTk5OTk5OTksMTYuNjk5OTk5OTk5OTk5OTksMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjY5OTk5OTk5OTk5OTk5LDE2LjY5OTk5OTk5OTk5OTk5LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42OTk5OTk5OTk5OTk5OSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTksMTYuNTk5OTk5OTk5OTk5OTY2LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42OTk5OTk5OTk5OTk5OSwxNi41OTk5OTk5OTk5OTk5NjYsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjY5OTk5OTk5OTk5OTk5LDE2LjY5OTk5OTk5OTk5OTk5LDE2LjY5OTk5OTk5OTk5OTk5LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42OTk5OTk5OTk5OTk5OSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTMyLDE2LjYwMDAwMDAwMDAwMDAyMywxNi44MDAwMDAwMDAwMDAwNjgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDAyMywxNi42OTk5OTk5OTk5OTk5MzIsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAwMjMsMTYuNjk5OTk5OTk5OTk5OTMyLDE2LjYwMDAwMDAwMDAwMDAyMywxNi44MDAwMDAwMDAwMDAwNjgsMTYuNSwxNi43OTk5OTk5OTk5OTk5NTUsMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjY5OTk5OTk5OTk5OTkzMiwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjY5OTk5OTk5OTk5OTkzMiwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMDIzLDE2LjY5OTk5OTk5OTk5OTkzMiwxNi42MDAwMDAwMDAwMDAwMjMsMTYuODAwMDAwMDAwMDAwMDY4LDE2LjUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNzk5OTk5OTk5OTk5OTU1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjU5OTk5OTk5OTk5OTkxLDE2Ljc5OTk5OTk5OTk5OTk1NSwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi43OTk5OTk5OTk5OTk5NTUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjAwMDAwMDAwMDAwMTM2LDE2Ljc5OTk5OTk5OTk5OTk1NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNjAwMDAwMDAwMDAwMTM2LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNzk5OTk5OTk5OTk5OTU1LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDA0NSwxNi42MDAwMDAwMDAwMDAxMzYsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDEzNiwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjcwMDAwMDAwMDAwMDA0NSwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAwNDUsMTYuNzAwMDAwMDAwMDAwMDQ1LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjgwMDAwMDAwMDAwMDE4MiwxNi41OTk5OTk5OTk5OTk5MSwxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNzk5OTk5OTk5OTk5NzI3LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi43OTk5OTk5OTk5OTk3MjcsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNzk5OTk5OTk5OTk5NzI3LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuODAwMDAwMDAwMDAwMTgyLDE2LjU5OTk5OTk5OTk5OTkxLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi44MDAwMDAwMDAwMDAxODIsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjcwMDAwMDAwMDAwMDI3MywxNi41OTk5OTk5OTk5OTk5MSwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi43MDAwMDAwMDAwMDAyNzMsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTkxLDE2LjcwMDAwMDAwMDAwMDI3MywxNi42OTk5OTk5OTk5OTk4MTgsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi41OTk5OTk5OTk5OTk5MSwxNi44MDAwMDAwMDAwMDAxODIsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNTk5OTk5OTk5OTk5OTEsMTYuNzAwMDAwMDAwMDAwMjczLDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNzk5OTk5OTk5OTk5MjcyLDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjYwMDAwMDAwMDAwMDM2NCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTQ1NCwxNi44MDAwMDAwMDAwMDAxODIsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjU5OTk5OTk5OTk5OTQ1NCwxNi43MDAwMDAwMDAwMDA3MjgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42OTk5OTk5OTk5OTk4MTgsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjY5OTk5OTk5OTk5OTgxOCwxNi42MDAwMDAwMDAwMDAzNjQsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTQ1NCwxNi43MDAwMDAwMDAwMDA3MjgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTQ1NCwxNi44MDAwMDAwMDAwMDAxODIsMTYuNjAwMDAwMDAwMDAwMzY0LDE2LjU5OTk5OTk5OTk5OTQ1NCwxNi43MDAwMDAwMDAwMDA3MjgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTQ1NCwxNi43MDAwMDAwMDAwMDA3MjgsMTYuNjk5OTk5OTk5OTk5ODE4LDE2LjU5OTk5OTk5OTk5OTQ1NCwxNi43MDAwMDAwMDAwMDA3MjhdfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-3d520159b62e367a0cf4",
+          "file": "result-presentation.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4634,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:47:20.468Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "animation-observations",
+                      "contentType": "application/json",
+                      "body": "eyJkaXN0aW5jdFNoYXBlcyI6NTUsImRpc3RpbmN0T3JpZ2lucyI6MzIsInZpZXdwb3J0IjoiNDAyeDg3NCwgYnJvd3NlciBlbXVsYXRpb247IG5vdCByZWFsIGlQaG9uZSBTYWZhcmkifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-a614c8b98c8262513cce",
+          "file": "result-presentation.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "結果電撃の実フレームを記録し、5本上限と継続発生を確認する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5646,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:47:25.172Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "result-animation-performance",
+                      "contentType": "application/json",
+                      "body": "eyJlbnZpcm9ubWVudCI6IkxpbnV4IFBsYXl3cmlnaHQgcmVmZXJlbmNlOyBub3QgaVBob25lIGhhcmR3YXJlIGFjY2VwdGFuY2UiLCJmcmFtZXMiOjI4OSwicDk1TXMiOjI0LCJtYXhCb2x0cyI6NSwic2hhcGVzIjozMjcsImNvbG9ycyI6WyJibHVlIiwiZ3JlZW4iLCJyZWQiXSwiaW50ZXJ2YWxzIjpbMTEsMjIsMTgsMjksMjQsMTgsMjUsMjIsMTcsMjcsMjQsMTYsMTksMTUsMTgsMTcsMTcsMTMsMjIsMTMsMjQsMTMsMTUsMTIsMTcsMTgsMjAsMTYsMjEsMTEsMTQsMTMsMTIsMTUsMTYsMTYsMTgsMTYsMTYsMTgsMjksMjMsMjIsMzEsMjEsMTUsMjIsMTQsMjAsMTQsMjMsMTUsMjYsMTksMTksMTIsMTksMTgsMTMsMTcsMTgsMTIsMTYsMjIsMTgsMTgsMTUsMTgsMTksMTUsMTgsMTYsMTgsMTQsMTYsMTcsMTYsMTcsMTYsMTUsMTYsMTksMTQsMTYsMjMsMTMsMjUsMTYsMTcsMTcsMTgsMTgsMTcsMTcsMjEsMjIsMjYsMTcsMTksMjAsMjAsMTUsMTksMTQsMTYsMTgsMTYsMTYsMTYsMTYsMTcsMTUsMTgsMjEsMTYsMzgsMjcsMjIsMjUsMTcsMTcsMTQsMTcsMjAsMTQsMTksMTEsMjEsMTgsMTUsMTksMTksMTIsMjEsMjAsMjEsMTMsMTUsMTQsMjQsMTcsMTcsMTIsMTYsMTksMTQsMTcsMTksMTMsMTYsMTgsMTQsMTksMTQsMTcsMTcsMTcsMTEsMTcsMTcsMTIsMTYsMTYsMTMsMTcsMTcsMTYsMTksMTYsMTcsMjEsMTgsMTQsMjIsMTgsMTUsMTcsMTcsMTUsMTUsMTcsMTMsMTcsMTYsMTIsMTgsMjIsMjIsMjAsMjMsMjUsMTYsMjEsMTgsMjEsMjAsMTgsMTYsMjUsMTEsMjEsMTIsMTYsMTUsMTcsMTEsMjIsMTAsMTcsMTgsMTIsMTcsMTUsMTQsMTUsMTcsMTUsMTcsMTUsMTYsNDEsMTgsMTEsMTcsMTQsMTMsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTcsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTgsMTcsMjAsMTQsMjQsMTMsMjAsMTIsMTcsMTUsMTMsMTUsMTcsMTEsMTksMjEsMTIsMTcsMTksMTIsMTgsMjAsMTIsMTksMTUsMTQsMTYsMjMsMTUsMTgsMjAsMTcsMTUsMTYsMTcsMTYsMTYsMTgsMTUsMTYsMTcsMTUsMTYsMThdfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-0b30141adddd787f131a",
+          "file": "result-presentation.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4436,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:47:31.134Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "animation-observations",
+                      "contentType": "application/json",
+                      "body": "eyJkaXN0aW5jdFNoYXBlcyI6NTQsImRpc3RpbmN0T3JpZ2lucyI6MzEsInZpZXdwb3J0IjoiNDAyeDg3NCwgYnJvd3NlciBlbXVsYXRpb247IG5vdCByZWFsIGlQaG9uZSBTYWZhcmkifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-85722b2f21d33dd5dffa",
+          "file": "result-presentation.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "結果電撃の実フレームを記録し、5本上限と継続発生を確認する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5627,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:47:35.642Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "result-animation-performance",
+                      "contentType": "application/json",
+                      "body": "eyJlbnZpcm9ubWVudCI6IkxpbnV4IFBsYXl3cmlnaHQgcmVmZXJlbmNlOyBub3QgaVBob25lIGhhcmR3YXJlIGFjY2VwdGFuY2UiLCJmcmFtZXMiOjI3MSwicDk1TXMiOjI3LCJtYXhCb2x0cyI6NSwic2hhcGVzIjozNTksImNvbG9ycyI6WyJibHVlIiwiZ3JlZW4iLCJyZWQiXSwiaW50ZXJ2YWxzIjpbMTUsMjIsMTMsMzUsMzAsMTksMjEsMTQsMjksMjYsMTUsMjQsMjMsMTgsMTgsMTQsMTgsMjEsMTcsMjUsMTMsMjMsMTksMTYsMTYsMTgsMTYsMTYsMTYsMjIsMTQsMTYsMTUsMTgsMjQsMTksMzEsMjcsMjUsMjksMjIsMTgsMjAsMTYsMTcsMjAsMjIsMTQsMjEsMTYsMjYsMjEsMjIsMTgsMTUsMTcsMTYsMjEsMTYsMTgsMTQsMTYsMjEsMTUsMjAsMjcsMTksMjEsMTcsMTUsMjMsMjEsMTYsMjMsMTUsMjEsMTksMjAsMjEsMTUsMTQsMjAsMjAsMTQsMjEsMTUsMjAsMTYsMTgsMTQsMTcsMTgsMTMsMTksMTUsMTUsMTcsMTgsMTUsMTcsMTgsMTUsMTYsMTgsMTgsMTksMTksMjAsMTUsMTksMTcsMTYsMTYsMTYsMjAsMTQsMjIsMjIsMjEsMTcsMTksMTgsMjQsMTksMjAsMTUsMTgsMTMsMTksMTgsMTUsMTUsMjYsMTgsMjgsMjIsMjIsMTEsMTYsMTYsMTUsMTgsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTgsMTUsMTYsMTksMjAsMTksMTgsMTcsMTIsMjYsMTYsMTcsMTQsMjAsMTIsMTgsMTYsMjAsMjEsMTUsMjMsMTIsMjEsMTcsMTcsMTUsMTgsMjAsMTksMjEsMTksMjEsMTcsMTgsMTUsMTUsMjIsMTgsMjEsMTMsMTksMTMsMTcsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTcsMTYsMTcsMTUsMTYsMTYsMjgsMTgsMjYsMTksMjQsMTYsMTgsMTYsNDMsMTcsMTUsMTgsMjAsMzMsMjMsMTQsMjEsMTUsMjEsMTQsMjcsMTYsMjgsMjAsMjIsMTQsMjAsMTMsMTgsMTcsMTksMTksMjEsMTksMTYsMjMsMTMsMjcsMTEsMjYsMTMsMjMsMTEsMjcsMTUsMjEsMTQsMjMsMTksMTgsMTYsMjMsMTcsMTcsMTIsMTcsMTcsMTUsMTQsMTksMTQsMThdfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-df80d841447c0c7867d0",
+          "file": "result-presentation.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4854,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:47:41.558Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "animation-observations",
+                      "contentType": "application/json",
+                      "body": "eyJkaXN0aW5jdFNoYXBlcyI6NTYsImRpc3RpbmN0T3JpZ2lucyI6MzIsInZpZXdwb3J0IjoiNDAyeDg3NCwgYnJvd3NlciBlbXVsYXRpb247IG5vdCByZWFsIGlQaG9uZSBTYWZhcmkifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-8289b92234924503c1f9",
+          "file": "result-presentation.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "結果電撃の実フレームを記録し、5本上限と継続発生を確認する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5653,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:47:46.480Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "result-animation-performance",
+                      "contentType": "application/json",
+                      "body": "eyJlbnZpcm9ubWVudCI6IkxpbnV4IFBsYXl3cmlnaHQgcmVmZXJlbmNlOyBub3QgaVBob25lIGhhcmR3YXJlIGFjY2VwdGFuY2UiLCJmcmFtZXMiOjI5MiwicDk1TXMiOjI0LCJtYXhCb2x0cyI6NSwic2hhcGVzIjozNDQsImNvbG9ycyI6WyJibHVlIiwiZ3JlZW4iLCJyZWQiXSwiaW50ZXJ2YWxzIjpbMTUsMjYsMzAsMzEsMjUsMjAsMjcsMzEsMTksMTUsMTksMTIsMjMsMTksMTAsMTcsMTYsMTksMTcsMjAsMTcsMTcsMTUsMTYsMTcsMTgsMTYsMjIsMTIsMTcsMTQsMTYsMTQsMTYsMjAsMTMsMTYsMTYsMjQsMjQsMjYsMjMsMjksMjUsMTksMTUsMTgsMTMsMTksMTUsMTUsMTYsMTksMjcsMjksMTYsMjQsMTUsMjMsMTEsMjAsMTAsMTcsMTQsMTMsMTYsMTcsMTgsMjIsMTYsMTksMTksMTksMTgsMTgsMTgsMTcsMTQsMTIsMTksMTgsMjAsMTIsMTYsMTYsMTMsMTQsMTksMTQsMjEsMTQsMTcsMTYsMTksMTYsMTgsMTQsMTYsMTcsMTEsMTgsMTUsMTYsMTQsMTgsMTQsMTYsMTYsMTYsMTYsMTYsMTYsMTcsMTYsMTYsMTksMjEsMTQsMTksMTIsMTcsMjEsMTksMTksMTMsMjIsMzYsMTgsMzksMTcsMTEsMTYsMTUsMTMsMTMsMTgsMTIsMTgsMTUsMTUsMTYsMTYsMTYsMTYsMTgsMTQsMTYsMTcsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTcsMTYsMTYsMTYsMTYsMTcsMTUsMTYsMTYsMTYsMTksMjEsMTcsMTgsMTIsMTgsMTksMTEsMTcsMjAsMTMsMTUsMTYsMTEsMTYsMTYsMTYsMTcsMTUsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTcsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTcsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTcsMTYsMTYsMTYsMTYsMTYsMTYsMTcsMTcsMTUsMjAsMTgsMjAsMjAsMTQsMTksMTQsMTksMTgsMTUsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTcsMTYsMjMsMjIsMTUsMjAsMTQsMjAsMTQsMjAsMTUsMjYsMjAsMTgsMTQsMTYsMjEsMTMsMjIsMTQsMjAsMTQsMTksMTQsMTUsMTgsMTIsMTcsMTYsMTQsMTYsMTcsMTYsMTMsMTksMTMsMTgsMTYsMTQsMTUsMjAsMTQsMjEsMTQsMjAsMTYsMTldfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-b69a4a9ce1d543cd0f90",
+          "file": "result-presentation.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4584,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:47:52.415Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "animation-observations",
+                      "contentType": "application/json",
+                      "body": "eyJkaXN0aW5jdFNoYXBlcyI6NTUsImRpc3RpbmN0T3JpZ2lucyI6MzEsInZpZXdwb3J0IjoiNDAyeDg3NCwgYnJvd3NlciBlbXVsYXRpb247IG5vdCByZWFsIGlQaG9uZSBTYWZhcmkifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-c188e42d1f2b0a04447c",
+          "file": "result-presentation.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "結果電撃の実フレームを記録し、5本上限と継続発生を確認する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5636,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:47:57.070Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "result-animation-performance",
+                      "contentType": "application/json",
+                      "body": "eyJlbnZpcm9ubWVudCI6IkxpbnV4IFBsYXl3cmlnaHQgcmVmZXJlbmNlOyBub3QgaVBob25lIGhhcmR3YXJlIGFjY2VwdGFuY2UiLCJmcmFtZXMiOjI4NCwicDk1TXMiOjI1LCJtYXhCb2x0cyI6NSwic2hhcGVzIjozNDksImNvbG9ycyI6WyJibHVlIiwiZ3JlZW4iLCJyZWQiXSwiaW50ZXJ2YWxzIjpbMTMsMzEsMTQsMzksMzIsMjEsMjUsMjcsMTcsMjIsMjcsMTgsMTMsMTQsMTQsMTgsMTMsMTYsMTUsMTUsMTYsMTYsMTYsMjAsMjEsMTYsMTUsMTMsMTQsMTYsMTUsMTYsMjMsMTEsMjIsMTIsMjMsMTUsMzIsMjUsMjEsMjcsMjQsMjAsMjAsMjQsMjIsMTQsMjMsMTUsMjAsMTUsMTksMTQsMTYsMjUsMTgsMjMsMTUsMjAsMTIsMTcsMjAsMTYsMjMsMTgsMTksMTMsMTcsMjQsMTUsMjEsMTUsMjQsMTcsMjUsMTUsMjMsMTQsMjYsMTcsMTgsMTQsMTgsMTksMTUsMTYsMTYsMTgsMTgsMTQsMTUsMjAsMTYsMTcsMTMsMjAsMTYsMTMsMTYsMTcsMTIsMTcsMTgsMTMsMjUsMjEsMTYsMjUsMjMsMjMsMjAsMTcsMTYsMTYsMjUsMTUsMjUsMjAsMTgsMTIsMTgsMjIsMTcsMTcsMTYsMTgsMjEsMTUsMjAsMTUsMTksMTQsMTYsMTcsMTQsMTYsMjAsMTMsMTQsMzcsMjMsMTQsMjAsMTIsMTcsMTgsMTMsMTgsMTksMTMsMTcsMTcsMTMsMTgsMTgsMTQsMTcsMTcsMTMsMTYsMjIsMTYsMTcsMTgsMTgsMTksMTgsMTYsMjMsMTEsMjEsMTMsMjIsMTQsMjAsMTQsMTksMTIsMTksMTgsMTYsMjEsMTQsMjQsMTMsMTksMTUsMTksMTMsMTgsMTcsMTYsMTMsMjAsMTQsMjAsMTYsMTgsMTQsMTYsMTgsMTMsMTksMTUsMTQsMTcsMTgsMTQsMTUsMjAsMTQsMjAsMTMsMTcsMTcsMTMsMjIsMjAsMTQsMjEsMTIsMTcsMTcsMTIsMTcsMTYsMTUsMTYsMTcsMTUsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTcsMTYsMTYsMTcsMTUsMTYsMTcsMTUsMTcsMjMsMTQsMTksMTMsMTYsMTgsMTMsMTgsMTksMTUsMTksMTQsMTcsMjAsMTQsMjAsMTQsMjIsMTUsMjEsMTYsMjQsMTUsMjEsMTgsMjUsMTYsMTgsMTQsMTUsMTksMjAsMTcsMTcsMTgsMTEsMTldfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-0e22df1827f458484afe",
+          "file": "result-presentation.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4637,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:48:03.021Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "animation-observations",
+                      "contentType": "application/json",
+                      "body": "eyJkaXN0aW5jdFNoYXBlcyI6NDcsImRpc3RpbmN0T3JpZ2lucyI6MjYsInZpZXdwb3J0IjoiNDAyeDg3NCwgYnJvd3NlciBlbXVsYXRpb247IG5vdCByZWFsIGlQaG9uZSBTYWZhcmkifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-167ddd1c96628b452b69",
+          "file": "result-presentation.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "結果電撃の実フレームを記録し、5本上限と継続発生を確認する",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5656,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-25T19:48:07.735Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "result-animation-performance",
+                      "contentType": "application/json",
+                      "body": "eyJlbnZpcm9ubWVudCI6IkxpbnV4IFBsYXl3cmlnaHQgcmVmZXJlbmNlOyBub3QgaVBob25lIGhhcmR3YXJlIGFjY2VwdGFuY2UiLCJmcmFtZXMiOjI3NiwicDk1TXMiOjI3LCJtYXhCb2x0cyI6NSwic2hhcGVzIjozNDAsImNvbG9ycyI6WyJibHVlIiwiZ3JlZW4iLCJyZWQiXSwiaW50ZXJ2YWxzIjpbMTMsMjIsMTUsMzYsMjksMjksMzIsMjcsMjEsMTksMjUsMjIsMTYsMTUsMjEsMjAsMjIsMjAsMjEsMTksMjAsMTcsMTUsMTYsMTUsMTUsMTIsMTgsMTQsMTcsMTYsMTYsMTcsMTYsMTUsMTYsMjYsMjMsMjYsMjEsMzAsMTYsMzIsMTksMjAsMTQsMjYsMTcsMjAsMTgsMTksMTUsMjMsMTMsMjcsMjUsMjQsMTcsMTgsMTIsMjAsMTgsMTUsMTYsMTksMTksMjEsMTQsMjEsMTIsMTgsMjQsMTYsMjUsMTQsMjYsMTYsMTYsMTYsMTUsMjAsMTcsMTcsMTcsMjcsMzAsMjksMTksMjEsMTYsMjQsMTcsMjIsMjUsMjIsMTcsMjMsMjIsNDEsMjEsMTUsMTksMTMsMTgsMTUsMTIsMTYsMjIsMTgsMjAsMTcsMjMsMjAsMTksMTUsMzQsMjksMTMsMjIsMTQsMjAsMTQsMjUsMTksMTgsMTIsMjMsMjQsMjEsMTksMTEsMTcsMTcsMTUsMjQsMTYsMTUsMTQsMjEsMTQsMjIsMTQsMjAsMTgsMjUsMTYsMjAsMjEsMjEsMTgsMTcsMTEsMTgsMTYsMTIsMTcsMjAsMTEsMTcsMTYsMTIsMTksMTgsMTUsMTUsMTcsMTUsMTgsMjAsMTYsMTYsMTMsMTUsMTksMTIsMjQsMTgsMTYsMTgsMTIsMTYsMTYsMTIsMjUsMjAsMTYsMTksMTYsMTcsMjMsMjMsMTQsMjYsMTcsMTgsMTIsMTksMTksMTgsMTYsMTYsMTYsMTYsMTYsMTcsMTYsMTYsMTYsMTYsMTYsMTYsMTcsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTYsMTgsMTUsMTYsMTcsMTUsMTYsMTYsMTYsMTYsMTgsMTQsMTcsMTYsMTYsMTYsMTYsMTYsMTYsMTksMjUsMTksMTYsMTgsMTEsMTcsMTQsMTQsMTMsMTcsMTIsMjIsMTYsMTEsMTcsMTYsMTQsMTksMTgsMTIsMTgsMTksMTUsMjQsMTMsMjEsMTIsMTcsMTYsMTUsMTUsMTgsMTMsMTYsMTgsMTMsMTldfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4f49307f870e9648e57b-5c57c2eabf49901adc66",
+          "file": "result-presentation.spec.ts",
+          "line": 38,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-25T19:46:34.064Z",
+    "duration": 99406.81899999999,
+    "expected": 20,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

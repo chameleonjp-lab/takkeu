@@ -20,7 +20,7 @@ function setup() {
   const render = (score: number, phase: 'gameover' | 'running' = 'gameover', finishing = false) => screens.render({ ...snapshot, score, phase }, finishing);
   const tick = (ms: number) => { now += ms; const callbacks = [...frames.values()]; frames.clear(); for (const fn of callbacks) fn(now); };
   dispose = () => { screens.dispose(); root.remove(); };
-  return { root, screens, render, tick, frames, listeners, reduce(value: boolean) { reduced = value; listeners.forEach(fn => fn()); } };
+  return { root, screens, render, tick, frames, listeners, reduce(value: boolean, notify = true) { reduced = value; if (notify) listeners.forEach(fn => fn()); } };
 }
 
 it.each([[299,'normal',[]],[300,'gold',[]],[499,'gold',[]],[500,'gold',['green']],[799,'gold',['green']],
@@ -66,4 +66,16 @@ it('stops while the tab is hidden and resumes only one loop when visible', () =>
   document.dispatchEvent(new Event('visibilitychange')); expect(frames.size).toBe(0);
   visibility.mockReturnValue(false); document.dispatchEvent(new Event('visibilitychange')); tick(100); expect(frames.size).toBe(1);
   visibility.mockRestore();
+});
+
+it('clears existing bolts when a frame observes reduced motion before the change event', () => {
+  const { root, render, tick, frames, reduce } = setup();
+  render(1500); tick(100); tick(100);
+  expect(root.querySelectorAll('[data-bolt]').length).toBeGreaterThan(0);
+  reduce(true, false); tick(40);
+  expect(frames.size).toBe(0);
+  expect(root.querySelectorAll('[data-bolt]').length).toBe(0);
+  reduce(false); tick(100);
+  expect(frames.size).toBe(1);
+  expect(root.querySelectorAll('[data-bolt]').length).toBeGreaterThan(0);
 });
