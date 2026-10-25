@@ -70,9 +70,10 @@ export function createObjects(config: GameConfig) {
     opponentRacketBody: other.body, opponentRacketEdge: other.rim, opponentBody,
   };
   const pool = createBallPool(config); root.add(pool.root);
-  root.add(self.group, opponent.group, courtEdges, player.group, other.group, opponentBody, net);
+  const tableRig = new Group(); tableRig.add(self.group, opponent.group, courtEdges, net, environment.structure);
+  root.add(tableRig, player.group, other.group, opponentBody);
   return {
-    root, parts, opponentField, balls: pool.balls, syncBalls: pool.sync, commitBalls:pool.commit, tableY: config.tableY, tableHalfLength: config.tableHalfLength, tableHalfWidth: config.tableHalfWidth,
+    root, tableRig, parts, opponentField, balls: pool.balls, syncBalls: pool.sync, commitBalls:pool.commit, tableY: config.tableY, tableHalfLength: config.tableHalfLength, tableHalfWidth: config.tableHalfWidth,
     playerCourt: self.group, opponentCourt: opponent.group, playerEdges, opponentEdges,
     playerPaddle: player.group, opponentPaddle: other.group, opponentBody, opponentArm, net, rimMaterial: player.rim.material,
     dispose() {

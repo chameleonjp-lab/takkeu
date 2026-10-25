@@ -71,6 +71,10 @@ test('タッチの絶対位置ドラッグでラケットを動かせる', async
   await page.clock.runFor(300);
   await surface.dispatchEvent('pointerup', { pointerId: 10, pointerType: 'touch', isPrimary: true, clientX: position.x + box.width * 0.8, clientY: position.y - 100 });
   await page.clock.runFor(2700);
+  await expect(page.locator('[data-finishing]')).toBeVisible();
+  await expect(page.getByLabel('残球数', { exact: true })).toHaveText('0');
+  // Gameplay has stopped; advance the drawing clock through the .9s net burst.
+  await page.clock.runFor(1000);
   await expect(page.getByRole('heading', { name: 'ナイスラリー！' })).toBeVisible();
   await expect(page.getByLabel('今回のラリー数')).toHaveText('0');
 });

@@ -7,6 +7,7 @@ button { cursor: pointer; }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid #7be2d1; outline-offset: 5px; }
 button:disabled { opacity: .5; cursor: wait; }
 [hidden] { display: none !important; }
+.finish-label { position: absolute; left: 50%; bottom: max(24px, var(--safe-bottom)); transform: translateX(-50%); margin: 0; padding: 8px 20px; border: 1px solid #7be2d1; border-radius: 999px; color: #f5fff9; background: #0b1220cc; font-weight: 750; pointer-events: none; }
 .shell { max-width: 1120px; padding: max(28px, var(--safe-top)) max(28px, var(--safe-right)) max(24px, var(--safe-bottom)) max(28px, var(--safe-left)); margin: 0 auto; }
 .brand { display: flex; align-items: center; gap: 14px; font-size: .8125rem; font-weight: 750; letter-spacing: .15em; }
 .brand-mark { display: inline-grid; place-items: center; width: 38px; height: 38px; border: 1px solid #45616d; border-radius: 50%; font: italic 700 25px Georgia, serif; color: #83d8cb; letter-spacing: -.1em; padding-right: 4px; }

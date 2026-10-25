@@ -18,6 +18,16 @@ test('99落球では継続し100球目で残球があっても結果へ進み再
   const ended = await page.evaluate(() => window.stage3.snapshot());
   expect(ended.phase).toBe('gameover'); expect(ended.lostBallCount).toBe(100);
   expect(ended.balls).toHaveLength(1);
+  await expect(page.locator('[data-result]')).toBeHidden();
+  await expect(page.locator('[data-finishing]')).toBeVisible();
+  await expect(page.getByLabel('落球数', { exact: true })).toHaveText('100 / 100');
+  await page.screenshot({ path: info.outputPath('hundred-loss-final-animation.png') });
+  await page.clock.runFor(2100);
+  // The 99-ball special remains visible for its full three seconds even
+  // when the 100th drop ends the game immediately afterwards.
+  await expect(page.locator('[data-finishing]')).toBeVisible();
+  expect(await page.evaluate(() => window.stage3.snapshot())).toEqual(ended);
+  await page.clock.runFor(1100);
   await expect(page.locator('[data-result-score]')).toHaveText('340');
   await expect(page.locator('[data-loss-limit-message]')).toBeVisible();
   await expect(page.locator('[data-status]')).toContainText('100球');

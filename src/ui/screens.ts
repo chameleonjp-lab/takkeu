@@ -46,7 +46,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       <section class="game-screen" data-testid="game-screen" data-game hidden inert>
         <div class="input-surface" data-testid="input-surface"><div class="canvas-wrap"><canvas tabindex="0" aria-label="卓球ゲームの描画領域" aria-keyshortcuts="Escape"></canvas></div></div>
         <div class="hud"><div><span class="eyebrow">RALLY</span><output aria-label="ラリー数" aria-live="off" class="rally-number" data-score>0</output></div><div class="balls-counter"><span class="eyebrow">残球数</span><output aria-label="残球数" aria-live="off" data-balls>1</output></div><div class="losses-counter"><span class="eyebrow">落球数</span><output aria-label="落球数" aria-live="off" data-losses>0 / ${MAX_LOST_BALLS}</output></div><p class="smash-warning" data-smash-warning role="status" hidden>スマッシュがくる！</p></div>
-        <div class="game-notices" data-game-notices></div>
+        <div class="game-notices" data-game-notices></div><p class="finish-label" data-finishing tabindex="-1" hidden>ゲーム終了</p>
         <div class="pause-overlay" role="dialog" aria-modal="true" aria-labelledby="pause-title" aria-describedby="pause-description" tabindex="-1" hidden inert><div class="pause-card"><p class="eyebrow">PAUSE</p><h2 id="pause-title">ひと休み</h2><p id="pause-description" data-pause-message></p><div data-pause-notices></div><button type="button" class="button primary" data-action="resume">つづける <span aria-hidden="true">→</span></button><button type="button" class="button subtle" data-action="retry">最初からやり直す</button><button type="button" class="text-button" data-action="home">ホームへ</button>${soundControls}</div></div>
       </section>
 
@@ -68,6 +68,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   const hud = get('.hud'), notices = get('[data-notices]');
   const doc = root.ownerDocument;
   let phase: GameSnapshot['phase'] = 'ready';
+  let finishing = false, lastFinishing = false;
   let lastPhase = '';
   let lastRemaining = -1;
   let settingsOpen = false;
@@ -79,9 +80,10 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   const show = (node: HTMLElement, visible: boolean): void => { node.hidden = !visible; setInert(node, !visible); };
   const updateVisibility = (): void => {
     show(home, phase === 'ready' && !settingsOpen); show(settings, phase === 'ready' && settingsOpen);
-    show(game, phase === 'running' || phase === 'paused'); show(result, phase === 'gameover'); show(overlay, phase === 'paused');
+    show(game, phase === 'running' || phase === 'paused' || finishing); show(result, phase === 'gameover' && !finishing); show(overlay, phase === 'paused');
+    get('[data-finishing]').hidden = !finishing;
     setInert(surface, phase !== 'running'); setInert(hud, phase === 'paused');
-    const host = get(phase === 'paused' ? '[data-pause-notices]' : phase === 'running' ? '[data-game-notices]' : phase === 'gameover' ? '[data-result-notices]' : settingsOpen ? '[data-settings-notices]' : '[data-home-notices]');
+    const host = get(phase === 'paused' ? '[data-pause-notices]' : phase === 'running' || finishing ? '[data-game-notices]' : phase === 'gameover' ? '[data-result-notices]' : settingsOpen ? '[data-settings-notices]' : '[data-home-notices]');
     if (notices.parentElement !== host) host.append(notices);
   };
   const showSettings = (open: boolean): void => {
@@ -155,9 +157,9 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       setText('[data-ranking-message]', state === 'loading' ? 'ランキングを読み込んでいます。' : state === 'error' ? 'ランキングを取得できませんでした。時間をおいて更新してください。' : rows.length ? 'プレイ回数はゲーム開始時に数えます。' : 'まだ記録がありません。最初のラリーをつなごう。');
       get<HTMLButtonElement>('[data-action="ranking-refresh"]').disabled = state === 'loading';
     },
-    render(snapshot: GameSnapshot) {
+    render(snapshot: GameSnapshot, showingFinalEffects = false) {
       if (snapshot.phase !== 'ready') settingsOpen = false;
-      phase = snapshot.phase; updateVisibility();
+      phase = snapshot.phase; finishing = phase === 'gameover' && showingFinalEffects; updateVisibility();
       const warning = snapshot.scheduledReturns.some(plan => plan.smash && plan.warningAt !== null && plan.warningAt <= snapshot.simTime + 1e-10 && snapshot.simTime < plan.departAt);
       get('[data-smash-warning]').hidden = !warning;
       const remaining = snapshot.balls.filter(ball => ball.phase !== 'lost').length;
@@ -180,7 +182,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
         setText('[data-status]', snapshot.phase === 'paused' ? '一時停止中。再開ボタンで続けられます。' : snapshot.phase === 'gameover' ? endMessage : snapshot.phase === 'running' ? `プレイ中。残球数${remaining}。` : 'ホーム');
         if (snapshot.phase === 'paused') { overlay.scrollTop = 0; focusPause(); }
         else {
-          const focus = snapshot.phase === 'gameover' ? result.querySelector<HTMLElement>('button:not(:disabled)') : snapshot.phase === 'running' ? canvas : home.querySelector<HTMLElement>('[data-action="start"]');
+          const focus = snapshot.phase === 'gameover' ? finishing ? get<HTMLElement>('[data-finishing]') : result.querySelector<HTMLElement>('button:not(:disabled)') : snapshot.phase === 'running' ? canvas : home.querySelector<HTMLElement>('[data-action="start"]');
           focus?.focus({ preventScroll: true });
         }
         lastPhase = snapshot.phase;
@@ -188,6 +190,8 @@ export function createScreens(root: HTMLElement, actions: Actions) {
         setText('[data-status]', `残球数${remaining}。`);
       }
       lastRemaining = remaining;
+      if (lastFinishing && !finishing && phase === 'gameover') result.querySelector<HTMLElement>('button:not(:disabled)')?.focus({ preventScroll: true });
+      lastFinishing = finishing;
     },
     setSound(muted: boolean) { for (const button of root.querySelectorAll('[data-action="sound"]')) button.textContent = muted ? '音：オフ' : '音：オン'; },
     setAudioReady(ready: boolean) { get('[data-audio-notice]').hidden = ready; },

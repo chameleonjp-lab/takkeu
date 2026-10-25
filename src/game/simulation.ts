@@ -8,6 +8,8 @@ import { MAX_BALLS } from './milestones';
 import { scheduleReturn } from './scheduler';
 import { bounceTime, deflectBounce, sampleReturn } from './trajectory';
 import { planOpponentReturn } from './opponent';
+import { createCelebrations, lossCelebration, rallyCelebration } from './celebrations';
+import type { CelebrationState } from './celebrations';
 import type { BallPhase, GameConfig, GameEvent, GameEventKind, GamePhase, GameSnapshot, InputFrame, PaddlePoint, PauseReason, Point3, ProgressionState, ReturnPlan, StepResult } from './types';
 
 export type SimulationBall = {
@@ -15,12 +17,14 @@ export type SimulationBall = {
   warningEmittedAt?: number; bounceEmitted?: boolean;
 };
 export type SimulationState = {
+  celebrations: CelebrationState;
   runId: string; nextBallId: number; randomState: number; eventNumber: number; phase: GamePhase; pauseReason: PauseReason | null;
   committedSmashDepartures: number[]; score: number; simTime: number; lostBallCount: number; paddle: PaddlePoint; opponentPaddle: PaddlePoint; balls: SimulationBall[]; progression: ProgressionState;
 };
 let nextRunId = 0;
 export function createSimulationState(seed: number): SimulationState {
   return {
+    celebrations: createCelebrations(),
     runId: `run-${++nextRunId}`, nextBallId: 2, randomState: seed >>> 0 || 1, eventNumber: 0,
     phase: 'ready', pauseReason: null, committedSmashDepartures: [], score: 0, simTime: 0, lostBallCount: 0, paddle: { ...INITIAL_PADDLE }, balls: [],
     opponentPaddle: { ...INITIAL_PADDLE }, progression: { appliedMilestones: [], ballGlowUntil: null, awardedBallCount: 0 },
@@ -32,6 +36,7 @@ function reservations(state: SimulationState): ReturnPlan[] {
 }
 export function snapshotSimulation(state: SimulationState): GameSnapshot {
   return {
+    celebrations: { ...state.celebrations, numberNotices: state.celebrations.numberNotices.map(n => ({ ...n })) },
     runId: state.runId, phase: state.phase, pauseReason: state.pauseReason, score: state.score, simTime: state.simTime, lostBallCount: state.lostBallCount,
     paddle: { ...state.paddle }, opponentPaddle: { ...state.opponentPaddle },
     balls: state.balls.map(b => ({ id: b.id, phase: b.phase, position: { ...b.position }, smash: b.plan.smash })),
@@ -105,6 +110,7 @@ function advanceSegment(state: SimulationState, config: GameConfig, dt: number, 
     } else if (kind === 'hit') {
       const smashReturn = ball.plan.smash;
       state.score++;
+      state.celebrations = rallyCelebration(state.celebrations, state.score, time);
       const at = paddleFraction!;
       const centre = { x: previousPaddle.x + (state.paddle.x - previousPaddle.x) * at,
         y: previousPaddle.y + (state.paddle.y - previousPaddle.y) * at, z: config.paddleZ };
@@ -136,6 +142,7 @@ function advanceSegment(state: SimulationState, config: GameConfig, dt: number, 
     } else if (kind === 'lost') {
       ball.phase = 'lost'; emit('ball-lost', time, ball.id);
       state.lostBallCount++;
+      state.celebrations = lossCelebration(state.celebrations, state.lostBallCount, time);
       if (state.lostBallCount >= MAX_LOST_BALLS) {
         state.phase = 'gameover'; stoppedAt = time;
         emit('game-over', time); break;
