@@ -1,0 +1,4 @@
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+Combined app preview: 1500 rally, mocked rank 3 / 620, TOP100, local best1500; 3 continuous screenshots. No live writes.
+
+Manual screenshot inspection found score1 rather than1500. Cause: data-game becomes visible during preparation; injection ran before beginRun reset. Fixed capture script to wait for session.phase=running and assert score1500. Product code unchanged. Initial image preserved as fixture-start-wait-failed.png.

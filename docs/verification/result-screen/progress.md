@@ -14,3 +14,4 @@
 - 回帰修正: 隠れた順位再試行ボタンが先頭buttonになり、終了後のfocusを奪った。既存失敗テストを再現し、再挑戦を明示して修正。全suite GREEN。
 - Task 4: complete — 全775 unit tests、typecheck、28関連browser tests成功。スコア→コメント→順位→ベスト→操作→TOP30。320×568と402×874の全44文言が2行以内、順位が画面内、横スクロールなし。9桁スコア/200%文字拡大/44pxタップを確認。証跡画像/測定JSONを保存。
 - Final review: 別コンテキスト担当の独立レビュー（26 unit testsも独立成功）。詳細review.md。旧キュー失敗で今回の順位表示が待機のままになる件を通信要件に照らして修正し、2プレイ統合RED→GREEN。ローカルbest文言・両幅の拡大検証も改善。全体browser初回は修正前に正常中断しログ/JSONを保持、最終版を再実行。
+- Task 5: functional verification complete — unit777/777, typecheck, browser182/182, root/Pages builds, distribution8/8, npm audit0。性能8ケースは60秒継続・エラーなしだが全ケースLinux目安未達。変更前mainも代表2ケース+Chromium再測定で制約を確認。初回Chrome baselineはslow-frame停止で比較に使わず全記録保存。結果電撃p95 16.7/25ms、shape311/338、3色/最大5本。実機は未確認。最終写真は実アプリの準備完了を待ってscore1500/モック順位3位を確認して連続撮影。

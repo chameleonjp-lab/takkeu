@@ -1,0 +1,6 @@
+Initial local orchestration guard stopped before release/performance because Playwright 1.64.1's JSON stats has no 'interrupted' field:
+Traceback (most recent call last):
+  File "<stdin>", line 3, in <module>
+KeyError: 'interrupted'
+Observed stats: expected=182, skipped=0, unexpected=0, flaky=0.
+Fixed the temporary orchestration guard to require expected=182, skipped=0, unexpected=0. This was not a product or test failure; release/performance were then started normally.

@@ -10,3 +10,272 @@ Running 182 tests using 1 worker
 (node:16756) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓    1 [chromium] › tests/browser/audio-fanfare.spec.ts:6:1 › renders a bounded musical fanfare through the production volume, fallback and game-over graph (4.5s)
+  ✓    2 [chromium] › tests/browser/audio-fanfare.spec.ts:65:1 › naturally ends the protected fanfare after game-over and releases every native source (2.2s)
+  ✓    3 [chromium] › tests/browser/audio-layered.spec.ts:12:1 › 多層音と最終出力を44.1/48kHzで合成、単発と上限+減衰の波形を保存 (2.6s)
+[WebServer] 6:52:28 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓    4 [chromium] › tests/browser/audio-layered.spec.ts:78:1 › 実AudioContextで多球・停止・復旧・run切替と部分失敗を繰り返し、予約音とnodeを回収 (1.7s)
+[WebServer] 6:52:29 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓    5 [chromium] › tests/browser/audio.spec.ts:24:1 › 打球ノード生成失敗を案内し、一時停止メニューから明示的に音声を再試行できる (8.4s)
+[WebServer] 6:52:43 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓    6 [chromium] › tests/browser/audio.spec.ts:56:1 › 開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰 (15.0s)
+[WebServer] 6:52:55 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓    7 [chromium] › tests/browser/audio.spec.ts:84:1 › 音声再開拒否でも無音で継続し、ミュートと明示的な音声の再試行が使える (11.6s)
+  ✓    8 [chromium] › tests/browser/audio.spec.ts:112:1 › 実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査 (639ms)
+  ✓    9 [chromium] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない (406ms)
+  ✓   10 [chromium] › tests/browser/glow-timing.spec.ts:4:1 › 指定された発光ラリーの直前・到達時を同一画角で撮影する (6.0s)
+[WebServer] 6:53:11 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   11 [chromium] › tests/browser/lifecycle.spec.ts:12:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない (2.7s)
+[WebServer] 6:53:14 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   12 [chromium] › tests/browser/lifecycle.spec.ts:42:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 (4.1s)
+[WebServer] 6:53:18 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   13 [chromium] › tests/browser/lifecycle.spec.ts:59:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する (3.2s)
+[WebServer] 6:53:21 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   14 [chromium] › tests/browser/lifecycle.spec.ts:77:1 › 実際のWEBGL_lose_contextによる喪失と復旧でも手動再開を待つ (2.5s)
+[WebServer] 6:53:24 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   15 [chromium] › tests/browser/lifecycle.spec.ts:95:1 › 描画再作成の失敗時も状態を壊さずホームへ戻れる (1.4s)
+[WebServer] 6:53:25 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   16 [chromium] › tests/browser/loss-limit.spec.ts:4:1 › 99落球では継続し100球目で残球があっても結果へ進み再挑戦で0に戻る (11.0s)
+[WebServer] 6:53:36 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   17 [chromium] › tests/browser/loss-limit.spec.ts:50:1 › 狭い画面でもラリー・残球・落球数が重ならず表示される (1.2s)
+  ✓   18 [chromium] › tests/browser/occlusion.spec.ts:3:1 › 球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない (656ms)
+  ✓   19 [chromium] › tests/browser/occlusion.spec.ts:10:1 › 球と虹色の輪郭はラケットとの前後関係を守る (2.0s)
+  ✓   20 [chromium] › tests/browser/occlusion.spec.ts:37:1 › 虹色は照明がなくても発光し、相手床・壁は閾値まで暗い (647ms)
+[WebServer] 6:53:42 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   21 [chromium] › tests/browser/preferences.spec.ts:4:1 › 全設定と自己ベストが再読込・リトライを越えて残る (8.6s)
+[WebServer] 6:53:50 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   22 [chromium] › tests/browser/preferences.spec.ts:41:1 › 保存拒否でも設定と自己ベストをメモリに保持して遊べる (1.1s)
+[WebServer] 6:53:51 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   23 [chromium] › tests/browser/ranking-isolation.spec.ts:3:1 › 通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す (8.1s)
+[WebServer] 6:54:00 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   24 [chromium] › tests/browser/ranking.spec.ts:36:1 › 名前なしで遊べて結果には上位30名と正式URLのXシェアが表示される (2.4s)
+[WebServer] 6:54:01 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   25 [chromium] › tests/browser/ranking.spec.ts:60:1 › 匿名開始の応答喪失後もすぐ遊べてonline復帰時は同じIDで再送する (1.2s)
+[WebServer] 6:54:02 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   26 [chromium] › tests/browser/ranking.spec.ts:76:1 › 通信不能で始めた匿名2回の記録を再読込後も保ち復旧時に送る (1.9s)
+[WebServer] 6:54:04 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   27 [chromium] › tests/browser/ranking.spec.ts:104:1 › online復帰が古い通信の失敗より先でも送信待ちを再開する (1.2s)
+[WebServer] 6:54:06 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   28 [chromium] › tests/browser/ranking.spec.ts:119:1 › 名前ありは開始時に一度記録し通常終了を自動送信する (1.3s)
+[WebServer] 6:54:07 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   29 [chromium] › tests/browser/ranking.spec.ts:134:1 › 送信失敗後も結果と共有を保ち同じIDで再送する (1.4s)
+[WebServer] 6:54:08 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   30 [chromium] › tests/browser/ranking.spec.ts:149:1 › 通信停止中も名前なしのプレイと再プレイが使えランキングは再取得できる (1.3s)
+  ✓   31 [chromium] › tests/browser/reference.spec.ts:3:1 › viewport全体の実描画でPC・縦・横の台を最大限収める (1.3s)
+  ✓   32 [chromium] › tests/browser/remaining-ball.spec.ts:15:1 › iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する (4.2s)
+[WebServer] 6:54:15 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   33 [chromium] › tests/browser/remaining-ball.spec.ts:58:1 › 実アプリで加速球の一時停止・手動再開・リトライを保つ (1.6s)
+  ✓   34 [chromium] › tests/browser/remaining-ball.spec.ts:84:1 › ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる (594ms)
+[WebServer] 6:54:17 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   35 [chromium] › tests/browser/render-loop.spec.ts:4:1 › 停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する (1.8s)
+  ✓   36 [chromium] › tests/browser/result-layout.spec.ts:5:1 › 全44コメントは320px幅でも2行以内、順位まで見え横スクロールしない (1.6s)
+[WebServer] 6:54:21 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   37 [chromium] › tests/browser/result-position.spec.ts:41:1 › 登録確認前には取得せず、100位超でもDB自己ベストの順位を表示する (1.3s)
+[WebServer] 6:54:22 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   38 [chromium] › tests/browser/result-position.spec.ts:49:1 › スコア送信失敗時は順位を出さず同じIDの再送成功後に表示する (1.4s)
+[WebServer] 6:54:23 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   39 [chromium] › tests/browser/result-position.spec.ts:56:1 › 順位通信失敗は再取得でき、TOP100の同順位も控えめに表示する (1.4s)
+[WebServer] 6:54:25 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   40 [chromium] › tests/browser/result-position.spec.ts:63:1 › 順位応答待ちで再プレイしても古い順位は新プレイに表示しない (1.6s)
+[WebServer] 6:54:26 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   41 [chromium] › tests/browser/result-position.spec.ts:71:1 › 集計対象外の名前には架空の順位を表示しない (1.6s)
+  ✓   42 [chromium] › tests/browser/result-presentation.spec.ts:5:1 › 数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する (3.8s)
+  ✓   43 [chromium] › tests/browser/result-presentation.spec.ts:38:1 › 結果電撃の実フレームを記録し、5本上限と継続発生を確認する (5.3s)
+[WebServer] 6:54:37 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   44 [chromium] › tests/browser/retry.spec.ts:5:1 › 再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない (14.5s)
+  ✓   45 [chromium] › tests/browser/sharing.spec.ts:71:1 › 自己ベストなしのホームから通常リンクで正式URLと汎用文を開ける (677ms)
+[WebServer] 6:54:52 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   46 [chromium] › tests/browser/sharing.spec.ts:84:1 › 自己ベストと今回の結果を区別し、通信失敗・再挑戦・0点・大きな値・ホームでも共有値を保つ (2.2s)
+  ✓   47 [chromium] › tests/browser/sharing.spec.ts:119:5 › 共有リンクは320x568・文字100%でも読めて操作できる (781ms)
+  ✓   48 [chromium] › tests/browser/sharing.spec.ts:119:5 › 共有リンクは320x568・文字200%でも読めて操作できる (831ms)
+  ✓   49 [chromium] › tests/browser/sharing.spec.ts:119:5 › 共有リンクは568x320・文字100%でも読めて操作できる (811ms)
+  ✓   50 [chromium] › tests/browser/sharing.spec.ts:119:5 › 共有リンクは568x320・文字200%でも読めて操作できる (909ms)
+  ✓   51 [chromium] › tests/browser/sharing.spec.ts:119:5 › 共有リンクは1280x720・文字100%でも読めて操作できる (1.1s)
+  ✓   52 [chromium] › tests/browser/sharing.spec.ts:119:5 › 共有リンクは1280x720・文字200%でも読めて操作できる (1.0s)
+[WebServer] 6:55:00 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   53 [chromium] › tests/browser/startup-loading.spec.ts:5:3 › 準備済みならpauseから次のRAFを待たず、案内を一度も出さずに開始する (1.4s)
+[WebServer] 6:55:01 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   54 [chromium] › tests/browser/startup-loading.spec.ts:5:3 › 準備済みならresultから次のRAFを待たず、案内を一度も出さずに開始する (1.3s)
+[WebServer] 6:55:03 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   55 [chromium] › tests/browser/startup-loading.spec.ts:5:3 › 準備済みならhomeから次のRAFを待たず、案内を一度も出さずに開始する (1.4s)
+[WebServer] 6:55:04 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   56 [chromium] › tests/browser/startup-loading.spec.ts:45:1 › 描画の準備中は進捗と中央のルールを表示し、ゲームと入力は開始しない (1.4s)
+[WebServer] 6:55:05 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   57 [chromium] › tests/browser/startup-loading.spec.ts:69:1 › 準備をキャンセルしたあと古い完了通知が来ても勝手に開始せず、次は準備済み資源を使う (1.2s)
+[WebServer] 6:55:07 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   58 [chromium] › tests/browser/startup-loading.spec.ts:83:1 › 準備の失敗はルール付きの再試行画面になり、手動の再試行で開始できる (1.3s)
+[WebServer] 6:55:08 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   59 [chromium] › tests/browser/startup-loading.spec.ts:94:1 › ウィンドウのresizeがなくてもコートの表示サイズ変更後にラケットを動かせる (1.5s)
+[WebServer] 6:55:10 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   60 [chromium] › tests/browser/startup-loading.spec.ts:113:1 › 準備中の描画喪失から復旧しても手動の再試行まで開始しない (1.3s)
+[WebServer] 6:55:11 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   61 [chromium] › tests/browser/startup-loading.spec.ts:126:1 › ドラッグ中にコートだけのサイズが変わっても指を離すまでラケットが追従する (1.3s)
+  ✓   62 [chromium] › tests/browser/startup-loading.spec.ts:146:1 › 狭い画面と文字200%でも中央の案内・進捗・終了条件・中断操作を読める (3.6s)
+[WebServer] 6:55:16 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   63 [chromium] › tests/browser/startup-resize.spec.ts:6:1 › スマホの高さ変更をまたいで同じ指のドラッグを継続できる (1.2s)
+[WebServer] 6:55:17 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   64 [chromium] › tests/browser/startup-resize.spec.ts:27:1 › 開始直後のresizeとキーボードを閉じる高さ変更ではポーズにならない (1.7s)
+(node:19896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+[WebServer] 6:55:19 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   65 [chromium] › tests/browser/basic-play.spec.ts:12:1 › 開始→直接配置・ドラッグ→返球→失球→結果→再挑戦 (16.9s)
+[WebServer] 6:55:43 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   66 [chromium] › tests/browser/basic-play.spec.ts:50:1 › 停止中は描画を保持し、再開操作でだけ進む (16.7s)
+[WebServer] 6:55:53 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   67 [chromium] › tests/browser/basic-play.spec.ts:67:1 › タッチの絶対位置ドラッグでラケットを動かせる (8.1s)
+[WebServer] 6:56:01 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   68 [chromium] › tests/browser/contact.spec.ts:36:1 › ワンバウンド後の見える球にラケットを合わせれば返球できる (8.1s)
+[WebServer] 6:56:09 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   69 [chromium] › tests/browser/contact.spec.ts:57:1 › 見えている球にドラッグで合わせ、3ラリーをつなげる (33.6s)
+[WebServer] 6:56:42 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   70 [chromium] › tests/browser/direct-input.spec.ts:34:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844 (2.4s)
+[WebServer] 6:56:45 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   71 [chromium] › tests/browser/direct-input.spec.ts:34:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390 (2.6s)
+[WebServer] 6:56:48 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   72 [chromium] › tests/browser/direct-input.spec.ts:34:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720 (4.3s)
+[WebServer] 6:56:52 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   73 [chromium] › tests/browser/direct-input.spec.ts:34:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360 (2.0s)
+[WebServer] 6:56:54 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   74 [chromium] › tests/browser/direct-input.spec.ts:67:1 › 二本指は両releaseで停止し、追加指やドラッグでは停止しない (1.5s)
+[WebServer] 6:56:55 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   75 [chromium] › tests/browser/direct-input.spec.ts:96:1 › 情報上の入力・safe area・resize連発・メニューに古い入力が残らない (1.3s)
+[WebServer] 6:56:57 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   76 [chromium] › tests/browser/evidence.spec.ts:6:3 › 画面の証拠 › 縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す (7.0s)
+  ✓   77 [chromium] › tests/browser/evidence.spec.ts:47:1 › 実際のWeb Audioで自分用・相手用の異なる短音を合成できる (466ms)
+  ✓   78 [chromium] › tests/browser/extended.spec.ts:6:1 › 460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する (13.6s)
+  ✓   79 [chromium] › tests/browser/extended.spec.ts:31:1 › 返球・台面の花火を実際の接触イベントで描き、停止・リトライで過去の粒子を残さない (4.2s)
+[WebServer] 6:57:22 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   80 [chromium] › tests/browser/extended.spec.ts:54:1 › 実アプリのホーム遷移で花火を直ちに消し、再挑戦へ持ち越さない (5.0s)
+  ✓   81 [chromium] › tests/browser/milestones.spec.ts:6:1 › 専用状態で増球の境界と全演出の表示・発光終了を撮影する (5.4s)
+  ✓   82 [chromium] › tests/browser/milestones.spec.ts:41:1 › 390の強弱を実描画で比較し、0.6秒の動きを保存する (4.8s)
+  ✓   83 [chromium] › tests/browser/smash.spec.ts:5:1 › 450の予告はミュート・落球後4球・停止中でも見え、相手側の球を隠す (8.4s)
+  ✓   84 [chromium] › tests/browser/smash.spec.ts:60:1 › 予告音を実際のWeb Audioで合成して保存する (455ms)
+(node:20764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   85 [chromium] › tests/browser/celebrations.spec.ts:5:1 › 落球電撃の増大・4球目の揺れと全14種類の落球数字を描き、指定色へ点滅する (2.9s)
+  ✓   86 [chromium] › tests/browser/celebrations.spec.ts:33:1 › ゾロ目の緑電撃と100単位の床壁点滅が5秒で消え、停止・復旧・新規プレイを尊重する (7.3s)
+(node:20864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+[WebServer] 6:57:58 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   87 [chromium] › tests/browser/extended-load.spec.ts:8:1 › 555の30球から同時返球・失球・増球・全スマッシュを30ゲーム秒継続する (20.4s)
+(node:20985) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+[WebServer] 6:58:19 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   88 [chromium] › tests/browser/quality.spec.ts:14:1 › 開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む (1.4m)
+[WebServer] 6:59:46 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   89 [chromium] › tests/browser/quality.spec.ts:54:1 › 縦横・44pxボタン・200%文字・ラベル・安全余白を確認 (3.3s)
+[WebServer] 6:59:49 PM [vite] (client) [console.warn] THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.
+  ✓   90 [chromium] › tests/browser/quality.spec.ts:100:1 › 450の30球と以後の同時返球・失球・増球・スマッシュを30ゲーム秒維持する (18.6s)
+  ✓   91 [chromium] › tests/browser/quality.spec.ts:146:1 › WebGL初期化不可でも再試行画面からホームへ戻り自己ベストを保つ (3.6s)
+(node:21313) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   92 [webkit] › tests/browser/audio-fanfare.spec.ts:6:1 › renders a bounded musical fanfare through the production volume, fallback and game-over graph (4.3s)
+  ✓   93 [webkit] › tests/browser/audio-fanfare.spec.ts:65:1 › naturally ends the protected fanfare after game-over and releases every native source (2.3s)
+  ✓   94 [webkit] › tests/browser/audio-layered.spec.ts:12:1 › 多層音と最終出力を44.1/48kHzで合成、単発と上限+減衰の波形を保存 (3.1s)
+  ✓   95 [webkit] › tests/browser/audio-layered.spec.ts:78:1 › 実AudioContextで多球・停止・復旧・run切替と部分失敗を繰り返し、予約音とnodeを回収 (2.5s)
+  ✓   96 [webkit] › tests/browser/audio.spec.ts:24:1 › 打球ノード生成失敗を案内し、一時停止メニューから明示的に音声を再試行できる (6.1s)
+  ✓   97 [webkit] › tests/browser/audio.spec.ts:56:1 › 開始・自他の実ノード・ミュート・ブラウザ音声中断と手動復帰 (6.9s)
+  ✓   98 [webkit] › tests/browser/audio.spec.ts:84:1 › 音声再開拒否でも無音で継続し、ミュートと明示的な音声の再試行が使える (4.5s)
+  ✓   99 [webkit] › tests/browser/audio.spec.ts:112:1 › 実Web Audioで自他・予告・4球・最大重なりを合成しピークと無音でないことを検査 (915ms)
+  ✓  100 [webkit] › tests/browser/boot.spec.ts:3:1 › ホームにタイトルと開始ボタンを表示し、自動で開始しない (743ms)
+  ✓  101 [webkit] › tests/browser/glow-timing.spec.ts:4:1 › 指定された発光ラリーの直前・到達時を同一画角で撮影する (9.1s)
+  ✓  102 [webkit] › tests/browser/lifecycle.spec.ts:12:1 › 通常の指離れ・2本目・追跡喪失・回転で入力が残らない (4.6s)
+  ✓  103 [webkit] › tests/browser/lifecycle.spec.ts:42:1 › 非表示・画面ロック相当のpagehideでM10・球・時刻が止まり、手動で再開 (6.8s)
+  ✓  104 [webkit] › tests/browser/lifecycle.spec.ts:59:1 › WebGL復旧で描画を再作成し、停止中の390・スマッシュ予告を保持する (4.9s)
+  ✓  105 [webkit] › tests/browser/lifecycle.spec.ts:77:1 › 実際のWEBGL_lose_contextによる喪失と復旧でも手動再開を待つ (3.0s)
+  ✓  106 [webkit] › tests/browser/lifecycle.spec.ts:95:1 › 描画再作成の失敗時も状態を壊さずホームへ戻れる (1.7s)
+  ✓  107 [webkit] › tests/browser/loss-limit.spec.ts:4:1 › 99落球では継続し100球目で残球があっても結果へ進み再挑戦で0に戻る (6.2s)
+  ✓  108 [webkit] › tests/browser/loss-limit.spec.ts:50:1 › 狭い画面でもラリー・残球・落球数が重ならず表示される (1.9s)
+  ✓  109 [webkit] › tests/browser/occlusion.spec.ts:3:1 › 球が前後に混在しても、ネットより手前の虹色の輪郭がネットに透けない (885ms)
+  ✓  110 [webkit] › tests/browser/occlusion.spec.ts:10:1 › 球と虹色の輪郭はラケットとの前後関係を守る (1.6s)
+  ✓  111 [webkit] › tests/browser/occlusion.spec.ts:37:1 › 虹色は照明がなくても発光し、相手床・壁は閾値まで暗い (806ms)
+  ✓  112 [webkit] › tests/browser/preferences.spec.ts:4:1 › 全設定と自己ベストが再読込・リトライを越えて残る (4.5s)
+  ✓  113 [webkit] › tests/browser/preferences.spec.ts:41:1 › 保存拒否でも設定と自己ベストをメモリに保持して遊べる (1.5s)
+  ✓  114 [webkit] › tests/browser/ranking-isolation.spec.ts:3:1 › 通常のゲーム開始・再プレイも本番APIへ送らず検査内で確認応答を返す (4.5s)
+  ✓  115 [webkit] › tests/browser/ranking.spec.ts:36:1 › 名前なしで遊べて結果には上位30名と正式URLのXシェアが表示される (2.0s)
+  ✓  116 [webkit] › tests/browser/ranking.spec.ts:60:1 › 匿名開始の応答喪失後もすぐ遊べてonline復帰時は同じIDで再送する (1.8s)
+  ✓  117 [webkit] › tests/browser/ranking.spec.ts:76:1 › 通信不能で始めた匿名2回の記録を再読込後も保ち復旧時に送る (2.2s)
+  ✓  118 [webkit] › tests/browser/ranking.spec.ts:104:1 › online復帰が古い通信の失敗より先でも送信待ちを再開する (1.7s)
+  ✓  119 [webkit] › tests/browser/ranking.spec.ts:119:1 › 名前ありは開始時に一度記録し通常終了を自動送信する (1.7s)
+  ✓  120 [webkit] › tests/browser/ranking.spec.ts:134:1 › 送信失敗後も結果と共有を保ち同じIDで再送する (1.9s)
+  ✓  121 [webkit] › tests/browser/ranking.spec.ts:149:1 › 通信停止中も名前なしのプレイと再プレイが使えランキングは再取得できる (1.8s)
+  ✓  122 [webkit] › tests/browser/reference.spec.ts:3:1 › viewport全体の実描画でPC・縦・横の台を最大限収める (3.3s)
+  ✓  123 [webkit] › tests/browser/remaining-ball.spec.ts:15:1 › iPhone縦画面で待機球の本体・影・発光を隠し解放コートの飛行球だけ表示する (10.8s)
+  ✓  124 [webkit] › tests/browser/remaining-ball.spec.ts:58:1 › 実アプリで加速球の一時停止・手動再開・リトライを保つ (2.7s)
+  ✓  125 [webkit] › tests/browser/remaining-ball.spec.ts:84:1 › ブラウザの実シミュレーション飛行時間が境界・残球数・後半スマッシュの指定比になる (788ms)
+  ✓  126 [webkit] › tests/browser/render-loop.spec.ts:4:1 › 停止・終了中は同じ3D画面を繰り返し描かず、回転と再開時には描画する (2.4s)
+  ✓  127 [webkit] › tests/browser/result-layout.spec.ts:5:1 › 全44コメントは320px幅でも2行以内、順位まで見え横スクロールしない (3.4s)
+  ✓  128 [webkit] › tests/browser/result-position.spec.ts:41:1 › 登録確認前には取得せず、100位超でもDB自己ベストの順位を表示する (1.7s)
+  ✓  129 [webkit] › tests/browser/result-position.spec.ts:49:1 › スコア送信失敗時は順位を出さず同じIDの再送成功後に表示する (1.8s)
+  ✓  130 [webkit] › tests/browser/result-position.spec.ts:56:1 › 順位通信失敗は再取得でき、TOP100の同順位も控えめに表示する (1.9s)
+  ✓  131 [webkit] › tests/browser/result-position.spec.ts:63:1 › 順位応答待ちで再プレイしても古い順位は新プレイに表示しない (2.1s)
+  ✓  132 [webkit] › tests/browser/result-position.spec.ts:71:1 › 集計対象外の名前には架空の順位を表示しない (1.8s)
+  ✓  133 [webkit] › tests/browser/result-presentation.spec.ts:5:1 › 数字の全段階と継続する電撃をiPhone 17 Pro相当の画面で検証する (4.6s)
+  ✓  134 [webkit] › tests/browser/result-presentation.spec.ts:38:1 › 結果電撃の実フレームを記録し、5本上限と継続発生を確認する (5.7s)
+  ✓  135 [webkit] › tests/browser/retry.spec.ts:5:1 › 再挑戦20回・ホーム往復20回でループ・購読・描画資源が増殖しない (10.0s)
+  ✓  136 [webkit] › tests/browser/sharing.spec.ts:71:1 › 自己ベストなしのホームから通常リンクで正式URLと汎用文を開ける (1.2s)
+  ✓  137 [webkit] › tests/browser/sharing.spec.ts:84:1 › 自己ベストと今回の結果を区別し、通信失敗・再挑戦・0点・大きな値・ホームでも共有値を保つ (3.3s)
+  ✓  138 [webkit] › tests/browser/sharing.spec.ts:119:5 › 共有リンクは320x568・文字100%でも読めて操作できる (1.5s)
+  ✓  139 [webkit] › tests/browser/sharing.spec.ts:119:5 › 共有リンクは320x568・文字200%でも読めて操作できる (1.7s)
+  ✓  140 [webkit] › tests/browser/sharing.spec.ts:119:5 › 共有リンクは568x320・文字100%でも読めて操作できる (1.8s)
+  ✓  141 [webkit] › tests/browser/sharing.spec.ts:119:5 › 共有リンクは568x320・文字200%でも読めて操作できる (1.7s)
+  ✓  142 [webkit] › tests/browser/sharing.spec.ts:119:5 › 共有リンクは1280x720・文字100%でも読めて操作できる (2.9s)
+  ✓  143 [webkit] › tests/browser/sharing.spec.ts:119:5 › 共有リンクは1280x720・文字200%でも読めて操作できる (3.2s)
+  ✓  144 [webkit] › tests/browser/startup-loading.spec.ts:5:3 › 準備済みならpauseから次のRAFを待たず、案内を一度も出さずに開始する (1.8s)
+  ✓  145 [webkit] › tests/browser/startup-loading.spec.ts:5:3 › 準備済みならresultから次のRAFを待たず、案内を一度も出さずに開始する (1.8s)
+  ✓  146 [webkit] › tests/browser/startup-loading.spec.ts:5:3 › 準備済みならhomeから次のRAFを待たず、案内を一度も出さずに開始する (1.8s)
+  ✓  147 [webkit] › tests/browser/startup-loading.spec.ts:45:1 › 描画の準備中は進捗と中央のルールを表示し、ゲームと入力は開始しない (1.8s)
+  ✓  148 [webkit] › tests/browser/startup-loading.spec.ts:69:1 › 準備をキャンセルしたあと古い完了通知が来ても勝手に開始せず、次は準備済み資源を使う (1.8s)
+  ✓  149 [webkit] › tests/browser/startup-loading.spec.ts:83:1 › 準備の失敗はルール付きの再試行画面になり、手動の再試行で開始できる (1.7s)
+  ✓  150 [webkit] › tests/browser/startup-loading.spec.ts:94:1 › ウィンドウのresizeがなくてもコートの表示サイズ変更後にラケットを動かせる (1.7s)
+  ✓  151 [webkit] › tests/browser/startup-loading.spec.ts:113:1 › 準備中の描画喪失から復旧しても手動の再試行まで開始しない (1.7s)
+  ✓  152 [webkit] › tests/browser/startup-loading.spec.ts:126:1 › ドラッグ中にコートだけのサイズが変わっても指を離すまでラケットが追従する (1.8s)
+  ✓  153 [webkit] › tests/browser/startup-loading.spec.ts:146:1 › 狭い画面と文字200%でも中央の案内・進捗・終了条件・中断操作を読める (6.8s)
+  ✓  154 [webkit] › tests/browser/startup-resize.spec.ts:6:1 › スマホの高さ変更をまたいで同じ指のドラッグを継続できる (1.8s)
+  ✓  155 [webkit] › tests/browser/startup-resize.spec.ts:27:1 › 開始直後のresizeとキーボードを閉じる高さ変更ではポーズにならない (2.4s)
+(node:26905) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  156 [webkit] › tests/browser/basic-play.spec.ts:12:1 › 開始→直接配置・ドラッグ→返球→失球→結果→再挑戦 (10.1s)
+  ✓  157 [webkit] › tests/browser/basic-play.spec.ts:50:1 › 停止中は描画を保持し、再開操作でだけ進む (6.8s)
+  ✓  158 [webkit] › tests/browser/basic-play.spec.ts:67:1 › タッチの絶対位置ドラッグでラケットを動かせる (4.7s)
+  ✓  159 [webkit] › tests/browser/contact.spec.ts:36:1 › ワンバウンド後の見える球にラケットを合わせれば返球できる (4.0s)
+  ✓  160 [webkit] › tests/browser/contact.spec.ts:57:1 › 見えている球にドラッグで合わせ、3ラリーをつなげる (7.0s)
+  ✓  161 [webkit] › tests/browser/direct-input.spec.ts:34:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 390×844 (3.5s)
+  ✓  162 [webkit] › tests/browser/direct-input.spec.ts:34:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 844×390 (3.7s)
+  ✓  163 [webkit] › tests/browser/direct-input.spec.ts:34:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 1280×720 (6.0s)
+  ✓  164 [webkit] › tests/browser/direct-input.spec.ts:34:3 › 実canvasのtap/drag/releaseが投影位置に一致し保持する 280×360 (2.6s)
+  ✓  165 [webkit] › tests/browser/direct-input.spec.ts:67:1 › 二本指は両releaseで停止し、追加指やドラッグでは停止しない (2.4s)
+  ✓  166 [webkit] › tests/browser/direct-input.spec.ts:96:1 › 情報上の入力・safe area・resize連発・メニューに古い入力が残らない (2.2s)
+  ✓  167 [webkit] › tests/browser/evidence.spec.ts:6:3 › 画面の証拠 › 縦・横・PCのレイアウトと開始・停止・結果を画像・動画に残す (6.1s)
+  ✓  168 [webkit] › tests/browser/evidence.spec.ts:47:1 › 実際のWeb Audioで自分用・相手用の異なる短音を合成できる (709ms)
+  ✓  169 [webkit] › tests/browser/extended.spec.ts:6:1 › 460〜555の追加段階を表示し、相手側の継ぎ目とランダムな動きを保存する (12.5s)
+  ✓  170 [webkit] › tests/browser/extended.spec.ts:31:1 › 返球・台面の花火を実際の接触イベントで描き、停止・リトライで過去の粒子を残さない (2.8s)
+  ✓  171 [webkit] › tests/browser/extended.spec.ts:54:1 › 実アプリのホーム遷移で花火を直ちに消し、再挑戦へ持ち越さない (2.9s)
+  ✓  172 [webkit] › tests/browser/milestones.spec.ts:6:1 › 専用状態で増球の境界と全演出の表示・発光終了を撮影する (7.7s)
+  ✓  173 [webkit] › tests/browser/milestones.spec.ts:41:1 › 390の強弱を実描画で比較し、0.6秒の動きを保存する (3.5s)
+  ✓  174 [webkit] › tests/browser/smash.spec.ts:5:1 › 450の予告はミュート・落球後4球・停止中でも見え、相手側の球を隠す (4.6s)
+  ✓  175 [webkit] › tests/browser/smash.spec.ts:60:1 › 予告音を実際のWeb Audioで合成して保存する (726ms)
+(node:28383) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  176 [webkit] › tests/browser/celebrations.spec.ts:5:1 › 落球電撃の増大・4球目の揺れと全14種類の落球数字を描き、指定色へ点滅する (7.5s)
+  ✓  177 [webkit] › tests/browser/celebrations.spec.ts:33:1 › ゾロ目の緑電撃と100単位の床壁点滅が5秒で消え、停止・復旧・新規プレイを尊重する (9.1s)
+(node:28532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  178 [webkit] › tests/browser/extended-load.spec.ts:8:1 › 555の30球から同時返球・失球・増球・全スマッシュを30ゲーム秒継続する (9.1s)
+(node:28630) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  179 [webkit] › tests/browser/quality.spec.ts:14:1 › 開始から実際に返球して5・10・20の増球を通過し、21ラリーへ進む (24.7s)
+  ✓  180 [webkit] › tests/browser/quality.spec.ts:54:1 › 縦横・44pxボタン・200%文字・ラベル・安全余白を確認 (5.4s)
+  ✓  181 [webkit] › tests/browser/quality.spec.ts:100:1 › 450の30球と以後の同時返球・失球・増球・スマッシュを30ゲーム秒維持する (10.2s)
+  ✓  182 [webkit] › tests/browser/quality.spec.ts:146:1 › WebGL初期化不可でも再試行画面からホームへ戻り自己ベストを保つ (890ms)
+
+  182 passed (13.9m)
