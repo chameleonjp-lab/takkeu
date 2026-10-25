@@ -98,4 +98,6 @@ npm audit --json
 
 変更前main `7b48f22` も同じ代表条件（standard・450・60秒）を隔離コピーで比較。WebKitは1933 frames / p95 42ms（今回1905 / 43ms）、Chromiumは再測定844 frames / p95 133.4ms（今回844 / 150ms）。いずれもLinux目安未達。Chromium初回は約2秒で既存slow-frame保護が停止したためFPS比較に使用せず、記録を残して1回だけ再測定した。単発比較から厳密な性能差・実機性能を結論しない。今回のゲーム実装ファイルは未変更で、結果電撃はゲーム中に描画されない。
 
-全測定・全フレーム: `final-performance-results.json`, `baseline-main-performance-*.json`, `evidence/performance/`。参考目安は各フレーム25ms以内が95%以上。実行テストが成功していても、測定の `measurementVerdict` は未達であることを上表に明示した。
+全測定・全フレーム: `final-performance-results.json.gz`, `baseline-main-performance-*.json`, `evidence/performance/`。参考目安は各フレーム25ms以内が95%以上。実行テストが成功していても、測定の `measurementVerdict` は未達であることを上表に明示した。
+
+大きな正式JSON・全フレーム記録は内容を省略せずgzip化し、PRのソース差分を読める形にした。`compressed-artifacts.json` に元サイズ・SHA256を記録し、全ファイルの展開一致を検証済み。`gzip -dk <file>.json.gz` で元のJSONを取り出せる。監査・要約・通常ログはそのまま読める。
