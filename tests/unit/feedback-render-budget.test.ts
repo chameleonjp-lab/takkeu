@@ -59,3 +59,10 @@ it('capacity reserves the final outline alongside the maximum512 distinct hit fa
  const s=state({score:4512,hits,lostBallCount:100,cues:[{id:'end',kind:'loss-final',value:100,at:20,duration:2,priority:100}]});
  v.update({...snap(4512),phase:'gameover'},s);expect(v.stats().tableQuads).toBe(512*12+4);expect(v.stats().activeEffects).toContain('loss-final');expect(hits).toHaveLength(512);v.dispose();
 });
+it('the quiet backdrop removes the large floor from1500 while ball matrices and paddle coordinates remain identical',()=>{
+ const objects=createObjects(DEFAULT_CONFIG),base=snap(1499),balls=Array.from({length:30},(_,i)=>({id:i+1,phase:'incoming' as const,smash:false,position:{x:(i%6-2.5)*.2,y:.4,z:.8}}));
+ const s={...base,balls,paddle:{x:.4,y:.65}},before=JSON.stringify(s);applyPresentation(objects,s);
+ expect(objects.parts.selfFloor.visible).toBe(true);const batches:InstancedMesh[]=[];objects.root.traverse(n=>{if(n instanceof InstancedMesh)batches.push(n);});const matrices=batches.map(b=>Array.from(b.instanceMatrix.array));
+ for(const score of[1500,2600,3000,4000]){applyPresentation(objects,{...s,score});expect(objects.parts.selfFloor.visible).toBe(false);batches.forEach((b,i)=>{expect(b.count).toBe(30);expect(Array.from(b.instanceMatrix.array)).toEqual(matrices[i]);});expect(objects.playerPaddle.position.x).toBe(.4);expect(objects.playerPaddle.position.y).toBe(.65);}
+ expect(JSON.stringify(s)).toBe(before);objects.dispose();
+});

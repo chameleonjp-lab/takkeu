@@ -34,7 +34,8 @@ export function resolvePresentation(snapshot: GameSnapshot): PresentationState {
       opponentCourtRight: part(190,false,true), opponentCourtLeft: part(240,false,true), courtEdges: part(70, true),
       net: part(130, true), playerRacketBody: reached(390) ? part(390, true) : { visible: true, rainbow: false, ...(reached(270) ? { solid: true } : {}) }, playerRacketEdge: part(100, true),
       opponentRacketBody: part(330,false,true), opponentRacketEdge: part(300,false,true), opponentBody: part(360,false,true),
-      selfFloor: part(410, true), opponentFloor: part(380,false,true), opponentWall: part(420,false,true),structure:part(460,true),
+      // Later stages keep a quiet backdrop; floor decoration has no role in physics or input mapping.
+      selfFloor: {visible:snapshot.score<1500,rainbow:reached(410)}, opponentFloor: part(380,false,true), opponentWall: part(420,false,true),structure:part(460,true),
     },
     balls: Object.fromEntries(snapshot.balls.map(ball => [ball.id, { visible: isBallVisible(ball, snapshot), rainbow: glowing(snapshot) }])),
     pulseStrength: reached(390) ? samplePulse(snapshot.simTime) : 1,

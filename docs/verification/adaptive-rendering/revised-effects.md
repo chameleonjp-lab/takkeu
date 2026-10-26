@@ -23,16 +23,21 @@
 - 追加演出の4batchを、打球位置の12segment輪・落球位置の6ray印・最後の4edge輪郭の2batchへ整理。常設の星/流星/多重輪/三色電撃/大到達geometryを削除。到達通知と専用fanfareは維持。
 - 同時刻・同位置のhit/loss光は固定1024slotの表で一度だけ描く。異なる位置/時刻は厳密比較し、score/event/audioの事実は消さない。入力や当たり判定を呼び出す経路はない。
 - 1000以降のfullscreen century祝福層を削除。1500以降のlegacy電撃/揺れは局所feedbackと既存の落球数字へ統合。1500以降の背景は暗くし、それ以前の490〜1499の虹fieldは維持する。
+- 1500以降の大きな床を非表示にする。追加の固定scene24対照（4ラリー×前後×3回）ではGPU中央値が1500で70.21→39.12ms、2600で71.79→43.33ms、3000で69.19→38.20ms、4000で69.95→42.93ms。球・台・ラケットは同一状態のまま、描画31回/14,194triangleへ減る。製品の60秒RAF改善率とは区別する。
 - 共通GPU資源を段階で破棄しない。早期stageのfield/legacy bufferはretryでも使う。新feedback bufferは固定・使用prefix転送・動的境界のため既存どおりfrustumCulled=false。
 
 CPU上のgame演出事実はHUD/音声/終了clockにも使うため維持する。RALLY_EFFECTSの設定表が存在することを「全43演出が画面に残った」とは報告しない。
 
 ## テストの更新と失敗記録
 
-新しい予算/同時光/位置/期限/終了/資源/物理半径の9unitを全RED→GREEN。独立レビューのF01（512hitでtableが満杯となりfinal4edgeが欠落）も専用test RED→GREENで修正し、+4予約をtableへ移した。最終型検査と924unitが成功、skip0。重点22browserは容量修正前の参考成功で、最終受入は修正後commitの全CIで判定する。
+新しい予算/同時光/位置/期限/終了/資源/物理半径の9unitを全RED→GREEN。独立レビューのF01（512hitでtableが満杯となりfinal4edgeが欠落）も専用test RED→GREENで修正し、+4予約をtableへ移した。床の簡略化も球の3種類のinstance行列・ラケット座標が変わらない検査をRED→GREENで追加。型検査と925unitが成功、skip0。重点22browserは容量修正前の参考成功で、最終受入は修正後commitの全CIで判定する。
 
-旧render93caseは36caseへ置換し、予算10caseを追加。削除した形状の検査、旧タイトル、初期の失敗、置換先はrevised-test-scope-map.jsonと全JSON/logへ保存する。旧ゲーム/音声/入力/ランキング/結果/公開SHA照合のテストは削除しない。初回全980では73件のobsolete装飾検査と1件のsandbox子プロセス失敗があり、後者は検査内容を変えず実行可能な権限設定で成功した。新資源検査の5秒timeoutは大きなtyped array値比較をbuffer identityの厳密比較へ変更し、回数20と制限5秒は維持した。
+旧render93caseは36caseへ置換し、予算11caseを追加。削除した形状の検査、旧タイトル、初期の失敗、置換先はrevised-test-scope-map.jsonと全JSON/logへ保存する。旧ゲーム/音声/入力/ランキング/結果/公開SHA照合のテストは削除しない。初回全980では73件のobsolete装飾検査と1件のsandbox子プロセス失敗があり、後者は検査内容を変えず実行可能な権限設定で成功した。新資源検査の5秒timeoutは大きなtyped array値比較をbuffer identityの厳密比較へ変更し、回数20と制限5秒は維持した。
 
 ## 残る検証
 
 正式60秒性能、低polyの白中心/実シルエット、pointer精度、auto切替時の再確保、長期retry資源、点滅の旧7警告、全CIのcheckout SHA、最終独立レビューを記録する。ここまでの診断やunitの成功から、実機iPhoneの快適性・正式WCAG・人間の視認/試聴を主張しない。Draftを維持する。
+
+## CIの巨大diff収集
+
+517286cのpush CIは全成功、PR CIはChromiumの3返球操作試験が60秒で失敗した。以前の95cb9d7でも同じ差があった。PRログにはPlaywrightの自動git diffが3秒でtimeoutした記録がある。sparse cloneの外にある巨大な過去証拠までdiff対象になるため、全3設定でcaptureGitInfo.diffをfalseにし、commit情報は保持する。git処理の終了時にはPlaywrightが子プロセスをkillする実装であり、これを返球失敗の原因と断定しない。ゲーム・テスト内容・60秒制限・性能閾値・回数・retries=0は変えず、新commitのCIで再判定する。元の失敗ログとtraceは保存する。

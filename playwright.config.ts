@@ -1,6 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
+  // Historical verification archives make PR diffs very large in the sparse clone.
+  // Keep the tested commit identity; GitHub already retains the complete code diff.
+  captureGitInfo: { commit: true, diff: false },
   testDir: './tests/browser',
   fullyParallel: true,
   // Software WebGL browser/context startup is included in each test's timeout.
