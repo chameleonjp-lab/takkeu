@@ -169,7 +169,7 @@ begin
     'finished_at', v_now
   );
 end;
-$function$
+$function$;
 
 
 CREATE OR REPLACE FUNCTION public.submit_score_idempotent_v1(p_play_id uuid, p_submission_id uuid, p_display_name text, p_game_slug text, p_score integer, p_client_version text)
@@ -504,7 +504,7 @@ begin
     v_is_new_best,
     false;
 end;
-$function$
+$function$;
 
 
 CREATE OR REPLACE FUNCTION public.submit_score(p_display_name text, p_game_slug text, p_score integer, p_client_version text DEFAULT ''::text)
@@ -535,5 +535,4 @@ begin
     p_display_name, p_game_slug, p_score, p_client_version
   );
 end;
-$function$
-
+$function$;
