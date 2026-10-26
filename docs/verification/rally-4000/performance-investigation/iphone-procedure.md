@@ -8,6 +8,8 @@
 
 このページはランキングの模擬応答を使い、さらに同一origin以外のfetchを拒否する。本番Supabaseへスコアを送らない。Web Inspectorは不要。ページ・起動中のViteは試験終了後に閉じる。
 
+LAN HTTPではSafariの`crypto.randomUUID`が利用できない場合があるため、このテスト入口だけに`getRandomValues`を使うUUID互換処理を置いている。本番のランキング・ID生成は変更していない。ブラウザ例外/未処理Promise拒否は測定JSONの`errors`へ保存する。`errors`が空でない記録を正常な性能測定として採用しない。HTTP相当originでの起動・記録完了をChromium/WebKitで検証するが、実機Safariの確認とは区別する。
+
 ## 計測
 
 1. iPhoneモデル、iOS/Safari版、対象commit、画面方向、電源/低電力状態、充電有無、室温、開始時の熱さ、画質を記録する。画面収録の有無も記録し、比較間で揃える。

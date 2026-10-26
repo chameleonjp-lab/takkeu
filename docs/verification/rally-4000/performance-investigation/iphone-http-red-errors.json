@@ -1,0 +1,52 @@
+[
+  {
+    "trace": "test-results/iphone-performance-LAN-HTT-de167-e-origin\u3067\u3082\u8d77\u52d5\u305760\u79d2\u306e\u8a3a\u65ad\u8a18\u9332\u3092\u4fdd\u5b58\u3067\u304d\u308b-webkit/trace.zip",
+    "entry": "1-trace.trace",
+    "event": {
+      "type": "event",
+      "time": 9779.586,
+      "class": "BrowserContext",
+      "method": "pageError",
+      "params": {
+        "error": {
+          "error": {
+            "message": "TypeError: crypto.randomUUID is not a function. (In 'crypto.randomUUID()', 'crypto.randomUUID' is undefined)",
+            "stack": "Unhandled Promise Rejection: TypeError: crypto.randomUUID is not a function. (In 'crypto.randomUUID()', 'crypto.randomUUID' is undefined)\n    at record (http://device-lan.invalid/src/ranking/guestPlays.ts:65:44)\n    at start (http://device-lan.invalid/src/ranking/controller.ts:119:18)\n    at prepareStart (http://device-lan.invalid/src/app/createApp.ts:331:29)",
+            "name": "Unhandled Promise Rejection"
+          }
+        },
+        "location": {
+          "url": "http://device-lan.invalid/src/ranking/guestPlays.ts",
+          "line": 64,
+          "column": 43
+        }
+      },
+      "pageId": "page@20e64a4de11f46cff89beeab1d625ab4"
+    }
+  },
+  {
+    "trace": "test-results/iphone-performance-LAN-HTT-de167-e-origin\u3067\u3082\u8d77\u52d5\u305760\u79d2\u306e\u8a3a\u65ad\u8a18\u9332\u3092\u4fdd\u5b58\u3067\u304d\u308b-chromium/trace.zip",
+    "entry": "1-trace.trace",
+    "event": {
+      "type": "event",
+      "time": 3839.43,
+      "class": "BrowserContext",
+      "method": "pageError",
+      "params": {
+        "error": {
+          "error": {
+            "message": "crypto.randomUUID is not a function",
+            "stack": "TypeError: crypto.randomUUID is not a function\n    at Object.record (http://device-lan.invalid/src/ranking/guestPlays.ts:65:34)\n    at Object.start (http://device-lan.invalid/src/ranking/controller.ts:119:12)\n    at prepareStart (http://device-lan.invalid/src/app/createApp.ts:331:24)",
+            "name": "TypeError"
+          }
+        },
+        "location": {
+          "url": "http://device-lan.invalid/src/ranking/guestPlays.ts",
+          "line": 64,
+          "column": 33
+        }
+      },
+      "pageId": "page@62da97e4e47834f24acd1be0df66960c"
+    }
+  }
+]

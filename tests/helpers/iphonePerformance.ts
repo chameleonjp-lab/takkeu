@@ -1,5 +1,17 @@
 import { installAudioProbe } from './audioProbe';
 
+const diagnosticErrors:{type:string;message:string}[]=[];
+window.addEventListener('error',event=>diagnosticErrors.push({type:'error',message:event.message}));
+window.addEventListener('unhandledrejection',event=>diagnosticErrors.push({type:'unhandledrejection',message:String(event.reason)}));
+// LAN HTTP lacks the secure-context-only randomUUID API. Keep the compatibility
+// shim in this test entrypoint; production ranking/identity code is unchanged.
+if(typeof crypto.randomUUID!=='function')Object.defineProperty(crypto,'randomUUID',{value:()=>{
+  const bytes=crypto.getRandomValues(new Uint8Array(16));
+  bytes[6]=(bytes[6]!&15)|64;bytes[8]=(bytes[8]!&63)|128;
+  const hex=Array.from(bytes,value=>value.toString(16).padStart(2,'0')).join('');
+  return `${hex.slice(0,8)}-${hex.slice(8,12)}-${hex.slice(12,16)}-${hex.slice(16,20)}-${hex.slice(20)}`;
+}});
+
 // Test entrypoint only. No server/database writes, even if a URL contains ?ranking.
 const originalFetch=window.fetch.bind(window);
 window.fetch=(input,init)=>{
@@ -29,7 +41,7 @@ panel.querySelector<HTMLButtonElement>('[data-measure]')!.onclick=()=>{
     const state=window.stage3.snapshot();samples.push({wallMs:now-start,intervalMs:now-previous,simTime:state.simTime,phase:state.phase,pauseReason:state.pauseReason,score:state.score,balls:state.balls.filter(b=>b.phase!=='lost').length});previous=now;
     if(now-start<60000){requestAnimationFrame(frame);return;}
     const sorted=samples.map(s=>s.intervalMs).sort((a,b)=>a-b),p=(fraction:number)=>sorted[Math.ceil(sorted.length*fraction)-1]!;
-    const data={schema:'iphone-real-device-v1',time:new Date().toISOString(),userAgent:navigator.userAgent,devicePixelRatio,viewport:{width:innerWidth,height:innerHeight},drawingSize:{width:document.querySelector('canvas')!.width,height:document.querySelector('canvas')!.height},
+    const data={schema:'iphone-real-device-v1',time:new Date().toISOString(),userAgent:navigator.userAgent,secureContext:isSecureContext,errors:diagnosticErrors,devicePixelRatio,viewport:{width:innerWidth,height:innerHeight},drawingSize:{width:document.querySelector('canvas')!.width,height:document.querySelector('canvas')!.height},
       initialScore:score,autoplay,durationMs:now-start,p50Ms:p(.5),p95Ms:p(.95),p99Ms:p(.99),fraction25:sorted.filter(x=>x<=25).length/sorted.length,simulationSeconds:state.simTime-initial.simTime,continuousRunning30:samples.every(s=>s.phase==='running'&&s.balls===30),finalPhase:state.phase,pauseReason:state.pauseReason,initialAudio,finalAudio:window.audioResources(),resources:window.stage3.resources(),samples,
       note:'実機で開いた場合のみ実機測定。入力遅延・視認性・音質・温度は人間の別記録が必要。Linux比較とは初期化/収集方式が異なる。'};
     result.textContent=JSON.stringify({...data,samples:`${samples.length}件（保存JSONに全件）`},null,2);

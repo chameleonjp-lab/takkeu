@@ -2,12 +2,15 @@ import { chromium } from '@playwright/test';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { resolve } from 'node:path';
+import { execFileSync } from 'node:child_process';
 
 // Start the normal Vite dev server separately. No production test URL is used.
 const baseURL=process.env.RALLY_FLASH_BASE_URL??'http://127.0.0.1:4173';
 const output=resolve(process.env.RALLY_FLASH_OUTPUT??'docs/verification/rally-4000/safety/captures');
-const files=['tests/helpers/captureRallyFlashFrames.mjs','tests/helpers/rallyHarness.ts','src/render/quality.ts','src/render/createView.ts','src/render/rallyEffects.ts','src/render/celebrations.ts','src/render/particles.ts','src/render/presentation.ts','src/render/field.ts','src/render/rainbow.ts','src/game/rallyEffects.ts','src/game/celebrations.ts'];
-const hashes=()=>Object.fromEntries(files.map(file=>[file,createHash('sha256').update(readFileSync(file)).digest('hex')]));
+const sourceRoot=resolve(process.env.RALLY_FLASH_SOURCE_ROOT??process.cwd());
+const files=execFileSync('git',['-C',sourceRoot,'ls-files','src','tests/helpers/rallyHarness.ts','tests/helpers/scenarios.ts','tests/fixtures/rally.html','package.json','package-lock.json'],{encoding:'utf8'}).trim().split('\n');
+const digest=file=>createHash('sha256').update(readFileSync(file)).digest('hex');
+const hashes=()=>({...Object.fromEntries(files.map(file=>[file,digest(resolve(sourceRoot,file))])),executingRunnerSHA256:digest(import.meta.filename)});
 const sourceHashes=hashes();
 const browser=await chromium.launch({headless:true,args:['--enable-unsafe-swiftshader','--use-angle=swiftshader']});
 const context=await browser.newContext({viewport:{width:1024,height:768},deviceScaleFactor:1});
@@ -40,7 +43,7 @@ try{
     writeFileSync(resolve(directory,'capture.json'),JSON.stringify(sequence,null,2));sequences.push(sequence);
     process.stdout.write(`${name}: ${fps*seconds} frames captured\n`);
   }
-  if(!['worst-only','fireworks-only'].includes(mode))for(const quality of qualities){
+  if(!['worst-only','fireworks-only','scores-only'].includes(mode))for(const quality of qualities){
     const name=`4000-${quality}-reduced`,directory=resolve(output,name);mkdirSync(directory,{recursive:true});
     await page.emulateMedia({reducedMotion:'reduce'});
     await page.evaluate(quality=>{window.rally.setQuality(quality);window.rally.overlap(4000,99);},quality);
@@ -52,7 +55,7 @@ try{
     writeFileSync(resolve(directory,'capture.json'),JSON.stringify(sequence,null,2));sequences.push(sequence);
     process.stdout.write(`${name}: ${fps*seconds} frames captured\n`);
   }
-  if(!['regular-only','fireworks-only'].includes(mode))for(const quality of qualities){
+  if(!['regular-only','fireworks-only','scores-only'].includes(mode))for(const quality of qualities){
     const name=`4000-${quality}-legacy100`,directory=resolve(output,name);mkdirSync(directory,{recursive:true});
     await page.emulateMedia({reducedMotion:'no-preference'});
     await page.evaluate(quality=>{window.rally.setQuality(quality);window.rally.overlap(4000,100,100);},quality);
@@ -89,6 +92,6 @@ try{
     process.stdout.write(`${name}: ${fps*seconds} frames captured,legacy particles${legacyParticles}\n`);
   }
   const endSourceHashes=hashes(),sourceStable=JSON.stringify(sourceHashes)===JSON.stringify(endSourceHashes);
-  writeFileSync(resolve(output,'capture-run.json'),JSON.stringify({sequences,errors,unexpected,sourceHashes,endSourceHashes,sourceStable,limitations:['Canvas analysis excludes CSS HUD; its labels have single-arrival transitions, assessed separately.','Sampling at60Hz measures content clock, not monitor hardware artifacts.','Linux software rendering does not certify device/HDR behavior.']},null,2));
+  writeFileSync(resolve(output,'capture-run.json'),JSON.stringify({sourceRoot,sourceCommit:execFileSync('git',['-C',sourceRoot,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),browserVersion:browser.version(),sequences,errors,unexpected,sourceHashes,endSourceHashes,sourceStable,limitations:['Canvas analysis excludes CSS HUD; its labels have single-arrival transitions, assessed separately.','Sampling at60Hz measures content clock, not monitor hardware artifacts.','Linux software rendering does not certify device/HDR behavior.']},null,2));
   if(errors.length||unexpected.length||!sourceStable)throw new Error(JSON.stringify({errors,unexpected,sourceStable}));
 }finally{await browser.close();}

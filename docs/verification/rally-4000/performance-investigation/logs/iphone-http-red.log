@@ -1,0 +1,93 @@
+[WebServer] (node:18230) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:18243) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:18270) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/iphone-performance.spec.ts:15:1 › LAN HTTP相当の非secure originでも起動し60秒の診断記録を保存できる (2.7s)
+(node:18372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  2 [webkit] › tests/browser/iphone-performance.spec.ts:15:1 › LAN HTTP相当の非secure originでも起動し60秒の診断記録を保存できる (5.4s)
+
+
+  1) [chromium] › tests/browser/iphone-performance.spec.ts:15:1 › LAN HTTP相当の非secure originでも起動し60秒の診断記録を保存できる 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: []
+    Received: undefined
+
+      37 |   const record=await save.evaluate(async element=>JSON.parse(await (await fetch((element as HTMLAnchorElement).href)).text()));
+      38 |   expect(record.durationMs).toBeGreaterThanOrEqual(60000);
+    > 39 |   expect(record.errors).toEqual([]);expect(record.secureContext).toBe(false);
+         |                         ^
+      40 |   expect(errors).toEqual([]);
+      41 | });
+      42 |
+        at /workspace/takkeu/tests/browser/iphone-performance.spec.ts:39:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/iphone-performance-LAN-HTT-de167-e-originでも起動し60秒の診断記録を保存できる-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/iphone-performance-LAN-HTT-de167-e-originでも起動し60秒の診断記録を保存できる-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/iphone-performance-LAN-HTT-de167-e-originでも起動し60秒の診断記録を保存できる-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/iphone-performance-LAN-HTT-de167-e-originでも起動し60秒の診断記録を保存できる-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/iphone-performance-LAN-HTT-de167-e-originでも起動し60秒の診断記録を保存できる-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit] › tests/browser/iphone-performance.spec.ts:15:1 › LAN HTTP相当の非secure originでも起動し60秒の診断記録を保存できる 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: []
+    Received: undefined
+
+      37 |   const record=await save.evaluate(async element=>JSON.parse(await (await fetch((element as HTMLAnchorElement).href)).text()));
+      38 |   expect(record.durationMs).toBeGreaterThanOrEqual(60000);
+    > 39 |   expect(record.errors).toEqual([]);expect(record.secureContext).toBe(false);
+         |                         ^
+      40 |   expect(errors).toEqual([]);
+      41 | });
+      42 |
+        at /workspace/takkeu/tests/browser/iphone-performance.spec.ts:39:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/iphone-performance-LAN-HTT-de167-e-originでも起動し60秒の診断記録を保存できる-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/iphone-performance-LAN-HTT-de167-e-originでも起動し60秒の診断記録を保存できる-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/iphone-performance-LAN-HTT-de167-e-originでも起動し60秒の診断記録を保存できる-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/iphone-performance-LAN-HTT-de167-e-originでも起動し60秒の診断記録を保存できる-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/iphone-performance-LAN-HTT-de167-e-originでも起動し60秒の診断記録を保存できる-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/browser/iphone-performance.spec.ts:15:1 › LAN HTTP相当の非secure originでも起動し60秒の診断記録を保存できる 
+    [webkit] › tests/browser/iphone-performance.spec.ts:15:1 › LAN HTTP相当の非secure originでも起動し60秒の診断記録を保存できる 
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
