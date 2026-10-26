@@ -25,3 +25,10 @@ Stage1同解像度はRGBA完全一致、同snapshot/geometry/order。Stage2 manu
 既存の客観閾値（baseline白core>=220の適格5×5領域はafter>=200、独立した加算batch各RGB寄与85〜115%、input<1CSSpx）を緩めない。初めから重なって隠れた球は白coreの標本外として件数を明記。full native aspect画像、標準/中間/低相当を別保存。輪郭差、光面積差は数値化する。point spriteが固定buffer-pixelサイズを使うことによるCSS上の見え方も未検証のまま同等と断定しない。
 
 点滅は既存60Hz・6s・解析閾値のまま再測定。過去の7警告を解除しない。切替時を含めた追加観察を保存し、実機/HDR/正式WCAG/人間視認と区別する。
+
+## 検証で見つかった補正
+warmupをまたぐintervalは全体を評価から外す（単に末端時刻がwarmup後かどうかでは判定しない）。1000ms刻みの再現で6000msに降格した初期失敗を保存し、最短7000msへ修正した。短い200msのpause/hidden/context中断もlong-gap規則とは独立に検査する。
+
+花火はgl_PointSizeがbuffer pixel単位のため、解像度だけを下げるとCSS上の直径と明るさが増えた。auto時だけ `currentBuffer / standardBuffer` の比でpoint sizeを補正し、manualのuniformは1を維持する。402×874/DPR2・同じsnapshot/stateで中間/最低のRGB寄与は補正前1.356–1.997倍、補正後0.998–1.004倍。85–115%基準を変更していない。最初の診断はrunIdが異なり色場がずれていたため失敗手法として保存し、別contextの同一runId/全stateで再比較した。これは描画資源統合による性能改善ではなく、解像度変更時の表示保護である。
+
+policy上下と短期historyの2つのbrowser testは、virtual clockを進める間だけtest-owned render gateでGPU描画を省く。実App RAF→controller→real renderer.setSize/viewportとCPU uniformを検証し、GPU uniform upload・実性能・画像の証拠には使用しない。held pointer/lifecycleのbrowser test、すべての描画比較、正式A/C/D/E性能測定は全frame描画。実GL uResolution/viewportとpoint-sprite寄与は別のfull-render診断で照合する。

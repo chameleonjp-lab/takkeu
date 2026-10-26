@@ -112,8 +112,10 @@ for(let n=0;n<plan.length;n++){
   const dest=path.join(output,`${String(n+1).padStart(3,'0')}-${c.label}`);
   console.log('START',n+1,JSON.stringify(c));
   let server,browser;
-  const sourceFiles=execFileSync('git',['-C',c.root,'ls-files','src'],{encoding:'utf8'}).trim().split('\n');
+  const inputFiles=()=>execFileSync('git',['-C',c.root,'ls-files','--cached','--others','--exclude-standard','src','tests/helpers','tests/fixtures','package.json','package-lock.json','vite.config.ts'],{encoding:'utf8'}).trim().split('\n').filter(Boolean).sort();
+  const sourceFiles=inputFiles();
   const beforeSource=Object.fromEntries(sourceFiles.map(f=>[f,sha(path.join(c.root,f))]));
+  let endSourceForFailure=null;
   const beforeCPU=cpu(), startedAt=new Date().toISOString();
   const errors=[],blocked=[];
   try {
@@ -143,7 +145,7 @@ for(let n=0;n<plan.length;n++){
         const snapshot=c.collector==='off'?null:window.stage3.snapshot();
         if(snapshot){if(previousPhase==='running'&&snapshot.phase==='running')runningIntervals.push(interval);previousPhase=snapshot.phase;}
         if(snapshot)samples.push({wallMs:now-start,intervalMs:interval,simTime:snapshot.simTime,phase:snapshot.phase,pauseReason:snapshot.pauseReason,
-          ballCount:snapshot.balls.length,activeBalls:snapshot.balls.filter(b=>b.phase!=='lost').length,score:snapshot.score,
+          renderingEnabled:window.stage3.renderingEnabled?.()??true,ballCount:snapshot.balls.length,activeBalls:snapshot.balls.filter(b=>b.phase!=='lost').length,score:snapshot.score,
           drawingSize:{width:document.querySelector('canvas').width,height:document.querySelector('canvas').height},...(c.collector==='full'?{resources:window.stage3.resources(),audio:window.audioResources(),heapBytes:heap()}:{} )});
         collectorCosts.push(performance.now()-t);
         if(now-start<c.seconds*1000){requestAnimationFrame(frame);return;}
@@ -167,22 +169,23 @@ for(let n=0;n<plan.length;n++){
       }
       return {gpu:p.gpu,pending:p.pending.length};
     });data.gpu=drained.gpu;data.pendingGPU=drained.pending;
-    const sourceSHA256=Object.fromEntries(sourceFiles.map(f=>[f,sha(path.join(c.root,f))]));
+    const sourceSHA256=Object.fromEntries(inputFiles().map(f=>[f,sha(path.join(c.root,f))]));
+    endSourceForFailure=sourceSHA256;
     const completeIntervals=data.intervals.slice(1);
-    const summary={sourceStable:JSON.stringify(beforeSource)===JSON.stringify(sourceSHA256),intervalPolicy:'omit first partial interval for all runs; retain raw',measurementCPUStart,measurementCPUEnd,sourceSHA256,label:c.label,configuration:c,startedAt,finishedAt:new Date().toISOString(),commit:execFileSync('git',['-C',c.root,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),
+    const summary={beforeSourceSHA256:beforeSource,sourceStable:JSON.stringify(beforeSource)===JSON.stringify(sourceSHA256),intervalPolicy:'omit first partial interval for all runs; retain raw',measurementCPUStart,measurementCPUEnd,sourceSHA256,label:c.label,configuration:c,startedAt,finishedAt:new Date().toISOString(),commit:execFileSync('git',['-C',c.root,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),
       sourceTree:execFileSync('git',['-C',c.root,'rev-parse','HEAD:src'],{encoding:'utf8'}).trim(),runnerSHA256:sha(import.meta.filename),browser:browser.version(),
       errors,blocked,beforeCPU,afterCPU:cpu(),durationMs:data.durationMs,frames:data.intervals.length,p50Ms:percentile(completeIntervals,.5),p95Ms:percentile(completeIntervals,.95),p99Ms:percentile(completeIntervals,.99),
       fraction25:completeIntervals.filter(n=>n<=25).length/completeIntervals.length,simulationSeconds:data.final.simTime-data.initial.simTime,simulationSecondsPer60:(data.final.simTime-data.initial.simTime)*60000/data.durationMs,
       finalPhase:data.final.phase,initialBalls:data.initial.balls.length,remainingBalls:data.final.balls.filter(b=>b.phase!=='lost').length,
-      everySampleRunning30:c.collector==='off'?null:data.samples.every(s=>s.phase==='running'&&s.activeBalls===30),
+      everySampleRunning30:c.collector==='off'?null:data.samples.every(s=>s.phase==='running'&&s.activeBalls===30&&s.renderingEnabled),
       initialAudio:data.initialAudio,finalAudio:data.finalAudio,drawingSize:data.drawingSize,glInfo:data.glInfo,
       collectorP50Ms:percentile(data.collectorCosts,.5),collectorP95Ms:percentile(data.collectorCosts,.95),
       costs:Object.fromEntries(['simulation','presentation','rainbow','effects','background','submit','uploadBytes','drawCalls','triangles'].map(k=>[k,{p50:percentile(data.cpuFrames.map(f=>f[k]??0),.5),p95:percentile(data.cpuFrames.map(f=>f[k]??0),.95)}])),
       gpu:{frames:data.cpuFrames.length,issued:data.gpu.length+data.pendingGPU,valid:data.gpu.filter(g=>g.ms!==null).length,invalid:data.gpu.filter(g=>g.ms===null).length,pending:data.pendingGPU,p50Ms:percentile(data.gpu.filter(g=>g.ms!==null).map(g=>g.ms),.5)},
-      absoluteTarget:data.initial.phase==='running'&&data.initial.balls.filter(b=>b.phase!=='lost').length===30&&data.durationMs>=60000&&data.final.simTime-data.initial.simTime>=59&&data.samples.length>0&&data.samples.every(s=>s.phase==='running'&&s.activeBalls===30)&&percentile(completeIntervals,.95)<=25&&completeIntervals.filter(n=>n<=25).length/completeIntervals.length>=.95};
+      absoluteTarget:data.initial.phase==='running'&&data.initial.balls.filter(b=>b.phase!=='lost').length===30&&data.durationMs>=60000&&(data.final.simTime-data.initial.simTime)*60000/data.durationMs>=59&&data.samples.length>0&&data.samples.every(s=>s.phase==='running'&&s.activeBalls===30&&s.renderingEnabled)&&percentile(completeIntervals,.95)<=25&&completeIntervals.filter(n=>n<=25).length/completeIntervals.length>=.95};
     writeFileSync(dest+'.json.gz',gzipSync(JSON.stringify({summary,data})));summaries.push(summary);writeFileSync(path.join(output,'summary.json'),JSON.stringify(summaries,null,2));
     console.log('RESULT',c.label,summary.p50Ms,summary.p95Ms,summary.simulationSeconds,'audioSources',data.finalAudio.sourceCreated-data.initialAudio.sourceCreated,JSON.stringify(summary.costs));
     if(errors.length||blocked.length)throw Error('page errors or unexpected requests');
-  }catch(error){writeFileSync(dest+'-failure.json',JSON.stringify({configuration:c,startedAt,error:String(error),errors,blocked,beforeCPU,afterCPU:cpu()},null,2));console.error(error);throw error;}
+  }catch(error){try{endSourceForFailure=Object.fromEntries(inputFiles().map(f=>[f,sha(path.join(c.root,f))]));}catch{}writeFileSync(dest+'-failure.json',JSON.stringify({beforeSourceSHA256:beforeSource,afterSourceSHA256:endSourceForFailure,sourceStable:JSON.stringify(beforeSource)===JSON.stringify(endSourceForFailure),configuration:c,startedAt,error:String(error),errors,blocked,beforeCPU,afterCPU:cpu()},null,2));console.error(error);throw error;}
   finally{await browser?.close();await server?.close();}
 }

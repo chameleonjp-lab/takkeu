@@ -3,10 +3,11 @@ import { chromium, webkit } from 'playwright';
 import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
 import { gzipSync } from 'node:zlib';
 import { createHash } from 'node:crypto';
+import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 // Diagnostic scenes and synchronous readbacks are explicitly separate from RAF performance.
-const [planPath,out]=process.argv.slice(2),plan=JSON.parse(readFileSync(planPath,'utf8'));
+const [planPath,out,referenceDir]=process.argv.slice(2),plan=JSON.parse(readFileSync(planPath,'utf8'));
 mkdirSync(out,{recursive:true});
 const transforms={name:'render-audit-test-only',enforce:'pre',transform(code,id){
   if(!id.endsWith('/src/render/createView.ts'))return;
@@ -16,6 +17,7 @@ const transforms={name:'render-audit-test-only',enforce:'pre',transform(code,id)
   return result;
 }};
 const results=[],pixelArtifacts=new Map();
+if(referenceDir){for(const row of JSON.parse(readFileSync(path.join(referenceDir,'summary.json'),'utf8')))pixelArtifacts.set(row.pixelSHA256,path.relative(out,path.join(referenceDir,row.pixelReference)));}
 for(const c of plan){
  const errors=[],blocked=[];let server,browser;
  try{
@@ -31,9 +33,9 @@ for(const c of plan){
    for(const name of ['drawArrays','drawElements','drawArraysInstanced','drawElementsInstanced']){const native=gl[name].bind(gl);gl[name]=(...args)=>{a.draws++;a.vertices+=args[name.startsWith('drawArrays')?2:1]*(name.endsWith('Instanced')?args.at(-1):1);return native(...args);};}
   });
   for(const scene of c.scenes){
-   const data=await page.evaluate(async({scene,quality})=>{
+   const data=await page.evaluate(async({scene,quality,layers})=>{
     const a=window.__audit,r=window.rally,gl=a.renderer.getContext();
-    r.setQuality(quality??'standard');r.show(scene.score);
+    r.setQuality(quality??'standard');if(quality==='auto')r.setResolutionLevel(scene.level??0);r.show(scene.score);
     if(scene.loss)r.loss(scene.loss,scene.streak??4,true);
     if(scene.overlap)r.overlap(scene.score,99,4);
     if(scene.fireworks)r.legacyFireworks();
@@ -68,9 +70,12 @@ for(const c of plan){
       for(const [key,attribute] of Object.entries(g.attributes)){if(attribute.array){const bytes=new Uint8Array(attribute.array.buffer,attribute.array.byteOffset,Math.min(attribute.count,count)*attribute.itemSize*attribute.array.BYTES_PER_ELEMENT);const digest=new Uint8Array(await crypto.subtle.digest('SHA-256',bytes));row.attributes[key]=Array.from(digest,x=>x.toString(16).padStart(2,'0')).join('');}}
       geometryHashes.push(row);
     }
-    const result={width:gl.drawingBufferWidth,height:gl.drawingBufferHeight,cpuMs,cpuCosts:{...a.cost},bytes:a.bytes,draws:a.draws,drawVertices:a.vertices,triangles:a.renderer.info.render.triangles,points:a.renderer.info.render.points,
+    const glUniformResolutions=[],glPointScales=[];for(const program of a.renderer.info.programs??[]){const raw=program.program;for(let i=0;i<gl.getProgramParameter(raw,gl.ACTIVE_UNIFORMS);i++){const uniform=gl.getActiveUniform(raw,i);if(uniform?.name==='uResolutionScale')glPointScales.push(gl.getUniform(raw,gl.getUniformLocation(raw,uniform.name)));if(uniform?.name==='uResolution')glUniformResolutions.push(Array.from(gl.getUniform(raw,gl.getUniformLocation(raw,uniform.name))));}}
+    const result={viewport:Array.from(gl.getParameter(gl.VIEWPORT)),glPointScales,glUniformResolutions,width:gl.drawingBufferWidth,height:gl.drawingBufferHeight,cpuMs,cpuCosts:{...a.cost},bytes:a.bytes,draws:a.draws,drawVertices:a.vertices,triangles:a.renderer.info.render.triangles,points:a.renderer.info.render.points,
      culling,geometryHashes,resources:r.resources(),snapshot:r.snapshot(),state:r.state(),geometry,pixels:encode(pixels),png,gpuMs:null,gpuDisjoint:null};
     if(query){for(let i=0;i<500&&!gl.getQueryParameter(query,gl.QUERY_RESULT_AVAILABLE);i++)await new Promise(res=>setTimeout(res,5));result.gpuDisjoint=!!gl.getParameter(ext.GPU_DISJOINT_EXT);if(gl.getQueryParameter(query,gl.QUERY_RESULT_AVAILABLE)&&!result.gpuDisjoint)result.gpuMs=gl.getQueryParameter(query,gl.QUERY_RESULT)/1e6;gl.deleteQuery(query);}
+    if(layers.length){result.hiddenLayers={};for(const name of layers){const root=name==='fireworks'?a.fireworks.root:a.scene.getObjectByName(name);const visible=root.visible;root.visible=false;a.renderer.render(a.scene,a.camera);const hidden=new Uint8Array(result.width*result.height*4);gl.readPixels(0,0,result.width,result.height,gl.RGBA,gl.UNSIGNED_BYTE,hidden);result.hiddenLayers[name]=encode(hidden);root.visible=visible;}r.redraw();}
+    if(scene.fireworkMask){const visible=a.fireworks.root.visible;a.fireworks.root.visible=false;a.renderer.render(a.scene,a.camera);const hidden=new Uint8Array(result.width*result.height*4);gl.readPixels(0,0,result.width,result.height,gl.RGBA,gl.UNSIGNED_BYTE,hidden);result.hiddenParticles=encode(hidden);a.fireworks.root.visible=visible;r.redraw();}
     // Count transparent fragment invocations (including alpha=0) with the same
     // primitives, depth occlusion, side/pass ordering and projection. This is a
     // diagnostic override, not a change to production blending. Saturates at255.
@@ -92,13 +97,15 @@ for(const c of plan){
      a.scene.background=background;a.renderer.toneMapping=mapping;a.renderer.outputColorSpace=space;r.redraw();
     }
     return result;
-   },{scene,quality:c.quality});
+   },{scene,quality:c.quality,layers:c.layers??[]});
    const prefix=`${c.label}-${scene.label??scene.score}`;
    const pixels=Buffer.from(data.pixels,'base64');delete data.pixels;
    const pixelSHA256=createHash('sha256').update(pixels).digest('hex');
    const pixelReference=pixelArtifacts.get(pixelSHA256)??prefix;
    if(!pixelArtifacts.has(pixelSHA256)){writeFileSync(`${out}/${prefix}.rgba.gz`,gzipSync(pixels));writeFileSync(`${out}/${prefix}.png`,Buffer.from(data.png.split(',')[1],'base64'));pixelArtifacts.set(pixelSHA256,prefix);}
    delete data.png;
+   if(data.hiddenLayers){for(const [name,encoded]of Object.entries(data.hiddenLayers)){const hidden=Buffer.from(encoded,'base64');for(let i=0;i<hidden.length;i++)hidden[i]^=pixels[i];writeFileSync(`${out}/${prefix}.${name}.xor.rgba.gz`,gzipSync(hidden));}data.layerEncoding='XOR against full RGBA; gzip; same byte length';data.layers=Object.keys(data.hiddenLayers);delete data.hiddenLayers;}
+   if(data.hiddenParticles){writeFileSync(`${out}/${prefix}.hidden.rgba.gz`,gzipSync(Buffer.from(data.hiddenParticles,'base64')));delete data.hiddenParticles;}
    const row={configuration:c,scene,errors,blocked,browser:browser.version(),commit:execFileSync('git',['-C',c.root,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),pixelSHA256,pixelReference,...data};
    writeFileSync(`${out}/${prefix}.json`,JSON.stringify(row));results.push({label:prefix,...row,pixels:undefined});
    console.log(prefix,JSON.stringify({cpuMs:data.cpuMs,gpuMs:data.gpuMs,bytes:data.bytes,draws:data.draws,pixels:row.pixelSHA256,overdraw:data.overdraw}));

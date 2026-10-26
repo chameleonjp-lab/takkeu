@@ -7,6 +7,7 @@ import type { PauseReason } from '../game/types';
 import { createInputTimeline } from '../input/timeline';
 import { createView } from '../render/createView';
 import type { GameView } from '../render/createView';
+import { createAdaptiveQuality } from '../render/adaptiveQuality';
 import { loadPreferences, savePreferences } from '../storage/preferences';
 import type { Preferences, StorageLike } from '../storage/preferences';
 import { createScreens } from '../ui/screens';
@@ -31,6 +32,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     get length() { return window.localStorage.length; },
   };
   let preferences = loadPreferences(storage);
+  const adaptiveQuality = createAdaptiveQuality();
   const seed = (): number => Date.now() >>> 0;
   const session = (services.createSession ?? createSession)(config, seed());
   const timeline = createInputTimeline(INITIAL_PADDLE);
@@ -60,7 +62,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     toggleSound() { updatePreferences({ muted: !preferences.muted }); if (!preferences.muted) void unlockAudio(); },
     volume(value) { updatePreferences({ volume: value }); void unlockAudio(); },
     retryAudio() { void unlockAudio(); },
-    quality(value) { updatePreferences({ quality: value }); resizeView(); },
+    quality(value) { updatePreferences({ quality: value }); },
     retryRanking() { void ranking.retry(); },
     refreshRanking() { void refreshLeaderboard(); void resultPosition.retry(); },
     retryPosition() { void ranking.retry().then(() => { if (!disposed && resultPosition.state().status === 'error') void resultPosition.retry(); }); },
@@ -87,11 +89,14 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   }
   function persist(): void { screens.setStorageAvailable(savePreferences(storage, preferences)); }
   function updatePreferences(update: Partial<Preferences>): void {
+    const qualityChanged = update.quality !== undefined && update.quality !== preferences.quality;
     preferences = { ...preferences, ...update };
     audio.setVolume(preferences.volume); audio.setMuted(preferences.muted); audio.setQuality?.(preferences.quality);
     screens.setSound(preferences.muted); screens.setPreferences(preferences);
     if (preferences.muted) screens.setAudioReady(true);
-    view?.setQuality(preferences.quality); persist();
+    view?.setQuality(preferences.quality);
+    if (qualityChanged) { adaptiveQuality.reset(); view?.setResolutionLevel?.(0); }
+    persist();
   }
   function rememberBest(): void {
     const score = session.snapshot().score;
@@ -138,10 +143,10 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   function resizeView(): void {
     if (!view || !contextAvailable) return;
     const rect = screens.canvasWrap.getBoundingClientRect();
-    const key = `${rect.left}:${rect.top}:${rect.width}:${rect.height}:${window.devicePixelRatio}:${preferences.quality}`;
+    const key = `${rect.left}:${rect.top}:${rect.width}:${rect.height}:${window.devicePixelRatio}`;
     if (rect.width <= 0 || rect.height <= 0) return;
     if (key === fitted && inputMapping?.isCurrent?.() !== false) return;
-    view.resize(rect.width, rect.height);
+    adaptiveQuality.suspend(); view.resize(rect.width, rect.height);
     // Benign mobile chrome changes keep the held pointer. Real interruptions
     // pause/cancel before refitting, so stale contacts still cannot resume play.
     inputMapping = view.inputMapping();
@@ -152,7 +157,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   function makeView(): GameView {
     fitted = '';inputMapping=null;viewPrepared=false;
     const next = (services.createView ?? createView)(screens.canvas, config);
-    next.setQuality(preferences.quality); return next;
+    next.setQuality(preferences.quality); next.setResolutionLevel?.(adaptiveQuality.level()); return next;
   }
   function start(): void {
     if (starting) return;
@@ -240,6 +245,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     }
   }
   function beginRun(play: Play | null): void {
+    adaptiveQuality.reset(); view?.setResolutionLevel?.(0);
     ranking.finish(activePlay, session.snapshot().score, 'retire');
     activePlay = play; leaderboardEpoch++;
     ranking.clearResult(); screens.setRankingParticipation(!!play);
@@ -252,6 +258,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   }
   function silence(): void { unlockAttempt++; audio.suspend(); }
   function pause(reason: PauseReason): void {
+    adaptiveQuality.suspend();
     if(starting){
       if(reason==='resize'){resizeView();return;}
       startEpoch++;pendingStart?.abort();pendingStart=null;ranking.abandonStart();retirePreparingPlay();starting=false;screens.setStarting(false);silence();
@@ -268,10 +275,11 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   }
   function resume(): void {
     if (session.snapshot().phase !== 'paused' || !contextAvailable || document.hidden) return;
-    swipe.cancel(); timeline.clear(session.snapshot().paddle); resizeView();
+    adaptiveQuality.suspend(); swipe.cancel(); timeline.clear(session.snapshot().paddle); resizeView();
     session.resume(); loop.resetClock(performance.now()); screens.render(session.snapshot()); void unlockAudio();
   }
   function home(): void {
+    adaptiveQuality.reset(); view?.setResolutionLevel?.(0);
     resultPosition.clear();
     if(starting)ranking.abandonStart();pendingStart?.abort();pendingStart=null;retirePreparingPlay();loadingProgress=null;loadingError=null;loadingScreen.show(null);screens.setPreparing(false);
     startEpoch++; leaderboardEpoch++; starting = false; screens.setStarting(false); screens.setContextAvailable(contextAvailable);
@@ -315,6 +323,10 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     // resize event. Refresh its camera mapping before accepting the next frame.
     if (session.snapshot().phase === 'running') resizeView();
     const result = loop.frame(now); rememberBest();
+    if (preferences.quality === 'auto' && view && contextAvailable && !document.hidden && !starting && !loadingError && result.snapshot.phase === 'running') {
+      const level = adaptiveQuality.sample(now);
+      if (level !== null) view.setResolutionLevel?.(level);
+    } else adaptiveQuality.suspend();
     const presentation = finishPresentation.frame(result.snapshot, now, effectEnd);
     if (result.snapshot.phase === 'gameover' && observedPhase !== 'gameover') {
       swipe.cancel(); timeline.clear(result.snapshot.paddle); persist();
