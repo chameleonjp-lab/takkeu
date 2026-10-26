@@ -6,7 +6,7 @@ import { resolve } from 'node:path';
 // Start the normal Vite dev server separately. No production test URL is used.
 const baseURL=process.env.RALLY_FLASH_BASE_URL??'http://127.0.0.1:4173';
 const output=resolve(process.env.RALLY_FLASH_OUTPUT??'docs/verification/rally-4000/safety/captures');
-const files=['tests/helpers/rallyHarness.ts','src/render/createView.ts','src/render/rallyEffects.ts','src/render/celebrations.ts','src/render/particles.ts','src/render/presentation.ts','src/render/field.ts','src/render/rainbow.ts','src/game/rallyEffects.ts','src/game/celebrations.ts'];
+const files=['tests/helpers/captureRallyFlashFrames.mjs','tests/helpers/rallyHarness.ts','src/render/quality.ts','src/render/createView.ts','src/render/rallyEffects.ts','src/render/celebrations.ts','src/render/particles.ts','src/render/presentation.ts','src/render/field.ts','src/render/rainbow.ts','src/game/rallyEffects.ts','src/game/celebrations.ts'];
 const hashes=()=>Object.fromEntries(files.map(file=>[file,createHash('sha256').update(readFileSync(file)).digest('hex')]));
 const sourceHashes=hashes();
 const browser=await chromium.launch({headless:true,args:['--enable-unsafe-swiftshader','--use-angle=swiftshader']});
@@ -23,8 +23,10 @@ const fps=60,seconds=6,sequences=[];
 const qualities=process.env.RALLY_FLASH_QUALITY?[process.env.RALLY_FLASH_QUALITY]:['standard','low'];
 if(qualities.some(quality=>quality!=='standard'&&quality!=='low'))throw new Error('Invalid capture quality');
 const mode=process.env.RALLY_FLASH_MODE??'all';
+const scores=process.env.RALLY_FLASH_SCORES?process.env.RALLY_FLASH_SCORES.split(',').map(Number):[1500,2000,3000,4000];
+if(scores.some(score=>!Number.isInteger(score)||score<0||score>4000))throw new Error('Invalid capture scores');
 try{
-  if(!['worst-only','fireworks-only'].includes(mode))for(const quality of qualities)for(const score of [1500,2000,3000,4000]){
+  if(!['worst-only','fireworks-only'].includes(mode))for(const quality of qualities)for(const score of scores){
     const name=`${score}-${quality}`,directory=resolve(output,name);mkdirSync(directory,{recursive:true});
     await page.emulateMedia({reducedMotion:'no-preference'});
     await page.evaluate(({score,quality})=>{window.rally.setQuality(quality);window.rally.overlap(score,99);},{score,quality});

@@ -4,11 +4,12 @@ import type {} from '../helpers/appHarness';
 test.use({ video: 'on' });
 // 25ms = one 60Hz render interval + one 120Hz physics interval. A 12ms
 // clock advance can end before the first eligible render; this is not a latency allowance.
-async function begin(page: Page, size = { width: 390, height: 844 }) {
+async function begin(page: Page, size = { width: 390, height: 844 }, lowQuality=false) {
   await page.setViewportSize(size);
   await page.clock.install({ time: new Date('2026-10-23T14:00:00Z') });
   await page.clock.pauseAt(new Date('2026-10-23T14:00:01Z'));
   await page.goto('/tests/fixtures/stage3.html');
+  if(lowQuality){await page.getByRole('button',{name:'設定',exact:true}).click();await page.getByLabel('描画品質',{exact:true}).selectOption('low');await page.getByRole('button',{name:'戻る',exact:true}).click();}
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   await waitForStart(page);
 }
@@ -121,4 +122,14 @@ test('情報上の入力・safe area・resize連発・メニューに古い入�
   await page.locator('canvas').dispatchEvent('pointermove', { pointerId: 1, pointerType: 'touch', isPrimary: true, clientX: 100, clientY: 100 });
   await page.clock.runFor(25); expect(await page.evaluate(() => window.stage3.snapshot().paddle)).toEqual(paused.state.paddle);
   await page.screenshot({ path: info.outputPath('resized-resumed.png') });
+});
+
+
+test('低負荷の縮小描画でもCSS座標のラケット操作が1px以内で一致する',async({page})=>{
+  await begin(page,{width:1280,height:720},true);
+  expect(await page.evaluate(()=>({width:document.querySelector('canvas')!.width,height:document.querySelector('canvas')!.height}))).toEqual({width:960,height:540});
+  for(const y of [.15,.5,.85])for(const x of [-2,0,2]){
+    const p=await projection(page,{x,y});await page.mouse.move(Math.round(p.x),Math.round(p.y));await page.mouse.down();await page.clock.runFor(25);await aligned(page,p);await page.mouse.up();
+  }
+  expect(await page.evaluate(()=>window.stage3.snapshot().phase)).toBe('running');
 });

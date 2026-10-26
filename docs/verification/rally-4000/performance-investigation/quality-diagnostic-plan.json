@@ -1,0 +1,38 @@
+[
+  {
+    "label": "standard-before",
+    "root": "/workspace/takkeu-before",
+    "quality": "standard",
+    "dpr": 1
+  },
+  {
+    "label": "standard-candidate",
+    "root": "/workspace/takkeu",
+    "quality": "standard",
+    "dpr": 1
+  },
+  {
+    "label": "low-before",
+    "root": "/workspace/takkeu-before",
+    "quality": "low",
+    "dpr": 1
+  },
+  {
+    "label": "low-candidate",
+    "root": "/workspace/takkeu",
+    "quality": "low",
+    "dpr": 1
+  },
+  {
+    "label": "standard-dpr2-candidate",
+    "root": "/workspace/takkeu",
+    "quality": "standard",
+    "dpr": 2
+  },
+  {
+    "label": "low-dpr2-candidate",
+    "root": "/workspace/takkeu",
+    "quality": "low",
+    "dpr": 2
+  }
+]
