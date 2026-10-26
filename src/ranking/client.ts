@@ -4,7 +4,11 @@ export type Play = Readonly<{ startId: string; playId: string; displayName: stri
 export type PendingResult = Readonly<{ play: Play; submissionId: string; score: number; resultType: 'game_over' | 'retire'; clientVersion: string; permanentFailure?: boolean }>;
 export type RankingEntry = Readonly<{ rank: number; displayName: string; score: number; playCount: number }>;
 export type PlayerPosition = Readonly<{ rank: number; total: number; bestScore: number }>;
-export type RankingApi = ReturnType<typeof createRankingClient>;
+export type ProgressReport = Readonly<{ score: number; simSeconds: number; ballCount: number; lostBalls: number }>;
+// Progress telemetry is optional so older injected clients/tests and transient network failures still work.
+export type RankingApi = Omit<ReturnType<typeof createRankingClient>, 'progress'> & {
+  progress?: (play: Play, report: ProgressReport) => Promise<void>;
+};
 export class RankingError extends Error {
   constructor(readonly retryable: boolean, message: string) { super(message); }
 }
@@ -66,6 +70,20 @@ export function createRankingClient(fetchImpl: typeof fetch = (...args) => globa
       // Another play can change its spelling; the normalized identity stays fixed.
       const nameMatches = data.result_display_name === pending.play.displayName || (data.was_duplicate === true && validName(data.result_display_name));
       requireResponse(data.accepted === true && data.result_submission_id === pending.submissionId && data.result_play_id === pending.play.playId && nameMatches && data.result_normalized_name === pending.play.normalizedName && validScore(data.result_first_score) && validScore(data.result_best_score) && data.result_best_score >= pending.score && Number.isSafeInteger(data.result_play_count) && Number(data.result_play_count) >= 1);
+    },
+    async progress(play: Play, report: ProgressReport): Promise<void> {
+      requireResponse(validUuid(play.playId) && validName(play.displayName) &&
+        validScore(report.score) && Number.isFinite(report.simSeconds) &&
+        report.simSeconds >= 0 && report.simSeconds <= 43200 &&
+        Number.isSafeInteger(report.ballCount) && report.ballCount >= 0 && report.ballCount <= 30 &&
+        Number.isSafeInteger(report.lostBalls) && report.lostBalls >= 0 && report.lostBalls <= 100);
+      const result = record(await rpc(config.progressRpc, {
+        p_play_id: play.playId, p_display_name: play.displayName,
+        p_client_version: config.clientVersion, p_score: report.score,
+        p_sim_seconds: Math.round(report.simSeconds * 1000) / 1000,
+        p_ball_count: report.ballCount, p_lost_balls: report.lostBalls,
+      }));
+      requireResponse(result.accepted === true);
     },
     async position(normalizedName: string): Promise<PlayerPosition | null> {
       requireResponse(validName(normalizedName));

@@ -263,3 +263,22 @@ it('accepts a duplicate acknowledgement after the aggregate display spelling cha
   const client = createRankingClient(async () => response([{ ...acceptedScore[0], result_display_name: 'TEST', result_normalized_name: 'test', was_duplicate: true }]));
   await expect(client.submit(named)).resolves.toBeUndefined();
 });
+
+it('sends a bounded, optional high-score progress report independently from the finish/submit path', async () => {
+  const calls: Array<{ rpc: string; body: Record<string, unknown> }> = [];
+  const client = createRankingClient(async (input, init) => {
+    calls.push({ rpc: String(input).split('/').at(-1)!, body: JSON.parse(String(init!.body)) });
+    return response({ accepted: true, high_density_signal: false });
+  });
+  await client.progress(play, { score: 210, simSeconds: 15.12349, ballCount: 4, lostBalls: 2 });
+  expect(calls).toEqual([{
+    rpc: 'report_takkeu_progress_v1',
+    body: {
+      p_play_id: playId, p_display_name: 'テスト', p_client_version: RANKING_CONFIG.clientVersion,
+      p_score: 210, p_sim_seconds: 15.123, p_ball_count: 4, p_lost_balls: 2,
+    },
+  }]);
+  await expect(client.progress(play, { score: 10, simSeconds: Infinity, ballCount: 50, lostBalls: 0 }))
+    .rejects.toMatchObject({ retryable: false });
+  expect(calls).toHaveLength(1);
+});
