@@ -45,6 +45,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   let wasFinishing = false;
   let unlockAttempt = 0;
   let activePlay: Play | null = null;
+  let nextProgressReportAt = 0, progressReportInFlight = false;
   let starting = false, startEpoch = 0, leaderboardEpoch = 0;
   let pendingStart:AbortController|null=null,viewPrepared=false;
   let preparingPlay:Play|null=null;
@@ -220,6 +221,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   function beginRun(play: Play | null): void {
     ranking.finish(activePlay, session.snapshot().score, 'retire');
     activePlay = play; leaderboardEpoch++;
+    nextProgressReportAt = performance.now() + 15000; progressReportInFlight = false;
     ranking.clearResult(); screens.setRankingParticipation(!!play);
     rememberBest(); persist();
     swipe.cancel(); session.reset(seed()); session.start();
@@ -291,6 +293,19 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     // resize event. Refresh its camera mapping before accepting the next frame.
     if (session.snapshot().phase === 'running') resizeView();
     const result = loop.frame(now); rememberBest();
+    // Best-effort high-score snapshots for later reviews; never delay the game or rank submission.
+    if (activePlay && result.snapshot.phase === 'running' && now >= nextProgressReportAt) {
+      nextProgressReportAt = now + 15000;
+      if (result.snapshot.score >= 100 && !progressReportInFlight && rankingApi.progress) {
+        const play = activePlay;
+        progressReportInFlight = true;
+        void rankingApi.progress(play, {
+          score: result.snapshot.score, simSeconds: result.snapshot.simTime,
+          ballCount: result.snapshot.balls.length, lostBalls: result.snapshot.lostBallCount,
+        }).catch(() => { /* Offline snapshots never block play. */ })
+          .finally(() => { progressReportInFlight = false; });
+      }
+    }
     const presentation = finishPresentation.frame(result.snapshot, now);
     if (result.snapshot.phase === 'gameover' && observedPhase !== 'gameover') {
       swipe.cancel(); timeline.clear(result.snapshot.paddle); persist();
