@@ -9,7 +9,7 @@ GameView.setResolutionLevel はrenderer.setSize(...,false)とscreen shaderのuRe
 
 ## 計測と初期定数
 - 非重複の連続した3,000ms active描画区間を評価。p95はnearest-rank。
-- p95>25msを2区間連続で観測すると1段階下げる候補。単一burstが評価境界をまたぐ誤判定を防ぐため、遅いsampleの開始〜最後が3,000ms以上あり、最後の遅いsampleが評価時点の1,000ms以内であることも要求する。
+- p95>25msを2区間連続で観測すると1段階下げる候補。単一burstが評価境界をまたぐ誤判定を防ぐため、遅いsampleの開始〜最後が6,000ms以上あり、最後の遅いsampleが評価時点の1,000ms以内であることも要求する。
 - p95<=18msの区間が累計20,000ms以上連続すると1段階上げる候補。
 - 切替から次切替までactive時間で10,000ms以上。一度に1段階。
 - 初期・切替・pause/resume・hidden・layout/rotation・WebGL restore・loadingの後は履歴を捨て、1,000msのwarmup後に新しい区間を開始。
@@ -32,3 +32,5 @@ warmupをまたぐintervalは全体を評価から外す（単に末端時刻が
 花火はgl_PointSizeがbuffer pixel単位のため、解像度だけを下げるとCSS上の直径と明るさが増えた。auto時だけ `currentBuffer / standardBuffer` の比でpoint sizeを補正し、manualのuniformは1を維持する。402×874/DPR2・同じsnapshot/stateで中間/最低のRGB寄与は補正前1.356–1.997倍、補正後0.998–1.004倍。85–115%基準を変更していない。最初の診断はrunIdが異なり色場がずれていたため失敗手法として保存し、別contextの同一runId/全stateで再比較した。これは描画資源統合による性能改善ではなく、解像度変更時の表示保護である。
 
 policy上下と短期historyの2つのbrowser testは、virtual clockを進める間だけtest-owned render gateでGPU描画を省く。実App RAF→controller→real renderer.setSize/viewportとCPU uniformを検証し、GPU uniform upload・実性能・画像の証拠には使用しない。held pointer/lifecycleのbrowser test、すべての描画比較、正式A/C/D/E性能測定は全frame描画。実GL uResolution/viewportとpoint-sprite寄与は別のfull-render診断で照合する。
+
+4秒の単発arrivalが2つの評価窓をまたぐ敵対的ケースで初期の3秒pressure-spanは誤降格した。pressure-spanを2評価区間の6秒へ変更し、first slow intervalの開始を起点にする。p95/3秒窓/2連続/cooldown/復帰閾値と絶対性能基準は変更しない。開始直後からの持続負荷はwarmup後2区間、途中からの負荷は評価位相により6〜9秒を確認する。これを検証で必要になった保守的な初期調整として記録し、旧b673の測定15回は初期版の記録へ分離する。

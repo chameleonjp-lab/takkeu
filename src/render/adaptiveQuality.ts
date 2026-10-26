@@ -2,7 +2,7 @@
 export const ADAPTIVE_QUALITY = Object.freeze({
   evaluationMs: 3000, downP95Ms: 25, downWindows: 2,
   upP95Ms: 18, stableMs: 20000, cooldownMs: 10000, warmupMs: 1000,
-  pressureSpanMs: 3000, recentPressureMs: 1000, maxSampleGapMs: 1500,
+  pressureSpanMs: 6000, recentPressureMs: 1000, maxSampleGapMs: 1500,
   maxLevel: 2, sampleCapacity: 4096,
 });
 
@@ -33,7 +33,7 @@ export function createAdaptiveQuality() {
       samples[count % samples.length] = interval; count++;
       windowMs += interval;
       if (interval > policy.downP95Ms) {
-        pressureStart ??= activeMs; pressureEnd = activeMs;
+        pressureStart ??= activeMs - interval; pressureEnd = activeMs;
       }
       if (windowMs < policy.evaluationMs) return null;
       const size = Math.min(count, samples.length);

@@ -8,7 +8,7 @@ for(const hz of [60,120]){
     const q=createAdaptiveQuality();let now=0;const changes:{at:number;level:number}[]=[];
     const feed=(ms:number,seconds:number)=>{const end=now+seconds*1000;while(now<end){now+=ms;const changed=q.sample(now);if(changed!==null)changes.push({at:now,level:changed});}};
     feed(1000/hz,5);expect(q.level()).toBe(0);
-    feed(32,6.2);expect(q.level()).toBe(1);expect(changes).toHaveLength(1);
+    feed(32,9.2);expect(q.level()).toBe(1);expect(changes).toHaveLength(1);
     feed(32,14);expect(q.level()).toBe(2);
     feed(32,30);expect(q.level()).toBe(2);
     feed(1000/hz,46);expect(q.level()).toBe(0);
@@ -77,4 +77,10 @@ it('short suspension clears a primed bad window independently of the long-gap gu
   q.suspend();q.sample(now+=200);
   for(let i=0;i<150;i++)q.sample(now+=32);
   expect(q.level()).toBe(0);
+});
+it('one four-second arrival burst spanning two evaluation boundaries does not lower quality',()=>{
+ const q=createAdaptiveQuality();let now=0;q.sample(now);const changes:number[]=[];
+ const feed=(ms:number,until:number)=>{while(now<until){const level=q.sample(now+=ms);if(level!==null)changes.push(level);}};
+ feed(1000/60,3500);feed(40,7500);feed(1000/60,31000);
+ expect(changes).toEqual([]);
 });
