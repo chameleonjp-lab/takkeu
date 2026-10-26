@@ -1,0 +1,229 @@
+{
+  "scenes": [
+    {
+      "group": "regular",
+      "scene": "1500-low",
+      "directory": "flash/regular/1500-low",
+      "reference": null,
+      "sourcePixelRGB24SHA256": "11eb04b3cfa0ed5515ede776a0c0992bf6fca0fd2c6d1bc829046a76581af925",
+      "flagged": true,
+      "maxGeneralHighFrequencyArea": 7899,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "regular",
+      "scene": "1500-standard",
+      "directory": "flash/regular/1500-standard",
+      "reference": "docs/verification/rally-4000/safety/final-regular/1500-standard",
+      "sourcePixelRGB24SHA256": "155127f012fd949450782d6e5f38d358a494f84fc47bedc6bfa69929881d0d60",
+      "flagged": true,
+      "maxGeneralHighFrequencyArea": 9207,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "regular",
+      "scene": "2000-low",
+      "directory": "flash/regular/2000-low",
+      "reference": null,
+      "sourcePixelRGB24SHA256": "28f9bf5808aecc09b1536019f24b39476ee9b135c7bf88cec360d52b91535ac9",
+      "flagged": false,
+      "maxGeneralHighFrequencyArea": 9587,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "regular",
+      "scene": "2000-standard",
+      "directory": "flash/regular/2000-standard",
+      "reference": "docs/verification/rally-4000/safety/final-regular/2000-standard",
+      "sourcePixelRGB24SHA256": "877fcb88b2cb39a9118d99eece46a47e5a6f964dc50b83e31c6cfa8dc556f5e7",
+      "flagged": false,
+      "maxGeneralHighFrequencyArea": 10267,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "regular",
+      "scene": "3000-low",
+      "directory": "flash/regular/3000-low",
+      "reference": null,
+      "sourcePixelRGB24SHA256": "3c5503f3d60f7867a9baa0df002618cec030146a45ba23b03fa85b9f5aa81a0c",
+      "flagged": true,
+      "maxGeneralHighFrequencyArea": 6824,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "regular",
+      "scene": "3000-standard",
+      "directory": "flash/regular/3000-standard",
+      "reference": "docs/verification/rally-4000/safety/final-regular/3000-standard",
+      "sourcePixelRGB24SHA256": "5b835dcf54ee4373f28e3501ef545d7e82777c4383322c948afd6303e02d5174",
+      "flagged": false,
+      "maxGeneralHighFrequencyArea": 9175,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "regular",
+      "scene": "4000-low",
+      "directory": "flash/regular/4000-low",
+      "reference": null,
+      "sourcePixelRGB24SHA256": "177cec533b4a3ef9985fd9a98bd31fda9047d5a79c8857579a483c397fa23de1",
+      "flagged": true,
+      "maxGeneralHighFrequencyArea": 8769,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "regular",
+      "scene": "4000-low-reduced",
+      "directory": "flash/regular/4000-low-reduced",
+      "reference": null,
+      "sourcePixelRGB24SHA256": "0d6caf9c476dbb18201395d5f71f32f91ffcd3ec945ed4b4b819af63d73ce1bf",
+      "flagged": false,
+      "maxGeneralHighFrequencyArea": 0,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "regular",
+      "scene": "4000-standard",
+      "directory": "flash/regular/4000-standard",
+      "reference": "docs/verification/rally-4000/safety/final-regular/4000-standard",
+      "sourcePixelRGB24SHA256": "f5f6356504ea242b15e5e17a36a88230cff5b66777e3294f82bd8d1ecfdebbb8",
+      "flagged": true,
+      "maxGeneralHighFrequencyArea": 6293,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "regular",
+      "scene": "4000-standard-reduced",
+      "directory": "flash/regular/4000-standard-reduced",
+      "reference": "docs/verification/rally-4000/safety/final-regular/4000-standard-reduced",
+      "sourcePixelRGB24SHA256": "cb92ea0088705a40b206f1ea79df01eebe916e2cdf4d3c9dbeb9723a708b85c4",
+      "flagged": false,
+      "maxGeneralHighFrequencyArea": 0,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "legacy-standard",
+      "scene": "4000-standard-legacy100",
+      "directory": "flash/legacy-standard/4000-standard-legacy100",
+      "reference": "docs/verification/rally-4000/safety/final-worst-standard-v4/4000-standard-legacy100",
+      "sourcePixelRGB24SHA256": "2ca4da0333a674d6cd29f8f6248cee32cf99b2679a142cf127aaaa9b92f89ff2",
+      "flagged": false,
+      "maxGeneralHighFrequencyArea": 10822,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "legacy-low",
+      "scene": "4000-low-legacy100",
+      "directory": "flash/legacy-low/4000-low-legacy100",
+      "reference": null,
+      "sourcePixelRGB24SHA256": "8e3152ec7668eb9f3418acf0dcd376508ce6c5fc126d14be79539da6b310d46d",
+      "flagged": false,
+      "maxGeneralHighFrequencyArea": 6985,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "fireworks",
+      "scene": "4000-low-legacy-fireworks",
+      "directory": "flash/fireworks/4000-low-legacy-fireworks",
+      "reference": null,
+      "sourcePixelRGB24SHA256": "568852fe30415442fedb5e0025d84b7f13160a8766c86f26716f6b5bc95b1b72",
+      "flagged": false,
+      "maxGeneralHighFrequencyArea": 10410,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "fireworks",
+      "scene": "4000-standard-legacy-fireworks",
+      "directory": "flash/fireworks/4000-standard-legacy-fireworks",
+      "reference": "docs/verification/rally-4000/safety/final-fireworks/4000-standard-legacy-fireworks",
+      "sourcePixelRGB24SHA256": "179a647dbc025d271ef5d41687ade5f62f228b1b21c419cba71adc60bd2928f0",
+      "flagged": false,
+      "maxGeneralHighFrequencyArea": 9483,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "extra",
+      "scene": "1000-low",
+      "directory": "flash/extra/1000-low",
+      "reference": null,
+      "sourcePixelRGB24SHA256": "ba99758fafb23ec8395c55199adbd25d707e021efcd1051f2fcb975ad804f08e",
+      "flagged": true,
+      "maxGeneralHighFrequencyArea": 6432,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "extra",
+      "scene": "1000-standard",
+      "directory": "flash/extra/1000-standard",
+      "reference": null,
+      "sourcePixelRGB24SHA256": "14fdffa85a01f608481646616b3325c14cd44a5d018300e6043e510af6de2f4f",
+      "flagged": true,
+      "maxGeneralHighFrequencyArea": 10267,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "extra",
+      "scene": "390-low",
+      "directory": "flash/extra/390-low",
+      "reference": null,
+      "sourcePixelRGB24SHA256": "b0cffe08eb2ab6a5357ce2cbe24f597b4fe945561d49f41d6896e4ef6c833a49",
+      "flagged": false,
+      "maxGeneralHighFrequencyArea": 6890,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "extra",
+      "scene": "390-standard",
+      "directory": "flash/extra/390-standard",
+      "reference": null,
+      "sourcePixelRGB24SHA256": "6d75628a178415928d7145e091663f3abf3e3ad827da717668d502fb5d4aca61",
+      "flagged": false,
+      "maxGeneralHighFrequencyArea": 6594,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "extra-before",
+      "scene": "1000-low",
+      "directory": "flash/extra-before/1000-low",
+      "reference": null,
+      "sourcePixelRGB24SHA256": "5fbfd801781e45a6183211ab9a4d8c4b46d21cdd6158327fe8888b2944e666e0",
+      "flagged": true,
+      "maxGeneralHighFrequencyArea": 6293,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "extra-before",
+      "scene": "1000-standard",
+      "directory": "flash/extra-before/1000-standard",
+      "reference": "docs/verification/rally-4000/performance-investigation/flash/extra/1000-standard",
+      "sourcePixelRGB24SHA256": "14fdffa85a01f608481646616b3325c14cd44a5d018300e6043e510af6de2f4f",
+      "flagged": true,
+      "maxGeneralHighFrequencyArea": 10267,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "extra-before",
+      "scene": "390-low",
+      "directory": "flash/extra-before/390-low",
+      "reference": null,
+      "sourcePixelRGB24SHA256": "7581c0d2e55e173efe2895b99c0c02fb55a85885598b3fda3a54f8a9f6d0769d",
+      "flagged": false,
+      "maxGeneralHighFrequencyArea": 6594,
+      "maxRedHighFrequencyArea": 0
+    },
+    {
+      "group": "extra-before",
+      "scene": "390-standard",
+      "directory": "flash/extra-before/390-standard",
+      "reference": "docs/verification/rally-4000/performance-investigation/flash/extra/390-standard",
+      "sourcePixelRGB24SHA256": "6d75628a178415928d7145e091663f3abf3e3ad827da717668d502fb5d4aca61",
+      "flagged": false,
+      "maxGeneralHighFrequencyArea": 6594,
+      "maxRedHighFrequencyArea": 0
+    }
+  ],
+  "allReferencedPartsVerified": true,
+  "currentScenes": 18,
+  "baselineSupplementScenes": 4,
+  "currentPrimaryWarnings": 7,
+  "formalWCAG": "unconfirmed"
+}

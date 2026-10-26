@@ -1,0 +1,82 @@
+{
+  "1000-standard": {
+    "fps": 60,
+    "frames": 360,
+    "width": 1024,
+    "height": 768,
+    "referenceWindow": [
+      341,
+      256
+    ],
+    "areaThreshold25Percent": 21824.0,
+    "maxGeneralPixelFlashCount": 15,
+    "maxRedPixelFlashCount": 3,
+    "maxGeneralHighFrequencyArea": 10267,
+    "maxRedHighFrequencyArea": 0,
+    "maxGeneralLargeClosingFramesPerSecond": 4,
+    "maxRedLargeClosingFramesPerSecond": 0,
+    "screeningVerdict": "flagged; investigate and fix before acceptance",
+    "flagged": true,
+    "sourcePixelRGB24SHA256": "14fdffa85a01f608481646616b3325c14cd44a5d018300e6043e510af6de2f4f"
+  },
+  "390-standard": {
+    "fps": 60,
+    "frames": 360,
+    "width": 1024,
+    "height": 768,
+    "referenceWindow": [
+      341,
+      256
+    ],
+    "areaThreshold25Percent": 21824.0,
+    "maxGeneralPixelFlashCount": 12,
+    "maxRedPixelFlashCount": 3,
+    "maxGeneralHighFrequencyArea": 6594,
+    "maxRedHighFrequencyArea": 0,
+    "maxGeneralLargeClosingFramesPerSecond": 2,
+    "maxRedLargeClosingFramesPerSecond": 0,
+    "screeningVerdict": "no threshold exceedance detected in sampled SDR canvas; limitations apply",
+    "flagged": false,
+    "sourcePixelRGB24SHA256": "6d75628a178415928d7145e091663f3abf3e3ad827da717668d502fb5d4aca61"
+  },
+  "1000-low": {
+    "fps": 60,
+    "frames": 360,
+    "width": 1024,
+    "height": 768,
+    "referenceWindow": [
+      341,
+      256
+    ],
+    "areaThreshold25Percent": 21824.0,
+    "maxGeneralPixelFlashCount": 11,
+    "maxRedPixelFlashCount": 2,
+    "maxGeneralHighFrequencyArea": 6432,
+    "maxRedHighFrequencyArea": 0,
+    "maxGeneralLargeClosingFramesPerSecond": 7,
+    "maxRedLargeClosingFramesPerSecond": 0,
+    "screeningVerdict": "flagged; investigate and fix before acceptance",
+    "flagged": true,
+    "sourcePixelRGB24SHA256": "ba99758fafb23ec8395c55199adbd25d707e021efcd1051f2fcb975ad804f08e"
+  },
+  "390-low": {
+    "fps": 60,
+    "frames": 360,
+    "width": 1024,
+    "height": 768,
+    "referenceWindow": [
+      341,
+      256
+    ],
+    "areaThreshold25Percent": 21824.0,
+    "maxGeneralPixelFlashCount": 11,
+    "maxRedPixelFlashCount": 2,
+    "maxGeneralHighFrequencyArea": 6890,
+    "maxRedHighFrequencyArea": 0,
+    "maxGeneralLargeClosingFramesPerSecond": 2,
+    "maxRedLargeClosingFramesPerSecond": 0,
+    "screeningVerdict": "no threshold exceedance detected in sampled SDR canvas; limitations apply",
+    "flagged": false,
+    "sourcePixelRGB24SHA256": "b0cffe08eb2ab6a5357ce2cbe24f597b4fe945561d49f41d6896e4ef6c833a49"
+  }
+}
