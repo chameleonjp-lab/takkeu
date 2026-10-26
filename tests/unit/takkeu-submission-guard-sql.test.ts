@@ -65,6 +65,7 @@ it('rejects impossible Takkeu time rates, mismatched scores and legacy bypasses'
       );
     `);
     await db.exec(readFileSync(migration, 'utf8'));
+    await db.exec(readFileSync('supabase/migrations/20261027_takkeu_rate_limit_refinement.sql', 'utf8'));
     async function finish(score: number, rankingScore: number) {
       const res = await db.query<{ result: unknown }>(
         "select public.finish_game_play_v1($1::uuid,'tester','takkeu','game_over',1,$2,$3,$4) as result",
@@ -73,6 +74,8 @@ it('rejects impossible Takkeu time rates, mismatched scores and legacy bypasses'
       const result = res.rows[0]?.result;
       return typeof result === 'string' ? JSON.parse(result) : result;
     }
+    expect(7927).toBeGreaterThan(35 * 216.31 + 150);
+    expect(11354).toBeLessThan(35 * 691.15 + 150);
     expect(await finish(999999,999999)).toMatchObject({
       accepted: false, reason: 'takkeu_score_rate_impossible'
     });
