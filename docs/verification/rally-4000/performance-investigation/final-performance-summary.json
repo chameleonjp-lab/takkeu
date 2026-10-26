@@ -1315,5 +1315,12 @@
   ],
   "absolutePassed": 0,
   "validComparisons": 16,
-  "method": "Nearest-rank percentiles match runner. Also show full inter-frame intervals without initial partial interval, and simulation normalized to60wallSeconds. No run or failed target is excluded. CPU throttling is summed cgroup accounting, not a direct frame-delay explanation. Frames are not independent repetitions."
+  "method": "Primary frame distribution: complete inter-RAF intervals, excluding index0 uniformly across all runs. Plain p50Ms/p95Ms/p99Ms/fraction25 retain legacy start-boundary-inclusive values for provenance. Measurement duration/simulation targets and run inclusion unchanged. CPU throttling is summed cgroup accounting, not direct frame-delay attribution. Frames are not independent repetitions.",
+  "primaryIntervalFields": [
+    "completeIntervalP50Ms",
+    "completeIntervalP95Ms",
+    "completeIntervalP99Ms",
+    "completeIntervalFraction25"
+  ],
+  "reportPolicy": "interval-statistics-policy.json"
 }

@@ -1,0 +1,16 @@
+{
+  "primaryIntervalFields": [
+    "completeIntervalP50Ms",
+    "completeIntervalP95Ms",
+    "completeIntervalP99Ms",
+    "completeIntervalFraction25"
+  ],
+  "legacyIntervalFields": [
+    "p50Ms",
+    "p95Ms",
+    "p99Ms",
+    "fraction25"
+  ],
+  "selection": "Post-observation promotion of the previously reported complete-interval sensitivity; applies uniformly to all18paired and16final runs. Raw samples,legacy numbers,duration,sim-time,run inclusion and targets are unchanged.",
+  "reproduction": "summarize.py reproduces both numeric sets. This non-executable report policy selects completeInterval* for publication; it does not change collection or numerical computation."
+}

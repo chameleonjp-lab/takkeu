@@ -26,9 +26,9 @@ Measurement overhead; independent hiding versus update freeze; changing score tr
 
 ## Stage 3
 - [x] 4000/30-ball standard and low >=3 paired interleaved >=60s comparisons, retain dispersion and all attempts; main comparison same method.
-- [ ] Final 1500/2000/3000/4000 x standard/low x2 >=60s matrix.
+- [x] Final 1500/2000/3000/4000 x standard/low x2 >=60s matrix.
 - [x] Typecheck/unit/Chromium/WebKit/release/build, 43-condition/effect/physics/resource regression and flash safety when light rendering changed.
-- [ ] Independent adversarial review using exact code/raw data/images/logs; fix material findings and retest.
+- [x] Independent adversarial review using exact code/raw data/images/logs; fix material findings and retest.
 - [x] iPhone-only reproduction procedure if hardware unavailable. Evidence compressed and hash-indexed, no duplicate old artifacts.
 - [ ] Update Draft PR preserving old evidence, tie CI to final code SHA.
 
@@ -44,3 +44,5 @@ Prepared fallback consideration (not implemented): D08 confirms software fill-re
 
 2026-10-26 Stage2: indexed candidate failed latency acceptance and was reverted (94a90b1). Large-surface LOW pixel budget (a180f27) passes3 preassigned pairs perquality with18total60s runs including3main controls perquality. LOW p95 median199.9→133.4ms; standard200→200ms. All absolute targets failed. Detailed measurements and failures remain inStage2.
 2026-10-26 b697a98: test-only HTTP UUID/error handling and native visual helpers; production bytes unchanged froma180. Independent I01/I02 closed within stated finite scope afterRED/GREEN and nativev1FAILED→v2corrected. CI40260338558 all6jobs/1167tests succeeded on tree-identical merge6ee5216. Final16 matrix is now serialized; native audio probe refresh and archival follow it. No heavy browser/archive operations overlap accepted measurements.
+
+Stage3local complete: all16 final60s runs valid, all16absolute targets failed. Whole34run complete-inter-RAF reanalysis preserves everyp95/pair verdict; first partial final010−4.1ms disclosed, no run omitted. Nativeaudio140+4pass; flash18current/4baseline preserves7primary flags. Final review independently reproduces23613step deltas. Artifact packing retains failedv1 and allformal measurements, using exactRGBreferences for9flash duplicates.

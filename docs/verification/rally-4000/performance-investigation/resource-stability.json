@@ -1,0 +1,1804 @@
+[
+  {
+    "series": "quality-paired",
+    "file": "001-standard-1-main.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 53,
+        "min": 53,
+        "max": 53,
+        "last": 53
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 16,
+        "min": 16,
+        "max": 16,
+        "last": 16
+      },
+      "drawCalls": {
+        "first": 27,
+        "min": 27,
+        "max": 36,
+        "last": 31
+      },
+      "particles": {
+        "first": 0,
+        "min": 0,
+        "max": 1440,
+        "last": 336
+      }
+    },
+    "heapMin": 23100000,
+    "heapMax": 23100000,
+    "heapFirst": 23100000,
+    "heapLast": 23100000,
+    "sampledPeakLiveAudioSources": 101,
+    "sampledPeakLiveAudioNodes": 283,
+    "finalAudio": {
+      "created": 42045,
+      "sourceCreated": 13481,
+      "liveNodes": 15,
+      "liveSources": 4,
+      "layeredVoices": 1,
+      "peakNodes": 283,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "002-standard-2-before.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 35
+      },
+      "particles": {
+        "first": 248,
+        "min": 248,
+        "max": 1688,
+        "last": 296
+      }
+    },
+    "heapMin": 29400000,
+    "heapMax": 29400000,
+    "heapFirst": 29400000,
+    "heapLast": 29400000,
+    "sampledPeakLiveAudioSources": 95,
+    "sampledPeakLiveAudioNodes": 273,
+    "finalAudio": {
+      "created": 39991,
+      "sourceCreated": 12829,
+      "liveNodes": 211,
+      "liveSources": 64,
+      "layeredVoices": 16,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "003-standard-3-quality.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 248,
+        "min": 248,
+        "max": 1688,
+        "last": 1568
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 101,
+    "sampledPeakLiveAudioNodes": 284,
+    "finalAudio": {
+      "created": 40310,
+      "sourceCreated": 12911,
+      "liveNodes": 44,
+      "liveSources": 14,
+      "layeredVoices": 3,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "004-standard-4-quality.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 248,
+        "min": 248,
+        "max": 1688,
+        "last": 1592
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 90,
+    "sampledPeakLiveAudioNodes": 263,
+    "finalAudio": {
+      "created": 40003,
+      "sourceCreated": 12870,
+      "liveNodes": 243,
+      "liveSources": 80,
+      "layeredVoices": 16,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "005-standard-5-before.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 248,
+        "min": 248,
+        "max": 1688,
+        "last": 1448
+      }
+    },
+    "heapMin": 26000000,
+    "heapMax": 26000000,
+    "heapFirst": 26000000,
+    "heapLast": 26000000,
+    "sampledPeakLiveAudioSources": 95,
+    "sampledPeakLiveAudioNodes": 268,
+    "finalAudio": {
+      "created": 40014,
+      "sourceCreated": 12823,
+      "liveNodes": 16,
+      "liveSources": 4,
+      "layeredVoices": 1,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "006-standard-6-main.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 53,
+        "min": 53,
+        "max": 53,
+        "last": 53
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 16,
+        "min": 16,
+        "max": 16,
+        "last": 16
+      },
+      "drawCalls": {
+        "first": 27,
+        "min": 27,
+        "max": 36,
+        "last": 30
+      },
+      "particles": {
+        "first": 0,
+        "min": 0,
+        "max": 1440,
+        "last": 96
+      }
+    },
+    "heapMin": 24500000,
+    "heapMax": 24500000,
+    "heapFirst": 24500000,
+    "heapLast": 24500000,
+    "sampledPeakLiveAudioSources": 90,
+    "sampledPeakLiveAudioNodes": 262,
+    "finalAudio": {
+      "created": 43509,
+      "sourceCreated": 13908,
+      "liveNodes": 78,
+      "liveSources": 28,
+      "layeredVoices": 4,
+      "peakNodes": 283,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "007-standard-7-before.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 35
+      },
+      "particles": {
+        "first": 248,
+        "min": 248,
+        "max": 1688,
+        "last": 1352
+      }
+    },
+    "heapMin": 29400000,
+    "heapMax": 29400000,
+    "heapFirst": 29400000,
+    "heapLast": 29400000,
+    "sampledPeakLiveAudioSources": 86,
+    "sampledPeakLiveAudioNodes": 254,
+    "finalAudio": {
+      "created": 39744,
+      "sourceCreated": 12723,
+      "liveNodes": 16,
+      "liveSources": 4,
+      "layeredVoices": 1,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "008-standard-8-quality.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 248,
+        "min": 248,
+        "max": 1688,
+        "last": 1352
+      }
+    },
+    "heapMin": 26000000,
+    "heapMax": 26000000,
+    "heapFirst": 26000000,
+    "heapLast": 26000000,
+    "sampledPeakLiveAudioSources": 91,
+    "sampledPeakLiveAudioNodes": 254,
+    "finalAudio": {
+      "created": 40785,
+      "sourceCreated": 13066,
+      "liveNodes": 22,
+      "liveSources": 5,
+      "layeredVoices": 2,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "009-standard-9-main.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 53,
+        "min": 53,
+        "max": 53,
+        "last": 53
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 16,
+        "min": 16,
+        "max": 16,
+        "last": 16
+      },
+      "drawCalls": {
+        "first": 27,
+        "min": 27,
+        "max": 36,
+        "last": 31
+      },
+      "particles": {
+        "first": 0,
+        "min": 0,
+        "max": 1440,
+        "last": 1104
+      }
+    },
+    "heapMin": 23100000,
+    "heapMax": 23100000,
+    "heapFirst": 23100000,
+    "heapLast": 23100000,
+    "sampledPeakLiveAudioSources": 90,
+    "sampledPeakLiveAudioNodes": 253,
+    "finalAudio": {
+      "created": 41767,
+      "sourceCreated": 13347,
+      "liveNodes": 57,
+      "liveSources": 16,
+      "layeredVoices": 5,
+      "peakNodes": 283,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "010-low-1-main.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 53,
+        "min": 53,
+        "max": 53,
+        "last": 53
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 16,
+        "min": 16,
+        "max": 16,
+        "last": 16
+      },
+      "drawCalls": {
+        "first": 27,
+        "min": 27,
+        "max": 36,
+        "last": 30
+      },
+      "particles": {
+        "first": 0,
+        "min": 0,
+        "max": 720,
+        "last": 48
+      }
+    },
+    "heapMin": 26000000,
+    "heapMax": 26000000,
+    "heapFirst": 26000000,
+    "heapLast": 26000000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 243,
+    "finalAudio": {
+      "created": 40846,
+      "sourceCreated": 12574,
+      "liveNodes": 56,
+      "liveSources": 16,
+      "layeredVoices": 5,
+      "peakNodes": 243,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "011-low-2-quality.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 35
+      },
+      "particles": {
+        "first": 124,
+        "min": 124,
+        "max": 844,
+        "last": 784
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 244,
+    "finalAudio": {
+      "created": 42070,
+      "sourceCreated": 12977,
+      "liveNodes": 22,
+      "liveSources": 5,
+      "layeredVoices": 2,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "012-low-3-before.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 35
+      },
+      "particles": {
+        "first": 124,
+        "min": 124,
+        "max": 844,
+        "last": 676
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 244,
+    "finalAudio": {
+      "created": 38820,
+      "sourceCreated": 11966,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "013-low-4-before.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 124,
+        "min": 124,
+        "max": 844,
+        "last": 796
+      }
+    },
+    "heapMin": 29400000,
+    "heapMax": 29400000,
+    "heapFirst": 29400000,
+    "heapLast": 29400000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 244,
+    "finalAudio": {
+      "created": 38360,
+      "sourceCreated": 11826,
+      "liveNodes": 15,
+      "liveSources": 2,
+      "layeredVoices": 2,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "014-low-5-quality.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 35
+      },
+      "particles": {
+        "first": 124,
+        "min": 124,
+        "max": 844,
+        "last": 124
+      }
+    },
+    "heapMin": 29400000,
+    "heapMax": 29400000,
+    "heapFirst": 29400000,
+    "heapLast": 29400000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 244,
+    "finalAudio": {
+      "created": 42377,
+      "sourceCreated": 13065,
+      "liveNodes": 71,
+      "liveSources": 18,
+      "layeredVoices": 8,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "015-low-6-main.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 53,
+        "min": 53,
+        "max": 53,
+        "last": 53
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 16,
+        "min": 16,
+        "max": 16,
+        "last": 16
+      },
+      "drawCalls": {
+        "first": 27,
+        "min": 27,
+        "max": 36,
+        "last": 32
+      },
+      "particles": {
+        "first": 0,
+        "min": 0,
+        "max": 720,
+        "last": 660
+      }
+    },
+    "heapMin": 24500000,
+    "heapMax": 24500000,
+    "heapFirst": 24500000,
+    "heapLast": 24500000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 243,
+    "finalAudio": {
+      "created": 40342,
+      "sourceCreated": 12422,
+      "liveNodes": 18,
+      "liveSources": 4,
+      "layeredVoices": 2,
+      "peakNodes": 243,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "016-low-7-quality.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 35
+      },
+      "particles": {
+        "first": 124,
+        "min": 124,
+        "max": 844,
+        "last": 580
+      }
+    },
+    "heapMin": 31200000,
+    "heapMax": 31200000,
+    "heapFirst": 31200000,
+    "heapLast": 31200000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 244,
+    "finalAudio": {
+      "created": 42695,
+      "sourceCreated": 13177,
+      "liveNodes": 68,
+      "liveSources": 20,
+      "layeredVoices": 5,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "017-low-8-before.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 35
+      },
+      "particles": {
+        "first": 124,
+        "min": 124,
+        "max": 844,
+        "last": 676
+      }
+    },
+    "heapMin": 29400000,
+    "heapMax": 29400000,
+    "heapFirst": 29400000,
+    "heapLast": 29400000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 244,
+    "finalAudio": {
+      "created": 38578,
+      "sourceCreated": 11900,
+      "liveNodes": 11,
+      "liveSources": 2,
+      "layeredVoices": 1,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "quality-paired",
+    "file": "018-low-9-main.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 53,
+        "min": 53,
+        "max": 53,
+        "last": 53
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 16,
+        "min": 16,
+        "max": 16,
+        "last": 16
+      },
+      "drawCalls": {
+        "first": 27,
+        "min": 27,
+        "max": 36,
+        "last": 29
+      },
+      "particles": {
+        "first": 0,
+        "min": 0,
+        "max": 720,
+        "last": 552
+      }
+    },
+    "heapMin": 23100000,
+    "heapMax": 23100000,
+    "heapFirst": 23100000,
+    "heapLast": 23100000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 243,
+    "finalAudio": {
+      "created": 40368,
+      "sourceCreated": 12430,
+      "liveNodes": 28,
+      "liveSources": 8,
+      "layeredVoices": 2,
+      "peakNodes": 243,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "001-1500-standard-1.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 30,
+        "min": 30,
+        "max": 40,
+        "last": 35
+      },
+      "particles": {
+        "first": 1,
+        "min": 1,
+        "max": 1601,
+        "last": 689
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 100,
+    "sampledPeakLiveAudioNodes": 283,
+    "finalAudio": {
+      "created": 41227,
+      "sourceCreated": 13090,
+      "liveNodes": 121,
+      "liveSources": 34,
+      "layeredVoices": 11,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "002-1500-low-1.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 30,
+        "min": 30,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 1,
+        "min": 1,
+        "max": 801,
+        "last": 81
+      }
+    },
+    "heapMin": 29400000,
+    "heapMax": 29400000,
+    "heapFirst": 29400000,
+    "heapLast": 29400000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 244,
+    "finalAudio": {
+      "created": 42798,
+      "sourceCreated": 13188,
+      "liveNodes": 151,
+      "liveSources": 43,
+      "layeredVoices": 13,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "003-2000-standard-1.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 35
+      },
+      "particles": {
+        "first": 161,
+        "min": 161,
+        "max": 1601,
+        "last": 257
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 95,
+    "sampledPeakLiveAudioNodes": 273,
+    "finalAudio": {
+      "created": 39071,
+      "sourceCreated": 12514,
+      "liveNodes": 129,
+      "liveSources": 39,
+      "layeredVoices": 10,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "004-2000-low-1.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 81,
+        "min": 81,
+        "max": 801,
+        "last": 369
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 244,
+    "finalAudio": {
+      "created": 42799,
+      "sourceCreated": 13199,
+      "liveNodes": 153,
+      "liveSources": 50,
+      "layeredVoices": 10,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "005-3000-standard-1.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 35
+      },
+      "particles": {
+        "first": 161,
+        "min": 161,
+        "max": 1608,
+        "last": 264
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 96,
+    "sampledPeakLiveAudioNodes": 273,
+    "finalAudio": {
+      "created": 39448,
+      "sourceCreated": 12645,
+      "liveNodes": 199,
+      "liveSources": 60,
+      "layeredVoices": 16,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "006-3000-low-1.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 81,
+        "min": 81,
+        "max": 844,
+        "last": 808
+      }
+    },
+    "heapMin": 29400000,
+    "heapMax": 29400000,
+    "heapFirst": 29400000,
+    "heapLast": 29400000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 244,
+    "finalAudio": {
+      "created": 42205,
+      "sourceCreated": 13014,
+      "liveNodes": 26,
+      "liveSources": 7,
+      "layeredVoices": 2,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "007-4000-standard-1.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 248,
+        "min": 248,
+        "max": 1688,
+        "last": 272
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 95,
+    "sampledPeakLiveAudioNodes": 273,
+    "finalAudio": {
+      "created": 40275,
+      "sourceCreated": 12911,
+      "liveNodes": 67,
+      "liveSources": 16,
+      "layeredVoices": 8,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "008-4000-low-1.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 124,
+        "min": 124,
+        "max": 844,
+        "last": 796
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 244,
+    "finalAudio": {
+      "created": 42236,
+      "sourceCreated": 13022,
+      "liveNodes": 22,
+      "liveSources": 5,
+      "layeredVoices": 2,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "009-1500-standard-2.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 30,
+        "min": 30,
+        "max": 40,
+        "last": 35
+      },
+      "particles": {
+        "first": 1,
+        "min": 1,
+        "max": 1601,
+        "last": 1049
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 96,
+    "sampledPeakLiveAudioNodes": 273,
+    "finalAudio": {
+      "created": 40656,
+      "sourceCreated": 12902,
+      "liveNodes": 32,
+      "liveSources": 8,
+      "layeredVoices": 3,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "010-1500-low-2.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 30,
+        "min": 30,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 1,
+        "min": 1,
+        "max": 801,
+        "last": 765
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 244,
+    "finalAudio": {
+      "created": 42465,
+      "sourceCreated": 13084,
+      "liveNodes": 64,
+      "liveSources": 12,
+      "layeredVoices": 9,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "011-2000-standard-2.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 161,
+        "min": 161,
+        "max": 1601,
+        "last": 497
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 95,
+    "sampledPeakLiveAudioNodes": 268,
+    "finalAudio": {
+      "created": 40604,
+      "sourceCreated": 13023,
+      "liveNodes": 140,
+      "liveSources": 51,
+      "layeredVoices": 7,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "012-2000-low-2.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 81,
+        "min": 81,
+        "max": 801,
+        "last": 81
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 82,
+    "sampledPeakLiveAudioNodes": 246,
+    "finalAudio": {
+      "created": 42613,
+      "sourceCreated": 13138,
+      "liveNodes": 26,
+      "liveSources": 7,
+      "layeredVoices": 2,
+      "peakNodes": 246,
+      "peakSources": 82,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "013-3000-standard-2.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 161,
+        "min": 161,
+        "max": 1608,
+        "last": 1344
+      }
+    },
+    "heapMin": 26000000,
+    "heapMax": 26000000,
+    "heapFirst": 26000000,
+    "heapLast": 26000000,
+    "sampledPeakLiveAudioSources": 90,
+    "sampledPeakLiveAudioNodes": 253,
+    "finalAudio": {
+      "created": 40305,
+      "sourceCreated": 12941,
+      "liveNodes": 16,
+      "liveSources": 4,
+      "layeredVoices": 1,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "014-3000-low-2.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 81,
+        "min": 81,
+        "max": 844,
+        "last": 136
+      }
+    },
+    "heapMin": 29400000,
+    "heapMax": 29400000,
+    "heapFirst": 29400000,
+    "heapLast": 29400000,
+    "sampledPeakLiveAudioSources": 83,
+    "sampledPeakLiveAudioNodes": 248,
+    "finalAudio": {
+      "created": 42670,
+      "sourceCreated": 13154,
+      "liveNodes": 79,
+      "liveSources": 21,
+      "layeredVoices": 7,
+      "peakNodes": 248,
+      "peakSources": 83,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "015-4000-standard-2.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 248,
+        "min": 248,
+        "max": 1688,
+        "last": 584
+      }
+    },
+    "heapMin": 27600000,
+    "heapMax": 27600000,
+    "heapFirst": 27600000,
+    "heapLast": 27600000,
+    "sampledPeakLiveAudioSources": 86,
+    "sampledPeakLiveAudioNodes": 254,
+    "finalAudio": {
+      "created": 41253,
+      "sourceCreated": 13250,
+      "liveNodes": 140,
+      "liveSources": 51,
+      "layeredVoices": 7,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  },
+  {
+    "series": "final-performance",
+    "file": "016-4000-low-2.json.gz",
+    "resources": {
+      "geometries": {
+        "first": 57,
+        "min": 57,
+        "max": 57,
+        "last": 57
+      },
+      "textures": {
+        "first": 4,
+        "min": 4,
+        "max": 4,
+        "last": 4
+      },
+      "programs": {
+        "first": 17,
+        "min": 17,
+        "max": 17,
+        "last": 17
+      },
+      "drawCalls": {
+        "first": 31,
+        "min": 31,
+        "max": 40,
+        "last": 36
+      },
+      "particles": {
+        "first": 124,
+        "min": 124,
+        "max": 844,
+        "last": 172
+      }
+    },
+    "heapMin": 29400000,
+    "heapMax": 29400000,
+    "heapFirst": 29400000,
+    "heapLast": 29400000,
+    "sampledPeakLiveAudioSources": 81,
+    "sampledPeakLiveAudioNodes": 244,
+    "finalAudio": {
+      "created": 42669,
+      "sourceCreated": 13154,
+      "liveNodes": 174,
+      "liveSources": 47,
+      "layeredVoices": 16,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "scope": "Bounded60s workload; program preparation and GC timing vary. No inference of unlimited-session leak absence."
+  }
+]

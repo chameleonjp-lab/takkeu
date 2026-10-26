@@ -95,3 +95,9 @@
 ### 音声の追加実波形
 
 変更後に既存のbyte同一probeで140native offline renders（各engine70）と終了impact4対照を再実行。全成功、最大peak0.322451234、最大fading込みvoice16、全node解放。終了impactと対照の最大差は約1.32e−24。専用1000/3000/4000、best/loss、mute/zero/quiet/fallback、重複warning残差を保存。[新WAV/JSONとsource hash](audio/)を参照。これは新しい波形検証であり、旧WAVを新実行として扱っていない。人間試聴は未実施。
+
+### 保護対象と資源の照合
+
+[保護対象・配布物監査](protected-and-distribution-audit.json)で、Bから変更された製品ファイルがquality.tsだけ、残り59ファイルがbyte同一であることを確認。実際のCI root build7ファイルに今回の診断marker混入0。Pages/root両配布は別途8release検査成功。[全34回の資源範囲](resource-stability.json)も保持し、最終16ではgeometry57/プログラム17が各run内で一定、取得heap26.0–29.4MBだった。これは有限60秒と既存再試行/load検査の範囲であり、任意長時間のリーク不在の証明ではない。
+
+[独立最終レビュー](final-adversarial-review.md)は元コード・全34raw・比較画像・正式logを参照し、指摘と修正の履歴を保持する。数値の機械可読な主要列は[interval-statistics-policy.json](interval-statistics-policy.json)で宣言し、plain列を旧境界込みの参照値として残す。
