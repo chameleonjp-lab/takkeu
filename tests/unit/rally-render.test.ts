@@ -1,4 +1,3 @@
-import { triangleAttribute } from '../helpers/triangleAttribute';
 import { describe, expect, it, vi } from 'vitest';
 import { Group, Mesh, NormalBlending, Vector3 } from 'three';
 import { DEFAULT_CONFIG } from '../../src/game/config';
@@ -16,7 +15,7 @@ function effectState(score:number, additions:Partial<RallyEffectsState>={}):Rall
 function geometryValues(root:Group):number[] {
   const values:number[]=[];
   root.traverse(node=>{if(node instanceof Mesh){
-    const p=triangleAttribute(node.geometry,'position');
+    const p=node.geometry.getAttribute('position');
     for(let i=0;i<node.geometry.drawRange.count*3;i++)values.push(p.array[i]!);
   }});
   return values;
@@ -49,15 +48,15 @@ describe('shared presentation priority budget',()=>{
   it('dims actual ambient alpha while preserving cosmic backing, dedicated arrival alpha and geometry',()=>{
     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig),s=snapshot(4000,20.5);
     const world=view.worldRoot.getObjectByName('rally-world-lines') as Mesh,backdrop=view.worldRoot.getObjectByName('rally-world-glow') as Mesh;
-    view.update(s,effectState(4000));const ambient=triangleAttribute(world.geometry,'color').getW(0),dark=triangleAttribute(backdrop.geometry,'color').getW(0),base=world.geometry.drawRange.count;
-    const positions=Array.from(triangleAttribute(world.geometry,'position').array.slice(0,base*3));
+    view.update(s,effectState(4000));const ambient=world.geometry.getAttribute('color').getW(0),dark=backdrop.geometry.getAttribute('color').getW(0),base=world.geometry.drawRange.count;
+    const positions=Array.from(world.geometry.getAttribute('position').array.slice(0,base*3));
     const major=effectState(4000,{arrivals:[{id:'major',threshold:4000,at:20,config:RALLY_EFFECTS.find(c=>c.threshold===4000)!}]});
     view.update(s,major);
-    expect(triangleAttribute(world.geometry,'color').getW(0)).toBeCloseTo(ambient*.45,6);
-    expect(triangleAttribute(backdrop.geometry,'color').getW(0)).toBe(dark);
-    expect(triangleAttribute(world.geometry,'color').getW(base)).toBeCloseTo(.55,6);
-    expect(Array.from(triangleAttribute(world.geometry,'position').array.slice(0,base*3))).toEqual(positions);
-    view.update(snapshot(4000,24.1),major);expect(triangleAttribute(world.geometry,'color').getW(0)).toBeGreaterThan(ambient*.8);
+    expect(world.geometry.getAttribute('color').getW(0)).toBeCloseTo(ambient*.45,6);
+    expect(backdrop.geometry.getAttribute('color').getW(0)).toBe(dark);
+    expect(world.geometry.getAttribute('color').getW(base)).toBeCloseTo(.55,6);
+    expect(Array.from(world.geometry.getAttribute('position').array.slice(0,base*3))).toEqual(positions);
+    view.update(snapshot(4000,24.1),major);expect(world.geometry.getAttribute('color').getW(0)).toBeGreaterThan(ambient*.8);
     expect(view.stats().geometries).toBe(4);view.dispose();
   });
 
@@ -66,11 +65,11 @@ describe('shared presentation priority budget',()=>{
     const loss={id:'100',count:100,at:20,rollingCount:4,position:{x:.7,y:.5,z:1.95}};
     const world=view.worldRoot.getObjectByName('rally-world-lines') as Mesh;
     view.update(s,effectState(0,{lostBallCount:99,losses:[loss]}));
-    const positions=Array.from(triangleAttribute(world.geometry,'position').array.slice(0,12*6*3)),sparkAlpha=triangleAttribute(world.geometry,'color').getW(0);
+    const positions=Array.from(world.geometry.getAttribute('position').array.slice(0,12*6*3)),sparkAlpha=world.geometry.getAttribute('color').getW(0);
     const state=effectState(0,{lostBallCount:100,losses:[loss],cues:[{id:'final',kind:'loss-final',value:100,at:20,duration:2,priority:100}]});
-    view.update({...s,phase:'gameover'},state);const colors=triangleAttribute(world.geometry,'color');
+    view.update({...s,phase:'gameover'},state);const colors=world.geometry.getAttribute('color');
     expect(colors.getW(0)).toBeGreaterThan(0);expect(colors.getW(0)).toBeCloseTo(sparkAlpha*.45,6);
-    expect(Array.from(triangleAttribute(world.geometry,'position').array.slice(0,12*6*3))).toEqual(positions);
+    expect(Array.from(world.geometry.getAttribute('position').array.slice(0,12*6*3))).toEqual(positions);
     expect(colors.getW(12*6)).toBeCloseTo(.45,6);expect(state.losses).toHaveLength(1);view.dispose();
   });
 });
@@ -174,7 +173,7 @@ describe('bounded rally world renderer, 0–1000',()=>{
     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());
     const radius=(time:number)=>{
       view.update(snapshot(700,time));const mesh=view.worldRoot.getObjectByName('rally-world-lines') as Mesh;
-      const p=triangleAttribute(mesh.geometry,'position'),c=triangleAttribute(mesh.geometry,'color'),x:number[]=[];
+      const p=mesh.geometry.getAttribute('position'),c=mesh.geometry.getAttribute('color'),x:number[]=[];
       for(let i=0;i<mesh.geometry.drawRange.count;i++)if(Math.abs(c.getY(i)-.8)<1e-6&&Math.abs(c.getZ(i)-.35)<1e-6)x.push(p.getX(i));
       return (Math.max(...x)-Math.min(...x))/2;
     };
@@ -186,7 +185,7 @@ describe('bounded rally world renderer, 0–1000',()=>{
     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig);
     const cornerAlpha=(score:number)=>{
       view.update(snapshot(score));const mesh=rig.getObjectByName('rally-table-lines') as Mesh;
-      const p=triangleAttribute(mesh.geometry,'position'),c=triangleAttribute(mesh.geometry,'color'),alphas:number[]=[];
+      const p=mesh.geometry.getAttribute('position'),c=mesh.geometry.getAttribute('color'),alphas:number[]=[];
       for(let i=0;i<mesh.geometry.drawRange.count;i++)if(Math.abs(p.getZ(i))>1.5&&p.getY(i)>.045)alphas.push(c.getW(i));
       return Math.max(...alphas);
     };
@@ -233,7 +232,7 @@ describe('loss renderer follows immutable event facts through the finish clock',
     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig);
     const celebrations=lossCelebration(lossCelebration(createCelebrations(),55,20),77,20),original=JSON.stringify(celebrations);
     view.update({...snapshot(0,20.1),celebrations},effectState(0,{cues:[cue('loss-number',55,.8),cue('loss-number',77,.8)]}));
-    const mesh=rig.getObjectByName('rally-table-lines') as Mesh,p=triangleAttribute(mesh.geometry,'position');
+    const mesh=rig.getObjectByName('rally-table-lines') as Mesh,p=mesh.geometry.getAttribute('position');
     const center=(offset:number)=>{let x=0,z=0;for(let i=offset;i<offset+32*6;i++){x+=p.getX(i);z+=p.getZ(i);}return {x:x/(32*6),z:z/(32*6)};};
     expect(center(0).x).toBeLessThan(-.3);expect(center(32*6).x).toBeGreaterThan(.3);
     expect(center(0).z).toBeCloseTo(.93,2);expect(center(32*6).z).toBeCloseTo(.93,2);
@@ -280,17 +279,17 @@ describe('loss renderer follows immutable event facts through the finish clock',
     const cues=[10,20,30,40].map(value=>cue('loss-wave',value,1.2)),state=effectState(0,{cues}),original=JSON.stringify(state);
     const mesh=rig.getObjectByName('rally-table-lines') as Mesh;
     view.update(snapshot(0,20.3),effectState(0,{cues:[cues[0]!]}));
-    const count=mesh.geometry.drawRange.count,positions=geometryValues(rig),colors=Array.from(triangleAttribute(mesh.geometry,'color').array.slice(0,count*4));
+    const count=mesh.geometry.drawRange.count,positions=geometryValues(rig),colors=Array.from(mesh.geometry.getAttribute('color').array.slice(0,count*4));
     view.update(snapshot(0,20.3),state);
     expect(mesh.geometry.drawRange.count).toBe(count);expect(geometryValues(rig)).toEqual(positions);
-    expect(Array.from(triangleAttribute(mesh.geometry,'color').array.slice(0,count*4))).toEqual(colors);
+    expect(Array.from(mesh.geometry.getAttribute('color').array.slice(0,count*4))).toEqual(colors);
     expect(JSON.stringify(state)).toBe(original);expect(state.cues).toHaveLength(4);view.dispose();
   });
 
   it('budgets overlapping different-time wave opacity continuously rather than adding four full-strength outlines',()=>{
     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig),mesh=rig.getObjectByName('rally-table-lines') as Mesh;
     const cues=[10,20,30,40].map((value,i)=>cue('loss-wave',value,1.2,20+i*.05)),state=effectState(0,{cues});
-    view.update(snapshot(0,20.4),state);const colors=triangleAttribute(mesh.geometry,'color');let summedAlpha=0;
+    view.update(snapshot(0,20.4),state);const colors=mesh.geometry.getAttribute('color');let summedAlpha=0;
     for(let i=0;i<mesh.geometry.drawRange.count;i+=6)summedAlpha+=colors.getW(i);
     // Four sides × sixteen independent segments per outline. Summing their
     // per-outline opacity gives an upper bound even if every outline overlaps.
@@ -345,7 +344,7 @@ describe('late rally world replacements and arrivals',()=>{
     const view=createRallyEffectView(DEFAULT_CONFIG,new Group()),camera=createCamera();fitCamera(camera,1280,720,DEFAULT_CONFIG);
     view.update(snapshot(2000));
     const mesh=view.worldRoot.getObjectByName('rally-world-lines') as Mesh;
-    const p=triangleAttribute(mesh.geometry,'position'),c=triangleAttribute(mesh.geometry,'color'),projected=new Vector3();let visible=0;
+    const p=mesh.geometry.getAttribute('position'),c=mesh.geometry.getAttribute('color'),projected=new Vector3();let visible=0;
     for(let i=0;i<mesh.geometry.drawRange.count;i++)if(c.getX(i)>.4&&c.getY(i)>.58&&c.getZ(i)>.8){
       expect(p.getZ(i)).toBeGreaterThan(-6);expect(p.getZ(i)).toBeLessThan(-3);
       projected.set(p.getX(i),p.getY(i),p.getZ(i)).project(camera);
@@ -369,7 +368,7 @@ describe('late rally world replacements and arrivals',()=>{
 
   it.each([[390,844],[1280,720]])('covers most of the upper background at %i×%i while preserving the floor seam',(width,height)=>{
     const view=createRallyEffectView(DEFAULT_CONFIG,new Group()),camera=createCamera();fitCamera(camera,width,height,DEFAULT_CONFIG);view.update(snapshot(2000));
-    const mesh=view.worldRoot.getObjectByName('rally-world-glow') as Mesh,p=triangleAttribute(mesh.geometry,'position');
+    const mesh=view.worldRoot.getObjectByName('rally-world-glow') as Mesh,p=mesh.geometry.getAttribute('position');
     const xs:number[]=[],ys:number[]=[];
     for(let i=0;i<6;i++){xs.push(p.getX(i));ys.push(p.getY(i));}
     const minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys),planeZ=p.getZ(0);
@@ -393,7 +392,7 @@ describe('late rally world replacements and arrivals',()=>{
 
   it('distributes star points and a slow large halo across the portrait upper background',()=>{
     const view=createRallyEffectView(DEFAULT_CONFIG,new Group()),camera=createCamera();fitCamera(camera,390,844,DEFAULT_CONFIG);view.update(snapshot(2000));
-    const mesh=view.worldRoot.getObjectByName('rally-world-lines') as Mesh,p=triangleAttribute(mesh.geometry,'position'),c=triangleAttribute(mesh.geometry,'color'),v=new Vector3();
+    const mesh=view.worldRoot.getObjectByName('rally-world-lines') as Mesh,p=mesh.geometry.getAttribute('position'),c=mesh.geometry.getAttribute('color'),v=new Vector3();
     const seam=new Vector3(camera.position.x,-.8,-6.15).project(camera).y,bands=[0,0,0],haloY:number[]=[];
     for(let i=0;i<mesh.geometry.drawRange.count;i++){
       v.set(p.getX(i),p.getY(i),p.getZ(i)).project(camera);if(Math.abs(v.x)>.95||v.y<=seam||v.y>=.98)continue;
@@ -409,7 +408,7 @@ describe('late rally world replacements and arrivals',()=>{
   it('gives green, blue and red lightning different widths and travel speeds with smooth motion and decay',()=>{
     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());
     const widths=()=>{
-      const mesh=view.worldRoot.getObjectByName('rally-world-lines') as Mesh,p=triangleAttribute(mesh.geometry,'position'),c=triangleAttribute(mesh.geometry,'color');
+      const mesh=view.worldRoot.getObjectByName('rally-world-lines') as Mesh,p=mesh.geometry.getAttribute('position'),c=mesh.geometry.getAttribute('color');
       const values=new Map<string,number>(),alphas=new Map<string,number[]>();
       for(let i=0;i<mesh.geometry.drawRange.count;i+=6){
         const key=c.getY(i)>.8&&c.getX(i)<.1?'green':c.getZ(i)>.9&&c.getX(i)<.1?'blue':c.getX(i)>.8&&c.getY(i)<.1?'red':null;
@@ -440,7 +439,7 @@ describe('late rally world replacements and arrivals',()=>{
 
   it('evolves the green perimeter and net into three intersecting traveling table channels at 1500',()=>{
     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig);view.update(snapshot(1500,22));
-    const mesh=rig.getObjectByName('rally-table-lines') as Mesh,p=triangleAttribute(mesh.geometry,'position'),c=triangleAttribute(mesh.geometry,'color');
+    const mesh=rig.getObjectByName('rally-table-lines') as Mesh,p=mesh.geometry.getAttribute('position'),c=mesh.geometry.getAttribute('color');
     const perimeter=new Set<string>(),net=new Set<string>();
     for(let i=0;i<mesh.geometry.drawRange.count;i++){
       const color=c.getX(i)>.7?'red':c.getZ(i)>.8?'blue':c.getY(i)>.7?'green':null;
@@ -457,7 +456,7 @@ describe('late rally world replacements and arrivals',()=>{
     const projected=new Vector3();
     for(const age of [.45,1.35,2.35,3.45]){
       view.update(snapshot(4000,20+age));const mesh=view.worldRoot.getObjectByName('rally-world-lines') as Mesh,base=mesh.geometry.drawRange.count;
-      view.update(snapshot(4000,20+age),state);const p=triangleAttribute(mesh.geometry,'position');let visible=0;
+      view.update(snapshot(4000,20+age),state);const p=mesh.geometry.getAttribute('position');let visible=0;
       const visibleRings=new Set<number>();
       for(let i=base;i<mesh.geometry.drawRange.count;i++){
         const x=p.getX(i),y=p.getY(i),z=p.getZ(i);projected.set(x,y,z).project(camera);
@@ -478,7 +477,7 @@ describe('late rally world replacements and arrivals',()=>{
     const projected=new Vector3();
     for(const age of [.4,1.8,3.3]){
       view.update(snapshot(3000,20+age));const mesh=view.worldRoot.getObjectByName('rally-world-lines') as Mesh,base=mesh.geometry.drawRange.count;
-      view.update(snapshot(3000,20+age),state);const p=triangleAttribute(mesh.geometry,'position');let visible=0;
+      view.update(snapshot(3000,20+age),state);const p=mesh.geometry.getAttribute('position');let visible=0;
       for(let i=base;i<mesh.geometry.drawRange.count;i++){
         const x=p.getX(i),y=p.getY(i),z=p.getZ(i);projected.set(x,y,z).project(camera);
         if(Math.abs(projected.x)<1&&Math.abs(projected.y)<.94&&y>-.79)visible++;
@@ -490,7 +489,7 @@ describe('late rally world replacements and arrivals',()=>{
 
   it('propagates electric strands along the 2500 orbit band instead of only drawing a smooth ellipse',()=>{
     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig);view.update(snapshot(2500));
-    const mesh=rig.getObjectByName('rally-table-lines') as Mesh,p=triangleAttribute(mesh.geometry,'position');
+    const mesh=rig.getObjectByName('rally-table-lines') as Mesh,p=mesh.geometry.getAttribute('position');
     const y:number[]=[];
     for(let i=0;i<mesh.geometry.drawRange.count;i++)if(p.getY(i)<-.025&&p.getY(i)>-.13)y.push(p.getY(i));
     expect(Math.max(...y)-Math.min(...y)).toBeGreaterThan(.025);view.dispose();
@@ -499,7 +498,7 @@ describe('late rally world replacements and arrivals',()=>{
   it('adds genuinely branching tricolor lightning to the 3250 meteor swarm',()=>{
     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());
     const junctions=(score:number)=>{
-      view.update(snapshot(score,22));const mesh=view.worldRoot.getObjectByName('rally-world-lines') as Mesh,p=triangleAttribute(mesh.geometry,'position'),c=triangleAttribute(mesh.geometry,'color');
+      view.update(snapshot(score,22));const mesh=view.worldRoot.getObjectByName('rally-world-lines') as Mesh,p=mesh.geometry.getAttribute('position'),c=mesh.geometry.getAttribute('color');
       const degree=new Map<string,number>();
       for(let i=0;i<mesh.geometry.drawRange.count;i+=6){
         if(!(c.getX(i)<.1&&c.getY(i)>.8||c.getX(i)<.1&&c.getZ(i)>.9||c.getX(i)>.8&&c.getY(i)<.1))continue;
@@ -516,7 +515,7 @@ describe('late rally world replacements and arrivals',()=>{
   it('intertwines the 3500 electric strands in three dimensions around the double table halos',()=>{
     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig);view.update(snapshot(3499));
     const mesh=rig.getObjectByName('rally-table-lines') as Mesh,base=mesh.geometry.drawRange.count;
-    view.update(snapshot(3500));const p=triangleAttribute(mesh.geometry,'position'),ys:number[]=[];
+    view.update(snapshot(3500));const p=mesh.geometry.getAttribute('position'),ys:number[]=[];
     for(let i=base;i<mesh.geometry.drawRange.count;i++)ys.push(p.getY(i));
     expect(Math.max(...ys)-Math.min(...ys)).toBeGreaterThan(.24);view.dispose();
   });
@@ -527,7 +526,7 @@ describe('late rally world replacements and arrivals',()=>{
     const recent={id:'3000',threshold:3000,at:20.2,config:RALLY_EFFECTS.find(c=>c.threshold===3000)!};
     view.update(snapshot(3000,20.3));const mesh=view.worldRoot.getObjectByName('rally-world-lines') as Mesh,base=mesh.geometry.drawRange.count;
     view.update(snapshot(3000,20.3),effectState(1000,{arrivals:[old]}));const end=mesh.geometry.drawRange.count;
-    const maxAlpha=()=>{const c=triangleAttribute(mesh.geometry,'color'),a:number[]=[];for(let i=base;i<end;i++)a.push(c.getW(i));return Math.max(...a);};
+    const maxAlpha=()=>{const c=mesh.geometry.getAttribute('color'),a:number[]=[];for(let i=base;i<end;i++)a.push(c.getW(i));return Math.max(...a);};
     const oldAlpha=maxAlpha(),state=effectState(3000,{arrivals:[old,recent]});
     view.update(snapshot(3000,20.3),state);expect(maxAlpha()).toBeLessThan(oldAlpha*.8);expect(maxAlpha()).toBeGreaterThan(oldAlpha*.6);
     view.update(snapshot(3000,20.56),state);expect(view.stats().activeEffects).not.toContain('thousand-shockwave');expect(view.stats().activeEffects).toContain('electric-opening');

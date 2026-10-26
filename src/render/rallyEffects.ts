@@ -5,15 +5,11 @@ import { celebrationFrame } from '../game/celebrations';
 import type { Quality } from '../storage/preferences';
 import { sampleRainbow } from './rainbow';
 
-/** Four reused batches. Draw ranges count indices; uploads contain active corners. */
+/** Four reused batches. Draw ranges and upload ranges contain only this frame's vertices. */
 function createBatch(capacity:number,name:string,additive=true) {
   const geometry=new BufferGeometry();
-  const position=new BufferAttribute(new Float32Array(capacity*12),3).setUsage(DynamicDrawUsage);
-  const color=new BufferAttribute(new Float32Array(capacity*16),4).setUsage(DynamicDrawUsage);
-  const indices=new Uint16Array(capacity*6);
-  for(let quad=0;quad<capacity;quad++){const v=quad*4,i=quad*6;indices.set([v,v+1,v+2,v+1,v+3,v+2],i);}
-  // Fixed topology uploads once, while position/RGBA reuse four corners per quad.
-  geometry.setIndex(new BufferAttribute(indices,1));
+  const position=new BufferAttribute(new Float32Array(capacity*18),3).setUsage(DynamicDrawUsage);
+  const color=new BufferAttribute(new Float32Array(capacity*24),4).setUsage(DynamicDrawUsage);
   geometry.setAttribute('position',position);geometry.setAttribute('color',color);geometry.setDrawRange(0,0);
   const material=new MeshBasicMaterial({vertexColors:true,transparent:true,depthTest:true,depthWrite:false,
     side:DoubleSide,forceSinglePass:true,blending:additive?AdditiveBlending:NormalBlending,toneMapped:false});
@@ -21,24 +17,24 @@ function createBatch(capacity:number,name:string,additive=true) {
   let count=0,opacity=1;
   return {mesh,capacity,get count(){return count;},clear(){count=0;opacity=1;},setOpacity(value:number){opacity=value;},
     rect(left:number,bottom:number,right:number,top:number,z:number,r:number,g:number,b:number,a:number,bottomAlpha=a){
-      a*=opacity;bottomAlpha*=opacity;if(count>=capacity||a<=0)return;let v=count++*4;
+      a*=opacity;bottomAlpha*=opacity;if(count>=capacity||a<=0)return;let v=count++*6;
       position.setXYZ(v,left,bottom,z);position.setXYZ(v+1,right,bottom,z);position.setXYZ(v+2,left,top,z);
-      position.setXYZ(v+3,right,top,z);
-      for(let i=0;i<4;i++)color.setXYZW(v++,r,g,b,i<2?bottomAlpha:a);
+      position.setXYZ(v+3,right,bottom,z);position.setXYZ(v+4,right,top,z);position.setXYZ(v+5,left,top,z);
+      for(let i=0;i<6;i++)color.setXYZW(v++,r,g,b,i===0||i===1||i===3?bottomAlpha:a);
     },
     line(ax:number,ay:number,az:number,bx:number,by:number,bz:number,width:number,r:number,g:number,b:number,a:number){
       a*=opacity;if(count>=capacity||a<=0)return;
       // Billboard the ribbon toward the fixed player viewpoint, without Three allocations.
       const dx=bx-ax,dy=by-ay,dz=bz-az,sx=dy*3.4-dz*1.3,sy=-dx*3.4,sz=dx*1.3;
       const half=width/(Math.hypot(sx,sy,sz)||1)/2,x=sx*half,y=sy*half,z=sz*half;
-      let v=count++*4;
+      let v=count++*6;
       position.setXYZ(v,ax-x,ay-y,az-z);position.setXYZ(v+1,ax+x,ay+y,az+z);position.setXYZ(v+2,bx-x,by-y,bz-z);
-      position.setXYZ(v+3,bx+x,by+y,bz+z);
-      for(let i=0;i<4;i++)color.setXYZW(v++,r,g,b,a);
+      position.setXYZ(v+3,ax+x,ay+y,az+z);position.setXYZ(v+4,bx+x,by+y,bz+z);position.setXYZ(v+5,bx-x,by-y,bz-z);
+      for(let i=0;i<6;i++)color.setXYZW(v++,r,g,b,a);
     },
     finish(){geometry.setDrawRange(0,count*6);mesh.visible=count>0;
       position.clearUpdateRanges();color.clearUpdateRanges();
-      if(count){position.addUpdateRange(0,count*12);color.addUpdateRange(0,count*16);position.needsUpdate=true;color.needsUpdate=true;}
+      if(count){position.addUpdateRange(0,count*18);color.addUpdateRange(0,count*24);position.needsUpdate=true;color.needsUpdate=true;}
     },
     dispose(){mesh.removeFromParent();geometry.dispose();material.dispose();},
   };

@@ -1,0 +1,11 @@
+# Visual acceptance declared before the resolution candidate
+
+Indexed candidate: require zero changed RGBA channels at matched source/state/camera/quality/age; expanded triangle/RGBA streams must match exactly. Vertex/index representation alone is insufficient performance evidence.
+
+Possible large-viewport low-quality pixel budget candidate (not yet implemented): keep all geometry, material colors/alpha, effect/controller time, density, camera, input mapping, audio and physics byte-identical to B. Standard and phone-sized low rendering must keep exactly the same drawing dimensions and sampled pixels. For affected desktop low-quality rendering, exact pixel equality is not expected because raster sample positions change.
+
+Before considering adoption, capture both sources at500/1000/1500/2000/2500/2750/3000/3500/4000, age0.1/1.5/3.2s, both quality settings, Chromium/WebKit. Save all full images and frozen state. Require exact state/geometry and phase/quality counts; no effect is disabled. Quantify channel differences instead of subjective equivalence.
+
+For changed low-resolution images, compare individual additive line batches' before/after pixel contributions against the same scene with that batch hidden. Require each nonempty batch's total absolute RGB contribution to retain at least85% and at most115% of baseline at matched displayed image size; assess each channel separately where its baseline energy is nonzero. This protects visible light/color intensity against merely retaining invisible geometry. Check sample ball centers at their unchanged projected locations for a white-core pixel with RGB channels >=200, plus unchanged CSS input coordinates within the existing1px browser tolerance. Inspect full images for stage distinction, ball/paddle visibility and continuous movement. A failure rejects the candidate or requires a documented investigation, not a relaxed threshold.
+
+Rerun the existing flash analyzer without changing thresholds, including390/1000/1500/3000/4000. Retain earlier warnings and distinguish finite SDR screening, human vision/listening, formal WCAG, HDR and physical iPhone. This finite comparison cannot certify every possible overlap or human visual acuity.
