@@ -1,0 +1,101 @@
+[
+  {
+    "root": "/workspace/takkeu-main",
+    "seconds": 12,
+    "warmSeconds": 3,
+    "label": "D01-main-corrected"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 12,
+    "warmSeconds": 3,
+    "label": "D01-pr-corrected"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 12,
+    "warmSeconds": 3,
+    "label": "D02-hide-corrected",
+    "mode": "hide-effects"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 12,
+    "warmSeconds": 3,
+    "label": "D03-freeze-corrected",
+    "mode": "freeze-effects"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 12,
+    "warmSeconds": 3,
+    "label": "D04-rainbow-corrected",
+    "mode": "freeze-rainbow"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 12,
+    "warmSeconds": 3,
+    "label": "D05-background-corrected",
+    "mode": "static-background"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 12,
+    "warmSeconds": 3,
+    "label": "D06-no-audio-corrected",
+    "mode": "no-audio"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 12,
+    "warmSeconds": 3,
+    "label": "D07-full-corrected",
+    "profile": false
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 12,
+    "warmSeconds": 3,
+    "label": "D07-light-corrected",
+    "profile": false,
+    "collector": "light"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 12,
+    "warmSeconds": 3,
+    "label": "D07-off-corrected",
+    "profile": false,
+    "collector": "off"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 12,
+    "warmSeconds": 3,
+    "label": "D06-original-silent-corrected",
+    "audible": false
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 12,
+    "warmSeconds": 3,
+    "label": "D08-low-dpr1-corrected",
+    "quality": "low"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 12,
+    "warmSeconds": 3,
+    "label": "D08-standard-dpr2-corrected",
+    "dpr": 2
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 12,
+    "warmSeconds": 3,
+    "label": "D08-low-dpr2-corrected",
+    "quality": "low",
+    "dpr": 2
+  }
+]

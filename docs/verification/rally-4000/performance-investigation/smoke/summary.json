@@ -1,0 +1,148 @@
+[
+  {
+    "label": "smoke",
+    "configuration": {
+      "seconds": 3,
+      "warmSeconds": 1,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "smoke"
+    },
+    "startedAt": "2026-10-26T00:55:43.138Z",
+    "finishedAt": "2026-10-26T00:55:49.499Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "a3b9279b8382c4f44d7276e3e5de4879a9cab75443a6ac79cf2dd2ef27ef8656",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 241903414\nuser_usec 188945064\nsystem_usec 52958349\nnice_usec 0\nnr_periods 5611\nnr_throttled 65\nthrottled_usec 1868103\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 263116521\nuser_usec 208243185\nsystem_usec 54873335\nnice_usec 0\nnr_periods 5675\nnr_throttled 104\nthrottled_usec 4572899\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 3218.300000000093,
+    "frames": 53,
+    "p50Ms": 16.700000000000273,
+    "p95Ms": 200,
+    "p99Ms": 233.39999999999964,
+    "fraction25": 0.5849056603773585,
+    "simulationSeconds": 2.4499999999999935,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 783,
+      "sourceCreated": 240,
+      "liveNodes": 211,
+      "liveSources": 64,
+      "layeredVoices": 16,
+      "peakNodes": 211,
+      "peakSources": 64,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 2829,
+      "sourceCreated": 886,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0,
+    "collectorP95Ms": 0.2000000000698492,
+    "costs": {
+      "simulation": {
+        "p50": 0.09999999997671694,
+        "p95": 1.1999999999534339
+      },
+      "presentation": {
+        "p50": 0.7999999999301508,
+        "p95": 1.6999999999534339
+      },
+      "rainbow": {
+        "p50": 0.5999999999767169,
+        "p95": 1
+      },
+      "effects": {
+        "p50": 0.7999999999301508,
+        "p95": 2.799999999930151
+      },
+      "background": {
+        "p50": 0.4999999998835847,
+        "p95": 1.7000000000698492
+      },
+      "submit": {
+        "p50": 0.8000000000465661,
+        "p95": 4.5
+      },
+      "uploadBytes": {
+        "p50": 489124,
+        "p95": 653004
+      },
+      "drawCalls": {
+        "p50": 33,
+        "p95": 34
+      },
+      "triangles": {
+        "p50": 44450,
+        "p95": 46972
+      }
+    },
+    "gpu": {
+      "valid": 13,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 78.319865
+    },
+    "absoluteTarget": false
+  }
+]

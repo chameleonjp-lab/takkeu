@@ -1,0 +1,30 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit
+
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu-before
+
+
+ Test Files  71 passed (71)
+      Tests  958 passed (958)
+   Start at  00:53:22
+   Duration  14.60s (tests 68%, environment 24%, import 6%, transform 2%, worker 1%)
+
+    Isolate  71 workers spawned · ~225ms startup each (spawn + environment, per file)
+             at least ~5.11s faster with isolate: false — reuses workers across files instead of one per file
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

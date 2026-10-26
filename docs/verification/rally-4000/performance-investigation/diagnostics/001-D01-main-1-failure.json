@@ -1,0 +1,21 @@
+{
+  "configuration": {
+    "seconds": 10,
+    "warmSeconds": 3,
+    "score": 4000,
+    "quality": "standard",
+    "dpr": 1,
+    "mode": "normal",
+    "collector": "full",
+    "profile": true,
+    "audible": true,
+    "root": "/workspace/takkeu-main",
+    "label": "D01-main-1"
+  },
+  "startedAt": "2026-10-26T00:56:35.858Z",
+  "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '設定', exact: true })\u001b[22m\n",
+  "errors": [],
+  "blocked": [],
+  "beforeCPU": "usage_usec 270570577\nuser_usec 215237344\nsystem_usec 55333232\nnice_usec 0\nnr_periods 5778\nnr_throttled 119\nthrottled_usec 5442076\nnr_bursts 0\nburst_usec 0\n",
+  "afterCPU": "usage_usec 272797428\nuser_usec 216978534\nsystem_usec 55818894\nnice_usec 0\nnr_periods 5942\nnr_throttled 119\nthrottled_usec 5442076\nnr_bursts 0\nburst_usec 0\n"
+}
