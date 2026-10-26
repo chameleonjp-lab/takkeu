@@ -1,5 +1,7 @@
 # 0–4000ラリー演出拡張：検証結果と未解決事項
 
+**2026-10-26の追補:** [原因調査・改善・再検証](performance-investigation/README.md)を参照。大画面の手動低画質で新しい同方式3組比較のp95が25.05–33.27%短縮。標準画質・Linux絶対目標・物理iPhoneは未解決/未確認。以下の本文は前回d30aa196系列の履歴であり、今回の性能測定やCI結果ではない。旧ログ・失敗・43条件の対応は保持する。
+
 Draft PR: [#27](https://github.com/chameleonjp-lab/takkeu/pull/27)（main向け・性能P1未解消・マージ/公開なし）。
 
 **総合受入は未達。Linux性能targetはbaseline・initial・finalの各16条件すべて未達で、4000の遅延悪化はP1 FAILED（未解決）。GPU診断は96/96 queryを取得し完了。性能悪化の完全な因果帰属は未立証。** CI成功、draw call削減、画素一致を遅延改善へ読み替えない。Draft PR用の記録で、マージ・公開・DB変更は行わない。

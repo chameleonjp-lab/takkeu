@@ -1,11 +1,13 @@
 # PR #27 performance investigation — 2026-10-26
 
-Stage 1 complete; Stage 2 candidate testing pending. This is a new measurement series, not a reuse of historical performance results. No performance improvement is claimed at this checkpoint.
+大画面の手動低画質で比較性能の改善を確認した。4000ラリー・30球・1280×720/DPR1、同じfull計測の3組でp95を25.05–33.27%短縮。中央値199.9→133.4ms、ゲーム進行50.586→55.557秒/実時間60秒。標準画質のp95は200→200msで改善せず、絶対目標25ms/95%/59秒は未達。iPhone実機は未確認。総合性能問題は未解決でありDraftを維持する。
+
+[Stage 1 原因と確度](causes.md) / [Stage 2 修正・不採用・全反復結果](stage2-report.md) / [Stage 3 回帰・安全性・最終測定](stage3-report.md) / [実機手順](iphone-procedure.md)。これは新しい計測系列であり、過去の異なる計測方式の値を改善率へ流用していない。以下の原因調査本文・元ログは履歴として残す。
 
 A: main/merged PR26 `aff31169fd6feaad7bad35f22fe3de26429296cf`, source tree `52b45edfb0b8947223b8947437ef6fa9ee79cf5f`.
 B: PR27 head `059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674`, source tree `47bd0f370ad169de00c77b37bb74429b63020d44`, tests tree `097b10b95f55aded9d77af6dd4ed6b85925b9684`. Runtime source/tests/package/config match historical `d30aa196`; documentation differs. PR27 is open Draft. Production files in A/B are unchanged.
 
-[Environment and file hashes](environment.json), [plan/ledger](plan.md), [independent method review](measurement-review.md), [corrected diagnostic summary](stage1-summary.json). Node24.19.0/npm11.9.0/Three0.186.1/Playwright1.64.1; Chromium156.0.8078.4, headless ANGLE SwiftShader, 1280×720, DPR1/2. Cgroup4 CPUs quota, effective CPUs0–4, memory16GiB. Individual raw files retain GL renderer/extensions, actual drawing size, browser and CPU counters. No iPhone is attached.
+[Environment and file hashes](environment.json), [plan/ledger](plan.md), [independent method review](measurement-review.md), [corrected diagnostic summary](stage1-summary.json). Node24.19.0/npm11.9.0/Three0.186.1/Playwright1.64.1; Chromium156.0.8078.4, headless ANGLE SwiftShader, 1280×720, DPR1/2. Cgroup4 CPUs quota, effective CPUs0–4, memory16GiB. Profiled diagnostics retain GL renderer/extensions. Formal profile:false cases retain launch configuration, browser, actual drawing size and CPU counters, but their GL metadata and GPU times are null; they do not independently re-query the renderer. No iPhone is attached.
 
 ## Methods and limits
 
@@ -39,8 +41,8 @@ Numbers below are short diagnostic observations, not 60s acceptance results. `st
 
 The v2 DPR2 standard second run paused with zero simulation advance; its idle RAF p95 is **not** an improvement. It remains a failure record. Absolute reference target remains25ms/95%/59simSeconds/continuous30balls; no threshold is relaxed. Short diagnostics cannot pass the60s target.
 
-## Baseline verification and next step
+## Stage 1 checkpoint history
 
 958 unit tests pass on unchanged B after restoring the SQL migration to the sparse checkout. First attempt957pass/1failure was missing sparse-checkout SQL input; both complete logs remain. Indexed-representation guard is RED on current production as expected. A1064-case pre-change triangle-stream/color reference was captured before any production edit.
 
-Next candidate: indexed BufferGeometry only. Same four corners, RGBA, winding, triangle ordering, draw range (indices), effect duration/density, physics, and input. Static index upload once; dynamic attributes reduced1/3. Validate expanded triangle hashes, images and actual measured latency. Do not retain an unproven performance change solely because vertex/byte counters decrease.
+At this checkpoint the next candidate was indexed BufferGeometry. Its1064 expanded triangle/RGBA cases matched and transfers decreased, but16 long trials did not establish a latency benefit. It was reverted at94a90b1; [complete verdict](indexed-verdict.md). The retained production change is solely the large-viewport LOW pixel budget inquality.ts; seeStage2. No physics/input/audio/effect-generation algorithm was changed.

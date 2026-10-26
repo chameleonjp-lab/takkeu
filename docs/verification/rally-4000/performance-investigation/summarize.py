@@ -21,8 +21,9 @@ def summarize(directory):
         sim=d['final']['simTime']-d['initial']['simTime'];normalized=60_000*sim/d['durationMs']
         row={'file':path.name,'label':s['label'],'configuration':s['configuration'],'commit':s['commit'],'sourceStable':s['sourceStable'],
             'durationMs':d['durationMs'],'frames':len(intervals),'p50Ms':percentile(intervals,.5),'p95Ms':percentile(intervals,.95),'p99Ms':percentile(intervals,.99),
-            'fraction25':sum(x<=25 for x in intervals)/len(intervals),'completeIntervalP95Ms':percentile(complete,.95),
+            'fraction25':sum(x<=25 for x in intervals)/len(intervals),'completeIntervalP50Ms':percentile(complete,.5),'completeIntervalP95Ms':percentile(complete,.95),'completeIntervalP99Ms':percentile(complete,.99),
             'completeIntervalFraction25':sum(x<=25 for x in complete)/len(complete),'simulationSeconds':sim,'simulationSecondsPer60Wall':normalized,
+            'initialPartialMs':intervals[0],'completeIntervalsValid':bool(complete) and all(math.isfinite(x) and x>=0 for x in complete),
             'initialScore':d['initial']['score'],'finalScore':d['final']['score'],'initialBalls':len(d['initial']['balls']),'remainingBalls':s['remainingBalls'],
             'continuousRunning30':continuous,'generatedAudioSources':generated,'sampledPeakLiveAudioSources':max(x['audio']['liveSources']for x in samples),
             'sampledPeakLiveAudioNodes':max(x['audio']['liveNodes']for x in samples),
@@ -35,6 +36,7 @@ def summarize(directory):
             'errors':s['errors'],'blocked':s['blocked']}
         row['validComparison']=s['sourceStable'] and not s['errors'] and not s['blocked'] and continuous and generated>0 and d['durationMs']>=60000
         row['absoluteTarget']=row['validComparison'] and row['p95Ms']<=25 and row['fraction25']>=.95 and sim>=59 and normalized>=59
+        row['completeIntervalAbsoluteTarget']=row['validComparison'] and row['completeIntervalsValid'] and row['completeIntervalP95Ms']<=25 and row['completeIntervalFraction25']>=.95 and sim>=59 and normalized>=59
         # Preserve summary discrepancies rather than silently correcting source logs.
         row['recordedSummaryMatches']=all(abs(row[k]-s[k])<1e-8 for k in ['p50Ms','p95Ms','p99Ms','fraction25','simulationSeconds'])
         rows.append(row)

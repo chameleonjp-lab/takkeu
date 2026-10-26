@@ -1,5 +1,7 @@
 # Three-way performance results
 
+Historical d30aa196 series. The new2026-10-26 investigation and same-method A/B/C measurements are in[performance-investigation](performance-investigation/README.md). Do not directly compare the old measurement method below with that new series. Original records and failed targets remain unchanged.
+
 **P1 performance FAILED. All 16 final measurements executed successfully, but all 16 Linux reference targets remain unmet. The single-pass change reduced actual draw submissions; real-loop latency improvement was not demonstrated.** No no-degradation or target-device acceptance claim is made.
 
 The table compares merged PR26 baseline, initial rally implementation, and the single-pass candidate. Each matrix has four starting scores × standard/low × two repeats, 30 non-lost balls, and at least 60 real seconds. Scoring/physics continues naturally; the raw samples retain changing scores, phase and simulation time. Chromium/SwiftShader uses 1280×720 at device ratio 1. The formal test script/config/fixtures are byte-identical across matrices.
