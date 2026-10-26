@@ -33,7 +33,12 @@ def split(p):
 
 def verified_parts(directory):
  p=directory/'capture-lossless.mp4.parts.json'
- if not p.exists(): raise RuntimeError('Missing retained movie parts: '+str(directory))
+ if not p.exists():
+  video=directory/'capture-lossless.mp4'
+  proof=json.loads((directory/'lossless-verification.json').read_text())
+  assert video.exists() and video.stat().st_size==proof['videoBytes'] and sha(video)==proof['videoSHA256']
+  assert proof['losslessRGBBytesMatch'] and proof['sourceRGB24SHA256']==proof['decodedRGB24SHA256']
+  return
  m=json.loads(p.read_text());h=hashlib.sha256();n=0
  for part in m['parts']:
   f=directory/part['file'];assert sha(f)==part['sha256']

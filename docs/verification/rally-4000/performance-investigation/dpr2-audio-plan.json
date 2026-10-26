@@ -1,0 +1,50 @@
+[
+  {
+    "label": "standard-before",
+    "root": "/workspace/takkeu-before",
+    "quality": "standard",
+    "dpr": 2,
+    "score": 4000,
+    "seconds": 12,
+    "warmSeconds": 3,
+    "profile": true,
+    "collector": "full",
+    "audible": true
+  },
+  {
+    "label": "standard-candidate",
+    "root": "/workspace/takkeu",
+    "quality": "standard",
+    "dpr": 2,
+    "score": 4000,
+    "seconds": 12,
+    "warmSeconds": 3,
+    "profile": true,
+    "collector": "full",
+    "audible": true
+  },
+  {
+    "label": "low-candidate",
+    "root": "/workspace/takkeu",
+    "quality": "low",
+    "dpr": 2,
+    "score": 4000,
+    "seconds": 12,
+    "warmSeconds": 3,
+    "profile": true,
+    "collector": "full",
+    "audible": true
+  },
+  {
+    "label": "low-before",
+    "root": "/workspace/takkeu-before",
+    "quality": "low",
+    "dpr": 2,
+    "score": 4000,
+    "seconds": 12,
+    "warmSeconds": 3,
+    "profile": true,
+    "collector": "full",
+    "audible": true
+  }
+]
