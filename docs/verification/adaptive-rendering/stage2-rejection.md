@@ -31,6 +31,6 @@ EautoとDlowでは演出密度・音声品質も異なる。全体p95差を自�
 - 自動モードのUI/保存値/controller/描画buffer変更/point uniformと、その専用検査を候補不採用として撤回。対象と元source/testのSHA256・Git blobは正式記録のwithdraw-adaptive-source-map.jsonに保存し、親commit9a9b71fから復元できる。
 - app/createView/quality/particles/preferences/screensと補助fixtureを6ec3872の元実装へ戻す。ゲーム・物理・入力・音声・結果44段階・ランキングの処理は変更しない。
 - 既存standard/lowとtakkeu.preferences.v1を維持。未公開候補のauto値が残っても、bestScore等を保持したままstandardへ安全復旧する検査をRED→GREENで追加。
-- 採用するsource差分はballs/celebrations/presentation/rallyEffectsの4描画file。型検査・914unit成功。最終manual版は新SHAでCI/ビルド/実時間性能/実入力/視認性/資源/点滅を再検証する。候補の成功を新sourceの成功へ流用しない。
+- 採用sourceはb0b6760、差分はballs/celebrations/presentation/rallyEffectsの4描画file。候補の成功を流用せず、型検査・914unit/200browser/8release・両build・CI・44回の実時間継続・実入力/視認/資源を再検証した。絶対性能目標は未達。[最終数値と点滅・独立レビュー](final-results.md)。
 
 候補の追加native/auto撮影は不採用判断で未実施とし、成功に数えない。旧成功/失敗・75回の元測定・独立レビューは保存する。実機で切替の待ちが小さいことや、別方式の有効性が実測できるまでは、快適性を優先して自動機能を配布対象へ含めない。

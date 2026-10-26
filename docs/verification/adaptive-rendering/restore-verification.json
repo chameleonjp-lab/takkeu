@@ -1,0 +1,17 @@
+{
+  "source": "b0b6760610c17dc5a1f19efebf42049a31df1150",
+  "command": "python3 docs/verification/adaptive-rendering/restore_evidence.py verify docs/verification/adaptive-rendering/evidence /workspace/takkeu-reference-cache --restore /workspace/takkeu-restored-evidence",
+  "manifestSHA256": "b7be8ecae0d850e4af0e27c12085a8593f1c8c5e99a6dd138e857d2442c6c5a6",
+  "verifierSHA256": "c62a9317a90762519c94a4ed2de9c4d079b6446113bd218432c31259fe3edd8b",
+  "logSHA256": "f3bf65a0732234fca5599560cfce532340f74daa84a10eea621022b1ab284898",
+  "completedAtFromLogMtimeUTC": "2026-10-26T18:20:32.987271+00:00",
+  "result": {
+    "verifiedOrdinaryFiles": 5930,
+    "verifiedCIMembers": 12888,
+    "verifiedExternalArchives": 5,
+    "allRestoredSHA256Match": true
+  },
+  "independentAudit": "archive-review.md",
+  "providerZIPContainersRetained": false,
+  "providerExactMembersRetained": true
+}

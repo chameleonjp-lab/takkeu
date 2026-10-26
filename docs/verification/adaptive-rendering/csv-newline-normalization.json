@@ -1,0 +1,21 @@
+{
+  "reason": "Git whitespace check treated original CRLF as trailing whitespace. Original formal CSV bytes remain frozen in CAS; public convenience copies normalize only line endings with exact cell equality.",
+  "initialCheckExit": 2,
+  "initialLogSHA256": "c0596efc59d0c0af5174ab018670542d1498ed9628d20adaedf9e5fb7661efc4",
+  "files": [
+    {
+      "file": "performance.csv",
+      "rawArchivedSHA256": "db3d4000de719c40e293a209e8c78e37dfc61cd8d6284cb86652e8e19699f4fc",
+      "publicLFSHA256": "c4889c2d141d64d853c688f49eefa8208404cb0bb2cf638ce9b8a8edd411c9ec",
+      "rowsIncludingHeader": 56,
+      "allParsedCellsEqual": true
+    },
+    {
+      "file": "effect-decisions.csv",
+      "rawArchivedSHA256": "b272b338f0068fab4a755d27fd77f0feb290b239d10d943d6a4159af77c8387a",
+      "publicLFSHA256": "86da74460f4c6fca6db63f5c690d988c902be8d1e5934011687587231cd9bf7c",
+      "rowsIncludingHeader": 44,
+      "allParsedCellsEqual": true
+    }
+  ]
+}

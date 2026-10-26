@@ -1,5 +1,7 @@
 # 遊びやすさを優先する描画整理 Implementation Plan
 
+> 下記checklistは計画時点の記録。最新の実装/採否・正式数値・残存制約は[最終結果](final-results.md)、復元と独立監査は[証拠](evidence-method.md)を参照する。autoは実測後不採用で、最終sourceはb0bの4render変更のみ。
+
 > For agentic workers: Use superpowers:executing-plans. The user's autonomous execution instruction remains in force; do not add a design approval gate.
 
 Goal: 装飾を整理し、30球の視認・操作・安定性を優先する。

@@ -1,0 +1,125 @@
+{
+  "testedSource": "b0b6760610c17dc5a1f19efebf42049a31df1150",
+  "testedCompleteTree": "89b634281d2fb056c115de1a865925fc178f1c22",
+  "testedPRMergeCheckout": "e7424bcdce86a7995c97b9b1dbb0f3f43785d696",
+  "ciRuns": [
+    40344003207,
+    40344231010
+  ],
+  "rootEntriesOutsideDocsIdentical": {
+    ".gitattributes": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a317c1d7092cf96f446ed4bea4708bae1d0e9163"
+    },
+    ".github": {
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7918d84a58a92f6b7d0767fe24650b57ab856183"
+    },
+    ".gitignore": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10379bb44ee608223e1e16705d1f7446f28e5e03"
+    },
+    ".node-version": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60ade1ae01e833a5c291c47883bf26fb031f7727"
+    },
+    "README.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "526b763e84400275ee555b09e950e371c3c0a823"
+    },
+    "index.html": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e0a1af6b217ccda9e1e4d3b056e77d5088d193f"
+    },
+    "package-lock.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb49a6c325ff4cfef20250be47dc6674deb0edbd"
+    },
+    "package.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44a0d6184a6bc1932feb0cf13e14bcd7e1b641bc"
+    },
+    "playwright.config.ts": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c8a8257eebefa24251bf9f6e7507ab1c72035581"
+    },
+    "playwright.performance.config.ts": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "693037046156a05b8485e51a11b486fe40369e59"
+    },
+    "playwright.rally-pixels.config.ts": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59cf6d265210c5f61fb022b286fbf70731dc4245"
+    },
+    "playwright.release.config.ts": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67f95590fdcdef7aabdc5057520e1ff3d1b88697"
+    },
+    "public": {
+      "mode": "040000",
+      "type": "tree",
+      "sha": "88907e2c6818c115e2ff8d2c8782ae254f6a92e4"
+    },
+    "ranking-manifest.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "177f12acef0b601317d240eba29d363ca393e147"
+    },
+    "scripts": {
+      "mode": "040000",
+      "type": "tree",
+      "sha": "682335464f27cedc5a6337b1831229e9f9f05a91"
+    },
+    "src": {
+      "mode": "040000",
+      "type": "tree",
+      "sha": "517f5d82e37b23692f08b7e386d7d74784570612"
+    },
+    "supabase": {
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3d42005152b328caee44018a7d3a2fe1dedb609d"
+    },
+    "tests": {
+      "mode": "040000",
+      "type": "tree",
+      "sha": "24f34e03710c2f57596c055bc0f9dc1299e1a447"
+    },
+    "tsconfig.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd04a9492423ede39de41856551a7df410f39a3e"
+    },
+    "vite.config.ts": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54331fa51c70262a308c2cd98ec92aa5bb31cea5"
+    },
+    "vitest.config.ts": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3cd5813fe5f7177a29edbf8c26554d6cf2e9ebd6"
+    }
+  },
+  "allProductSourceTestsScriptsConfigPackageAssetsUnchanged": true,
+  "recordCommitItselfNotCIValidated": true,
+  "finalPublicationConstraint": "Only docs/verification/adaptive-rendering paths may change after this proof; final commit staged-path and tree checks must enforce it.",
+  "manifestSHA256": "b7be8ecae0d850e4af0e27c12085a8593f1c8c5e99a6dd138e857d2442c6c5a6",
+  "sourceReviewSHA256": "bac9436ae6f7780a33d0aa838733753edee5d6fa8beeb3ff234b7c860ec2a8c4",
+  "archiveReviewSHA256": "693dd9d68278b25563bad127b9ba2f44f6600921b9b78ecff7960df573927b5d",
+  "latestMainObserved": "628439f5907601c9b34ee2ba01f70c918b6e8d18",
+  "latestMainIntegrationVerified": false,
+  "prMergeableReported": false
+}
