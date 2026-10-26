@@ -63,11 +63,11 @@ begin
     return pg_catalog.jsonb_build_object('accepted', false, 'reason', 'play_unavailable');
   end if;
 
-  v_total_seconds := pg_catalog.greatest(0::numeric,
-      pg_catalog.extract(epoch from v_now - v_session.started_at)::numeric);
+  v_total_seconds := greatest(0::numeric,
+      extract(epoch from v_now - v_session.started_at)::numeric);
   select * into v_prior from private.takkeu_progress_v1 where play_id = p_play_id for update;
   v_delta_seconds := case when found then
-    pg_catalog.greatest(0::numeric, pg_catalog.extract(epoch from v_now - v_prior.last_report_at)::numeric)
+    greatest(0::numeric, extract(epoch from v_now - v_prior.last_report_at)::numeric)
   else v_total_seconds end;
   if p_sim_seconds > v_total_seconds + 5 then
     v_signal := 'sim_time_invalid';
