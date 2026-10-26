@@ -16,6 +16,7 @@ export const RANKING_CONFIG = Object.freeze({
   scoreRpc: manifest.submission.rpc,
   topRpc: 'get_best_score_ranking',
   positionRpc: manifest.player_position.rpc,
+  progressRpc: 'report_takkeu_progress_v1',
   timeoutMs: manifest.submission.timeout_ms,
   minScore: entry.score_min,
   maxScore: entry.score_max,
