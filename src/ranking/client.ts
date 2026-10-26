@@ -1,7 +1,7 @@
 import { RANKING_CONFIG as config } from './config';
 
 export type Play = Readonly<{ startId: string; playId: string; displayName: string; normalizedName: string }>;
-export type PendingResult = Readonly<{ play: Play; submissionId: string; score: number; resultType: 'game_over' | 'retire'; clientVersion: string; permanentFailure?: boolean }>;
+export type PendingResult = Readonly<{ play: Play; submissionId: string; score: number; resultType: 'game_over' | 'retire'; clientVersion: string; lostBalls?: number; permanentFailure?: boolean }>;
 export type RankingEntry = Readonly<{ rank: number; displayName: string; score: number; playCount: number }>;
 export type PlayerPosition = Readonly<{ rank: number; total: number; bestScore: number }>;
 export type ProgressReport = Readonly<{ score: number; simSeconds: number; ballCount: number; lostBalls: number }>;
@@ -14,6 +14,7 @@ export class RankingError extends Error {
 }
 export const validUuid = (value: unknown): value is string => typeof value === 'string' && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(value);
 export const validScore = (value: unknown): value is number => typeof value === 'number' && Number.isSafeInteger(value) && value >= config.minScore && value <= config.maxScore;
+export const validLostBalls = (value: unknown): value is number => typeof value === 'number' && Number.isSafeInteger(value) && value >= 0 && value <= 100;
 const record = (value: unknown): Record<string, unknown> => value && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : {};
 const validName = (value: unknown): value is string => typeof value === 'string' && value.trim() === value && [...value].length >= 1 && [...value].length <= config.maxNameLength;
 function requireResponse(valid: boolean): asserts valid { if (!valid) throw new RankingError(false, 'ランキングの応答を確認できませんでした。'); }
@@ -57,9 +58,20 @@ export function createRankingClient(fetchImpl: typeof fetch = (...args) => globa
       return { startId, playId: data.play_id, displayName, normalizedName: data.normalized_name };
     },
     async finish(pending: PendingResult): Promise<void> {
-      requireResponse(validScore(pending.score) && validUuid(pending.play.playId) && pending.clientVersion === config.clientVersion);
-      const data = record(await rpc(config.finishRpc, { ...identity(pending.play), p_play_id: pending.play.playId, p_result_type: pending.resultType, p_reached_wave: 1, p_score: pending.score, p_ranking_score: pending.score }));
-      requireResponse(data.accepted === true && data.play_id === pending.play.playId && data.game_slug === config.gameSlug && data.result_type === pending.resultType && data.reached_wave === 1 && data.score === pending.score);
+      const withFinalLossCount = pending.lostBalls !== undefined;
+      requireResponse(validScore(pending.score) && validUuid(pending.play.playId) &&
+        pending.clientVersion === config.clientVersion && (!withFinalLossCount || validLostBalls(pending.lostBalls)));
+      // Pending results created by older releases have no loss count. Keep their
+      // existing finish/retry path and record NULL rather than pretending zero.
+      const endpoint = withFinalLossCount ? config.finishWithLossRpc : config.finishRpc;
+      const payload = { ...identity(pending.play), p_play_id: pending.play.playId,
+        p_result_type: pending.resultType, p_reached_wave: 1, p_score: pending.score,
+        p_ranking_score: pending.score, ...(withFinalLossCount ? { p_lost_balls: pending.lostBalls } : {}) };
+      const data = record(await rpc(endpoint, payload));
+      requireResponse(data.accepted === true && data.play_id === pending.play.playId &&
+        data.game_slug === config.gameSlug && data.result_type === pending.resultType &&
+        data.reached_wave === 1 && data.score === pending.score &&
+        (!withFinalLossCount || data.lost_balls === pending.lostBalls));
     },
     async submit(pending: PendingResult): Promise<void> {
       requireResponse(validScore(pending.score) && validUuid(pending.submissionId) && validUuid(pending.play.playId) && pending.clientVersion === config.clientVersion);
