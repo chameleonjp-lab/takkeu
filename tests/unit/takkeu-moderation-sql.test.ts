@@ -59,6 +59,7 @@ it('collects high-score progress without treating it as proof of BOT and flags i
         clock_timestamp() - interval '60 seconds');
     `);
     await db.exec(readFileSync(progressSQL, 'utf8'));
+    await db.exec(readFileSync('supabase/migrations/20261027_takkeu_progress_throttle.sql', 'utf8'));
     const report = async (score: number, simSeconds: number) => {
       const rows = (await db.query<{ response: unknown }>(`select public.report_takkeu_progress_v1(
         '22222222-2222-4222-8222-222222222222','tester','takkeu-web-ranking-1',$1,$2,30,0) as response`,
@@ -67,10 +68,14 @@ it('collects high-score progress without treating it as proof of BOT and flags i
       return typeof result === 'string' ? JSON.parse(result) : result;
     };
     expect(await report(2000, 50)).toMatchObject({ accepted: true, high_density_signal: true });
+    expect(await report(2000, 50)).toMatchObject({ accepted: false, reason: 'report_too_frequent' });
+    await db.exec("update private.takkeu_progress_v1 set last_report_at=clock_timestamp()-interval '10 seconds'");
     expect(await report(1999, 51)).toMatchObject({ accepted: false, reason: 'non_monotonic' });
     expect(await report(100000, 52)).toMatchObject({ accepted: false, reason: 'invalid_rate' });
     expect((await db.query<{ report_count: number }>('select report_count from private.takkeu_progress_v1')).rows[0]?.report_count).toBe(1);
     expect((await db.query<{ n: number }>('select count(*)::integer as n from private.takkeu_progress_signals_v1')).rows[0]?.n).toBe(3);
+    await db.exec("update private.takkeu_progress_v1 set report_count=240, last_report_at=clock_timestamp()-interval '10 seconds'");
+    expect(await report(2001, 53)).toMatchObject({ accepted: false, reason: 'report_limit_reached' });
     await db.exec('set role anon;');
     await expect(db.query('select * from private.takkeu_progress_v1')).rejects.toThrow(/permission denied/);
     await db.exec('reset role;');
