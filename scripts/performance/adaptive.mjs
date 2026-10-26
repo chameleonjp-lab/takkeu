@@ -24,10 +24,17 @@ function transforms(profile) { return {name:'test-only-performance',enforce:'pre
     }
   }
   if(id.endsWith('/src/app/createApp.ts')) {
+    const qualityReset=code.includes('const adaptiveQuality = createAdaptiveQuality();')?'adaptiveQuality.reset();view?.setResolutionLevel?.(0);':'';
     replace('  frameId = requestAnimationFrame(frame);\n  return {', `  frameId = requestAnimationFrame(frame);
-  window.__perf.resetMeasurement=score=>{preferences={...preferences,bestScore:score};loop.resetClock(performance.now());};
+  window.__perf.resetMeasurement=score=>{preferences={...preferences,bestScore:score};loop.resetClock(performance.now());${qualityReset}};
   window.__perf.appState=()=>({bestScore:preferences.bestScore,effectBestAtStart:typeof effects==='undefined'?null:effects.state().bestAtStart});
   return {`);
+  }
+  if(id.endsWith('/src/render/createView.ts')&&s.includes('const resizeDrawingBuffer =')){
+    replace('    renderer.setSize(size.width, size.height, false);',`    const __resizeStart=performance.now(),__beforeSize={width:drawingWidth,height:drawingHeight};
+    renderer.setSize(size.width, size.height, false);`);
+    replace('    drawingWidth = size.width; drawingHeight = size.height;',`    drawingWidth = size.width; drawingHeight = size.height;
+    if(window.__perf.active)window.__perf.resizes.push({startMs:__resizeStart,endMs:performance.now(),cpuMs:performance.now()-__resizeStart,before:__beforeSize,after:{...size},level:resolutionLevel});`);
   }
   if(profile && id.endsWith('/src/render/createView.ts')) {
     const presentationCall=s.match(/applyPresentation\(objects, snapshot[^;]*;/)?.[0];
@@ -49,7 +56,7 @@ function transforms(profile) { return {name:'test-only-performance',enforce:'pre
   if(profile && id.endsWith('/src/audio/audio.ts')) {
     replace("const startVoice = (play: typeof playPlayerHit, priority: VoicePriority, score: number) => {", "const startVoice = (play: typeof playPlayerHit, priority: VoicePriority, score: number) => { if(window.__perf.mode==='no-audio')return;");
   }
-  if(profile && id.endsWith('/src/render/rallyEffects.ts')) {
+  if(profile && id.endsWith('/src/render/rallyEffects.ts') && s.includes('function stars(')) {
     // Freeze background generation via cached batch commands. Uploads/draws remain.
     // This control isolates repeated maths, NOT the cost of copying data or drawing it.
     replace('const batches=[table,tableGlow,world,worldGlow];',`const batches=[table,tableGlow,world,worldGlow];
@@ -71,7 +78,7 @@ function transforms(profile) { return {name:'test-only-performance',enforce:'pre
   return s===code?null:{code:s,map:null};
 }};}
 function install({mode,profile}) {
-  const p=window.__perf={mode,active:false,cost:{},frames:[],gpu:[],pending:[],freezeReady:false,ballColorReady:false,
+  const p=window.__perf={mode,active:false,cost:{},resizes:[],frames:[],gpu:[],pending:[],freezeReady:false,ballColorReady:false,
     time(name,fn){const t=performance.now();try{return fn();}finally{if(this.active)this.cost[name]=(this.cost[name]??0)+performance.now()-t;}},
     beforeGL(renderer,scene){
       const gl=renderer.getContext();
@@ -153,7 +160,7 @@ for(let n=0;n<plan.length;n++){
         const final=window.stage3.snapshot();
         resolve({durationMs:now-start,initialApp,finalApp:window.__perf.appState(),initial,final,initialResources,finalResources:window.stage3.resources(),initialAudio,finalAudio:window.audioResources(),
           heapBytes:heap(),intervals,runningIntervals,samples,collectorCosts,cpuFrames:window.__perf.frames,gpu:window.__perf.gpu,pendingGPU:window.__perf.pending.length,
-          glInfo:window.__perf.glInfo??null,viewport:{width:innerWidth,height:innerHeight,dpr:devicePixelRatio},drawingSize:{width:document.querySelector('canvas').width,height:document.querySelector('canvas').height}});
+          qualityResizes:window.__perf.resizes,glInfo:window.__perf.glInfo??null,viewport:{width:innerWidth,height:innerHeight,dpr:devicePixelRatio},drawingSize:{width:document.querySelector('canvas').width,height:document.querySelector('canvas').height}});
       }requestAnimationFrame(frame);
     }),c);
     const measurementCPUEnd=cpu();

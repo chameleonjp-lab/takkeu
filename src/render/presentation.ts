@@ -38,7 +38,7 @@ export function resolvePresentation(snapshot: GameSnapshot): PresentationState {
     },
     balls: Object.fromEntries(snapshot.balls.map(ball => [ball.id, { visible: isBallVisible(ball, snapshot), rainbow: glowing(snapshot) }])),
     pulseStrength: reached(390) ? samplePulse(snapshot.simTime) : 1,
-    opponentEdgesVisible: reached(70)&&!reached(490),opponentField:reached(490),opponentRandom:reached(500),ownRandom:reached(510),
+    opponentEdgesVisible: reached(70)&&!reached(490),opponentField:reached(490)&&snapshot.score<1500,opponentRandom:reached(500),ownRandom:reached(510),
   };
 }
 function colorVertices(geometry: BufferGeometry, time: number, randomSeed?:number): void {

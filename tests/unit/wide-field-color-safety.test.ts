@@ -7,9 +7,9 @@ import { sampleRandomMotion } from '../../src/render/rainbow';
 import { scenario } from '../helpers/scenarios';
 import { applyPresentation } from '../../src/render/presentation';
 
-it('crossfades the existing century environment without a color jump at its palette boundary',()=>{
+it('crossfades the retained early century environment without a color jump; high-rally overlays are removed',()=>{
   const objects=createObjects(DEFAULT_CONFIG),view=createCelebrationView(DEFAULT_CONFIG,objects.tableRig);
-  const s={...scenario(4000,20.299).snapshot(),celebrations:rallyCelebration(createCelebrations(),4000,20)};
+  const s={...scenario(900,20.299).snapshot(),celebrations:rallyCelebration(createCelebrations(),900,20)};
   view.update(s);
   const geometry=(view.worldRoot.children[0] as import('three').Mesh).geometry;
   const before=Array.from(geometry.getAttribute('color').array);
@@ -17,6 +17,7 @@ it('crossfades the existing century environment without a color jump at its pale
   const after=geometry.getAttribute('color').array;
   expect(Math.max(...before.map((value,i)=>Math.abs(value-after[i]!)))).toBeLessThan(.02);
   expect(view.stats().environment).not.toBeNull();
+  view.update({...s,score:1000});expect(view.stats().environment).toBeNull();expect(geometry.drawRange.count).toBe(0);
   view.update({...s,simTime:25});expect(view.stats().environment).toBeNull();view.dispose();objects.dispose();
 });
 it('keeps wide-field brightness modulation subtle while retaining its original period',()=>{

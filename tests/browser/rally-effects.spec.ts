@@ -62,7 +62,7 @@ test.beforeEach(async({page})=>{
   await page.waitForFunction(()=>!!window.rally);
 });
 
-test('all 23 thresholds: preserve before/arrival/during/after camera evidence and fixed resources',async({page},info)=>{
+test('all 23 threshold facts keep HUD/audio timing; retired ambient geometry stays absent',async({page},info)=>{
   test.setTimeout(captureBudget(240_000));
   const directory=resolve(evidenceRoot,info.project.name,'thresholds');mkdirSync(directory,{recursive:true});
   const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
@@ -79,7 +79,8 @@ test('all 23 thresholds: preserve before/arrival/during/after camera evidence an
       expect(record.gameplayPositions.every(p=>p.inView),'representative foreground balls stay inside camera').toBe(true);
       expect(record.scrollWidth).toBeLessThanOrEqual(record.width);
       expect(record.stats.tableQuads+record.stats.worldQuads).toBeLessThanOrEqual(record.stats.capacity);
-      expect(record.stats.geometries).toBe(4);expect(record.stats.materials).toBe(4);
+      expect(record.stats.geometries).toBe(2);expect(record.stats.materials).toBe(2);
+      if(phase==='before'||offset>=.3)expect(record.stats.tableQuads+record.stats.worldQuads).toBe(0);
       if([1000,2000,3000,4000].includes(threshold)&&phase==='during')expect(record.notice).toBe(`${threshold} RALLY`);
       const filename=`${threshold}-${phase}.png`;
       await cameraScreenshot(page,info,resolve(directory,filename));
@@ -91,7 +92,7 @@ test('all 23 thresholds: preserve before/arrival/during/after camera evidence an
   expect(errors).toEqual([]);
 });
 
-test('moving background/electricity/rings: time sequences, deterministic restore and reduced motion',async({page},info)=>{
+test('local hit feedback expires at .3s without perpetual geometry; pause/restore and reduced motion are stable',async({page},info)=>{
   test.setTimeout(captureBudget(180_000));
   const directory=resolve(evidenceRoot,info.project.name,'motion');mkdirSync(directory,{recursive:true});
   const rows:object[]=[];
@@ -104,7 +105,9 @@ test('moving background/electricity/rings: time sequences, deterministic restore
       await cameraScreenshot(page,info,resolve(directory,`${score}-${offset.toFixed(2)}.png`));
       rows.push({score,offset,geometry,stats:await page.evaluate(()=>window.rally.stats())});
     }
-    expect(JSON.stringify(shapes[0]),`${score} geometry changes over simulation time`).not.toBe(JSON.stringify(shapes[2]));
+    expect(shapes[0],`${score} confirmed hit is visible`).not.toEqual([]);
+    expect(shapes[1],`${score} hit expired at .35s`).toEqual([]);
+    expect(shapes[2],`${score} no ambient world remains`).toEqual([]);
   }
   await page.evaluate(()=>{window.rally.show(4000,20.7);window.rally.pause();});
   const paused=await page.evaluate(()=>({state:window.rally.state(),snapshot:window.rally.snapshot(),geometry:window.rally.geometry()}));

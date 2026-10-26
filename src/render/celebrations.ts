@@ -98,17 +98,18 @@ export function createCelebrationView(config: GameConfig, tableRig: Group) {
       electric.clear();electricGlow.clear();digits.clear();digitGlow.clear();environment.clear();
       // The event count and number notices are unchanged. Bound the visual
       // footprint instead of allowing 204 overlapping full-background bolts.
-      const netBolts=Math.min(24,frame.netBolts);
+      const netBolts=snapshot.score>=1500?0:Math.min(24,frame.netBolts);
       for(let i=0;i<netBolts;i++)bolt({x:(hash(i+5)*2-1)*config.tableHalfWidth,y:config.tableY+.18,z:0},
         Math.min(.7,frame.strength?frame.netSize/frame.strength:0)*(.6+hash(i+50)*.4),i+1,motionTime,{r:.34,g:.78,b:1},frame.strength*.55*lowPriorityOpacity,Math.min(.02,.007+Math.min(100,snapshot.celebrations.lossStreak)*.00065));
-      if(frame.edgeElectric)for(let i=0;i<48;i++){
+      if(frame.edgeElectric&&snapshot.score<1500)for(let i=0;i<48;i++){
         const side=Math.floor(i/12),t=(i%12)/11;
         const origin=side<2?{x:(side===0?-1:1)*config.tableHalfWidth,y:config.tableY+.015,z:(t*2-1)*config.tableHalfLength}
           :{x:(t*2-1)*config.tableHalfWidth,y:config.tableY+.015,z:(side===2?-1:1)*config.tableHalfLength};
         bolt(origin,.18+hash(i+9)*.25,i+301,motionTime,{r:.08,g:1,b:.22},.9*lowPriorityOpacity,.009);
       }
       frame.numbers.forEach((n,i)=>drawNumber(n.value,i,frame.numbers.length,motionTime,n.age,n.duration,reducedMotion?({55:'black',77:'blue',88:'green',99:'gold'} as Record<number,CelebrationPalette>)[n.value]??n.palette:n.palette,reducedMotion));
-      if(frame.environment)for(let i=0;i<24;i++){
+      const ambientEnvironment=snapshot.score<1000?frame.environment:null;
+      if(ambientEnvironment)for(let i=0;i<24;i++){
         const x1=-9+i*.75,x2=x1+.75,age=time-(snapshot.celebrations.centuryAt??time);
         // The five-second century cue keeps its rainbow/gold intent, but broad
         // surfaces crossfade instead of switching every .3s over moving colors.
@@ -119,11 +120,11 @@ export function createCelebrationView(config: GameConfig, tableRig: Group) {
         environment.quad({x:x1,y,z:-9},{x:x2,y,z:-9},{x:x2,y,z:9},{x:x1,y,z:9},rgba);
         environment.quad({x:x1,y:y-.01,z:-6.08},{x:x2,y:y-.01,z:-6.08},{x:x2,y:y+12,z:-6.08},{x:x1,y:y+12,z:-6.08},rgba);
       }
-      const shake=reducedMotion?0:frame.shake;
+      const shake=reducedMotion||snapshot.score>=1500?0:frame.shake;
       tableRig.position.set(Math.sin(time*5)*shake,Math.sin(time*6)*shake*.28,Math.cos(time*4.5)*shake*.35);
       tableRig.rotation.z=shake?Math.sin(time*5.5)*shake*.28:0;
       for(const target of [electric,electricGlow,digits,digitGlow,environment])target.finish();
-      stats={netBolts,edgeBolts:frame.edgeElectric?48:0,numbers:frame.numbers.map(n=>n.value),environment:frame.environment};
+      stats={netBolts,edgeBolts:frame.edgeElectric&&snapshot.score<1500?48:0,numbers:frame.numbers.map(n=>n.value),environment:ambientEnvironment};
     },
     dispose(){if(disposed)return;disposed=true;for(const target of [electric,electricGlow,digits,digitGlow,environment])target.dispose();tableRoot.removeFromParent();worldRoot.removeFromParent();tableRig.position.set(0,0,0);tableRig.rotation.z=0;},
   };
