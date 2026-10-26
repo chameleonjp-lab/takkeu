@@ -27,15 +27,15 @@ it('moves only two known anomalous Takkeu records, preserves them and hides priv
         ('💩','other','💩',1,999,1);
     `);
     await db.exec(readFileSync(moderationSQL, 'utf8'));
-    const rows = (await db.query(`select display_name,best_score,ranking_status
+    const rows = (await db.query<{ display_name: string; best_score: number; ranking_status: string }>(`select display_name,best_score,ranking_status
       from public.game_scores where game_slug='takkeu' order by best_score desc`)).rows;
     expect(rows.map(row => row.ranking_status)).toEqual(['provisional_bot','normal','provisional_bot']);
-    const anomalies = (await db.query('select display_name,best_score,ranking_status from public.get_takkeu_abnormal_entries_v1(50)')).rows;
+    const anomalies = (await db.query<{ display_name: string; best_score: number; ranking_status: string }>('select display_name,best_score,ranking_status from public.get_takkeu_abnormal_entries_v1(50)')).rows;
     expect(anomalies.map(row => row.display_name)).toEqual(['💩','あ']);
-    expect((await db.query('select count(*)::integer as n from private.takkeu_moderation_audit_v1')).rows[0]?.n).toBe(2);
-    expect((await db.query(`select ranking_status from game_scores where game_slug='other'`)).rows[0]?.ranking_status).toBe('normal');
+    expect((await db.query<{ n: number }>('select count(*)::integer as n from private.takkeu_moderation_audit_v1')).rows[0]?.n).toBe(2);
+    expect((await db.query<{ ranking_status: string }>(`select ranking_status from game_scores where game_slug='other'`)).rows[0]?.ranking_status).toBe('normal');
     await db.exec('set role anon;');
-    expect((await db.query('select count(*) as n from public.get_takkeu_abnormal_entries_v1(50)')).rows[0]?.n).toBe(2);
+    expect((await db.query<{ n: number }>('select count(*)::integer as n from public.get_takkeu_abnormal_entries_v1(50)')).rows[0]?.n).toBe(2);
     await expect(db.query('select * from private.takkeu_moderation_audit_v1')).rejects.toThrow(/permission denied/);
     await db.exec('reset role;');
   } finally { await db.close(); }
@@ -60,7 +60,7 @@ it('collects high-score progress without treating it as proof of BOT and flags i
     `);
     await db.exec(readFileSync(progressSQL, 'utf8'));
     const report = async (score: number, simSeconds: number) => {
-      const rows = (await db.query(`select public.report_takkeu_progress_v1(
+      const rows = (await db.query<{ response: unknown }>(`select public.report_takkeu_progress_v1(
         '22222222-2222-4222-8222-222222222222','tester','takkeu-web-ranking-1',$1,$2,30,0) as response`,
         [score, simSeconds])).rows;
       const result = rows[0]?.response;
@@ -69,8 +69,8 @@ it('collects high-score progress without treating it as proof of BOT and flags i
     expect(await report(2000, 50)).toMatchObject({ accepted: true, high_density_signal: true });
     expect(await report(1999, 51)).toMatchObject({ accepted: false, reason: 'non_monotonic' });
     expect(await report(100000, 52)).toMatchObject({ accepted: false, reason: 'invalid_rate' });
-    expect((await db.query('select report_count from private.takkeu_progress_v1')).rows[0]?.report_count).toBe(1);
-    expect((await db.query('select count(*)::integer as n from private.takkeu_progress_signals_v1')).rows[0]?.n).toBe(3);
+    expect((await db.query<{ report_count: number }>('select report_count from private.takkeu_progress_v1')).rows[0]?.report_count).toBe(1);
+    expect((await db.query<{ n: number }>('select count(*)::integer as n from private.takkeu_progress_signals_v1')).rows[0]?.n).toBe(3);
     await db.exec('set role anon;');
     await expect(db.query('select * from private.takkeu_progress_v1')).rejects.toThrow(/permission denied/);
     await db.exec('reset role;');
