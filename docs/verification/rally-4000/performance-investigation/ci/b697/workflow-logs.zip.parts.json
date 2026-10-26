@@ -1,0 +1,17 @@
+{
+  "original": "workflow-logs.zip",
+  "originalBytes": 290193,
+  "originalSHA256": "c15aac15faa474396be72e4e6a0e8e4a0f6eecee4133cb7d1979cb8a1dbc0255",
+  "reconstructedSHA256": "c15aac15faa474396be72e4e6a0e8e4a0f6eecee4133cb7d1979cb8a1dbc0255",
+  "allPartsVerified": true,
+  "chunkBytes": 33554432,
+  "parts": [
+    {
+      "file": "workflow-logs.zip.part-000",
+      "bytes": 290193,
+      "sha256": "c15aac15faa474396be72e4e6a0e8e4a0f6eecee4133cb7d1979cb8a1dbc0255"
+    }
+  ],
+  "restoreCommand": "cat workflow-logs.zip.part-* > workflow-logs.zip",
+  "verifyCommand": "sha256sum workflow-logs.zip"
+}

@@ -1,0 +1,17 @@
+{
+  "original": "core.zip",
+  "originalBytes": 901461,
+  "originalSHA256": "52aabeb0357a4d05525e4596ec9d239fc2ce0e57ba38959cae1cd214aaab8a02",
+  "reconstructedSHA256": "52aabeb0357a4d05525e4596ec9d239fc2ce0e57ba38959cae1cd214aaab8a02",
+  "allPartsVerified": true,
+  "chunkBytes": 33554432,
+  "parts": [
+    {
+      "file": "core.zip.part-000",
+      "bytes": 901461,
+      "sha256": "52aabeb0357a4d05525e4596ec9d239fc2ce0e57ba38959cae1cd214aaab8a02"
+    }
+  ],
+  "restoreCommand": "cat core.zip.part-* > core.zip",
+  "verifyCommand": "sha256sum core.zip"
+}
