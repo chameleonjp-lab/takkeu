@@ -40,3 +40,7 @@ GitHub Actionsのb697 artifactは2026-11-25期限（30日）。ここに保存�
 性能対象b697とCIの6ee5216はrepository tree同一。後続の補助分析・保存コードを含む7ba8004/006b545は`[skip ci]`を付けずCIを起動した。重い証拠ファイルだけの後続archive commitは文書保存であり、そのCI skipをテスト成功とは呼ばない。全non-doc入力と追加解析scriptの同一性・対象SHAを最終provenanceに記録する。
 
 local一時ファイル、展開したCIコピー、エンコード前と同じ画像の重複、node_modules、ブラウザcacheは成果物へ入れない。原測定・解析・正式失敗log・再構成に必要なbyteは省略しない。元の閾値、ゲーム規則、正式警告は保存処理で変更していない。
+
+最新006b/CI40266770076も全6job成功。5artifact ZIP/1037memberと全workflowログを別の同一性検証付きセットで長期保存した。期限は2026-11-25。中間7ba8/CI40266515854は全workflowログと成功状態を保存し、同じruntimeの中間browser artifactを再複製していない。
+
+[全保存ファイルの最終SHA一覧](artifact-file-manifest.json)は、自己参照するmanifest本体とその監査stdoutだけを除き、この追補の全ファイルを読み直してhashを記録する。part hashを各parts.jsonと再照合し、元ファイルの連結hashは作成時に検証済みのmanifestと結び付ける。[119元測定のbyte照合](raw-measurement-retention.json)と併用する。

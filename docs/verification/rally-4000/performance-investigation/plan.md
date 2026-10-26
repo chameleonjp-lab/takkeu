@@ -30,7 +30,7 @@ Measurement overhead; independent hiding versus update freeze; changing score tr
 - [x] Typecheck/unit/Chromium/WebKit/release/build, 43-condition/effect/physics/resource regression and flash safety when light rendering changed.
 - [x] Independent adversarial review using exact code/raw data/images/logs; fix material findings and retest.
 - [x] iPhone-only reproduction procedure if hardware unavailable. Evidence compressed and hash-indexed, no duplicate old artifacts.
-- [ ] Update Draft PR preserving old evidence, tie CI to final code SHA.
+- [x] Update Draft PR preserving old evidence, tie CI to final code SHA.
 
 ## Ledger
 2026-10-26: clean initial source. Sparse baseline unit run 957 pass/1 fail because SQL migration absent from sparse checkout, not product change; add supabase path and rerun, retain first log.
@@ -46,3 +46,5 @@ Prepared fallback consideration (not implemented): D08 confirms software fill-re
 2026-10-26 b697a98: test-only HTTP UUID/error handling and native visual helpers; production bytes unchanged froma180. Independent I01/I02 closed within stated finite scope afterRED/GREEN and nativev1FAILED→v2corrected. CI40260338558 all6jobs/1167tests succeeded on tree-identical merge6ee5216. Final16 matrix is now serialized; native audio probe refresh and archival follow it. No heavy browser/archive operations overlap accepted measurements.
 
 Stage3local complete: all16 final60s runs valid, all16absolute targets failed. Whole34run complete-inter-RAF reanalysis preserves everyp95/pair verdict; first partial final010−4.1ms disclosed, no run omitted. Nativeaudio140+4pass; flash18current/4baseline preserves7primary flags. Final review independently reproduces23613step deltas. Artifact packing retains failedv1 and allformal measurements, using exactRGBreferences for9flash duplicates.
+
+Final CI40266770076 (006b545/merge61556b4) all6jobs succeeded:1167tests,0fail/skip/flaky/retry. FullZIP/member/archive proofs retained. PR27updatedDraft; no merge/deploy/live scores. Overall absolute performance and device/human/safety objectives remain unresolved, despite confirmed large-LOW relative improvement.

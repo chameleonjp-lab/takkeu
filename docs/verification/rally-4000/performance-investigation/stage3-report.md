@@ -101,3 +101,11 @@
 [保護対象・配布物監査](protected-and-distribution-audit.json)で、Bから変更された製品ファイルがquality.tsだけ、残り59ファイルがbyte同一であることを確認。実際のCI root build7ファイルに今回の診断marker混入0。Pages/root両配布は別途8release検査成功。[全34回の資源範囲](resource-stability.json)も保持し、最終16ではgeometry57/プログラム17が各run内で一定、取得heap26.0–29.4MBだった。これは有限60秒と既存再試行/load検査の範囲であり、任意長時間のリーク不在の証明ではない。
 
 [独立最終レビュー](final-adversarial-review.md)は元コード・全34raw・比較画像・正式logを参照し、指摘と修正の履歴を保持する。数値の機械可読な主要列は[interval-statistics-policy.json](interval-statistics-policy.json)で宣言し、plain列を旧境界込みの参照値として残す。
+
+## 最後の補助コードCIも成功
+
+補助分析・保存コード006b5456af88b72ab7875bb1035034c968b43149の[CI40266770076](https://github.com/chameleonjp-lab/takkeu/actions/runs/40266770076)も全6job成功。実checkout61556b4e897a133c479d1c07a4ff1ce564085eadは006b545と全tree同一。959unit/72files+200browser+8release=1167件成功。4browser reporterを全件再集計し、retry/skip/flaky/unexpected/top-level errorはすべて0。追加のroot配布物7ファイルも診断marker0を照合した。
+
+[最新CIの全5ZIP・1037member照合](ci/006b/verified-artifacts.json)、[200browserの再集計](ci/006b/test-verdict-audit.json)、[実行対象との対応](ci/006b/source-equivalence.json)、[全workflowログ](ci/006b/workflow-logs.zip.parts.json)。2026-11-25のActions期限後も同一ZIPをpartsから復元できる。中間7ba8004のCI40266515854も全6job成功、全workflowログと状態をci/7ba8へ保存した。中間browser artifactは再び巨大複製せず、期限付きGitHub側記録と正式006b/b697長期保存セットを区別する。
+
+最終archiveで250実行入力（全non-docと2integrity checker）を006b545と照合し、分析3scriptも同じbyte/hashであることを確認。[archive-provenance.json](archive-provenance.json)を参照。文書だけのskipは成功CIではない。source/tests変更を含むb697と分析/保存コード変更を含む7ba/006bにはskipを使っていない。
