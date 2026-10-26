@@ -36,3 +36,6 @@ Measurement overhead; independent hiding versus update freeze; changing score tr
 2026-10-26: clean initial source. Sparse baseline unit run 957 pass/1 fail because SQL migration absent from sparse checkout, not product change; add supabase path and rerun, retain first log.
 Ruling: use existing full user specification without another design approval. Use writing-plans/executing-plans for staged work; test tooling first, no speculative product edits.
 Finding pending measurement: appHarness.show resets audio.enabled=false; original real-loop audio may be silent. Investigate counts before correcting benchmark method.
+
+Stage 1 complete at34d22bb: allD01–D08 screening, corrected GPU coverage, frozen equal-upload control, independent method review, quota-affinity control saved. Silence hypothesis rejected; reset did not disable audio. Four-core affinity reduced throttling but not reliably frame p95; original5-core affinity retained for formal comparison.
+Stage 2 candidate: indexed batches. Representation guard RED(index null)→GREEN;1064 expanded position/RGBA/stats cases byte-identical; typecheck and959unit pass. Initial test typecheck error (union attribute) fixed; both logs retained. Latency benefit pending; not yet accepted as performance improvement.

@@ -1,0 +1,13 @@
+
+> takkeu@0.1.0 typecheck
+> tsc --noEmit
+
+tests/unit/rally-indexed.test.ts(18,35): error TS2339: Property 'updateRanges' does not exist on type 'BufferAttribute<BufferAttributeEventMap> | InterleavedBufferAttribute'.
+  Property 'updateRanges' does not exist on type 'InterleavedBufferAttribute'.
+tests/unit/rally-indexed.test.ts(19,32): error TS2339: Property 'updateRanges' does not exist on type 'BufferAttribute<BufferAttributeEventMap> | InterleavedBufferAttribute'.
+  Property 'updateRanges' does not exist on type 'InterleavedBufferAttribute'.
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

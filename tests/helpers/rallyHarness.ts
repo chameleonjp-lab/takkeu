@@ -1,3 +1,4 @@
+import { triangleAttribute } from './triangleAttribute';
 import { DoubleSide, Group, Mesh, Vector3 } from 'three';
 import type { Material } from 'three';
 import { DEFAULT_CONFIG } from '../../src/game/config';
@@ -166,11 +167,11 @@ const harness={
     const rows:{name:string;vertices:number;sample:number[];colorSample:number[];bounds:{min:number[];max:number[]}}[]=[];
     for(const group of [diagnosticRig,diagnostic.worldRoot])group.traverse(node=>{
       if(!('geometry' in node))return;
-      const geometry=(node as unknown as {geometry:{attributes:{position:{array:ArrayLike<number>};color:{array:ArrayLike<number>}};drawRange:{count:number}}}).geometry;
-      const values=geometry.attributes.position.array,count=geometry.drawRange.count;
+      const geometry=(node as Mesh).geometry;
+      const values=triangleAttribute(geometry,'position').array,count=geometry.drawRange.count;
       if(!count)return;const min=[Infinity,Infinity,Infinity],max=[-Infinity,-Infinity,-Infinity];
       for(let i=0;i<count*3;i++){const k=i%3;min[k]=Math.min(min[k]!,values[i]!);max[k]=Math.max(max[k]!,values[i]!);}
-      rows.push({name:node.name,vertices:count,sample:Array.from(values).slice(0,Math.min(count*3,240)),colorSample:Array.from(geometry.attributes.color.array).slice(0,Math.min(count*4,320)),bounds:{min,max}});
+      rows.push({name:node.name,vertices:count,sample:Array.from(values).slice(0,Math.min(count*3,240)),colorSample:Array.from(triangleAttribute(geometry,'color').array).slice(0,Math.min(count*4,320)),bounds:{min,max}});
     });
     return rows;
   },
