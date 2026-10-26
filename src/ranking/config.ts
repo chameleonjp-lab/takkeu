@@ -13,6 +13,7 @@ export const RANKING_CONFIG = Object.freeze({
   startRpc: manifest.play_count.rpc,
   guestStartRpc: manifest.play_count.guest_rpc,
   finishRpc: 'finish_game_play_v1',
+  finishWithLossRpc: 'finish_takkeu_play_v2',
   scoreRpc: manifest.submission.rpc,
   topRpc: 'get_best_score_ranking',
   positionRpc: manifest.player_position.rpc,
