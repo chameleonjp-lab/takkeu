@@ -1,5 +1,5 @@
 import { RANKING_CONFIG as config } from './config';
-import { createRankingClient, RankingError, validScore, validUuid } from './client';
+import { createRankingClient, RankingError, validLostBalls, validScore, validUuid } from './client';
 import type { PendingResult, Play, RankingApi } from './client';
 import type { StorageLike } from '../storage/preferences';
 import { createGuestPlayCounter } from './guestPlays';
@@ -15,7 +15,7 @@ export function validateName(value: string): string {
 function isPending(value: unknown): value is PendingResult {
   if (!value || typeof value !== 'object') return false;
   const row = value as Partial<PendingResult>, play = row.play;
-  return !!play && validUuid(play.startId) && validUuid(play.playId) && typeof play.displayName === 'string' && play.displayName.length > 0 && [...play.displayName].length <= config.maxNameLength && typeof play.normalizedName === 'string' && validUuid(row.submissionId) && validScore(row.score) && ['game_over', 'retire'].includes(row.resultType ?? '') && row.clientVersion === config.clientVersion;
+  return !!play && validUuid(play.startId) && validUuid(play.playId) && typeof play.displayName === 'string' && play.displayName.length > 0 && [...play.displayName].length <= config.maxNameLength && typeof play.normalizedName === 'string' && validUuid(row.submissionId) && validScore(row.score) && (row.lostBalls === undefined || validLostBalls(row.lostBalls)) && ['game_over', 'retire'].includes(row.resultType ?? '') && row.clientVersion === config.clientVersion;
 }
 export function createRankingController(storage: StorageLike, api: RankingApi = createRankingClient(), onChange: (state: RankingState) => void = () => {}, onSubmission: (event: SubmissionEvent) => void = () => {}) {
   const guests = createGuestPlayCounter(storage, api);
@@ -79,11 +79,12 @@ export function createRankingController(storage: StorageLike, api: RankingApi = 
       if (pendingStart === request) { pendingStart = null; save(config.startKey, null); }
       return play;
     },
-    finish(play: Play | null, score: number, resultType: PendingResult['resultType']): void {
+    finish(play: Play | null, score: number, resultType: PendingResult['resultType'], lostBalls?: number): void {
       if (!play || finished.has(play.playId)) return;
-      if (!validScore(score)) { status = 'permanent_failed'; notify(); return; }
+      if (!validScore(score) || (lostBalls !== undefined && !validLostBalls(lostBalls))) { status = 'permanent_failed'; notify(); return; }
       finished.add(play.playId);
-      pending.push({ play, submissionId: crypto.randomUUID(), score, resultType, clientVersion: config.clientVersion });
+      pending.push({ play, submissionId: crypto.randomUUID(), score, resultType, clientVersion: config.clientVersion,
+        ...(lostBalls === undefined ? {} : { lostBalls }) });
       submission(pending.at(-1)!, 'submitting');
       persist(); void retry();
     },
