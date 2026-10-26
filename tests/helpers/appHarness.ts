@@ -13,17 +13,12 @@ import { scenario } from './scenarios';
 import { deflectBounce } from '../../src/game/trajectory';
 import { remainingScenario } from './remainingBall';
 import { lossLimitScenario } from './losses';
-import { Vector3 } from 'three';
-import { createCamera, fitCamera } from '../../src/render/camera';
 import '../../src/ui/styles.css';
 
 let state = createSimulationState(7);
 let currentView: ReturnType<typeof createView> | null = null;
 let currentAudio: ReturnType<typeof createAudio> | null = null;
 let autoPlay = false;
-let renderEnabled=true;
-const qualitySwitches: {level:number;at:number;before:{width:number;height:number};after:{width:number;height:number}}[]=[];
-let resolutionLevel=0;
 let failNextView = false;
 let releasePreparation:(()=>void)|null=null;
 const metrics = { viewCreates: 0, viewDisposes: 0, viewRenders: 0, viewPrepares:0, smashDepartures: 0, events: [] as GameEvent[] };
@@ -54,19 +49,13 @@ const app = createApp(document.querySelector<HTMLElement>('#app')!, {
   createView(canvas, config) {
     if (failNextView) { failNextView = false; throw new Error('verification: renderer creation failed'); }
     const view = createView(canvas, config); currentView = view; metrics.viewCreates++;
-    let drawingQuality: import('../../src/storage/preferences').Quality='standard';
     return { ...view,
-      setQuality(quality){drawingQuality=quality;view.setQuality(quality);},
-      setResolutionLevel(level){
-        const before={width:canvas.width,height:canvas.height};view.setResolutionLevel?.(level);
-        if(drawingQuality==='auto'&&level!==resolutionLevel){qualitySwitches.push({level,at:performance.now(),before,after:{width:canvas.width,height:canvas.height}});resolutionLevel=level;}
-      },
       async prepare(progress:(completed:number,total:number)=>void){
         metrics.viewPrepares++;
         if(new URLSearchParams(location.search).get('loading')==='hold'&&metrics.viewPrepares===1)await new Promise<void>(resolve=>{releasePreparation=resolve;});
         await view.prepare!(progress);
       },
-      render(...args) { metrics.viewRenders++; if(renderEnabled)view.render(...args); }, dispose() { metrics.viewDisposes++; view.dispose(); } };
+      render(...args) { metrics.viewRenders++; view.render(...args); }, dispose() { metrics.viewDisposes++; view.dispose(); } };
   },
 });
 function show(score: number) {
@@ -86,24 +75,7 @@ function show(score: number) {
   if (score === 10) state.progression = { ...state.progression, ballGlowUntil: 5 };
 }
 function restore() { const canvas = document.querySelector('canvas')!; canvas.dispatchEvent(new Event('webglcontextrestored')); }
-const harness = {
-  renderingEnabled:()=>renderEnabled,
-  renderEnabled(value:boolean){renderEnabled=value;},
-  qualityChanges:()=>qualitySwitches.map(c=>({...c})),
-  setResolutionLevel(level:number){currentView?.setResolutionLevel?.(level);},
-  parkForInput(){
-    show(0); // Keep a real running session, with an opponent stroke beyond the input-only test.
-    for(const ball of state.balls)ball.plan={...ball.plan,departAt:100000,netCrossAt:100001,arriveAt:100002,warningAt:null};
-  },
-  inputError(x:number,y:number){
-    const canvas=document.querySelector('canvas')!,rect=canvas.getBoundingClientRect();
-    const expected=currentView!.inputMapping().toWorld(x,y)!;
-    const camera=createCamera();fitCamera(camera,rect.width,rect.height,DEFAULT_CONFIG);
-    const project=(p:{x:number;y:number})=>{const v=new Vector3(p.x,p.y,DEFAULT_CONFIG.paddleZ).project(camera);return{x:rect.left+(v.x+1)*rect.width/2,y:rect.top+(1-v.y)*rect.height/2};};
-    const actual=project(state.paddle),target=project(expected);
-    return{phase:state.phase,paddle:{...state.paddle},expected,actual,target,errorCssPx:Math.hypot(actual.x-target.x,actual.y-target.y)};
-  },
-  snapshot: (): GameSnapshot => session.snapshot(), show, restore, metrics: () => metrics,
+const harness = { snapshot: (): GameSnapshot => session.snapshot(), show, restore, metrics: () => metrics,
   releasePreparation(){releasePreparation?.();releasePreparation=null;},
   lossLimit(count = 98) {
     state = lossLimitScenario(count, 340, 0).state;

@@ -1,4 +1,4 @@
-export type Quality = 'standard' | 'low' | 'auto';
+export type Quality = 'standard' | 'low';
 export type Preferences = Readonly<{ version: 1; bestScore: number; volume: number; muted: boolean; sensitivity: number; quality: Quality }>;
 export type StorageLike = Pick<Storage, 'getItem' | 'setItem'>;
 export const PREFERENCES_KEY = 'takkeu.preferences.v1';
@@ -14,11 +14,11 @@ export function loadPreferences(storage: StorageLike): Preferences {
       volume: inRange(record.volume, 0, 1) ? record.volume : DEFAULT_PREFERENCES.volume,
       muted: typeof record.muted === 'boolean' ? record.muted : DEFAULT_PREFERENCES.muted,
       sensitivity: inRange(record.sensitivity, 0.5, 2) ? record.sensitivity : DEFAULT_PREFERENCES.sensitivity,
-      quality: record.quality === 'low' || record.quality === 'standard' || record.quality === 'auto' ? record.quality : DEFAULT_PREFERENCES.quality,
+      quality: record.quality === 'low' || record.quality === 'standard' ? record.quality : DEFAULT_PREFERENCES.quality,
     };
   } catch { return { ...DEFAULT_PREFERENCES }; }
 }
 export function savePreferences(storage: StorageLike, value: Preferences): boolean {
-  if (value.version !== 1 || !validScore(value.bestScore) || !inRange(value.volume, 0, 1) || typeof value.muted !== 'boolean' || !inRange(value.sensitivity, 0.5, 2) || !['low', 'standard', 'auto'].includes(value.quality)) return false;
+  if (value.version !== 1 || !validScore(value.bestScore) || !inRange(value.volume, 0, 1) || typeof value.muted !== 'boolean' || !inRange(value.sensitivity, 0.5, 2) || !['low', 'standard'].includes(value.quality)) return false;
   try { storage.setItem(PREFERENCES_KEY, JSON.stringify(value)); return true; } catch { return false; }
 }

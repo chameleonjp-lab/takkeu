@@ -6,7 +6,7 @@ import { createObjects } from './objects';
 import { applyPresentation } from './presentation';
 import { createCamera, fitCamera } from './camera';
 import { updateOpponentView } from './opponentView';
-import { computeAdaptiveDrawingSize, computeDrawingSize } from './quality';
+import { computeDrawingSize } from './quality';
 import type { Quality } from '../storage/preferences';
 import { createFireworks, PARTICLE_LIMIT } from './particles';
 import { createCelebrationView } from './celebrations';
@@ -21,8 +21,6 @@ export interface GameView {
   resize(width: number, height: number): void;
   inputMapping(): InputMapping;
   setQuality(quality: Quality): void;
-  /** Changes only the backing store; the live camera and held pointer stay valid. */
-  setResolutionLevel?(level: number): void;
   resources(): { geometries: number; textures: number; programs: number; drawCalls: number; particles:number;particleCapacity:number; rallyEffects?: ReturnType<ReturnType<typeof createRallyEffectView>['stats']> };
   dispose(): void;
 }
@@ -47,21 +45,6 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
   let flashUntil = 0;
   let previousRunId = '';
   let quality: Quality = 'standard';
-  let resolutionLevel = 0, cssWidth = 0, cssHeight = 0, drawingWidth = 0, drawingHeight = 0;
-  const resizeDrawingBuffer = (): void => {
-    if (!cssWidth || !cssHeight) return;
-    const ratio = window.devicePixelRatio || 1;
-    const size = quality === 'auto' ? computeAdaptiveDrawingSize(cssWidth, cssHeight, ratio, resolutionLevel)
-      : computeDrawingSize(cssWidth, cssHeight, ratio, quality);
-    // Point sprites use buffer pixels. Keep their standard-mode CSS footprint
-    // as auto lowers resolution; manual modes retain their original sizes.
-    const reference = quality === 'auto' ? computeDrawingSize(cssWidth, cssHeight, ratio, 'standard') : size;
-    fireworks.material.uniforms.uResolutionScale!.value = Math.min(size.width / reference.width, size.height / reference.height);
-    if (size.width === drawingWidth && size.height === drawingHeight) return;
-    renderer.setSize(size.width, size.height, false);
-    objects.opponentField.resize(size.width, size.height);
-    drawingWidth = size.width; drawingHeight = size.height;
-  };
   let preparation:Promise<void>|null=null,disposed=false;
   return {
     prepare(progress){
@@ -92,19 +75,14 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
     },
     resize(width, height) {
       const w = Math.max(1, width), h = Math.max(1, height);
-      cssWidth = w; cssHeight = h; resizeDrawingBuffer();
+      const size = computeDrawingSize(w, h, window.devicePixelRatio || 1, quality);
+      renderer.setPixelRatio(1);
+      renderer.setSize(size.width, size.height, false);
+      objects.opponentField.resize(size.width,size.height);
       fitCamera(camera, w, h, config);
     },
     inputMapping() { return createInputMapping(camera, () => canvas.getBoundingClientRect(), config); },
-    setQuality(value) {
-      if (quality === value) return;
-      quality = value; resolutionLevel = 0; resizeDrawingBuffer();
-    },
-    setResolutionLevel(value) {
-      if (quality !== 'auto') return;
-      resolutionLevel = Number.isFinite(value) ? Math.max(0, Math.min(2, Math.floor(value))) : 0;
-      resizeDrawingBuffer();
-    },
+    setQuality(value) { quality = value; },
     resources() { return { geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures, programs: renderer.info.programs?.length ?? 0, drawCalls: renderer.info.render.calls,particles:fireworks.active()+rallyEffects.stats().particleCount,particleCapacity:PARTICLE_LIMIT+rallyEffects.stats().capacity,rallyEffects:rallyEffects.stats() }; },
     dispose() { if(disposed)return;disposed=true;rallyEffects.dispose();celebrations.dispose(); fireworks.dispose(); objects.dispose(); renderer.dispose(); },
   };

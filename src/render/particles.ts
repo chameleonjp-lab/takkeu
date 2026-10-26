@@ -14,10 +14,9 @@ export function createFireworks() {
   geometry.setAttribute('position',position); geometry.setAttribute('color',color); geometry.setAttribute('opacity',opacity);
   geometry.setDrawRange(0,0);
   const material = new ShaderMaterial({ transparent:true, depthWrite:false, blending:AdditiveBlending, toneMapped:false,
-    uniforms:{uResolutionScale:{value:1}},
-    vertexShader: `uniform float uResolutionScale; attribute vec3 color; attribute float opacity; varying vec3 vColor; varying float vOpacity;
+    vertexShader: `attribute vec3 color; attribute float opacity; varying vec3 vColor; varying float vOpacity;
       void main(){vColor=color;vOpacity=opacity;vec4 p=modelViewMatrix*vec4(position,1.0);
-      gl_Position=projectionMatrix*p;gl_PointSize=clamp(38.0/max(1.0,-p.z),2.0,12.0)*uResolutionScale;}`,
+      gl_Position=projectionMatrix*p;gl_PointSize=clamp(38.0/max(1.0,-p.z),2.0,12.0);}`,
     fragmentShader: `varying vec3 vColor; varying float vOpacity;
       void main(){float r=length(gl_PointCoord-vec2(.5))*2.0;if(r>1.0)discard;
       gl_FragColor=vec4(vColor*1.2,vOpacity*(1.0-r)*(1.0-r));}` });

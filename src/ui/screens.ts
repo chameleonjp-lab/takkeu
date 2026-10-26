@@ -44,7 +44,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
         <div data-home-notices></div>
       </section>
 
-      <section class="settings-screen" data-settings hidden inert aria-labelledby="settings-title"><p class="eyebrow">PREFERENCES</p><h2 id="settings-title" tabindex="-1">設定</h2><p>音と描画品質を調整できます。ラケットは指やポインターの位置に直接合わせるため、操作感度の調整は不要です。</p><div data-settings-notices></div><div class="settings-fields">${soundControls}<label>描画品質<select aria-label="描画品質"><option value="standard">標準</option><option value="low">低負荷</option><option value="auto">自動（負荷に応じて調整）</option></select></label></div><button type="button" class="button primary" data-action="settings-back">戻る</button></section>
+      <section class="settings-screen" data-settings hidden inert aria-labelledby="settings-title"><p class="eyebrow">PREFERENCES</p><h2 id="settings-title" tabindex="-1">設定</h2><p>音と描画品質を調整できます。ラケットは指やポインターの位置に直接合わせるため、操作感度の調整は不要です。</p><div data-settings-notices></div><div class="settings-fields">${soundControls}<label>描画品質<select aria-label="描画品質"><option value="standard">標準</option><option value="low">低負荷</option></select></label></div><button type="button" class="button primary" data-action="settings-back">戻る</button></section>
 
       <section class="game-screen" data-testid="game-screen" data-game hidden inert>
         <div class="input-surface" data-testid="input-surface"><div class="canvas-wrap"><canvas tabindex="0" aria-label="卓球ゲームの描画領域" aria-keyshortcuts="Escape"></canvas></div></div>

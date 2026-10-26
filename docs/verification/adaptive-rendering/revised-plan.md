@@ -62,3 +62,7 @@ Files: 既存adaptiveQuality/quality/createView/createApp/preferences/screens（
 ## 旧仕様の証拠
 
 95cbの71本予定は30本完了時に停止。完了した15本の正式3組比較と15本のprofile診断はそのまま保存し、新しい簡略化版の結果へ流用しない。次のnative/flash/phone/旧16suiteは未起動のまま停止した。retained-effects-interruption.jsonに日時と全labelを記録する。prefix upload候補の12回と撤回、旧136組/340scene、CIの成功/失敗も履歴として保持する。
+
+## 採用判定の変更
+
+Ruling: 9a9b71fの自動画質は不採用。profile:falseの3組/phone2条件で同期resize経路の長い待ちが再現し、最大423.1msの次RAFは433.2msだった。最新追加指示の「仕組み自体が新たな負荷を生む場合は無理に導入しない」を適用する。統計処理そのものが重いことやiPhoneで同じ待ちが出ることは立証していない。標準/低負荷とゲーム/input/audio/rankingの元実装へ戻し、4つの描画整理fileを採用する。候補75実時間測定・全CI・source/test hashを残し、auto専用の未実施追加撮影は成功に数えない。最終manual版を新SHAで全検証する。判断が過度に保守的なら、実機で安全に切り替わる可能性がある自動機能の提供が遅れる。

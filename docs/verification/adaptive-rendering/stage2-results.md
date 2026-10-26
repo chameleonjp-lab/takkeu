@@ -1,3 +1,5 @@
+> **履歴：この自動画質実装は不採用。** 後続の実時間測定で同期resize経路の長い待ちを検出したため、[Stage2不採用記録](stage2-rejection.md)を最終判断として優先する。以前の機能テスト成功を採用成功とは扱わない。
+
 # Stage 2 実装・検証台帳
 
 実装は自動モードの明示選択、3段階の内部bufferサイズと純粋な負荷controller。仕様/定数は[auto-quality-spec.md](auto-quality-spec.md)。ゲーム計算、input、音声、ランキング、44コメントは変更していない。low/standard保存と固定サイズを維持。

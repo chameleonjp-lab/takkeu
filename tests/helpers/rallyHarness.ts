@@ -114,7 +114,6 @@ const harness={
   replayHit(){if(confirmedHit)controller.consume([confirmedHit]);render();},
   restore(){view.dispose();diagnostic.dispose();view=createView(screens.canvas,DEFAULT_CONFIG);diagnostic=createRallyEffectView(DEFAULT_CONFIG,diagnosticRig);fitted='';render();},
   setQuality(next:Quality){quality=next;render();},
-  setResolutionLevel(level:number){view.setResolutionLevel?.(level);render();},
   warning(){current={...current,scheduledReturns:[{ballId:1,departAt:current.simTime+.2,netCrossAt:current.simTime+.4,arriveAt:current.simTime+.6,target:{x:0,y:.5},smash:true,warningAt:current.simTime-.1,speedMultiplier:2.5}]};render();},
   loss(count:number,streak=1,sameFrame=false) {
     reset(2000);let celebrations=createCelebrations();
