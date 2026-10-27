@@ -1,0 +1,19 @@
+2026-10-27T21:11:11.9801852Z Build Date: 2026-10-21T00:45:21Z
+2026-10-27T21:11:12.9827531Z   ref: fdbdf46b9d8b846db200a2895cf73a73f8e2f02d
+2026-10-27T21:11:13.4640358Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=1 origin fdbdf46b9d8b846db200a2895cf73a73f8e2f02d
+2026-10-27T21:11:14.1251673Z  * branch            fdbdf46b9d8b846db200a2895cf73a73f8e2f02d -> FETCH_HEAD
+2026-10-27T21:11:14.1302641Z [command]/usr/bin/git rev-parse --git-path info/sparse-checkout
+2026-10-27T21:11:14.1344580Z [command]/usr/bin/git checkout --progress --force fdbdf46b9d8b846db200a2895cf73a73f8e2f02d
+2026-10-27T21:11:14.8208908Z Note: switching to 'fdbdf46b9d8b846db200a2895cf73a73f8e2f02d'.
+2026-10-27T21:11:14.8216841Z HEAD is now at fdbdf46 fix: Stage C wrap loss warnings within narrow enlarged-text HUDs
+2026-10-27T21:11:14.8295116Z fdbdf46b9d8b846db200a2895cf73a73f8e2f02d
+2026-10-27T21:11:38.1786865Z Building dependency tree...
+2026-10-27T21:12:01.4535006Z Get:175 https://archive.ubuntu.com/ubuntu noble/universe amd64 libzxing3 amd64 2.2.1-3 [583 kB]
+2026-10-27T21:12:16.3835004Z Setting up libtag1v5-vanilla:amd64 (1.13.1-1build1) ...
+2026-10-27T21:12:25.8018894Z Running 3 tests using 1 worker
+2026-10-27T21:13:56.2797423Z   3 passed (1.5m)
+2026-10-27T21:13:56.6677215Z ##[group]Run git rev-parse HEAD > artifacts/commit.txt
+2026-10-27T21:13:56.6677672Z git rev-parse HEAD > artifacts/commit.txt
+2026-10-27T21:13:56.7702677Z   name: verification-browser-webkit-load-fdbdf46b9d8b846db200a2895cf73a73f8e2f02d
+2026-10-27T21:13:58.5495836Z Artifact verification-browser-webkit-load-fdbdf46b9d8b846db200a2895cf73a73f8e2f02d.zip successfully finalized. Artifact ID 12772635074
+2026-10-27T21:13:58.5497762Z Artifact verification-browser-webkit-load-fdbdf46b9d8b846db200a2895cf73a73f8e2f02d has been successfully uploaded! Final size is 5313339 bytes. Artifact ID is 12772635074

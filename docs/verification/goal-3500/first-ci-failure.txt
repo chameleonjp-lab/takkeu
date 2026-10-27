@@ -1,0 +1,7 @@
+2026-10-27T20:21:15.4831735Z     Error: expect(received).toBe(expected) // Object.is equality
+2026-10-27T20:21:15.4831993Z     Expected: "4000 RALLY"
+2026-10-27T20:21:15.4832203Z     Received: "3500 RALLY · CLEAR!"
+2026-10-27T20:21:15.4836023Z         at /home/runner/work/takkeu/takkeu/tests/browser/rally-effects.spec.ts:171:61
+2026-10-27T20:21:15.4837269Z     test-results/rally-effects-mobile-lands-7e399--readable-four-digit-scores-chromium/test-failed-1.png
+2026-10-27T20:21:15.4840803Z   1 failed
+2026-10-27T20:21:15.4841545Z   110 passed (7.5m)
