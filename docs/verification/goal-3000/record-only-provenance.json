@@ -1,0 +1,29 @@
+{
+  "testedSource": "720c06357beff5e7bdfe0073fb35293c7f45b372",
+  "finalRecordCommit": "Documentation only; its SHA is the containing commit, not a new CI-tested source SHA.",
+  "expectedParent": "720c06357beff5e7bdfe0073fb35293c7f45b372",
+  "protectedNonDocumentationRootEntries": [
+    "100644 blob a317c1d7092cf96f446ed4bea4708bae1d0e9163\t.gitattributes",
+    "040000 tree 15f77b1f87fd384ff24717b8bbaf817885855a36\t.github",
+    "100644 blob 10379bb44ee608223e1e16705d1f7446f28e5e03\t.gitignore",
+    "100644 blob 60ade1ae01e833a5c291c47883bf26fb031f7727\t.node-version",
+    "100644 blob 526b763e84400275ee555b09e950e371c3c0a823\tREADME.md",
+    "100644 blob 9e0a1af6b217ccda9e1e4d3b056e77d5088d193f\tindex.html",
+    "100644 blob cb49a6c325ff4cfef20250be47dc6674deb0edbd\tpackage-lock.json",
+    "100644 blob 44a0d6184a6bc1932feb0cf13e14bcd7e1b641bc\tpackage.json",
+    "100644 blob c8a8257eebefa24251bf9f6e7507ab1c72035581\tplaywright.config.ts",
+    "100644 blob 693037046156a05b8485e51a11b486fe40369e59\tplaywright.performance.config.ts",
+    "100644 blob 59cf6d265210c5f61fb022b286fbf70731dc4245\tplaywright.rally-pixels.config.ts",
+    "100644 blob 67f95590fdcdef7aabdc5057520e1ff3d1b88697\tplaywright.release.config.ts",
+    "040000 tree 88907e2c6818c115e2ff8d2c8782ae254f6a92e4\tpublic",
+    "100644 blob de51cc000d7ea7a8ed15a33c41a5e3300b8bb81d\tranking-manifest.json",
+    "040000 tree 682335464f27cedc5a6337b1831229e9f9f05a91\tscripts",
+    "040000 tree 0a1fe7a15bee03e9cb5fe14d8556068ba31159b8\tsrc",
+    "040000 tree 7c5f9362e182f15d02450dcf702a9944838f927a\tsupabase",
+    "040000 tree 637aa75df5570ce109e31439f19944eb2fbd5628\ttests",
+    "100644 blob dd04a9492423ede39de41856551a7df410f39a3e\ttsconfig.json",
+    "100644 blob 54331fa51c70262a308c2cd98ec92aa5bb31cea5\tvite.config.ts",
+    "100644 blob 3cd5813fe5f7177a29edbf8c26554d6cf2e9ebd6\tvitest.config.ts"
+  ],
+  "stagedAndCommittedTreeVerification": "Check every non-doc root entry against testedSource; final log is cited in PR."
+}

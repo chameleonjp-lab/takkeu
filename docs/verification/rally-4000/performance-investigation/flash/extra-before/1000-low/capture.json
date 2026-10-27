@@ -1,0 +1,434 @@
+{
+  "name": "1000-low",
+  "score": 1000,
+  "quality": "low",
+  "reducedMotion": false,
+  "fps": 60,
+  "seconds": 6,
+  "width": 1024,
+  "height": 768,
+  "frames": 360,
+  "source": "actual unchanged camera canvas drawn at explicit simTime increments; synthetic stress stacking of legacy and new effects",
+  "snapshot": {
+    "celebrations": {
+      "lastLossAt": 20,
+      "lossStreak": 4,
+      "numberNotices": [
+        {
+          "value": 99,
+          "at": 20
+        }
+      ],
+      "repdigitAt": 20,
+      "centuryAt": 20,
+      "centuryScore": 1000
+    },
+    "runId": "run-9",
+    "phase": "running",
+    "pauseReason": null,
+    "score": 1000,
+    "simTime": 25.983333333333334,
+    "lostBallCount": 99,
+    "paddle": {
+      "x": 0.1,
+      "y": 0.5
+    },
+    "opponentPaddle": {
+      "x": 0,
+      "y": 0.5
+    },
+    "balls": [
+      {
+        "id": 1,
+        "phase": "incoming",
+        "position": {
+          "x": -0.4,
+          "y": 0.43,
+          "z": 1.25
+        },
+        "smash": false
+      },
+      {
+        "id": 2,
+        "phase": "outgoing",
+        "position": {
+          "x": 0.45,
+          "y": 0.62,
+          "z": -0.35
+        },
+        "smash": false
+      }
+    ],
+    "progression": {
+      "appliedMilestones": [
+        10,
+        30,
+        40,
+        70,
+        100,
+        130,
+        150,
+        160,
+        190,
+        210,
+        240,
+        270,
+        300,
+        330,
+        360,
+        380,
+        390,
+        410,
+        420,
+        450,
+        460,
+        470,
+        480,
+        490,
+        500,
+        510,
+        520,
+        530,
+        540,
+        555
+      ],
+      "ballGlowUntil": null,
+      "awardedBallCount": 315
+    },
+    "scheduledReturns": []
+  },
+  "state": {
+    "runId": "run-9",
+    "score": 1000,
+    "bestAtStart": 0,
+    "best": null,
+    "lostBallCount": 99,
+    "stage": [
+      {
+        "threshold": 400,
+        "kind": "A",
+        "effect": "background-threads",
+        "duration": null,
+        "color": "green-blue",
+        "priority": 10,
+        "replaces": []
+      },
+      {
+        "threshold": 500,
+        "kind": "A",
+        "effect": "green-perimeter",
+        "duration": null,
+        "color": "green",
+        "priority": 10,
+        "replaces": []
+      },
+      {
+        "threshold": 600,
+        "kind": "A",
+        "effect": "green-net",
+        "duration": null,
+        "color": "green",
+        "priority": 10,
+        "replaces": []
+      },
+      {
+        "threshold": 700,
+        "kind": "A",
+        "effect": "background-halo",
+        "duration": null,
+        "color": "green-blue",
+        "priority": 10,
+        "replaces": []
+      },
+      {
+        "threshold": 1000,
+        "kind": "A",
+        "effect": "green-blue-world",
+        "duration": null,
+        "color": "green-blue",
+        "priority": 10,
+        "replaces": []
+      }
+    ],
+    "arrivals": [
+      {
+        "id": "run-9:fixture-2",
+        "threshold": 1000,
+        "at": 20,
+        "config": {
+          "threshold": 1000,
+          "kind": "B",
+          "effect": "shockwave",
+          "duration": 3.5,
+          "color": "green-blue",
+          "priority": 100,
+          "replaces": [
+            "corner-posts"
+          ]
+        },
+        "position": {
+          "x": 0.1,
+          "y": 0.5,
+          "z": 1.95
+        }
+      }
+    ],
+    "hits": [
+      {
+        "id": "run-9:fixture-2",
+        "score": 1000,
+        "at": 20,
+        "smashReturn": false,
+        "position": {
+          "x": 0.1,
+          "y": 0.5,
+          "z": 1.95
+        }
+      }
+    ],
+    "losses": [
+      {
+        "id": "run-9:fixture-3",
+        "count": 96,
+        "at": 20,
+        "rollingCount": 1,
+        "position": {
+          "x": 0.72,
+          "y": 0.16,
+          "z": 2.3
+        }
+      },
+      {
+        "id": "run-9:fixture-4",
+        "count": 97,
+        "at": 20,
+        "rollingCount": 2,
+        "position": {
+          "x": -0.72,
+          "y": 0.16,
+          "z": 2.3
+        }
+      },
+      {
+        "id": "run-9:fixture-5",
+        "count": 98,
+        "at": 20,
+        "rollingCount": 3,
+        "position": {
+          "x": 0.72,
+          "y": 0.16,
+          "z": 2.3
+        }
+      },
+      {
+        "id": "run-9:fixture-6",
+        "count": 99,
+        "at": 20,
+        "rollingCount": 4,
+        "position": {
+          "x": -0.72,
+          "y": 0.16,
+          "z": 2.3
+        }
+      }
+    ],
+    "cues": [
+      {
+        "id": "run-9:fixture-2:major",
+        "kind": "major",
+        "value": 1000,
+        "at": 20,
+        "duration": 2.5,
+        "priority": 100,
+        "position": {
+          "x": 0.1,
+          "y": 0.5,
+          "z": 1.95
+        }
+      },
+      {
+        "id": "run-9:fixture-3:loss-spark",
+        "kind": "loss-spark",
+        "value": 96,
+        "at": 20,
+        "duration": 0.5,
+        "priority": 10,
+        "position": {
+          "x": 0.72,
+          "y": 0.16,
+          "z": 2.3
+        }
+      },
+      {
+        "id": "run-9:fixture-3:loss-warning",
+        "kind": "loss-warning",
+        "value": 96,
+        "at": 20,
+        "duration": 0.8,
+        "priority": 80,
+        "position": {
+          "x": 0.72,
+          "y": 0.16,
+          "z": 2.3
+        }
+      },
+      {
+        "id": "run-9:fixture-4:loss-spark",
+        "kind": "loss-spark",
+        "value": 97,
+        "at": 20,
+        "duration": 0.5,
+        "priority": 10,
+        "position": {
+          "x": -0.72,
+          "y": 0.16,
+          "z": 2.3
+        }
+      },
+      {
+        "id": "run-9:fixture-4:loss-warning",
+        "kind": "loss-warning",
+        "value": 97,
+        "at": 20,
+        "duration": 0.8,
+        "priority": 80,
+        "position": {
+          "x": -0.72,
+          "y": 0.16,
+          "z": 2.3
+        }
+      },
+      {
+        "id": "run-9:fixture-5:loss-spark",
+        "kind": "loss-spark",
+        "value": 98,
+        "at": 20,
+        "duration": 0.5,
+        "priority": 10,
+        "position": {
+          "x": 0.72,
+          "y": 0.16,
+          "z": 2.3
+        }
+      },
+      {
+        "id": "run-9:fixture-5:loss-warning",
+        "kind": "loss-warning",
+        "value": 98,
+        "at": 20,
+        "duration": 0.8,
+        "priority": 80,
+        "position": {
+          "x": 0.72,
+          "y": 0.16,
+          "z": 2.3
+        }
+      },
+      {
+        "id": "run-9:fixture-6:loss-spark",
+        "kind": "loss-spark",
+        "value": 99,
+        "at": 20,
+        "duration": 0.5,
+        "priority": 10,
+        "position": {
+          "x": -0.72,
+          "y": 0.16,
+          "z": 2.3
+        }
+      },
+      {
+        "id": "run-9:fixture-6:loss-impact",
+        "kind": "loss-impact",
+        "value": 99,
+        "at": 20,
+        "duration": 0.5,
+        "priority": 80,
+        "position": {
+          "x": -0.72,
+          "y": 0.16,
+          "z": 2.3
+        }
+      },
+      {
+        "id": "run-9:fixture-6:loss-warning",
+        "kind": "loss-warning",
+        "value": 99,
+        "at": 20,
+        "duration": 0.8,
+        "priority": 80,
+        "position": {
+          "x": -0.72,
+          "y": 0.16,
+          "z": 2.3
+        }
+      },
+      {
+        "id": "run-9:fixture-6:loss-gold",
+        "kind": "loss-gold",
+        "value": 99,
+        "at": 20,
+        "duration": 1.2,
+        "priority": 90,
+        "position": {
+          "x": -0.72,
+          "y": 0.16,
+          "z": 2.3
+        }
+      }
+    ]
+  },
+  "resources": {
+    "geometries": 55,
+    "textures": 4,
+    "programs": 17,
+    "drawCalls": 33,
+    "particles": 0,
+    "particleCapacity": 11776,
+    "rallyEffects": {
+      "activeEffects": [
+        "background-threads",
+        "green-perimeter",
+        "green-net",
+        "single-halo",
+        "green-blue-crossing",
+        "loss-warning-posts"
+      ],
+      "tableQuads": 114,
+      "worldQuads": 136,
+      "particleCount": 0,
+      "finalPhase": null,
+      "capacity": 10240,
+      "geometries": 4,
+      "materials": 4,
+      "nodes": 6,
+      "drawCalls": 3,
+      "disposed": false
+    }
+  },
+  "stats": {
+    "activeEffects": [
+      "background-threads",
+      "green-perimeter",
+      "green-net",
+      "single-halo",
+      "green-blue-crossing",
+      "loss-warning-posts"
+    ],
+    "tableQuads": 114,
+    "worldQuads": 136,
+    "particleCount": 0,
+    "finalPhase": null,
+    "capacity": 10240,
+    "geometries": 4,
+    "materials": 4,
+    "nodes": 6,
+    "drawCalls": 3,
+    "disposed": false
+  },
+  "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+  "drawingSize": {
+    "width": 1024,
+    "height": 768
+  }
+}

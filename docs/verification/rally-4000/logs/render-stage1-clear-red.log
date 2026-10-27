@@ -1,0 +1,31 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-render.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-render.test.ts (20 tests | 1 failed) 783ms
+   ❯ bounded rally world renderer, 0–1000 (20)
+     × prepares every fixed batch for initial shader compilation and upload, then clears on ready 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > prepares every fixed batch for initial shader compilation and upload, then clears on ready
+TypeError: view.clear is not a function
+ ❯ tests/unit/rally-render.test.ts:75:10
+     73|     expect(view.stats().drawCalls).toBe(4);
+     74|     expect(view.stats().tableQuads).toBeGreaterThan(0);expect(view.sta…
+     75|     view.clear();
+       |          ^
+     76|     expect(view.stats().drawCalls).toBe(0);
+     77|     view.update(snapshot(1000));expect(view.stats().activeEffects).toC…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 19 passed (20)
+   Start at  20:20:50
+   Duration  1.10s (tests 82%, transform 10%, import 8%)
+

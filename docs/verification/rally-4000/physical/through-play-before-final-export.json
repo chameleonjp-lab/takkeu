@@ -1,0 +1,149 @@
+{
+  "kind": "actual-fixed-step-play",
+  "seed": 7,
+  "input": "earliest scheduledReturns target each fixed tick",
+  "productionStateSetters": false,
+  "fixedDt": 0.008333333333333333,
+  "ticks": 32014,
+  "pausedSteps": 60,
+  "simulatedSeconds": 266.78333333325503,
+  "wallDurationMs": 2460.213273,
+  "score": 4001,
+  "phase": "running",
+  "losses": 0,
+  "lossEvents": 0,
+  "maxBalls": 30,
+  "maxScoreIncrement": 15,
+  "playerHitEvents": 4001,
+  "firstPlayerHitScore": 1,
+  "lastPlayerHitScore": 4001,
+  "thresholdCounts": {
+    "50": 1,
+    "100": 1,
+    "200": 1,
+    "300": 1,
+    "400": 1,
+    "500": 1,
+    "600": 1,
+    "700": 1,
+    "800": 1,
+    "900": 1,
+    "1000": 1,
+    "1250": 1,
+    "1500": 1,
+    "1750": 1,
+    "2000": 1,
+    "2250": 1,
+    "2500": 1,
+    "2750": 1,
+    "3000": 1,
+    "3250": 1,
+    "3500": 1,
+    "3750": 1,
+    "4000": 1
+  },
+  "arrivalCounts": {
+    "100": 1,
+    "200": 1,
+    "300": 1,
+    "800": 1,
+    "1000": 1,
+    "2000": 1,
+    "3000": 1,
+    "4000": 1
+  },
+  "stages": {
+    "background-threads": {
+      "score": 400,
+      "time": 76.991666666674
+    },
+    "green-perimeter": {
+      "score": 500,
+      "time": 82.02500000001135
+    },
+    "green-net": {
+      "score": 603,
+      "time": 88.09166666668284
+    },
+    "background-halo": {
+      "score": 700,
+      "time": 92.96666666668672
+    },
+    "corner-posts": {
+      "score": 900,
+      "time": 103.9083333333621
+    },
+    "green-blue-world": {
+      "score": 1005,
+      "time": 108.7666666666993
+    },
+    "meteor": {
+      "score": 1250,
+      "time": 121.3416666667093
+    },
+    "tricolor-network": {
+      "score": 1500,
+      "time": 135.28333333337463
+    },
+    "floor-wave": {
+      "score": 1751,
+      "time": 148.0916666666963
+    },
+    "star-world": {
+      "score": 2000,
+      "time": 161.14166666668444
+    },
+    "side-halos": {
+      "score": 2250,
+      "time": 174.73333333333875
+    },
+    "orbit-ribbon": {
+      "score": 2500,
+      "time": 187.58333333332706
+    },
+    "multi-halos": {
+      "score": 2752,
+      "time": 200.52499999998196
+    },
+    "meteor-swarm": {
+      "score": 3251,
+      "time": 227.31666666662426
+    },
+    "double-table-halos": {
+      "score": 3500,
+      "time": 240.32499999994576
+    },
+    "center-density": {
+      "score": 3750,
+      "time": 253.44999999993382
+    },
+    "final-world": {
+      "score": 4000,
+      "time": 266.69166666658845
+    }
+  },
+  "eventCounts": {
+    "opponent-hit": 4015,
+    "table-bounce": 7993,
+    "player-hit": 4001,
+    "milestone": 1326,
+    "smash-warning": 3545
+  },
+  "controllerScore": 4001,
+  "controllerBest": {
+    "score": 100,
+    "at": 60.85589683029374,
+    "position": {
+      "x": 0.7275789110309174,
+      "y": 0.3760150704532862,
+      "z": 1.95
+    }
+  },
+  "randomState": 1040620194,
+  "baselineRandomState": 1040620194,
+  "randomEquivalent": true,
+  "finalSnapshotEquivalent": true,
+  "eventEquivalent": true,
+  "result": "passed",
+  "failure": null
+}

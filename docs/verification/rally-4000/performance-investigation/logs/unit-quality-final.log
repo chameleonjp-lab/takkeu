@@ -1,0 +1,44 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit
+
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/release-revision.test.ts (1 test | 1 failed) 72ms
+   × 公開の照合は完全SHA・main選択・checkout・最新mainの全一致だけを許す 71ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/release-revision.test.ts > 公開の照合は完全SHA・main選択・checkout・最新mainの全一致だけを許す
+AssertionError: expected { status: 1, stdout: '', …(2) } to deeply equal { status: +0, …(3) }
+
+- Expected
++ Received
+
+  {
+    "expected": "7919fe55ced64c695c805addb72ad27b1ed67f64",
+-   "status": 0,
++   "status": 1,
+    "stderr": "",
+    "stdout": "",
+  }
+
+ ❯ tests/unit/release-revision.test.ts:16:103
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 71 passed (72)
+      Tests  1 failed | 958 passed (959)
+   Start at  01:47:09
+   Duration  13.34s (tests 66%, environment 26%, import 6%, transform 2%, worker 1%)
+
+    Isolate  72 workers spawned · ~214ms startup each (spawn + environment, per file)
+             at least ~4.93s faster with isolate: false — reuses workers across files instead of one per file
+

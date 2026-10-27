@@ -1,0 +1,3868 @@
+[
+  {
+    "label": "D01-main-1",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-main",
+      "label": "D01-main-1"
+    },
+    "startedAt": "2026-10-26T00:57:13.194Z",
+    "finishedAt": "2026-10-26T00:57:27.626Z",
+    "commit": "aff31169fd6feaad7bad35f22fe3de26429296cf",
+    "sourceTree": "52b45edfb0b8947223b8947437ef6fa9ee79cf5f",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 273328051\nuser_usec 217381556\nsystem_usec 55946494\nnice_usec 0\nnr_periods 5958\nnr_throttled 119\nthrottled_usec 5442076\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 327809933\nuser_usec 269294577\nsystem_usec 58515355\nnice_usec 0\nnr_periods 6102\nnr_throttled 242\nthrottled_usec 13689165\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10095.399999999954,
+    "frames": 122,
+    "p50Ms": 83.30000000000018,
+    "p95Ms": 166.60000000000036,
+    "p99Ms": 183.29999999999927,
+    "fraction25": 0.08196721311475409,
+    "simulationSeconds": 9.258333333333448,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1948,
+      "sourceCreated": 598,
+      "liveNodes": 2,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 282,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 9290,
+      "sourceCreated": 2917,
+      "liveNodes": 2,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999997671694,
+    "collectorP95Ms": 0.8000000000465661,
+    "costs": {
+      "simulation": {
+        "p50": 0.2000000000698492,
+        "p95": 0.5
+      },
+      "presentation": {
+        "p50": 0.5999999999767169,
+        "p95": 0.9000000000232831
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 0.8000000000465661
+      },
+      "effects": {
+        "p50": 0,
+        "p95": 0
+      },
+      "background": {
+        "p50": 0,
+        "p95": 0
+      },
+      "submit": {
+        "p50": 0.5999999999767169,
+        "p95": 0.8000000000465661
+      },
+      "uploadBytes": {
+        "p50": 117588,
+        "p95": 125652
+      },
+      "drawCalls": {
+        "p50": 30,
+        "p95": 32
+      },
+      "triangles": {
+        "p50": 39998,
+        "p95": 40790
+      }
+    },
+    "gpu": {
+      "valid": 32,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 81.369243
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D01-pr-1",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D01-pr-1"
+    },
+    "startedAt": "2026-10-26T00:57:29.913Z",
+    "finishedAt": "2026-10-26T00:57:44.134Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 336728026\nuser_usec 277823868\nsystem_usec 58904157\nnice_usec 0\nnr_periods 6125\nnr_throttled 264\nthrottled_usec 14840119\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 391007046\nuser_usec 329135296\nsystem_usec 61871749\nnice_usec 0\nnr_periods 6267\nnr_throttled 385\nthrottled_usec 22586953\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10034.700000000023,
+    "frames": 105,
+    "p50Ms": 99.89999999999964,
+    "p95Ms": 199.90000000000055,
+    "p99Ms": 250.09999999999945,
+    "fraction25": 0.09523809523809523,
+    "simulationSeconds": 8.583333333333487,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1611,
+      "sourceCreated": 504,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 8441,
+      "sourceCreated": 2640,
+      "liveNodes": 51,
+      "liveSources": 8,
+      "layeredVoices": 8,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999997671694,
+    "collectorP95Ms": 0.19999999995343387,
+    "costs": {
+      "simulation": {
+        "p50": 0.19999999995343387,
+        "p95": 0.5999999999767169
+      },
+      "presentation": {
+        "p50": 0.5999999999767169,
+        "p95": 1
+      },
+      "rainbow": {
+        "p50": 0.4999999998835847,
+        "p95": 0.7000000000698492
+      },
+      "effects": {
+        "p50": 0.6000000000931323,
+        "p95": 1.400000000023283
+      },
+      "background": {
+        "p50": 0.40000000002328306,
+        "p95": 0.7000000000698492
+      },
+      "submit": {
+        "p50": 0.6999999999534339,
+        "p95": 2.099999999976717
+      },
+      "uploadBytes": {
+        "p50": 489460,
+        "p95": 653004
+      },
+      "drawCalls": {
+        "p50": 33,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 44454,
+        "p95": 46972
+      }
+    },
+    "gpu": {
+      "valid": 31,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 84.415045
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D02-hide-1",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "hide-effects",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D02-hide-1"
+    },
+    "startedAt": "2026-10-26T00:57:46.535Z",
+    "finishedAt": "2026-10-26T00:58:00.948Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 400366883\nuser_usec 338110427\nsystem_usec 62256455\nnice_usec 0\nnr_periods 6291\nnr_throttled 408\nthrottled_usec 24299275\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 455202414\nuser_usec 389789681\nsystem_usec 65412732\nnice_usec 0\nnr_periods 6436\nnr_throttled 534\nthrottled_usec 32862817\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10202.600000000046,
+    "frames": 116,
+    "p50Ms": 83.30000000000018,
+    "p95Ms": 183.3000000000011,
+    "p99Ms": 200.10000000000036,
+    "fraction25": 0.09482758620689655,
+    "simulationSeconds": 9.033333333333461,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1611,
+      "sourceCreated": 504,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 8929,
+      "sourceCreated": 2809,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999997671694,
+    "collectorP95Ms": 2,
+    "costs": {
+      "simulation": {
+        "p50": 0.19999999995343387,
+        "p95": 1.1999999999534339
+      },
+      "presentation": {
+        "p50": 0.6999999999534339,
+        "p95": 1.099999999976717
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 0.8999999999068677
+      },
+      "effects": {
+        "p50": 0.6999999999534339,
+        "p95": 1.2000000000698492
+      },
+      "background": {
+        "p50": 0.40000000002328306,
+        "p95": 0.8000000000465661
+      },
+      "submit": {
+        "p50": 0.7999999999301508,
+        "p95": 3.800000000046566
+      },
+      "uploadBytes": {
+        "p50": 115156,
+        "p95": 125652
+      },
+      "drawCalls": {
+        "p50": 29,
+        "p95": 32
+      },
+      "triangles": {
+        "p50": 39998,
+        "p95": 40790
+      }
+    },
+    "gpu": {
+      "valid": 32,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 82.443612
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D03-freeze-1",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "freeze-effects",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D03-freeze-1"
+    },
+    "startedAt": "2026-10-26T00:58:03.038Z",
+    "finishedAt": "2026-10-26T00:58:17.327Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 463266614\nuser_usec 397490686\nsystem_usec 65775928\nnice_usec 0\nnr_periods 6456\nnr_throttled 553\nthrottled_usec 34089281\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 517322061\nuser_usec 448249101\nsystem_usec 69072959\nnice_usec 0\nnr_periods 6599\nnr_throttled 677\nthrottled_usec 42241514\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10085.4,
+    "frames": 104,
+    "p50Ms": 99.90000000000009,
+    "p95Ms": 183.40000000000055,
+    "p99Ms": 216.70000000000073,
+    "fraction25": 0.07692307692307693,
+    "simulationSeconds": 8.683333333333481,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1221,
+      "sourceCreated": 384,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 8057,
+      "sourceCreated": 2523,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999997671694,
+    "collectorP95Ms": 2.700000000069849,
+    "costs": {
+      "simulation": {
+        "p50": 0.2000000000698492,
+        "p95": 0.7999999998137355
+      },
+      "presentation": {
+        "p50": 0.5999999999767169,
+        "p95": 1.099999999976717
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 0.8000000000465661
+      },
+      "effects": {
+        "p50": 0,
+        "p95": 0
+      },
+      "background": {
+        "p50": 0,
+        "p95": 0
+      },
+      "submit": {
+        "p50": 0.6000000000931323,
+        "p95": 1.400000000023283
+      },
+      "uploadBytes": {
+        "p50": 117588,
+        "p95": 125652
+      },
+      "drawCalls": {
+        "p50": 33,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 44450,
+        "p95": 45242
+      }
+    },
+    "gpu": {
+      "valid": 31,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 85.439543
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D04-rainbow-1",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "freeze-rainbow",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D04-rainbow-1"
+    },
+    "startedAt": "2026-10-26T00:58:19.542Z",
+    "finishedAt": "2026-10-26T00:58:33.778Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 525867732\nuser_usec 456406706\nsystem_usec 69461025\nnice_usec 0\nnr_periods 6621\nnr_throttled 698\nthrottled_usec 43790878\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 579689216\nuser_usec 506419541\nsystem_usec 73269674\nnice_usec 0\nnr_periods 6764\nnr_throttled 821\nthrottled_usec 52268208\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10022.899999999954,
+    "frames": 98,
+    "p50Ms": 100,
+    "p95Ms": 200.09999999999945,
+    "p99Ms": 249.89999999999964,
+    "fraction25": 0.10204081632653061,
+    "simulationSeconds": 8.025000000000185,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1221,
+      "sourceCreated": 384,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 7557,
+      "sourceCreated": 2378,
+      "liveNodes": 201,
+      "liveSources": 60,
+      "layeredVoices": 16,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999997671694,
+    "collectorP95Ms": 0.5999999999767169,
+    "costs": {
+      "simulation": {
+        "p50": 0.19999999995343387,
+        "p95": 0.8000000000465661
+      },
+      "presentation": {
+        "p50": 0.19999999995343387,
+        "p95": 0.5999999999767169
+      },
+      "rainbow": {
+        "p50": 0,
+        "p95": 0.10000000009313226
+      },
+      "effects": {
+        "p50": 0.6999999999534339,
+        "p95": 1.8000000000465661
+      },
+      "background": {
+        "p50": 0.40000000002328306,
+        "p95": 0.6999999999534339
+      },
+      "submit": {
+        "p50": 0.6000000000931323,
+        "p95": 3.1000000000931323
+      },
+      "uploadBytes": {
+        "p50": 423672,
+        "p95": 593016
+      },
+      "drawCalls": {
+        "p50": 34,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 44458,
+        "p95": 47160
+      }
+    },
+    "gpu": {
+      "valid": 26,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 87.063288
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D05-background-1",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "static-background",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D05-background-1"
+    },
+    "startedAt": "2026-10-26T00:58:36.047Z",
+    "finishedAt": "2026-10-26T00:58:50.196Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 588583625\nuser_usec 514770006\nsystem_usec 73813619\nnice_usec 0\nnr_periods 6786\nnr_throttled 843\nthrottled_usec 53808811\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 642407401\nuser_usec 565429569\nsystem_usec 76977831\nnice_usec 0\nnr_periods 6928\nnr_throttled 965\nthrottled_usec 61884229\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10027.900000000092,
+    "frames": 107,
+    "p50Ms": 99.89999999999964,
+    "p95Ms": 200,
+    "p99Ms": 216.6999999999989,
+    "fraction25": 0.1308411214953271,
+    "simulationSeconds": 8.458333333333494,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1221,
+      "sourceCreated": 382,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 268,
+      "peakSources": 93,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 8051,
+      "sourceCreated": 2518,
+      "liveNodes": 181,
+      "liveSources": 49,
+      "layeredVoices": 16,
+      "peakNodes": 277,
+      "peakSources": 98,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999997671694,
+    "collectorP95Ms": 0.30000000004656613,
+    "costs": {
+      "simulation": {
+        "p50": 0.19999999995343387,
+        "p95": 0.8000000000465661
+      },
+      "presentation": {
+        "p50": 0.5999999999767169,
+        "p95": 1.099999999976717
+      },
+      "rainbow": {
+        "p50": 0.40000000002328306,
+        "p95": 0.6000000000931323
+      },
+      "effects": {
+        "p50": 0.5999999999767169,
+        "p95": 1.900000000023283
+      },
+      "background": {
+        "p50": 0,
+        "p95": 0
+      },
+      "submit": {
+        "p50": 0.6999999999534339,
+        "p95": 1.1000000000931323
+      },
+      "uploadBytes": {
+        "p50": 489460,
+        "p95": 655692
+      },
+      "drawCalls": {
+        "p50": 33,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 44452,
+        "p95": 46974
+      }
+    },
+    "gpu": {
+      "valid": 32,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 91.2815
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D06-no-audio-1",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "no-audio",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D06-no-audio-1"
+    },
+    "startedAt": "2026-10-26T00:58:52.333Z",
+    "finishedAt": "2026-10-26T00:59:06.512Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 650733918\nuser_usec 573383823\nsystem_usec 77350094\nnice_usec 0\nnr_periods 6949\nnr_throttled 985\nthrottled_usec 63199247\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 704473609\nuser_usec 624046714\nsystem_usec 80426895\nnice_usec 0\nnr_periods 7091\nnr_throttled 1108\nthrottled_usec 71477934\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10049.900000000023,
+    "frames": 106,
+    "p50Ms": 99.89999999999964,
+    "p95Ms": 183.30000000000018,
+    "p99Ms": 233.39999999999964,
+    "fraction25": 0.1320754716981132,
+    "simulationSeconds": 8.400000000000164,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 3,
+      "sourceCreated": 0,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 3,
+      "peakSources": 0,
+      "peakVoices": 0
+    },
+    "finalAudio": {
+      "created": 3,
+      "sourceCreated": 0,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 3,
+      "peakSources": 0,
+      "peakVoices": 0
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999997671694,
+    "collectorP95Ms": 0.19999999995343387,
+    "costs": {
+      "simulation": {
+        "p50": 0.2000000000698492,
+        "p95": 0.6000000000931323
+      },
+      "presentation": {
+        "p50": 0.6999999999534339,
+        "p95": 1.099999999976717
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 0.9000000000232831
+      },
+      "effects": {
+        "p50": 0.6999999999534339,
+        "p95": 1.3999999999068677
+      },
+      "background": {
+        "p50": 0.40000000002328306,
+        "p95": 0.8000000000465661
+      },
+      "submit": {
+        "p50": 0.6999999999534339,
+        "p95": 1.8999999999068677
+      },
+      "uploadBytes": {
+        "p50": 489628,
+        "p95": 660564
+      },
+      "drawCalls": {
+        "p50": 33,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 44452,
+        "p95": 47120
+      }
+    },
+    "gpu": {
+      "valid": 31,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 89.672609
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D07-full-1",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "full",
+      "profile": false,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D07-full-1"
+    },
+    "startedAt": "2026-10-26T00:59:08.763Z",
+    "finishedAt": "2026-10-26T00:59:22.974Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 713301192\nuser_usec 632450253\nsystem_usec 80850939\nnice_usec 0\nnr_periods 7113\nnr_throttled 1129\nthrottled_usec 72889505\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 767436552\nuser_usec 683424059\nsystem_usec 84012493\nnice_usec 0\nnr_periods 7256\nnr_throttled 1251\nthrottled_usec 80931096\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10081.10000000007,
+    "frames": 112,
+    "p50Ms": 83.30000000000018,
+    "p95Ms": 183.40000000000055,
+    "p99Ms": 216.79999999999927,
+    "fraction25": 0.08928571428571429,
+    "simulationSeconds": 8.641666666666817,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1611,
+      "sourceCreated": 504,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 8471,
+      "sourceCreated": 2655,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": null,
+    "collectorP50Ms": 0.09999999997671694,
+    "collectorP95Ms": 1.7999999999301508,
+    "costs": {
+      "simulation": {
+        "p50": null,
+        "p95": null
+      },
+      "presentation": {
+        "p50": null,
+        "p95": null
+      },
+      "rainbow": {
+        "p50": null,
+        "p95": null
+      },
+      "effects": {
+        "p50": null,
+        "p95": null
+      },
+      "background": {
+        "p50": null,
+        "p95": null
+      },
+      "submit": {
+        "p50": null,
+        "p95": null
+      },
+      "uploadBytes": {
+        "p50": null,
+        "p95": null
+      },
+      "drawCalls": {
+        "p50": null,
+        "p95": null
+      },
+      "triangles": {
+        "p50": null,
+        "p95": null
+      }
+    },
+    "gpu": {
+      "valid": 0,
+      "invalid": 0,
+      "pending": 0,
+      "p50Ms": null
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D07-light-1",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "light",
+      "profile": false,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D07-light-1"
+    },
+    "startedAt": "2026-10-26T00:59:25.435Z",
+    "finishedAt": "2026-10-26T00:59:39.520Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 777061311\nuser_usec 692556388\nsystem_usec 84504923\nnice_usec 0\nnr_periods 7280\nnr_throttled 1274\nthrottled_usec 82431993\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 830547468\nuser_usec 743093172\nsystem_usec 87454296\nnice_usec 0\nnr_periods 7421\nnr_throttled 1394\nthrottled_usec 90532220\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10043.1,
+    "frames": 104,
+    "p50Ms": 83.40000000000055,
+    "p95Ms": 200,
+    "p99Ms": 233.3000000000011,
+    "fraction25": 0.22115384615384615,
+    "simulationSeconds": 7.65000000000017,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1221,
+      "sourceCreated": 382,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 268,
+      "peakSources": 93,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 7367,
+      "sourceCreated": 2326,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": null,
+    "collectorP50Ms": 0,
+    "collectorP95Ms": 0.10000000009313226,
+    "costs": {
+      "simulation": {
+        "p50": null,
+        "p95": null
+      },
+      "presentation": {
+        "p50": null,
+        "p95": null
+      },
+      "rainbow": {
+        "p50": null,
+        "p95": null
+      },
+      "effects": {
+        "p50": null,
+        "p95": null
+      },
+      "background": {
+        "p50": null,
+        "p95": null
+      },
+      "submit": {
+        "p50": null,
+        "p95": null
+      },
+      "uploadBytes": {
+        "p50": null,
+        "p95": null
+      },
+      "drawCalls": {
+        "p50": null,
+        "p95": null
+      },
+      "triangles": {
+        "p50": null,
+        "p95": null
+      }
+    },
+    "gpu": {
+      "valid": 0,
+      "invalid": 0,
+      "pending": 0,
+      "p50Ms": null
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D07-off-1",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "off",
+      "profile": false,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D07-off-1"
+    },
+    "startedAt": "2026-10-26T00:59:41.856Z",
+    "finishedAt": "2026-10-26T00:59:56.190Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 839639760\nuser_usec 751697195\nsystem_usec 87942564\nnice_usec 0\nnr_periods 7444\nnr_throttled 1417\nthrottled_usec 92001206\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 894168120\nuser_usec 802801354\nsystem_usec 91366766\nnice_usec 0\nnr_periods 7588\nnr_throttled 1540\nthrottled_usec 100171020\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10262.999999999953,
+    "frames": 104,
+    "p50Ms": 83.40000000000146,
+    "p95Ms": 199.89999999999964,
+    "p99Ms": 333.2999999999993,
+    "fraction25": 0.125,
+    "simulationSeconds": 8.208333333333508,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": null,
+    "initialAudio": {
+      "created": 1221,
+      "sourceCreated": 384,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 7713,
+      "sourceCreated": 2426,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": null,
+    "collectorP50Ms": 0,
+    "collectorP95Ms": 0,
+    "costs": {
+      "simulation": {
+        "p50": null,
+        "p95": null
+      },
+      "presentation": {
+        "p50": null,
+        "p95": null
+      },
+      "rainbow": {
+        "p50": null,
+        "p95": null
+      },
+      "effects": {
+        "p50": null,
+        "p95": null
+      },
+      "background": {
+        "p50": null,
+        "p95": null
+      },
+      "submit": {
+        "p50": null,
+        "p95": null
+      },
+      "uploadBytes": {
+        "p50": null,
+        "p95": null
+      },
+      "drawCalls": {
+        "p50": null,
+        "p95": null
+      },
+      "triangles": {
+        "p50": null,
+        "p95": null
+      }
+    },
+    "gpu": {
+      "valid": 0,
+      "invalid": 0,
+      "pending": 0,
+      "p50Ms": null
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D06-original-silent-1",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "full",
+      "profile": true,
+      "audible": false,
+      "root": "/workspace/takkeu-before",
+      "label": "D06-original-silent-1"
+    },
+    "startedAt": "2026-10-26T00:59:58.455Z",
+    "finishedAt": "2026-10-26T01:00:12.723Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 903153660\nuser_usec 811337986\nsystem_usec 91815673\nnice_usec 0\nnr_periods 7610\nnr_throttled 1562\nthrottled_usec 101886615\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 957517405\nuser_usec 862320848\nsystem_usec 95196556\nnice_usec 0\nnr_periods 7753\nnr_throttled 1687\nthrottled_usec 110532766\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10072.69999999993,
+    "frames": 100,
+    "p50Ms": 100,
+    "p95Ms": 199.9999999999991,
+    "p99Ms": 249.90000000000055,
+    "fraction25": 0.11,
+    "simulationSeconds": 8.283333333333504,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1221,
+      "sourceCreated": 384,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 7705,
+      "sourceCreated": 2422,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999997671694,
+    "collectorP95Ms": 0.2000000000698492,
+    "costs": {
+      "simulation": {
+        "p50": 0.2000000000698492,
+        "p95": 0.9000000000232831
+      },
+      "presentation": {
+        "p50": 0.6999999999534339,
+        "p95": 1.2000000000698492
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 1
+      },
+      "effects": {
+        "p50": 0.7999999999301508,
+        "p95": 1.3999999999068677
+      },
+      "background": {
+        "p50": 0.5,
+        "p95": 0.7000000000698492
+      },
+      "submit": {
+        "p50": 0.7999999999301508,
+        "p95": 2.199999999953434
+      },
+      "uploadBytes": {
+        "p50": 489460,
+        "p95": 660564
+      },
+      "drawCalls": {
+        "p50": 33,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 44454,
+        "p95": 47120
+      }
+    },
+    "gpu": {
+      "valid": 26,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 89.994749
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D08-low-dpr1-1",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "low",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D08-low-dpr1-1"
+    },
+    "startedAt": "2026-10-26T01:00:14.822Z",
+    "finishedAt": "2026-10-26T01:00:29.034Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 965672143\nuser_usec 870123719\nsystem_usec 95548424\nnice_usec 0\nnr_periods 7774\nnr_throttled 1708\nthrottled_usec 112134157\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1019502779\nuser_usec 920244518\nsystem_usec 99258260\nnice_usec 0\nnr_periods 7917\nnr_throttled 1829\nthrottled_usec 120529013\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10003.3,
+    "frames": 103,
+    "p50Ms": 99.89999999999964,
+    "p95Ms": 199.89999999999964,
+    "p99Ms": 216.70000000000073,
+    "fraction25": 0.0970873786407767,
+    "simulationSeconds": 8.425000000000162,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1563,
+      "sourceCreated": 480,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 243,
+      "peakSources": 80,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 8027,
+      "sourceCreated": 2463,
+      "liveNodes": 80,
+      "liveSources": 21,
+      "layeredVoices": 7,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999997671694,
+    "collectorP95Ms": 3.699999999953434,
+    "costs": {
+      "simulation": {
+        "p50": 0.2000000000698492,
+        "p95": 0.7000000000698492
+      },
+      "presentation": {
+        "p50": 0.6000000000931323,
+        "p95": 1.2999999999301508
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 0.7000000000698492
+      },
+      "effects": {
+        "p50": 0.40000000002328306,
+        "p95": 0.9000000000232831
+      },
+      "background": {
+        "p50": 0.2999999999301508,
+        "p95": 0.5
+      },
+      "submit": {
+        "p50": 0.8000000000465661,
+        "p95": 4.800000000046566
+      },
+      "uploadBytes": {
+        "p50": 299284,
+        "p95": 390084
+      },
+      "drawCalls": {
+        "p50": 33,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 42188,
+        "p95": 43938
+      }
+    },
+    "gpu": {
+      "valid": 27,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 92.078777
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D08-standard-dpr2-1",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 2,
+      "mode": "normal",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D08-standard-dpr2-1"
+    },
+    "startedAt": "2026-10-26T01:00:31.253Z",
+    "finishedAt": "2026-10-26T01:00:45.529Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1028142257\nuser_usec 928517663\nsystem_usec 99624593\nnice_usec 0\nnr_periods 7938\nnr_throttled 1849\nthrottled_usec 121883771\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1082443564\nuser_usec 980548391\nsystem_usec 101895173\nnice_usec 0\nnr_periods 8081\nnr_throttled 1974\nthrottled_usec 130525215\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10172.400000000047,
+    "frames": 89,
+    "p50Ms": 133.29999999999927,
+    "p95Ms": 283.2999999999993,
+    "p99Ms": 399.89999999999964,
+    "fraction25": 0.3595505617977528,
+    "simulationSeconds": 6.18333333333343,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 393,
+      "sourceCreated": 120,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 211,
+      "peakSources": 64,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 4929,
+      "sourceCreated": 1559,
+      "liveNodes": 13,
+      "liveSources": 3,
+      "layeredVoices": 1,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1885,
+      "height": 1060
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999997671694,
+    "collectorP95Ms": 0.30000000004656613,
+    "costs": {
+      "simulation": {
+        "p50": 0.2999999999301508,
+        "p95": 1.400000000023283
+      },
+      "presentation": {
+        "p50": 0.7000000000698492,
+        "p95": 2.900000000023283
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 1.6000000000931323
+      },
+      "effects": {
+        "p50": 0.7000000000698492,
+        "p95": 1.6999999999534339
+      },
+      "background": {
+        "p50": 0.40000000002328306,
+        "p95": 1.1999999999534339
+      },
+      "submit": {
+        "p50": 0.9000000000232831,
+        "p95": 5
+      },
+      "uploadBytes": {
+        "p50": 489292,
+        "p95": 652668
+      },
+      "drawCalls": {
+        "p50": 33,
+        "p95": 35
+      },
+      "triangles": {
+        "p50": 44450,
+        "p95": 46968
+      }
+    },
+    "gpu": {
+      "valid": 24,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 146.43862
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D08-low-dpr2-1",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "low",
+      "dpr": 2,
+      "mode": "normal",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D08-low-dpr2-1"
+    },
+    "startedAt": "2026-10-26T01:00:49.521Z",
+    "finishedAt": "2026-10-26T01:01:03.650Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1098093860\nuser_usec 995616435\nsystem_usec 102477425\nnice_usec 0\nnr_periods 8121\nnr_throttled 2011\nthrottled_usec 132921183\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1149202554\nuser_usec 1044237133\nsystem_usec 104965421\nnice_usec 0\nnr_periods 8263\nnr_throttled 2126\nthrottled_usec 141416204\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10002.799999999977,
+    "frames": 138,
+    "p50Ms": 66.70000000000073,
+    "p95Ms": 183.3000000000011,
+    "p99Ms": 216.60000000000036,
+    "fraction25": 0.35507246376811596,
+    "simulationSeconds": 8.366666666666832,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 393,
+      "sourceCreated": 120,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 211,
+      "peakSources": 64,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 6791,
+      "sourceCreated": 2085,
+      "liveNodes": 135,
+      "liveSources": 36,
+      "layeredVoices": 12,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999997671694,
+    "collectorP95Ms": 3.299999999930151,
+    "costs": {
+      "simulation": {
+        "p50": 0.19999999995343387,
+        "p95": 0.7000000000698492
+      },
+      "presentation": {
+        "p50": 0.6999999999534339,
+        "p95": 1.1000000000931323
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 0.8000000000465661
+      },
+      "effects": {
+        "p50": 0.40000000002328306,
+        "p95": 0.6999999999534339
+      },
+      "background": {
+        "p50": 0.2000000000698492,
+        "p95": 0.40000000002328306
+      },
+      "submit": {
+        "p50": 0.7000000000698492,
+        "p95": 5.199999999953434
+      },
+      "uploadBytes": {
+        "p50": 299116,
+        "p95": 389748
+      },
+      "drawCalls": {
+        "p50": 33,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 42186,
+        "p95": 43854
+      }
+    },
+    "gpu": {
+      "valid": 42,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 82.305002
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D08-low-dpr2-2",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "low",
+      "dpr": 2,
+      "mode": "normal",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D08-low-dpr2-2"
+    },
+    "startedAt": "2026-10-26T01:01:05.817Z",
+    "finishedAt": "2026-10-26T01:01:20.010Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1157551563\nuser_usec 1052213722\nsystem_usec 105337840\nnice_usec 0\nnr_periods 8284\nnr_throttled 2147\nthrottled_usec 143012044\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1211504333\nuser_usec 1103229706\nsystem_usec 108274626\nnice_usec 0\nnr_periods 8426\nnr_throttled 2269\nthrottled_usec 151445341\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10105.299999999977,
+    "frames": 107,
+    "p50Ms": 99.89999999999964,
+    "p95Ms": 200,
+    "p99Ms": 216.70000000000073,
+    "fraction25": 0.16822429906542055,
+    "simulationSeconds": 8.133333333333512,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1183,
+      "sourceCreated": 363,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 238,
+      "peakSources": 78,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 7449,
+      "sourceCreated": 2292,
+      "liveNodes": 68,
+      "liveSources": 20,
+      "layeredVoices": 5,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999997671694,
+    "collectorP95Ms": 2,
+    "costs": {
+      "simulation": {
+        "p50": 0.2000000000698492,
+        "p95": 0.9000000000232831
+      },
+      "presentation": {
+        "p50": 0.6999999999534339,
+        "p95": 2.300000000046566
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 1
+      },
+      "effects": {
+        "p50": 0.40000000002328306,
+        "p95": 0.7000000000698492
+      },
+      "background": {
+        "p50": 0.2000000000698492,
+        "p95": 0.40000000002328306
+      },
+      "submit": {
+        "p50": 0.7999999999301508,
+        "p95": 4.5
+      },
+      "uploadBytes": {
+        "p50": 299284,
+        "p95": 382356
+      },
+      "drawCalls": {
+        "p50": 33,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 42188,
+        "p95": 43748
+      }
+    },
+    "gpu": {
+      "valid": 30,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 89.144313
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D08-standard-dpr2-2",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 2,
+      "mode": "normal",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D08-standard-dpr2-2"
+    },
+    "startedAt": "2026-10-26T01:01:22.111Z",
+    "finishedAt": "2026-10-26T01:01:36.472Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1219803518\nuser_usec 1111087819\nsystem_usec 108715699\nnice_usec 0\nnr_periods 8447\nnr_throttled 2290\nthrottled_usec 152721624\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1236534675\nuser_usec 1126793223\nsystem_usec 109741452\nnice_usec 0\nnr_periods 8591\nnr_throttled 2321\nthrottled_usec 155034836\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10002.30000000007,
+    "frames": 602,
+    "p50Ms": 16.69999999999891,
+    "p95Ms": 16.799999999999272,
+    "p99Ms": 16.80000000000109,
+    "fraction25": 1,
+    "simulationSeconds": 0,
+    "finalPhase": "paused",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": false,
+    "initialAudio": {
+      "created": 393,
+      "sourceCreated": 120,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 211,
+      "peakSources": 64,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 393,
+      "sourceCreated": 120,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 211,
+      "peakSources": 64,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1885,
+      "height": 1060
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0,
+    "collectorP95Ms": 0.19999999995343387,
+    "costs": {
+      "simulation": {
+        "p50": null,
+        "p95": null
+      },
+      "presentation": {
+        "p50": null,
+        "p95": null
+      },
+      "rainbow": {
+        "p50": null,
+        "p95": null
+      },
+      "effects": {
+        "p50": null,
+        "p95": null
+      },
+      "background": {
+        "p50": null,
+        "p95": null
+      },
+      "submit": {
+        "p50": null,
+        "p95": null
+      },
+      "uploadBytes": {
+        "p50": null,
+        "p95": null
+      },
+      "drawCalls": {
+        "p50": null,
+        "p95": null
+      },
+      "triangles": {
+        "p50": null,
+        "p95": null
+      }
+    },
+    "gpu": {
+      "valid": 0,
+      "invalid": 0,
+      "pending": 0,
+      "p50Ms": null
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D08-low-dpr1-2",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "low",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D08-low-dpr1-2"
+    },
+    "startedAt": "2026-10-26T01:01:36.532Z",
+    "finishedAt": "2026-10-26T01:01:50.831Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1236647095\nuser_usec 1126884754\nsystem_usec 109762340\nnice_usec 0\nnr_periods 8591\nnr_throttled 2321\nthrottled_usec 155034836\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1290885409\nuser_usec 1177410403\nsystem_usec 113475006\nnice_usec 0\nnr_periods 8734\nnr_throttled 2443\nthrottled_usec 162946048\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10100.900000000023,
+    "frames": 108,
+    "p50Ms": 83.40000000000009,
+    "p95Ms": 183.39999999999964,
+    "p99Ms": 233.39999999999964,
+    "fraction25": 0.12962962962962962,
+    "simulationSeconds": 8.383333333333498,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1173,
+      "sourceCreated": 360,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 243,
+      "peakSources": 80,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 7571,
+      "sourceCreated": 2325,
+      "liveNodes": 135,
+      "liveSources": 36,
+      "layeredVoices": 12,
+      "peakNodes": 244,
+      "peakSources": 81,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0,
+    "collectorP95Ms": 0.19999999995343387,
+    "costs": {
+      "simulation": {
+        "p50": 0.19999999995343387,
+        "p95": 0.5999999999767169
+      },
+      "presentation": {
+        "p50": 0.6000000000931323,
+        "p95": 1.3000000000465661
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 0.9000000000232831
+      },
+      "effects": {
+        "p50": 0.39999999990686774,
+        "p95": 0.6000000000931323
+      },
+      "background": {
+        "p50": 0.2000000000698492,
+        "p95": 0.40000000002328306
+      },
+      "submit": {
+        "p50": 0.6999999999534339,
+        "p95": 4.299999999930151
+      },
+      "uploadBytes": {
+        "p50": 301044,
+        "p95": 389916
+      },
+      "drawCalls": {
+        "p50": 34,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 42190,
+        "p95": 43936
+      }
+    },
+    "gpu": {
+      "valid": 32,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 85.495441
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D06-original-silent-2",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "full",
+      "profile": true,
+      "audible": false,
+      "root": "/workspace/takkeu-before",
+      "label": "D06-original-silent-2"
+    },
+    "startedAt": "2026-10-26T01:01:53.030Z",
+    "finishedAt": "2026-10-26T01:02:07.138Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1299487315\nuser_usec 1185653992\nsystem_usec 113833322\nnice_usec 0\nnr_periods 8756\nnr_throttled 2465\nthrottled_usec 164349097\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1353190001\nuser_usec 1236235990\nsystem_usec 116954011\nnice_usec 0\nnr_periods 8898\nnr_throttled 2588\nthrottled_usec 172448041\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10058.599999999953,
+    "frames": 103,
+    "p50Ms": 100,
+    "p95Ms": 200,
+    "p99Ms": 216.60000000000036,
+    "fraction25": 0.1650485436893204,
+    "simulationSeconds": 8.250000000000172,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1221,
+      "sourceCreated": 384,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 7705,
+      "sourceCreated": 2422,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999997671694,
+    "collectorP95Ms": 0.2000000000698492,
+    "costs": {
+      "simulation": {
+        "p50": 0.2000000000698492,
+        "p95": 0.8000000002793968
+      },
+      "presentation": {
+        "p50": 0.6999999999534339,
+        "p95": 1.3000000000465661
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 0.9000000000232831
+      },
+      "effects": {
+        "p50": 0.6999999999534339,
+        "p95": 1.400000000023283
+      },
+      "background": {
+        "p50": 0.5,
+        "p95": 0.7000000000698492
+      },
+      "submit": {
+        "p50": 0.6999999999534339,
+        "p95": 2
+      },
+      "uploadBytes": {
+        "p50": 489292,
+        "p95": 655692
+      },
+      "drawCalls": {
+        "p50": 33,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 44452,
+        "p95": 46974
+      }
+    },
+    "gpu": {
+      "valid": 32,
+      "invalid": 0,
+      "pending": 6,
+      "p50Ms": 90.187022
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D07-off-2",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "off",
+      "profile": false,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D07-off-2"
+    },
+    "startedAt": "2026-10-26T01:02:09.489Z",
+    "finishedAt": "2026-10-26T01:02:23.538Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1362363963\nuser_usec 1244922338\nsystem_usec 117441625\nnice_usec 0\nnr_periods 8921\nnr_throttled 2610\nthrottled_usec 173805537\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1415648022\nuser_usec 1294982664\nsystem_usec 120665357\nnice_usec 0\nnr_periods 9061\nnr_throttled 2731\nthrottled_usec 181416220\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10032.899999999954,
+    "frames": 106,
+    "p50Ms": 99.89999999999964,
+    "p95Ms": 183.3000000000011,
+    "p99Ms": 216.69999999999982,
+    "fraction25": 0.10377358490566038,
+    "simulationSeconds": 8.600000000000152,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": null,
+    "initialAudio": {
+      "created": 1221,
+      "sourceCreated": 384,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 8053,
+      "sourceCreated": 2521,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": null,
+    "collectorP50Ms": 0,
+    "collectorP95Ms": 0,
+    "costs": {
+      "simulation": {
+        "p50": null,
+        "p95": null
+      },
+      "presentation": {
+        "p50": null,
+        "p95": null
+      },
+      "rainbow": {
+        "p50": null,
+        "p95": null
+      },
+      "effects": {
+        "p50": null,
+        "p95": null
+      },
+      "background": {
+        "p50": null,
+        "p95": null
+      },
+      "submit": {
+        "p50": null,
+        "p95": null
+      },
+      "uploadBytes": {
+        "p50": null,
+        "p95": null
+      },
+      "drawCalls": {
+        "p50": null,
+        "p95": null
+      },
+      "triangles": {
+        "p50": null,
+        "p95": null
+      }
+    },
+    "gpu": {
+      "valid": 0,
+      "invalid": 0,
+      "pending": 0,
+      "p50Ms": null
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D07-light-2",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "light",
+      "profile": false,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D07-light-2"
+    },
+    "startedAt": "2026-10-26T01:02:26.007Z",
+    "finishedAt": "2026-10-26T01:02:40.139Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1425309674\nuser_usec 1304066838\nsystem_usec 121242836\nnice_usec 0\nnr_periods 9086\nnr_throttled 2753\nthrottled_usec 182777217\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1478947455\nuser_usec 1354252167\nsystem_usec 124695288\nnice_usec 0\nnr_periods 9228\nnr_throttled 2875\nthrottled_usec 190704622\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10052.099999999977,
+    "frames": 105,
+    "p50Ms": 83.39999999999964,
+    "p95Ms": 200,
+    "p99Ms": 216.69999999999982,
+    "fraction25": 0.1619047619047619,
+    "simulationSeconds": 8.27500000000017,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1221,
+      "sourceCreated": 384,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 7705,
+      "sourceCreated": 2422,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": null,
+    "collectorP50Ms": 0,
+    "collectorP95Ms": 0.09999999997671694,
+    "costs": {
+      "simulation": {
+        "p50": null,
+        "p95": null
+      },
+      "presentation": {
+        "p50": null,
+        "p95": null
+      },
+      "rainbow": {
+        "p50": null,
+        "p95": null
+      },
+      "effects": {
+        "p50": null,
+        "p95": null
+      },
+      "background": {
+        "p50": null,
+        "p95": null
+      },
+      "submit": {
+        "p50": null,
+        "p95": null
+      },
+      "uploadBytes": {
+        "p50": null,
+        "p95": null
+      },
+      "drawCalls": {
+        "p50": null,
+        "p95": null
+      },
+      "triangles": {
+        "p50": null,
+        "p95": null
+      }
+    },
+    "gpu": {
+      "valid": 0,
+      "invalid": 0,
+      "pending": 0,
+      "p50Ms": null
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D07-full-2",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "full",
+      "profile": false,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D07-full-2"
+    },
+    "startedAt": "2026-10-26T01:02:42.506Z",
+    "finishedAt": "2026-10-26T01:02:56.651Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1488204024\nuser_usec 1363006423\nsystem_usec 125197601\nnice_usec 0\nnr_periods 9251\nnr_throttled 2897\nthrottled_usec 191996975\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1541941812\nuser_usec 1412864611\nsystem_usec 129077200\nnice_usec 0\nnr_periods 9393\nnr_throttled 3019\nthrottled_usec 200492448\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10098.99999999993,
+    "frames": 103,
+    "p50Ms": 99.90000000000055,
+    "p95Ms": 199.90000000000055,
+    "p99Ms": 200.09999999999945,
+    "fraction25": 0.0970873786407767,
+    "simulationSeconds": 8.566666666666821,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1221,
+      "sourceCreated": 384,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 8049,
+      "sourceCreated": 2519,
+      "liveNodes": 51,
+      "liveSources": 8,
+      "layeredVoices": 8,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": null,
+    "collectorP50Ms": 0.10000000009313226,
+    "collectorP95Ms": 4.199999999953434,
+    "costs": {
+      "simulation": {
+        "p50": null,
+        "p95": null
+      },
+      "presentation": {
+        "p50": null,
+        "p95": null
+      },
+      "rainbow": {
+        "p50": null,
+        "p95": null
+      },
+      "effects": {
+        "p50": null,
+        "p95": null
+      },
+      "background": {
+        "p50": null,
+        "p95": null
+      },
+      "submit": {
+        "p50": null,
+        "p95": null
+      },
+      "uploadBytes": {
+        "p50": null,
+        "p95": null
+      },
+      "drawCalls": {
+        "p50": null,
+        "p95": null
+      },
+      "triangles": {
+        "p50": null,
+        "p95": null
+      }
+    },
+    "gpu": {
+      "valid": 0,
+      "invalid": 0,
+      "pending": 0,
+      "p50Ms": null
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D06-no-audio-2",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "no-audio",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D06-no-audio-2"
+    },
+    "startedAt": "2026-10-26T01:02:58.923Z",
+    "finishedAt": "2026-10-26T01:03:13.126Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1550859224\nuser_usec 1421317114\nsystem_usec 129542109\nnice_usec 0\nnr_periods 9415\nnr_throttled 3041\nthrottled_usec 201911003\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1604736534\nuser_usec 1472118474\nsystem_usec 132618059\nnice_usec 0\nnr_periods 9557\nnr_throttled 3164\nthrottled_usec 210040384\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10042.500000000047,
+    "frames": 106,
+    "p50Ms": 100,
+    "p95Ms": 166.70000000000073,
+    "p99Ms": 200,
+    "fraction25": 0.14150943396226415,
+    "simulationSeconds": 8.575000000000154,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 3,
+      "sourceCreated": 0,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 3,
+      "peakSources": 0,
+      "peakVoices": 0
+    },
+    "finalAudio": {
+      "created": 3,
+      "sourceCreated": 0,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 3,
+      "peakSources": 0,
+      "peakVoices": 0
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999986030161,
+    "collectorP95Ms": 0.5,
+    "costs": {
+      "simulation": {
+        "p50": 0.19999999995343387,
+        "p95": 0.7999999998137355
+      },
+      "presentation": {
+        "p50": 0.6999999999534339,
+        "p95": 1.1000000000931323
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 0.8000000000465661
+      },
+      "effects": {
+        "p50": 0.6000000000931323,
+        "p95": 1.2999999998137355
+      },
+      "background": {
+        "p50": 0.4000000001396984,
+        "p95": 0.7000000001862645
+      },
+      "submit": {
+        "p50": 0.6999999999534339,
+        "p95": 1.5
+      },
+      "uploadBytes": {
+        "p50": 489292,
+        "p95": 653172
+      },
+      "drawCalls": {
+        "p50": 33,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 44452,
+        "p95": 46974
+      }
+    },
+    "gpu": {
+      "valid": 30,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 92.034081
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D05-background-2",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "static-background",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D05-background-2"
+    },
+    "startedAt": "2026-10-26T01:03:15.482Z",
+    "finishedAt": "2026-10-26T01:03:29.781Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1613985197\nuser_usec 1480879482\nsystem_usec 133105714\nnice_usec 0\nnr_periods 9581\nnr_throttled 3187\nthrottled_usec 211354241\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1668327890\nuser_usec 1531900441\nsystem_usec 136427448\nnice_usec 0\nnr_periods 9724\nnr_throttled 3310\nthrottled_usec 219300398\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10089.299999999954,
+    "frames": 109,
+    "p50Ms": 99.89999999999964,
+    "p95Ms": 183.29999999999927,
+    "p99Ms": 200,
+    "fraction25": 0.11009174311926606,
+    "simulationSeconds": 8.808333333333474,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1221,
+      "sourceCreated": 384,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 8271,
+      "sourceCreated": 2600,
+      "liveNodes": 210,
+      "liveSources": 74,
+      "layeredVoices": 12,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999986030161,
+    "collectorP95Ms": 1.1999999999534339,
+    "costs": {
+      "simulation": {
+        "p50": 0.19999999995343387,
+        "p95": 0.8000000005122274
+      },
+      "presentation": {
+        "p50": 0.6000000000931323,
+        "p95": 1.1999999999534339
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 0.8000000000465661
+      },
+      "effects": {
+        "p50": 0.6000000000931323,
+        "p95": 4.400000000139698
+      },
+      "background": {
+        "p50": 0,
+        "p95": 0
+      },
+      "submit": {
+        "p50": 0.6999999999534339,
+        "p95": 1.6999999999534339
+      },
+      "uploadBytes": {
+        "p50": 491388,
+        "p95": 653340
+      },
+      "drawCalls": {
+        "p50": 34,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 44452,
+        "p95": 46976
+      }
+    },
+    "gpu": {
+      "valid": 32,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 86.448208
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D04-rainbow-2",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "freeze-rainbow",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D04-rainbow-2"
+    },
+    "startedAt": "2026-10-26T01:03:32.038Z",
+    "finishedAt": "2026-10-26T01:03:46.196Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1677130383\nuser_usec 1540235782\nsystem_usec 136894600\nnice_usec 0\nnr_periods 9746\nnr_throttled 3332\nthrottled_usec 220637871\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1730936913\nuser_usec 1590510745\nsystem_usec 140426167\nnice_usec 0\nnr_periods 9888\nnr_throttled 3455\nthrottled_usec 228673977\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10047.30000000014,
+    "frames": 109,
+    "p50Ms": 83.39999999999964,
+    "p95Ms": 183.40000000000055,
+    "p99Ms": 216.60000000000036,
+    "fraction25": 0.08256880733944955,
+    "simulationSeconds": 8.566666666666821,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1221,
+      "sourceCreated": 384,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 8051,
+      "sourceCreated": 2520,
+      "liveNodes": 51,
+      "liveSources": 8,
+      "layeredVoices": 8,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999986030161,
+    "collectorP95Ms": 0.8000000000465661,
+    "costs": {
+      "simulation": {
+        "p50": 0.19999999995343387,
+        "p95": 0.8000000000465661
+      },
+      "presentation": {
+        "p50": 0.10000000009313226,
+        "p95": 0.30000000004656613
+      },
+      "rainbow": {
+        "p50": 0,
+        "p95": 0.10000000009313226
+      },
+      "effects": {
+        "p50": 0.6000000000931323,
+        "p95": 1.1999999999534339
+      },
+      "background": {
+        "p50": 0.4000000001396984,
+        "p95": 0.6999999999534339
+      },
+      "submit": {
+        "p50": 0.6000000000931323,
+        "p95": 0.9000000001396984
+      },
+      "uploadBytes": {
+        "p50": 423840,
+        "p95": 584952
+      },
+      "drawCalls": {
+        "p50": 34,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 44452,
+        "p95": 46972
+      }
+    },
+    "gpu": {
+      "valid": 32,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 87.264954
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D03-freeze-2",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "freeze-effects",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D03-freeze-2"
+    },
+    "startedAt": "2026-10-26T01:03:48.346Z",
+    "finishedAt": "2026-10-26T01:04:02.451Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1739345758\nuser_usec 1598531354\nsystem_usec 140814404\nnice_usec 0\nnr_periods 9909\nnr_throttled 3476\nthrottled_usec 230017952\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1792953308\nuser_usec 1648992414\nsystem_usec 143960894\nnice_usec 0\nnr_periods 10051\nnr_throttled 3599\nthrottled_usec 237972971\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10030.2,
+    "frames": 111,
+    "p50Ms": 83.39999999999964,
+    "p95Ms": 199.89999999999964,
+    "p99Ms": 200,
+    "fraction25": 0.11711711711711711,
+    "simulationSeconds": 8.658333333333482,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1611,
+      "sourceCreated": 504,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 8433,
+      "sourceCreated": 2636,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999986030161,
+    "collectorP95Ms": 1.6999999999534339,
+    "costs": {
+      "simulation": {
+        "p50": 0.19999999995343387,
+        "p95": 0.6000000000931323
+      },
+      "presentation": {
+        "p50": 0.6000000000931323,
+        "p95": 1.1999999999534339
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 0.8999999999068677
+      },
+      "effects": {
+        "p50": 0,
+        "p95": 0
+      },
+      "background": {
+        "p50": 0,
+        "p95": 0
+      },
+      "submit": {
+        "p50": 0.6000000000931323,
+        "p95": 1.7999999998137355
+      },
+      "uploadBytes": {
+        "p50": 117588,
+        "p95": 125652
+      },
+      "drawCalls": {
+        "p50": 34,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 44450,
+        "p95": 45242
+      }
+    },
+    "gpu": {
+      "valid": 32,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 82.078228
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D02-hide-2",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "hide-effects",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D02-hide-2"
+    },
+    "startedAt": "2026-10-26T01:04:04.610Z",
+    "finishedAt": "2026-10-26T01:04:18.811Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1801426332\nuser_usec 1657030850\nsystem_usec 144395481\nnice_usec 0\nnr_periods 10072\nnr_throttled 3620\nthrottled_usec 239441568\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1855470681\nuser_usec 1707512560\nsystem_usec 147958121\nnice_usec 0\nnr_periods 10214\nnr_throttled 3741\nthrottled_usec 247474393\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10020.799999999907,
+    "frames": 115,
+    "p50Ms": 83.30000000000109,
+    "p95Ms": 166.69999999999982,
+    "p99Ms": 200.10000000000036,
+    "fraction25": 0.10434782608695652,
+    "simulationSeconds": 8.841666666666805,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1611,
+      "sourceCreated": 504,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 8653,
+      "sourceCreated": 2716,
+      "liveNodes": 99,
+      "liveSources": 32,
+      "layeredVoices": 8,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.09999999986030161,
+    "collectorP95Ms": 1.0999999998603016,
+    "costs": {
+      "simulation": {
+        "p50": 0.19999999995343387,
+        "p95": 0.6000000000931323
+      },
+      "presentation": {
+        "p50": 0.6999999999534339,
+        "p95": 1.2000000001862645
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 0.8999999999068677
+      },
+      "effects": {
+        "p50": 0.6000000000931323,
+        "p95": 1.6000000000931323
+      },
+      "background": {
+        "p50": 0.4000000001396984,
+        "p95": 0.6999999999534339
+      },
+      "submit": {
+        "p50": 0.6000000000931323,
+        "p95": 2.300000000046566
+      },
+      "uploadBytes": {
+        "p50": 115156,
+        "p95": 125652
+      },
+      "drawCalls": {
+        "p50": 29,
+        "p95": 32
+      },
+      "triangles": {
+        "p50": 39998,
+        "p95": 40790
+      }
+    },
+    "gpu": {
+      "valid": 32,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 81.355405
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D01-pr-2",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-before",
+      "label": "D01-pr-2"
+    },
+    "startedAt": "2026-10-26T01:04:21.112Z",
+    "finishedAt": "2026-10-26T01:04:35.338Z",
+    "commit": "059bcba8a5dc1aa2ab0a9c3b8d972be1c0b3c674",
+    "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1864514808\nuser_usec 1716116516\nsystem_usec 148398292\nnice_usec 0\nnr_periods 10237\nnr_throttled 3764\nthrottled_usec 248959100\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1918661243\nuser_usec 1767080432\nsystem_usec 151580810\nnice_usec 0\nnr_periods 10380\nnr_throttled 3887\nthrottled_usec 256630144\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10033.49999999986,
+    "frames": 106,
+    "p50Ms": 99.89999999999964,
+    "p95Ms": 183.39999999999964,
+    "p99Ms": 216.60000000000036,
+    "fraction25": 0.1320754716981132,
+    "simulationSeconds": 8.41666666666683,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1611,
+      "sourceCreated": 504,
+      "liveNodes": 3,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 283,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 8265,
+      "sourceCreated": 2592,
+      "liveNodes": 158,
+      "liveSources": 43,
+      "layeredVoices": 14,
+      "peakNodes": 284,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0,
+    "collectorP95Ms": 0.20000000018626451,
+    "costs": {
+      "simulation": {
+        "p50": 0.19999999995343387,
+        "p95": 0.6999999997206032
+      },
+      "presentation": {
+        "p50": 0.6000000000931323,
+        "p95": 1.1000000000931323
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 0.8000000000465661
+      },
+      "effects": {
+        "p50": 0.6000000000931323,
+        "p95": 1.3000000000465661
+      },
+      "background": {
+        "p50": 0.4000000001396984,
+        "p95": 0.8000000000465661
+      },
+      "submit": {
+        "p50": 0.6999999999534339,
+        "p95": 1.0999999998603016
+      },
+      "uploadBytes": {
+        "p50": 489460,
+        "p95": 660732
+      },
+      "drawCalls": {
+        "p50": 33,
+        "p95": 36
+      },
+      "triangles": {
+        "p50": 44452,
+        "p95": 46974
+      }
+    },
+    "gpu": {
+      "valid": 32,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 93.078347
+    },
+    "absoluteTarget": false
+  },
+  {
+    "label": "D01-main-2",
+    "configuration": {
+      "seconds": 10,
+      "warmSeconds": 3,
+      "score": 4000,
+      "quality": "standard",
+      "dpr": 1,
+      "mode": "normal",
+      "collector": "full",
+      "profile": true,
+      "audible": true,
+      "root": "/workspace/takkeu-main",
+      "label": "D01-main-2"
+    },
+    "startedAt": "2026-10-26T01:04:37.532Z",
+    "finishedAt": "2026-10-26T01:04:51.602Z",
+    "commit": "aff31169fd6feaad7bad35f22fe3de26429296cf",
+    "sourceTree": "52b45edfb0b8947223b8947437ef6fa9ee79cf5f",
+    "runnerSHA256": "d87054d18adf0acbc479e9e266cdb8bb7217a33d3ef0690cc5e8a9daaead730f",
+    "browser": "156.0.8078.4",
+    "errors": [],
+    "blocked": [],
+    "beforeCPU": "usage_usec 1927277480\nuser_usec 1775299944\nsystem_usec 151977536\nnice_usec 0\nnr_periods 10401\nnr_throttled 3908\nthrottled_usec 257909696\nnr_bursts 0\nburst_usec 0\n",
+    "afterCPU": "usage_usec 1981114724\nuser_usec 1826345950\nsystem_usec 154768773\nnice_usec 0\nnr_periods 10542\nnr_throttled 4028\nthrottled_usec 266252625\nnr_bursts 0\nburst_usec 0\n",
+    "durationMs": 10012.099999999953,
+    "frames": 114,
+    "p50Ms": 83.30000000000109,
+    "p95Ms": 166.70000000000073,
+    "p99Ms": 200,
+    "fraction25": 0.08771929824561403,
+    "simulationSeconds": 8.933333333333467,
+    "finalPhase": "running",
+    "initialBalls": 30,
+    "remainingBalls": 30,
+    "everySampleRunning30": true,
+    "initialAudio": {
+      "created": 1610,
+      "sourceCreated": 504,
+      "liveNodes": 2,
+      "liveSources": 0,
+      "layeredVoices": 0,
+      "peakNodes": 282,
+      "peakSources": 100,
+      "peakVoices": 16
+    },
+    "finalAudio": {
+      "created": 8968,
+      "sourceCreated": 2831,
+      "liveNodes": 262,
+      "liveSources": 90,
+      "layeredVoices": 16,
+      "peakNodes": 283,
+      "peakSources": 101,
+      "peakVoices": 16
+    },
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "glInfo": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "WebKit WebGL",
+      "vendor": "WebKit",
+      "unmaskedRenderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "extensions": [
+        "EXT_clip_control",
+        "EXT_color_buffer_float",
+        "EXT_color_buffer_half_float",
+        "EXT_conservative_depth",
+        "EXT_depth_clamp",
+        "EXT_disjoint_timer_query_webgl2",
+        "EXT_float_blend",
+        "EXT_polygon_offset_clamp",
+        "EXT_texture_compression_bptc",
+        "EXT_texture_compression_rgtc",
+        "EXT_texture_filter_anisotropic",
+        "EXT_texture_mirror_clamp_to_edge",
+        "NV_shader_noperspective_interpolation",
+        "OES_draw_buffers_indexed",
+        "OES_sample_variables",
+        "OES_shader_multisample_interpolation",
+        "OES_texture_float_linear",
+        "OVR_multiview2",
+        "WEBGL_clip_cull_distance",
+        "WEBGL_compressed_texture_astc",
+        "WEBGL_compressed_texture_etc",
+        "WEBGL_compressed_texture_etc1",
+        "WEBGL_compressed_texture_s3tc",
+        "WEBGL_compressed_texture_s3tc_srgb",
+        "WEBGL_debug_renderer_info",
+        "WEBGL_debug_shaders",
+        "WEBGL_lose_context",
+        "WEBGL_multi_draw",
+        "WEBGL_polygon_mode",
+        "WEBGL_stencil_texturing"
+      ]
+    },
+    "collectorP50Ms": 0.10000000009313226,
+    "collectorP95Ms": 4.199999999953434,
+    "costs": {
+      "simulation": {
+        "p50": 0.19999999995343387,
+        "p95": 0.5999999998603016
+      },
+      "presentation": {
+        "p50": 0.6999999999534339,
+        "p95": 2
+      },
+      "rainbow": {
+        "p50": 0.5,
+        "p95": 1.1999999997206032
+      },
+      "effects": {
+        "p50": 0,
+        "p95": 0
+      },
+      "background": {
+        "p50": 0,
+        "p95": 0
+      },
+      "submit": {
+        "p50": 0.6000000000931323,
+        "p95": 2.1000000000931323
+      },
+      "uploadBytes": {
+        "p50": 115156,
+        "p95": 125652
+      },
+      "drawCalls": {
+        "p50": 29,
+        "p95": 32
+      },
+      "triangles": {
+        "p50": 39998,
+        "p95": 40790
+      }
+    },
+    "gpu": {
+      "valid": 32,
+      "invalid": 0,
+      "pending": 8,
+      "p50Ms": 75.908341
+    },
+    "absoluteTarget": false
+  }
+]

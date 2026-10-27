@@ -44,7 +44,7 @@ export const test = base.extend<{ rankingTraffic: RpcCall[] }>({
         await route.fulfill({ json: { accepted: true, start_id: body.p_start_id,
           play_id: '22222222-2222-4222-8222-222222222222',
           game_slug: body.p_game_slug, client_version: body.p_client_version } });
-      } else if (rpc === 'get_best_score_ranking') {
+      } else if (rpc === 'get_best_score_ranking' || rpc === 'get_takkeu_hall_v2') {
         await route.fulfill({ json: [] });
       } else {
         unexpected.push(rpc); await route.abort();

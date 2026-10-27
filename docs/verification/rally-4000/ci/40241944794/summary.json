@@ -1,0 +1,446 @@
+{
+  "runId": 40241944794,
+  "headSha": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+  "runAttempt": 1,
+  "conclusion": "success",
+  "event": "push",
+  "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40241944794",
+  "jobCountExpected": 6,
+  "jobs": [
+    {
+      "id": 121315426871,
+      "name": "core",
+      "conclusion": "success",
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v5",
+          "conclusion": "success"
+        },
+        {
+          "number": 3,
+          "name": "Run actions/setup-node@v6",
+          "conclusion": "success"
+        },
+        {
+          "number": 4,
+          "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+          "conclusion": "success"
+        },
+        {
+          "number": 5,
+          "name": "Dependencies",
+          "conclusion": "success"
+        },
+        {
+          "number": 6,
+          "name": "Typecheck",
+          "conclusion": "success"
+        },
+        {
+          "number": 7,
+          "name": "Unit tests",
+          "conclusion": "success"
+        },
+        {
+          "number": 8,
+          "name": "Build and test root and Pages distributions",
+          "conclusion": "success"
+        },
+        {
+          "number": 9,
+          "name": "Record revision",
+          "conclusion": "success"
+        },
+        {
+          "number": 10,
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "number": 19,
+          "name": "Post Run actions/setup-node@v6",
+          "conclusion": "success"
+        },
+        {
+          "number": 20,
+          "name": "Post Run actions/checkout@v5",
+          "conclusion": "success"
+        },
+        {
+          "number": 21,
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 121316674079,
+      "name": "Browser (webkit, load)",
+      "conclusion": "success",
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v5",
+          "conclusion": "success"
+        },
+        {
+          "number": 3,
+          "name": "Run actions/setup-node@v6",
+          "conclusion": "success"
+        },
+        {
+          "number": 4,
+          "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+          "conclusion": "success"
+        },
+        {
+          "number": 5,
+          "name": "Dependencies",
+          "conclusion": "success"
+        },
+        {
+          "number": 6,
+          "name": "Browser tests",
+          "conclusion": "success"
+        },
+        {
+          "number": 7,
+          "name": "Record revision",
+          "conclusion": "success"
+        },
+        {
+          "number": 8,
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "number": 15,
+          "name": "Post Run actions/setup-node@v6",
+          "conclusion": "success"
+        },
+        {
+          "number": 16,
+          "name": "Post Run actions/checkout@v5",
+          "conclusion": "success"
+        },
+        {
+          "number": 17,
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 121316674083,
+      "name": "Browser (chromium, interaction)",
+      "conclusion": "success",
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v5",
+          "conclusion": "success"
+        },
+        {
+          "number": 3,
+          "name": "Run actions/setup-node@v6",
+          "conclusion": "success"
+        },
+        {
+          "number": 4,
+          "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+          "conclusion": "success"
+        },
+        {
+          "number": 5,
+          "name": "Dependencies",
+          "conclusion": "success"
+        },
+        {
+          "number": 6,
+          "name": "Browser tests",
+          "conclusion": "success"
+        },
+        {
+          "number": 7,
+          "name": "Record revision",
+          "conclusion": "success"
+        },
+        {
+          "number": 8,
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "number": 15,
+          "name": "Post Run actions/setup-node@v6",
+          "conclusion": "success"
+        },
+        {
+          "number": 16,
+          "name": "Post Run actions/checkout@v5",
+          "conclusion": "success"
+        },
+        {
+          "number": 17,
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 121316674122,
+      "name": "Browser (chromium, load)",
+      "conclusion": "success",
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v5",
+          "conclusion": "success"
+        },
+        {
+          "number": 3,
+          "name": "Run actions/setup-node@v6",
+          "conclusion": "success"
+        },
+        {
+          "number": 4,
+          "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+          "conclusion": "success"
+        },
+        {
+          "number": 5,
+          "name": "Dependencies",
+          "conclusion": "success"
+        },
+        {
+          "number": 6,
+          "name": "Browser tests",
+          "conclusion": "success"
+        },
+        {
+          "number": 7,
+          "name": "Record revision",
+          "conclusion": "success"
+        },
+        {
+          "number": 8,
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "number": 15,
+          "name": "Post Run actions/setup-node@v6",
+          "conclusion": "success"
+        },
+        {
+          "number": 16,
+          "name": "Post Run actions/checkout@v5",
+          "conclusion": "success"
+        },
+        {
+          "number": 17,
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 121316674136,
+      "name": "Browser (webkit, interaction)",
+      "conclusion": "success",
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v5",
+          "conclusion": "success"
+        },
+        {
+          "number": 3,
+          "name": "Run actions/setup-node@v6",
+          "conclusion": "success"
+        },
+        {
+          "number": 4,
+          "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+          "conclusion": "success"
+        },
+        {
+          "number": 5,
+          "name": "Dependencies",
+          "conclusion": "success"
+        },
+        {
+          "number": 6,
+          "name": "Browser tests",
+          "conclusion": "success"
+        },
+        {
+          "number": 7,
+          "name": "Record revision",
+          "conclusion": "success"
+        },
+        {
+          "number": 8,
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "number": 15,
+          "name": "Post Run actions/setup-node@v6",
+          "conclusion": "success"
+        },
+        {
+          "number": 16,
+          "name": "Post Run actions/checkout@v5",
+          "conclusion": "success"
+        },
+        {
+          "number": 17,
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 121319923049,
+      "name": "verify",
+      "conclusion": "success",
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "number": 2,
+          "name": "Require all validation jobs",
+          "conclusion": "success"
+        },
+        {
+          "number": 3,
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "unit": {
+    "filesPassed": 71,
+    "testsPassed": 958,
+    "failed": 0,
+    "skipped": 0,
+    "source": "selected/12617231515/artifacts/unit.log"
+  },
+  "playwright": [
+    {
+      "artifactId": 12617182250,
+      "artifactName": "verification-browser-webkit-interaction-d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "stats": {
+        "startTime": "2026-10-25T22:58:36.138Z",
+        "duration": 556802.747,
+        "expected": 94,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "totalCases": 94,
+      "retriedCases": 0
+    },
+    {
+      "artifactId": 12617231515,
+      "artifactName": "verification-d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "stats": {
+        "startTime": "2026-10-25T22:54:22.631Z",
+        "duration": 16803.039,
+        "expected": 8,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "totalCases": 8,
+      "retriedCases": 0
+    },
+    {
+      "artifactId": 12617242568,
+      "artifactName": "verification-browser-chromium-load-d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "stats": {
+        "startTime": "2026-10-25T22:57:54.481Z",
+        "duration": 334187.046,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "totalCases": 3,
+      "retriedCases": 0
+    },
+    {
+      "artifactId": 12617532732,
+      "artifactName": "verification-browser-chromium-interaction-d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "stats": {
+        "startTime": "2026-10-25T22:58:18.622Z",
+        "duration": 633486.4689999999,
+        "expected": 94,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "totalCases": 94,
+      "retriedCases": 0
+    },
+    {
+      "artifactId": 12617701130,
+      "artifactName": "verification-browser-webkit-load-d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "stats": {
+        "startTime": "2026-10-25T22:58:23.906Z",
+        "duration": 60124.429,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "totalCases": 3,
+      "retriedCases": 0
+    }
+  ],
+  "browserTotalPassed": 194,
+  "releaseTotalPassed": 8,
+  "playwrightSkipped": 0,
+  "playwrightFlaky": 0,
+  "playwrightUnexpected": 0,
+  "scope": "Canonical C d30aa196 includes final runtime/source tests; final flash-screening/performance/device acceptance are separate from CI outcomes.",
+  "productionEditsMade": false,
+  "sourceHeadCIValidated": true,
+  "finalAcceptanceVerified": false,
+  "sourceTreeSHA": "47bd0f370ad169de00c77b37bb74429b63020d44",
+  "testsTreeSHA": "097b10b95f55aded9d77af6dd4ed6b85925b9684",
+  "quietLockReleasedAt": "2026-10-25T23:15:17Z",
+  "heavyArchivalStartedAfterRelease": true,
+  "finalAcceptanceScope": "Exact canonical C runtime/tests validated by CI. Local performance targets, flash-screening, human listening/device confirmation are independent evidence."
+}

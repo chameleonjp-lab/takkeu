@@ -34,11 +34,12 @@ export function resolvePresentation(snapshot: GameSnapshot): PresentationState {
       opponentCourtRight: part(190,false,true), opponentCourtLeft: part(240,false,true), courtEdges: part(70, true),
       net: part(130, true), playerRacketBody: reached(390) ? part(390, true) : { visible: true, rainbow: false, ...(reached(270) ? { solid: true } : {}) }, playerRacketEdge: part(100, true),
       opponentRacketBody: part(330,false,true), opponentRacketEdge: part(300,false,true), opponentBody: part(360,false,true),
-      selfFloor: part(410, true), opponentFloor: part(380,false,true), opponentWall: part(420,false,true),structure:part(460,true),
+      // Later stages keep a quiet backdrop; floor decoration has no role in physics or input mapping.
+      selfFloor: {visible:snapshot.score<1500,rainbow:reached(410)}, opponentFloor: part(380,false,true), opponentWall: part(420,false,true),structure:part(460,true),
     },
     balls: Object.fromEntries(snapshot.balls.map(ball => [ball.id, { visible: isBallVisible(ball, snapshot), rainbow: glowing(snapshot) }])),
     pulseStrength: reached(390) ? samplePulse(snapshot.simTime) : 1,
-    opponentEdgesVisible: reached(70)&&!reached(490),opponentField:reached(490),opponentRandom:reached(500),ownRandom:reached(510),
+    opponentEdgesVisible: reached(70)&&!reached(490),opponentField:reached(490)&&snapshot.score<1500,opponentRandom:reached(500),ownRandom:reached(510),
   };
 }
 function colorVertices(geometry: BufferGeometry, time: number, randomSeed?:number): void {
@@ -56,12 +57,16 @@ function colorVertices(geometry: BufferGeometry, time: number, randomSeed?:numbe
   }
   colors.needsUpdate = true;
 }
-export function applyPresentation(objects: ReturnType<typeof createObjects>, snapshot: GameSnapshot): void {
+export function applyPresentation(objects: ReturnType<typeof createObjects>, snapshot: GameSnapshot, reducedMotion=false): void {
   const state = resolvePresentation(snapshot);
+  const motionTime=reducedMotion?0:snapshot.simTime;
+  // Preserve the legacy logical pulse/period, while narrowing only displayed
+  // wide-field material contrast to prevent composite full-surface flashes.
+  const presentationPulse=reducedMotion?1:.88+(state.pulseStrength-.65)*(.12/.35);
   let runSeed=0;
   for(const character of snapshot.runId)runSeed=(runSeed*31+character.charCodeAt(0))%65521;
   objects.opponentField.root.visible=state.opponentField;
-  if(state.opponentField)objects.opponentField.update(snapshot.simTime,state.opponentRandom,state.pulseStrength,runSeed+490);
+  if(state.opponentField)objects.opponentField.update(motionTime,state.opponentRandom,presentationPulse,runSeed+490);
   let partIndex=0;
   for (const [id, object] of Object.entries(objects.parts)) {
     partIndex++;
@@ -75,10 +80,10 @@ export function applyPresentation(objects: ReturnType<typeof createObjects>, sna
         if (!(material instanceof MeshStandardMaterial || material instanceof LineBasicMaterial)) continue;
         if (material.vertexColors !== part.rainbow) { material.vertexColors = part.rainbow; material.needsUpdate = true; }
         if (part.rainbow) {
-          colorVertices(child.geometry, snapshot.simTime,state.ownRandom&&!id.startsWith('opponent')?runSeed+partIndex*31:undefined);
-          material.color.setRGB(1, 1, 1).multiplyScalar((material instanceof MeshStandardMaterial ? 0.16 : 1) * state.pulseStrength);
+          colorVertices(child.geometry, motionTime,state.ownRandom&&!id.startsWith('opponent')?runSeed+partIndex*31:undefined);
+          material.color.setRGB(1, 1, 1).multiplyScalar((material instanceof MeshStandardMaterial ? 0.16 : 1) * presentationPulse);
           if (material instanceof MeshStandardMaterial) {
-            material.emissive.setRGB(1, 1, 1); material.emissiveIntensity = 0.85 * state.pulseStrength;
+            material.emissive.setRGB(1, 1, 1); material.emissiveIntensity = 0.85 * presentationPulse;
           } else material.opacity = 0.9;
         } else {
           material.color.copy(material.userData.baseColor as Color);
@@ -95,8 +100,8 @@ export function applyPresentation(objects: ReturnType<typeof createObjects>, sna
   objects.opponentEdges.visible = state.opponentEdgesVisible;
   objects.opponentPaddle.visible = state.parts.opponentRacketBody.visible || state.parts.opponentRacketEdge.visible;
   objects.playerPaddle.position.x = snapshot.paddle.x; objects.playerPaddle.position.y = snapshot.paddle.y;
-  const motion=state.ownRandom?sampleRandomMotion(snapshot.simTime,runSeed+480):{x:0,y:0};
-  objects.syncBalls(snapshot.balls.filter(ball => state.balls[ball.id]?.visible).map(ball => ball.id), glowing(snapshot), snapshot.simTime+motion.x*7);
+  const motion=state.ownRandom?sampleRandomMotion(motionTime,runSeed+480):{x:0,y:0};
+  objects.syncBalls(snapshot.balls.filter(ball => state.balls[ball.id]?.visible).map(ball => ball.id), glowing(snapshot), motionTime+motion.x*7);
   for (const ball of snapshot.balls) {
     const id = ball.id, visual = objects.balls.get(id), style = state.balls[id];
     if (!visual) continue;

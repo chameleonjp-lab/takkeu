@@ -1,0 +1,52 @@
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/wide-field-color-safety.test.ts (3 tests | 3 failed) 40ms
+   × crossfades the existing century environment without a color jump at its palette boundary 36ms
+   × keeps wide-field brightness modulation subtle while retaining its original period 1ms
+   × keeps procedural color-field motion gradual without removing irregular movement 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/wide-field-color-safety.test.ts > crossfades the existing century environment without a color jump at its palette boundary
+AssertionError: expected 0.974999999627471 to be less than 0.02
+ ❯ tests/unit/wide-field-color-safety.test.ts:17:73
+     15|   view.update({...s,simTime:20.301});
+     16|   const after=geometry.getAttribute('color').array;
+     17|   expect(Math.max(...before.map((value,i)=>Math.abs(value-after[i]!)))…
+       |                                                                         ^
+     18|   expect(view.stats().environment).not.toBeNull();
+     19|   view.update({...s,simTime:25});expect(view.stats().environment).toBe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/wide-field-color-safety.test.ts > keeps wide-field brightness modulation subtle while retaining its original period
+AssertionError: expected 0.3500000000000001 to be less than or equal to 0.125
+ ❯ tests/unit/wide-field-color-safety.test.ts:23:51
+     21| it('keeps wide-field brightness modulation subtle while retaining its …
+     22|   const values=Array.from({length:601},(_,i)=>samplePulse(i/1000));
+     23|   expect(Math.max(...values)-Math.min(...values)).toBeLessThanOrEqual(…
+       |                                                   ^
+     24|   expect(samplePulse(0)).toBeCloseTo(samplePulse(2*DEFAULT_CONFIG.puls…
+     25|   expect(samplePulse(0)).toBeGreaterThan(samplePulse(DEFAULT_CONFIG.pu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/wide-field-color-safety.test.ts > keeps procedural color-field motion gradual without removing irregular movement
+AssertionError: expected 0.04798146172871243 to be less than 0.02
+ ❯ tests/unit/wide-field-color-safety.test.ts:33:15
+     31|     max=Math.max(max,Math.abs(a.x-b.x),Math.abs(a.y-b.y));
+     32|   }
+     33|   expect(max).toBeLessThan(.02);
+       |               ^
+     34|   expect(sampleRandomMotion(2,729)).not.toEqual(sampleRandomMotion(3,7…
+     35| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  21:13:13
+   Duration  279ms (import 36%, transform 34%, tests 27%, worker 2%)
+

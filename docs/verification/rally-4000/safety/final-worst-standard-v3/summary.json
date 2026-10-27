@@ -1,0 +1,23 @@
+[
+  {
+    "sequence": "4000-standard-legacy100",
+    "fps": 60,
+    "frames": 360,
+    "width": 1024,
+    "height": 768,
+    "referenceWindow": [
+      341,
+      256
+    ],
+    "areaThreshold25Percent": 21824.0,
+    "maxGeneralPixelFlashCount": 11,
+    "maxRedPixelFlashCount": 3,
+    "maxGeneralHighFrequencyArea": 21975,
+    "maxRedHighFrequencyArea": 0,
+    "maxGeneralLargeClosingFramesPerSecond": 1,
+    "maxRedLargeClosingFramesPerSecond": 0,
+    "screeningVerdict": "flagged; investigate and fix before acceptance",
+    "flagged": true,
+    "sourcePixelRGB24SHA256": "ccca7bf279dce53b4a5a84a54ff228750c6215eacf03f78a269e9b7609c6cb10"
+  }
+]

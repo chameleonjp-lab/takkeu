@@ -1,0 +1,42 @@
+ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 14 (Debian 14.2.0-19)
+  configuration: --prefix=/usr --extra-version=0+deb13u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.103 / 61.  7.103
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  5.100 / 10.  5.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, image2, from 'docs/verification/rally-4000/safety/final-regular/4000-standard-reduced/%04d.png':
+  Duration: 00:00:06.00, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 1024x768, 60 fps, 60 tbr, 60 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264rgb))
+Press [q] to stop, [?] for help
+[libx264rgb @ 0x55cf89e4a340] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264rgb @ 0x55cf89e4a340] profile High 4:4:4 Predictive, level 3.2, 4:4:4, 8-bit
+[libx264rgb @ 0x55cf89e4a340] 264 - core 164 r3108 31e19f9 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=0 mixed_ref=1 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=0 chroma_qp_offset=0 threads=2 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc=cqp mbtree=0 qp=0
+Output #0, mp4, to 'docs/verification/rally-4000/safety/final-regular/4000-standard-reduced/capture-lossless.mp4':
+  Metadata:
+    encoder         : Lavf61.7.103
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), rgb24(pc, gbr/unknown/unknown, progressive), 1024x768, q=2-31, 60 fps, 15360 tbn
+      Metadata:
+        encoder         : Lavc61.19.101 libx264rgb
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    3 fps=0.0 q=0.0 size=     768KiB time=00:00:00.05 bitrate=125836.8kbits/s speed= 0.1x    frame=    8 fps=7.9 q=0.0 size=    2304KiB time=00:00:00.13 bitrate=141561.0kbits/s speed=0.132x    frame=   38 fps= 25 q=0.0 size=    3584KiB time=00:00:00.63 bitrate=46358.7kbits/s speed=0.419x    frame=   78 fps= 39 q=0.0 size=    3584KiB time=00:00:01.30 bitrate=22585.0kbits/s speed=0.646x    frame=  123 fps= 49 q=0.0 size=    3584KiB time=00:00:02.05 bitrate=14322.2kbits/s speed=0.816x    frame=  163 fps= 54 q=0.0 size=    3584KiB time=00:00:02.71 bitrate=10807.5kbits/s speed=0.902x    frame=  198 fps= 56 q=0.0 size=    4096KiB time=00:00:03.30 bitrate=10168.1kbits/s speed=0.94x    frame=  231 fps= 58 q=0.0 size=    4864KiB time=00:00:03.85 bitrate=10349.7kbits/s speed=0.959x    frame=  250 fps= 55 q=0.0 size=    5888KiB time=00:00:04.16 bitrate=11576.4kbits/s speed=0.923x    frame=  280 fps= 56 q=0.0 size=    6144KiB time=00:00:04.66 bitrate=10785.4kbits/s speed=0.931x    frame=  291 fps= 53 q=0.0 size=    7168KiB time=00:00:04.85 bitrate=12107.3kbits/s speed=0.88x    frame=  298 fps= 50 q=0.0 size=    8960KiB time=00:00:04.96 bitrate=14778.7kbits/s speed=0.826x    frame=  331 fps= 51 q=0.0 size=    9984KiB time=00:00:05.51 bitrate=14825.9kbits/s speed=0.847x    [out#0/mp4 @ 0x55cf89e55640] video:10059KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.023533%
+frame=  360 fps= 53 q=-1.0 Lsize=   10062KiB time=00:00:06.00 bitrate=13737.3kbits/s speed=0.881x    
+[libx264rgb @ 0x55cf89e4a340] frame I:2     Avg QP: 0.00  size:439868
+[libx264rgb @ 0x55cf89e4a340] frame P:358   Avg QP: 0.00  size: 26314
+[libx264rgb @ 0x55cf89e4a340] mb I  I16..4: 61.6% 13.0% 25.4%
+[libx264rgb @ 0x55cf89e4a340] mb P  I16..4:  3.1%  0.3%  0.6%  P16..4:  4.0%  0.2%  0.2%  0.0%  0.0%    skip:91.6%
+[libx264rgb @ 0x55cf89e4a340] 8x8 transform intra:7.8% inter:16.2%
+[libx264rgb @ 0x55cf89e4a340] coded y,u,v intra: 67.4% 70.9% 68.9% inter: 2.0% 2.7% 2.7%
+[libx264rgb @ 0x55cf89e4a340] i16 v,h,dc,p: 40% 55%  1%  5%
+[libx264rgb @ 0x55cf89e4a340] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 19% 33% 12%  1% 32%  2%  1%  0%  0%
+[libx264rgb @ 0x55cf89e4a340] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 21% 41%  5%  3% 21%  3%  3%  1%  1%
+[libx264rgb @ 0x55cf89e4a340] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264rgb @ 0x55cf89e4a340] ref P L0: 92.6%  7.3%  0.1%  0.0%
+[libx264rgb @ 0x55cf89e4a340] kb/s:13733.41

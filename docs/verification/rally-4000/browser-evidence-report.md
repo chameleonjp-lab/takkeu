@@ -1,0 +1,58 @@
+# Browser evidence workflow
+
+These fixtures are test-only and never register or submit scores. Unknown external traffic is blocked. `rallyHarness` uses real screens, notices, `createView`, event controller, unchanged camera and existing rainbow world. The visible two-ball scene uses explicit synthetic positions to assess foreground visibility; it is not a physical game replay. A separate unrendered renderer supplies deterministic vertex metadata without altering the visible scene.
+
+## Authored checks
+
+- 23 rally thresholds × before/arrival/during/after, each in Chromium and WebKit.
+- Timed geometry and PNG sequences for electricity, halo, meteor and late-stage worlds; exact pause/replay/restore state equality and static reduced-motion geometry.
+- 13 loss values including real event-coordinate use, same-frame four loss IDs/positions, and frozen final snapshot while finish drawing continues.
+- 320×568,390×844,844×390 and root text200%, four-digit score bounds, pointer-events and warning/notification nonoverlap.
+
+## Verification status
+
+- Typecheck passed; final opt-in harness result is in `logs/single-pass-browser-harness-typecheck.log`.
+- Priority-corrected focused rendering/legacy regression passed16/16. Canonical single-pass source subsequently passed832 exact whole-camera old/new comparisons across all12 existing engine/case combinations, plus16 fresh-production-default bridge cases. Formal run boundaries and the retained WebKit infrastructure timeout are described below.
+- All416 new-effect full-resolution PNGs, motion geometry/metadata,14 dense final clips/5040frames, failed attempts, audio graph/browser results and formal logs remain available. Browser evidence never substitutes for human listening, VoiceOver or device performance.
+
+Formal images and JSON metadata are stored under `evidence/<engine>/`, and full Playwright logs/results under `logs/`. Image metadata and geometric changes alone do not certify actual visibility, safety, human listening or iPhone performance.
+
+## Executed findings and corrections (2026-10-25)
+
+1. Initial major-label scale at320×568/root200% clipped `1000 RALLY`: both engines measured right649.6 against screen320. Full failure trace/error context/screenshots are preserved in `failures/arrival-first`. Parent fixed the label inner span and available-width bound; strict inner-label and wrapper bounds then passed2/2.
+2. First complete milestone/motion/loss/layout matrix passed10/10, but actual image inspection identified a hard-edged70px star strip that did not read as the required cosmic background. All425 original evidence files are retained in the verified split `failures/star-band-first-evidence.tar.gz.part-*` archive with full original/member/part SHA manifests. New backdrop covers the upper camera frustum with distributed stars/upper halo and a soft lower edge. Actual2000-after images now show dark cosmic space above the unchanged rainbow table/floor.
+3. Gold300 rays were imperceptible. A paired same-frame screenshot regression compares aura visible/hidden around the score, requiring≥80 pixels with red delta>.15,green>.10,blue<-.05 across≥3 quadrants. Old result:0 in both engines. Parent increased local gold contrast without changing the1.5s duration. New result:Chromium123 (quadrants41/16/47/19);WebKit1159 (535/151/315/158 atDPR3). Strict test passed2/2.
+4. Post-star/gold focused matrix passed12/12, with all23×4 threshold images, timed motion (including4000 at2.5s and3.5s), loss and layouts. Formal `logs/browser-focused-final.*` retains that run. These images precede later legacy flash-safety corrections and must be recaptured for final source acceptance.
+5. Dense60Hz6s worst legacy100-streak plus4000/new cues exposed a conservative general-flash screening failure: standard22 flashes/pixel in1s and max high-frequency area82788>21824;low23 and82515. All raw RGB content is retained in verified lossless movies, source hashes/copies, per-frame analysis and codec logs under `safety/worst-first`.
+6. Parent bounded/smoothed legacy net bolts and table shake (game facts/numbers unchanged). Same standard capture still flagged11 and31808>21824, peak at t1.2s/window[0,473] below the table. `safety/final-worst-standard` is a **failed first-fix attempt**, despite that historical directory name. Its360 RGB frames and exact sources are retained in a verified lossless movie for the independent pixel diagnosis. Parent requested test-only no-legacy/no-random ablations; neither is an acceptance scenario.
+
+These early attempts remain failed records. Human visual/listening and real-device results remain unconfirmed. The temporal analyzer is a reproducible conservative SDR screen, not accredited WCAG certification. All partial/failing formal results are retained.
+7. Test-only causal ablations used fresh pages with identical fixture call order/seed (`run-3`): no legacy celebrations yielded area15545 but conservative large-closing-frame count4; no500/510 random flags yielded27761; no repdigit only yielded28527. These are diagnostic scenes, not acceptance tests. Exact nine source files for every variant were recovered and SHA-verified; all RGB data was losslessly packed before deleting PNGs.
+8. Wave correction coalesced same-time10/20/30/40 outlines and budgeted overlapping wave opacity while retaining every cue fact, then attenuated those lower-priority waves during loss100. Same standard capture still flagged24817>21824. This failed attempt is `safety/final-worst-standard-v2`.
+9. Parent then corrected wide-field sources: smooth1.2s rainbow/gold crossfade for the unchanged5s century cue, slower dedicated decorative random motion and a narrower material brightness swing. Special-number palette/times and all simulation rules remained unchanged. The same standard capture improved to21975>21824 (151pixels above the conservative25% threshold); max large-closing-frame count fell5→1, red high-frequency area became0. This remains a flagged attempt (`safety/final-worst-standard-v3`), not a pass. Its exact source copies/all360 RGB frames in a verified lossless movie/per-frame analysis are retained alongside the subsequent priority-layer correction and rerun.
+
+## Final source capture and browser results
+
+The shared central priority budget corrected the remaining overlap without changing any flash thresholds. Standard legacy100 stress now has high-frequency area10822 (limit21824), low8816; legacy-particle-pool stress has standard9483 and low10307. These are conservative synthetic visual stress scenes, not physical game progress.
+
+All14 final scenes contain360 actual rendered SDR/sRGB frames at60Hz (5040 total); `safety/final-primary-index.json` lists every scene, SHA, resource and verdict. All fingerprinted production display sources are identical across final captures, every capture reports stable sources, and no unknown external request/page error occurred. The original screen retains five auxiliary global-counter flags (1500standard/low,3000low,4000standard/low). Their per-pixel high-frequency areas are below21824 and red high-frequency areas are0. The independent reviewer added separate fixed-field diagnostics for those same frames: each is at most2 large closing events in any fixed field (red0), while reproducing original global7/4/4/5/5 counts and RGB hashes. Original flags remain in the formal results; the additional analysis is not a hidden threshold change or accredited certification.
+
+Final focused rendering regression: **16/16** (Chromium8,WebKit8), with no skipped/retried cases. Full formal results are `logs/browser-final-focused16.json` and `.log`; passing legacy screenshots/attachments are also preserved under `failures/final-focused16-attempt` (historical folder name, not a failure verdict). This run checks the12 new browser cases and4 existing celebration cases after all production corrections.
+
+The final new-effect image set contains184 threshold PNGs (23 thresholds×4 phases×2 engines),126 timed/static-motion PNGs,80 loss PNGs and26 layout/best/2600 PNGs. The12 review contact sheets are derived previews; all416 full-resolution originals and geometry/RGBA metadata remain. The4000 motion sequence includes2.5s expansion and3.5s overlap-fade. Score fixtures, render-only event stress, and the separate physical0→4000 test are explicitly distinct.
+
+## Assistant visual inspection
+
+All12 final contact sheets (all23 thresholds, before/arrival/during/after, both engines) were inspected. Full-resolution anchors also covered400 background threads,300 gold rays,1000/3000/4000 ring forms,2000 dark-space visibility and the old-fireworks peak. The final2000+ sky occupies the visible upper opponent background with distributed stars and upper/horizon halos; the rainbow table and floor remain visible. The3500 double table halos differ from the earlier side halos, and the4000 inward assembly/expansion/overlap sequences differ from3000 opening. White foreground balls/racket and HUD remain identifiable in those anchors. At the30-ball/1536-particle synthetic peak the amber smash warning is visible above the playfield without overlap from the4000 label.
+
+This is assistant inspection of actual browser captures, **not human observation, actual VoiceOver operation, human listening, target-device performance, HDR analysis, or certified flash-safety acceptance**. Those statuses must remain separate in the main report.
+
+## Packaging and source-equivalence follow-up
+
+All22 dense scene movies (7920 total frames, including failed/diagnostic runs) are now losslessly encoded, decoded and matched to the original concatenatedRGB24 SHA256/length. The five global-only flagged scenes are included. Every large movie/archive is split into at most32MiB parts with original/part/reconstruction hashes. Formal source metadata and analysis logs remain; no frame, resolution or event was omitted. `packaging-index.json` records that completed packaging batch. Later single-pass PNG evidence is additional to that batch.
+
+The final one-property optimization sets `forceSinglePass:true` on four new flat transparent batches. `diagnostics/single-pass/summary.json` records832/832 exact decoded whole-camera comparisons (208 states×2qualities×2engines), with0 changed pixels and0 maximum channel delta. Chromium6cases passed in the first attempt; initial WebKit capture exceeded its original240s screenshot budget, so the partial attempt/trace remained and WebKit6cases were rerun successfully with an approved opt-in4×capture infrastructure budget. All ordinary CI budgets, pixel/state assertions and frame-time targets stayed unchanged. This was not one clean12-case run.
+
+The false→true branch comparison can retain a cached FrontSide shader; those macros are unused by the current unlit/no-map materials. A separate fresh-production-default bridge recreates actual materials with override=null before their first render, then compares fresh default against explicitfalse and false→true at2000transition,4000peak/middle and loss100finishing, bothqualities/bothengines. All16cases/32pixel relations are exactly equal with unchanged state. All48PNG, reproducible script, hashed Three0.186.1 renderer/basic-shader excerpts and full results remain under `diagnostics/single-pass/fresh-default/`.
+
+These are finite source-equivalence checks, not a new capture of all5040 dense safety frames. Original videos, exact original sources and all primary safety flags remain intact. After both browser commands exited0, localhost4173/4183 were confirmed closed and CPU/GPU was explicitly released for the final isolated performance matrix. Only lightweight metadata/static docs continue during that quiet window.

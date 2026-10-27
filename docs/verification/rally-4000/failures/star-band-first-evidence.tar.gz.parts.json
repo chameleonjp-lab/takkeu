@@ -1,0 +1,37 @@
+{
+  "original": "star-band-first-evidence.tar.gz",
+  "originalBytes": 157869141,
+  "originalSHA256": "f5095591c8f6193cdaf5eecf83af24c20e5709a2089793efafd20384c0ce15fb",
+  "reconstructedSHA256": "f5095591c8f6193cdaf5eecf83af24c20e5709a2089793efafd20384c0ce15fb",
+  "allPartsVerified": true,
+  "chunkBytes": 33554432,
+  "parts": [
+    {
+      "file": "star-band-first-evidence.tar.gz.part-000",
+      "bytes": 33554432,
+      "sha256": "0c4b7190f04370465200277608ea85becdf3002e4fbe752817606e5e79011a3f"
+    },
+    {
+      "file": "star-band-first-evidence.tar.gz.part-001",
+      "bytes": 33554432,
+      "sha256": "fbef24a7de82fd622fe1fdaa44b344cc145917b8f35e54f01b57c45911c12c2b"
+    },
+    {
+      "file": "star-band-first-evidence.tar.gz.part-002",
+      "bytes": 33554432,
+      "sha256": "5db592b1d1ca78c2c827c19dd6752b85827e77a856433cd5cb2eec32e9e8d97d"
+    },
+    {
+      "file": "star-band-first-evidence.tar.gz.part-003",
+      "bytes": 33554432,
+      "sha256": "0dfb5186e0475b69d1f8f3021deec71cafb917851dad8653c50e87d9692c712e"
+    },
+    {
+      "file": "star-band-first-evidence.tar.gz.part-004",
+      "bytes": 23651413,
+      "sha256": "277439bf4f2d88c69a85b2735906d2b8b60c40d482b9bfc9c6579f31183c8540"
+    }
+  ],
+  "restoreCommand": "cat star-band-first-evidence.tar.gz.part-* > star-band-first-evidence.tar.gz",
+  "verifyCommand": "sha256sum star-band-first-evidence.tar.gz"
+}

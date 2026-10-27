@@ -1,0 +1,36 @@
+2026-10-27T21:08:51.0458606Z Build Date: 2026-10-21T00:45:21Z
+2026-10-27T21:08:52.5522795Z   ref: fdbdf46b9d8b846db200a2895cf73a73f8e2f02d
+2026-10-27T21:08:53.3547578Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=1 origin fdbdf46b9d8b846db200a2895cf73a73f8e2f02d
+2026-10-27T21:08:53.7401986Z  * branch            fdbdf46b9d8b846db200a2895cf73a73f8e2f02d -> FETCH_HEAD
+2026-10-27T21:08:53.7463007Z [command]/usr/bin/git rev-parse --git-path info/sparse-checkout
+2026-10-27T21:08:53.7511720Z [command]/usr/bin/git checkout --progress --force fdbdf46b9d8b846db200a2895cf73a73f8e2f02d
+2026-10-27T21:08:54.1916623Z Note: switching to 'fdbdf46b9d8b846db200a2895cf73a73f8e2f02d'.
+2026-10-27T21:08:54.1931319Z HEAD is now at fdbdf46 fix: Stage C wrap loss warnings within narrow enlarged-text HUDs
+2026-10-27T21:08:54.2014282Z fdbdf46b9d8b846db200a2895cf73a73f8e2f02d
+2026-10-27T21:09:17.0698273Z Building dependency tree...
+2026-10-27T21:09:29.3500574Z Unpacking libunibreak5:amd64 (5.1-2build1) ...
+2026-10-27T21:09:36.3500089Z Setting up libflite1:amd64 (2.2-6build3) ...
+2026-10-27T21:10:02.9099468Z  ✓ tests/unit/takkeu-3500-sql.test.ts (3 tests) 7022ms
+2026-10-27T21:10:02.9147926Z    ✓ enforces the3500 contract even through generic RPCs and leaves old3000 ledger independent 1804ms
+2026-10-27T21:10:02.9177504Z    ✓ keeps a legacy4001 best and first score when the same name clears3500 2057ms
+2026-10-27T21:10:07.8768316Z    ✓ plays from zero to the 3500 clear with real physics and identical RNG with/without presentation 2995ms
+2026-10-27T21:10:10.3918081Z  ✓ tests/unit/transient-3500.test.ts (40 tests) 130ms
+2026-10-27T21:10:30.1165078Z  Test Files  86 passed (86)
+2026-10-27T21:10:30.1174511Z       Tests  969 passed (969)
+2026-10-27T21:10:30.1696519Z mkdir -p artifacts/goal-3500
+2026-10-27T21:10:30.1697169Z node tests/helpers/checkHallConcurrency.mjs 2>&1 | tee artifacts/goal-3500/postgres-concurrency.log
+2026-10-27T21:10:38.7294276Z psql: error: connection to server at "127.0.0.1", port 5432 failed: Connection refused
+2026-10-27T21:10:39.0202066Z psql: error: connection to server at "127.0.0.1", port 5432 failed: Connection refused
+2026-10-27T21:10:39.3090931Z psql: error: connection to server at "127.0.0.1", port 5432 failed: Connection refused
+2026-10-27T21:10:43.2647465Z Postgres: same-name race, distinct-name race, stable receipts and counter passed.
+2026-10-27T21:10:45.1152127Z   "status": "passed",
+2026-10-27T21:10:45.1152557Z   "commit": "fdbdf46b9d8b846db200a2895cf73a73f8e2f02d",
+2026-10-27T21:10:46.6694796Z   "status": "passed",
+2026-10-27T21:10:46.6695210Z   "commit": "fdbdf46b9d8b846db200a2895cf73a73f8e2f02d",
+2026-10-27T21:10:47.7551846Z Running 8 tests using 1 worker
+2026-10-27T21:11:05.4847191Z   8 passed (18.1s)
+2026-10-27T21:11:05.5214821Z ##[group]Run git rev-parse HEAD > artifacts/commit.txt
+2026-10-27T21:11:05.5215266Z git rev-parse HEAD > artifacts/commit.txt
+2026-10-27T21:11:05.6352747Z   name: verification-fdbdf46b9d8b846db200a2895cf73a73f8e2f02d
+2026-10-27T21:11:06.6268914Z Artifact verification-fdbdf46b9d8b846db200a2895cf73a73f8e2f02d.zip successfully finalized. Artifact ID 12772115234
+2026-10-27T21:11:06.6270593Z Artifact verification-fdbdf46b9d8b846db200a2895cf73a73f8e2f02d has been successfully uploaded! Final size is 905153 bytes. Artifact ID is 12772115234

@@ -26,7 +26,7 @@ describe('silent audio preparation', () => {
     expect(buffers).toHaveLength(1);
     expect(buffers[0]!.getChannelData(0)).toHaveLength(2400);
     expect(t.sources).toHaveLength(0);
-    expect(t.nodes.map(node => node.kind).sort()).toEqual(['compressor', 'gain']);
+    expect(t.nodes.map(node => node.kind).sort()).toEqual(['compressor', 'gain', 'gain']);
     audio.consume([hit('first')]);
     expect(t.sources.length).toBeGreaterThan(0);
     expect(t.buffers[0]).toBe(buffers[0]);
@@ -63,7 +63,7 @@ describe('silent audio preparation', () => {
       expect(await audio.prepare!()).toBe(true);
       expect(t.sources.filter(source => !source.record.disconnected)).toHaveLength(0);
       audio.consume([hit('first', runId)]); t.finishAll(); audio.suspend();
-      expect(t.nodes.filter(node => !node.disconnected)).toHaveLength(2);
+      expect(t.nodes.filter(node => !node.disconnected)).toHaveLength(3);
     }
     expect(contexts).toBe(1);
     expect(buffers).toHaveLength(1);
@@ -88,7 +88,7 @@ describe('silent audio preparation', () => {
     const t = fakeAudioContext(), audio = createAudio(DEFAULT_CONFIG, () => t.context);
     expect(() => tones.prepareTones(t.context)).not.toThrow();
     audio.reset('run'); expect(await audio.prepare!()).toBe(true);
-    expect(t.voices).toHaveLength(0); expect(t.gains).toHaveLength(1);
+    expect(t.voices).toHaveLength(0); expect(t.gains).toHaveLength(2);
     audio.consume([hit('first')]); expect(t.voices).toHaveLength(1);
     await audio.dispose();
   });
@@ -157,7 +157,7 @@ describe('silent audio preparation', () => {
     audio.suspend(); t.context.resume = resume;
     expect(await audio.prepare!()).toBe(true);
     rejectOld(new Error('interrupted')); expect(await old).toBe(false);
-    expect(t.nodes.filter(node => !node.disconnected)).toHaveLength(2);
+    expect(t.nodes.filter(node => !node.disconnected)).toHaveLength(3);
     audio.consume([hit('first')]); expect(t.sources.length).toBeGreaterThan(0);
     await audio.dispose(); expect(t.nodes.every(node => node.disconnected)).toBe(true);
   });

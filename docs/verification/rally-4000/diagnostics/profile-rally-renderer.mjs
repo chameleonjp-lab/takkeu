@@ -1,0 +1,39 @@
+import { performance } from 'node:perf_hooks';
+import { writeFileSync } from 'node:fs';
+import { Group } from 'three';
+import { DEFAULT_CONFIG } from '../../../../src/game/config.ts';
+import { createRallyEffectView } from '../../../../src/render/rallyEffects.ts';
+import { rallyPerformanceReplay } from '../../../../tests/helpers/rallyPerformanceReplay.ts';
+const frames=rallyPerformanceReplay(4000,30,2);
+const p=(array,q)=>[...array].sort((a,b)=>a-b)[Math.ceil(array.length*q)-1];
+const summary={frames:frames.length,initialScore:frames[0].snapshot.score,finalScore:frames.at(-1).snapshot.score,
+ minBalls:Math.min(...frames.map(f=>f.snapshot.balls.length)),maxLost:Math.max(...frames.map(f=>f.snapshot.lostBallCount))};
+let maxHits=0,maxCoincident=0;
+const variants={full:frames,withoutHits:frames.map(f=>({...f,state:{...f.state,hits:[]}})),uniqueCoincidentHits:frames.map(f=>{
+ const seen=new Set();const hits=f.state.hits.filter(hit=>{const pos=hit.position,key=`${hit.at}:${pos?.x}:${pos?.y}:${pos?.z}`;if(seen.has(key))return false;seen.add(key);return true;});
+ return {...f,state:{...f.state,hits}};
+})};
+for(const f of frames){
+ const active=f.state.hits.filter(h=>f.snapshot.simTime>=h.at&&f.snapshot.simTime<h.at+.3),groups=new Map();maxHits=Math.max(maxHits,active.length);
+ for(const h of active){const key=`${h.at}:${h.position?.x}:${h.position?.y}:${h.position?.z}`;groups.set(key,(groups.get(key)??0)+1);}
+ maxCoincident=Math.max(maxCoincident,...groups.values());
+}
+const rows=[];
+for(const quality of ['standard','low'])for(const [variant,input] of Object.entries(variants)){
+ const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,rig);let maxQuads=0,maxUploadBytes=0;
+ for(let i=0;i<100;i++){const f=input[i%input.length];view.update(f.snapshot,f.state,quality);}
+ for(let repeat=0;repeat<3;repeat++){
+  const times=[];
+  for(let i=0;i<600;i++){
+   const f=input[(i*3)%input.length],start=performance.now();view.update(f.snapshot,f.state,quality);times.push(performance.now()-start);
+   const stats=view.stats();maxQuads=Math.max(maxQuads,stats.tableQuads+stats.worldQuads);
+   let upload=0;for(const root of [rig,view.worldRoot])root.traverse(n=>{if(!('geometry'in n))return;for(const a of Object.values(n.geometry.attributes))for(const range of a.updateRanges)upload+=range.count*4;});
+   maxUploadBytes=Math.max(maxUploadBytes,upload);
+  }
+  rows.push({quality,variant,repeat:repeat+1,meanMs:times.reduce((a,b)=>a+b,0)/times.length,p50Ms:p(times,.5),p95Ms:p(times,.95),maxQuads,maxUploadBytes});
+ }
+ view.dispose();
+}
+const result={schema:'rally-render-cpu-profile-v1',environment:'Node24 CPU only; no WebGL or GPU timing',source:process.env.RALLY_SOURCE_SHA??null,summary:{...summary,maxActiveHitRings:maxHits,maxSameTimeSamePositionHits:maxCoincident},rows};
+writeFileSync(new URL('../logs/render-cpu-profile.json',import.meta.url),JSON.stringify(result,null,2));
+console.log(JSON.stringify(result,null,2));

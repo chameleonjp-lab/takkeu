@@ -1,0 +1,182 @@
+{
+  "fps": 60,
+  "frames": 180,
+  "width": 64,
+  "height": 48,
+  "referenceWindow": [
+    22,
+    16
+  ],
+  "areaThreshold25Percent": 88.0,
+  "maxGeneralPixelFlashCount": 3,
+  "maxRedPixelFlashCount": 0,
+  "maxGeneralHighFrequencyArea": 0,
+  "maxRedHighFrequencyArea": 0,
+  "maxGeneralLargeClosingFramesPerSecond": 9,
+  "maxRedLargeClosingFramesPerSecond": 0,
+  "screeningVerdict": "flagged; investigate and fix before acceptance",
+  "flagged": true,
+  "description": "Four disjoint horizontal components, each black/white at 2 Hz, phases delayed 0/2/4/6 frames; no pixel exceeds three flashes/sec.",
+  "largeClosingFrames": [
+    {
+      "frame": 45,
+      "area": 264,
+      "xy": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 47,
+      "area": 264,
+      "xy": [
+        0,
+        8
+      ]
+    },
+    {
+      "frame": 49,
+      "area": 264,
+      "xy": [
+        0,
+        20
+      ]
+    },
+    {
+      "frame": 51,
+      "area": 264,
+      "xy": [
+        0,
+        32
+      ]
+    },
+    {
+      "frame": 75,
+      "area": 264,
+      "xy": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 77,
+      "area": 264,
+      "xy": [
+        0,
+        8
+      ]
+    },
+    {
+      "frame": 79,
+      "area": 264,
+      "xy": [
+        0,
+        20
+      ]
+    },
+    {
+      "frame": 81,
+      "area": 264,
+      "xy": [
+        0,
+        32
+      ]
+    },
+    {
+      "frame": 105,
+      "area": 264,
+      "xy": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 107,
+      "area": 264,
+      "xy": [
+        0,
+        8
+      ]
+    },
+    {
+      "frame": 109,
+      "area": 264,
+      "xy": [
+        0,
+        20
+      ]
+    },
+    {
+      "frame": 111,
+      "area": 264,
+      "xy": [
+        0,
+        32
+      ]
+    },
+    {
+      "frame": 135,
+      "area": 264,
+      "xy": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 137,
+      "area": 264,
+      "xy": [
+        0,
+        8
+      ]
+    },
+    {
+      "frame": 139,
+      "area": 264,
+      "xy": [
+        0,
+        20
+      ]
+    },
+    {
+      "frame": 141,
+      "area": 264,
+      "xy": [
+        0,
+        32
+      ]
+    },
+    {
+      "frame": 165,
+      "area": 264,
+      "xy": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 167,
+      "area": 264,
+      "xy": [
+        0,
+        8
+      ]
+    },
+    {
+      "frame": 169,
+      "area": 264,
+      "xy": [
+        0,
+        20
+      ]
+    },
+    {
+      "frame": 171,
+      "area": 264,
+      "xy": [
+        0,
+        32
+      ]
+    }
+  ]
+}

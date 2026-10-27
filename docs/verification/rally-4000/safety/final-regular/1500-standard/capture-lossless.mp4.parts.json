@@ -1,0 +1,27 @@
+{
+  "original": "capture-lossless.mp4",
+  "originalBytes": 98319507,
+  "originalSHA256": "de24c10dc2af3e01ec1108ddd9a6599ee76887da1b81ab3363131ddd89e7c2f0",
+  "reconstructedSHA256": "de24c10dc2af3e01ec1108ddd9a6599ee76887da1b81ab3363131ddd89e7c2f0",
+  "allPartsVerified": true,
+  "chunkBytes": 33554432,
+  "parts": [
+    {
+      "file": "capture-lossless.mp4.part-000",
+      "bytes": 33554432,
+      "sha256": "9deb0105343d5af8c11a406e439493cbc1d880dca97ccd6bacea5f1c017893ea"
+    },
+    {
+      "file": "capture-lossless.mp4.part-001",
+      "bytes": 33554432,
+      "sha256": "7af2cef38afcc7139880610f77c4d5619a79d04040ae7b9ae4d3f89169a38cc4"
+    },
+    {
+      "file": "capture-lossless.mp4.part-002",
+      "bytes": 31210643,
+      "sha256": "fb5a938d6feb6ba74fa4dcf97166b9a4eaaac0415c38a6e19548c30f2e996101"
+    }
+  ],
+  "restoreCommand": "cat capture-lossless.mp4.part-* > capture-lossless.mp4",
+  "verifyCommand": "sha256sum capture-lossless.mp4"
+}

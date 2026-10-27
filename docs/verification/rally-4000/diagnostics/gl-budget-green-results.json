@@ -1,0 +1,193 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/takkeu-work/node_modules/.bin/playwright",
+      "test",
+      "--config=playwright.performance.config.ts",
+      "tests/performance/rally-gl.spec.ts",
+      "--project=chromium",
+      "--grep",
+      "default rally draw budget",
+      "--reporter=list,json",
+      "--output=artifacts/rally-gl-budget-green"
+    ],
+    "configFile": "/workspace/takkeu-work/playwright.performance.config.ts",
+    "rootDir": "/workspace/takkeu-work/tests/performance",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/takkeu-work/artifacts/rally-gl-budget-green",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/workspace/takkeu-work/tests/performance",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/workspace/takkeu-work/artifacts/rally-gl-budget-green",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/workspace/takkeu-work/tests/performance",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/takkeu-work/artifacts/rally-gl-budget-green",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/workspace/takkeu-work/tests/performance",
+        "snapshotDir": "/workspace/takkeu-work/tests/performance",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:4176",
+          "video": "off",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "launchOptions": {
+            "args": [
+              "--enable-unsafe-swiftshader",
+              "--use-angle=swiftshader"
+            ]
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 4176 --strictPort",
+      "url": "http://127.0.0.1:4176",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "rally-gl.spec.ts",
+      "file": "rally-gl.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "default rally draw budget uses four actual GL submissions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2120,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-25T22:37:57.104Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "default-rally-draw-budget.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJ2aXNpYmxlIjogewogICAgImRyYXdDYWxscyI6IDM2LAogICAgImRyYXdWZXJ0aWNlcyI6IDEzNjY1MCwKICAgICJkcmF3TXMiOiAwLAogICAgImJ1ZmZlckRhdGFDYWxscyI6IDAsCiAgICAiYnVmZmVyRGF0YUJ5dGVzIjogMCwKICAgICJidWZmZXJTdWJEYXRhQ2FsbHMiOiA0MSwKICAgICJidWZmZXJTdWJEYXRhQnl0ZXMiOiA0OTkyODQsCiAgICAidXBsb2FkTXMiOiAwLjI5OTk5OTk5ODg4MjQxMjksCiAgICAidXBsb2Fkc0J5Q2FwYWNpdHkiOiB7CiAgICAgICIyODgiOiAxNzI4LAogICAgICAiMzg0IjogNzY4LAogICAgICAiNjAwIjogMTIwMCwKICAgICAgIjYyNCI6IDEyNDgsCiAgICAgICI5MTIiOiAxODI0LAogICAgICAiMTgzNiI6IDczNDQsCiAgICAgICIyMDQ4IjogNjE0NCwKICAgICAgIjM0NTYiOiAzNDU2LAogICAgICAiMzUwNCI6IDM1MDQsCiAgICAgICI0MTE2IjogNDExNiwKICAgICAgIjQ2MDgiOiA0NjA4LAogICAgICAiNTEwMCI6IDE1MzAwLAogICAgICAiNjE0NCI6IDYxNDQsCiAgICAgICI5OTAwIjogOTkwMCwKICAgICAgIjE4NDMyIjogMzY4NjQsCiAgICAgICIyMTUwNCI6IDIxNTA0LAogICAgICAiNzM3MjgiOiAxNTg0LAogICAgICAiOTgzMDQiOiAyMTEyLAogICAgICAiMjk0OTEyIjogMTU4NTQ0LAogICAgICAiMzkzMjE2IjogMjExMzkyCiAgICB9LAogICAgInJlbmRlcmVyQ2FsbHMiOiAzNgogIH0sCiAgImhpZGRlbiI6IHsKICAgICJkcmF3Q2FsbHMiOiAzMiwKICAgICJkcmF3VmVydGljZXMiOiAxMjMzMDYsCiAgICAiZHJhd01zIjogMC4wOTk5OTk5OTk2Mjc0NzA5NywKICAgICJidWZmZXJEYXRhQ2FsbHMiOiAwLAogICAgImJ1ZmZlckRhdGFCeXRlcyI6IDAsCiAgICAiYnVmZmVyU3ViRGF0YUNhbGxzIjogMzMsCiAgICAiYnVmZmVyU3ViRGF0YUJ5dGVzIjogMTI1NjUyLAogICAgInVwbG9hZE1zIjogMC40MDAwMDAwMDAzNzI1MjkwMywKICAgICJ1cGxvYWRzQnlDYXBhY2l0eSI6IHsKICAgICAgIjI4OCI6IDE3MjgsCiAgICAgICIzODQiOiA3NjgsCiAgICAgICI2MDAiOiAxMjAwLAogICAgICAiNjI0IjogMTI0OCwKICAgICAgIjkxMiI6IDE4MjQsCiAgICAgICIxODM2IjogNzM0NCwKICAgICAgIjIwNDgiOiA2MTQ0LAogICAgICAiMzQ1NiI6IDM0NTYsCiAgICAgICIzNTA0IjogMzUwNCwKICAgICAgIjQxMTYiOiA0MTE2LAogICAgICAiNDYwOCI6IDQ2MDgsCiAgICAgICI1MTAwIjogMTUzMDAsCiAgICAgICI2MTQ0IjogNjE0NCwKICAgICAgIjk5MDAiOiA5OTAwLAogICAgICAiMTg0MzIiOiAzNjg2NCwKICAgICAgIjIxNTA0IjogMjE1MDQKICAgIH0sCiAgICAicmVuZGVyZXJDYWxscyI6IDMyCiAgfSwKICAiY29udHJpYnV0aW9uIjogNCwKICAic25hcHNob3QiOiB7CiAgICAic2NvcmUiOiA0MjcwLAogICAgInNpbVRpbWUiOiAxNS4wMTY2NjY2NjY2NjY0NTQsCiAgICAiYmFsbHMiOiAzMAogIH0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5b1f3b75dc55331c077f-5de52f3da327ff4c27bb",
+          "file": "rally-gl.spec.ts",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-25T22:37:55.018Z",
+    "duration": 6909.784,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

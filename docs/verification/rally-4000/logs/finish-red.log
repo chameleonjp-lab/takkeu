@@ -1,0 +1,33 @@
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/finish-presentation.test.ts (3 tests | 1 failed) 78ms
+   × new effects use the existing bounded finish drawing clock without changing final facts 30ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/finish-presentation.test.ts > new effects use the existing bounded finish drawing clock without changing final facts
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/finish-presentation.test.ts:33:27
+     31|   const end={...base,phase:'gameover' as const,celebrations:createCele…
+     32|   const first=finish.frame(end,1000,40);
+     33|   expect(first.finishing).toBe(true);expect(first.snapshot.balls).toBe…
+       |                           ^
+     34|   expect(finish.frame(end,5999,40).finishing).toBe(true);
+     35|   expect(finish.frame(end,6000,40)).toMatchObject({finishing:false,sna…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  20:16:13
+   Duration  876ms (transform 68%, tests 16%, import 13%, worker 3%, environment 1%)
+

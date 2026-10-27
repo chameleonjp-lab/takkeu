@@ -1,0 +1,149 @@
+{
+  "source": "720c06357beff5e7bdfe0073fb35293c7f45b372",
+  "renderBaseline": "b0b6760610c17dc5a1f19efebf42049a31df1150",
+  "render": [
+    {
+      "path": "src/render/balls.ts",
+      "sha256": "015f4c5014692459f2387c1bf24a07386f56c778f975bec63b32db2034e914c4",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/camera.ts",
+      "sha256": "21bbe2f2ecd39520e72ffdca080a0936414b7131f06ded2d5a85f1aa21fd31ac",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/celebrations.ts",
+      "sha256": "176eaa8a40b74f2bd028116ffe9c11f7f6746ec47421f5fad7834f5b68c78f15",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/createView.ts",
+      "sha256": "498dc86f0331201acdbd2e69c01300d0dbe51f32e80f1fbab4ccbdef32870450",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/environment.ts",
+      "sha256": "089bb1539b6cb324697c8eb2d57f78919bfbeaf393a079572ea883efe641ab3e",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/field.ts",
+      "sha256": "33a224d11f907415d9064e9c9b9096a6cf84b7f7f71915d69f5810e43e31a452",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/materials.ts",
+      "sha256": "762098367b45770052d30790e2fc76ce02939ad912a6a07a6d96831c11ba5c85",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/objects.ts",
+      "sha256": "6b9bb96e3e6199c6c4fd17b0a96ac3d9946c29036d69d206fd3ddba2fbc21c5c",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/opponentView.ts",
+      "sha256": "18b3fd0fc7fabc45a7137c8ba544306208c626405cd85b497efb6af50a448658",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/paddle.ts",
+      "sha256": "9b88815c5b00032957a222f43b5b13dae1004fa144a92ec05fe8e1f32944c9dd",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/particles.ts",
+      "sha256": "6ec5c56a5ef87dbb5d861baa918de7915b1ca7120c7deac74d63430929430129",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/prepare.ts",
+      "sha256": "1be3dacde68f5df22a0b296f141a3a179c8c289a4d79e95398266f456c1bb6e2",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/presentation.ts",
+      "sha256": "e8d9c8952245dab13873571e677909d5c00845cf839b40b9c2fab2208f34b65e",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/quality.ts",
+      "sha256": "670a050005c1f3a37c93ae16e568e3ef4f9dcd010dc159acef6290b147f1fc1d",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/rainbow.ts",
+      "sha256": "0b6d3bed0975942d7f220fc8b527f4a6e2831a5374e87e09c4974d55f305e180",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/render/rallyEffects.ts",
+      "sha256": "ab0b9e6b983740055f30275b48e72f81c9ea785c34c47c9e063e98e88cb603b3",
+      "byteIdentical": true
+    }
+  ],
+  "mechanicsBaseline": "75a36404d1a5fce7f842596293fb47908cdc55a3",
+  "protected": [
+    {
+      "path": "src/app/loop.ts",
+      "sha256": "86ad8c723a5f36559259bb46b3998b0b8af96cf97665373129b56794d76e4f22",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/storage/preferences.ts",
+      "sha256": "d1413a7c858fdef151919d1a8a31c9c2511b8c97723cabb11be1ede0b9599d37",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/ui/resultComments.ts",
+      "sha256": "e6b24fb9e55228bccfe9ec1fe5cbc521f9395001a1a344706cba871359ba32fe",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/game/collision.ts",
+      "sha256": "8e5ad013fcafcc33d7aabf57d9ccdae0dd99fa6db4f1aefb5cd75a1730074c1c",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/game/trajectory.ts",
+      "sha256": "2e985214f496ceac6955d9e21a011232513dde662f1ecea3df40ffdd94fcb924",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/game/difficulty.ts",
+      "sha256": "edd4db4b76a67d862d2febe96ffe2b498ad4f09ac4f089ec2796a96b15ea757b",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/game/flightSpeed.ts",
+      "sha256": "8020ff1fd1e6d843dd47a7b854e6c4f14c6110caa9c4e90210f0dfc61b5721d6",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/game/progression.ts",
+      "sha256": "95ac4b6393e413702a11c6c786c2e8d118c59150ddd51e45926622129f5e951a",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/game/milestones.ts",
+      "sha256": "8c06f67752be261f12250d8136bbca60f2e709019b4cb4066f33aa284d69ca6c",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/input/mapping.ts",
+      "sha256": "80199b8f730a6339e6a106bf8cedec28308062e72dd878e080b38ce6b022ef32",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/input/swipe.ts",
+      "sha256": "cde8301accea83b7a2588ace83dda2db63943252e9fbf252c65ea9460cfe885c",
+      "byteIdentical": true
+    },
+    {
+      "path": "src/input/timeline.ts",
+      "sha256": "f1d8aa89893bb444fd0c3cdf6426c90e647eb02027aaf51773e14f45edea9461",
+      "byteIdentical": true
+    }
+  ]
+}

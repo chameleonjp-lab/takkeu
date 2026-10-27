@@ -18,5 +18,7 @@ test('通常のゲーム開始・再プレイも本番APIへ送らず検査内�
   await page.mouse.click(5, 5); await page.clock.runFor(4000);
   await expect(page.locator('[data-result] h2')).toBeVisible();
   await expect.poll(() => rankingTraffic.filter(call => call.rpc === 'get_best_score_ranking').length).toBe(1);
-  expect(rankingTraffic.map(call => call.rpc)).toEqual(['start_takkeu_guest_play_v1', 'start_takkeu_guest_play_v1', 'get_best_score_ranking']);
+  await expect.poll(() => rankingTraffic.filter(call => call.rpc === 'get_takkeu_hall_v2').length).toBe(1);
+  expect(rankingTraffic.map(call => call.rpc)).toEqual(['start_takkeu_guest_play_v1', 'start_takkeu_guest_play_v1', 'get_takkeu_hall_v2', 'get_best_score_ranking']);
+  expect(rankingTraffic.find(call => call.rpc === 'get_takkeu_hall_v2')!.body).toEqual({ p_limit: 30 });
 });

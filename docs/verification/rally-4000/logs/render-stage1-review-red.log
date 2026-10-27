@@ -1,0 +1,44 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-render.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-render.test.ts (20 tests | 2 failed) 2777ms
+   ❯ bounded rally world renderer, 0–1000 (20)
+     × covers the entire table perimeter at 100 without enabling the unreleased court 16ms
+     × prepares every fixed batch for initial shader compilation and upload, then clears on ready 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > covers the entire table perimeter at 100 without enabling the unreleased court
+AssertionError: expected 0.05000000074505806 to be less than -1.79
+ ❯ tests/unit/rally-render.test.ts:66:33
+     64|       depths.push(...geometryValues(rig).filter((_,i)=>i%3===2));
+     65|     }
+     66|     expect(Math.min(...depths)).toBeLessThan(-1.79);expect(Math.max(..…
+       |                                 ^
+     67|     view.dispose();
+     68|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > prepares every fixed batch for initial shader compilation and upload, then clears on ready
+TypeError: view.prepare is not a function
+ ❯ tests/unit/rally-render.test.ts:72:10
+     70|   it('prepares every fixed batch for initial shader compilation and up…
+     71|     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,ri…
+     72|     view.prepare();
+       |          ^
+     73|     expect(view.stats().drawCalls).toBe(4);
+     74|     expect(view.stats().tableQuads).toBeGreaterThan(0);expect(view.sta…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 18 passed (20)
+   Start at  20:19:50
+   Duration  3.85s (tests 80%, transform 12%, import 7%, environment 1%)
+

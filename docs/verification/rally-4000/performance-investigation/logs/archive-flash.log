@@ -1,0 +1,26 @@
+1500-low verified lossless RGB 11eb04b3cfa0ed5515ede776a0c0992bf6fca0fd2c6d1bc829046a76581af925 101605457
+capture-lossless.mp4 4 pieces; exact reconstruction verified 352015cea4d8d18c01fb63f0946716cd3a76fe0f833c5380571ea72463c19e67
+flash retained regular 1500-low new
+flash retained regular 1500-standard reference
+flash retained regular 2000-low new
+flash retained regular 2000-standard reference
+3000-low verified lossless RGB 3c5503f3d60f7867a9baa0df002618cec030146a45ba23b03fa85b9f5aa81a0c 108963644
+capture-lossless.mp4 4 pieces; exact reconstruction verified 39293826ae7c9130897f27594287b0bf775271b93a08522f119747e7244dec91
+flash retained regular 3000-low new
+flash retained regular 3000-standard reference
+4000-low verified lossless RGB 177cec533b4a3ef9985fd9a98bd31fda9047d5a79c8857579a483c397fa23de1 122803442
+capture-lossless.mp4 4 pieces; exact reconstruction verified 76f8e19a4114c2fe0f7e9ef0c632dc4d0a3c0c59efce70d1a0b5140d7e7fa70f
+flash retained regular 4000-low new
+capture-lossless.mp4 1 pieces; exact reconstruction verified 89a60de458019bccccf421fc88eaf061039b018bdd1bc9e4f80df66b587cc330
+flash retained regular 4000-low-reduced new
+flash retained regular 4000-standard reference
+Traceback (most recent call last):
+  File "/workspace/investigation/archive-evidence.py", line 119, in <module>
+    {'native':archive_native,'static':archive_static,'flash':archive_flash,'ci':archive_ci}[sys.argv[1]]()
+  File "/workspace/investigation/archive-evidence.py", line 89, in archive_flash
+    if reference not in checked:verified_parts(reference);checked.add(reference)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/investigation/archive-evidence.py", line 36, in verified_parts
+    if not p.exists(): raise RuntimeError('Missing retained movie parts: '+str(directory))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Missing retained movie parts: /workspace/takkeu/docs/verification/rally-4000/safety/final-regular/4000-standard-reduced

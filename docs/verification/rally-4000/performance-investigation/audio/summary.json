@@ -1,0 +1,128 @@
+[
+  {
+    "engine": "chromium",
+    "renders": 70,
+    "maxPeak": 0.32245123386383057,
+    "maxVoicesIncludingFading": 16,
+    "allDisposed": true,
+    "warningPairs": [
+      {
+        "rate": 44100,
+        "score": 1000,
+        "warningResidualRms": 0.007747812261287353,
+        "warningRms": 0.008741355606934653,
+        "withoutWarningRms": 0.02387523582023749,
+        "warningDifference": 0.00193921808974111,
+        "withoutWarningDifference": 0.006738406641099981
+      },
+      {
+        "rate": 44100,
+        "score": 3000,
+        "warningResidualRms": 0.007211049881044778,
+        "warningRms": 0.007910866571388285,
+        "withoutWarningRms": 0.0224031303084005,
+        "warningDifference": 0.001723430029274328,
+        "withoutWarningDifference": 0.006101073888248212
+      },
+      {
+        "rate": 44100,
+        "score": 4000,
+        "warningResidualRms": 0.0077909318531621235,
+        "warningRms": 0.008719706497661472,
+        "withoutWarningRms": 0.0235405243437225,
+        "warningDifference": 0.0018547440253623114,
+        "withoutWarningDifference": 0.006056061058435769
+      },
+      {
+        "rate": 48000,
+        "score": 1000,
+        "warningResidualRms": 0.007699970741737959,
+        "warningRms": 0.008769531493493557,
+        "withoutWarningRms": 0.023397577487555294,
+        "warningDifference": 0.0017495630375792249,
+        "withoutWarningDifference": 0.00609777195903909
+      },
+      {
+        "rate": 48000,
+        "score": 3000,
+        "warningResidualRms": 0.007803879187127541,
+        "warningRms": 0.008751823842997658,
+        "withoutWarningRms": 0.021742533150347368,
+        "warningDifference": 0.001681934333838209,
+        "withoutWarningDifference": 0.005406230207141196
+      },
+      {
+        "rate": 48000,
+        "score": 4000,
+        "warningResidualRms": 0.007780441108688217,
+        "warningRms": 0.008962324734552506,
+        "withoutWarningRms": 0.023164506042502135,
+        "warningDifference": 0.001683090066579967,
+        "withoutWarningDifference": 0.005376378344913939
+      }
+    ]
+  },
+  {
+    "engine": "webkit",
+    "renders": 70,
+    "maxPeak": 0.32245123386383057,
+    "maxVoicesIncludingFading": 16,
+    "allDisposed": true,
+    "warningPairs": [
+      {
+        "rate": 44100,
+        "score": 1000,
+        "warningResidualRms": 0.007812730332578116,
+        "warningRms": 0.00877415808733099,
+        "withoutWarningRms": 0.023875236609863102,
+        "warningDifference": 0.0019545605008442993,
+        "withoutWarningDifference": 0.006738407003161203
+      },
+      {
+        "rate": 44100,
+        "score": 3000,
+        "warningResidualRms": 0.007810451959259861,
+        "warningRms": 0.008581730478563646,
+        "withoutWarningRms": 0.02240313097581719,
+        "warningDifference": 0.0018588708536518039,
+        "withoutWarningDifference": 0.006101074149514508
+      },
+      {
+        "rate": 44100,
+        "score": 4000,
+        "warningResidualRms": 0.007790966481649518,
+        "warningRms": 0.008719057644458955,
+        "withoutWarningRms": 0.023540525097107492,
+        "warningDifference": 0.0018545488056761256,
+        "withoutWarningDifference": 0.006056061212026316
+      },
+      {
+        "rate": 48000,
+        "score": 1000,
+        "warningResidualRms": 0.00781270979370702,
+        "warningRms": 0.008936223033953146,
+        "withoutWarningRms": 0.023397578526424358,
+        "warningDifference": 0.0017783188592333462,
+        "withoutWarningDifference": 0.006097772022293383
+      },
+      {
+        "rate": 48000,
+        "score": 3000,
+        "warningResidualRms": 0.007803879351480851,
+        "warningRms": 0.0087518241269273,
+        "withoutWarningRms": 0.021742534357305384,
+        "warningDifference": 0.0016819344283114182,
+        "withoutWarningDifference": 0.005406230319771879
+      },
+      {
+        "rate": 48000,
+        "score": 4000,
+        "warningResidualRms": 0.0077804411447043725,
+        "warningRms": 0.008962324879223925,
+        "withoutWarningRms": 0.023164506609318427,
+        "warningDifference": 0.0016830901099964208,
+        "withoutWarningDifference": 0.005376378230303567
+      }
+    ]
+  }
+]

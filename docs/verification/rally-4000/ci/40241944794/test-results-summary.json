@@ -1,0 +1,2132 @@
+[
+  {
+    "artifactId": 12617182250,
+    "artifactName": "verification-browser-webkit-interaction-d30aa196f2faccd88fab36de4b94bb585c21b464",
+    "reportPath": "test-results/results.json",
+    "stats": {
+      "startTime": "2026-10-25T22:58:36.138Z",
+      "duration": 556802.747,
+      "expected": 94,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "caseStatusCounts": {
+      "expected": 94
+    },
+    "totalCases": 94,
+    "retriedCases": [],
+    "nonExpectedCases": [],
+    "cases": [
+      {
+        "file": "audio-fanfare.spec.ts",
+        "title": "renders a bounded musical fanfare through the production volume, fallback and game-over graph",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "audio-fanfare.spec.ts",
+        "title": "naturally ends the protected fanfare after game-over and releases every native source",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "audio-layered.spec.ts",
+        "title": "\u591a\u5c64\u97f3\u3068\u6700\u7d42\u51fa\u529b\u309244.1/48kHz\u3067\u5408\u6210\u3001\u5358\u767a\u3068\u4e0a\u9650+\u6e1b\u8870\u306e\u6ce2\u5f62\u3092\u4fdd\u5b58",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "audio-layered.spec.ts",
+        "title": "\u5b9fAudioContext\u3067\u591a\u7403\u30fb\u505c\u6b62\u30fb\u5fa9\u65e7\u30fbrun\u5207\u66ff\u3068\u90e8\u5206\u5931\u6557\u3092\u7e70\u308a\u8fd4\u3057\u3001\u4e88\u7d04\u97f3\u3068node\u3092\u56de\u53ce",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "audio.spec.ts",
+        "title": "\u6253\u7403\u30ce\u30fc\u30c9\u751f\u6210\u5931\u6557\u3092\u6848\u5185\u3057\u3001\u4e00\u6642\u505c\u6b62\u30e1\u30cb\u30e5\u30fc\u304b\u3089\u660e\u793a\u7684\u306b\u97f3\u58f0\u3092\u518d\u8a66\u884c\u3067\u304d\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "audio.spec.ts",
+        "title": "\u958b\u59cb\u30fb\u81ea\u4ed6\u306e\u5b9f\u30ce\u30fc\u30c9\u30fb\u30df\u30e5\u30fc\u30c8\u30fb\u30d6\u30e9\u30a6\u30b6\u97f3\u58f0\u4e2d\u65ad\u3068\u624b\u52d5\u5fa9\u5e30",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "audio.spec.ts",
+        "title": "\u97f3\u58f0\u518d\u958b\u62d2\u5426\u3067\u3082\u7121\u97f3\u3067\u7d99\u7d9a\u3057\u3001\u30df\u30e5\u30fc\u30c8\u3068\u660e\u793a\u7684\u306a\u97f3\u58f0\u306e\u518d\u8a66\u884c\u304c\u4f7f\u3048\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "audio.spec.ts",
+        "title": "\u5b9fWeb Audio\u3067\u81ea\u4ed6\u30fb\u4e88\u544a\u30fb4\u7403\u30fb\u6700\u5927\u91cd\u306a\u308a\u3092\u5408\u6210\u3057\u30d4\u30fc\u30af\u3068\u7121\u97f3\u3067\u306a\u3044\u3053\u3068\u3092\u691c\u67fb",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "basic-play.spec.ts",
+        "title": "\u958b\u59cb\u2192\u76f4\u63a5\u914d\u7f6e\u30fb\u30c9\u30e9\u30c3\u30b0\u2192\u8fd4\u7403\u2192\u5931\u7403\u2192\u7d50\u679c\u2192\u518d\u6311\u6226",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "basic-play.spec.ts",
+        "title": "\u505c\u6b62\u4e2d\u306f\u63cf\u753b\u3092\u4fdd\u6301\u3057\u3001\u518d\u958b\u64cd\u4f5c\u3067\u3060\u3051\u9032\u3080",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "basic-play.spec.ts",
+        "title": "\u30bf\u30c3\u30c1\u306e\u7d76\u5bfe\u4f4d\u7f6e\u30c9\u30e9\u30c3\u30b0\u3067\u30e9\u30b1\u30c3\u30c8\u3092\u52d5\u304b\u305b\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "boot.spec.ts",
+        "title": "\u30db\u30fc\u30e0\u306b\u30bf\u30a4\u30c8\u30eb\u3068\u958b\u59cb\u30dc\u30bf\u30f3\u3092\u8868\u793a\u3057\u3001\u81ea\u52d5\u3067\u958b\u59cb\u3057\u306a\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "celebrations.spec.ts",
+        "title": "\u843d\u7403\u96fb\u6483\u306e\u5897\u5927\u30fb4\u7403\u76ee\u306e\u63fa\u308c\u3068\u516814\u7a2e\u985e\u306e\u843d\u7403\u6570\u5b57\u3092\u63cf\u304d\u3001\u6307\u5b9a\u8272\u3078\u70b9\u6ec5\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "celebrations.spec.ts",
+        "title": "\u30be\u30ed\u76ee\u306e\u7dd1\u96fb\u6483\u3068100\u5358\u4f4d\u306e\u5e8a\u58c1\u70b9\u6ec5\u304c5\u79d2\u3067\u6d88\u3048\u3001\u505c\u6b62\u30fb\u5fa9\u65e7\u30fb\u65b0\u898f\u30d7\u30ec\u30a4\u3092\u5c0a\u91cd\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "\u30ef\u30f3\u30d0\u30a6\u30f3\u30c9\u5f8c\u306e\u898b\u3048\u308b\u7403\u306b\u30e9\u30b1\u30c3\u30c8\u3092\u5408\u308f\u305b\u308c\u3070\u8fd4\u7403\u3067\u304d\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "\u898b\u3048\u3066\u3044\u308b\u7403\u306b\u30c9\u30e9\u30c3\u30b0\u3067\u5408\u308f\u305b\u30013\u30e9\u30ea\u30fc\u3092\u3064\u306a\u3052\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "direct-input.spec.ts",
+        "title": "\u5b9fcanvas\u306etap/drag/release\u304c\u6295\u5f71\u4f4d\u7f6e\u306b\u4e00\u81f4\u3057\u4fdd\u6301\u3059\u308b 390\u00d7844",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "direct-input.spec.ts",
+        "title": "\u5b9fcanvas\u306etap/drag/release\u304c\u6295\u5f71\u4f4d\u7f6e\u306b\u4e00\u81f4\u3057\u4fdd\u6301\u3059\u308b 844\u00d7390",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "direct-input.spec.ts",
+        "title": "\u5b9fcanvas\u306etap/drag/release\u304c\u6295\u5f71\u4f4d\u7f6e\u306b\u4e00\u81f4\u3057\u4fdd\u6301\u3059\u308b 1280\u00d7720",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "direct-input.spec.ts",
+        "title": "\u5b9fcanvas\u306etap/drag/release\u304c\u6295\u5f71\u4f4d\u7f6e\u306b\u4e00\u81f4\u3057\u4fdd\u6301\u3059\u308b 280\u00d7360",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "direct-input.spec.ts",
+        "title": "\u4e8c\u672c\u6307\u306f\u4e21release\u3067\u505c\u6b62\u3057\u3001\u8ffd\u52a0\u6307\u3084\u30c9\u30e9\u30c3\u30b0\u3067\u306f\u505c\u6b62\u3057\u306a\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "direct-input.spec.ts",
+        "title": "\u60c5\u5831\u4e0a\u306e\u5165\u529b\u30fbsafe area\u30fbresize\u9023\u767a\u30fb\u30e1\u30cb\u30e5\u30fc\u306b\u53e4\u3044\u5165\u529b\u304c\u6b8b\u3089\u306a\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "evidence.spec.ts",
+        "title": "\u5b9f\u969b\u306eWeb Audio\u3067\u81ea\u5206\u7528\u30fb\u76f8\u624b\u7528\u306e\u7570\u306a\u308b\u77ed\u97f3\u3092\u5408\u6210\u3067\u304d\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "evidence.spec.ts",
+        "title": "\u7e26\u30fb\u6a2a\u30fbPC\u306e\u30ec\u30a4\u30a2\u30a6\u30c8\u3068\u958b\u59cb\u30fb\u505c\u6b62\u30fb\u7d50\u679c\u3092\u753b\u50cf\u30fb\u52d5\u753b\u306b\u6b8b\u3059",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "extended.spec.ts",
+        "title": "460\u301c555\u306e\u8ffd\u52a0\u6bb5\u968e\u3092\u8868\u793a\u3057\u3001\u76f8\u624b\u5074\u306e\u7d99\u304e\u76ee\u3068\u30e9\u30f3\u30c0\u30e0\u306a\u52d5\u304d\u3092\u4fdd\u5b58\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "extended.spec.ts",
+        "title": "\u8fd4\u7403\u30fb\u53f0\u9762\u306e\u82b1\u706b\u3092\u5b9f\u969b\u306e\u63a5\u89e6\u30a4\u30d9\u30f3\u30c8\u3067\u63cf\u304d\u3001\u505c\u6b62\u30fb\u30ea\u30c8\u30e9\u30a4\u3067\u904e\u53bb\u306e\u7c92\u5b50\u3092\u6b8b\u3055\u306a\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "extended.spec.ts",
+        "title": "\u5b9f\u30a2\u30d7\u30ea\u306e\u30db\u30fc\u30e0\u9077\u79fb\u3067\u82b1\u706b\u3092\u76f4\u3061\u306b\u6d88\u3057\u3001\u518d\u6311\u6226\u3078\u6301\u3061\u8d8a\u3055\u306a\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "glow-timing.spec.ts",
+        "title": "\u6307\u5b9a\u3055\u308c\u305f\u767a\u5149\u30e9\u30ea\u30fc\u306e\u76f4\u524d\u30fb\u5230\u9054\u6642\u3092\u540c\u4e00\u753b\u89d2\u3067\u64ae\u5f71\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "lifecycle.spec.ts",
+        "title": "\u901a\u5e38\u306e\u6307\u96e2\u308c\u30fb2\u672c\u76ee\u30fb\u8ffd\u8de1\u55aa\u5931\u30fb\u56de\u8ee2\u3067\u5165\u529b\u304c\u6b8b\u3089\u306a\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "lifecycle.spec.ts",
+        "title": "\u975e\u8868\u793a\u30fb\u753b\u9762\u30ed\u30c3\u30af\u76f8\u5f53\u306epagehide\u3067M10\u30fb\u7403\u30fb\u6642\u523b\u304c\u6b62\u307e\u308a\u3001\u624b\u52d5\u3067\u518d\u958b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "lifecycle.spec.ts",
+        "title": "WebGL\u5fa9\u65e7\u3067\u63cf\u753b\u3092\u518d\u4f5c\u6210\u3057\u3001\u505c\u6b62\u4e2d\u306e390\u30fb\u30b9\u30de\u30c3\u30b7\u30e5\u4e88\u544a\u3092\u4fdd\u6301\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "lifecycle.spec.ts",
+        "title": "\u5b9f\u969b\u306eWEBGL_lose_context\u306b\u3088\u308b\u55aa\u5931\u3068\u5fa9\u65e7\u3067\u3082\u624b\u52d5\u518d\u958b\u3092\u5f85\u3064",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "lifecycle.spec.ts",
+        "title": "\u63cf\u753b\u518d\u4f5c\u6210\u306e\u5931\u6557\u6642\u3082\u72b6\u614b\u3092\u58ca\u3055\u305a\u30db\u30fc\u30e0\u3078\u623b\u308c\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "loss-limit.spec.ts",
+        "title": "99\u843d\u7403\u3067\u306f\u7d99\u7d9a\u3057100\u7403\u76ee\u3067\u6b8b\u7403\u304c\u3042\u3063\u3066\u3082\u7d50\u679c\u3078\u9032\u307f\u518d\u6311\u6226\u30670\u306b\u623b\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "loss-limit.spec.ts",
+        "title": "\u72ed\u3044\u753b\u9762\u3067\u3082\u30e9\u30ea\u30fc\u30fb\u6b8b\u7403\u30fb\u843d\u7403\u6570\u304c\u91cd\u306a\u3089\u305a\u8868\u793a\u3055\u308c\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "milestones.spec.ts",
+        "title": "\u5c02\u7528\u72b6\u614b\u3067\u5897\u7403\u306e\u5883\u754c\u3068\u5168\u6f14\u51fa\u306e\u8868\u793a\u30fb\u767a\u5149\u7d42\u4e86\u3092\u64ae\u5f71\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "milestones.spec.ts",
+        "title": "390\u306e\u5f37\u5f31\u3092\u5b9f\u63cf\u753b\u3067\u6bd4\u8f03\u3057\u30010.6\u79d2\u306e\u52d5\u304d\u3092\u4fdd\u5b58\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "occlusion.spec.ts",
+        "title": "\u7403\u304c\u524d\u5f8c\u306b\u6df7\u5728\u3057\u3066\u3082\u3001\u30cd\u30c3\u30c8\u3088\u308a\u624b\u524d\u306e\u8679\u8272\u306e\u8f2a\u90ed\u304c\u30cd\u30c3\u30c8\u306b\u900f\u3051\u306a\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "occlusion.spec.ts",
+        "title": "\u7403\u3068\u8679\u8272\u306e\u8f2a\u90ed\u306f\u30e9\u30b1\u30c3\u30c8\u3068\u306e\u524d\u5f8c\u95a2\u4fc2\u3092\u5b88\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "occlusion.spec.ts",
+        "title": "\u8679\u8272\u306f\u7167\u660e\u304c\u306a\u304f\u3066\u3082\u767a\u5149\u3057\u3001\u76f8\u624b\u5e8a\u30fb\u58c1\u306f\u95be\u5024\u307e\u3067\u6697\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "preferences.spec.ts",
+        "title": "\u5168\u8a2d\u5b9a\u3068\u81ea\u5df1\u30d9\u30b9\u30c8\u304c\u518d\u8aad\u8fbc\u30fb\u30ea\u30c8\u30e9\u30a4\u3092\u8d8a\u3048\u3066\u6b8b\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "preferences.spec.ts",
+        "title": "\u4fdd\u5b58\u62d2\u5426\u3067\u3082\u8a2d\u5b9a\u3068\u81ea\u5df1\u30d9\u30b9\u30c8\u3092\u30e1\u30e2\u30ea\u306b\u4fdd\u6301\u3057\u3066\u904a\u3079\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "quality.spec.ts",
+        "title": "\u7e26\u6a2a\u30fb44px\u30dc\u30bf\u30f3\u30fb200%\u6587\u5b57\u30fb\u30e9\u30d9\u30eb\u30fb\u5b89\u5168\u4f59\u767d\u3092\u78ba\u8a8d",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "quality.spec.ts",
+        "title": "WebGL\u521d\u671f\u5316\u4e0d\u53ef\u3067\u3082\u518d\u8a66\u884c\u753b\u9762\u304b\u3089\u30db\u30fc\u30e0\u3078\u623b\u308a\u81ea\u5df1\u30d9\u30b9\u30c8\u3092\u4fdd\u3064",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "rally-effects.spec.ts",
+        "title": "all 23 thresholds: preserve before/arrival/during/after camera evidence and fixed resources",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "rally-effects.spec.ts",
+        "title": "moving background/electricity/rings: time sequences, deterministic restore and reduced motion",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "rally-effects.spec.ts",
+        "title": "losses keep actual distinct positions, number lifetimes and final drawing without advancing balls",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "rally-effects.spec.ts",
+        "title": "mobile, landscape, 200% text, best and smash warning keep controls and readable four-digit scores",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "rally-effects.spec.ts",
+        "title": "major labels fit at their largest initial scale with 200% text on 320px screens",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "rally-effects.spec.ts",
+        "title": "300 gold rays visibly radiate behind the rally number at age0.65",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking-isolation.spec.ts",
+        "title": "\u901a\u5e38\u306e\u30b2\u30fc\u30e0\u958b\u59cb\u30fb\u518d\u30d7\u30ec\u30a4\u3082\u672c\u756aAPI\u3078\u9001\u3089\u305a\u691c\u67fb\u5185\u3067\u78ba\u8a8d\u5fdc\u7b54\u3092\u8fd4\u3059",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking.spec.ts",
+        "title": "\u540d\u524d\u306a\u3057\u3067\u904a\u3079\u3066\u7d50\u679c\u306b\u306f\u4e0a\u4f4d30\u540d\u3068\u6b63\u5f0fURL\u306eX\u30b7\u30a7\u30a2\u304c\u8868\u793a\u3055\u308c\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking.spec.ts",
+        "title": "\u533f\u540d\u958b\u59cb\u306e\u5fdc\u7b54\u55aa\u5931\u5f8c\u3082\u3059\u3050\u904a\u3079\u3066online\u5fa9\u5e30\u6642\u306f\u540c\u3058ID\u3067\u518d\u9001\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking.spec.ts",
+        "title": "\u901a\u4fe1\u4e0d\u80fd\u3067\u59cb\u3081\u305f\u533f\u540d2\u56de\u306e\u8a18\u9332\u3092\u518d\u8aad\u8fbc\u5f8c\u3082\u4fdd\u3061\u5fa9\u65e7\u6642\u306b\u9001\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking.spec.ts",
+        "title": "online\u5fa9\u5e30\u304c\u53e4\u3044\u901a\u4fe1\u306e\u5931\u6557\u3088\u308a\u5148\u3067\u3082\u9001\u4fe1\u5f85\u3061\u3092\u518d\u958b\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking.spec.ts",
+        "title": "\u540d\u524d\u3042\u308a\u306f\u958b\u59cb\u6642\u306b\u4e00\u5ea6\u8a18\u9332\u3057\u901a\u5e38\u7d42\u4e86\u3092\u81ea\u52d5\u9001\u4fe1\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking.spec.ts",
+        "title": "\u9001\u4fe1\u5931\u6557\u5f8c\u3082\u7d50\u679c\u3068\u5171\u6709\u3092\u4fdd\u3061\u540c\u3058ID\u3067\u518d\u9001\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking.spec.ts",
+        "title": "\u901a\u4fe1\u505c\u6b62\u4e2d\u3082\u540d\u524d\u306a\u3057\u306e\u30d7\u30ec\u30a4\u3068\u518d\u30d7\u30ec\u30a4\u304c\u4f7f\u3048\u30e9\u30f3\u30ad\u30f3\u30b0\u306f\u518d\u53d6\u5f97\u3067\u304d\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "reference.spec.ts",
+        "title": "viewport\u5168\u4f53\u306e\u5b9f\u63cf\u753b\u3067PC\u30fb\u7e26\u30fb\u6a2a\u306e\u53f0\u3092\u6700\u5927\u9650\u53ce\u3081\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "remaining-ball.spec.ts",
+        "title": "iPhone\u7e26\u753b\u9762\u3067\u5f85\u6a5f\u7403\u306e\u672c\u4f53\u30fb\u5f71\u30fb\u767a\u5149\u3092\u96a0\u3057\u89e3\u653e\u30b3\u30fc\u30c8\u306e\u98db\u884c\u7403\u3060\u3051\u8868\u793a\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "remaining-ball.spec.ts",
+        "title": "\u5b9f\u30a2\u30d7\u30ea\u3067\u52a0\u901f\u7403\u306e\u4e00\u6642\u505c\u6b62\u30fb\u624b\u52d5\u518d\u958b\u30fb\u30ea\u30c8\u30e9\u30a4\u3092\u4fdd\u3064",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "remaining-ball.spec.ts",
+        "title": "\u30d6\u30e9\u30a6\u30b6\u306e\u5b9f\u30b7\u30df\u30e5\u30ec\u30fc\u30b7\u30e7\u30f3\u98db\u884c\u6642\u9593\u304c\u5883\u754c\u30fb\u6b8b\u7403\u6570\u30fb\u5f8c\u534a\u30b9\u30de\u30c3\u30b7\u30e5\u306e\u6307\u5b9a\u6bd4\u306b\u306a\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "render-loop.spec.ts",
+        "title": "\u505c\u6b62\u30fb\u7d42\u4e86\u4e2d\u306f\u540c\u30583D\u753b\u9762\u3092\u7e70\u308a\u8fd4\u3057\u63cf\u304b\u305a\u3001\u56de\u8ee2\u3068\u518d\u958b\u6642\u306b\u306f\u63cf\u753b\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-layout.spec.ts",
+        "title": "\u516844\u30b3\u30e1\u30f3\u30c8\u306f320px\u5e45\u3067\u30822\u884c\u4ee5\u5185\u3001\u9806\u4f4d\u307e\u3067\u898b\u3048\u6a2a\u30b9\u30af\u30ed\u30fc\u30eb\u3057\u306a\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-position.spec.ts",
+        "title": "\u767b\u9332\u78ba\u8a8d\u524d\u306b\u306f\u53d6\u5f97\u305b\u305a\u3001100\u4f4d\u8d85\u3067\u3082DB\u81ea\u5df1\u30d9\u30b9\u30c8\u306e\u9806\u4f4d\u3092\u8868\u793a\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-position.spec.ts",
+        "title": "\u30b9\u30b3\u30a2\u9001\u4fe1\u5931\u6557\u6642\u306f\u9806\u4f4d\u3092\u51fa\u3055\u305a\u540c\u3058ID\u306e\u518d\u9001\u6210\u529f\u5f8c\u306b\u8868\u793a\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-position.spec.ts",
+        "title": "\u9806\u4f4d\u901a\u4fe1\u5931\u6557\u306f\u518d\u53d6\u5f97\u3067\u304d\u3001TOP100\u306e\u540c\u9806\u4f4d\u3082\u63a7\u3048\u3081\u306b\u8868\u793a\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-position.spec.ts",
+        "title": "\u9806\u4f4d\u5fdc\u7b54\u5f85\u3061\u3067\u518d\u30d7\u30ec\u30a4\u3057\u3066\u3082\u53e4\u3044\u9806\u4f4d\u306f\u65b0\u30d7\u30ec\u30a4\u306b\u8868\u793a\u3057\u306a\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-position.spec.ts",
+        "title": "\u96c6\u8a08\u5bfe\u8c61\u5916\u306e\u540d\u524d\u306b\u306f\u67b6\u7a7a\u306e\u9806\u4f4d\u3092\u8868\u793a\u3057\u306a\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-presentation.spec.ts",
+        "title": "\u6570\u5b57\u306e\u5168\u6bb5\u968e\u3068\u7d99\u7d9a\u3059\u308b\u96fb\u6483\u3092iPhone 17 Pro\u76f8\u5f53\u306e\u753b\u9762\u3067\u691c\u8a3c\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-presentation.spec.ts",
+        "title": "\u7d50\u679c\u96fb\u6483\u306e\u5b9f\u30d5\u30ec\u30fc\u30e0\u3092\u8a18\u9332\u3057\u30015\u672c\u4e0a\u9650\u3068\u7d99\u7d9a\u767a\u751f\u3092\u78ba\u8a8d\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "retry.spec.ts",
+        "title": "\u518d\u6311\u622620\u56de\u30fb\u30db\u30fc\u30e0\u5f80\u5fa920\u56de\u3067\u30eb\u30fc\u30d7\u30fb\u8cfc\u8aad\u30fb\u63cf\u753b\u8cc7\u6e90\u304c\u5897\u6b96\u3057\u306a\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u81ea\u5df1\u30d9\u30b9\u30c8\u306a\u3057\u306e\u30db\u30fc\u30e0\u304b\u3089\u901a\u5e38\u30ea\u30f3\u30af\u3067\u6b63\u5f0fURL\u3068\u6c4e\u7528\u6587\u3092\u958b\u3051\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u81ea\u5df1\u30d9\u30b9\u30c8\u3068\u4eca\u56de\u306e\u7d50\u679c\u3092\u533a\u5225\u3057\u3001\u901a\u4fe1\u5931\u6557\u30fb\u518d\u6311\u6226\u30fb0\u70b9\u30fb\u5927\u304d\u306a\u5024\u30fb\u30db\u30fc\u30e0\u3067\u3082\u5171\u6709\u5024\u3092\u4fdd\u3064",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u5171\u6709\u30ea\u30f3\u30af\u306f320x568\u30fb\u6587\u5b57100%\u3067\u3082\u8aad\u3081\u3066\u64cd\u4f5c\u3067\u304d\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u5171\u6709\u30ea\u30f3\u30af\u306f320x568\u30fb\u6587\u5b57200%\u3067\u3082\u8aad\u3081\u3066\u64cd\u4f5c\u3067\u304d\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u5171\u6709\u30ea\u30f3\u30af\u306f568x320\u30fb\u6587\u5b57100%\u3067\u3082\u8aad\u3081\u3066\u64cd\u4f5c\u3067\u304d\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u5171\u6709\u30ea\u30f3\u30af\u306f568x320\u30fb\u6587\u5b57200%\u3067\u3082\u8aad\u3081\u3066\u64cd\u4f5c\u3067\u304d\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u5171\u6709\u30ea\u30f3\u30af\u306f1280x720\u30fb\u6587\u5b57100%\u3067\u3082\u8aad\u3081\u3066\u64cd\u4f5c\u3067\u304d\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u5171\u6709\u30ea\u30f3\u30af\u306f1280x720\u30fb\u6587\u5b57200%\u3067\u3082\u8aad\u3081\u3066\u64cd\u4f5c\u3067\u304d\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "smash.spec.ts",
+        "title": "450\u306e\u4e88\u544a\u306f\u30df\u30e5\u30fc\u30c8\u30fb\u843d\u7403\u5f8c4\u7403\u30fb\u505c\u6b62\u4e2d\u3067\u3082\u898b\u3048\u3001\u76f8\u624b\u5074\u306e\u7403\u3092\u96a0\u3059",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "smash.spec.ts",
+        "title": "\u4e88\u544a\u97f3\u3092\u5b9f\u969b\u306eWeb Audio\u3067\u5408\u6210\u3057\u3066\u4fdd\u5b58\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u6e96\u5099\u6e08\u307f\u306a\u3089pause\u304b\u3089\u6b21\u306eRAF\u3092\u5f85\u305f\u305a\u3001\u6848\u5185\u3092\u4e00\u5ea6\u3082\u51fa\u3055\u305a\u306b\u958b\u59cb\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u6e96\u5099\u6e08\u307f\u306a\u3089result\u304b\u3089\u6b21\u306eRAF\u3092\u5f85\u305f\u305a\u3001\u6848\u5185\u3092\u4e00\u5ea6\u3082\u51fa\u3055\u305a\u306b\u958b\u59cb\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u6e96\u5099\u6e08\u307f\u306a\u3089home\u304b\u3089\u6b21\u306eRAF\u3092\u5f85\u305f\u305a\u3001\u6848\u5185\u3092\u4e00\u5ea6\u3082\u51fa\u3055\u305a\u306b\u958b\u59cb\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u63cf\u753b\u306e\u6e96\u5099\u4e2d\u306f\u9032\u6357\u3068\u4e2d\u592e\u306e\u30eb\u30fc\u30eb\u3092\u8868\u793a\u3057\u3001\u30b2\u30fc\u30e0\u3068\u5165\u529b\u306f\u958b\u59cb\u3057\u306a\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u6e96\u5099\u3092\u30ad\u30e3\u30f3\u30bb\u30eb\u3057\u305f\u3042\u3068\u53e4\u3044\u5b8c\u4e86\u901a\u77e5\u304c\u6765\u3066\u3082\u52dd\u624b\u306b\u958b\u59cb\u305b\u305a\u3001\u6b21\u306f\u6e96\u5099\u6e08\u307f\u8cc7\u6e90\u3092\u4f7f\u3046",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u6e96\u5099\u306e\u5931\u6557\u306f\u30eb\u30fc\u30eb\u4ed8\u304d\u306e\u518d\u8a66\u884c\u753b\u9762\u306b\u306a\u308a\u3001\u624b\u52d5\u306e\u518d\u8a66\u884c\u3067\u958b\u59cb\u3067\u304d\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u30a6\u30a3\u30f3\u30c9\u30a6\u306eresize\u304c\u306a\u304f\u3066\u3082\u30b3\u30fc\u30c8\u306e\u8868\u793a\u30b5\u30a4\u30ba\u5909\u66f4\u5f8c\u306b\u30e9\u30b1\u30c3\u30c8\u3092\u52d5\u304b\u305b\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u6e96\u5099\u4e2d\u306e\u63cf\u753b\u55aa\u5931\u304b\u3089\u5fa9\u65e7\u3057\u3066\u3082\u624b\u52d5\u306e\u518d\u8a66\u884c\u307e\u3067\u958b\u59cb\u3057\u306a\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u30c9\u30e9\u30c3\u30b0\u4e2d\u306b\u30b3\u30fc\u30c8\u3060\u3051\u306e\u30b5\u30a4\u30ba\u304c\u5909\u308f\u3063\u3066\u3082\u6307\u3092\u96e2\u3059\u307e\u3067\u30e9\u30b1\u30c3\u30c8\u304c\u8ffd\u5f93\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u72ed\u3044\u753b\u9762\u3068\u6587\u5b57200%\u3067\u3082\u4e2d\u592e\u306e\u6848\u5185\u30fb\u9032\u6357\u30fb\u7d42\u4e86\u6761\u4ef6\u30fb\u4e2d\u65ad\u64cd\u4f5c\u3092\u8aad\u3081\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-resize.spec.ts",
+        "title": "\u30b9\u30de\u30db\u306e\u9ad8\u3055\u5909\u66f4\u3092\u307e\u305f\u3044\u3067\u540c\u3058\u6307\u306e\u30c9\u30e9\u30c3\u30b0\u3092\u7d99\u7d9a\u3067\u304d\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-resize.spec.ts",
+        "title": "\u958b\u59cb\u76f4\u5f8c\u306eresize\u3068\u30ad\u30fc\u30dc\u30fc\u30c9\u3092\u9589\u3058\u308b\u9ad8\u3055\u5909\u66f4\u3067\u306f\u30dd\u30fc\u30ba\u306b\u306a\u3089\u306a\u3044",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      }
+    ]
+  },
+  {
+    "artifactId": 12617231515,
+    "artifactName": "verification-d30aa196f2faccd88fab36de4b94bb585c21b464",
+    "reportPath": "artifacts/release-results.json",
+    "stats": {
+      "startTime": "2026-10-25T22:54:22.631Z",
+      "duration": 16803.039,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "caseStatusCounts": {
+      "expected": 8
+    },
+    "totalCases": 8,
+    "retriedCases": [],
+    "nonExpectedCases": [],
+    "cases": [
+      {
+        "file": "distribution.spec.ts",
+        "title": "\u5b9f\u914d\u5e03\u7269 / \u306e\u521d\u671fHTML\u306b\u9759\u7684\u306aOG\u30fbX\u30ab\u30fc\u30c9\u304c\u3042\u308aPNG\u3092\u914d\u4fe1\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "distribution.spec.ts",
+        "title": "\u5b9f\u914d\u5e03\u7269 / \u306e\u53c2\u7167\u30fb\u958b\u59cb\u30fb\u4fdd\u5b58\u3068\u958b\u767a\u6a5f\u80fd\u306e\u975e\u6df7\u5165",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "distribution.spec.ts",
+        "title": "\u5b9f\u914d\u5e03\u7269 /takkeu/ \u306e\u521d\u671fHTML\u306b\u9759\u7684\u306aOG\u30fbX\u30ab\u30fc\u30c9\u304c\u3042\u308aPNG\u3092\u914d\u4fe1\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "distribution.spec.ts",
+        "title": "\u5b9f\u914d\u5e03\u7269 /takkeu/ \u306e\u53c2\u7167\u30fb\u958b\u59cb\u30fb\u4fdd\u5b58\u3068\u958b\u767a\u6a5f\u80fd\u306e\u975e\u6df7\u5165",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "distribution.spec.ts",
+        "title": "\u5b9f\u914d\u5e03\u7269 / \u306e\u521d\u671fHTML\u306b\u9759\u7684\u306aOG\u30fbX\u30ab\u30fc\u30c9\u304c\u3042\u308aPNG\u3092\u914d\u4fe1\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "distribution.spec.ts",
+        "title": "\u5b9f\u914d\u5e03\u7269 / \u306e\u53c2\u7167\u30fb\u958b\u59cb\u30fb\u4fdd\u5b58\u3068\u958b\u767a\u6a5f\u80fd\u306e\u975e\u6df7\u5165",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "distribution.spec.ts",
+        "title": "\u5b9f\u914d\u5e03\u7269 /takkeu/ \u306e\u521d\u671fHTML\u306b\u9759\u7684\u306aOG\u30fbX\u30ab\u30fc\u30c9\u304c\u3042\u308aPNG\u3092\u914d\u4fe1\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "distribution.spec.ts",
+        "title": "\u5b9f\u914d\u5e03\u7269 /takkeu/ \u306e\u53c2\u7167\u30fb\u958b\u59cb\u30fb\u4fdd\u5b58\u3068\u958b\u767a\u6a5f\u80fd\u306e\u975e\u6df7\u5165",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      }
+    ]
+  },
+  {
+    "artifactId": 12617242568,
+    "artifactName": "verification-browser-chromium-load-d30aa196f2faccd88fab36de4b94bb585c21b464",
+    "reportPath": "test-results/results.json",
+    "stats": {
+      "startTime": "2026-10-25T22:57:54.481Z",
+      "duration": 334187.046,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "caseStatusCounts": {
+      "expected": 3
+    },
+    "totalCases": 3,
+    "retriedCases": [],
+    "nonExpectedCases": [],
+    "cases": [
+      {
+        "file": "extended-load.spec.ts",
+        "title": "555\u306e30\u7403\u304b\u3089\u540c\u6642\u8fd4\u7403\u30fb\u5931\u7403\u30fb\u5897\u7403\u30fb\u5168\u30b9\u30de\u30c3\u30b7\u30e5\u309230\u30b2\u30fc\u30e0\u79d2\u7d99\u7d9a\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "quality.spec.ts",
+        "title": "\u958b\u59cb\u304b\u3089\u5b9f\u969b\u306b\u8fd4\u7403\u3057\u30665\u30fb10\u30fb20\u306e\u5897\u7403\u3092\u901a\u904e\u3057\u300121\u30e9\u30ea\u30fc\u3078\u9032\u3080",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "quality.spec.ts",
+        "title": "450\u306e30\u7403\u3068\u4ee5\u5f8c\u306e\u540c\u6642\u8fd4\u7403\u30fb\u5931\u7403\u30fb\u5897\u7403\u30fb\u30b9\u30de\u30c3\u30b7\u30e5\u309230\u30b2\u30fc\u30e0\u79d2\u7dad\u6301\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      }
+    ]
+  },
+  {
+    "artifactId": 12617532732,
+    "artifactName": "verification-browser-chromium-interaction-d30aa196f2faccd88fab36de4b94bb585c21b464",
+    "reportPath": "test-results/results.json",
+    "stats": {
+      "startTime": "2026-10-25T22:58:18.622Z",
+      "duration": 633486.4689999999,
+      "expected": 94,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "caseStatusCounts": {
+      "expected": 94
+    },
+    "totalCases": 94,
+    "retriedCases": [],
+    "nonExpectedCases": [],
+    "cases": [
+      {
+        "file": "audio-fanfare.spec.ts",
+        "title": "renders a bounded musical fanfare through the production volume, fallback and game-over graph",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "audio-fanfare.spec.ts",
+        "title": "naturally ends the protected fanfare after game-over and releases every native source",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "audio-layered.spec.ts",
+        "title": "\u591a\u5c64\u97f3\u3068\u6700\u7d42\u51fa\u529b\u309244.1/48kHz\u3067\u5408\u6210\u3001\u5358\u767a\u3068\u4e0a\u9650+\u6e1b\u8870\u306e\u6ce2\u5f62\u3092\u4fdd\u5b58",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "audio-layered.spec.ts",
+        "title": "\u5b9fAudioContext\u3067\u591a\u7403\u30fb\u505c\u6b62\u30fb\u5fa9\u65e7\u30fbrun\u5207\u66ff\u3068\u90e8\u5206\u5931\u6557\u3092\u7e70\u308a\u8fd4\u3057\u3001\u4e88\u7d04\u97f3\u3068node\u3092\u56de\u53ce",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "audio.spec.ts",
+        "title": "\u6253\u7403\u30ce\u30fc\u30c9\u751f\u6210\u5931\u6557\u3092\u6848\u5185\u3057\u3001\u4e00\u6642\u505c\u6b62\u30e1\u30cb\u30e5\u30fc\u304b\u3089\u660e\u793a\u7684\u306b\u97f3\u58f0\u3092\u518d\u8a66\u884c\u3067\u304d\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "audio.spec.ts",
+        "title": "\u958b\u59cb\u30fb\u81ea\u4ed6\u306e\u5b9f\u30ce\u30fc\u30c9\u30fb\u30df\u30e5\u30fc\u30c8\u30fb\u30d6\u30e9\u30a6\u30b6\u97f3\u58f0\u4e2d\u65ad\u3068\u624b\u52d5\u5fa9\u5e30",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "audio.spec.ts",
+        "title": "\u97f3\u58f0\u518d\u958b\u62d2\u5426\u3067\u3082\u7121\u97f3\u3067\u7d99\u7d9a\u3057\u3001\u30df\u30e5\u30fc\u30c8\u3068\u660e\u793a\u7684\u306a\u97f3\u58f0\u306e\u518d\u8a66\u884c\u304c\u4f7f\u3048\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "audio.spec.ts",
+        "title": "\u5b9fWeb Audio\u3067\u81ea\u4ed6\u30fb\u4e88\u544a\u30fb4\u7403\u30fb\u6700\u5927\u91cd\u306a\u308a\u3092\u5408\u6210\u3057\u30d4\u30fc\u30af\u3068\u7121\u97f3\u3067\u306a\u3044\u3053\u3068\u3092\u691c\u67fb",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "basic-play.spec.ts",
+        "title": "\u958b\u59cb\u2192\u76f4\u63a5\u914d\u7f6e\u30fb\u30c9\u30e9\u30c3\u30b0\u2192\u8fd4\u7403\u2192\u5931\u7403\u2192\u7d50\u679c\u2192\u518d\u6311\u6226",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "basic-play.spec.ts",
+        "title": "\u505c\u6b62\u4e2d\u306f\u63cf\u753b\u3092\u4fdd\u6301\u3057\u3001\u518d\u958b\u64cd\u4f5c\u3067\u3060\u3051\u9032\u3080",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "basic-play.spec.ts",
+        "title": "\u30bf\u30c3\u30c1\u306e\u7d76\u5bfe\u4f4d\u7f6e\u30c9\u30e9\u30c3\u30b0\u3067\u30e9\u30b1\u30c3\u30c8\u3092\u52d5\u304b\u305b\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "boot.spec.ts",
+        "title": "\u30db\u30fc\u30e0\u306b\u30bf\u30a4\u30c8\u30eb\u3068\u958b\u59cb\u30dc\u30bf\u30f3\u3092\u8868\u793a\u3057\u3001\u81ea\u52d5\u3067\u958b\u59cb\u3057\u306a\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "celebrations.spec.ts",
+        "title": "\u843d\u7403\u96fb\u6483\u306e\u5897\u5927\u30fb4\u7403\u76ee\u306e\u63fa\u308c\u3068\u516814\u7a2e\u985e\u306e\u843d\u7403\u6570\u5b57\u3092\u63cf\u304d\u3001\u6307\u5b9a\u8272\u3078\u70b9\u6ec5\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "celebrations.spec.ts",
+        "title": "\u30be\u30ed\u76ee\u306e\u7dd1\u96fb\u6483\u3068100\u5358\u4f4d\u306e\u5e8a\u58c1\u70b9\u6ec5\u304c5\u79d2\u3067\u6d88\u3048\u3001\u505c\u6b62\u30fb\u5fa9\u65e7\u30fb\u65b0\u898f\u30d7\u30ec\u30a4\u3092\u5c0a\u91cd\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "\u30ef\u30f3\u30d0\u30a6\u30f3\u30c9\u5f8c\u306e\u898b\u3048\u308b\u7403\u306b\u30e9\u30b1\u30c3\u30c8\u3092\u5408\u308f\u305b\u308c\u3070\u8fd4\u7403\u3067\u304d\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "contact.spec.ts",
+        "title": "\u898b\u3048\u3066\u3044\u308b\u7403\u306b\u30c9\u30e9\u30c3\u30b0\u3067\u5408\u308f\u305b\u30013\u30e9\u30ea\u30fc\u3092\u3064\u306a\u3052\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "direct-input.spec.ts",
+        "title": "\u5b9fcanvas\u306etap/drag/release\u304c\u6295\u5f71\u4f4d\u7f6e\u306b\u4e00\u81f4\u3057\u4fdd\u6301\u3059\u308b 390\u00d7844",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "direct-input.spec.ts",
+        "title": "\u5b9fcanvas\u306etap/drag/release\u304c\u6295\u5f71\u4f4d\u7f6e\u306b\u4e00\u81f4\u3057\u4fdd\u6301\u3059\u308b 844\u00d7390",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "direct-input.spec.ts",
+        "title": "\u5b9fcanvas\u306etap/drag/release\u304c\u6295\u5f71\u4f4d\u7f6e\u306b\u4e00\u81f4\u3057\u4fdd\u6301\u3059\u308b 1280\u00d7720",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "direct-input.spec.ts",
+        "title": "\u5b9fcanvas\u306etap/drag/release\u304c\u6295\u5f71\u4f4d\u7f6e\u306b\u4e00\u81f4\u3057\u4fdd\u6301\u3059\u308b 280\u00d7360",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "direct-input.spec.ts",
+        "title": "\u4e8c\u672c\u6307\u306f\u4e21release\u3067\u505c\u6b62\u3057\u3001\u8ffd\u52a0\u6307\u3084\u30c9\u30e9\u30c3\u30b0\u3067\u306f\u505c\u6b62\u3057\u306a\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "direct-input.spec.ts",
+        "title": "\u60c5\u5831\u4e0a\u306e\u5165\u529b\u30fbsafe area\u30fbresize\u9023\u767a\u30fb\u30e1\u30cb\u30e5\u30fc\u306b\u53e4\u3044\u5165\u529b\u304c\u6b8b\u3089\u306a\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "evidence.spec.ts",
+        "title": "\u5b9f\u969b\u306eWeb Audio\u3067\u81ea\u5206\u7528\u30fb\u76f8\u624b\u7528\u306e\u7570\u306a\u308b\u77ed\u97f3\u3092\u5408\u6210\u3067\u304d\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "evidence.spec.ts",
+        "title": "\u7e26\u30fb\u6a2a\u30fbPC\u306e\u30ec\u30a4\u30a2\u30a6\u30c8\u3068\u958b\u59cb\u30fb\u505c\u6b62\u30fb\u7d50\u679c\u3092\u753b\u50cf\u30fb\u52d5\u753b\u306b\u6b8b\u3059",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "extended.spec.ts",
+        "title": "460\u301c555\u306e\u8ffd\u52a0\u6bb5\u968e\u3092\u8868\u793a\u3057\u3001\u76f8\u624b\u5074\u306e\u7d99\u304e\u76ee\u3068\u30e9\u30f3\u30c0\u30e0\u306a\u52d5\u304d\u3092\u4fdd\u5b58\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "extended.spec.ts",
+        "title": "\u8fd4\u7403\u30fb\u53f0\u9762\u306e\u82b1\u706b\u3092\u5b9f\u969b\u306e\u63a5\u89e6\u30a4\u30d9\u30f3\u30c8\u3067\u63cf\u304d\u3001\u505c\u6b62\u30fb\u30ea\u30c8\u30e9\u30a4\u3067\u904e\u53bb\u306e\u7c92\u5b50\u3092\u6b8b\u3055\u306a\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "extended.spec.ts",
+        "title": "\u5b9f\u30a2\u30d7\u30ea\u306e\u30db\u30fc\u30e0\u9077\u79fb\u3067\u82b1\u706b\u3092\u76f4\u3061\u306b\u6d88\u3057\u3001\u518d\u6311\u6226\u3078\u6301\u3061\u8d8a\u3055\u306a\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "glow-timing.spec.ts",
+        "title": "\u6307\u5b9a\u3055\u308c\u305f\u767a\u5149\u30e9\u30ea\u30fc\u306e\u76f4\u524d\u30fb\u5230\u9054\u6642\u3092\u540c\u4e00\u753b\u89d2\u3067\u64ae\u5f71\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "lifecycle.spec.ts",
+        "title": "\u901a\u5e38\u306e\u6307\u96e2\u308c\u30fb2\u672c\u76ee\u30fb\u8ffd\u8de1\u55aa\u5931\u30fb\u56de\u8ee2\u3067\u5165\u529b\u304c\u6b8b\u3089\u306a\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "lifecycle.spec.ts",
+        "title": "\u975e\u8868\u793a\u30fb\u753b\u9762\u30ed\u30c3\u30af\u76f8\u5f53\u306epagehide\u3067M10\u30fb\u7403\u30fb\u6642\u523b\u304c\u6b62\u307e\u308a\u3001\u624b\u52d5\u3067\u518d\u958b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "lifecycle.spec.ts",
+        "title": "WebGL\u5fa9\u65e7\u3067\u63cf\u753b\u3092\u518d\u4f5c\u6210\u3057\u3001\u505c\u6b62\u4e2d\u306e390\u30fb\u30b9\u30de\u30c3\u30b7\u30e5\u4e88\u544a\u3092\u4fdd\u6301\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "lifecycle.spec.ts",
+        "title": "\u5b9f\u969b\u306eWEBGL_lose_context\u306b\u3088\u308b\u55aa\u5931\u3068\u5fa9\u65e7\u3067\u3082\u624b\u52d5\u518d\u958b\u3092\u5f85\u3064",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "lifecycle.spec.ts",
+        "title": "\u63cf\u753b\u518d\u4f5c\u6210\u306e\u5931\u6557\u6642\u3082\u72b6\u614b\u3092\u58ca\u3055\u305a\u30db\u30fc\u30e0\u3078\u623b\u308c\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "loss-limit.spec.ts",
+        "title": "99\u843d\u7403\u3067\u306f\u7d99\u7d9a\u3057100\u7403\u76ee\u3067\u6b8b\u7403\u304c\u3042\u3063\u3066\u3082\u7d50\u679c\u3078\u9032\u307f\u518d\u6311\u6226\u30670\u306b\u623b\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "loss-limit.spec.ts",
+        "title": "\u72ed\u3044\u753b\u9762\u3067\u3082\u30e9\u30ea\u30fc\u30fb\u6b8b\u7403\u30fb\u843d\u7403\u6570\u304c\u91cd\u306a\u3089\u305a\u8868\u793a\u3055\u308c\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "milestones.spec.ts",
+        "title": "\u5c02\u7528\u72b6\u614b\u3067\u5897\u7403\u306e\u5883\u754c\u3068\u5168\u6f14\u51fa\u306e\u8868\u793a\u30fb\u767a\u5149\u7d42\u4e86\u3092\u64ae\u5f71\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "milestones.spec.ts",
+        "title": "390\u306e\u5f37\u5f31\u3092\u5b9f\u63cf\u753b\u3067\u6bd4\u8f03\u3057\u30010.6\u79d2\u306e\u52d5\u304d\u3092\u4fdd\u5b58\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "occlusion.spec.ts",
+        "title": "\u7403\u304c\u524d\u5f8c\u306b\u6df7\u5728\u3057\u3066\u3082\u3001\u30cd\u30c3\u30c8\u3088\u308a\u624b\u524d\u306e\u8679\u8272\u306e\u8f2a\u90ed\u304c\u30cd\u30c3\u30c8\u306b\u900f\u3051\u306a\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "occlusion.spec.ts",
+        "title": "\u7403\u3068\u8679\u8272\u306e\u8f2a\u90ed\u306f\u30e9\u30b1\u30c3\u30c8\u3068\u306e\u524d\u5f8c\u95a2\u4fc2\u3092\u5b88\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "occlusion.spec.ts",
+        "title": "\u8679\u8272\u306f\u7167\u660e\u304c\u306a\u304f\u3066\u3082\u767a\u5149\u3057\u3001\u76f8\u624b\u5e8a\u30fb\u58c1\u306f\u95be\u5024\u307e\u3067\u6697\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "preferences.spec.ts",
+        "title": "\u5168\u8a2d\u5b9a\u3068\u81ea\u5df1\u30d9\u30b9\u30c8\u304c\u518d\u8aad\u8fbc\u30fb\u30ea\u30c8\u30e9\u30a4\u3092\u8d8a\u3048\u3066\u6b8b\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "preferences.spec.ts",
+        "title": "\u4fdd\u5b58\u62d2\u5426\u3067\u3082\u8a2d\u5b9a\u3068\u81ea\u5df1\u30d9\u30b9\u30c8\u3092\u30e1\u30e2\u30ea\u306b\u4fdd\u6301\u3057\u3066\u904a\u3079\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "quality.spec.ts",
+        "title": "\u7e26\u6a2a\u30fb44px\u30dc\u30bf\u30f3\u30fb200%\u6587\u5b57\u30fb\u30e9\u30d9\u30eb\u30fb\u5b89\u5168\u4f59\u767d\u3092\u78ba\u8a8d",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "quality.spec.ts",
+        "title": "WebGL\u521d\u671f\u5316\u4e0d\u53ef\u3067\u3082\u518d\u8a66\u884c\u753b\u9762\u304b\u3089\u30db\u30fc\u30e0\u3078\u623b\u308a\u81ea\u5df1\u30d9\u30b9\u30c8\u3092\u4fdd\u3064",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "rally-effects.spec.ts",
+        "title": "all 23 thresholds: preserve before/arrival/during/after camera evidence and fixed resources",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "rally-effects.spec.ts",
+        "title": "moving background/electricity/rings: time sequences, deterministic restore and reduced motion",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "rally-effects.spec.ts",
+        "title": "losses keep actual distinct positions, number lifetimes and final drawing without advancing balls",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "rally-effects.spec.ts",
+        "title": "mobile, landscape, 200% text, best and smash warning keep controls and readable four-digit scores",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "rally-effects.spec.ts",
+        "title": "major labels fit at their largest initial scale with 200% text on 320px screens",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "rally-effects.spec.ts",
+        "title": "300 gold rays visibly radiate behind the rally number at age0.65",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking-isolation.spec.ts",
+        "title": "\u901a\u5e38\u306e\u30b2\u30fc\u30e0\u958b\u59cb\u30fb\u518d\u30d7\u30ec\u30a4\u3082\u672c\u756aAPI\u3078\u9001\u3089\u305a\u691c\u67fb\u5185\u3067\u78ba\u8a8d\u5fdc\u7b54\u3092\u8fd4\u3059",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking.spec.ts",
+        "title": "\u540d\u524d\u306a\u3057\u3067\u904a\u3079\u3066\u7d50\u679c\u306b\u306f\u4e0a\u4f4d30\u540d\u3068\u6b63\u5f0fURL\u306eX\u30b7\u30a7\u30a2\u304c\u8868\u793a\u3055\u308c\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking.spec.ts",
+        "title": "\u533f\u540d\u958b\u59cb\u306e\u5fdc\u7b54\u55aa\u5931\u5f8c\u3082\u3059\u3050\u904a\u3079\u3066online\u5fa9\u5e30\u6642\u306f\u540c\u3058ID\u3067\u518d\u9001\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking.spec.ts",
+        "title": "\u901a\u4fe1\u4e0d\u80fd\u3067\u59cb\u3081\u305f\u533f\u540d2\u56de\u306e\u8a18\u9332\u3092\u518d\u8aad\u8fbc\u5f8c\u3082\u4fdd\u3061\u5fa9\u65e7\u6642\u306b\u9001\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking.spec.ts",
+        "title": "online\u5fa9\u5e30\u304c\u53e4\u3044\u901a\u4fe1\u306e\u5931\u6557\u3088\u308a\u5148\u3067\u3082\u9001\u4fe1\u5f85\u3061\u3092\u518d\u958b\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking.spec.ts",
+        "title": "\u540d\u524d\u3042\u308a\u306f\u958b\u59cb\u6642\u306b\u4e00\u5ea6\u8a18\u9332\u3057\u901a\u5e38\u7d42\u4e86\u3092\u81ea\u52d5\u9001\u4fe1\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking.spec.ts",
+        "title": "\u9001\u4fe1\u5931\u6557\u5f8c\u3082\u7d50\u679c\u3068\u5171\u6709\u3092\u4fdd\u3061\u540c\u3058ID\u3067\u518d\u9001\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "ranking.spec.ts",
+        "title": "\u901a\u4fe1\u505c\u6b62\u4e2d\u3082\u540d\u524d\u306a\u3057\u306e\u30d7\u30ec\u30a4\u3068\u518d\u30d7\u30ec\u30a4\u304c\u4f7f\u3048\u30e9\u30f3\u30ad\u30f3\u30b0\u306f\u518d\u53d6\u5f97\u3067\u304d\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "reference.spec.ts",
+        "title": "viewport\u5168\u4f53\u306e\u5b9f\u63cf\u753b\u3067PC\u30fb\u7e26\u30fb\u6a2a\u306e\u53f0\u3092\u6700\u5927\u9650\u53ce\u3081\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "remaining-ball.spec.ts",
+        "title": "iPhone\u7e26\u753b\u9762\u3067\u5f85\u6a5f\u7403\u306e\u672c\u4f53\u30fb\u5f71\u30fb\u767a\u5149\u3092\u96a0\u3057\u89e3\u653e\u30b3\u30fc\u30c8\u306e\u98db\u884c\u7403\u3060\u3051\u8868\u793a\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "remaining-ball.spec.ts",
+        "title": "\u5b9f\u30a2\u30d7\u30ea\u3067\u52a0\u901f\u7403\u306e\u4e00\u6642\u505c\u6b62\u30fb\u624b\u52d5\u518d\u958b\u30fb\u30ea\u30c8\u30e9\u30a4\u3092\u4fdd\u3064",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "remaining-ball.spec.ts",
+        "title": "\u30d6\u30e9\u30a6\u30b6\u306e\u5b9f\u30b7\u30df\u30e5\u30ec\u30fc\u30b7\u30e7\u30f3\u98db\u884c\u6642\u9593\u304c\u5883\u754c\u30fb\u6b8b\u7403\u6570\u30fb\u5f8c\u534a\u30b9\u30de\u30c3\u30b7\u30e5\u306e\u6307\u5b9a\u6bd4\u306b\u306a\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "render-loop.spec.ts",
+        "title": "\u505c\u6b62\u30fb\u7d42\u4e86\u4e2d\u306f\u540c\u30583D\u753b\u9762\u3092\u7e70\u308a\u8fd4\u3057\u63cf\u304b\u305a\u3001\u56de\u8ee2\u3068\u518d\u958b\u6642\u306b\u306f\u63cf\u753b\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-layout.spec.ts",
+        "title": "\u516844\u30b3\u30e1\u30f3\u30c8\u306f320px\u5e45\u3067\u30822\u884c\u4ee5\u5185\u3001\u9806\u4f4d\u307e\u3067\u898b\u3048\u6a2a\u30b9\u30af\u30ed\u30fc\u30eb\u3057\u306a\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-position.spec.ts",
+        "title": "\u767b\u9332\u78ba\u8a8d\u524d\u306b\u306f\u53d6\u5f97\u305b\u305a\u3001100\u4f4d\u8d85\u3067\u3082DB\u81ea\u5df1\u30d9\u30b9\u30c8\u306e\u9806\u4f4d\u3092\u8868\u793a\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-position.spec.ts",
+        "title": "\u30b9\u30b3\u30a2\u9001\u4fe1\u5931\u6557\u6642\u306f\u9806\u4f4d\u3092\u51fa\u3055\u305a\u540c\u3058ID\u306e\u518d\u9001\u6210\u529f\u5f8c\u306b\u8868\u793a\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-position.spec.ts",
+        "title": "\u9806\u4f4d\u901a\u4fe1\u5931\u6557\u306f\u518d\u53d6\u5f97\u3067\u304d\u3001TOP100\u306e\u540c\u9806\u4f4d\u3082\u63a7\u3048\u3081\u306b\u8868\u793a\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-position.spec.ts",
+        "title": "\u9806\u4f4d\u5fdc\u7b54\u5f85\u3061\u3067\u518d\u30d7\u30ec\u30a4\u3057\u3066\u3082\u53e4\u3044\u9806\u4f4d\u306f\u65b0\u30d7\u30ec\u30a4\u306b\u8868\u793a\u3057\u306a\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-position.spec.ts",
+        "title": "\u96c6\u8a08\u5bfe\u8c61\u5916\u306e\u540d\u524d\u306b\u306f\u67b6\u7a7a\u306e\u9806\u4f4d\u3092\u8868\u793a\u3057\u306a\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-presentation.spec.ts",
+        "title": "\u6570\u5b57\u306e\u5168\u6bb5\u968e\u3068\u7d99\u7d9a\u3059\u308b\u96fb\u6483\u3092iPhone 17 Pro\u76f8\u5f53\u306e\u753b\u9762\u3067\u691c\u8a3c\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "result-presentation.spec.ts",
+        "title": "\u7d50\u679c\u96fb\u6483\u306e\u5b9f\u30d5\u30ec\u30fc\u30e0\u3092\u8a18\u9332\u3057\u30015\u672c\u4e0a\u9650\u3068\u7d99\u7d9a\u767a\u751f\u3092\u78ba\u8a8d\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "retry.spec.ts",
+        "title": "\u518d\u6311\u622620\u56de\u30fb\u30db\u30fc\u30e0\u5f80\u5fa920\u56de\u3067\u30eb\u30fc\u30d7\u30fb\u8cfc\u8aad\u30fb\u63cf\u753b\u8cc7\u6e90\u304c\u5897\u6b96\u3057\u306a\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u81ea\u5df1\u30d9\u30b9\u30c8\u306a\u3057\u306e\u30db\u30fc\u30e0\u304b\u3089\u901a\u5e38\u30ea\u30f3\u30af\u3067\u6b63\u5f0fURL\u3068\u6c4e\u7528\u6587\u3092\u958b\u3051\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u81ea\u5df1\u30d9\u30b9\u30c8\u3068\u4eca\u56de\u306e\u7d50\u679c\u3092\u533a\u5225\u3057\u3001\u901a\u4fe1\u5931\u6557\u30fb\u518d\u6311\u6226\u30fb0\u70b9\u30fb\u5927\u304d\u306a\u5024\u30fb\u30db\u30fc\u30e0\u3067\u3082\u5171\u6709\u5024\u3092\u4fdd\u3064",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u5171\u6709\u30ea\u30f3\u30af\u306f320x568\u30fb\u6587\u5b57100%\u3067\u3082\u8aad\u3081\u3066\u64cd\u4f5c\u3067\u304d\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u5171\u6709\u30ea\u30f3\u30af\u306f320x568\u30fb\u6587\u5b57200%\u3067\u3082\u8aad\u3081\u3066\u64cd\u4f5c\u3067\u304d\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u5171\u6709\u30ea\u30f3\u30af\u306f568x320\u30fb\u6587\u5b57100%\u3067\u3082\u8aad\u3081\u3066\u64cd\u4f5c\u3067\u304d\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u5171\u6709\u30ea\u30f3\u30af\u306f568x320\u30fb\u6587\u5b57200%\u3067\u3082\u8aad\u3081\u3066\u64cd\u4f5c\u3067\u304d\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u5171\u6709\u30ea\u30f3\u30af\u306f1280x720\u30fb\u6587\u5b57100%\u3067\u3082\u8aad\u3081\u3066\u64cd\u4f5c\u3067\u304d\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "sharing.spec.ts",
+        "title": "\u5171\u6709\u30ea\u30f3\u30af\u306f1280x720\u30fb\u6587\u5b57200%\u3067\u3082\u8aad\u3081\u3066\u64cd\u4f5c\u3067\u304d\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "smash.spec.ts",
+        "title": "450\u306e\u4e88\u544a\u306f\u30df\u30e5\u30fc\u30c8\u30fb\u843d\u7403\u5f8c4\u7403\u30fb\u505c\u6b62\u4e2d\u3067\u3082\u898b\u3048\u3001\u76f8\u624b\u5074\u306e\u7403\u3092\u96a0\u3059",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "smash.spec.ts",
+        "title": "\u4e88\u544a\u97f3\u3092\u5b9f\u969b\u306eWeb Audio\u3067\u5408\u6210\u3057\u3066\u4fdd\u5b58\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u6e96\u5099\u6e08\u307f\u306a\u3089pause\u304b\u3089\u6b21\u306eRAF\u3092\u5f85\u305f\u305a\u3001\u6848\u5185\u3092\u4e00\u5ea6\u3082\u51fa\u3055\u305a\u306b\u958b\u59cb\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u6e96\u5099\u6e08\u307f\u306a\u3089result\u304b\u3089\u6b21\u306eRAF\u3092\u5f85\u305f\u305a\u3001\u6848\u5185\u3092\u4e00\u5ea6\u3082\u51fa\u3055\u305a\u306b\u958b\u59cb\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u6e96\u5099\u6e08\u307f\u306a\u3089home\u304b\u3089\u6b21\u306eRAF\u3092\u5f85\u305f\u305a\u3001\u6848\u5185\u3092\u4e00\u5ea6\u3082\u51fa\u3055\u305a\u306b\u958b\u59cb\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u63cf\u753b\u306e\u6e96\u5099\u4e2d\u306f\u9032\u6357\u3068\u4e2d\u592e\u306e\u30eb\u30fc\u30eb\u3092\u8868\u793a\u3057\u3001\u30b2\u30fc\u30e0\u3068\u5165\u529b\u306f\u958b\u59cb\u3057\u306a\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u6e96\u5099\u3092\u30ad\u30e3\u30f3\u30bb\u30eb\u3057\u305f\u3042\u3068\u53e4\u3044\u5b8c\u4e86\u901a\u77e5\u304c\u6765\u3066\u3082\u52dd\u624b\u306b\u958b\u59cb\u305b\u305a\u3001\u6b21\u306f\u6e96\u5099\u6e08\u307f\u8cc7\u6e90\u3092\u4f7f\u3046",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u6e96\u5099\u306e\u5931\u6557\u306f\u30eb\u30fc\u30eb\u4ed8\u304d\u306e\u518d\u8a66\u884c\u753b\u9762\u306b\u306a\u308a\u3001\u624b\u52d5\u306e\u518d\u8a66\u884c\u3067\u958b\u59cb\u3067\u304d\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u30a6\u30a3\u30f3\u30c9\u30a6\u306eresize\u304c\u306a\u304f\u3066\u3082\u30b3\u30fc\u30c8\u306e\u8868\u793a\u30b5\u30a4\u30ba\u5909\u66f4\u5f8c\u306b\u30e9\u30b1\u30c3\u30c8\u3092\u52d5\u304b\u305b\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u6e96\u5099\u4e2d\u306e\u63cf\u753b\u55aa\u5931\u304b\u3089\u5fa9\u65e7\u3057\u3066\u3082\u624b\u52d5\u306e\u518d\u8a66\u884c\u307e\u3067\u958b\u59cb\u3057\u306a\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u30c9\u30e9\u30c3\u30b0\u4e2d\u306b\u30b3\u30fc\u30c8\u3060\u3051\u306e\u30b5\u30a4\u30ba\u304c\u5909\u308f\u3063\u3066\u3082\u6307\u3092\u96e2\u3059\u307e\u3067\u30e9\u30b1\u30c3\u30c8\u304c\u8ffd\u5f93\u3059\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-loading.spec.ts",
+        "title": "\u72ed\u3044\u753b\u9762\u3068\u6587\u5b57200%\u3067\u3082\u4e2d\u592e\u306e\u6848\u5185\u30fb\u9032\u6357\u30fb\u7d42\u4e86\u6761\u4ef6\u30fb\u4e2d\u65ad\u64cd\u4f5c\u3092\u8aad\u3081\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-resize.spec.ts",
+        "title": "\u30b9\u30de\u30db\u306e\u9ad8\u3055\u5909\u66f4\u3092\u307e\u305f\u3044\u3067\u540c\u3058\u6307\u306e\u30c9\u30e9\u30c3\u30b0\u3092\u7d99\u7d9a\u3067\u304d\u308b",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "startup-resize.spec.ts",
+        "title": "\u958b\u59cb\u76f4\u5f8c\u306eresize\u3068\u30ad\u30fc\u30dc\u30fc\u30c9\u3092\u9589\u3058\u308b\u9ad8\u3055\u5909\u66f4\u3067\u306f\u30dd\u30fc\u30ba\u306b\u306a\u3089\u306a\u3044",
+        "projectName": "chromium",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      }
+    ]
+  },
+  {
+    "artifactId": 12617701130,
+    "artifactName": "verification-browser-webkit-load-d30aa196f2faccd88fab36de4b94bb585c21b464",
+    "reportPath": "test-results/results.json",
+    "stats": {
+      "startTime": "2026-10-25T22:58:23.906Z",
+      "duration": 60124.429,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "caseStatusCounts": {
+      "expected": 3
+    },
+    "totalCases": 3,
+    "retriedCases": [],
+    "nonExpectedCases": [],
+    "cases": [
+      {
+        "file": "extended-load.spec.ts",
+        "title": "555\u306e30\u7403\u304b\u3089\u540c\u6642\u8fd4\u7403\u30fb\u5931\u7403\u30fb\u5897\u7403\u30fb\u5168\u30b9\u30de\u30c3\u30b7\u30e5\u309230\u30b2\u30fc\u30e0\u79d2\u7d99\u7d9a\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "quality.spec.ts",
+        "title": "\u958b\u59cb\u304b\u3089\u5b9f\u969b\u306b\u8fd4\u7403\u3057\u30665\u30fb10\u30fb20\u306e\u5897\u7403\u3092\u901a\u904e\u3057\u300121\u30e9\u30ea\u30fc\u3078\u9032\u3080",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      },
+      {
+        "file": "quality.spec.ts",
+        "title": "450\u306e30\u7403\u3068\u4ee5\u5f8c\u306e\u540c\u6642\u8fd4\u7403\u30fb\u5931\u7403\u30fb\u5897\u7403\u30fb\u30b9\u30de\u30c3\u30b7\u30e5\u309230\u30b2\u30fc\u30e0\u79d2\u7dad\u6301\u3059\u308b",
+        "projectName": "webkit",
+        "status": "expected",
+        "resultCount": 1,
+        "attemptStatuses": [
+          "passed"
+        ]
+      }
+    ]
+  }
+]

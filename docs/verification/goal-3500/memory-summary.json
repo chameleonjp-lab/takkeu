@@ -1,0 +1,126 @@
+[
+  {
+    "series": "memory",
+    "repeats": 20,
+    "heapDeltaBytes": 975532,
+    "last10DeltaBytes": 92868,
+    "last20DeltaBytes": null,
+    "baseline": {
+      "heapBytes": 11447884,
+      "domNodes": 480,
+      "documents": 1,
+      "listeners": 55,
+      "resources": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      }
+    },
+    "final": {
+      "heapBytes": 12423416,
+      "domNodes": 480,
+      "documents": 1,
+      "listeners": 55,
+      "resources": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      }
+    },
+    "errors": []
+  },
+  {
+    "series": "memory-100",
+    "repeats": 100,
+    "heapDeltaBytes": 1470276,
+    "last10DeltaBytes": 2736,
+    "last20DeltaBytes": 19432,
+    "baseline": {
+      "heapBytes": 11423092,
+      "domNodes": 480,
+      "documents": 1,
+      "listeners": 55,
+      "resources": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      }
+    },
+    "final": {
+      "heapBytes": 12893368,
+      "domNodes": 480,
+      "documents": 1,
+      "listeners": 55,
+      "resources": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      }
+    },
+    "errors": []
+  }
+]

@@ -1,0 +1,1563 @@
+{
+  "schema": "rally-4000-performance-summary-v1",
+  "reportErrors": [],
+  "playwrightStats": {
+    "startTime": "2026-10-25T20:15:45.738Z",
+    "duration": 1046398.905,
+    "expected": 16,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "count": 16,
+  "expectedConditionsPerBrowser": 16,
+  "measurementCount": 16,
+  "passingExecutions": 16,
+  "metLinuxReferenceTargets": 0,
+  "unmetLinuxReferenceTargets": 16,
+  "targetHardwareVerdict": "unverified",
+  "rows": [
+    {
+      "title": "rally4000 standard score1500 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60014.3,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-1500-repeat1.json",
+          "file": "chromium-rally4000-standard-1500-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 1,
+      "initialScore": 1500,
+      "initialBalls": 30,
+      "frames": 2245,
+      "p95Ms": 16.80000000000291,
+      "fractionAtMost25ms": 0.9581291759465479,
+      "runningP95Ms": 600,
+      "runningFractionAtMost25ms": 0.2087912087912088,
+      "runningFrameCount": 91,
+      "runningSimulationSeconds": 7.141666666666811,
+      "continuousRun": false,
+      "finalPhase": "paused",
+      "pauseReason": "slow-frame",
+      "finalScore": 1620,
+      "remainingBalls": 30,
+      "unexpectedPauses": [
+        {
+          "wallMs": 21282.4,
+          "simTime": 7.141666666666811,
+          "pauseReason": "slow-frame"
+        }
+      ],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 32,
+        "particles": 1440,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 32,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 24500000,
+      "finalHeapBytes": 24500000,
+      "peakHeapBytes": 24500000,
+      "audioResources": {
+        "created": 5657,
+        "sourceCreated": 1773,
+        "liveNodes": 2,
+        "liveSources": 0,
+        "layeredVoices": 0,
+        "peakNodes": 283,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 150,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 standard score1500 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60039.59999999998,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-1500-repeat2.json",
+          "file": "chromium-rally4000-standard-1500-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 2,
+      "initialScore": 1500,
+      "initialBalls": 30,
+      "frames": 377,
+      "p95Ms": 450,
+      "fractionAtMost25ms": 0.13527851458885942,
+      "runningP95Ms": 450,
+      "runningFractionAtMost25ms": 0.13527851458885942,
+      "runningFrameCount": 377,
+      "runningSimulationSeconds": 31.799999999998832,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2100,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 32,
+        "particles": 1440,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 31,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 21700000,
+      "finalHeapBytes": 21700000,
+      "peakHeapBytes": 21700000,
+      "audioResources": {
+        "created": 25045,
+        "sourceCreated": 7937,
+        "liveNodes": 207,
+        "liveSources": 63,
+        "layeredVoices": 16,
+        "peakNodes": 283,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 600,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 standard score2000 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60053.199999999975,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-2000-repeat1.json",
+          "file": "chromium-rally4000-standard-2000-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 1,
+      "initialScore": 2000,
+      "initialBalls": 30,
+      "frames": 471,
+      "p95Ms": 266.7000000000007,
+      "fractionAtMost25ms": 0.11464968152866242,
+      "runningP95Ms": 266.7000000000007,
+      "runningFractionAtMost25ms": 0.11464968152866242,
+      "runningFrameCount": 471,
+      "runningSimulationSeconds": 40.10833333333169,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2750,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 36,
+        "particles": 1440,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 31,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 27600000,
+      "finalHeapBytes": 27600000,
+      "peakHeapBytes": 27600000,
+      "audioResources": {
+        "created": 31844,
+        "sourceCreated": 10192,
+        "liveNodes": 28,
+        "liveSources": 8,
+        "layeredVoices": 2,
+        "peakNodes": 283,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 755,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 standard score2000 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60197,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-2000-repeat2.json",
+          "file": "chromium-rally4000-standard-2000-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 2,
+      "initialScore": 2000,
+      "initialBalls": 30,
+      "frames": 238,
+      "p95Ms": 633.3000000000029,
+      "fractionAtMost25ms": 0.058823529411764705,
+      "runningP95Ms": 633.3000000000029,
+      "runningFractionAtMost25ms": 0.058823529411764705,
+      "runningFrameCount": 238,
+      "runningSimulationSeconds": 21.24999999999943,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2390,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 36,
+        "particles": 1440,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 30,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 23100000,
+      "finalHeapBytes": 23100000,
+      "peakHeapBytes": 23100000,
+      "audioResources": {
+        "created": 17276,
+        "sourceCreated": 5561,
+        "liveNodes": 15,
+        "liveSources": 4,
+        "layeredVoices": 1,
+        "peakNodes": 283,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 417,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 standard score3000 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60070.2,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-3000-repeat1.json",
+          "file": "chromium-rally4000-standard-3000-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 1,
+      "initialScore": 3000,
+      "initialBalls": 30,
+      "frames": 292,
+      "p95Ms": 599.9000000000015,
+      "fractionAtMost25ms": 0.1095890410958904,
+      "runningP95Ms": 599.9000000000015,
+      "runningFractionAtMost25ms": 0.1095890410958904,
+      "runningFrameCount": 292,
+      "runningSimulationSeconds": 25.69999999999918,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 3480,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 36,
+        "particles": 1440,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 29,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 23100000,
+      "finalHeapBytes": 23100000,
+      "peakHeapBytes": 23100000,
+      "audioResources": {
+        "created": 20579,
+        "sourceCreated": 6603,
+        "liveNodes": 41,
+        "liveSources": 12,
+        "layeredVoices": 3,
+        "peakNodes": 283,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 480,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 standard score3000 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60055.10000000009,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-3000-repeat2.json",
+          "file": "chromium-rally4000-standard-3000-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 2,
+      "initialScore": 3000,
+      "initialBalls": 30,
+      "frames": 350,
+      "p95Ms": 366.60000000000036,
+      "fractionAtMost25ms": 0.1,
+      "runningP95Ms": 366.60000000000036,
+      "runningFractionAtMost25ms": 0.1,
+      "runningFrameCount": 350,
+      "runningSimulationSeconds": 30.78333333333222,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 3574,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 36,
+        "particles": 1440,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 32,
+        "particles": 192,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 29400000,
+      "finalHeapBytes": 29400000,
+      "peakHeapBytes": 29400000,
+      "audioResources": {
+        "created": 24893,
+        "sourceCreated": 8003,
+        "liveNodes": 105,
+        "liveSources": 39,
+        "layeredVoices": 5,
+        "peakNodes": 283,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 598,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 standard score4000 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60165.599999999955,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-4000-repeat1.json",
+          "file": "chromium-rally4000-standard-4000-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 1,
+      "initialScore": 4000,
+      "initialBalls": 30,
+      "frames": 466,
+      "p95Ms": 266.59999999999854,
+      "fractionAtMost25ms": 0.11587982832618025,
+      "runningP95Ms": 266.59999999999854,
+      "runningFractionAtMost25ms": 0.11587982832618025,
+      "runningFrameCount": 466,
+      "runningSimulationSeconds": 40.649999999998336,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 4777,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 36,
+        "particles": 1440,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 32,
+        "particles": 1320,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 21700000,
+      "finalHeapBytes": 21700000,
+      "peakHeapBytes": 21700000,
+      "audioResources": {
+        "created": 32714,
+        "sourceCreated": 10497,
+        "liveNodes": 242,
+        "liveSources": 80,
+        "layeredVoices": 16,
+        "peakNodes": 283,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 780,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 standard score4000 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60081.89999999995,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-4000-repeat2.json",
+          "file": "chromium-rally4000-standard-4000-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 2,
+      "initialScore": 4000,
+      "initialBalls": 30,
+      "frames": 469,
+      "p95Ms": 249.89999999999964,
+      "fractionAtMost25ms": 0.11513859275053305,
+      "runningP95Ms": 249.89999999999964,
+      "runningFractionAtMost25ms": 0.11513859275053305,
+      "runningFrameCount": 469,
+      "runningSimulationSeconds": 40.591666666665006,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 4755,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 36,
+        "particles": 1440,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 32,
+        "particles": 768,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 31200000,
+      "finalHeapBytes": 31200000,
+      "peakHeapBytes": 31200000,
+      "audioResources": {
+        "created": 32312,
+        "sourceCreated": 10351,
+        "liveNodes": 64,
+        "liveSources": 18,
+        "layeredVoices": 6,
+        "peakNodes": 283,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 780,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score1500 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60188.80000000014,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-1500-repeat1.json",
+          "file": "chromium-rally4000-low-1500-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 1,
+      "initialScore": 1500,
+      "initialBalls": 30,
+      "frames": 397,
+      "p95Ms": 316.59999999999854,
+      "fractionAtMost25ms": 0.11083123425692695,
+      "runningP95Ms": 316.59999999999854,
+      "runningFractionAtMost25ms": 0.11083123425692695,
+      "runningFrameCount": 397,
+      "runningSimulationSeconds": 34.96666666666532,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2160,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 32,
+        "particles": 720,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 31,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 27600000,
+      "finalHeapBytes": 27600000,
+      "peakHeapBytes": 27600000,
+      "audioResources": {
+        "created": 26096,
+        "sourceCreated": 8035,
+        "liveNodes": 132,
+        "liveSources": 40,
+        "layeredVoices": 10,
+        "peakNodes": 243,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 660,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score1500 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60105.79999999991,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-1500-repeat2.json",
+          "file": "chromium-rally4000-low-1500-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 2,
+      "initialScore": 1500,
+      "initialBalls": 30,
+      "frames": 402,
+      "p95Ms": 333.2999999999993,
+      "fractionAtMost25ms": 0.10945273631840796,
+      "runningP95Ms": 333.2999999999993,
+      "runningFractionAtMost25ms": 0.10945273631840796,
+      "runningFrameCount": 402,
+      "runningSimulationSeconds": 34.99166666666532,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2160,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 32,
+        "particles": 720,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 29,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 29400000,
+      "finalHeapBytes": 29400000,
+      "peakHeapBytes": 29400000,
+      "audioResources": {
+        "created": 26239,
+        "sourceCreated": 8079,
+        "liveNodes": 190,
+        "liveSources": 56,
+        "layeredVoices": 16,
+        "peakNodes": 243,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 660,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score2000 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60106.3,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-2000-repeat1.json",
+          "file": "chromium-rally4000-low-2000-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 1,
+      "initialScore": 2000,
+      "initialBalls": 30,
+      "frames": 484,
+      "p95Ms": 266.59999999999854,
+      "fractionAtMost25ms": 0.15702479338842976,
+      "runningP95Ms": 266.59999999999854,
+      "runningFractionAtMost25ms": 0.15702479338842976,
+      "runningFrameCount": 484,
+      "runningSimulationSeconds": 39.916666666665044,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2750,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 36,
+        "particles": 720,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 31,
+        "particles": 24,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 27600000,
+      "finalHeapBytes": 27600000,
+      "peakHeapBytes": 27600000,
+      "audioResources": {
+        "created": 29761,
+        "sourceCreated": 9163,
+        "liveNodes": 85,
+        "liveSources": 18,
+        "layeredVoices": 11,
+        "peakNodes": 243,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 752,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score2000 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60033.499999999956,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-2000-repeat2.json",
+          "file": "chromium-rally4000-low-2000-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 2,
+      "initialScore": 2000,
+      "initialBalls": 30,
+      "frames": 470,
+      "p95Ms": 266.6999999999989,
+      "fractionAtMost25ms": 0.12340425531914893,
+      "runningP95Ms": 266.6999999999989,
+      "runningFractionAtMost25ms": 0.12340425531914893,
+      "runningFrameCount": 470,
+      "runningSimulationSeconds": 40.09999999999836,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2750,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 36,
+        "particles": 720,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 31,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 23100000,
+      "finalHeapBytes": 23100000,
+      "peakHeapBytes": 23100000,
+      "audioResources": {
+        "created": 29820,
+        "sourceCreated": 9180,
+        "liveNodes": 46,
+        "liveSources": 11,
+        "layeredVoices": 5,
+        "peakNodes": 243,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 755,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score3000 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60073.400000000045,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-3000-repeat1.json",
+          "file": "chromium-rally4000-low-3000-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 1,
+      "initialScore": 3000,
+      "initialBalls": 30,
+      "frames": 456,
+      "p95Ms": 250.09999999999854,
+      "fractionAtMost25ms": 0.10307017543859649,
+      "runningP95Ms": 250.09999999999854,
+      "runningFractionAtMost25ms": 0.10307017543859649,
+      "runningFrameCount": 456,
+      "runningSimulationSeconds": 40.16666666666503,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 3750,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 36,
+        "particles": 720,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 32,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 24500000,
+      "finalHeapBytes": 24500000,
+      "peakHeapBytes": 24500000,
+      "audioResources": {
+        "created": 29974,
+        "sourceCreated": 9222,
+        "liveNodes": 182,
+        "liveSources": 50,
+        "layeredVoices": 16,
+        "peakNodes": 243,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 769,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score3000 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60136.19999999995,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-3000-repeat2.json",
+          "file": "chromium-rally4000-low-3000-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 2,
+      "initialScore": 3000,
+      "initialBalls": 30,
+      "frames": 409,
+      "p95Ms": 300,
+      "fractionAtMost25ms": 0.13447432762836187,
+      "runningP95Ms": 300,
+      "runningFractionAtMost25ms": 0.13447432762836187,
+      "runningFrameCount": 409,
+      "runningSimulationSeconds": 34.69999999999867,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 3660,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 36,
+        "particles": 720,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 32,
+        "particles": 660,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 21700000,
+      "finalHeapBytes": 21700000,
+      "peakHeapBytes": 21700000,
+      "audioResources": {
+        "created": 25862,
+        "sourceCreated": 7963,
+        "liveNodes": 15,
+        "liveSources": 4,
+        "layeredVoices": 1,
+        "peakNodes": 243,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 660,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score4000 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60071.30000000009,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-4000-repeat1.json",
+          "file": "chromium-rally4000-low-4000-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 1,
+      "initialScore": 4000,
+      "initialBalls": 30,
+      "frames": 458,
+      "p95Ms": 266.6999999999989,
+      "fractionAtMost25ms": 0.11790393013100436,
+      "runningP95Ms": 266.6999999999989,
+      "runningFractionAtMost25ms": 0.11790393013100436,
+      "runningFrameCount": 458,
+      "runningSimulationSeconds": 39.96666666666504,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 4750,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 36,
+        "particles": 720,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 31,
+        "particles": 24,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 23100000,
+      "finalHeapBytes": 23100000,
+      "peakHeapBytes": 23100000,
+      "audioResources": {
+        "created": 29772,
+        "sourceCreated": 9166,
+        "liveNodes": 112,
+        "liveSources": 29,
+        "layeredVoices": 12,
+        "peakNodes": 243,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 753,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score4000 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60065.29999999995,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-4000-repeat2.json",
+          "file": "chromium-rally4000-low-4000-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 2,
+      "initialScore": 4000,
+      "initialBalls": 30,
+      "frames": 461,
+      "p95Ms": 283.2999999999993,
+      "fractionAtMost25ms": 0.14316702819956617,
+      "runningP95Ms": 283.2999999999993,
+      "runningFractionAtMost25ms": 0.14316702819956617,
+      "runningFrameCount": 461,
+      "runningSimulationSeconds": 38.841666666665105,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 4723,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 1536
+      },
+      "maximumResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 36,
+        "particles": 720,
+        "particleCapacity": 1536
+      },
+      "finalResources": {
+        "geometries": 53,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 32,
+        "particles": 96,
+        "particleCapacity": 1536
+      },
+      "initialHeapBytes": 23100000,
+      "finalHeapBytes": 23100000,
+      "peakHeapBytes": 23100000,
+      "audioResources": {
+        "created": 28948,
+        "sourceCreated": 8904,
+        "liveNodes": 68,
+        "liveSources": 21,
+        "layeredVoices": 5,
+        "peakNodes": 243,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 748,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    }
+  ]
+}

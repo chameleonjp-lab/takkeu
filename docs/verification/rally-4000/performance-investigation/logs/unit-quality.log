@@ -1,0 +1,47 @@
+
+> takkeu@0.1.0 test
+> npm run test:unit
+
+
+> takkeu@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/takkeu
+
+ ❯ tests/unit/quality-budget.test.ts (1 test | 1 failed) 7ms
+   × caps large low-load canvases at 960x540 pixels while preserving phone-sized low-load and standard rendering 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/quality-budget.test.ts > caps large low-load canvases at 960x540 pixels while preserving phone-sized low-load and standard rendering
+AssertionError: expected 3.561679790026247 to be close to 3.5555555555555554, received difference is 0.0061242344706915475, but expected 0.005
+ ❯ tests/unit/quality-budget.test.ts:11:34
+      9|   for(const [w,h] of [[720,1280],[1920,1080],[3840,1080],[800,2000]]){
+     10|     const low=computeDrawingSize(w!,h!,2,'low');expect(low.width*low.h…
+     11|     expect(low.width/low.height).toBeCloseTo(w!/h!,2);
+       |                                  ^
+     12|   }
+     13| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 71 passed (72)
+      Tests  1 failed | 958 passed (959)
+   Start at  01:35:43
+   Duration  13.74s (tests 66%, environment 25%, import 6%, transform 2%, worker 1%)
+
+    Isolate  72 workers spawned · ~216ms startup each (spawn + environment, per file)
+             at least ~4.97s faster with isolate: false — reuses workers across files instead of one per file
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

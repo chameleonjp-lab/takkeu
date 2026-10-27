@@ -1,0 +1,48 @@
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+[
+  {
+    "engine": "chromium",
+    "control": {
+      "ending": false,
+      "rate": 48000,
+      "peak": 0.027511093765497208,
+      "rms": 0.007480430265377249,
+      "silence": 4.326764573253476e-15,
+      "liveAfterRender": 3,
+      "liveAfterDispose": 0
+    },
+    "ending": {
+      "ending": true,
+      "rate": 48000,
+      "peak": 0.027511093765497208,
+      "rms": 0.007480430265377249,
+      "silence": 0,
+      "liveAfterRender": 3,
+      "liveAfterDispose": 0
+    },
+    "difference": 6.295984888993189e-8
+  },
+  {
+    "engine": "webkit",
+    "control": {
+      "ending": false,
+      "rate": 48000,
+      "peak": 0.027511093765497208,
+      "rms": 0.007480430337078448,
+      "silence": 4.326723915672008e-15,
+      "liveAfterRender": 3,
+      "liveAfterDispose": 0
+    },
+    "ending": {
+      "ending": true,
+      "rate": 48000,
+      "peak": 0.027511093765497208,
+      "rms": 0.007480430337078448,
+      "silence": 4.326723915672008e-15,
+      "liveAfterRender": 3,
+      "liveAfterDispose": 0
+    },
+    "difference": 1.3155776123955185e-24
+  }
+]

@@ -6,14 +6,14 @@ import { sampleRainbow } from './rainbow';
 /** Three GPU draws regardless of ball count; detached handles retain per-ball transforms. */
 export function createBallPool(config: GameConfig) {
   const root = new Group();
-  const coreGeometry = new SphereGeometry(config.ballRadius, 20, 12);
+  const coreGeometry = new SphereGeometry(config.ballRadius, 12, 8);
   const coreMaterial = standard(0xffec64, 0.42, 0xffeaa0, 0.15);
-  const glowGeometry = new SphereGeometry(config.ballRadius, 24, 16);
+  const glowGeometry = new SphereGeometry(config.ballRadius, 12, 8);
   glowGeometry.setAttribute('color', new Float32BufferAttribute(new Float32Array(glowGeometry.attributes.position!.count * 3), 3));
   // The opaque white core occludes the shell's centre. Normal depth testing
   // also keeps the entire ball behind a paddle when it is farther away.
   const glowMaterial = new MeshBasicMaterial({ vertexColors: true, side: BackSide, transparent: true, opacity: 0.85, depthWrite: true, toneMapped: false });
-  const shadowGeometry = new CircleGeometry(config.ballRadius * 1.2, 20);
+  const shadowGeometry = new CircleGeometry(config.ballRadius * 1.2, 12);
   const shadowMaterial=new MeshBasicMaterial({color:0x153827,transparent:true,opacity:1,depthWrite:false});
   shadowMaterial.onBeforeCompile=shader=>{
     shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying float vInstanceOpacity;')

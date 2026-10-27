@@ -1,0 +1,8 @@
+{
+  "attempt": "GitHub create_blob via connector; 8MiB first archive part encoded base64",
+  "expectedGitBlobSHA": "7e5bcfd3b5dddb3b7647660cbfa95aeb0eff87e3",
+  "elapsedSeconds": 18770.069,
+  "result": "No usable returned SHA; helper reported undefined structured SHA. Subsequent normal GitHub API GET for expected object returned404. Root ref remained b0b. Exact connector failure reason unisolated.",
+  "fallback": "Authenticated normal Git CLI, task-owned staging branch, five pack pushes below2GiB, then lease-protected Draft branch update.",
+  "productionSourceChanged": false
+}

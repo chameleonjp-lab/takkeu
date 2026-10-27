@@ -1,0 +1,108 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-audio.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-audio.test.ts (15 tests | 3 failed) 75ms
+   ❯ extended rally audio (15)
+     × preserves an active warning against a new fanfare when only one voice fits 14ms
+     × clears prior warning duck automation when a run resets 7ms
+     × keeps duck ramps continuous when cancelAndHoldAtTime is unavailable 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > preserves an active warning against a new fanfare when only one voice fits
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/rally-audio.test.ts:98:95
+     96|     const warning = t.sources.slice();
+     97|     audio.consume([hit(1000)]);
+     98|     expect(warning.every(source => source.stops.length === 1 && !sourc…
+       |                                                                                               ^
+     99|     await audio.dispose();
+    100|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > clears prior warning duck automation when a run resets
+AssertionError: expected "cancelScheduledValues" to be called with arguments: [ +0 ]
+
+Number of calls: 0
+
+ ❯ tests/unit/rally-audio.test.ts:109:20
+    107|     audio.consume([{ kind: 'smash-warning', id: 'old-warning', runId: …
+    108|     audio.reset('next');
+    109|     expect(cancel).toHaveBeenCalledWith(0);
+       |                    ^
+    110|     expect(set).toHaveBeenCalledWith(1, 0);
+    111|     await audio.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > keeps duck ramps continuous when cancelAndHoldAtTime is unavailable
+AssertionError: expected "setValueAtTime" to be called with arguments: [ NumberCloseTo{…}, 0.005 ]
+
+Received:
+
+  1st setValueAtTime call:
+
+  [
+-   NumberCloseTo 0.7333333333 (6 digits),
+-   0.005,
++   1,
++   0,
+  ]
+
+  2nd setValueAtTime call:
+
+  [
+-   NumberCloseTo 0.7333333333 (6 digits),
+-   0.005,
++   0.2,
++   0.184,
+  ]
+
+  3rd setValueAtTime call:
+
+  [
+-   NumberCloseTo 0.7333333333 (6 digits),
++   1,
+    0.005,
+  ]
+
+  4th setValueAtTime call:
+
+  [
+-   NumberCloseTo 0.7333333333 (6 digits),
+-   0.005,
++   0.2,
++   0.189,
+  ]
+
+
+Number of calls: 4
+
+ ❯ tests/unit/rally-audio.test.ts:122:17
+    120|     Object.assign(t.context, { currentTime: .005 });
+    121|     audio.consume([{ kind: 'smash-warning', id: 'warning-b', runId: 'r…
+    122|     expect(set).toHaveBeenCalledWith(expect.closeTo(.7333333333, 6), .…
+       |                 ^
+    123|     await audio.dispose();
+    124|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 12 passed (15)
+   Start at  20:17:42
+   Duration  567ms (transform 67%, tests 23%, import 7%, worker 2%)
+

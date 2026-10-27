@@ -1,0 +1,39 @@
+{
+  "schema": "rally-render-cpu-profile-metadata-v1",
+  "collectedAt": "2026-10-25T22:32:18.619Z",
+  "head": "672ad2938dfd8ed482563a727be5cc273f146631",
+  "runtime": {
+    "node": "v24.19.0",
+    "v8": "13.6.233.17-node.51",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "timing": {
+    "replaySeconds": 30,
+    "fixedStepSeconds": 0.008333333333333333,
+    "storedFrameEverySteps": 2,
+    "storedFrames": 1800,
+    "warmupUpdatesPerVariant": 100,
+    "timedUpdatesPerRepeat": 600,
+    "repeats": 3,
+    "qualities": [
+      "standard",
+      "low"
+    ],
+    "variants": [
+      "full",
+      "withoutHits",
+      "uniqueCoincidentHits"
+    ],
+    "frameSelection": "(sample * 3) % 1800"
+  },
+  "scope": "CPU-only renderer.update; replay construction, controller.state copies, stats, update-range inspection and GPU submission excluded from timed region",
+  "provenance": "Metadata collected after the completed timing run. Production source unchanged throughout the run; original script retained byte-for-byte. No timing rerun was performed.",
+  "files": {
+    "src/render/rallyEffects.ts": "16000d9e7ddbcbda11836f2d596f8417573c803241a0c90303b0344bae5d44af",
+    "src/game/rallyEffects.ts": "a94fad020f483cb0f6ded3321edc3164008e79fc0fffe6d5f1ee7720fc950150",
+    "tests/helpers/rallyPerformanceReplay.ts": "cf6785c64ecd123f44b5dcc8f56f820c0d77574abd7914c7ecdb031877f74f86",
+    "docs/verification/rally-4000/diagnostics/profile-renderer-original.ts.txt": "ed738c94b94b4d581a211ec50baca818bf1504f08d9563a175b4261088020820",
+    "docs/verification/rally-4000/diagnostics/profile-rally-renderer.mjs": "a8b3ee3545679fcf8815be2f4973b0a130b198f7262d69d68af5ca700b51fb6d"
+  }
+}

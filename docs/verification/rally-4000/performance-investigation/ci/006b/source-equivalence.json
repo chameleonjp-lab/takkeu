@@ -1,0 +1,25 @@
+{
+  "headAtCheck": "4bb75987eaae7ca5e1833b3b0b922e6545673390",
+  "ciHead": "006b5456af88b72ab7875bb1035034c968b43149",
+  "ciMerge": "61556b4e897a133c479d1c07a4ff1ce564085ead",
+  "entireCITreeMatchesHead": true,
+  "productionTestsBuildMatchB697": true,
+  "analysisInputs": [
+    {
+      "file": "docs/verification/rally-4000/performance-investigation/summarize.py",
+      "sha256": "133efbed04aa36d25973ced0fe86639890a52954cd59d15a239e65e360199475",
+      "matches006b545": true
+    },
+    {
+      "file": "docs/verification/rally-4000/performance-investigation/audit-frame-budget.py",
+      "sha256": "723247c27e6c25a755b49f47502b5be7c9c78b83fc399d11404dee945d80eebe",
+      "matches006b545": true
+    },
+    {
+      "file": "docs/verification/rally-4000/performance-investigation/archive-evidence.py",
+      "sha256": "0c9b32c5466512e9d4cd663f3e8f4f9137009d671aa89dcc42ba038ffc114459",
+      "matches006b545": true
+    }
+  ],
+  "status": "CI40266770076 all6jobs succeeded;959unit+200browser+8release=1167pass,0final failures. Later archive commits are documentation only."
+}

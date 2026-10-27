@@ -1,0 +1,13 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/audio-events.test.ts tests/unit/audio-contact.test.ts tests/unit/audio-prepare.test.ts tests/unit/audio-fanfare.test.ts tests/unit/rally-audio.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+
+ Test Files  5 passed (5)
+      Tests  68 passed (68)
+   Start at  20:34:58
+   Duration  416ms (tests 54%, transform 24%, import 18%, worker 4%)
+

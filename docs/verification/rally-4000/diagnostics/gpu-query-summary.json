@@ -1,0 +1,425 @@
+{
+  "sourceCommit": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+  "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+  "diagnosticOnly": true,
+  "medianDefinition": "Conventional median: mean of two middle observations for even sample counts. Raw console helper used upper-middle; this normalized summary/report uses conventional median.",
+  "queryCount": 96,
+  "availableQueryCount": 96,
+  "disjointConditions": 0,
+  "blockedRequests": [],
+  "pageErrors": [],
+  "contextTracing": false,
+  "conditions": [
+    {
+      "quality": "standard",
+      "frame": "peak",
+      "snapshot": {
+        "score": 4030,
+        "simTime": 0.8499999999999994,
+        "balls": 30,
+        "phase": "running",
+        "activeHits": 30,
+        "index": 50
+      },
+      "queries": 24,
+      "available": 24,
+      "disjoint": false,
+      "fallbackUsed": false,
+      "pixelDifference": {
+        "changedChannels": 0,
+        "maxChannelDifference": 0,
+        "meanAbsoluteDifference": 0
+      },
+      "modes": [
+        {
+          "mode": "normal",
+          "sampleCount": 8,
+          "gpuMedianMs": 114.0058175,
+          "gpuRangeMs": [
+            110.592206,
+            115.800226
+          ],
+          "submitMedianMs": 6.8500000005587935,
+          "individualBlockGpuMediansMs": [
+            115.0220465,
+            112.6833455
+          ],
+          "drawCalls": [
+            38
+          ],
+          "bufferSubDataBytes": [
+            653004
+          ]
+        },
+        {
+          "mode": "single-pass",
+          "sampleCount": 8,
+          "gpuMedianMs": 113.4515955,
+          "gpuRangeMs": [
+            107.848353,
+            132.10285
+          ],
+          "submitMedianMs": 3.4999999990686774,
+          "individualBlockGpuMediansMs": [
+            110.626496,
+            117.49421849999999
+          ],
+          "drawCalls": [
+            34
+          ],
+          "bufferSubDataBytes": [
+            653004
+          ]
+        },
+        {
+          "mode": "hidden",
+          "sampleCount": 4,
+          "gpuMedianMs": 100.55587299999999,
+          "gpuRangeMs": [
+            94.333708,
+            104.353136
+          ],
+          "submitMedianMs": 3.300000000745058,
+          "individualBlockGpuMediansMs": [
+            100.55587299999999
+          ],
+          "drawCalls": [
+            30
+          ],
+          "bufferSubDataBytes": [
+            117588
+          ]
+        },
+        {
+          "mode": "scissor",
+          "sampleCount": 4,
+          "gpuMedianMs": 104.627659,
+          "gpuRangeMs": [
+            103.117904,
+            107.845211
+          ],
+          "submitMedianMs": 4.7999999998137355,
+          "individualBlockGpuMediansMs": [
+            104.627659
+          ],
+          "drawCalls": [
+            38
+          ],
+          "bufferSubDataBytes": [
+            653004
+          ]
+        }
+      ]
+    },
+    {
+      "quality": "standard",
+      "frame": "middle",
+      "snapshot": {
+        "score": 4270,
+        "simTime": 15.016666666666454,
+        "balls": 30,
+        "phase": "running",
+        "activeHits": 0,
+        "index": 900
+      },
+      "queries": 24,
+      "available": 24,
+      "disjoint": false,
+      "fallbackUsed": false,
+      "pixelDifference": {
+        "changedChannels": 0,
+        "maxChannelDifference": 0,
+        "meanAbsoluteDifference": 0
+      },
+      "modes": [
+        {
+          "mode": "normal",
+          "sampleCount": 8,
+          "gpuMedianMs": 116.67184950000001,
+          "gpuRangeMs": [
+            112.84603,
+            138.325864
+          ],
+          "submitMedianMs": 5.650000000372529,
+          "individualBlockGpuMediansMs": [
+            114.807216,
+            117.11700300000001
+          ],
+          "drawCalls": [
+            40
+          ],
+          "bufferSubDataBytes": [
+            499284
+          ]
+        },
+        {
+          "mode": "single-pass",
+          "sampleCount": 8,
+          "gpuMedianMs": 115.62866700000001,
+          "gpuRangeMs": [
+            111.059285,
+            127.61055
+          ],
+          "submitMedianMs": 4.0,
+          "individualBlockGpuMediansMs": [
+            117.4896005,
+            115.62866700000001
+          ],
+          "drawCalls": [
+            36
+          ],
+          "bufferSubDataBytes": [
+            499284
+          ]
+        },
+        {
+          "mode": "hidden",
+          "sampleCount": 4,
+          "gpuMedianMs": 112.82754299999999,
+          "gpuRangeMs": [
+            106.537588,
+            129.651932
+          ],
+          "submitMedianMs": 2.599999999627471,
+          "individualBlockGpuMediansMs": [
+            112.82754299999999
+          ],
+          "drawCalls": [
+            32
+          ],
+          "bufferSubDataBytes": [
+            125652
+          ]
+        },
+        {
+          "mode": "scissor",
+          "sampleCount": 4,
+          "gpuMedianMs": 131.09936249999998,
+          "gpuRangeMs": [
+            93.19349,
+            301.490394
+          ],
+          "submitMedianMs": 2.5,
+          "individualBlockGpuMediansMs": [
+            131.09936249999998
+          ],
+          "drawCalls": [
+            40
+          ],
+          "bufferSubDataBytes": [
+            499284
+          ]
+        }
+      ]
+    },
+    {
+      "quality": "low",
+      "frame": "peak",
+      "snapshot": {
+        "score": 4030,
+        "simTime": 0.8499999999999994,
+        "balls": 30,
+        "phase": "running",
+        "activeHits": 30,
+        "index": 50
+      },
+      "queries": 24,
+      "available": 24,
+      "disjoint": false,
+      "fallbackUsed": false,
+      "pixelDifference": {
+        "changedChannels": 0,
+        "maxChannelDifference": 0,
+        "meanAbsoluteDifference": 0
+      },
+      "modes": [
+        {
+          "mode": "normal",
+          "sampleCount": 8,
+          "gpuMedianMs": 140.076703,
+          "gpuRangeMs": [
+            109.577028,
+            318.603632
+          ],
+          "submitMedianMs": 3.199999999254942,
+          "individualBlockGpuMediansMs": [
+            121.965953,
+            276.74152349999997
+          ],
+          "drawCalls": [
+            38
+          ],
+          "bufferSubDataBytes": [
+            382188
+          ]
+        },
+        {
+          "mode": "single-pass",
+          "sampleCount": 8,
+          "gpuMedianMs": 192.4902865,
+          "gpuRangeMs": [
+            132.861845,
+            310.667346
+          ],
+          "submitMedianMs": 2.550000000745058,
+          "individualBlockGpuMediansMs": [
+            153.2340855,
+            254.6817595
+          ],
+          "drawCalls": [
+            34
+          ],
+          "bufferSubDataBytes": [
+            382188
+          ]
+        },
+        {
+          "mode": "hidden",
+          "sampleCount": 4,
+          "gpuMedianMs": 180.65015699999998,
+          "gpuRangeMs": [
+            101.19448,
+            358.595728
+          ],
+          "submitMedianMs": 2.5,
+          "individualBlockGpuMediansMs": [
+            180.65015699999998
+          ],
+          "drawCalls": [
+            30
+          ],
+          "bufferSubDataBytes": [
+            117588
+          ]
+        },
+        {
+          "mode": "scissor",
+          "sampleCount": 4,
+          "gpuMedianMs": 211.618108,
+          "gpuRangeMs": [
+            99.218014,
+            364.100189
+          ],
+          "submitMedianMs": 6.2000000001862645,
+          "individualBlockGpuMediansMs": [
+            211.618108
+          ],
+          "drawCalls": [
+            38
+          ],
+          "bufferSubDataBytes": [
+            382188
+          ]
+        }
+      ]
+    },
+    {
+      "quality": "low",
+      "frame": "middle",
+      "snapshot": {
+        "score": 4270,
+        "simTime": 15.016666666666454,
+        "balls": 30,
+        "phase": "running",
+        "activeHits": 0,
+        "index": 900
+      },
+      "queries": 24,
+      "available": 24,
+      "disjoint": false,
+      "fallbackUsed": false,
+      "pixelDifference": {
+        "changedChannels": 0,
+        "maxChannelDifference": 0,
+        "meanAbsoluteDifference": 0
+      },
+      "modes": [
+        {
+          "mode": "normal",
+          "sampleCount": 8,
+          "gpuMedianMs": 111.097655,
+          "gpuRangeMs": [
+            108.075132,
+            146.852188
+          ],
+          "submitMedianMs": 2.5,
+          "individualBlockGpuMediansMs": [
+            110.974107,
+            112.770661
+          ],
+          "drawCalls": [
+            40
+          ],
+          "bufferSubDataBytes": [
+            309108
+          ]
+        },
+        {
+          "mode": "single-pass",
+          "sampleCount": 8,
+          "gpuMedianMs": 113.4260855,
+          "gpuRangeMs": [
+            108.855334,
+            128.748549
+          ],
+          "submitMedianMs": 2.5,
+          "individualBlockGpuMediansMs": [
+            113.4260855,
+            113.981555
+          ],
+          "drawCalls": [
+            36
+          ],
+          "bufferSubDataBytes": [
+            309108
+          ]
+        },
+        {
+          "mode": "hidden",
+          "sampleCount": 4,
+          "gpuMedianMs": 105.451817,
+          "gpuRangeMs": [
+            104.765014,
+            107.644166
+          ],
+          "submitMedianMs": 2.7000000001862645,
+          "individualBlockGpuMediansMs": [
+            105.451817
+          ],
+          "drawCalls": [
+            32
+          ],
+          "bufferSubDataBytes": [
+            125652
+          ]
+        },
+        {
+          "mode": "scissor",
+          "sampleCount": 4,
+          "gpuMedianMs": 109.1647335,
+          "gpuRangeMs": [
+            108.387024,
+            125.175356
+          ],
+          "submitMedianMs": 1.599999999627471,
+          "individualBlockGpuMediansMs": [
+            109.1647335
+          ],
+          "drawCalls": [
+            40
+          ],
+          "bufferSubDataBytes": [
+            309108
+          ]
+        }
+      ]
+    }
+  ],
+  "cgroupContext": {
+    "checkedAt": "2026-10-25T23:27:49.813620+00:00",
+    "cpuMax": "400000 100000",
+    "cpuSetEffective": "0-4",
+    "cpuStatCumulative": "usage_usec 23760232373\nuser_usec 21822131189\nsystem_usec 1938101183\nnice_usec 2192754\nnr_periods 84152\nnr_throttled 43801\nthrottled_usec 2939449489\nnr_bursts 0\nburst_usec 0",
+    "interpretation": "Context only; no during-probe counter delta, causal quota test, or host-load attribution was established."
+  }
+}

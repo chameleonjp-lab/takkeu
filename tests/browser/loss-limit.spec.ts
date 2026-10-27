@@ -24,9 +24,8 @@ test('99落球では継続し100球目で残球があっても結果へ進み再
   await expect(page.getByLabel('落球数', { exact: true })).toHaveText('100 / 100');
   await page.screenshot({ path: info.outputPath('hundred-loss-final-animation.png') });
   await page.clock.runFor(2100);
-  // The 99-ball special remains visible for its full three seconds even
-  // when the 100th drop ends the game immediately afterwards.
-  await expect(page.locator('[data-finishing]')).toBeVisible();
+  // The terminal100 marker owns its two-second lifetime;99 must not return.
+  await expect(page.locator('[data-finishing]')).toBeHidden();
   expect(await page.evaluate(() => window.stage3.snapshot())).toEqual(ended);
   await page.clock.runFor(1100);
   await expect(page.locator('[data-result-score]')).toHaveText('340');

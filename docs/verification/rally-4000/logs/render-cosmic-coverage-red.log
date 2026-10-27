@@ -1,0 +1,57 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-render.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-render.test.ts (83 tests | 3 failed) 1037ms
+   ❯ late rally world replacements and arrivals (41)
+     × covers most of the upper background at 390×844 while preserving the floor seam 7ms
+     × covers most of the upper background at 1280×720 while preserving the floor seam 2ms
+     × distributes star points and a slow large halo across the portrait upper background 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > covers most of the upper background at 390×844 while preserving the floor seam
+AssertionError: expected 5 to be greater than or equal to 18
+ ❯ tests/unit/rally-render.test.ts:295:21
+    293|       if(worldX>minX&&worldX<maxX&&worldY>minY&&worldY<maxY)covered++;
+    294|     }
+    295|     expect(covered).toBeGreaterThanOrEqual(18);
+       |                     ^
+    296|     // Far-floor points are either in front of the backdrop or below i…
+    297|     // lower edge. The opaque rainbow floor therefore remains unobscur…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > covers most of the upper background at 1280×720 while preserving the floor seam
+AssertionError: expected 16 to be greater than or equal to 18
+ ❯ tests/unit/rally-render.test.ts:295:21
+    293|       if(worldX>minX&&worldX<maxX&&worldY>minY&&worldY<maxY)covered++;
+    294|     }
+    295|     expect(covered).toBeGreaterThanOrEqual(18);
+       |                     ^
+    296|     // Far-floor points are either in front of the backdrop or below i…
+    297|     // lower edge. The opaque rainbow floor therefore remains unobscur…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > distributes star points and a slow large halo across the portrait upper background
+AssertionError: expected 0 to be greater than 50
+ ❯ tests/unit/rally-render.test.ts:318:44
+    316|       if(p.getY(i)>1&&c.getX(i)<.2&&Math.abs(c.getY(i)-.3)<1e-6&&Math.…
+    317|     }
+    318|     for(const count of bands)expect(count).toBeGreaterThan(50);
+       |                                            ^
+    319|     expect(haloY.length).toBeGreaterThan(24);expect(Math.min(...haloY)…
+    320|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 80 passed (83)
+   Start at  20:42:54
+   Duration  1.31s (tests 87%, transform 7%, import 5%)
+

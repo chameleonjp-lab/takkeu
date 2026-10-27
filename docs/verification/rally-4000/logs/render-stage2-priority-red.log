@@ -1,0 +1,31 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-render.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-render.test.ts (58 tests | 1 failed) 1993ms
+   ❯ late rally world replacements and arrivals (36)
+     × smoothly yields an older large arrival to a newer one without replaying or extending either event 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > smoothly yields an older large arrival to a newer one without replaying or extending either event
+AssertionError: expected 0.5799999833106995 to be less than 0.46399998664855957
+ ❯ tests/unit/rally-render.test.ts:302:63
+    300|     const maxAlpha=()=>{const c=mesh.geometry.getAttribute('color'),a:…
+    301|     const oldAlpha=maxAlpha(),state=effectState(3000,{arrivals:[old,re…
+    302|     view.update(snapshot(3000,20.3),state);expect(maxAlpha()).toBeLess…
+       |                                                               ^
+    303|     view.update(snapshot(3000,20.56),state);expect(view.stats().active…
+    304|     expect(state.arrivals).toHaveLength(2);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 57 passed (58)
+   Start at  20:29:45
+   Duration  2.43s (tests 90%, import 5%, transform 5%)
+

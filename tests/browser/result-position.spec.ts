@@ -1,7 +1,7 @@
 import { test, expect, waitForStart } from '../helpers/browserTest';
 import type { Page } from '@playwright/test';
 import type {} from '../helpers/appHarness';
-const version = 'takkeu-web-ranking-1';
+const version = 'takkeu-web-clear-3500-1';
 const id = (n: number) => `22222222-2222-4222-8222-${String(n).padStart(12, '0')}`;
 async function fixture(page: Page, options: { failSubmit?: boolean; failPosition?: boolean; holdPosition?: boolean; holdSubmit?: boolean; excluded?: boolean; rank?: number } = {}) {
   let starts = 0, submissions = 0, positions = 0, failedSubmit = false, failedPosition = false;
@@ -11,8 +11,8 @@ async function fixture(page: Page, options: { failSubmit?: boolean; failPosition
   const calls: { rpc: string; body: Record<string, unknown> }[] = [];
   await page.route('https://*.supabase.co/rest/v1/rpc/**', async route => {
     const rpc = route.request().url().split('/').at(-1)!, body = route.request().postDataJSON(); calls.push({ rpc, body });
-    if (rpc === 'start_game_play_v1') return route.fulfill({ json: { accepted: true, start_id: body.p_start_id, play_id: id(++starts), display_name: body.p_display_name, normalized_name: body.p_display_name, game_slug: 'takkeu', client_version: version } });
-    if (rpc === 'finish_takkeu_play_v2') return route.fulfill({ json: { accepted: true, play_id: body.p_play_id, game_slug: 'takkeu', result_type: body.p_result_type, reached_wave: 1, score: body.p_score, lost_balls: body.p_lost_balls } });
+    if (rpc === 'start_takkeu_clear_play_v2') return route.fulfill({ json: { accepted: true, start_id: body.p_start_id, play_id: id(++starts), display_name: body.p_display_name, normalized_name: body.p_display_name, game_slug: 'takkeu', client_version: version, rules_version: 'goal-3500-v1' } });
+    if (rpc === 'finish_takkeu_clear_play_v2') return route.fulfill({ json: { accepted: true, play_id: body.p_play_id, game_slug: 'takkeu', result_type: body.p_result_type, reached_wave: 1, score: body.p_score, lost_balls: body.p_lost_balls, rules_version: 'goal-3500-v1' } });
     if (rpc === 'submit_score_idempotent_v1') {
       submissions++;
       if (options.holdSubmit) await pendingSubmit;
@@ -24,7 +24,7 @@ async function fixture(page: Page, options: { failSubmit?: boolean; failPosition
       if (options.failPosition && !failedPosition) { failedPosition = true; return route.fulfill({ status: 503, json: {} }); }
       return route.fulfill({ json: options.excluded ? [] : [{ rank_no: options.rank ?? 123, total_entries: 250, best_score: 1500 }] });
     }
-    if (rpc === 'get_best_score_ranking') return route.fulfill({ json: [] });
+    if (rpc === 'get_best_score_ranking' || rpc === 'get_takkeu_hall_v2') return route.fulfill({ json: [] });
     throw Error(`Unexpected RPC ${rpc}`);
   });
   await page.clock.install(); await page.clock.pauseAt(new Date(Date.now() + 1000));
@@ -40,7 +40,7 @@ async function finish(page: Page) {
 
 test('登録確認前には取得せず、100位超でもDB自己ベストの順位を表示する', async ({ page }) => {
   const remote = await fixture(page, { holdSubmit: true }); await finish(page);
-  const finishCall = remote.calls.find(call => call.rpc === 'finish_takkeu_play_v2');
+  const finishCall = remote.calls.find(call => call.rpc === 'finish_takkeu_clear_play_v2');
   expect(finishCall?.body.p_lost_balls).toBeGreaterThan(0);
   await expect(page.locator('[data-position-message]')).toHaveText('順位を集計中…'); expect(remote.positions()).toBe(0);
   await expect(page.getByRole('button', { name: 'もう一度', exact: true })).toBeEnabled();

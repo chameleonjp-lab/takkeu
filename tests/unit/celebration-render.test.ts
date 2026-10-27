@@ -39,7 +39,7 @@ it('大量の落球でも描画バッファを再利用し、黒の数字を不�
   for(let i=0;i<200;i++) view.update({...base,celebrations,simTime:20+i/1000});
   expect(view.lightning.geometry).toBe(geometry);
   expect(geometry.attributes.position!.array).toBe(positions);
-  expect(view.stats().numbers).toHaveLength(14);
+  expect(view.stats().numbers).toEqual([100]);
   const black=lossCelebration(createCelebrations(),55,20);
   view.update({...base,celebrations:black,simTime:20.31});
   const colors=view.numbers.geometry.attributes.color!;

@@ -1,0 +1,78 @@
+[WebServer] (node:16873) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:16900) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/rally-effects.spec.ts:127:1 › major labels fit at their largest initial scale with 200% text on 320px screens (1.4s)
+(node:16982) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  2 [webkit] › tests/browser/rally-effects.spec.ts:127:1 › major labels fit at their largest initial scale with 200% text on 320px screens (3.4s)
+
+
+  1) [chromium] › tests/browser/rally-effects.spec.ts:127:1 › major labels fit at their largest initial scale with 200% text on 320px screens 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 320
+    Received:    649.6000366210938
+
+      137 |     });
+      138 |     await page.screenshot({path:resolve(directory,`${score}-320x568-text200-age0.png`)});
+    > 139 |     expect(bounds.label.left).toBeGreaterThanOrEqual(bounds.game.left);expect(bounds.label.right).toBeLessThanOrEqual(bounds.game.right);
+          |                                                                                                   ^
+      140 |     expect(bounds.label.top).toBeGreaterThanOrEqual(bounds.game.top);expect(bounds.label.bottom).toBeLessThanOrEqual(bounds.game.bottom);
+      141 |   }
+      142 | });
+        at /workspace/takkeu-work/tests/browser/rally-effects.spec.ts:139:99
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/rally-effects-major-labels-ae772-h-200-text-on-320px-screens-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/rally-effects-major-labels-ae772-h-200-text-on-320px-screens-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/rally-effects-major-labels-ae772-h-200-text-on-320px-screens-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/rally-effects-major-labels-ae772-h-200-text-on-320px-screens-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit] › tests/browser/rally-effects.spec.ts:127:1 › major labels fit at their largest initial scale with 200% text on 320px screens 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 320
+    Received:    649.5999755859375
+
+      137 |     });
+      138 |     await page.screenshot({path:resolve(directory,`${score}-320x568-text200-age0.png`)});
+    > 139 |     expect(bounds.label.left).toBeGreaterThanOrEqual(bounds.game.left);expect(bounds.label.right).toBeLessThanOrEqual(bounds.game.right);
+          |                                                                                                   ^
+      140 |     expect(bounds.label.top).toBeGreaterThanOrEqual(bounds.game.top);expect(bounds.label.bottom).toBeLessThanOrEqual(bounds.game.bottom);
+      141 |   }
+      142 | });
+        at /workspace/takkeu-work/tests/browser/rally-effects.spec.ts:139:99
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/rally-effects-major-labels-ae772-h-200-text-on-320px-screens-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/rally-effects-major-labels-ae772-h-200-text-on-320px-screens-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/rally-effects-major-labels-ae772-h-200-text-on-320px-screens-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/rally-effects-major-labels-ae772-h-200-text-on-320px-screens-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/browser/rally-effects.spec.ts:127:1 › major labels fit at their largest initial scale with 200% text on 320px screens 
+    [webkit] › tests/browser/rally-effects.spec.ts:127:1 › major labels fit at their largest initial scale with 200% text on 320px screens 

@@ -1,0 +1,2366 @@
+{
+  "schema": "rally-4000-documentation-archive-provenance-v1",
+  "canonicalCommit": "72c1920354a53e234ebf2b4ab156538081536731",
+  "executionInputsMatch": false,
+  "inputCount": 234,
+  "canonicalInputManifestSHA256": "a92cfe6f755c716768980aa1256a1e4cd577f3f4e8d448498d6675a3cdff52cd",
+  "headInputManifestSHA256": "a92cfe6f755c716768980aa1256a1e4cd577f3f4e8d448498d6675a3cdff52cd",
+  "inputManifest": {
+    ".gitattributes": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a317c1d7092cf96f446ed4bea4708bae1d0e9163"
+    },
+    ".github/workflows/ci.yml": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "7c3e04df98dbadde8cdac0b05ed6f2f76f1072c1"
+    },
+    ".github/workflows/deploy.yml": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "1c036e1e4f0d1b168ac853a67ed1eb9db8ff4f17"
+    },
+    ".gitignore": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "10379bb44ee608223e1e16705d1f7446f28e5e03"
+    },
+    ".node-version": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "60ade1ae01e833a5c291c47883bf26fb031f7727"
+    },
+    "README.md": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "526b763e84400275ee555b09e950e371c3c0a823"
+    },
+    "index.html": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "9e0a1af6b217ccda9e1e4d3b056e77d5088d193f"
+    },
+    "package-lock.json": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "cb49a6c325ff4cfef20250be47dc6674deb0edbd"
+    },
+    "package.json": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "44a0d6184a6bc1932feb0cf13e14bcd7e1b641bc"
+    },
+    "playwright.config.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "1c586f7f58abf0de1296f0b88b050d9eb559dd73"
+    },
+    "playwright.performance.config.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f7d9162011002a2772b98e7382d2242de179313a"
+    },
+    "playwright.release.config.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "1ee0e055a292ba96854e261698777ea610928b26"
+    },
+    "public/og-takkeu-v1.png": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a9b8a9a7797e9498ba539d2f2fce06a75a99074a"
+    },
+    "ranking-manifest.json": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "177f12acef0b601317d240eba29d363ca393e147"
+    },
+    "scripts/check-production.mjs": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "4f38f712554edb4a9aa5a96a77be7649af45df29"
+    },
+    "scripts/check-release-revision.mjs": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "3f7c231abf294856c2b488ee7c22b191449b6187"
+    },
+    "scripts/serve-built.mjs": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "75a7cb20ebfc99142eb0f6d39d279b6f168dc09e"
+    },
+    "scripts/verify-release.mjs": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "0af8a7f654c0a33b7135fe5b4d2fc9d4d67fe920"
+    },
+    "scripts/verify-stage3.mjs": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "10a6b9e937f07601ddfeb0d68f003dbbd9cccbea"
+    },
+    "src/app/controls.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "6b0e2ba2a9867570e6a299a6836b597b5a75896c"
+    },
+    "src/app/createApp.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "904c50f45fd0bce899f09a7f4e798fe64d89bd30"
+    },
+    "src/app/finishPresentation.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "27ebf6946d73de7ad0566aec3e73558b117277c4"
+    },
+    "src/app/lifecycle.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "7dcb9ea665533ebd00e3fcb842c750fd6aa2bce5"
+    },
+    "src/app/loadingProgress.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "68410df63ef917d41e80b27febfede2289f80b60"
+    },
+    "src/app/loop.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "721171350c21384b5977454eed89612708ee09e0"
+    },
+    "src/audio/audio.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "438ad72e5c001123f87452d65555255f45a5fb42"
+    },
+    "src/audio/tones.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "354a41f8ac39cc4603bd54fd2fb5d7dce7bae6e0"
+    },
+    "src/game/celebrations.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "64376a68f40ff5a3add1d5c43f05cba7472d41ed"
+    },
+    "src/game/collision.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "d58530d7538f0a98dbc5b22f1a568abe5c11c164"
+    },
+    "src/game/config.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "77129009c8b09d8092422148ba179b80313c6611"
+    },
+    "src/game/difficulty.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "e01a48a8208e844f88258df072f5a7a1ac89ac89"
+    },
+    "src/game/flightSpeed.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "56fb24e49125b8ac30737ae07682ed4d3a6e7381"
+    },
+    "src/game/milestones.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "5fd8bf27e577de36c1d43b84817bb16d799784f9"
+    },
+    "src/game/opponent.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "e886d7ab6c1202532530e34c7a776ebc3e529d53"
+    },
+    "src/game/progression.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "100800f35cc75736b6c1f9cc94ec1be46ea68d4e"
+    },
+    "src/game/rallyEffects.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "81a31eabd8b6b650c8108b588d5e8deb53ce9290"
+    },
+    "src/game/scheduler.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "34debe6836a1faa1002132a9dc7d1945d4d5ff47"
+    },
+    "src/game/session.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "3f01b590b1b83b1420b9ea818187b45ac2d210af"
+    },
+    "src/game/simulation.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "96f9655c0265367204275aee417b4d9109df0ea0"
+    },
+    "src/game/targets.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "1a912fd3933eadeae4bf8d15d4c47c2aac9130db"
+    },
+    "src/game/trajectory.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "8e396cce82bf2fc314b0e3b7e7164472f9cacb9b"
+    },
+    "src/game/types.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "afc3d96194f1c471dfe42c38fe4294a250d0427a"
+    },
+    "src/game/viewpoint.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "34e4c7d6462c88fcef0ca5ed76dda75679f77f97"
+    },
+    "src/input/mapping.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "502b4e31e51dadab051733067bf0dff3e42ec635"
+    },
+    "src/input/swipe.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "d63dba2628bf976706c386e89d67c4d3dbb786fd"
+    },
+    "src/input/timeline.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a762ddaeef1d965abe3e103e148fe4a294af74b8"
+    },
+    "src/main.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "89e91a4dbc872458a9d8a6537ae6303116b3f3fd"
+    },
+    "src/ranking/client.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "b28d409b576d0724a3673107082d8abb02fffe7f"
+    },
+    "src/ranking/config.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "ab9a6699d612b7b4cf448d2c78334517a1133d3d"
+    },
+    "src/ranking/controller.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "3dfc6d0606e2cf28e87b11b60d8e4bbd1ccd4d23"
+    },
+    "src/ranking/guestPlays.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "c4cfc52773615d00e64c18fc9157f4ac57ad72e1"
+    },
+    "src/ranking/resultPosition.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "58788fa8cad66d4ce0f802d07106d4a948a94431"
+    },
+    "src/render/balls.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "46cafa832a91d02ff26cab3adf53fd919eca5ae5"
+    },
+    "src/render/camera.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f89ffbcb36c5cf4c8947303a3e57e042bbcbfe20"
+    },
+    "src/render/celebrations.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "9005043264ab08afb846b6cdd138d041a69d39a0"
+    },
+    "src/render/createView.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "00f39f9589637081ade2d70a5f70ef80d2d48763"
+    },
+    "src/render/environment.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "fa0e79f1fa8a92f6627042d89c37f49e0de98f72"
+    },
+    "src/render/field.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "de4bd074f1e2630dce33d2d21ca69b1247effe4c"
+    },
+    "src/render/materials.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "0208feb849622996096d42213f5c1155a6d6165f"
+    },
+    "src/render/objects.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "d645d20f0f5471d03ab60361a05648acc5fc4c43"
+    },
+    "src/render/opponentView.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "366cb460c7756574d113eb7a59c20f3f4d67554e"
+    },
+    "src/render/paddle.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "ceb3f5629a49da1fcfd855e0811ec64010dba49e"
+    },
+    "src/render/particles.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "ad5ffdd50d685e185a5dc17c889433351f0313c5"
+    },
+    "src/render/prepare.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "42b73ce304d8b70aba5418e3112e21f9d0f81639"
+    },
+    "src/render/presentation.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "056c23b15accb49f5bc86263b3f2253f34be4087"
+    },
+    "src/render/quality.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "fa2b76fd42659dbdd3d31c4f67e20c717809ebb9"
+    },
+    "src/render/rainbow.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "7edefd83e14caef080700a09c5d5ef053ff3d40a"
+    },
+    "src/render/rallyEffects.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f4fa7fa7a734d3107c16e841eddeedbda9172aa3"
+    },
+    "src/storage/preferences.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "77df286afa7899272aa9aea69c57d8f2197dbec2"
+    },
+    "src/ui/court-preview.png": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "b1215b380e2963cd53d468d8a5415e5b68346b5d"
+    },
+    "src/ui/loading.css": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "60d1a68ae2c0a1455830fdb1213cd80111690e99"
+    },
+    "src/ui/loading.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "617f095e7ad7f8380d9451060e6a954a2a629427"
+    },
+    "src/ui/rallyNotice.css": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "69b4f694cccdbeb21bd073c98cee989b6c666a8d"
+    },
+    "src/ui/rallyNotice.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "5c3f79ae99753a3410c291b50704d3bdaacae237"
+    },
+    "src/ui/result.css": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a4e0ab84e50abf2f22c5da5898f7902a492f381c"
+    },
+    "src/ui/resultComments.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a9c1ac92e2b0274c4cabfefecbb34a41c37419c0"
+    },
+    "src/ui/resultEffects.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "7fd68eb9f0e15483e28ecc0a15ea05c9ff8673be"
+    },
+    "src/ui/screens.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "eb5a918af47f73a3a4d6f01dece80e9b71f835dc"
+    },
+    "src/ui/styles.css": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "c8e7d58771beb9a99445f825bf8d72d4382c35f9"
+    },
+    "supabase/migrations/20261024095634_takkeu_guest_play_count.sql": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a0bd084463be1875e30f44313e8b58f0aff04d8e"
+    },
+    "supabase/migrations/20261025184307_takkeu_result_position.sql": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "c6fb1527b1285335bcc206fd1db600d47a3dbf60"
+    },
+    "tests/browser/audio-fanfare.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "c65fd76d8af8fb4a5d5eeee9f6c36986718a5096"
+    },
+    "tests/browser/audio-layered.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "dd0b72886fcfecf14f9b0bf51812d112e1d89f5e"
+    },
+    "tests/browser/audio.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "7f0e2e43c857edc924430162f9ad6a5ee1775f71"
+    },
+    "tests/browser/basic-play.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "6703be57f8dc9c57d9280935d0ef355d324e72a1"
+    },
+    "tests/browser/boot.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f83130b716254bff1ee4f81199ea28a6063a84cc"
+    },
+    "tests/browser/celebrations.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "326576e77db2fc8ab48afaab83fa7363878b5976"
+    },
+    "tests/browser/contact.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "1be0e23e17e1a630d2a82eb3aa76871cd4583844"
+    },
+    "tests/browser/direct-input.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "15634fc87abd2371a765a6bd3c8a9b7922a30688"
+    },
+    "tests/browser/evidence.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "127a25485b8dff63dcc801d1e181488690fdb549"
+    },
+    "tests/browser/extended-load.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "3fe71891642712e2bf34f42e092434418a2544e9"
+    },
+    "tests/browser/extended.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "22de72b2aa523e12f5792f224378ae20fb303dd5"
+    },
+    "tests/browser/glow-timing.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "e6274c7f6f1e2ccd11ef27b45c94fa083c55b35b"
+    },
+    "tests/browser/lifecycle.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "73f8db5bc326e3f91338373a2ccd62f38e237159"
+    },
+    "tests/browser/loss-limit.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "759cd92f56e7184d27f01fc388f77da388d190c7"
+    },
+    "tests/browser/milestones.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "00b42d47389c4dce62bfb8d35fd77034c397ec61"
+    },
+    "tests/browser/occlusion.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "58c8e48b8745720372f4d8f48dbd67afaa6121b1"
+    },
+    "tests/browser/preferences.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f9790c274fa733135859179c26806104f580093d"
+    },
+    "tests/browser/quality.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a1d4de3f1baa969b8db48c70e23aa40dab5a67f6"
+    },
+    "tests/browser/rally-effects.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "7ab2e73fab06c2211748aa4d7295c689b38dd319"
+    },
+    "tests/browser/ranking-isolation.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "ad8862b8a6a6edc20a3f32a536a61e908908e896"
+    },
+    "tests/browser/ranking.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a6e0a461159cbf4a57e0255e37a5498ef744ed6d"
+    },
+    "tests/browser/reference.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a6c0e2cf3aa14bbc26bdc7773d2a7858446378ff"
+    },
+    "tests/browser/remaining-ball.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "aafd4fe2050bd5a5d8f9e591cdb6357628119201"
+    },
+    "tests/browser/render-loop.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "2474b44919aa851991c1125201e7b7e1febedde8"
+    },
+    "tests/browser/result-layout.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "ea64a1105d94485fb7ae0ceebe5d538412fb567e"
+    },
+    "tests/browser/result-position.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "286185ef9ef6282b830102cbf94825f4236df6e8"
+    },
+    "tests/browser/result-presentation.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "029035d7b352f99022c95a3ca62efd4fce2607eb"
+    },
+    "tests/browser/retry.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "d8600f8c86936dcc9d856808c9bf6d70403a574c"
+    },
+    "tests/browser/sharing.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f4dd782fcf7b759e151658dbea6131f8c5db6b4d"
+    },
+    "tests/browser/smash.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "347c14cfe4ca9725e363013d163f9dafbb7d7e68"
+    },
+    "tests/browser/startup-loading.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "be87f2983dc5b35599a223f02c7dbc018ee2512f"
+    },
+    "tests/browser/startup-resize.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "1b423c698dae2e65a6aeb2365b24ed3807524921"
+    },
+    "tests/fixtures/audio-fanfare.html": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "91001d7a575a7a84113a16e1571c140030034c8e"
+    },
+    "tests/fixtures/celebrations.html": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "afa3b58e87ed53d3c869c069942c5ca52bb7cead"
+    },
+    "tests/fixtures/occlusion.html": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "68e92ebc4aa4cd8f29605c3f915bfa37b6fd5c67"
+    },
+    "tests/fixtures/rally-gl.html": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "26be68a0357992f9cecd99eb3068d7f63426f994"
+    },
+    "tests/fixtures/rally.html": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "022c1b1c2bc8f7da51efed195f25959bc4a0a31d"
+    },
+    "tests/fixtures/remaining-ball.html": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "8d22d4954092cdc6ee4c3e85faeed653af29a507"
+    },
+    "tests/fixtures/result.html": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a35a3b0948dc24b564e0435806a3315b6aa6f51b"
+    },
+    "tests/fixtures/stage2.html": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "33f0896b4a32560cb082ac7c54ca79d2a9b6536f"
+    },
+    "tests/fixtures/stage3.html": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f606e8bf754fad6e35b5332ac5d710f241341f3f"
+    },
+    "tests/helpers/appHarness.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "1abf59f30eee1a494b9efa7fb113dff49ce50365"
+    },
+    "tests/helpers/audioContext.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "2578f4e4298d0c12e5fb6109d9506e0847f7052a"
+    },
+    "tests/helpers/audioProbe.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "0e488053a5ef8ae35563b14e303cdc33b8b2ae91"
+    },
+    "tests/helpers/browserTest.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "081f6df12900c0abd8541293b70444402b3023fd"
+    },
+    "tests/helpers/captureRallyFlashFrames.mjs": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "c5b725cdeadb7c513b43793ed9dac67c29d8c4aa"
+    },
+    "tests/helpers/celebrationHarness.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "e6ce1f26c75c2d4649dffb686c3a2cfcfb3a7463"
+    },
+    "tests/helpers/collectRallyPerformance.mjs": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f72c30f459907aecdb0f4876760b619affe618e9"
+    },
+    "tests/helpers/compareRallyPerformance.mjs": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "799b10d30c03c67fa635774b3f96203c0aedb1f3"
+    },
+    "tests/helpers/fixtures.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "4861163d5fe5ad3d7109e01fe801ae599c5da8d7"
+    },
+    "tests/helpers/glowSchedule.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a186ffc451a09aaf4ec70871ec919d8afa85515e"
+    },
+    "tests/helpers/legacyTones.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "e8fc192d812f8ed3da1e125601fa93dd60c51dff"
+    },
+    "tests/helpers/losses.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f6c629c46ee93fd63d45e81b733b5a07de0a9f7a"
+    },
+    "tests/helpers/occlusionHarness.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "cc494626e5cfbe7cb5af07b8e4ca34c142280932"
+    },
+    "tests/helpers/packRallyFlashEvidence.py": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f15449b68eedb91c9d4adb34136204377ffb25d6"
+    },
+    "tests/helpers/pngPixels.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "335eef5200b07d2796ac490394f649fc37529407"
+    },
+    "tests/helpers/rallyEvidenceAnalysis.py": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "9d21a0131abbd30fec4fa209ef218f12db0866aa"
+    },
+    "tests/helpers/rallyFlashAnalysis.py": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "92dc24a97d6aa391478b04c63541f854390227ed"
+    },
+    "tests/helpers/rallyGlHarness.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "1103efe3e5c10488180ce5502a2bcc25c57f5454"
+    },
+    "tests/helpers/rallyHarness.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "c90692829647c43e78fd38a01e629e2e197fe0b9"
+    },
+    "tests/helpers/rallyPerformanceReplay.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "dc25627ad339d54df10e138a280e7e5f8839928d"
+    },
+    "tests/helpers/remainingBall.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "211b57c9b137574fe3987cb15e6e25295db30822"
+    },
+    "tests/helpers/remainingHarness.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "38d4b869ba123862d82b53731d95ae9fe5cb43a7"
+    },
+    "tests/helpers/repackRallyMovie.py": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "73828ceab5cd51cfd88375906162abd4773c84a2"
+    },
+    "tests/helpers/replay.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "922de9c35c0adebaf55b5dbe4290bc363c94f33f"
+    },
+    "tests/helpers/resultCases.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a44e9698d8d195592e239822416176ea0eeefdce"
+    },
+    "tests/helpers/resultHarness.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "45f4e6c999b686c6f77e9f11c0688dea241bf81c"
+    },
+    "tests/helpers/runtimeProbe.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "6aac1a62e2d01b60191c0164564754fee090450c"
+    },
+    "tests/helpers/scenarios.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "931a8733fa55f552586b9c0fbf17b432aeff347b"
+    },
+    "tests/helpers/splitRallyArtifact.py": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "3dadc23f35c8ad915f81a860c2a37674b4b5abf4"
+    },
+    "tests/helpers/stageHarness.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "18aa4ff07fba500535006bdd2db53d785601444f"
+    },
+    "tests/helpers/viewportEvidence.mjs": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "8b9c6997d63e6615850cc8e0763b8adc94fa8e9d"
+    },
+    "tests/helpers/viewportEvidenceAnalysis.py": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "d52237416798842801ee8cfe9d906487c81939cf"
+    },
+    "tests/helpers/wav.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f24b548c40346b72a984ca06ad501351a7ac8867"
+    },
+    "tests/performance/browser-load.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "e560ed5b0e4fab66d2eed4f3b7171d0a51819f57"
+    },
+    "tests/performance/rally-4000.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a2ef644df3455b9848f26bd5461bea55f7f69a4a"
+    },
+    "tests/performance/rally-gl.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "c8548c485985d604662bf6d2439585e57bd75ff1"
+    },
+    "tests/release/distribution.spec.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "2f0fe7332792eacba260c3a16f45e6c63557ad10"
+    },
+    "tests/sql/guest-play-count.sql": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "b5083b52fdc8a473e8b590ce2b1c40583ec5324f"
+    },
+    "tests/unit/audio-contact.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "3be0ab354cc1743bd6c678e5086ad3487d153a34"
+    },
+    "tests/unit/audio-events.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "c90b42de6ede652f1c6c8f2cc25b553c387a5c10"
+    },
+    "tests/unit/audio-fanfare.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "fde2463b805613bd38b4fc935debdfa170f5bedc"
+    },
+    "tests/unit/audio-prepare.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "b37e58ce8620850a3ce477dbbce28df2f74d1d29"
+    },
+    "tests/unit/ball-instancing.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "81547dc78272b5f72b1a1e5d7537ff1380bd71d1"
+    },
+    "tests/unit/ball-pool.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "40b90fea34934c2b46146d223b4b92d73b3d1b85"
+    },
+    "tests/unit/bounce-contact.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f56522a0b72b09b460c8c6f162220d72985358ce"
+    },
+    "tests/unit/camera.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "92160b091b6e97c645c862d1169b6f51ea213789"
+    },
+    "tests/unit/celebration-render.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "3f22ccf1c3a3dc02e13e9dcf73bb466e3509a2d4"
+    },
+    "tests/unit/celebrations.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "6c13f46c3303f5071ecf9de60e329e8639bffa9c"
+    },
+    "tests/unit/collision.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "63416ac42cc961922d77f5b158bec13960f850af"
+    },
+    "tests/unit/direct-contact.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "bfb42983356e4196e2d47fda74d93e4165e16345"
+    },
+    "tests/unit/extended-core.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a5f5a818f1650a5c406e84d061ccacb068f100c6"
+    },
+    "tests/unit/extended-progression.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "fff446421cc1d5b55a3933ba6e0b187571ecac41"
+    },
+    "tests/unit/extended-render.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "5fef0a71e5f9ead881c6c06b4266b10da2ef4b80"
+    },
+    "tests/unit/extended-safety.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "8a2ea6923e12445fbbb27fbb560c16db64fcabf1"
+    },
+    "tests/unit/finish-presentation.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "65edd113de8dac46bbacd3155765fc90e7fa8667"
+    },
+    "tests/unit/glow-timing.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "da54b75cfe2ef70d42b66ade6a1a1909ebac8ef6"
+    },
+    "tests/unit/growing-replay.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "5ce1c0a1b7e253812189cfdbbbf8c97b8934df47"
+    },
+    "tests/unit/input-boundary.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "64da9dd125bac9d61247fe2de7511b0e31f46b78"
+    },
+    "tests/unit/input-timeline.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "03f79c848518d3d41c78777c10494919b5cb818d"
+    },
+    "tests/unit/layered-tones.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f8cf1004575322708aa734b8207adceea9480447"
+    },
+    "tests/unit/legacy-flash-safety.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "0bebe04ab81379008990b1c74be5f2fe0128e107"
+    },
+    "tests/unit/lifecycle-resize.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "4bed17b382c1e4a4123cb1edf63eb634365d1477"
+    },
+    "tests/unit/loading-progress.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "5d4f39a9a5acd39f21eabdd4b4c5c6b4a21f3e09"
+    },
+    "tests/unit/loading-screen.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "871df5934ff40ca709006b6e93ec8a4190b239da"
+    },
+    "tests/unit/loop.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "ee5abb94a634334e5f2c675d9d6e5e8a70e2065f"
+    },
+    "tests/unit/loss-limit.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "b56bdc6f1bae75dee1c7aecaebe6b1493481772c"
+    },
+    "tests/unit/loss-position.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "ada53aa827d6e4f79696f5bf0baea32399f7a2db"
+    },
+    "tests/unit/multiball.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "5475f3e7757fc3f3ee277a9cc0d1a1c239fe9f3a"
+    },
+    "tests/unit/opponent.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "18007a88ce2f95671521a0e4c1b18b9c23b55a56"
+    },
+    "tests/unit/paddle.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "7fb6cdec4c9897673ca879199a7c594971e9895e"
+    },
+    "tests/unit/pointer-loop.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "511642be9331643ed0ec1793b071ae50024d2e0d"
+    },
+    "tests/unit/pointer-mapping.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "4ec6c123b4f3b09f3f022ea97aeaceac561de6b5"
+    },
+    "tests/unit/prepare-render.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f7d35ebd101eb0699a6c8beddb945f300729e763"
+    },
+    "tests/unit/presentation.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "ef4a909e3c94726fc04e4054d7dc858f36e4cf10"
+    },
+    "tests/unit/progression.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "05ec0aeaa79bb8735206110fe6e675d7a5f4ed9a"
+    },
+    "tests/unit/quality.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "0968df8a8f629734afe9b698e9fc4d43f688770c"
+    },
+    "tests/unit/rally-audio.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "01faa6863b499fdf00a2c84ffc43452c0631de74"
+    },
+    "tests/unit/rally-balance.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "302b0a75fda07dd7e59c264c8b797d1a10e4535f"
+    },
+    "tests/unit/rally-effects.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "d3cd43f3a7b16c42d5336268c80bc6684a1a033c"
+    },
+    "tests/unit/rally-notice.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "5fc0c125fe4f9f486bc5b309c034c35a92f27de6"
+    },
+    "tests/unit/rally-render.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "173a2c8f884a53d1f6539350502d770053f933ac"
+    },
+    "tests/unit/rally-through-play.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "c14cdb71fa4ba251b819c0b711db9abec745ce39"
+    },
+    "tests/unit/ranking-position-sql.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "aba6b425b655b40b1340717a4973e11d0fbad6c5"
+    },
+    "tests/unit/ranking-screens.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "cc2bae6f536aa052abf7d759477e4069bb7d8c49"
+    },
+    "tests/unit/ranking.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "08f736a92c78d9e23ae8c823271241fe8c8abe88"
+    },
+    "tests/unit/reduced-world.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a014c974f8a85603008162d6b50de84cc613b39d"
+    },
+    "tests/unit/release-revision.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "4933af3ae08b587c032ab3c74ccc8d5892ceff6b"
+    },
+    "tests/unit/remaining-ball-speed.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "c195b09ec83b5ed953130d6d5fa45ca2efce3c0c"
+    },
+    "tests/unit/render-assets.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "ac60fa51843a8d5e03bc0a766fc4a69bad8d2642"
+    },
+    "tests/unit/replay.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "e885a7f595067e93485342b3c163edd6d99f0a9b"
+    },
+    "tests/unit/result-comments.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "ed7434b7c41ad44f60da875b893741544f6a65cf"
+    },
+    "tests/unit/result-effects.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "51c46ca887622782d1dab53b8ef2a7e04c317695"
+    },
+    "tests/unit/result-layout.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "7a647055fafcd860c3eaf16550a95d3b7518de19"
+    },
+    "tests/unit/result-position.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "f0df76bf9aa284e63068ed76497d119f113e7766"
+    },
+    "tests/unit/return-spread.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "ab8db3db6166e9da83f0c2134c891611b58f5808"
+    },
+    "tests/unit/scheduler.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "d0e75419559f452d3d62355c92a9412a06573e00"
+    },
+    "tests/unit/screens-direct.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "c7c6fa3b1830a6eda558a3795a64ee4c29f6a98d"
+    },
+    "tests/unit/session.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "0a7c9c13c03ee2183a1b805038906e7f641fbf27"
+    },
+    "tests/unit/sharing-metadata.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "3fefcfba3518e1b5ef272cb4549fadf984ab6b6d"
+    },
+    "tests/unit/sharing.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "787786cf143ce1e906ca88dde301d4d9426d331d"
+    },
+    "tests/unit/simulation-isolation.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "69bf1c8eb538e003805845c31470104b52ad2112"
+    },
+    "tests/unit/startup-app.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "0fdc7e4503764e78425930f81af51cf1d1d365bb"
+    },
+    "tests/unit/storage.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "01d4955b02a0d209c37ff434a3f7441d4c648bce"
+    },
+    "tests/unit/swipe.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "4be0a13ec978f2657e00ad6035379a6740559fb7"
+    },
+    "tests/unit/thirty-ball-returns.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "ac53b94f5ce30f6f269271b64878ddb148819869"
+    },
+    "tests/unit/trajectory.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "6d0bd26452915c5d0ff0e194f020b73a37753c4e"
+    },
+    "tests/unit/waiting-visibility.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "9605763271df090c7f23db61e28d912089f82dcd"
+    },
+    "tests/unit/warning-ui.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "8bd462f4842195b8001dbe806caad0f325b26aa2"
+    },
+    "tests/unit/wide-field-color-safety.test.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "a8602fba8ba45db7aceee20d2bab633848e87860"
+    },
+    "tsconfig.json": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "dd04a9492423ede39de41856551a7df410f39a3e"
+    },
+    "vite.config.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "54331fa51c70262a308c2cd98ec92aa5bb31cea5"
+    },
+    "vitest.config.ts": {
+      "mode": "100644",
+      "kind": "blob",
+      "gitObject": "3cd5813fe5f7177a29edbf8c26554d6cf2e9ebd6"
+    }
+  },
+  "workingInputMismatches": [
+    {
+      "path": "tests/browser/rally-effects.spec.ts",
+      "reason": "working bytes or mode differ"
+    },
+    {
+      "path": "tests/helpers/captureRallyFlashFrames.mjs",
+      "reason": "working bytes or mode differ"
+    },
+    {
+      "path": "tests/helpers/packRallyFlashEvidence.py",
+      "reason": "working bytes or mode differ"
+    },
+    {
+      "path": "tests/helpers/rallyHarness.ts",
+      "reason": "working bytes or mode differ"
+    }
+  ],
+  "unexpectedUntrackedInputs": [
+    "docs/rally-4000/refresh-report-index.py",
+    "docs/rally-4000/verify-archive-provenance.py",
+    "playwright.rally-pixels.config.ts",
+    "tests/helpers/processRallySafetyBatch.py",
+    "tests/helpers/rallyFixedFieldAnalysis.py"
+  ],
+  "nonDocumentationChanges": [
+    "docs/rally-4000/refresh-report-index.py",
+    "docs/rally-4000/verify-archive-provenance.py",
+    "playwright.rally-pixels.config.ts",
+    "tests/browser/rally-effects.spec.ts",
+    "tests/helpers/captureRallyFlashFrames.mjs",
+    "tests/helpers/packRallyFlashEvidence.py",
+    "tests/helpers/processRallySafetyBatch.py",
+    "tests/helpers/rallyFixedFieldAnalysis.py",
+    "tests/helpers/rallyHarness.ts"
+  ],
+  "documentationChangesSinceCanonical": [
+    "docs/rally-4000/changed-files.md",
+    "docs/rally-4000/refresh-report-index.py",
+    "docs/rally-4000/verify-archive-provenance.py",
+    "docs/verification/rally-4000/README.md",
+    "docs/verification/rally-4000/adversarial-review.md",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-low-1500-repeat1.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-low-1500-repeat2.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-low-2000-repeat1.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-low-2000-repeat2.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-low-3000-repeat1.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-low-3000-repeat2.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-low-4000-repeat1.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-low-4000-repeat2.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-standard-1500-repeat1.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-standard-1500-repeat2.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-standard-2000-repeat1.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-standard-2000-repeat2.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-standard-3000-repeat1.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-standard-3000-repeat2.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-standard-4000-repeat1.json.gz",
+    "docs/verification/rally-4000/after/chromium/chromium-rally4000-standard-4000-repeat2.json.gz",
+    "docs/verification/rally-4000/after/chromium/playwright-results.json.gz",
+    "docs/verification/rally-4000/after/chromium/summary.json",
+    "docs/verification/rally-4000/after/environment-after.json",
+    "docs/verification/rally-4000/after/environment-before.json",
+    "docs/verification/rally-4000/after/node-version.txt",
+    "docs/verification/rally-4000/after/npm-version.txt",
+    "docs/verification/rally-4000/after/source-revision-after.txt",
+    "docs/verification/rally-4000/after/status.json",
+    "docs/verification/rally-4000/artifact-upload-plan.md",
+    "docs/verification/rally-4000/baseline-performance.md",
+    "docs/verification/rally-4000/browser-evidence-report.md",
+    "docs/verification/rally-4000/coverage.md",
+    "docs/verification/rally-4000/diagnostics/gl-probe-report.md",
+    "docs/verification/rally-4000/diagnostics/single-pass/README.md",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-000-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-001-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-002-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-003-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-004-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-005-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-006-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-007-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-008-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-009-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-010-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-011-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-012-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-013-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-014-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-015-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-016-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-017-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-018-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-019-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-020-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-021-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-022-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-023-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-024-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-025-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-026-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-027-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-028-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-029-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-030-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-031-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-032-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-033-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-034-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-035-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-036-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-037-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-038-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-039-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-040-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-041-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-042-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-043-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-044-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-045-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-046-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-047-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-048-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-049-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-050-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-051-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-052-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-053-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-054-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-055-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-056-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-057-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-058-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-059-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-060-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-061-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-062-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-063-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-064-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-065-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-066-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-067-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-068-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-069-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-070-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-071-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-072-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-073-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-074-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-075-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-076-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-077-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-078-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-079-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-080-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-081-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-082-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-083-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-084-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-085-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-086-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-087-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-088-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-089-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-090-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-091-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-092-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-093-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-094-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-095-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-096-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-097-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-098-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-099-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-100-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-101-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-102-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-103-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-104-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-105-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-106-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-107-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-108-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-109-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-110-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-111-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-112-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-113-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-114-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-115-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-116-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-117-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-118-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-119-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-120-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-121-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-122-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-123-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-124-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-125-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-126-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-127-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-128-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-129-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-130-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-131-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-132-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-133-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-134-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-135-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-136-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-137-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-138-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-139-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-140-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-141-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-142-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-143-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-144-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-145-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-146-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-147-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-148-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-149-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-150-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-151-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-152-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-153-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-154-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-155-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-156-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-157-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-158-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-159-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-160-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-161-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-162-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-163-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-164-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-165-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-166-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-167-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-168-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-169-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-170-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-171-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-172-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-173-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-174-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-175-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-176-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-177-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-178-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-179-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-180-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-181-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-182-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-183-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources.json",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-000-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-001-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-002-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-003-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-004-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-005-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-006-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-007-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-008-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-009-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-010-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-011-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-012-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-013-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-014-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-015-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-016-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-017-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-018-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-019-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-020-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-021-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-022-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-023-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-024-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-025-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-026-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-027-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-028-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-029-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-030-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-031-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-032-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-033-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-034-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-035-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-036-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-037-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-038-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-039-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-040-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-041-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-042-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-043-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-044-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-045-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-046-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-047-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-048-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-049-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-050-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-051-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-052-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-053-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-054-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-055-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-056-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-057-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-058-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-059-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-060-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-061-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-062-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-063-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-064-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-065-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-066-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-067-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-068-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-069-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-070-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-071-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-072-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-073-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-074-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-075-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-076-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-077-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-078-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls-079-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls.json",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/major-labels-fit-at-their-largest-initial-scale-with-200-text-on-320px-screens-000-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/major-labels-fit-at-their-largest-initial-scale-with-200-text-on-320px-screens-001-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/major-labels-fit-at-their-largest-initial-scale-with-200-text-on-320px-screens-002-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/major-labels-fit-at-their-largest-initial-scale-with-200-text-on-320px-screens-003-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/major-labels-fit-at-their-largest-initial-scale-with-200-text-on-320px-screens-004-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/major-labels-fit-at-their-largest-initial-scale-with-200-text-on-320px-screens-005-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/major-labels-fit-at-their-largest-initial-scale-with-200-text-on-320px-screens-006-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/major-labels-fit-at-their-largest-initial-scale-with-200-text-on-320px-screens-007-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/major-labels-fit-at-their-largest-initial-scale-with-200-text-on-320px-screens.json",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-000-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-001-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-002-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-003-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-004-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-005-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-006-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-007-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-008-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-009-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-010-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-011-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-012-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-013-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-014-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-015-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-016-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-017-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores.json",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-000-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-001-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-002-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-003-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-004-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-005-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-006-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-007-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-008-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-009-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-010-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-011-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-012-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-013-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-014-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-015-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-016-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-017-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-018-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-019-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-020-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-021-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-022-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-023-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-024-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-025-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-026-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-027-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-028-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-029-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-030-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-031-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-032-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-033-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-034-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-035-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-036-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-037-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-038-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-039-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-040-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-041-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-042-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-043-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-044-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-045-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-046-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-047-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-048-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-049-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-050-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-051-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-052-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-053-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-054-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-055-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-056-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-057-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-058-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-059-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-060-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-061-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-062-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-063-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-064-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-065-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-066-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-067-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-068-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-069-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-070-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-071-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-072-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-073-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-074-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-075-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-076-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-077-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-078-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-079-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-080-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-081-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-082-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-083-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-084-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-085-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-086-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-087-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-088-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-089-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-090-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-091-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-092-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-093-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-094-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-095-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-096-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-097-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-098-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-099-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-100-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-101-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-102-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-103-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-104-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-105-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-106-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-107-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-108-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-109-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-110-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-111-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-112-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-113-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-114-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-115-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-116-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-117-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-118-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-119-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-120-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-121-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-122-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-123-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-124-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion-125-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion.json",
+    "docs/verification/rally-4000/diagnostics/single-pass/run.json",
+    "docs/verification/rally-4000/diagnostics/single-pass/source/playwright.rally-pixels.config.ts",
+    "docs/verification/rally-4000/diagnostics/single-pass/source/src/render/createView.ts",
+    "docs/verification/rally-4000/diagnostics/single-pass/source/src/render/rallyEffects.ts",
+    "docs/verification/rally-4000/diagnostics/single-pass/source/tests/browser/rally-effects.spec.ts",
+    "docs/verification/rally-4000/diagnostics/single-pass/source/tests/helpers/pngPixels.ts",
+    "docs/verification/rally-4000/diagnostics/single-pass/source/tests/helpers/rallyHarness.ts",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-000-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-001-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-002-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-003-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-004-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-005-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-006-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-007-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-008-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-009-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-010-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-011-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-012-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-013-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-014-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-015-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-016-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-017-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-018-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-019-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-020-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-021-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-022-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-023-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-024-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-025-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-026-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-027-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-028-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-029-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-030-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-031-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-032-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-033-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-034-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-035-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-036-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-037-low.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources-038-standard.png",
+    "docs/verification/rally-4000/diagnostics/single-pass/webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources.json",
+    "docs/verification/rally-4000/evidence/chromium/layout/1000-320x568-text200-age0.png",
+    "docs/verification/rally-4000/evidence/chromium/layout/2000-320x568-text200-age0.png",
+    "docs/verification/rally-4000/evidence/chromium/layout/3000-320x568-text200-age0.png",
+    "docs/verification/rally-4000/evidence/chromium/layout/320x568-text100.png",
+    "docs/verification/rally-4000/evidence/chromium/layout/390x844-text100.png",
+    "docs/verification/rally-4000/evidence/chromium/layout/390x844-text200.png",
+    "docs/verification/rally-4000/evidence/chromium/layout/4000-320x568-text200-age0.png",
+    "docs/verification/rally-4000/evidence/chromium/layout/844x390-text100.png",
+    "docs/verification/rally-4000/evidence/chromium/layout/best-after.png",
+    "docs/verification/rally-4000/evidence/chromium/layout/best-and-2600.json",
+    "docs/verification/rally-4000/evidence/chromium/layout/best-before.png",
+    "docs/verification/rally-4000/evidence/chromium/layout/best-during.png",
+    "docs/verification/rally-4000/evidence/chromium/layout/best-no-repeat.png",
+    "docs/verification/rally-4000/evidence/chromium/layout/ordinary-2600.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/1-0.05.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/1-0.25.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/1-0.65.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/10-0.05.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/10-0.25.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/10-0.65.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/100-0.05.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/100-0.25.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/100-0.65.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/100-finishing.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/20-0.05.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/20-0.25.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/20-0.65.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/30-0.05.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/30-0.25.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/30-0.65.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/4-0.05.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/4-0.25.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/4-0.65.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/40-0.05.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/40-0.25.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/40-0.65.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/50-0.05.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/50-0.25.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/50-0.65.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/55-0.05.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/55-0.25.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/55-0.65.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/77-0.05.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/77-0.25.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/77-0.65.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/88-0.05.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/88-0.25.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/88-0.65.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/90-0.05.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/90-0.25.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/90-0.65.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/99-0.05.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/99-0.25.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/99-0.65.png",
+    "docs/verification/rally-4000/evidence/chromium/losses/loss-frames.json",
+    "docs/verification/rally-4000/evidence/chromium/motion/1000-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1000-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1000-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1000-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1250-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1250-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1250-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1250-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1500-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1500-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1500-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1500-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1750-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1750-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1750-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/1750-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2000-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2000-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2000-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2000-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2250-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2250-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2250-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2250-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2500-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2500-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2500-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2500-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2750-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2750-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2750-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/2750-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3000-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3000-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3000-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3000-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3250-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3250-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3250-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3250-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3500-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3500-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3500-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3500-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3750-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3750-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3750-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/3750-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/4000-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/4000-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/4000-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/4000-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/4000-2.50.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/4000-3.50.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/4001-reduced-motion.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/500-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/500-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/500-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/500-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/700-0.10.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/700-0.35.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/700-0.80.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/700-1.40.png",
+    "docs/verification/rally-4000/evidence/chromium/motion/geometry-sequence.json",
+    "docs/verification/rally-4000/evidence/chromium/review/thresholds-1.jpg",
+    "docs/verification/rally-4000/evidence/chromium/review/thresholds-2.jpg",
+    "docs/verification/rally-4000/evidence/chromium/review/thresholds-3.jpg",
+    "docs/verification/rally-4000/evidence/chromium/review/thresholds-4.jpg",
+    "docs/verification/rally-4000/evidence/chromium/review/thresholds-5.jpg",
+    "docs/verification/rally-4000/evidence/chromium/review/thresholds-6.jpg",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/100-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/100-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/100-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/100-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1000-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1000-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1000-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1000-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1250-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1250-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1250-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1250-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1500-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1500-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1500-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1500-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1750-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1750-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1750-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/1750-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/200-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/200-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/200-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/200-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2000-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2000-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2000-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2000-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2250-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2250-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2250-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2250-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2500-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2500-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2500-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2500-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2750-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2750-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2750-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/2750-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/300-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/300-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/300-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/300-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3000-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3000-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3000-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3000-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3250-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3250-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3250-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3250-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3500-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3500-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3500-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3500-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3750-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3750-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3750-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/3750-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/400-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/400-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/400-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/400-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/4000-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/4000-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/4000-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/4000-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/50-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/50-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/50-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/50-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/500-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/500-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/500-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/500-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/600-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/600-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/600-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/600-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/700-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/700-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/700-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/700-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/800-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/800-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/800-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/800-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/900-after.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/900-arrival.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/900-before.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/900-during.png",
+    "docs/verification/rally-4000/evidence/chromium/thresholds/frames.json",
+    "docs/verification/rally-4000/evidence/sparse-frame-diagnostics.json",
+    "docs/verification/rally-4000/evidence/webkit/layout/1000-320x568-text200-age0.png",
+    "docs/verification/rally-4000/evidence/webkit/layout/2000-320x568-text200-age0.png",
+    "docs/verification/rally-4000/evidence/webkit/layout/3000-320x568-text200-age0.png",
+    "docs/verification/rally-4000/evidence/webkit/layout/320x568-text100.png",
+    "docs/verification/rally-4000/evidence/webkit/layout/390x844-text100.png",
+    "docs/verification/rally-4000/evidence/webkit/layout/390x844-text200.png",
+    "docs/verification/rally-4000/evidence/webkit/layout/4000-320x568-text200-age0.png",
+    "docs/verification/rally-4000/evidence/webkit/layout/844x390-text100.png",
+    "docs/verification/rally-4000/evidence/webkit/layout/best-after.png",
+    "docs/verification/rally-4000/evidence/webkit/layout/best-and-2600.json",
+    "docs/verification/rally-4000/evidence/webkit/layout/best-before.png",
+    "docs/verification/rally-4000/evidence/webkit/layout/best-during.png",
+    "docs/verification/rally-4000/evidence/webkit/layout/best-no-repeat.png",
+    "docs/verification/rally-4000/evidence/webkit/layout/ordinary-2600.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/1-0.05.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/1-0.25.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/1-0.65.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/10-0.05.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/10-0.25.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/10-0.65.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/100-0.05.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/100-0.25.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/100-0.65.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/100-finishing.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/20-0.05.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/20-0.25.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/20-0.65.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/30-0.05.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/30-0.25.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/30-0.65.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/4-0.05.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/4-0.25.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/4-0.65.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/40-0.05.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/40-0.25.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/40-0.65.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/50-0.05.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/50-0.25.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/50-0.65.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/55-0.05.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/55-0.25.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/55-0.65.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/77-0.05.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/77-0.25.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/77-0.65.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/88-0.05.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/88-0.25.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/88-0.65.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/90-0.05.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/90-0.25.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/90-0.65.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/99-0.05.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/99-0.25.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/99-0.65.png",
+    "docs/verification/rally-4000/evidence/webkit/losses/loss-frames.json",
+    "docs/verification/rally-4000/evidence/webkit/motion/1000-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1000-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1000-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1000-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1250-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1250-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1250-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1250-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1500-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1500-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1500-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1500-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1750-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1750-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1750-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/1750-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2000-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2000-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2000-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2000-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2250-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2250-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2250-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2250-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2500-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2500-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2500-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2500-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2750-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2750-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2750-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/2750-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3000-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3000-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3000-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3000-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3250-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3250-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3250-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3250-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3500-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3500-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3500-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3500-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3750-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3750-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3750-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/3750-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/4000-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/4000-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/4000-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/4000-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/4000-2.50.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/4000-3.50.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/4001-reduced-motion.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/500-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/500-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/500-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/500-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/700-0.10.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/700-0.35.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/700-0.80.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/700-1.40.png",
+    "docs/verification/rally-4000/evidence/webkit/motion/geometry-sequence.json",
+    "docs/verification/rally-4000/evidence/webkit/review/thresholds-1.jpg",
+    "docs/verification/rally-4000/evidence/webkit/review/thresholds-2.jpg",
+    "docs/verification/rally-4000/evidence/webkit/review/thresholds-3.jpg",
+    "docs/verification/rally-4000/evidence/webkit/review/thresholds-4.jpg",
+    "docs/verification/rally-4000/evidence/webkit/review/thresholds-5.jpg",
+    "docs/verification/rally-4000/evidence/webkit/review/thresholds-6.jpg",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/100-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/100-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/100-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/100-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1000-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1000-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1000-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1000-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1250-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1250-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1250-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1250-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1500-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1500-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1500-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1500-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1750-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1750-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1750-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/1750-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/200-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/200-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/200-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/200-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2000-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2000-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2000-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2000-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2250-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2250-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2250-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2250-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2500-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2500-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2500-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2500-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2750-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2750-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2750-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/2750-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/300-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/300-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/300-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/300-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3000-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3000-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3000-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3000-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3250-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3250-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3250-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3250-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3500-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3500-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3500-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3500-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3750-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3750-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3750-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/3750-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/400-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/400-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/400-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/400-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/4000-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/4000-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/4000-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/4000-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/50-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/50-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/50-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/50-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/500-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/500-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/500-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/500-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/600-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/600-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/600-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/600-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/700-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/700-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/700-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/700-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/800-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/800-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/800-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/800-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/900-after.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/900-arrival.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/900-before.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/900-during.png",
+    "docs/verification/rally-4000/evidence/webkit/thresholds/frames.json",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/006fb43eb88f0be3ea95-b585c7a8afde52c42f7e-recording1.network",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/006fb43eb88f0be3ea95-b585c7a8afde52c42f7e-recording1.trace",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/006fb43eb88f0be3ea95-b585c7a8afde52c42f7e.network",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/006fb43eb88f0be3ea95-b585c7a8afde52c42f7e.trace",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/resources/60b88e70547457b0d3b50f7dc0709ae05f76707a.png",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/resources/e221f54da9d102315257f5dc892b28136da3919a.html",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968126249.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968127967.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968128113.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968128708.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968129670.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968130892.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968131540.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968132517.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968132819.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968133806.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968134769.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968135106.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968136044.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968137043.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968137491.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968138487.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968139474.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968140047.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968141002.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968142024.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968142340.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968143326.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968144139.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968144648.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968145386.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968146356.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968146932.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968147977.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968149085.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968149488.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968149546.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968150623.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968151713.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968152055.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968152959.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968153850.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968154152.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968155232.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968156345.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968156737.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968157856.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968159064.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968159717.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968160016.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968161017.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968162190.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968162747.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968163663.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968164711.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968165078.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968166353.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968167560.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968168052.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968169283.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968170579.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968171051.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968171127.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968172499.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968173712.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968174133.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968175198.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968176287.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968176682.jpeg",
+    "docs/verification/rally-4000/failures/single-pass-browser-attempt/.playwright-artifacts-1/traces/screencast/page@5613f684047c078e73951ef0a3f7654e-1792968177925.jpeg",
+    "docs/verification/rally-4000/logs/after-performance-chromium.log",
+    "docs/verification/rally-4000/logs/after-performance-collect.log",
+    "docs/verification/rally-4000/logs/archive-provenance-precanonical-negative.log",
+    "docs/verification/rally-4000/logs/artifact-upload.log",
+    "docs/verification/rally-4000/logs/baseline-performance-chromium-setup-blocked.log",
+    "docs/verification/rally-4000/logs/baseline-performance-chromium.log",
+    "docs/verification/rally-4000/logs/baseline-performance-clean-collect.log",
+    "docs/verification/rally-4000/logs/baseline-performance-clean-repeat1.log",
+    "docs/verification/rally-4000/logs/baseline-performance-collect.log",
+    "docs/verification/rally-4000/logs/baseline-performance-harness-typecheck.log",
+    "docs/verification/rally-4000/logs/baseline-typecheck.log",
+    "docs/verification/rally-4000/logs/baseline-unit-network-sandbox.log",
+    "docs/verification/rally-4000/logs/baseline-unit-release-retry.log",
+    "docs/verification/rally-4000/logs/baseline-unit.log",
+    "docs/verification/rally-4000/logs/browser-arrival-first.json",
+    "docs/verification/rally-4000/logs/browser-arrival-first.log",
+    "docs/verification/rally-4000/logs/browser-arrival-fixed.json",
+    "docs/verification/rally-4000/logs/browser-arrival-fixed.log",
+    "docs/verification/rally-4000/logs/browser-best-2600.json",
+    "docs/verification/rally-4000/logs/browser-best-2600.log",
+    "docs/verification/rally-4000/logs/browser-final-focused16.json",
+    "docs/verification/rally-4000/logs/browser-final-focused16.log",
+    "docs/verification/rally-4000/logs/browser-focused-final.json",
+    "docs/verification/rally-4000/logs/browser-focused-final.log",
+    "docs/verification/rally-4000/logs/browser-focused-first.json",
+    "docs/verification/rally-4000/logs/browser-focused-first.log",
+    "docs/verification/rally-4000/logs/browser-gold-fixed.json",
+    "docs/verification/rally-4000/logs/browser-gold-fixed.log",
+    "docs/verification/rally-4000/logs/browser-gold-red.json",
+    "docs/verification/rally-4000/logs/browser-gold-red.log",
+    "docs/verification/rally-4000/logs/browser-harness-typecheck.log",
+    "docs/verification/rally-4000/logs/browser-harness-typecheck2.log",
+    "docs/verification/rally-4000/logs/browser-harness-typecheck3.log",
+    "docs/verification/rally-4000/logs/browser-harness-typecheck4.log",
+    "docs/verification/rally-4000/logs/browser-harness-typecheck5.log",
+    "docs/verification/rally-4000/logs/browser-harness-typecheck6.log",
+    "docs/verification/rally-4000/logs/browser-harness-typecheck7.log",
+    "docs/verification/rally-4000/logs/browser-harness-typecheck8.log",
+    "docs/verification/rally-4000/logs/browser-install.log",
+    "docs/verification/rally-4000/logs/browser-list.log",
+    "docs/verification/rally-4000/logs/ci-0cfdc7e-status.json",
+    "docs/verification/rally-4000/logs/ci-7aa8333-status.json",
+    "docs/verification/rally-4000/logs/final-build-pages.log",
+    "docs/verification/rally-4000/logs/final-build.log",
+    "docs/verification/rally-4000/logs/final-production-pages.log",
+    "docs/verification/rally-4000/logs/final-production-root.log",
+    "docs/verification/rally-4000/logs/final-typecheck.log",
+    "docs/verification/rally-4000/logs/final-unit.json",
+    "docs/verification/rally-4000/logs/final-unit.log",
+    "docs/verification/rally-4000/logs/flash-analyzer-tests-final.log",
+    "docs/verification/rally-4000/logs/flash-analyzer-tests.log",
+    "docs/verification/rally-4000/logs/flash-diagnostic-no-legacy-analysis.log",
+    "docs/verification/rally-4000/logs/flash-diagnostic-no-legacy-capture.log",
+    "docs/verification/rally-4000/logs/flash-diagnostic-no-random-analysis.log",
+    "docs/verification/rally-4000/logs/flash-diagnostic-no-random-capture.log",
+    "docs/verification/rally-4000/logs/flash-diagnostic-no-repdigit-analysis.log",
+    "docs/verification/rally-4000/logs/flash-diagnostic-no-repdigit-capture.log",
+    "docs/verification/rally-4000/logs/flash-final-fireworks-capture.log",
+    "docs/verification/rally-4000/logs/flash-final-fireworks-low-analysis.log",
+    "docs/verification/rally-4000/logs/flash-final-fireworks-standard-analysis.log",
+    "docs/verification/rally-4000/logs/flash-final-regular-capture.log",
+    "docs/verification/rally-4000/logs/flash-final-regular-processing.log",
+    "docs/verification/rally-4000/logs/flash-final-worst-low-analysis.log",
+    "docs/verification/rally-4000/logs/flash-final-worst-low-capture.log",
+    "docs/verification/rally-4000/logs/flash-final-worst-standard-analysis.log",
+    "docs/verification/rally-4000/logs/flash-final-worst-standard-capture.log",
+    "docs/verification/rally-4000/logs/flash-final-worst-standard-v2-analysis.log",
+    "docs/verification/rally-4000/logs/flash-final-worst-standard-v2-capture.log",
+    "docs/verification/rally-4000/logs/flash-final-worst-standard-v3-analysis.log",
+    "docs/verification/rally-4000/logs/flash-final-worst-standard-v3-capture.log",
+    "docs/verification/rally-4000/logs/flash-final-worst-standard-v4-analysis.log",
+    "docs/verification/rally-4000/logs/flash-final-worst-standard-v4-capture.log",
+    "docs/verification/rally-4000/logs/flash-pack-diagnostic-no-legacy.log",
+    "docs/verification/rally-4000/logs/flash-pack-diagnostic-no-random.log",
+    "docs/verification/rally-4000/logs/flash-pack-diagnostic-no-repdigit.log",
+    "docs/verification/rally-4000/logs/flash-pack-final-1500-low.log",
+    "docs/verification/rally-4000/logs/flash-pack-final-1500-standard.log",
+    "docs/verification/rally-4000/logs/flash-pack-final-3000-low.log",
+    "docs/verification/rally-4000/logs/flash-pack-final-4000-low.log",
+    "docs/verification/rally-4000/logs/flash-pack-final-4000-standard.log",
+    "docs/verification/rally-4000/logs/flash-pack-final-fireworks.log",
+    "docs/verification/rally-4000/logs/flash-pack-final-worst-low.log",
+    "docs/verification/rally-4000/logs/flash-pack-final-worst-standard-v2.log",
+    "docs/verification/rally-4000/logs/flash-pack-final-worst-standard-v3.log",
+    "docs/verification/rally-4000/logs/flash-pack-final-worst-standard-v4.log",
+    "docs/verification/rally-4000/logs/flash-pack-final-worst-standard.log",
+    "docs/verification/rally-4000/logs/flash-packer-selftest.log",
+    "docs/verification/rally-4000/logs/flash-rgb-codec-experiment.log",
+    "docs/verification/rally-4000/logs/flash-vite.log",
+    "docs/verification/rally-4000/logs/flash-worst-capture.log",
+    "docs/verification/rally-4000/logs/flash-worst-low-analysis.log",
+    "docs/verification/rally-4000/logs/flash-worst-low-pack.log",
+    "docs/verification/rally-4000/logs/flash-worst-low-repack.log",
+    "docs/verification/rally-4000/logs/flash-worst-low-split.log",
+    "docs/verification/rally-4000/logs/flash-worst-pack.log",
+    "docs/verification/rally-4000/logs/flash-worst-standard-analysis.log",
+    "docs/verification/rally-4000/logs/flash-worst-standard-repack.log",
+    "docs/verification/rally-4000/logs/flash-worst-standard-split.log",
+    "docs/verification/rally-4000/logs/gl-diagnostic-typecheck.log",
+    "docs/verification/rally-4000/logs/npm-audit.json",
+    "docs/verification/rally-4000/logs/performance-artifact-verification.json",
+    "docs/verification/rally-4000/logs/performance-comparison.log",
+    "docs/verification/rally-4000/logs/performance-harness-typecheck.log",
+    "docs/verification/rally-4000/logs/report-index-refresh.log",
+    "docs/verification/rally-4000/logs/single-pass-browser-harness-typecheck.log",
+    "docs/verification/rally-4000/logs/single-pass-browser-pixels.log",
+    "docs/verification/rally-4000/logs/sparse-image-analysis-current.log",
+    "docs/verification/rally-4000/logs/sparse-image-analysis-final.log",
+    "docs/verification/rally-4000/logs/sparse-image-analysis.log",
+    "docs/verification/rally-4000/logs/star-archive-split.log",
+    "docs/verification/rally-4000/logs/ui-arrival-bound-green.log",
+    "docs/verification/rally-4000/logs/webkit-local-apt-update.log",
+    "docs/verification/rally-4000/logs/webkit-local-download-extra.log",
+    "docs/verification/rally-4000/logs/webkit-local-download-lzo.log",
+    "docs/verification/rally-4000/logs/webkit-local-download.log",
+    "docs/verification/rally-4000/logs/webkit-local-smoke-retry.log",
+    "docs/verification/rally-4000/logs/webkit-local-smoke-skip-host-validation.log",
+    "docs/verification/rally-4000/logs/webkit-local-smoke.log",
+    "docs/verification/rally-4000/packaging-index.json",
+    "docs/verification/rally-4000/performance-comparison.json",
+    "docs/verification/rally-4000/performance-method.md",
+    "docs/verification/rally-4000/performance-report.md",
+    "docs/verification/rally-4000/pr-body.md",
+    "docs/verification/rally-4000/progress.md",
+    "docs/verification/rally-4000/protected-integrity.json",
+    "docs/verification/rally-4000/safety/README.md",
+    "docs/verification/rally-4000/stage2-review.md",
+    "docs/verification/rally-4000/through-play.json",
+    "playwright.rally-pixels.config.ts",
+    "tests/browser/rally-effects.spec.ts",
+    "tests/helpers/captureRallyFlashFrames.mjs",
+    "tests/helpers/packRallyFlashEvidence.py",
+    "tests/helpers/processRallySafetyBatch.py",
+    "tests/helpers/rallyFixedFieldAnalysis.py",
+    "tests/helpers/rallyHarness.ts"
+  ],
+  "scope": "All tracked paths outside docs/, plus the two documentation integrity checkers; modes and bytes checked against the canonical commit.",
+  "ciInterpretation": "The archive HEAD may intentionally skip CI. A matching execution-input manifest does not make skipped CI passed. Original CI artifacts retain the canonical commit identity.",
+  "selfReference": "No final archive commit ID is embedded here. Record that ID in PR metadata or the final response; rerun this checker read-only after committing."
+}

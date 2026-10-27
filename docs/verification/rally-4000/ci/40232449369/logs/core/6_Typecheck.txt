@@ -1,0 +1,12 @@
+﻿2026-10-25T20:49:39.5764027Z ##[group]Run set -o pipefail
+2026-10-25T20:49:39.5764396Z [36;1mset -o pipefail[0m
+2026-10-25T20:49:39.5764769Z [36;1mnpm run typecheck 2>&1 | tee artifacts/typecheck.log[0m
+2026-10-25T20:49:39.5832289Z shell: /usr/bin/bash -e {0}
+2026-10-25T20:49:39.5832567Z ##[endgroup]
+2026-10-25T20:49:39.6957664Z 
+2026-10-25T20:49:39.6958021Z > takkeu@0.1.0 typecheck
+2026-10-25T20:49:39.6958539Z > tsc --noEmit
+2026-10-25T20:49:39.6958767Z 
+2026-10-25T20:49:40.3791609Z ##[error]tests/browser/rally-effects.spec.ts(5,34): error TS2307: Cannot find module '../helpers/pngPixels' or its corresponding type declarations.
+2026-10-25T20:49:40.3800569Z ##[error]tests/browser/rally-effects.spec.ts(161,36): error TS7006: Parameter 'count' implicitly has an 'any' type.
+2026-10-25T20:49:40.3871351Z ##[error]Process completed with exit code 1.

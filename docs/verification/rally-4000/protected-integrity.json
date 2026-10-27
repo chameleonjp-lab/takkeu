@@ -1,0 +1,238 @@
+{
+  "schema": "rally-4000-protected-integrity-v1",
+  "generatedAtUTC": "2026-10-25T23:42:02.422655+00:00",
+  "baselineCommit": "aff31169fd6feaad7bad35f22fe3de26429296cf",
+  "comparison": "baseline git blob bytes against current working-tree bytes, including uncommitted changes",
+  "workingHead": "ecf59115ffa194ada549ced776c7957174656736",
+  "workingBranch": "feat/rally-4000-effects",
+  "allStrictProtectedFilesBytewiseEqual": true,
+  "allEventExceptionsMatchOnlyAllowedChanges": true,
+  "strictProtectedFiles": [
+    {
+      "path": "src/app/controls.ts",
+      "group": "input control integration",
+      "baselineSHA256": "03aa789baa922d3c26daaa5257f3e5d1a3bab51a15dcb924de753b480fe99594",
+      "workingSHA256": "03aa789baa922d3c26daaa5257f3e5d1a3bab51a15dcb924de753b480fe99594",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/app/lifecycle.ts",
+      "group": "pause/context lifecycle",
+      "baselineSHA256": "2876ad70a94f13c2bec2a45065e346e5dbc8d6c5a34684debf58d39ab0a01bd7",
+      "workingSHA256": "2876ad70a94f13c2bec2a45065e346e5dbc8d6c5a34684debf58d39ab0a01bd7",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/app/loop.ts",
+      "group": "fixed-step loop",
+      "baselineSHA256": "86ad8c723a5f36559259bb46b3998b0b8af96cf97665373129b56794d76e4f22",
+      "workingSHA256": "86ad8c723a5f36559259bb46b3998b0b8af96cf97665373129b56794d76e4f22",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/game/celebrations.ts",
+      "group": "gameplay physics/progression",
+      "baselineSHA256": "c3fe5cd55bdc5efabeaf1e511e76a71bb090fd964236ac043648e7620c525cfc",
+      "workingSHA256": "c3fe5cd55bdc5efabeaf1e511e76a71bb090fd964236ac043648e7620c525cfc",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/game/collision.ts",
+      "group": "gameplay physics/progression",
+      "baselineSHA256": "8e5ad013fcafcc33d7aabf57d9ccdae0dd99fa6db4f1aefb5cd75a1730074c1c",
+      "workingSHA256": "8e5ad013fcafcc33d7aabf57d9ccdae0dd99fa6db4f1aefb5cd75a1730074c1c",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/game/config.ts",
+      "group": "gameplay physics/progression",
+      "baselineSHA256": "ae3dbfc881325461879df2526e850a1673f6c7b918efab6b377741347c7acfc1",
+      "workingSHA256": "ae3dbfc881325461879df2526e850a1673f6c7b918efab6b377741347c7acfc1",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/game/difficulty.ts",
+      "group": "gameplay physics/progression",
+      "baselineSHA256": "edd4db4b76a67d862d2febe96ffe2b498ad4f09ac4f089ec2796a96b15ea757b",
+      "workingSHA256": "edd4db4b76a67d862d2febe96ffe2b498ad4f09ac4f089ec2796a96b15ea757b",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/game/flightSpeed.ts",
+      "group": "gameplay physics/progression",
+      "baselineSHA256": "8020ff1fd1e6d843dd47a7b854e6c4f14c6110caa9c4e90210f0dfc61b5721d6",
+      "workingSHA256": "8020ff1fd1e6d843dd47a7b854e6c4f14c6110caa9c4e90210f0dfc61b5721d6",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/game/milestones.ts",
+      "group": "gameplay physics/progression",
+      "baselineSHA256": "8c06f67752be261f12250d8136bbca60f2e709019b4cb4066f33aa284d69ca6c",
+      "workingSHA256": "8c06f67752be261f12250d8136bbca60f2e709019b4cb4066f33aa284d69ca6c",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/game/opponent.ts",
+      "group": "gameplay physics/progression",
+      "baselineSHA256": "69f800055694bf5745d89428086fbab15538116406b7d6b8487ca0c99c20f3e9",
+      "workingSHA256": "69f800055694bf5745d89428086fbab15538116406b7d6b8487ca0c99c20f3e9",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/game/progression.ts",
+      "group": "gameplay physics/progression",
+      "baselineSHA256": "95ac4b6393e413702a11c6c786c2e8d118c59150ddd51e45926622129f5e951a",
+      "workingSHA256": "95ac4b6393e413702a11c6c786c2e8d118c59150ddd51e45926622129f5e951a",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/game/scheduler.ts",
+      "group": "gameplay physics/progression",
+      "baselineSHA256": "75fd289e244e6de2b610d79751d80217379822e1fc2fe64c657e477ad6eb8830",
+      "workingSHA256": "75fd289e244e6de2b610d79751d80217379822e1fc2fe64c657e477ad6eb8830",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/game/session.ts",
+      "group": "gameplay physics/progression",
+      "baselineSHA256": "5c6fdc5f690b3addaeb8484d9f962276f4b3f60623e12acb1d4968909ad0c93a",
+      "workingSHA256": "5c6fdc5f690b3addaeb8484d9f962276f4b3f60623e12acb1d4968909ad0c93a",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/game/targets.ts",
+      "group": "gameplay physics/progression",
+      "baselineSHA256": "19ddd59cebbcb0b12ae09341f34df93ad8ef61628a70a064948747e69e89b8ec",
+      "workingSHA256": "19ddd59cebbcb0b12ae09341f34df93ad8ef61628a70a064948747e69e89b8ec",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/game/trajectory.ts",
+      "group": "gameplay physics/progression",
+      "baselineSHA256": "2e985214f496ceac6955d9e21a011232513dde662f1ecea3df40ffdd94fcb924",
+      "workingSHA256": "2e985214f496ceac6955d9e21a011232513dde662f1ecea3df40ffdd94fcb924",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/game/viewpoint.ts",
+      "group": "gameplay physics/progression",
+      "baselineSHA256": "1e5bea55f6b62fc37c9dce79f2b266d938d08e3fd663a925540e7b39dc9ad3f9",
+      "workingSHA256": "1e5bea55f6b62fc37c9dce79f2b266d938d08e3fd663a925540e7b39dc9ad3f9",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/input/mapping.ts",
+      "group": "direct input mapping/timeline",
+      "baselineSHA256": "80199b8f730a6339e6a106bf8cedec28308062e72dd878e080b38ce6b022ef32",
+      "workingSHA256": "80199b8f730a6339e6a106bf8cedec28308062e72dd878e080b38ce6b022ef32",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/input/swipe.ts",
+      "group": "direct input mapping/timeline",
+      "baselineSHA256": "cde8301accea83b7a2588ace83dda2db63943252e9fbf252c65ea9460cfe885c",
+      "workingSHA256": "cde8301accea83b7a2588ace83dda2db63943252e9fbf252c65ea9460cfe885c",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/input/timeline.ts",
+      "group": "direct input mapping/timeline",
+      "baselineSHA256": "f1d8aa89893bb444fd0c3cdf6426c90e647eb02027aaf51773e14f45edea9461",
+      "workingSHA256": "f1d8aa89893bb444fd0c3cdf6426c90e647eb02027aaf51773e14f45edea9461",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/ranking/client.ts",
+      "group": "ranking network protocol",
+      "baselineSHA256": "80607781333a2e1ed319337b4f17cdfdd3d902b82c61ed8f85deec099e1a2121",
+      "workingSHA256": "80607781333a2e1ed319337b4f17cdfdd3d902b82c61ed8f85deec099e1a2121",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/ranking/config.ts",
+      "group": "ranking/share endpoints and configuration",
+      "baselineSHA256": "827ac17fed6c111d58568015754a1a0b13c7bd4b274b5b6fbc86d11c2eec7d97",
+      "workingSHA256": "827ac17fed6c111d58568015754a1a0b13c7bd4b274b5b6fbc86d11c2eec7d97",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/ranking/controller.ts",
+      "group": "ranking queue/submission lifecycle",
+      "baselineSHA256": "d32422daa9a417e966f89d1158c76a0a1be986470bd8a60f3a400bdaeb96560f",
+      "workingSHA256": "d32422daa9a417e966f89d1158c76a0a1be986470bd8a60f3a400bdaeb96560f",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/ranking/resultPosition.ts",
+      "group": "PR26 acknowledged result position",
+      "baselineSHA256": "1a3bf05686ffcc88e6b50678d662c3cc5abb2dbda45a87b4bd966ac005f1c051",
+      "workingSHA256": "1a3bf05686ffcc88e6b50678d662c3cc5abb2dbda45a87b4bd966ac005f1c051",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/render/camera.ts",
+      "group": "camera/projection",
+      "baselineSHA256": "21bbe2f2ecd39520e72ffdca080a0936414b7131f06ded2d5a85f1aa21fd31ac",
+      "workingSHA256": "21bbe2f2ecd39520e72ffdca080a0936414b7131f06ded2d5a85f1aa21fd31ac",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/ui/result.css",
+      "group": "PR26 result styling",
+      "baselineSHA256": "51a2949c717e982d566441fbaa581dc327496d0c42fc27ac54d3a7a0778bee8d",
+      "workingSHA256": "51a2949c717e982d566441fbaa581dc327496d0c42fc27ac54d3a7a0778bee8d",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/ui/resultComments.ts",
+      "group": "PR26 result comments",
+      "baselineSHA256": "e6b24fb9e55228bccfe9ec1fe5cbc521f9395001a1a344706cba871359ba32fe",
+      "workingSHA256": "e6b24fb9e55228bccfe9ec1fe5cbc521f9395001a1a344706cba871359ba32fe",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/ui/resultEffects.ts",
+      "group": "PR26 result electricity",
+      "baselineSHA256": "9d844ab60e804e3ddf3e0acfefa136566de30147ba4aa6b54039897073871c72",
+      "workingSHA256": "9d844ab60e804e3ddf3e0acfefa136566de30147ba4aa6b54039897073871c72",
+      "bytewiseEqual": true
+    },
+    {
+      "path": "src/ui/screens.ts",
+      "group": "PR26 result markup/layout/integration",
+      "baselineSHA256": "5abf6d5966f926cb0705c3557af027d548df4301144b587daa407b896d104de3",
+      "workingSHA256": "5abf6d5966f926cb0705c3557af027d548df4301144b587daa407b896d104de3",
+      "bytewiseEqual": true
+    }
+  ],
+  "explicitExceptions": [
+    {
+      "path": "src/game/simulation.ts",
+      "group": "explicit event-fact exception",
+      "baselineSHA256": "48b7d7ccf0f2cd3864710e17b004a33d1af5a4a115ecaf8563a31f1df1e2e1b8",
+      "workingSHA256": "3044f72b803fd366428e51a1346d7ef3a269c60d60901b2058cbbf9668629fab",
+      "bytewiseEqual": false,
+      "allowedChange": "Only add optional lossCount event payload support and emit copied sampleReturn position plus cumulative lossCount at the existing loss boundary.",
+      "expectedAfterOnlyAllowedChangeSHA256": "3044f72b803fd366428e51a1346d7ef3a269c60d60901b2058cbbf9668629fab",
+      "matchesOnlyAllowedChange": true,
+      "diff": "diff --git a/src/game/simulation.ts b/src/game/simulation.ts\nindex 6b0e4be..96f9655 100644\n--- a/src/game/simulation.ts\n+++ b/src/game/simulation.ts\n@@ -57,7 +57,7 @@ type Action = { kind: 'bounce' | 'hit' | 'lost' | 'ready' | 'warning' | 'depart'\n /** Advance an uncommitted part of a fixed tick, including zero-time input paths. */\n function advanceSegment(state: SimulationState, config: GameConfig, dt: number, target: PaddlePoint, deferEndContact = false): StepResult {\n   const events: GameEvent[] = [];\n-  const emit = (kind: GameEventKind, time: number, ballId?: number, milestone?: number, position?: Point3, effect?: GameEvent['effect'], contact?: Pick<GameEvent, 'smashReturn' | 'rallyScore'>): void => {\n+  const emit = (kind: GameEventKind, time: number, ballId?: number, milestone?: number, position?: Point3, effect?: GameEvent['effect'], contact?: Pick<GameEvent, 'smashReturn' | 'rallyScore' | 'lossCount'>): void => {\n     events.push({ id: `${state.runId}:${++state.eventNumber}`, runId: state.runId, kind, time,\n       ...(ballId === undefined ? {} : { ballId }), ...(milestone === undefined ? {} : { milestone }),\n       ...(position ? { position: { ...position } } : {}), ...(effect ? { effect } : {}), ...contact });\n@@ -140,7 +140,8 @@ function advanceSegment(state: SimulationState, config: GameConfig, dt: number,\n         state.balls.push(extra); enqueueDeparture(extra);\n       }\n     } else if (kind === 'lost') {\n-      ball.phase = 'lost'; emit('ball-lost', time, ball.id);\n+      ball.phase = 'lost';\n+      emit('ball-lost', time, ball.id, undefined, sampleReturn(ball.plan, ball.from, time), undefined, { lossCount: state.lostBallCount + 1 });\n       state.lostBallCount++;\n       state.celebrations = lossCelebration(state.celebrations, state.lostBallCount, time);\n       if (state.lostBallCount >= MAX_LOST_BALLS) {\n"
+    },
+    {
+      "path": "src/game/types.ts",
+      "group": "explicit event-fact exception",
+      "baselineSHA256": "3a9b26a2380dc3b6c1c214ac240994e2aefb762d302fbadb1afa1324c665bba1",
+      "workingSHA256": "ed1128d511bf80a01d9ae88c1bc4ac04f59c7e255b59cf708da9acd363094a14",
+      "bytewiseEqual": false,
+      "allowedChange": "Only add the optional GameEvent.lossCount fact and its explanatory comment.",
+      "expectedAfterOnlyAllowedChangeSHA256": "ed1128d511bf80a01d9ae88c1bc4ac04f59c7e255b59cf708da9acd363094a14",
+      "matchesOnlyAllowedChange": true,
+      "diff": "diff --git a/src/game/types.ts b/src/game/types.ts\nindex ad0cd36..afc3d96 100644\n--- a/src/game/types.ts\n+++ b/src/game/types.ts\n@@ -13,6 +13,8 @@ export type GameEvent = Readonly<{\n   /** Player contact facts, copied before replacing the incoming plan.\n    * Legacy events without these fields use the normal, base-stage sound. */\n   smashReturn?: boolean; rallyScore?: number;\n+  /** Confirmed cumulative loss count; position is copied at the exact loss time. */\n+  lossCount?: number;\n   position?: Point3; effect?: 'racket-firework' | 'bounce-firework';\n }>;\n export type BallSnapshot = Readonly<{ id: number; phase: BallPhase; position: Point3; smash: boolean }>;\n"
+    }
+  ],
+  "limitations": [
+    "A working-tree snapshot, not a future guarantee; rerun after final changes.",
+    "Byte equality and exact event-fact transformations do not establish visual, audio, performance, or hardware acceptance.",
+    "Presentation-only reduced-motion edits in src/render/presentation.ts, celebrations.ts and particles.ts are intentionally outside strict gameplay byte equality and require their own behavior tests.",
+    "No production ranking request, database mutation, deployment or external message is performed by this checker."
+  ]
+}

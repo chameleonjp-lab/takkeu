@@ -1,0 +1,5995 @@
+{
+  "method": "CPU Three.js Raycaster; actual fixed camera1024x768; captured source functions; synthetic capture reconstructed at run-3 as explained in report; no WebGL/GPU",
+  "points": [
+    [
+      32,
+      700
+    ],
+    [
+      64,
+      700
+    ],
+    [
+      96,
+      700
+    ],
+    [
+      128,
+      700
+    ],
+    [
+      160,
+      650
+    ],
+    [
+      200,
+      650
+    ],
+    [
+      200,
+      700
+    ],
+    [
+      320,
+      700
+    ],
+    [
+      512,
+      700
+    ],
+    [
+      896,
+      740
+    ]
+  ],
+  "frames": [
+    10,
+    15,
+    20,
+    27,
+    40,
+    64
+  ],
+  "rows": [
+    {
+      "frame": 10,
+      "xy": [
+        32,
+        700
+      ],
+      "floorWorld": [
+        -1.4298936042321413,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7442896432871873,
+          "point": [
+            -0.5566827684243767,
+            0.2360751351445587,
+            2.3480635692057863
+          ],
+          "rgba": [
+            0.24999999999999997,
+            0.6999999880790709,
+            0.9999999999999999,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7691680495708375,
+          "point": [
+            -0.569471950717731,
+            0.2209006168843517,
+            2.3330600392527265
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7740864298004497,
+          "point": [
+            -0.5720003305756434,
+            0.2179006638425871,
+            2.3300938900446875
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.774889010685538,
+          "point": [
+            -0.5724129113948295,
+            0.21741113174968674,
+            2.3296098740586197
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.78496429725875,
+          "point": [
+            -0.5775922896545724,
+            0.21126573729238585,
+            2.3235337266493623
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7900724373241288,
+          "point": [
+            -0.5802182188934182,
+            0.20815004073955912,
+            2.3204531381421436
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7943111957162368,
+          "point": [
+            -0.5823972271930689,
+            0.20556462124410246,
+            2.3178968514662737
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.8023230811032112,
+          "point": [
+            -0.5865158777834332,
+            0.20067779289516463,
+            2.3130650884902444
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.804840521622801,
+          "point": [
+            -0.5878100123574339,
+            0.19914228669360368,
+            2.311546884558285
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.8089451553847142,
+          "point": [
+            -0.589920071532047,
+            0.19663867616238773,
+            2.3090714850133525
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.832113947809104,
+          "point": [
+            -0.601830396753608,
+            0.18250693236407645,
+            2.2950989794134253
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.8325094853454014,
+          "point": [
+            -0.6020337297805674,
+            0.18226567528760973,
+            2.294860440850877
+          ],
+          "rgba": [
+            0.25,
+            0.6999999880790712,
+            1,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.4298041589308323,
+          "point": [
+            -1.4231511487895618,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.13841493427753448,
+            0.8107348084449768,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.4380015946616918,
+          "point": [
+            -1.4273651847975244,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.44292005187866,
+          "point": [
+            -1.4298936042321408,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.09268462237356949,
+            1,
+            0.0890039678348353
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "xy": [
+        64,
+        700
+      ],
+      "floorWorld": [
+        -1.3405465494479882,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7850871783690976,
+          "point": [
+            -0.5428872860339913,
+            0.196749809589988,
+            2.3091813661760483
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7851639357687417,
+          "point": [
+            -0.5429252495200754,
+            0.1967023706655484,
+            2.3091344617991476
+          ],
+          "rgba": [
+            0.25,
+            0.6999999880790712,
+            1,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7922640012309037,
+          "point": [
+            -0.54643687494796,
+            0.19231426644970262,
+            2.3047958032723566
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.25333333015441895
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3849097892288014,
+          "point": [
+            -1.3341444639205082,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.13841493427753448,
+            0.8107348084449768,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3929999247485525,
+          "point": [
+            -1.3381457686630625,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.397854001894115,
+          "point": [
+            -1.3405465494479876,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.07775342001721208,
+            1,
+            0.09025336954899635
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "xy": [
+        96,
+        700
+      ],
+      "floorWorld": [
+        -1.2511994946638358,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.341783412149486,
+          "point": [
+            -1.2451377790514555,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.13841493427753448,
+            0.8107348084449768,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3497704730655484,
+          "point": [
+            -1.2489263525286014,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.35456270550198,
+          "point": [
+            -1.2511994946638354,
+            -0.7999999999999994,
+            1.3236630539995877
+          ],
+          "rgba": [
+            0.06157281594669377,
+            1,
+            0.09025336954899668
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "xy": [
+        128,
+        700
+      ],
+      "floorWorld": [
+        -1.1618524398796828,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3004943335992434,
+          "point": [
+            -1.1561310941824021,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.13841493427753448,
+            0.8107348084449768,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3083827111642696,
+          "point": [
+            -1.1597069363941404,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.3131157336408985,
+          "point": [
+            -1.1618524398796821,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.045392211876175335,
+            1,
+            0.0902533695489964
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "xy": [
+        160,
+        650
+      ],
+      "floorWorld": [
+        -1.1660207346315408,
+        -0.8,
+        1.1330395683297918
+      ],
+      "hits": [
+        {
+          "layer": "base-object",
+          "name": "rally-table-lines",
+          "part": null,
+          "distance": 1.9284595601383845,
+          "point": [
+            -0.5048586335658988,
+            0.12192649165453953,
+            2.128263795705685
+          ],
+          "rgba": [
+            0.07999999821186066,
+            0.850000023841858,
+            0.20000000298023224,
+            0.25999999046325684
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.4245209343510825,
+          "point": [
+            -1.1602835097076414,
+            -0.791999995708468,
+            1.141675612702218
+          ],
+          "rgba": [
+            1,
+            0.13841493427753448,
+            0.8107348084449768,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.4327057428612746,
+          "point": [
+            -1.1638692764392098,
+            -0.7969999999999999,
+            1.1362780832321777
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.437616623752348,
+          "point": [
+            -1.16602073463154,
+            -0.7999999999999993,
+            1.1330395683297927
+          ],
+          "rgba": [
+            0.027739086138595586,
+            1,
+            0.15554860471785126
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "xy": [
+        200,
+        650
+      ],
+      "floorWorld": [
+        -1.0469428549088966,
+        -0.8,
+        1.1330395683297922
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3742369999353308,
+          "point": [
+            -1.0416592602463346,
+            -0.7919999957084685,
+            1.141675612702218
+          ],
+          "rgba": [
+            1,
+            0.13841493427753448,
+            0.8107348084449768,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.382301626854514,
+          "point": [
+            -1.0449615079733126,
+            -0.7969999999999999,
+            1.1362780832321777
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.387140398852874,
+          "point": [
+            -1.046942854908896,
+            -0.7999999999999988,
+            1.1330395683297931
+          ],
+          "rgba": [
+            0.025555157317049233,
+            1,
+            0.17492948378159853
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "xy": [
+        200,
+        700
+      ],
+      "floorWorld": [
+        -0.960821566615339,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "base-object",
+          "name": "rally-table-lines",
+          "part": null,
+          "distance": 1.836933294688167,
+          "point": [
+            -0.40048570164531166,
+            0.10458626043445401,
+            2.2180563270397817
+          ],
+          "rgba": [
+            0.07999999821186066,
+            0.8500000238418579,
+            0.20000000298023224,
+            0.25999999046325684
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.2146731440455167,
+          "point": [
+            -0.9558660532270324,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.13841493427753448,
+            0.8107348084449768,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.222356403868214,
+          "point": [
+            -0.9589632500916031,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.2269663558050765,
+          "point": [
+            -0.9608215666153384,
+            -0.7999999999999989,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.03871829587338972,
+            1,
+            0.11998581379218796
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "xy": [
+        320,
+        700
+      ],
+      "floorWorld": [
+        -0.6257701111747662,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.095234023219914,
+          "point": [
+            -0.6220909849680833,
+            -0.7919999957084649,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.13841493427753448,
+            0.61052006483078,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.102631816447043,
+          "point": [
+            -0.624390439587374,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.107070488573575,
+          "point": [
+            -0.625770111174766,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.0279126643496956,
+            1,
+            0.1698574497518958
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "xy": [
+        512,
+        700
+      ],
+      "floorWorld": [
+        -0.08968778246984971,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 2.9728912101479334,
+          "point": [
+            -0.08805087575376452,
+            -0.7919999957084649,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.13841493427753448,
+            0.61052006483078,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 2.979996596782493,
+          "point": [
+            -0.08907394278060704,
+            -0.797,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 2.9842598251040693,
+          "point": [
+            -0.08968778246984954,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.02500000037252903,
+            1,
+            0.26402841374817254
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "xy": [
+        896,
+        740
+      ],
+      "floorWorld": [
+        0.9520719180663173,
+        -0.8,
+        1.4599237204231024
+      ],
+      "hits": [
+        {
+          "layer": "base-object",
+          "name": "rally-table-lines",
+          "part": null,
+          "distance": 2.017015138831034,
+          "point": [
+            0.7622463877797181,
+            -0.1487144209111271,
+            2.061611198147305
+          ],
+          "rgba": [
+            0.119999997317791,
+            0.3499999940395355,
+            1,
+            0.25
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 2.9126483459208194,
+          "point": [
+            0.94974021427048,
+            -0.7919999957084654,
+            1.4673144911671594
+          ],
+          "rgba": [
+            1,
+            0.13841493427753448,
+            0.21009059250354767,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 2.919609748530386,
+          "point": [
+            0.9511975296119372,
+            -0.7970000000000009,
+            1.462695257965354
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 2.923786586511114,
+          "point": [
+            0.9520719180663171,
+            -0.7999999999999994,
+            1.4599237204231028
+          ],
+          "rgba": [
+            0.02500000037252903,
+            1,
+            0.39285699801283197
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "xy": [
+        32,
+        700
+      ],
+      "floorWorld": [
+        -1.4298936042321413,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7346491055519917,
+          "point": [
+            -0.551726880450861,
+            0.2419553556953855,
+            2.353877530720221
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.18999999761581418
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7507487033866056,
+          "point": [
+            -0.5600031618657153,
+            0.23213544848196044,
+            2.344168275409016
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.18999999761581418
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7517531076448287,
+          "point": [
+            -0.5605194935393838,
+            0.23152281475521508,
+            2.343562544913203
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7778905306984487,
+          "point": [
+            -0.5739558955460087,
+            0.21558036253862878,
+            2.327799734176468
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7820227279715624,
+          "point": [
+            -0.5760801242283211,
+            0.21305993971649473,
+            2.3253077117835437
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.4298041589308323,
+          "point": [
+            -1.4231511487895618,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.26032495498657227,
+            0.5914332866668701,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.4380015946616918,
+          "point": [
+            -1.4273651847975244,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.44292005187866,
+          "point": [
+            -1.4298936042321408,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.12185997946395796,
+            1,
+            0.06315544567254126
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "xy": [
+        64,
+        700
+      ],
+      "floorWorld": [
+        -1.3405465494479882,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.6778581529234198,
+          "point": [
+            -0.48985282115911694,
+            0.2630213307649407,
+            2.3747061318347162
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7355331358602473,
+          "point": [
+            -0.5183783238763986,
+            0.22737604874286999,
+            2.339462505161845
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7608228715811245,
+          "point": [
+            -0.5308863886956876,
+            0.21174605257933932,
+            2.3240086296855673
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7708286035294942,
+          "point": [
+            -0.5358351293688186,
+            0.20556213853245464,
+            2.3178943967301207
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.8125844795484447,
+          "point": [
+            -0.5564871919129148,
+            0.17975545596430553,
+            2.2923785069825247
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "rally-table-lines",
+          "part": null,
+          "distance": 2.3275287240095572,
+          "point": [
+            -0.8111737595832204,
+            -0.1384992167689918,
+            1.9777099663951838
+          ],
+          "rgba": [
+            0.11999999731779099,
+            0.3499999940395355,
+            1,
+            0.25
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3849097892288014,
+          "point": [
+            -1.3341444639205082,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.26032495498657227,
+            0.5914332866668701,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3929999247485525,
+          "point": [
+            -1.3381457686630625,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.397854001894115,
+          "point": [
+            -1.3405465494479876,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.1066726193931835,
+            1,
+            0.06417729648022936
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "xy": [
+        96,
+        700
+      ],
+      "floorWorld": [
+        -1.2511994946638358,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.670056677437194,
+          "point": [
+            -0.4521728029824896,
+            0.25452274096235805,
+            2.3663033051699522
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.754416883822613,
+          "point": [
+            -0.4921881282438277,
+            0.20171215163611955,
+            2.314087791951798
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7608206323141122,
+          "point": [
+            -0.4952256750891781,
+            0.19770332157010495,
+            2.310124133867844
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.771742420561968,
+          "point": [
+            -0.5004063038227862,
+            0.19086613969752309,
+            2.3033639941875745
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.341783412149486,
+          "point": [
+            -1.2451377790514555,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.26032495498657227,
+            0.5914332866668701,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3497704730655484,
+          "point": [
+            -1.2489263525286014,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.35456270550198,
+          "point": [
+            -1.2511994946638354,
+            -0.7999999999999994,
+            1.3236630539995877
+          ],
+          "rgba": [
+            0.09046340851472093,
+            1,
+            0.06417729648022957
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "xy": [
+        128,
+        700
+      ],
+      "floorWorld": [
+        -1.1618524398796828,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.696588980837216,
+          "point": [
+            -0.42907253026843145,
+            0.22462650079451763,
+            2.3367439394523384
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.728412883111415,
+          "point": [
+            -0.4434984692091381,
+            0.20445509715255183,
+            2.316799829626386
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7475832200358585,
+          "point": [
+            -0.45218848175260323,
+            0.19230408560394818,
+            2.304785737145603
+          ],
+          "rgba": [
+            0.25,
+            0.6999999880790712,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3004943335992434,
+          "point": [
+            -1.1561310941824021,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.26032495498657227,
+            0.5914332866668701,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3083827111642696,
+          "point": [
+            -1.1597069363941404,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.3131157336408985,
+          "point": [
+            -1.1618524398796821,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.07425419763625851,
+            1,
+            0.06417729648022939
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "xy": [
+        160,
+        650
+      ],
+      "floorWorld": [
+        -1.1660207346315408,
+        -0.8,
+        1.1330395683297918
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.4245209343510825,
+          "point": [
+            -1.1602835097076414,
+            -0.791999995708468,
+            1.141675612702218
+          ],
+          "rgba": [
+            1,
+            0.26032495498657227,
+            0.5914332866668701,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.4327057428612746,
+          "point": [
+            -1.1638692764392098,
+            -0.7969999999999999,
+            1.1362780832321777
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.437616623752348,
+          "point": [
+            -1.16602073463154,
+            -0.7999999999999993,
+            1.1330395683297927
+          ],
+          "rgba": [
+            0.02987497483076871,
+            1,
+            0.10223905154417454
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "xy": [
+        200,
+        650
+      ],
+      "floorWorld": [
+        -1.0469428549088966,
+        -0.8,
+        1.1330395683297922
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3742369999353308,
+          "point": [
+            -1.0416592602463346,
+            -0.7919999957084685,
+            1.141675612702218
+          ],
+          "rgba": [
+            1,
+            0.26032495498657227,
+            0.5914332866668701,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.382301626854514,
+          "point": [
+            -1.0449615079733126,
+            -0.7969999999999999,
+            1.1362780832321777
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.387140398852874,
+          "point": [
+            -1.046942854908896,
+            -0.7999999999999988,
+            1.1330395683297931
+          ],
+          "rgba": [
+            0.026722677099346438,
+            1,
+            0.12068968812797677
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "xy": [
+        200,
+        700
+      ],
+      "floorWorld": [
+        -0.960821566615339,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.2146731440455167,
+          "point": [
+            -0.9558660532270324,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.26032495498657227,
+            0.5914332866668701,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.222356403868214,
+          "point": [
+            -0.9589632500916031,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.2269663558050765,
+          "point": [
+            -0.9608215666153384,
+            -0.7999999999999989,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.06756848235623363,
+            1,
+            0.09396230785136675
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "xy": [
+        320,
+        700
+      ],
+      "floorWorld": [
+        -0.6257701111747662,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.095234023219914,
+          "point": [
+            -0.6220909849680833,
+            -0.7919999957084649,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.26032495498657227,
+            0.4380147159099579,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.102631816447043,
+          "point": [
+            -0.624390439587374,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.107070488573575,
+          "point": [
+            -0.625770111174766,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.034038126430450844,
+            1,
+            0.12121649249417824
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "xy": [
+        512,
+        700
+      ],
+      "floorWorld": [
+        -0.08968778246984971,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 2.9728912101479334,
+          "point": [
+            -0.08805087575376452,
+            -0.7919999957084649,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.26032495498657227,
+            0.4380147159099579,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 2.979996596782493,
+          "point": [
+            -0.08907394278060704,
+            -0.797,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 2.9842598251040693,
+          "point": [
+            -0.08968778246984954,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.02500000037252903,
+            1,
+            0.20943362428100934
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "xy": [
+        896,
+        740
+      ],
+      "floorWorld": [
+        0.9520719180663173,
+        -0.8,
+        1.4599237204231024
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.4696124165167117,
+          "point": [
+            0.6476518972832492,
+            0.2444557653683721,
+            2.4248398420700132
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.1899999976158142
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.556259158017233,
+          "point": [
+            0.6657907168226413,
+            0.18222203121330116,
+            2.367345465201562
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.18999999761581418
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 2.9126483459208194,
+          "point": [
+            0.94974021427048,
+            -0.7919999957084654,
+            1.4673144911671594
+          ],
+          "rgba": [
+            1,
+            0.26032495498657227,
+            0.13117757439613342,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 2.919609748530386,
+          "point": [
+            0.9511975296119372,
+            -0.7970000000000009,
+            1.462695257965354
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 2.923786586511114,
+          "point": [
+            0.9520719180663171,
+            -0.7999999999999994,
+            1.4599237204231028
+          ],
+          "rgba": [
+            0.02500000037252903,
+            1,
+            0.3389574811408707
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "xy": [
+        32,
+        700
+      ],
+      "floorWorld": [
+        -1.4298936042321413,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7772768985464817,
+          "point": [
+            -0.5736404471461758,
+            0.2159546458503856,
+            2.328169800018597
+          ],
+          "rgba": [
+            0.6000000238418579,
+            0.949999988079071,
+            0.800000011920929,
+            0.18333333730697635
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7925837330706358,
+          "point": [
+            -0.5815091946387458,
+            0.20661828252612446,
+            2.318938639965527
+          ],
+          "rgba": [
+            0.6000000238418579,
+            0.9499999880790709,
+            0.8000000119209288,
+            0.18333333730697632
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.8180655844230262,
+          "point": [
+            -0.5946085884826375,
+            0.19107569453869178,
+            2.303571187739447
+          ],
+          "rgba": [
+            0.6000000238418579,
+            0.9499999880790712,
+            0.800000011920929,
+            0.18333333730697632
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.4298041589308323,
+          "point": [
+            -1.4231511487895618,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.39763328433036804,
+            0.3743821084499359,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.4380015946616918,
+          "point": [
+            -1.4273651847975244,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.44292005187866,
+          "point": [
+            -1.4298936042321408,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.14804608724257426,
+            1,
+            0.04068790812966663
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "xy": [
+        64,
+        700
+      ],
+      "floorWorld": [
+        -1.3405465494479882,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7009940314178718,
+          "point": [
+            -0.5012956085039013,
+            0.24872249838095195,
+            2.3605684204235056
+          ],
+          "rgba": [
+            0.25,
+            0.6999999880790712,
+            1,
+            0.12666666507720947
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7023808720950349,
+          "point": [
+            -0.5019815268256838,
+            0.24786537932274078,
+            2.3597209594865127
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.12666666507720947
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7370321581775474,
+          "point": [
+            -0.5191197261795817,
+            0.2264495972636198,
+            2.3385464930499196
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.12666666507720947
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7425216413982894,
+          "point": [
+            -0.5218347728177621,
+            0.22305689270446827,
+            2.3351920178960954
+          ],
+          "rgba": [
+            0.25,
+            0.6999999880790709,
+            1,
+            0.12666666507720947
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3849097892288014,
+          "point": [
+            -1.3341444639205082,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.39763328433036804,
+            0.3743821084499359,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3929999247485525,
+          "point": [
+            -1.3381457686630625,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.397854001894115,
+          "point": [
+            -1.3405465494479876,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.13223001675083979,
+            1,
+            0.04110805002780252
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "xy": [
+        96,
+        700
+      ],
+      "floorWorld": [
+        -1.2511994946638358,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.6276747931560704,
+          "point": [
+            -0.4320694277376576,
+            0.2810543532182217,
+            2.3925359560098602
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.12666666507720947
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7165756192950006,
+          "point": [
+            -0.47423854545766614,
+            0.22540127671273513,
+            2.337509985101799
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.12666666507720947
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7288792780811504,
+          "point": [
+            -0.48007464910567005,
+            0.21769902586241208,
+            2.3298945241456614
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.12666666507720947
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.341783412149486,
+          "point": [
+            -1.2451377790514555,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.39763328433036804,
+            0.3743821084499359,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3497704730655484,
+          "point": [
+            -1.2489263525286014,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.35456270550198,
+          "point": [
+            -1.2511994946638354,
+            -0.7999999999999994,
+            1.3236630539995877
+          ],
+          "rgba": [
+            0.11599380440665974,
+            1,
+            0.04110805002780261
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "xy": [
+        128,
+        700
+      ],
+      "floorWorld": [
+        -1.1618524398796828,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.5943154545397058,
+          "point": [
+            -0.3827114136176049,
+            0.28945200720347963,
+            2.400838984214298
+          ],
+          "rgba": [
+            0.25,
+            0.6999999880790712,
+            1,
+            0.12666666507720947
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.6407230570722544,
+          "point": [
+            -0.403748219058712,
+            0.26003680618022584,
+            2.371755237234007
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.12666666507720947
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.6500535972820947,
+          "point": [
+            -0.4079778010311306,
+            0.2541226951089739,
+            2.3659077670816306
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.12666666507720947
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.6744008692340557,
+          "point": [
+            -0.4190145449076517,
+            0.23869031205638125,
+            2.3506492779878547
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.12666666507720947
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3004943335992434,
+          "point": [
+            -1.1561310941824021,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.39763328433036804,
+            0.3743821084499359,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3083827111642696,
+          "point": [
+            -1.1597069363941404,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.3131157336408985,
+          "point": [
+            -1.1618524398796821,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.09975759206248008,
+            1,
+            0.04110805002780253
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "xy": [
+        160,
+        650
+      ],
+      "floorWorld": [
+        -1.1660207346315408,
+        -0.8,
+        1.1330395683297918
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.4245209343510825,
+          "point": [
+            -1.1602835097076414,
+            -0.791999995708468,
+            1.141675612702218
+          ],
+          "rgba": [
+            1,
+            0.39763328433036804,
+            0.3743821084499359,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.4327057428612746,
+          "point": [
+            -1.1638692764392098,
+            -0.7969999999999999,
+            1.1362780832321777
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.437616623752348,
+          "point": [
+            -1.16602073463154,
+            -0.7999999999999993,
+            1.1330395683297927
+          ],
+          "rgba": [
+            0.03344491317227408,
+            1,
+            0.05675743631652041
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "xy": [
+        200,
+        650
+      ],
+      "floorWorld": [
+        -1.0469428549088966,
+        -0.8,
+        1.1330395683297922
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.6278938633633504,
+          "point": [
+            -0.32657873500209417,
+            0.29071880391471017,
+            2.310475935259937
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.12666666507720947
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3742369999353308,
+          "point": [
+            -1.0416592602463346,
+            -0.7919999957084685,
+            1.141675612702218
+          ],
+          "rgba": [
+            1,
+            0.39763328433036804,
+            0.3743821084499359,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.382301626854514,
+          "point": [
+            -1.0449615079733126,
+            -0.7969999999999999,
+            1.1362780832321777
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.387140398852874,
+          "point": [
+            -1.046942854908896,
+            -0.7999999999999988,
+            1.1330395683297931
+          ],
+          "rgba": [
+            0.027754306988629067,
+            1,
+            0.07270575102238472
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "xy": [
+        200,
+        700
+      ],
+      "floorWorld": [
+        -0.960821566615339,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.6284350160841945,
+          "point": [
+            -0.3164380149000448,
+            0.24026985201596762,
+            2.3522110195001282
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.12666666507720947
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.2146731440455167,
+          "point": [
+            -0.9558660532270324,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.39763328433036804,
+            0.3743821084499359,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.222356403868214,
+          "point": [
+            -0.9589632500916031,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.2269663558050765,
+          "point": [
+            -0.9608215666153384,
+            -0.7999999999999989,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.09306073965102524,
+            1,
+            0.07094267756537398
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "xy": [
+        320,
+        700
+      ],
+      "floorWorld": [
+        -0.6257701111747662,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.095234023219914,
+          "point": [
+            -0.6220909849680833,
+            -0.7919999957084649,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.39763328433036804,
+            0.273670494556427,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.102631816447043,
+          "point": [
+            -0.624390439587374,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.107070488573575,
+          "point": [
+            -0.625770111174766,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.0504064383451494,
+            1,
+            0.08917417232453251
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "xy": [
+        512,
+        700
+      ],
+      "floorWorld": [
+        -0.08968778246984971,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 2.9728912101479334,
+          "point": [
+            -0.08805087575376452,
+            -0.7919999957084649,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.39763328433036804,
+            0.273670494556427,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 2.979996596782493,
+          "point": [
+            -0.08907394278060704,
+            -0.797,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 2.9842598251040693,
+          "point": [
+            -0.08968778246984954,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.02918619275911387,
+            1,
+            0.16537119337755407
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "xy": [
+        896,
+        740
+      ],
+      "floorWorld": [
+        0.9520719180663173,
+        -0.8,
+        1.4599237204231024
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.4587608017794584,
+          "point": [
+            0.6453801963742328,
+            0.252249901593419,
+            2.4320404224557293
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.12666666507720947
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 2.9126483459208194,
+          "point": [
+            0.94974021427048,
+            -0.7919999957084654,
+            1.4673144911671594
+          ],
+          "rgba": [
+            1,
+            0.39763328433036804,
+            0.07224723696708679,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 2.919609748530386,
+          "point": [
+            0.9511975296119372,
+            -0.7970000000000009,
+            1.462695257965354
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 2.923786586511114,
+          "point": [
+            0.9520719180663171,
+            -0.7999999999999994,
+            1.4599237204231028
+          ],
+          "rgba": [
+            0.02500000037252903,
+            1,
+            0.29136512607497395
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "xy": [
+        32,
+        700
+      ],
+      "floorWorld": [
+        -1.4298936042321413,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7242783862128228,
+          "point": [
+            -0.5463956297819219,
+            0.2482809485886539,
+            2.3601318460676737
+          ],
+          "rgba": [
+            0.6000000238418579,
+            0.949999988079071,
+            0.800000011920929,
+            0.054999999701976776
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.4298041589308323,
+          "point": [
+            -1.4231511487895618,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.5670064091682434,
+            0.14006927609443665,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.4380015946616918,
+          "point": [
+            -1.4273651847975244,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.44292005187866,
+          "point": [
+            -1.4298936042321408,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.18887285829095848,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "xy": [
+        64,
+        700
+      ],
+      "floorWorld": [
+        -1.3405465494479882,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.5105801536318175,
+          "point": [
+            -0.40711870004874634,
+            0.3664053485351402,
+            2.4769252059881586
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.03799999877810478
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7362256198988872,
+          "point": [
+            -0.5187208199521676,
+            0.2269480678819107,
+            2.3390393468409925
+          ],
+          "rgba": [
+            0.6000000238418579,
+            0.9499999880790712,
+            0.8000000119209288,
+            0.054999999701976776
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.7566926691426143,
+          "point": [
+            -0.5288436295151311,
+            0.21429867111916945,
+            2.326532485010946
+          ],
+          "rgba": [
+            0.6000000238418579,
+            0.949999988079071,
+            0.800000011920929,
+            0.054999999701976776
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "rally-table-lines",
+          "part": null,
+          "distance": 2.3527326790411736,
+          "point": [
+            -0.8236393980824653,
+            -0.15407619727989338,
+            1.9623085091847485
+          ],
+          "rgba": [
+            0.11999999731779099,
+            0.3499999940395355,
+            1,
+            0.25
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3849097892288014,
+          "point": [
+            -1.3341444639205082,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.5670064091682434,
+            0.14006927609443665,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3929999247485525,
+          "point": [
+            -1.3381457686630625,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.397854001894115,
+          "point": [
+            -1.3405465494479876,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.172601765337198,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "xy": [
+        96,
+        700
+      ],
+      "floorWorld": [
+        -1.2511994946638358,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.577459456210664,
+          "point": [
+            -0.40825034138078237,
+            0.3124898089968231,
+            2.4236171932705615
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.03799999877810478
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.341783412149486,
+          "point": [
+            -1.2451377790514555,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.5670064091682434,
+            0.14006927609443665,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3497704730655484,
+          "point": [
+            -1.2489263525286014,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.35456270550198,
+          "point": [
+            -1.2511994946638354,
+            -0.7999999999999994,
+            1.3236630539995877
+          ],
+          "rgba": [
+            0.15633067215498522,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "xy": [
+        128,
+        700
+      ],
+      "floorWorld": [
+        -1.1618524398796828,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.5904459724196125,
+          "point": [
+            -0.38095735742689446,
+            0.2919046569463444,
+            2.403263997203207
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.03799999877810478
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.6076291953703217,
+          "point": [
+            -0.3887466009632677,
+            0.2810131665495288,
+            2.392495233437532
+          ],
+          "rgba": [
+            0.25,
+            0.6999999880790709,
+            1,
+            0.03799999877810478
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.6593019978459296,
+          "point": [
+            -0.4121701486786173,
+            0.24826064779597212,
+            2.3601117740267794
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.03799999877810478
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.6670861309414613,
+          "point": [
+            -0.41569873633499393,
+            0.2433267182822414,
+            2.355233440627579
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.03799999877810478
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3004943335992434,
+          "point": [
+            -1.1561310941824021,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.5670064091682434,
+            0.14006927609443665,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3083827111642696,
+          "point": [
+            -1.1597069363941404,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.3131157336408985,
+          "point": [
+            -1.1618524398796821,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.14005957897277296,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "xy": [
+        160,
+        650
+      ],
+      "floorWorld": [
+        -1.1660207346315408,
+        -0.8,
+        1.1330395683297918
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.4343492753419467,
+          "point": [
+            -0.28838878961748865,
+            0.42377271583874965,
+            2.4541082941221894
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.03799999877810478
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.4245209343510825,
+          "point": [
+            -1.1602835097076414,
+            -0.791999995708468,
+            1.141675612702218
+          ],
+          "rgba": [
+            1,
+            0.5670064091682434,
+            0.14006927609443665,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.4327057428612746,
+          "point": [
+            -1.1638692764392098,
+            -0.7969999999999999,
+            1.1362780832321777
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.437616623752348,
+          "point": [
+            -1.16602073463154,
+            -0.7999999999999993,
+            1.1330395683297927
+          ],
+          "rgba": [
+            0.058716140645968015,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "xy": [
+        200,
+        650
+      ],
+      "floorWorld": [
+        -1.0469428549088966,
+        -0.8,
+        1.1330395683297922
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.5033806244680907,
+          "point": [
+            -0.2755939139755342,
+            0.3679160177558016,
+            2.3938107110756217
+          ],
+          "rgba": [
+            0.25,
+            0.6999999880790712,
+            1,
+            0.03799999877810478
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.552359387223199,
+          "point": [
+            -0.29564939944300456,
+            0.33754957595712043,
+            2.3610299863097994
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.03799999877810478
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3742369999353308,
+          "point": [
+            -1.0416592602463346,
+            -0.7919999957084685,
+            1.141675612702218
+          ],
+          "rgba": [
+            1,
+            0.5670064091682434,
+            0.14006927609443665,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.382301626854514,
+          "point": [
+            -1.0449615079733126,
+            -0.7969999999999999,
+            1.1362780832321777
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.387140398852874,
+          "point": [
+            -1.046942854908896,
+            -0.7999999999999988,
+            1.1330395683297931
+          ],
+          "rgba": [
+            0.04808423469254226,
+            1,
+            0.036053498724260793
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "xy": [
+        200,
+        700
+      ],
+      "floorWorld": [
+        -0.960821566615339,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.5593177373409737,
+          "point": [
+            -0.2885761666805225,
+            0.2852490273022723,
+            2.396683363998977
+          ],
+          "rgba": [
+            0.25,
+            0.6999999880790712,
+            1,
+            0.03799999877810478
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.5713905845804519,
+          "point": [
+            -0.293442848984574,
+            0.2773924287488674,
+            2.3889152945483447
+          ],
+          "rgba": [
+            0.25,
+            0.699999988079071,
+            1,
+            0.03799999877810478
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.2146731440455167,
+          "point": [
+            -0.9558660532270324,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.5670064091682434,
+            0.14006927609443665,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.222356403868214,
+          "point": [
+            -0.9589632500916031,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.2269663558050765,
+          "point": [
+            -0.9608215666153384,
+            -0.7999999999999989,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.12669856571198337,
+            1,
+            0.04824894242247446
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "xy": [
+        320,
+        700
+      ],
+      "floorWorld": [
+        -0.6257701111747662,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.095234023219914,
+          "point": [
+            -0.6220909849680833,
+            -0.7919999957084649,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.5670064091682434,
+            0.10437291115522385,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.102631816447043,
+          "point": [
+            -0.624390439587374,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.107070488573575,
+          "point": [
+            -0.625770111174766,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.07988905599056355,
+            1,
+            0.062456023258519074
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "xy": [
+        512,
+        700
+      ],
+      "floorWorld": [
+        -0.08968778246984971,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 2.9728912101479334,
+          "point": [
+            -0.08805087575376452,
+            -0.7919999957084649,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.5670064091682435,
+            0.10437291115522385,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 2.979996596782493,
+          "point": [
+            -0.08907394278060704,
+            -0.797,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 2.9842598251040693,
+          "point": [
+            -0.08968778246984954,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.03805217740645642,
+            1,
+            0.11824568956635521
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "xy": [
+        896,
+        740
+      ],
+      "floorWorld": [
+        0.9520719180663173,
+        -0.8,
+        1.4599237204231024
+      ],
+      "hits": [
+        {
+          "layer": "rally-world",
+          "name": "rally-world-lines",
+          "part": null,
+          "distance": 1.5644903407832016,
+          "point": [
+            0.6675138507363012,
+            0.17631001154391757,
+            2.3618836703801507
+          ],
+          "rgba": [
+            0.6000000238418579,
+            0.949999988079071,
+            0.800000011920929,
+            0.05499999970197677
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 2.9126483459208194,
+          "point": [
+            0.94974021427048,
+            -0.7919999957084654,
+            1.4673144911671594
+          ],
+          "rgba": [
+            1,
+            0.5670064091682434,
+            0.032980188727378845,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 2.919609748530386,
+          "point": [
+            0.9511975296119372,
+            -0.7970000000000009,
+            1.462695257965354
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 2.923786586511114,
+          "point": [
+            0.9520719180663171,
+            -0.7999999999999994,
+            1.4599237204231028
+          ],
+          "rgba": [
+            0.02500000037252903,
+            1,
+            0.23622133847365462
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "xy": [
+        32,
+        700
+      ],
+      "floorWorld": [
+        -1.4298936042321413,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.4298041589308323,
+          "point": [
+            -1.4231511487895618,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.6408523917198181,
+            0.048077136278152466,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.4380015946616918,
+          "point": [
+            -1.4273651847975244,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.44292005187866,
+          "point": [
+            -1.4298936042321408,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.2538330317471803,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "xy": [
+        64,
+        700
+      ],
+      "floorWorld": [
+        -1.3405465494479882,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3849097892288014,
+          "point": [
+            -1.3341444639205082,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.6408523917198181,
+            0.048077136278152466,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3929999247485525,
+          "point": [
+            -1.3381457686630625,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.397854001894115,
+          "point": [
+            -1.3405465494479876,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.2375072422265394,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "xy": [
+        96,
+        700
+      ],
+      "floorWorld": [
+        -1.2511994946638358,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.341783412149486,
+          "point": [
+            -1.2451377790514555,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.6408523917198181,
+            0.048077136278152466,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3497704730655484,
+          "point": [
+            -1.2489263525286014,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.35456270550198,
+          "point": [
+            -1.2511994946638354,
+            -0.7999999999999994,
+            1.3236630539995877
+          ],
+          "rgba": [
+            0.22118145261451747,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "xy": [
+        128,
+        700
+      ],
+      "floorWorld": [
+        -1.1618524398796828,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3004943335992434,
+          "point": [
+            -1.1561310941824021,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.6408523917198181,
+            0.048077136278152466,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3083827111642696,
+          "point": [
+            -1.1597069363941404,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.3131157336408985,
+          "point": [
+            -1.1618524398796821,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.2048556630024961,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "xy": [
+        160,
+        650
+      ],
+      "floorWorld": [
+        -1.1660207346315408,
+        -0.8,
+        1.1330395683297918
+      ],
+      "hits": [
+        {
+          "layer": "base-object",
+          "name": "rally-table-glow",
+          "part": null,
+          "distance": 2.13590182283675,
+          "point": [
+            -0.5957391426674647,
+            -0.004797573110732041,
+            1.9914645382945975
+          ],
+          "rgba": [
+            0.8500000238418579,
+            0.07000000029802322,
+            0.12999999523162842,
+            0.041580818593502045
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.4245209343510825,
+          "point": [
+            -1.1602835097076414,
+            -0.791999995708468,
+            1.141675612702218
+          ],
+          "rgba": [
+            1,
+            0.6408523917198181,
+            0.048077136278152466,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.4327057428612746,
+          "point": [
+            -1.1638692764392098,
+            -0.7969999999999999,
+            1.1362780832321777
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.437616623752348,
+          "point": [
+            -1.16602073463154,
+            -0.7999999999999993,
+            1.1330395683297927
+          ],
+          "rgba": [
+            0.12448235550462797,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "xy": [
+        200,
+        650
+      ],
+      "floorWorld": [
+        -1.0469428549088966,
+        -0.8,
+        1.1330395683297922
+      ],
+      "hits": [
+        {
+          "layer": "base-object",
+          "name": "rally-table-glow",
+          "part": null,
+          "distance": 2.104431504921215,
+          "point": [
+            -0.5217080769324299,
+            -0.004730728561248861,
+            1.9915366973178126
+          ],
+          "rgba": [
+            0.8500000238418579,
+            0.07000000029802322,
+            0.12999999523162842,
+            0.04158081859350205
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3742369999353308,
+          "point": [
+            -1.0416592602463346,
+            -0.7919999957084685,
+            1.141675612702218
+          ],
+          "rgba": [
+            1,
+            0.6408523917198181,
+            0.048077136278152466,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.382301626854514,
+          "point": [
+            -1.0449615079733126,
+            -0.7969999999999999,
+            1.1362780832321777
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.387140398852874,
+          "point": [
+            -1.046942854908896,
+            -0.7999999999999988,
+            1.1330395683297931
+          ],
+          "rgba": [
+            0.1046968958746841,
+            1,
+            0.026972842135720963
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "xy": [
+        200,
+        700
+      ],
+      "floorWorld": [
+        -0.960821566615339,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "base-object",
+          "name": "rally-table-lines",
+          "part": null,
+          "distance": 1.8510411413199994,
+          "point": [
+            -0.4061727120240146,
+            0.09540535345860264,
+            2.2089788716341854
+          ],
+          "rgba": [
+            0.07999999821186067,
+            0.8500000238418579,
+            0.20000000298023227,
+            0.2599999904632569
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.2146731440455167,
+          "point": [
+            -0.9558660532270324,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.6408523917198181,
+            0.048077136278152466,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.222356403868214,
+          "point": [
+            -0.9589632500916031,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.2269663558050765,
+          "point": [
+            -0.9608215666153384,
+            -0.7999999999999989,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.17227214112585215,
+            1,
+            0.029149499686379796
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "xy": [
+        320,
+        700
+      ],
+      "floorWorld": [
+        -0.6257701111747662,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "base-object",
+          "name": "rally-table-lines",
+          "part": null,
+          "distance": 2.0612374885379205,
+          "point": [
+            -0.300694044690555,
+            -0.09314468141237693,
+            2.02255344136167
+          ],
+          "rgba": [
+            0.03999999910593033,
+            0.8500000238418579,
+            0.25,
+            0.25
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.095234023219914,
+          "point": [
+            -0.6220909849680833,
+            -0.7919999957084649,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.6408523917198181,
+            0.040727175772190094,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.102631816447043,
+          "point": [
+            -0.624390439587374,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.107070488573575,
+          "point": [
+            -0.625770111174766,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.11358614282069844,
+            1,
+            0.03168519666796041
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "xy": [
+        512,
+        700
+      ],
+      "floorWorld": [
+        -0.08968778246984971,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 2.9728912101479334,
+          "point": [
+            -0.08805087575376452,
+            -0.7919999957084649,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.6408523917198181,
+            0.040727175772190094,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 2.979996596782493,
+          "point": [
+            -0.08907394278060704,
+            -0.797,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 2.9842598251040693,
+          "point": [
+            -0.08968778246984954,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.06396271700100735,
+            1,
+            0.08001649890560493
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "xy": [
+        896,
+        740
+      ],
+      "floorWorld": [
+        0.9520719180663173,
+        -0.8,
+        1.4599237204231024
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 2.9126483459208194,
+          "point": [
+            0.94974021427048,
+            -0.7919999957084654,
+            1.4673144911671594
+          ],
+          "rgba": [
+            1,
+            0.6446743607521057,
+            0.029849231243133545,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 2.919609748530386,
+          "point": [
+            0.9511975296119372,
+            -0.7970000000000009,
+            1.462695257965354
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 2.923786586511114,
+          "point": [
+            0.9520719180663171,
+            -0.7999999999999994,
+            1.4599237204231028
+          ],
+          "rgba": [
+            0.02500000037252903,
+            1,
+            0.17341099232524965
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "xy": [
+        32,
+        700
+      ],
+      "floorWorld": [
+        -1.4298936042321413,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.4298041589308323,
+          "point": [
+            -1.4231511487895618,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.09928088635206223,
+            0.31141918897628784,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.4380015946616918,
+          "point": [
+            -1.4273651847975244,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.44292005187866,
+          "point": [
+            -1.4298936042321408,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.2125765266897137,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "xy": [
+        64,
+        700
+      ],
+      "floorWorld": [
+        -1.3405465494479882,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "base-object",
+          "name": "rally-table-lines",
+          "part": null,
+          "distance": 2.3537923391127533,
+          "point": [
+            -0.8241634959618587,
+            -0.15473110656942635,
+            1.961660979492303
+          ],
+          "rgba": [
+            0.8000000119209288,
+            0.30000001192092896,
+            0.2000000029802322,
+            0.25999999046325684
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3849097892288014,
+          "point": [
+            -1.3341444639205082,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.09928088635206223,
+            0.31141918897628784,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3929999247485525,
+          "point": [
+            -1.3381457686630625,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.397854001894115,
+          "point": [
+            -1.3405465494479876,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.19619037668334374,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "xy": [
+        96,
+        700
+      ],
+      "floorWorld": [
+        -1.2511994946638358,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "base-object",
+          "name": "rally-table-lines",
+          "part": null,
+          "distance": 1.8884153994597785,
+          "point": [
+            -0.5557488331958775,
+            0.11782733339244378,
+            2.231148197986144
+          ],
+          "rgba": [
+            0.07999999821186066,
+            0.8500000238418579,
+            0.20000000298023224,
+            0.16333332657814026
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.341783412149486,
+          "point": [
+            -1.2451377790514555,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.09928088635206223,
+            0.31141918897628784,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3497704730655484,
+          "point": [
+            -1.2489263525286014,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.35456270550198,
+          "point": [
+            -1.2511994946638354,
+            -0.7999999999999994,
+            1.3236630539995877
+          ],
+          "rgba": [
+            0.17980422667697368,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "xy": [
+        128,
+        700
+      ],
+      "floorWorld": [
+        -1.1618524398796828,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3004943335992434,
+          "point": [
+            -1.1561310941824021,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.09928088635206223,
+            0.31141918897628784,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.3083827111642696,
+          "point": [
+            -1.1597069363941404,
+            -0.7969999999999996,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.3131157336408985,
+          "point": [
+            -1.1618524398796821,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.1634180766706041,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "xy": [
+        160,
+        650
+      ],
+      "floorWorld": [
+        -1.1660207346315408,
+        -0.8,
+        1.1330395683297918
+      ],
+      "hits": [
+        {
+          "layer": "base-object",
+          "name": "rally-table-lines",
+          "part": null,
+          "distance": 1.962389428484657,
+          "point": [
+            -0.5197233176902811,
+            0.10119912984378687,
+            2.105888505668595
+          ],
+          "rgba": [
+            0.07999999821186066,
+            0.8500000238418579,
+            0.20000000298023224,
+            0.16333332657814026
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.4245209343510825,
+          "point": [
+            -1.1602835097076414,
+            -0.791999995708468,
+            1.141675612702218
+          ],
+          "rgba": [
+            1,
+            0.09928088635206223,
+            0.31141918897628784,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.4327057428612746,
+          "point": [
+            -1.1638692764392098,
+            -0.7969999999999999,
+            1.1362780832321777
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.437616623752348,
+          "point": [
+            -1.16602073463154,
+            -0.7999999999999993,
+            1.1330395683297927
+          ],
+          "rgba": [
+            0.08411537918184771,
+            1,
+            0.02500000037252903
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "xy": [
+        200,
+        650
+      ],
+      "floorWorld": [
+        -1.0469428549088966,
+        -0.8,
+        1.1330395683297922
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.3742369999353308,
+          "point": [
+            -1.0416592602463346,
+            -0.7919999957084685,
+            1.141675612702218
+          ],
+          "rgba": [
+            1,
+            0.09928088635206223,
+            0.31141918897628784,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.382301626854514,
+          "point": [
+            -1.0449615079733126,
+            -0.7969999999999999,
+            1.1362780832321777
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.387140398852874,
+          "point": [
+            -1.046942854908896,
+            -0.7999999999999988,
+            1.1330395683297931
+          ],
+          "rgba": [
+            0.06990145800915858,
+            1,
+            0.032624828760207655
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "xy": [
+        200,
+        700
+      ],
+      "floorWorld": [
+        -0.960821566615339,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.2146731440455167,
+          "point": [
+            -0.9558660532270324,
+            -0.7919999957084654,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.09928088635206223,
+            0.31141918897628784,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.222356403868214,
+          "point": [
+            -0.9589632500916031,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.2269663558050765,
+          "point": [
+            -0.9608215666153384,
+            -0.7999999999999989,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.14258662385599774,
+            1,
+            0.04103738398494404
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "xy": [
+        320,
+        700
+      ],
+      "floorWorld": [
+        -0.6257701111747662,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "base-object",
+          "name": "rally-table-lines",
+          "part": null,
+          "distance": 2.0571285001000135,
+          "point": [
+            -0.2994168486195012,
+            -0.09036750730212151,
+            2.025299321938146
+          ],
+          "rgba": [
+            0.03999999910593033,
+            0.8500000238418579,
+            0.25,
+            0.25
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 3.095234023219914,
+          "point": [
+            -0.6220909849680833,
+            -0.7919999957084649,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.09928088635206223,
+            0.09618251770734787,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 3.102631816447043,
+          "point": [
+            -0.624390439587374,
+            -0.797,
+            1.3266292496367302
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 3.107070488573575,
+          "point": [
+            -0.625770111174766,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.09093876730872162,
+            1,
+            0.05083758929711531
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "xy": [
+        512,
+        700
+      ],
+      "floorWorld": [
+        -0.08968778246984971,
+        -0.8,
+        1.3236630539995873
+      ],
+      "hits": [
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 2.9728912101479334,
+          "point": [
+            -0.08805087575376452,
+            -0.7919999957084649,
+            1.331572913275147
+          ],
+          "rgba": [
+            1,
+            0.09928088635206223,
+            0.09618251770734787,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 2.979996596782493,
+          "point": [
+            -0.08907394278060704,
+            -0.797,
+            1.3266292496367307
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 2.9842598251040693,
+          "point": [
+            -0.08968778246984954,
+            -0.7999999999999994,
+            1.3236630539995882
+          ],
+          "rgba": [
+            0.04135329963553492,
+            1,
+            0.09956901752346335
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "xy": [
+        896,
+        740
+      ],
+      "floorWorld": [
+        0.9520719180663173,
+        -0.8,
+        1.4599237204231024
+      ],
+      "hits": [
+        {
+          "layer": "base-object",
+          "name": "rally-table-lines",
+          "part": null,
+          "distance": 2.0171448034782444,
+          "point": [
+            0.7622735320623033,
+            -0.1488075521131096,
+            2.0615251592730885
+          ],
+          "rgba": [
+            0.119999997317791,
+            0.3499999940395356,
+            1.0000000000000002,
+            0.25000000000000006
+          ],
+          "renderOrder": 2,
+          "additive": true,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "legacy-environment",
+          "name": "",
+          "part": null,
+          "distance": 2.9126483459208194,
+          "point": [
+            0.94974021427048,
+            -0.7919999957084654,
+            1.4673144911671594
+          ],
+          "rgba": [
+            1,
+            0.4591566026210785,
+            0.025584889575839043,
+            0.8999999761581421
+          ],
+          "renderOrder": 1,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": null,
+          "distance": 2.919609748530386,
+          "point": [
+            0.9511975296119372,
+            -0.7970000000000009,
+            1.462695257965354
+          ],
+          "rgba": null,
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        },
+        {
+          "layer": "base-object",
+          "name": "",
+          "part": "selfFloor",
+          "distance": 2.923786586511114,
+          "point": [
+            0.9520719180663171,
+            -0.7999999999999994,
+            1.4599237204231028
+          ],
+          "rgba": [
+            0.02500000037252903,
+            1,
+            0.21704000468494755
+          ],
+          "renderOrder": 0,
+          "additive": false,
+          "depthTest": true,
+          "opacity": 1
+        }
+      ]
+    }
+  ]
+}

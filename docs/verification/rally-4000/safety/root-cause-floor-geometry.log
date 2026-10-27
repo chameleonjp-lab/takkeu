@@ -1,0 +1,816 @@
+WebSocket server error:
+Error: listen EPERM: operation not permitted 0.0.0.0:24678
+    at Server.setupListenHandle [as _listen2] (node:net:2145:21)
+    at listenInCluster (node:net:2224:12)
+    at Server.listen (node:net:2344:7)
+    at Object.listen (file:///workspace/takkeu-work/node_modules/vite/dist/node/chunks/node.js:24711:18)
+    at Object.listen (file:///workspace/takkeu-work/node_modules/vite/dist/node/chunks/node.js:25395:27)
+    at DevEnvironment.listen (file:///workspace/takkeu-work/node_modules/vite/dist/node/chunks/node.js:37149:12)
+    at file:///workspace/takkeu-work/node_modules/vite/dist/node/chunks/node.js:25100:95
+    at Array.map (<anonymous>)
+    at file:///workspace/takkeu-work/node_modules/vite/dist/node/chunks/node.js:25100:82
+    at async _createServer (file:///workspace/takkeu-work/node_modules/vite/dist/node/chunks/node.js:25117:9)
+9:00:56 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+9:00:57 PM [vite] (client) [optimizer] scanning dependencies...
+[
+  {
+    "frame": 23,
+    "xy": [
+      32,
+      700
+    ],
+    "floorWorld": [
+      -1.4298936042321413,
+      -0.8,
+      1.3236630539995873
+    ],
+    "hits": [
+      {
+        "layer": "rally-world",
+        "name": "rally-world-lines",
+        "part": null,
+        "alpha": 0.12833333015441895,
+        "additive": true
+      },
+      {
+        "layer": "rally-world",
+        "name": "rally-world-lines",
+        "part": null,
+        "alpha": 0.12833333015441895,
+        "additive": true
+      },
+      {
+        "layer": "rally-world",
+        "name": "rally-world-lines",
+        "part": null,
+        "alpha": 0.12833333015441895,
+        "additive": true
+      },
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 23,
+    "xy": [
+      64,
+      700
+    ],
+    "floorWorld": [
+      -1.3405465494479882,
+      -0.8,
+      1.3236630539995873
+    ],
+    "hits": [
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 23,
+    "xy": [
+      96,
+      700
+    ],
+    "floorWorld": [
+      -1.2511994946638358,
+      -0.8,
+      1.3236630539995873
+    ],
+    "hits": [
+      {
+        "layer": "rally-world",
+        "name": "rally-world-lines",
+        "part": null,
+        "alpha": 0.08866667002439499,
+        "additive": true
+      },
+      {
+        "layer": "rally-world",
+        "name": "rally-world-lines",
+        "part": null,
+        "alpha": 0.08866667002439499,
+        "additive": true
+      },
+      {
+        "layer": "rally-world",
+        "name": "rally-world-lines",
+        "part": null,
+        "alpha": 0.08866667002439499,
+        "additive": true
+      },
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 23,
+    "xy": [
+      128,
+      700
+    ],
+    "floorWorld": [
+      -1.1618524398796828,
+      -0.8,
+      1.3236630539995873
+    ],
+    "hits": [
+      {
+        "layer": "rally-world",
+        "name": "rally-world-lines",
+        "part": null,
+        "alpha": 0.08866667002439499,
+        "additive": true
+      },
+      {
+        "layer": "rally-world",
+        "name": "rally-world-lines",
+        "part": null,
+        "alpha": 0.08866667002439499,
+        "additive": true
+      },
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 23,
+    "xy": [
+      160,
+      650
+    ],
+    "floorWorld": [
+      -1.1660207346315408,
+      -0.8,
+      1.1330395683297918
+    ],
+    "hits": [
+      {
+        "layer": "rally-world",
+        "name": "rally-world-lines",
+        "part": null,
+        "alpha": 0.08866667002439499,
+        "additive": true
+      },
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 23,
+    "xy": [
+      200,
+      650
+    ],
+    "floorWorld": [
+      -1.0469428549088966,
+      -0.8,
+      1.1330395683297922
+    ],
+    "hits": [
+      {
+        "layer": "rally-world",
+        "name": "rally-world-lines",
+        "part": null,
+        "alpha": 0.08866667002439499,
+        "additive": true
+      },
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 23,
+    "xy": [
+      200,
+      700
+    ],
+    "floorWorld": [
+      -0.960821566615339,
+      -0.8,
+      1.3236630539995873
+    ],
+    "hits": [
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 23,
+    "xy": [
+      320,
+      700
+    ],
+    "floorWorld": [
+      -0.6257701111747662,
+      -0.8,
+      1.3236630539995873
+    ],
+    "hits": [
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 23,
+    "xy": [
+      512,
+      700
+    ],
+    "floorWorld": [
+      -0.08968778246984971,
+      -0.8,
+      1.3236630539995873
+    ],
+    "hits": [
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 23,
+    "xy": [
+      896,
+      740
+    ],
+    "floorWorld": [
+      0.9520719180663173,
+      -0.8,
+      1.4599237204231024
+    ],
+    "hits": [
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 72,
+    "xy": [
+      32,
+      700
+    ],
+    "floorWorld": [
+      -1.4298936042321413,
+      -0.8,
+      1.3236630539995873
+    ],
+    "hits": [
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 72,
+    "xy": [
+      64,
+      700
+    ],
+    "floorWorld": [
+      -1.3405465494479882,
+      -0.8,
+      1.3236630539995873
+    ],
+    "hits": [
+      {
+        "layer": "base-object",
+        "name": "rally-table-glow",
+        "part": null,
+        "alpha": 0.014302130788564682,
+        "additive": true
+      },
+      {
+        "layer": "base-object",
+        "name": "rally-table-lines",
+        "part": null,
+        "alpha": 0.25999999046325684,
+        "additive": true
+      },
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 72,
+    "xy": [
+      96,
+      700
+    ],
+    "floorWorld": [
+      -1.2511994946638358,
+      -0.8,
+      1.3236630539995873
+    ],
+    "hits": [
+      {
+        "layer": "base-object",
+        "name": "rally-table-lines",
+        "part": null,
+        "alpha": 0.14000000059604645,
+        "additive": true
+      },
+      {
+        "layer": "base-object",
+        "name": "rally-table-glow",
+        "part": null,
+        "alpha": 0.014302130788564682,
+        "additive": true
+      },
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 72,
+    "xy": [
+      128,
+      700
+    ],
+    "floorWorld": [
+      -1.1618524398796828,
+      -0.8,
+      1.3236630539995873
+    ],
+    "hits": [
+      {
+        "layer": "base-object",
+        "name": "rally-table-glow",
+        "part": null,
+        "alpha": 0.014302130788564682,
+        "additive": true
+      },
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 72,
+    "xy": [
+      160,
+      650
+    ],
+    "floorWorld": [
+      -1.1660207346315408,
+      -0.8,
+      1.1330395683297918
+    ],
+    "hits": [
+      {
+        "layer": "base-object",
+        "name": "rally-table-lines",
+        "part": null,
+        "alpha": 0.14000000059604645,
+        "additive": true
+      },
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 72,
+    "xy": [
+      200,
+      650
+    ],
+    "floorWorld": [
+      -1.0469428549088966,
+      -0.8,
+      1.1330395683297922
+    ],
+    "hits": [
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 72,
+    "xy": [
+      200,
+      700
+    ],
+    "floorWorld": [
+      -0.960821566615339,
+      -0.8,
+      1.3236630539995873
+    ],
+    "hits": [
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 72,
+    "xy": [
+      320,
+      700
+    ],
+    "floorWorld": [
+      -0.6257701111747662,
+      -0.8,
+      1.3236630539995873
+    ],
+    "hits": [
+      {
+        "layer": "base-object",
+        "name": "rally-table-glow",
+        "part": null,
+        "alpha": 0.024052131921052936,
+        "additive": true
+      },
+      {
+        "layer": "base-object",
+        "name": "rally-table-lines",
+        "part": null,
+        "alpha": 0.25,
+        "additive": true
+      },
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 72,
+    "xy": [
+      512,
+      700
+    ],
+    "floorWorld": [
+      -0.08968778246984971,
+      -0.8,
+      1.3236630539995873
+    ],
+    "hits": [
+      {
+        "layer": "base-object",
+        "name": "rally-table-glow",
+        "part": null,
+        "alpha": 0.033802129328250885,
+        "additive": true
+      },
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  },
+  {
+    "frame": 72,
+    "xy": [
+      896,
+      740
+    ],
+    "floorWorld": [
+      0.9520719180663173,
+      -0.8,
+      1.4599237204231024
+    ],
+    "hits": [
+      {
+        "layer": "base-object",
+        "name": "rally-table-lines",
+        "part": null,
+        "alpha": 0.25,
+        "additive": true
+      },
+      {
+        "layer": "legacy-environment",
+        "name": "",
+        "part": null,
+        "alpha": 0.8999999761581421,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": null,
+        "additive": false
+      },
+      {
+        "layer": "base-object",
+        "name": "",
+        "part": "selfFloor",
+        "additive": false
+      }
+    ]
+  }
+]

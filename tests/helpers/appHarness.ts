@@ -9,10 +9,10 @@ import { createAudio } from '../../src/audio/audio';
 import { createRankingClient } from '../../src/ranking/client';
 import type { GameSession, GameSnapshot, GameEvent } from '../../src/game/types';
 import { createSimulationState, snapshotSimulation, startSimulation, stepSimulation } from '../../src/game/simulation';
-import { scenario } from './scenarios';
+import { incoming, scenario } from './scenarios';
 import { deflectBounce } from '../../src/game/trajectory';
 import { remainingScenario } from './remainingBall';
-import { lossLimitScenario } from './losses';
+import { ballLostAt, lossLimitScenario } from './losses';
 import '../../src/ui/styles.css';
 
 let state = createSimulationState(7);
@@ -76,6 +76,16 @@ function show(score: number) {
 }
 function restore() { const canvas = document.querySelector('canvas')!; canvas.dispatchEvent(new Event('webglcontextrestored')); }
 const harness = { snapshot: (): GameSnapshot => session.snapshot(), show, restore, metrics: () => metrics,
+  goal(score = 3499, count = 30) {
+    state = scenario(score, 0).state;
+    state.balls = Array.from({ length: count }, (_, i) => incoming(i + 1, .05, { x: 0, y: .5 }, 0));
+    state.nextBallId = count + 1;
+    currentAudio?.reset(state.runId); metrics.events.length = 0;
+  },
+  goalMiss() {
+    state = scenario(2999, 0).state; state.balls = [ballLostAt(1, .02, 0)];
+    currentAudio?.reset(state.runId); metrics.events.length = 0;
+  },
   releasePreparation(){releasePreparation?.();releasePreparation=null;},
   lossLimit(count = 98) {
     state = lossLimitScenario(count, 340, 0).state;

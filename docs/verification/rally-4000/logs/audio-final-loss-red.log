@@ -1,0 +1,38 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-audio.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-audio.test.ts (16 tests | 1 failed) 48ms
+   ❯ extended rally audio (16)
+     × lets the final confirmed loss impact finish through same-time game over while clearing contacts 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-audio.test.ts > extended rally audio > lets the final confirmed loss impact finish through same-time game over while clearing contacts
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/rally-audio.test.ts:133:94
+    131|     audio.consume([{ kind: 'ball-lost', id: 'loss-100', runId: 'run', …
+    132|     expect(contacts.every(source => source.record.disconnected)).toBe(…
+    133|     expect(impact.every(source => !source.record.disconnected && sourc…
+       |                                                                                              ^
+    134|     expect(Math.max(...impact.map(source => source.stops[0]!))).toBeCl…
+    135|     const count = t.sources.length;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 15 passed (16)
+   Start at  20:34:51
+   Duration  264ms (tests 40%, transform 40%, import 16%, worker 4%)
+

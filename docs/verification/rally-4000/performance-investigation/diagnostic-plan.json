@@ -1,0 +1,200 @@
+[
+  {
+    "root": "/workspace/takkeu-main",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D01-main-1"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D01-pr-1"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D02-hide-1",
+    "mode": "hide-effects"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D03-freeze-1",
+    "mode": "freeze-effects"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D04-rainbow-1",
+    "mode": "freeze-rainbow"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D05-background-1",
+    "mode": "static-background"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D06-no-audio-1",
+    "mode": "no-audio"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D07-full-1",
+    "profile": false
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D07-light-1",
+    "profile": false,
+    "collector": "light"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D07-off-1",
+    "profile": false,
+    "collector": "off"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D06-original-silent-1",
+    "audible": false
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D08-low-dpr1-1",
+    "quality": "low"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D08-standard-dpr2-1",
+    "dpr": 2
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D08-low-dpr2-1",
+    "quality": "low",
+    "dpr": 2
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D08-low-dpr2-2",
+    "quality": "low",
+    "dpr": 2
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D08-standard-dpr2-2",
+    "dpr": 2
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D08-low-dpr1-2",
+    "quality": "low"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D06-original-silent-2",
+    "audible": false
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D07-off-2",
+    "profile": false,
+    "collector": "off"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D07-light-2",
+    "profile": false,
+    "collector": "light"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D07-full-2",
+    "profile": false
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D06-no-audio-2",
+    "mode": "no-audio"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D05-background-2",
+    "mode": "static-background"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D04-rainbow-2",
+    "mode": "freeze-rainbow"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D03-freeze-2",
+    "mode": "freeze-effects"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D02-hide-2",
+    "mode": "hide-effects"
+  },
+  {
+    "root": "/workspace/takkeu-before",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D01-pr-2"
+  },
+  {
+    "root": "/workspace/takkeu-main",
+    "seconds": 10,
+    "warmSeconds": 3,
+    "label": "D01-main-2"
+  }
+]

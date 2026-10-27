@@ -45,6 +45,16 @@
 .result-best { color: #9aafbd; font-size: .875rem; padding-block: 2px 4px; }
 .result-best output { color: #e8f2f8; font-size: 1.25rem; font-weight: 700; padding-inline: 5px; }
 .result-best span { font-size: .75rem; }
+.result-screen[data-cleared="true"] *, .result-screen[data-cleared="true"] *::before { animation: none !important; transition: none !important; }
+.result-screen[data-cleared="true"] .result-score { background: none; color: #ffe6a5; -webkit-text-stroke: 0; }
+.hall-card, .certificate-card { padding: 18px; border: 1px solid #bfa36877; border-radius: 14px; background: #17262b; }
+.hall-card h3, .certificate-card h3 { margin: 0; color: #ffe6a5; }
+[data-hall-message] { font-size: clamp(20px, 6vw, 28px); font-weight: 750; overflow-wrap: anywhere; }
+.hall-card .position-note, .certificate-card p { font-size: .8125rem; color: #b6c5ca; line-height: 1.8; overflow-wrap: anywhere; }
+.certificate-card img { display: block; max-width: 100%; height: auto; margin-block: 16px; }
+.certificate-card .button { margin-block: 5px; }
+.hall-list { list-style: none; padding: 0; text-align: left; font-size: .8125rem; line-height: 1.8; }
+.hall-list li { padding-block: 10px; border-top: 1px solid #8fa9b833; overflow-wrap: anywhere; }
 .result-actions { display: grid; gap: 10px; margin-block: 4px 10px; }
 .result-actions .primary { min-height: 54px; font-weight: 750; }
 .result-screen .result-message { color: #9bb0bf; line-height: 1.7; }

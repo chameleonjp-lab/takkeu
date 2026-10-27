@@ -26,11 +26,11 @@ export function createFireworks() {
   const seen = new Set<string>(), order:string[]=[];
   let runId='', cursor=0, active=0, disposed=false;
   const clear=()=>{births.fill(-Infinity);seen.clear();order.length=0;cursor=0;active=0;geometry.setDrawRange(0,0);};
-  return { root, geometry, material, active:()=>active,
-    update(snapshot:GameSnapshot,events:readonly GameEvent[],quality:Quality) {
+  return { root, geometry, material, active:()=>active, clear,
+    update(snapshot:GameSnapshot,events:readonly GameEvent[],quality:Quality,reducedMotion=false,lowPriorityOpacity=1) {
       if(disposed)return;
       if(runId!==snapshot.runId){clear();runId=snapshot.runId;}
-      if(snapshot.phase==='gameover'||snapshot.phase==='ready'){clear();return;}
+      if(snapshot.score>=1500||snapshot.phase==='gameover'||snapshot.phase==='ready'){clear();return;}
       for(const event of events){
         if(event.runId!==runId||!event.effect||!event.position||seen.has(event.id)||event.time>snapshot.simTime+1e-9||snapshot.simTime-event.time>=LIFE)continue;
         seen.add(event.id);order.push(event.id);if(order.length>512)seen.delete(order.shift()!);
@@ -46,9 +46,9 @@ export function createFireworks() {
       active=0;
       for(let slot=0;slot<PARTICLE_LIMIT;slot++){
         const age=snapshot.simTime-births[slot]!;if(age<0||age>=LIFE)continue;
-        const index=slot*3;
-        position.setXYZ(active,origins[index]!+velocities[index]!*age,origins[index+1]!+velocities[index+1]!*age-1.1*age*age,origins[index+2]!+velocities[index+2]!*age);
-        const rgb=sampleRainbow(0,hues[slot]!);color.setXYZ(active,rgb.r,rgb.g,rgb.b);opacity.setX(active,(1-age/LIFE)*.8);active++;
+        const index=slot*3,motionAge=reducedMotion?0:age;
+        position.setXYZ(active,origins[index]!+velocities[index]!*motionAge,origins[index+1]!+velocities[index+1]!*motionAge-1.1*motionAge*motionAge,origins[index+2]!+velocities[index+2]!*motionAge);
+        const rgb=sampleRainbow(0,hues[slot]!);color.setXYZ(active,rgb.r,rgb.g,rgb.b);opacity.setX(active,(1-age/LIFE)*.8*lowPriorityOpacity);active++;
       }
       geometry.setDrawRange(0,active);position.needsUpdate=true;color.needsUpdate=true;opacity.needsUpdate=true;
     },

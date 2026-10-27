@@ -1,0 +1,350 @@
+{
+  "checkedAt": "2026-10-25T23:29:05.727706+00:00",
+  "status": "passed",
+  "reporters": [
+    {
+      "directory": "baseline/chromium",
+      "rawReporterSha256": "93a1613694ca25e1bf21f5ae40ee1e8868e3acadc6fc0bd9694ed3fc82dbee18",
+      "originalReporterBytesVerified": true,
+      "completeMeasurementBodies": 16,
+      "allDurationsAtLeast60Seconds": true,
+      "allInitialBalls30": true,
+      "measurementBodies": [
+        {
+          "file": "chromium-rally4000-standard-1500-repeat1.json.gz",
+          "sha256": "c11fbd0482adef6d8346d2a1ffdc9c9969023c35d205d4dbbad4147f4ee66249",
+          "frames": 2245,
+          "durationMs": 60014.3
+        },
+        {
+          "file": "chromium-rally4000-standard-1500-repeat2.json.gz",
+          "sha256": "6d3a295435faca84f419951b17c5bfff0308de070315de25cd2bf1c471379b1c",
+          "frames": 377,
+          "durationMs": 60039.59999999998
+        },
+        {
+          "file": "chromium-rally4000-standard-2000-repeat1.json.gz",
+          "sha256": "c4a89d77a81113936cc0b3e3d94aef6f66429ef9d9ce42bdc2a826518f3ac131",
+          "frames": 471,
+          "durationMs": 60053.199999999975
+        },
+        {
+          "file": "chromium-rally4000-standard-2000-repeat2.json.gz",
+          "sha256": "1a1d27f0abead428c6a0393ceab0c4e10814d6e6f3898a5067e4b5e65b725bb1",
+          "frames": 238,
+          "durationMs": 60197
+        },
+        {
+          "file": "chromium-rally4000-standard-3000-repeat1.json.gz",
+          "sha256": "5e09737591d0fe03867bd0bd510168ea6bfa9ca5329e2ec0b33958fb458a650c",
+          "frames": 292,
+          "durationMs": 60070.2
+        },
+        {
+          "file": "chromium-rally4000-standard-3000-repeat2.json.gz",
+          "sha256": "66948e556d6f35c4bc1a9d9f1b740f2fa3b34d9aac0f06b92b96878eb4a550fb",
+          "frames": 350,
+          "durationMs": 60055.10000000009
+        },
+        {
+          "file": "chromium-rally4000-standard-4000-repeat1.json.gz",
+          "sha256": "cd2538aa28c975a4a318d607eb130eba5182272f9dde7d66ca31c7c8df9c8375",
+          "frames": 466,
+          "durationMs": 60165.599999999955
+        },
+        {
+          "file": "chromium-rally4000-standard-4000-repeat2.json.gz",
+          "sha256": "cf6f33ddf8b890b28656969e0642f31f8dc6248a788bacfa29d920e7624abfe3",
+          "frames": 469,
+          "durationMs": 60081.89999999995
+        },
+        {
+          "file": "chromium-rally4000-low-1500-repeat1.json.gz",
+          "sha256": "6c59680ca8f19f5190f9132c6b1a3b04d351cf834b811bb82f340f4f3ed8c4a8",
+          "frames": 397,
+          "durationMs": 60188.80000000014
+        },
+        {
+          "file": "chromium-rally4000-low-1500-repeat2.json.gz",
+          "sha256": "58e0b453a2bb738061eaba75827ff28c8e5262829e034b4ebee1e327bdcdf16b",
+          "frames": 402,
+          "durationMs": 60105.79999999991
+        },
+        {
+          "file": "chromium-rally4000-low-2000-repeat1.json.gz",
+          "sha256": "a25c2c5151d15bd4a44cebc6fc616c23bd36705d28062e14c5d9cf2c7911af8a",
+          "frames": 484,
+          "durationMs": 60106.3
+        },
+        {
+          "file": "chromium-rally4000-low-2000-repeat2.json.gz",
+          "sha256": "00b7c04d541e6d8318de3c78bb2e903773cfbe2b41e1c79486ca49caa2b75e2d",
+          "frames": 470,
+          "durationMs": 60033.499999999956
+        },
+        {
+          "file": "chromium-rally4000-low-3000-repeat1.json.gz",
+          "sha256": "32eabf6c45b8fdd9554f7c8a6ad154c9f972f26537505c7e935714aedb5b2bb5",
+          "frames": 456,
+          "durationMs": 60073.400000000045
+        },
+        {
+          "file": "chromium-rally4000-low-3000-repeat2.json.gz",
+          "sha256": "03dc6a9b300da8f73540bba043e068c90105b9199924ec3a9f12aae5ae2c3e93",
+          "frames": 409,
+          "durationMs": 60136.19999999995
+        },
+        {
+          "file": "chromium-rally4000-low-4000-repeat1.json.gz",
+          "sha256": "dfe4d12440eaf603a4248bb6d87e6a228591f85af4f7ca5269fcdba38263f6b6",
+          "frames": 458,
+          "durationMs": 60071.30000000009
+        },
+        {
+          "file": "chromium-rally4000-low-4000-repeat2.json.gz",
+          "sha256": "e755441122cf3cd68ed167b349ee5f61dd14bd7bef459813aba3611c354de52d",
+          "frames": 461,
+          "durationMs": 60065.29999999995
+        }
+      ]
+    },
+    {
+      "directory": "baseline/chromium-clean-repeat1",
+      "rawReporterSha256": "389d4782ac189e5a698acf619276ecd5db5032506176e09a77960f4345b3a2b7",
+      "originalReporterBytesVerified": true,
+      "completeMeasurementBodies": 1,
+      "allDurationsAtLeast60Seconds": true,
+      "allInitialBalls30": true,
+      "measurementBodies": [
+        {
+          "file": "chromium-rally4000-standard-1500-repeat1.json.gz",
+          "sha256": "0c38beb72d012929266aff9ff84601d3a3a89a33a3c93e651ea44e2b403a3c40",
+          "frames": 526,
+          "durationMs": 60010.300000000185
+        }
+      ]
+    },
+    {
+      "directory": "after/chromium",
+      "rawReporterSha256": "2913380faea91074626ed3ac0730cd28dace23b23ec82ee10a45aba053570abe",
+      "originalReporterBytesVerified": true,
+      "completeMeasurementBodies": 16,
+      "allDurationsAtLeast60Seconds": true,
+      "allInitialBalls30": true,
+      "measurementBodies": [
+        {
+          "file": "chromium-rally4000-standard-1500-repeat1.json.gz",
+          "sha256": "fbe57d1a8763865fdad4e8b8d4b139fdf1ca23be1096665b3f088d03f711a8b0",
+          "frames": 502,
+          "durationMs": 60148.699999999626
+        },
+        {
+          "file": "chromium-rally4000-standard-1500-repeat2.json.gz",
+          "sha256": "d24babd301a5f4939ee1bcfc9bd0390d42a303d5ad7541fbd5f0d9fe53809dc2",
+          "frames": 511,
+          "durationMs": 60014.10000000019
+        },
+        {
+          "file": "chromium-rally4000-standard-2000-repeat1.json.gz",
+          "sha256": "257149bfcc17af3833d481914ecd929e9a18a1df643e2efe5c9020b7dbbd4a9d",
+          "frames": 479,
+          "durationMs": 60013.60000000019
+        },
+        {
+          "file": "chromium-rally4000-standard-2000-repeat2.json.gz",
+          "sha256": "b0b181a7ca119942352c1b774dfd5b93956c69f0a3c9649eda044ec5d737143c",
+          "frames": 469,
+          "durationMs": 60107.300000000556
+        },
+        {
+          "file": "chromium-rally4000-standard-3000-repeat1.json.gz",
+          "sha256": "e339a579f42f61d791f1b368c5b3a1012f19770f0991f6dea65233e4ab22cf9a",
+          "frames": 465,
+          "durationMs": 60181.7
+        },
+        {
+          "file": "chromium-rally4000-standard-3000-repeat2.json.gz",
+          "sha256": "4cf79a7cb240239e8baf923ab67e3d4d6a4d68c50df5744d7c8169a19c69905a",
+          "frames": 456,
+          "durationMs": 60181.39999999981
+        },
+        {
+          "file": "chromium-rally4000-standard-4000-repeat1.json.gz",
+          "sha256": "3c03e742fe976b36df38970e09f7bf879d1f8c7754085ae3951401cc7bc5370d",
+          "frames": 402,
+          "durationMs": 60073.9
+        },
+        {
+          "file": "chromium-rally4000-standard-4000-repeat2.json.gz",
+          "sha256": "b6fab6f1e3ffaf2dc1ae9a4fc74a223969c4a1d9ea82480d4b4ba5e02758d8c2",
+          "frames": 438,
+          "durationMs": 60048.299999999625
+        },
+        {
+          "file": "chromium-rally4000-low-1500-repeat1.json.gz",
+          "sha256": "01031ea27e0878d832f69bab5371c47854e6156b999f0b9b7eb79622cca368d9",
+          "frames": 470,
+          "durationMs": 60130.89999999963
+        },
+        {
+          "file": "chromium-rally4000-low-1500-repeat2.json.gz",
+          "sha256": "43db3d8dd991ce73ab7fae1a6c51e98d9f69a6197ff9b1eeb75357642a896aaa",
+          "frames": 472,
+          "durationMs": 60065.99999999981
+        },
+        {
+          "file": "chromium-rally4000-low-2000-repeat1.json.gz",
+          "sha256": "74fd5f74e240a14af480bfe2a39b3fa1aee276d1f3a0ba962e33abf4da6e9f3e",
+          "frames": 444,
+          "durationMs": 60098.89999999981
+        },
+        {
+          "file": "chromium-rally4000-low-2000-repeat2.json.gz",
+          "sha256": "0a6296a69c0674d3fbc8aa51a2ae5cb9f9fa6b8f5ab2286913e1537c79d68e0a",
+          "frames": 439,
+          "durationMs": 60200.49999999963
+        },
+        {
+          "file": "chromium-rally4000-low-3000-repeat1.json.gz",
+          "sha256": "672ffd75e09e5bee122a1dd66cb082ec54ee29f537d5be2d08fa41e5ce4cf261",
+          "frames": 429,
+          "durationMs": 60038.50000000019
+        },
+        {
+          "file": "chromium-rally4000-low-3000-repeat2.json.gz",
+          "sha256": "8f8be51743dc56bab4e4b6ac414cc4bee2b48df6603b4afc50515741deded8de",
+          "frames": 431,
+          "durationMs": 60093.00000000056
+        },
+        {
+          "file": "chromium-rally4000-low-4000-repeat1.json.gz",
+          "sha256": "f49b60c205b9b543f82bb47552c4c69053f18d1e3070c875ae7c771e3015ed80",
+          "frames": 416,
+          "durationMs": 60018.299999999625
+        },
+        {
+          "file": "chromium-rally4000-low-4000-repeat2.json.gz",
+          "sha256": "7efac756c9660fb64ab6dd5b9f61d69383d61c8dabd9102e6aa1914bd482e0ea",
+          "frames": 415,
+          "durationMs": 60212.799999999625
+        }
+      ]
+    },
+    {
+      "directory": "after-single-pass/chromium",
+      "rawReporterSha256": "8f7c00470a7ba8186e7cdd109ac2b570ad7cca15061dbb2fdb966ef709dc4fd1",
+      "originalReporterBytesVerified": true,
+      "completeMeasurementBodies": 16,
+      "allDurationsAtLeast60Seconds": true,
+      "allInitialBalls30": true,
+      "measurementBodies": [
+        {
+          "file": "chromium-rally4000-standard-1500-repeat1.json.gz",
+          "sha256": "00359ae0125453b655c02f4ed33189c907a4f118c23528bf84a29febccbcce4c",
+          "frames": 388,
+          "durationMs": 60142.99999999963
+        },
+        {
+          "file": "chromium-rally4000-standard-1500-repeat2.json.gz",
+          "sha256": "0cc84aa4562fdfeba2ea5113fa1f3c0ebc9ffd280b0be8bb940cbbca5635777c",
+          "frames": 435,
+          "durationMs": 60085.20000000149
+        },
+        {
+          "file": "chromium-rally4000-standard-2000-repeat1.json.gz",
+          "sha256": "a93b3fa887c13a7fb939dcdb7d6dc7a59a5b55b5ca22e7db98dc5f1be8578d2c",
+          "frames": 447,
+          "durationMs": 60023.89999999963
+        },
+        {
+          "file": "chromium-rally4000-standard-2000-repeat2.json.gz",
+          "sha256": "f43537cb7661e79f8a3255fe55060acc202b2e62c63b7a7d2fd0dfd83d8377c9",
+          "frames": 366,
+          "durationMs": 60133.29999999888
+        },
+        {
+          "file": "chromium-rally4000-standard-3000-repeat1.json.gz",
+          "sha256": "9c0527fbffe69098606a8c69a022fbaa5b4de3578f1d9d3b0a6953590b3dadab",
+          "frames": 424,
+          "durationMs": 60246.7
+        },
+        {
+          "file": "chromium-rally4000-standard-3000-repeat2.json.gz",
+          "sha256": "211ac85d2140e659182bff83ad86d92fa1fc43653458c49521f705bf1a48cdf0",
+          "frames": 368,
+          "durationMs": 60301.79999999888
+        },
+        {
+          "file": "chromium-rally4000-standard-4000-repeat1.json.gz",
+          "sha256": "bb600e19db5a1007725e6040b3dc4df706f192234d563cbad4d8724341801f40",
+          "frames": 384,
+          "durationMs": 60032.89999999963
+        },
+        {
+          "file": "chromium-rally4000-standard-4000-repeat2.json.gz",
+          "sha256": "7f6d785dcfc310df45aab67b889dd527b79d7af997521548012ea3f14882e5af",
+          "frames": 416,
+          "durationMs": 60144.200000000375
+        },
+        {
+          "file": "chromium-rally4000-low-1500-repeat1.json.gz",
+          "sha256": "981fc8ac1768a0f639cb091a3b4adece94ac49d9884ece0c7a89271b47428963",
+          "frames": 469,
+          "durationMs": 60212.59999999926
+        },
+        {
+          "file": "chromium-rally4000-low-1500-repeat2.json.gz",
+          "sha256": "9c7f0b553e79773ccb9cefb51a578c47f58035a305178ba4d4b6388487e071ba",
+          "frames": 414,
+          "durationMs": 60052.1
+        },
+        {
+          "file": "chromium-rally4000-low-2000-repeat1.json.gz",
+          "sha256": "07a71c95567b17b136a2854aa1266aa501ec0ce8ec485a93e2373798a101646c",
+          "frames": 380,
+          "durationMs": 60040.50000000037
+        },
+        {
+          "file": "chromium-rally4000-low-2000-repeat2.json.gz",
+          "sha256": "238641ec6311531cf3e0018077fc988d492825d56144a473573d4a0d193fe207",
+          "frames": 447,
+          "durationMs": 60262.5
+        },
+        {
+          "file": "chromium-rally4000-low-3000-repeat1.json.gz",
+          "sha256": "7bf06562809b228dd171b8cf5075e8f19f3e453aadd6be73d0f7e2aa20e37d65",
+          "frames": 444,
+          "durationMs": 60031.099999998885
+        },
+        {
+          "file": "chromium-rally4000-low-3000-repeat2.json.gz",
+          "sha256": "d612cfd749d98575e910cf6f4e4acd4085772485171377e78dd11f743bfa4ef8",
+          "frames": 385,
+          "durationMs": 60151.2
+        },
+        {
+          "file": "chromium-rally4000-low-4000-repeat1.json.gz",
+          "sha256": "ee760794007bd5a0251d8b60d8da5642e49da208cd89bc6546ea3fc7d6092506",
+          "frames": 397,
+          "durationMs": 60180.199999999255
+        },
+        {
+          "file": "chromium-rally4000-low-4000-repeat2.json.gz",
+          "sha256": "29a2de1dc49293208d551de2497d96829ba8f9ddbb52619dc0e4ae5bad8ec515",
+          "frames": 396,
+          "durationMs": 60064.299999999625
+        }
+      ]
+    }
+  ],
+  "completeRawMeasurements": 49,
+  "canonicalThreeWayConditions": 16,
+  "originalBaselineControlReplacementRetained": true,
+  "canonicalRuntimeCommit": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+  "sourceTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+  "testsTree": "097b10b95f55aded9d77af6dd4ed6b85925b9684",
+  "runtimeInputManifestSha256": "a2057a63716fe21337dc464563fd123a93c7f47cca21e026da0fe704234eafcb",
+  "formalHarnessAndRuntimeUnchangedDuringFinalMatrix": true,
+  "gpuQueriesAvailable": 96,
+  "gpuDisjointConditions": 0
+}

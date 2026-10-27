@@ -1,0 +1,1685 @@
+{
+  "sourceRoot": "/workspace/takkeu",
+  "sourceCommit": "b697a98475e54dbc8c3a9458eafd7628d92dc062",
+  "browserVersion": "156.0.8078.4",
+  "sequences": [
+    {
+      "name": "4000-standard-legacy-fireworks",
+      "score": 4000,
+      "quality": "standard",
+      "reducedMotion": false,
+      "fps": 60,
+      "seconds": 6,
+      "width": 1024,
+      "height": 768,
+      "frames": 360,
+      "syntheticStress": true,
+      "physicalReplay": false,
+      "fireworkFacts": 64,
+      "distinctBallIds": 30,
+      "initialLegacyParticleCount": 1536,
+      "initialNewParticleCount": 312,
+      "initialTotalParticleCount": 1848,
+      "source": "Actual racket-firework/bounce-firework consumer, positions on contact/bounce planes.64factsatonce deliberately exceed physically reachable timing;30ballIDs.",
+      "snapshot": {
+        "celebrations": {
+          "lastLossAt": 20,
+          "lossStreak": 4,
+          "numberNotices": [
+            {
+              "value": 99,
+              "at": 20
+            }
+          ],
+          "repdigitAt": 20,
+          "centuryAt": 20,
+          "centuryScore": 4000
+        },
+        "runId": "run-3",
+        "phase": "running",
+        "pauseReason": null,
+        "score": 4000,
+        "simTime": 25.983333333333334,
+        "lostBallCount": 99,
+        "paddle": {
+          "x": 0.1,
+          "y": 0.5
+        },
+        "opponentPaddle": {
+          "x": 0,
+          "y": 0.5
+        },
+        "balls": [
+          {
+            "id": 1,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 2,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 3,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 4,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 5,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 6,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 7,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 8,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 9,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 10,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 11,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 12,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 13,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 14,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 15,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 16,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 17,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 18,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 19,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 20,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 21,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 22,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 23,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 24,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 25,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 26,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 27,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 28,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 29,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 30,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.6,
+              "z": 1.3
+            }
+          }
+        ],
+        "progression": {
+          "appliedMilestones": [
+            10,
+            30,
+            40,
+            70,
+            100,
+            130,
+            150,
+            160,
+            190,
+            210,
+            240,
+            270,
+            300,
+            330,
+            360,
+            380,
+            390,
+            410,
+            420,
+            450,
+            460,
+            470,
+            480,
+            490,
+            500,
+            510,
+            520,
+            530,
+            540,
+            555
+          ],
+          "ballGlowUntil": null,
+          "awardedBallCount": 1315
+        },
+        "scheduledReturns": [
+          {
+            "ballId": 1,
+            "departAt": 20.2,
+            "netCrossAt": 20.4,
+            "arriveAt": 20.6,
+            "target": {
+              "x": 0,
+              "y": 0.5
+            },
+            "smash": true,
+            "warningAt": 19.9,
+            "speedMultiplier": 2.5
+          }
+        ]
+      },
+      "state": {
+        "runId": "run-3",
+        "score": 4000,
+        "bestAtStart": 0,
+        "best": null,
+        "lostBallCount": 99,
+        "stage": [
+          {
+            "threshold": 1500,
+            "kind": "A",
+            "effect": "tricolor-network",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "green-perimeter",
+              "green-net",
+              "green-blue-world"
+            ]
+          },
+          {
+            "threshold": 2000,
+            "kind": "A",
+            "effect": "star-world",
+            "duration": 2.5,
+            "color": "green-blue-red",
+            "priority": 100,
+            "replaces": [
+              "background-threads"
+            ]
+          },
+          {
+            "threshold": 2500,
+            "kind": "A",
+            "effect": "orbit-ribbon",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "floor-wave"
+            ]
+          },
+          {
+            "threshold": 2750,
+            "kind": "A",
+            "effect": "multi-halos",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "background-halo"
+            ]
+          },
+          {
+            "threshold": 3250,
+            "kind": "A",
+            "effect": "meteor-swarm",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "meteor"
+            ]
+          },
+          {
+            "threshold": 3500,
+            "kind": "A",
+            "effect": "double-table-halos",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "side-halos"
+            ]
+          },
+          {
+            "threshold": 4000,
+            "kind": "A",
+            "effect": "final-world",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": []
+          }
+        ],
+        "arrivals": [
+          {
+            "id": "run-3:fixture-2",
+            "threshold": 4000,
+            "at": 20,
+            "config": {
+              "threshold": 4000,
+              "kind": "B",
+              "effect": "final-assembly",
+              "duration": 4,
+              "color": "green-blue-red",
+              "priority": 100,
+              "replaces": [
+                "center-density"
+              ]
+            },
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          }
+        ],
+        "hits": [
+          {
+            "id": "run-3:fixture-2",
+            "score": 4000,
+            "at": 20,
+            "smashReturn": false,
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          }
+        ],
+        "losses": [
+          {
+            "id": "run-3:fixture-3",
+            "count": 96,
+            "at": 20,
+            "rollingCount": 1,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-4",
+            "count": 97,
+            "at": 20,
+            "rollingCount": 2,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-5",
+            "count": 98,
+            "at": 20,
+            "rollingCount": 3,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-6",
+            "count": 99,
+            "at": 20,
+            "rollingCount": 4,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          }
+        ],
+        "cues": [
+          {
+            "id": "run-3:fixture-2:major",
+            "kind": "major",
+            "value": 4000,
+            "at": 20,
+            "duration": 2.5,
+            "priority": 100,
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          },
+          {
+            "id": "run-3:fixture-3:loss-spark",
+            "kind": "loss-spark",
+            "value": 96,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-3:loss-warning",
+            "kind": "loss-warning",
+            "value": 96,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-4:loss-spark",
+            "kind": "loss-spark",
+            "value": 97,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-4:loss-warning",
+            "kind": "loss-warning",
+            "value": 97,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-5:loss-spark",
+            "kind": "loss-spark",
+            "value": 98,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-5:loss-warning",
+            "kind": "loss-warning",
+            "value": 98,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-6:loss-spark",
+            "kind": "loss-spark",
+            "value": 99,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-6:loss-impact",
+            "kind": "loss-impact",
+            "value": 99,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-6:loss-warning",
+            "kind": "loss-warning",
+            "value": 99,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-3:fixture-6:loss-gold",
+            "kind": "loss-gold",
+            "value": 99,
+            "at": 20,
+            "duration": 1.2,
+            "priority": 90,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          }
+        ]
+      },
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 34,
+        "particles": 248,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "loss-warning-posts"
+          ],
+          "tableQuads": 841,
+          "worldQuads": 1466,
+          "particleCount": 248,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "stats": {
+        "activeEffects": [
+          "tricolor-crossing",
+          "star-world",
+          "orbit-ribbon",
+          "multi-halos",
+          "meteor-swarm",
+          "double-table-halos",
+          "final-world",
+          "loss-warning-posts"
+        ],
+        "tableQuads": 841,
+        "worldQuads": 1466,
+        "particleCount": 248,
+        "finalPhase": null,
+        "capacity": 10240,
+        "geometries": 4,
+        "materials": 4,
+        "nodes": 6,
+        "drawCalls": 4,
+        "disposed": false
+      },
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+    },
+    {
+      "name": "4000-low-legacy-fireworks",
+      "score": 4000,
+      "quality": "low",
+      "reducedMotion": false,
+      "fps": 60,
+      "seconds": 6,
+      "width": 1024,
+      "height": 768,
+      "frames": 360,
+      "syntheticStress": true,
+      "physicalReplay": false,
+      "fireworkFacts": 64,
+      "distinctBallIds": 30,
+      "initialLegacyParticleCount": 768,
+      "initialNewParticleCount": 156,
+      "initialTotalParticleCount": 924,
+      "source": "Actual racket-firework/bounce-firework consumer, positions on contact/bounce planes.64factsatonce deliberately exceed physically reachable timing;30ballIDs.",
+      "snapshot": {
+        "celebrations": {
+          "lastLossAt": 20,
+          "lossStreak": 4,
+          "numberNotices": [
+            {
+              "value": 99,
+              "at": 20
+            }
+          ],
+          "repdigitAt": 20,
+          "centuryAt": 20,
+          "centuryScore": 4000
+        },
+        "runId": "run-5",
+        "phase": "running",
+        "pauseReason": null,
+        "score": 4000,
+        "simTime": 25.983333333333334,
+        "lostBallCount": 99,
+        "paddle": {
+          "x": 0.1,
+          "y": 0.5
+        },
+        "opponentPaddle": {
+          "x": 0,
+          "y": 0.5
+        },
+        "balls": [
+          {
+            "id": 1,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 2,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 3,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 4,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 5,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.35,
+              "z": 0.3
+            }
+          },
+          {
+            "id": 6,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 7,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 8,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 9,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 10,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.39999999999999997,
+              "z": 0.5
+            }
+          },
+          {
+            "id": 11,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 12,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 13,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 14,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 15,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.44999999999999996,
+              "z": 0.7
+            }
+          },
+          {
+            "id": 16,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 17,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 18,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 19,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 20,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.5,
+              "z": 0.9000000000000001
+            }
+          },
+          {
+            "id": 21,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 22,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 23,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 24,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 25,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.55,
+              "z": 1.1
+            }
+          },
+          {
+            "id": 26,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.64,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 27,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": -0.32,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 28,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 29,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.32,
+              "y": 0.6,
+              "z": 1.3
+            }
+          },
+          {
+            "id": 30,
+            "phase": "incoming",
+            "smash": false,
+            "position": {
+              "x": 0.64,
+              "y": 0.6,
+              "z": 1.3
+            }
+          }
+        ],
+        "progression": {
+          "appliedMilestones": [
+            10,
+            30,
+            40,
+            70,
+            100,
+            130,
+            150,
+            160,
+            190,
+            210,
+            240,
+            270,
+            300,
+            330,
+            360,
+            380,
+            390,
+            410,
+            420,
+            450,
+            460,
+            470,
+            480,
+            490,
+            500,
+            510,
+            520,
+            530,
+            540,
+            555
+          ],
+          "ballGlowUntil": null,
+          "awardedBallCount": 1315
+        },
+        "scheduledReturns": [
+          {
+            "ballId": 1,
+            "departAt": 20.2,
+            "netCrossAt": 20.4,
+            "arriveAt": 20.6,
+            "target": {
+              "x": 0,
+              "y": 0.5
+            },
+            "smash": true,
+            "warningAt": 19.9,
+            "speedMultiplier": 2.5
+          }
+        ]
+      },
+      "state": {
+        "runId": "run-5",
+        "score": 4000,
+        "bestAtStart": 0,
+        "best": null,
+        "lostBallCount": 99,
+        "stage": [
+          {
+            "threshold": 1500,
+            "kind": "A",
+            "effect": "tricolor-network",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "green-perimeter",
+              "green-net",
+              "green-blue-world"
+            ]
+          },
+          {
+            "threshold": 2000,
+            "kind": "A",
+            "effect": "star-world",
+            "duration": 2.5,
+            "color": "green-blue-red",
+            "priority": 100,
+            "replaces": [
+              "background-threads"
+            ]
+          },
+          {
+            "threshold": 2500,
+            "kind": "A",
+            "effect": "orbit-ribbon",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "floor-wave"
+            ]
+          },
+          {
+            "threshold": 2750,
+            "kind": "A",
+            "effect": "multi-halos",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "background-halo"
+            ]
+          },
+          {
+            "threshold": 3250,
+            "kind": "A",
+            "effect": "meteor-swarm",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "meteor"
+            ]
+          },
+          {
+            "threshold": 3500,
+            "kind": "A",
+            "effect": "double-table-halos",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": [
+              "side-halos"
+            ]
+          },
+          {
+            "threshold": 4000,
+            "kind": "A",
+            "effect": "final-world",
+            "duration": null,
+            "color": "green-blue-red",
+            "priority": 10,
+            "replaces": []
+          }
+        ],
+        "arrivals": [
+          {
+            "id": "run-5:fixture-2",
+            "threshold": 4000,
+            "at": 20,
+            "config": {
+              "threshold": 4000,
+              "kind": "B",
+              "effect": "final-assembly",
+              "duration": 4,
+              "color": "green-blue-red",
+              "priority": 100,
+              "replaces": [
+                "center-density"
+              ]
+            },
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          }
+        ],
+        "hits": [
+          {
+            "id": "run-5:fixture-2",
+            "score": 4000,
+            "at": 20,
+            "smashReturn": false,
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          }
+        ],
+        "losses": [
+          {
+            "id": "run-5:fixture-3",
+            "count": 96,
+            "at": 20,
+            "rollingCount": 1,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-4",
+            "count": 97,
+            "at": 20,
+            "rollingCount": 2,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-5",
+            "count": 98,
+            "at": 20,
+            "rollingCount": 3,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-6",
+            "count": 99,
+            "at": 20,
+            "rollingCount": 4,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          }
+        ],
+        "cues": [
+          {
+            "id": "run-5:fixture-2:major",
+            "kind": "major",
+            "value": 4000,
+            "at": 20,
+            "duration": 2.5,
+            "priority": 100,
+            "position": {
+              "x": 0.1,
+              "y": 0.5,
+              "z": 1.95
+            }
+          },
+          {
+            "id": "run-5:fixture-3:loss-spark",
+            "kind": "loss-spark",
+            "value": 96,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-3:loss-warning",
+            "kind": "loss-warning",
+            "value": 96,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-4:loss-spark",
+            "kind": "loss-spark",
+            "value": 97,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-4:loss-warning",
+            "kind": "loss-warning",
+            "value": 97,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-5:loss-spark",
+            "kind": "loss-spark",
+            "value": 98,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-5:loss-warning",
+            "kind": "loss-warning",
+            "value": 98,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": 0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-6:loss-spark",
+            "kind": "loss-spark",
+            "value": 99,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 10,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-6:loss-impact",
+            "kind": "loss-impact",
+            "value": 99,
+            "at": 20,
+            "duration": 0.5,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-6:loss-warning",
+            "kind": "loss-warning",
+            "value": 99,
+            "at": 20,
+            "duration": 0.8,
+            "priority": 80,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          },
+          {
+            "id": "run-5:fixture-6:loss-gold",
+            "kind": "loss-gold",
+            "value": 99,
+            "at": 20,
+            "duration": 1.2,
+            "priority": 90,
+            "position": {
+              "x": -0.72,
+              "y": 0.16,
+              "z": 2.3
+            }
+          }
+        ]
+      },
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 34,
+        "particles": 124,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "loss-warning-posts"
+          ],
+          "tableQuads": 422,
+          "worldQuads": 714,
+          "particleCount": 124,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "stats": {
+        "activeEffects": [
+          "tricolor-crossing",
+          "star-world",
+          "orbit-ribbon",
+          "multi-halos",
+          "meteor-swarm",
+          "double-table-halos",
+          "final-world",
+          "loss-warning-posts"
+        ],
+        "tableQuads": 422,
+        "worldQuads": 714,
+        "particleCount": 124,
+        "finalPhase": null,
+        "capacity": 10240,
+        "geometries": 4,
+        "materials": 4,
+        "nodes": 6,
+        "drawCalls": 4,
+        "disposed": false
+      },
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36"
+    }
+  ],
+  "errors": [],
+  "unexpected": [],
+  "sourceHashes": {
+    "package-lock.json": "52ba2daba720b1177c74da7a9a530c96e49d6ccdb26c3d139690ac5480d24c94",
+    "package.json": "407b468383097781632a23196d6d232e7066e6413f35d47046f0519c433e55c7",
+    "src/app/controls.ts": "03aa789baa922d3c26daaa5257f3e5d1a3bab51a15dcb924de753b480fe99594",
+    "src/app/createApp.ts": "394c211e48602524f1a619e2579af075834e646dfb65d3b46f07b953810bc788",
+    "src/app/finishPresentation.ts": "f05c475431aa8253950a7a85a9f0ca1014205708d80a2dec66626e368ab65815",
+    "src/app/lifecycle.ts": "2876ad70a94f13c2bec2a45065e346e5dbc8d6c5a34684debf58d39ab0a01bd7",
+    "src/app/loadingProgress.ts": "bba9ed80bff250f65cf8457ccc4c419b6f1917041bd564416dbb2dad9d19f92e",
+    "src/app/loop.ts": "86ad8c723a5f36559259bb46b3998b0b8af96cf97665373129b56794d76e4f22",
+    "src/audio/audio.ts": "c9a4d5a2208501833835187efd34867cdeae5d1876b7cf0e11d046168155e3f5",
+    "src/audio/tones.ts": "863c9c0d72d26da763de260974e90298ec48e8da40c7662b1ce9fead015f6127",
+    "src/game/celebrations.ts": "c3fe5cd55bdc5efabeaf1e511e76a71bb090fd964236ac043648e7620c525cfc",
+    "src/game/collision.ts": "8e5ad013fcafcc33d7aabf57d9ccdae0dd99fa6db4f1aefb5cd75a1730074c1c",
+    "src/game/config.ts": "ae3dbfc881325461879df2526e850a1673f6c7b918efab6b377741347c7acfc1",
+    "src/game/difficulty.ts": "edd4db4b76a67d862d2febe96ffe2b498ad4f09ac4f089ec2796a96b15ea757b",
+    "src/game/flightSpeed.ts": "8020ff1fd1e6d843dd47a7b854e6c4f14c6110caa9c4e90210f0dfc61b5721d6",
+    "src/game/milestones.ts": "8c06f67752be261f12250d8136bbca60f2e709019b4cb4066f33aa284d69ca6c",
+    "src/game/opponent.ts": "69f800055694bf5745d89428086fbab15538116406b7d6b8487ca0c99c20f3e9",
+    "src/game/progression.ts": "95ac4b6393e413702a11c6c786c2e8d118c59150ddd51e45926622129f5e951a",
+    "src/game/rallyEffects.ts": "a94fad020f483cb0f6ded3321edc3164008e79fc0fffe6d5f1ee7720fc950150",
+    "src/game/scheduler.ts": "75fd289e244e6de2b610d79751d80217379822e1fc2fe64c657e477ad6eb8830",
+    "src/game/session.ts": "5c6fdc5f690b3addaeb8484d9f962276f4b3f60623e12acb1d4968909ad0c93a",
+    "src/game/simulation.ts": "3044f72b803fd366428e51a1346d7ef3a269c60d60901b2058cbbf9668629fab",
+    "src/game/targets.ts": "19ddd59cebbcb0b12ae09341f34df93ad8ef61628a70a064948747e69e89b8ec",
+    "src/game/trajectory.ts": "2e985214f496ceac6955d9e21a011232513dde662f1ecea3df40ffdd94fcb924",
+    "src/game/types.ts": "ed1128d511bf80a01d9ae88c1bc4ac04f59c7e255b59cf708da9acd363094a14",
+    "src/game/viewpoint.ts": "1e5bea55f6b62fc37c9dce79f2b266d938d08e3fd663a925540e7b39dc9ad3f9",
+    "src/input/mapping.ts": "80199b8f730a6339e6a106bf8cedec28308062e72dd878e080b38ce6b022ef32",
+    "src/input/swipe.ts": "cde8301accea83b7a2588ace83dda2db63943252e9fbf252c65ea9460cfe885c",
+    "src/input/timeline.ts": "f1d8aa89893bb444fd0c3cdf6426c90e647eb02027aaf51773e14f45edea9461",
+    "src/main.ts": "1f32056096aa7d74eb8db4129d8a599515e6c88fa2691fa699477580938d3bcf",
+    "src/ranking/client.ts": "80607781333a2e1ed319337b4f17cdfdd3d902b82c61ed8f85deec099e1a2121",
+    "src/ranking/config.ts": "827ac17fed6c111d58568015754a1a0b13c7bd4b274b5b6fbc86d11c2eec7d97",
+    "src/ranking/controller.ts": "d32422daa9a417e966f89d1158c76a0a1be986470bd8a60f3a400bdaeb96560f",
+    "src/ranking/guestPlays.ts": "4bc324b102521abfe0f407b79920ba17539ec949fa48100e472dd1f89a916270",
+    "src/ranking/resultPosition.ts": "1a3bf05686ffcc88e6b50678d662c3cc5abb2dbda45a87b4bd966ac005f1c051",
+    "src/render/balls.ts": "dad9399341352e1a8ffc13801b70e2568a64a5410ff4eaefc97c17f754d9052a",
+    "src/render/camera.ts": "21bbe2f2ecd39520e72ffdca080a0936414b7131f06ded2d5a85f1aa21fd31ac",
+    "src/render/celebrations.ts": "7a480052b4af0310a8e84e208120278f4ae4716b49bad2a7ec90221d00210f3c",
+    "src/render/createView.ts": "498dc86f0331201acdbd2e69c01300d0dbe51f32e80f1fbab4ccbdef32870450",
+    "src/render/environment.ts": "089bb1539b6cb324697c8eb2d57f78919bfbeaf393a079572ea883efe641ab3e",
+    "src/render/field.ts": "33a224d11f907415d9064e9c9b9096a6cf84b7f7f71915d69f5810e43e31a452",
+    "src/render/materials.ts": "762098367b45770052d30790e2fc76ce02939ad912a6a07a6d96831c11ba5c85",
+    "src/render/objects.ts": "6b9bb96e3e6199c6c4fd17b0a96ac3d9946c29036d69d206fd3ddba2fbc21c5c",
+    "src/render/opponentView.ts": "18b3fd0fc7fabc45a7137c8ba544306208c626405cd85b497efb6af50a448658",
+    "src/render/paddle.ts": "9b88815c5b00032957a222f43b5b13dae1004fa144a92ec05fe8e1f32944c9dd",
+    "src/render/particles.ts": "6ec5c56a5ef87dbb5d861baa918de7915b1ca7120c7deac74d63430929430129",
+    "src/render/prepare.ts": "1be3dacde68f5df22a0b296f141a3a179c8c289a4d79e95398266f456c1bb6e2",
+    "src/render/presentation.ts": "fc5d249f6021215d638c2962629afbdba83eba3216e4595ddd880bc4fd1155ad",
+    "src/render/quality.ts": "670a050005c1f3a37c93ae16e568e3ef4f9dcd010dc159acef6290b147f1fc1d",
+    "src/render/rainbow.ts": "0b6d3bed0975942d7f220fc8b527f4a6e2831a5374e87e09c4974d55f305e180",
+    "src/render/rallyEffects.ts": "a1c545094d4066a717802c4b640b726a123db0629ab3896bc2dabdb78062327a",
+    "src/storage/preferences.ts": "d1413a7c858fdef151919d1a8a31c9c2511b8c97723cabb11be1ede0b9599d37",
+    "src/ui/court-preview.png": "08f9fb9d7067af221769f957cec4a9d38362adfa0a8fe6acdf62f2b33765d4c4",
+    "src/ui/loading.css": "a1eddf9655a06c16b052f9f49d342ca54a4db47bafd80da5f2e2eafdc1a51ef1",
+    "src/ui/loading.ts": "cf6961d85da761d3043a84765c5b343de89b39741f9c9acf6d72c189bd99bc2d",
+    "src/ui/rallyNotice.css": "470701d28b065fdc3edff7c9b8733f7252db2a58ef1b2cec12825485531169e0",
+    "src/ui/rallyNotice.ts": "1e8bd14e34d0af1164b176150ba4ec30a10d08eedabe27ffa884d255369d9a66",
+    "src/ui/result.css": "51a2949c717e982d566441fbaa581dc327496d0c42fc27ac54d3a7a0778bee8d",
+    "src/ui/resultComments.ts": "e6b24fb9e55228bccfe9ec1fe5cbc521f9395001a1a344706cba871359ba32fe",
+    "src/ui/resultEffects.ts": "9d844ab60e804e3ddf3e0acfefa136566de30147ba4aa6b54039897073871c72",
+    "src/ui/screens.ts": "5abf6d5966f926cb0705c3557af027d548df4301144b587daa407b896d104de3",
+    "src/ui/styles.css": "ef14a54dd6ed64f528640d48e36aaff8268b3053cc40065df53f389b6ab61229",
+    "tests/fixtures/rally.html": "d38b1c657f832f4a61f3e413a0edc3df2fd842f0da680721e8de5c7395067fd8",
+    "tests/helpers/rallyHarness.ts": "9badb4f8be19523eba0061409029d1f9da34c4415e2cf6665bce5ee9faad1992",
+    "tests/helpers/scenarios.ts": "1abc90056c6c59dcd3cb3557c9b7a0bc9ce967ccd6ad4ee0f1203bd5f4186bdf",
+    "executingRunnerSHA256": "929c88a06066eb3fd21380f285c87d649221a67eefc276502b61c59267cc185a"
+  },
+  "endSourceHashes": {
+    "package-lock.json": "52ba2daba720b1177c74da7a9a530c96e49d6ccdb26c3d139690ac5480d24c94",
+    "package.json": "407b468383097781632a23196d6d232e7066e6413f35d47046f0519c433e55c7",
+    "src/app/controls.ts": "03aa789baa922d3c26daaa5257f3e5d1a3bab51a15dcb924de753b480fe99594",
+    "src/app/createApp.ts": "394c211e48602524f1a619e2579af075834e646dfb65d3b46f07b953810bc788",
+    "src/app/finishPresentation.ts": "f05c475431aa8253950a7a85a9f0ca1014205708d80a2dec66626e368ab65815",
+    "src/app/lifecycle.ts": "2876ad70a94f13c2bec2a45065e346e5dbc8d6c5a34684debf58d39ab0a01bd7",
+    "src/app/loadingProgress.ts": "bba9ed80bff250f65cf8457ccc4c419b6f1917041bd564416dbb2dad9d19f92e",
+    "src/app/loop.ts": "86ad8c723a5f36559259bb46b3998b0b8af96cf97665373129b56794d76e4f22",
+    "src/audio/audio.ts": "c9a4d5a2208501833835187efd34867cdeae5d1876b7cf0e11d046168155e3f5",
+    "src/audio/tones.ts": "863c9c0d72d26da763de260974e90298ec48e8da40c7662b1ce9fead015f6127",
+    "src/game/celebrations.ts": "c3fe5cd55bdc5efabeaf1e511e76a71bb090fd964236ac043648e7620c525cfc",
+    "src/game/collision.ts": "8e5ad013fcafcc33d7aabf57d9ccdae0dd99fa6db4f1aefb5cd75a1730074c1c",
+    "src/game/config.ts": "ae3dbfc881325461879df2526e850a1673f6c7b918efab6b377741347c7acfc1",
+    "src/game/difficulty.ts": "edd4db4b76a67d862d2febe96ffe2b498ad4f09ac4f089ec2796a96b15ea757b",
+    "src/game/flightSpeed.ts": "8020ff1fd1e6d843dd47a7b854e6c4f14c6110caa9c4e90210f0dfc61b5721d6",
+    "src/game/milestones.ts": "8c06f67752be261f12250d8136bbca60f2e709019b4cb4066f33aa284d69ca6c",
+    "src/game/opponent.ts": "69f800055694bf5745d89428086fbab15538116406b7d6b8487ca0c99c20f3e9",
+    "src/game/progression.ts": "95ac4b6393e413702a11c6c786c2e8d118c59150ddd51e45926622129f5e951a",
+    "src/game/rallyEffects.ts": "a94fad020f483cb0f6ded3321edc3164008e79fc0fffe6d5f1ee7720fc950150",
+    "src/game/scheduler.ts": "75fd289e244e6de2b610d79751d80217379822e1fc2fe64c657e477ad6eb8830",
+    "src/game/session.ts": "5c6fdc5f690b3addaeb8484d9f962276f4b3f60623e12acb1d4968909ad0c93a",
+    "src/game/simulation.ts": "3044f72b803fd366428e51a1346d7ef3a269c60d60901b2058cbbf9668629fab",
+    "src/game/targets.ts": "19ddd59cebbcb0b12ae09341f34df93ad8ef61628a70a064948747e69e89b8ec",
+    "src/game/trajectory.ts": "2e985214f496ceac6955d9e21a011232513dde662f1ecea3df40ffdd94fcb924",
+    "src/game/types.ts": "ed1128d511bf80a01d9ae88c1bc4ac04f59c7e255b59cf708da9acd363094a14",
+    "src/game/viewpoint.ts": "1e5bea55f6b62fc37c9dce79f2b266d938d08e3fd663a925540e7b39dc9ad3f9",
+    "src/input/mapping.ts": "80199b8f730a6339e6a106bf8cedec28308062e72dd878e080b38ce6b022ef32",
+    "src/input/swipe.ts": "cde8301accea83b7a2588ace83dda2db63943252e9fbf252c65ea9460cfe885c",
+    "src/input/timeline.ts": "f1d8aa89893bb444fd0c3cdf6426c90e647eb02027aaf51773e14f45edea9461",
+    "src/main.ts": "1f32056096aa7d74eb8db4129d8a599515e6c88fa2691fa699477580938d3bcf",
+    "src/ranking/client.ts": "80607781333a2e1ed319337b4f17cdfdd3d902b82c61ed8f85deec099e1a2121",
+    "src/ranking/config.ts": "827ac17fed6c111d58568015754a1a0b13c7bd4b274b5b6fbc86d11c2eec7d97",
+    "src/ranking/controller.ts": "d32422daa9a417e966f89d1158c76a0a1be986470bd8a60f3a400bdaeb96560f",
+    "src/ranking/guestPlays.ts": "4bc324b102521abfe0f407b79920ba17539ec949fa48100e472dd1f89a916270",
+    "src/ranking/resultPosition.ts": "1a3bf05686ffcc88e6b50678d662c3cc5abb2dbda45a87b4bd966ac005f1c051",
+    "src/render/balls.ts": "dad9399341352e1a8ffc13801b70e2568a64a5410ff4eaefc97c17f754d9052a",
+    "src/render/camera.ts": "21bbe2f2ecd39520e72ffdca080a0936414b7131f06ded2d5a85f1aa21fd31ac",
+    "src/render/celebrations.ts": "7a480052b4af0310a8e84e208120278f4ae4716b49bad2a7ec90221d00210f3c",
+    "src/render/createView.ts": "498dc86f0331201acdbd2e69c01300d0dbe51f32e80f1fbab4ccbdef32870450",
+    "src/render/environment.ts": "089bb1539b6cb324697c8eb2d57f78919bfbeaf393a079572ea883efe641ab3e",
+    "src/render/field.ts": "33a224d11f907415d9064e9c9b9096a6cf84b7f7f71915d69f5810e43e31a452",
+    "src/render/materials.ts": "762098367b45770052d30790e2fc76ce02939ad912a6a07a6d96831c11ba5c85",
+    "src/render/objects.ts": "6b9bb96e3e6199c6c4fd17b0a96ac3d9946c29036d69d206fd3ddba2fbc21c5c",
+    "src/render/opponentView.ts": "18b3fd0fc7fabc45a7137c8ba544306208c626405cd85b497efb6af50a448658",
+    "src/render/paddle.ts": "9b88815c5b00032957a222f43b5b13dae1004fa144a92ec05fe8e1f32944c9dd",
+    "src/render/particles.ts": "6ec5c56a5ef87dbb5d861baa918de7915b1ca7120c7deac74d63430929430129",
+    "src/render/prepare.ts": "1be3dacde68f5df22a0b296f141a3a179c8c289a4d79e95398266f456c1bb6e2",
+    "src/render/presentation.ts": "fc5d249f6021215d638c2962629afbdba83eba3216e4595ddd880bc4fd1155ad",
+    "src/render/quality.ts": "670a050005c1f3a37c93ae16e568e3ef4f9dcd010dc159acef6290b147f1fc1d",
+    "src/render/rainbow.ts": "0b6d3bed0975942d7f220fc8b527f4a6e2831a5374e87e09c4974d55f305e180",
+    "src/render/rallyEffects.ts": "a1c545094d4066a717802c4b640b726a123db0629ab3896bc2dabdb78062327a",
+    "src/storage/preferences.ts": "d1413a7c858fdef151919d1a8a31c9c2511b8c97723cabb11be1ede0b9599d37",
+    "src/ui/court-preview.png": "08f9fb9d7067af221769f957cec4a9d38362adfa0a8fe6acdf62f2b33765d4c4",
+    "src/ui/loading.css": "a1eddf9655a06c16b052f9f49d342ca54a4db47bafd80da5f2e2eafdc1a51ef1",
+    "src/ui/loading.ts": "cf6961d85da761d3043a84765c5b343de89b39741f9c9acf6d72c189bd99bc2d",
+    "src/ui/rallyNotice.css": "470701d28b065fdc3edff7c9b8733f7252db2a58ef1b2cec12825485531169e0",
+    "src/ui/rallyNotice.ts": "1e8bd14e34d0af1164b176150ba4ec30a10d08eedabe27ffa884d255369d9a66",
+    "src/ui/result.css": "51a2949c717e982d566441fbaa581dc327496d0c42fc27ac54d3a7a0778bee8d",
+    "src/ui/resultComments.ts": "e6b24fb9e55228bccfe9ec1fe5cbc521f9395001a1a344706cba871359ba32fe",
+    "src/ui/resultEffects.ts": "9d844ab60e804e3ddf3e0acfefa136566de30147ba4aa6b54039897073871c72",
+    "src/ui/screens.ts": "5abf6d5966f926cb0705c3557af027d548df4301144b587daa407b896d104de3",
+    "src/ui/styles.css": "ef14a54dd6ed64f528640d48e36aaff8268b3053cc40065df53f389b6ab61229",
+    "tests/fixtures/rally.html": "d38b1c657f832f4a61f3e413a0edc3df2fd842f0da680721e8de5c7395067fd8",
+    "tests/helpers/rallyHarness.ts": "9badb4f8be19523eba0061409029d1f9da34c4415e2cf6665bce5ee9faad1992",
+    "tests/helpers/scenarios.ts": "1abc90056c6c59dcd3cb3557c9b7a0bc9ce967ccd6ad4ee0f1203bd5f4186bdf",
+    "executingRunnerSHA256": "929c88a06066eb3fd21380f285c87d649221a67eefc276502b61c59267cc185a"
+  },
+  "sourceStable": true,
+  "limitations": [
+    "Canvas analysis excludes CSS HUD; its labels have single-arrival transitions, assessed separately.",
+    "Sampling at60Hz measures content clock, not monitor hardware artifacts.",
+    "Linux software rendering does not certify device/HDR behavior."
+  ]
+}

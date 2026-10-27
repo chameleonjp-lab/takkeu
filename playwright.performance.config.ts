@@ -1,5 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
+  captureGitInfo: { commit: true, diff: false },
   testDir: './tests/performance', outputDir: 'artifacts/performance-tests', retries: 0, workers: 1, timeout: 90_000,
   reporter: [['list'], ['json', { outputFile: 'artifacts/performance-results.json' }]],
   use: { baseURL: 'http://127.0.0.1:4176', video: 'off', trace: 'retain-on-failure' },

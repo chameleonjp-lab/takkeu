@@ -1,0 +1,82 @@
+# 3000クリア・殿堂: 独立builder/design check
+
+2026-10-27。`codex/goal-3000-hall`、最新main628439f統合中のspec/plan、現client/controller/resultPosition、既存SQL（submission guard/rate refinement/final loss/progress/moderation/legacy filters）、simulation/audio/appを読み取り確認。製品編集・本番DB/ランキング呼出し・テスト送信なし。Supabase skillと現行functions/RLS文書も参照した。本書は設計レビューであり実装/機能成功判定ではない。
+
+**方針は実装可能。追加のユーザー質問が必須となる欠落は見つからなかった。以下の重要点は既存の名前identity/新旧互換/公開境界から実装者が決め、spec/planへ追記して進められる。**
+
+## B01 旧pendingと旧ranking rangeを壊さない（Important）
+
+現`identity(play)`はconfig.clientVersion固定、finish/submitはpending.clientVersion==config.clientVersionのみ、isPendingも現version/rangeのみを許す。manifestを新version/score_max3000へ替えるだけだと、旧4000以上や旧versionのpendingを読み込み時に無言で除去し、旧top/positionのbestも不正応答にする。
+
+決定案: `Play`/`PendingResult`に明示contract（legacy-v1/goal3000-v1）と開始時clientVersionを保持。既存無印pendingは固定の旧version `takkeu-web-ranking-1`/旧RPC/0..100000000のrangeとして読む。legacyはlostBalls有無に応じ従来finish_v1/finish_takkeu_v2とsubmit_idempotentを再送。新contractだけ専用start/finish/clear判定を使う。payload identityはpendingのimmutable clientVersionを使い、configの新versionへ置換しない。
+
+新clearのscore cap3000と既存ranking/read/legacy pendingのrangeを別validatorにする。旧best>3000は残す。旧記録をcap/書換/移行せず、旧bestからHallを付与しない。resultTypeへclearを追加してもlegacy game_over3000/4000をclear扱いしない。
+
+savedStartは現在{startId,displayName}だけ。無印旧startを同じstartIdで新専用RPCへ流し、既存旧sessionを新ruleへ格上げしない。無印は旧contractの再送として扱い、current gameplayを始める時はnew contractの新startIdを使う。開始済み旧playを取得した場合のretire/新startを明示する。名前を後から変更して匿名clearをnamed Hallへ転用しない（登録名は開始前に決まる）。
+
+## B02 DBのルール印・クリア・score run照合を一体で定義（Important）
+
+新専用startだけがprivateなrule印を作る。clientが任意rule文字列を渡して印を付けられる関数にしない。shared startで開始したplay、guest start、旧playへの後付印は禁止。新startの重複呼出しは同startId/同name/versionで同playを返し、countも二重計上しない。
+
+登録時に以下を全てDBで照合する。
+
+- private sessionがtakkeu、専用startのrule印、指定playId/name（既存normalize関数）/versionに一致。
+- finalはclear/score=ranking_score=3000、finished_atあり、最終lostBallsがnonnullかつ0..99。loss100/stock-emptyによるgame_over/retireは除外。
+- `score_runs`に指定submissionIdのaccepted行があり、playId/normalized_name/game_slug/version/score3000が一致。aggregate.best_score>=3000だけを根拠にしない。
+- game_scoresのtakkeu行のranking_statusがnormal。正常に戻る/除外になるケースを一覧でも動的filterする。
+
+専用finishは既存v2へ委譲して壁時計35hits/sec+150、score/ranking_score一致、最終落球数とprogress非後退、idempotenceを継承する。optional telemetryを突然必須にしない。新sessionのgame_over/retireも専用finishから処理し、lossあり/score<3000の条件を明記する。
+
+shared finish_v1はclearを既に受け付け、finish_takkeu_v2もclear+final_lossを受け付ける。したがって『新version文字列を持つsession』だけでは新専用finishの検証を保証しない。旧RPCを直接使っても登録の全predicateを迂回できないことをテストする。必要なら専用finishが記録するvalidated-clear印をprivateに追加する。印があるだけでscore run照合を省略しない。
+
+これは既存公開名・opaque playId・壁時計整合のサーバー記録条件であり、人の操作や実clearを暗号学的に証明する仕組みではない。既存のadvisory telemetryの限界を保持し、『不正不能な認証済みクリア』と説明しない。
+
+## B03 採番の順序と並行性（Important）
+
+ordinalの単位は既存DB `normalize_player_name` の結果。JSの別lower/NFKCルールを新設せず、既存clientがstartのnormalized_nameを受け取る構造を使う。別の人が同じ正規化名を使っても同じ番号であり、この仕様から人の人数/本人認証は導けない。
+
+推奨: private Hall表でnormalized_name primary key、number unique、first_play_id/first_submission_id/registered_atを保存し、初回値は再clearで書換えない。採番はDB sequenceまたはlock付きcounterで、同名のidempotent再送が番号を増やさないよう、採番前に既存entryを調べる。別名の同時登録はHall専用の短いglobal advisory/counter lock等で順序を決め、登録確定順=そのserialization順と定義する。lock後clock_timestampをregistered_atへ使う。MAX(number)+1だけの実装、count(*)+1、ROW_NUMBER再採番は禁止。
+
+同名二playの並行登録も同番号、別名は別番号、response喪失後の再送も同じnumber/date。status除外の行は削除/番号詰めせず、一覧のjoin/filterで隠す。戻ったとき同じ番号を復帰。transaction rollback等の欠番は再利用しない。
+
+PGlite一接続のPromise.allは真の並行transactionを再現しない。unique制約/atomic採番をSQL構造で保証し、可能ならローカルPostgresの別接続でraceを検証。未実施なら『実並行競合試験未確認』と区別する。本番への競合テストは行わない。
+
+## B04 score受領とHall受領の二段階再送（Important）
+
+現controllerはfinish→submit成功でpendingを削除。Hall登録前に削除するとoffline/timeoutで番号が永久に失われる。score送信が成功した後もHallが登録/対象外確定するまで同play/submissionのtaskを永続保持する。どこで通信が切れても同一idでfinish/submit/Hallを再実行できることをテストする。
+
+ランキングscore受領成功とHall通信失敗は別の状態。可能ならscoreAcknowledgedとhallStatusを分け、既存resultPositionへscore ackを渡しつつHallは登録中/再送を表示。『ランキング送信失敗』と誤表示しない。Hall除外はterminal excludedとしてループ再送せず、番号なし達成証明を表示できる。正式番号はDB応答だけを使い、一覧の件数やローカルcounterから予測しない。
+
+新旧が混在したqueueでも旧4000+を元契約で送信し、Hall処理は新clearだけ。再clearの同名でも異なるplayIdの応答が現在の結果へ混ざらないよう、playId+submissionId+結果epochで所有者を確認する。既存resultPositionの照合構造を流用できる。
+
+## B05 3000到達音を即時silenceで切らない（Important）
+
+clearでfinishPresentation.finishing=falseにするだけだと、createApp gameover入口の `if(!presentation.finishing)silence()` が同RAFでaudio.suspendを呼び、直前のplayer-hit3000専用fanfareを切る。現audioはgame-over eventでclearVoices(true)としてfanfare/impactを保持するが、その後app.silenceでは全voicesを停止する。
+
+決定案: 3000 player-hitを先にconsumeし、新game-clearを通常voice終了/専用phrase保持として扱う。3Dの継続描画停止と音声tailの寿命を分離する。clear後のrenderは一回、音は3000phraseが終わるまで保持し、home/retry/hidden/context interruptionでは停止。専用音のためにgame/3Dを進めない。ネイティブ波形/voice生成とapp lifecycleの両方で検証する。
+
+## B06 同tick terminalの現実的定義（Important）
+
+現simulationはactionをtime、bounce優先、ballId順で処理し、loss terminal後はbreakする。3000clearもこの順序を保ち、最初に処理された終端事象を確定させる。2999でhitが先なら3000で即clear、以後同tickの別hit/loss/ready/departを処理しない。100落球/stock-emptyが先ならlossで終わり、後のhitでclearに変わらない。同時刻のtieも現ballId/bounce順を保ち、clear優先の新しいソート規則は追加しない。
+
+3000th player-hitのscoreと必要な到達eventをemitし、終了eventは一度だけ。後続outgoing RNG/scheduling/増球や入力sample segmentの処理で継続させない。新endReasonをstate/snapshot/resetへ運ぶ。既存のtick終端simTime commitと描画停止の意味を区別し、dt/maxSteps/slow-frameを変えない。2999から30球同時を渡してscore3000/event1個・後続step無変化を検証する。
+
+## B07 一覧・名前・賞状・公開範囲（settle without asking）
+
+最初のHall登録時のdisplayNameとregisteredAtはimmutableとするのが番号の意味に合う。同じ正規化名で表記だけ変わった再clearでも番号/dateを再発行しない。証書はそのHallEntryのserver値を使う。名前単位なので『第○人』ではなく『殿堂登録 第○号』。
+
+Hall一覧はnormal statusだけをjoinし、番号順とbounded limit（例30、最大100）を固定。private play/submission/startIdやprogress情報は返さない。既存公開登録名と番号/初回日だけにする。登録直前にstatus除外となった場合は登録/表示を拒否、すでに番号のある名が後で除外されても番号を再利用しない。既存local PNGを後から撤回できる保証はしない。
+
+PNGはCanvas2Dへtextとして描き、長い20codepoint/emojiをmeasureTextで収める。DBの初回UTC timestampを保存し、日付表示のtimezoneを明示固定する。端末日付/現在時刻を初回日へ置換しない。生成中にhome/retry/別結果へ移る場合のepochを照合し、objectURLをrevoke。共有はfile生成済みの新しいuser gestureで行い、unsupported時はプレビュー/保存へfallbackする。匿名clearでは番号なし賞状、後付名で正式登録しない。
+
+## B08 migration・権限・試験の実装境界
+
+privateのrule/Hall表はRLSとdirect grantsのrevokeを設定。公開RPCが意図したAPI境界である現匿名登録方式を維持し、service roleをclientへ持たせない。security definerを使う場合は空search_path、全参照をschema修飾し、PUBLIC default EXECUTEをrevokeして必要rolesだけgrant。既存の公開名方式へ突然auth.uid必須を加えて破壊しない。
+
+新migrationはローカルCLIで生成し、共有gamesのscore_maxを3000へ下げない（旧pending/rankingを拒むため）。旧migrationは実運用への適用履歴が別途あるので、既存main7fileを新作の一括適用対象に混ぜず、新Hall migrationだけの前提/適用順を明記する。fresh SQL fixtureは必要な実既存schema/function/normalize契約を再現し、stubのlower(trim)だけで本番のUnicode正規化を保証したとしない。
+
+テスト外部fetchは全てmock/abort。新RPC実装前/DB未適用時のnamed開始失敗を明示し、local偽番号で続行しない。匿名ゲームは既存count-only経路を保てる。本番migration適用/試験スコア/merge/deployは行わない。
+
+## 結論
+
+B01/B02/B03/B04/B05/B06をspec/planの具体的なinterface/acceptanceへ追記して進めることを推奨する。これらは現ユーザー回答と既存契約から解決でき、追加承認待ちを作る必要はない。次の独立reviewは新SQL/新旧pending/同tickclear/音声tail/PNGの実コードと元ログを対象にする。

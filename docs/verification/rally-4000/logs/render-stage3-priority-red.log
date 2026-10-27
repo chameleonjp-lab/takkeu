@@ -1,0 +1,31 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-render.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-render.test.ts (80 tests | 1 failed) 1048ms
+   ❯ loss renderer follows immutable event facts through the finish clock (20)
+     × lets the final loss take priority over major arrivals and never restores them after the loss cue expires 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-render.test.ts > loss renderer follows immutable event facts through the finish clock > lets the final loss take priority over major arrivals and never restores them after the loss cue expires
+AssertionError: expected [ 'tricolor-crossing', …(7) ] to not include 'final-assembly'
+ ❯ tests/unit/rally-render.test.ts:209:118
+    207|     const state=effectState(4000,{lostBallCount:100,arrivals:[arrival]…
+    208|     view.update({...snapshot(4000,20.5),phase:'gameover'},state);expec…
+    209|     view.update({...snapshot(4000,22.3),phase:'gameover'},{...state,cu…
+       |                                                                                                                      ^
+    210|   });
+    211|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 79 passed (80)
+   Start at  20:36:09
+   Duration  1.35s (tests 87%, transform 8%, import 5%)
+

@@ -1,0 +1,235 @@
+{
+  "capturedAt": "2026-10-27T21:27:46.345726+00:00",
+  "checkoutProof": {
+    "productHead": "fdbdf46b9d8b846db200a2895cf73a73f8e2f02d",
+    "pushCheckout": "fdbdf46b9d8b846db200a2895cf73a73f8e2f02d",
+    "pullRequestCheckout": "2fffd2cc7f4eb450cb24e571245d15893d4b5a8c",
+    "wholeTreeIdentical": true,
+    "tree": "d5e7791debc3988ec46fe1f2517d71581eaf4c44",
+    "main": "628439f5907601c9b34ee2ba01f70c918b6e8d18"
+  },
+  "runs": [
+    {
+      "databaseId": 40584273034,
+      "event": "push",
+      "headSha": "fdbdf46b9d8b846db200a2895cf73a73f8e2f02d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40584273034",
+      "updatedAt": "2026-10-27T21:26:59Z",
+      "checkoutSHA": "fdbdf46b9d8b846db200a2895cf73a73f8e2f02d",
+      "validationJobs": 5,
+      "aggregateJobs": 1,
+      "jobsPassed": 6,
+      "jobsFailed": 0,
+      "unitPassed": 969,
+      "browserPassed": 236,
+      "distributionPassed": 8,
+      "totalCountedTests": 1213,
+      "jobs": [
+        {
+          "databaseId": 122471480404,
+          "name": "core",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-27T21:08:50Z",
+          "completedAt": "2026-10-27T21:11:08Z",
+          "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40584273034/job/122471480404",
+          "fullLog": "ci-logs/122471480404.log.gz",
+          "logSHA256": "92df83f85f03fba9287878a3bc93d25ad9f480d7c5f36706d9b3c079ee25d9da",
+          "unitPassed": 969,
+          "unitFiles": 86,
+          "distributionPassed": 8,
+          "typecheck": "success",
+          "realPostgresConcurrency": "success"
+        },
+        {
+          "databaseId": 122472660465,
+          "name": "Browser (webkit, load)",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-27T21:11:11Z",
+          "completedAt": "2026-10-27T21:14:00Z",
+          "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40584273034/job/122472660465",
+          "fullLog": "ci-logs/122472660465.log.gz",
+          "logSHA256": "8d59df5bd7e2baf82df29c6ee227f2640a9715e911e23f62fa167a40a17b4cf8",
+          "browserPassed": 3
+        },
+        {
+          "databaseId": 122472660475,
+          "name": "Browser (webkit, interaction)",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-27T21:11:11Z",
+          "completedAt": "2026-10-27T21:22:17Z",
+          "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40584273034/job/122472660475",
+          "fullLog": "ci-logs/122472660475.log.gz",
+          "logSHA256": "0749f6d5b9de704c4b81770dca765326146df166dc60f17395d71f9aa10561b0",
+          "browserPassed": 115
+        },
+        {
+          "databaseId": 122472660494,
+          "name": "Browser (chromium, load)",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-27T21:11:10Z",
+          "completedAt": "2026-10-27T21:17:18Z",
+          "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40584273034/job/122472660494",
+          "fullLog": "ci-logs/122472660494.log.gz",
+          "logSHA256": "95c14ac7552d3950af7cbfc639cc469b056a5fe941c2ad79b4c06baa81c56390",
+          "browserPassed": 3
+        },
+        {
+          "databaseId": 122472660602,
+          "name": "Browser (chromium, interaction)",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-27T21:11:10Z",
+          "completedAt": "2026-10-27T21:26:53Z",
+          "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40584273034/job/122472660602",
+          "fullLog": "ci-logs/122472660602.log.gz",
+          "logSHA256": "82a99d2f131b4b936781dc8912cdcf5ee36a84cd4f3b36befa3b69c8e6717180",
+          "browserPassed": 115
+        },
+        {
+          "databaseId": 122480514234,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-27T21:26:55Z",
+          "completedAt": "2026-10-27T21:26:59Z",
+          "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40584273034/job/122480514234",
+          "fullLog": "ci-logs/122480514234.log.gz",
+          "logSHA256": "5526c3462868cf458567c5ae3619cff52e1f072bec41343ee8aa4c6928cef554",
+          "aggregateOnly": true
+        }
+      ]
+    },
+    {
+      "databaseId": 40584299598,
+      "event": "pull_request",
+      "headSha": "fdbdf46b9d8b846db200a2895cf73a73f8e2f02d",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40584299598",
+      "updatedAt": "2026-10-27T21:24:14Z",
+      "checkoutSHA": "2fffd2cc7f4eb450cb24e571245d15893d4b5a8c",
+      "validationJobs": 5,
+      "aggregateJobs": 1,
+      "jobsPassed": 6,
+      "jobsFailed": 0,
+      "unitPassed": 969,
+      "browserPassed": 236,
+      "distributionPassed": 8,
+      "totalCountedTests": 1213,
+      "jobs": [
+        {
+          "databaseId": 122471575381,
+          "name": "core",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-27T21:09:02Z",
+          "completedAt": "2026-10-27T21:11:07Z",
+          "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40584299598/job/122471575381",
+          "fullLog": "ci-logs/122471575381.log.gz",
+          "logSHA256": "1533543d2e6c52af19430b929d96fe69b1331f089706fd8f7a58af80a73308c0",
+          "unitPassed": 969,
+          "unitFiles": 86,
+          "distributionPassed": 8,
+          "typecheck": "success",
+          "realPostgresConcurrency": "success"
+        },
+        {
+          "databaseId": 122472645126,
+          "name": "Browser (webkit, interaction)",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-27T21:11:09Z",
+          "completedAt": "2026-10-27T21:24:08Z",
+          "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40584299598/job/122472645126",
+          "fullLog": "ci-logs/122472645126.log.gz",
+          "logSHA256": "53b45f9b26c50b359b3667700c9b19fca9073a011a57c126b814a15f05d93c7f",
+          "browserPassed": 115
+        },
+        {
+          "databaseId": 122472645156,
+          "name": "Browser (webkit, load)",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-27T21:11:09Z",
+          "completedAt": "2026-10-27T21:13:30Z",
+          "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40584299598/job/122472645156",
+          "fullLog": "ci-logs/122472645156.log.gz",
+          "logSHA256": "6efe9791b9cab79067e8c3586d20bb7b88f2ae1f340365b81a13a81401e50844",
+          "browserPassed": 3
+        },
+        {
+          "databaseId": 122472645248,
+          "name": "Browser (chromium, interaction)",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-27T21:11:09Z",
+          "completedAt": "2026-10-27T21:20:58Z",
+          "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40584299598/job/122472645248",
+          "fullLog": "ci-logs/122472645248.log.gz",
+          "logSHA256": "5b52e61e12b4fbbba1f3b73aabd5c22e209a9df51980a03ad88c6d8d4f9c706e",
+          "browserPassed": 115
+        },
+        {
+          "databaseId": 122472645289,
+          "name": "Browser (chromium, load)",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-27T21:11:09Z",
+          "completedAt": "2026-10-27T21:14:44Z",
+          "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40584299598/job/122472645289",
+          "fullLog": "ci-logs/122472645289.log.gz",
+          "logSHA256": "9b6bd8760900871d5f78750fdbf9aee374fdbecea9d8ad05c871450db3c9e8ef",
+          "browserPassed": 3
+        },
+        {
+          "databaseId": 122479124588,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-27T21:24:11Z",
+          "completedAt": "2026-10-27T21:24:14Z",
+          "url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40584299598/job/122479124588",
+          "fullLog": "ci-logs/122479124588.log.gz",
+          "logSHA256": "bdd0da8c059a47560495e946221d40d7e5821322c50109fd461e199e73d27a52",
+          "aggregateOnly": true
+        }
+      ]
+    }
+  ],
+  "jobTotalsAcrossBothRuns": {
+    "passed": 12,
+    "failed": 0
+  },
+  "notes": [
+    "Each run has five validation jobs (core + four browser groups) and one aggregate verify job.",
+    "1213 counts unit+browser+distribution tests once per run; typecheck, builds and real PostgreSQL concurrency are additional successful checks.",
+    "PR checkout is the recorded virtual merge SHA; its complete tree equals the push-tested product HEAD.",
+    "CI load tests passing does not mean the independent actual-60-second Linux performance targets passed: all four final performance conditions failed those unchanged targets.",
+    "Subsequent evidence-only commits must not be relabeled as this exact tested SHA.",
+    "Superseded failed or canceled runs are retained by GitHub and the implementation report; these totals describe only the two final product runs."
+  ],
+  "supersededFailures": [
+    {
+      "head": "a03cdb657af24c445410e04c234ae1bc572aa3ac",
+      "runs": [
+        40578611417,
+        40578638654
+      ],
+      "reason": "Old OGP description expectation; updated to the new 3500 metadata contract."
+    },
+    {
+      "head": "1ac6943b04ab7278de0ab0fc772abcb195b7d9bc",
+      "runs": [
+        40581562519,
+        40581588328
+      ],
+      "reason": "Actual loss-warning overflow at 280px/200% text; reproduced and fixed in CSS without relaxing width/non-overlap assertions."
+    }
+  ]
+}

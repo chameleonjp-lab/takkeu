@@ -1,0 +1,155 @@
+{
+  "generatedAt": "2026-10-25T22:58:12.477941+00:00",
+  "canonicalCommit": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+  "productionSrcTree": "47bd0f370ad169de00c77b37bb74429b63020d44",
+  "broad": {
+    "comparisons": 832,
+    "frozenCameraStates": 416,
+    "allExact": true,
+    "engines": {
+      "chromium": {
+        "comparisons": 416,
+        "frozenCameraStates": 208,
+        "qualities": {
+          "standard": 208,
+          "low": 208
+        },
+        "differentPixelCount": 0,
+        "maximumChannelDelta": 0,
+        "allPixelHashesMatch": true,
+        "drawCallReductionHistogram": {
+          "0": 24,
+          "1": 18,
+          "2": 8,
+          "3": 112,
+          "4": 254
+        },
+        "caseRecords": [
+          "chromium/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources.json",
+          "chromium/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls.json",
+          "chromium/major-labels-fit-at-their-largest-initial-scale-with-200-text-on-320px-screens.json",
+          "chromium/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores.json",
+          "chromium/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion.json"
+        ]
+      },
+      "webkit": {
+        "comparisons": 416,
+        "frozenCameraStates": 208,
+        "qualities": {
+          "standard": 208,
+          "low": 208
+        },
+        "differentPixelCount": 0,
+        "maximumChannelDelta": 0,
+        "allPixelHashesMatch": true,
+        "drawCallReductionHistogram": {
+          "0": 24,
+          "1": 18,
+          "2": 8,
+          "3": 112,
+          "4": 254
+        },
+        "caseRecords": [
+          "webkit/all-23-thresholds-preserve-before-arrival-during-after-camera-evidence-and-fixed-resources.json",
+          "webkit/losses-keep-actual-distinct-positions-number-lifetimes-and-final-drawing-without-advancing-balls.json",
+          "webkit/major-labels-fit-at-their-largest-initial-scale-with-200-text-on-320px-screens.json",
+          "webkit/mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores.json",
+          "webkit/moving-background-electricity-rings-time-sequences-deterministic-restore-and-reduced-motion.json"
+        ]
+      }
+    },
+    "coverage": "23 thresholds \u00d74 states; moving effects including4000phases and reduced motion; all loss phases including frozen finishing; mobile/enlarged text/best/2600; bothqualities/bothengines",
+    "shaderCacheCaveat": "Explicit false\u2192true can retain FrontSide shader program. Current four flat MeshBasic materials use no normal/env/skinning branches, so side shader macros are unused. Supplementary fresh production-default comparisons independently verify the actual fresh DoubleSide path."
+  },
+  "formalRuns": {
+    "initial": {
+      "log": "../../logs/single-pass-browser-initial-budget.log",
+      "json": "../../logs/single-pass-browser-initial-budget.json",
+      "stats": {
+        "startTime": "2026-10-25T22:39:41.886Z",
+        "duration": 427393.072,
+        "expected": 6,
+        "skipped": 5,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "commandExitCode": 130,
+      "interpretation": "Six Chromium cases passed. WebKit threshold exceeded original240s screenshot infrastructure budget with zero completed-comparison pixel mismatches. Subsequent old-budget motion case deliberately interrupted; four remaining cases not run. CLI skipped5 includes the interrupted case. Complete attempt and partial frames preserved."
+    },
+    "webkitRerun": {
+      "log": "../../logs/single-pass-browser-pixels.log",
+      "json": "../../logs/single-pass-browser-pixels.json",
+      "stats": {
+        "startTime": "2026-10-25T22:47:15.751Z",
+        "duration": 575250.4600000001,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "commandExitCode": 0,
+      "interpretation": "All six existing WebKit cases passed with approved A/B-only4\u00d7capture infrastructure budget. Ordinary CI timeouts, all pixel/state criteria and independent frame-time targets unchanged."
+    },
+    "coverageVerdict": "All12 existing engine/case combinations passed across initial Chromium and final WebKit runs. This was not one clean12-case run."
+  },
+  "freshDefaultBridge": {
+    "cases": 16,
+    "completed": true,
+    "allExact": true,
+    "sourceStable": true,
+    "pixelRelationsPerCase": 2,
+    "results": "fresh-default/results.json",
+    "script": "fresh-default-check.mjs",
+    "formalLog": "../../logs/single-pass-fresh-default.log",
+    "scope": "2000transition/4000peak/4000middle/loss100finishing \u00d72qualities\u00d72engines. null override before restore, first new-material draw uses actual production default; no legacy firework/opponent transient facts."
+  },
+  "finalSourceChecks": [
+    {
+      "file": "playwright.rally-pixels.config.ts",
+      "retainedSHA256": "74eab10e3b4e2a35601945cd6d660d5929e3600596cb867d28330f7127e75ce8",
+      "currentSHA256": "74eab10e3b4e2a35601945cd6d660d5929e3600596cb867d28330f7127e75ce8",
+      "matches": true
+    },
+    {
+      "file": "src/render/rallyEffects.ts",
+      "retainedSHA256": "a1c545094d4066a717802c4b640b726a123db0629ab3896bc2dabdb78062327a",
+      "currentSHA256": "a1c545094d4066a717802c4b640b726a123db0629ab3896bc2dabdb78062327a",
+      "matches": true
+    },
+    {
+      "file": "src/render/createView.ts",
+      "retainedSHA256": "498dc86f0331201acdbd2e69c01300d0dbe51f32e80f1fbab4ccbdef32870450",
+      "currentSHA256": "498dc86f0331201acdbd2e69c01300d0dbe51f32e80f1fbab4ccbdef32870450",
+      "matches": true
+    },
+    {
+      "file": "tests/browser/rally-effects.spec.ts",
+      "retainedSHA256": "20ffe04c37901e090dd7e6086d326db06f1157ccd31b8d99663b2b89633b65de",
+      "currentSHA256": "20ffe04c37901e090dd7e6086d326db06f1157ccd31b8d99663b2b89633b65de",
+      "matches": true
+    },
+    {
+      "file": "tests/helpers/rallyHarness.ts",
+      "retainedSHA256": "9badb4f8be19523eba0061409029d1f9da34c4415e2cf6665bce5ee9faad1992",
+      "currentSHA256": "9badb4f8be19523eba0061409029d1f9da34c4415e2cf6665bce5ee9faad1992",
+      "matches": true
+    },
+    {
+      "file": "tests/helpers/pngPixels.ts",
+      "retainedSHA256": "fdd44c65a749ec8345019c0b14e19de7bcd88e08ac9e47271ce597dec454d8f2",
+      "currentSHA256": "fdd44c65a749ec8345019c0b14e19de7bcd88e08ac9e47271ce597dec454d8f2",
+      "matches": true
+    }
+  ],
+  "finalSourcesMatch": true,
+  "limits": [
+    "Finite-state pixel proof, not a recapture of all5040dense safety frames.",
+    "Original dense videos, exact source copies, initial failed sources and original primary safety flags remain unchanged.",
+    "No human visual acceptance, hardware performance claim, or WCAG certification is implied."
+  ],
+  "resourceRelease": {
+    "bothCommandsExitedZero": true,
+    "ports4173And4183ConfirmedClosed": true,
+    "heavyWorkStoppedBeforeFinalPerformance": true
+  }
+}

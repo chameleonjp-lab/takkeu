@@ -1,0 +1,44 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-render.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-render.test.ts (22 tests | 2 failed) 1286ms
+   ❯ bounded rally world renderer, 0–1000 (22)
+     × slowly expands and contracts the 700 halo rather than only rotating a fixed ellipse 16ms
+     × brightens the four corner posts progressively from 900 through 999 32ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > slowly expands and contracts the 700 halo rather than only rotating a fixed ellipse
+AssertionError: expected -0.000055670738220214844 to be greater than 0.07
+ ❯ tests/unit/rally-render.test.ts:126:28
+    124|     };
+    125|     const start=radius(0),expanded=radius(7),contracted=radius(21);
+    126|     expect(expanded-start).toBeGreaterThan(.07);expect(start-contracte…
+       |                            ^
+    127|   });
+    128|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > brightens the four corner posts progressively from 900 through 999
+AssertionError: expected 0.4000000059604645 to be greater than 0.5500000059604645
+ ❯ tests/unit/rally-render.test.ts:138:17
+    136|     };
+    137|     const early=cornerAlpha(900),mid=cornerAlpha(950),late=cornerAlpha…
+    138|     expect(mid).toBeGreaterThan(early+.15);expect(late).toBeGreaterTha…
+       |                 ^
+    139|   });
+    140| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 20 passed (22)
+   Start at  20:21:53
+   Duration  1.73s (tests 86%, import 8%, transform 6%)
+

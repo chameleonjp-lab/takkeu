@@ -1,0 +1,23 @@
+[WebServer] (node:18864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 10 tests using 1 worker
+
+(node:18888) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   1 [chromium] › tests/browser/rally-effects.spec.ts:18:1 › all 23 thresholds: preserve before/arrival/during/after camera evidence and fixed resources (12.6s)
+  ✓   2 [chromium] › tests/browser/rally-effects.spec.ts:47:1 › moving background/electricity/rings: time sequences, deterministic restore and reduced motion (18.2s)
+  ✓   3 [chromium] › tests/browser/rally-effects.spec.ts:76:1 › losses keep actual distinct positions, number lifetimes and final drawing without advancing balls (14.8s)
+  ✓   4 [chromium] › tests/browser/rally-effects.spec.ts:107:1 › mobile, landscape, 200% text, best and smash warning keep controls and readable four-digit scores (2.9s)
+  ✓   5 [chromium] › tests/browser/rally-effects.spec.ts:127:1 › major labels fit at their largest initial scale with 200% text on 320px screens (1.6s)
+(node:20010) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓   6 [webkit] › tests/browser/rally-effects.spec.ts:18:1 › all 23 thresholds: preserve before/arrival/during/after camera evidence and fixed resources (38.6s)
+  ✓   7 [webkit] › tests/browser/rally-effects.spec.ts:47:1 › moving background/electricity/rings: time sequences, deterministic restore and reduced motion (28.9s)
+  ✓   8 [webkit] › tests/browser/rally-effects.spec.ts:76:1 › losses keep actual distinct positions, number lifetimes and final drawing without advancing balls (18.6s)
+  ✓   9 [webkit] › tests/browser/rally-effects.spec.ts:107:1 › mobile, landscape, 200% text, best and smash warning keep controls and readable four-digit scores (4.8s)
+  ✓  10 [webkit] › tests/browser/rally-effects.spec.ts:127:1 › major labels fit at their largest initial scale with 200% text on 320px screens (3.9s)
+
+  10 passed (2.4m)

@@ -1,0 +1,266 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-render.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-render.test.ts (18 tests | 17 failed) 26ms
+   ❯ bounded rally world renderer, 0–1000 (18)
+     × draws permanent stages at 400 without inventing arrival effects 6ms
+     × draws permanent stages at 499 without inventing arrival effects 1ms
+     × draws permanent stages at 500 without inventing arrival effects 1ms
+     × draws permanent stages at 600 without inventing arrival effects 1ms
+     × draws permanent stages at 700 without inventing arrival effects 1ms
+     × draws permanent stages at 899 without inventing arrival effects 1ms
+     × draws permanent stages at 900 without inventing arrival effects 0ms
+     × draws permanent stages at 999 without inventing arrival effects 1ms
+     × draws permanent stages at 1000 without inventing arrival effects 4ms
+     × draws permanent stages at 1001 without inventing arrival effects 1ms
+     × uses confirmed hit coordinates, retains a ring only for .3 seconds and ignores foreign state 2ms
+     × draws confirmed 100 arrivals and clears at the exact deadline 1ms
+     × draws confirmed 200 arrivals and clears at the exact deadline 0ms
+     × draws confirmed 800 arrivals and clears at the exact deadline 2ms
+     × draws confirmed 1000 arrivals and clears at the exact deadline 0ms
+     × keeps fixed GPU buffers through replay, quality changes, pauses and repeated disposal 2ms
+     × freezes reduced-motion geometry while preserving distinct permanent stages 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 17 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > draws permanent stages at 400 without inventing arrival effects
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > draws permanent stages at 499 without inventing arrival effects
+AssertionError: expected [] to deeply equal [ 'background-threads' ]
+
+- Expected
++ Received
+
+- [
+-   "background-threads",
+- ]
++ []
+
+ ❯ tests/unit/rally-render.test.ts:35:40
+     33|     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,ri…
+     34|     view.update(snapshot(score));
+     35|     expect(view.stats().activeEffects).toEqual(want);
+       |                                        ^
+     36|     expect(view.stats().worldQuads+view.stats().tableQuads>0).toBe(sco…
+     37|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/17]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > draws permanent stages at 500 without inventing arrival effects
+AssertionError: expected [] to deeply equal [ 'background-threads', …(1) ]
+
+- Expected
++ Received
+
+- [
+-   "background-threads",
+-   "green-perimeter",
+- ]
++ []
+
+ ❯ tests/unit/rally-render.test.ts:35:40
+     33|     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,ri…
+     34|     view.update(snapshot(score));
+     35|     expect(view.stats().activeEffects).toEqual(want);
+       |                                        ^
+     36|     expect(view.stats().worldQuads+view.stats().tableQuads>0).toBe(sco…
+     37|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/17]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > draws permanent stages at 600 without inventing arrival effects
+AssertionError: expected [] to deeply equal [ 'background-threads', …(2) ]
+
+- Expected
++ Received
+
+- [
+-   "background-threads",
+-   "green-perimeter",
+-   "green-net",
+- ]
++ []
+
+ ❯ tests/unit/rally-render.test.ts:35:40
+     33|     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,ri…
+     34|     view.update(snapshot(score));
+     35|     expect(view.stats().activeEffects).toEqual(want);
+       |                                        ^
+     36|     expect(view.stats().worldQuads+view.stats().tableQuads>0).toBe(sco…
+     37|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/17]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > draws permanent stages at 700 without inventing arrival effects
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > draws permanent stages at 899 without inventing arrival effects
+AssertionError: expected [] to deeply equal [ 'background-threads', …(3) ]
+
+- Expected
++ Received
+
+- [
+-   "background-threads",
+-   "green-perimeter",
+-   "green-net",
+-   "single-halo",
+- ]
++ []
+
+ ❯ tests/unit/rally-render.test.ts:35:40
+     33|     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,ri…
+     34|     view.update(snapshot(score));
+     35|     expect(view.stats().activeEffects).toEqual(want);
+       |                                        ^
+     36|     expect(view.stats().worldQuads+view.stats().tableQuads>0).toBe(sco…
+     37|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/17]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > draws permanent stages at 900 without inventing arrival effects
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > draws permanent stages at 999 without inventing arrival effects
+AssertionError: expected [] to deeply equal [ 'background-threads', …(4) ]
+
+- Expected
++ Received
+
+- [
+-   "background-threads",
+-   "green-perimeter",
+-   "green-net",
+-   "single-halo",
+-   "corner-gather",
+- ]
++ []
+
+ ❯ tests/unit/rally-render.test.ts:35:40
+     33|     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,ri…
+     34|     view.update(snapshot(score));
+     35|     expect(view.stats().activeEffects).toEqual(want);
+       |                                        ^
+     36|     expect(view.stats().worldQuads+view.stats().tableQuads>0).toBe(sco…
+     37|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/17]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > draws permanent stages at 1000 without inventing arrival effects
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > draws permanent stages at 1001 without inventing arrival effects
+AssertionError: expected [] to deeply equal [ 'background-threads', …(4) ]
+
+- Expected
++ Received
+
+- [
+-   "background-threads",
+-   "green-perimeter",
+-   "green-net",
+-   "single-halo",
+-   "green-blue-crossing",
+- ]
++ []
+
+ ❯ tests/unit/rally-render.test.ts:35:40
+     33|     const rig=new Group(),view=createRallyEffectView(DEFAULT_CONFIG,ri…
+     34|     view.update(snapshot(score));
+     35|     expect(view.stats().activeEffects).toEqual(want);
+       |                                        ^
+     36|     expect(view.stats().worldQuads+view.stats().tableQuads>0).toBe(sco…
+     37|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/17]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > uses confirmed hit coordinates, retains a ring only for .3 seconds and ignores foreign state
+AssertionError: expected [] to include 'hit-ring'
+ ❯ tests/unit/rally-render.test.ts:45:40
+     43|     const state=effectState(50,{hits:[hit]});
+     44|     view.update(snapshot(50,20.1),state);
+     45|     expect(view.stats().activeEffects).toContain('hit-ring');
+       |                                        ^
+     46|     const points=geometryValues(rig);
+     47|     expect(Math.min(...points.filter((_,i)=>i%3===0))).toBeGreaterThan…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/17]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > draws confirmed 100 arrivals and clears at the exact deadline
+AssertionError: expected [] to include 'perimeter-lap'
+ ❯ tests/unit/rally-render.test.ts:61:86
+     59|       const state=effectState(threshold,{arrivals:[{id:`arrival-${thre…
+     60|       view.update(snapshot(threshold,19.99),state);expect(view.stats()…
+     61|       view.update(snapshot(threshold,20.4),state);expect(view.stats().…
+       |                                                                                      ^
+     62|       view.update(snapshot(threshold,20+duration),state);expect(view.s…
+     63|       view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/17]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > draws confirmed 200 arrivals and clears at the exact deadline
+AssertionError: expected [] to include 'net-crossing'
+ ❯ tests/unit/rally-render.test.ts:61:86
+     59|       const state=effectState(threshold,{arrivals:[{id:`arrival-${thre…
+     60|       view.update(snapshot(threshold,19.99),state);expect(view.stats()…
+     61|       view.update(snapshot(threshold,20.4),state);expect(view.stats().…
+       |                                                                                      ^
+     62|       view.update(snapshot(threshold,20+duration),state);expect(view.s…
+     63|       view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/17]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > draws confirmed 800 arrivals and clears at the exact deadline
+AssertionError: expected [] to include 'edge-sparks'
+ ❯ tests/unit/rally-render.test.ts:61:86
+     59|       const state=effectState(threshold,{arrivals:[{id:`arrival-${thre…
+     60|       view.update(snapshot(threshold,19.99),state);expect(view.stats()…
+     61|       view.update(snapshot(threshold,20.4),state);expect(view.stats().…
+       |                                                                                      ^
+     62|       view.update(snapshot(threshold,20+duration),state);expect(view.s…
+     63|       view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/17]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > draws confirmed 1000 arrivals and clears at the exact deadline
+AssertionError: expected [] to include 'thousand-shockwave'
+ ❯ tests/unit/rally-render.test.ts:61:86
+     59|       const state=effectState(threshold,{arrivals:[{id:`arrival-${thre…
+     60|       view.update(snapshot(threshold,19.99),state);expect(view.stats()…
+     61|       view.update(snapshot(threshold,20.4),state);expect(view.stats().…
+       |                                                                                      ^
+     62|       view.update(snapshot(threshold,20+duration),state);expect(view.s…
+     63|       view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/17]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > keeps fixed GPU buffers through replay, quality changes, pauses and repeated disposal
+AssertionError: expected 0 to be less than 0
+ ❯ tests/unit/rally-render.test.ts:75:108
+     73|     view.update({...snapshot(1001,20),phase:'paused'});expect(geometry…
+     74|     for(let i=0;i<300;i++)view.update(snapshot(i%2?1001:900,20+i/60),u…
+     75|     view.update(snapshot(1001,25),undefined,'low');expect(view.stats()…
+       |                                                                                                            ^
+     76|     expect(meshes.map(n=>n.geometry.getAttribute('position').array)).t…
+     77|     expect(view.stats().geometries).toBe(4);expect(view.stats().materi…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/17]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > bounded rally world renderer, 0–1000 > freezes reduced-motion geometry while preserving distinct permanent stages
+AssertionError: expected [] to not deeply equal []
+
+Compared values have no visual difference.
+
+ ❯ tests/unit/rally-render.test.ts:87:105
+     85|     view.update(snapshot(700,20),undefined,'standard',true);const init…
+     86|     view.update(snapshot(700,22),undefined,'standard',true);expect(geo…
+     87|     view.update(snapshot(1000,22),undefined,'standard',true);expect(ge…
+       |                                                                                                         ^
+     88|     expect(view.stats().activeEffects).toContain('green-blue-crossing'…
+     89|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/17]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  17 failed | 1 passed (18)
+   Start at  20:14:11
+   Duration  332ms (import 41%, transform 34%, tests 22%, worker 3%)
+

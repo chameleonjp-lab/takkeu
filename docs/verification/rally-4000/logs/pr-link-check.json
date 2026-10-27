@@ -1,0 +1,826 @@
+{
+  "bodyUTF8Bytes": 42795,
+  "bodySHA256": "6974e7d6ab1991dd883dbd979334e4bc243337f2cb478af92ac7a8d42f32a4dd",
+  "matrixRows": 43,
+  "checkedBlobLinks": 154,
+  "missing": [],
+  "pendingMarkers": [],
+  "links": [
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "src/app/createApp.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "src/app/finishPresentation.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "src/audio/audio.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "src/audio/tones.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "src/game/rallyEffects.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "src/game/simulation.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "src/render/celebrations.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "src/render/rallyEffects.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "src/ui/rallyNotice.css",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "src/ui/rallyNotice.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "tests/browser/rally-effects.spec.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "tests/helpers/captureRallyFlashFrames.mjs",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "tests/helpers/collectRallyPerformance.mjs",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "tests/helpers/compareRallyPerformance.mjs",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "tests/helpers/packRallyFlashEvidence.py",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "tests/helpers/rallyFlashAnalysis.py",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "tests/performance/rally-4000.spec.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "tests/unit/loss-position.test.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "tests/unit/rally-audio.test.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "tests/unit/rally-effects.test.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "tests/unit/rally-notice.test.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "tests/unit/rally-render.test.ts",
+      "exists": true
+    },
+    {
+      "ref": "d30aa196f2faccd88fab36de4b94bb585c21b464",
+      "path": "tests/unit/rally-through-play.test.ts",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/README.md",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/adversarial-review.md",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/after-single-pass/resource-detail.json",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/archive-provenance.json",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/audio-report.md",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/audio/chromium-1000-best-record.wav",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/audio/chromium-1000-loss-impact.wav",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/audio/chromium-1000-standard.wav",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/audio/chromium-3000-standard.wav",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/audio/chromium-4000-standard.wav",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/audio/ending-impact-summary.json",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/audio/summary.json",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/audio/webkit-1000-best-record.wav",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/audio/webkit-1000-loss-impact.wav",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/audio/webkit-1000-standard.wav",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/audio/webkit-3000-standard.wav",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/audio/webkit-4000-standard.wav",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/ci/40241944794/README.md",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/coverage.md",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/diagnostics/gpu-query-report.md",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/diagnostics/single-pass/summary.json",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/layout/best-after.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/layout/best-and-2600.json",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/layout/best-before.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/layout/best-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/layout/ordinary-2600.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/losses/1-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/losses/10-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/losses/100-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/losses/100-finishing.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/losses/20-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/losses/30-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/losses/4-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/losses/40-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/losses/50-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/losses/55-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/losses/77-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/losses/88-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/losses/90-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/losses/99-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/motion/1000-0.10.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/motion/1250-0.10.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/motion/1500-0.10.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/motion/1750-0.10.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/motion/2000-0.10.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/motion/2250-0.10.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/motion/2500-0.10.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/motion/2750-0.10.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/motion/3000-0.10.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/motion/3250-0.10.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/motion/3500-0.10.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/motion/4000-0.10.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/motion/500-0.10.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/motion/700-0.10.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/100-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/1000-before.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/1000-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/1250-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/1500-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/1750-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/200-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/2000-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/2250-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/2500-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/2750-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/300-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/3000-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/3250-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/3500-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/3750-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/400-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/4000-before.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/4000-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/50-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/500-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/600-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/700-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/800-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/chromium/thresholds/900-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/layout/4000-320x568-text200-age0.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/layout/best-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/layout/best-no-repeat.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/layout/ordinary-2600.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/losses/1-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/losses/10-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/losses/100-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/losses/20-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/losses/30-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/losses/4-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/losses/40-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/losses/50-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/losses/55-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/losses/77-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/losses/88-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/losses/90-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/losses/99-0.25.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/100-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/1000-before.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/1000-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/1250-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/1500-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/1750-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/200-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/2000-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/2250-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/2500-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/2750-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/300-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/3000-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/3250-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/3500-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/3750-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/400-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/4000-before.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/4000-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/50-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/500-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/600-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/700-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/800-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/evidence/webkit/thresholds/900-during.png",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/logs/archive-provenance.log",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/logs/browser-best-2600.json",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/logs/performance-artifact-verification.json",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/logs/physical-final-unit.json",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/performance-comparison-single-pass.json",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/performance-optimization-comparison.json",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/performance-report.md",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/protected-integrity.json",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/safety/README.md",
+      "exists": true
+    },
+    {
+      "ref": "feat/rally-4000-effects",
+      "path": "docs/verification/rally-4000/safety/final-primary-index.json",
+      "exists": true
+    }
+  ],
+  "matrixIds": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06",
+    "R07",
+    "R08",
+    "R09",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "R16",
+    "R17",
+    "R18",
+    "R19",
+    "R20",
+    "R21",
+    "R22",
+    "R23",
+    "L01",
+    "L02",
+    "L03",
+    "L04",
+    "L05",
+    "L06",
+    "L07",
+    "L08",
+    "L09",
+    "L10",
+    "L11",
+    "L12",
+    "L13",
+    "N01",
+    "N02",
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05"
+  ],
+  "matrixIdPattern": "^\\| ((?:R|L|N|A)\\d{2})[:：]"
+}

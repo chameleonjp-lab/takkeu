@@ -1,4 +1,4 @@
-import { clampPaddle, DIFFICULTY, INITIAL_PADDLE, MAX_LOST_BALLS } from './config';
+import { clampPaddle, CLEAR_SCORE, DIFFICULTY, INITIAL_PADDLE, MAX_LOST_BALLS } from './config';
 import { paddleExitFraction, sweepPaddleHit } from './collision';
 import { flightDuration, remainingBallMultiplier, speedMultiplier } from './difficulty';
 import { refreshFlightSpeeds } from './flightSpeed';
@@ -19,6 +19,7 @@ export type SimulationBall = {
 export type SimulationState = {
   celebrations: CelebrationState;
   runId: string; nextBallId: number; randomState: number; eventNumber: number; phase: GamePhase; pauseReason: PauseReason | null;
+  endReason: 'clear' | 'loss' | null;
   committedSmashDepartures: number[]; score: number; simTime: number; lostBallCount: number; paddle: PaddlePoint; opponentPaddle: PaddlePoint; balls: SimulationBall[]; progression: ProgressionState;
 };
 let nextRunId = 0;
@@ -26,7 +27,7 @@ export function createSimulationState(seed: number): SimulationState {
   return {
     celebrations: createCelebrations(),
     runId: `run-${++nextRunId}`, nextBallId: 2, randomState: seed >>> 0 || 1, eventNumber: 0,
-    phase: 'ready', pauseReason: null, committedSmashDepartures: [], score: 0, simTime: 0, lostBallCount: 0, paddle: { ...INITIAL_PADDLE }, balls: [],
+    phase: 'ready', pauseReason: null, endReason: null, committedSmashDepartures: [], score: 0, simTime: 0, lostBallCount: 0, paddle: { ...INITIAL_PADDLE }, balls: [],
     opponentPaddle: { ...INITIAL_PADDLE }, progression: { appliedMilestones: [], ballGlowUntil: null, awardedBallCount: 0 },
   };
 }
@@ -37,7 +38,7 @@ function reservations(state: SimulationState): ReturnPlan[] {
 export function snapshotSimulation(state: SimulationState): GameSnapshot {
   return {
     celebrations: { ...state.celebrations, numberNotices: state.celebrations.numberNotices.map(n => ({ ...n })) },
-    runId: state.runId, phase: state.phase, pauseReason: state.pauseReason, score: state.score, simTime: state.simTime, lostBallCount: state.lostBallCount,
+    runId: state.runId, phase: state.phase, pauseReason: state.pauseReason, endReason: state.endReason, score: state.score, simTime: state.simTime, lostBallCount: state.lostBallCount,
     paddle: { ...state.paddle }, opponentPaddle: { ...state.opponentPaddle },
     balls: state.balls.map(b => ({ id: b.id, phase: b.phase, position: { ...b.position }, smash: b.plan.smash })),
     progression: { ...state.progression, appliedMilestones: [...state.progression.appliedMilestones] },
@@ -57,7 +58,7 @@ type Action = { kind: 'bounce' | 'hit' | 'lost' | 'ready' | 'warning' | 'depart'
 /** Advance an uncommitted part of a fixed tick, including zero-time input paths. */
 function advanceSegment(state: SimulationState, config: GameConfig, dt: number, target: PaddlePoint, deferEndContact = false): StepResult {
   const events: GameEvent[] = [];
-  const emit = (kind: GameEventKind, time: number, ballId?: number, milestone?: number, position?: Point3, effect?: GameEvent['effect'], contact?: Pick<GameEvent, 'smashReturn' | 'rallyScore'>): void => {
+  const emit = (kind: GameEventKind, time: number, ballId?: number, milestone?: number, position?: Point3, effect?: GameEvent['effect'], contact?: Pick<GameEvent, 'smashReturn' | 'rallyScore' | 'lossCount'>): void => {
     events.push({ id: `${state.runId}:${++state.eventNumber}`, runId: state.runId, kind, time,
       ...(ballId === undefined ? {} : { ballId }), ...(milestone === undefined ? {} : { milestone }),
       ...(position ? { position: { ...position } } : {}), ...(effect ? { effect } : {}), ...contact });
@@ -139,12 +140,17 @@ function advanceSegment(state: SimulationState, config: GameConfig, dt: number, 
         const extra: SimulationBall = { id, phase: 'queued', from, position: from, plan, warningSent: false };
         state.balls.push(extra); enqueueDeparture(extra);
       }
+      if (state.score === CLEAR_SCORE) {
+        state.phase = 'gameover'; state.endReason = 'clear'; stoppedAt = time;
+        emit('game-clear', time); break;
+      }
     } else if (kind === 'lost') {
-      ball.phase = 'lost'; emit('ball-lost', time, ball.id);
+      ball.phase = 'lost';
+      emit('ball-lost', time, ball.id, undefined, sampleReturn(ball.plan, ball.from, time), undefined, { lossCount: state.lostBallCount + 1 });
       state.lostBallCount++;
       state.celebrations = lossCelebration(state.celebrations, state.lostBallCount, time);
       if (state.lostBallCount >= MAX_LOST_BALLS) {
-        state.phase = 'gameover'; stoppedAt = time;
+        state.phase = 'gameover'; state.endReason = 'loss'; stoppedAt = time;
         emit('game-over', time); break;
       }
     } else if (kind === 'ready') {
@@ -188,7 +194,7 @@ function advanceSegment(state: SimulationState, config: GameConfig, dt: number, 
     if (ball.phase === 'incoming' || ball.phase === 'outgoing') ball.position = sampleReturn(ball.plan, ball.from, stoppedAt ?? end);
   }
   if (state.phase === 'running' && state.balls.length && state.balls.every(b => b.phase === 'lost')) {
-    state.phase = 'gameover';
+    state.phase = 'gameover'; state.endReason = 'loss';
     emit('game-over', events.at(-1)?.time ?? end);
   }
   // The loss event is sufficient history. Do not retain every lost ball forever.

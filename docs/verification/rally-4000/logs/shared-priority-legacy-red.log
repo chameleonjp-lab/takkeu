@@ -1,0 +1,40 @@
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/reduced-world.test.ts (4 tests | 1 failed) 135ms
+   × dims ordinary fireworks for higher-priority cues without dropping their particles 5ms
+ ❯ tests/unit/legacy-flash-safety.test.ts (3 tests | 1 failed) 157ms
+   × dims competing legacy electricity without dimming the protected loss digits 25ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/legacy-flash-safety.test.ts > dims competing legacy electricity without dimming the protected loss digits
+AssertionError: expected 0.8999999761581421 to be less than or equal to 0.361
+ ❯ tests/unit/legacy-flash-safety.test.ts:39:17
+     37|   const colors=view.lightning.geometry.getAttribute('color');
+     38|   let alpha=0;for(let i=0;i<view.lightning.geometry.drawRange.count;i+…
+     39|   expect(alpha).toBeLessThanOrEqual(.361);
+       |                 ^
+     40|   const digits=view.numbers.geometry.getAttribute('color');
+     41|   let digitAlpha=0;for(let i=0;i<view.numbers.geometry.drawRange.count…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/reduced-world.test.ts > dims ordinary fireworks for higher-priority cues without dropping their particles
+AssertionError: expected 0.800000011920929 to be close to 0.32, received difference is 0.48000001192092895, but expected 0.005
+ ❯ tests/unit/reduced-world.test.ts:42:82
+     40|   const f=createFireworks(),snapshot={...scenario(1000,20).snapshot(),…
+     41|   f.update(snapshot,[{id:'hit',runId:'priority',kind:'player-hit',time…
+     42|   expect(f.active()).toBe(24);expect(f.geometry.getAttribute('opacity'…
+       |                                                                                  ^
+     43| });
+     44|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 5 passed (7)
+   Start at  21:25:07
+   Duration  456ms (tests 51%, import 29%, transform 18%, worker 2%)
+

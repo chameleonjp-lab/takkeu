@@ -1,0 +1,266 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-render.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-render.test.ts (52 tests | 23 failed) 2157ms
+   ❯ late rally world replacements and arrivals (30)
+     × applies the exact replacement boundaries at 1250 7ms
+     × applies the exact replacement boundaries at 1499 3ms
+     × applies the exact replacement boundaries at 1500 1ms
+     × applies the exact replacement boundaries at 1750 1ms
+     × applies the exact replacement boundaries at 2000 1ms
+     × applies the exact replacement boundaries at 2250 1ms
+     × applies the exact replacement boundaries at 2499 1ms
+     × applies the exact replacement boundaries at 2500 1ms
+     × applies the exact replacement boundaries at 2750 21ms
+     × applies the exact replacement boundaries at 3249 1ms
+     × applies the exact replacement boundaries at 3250 1ms
+     × applies the exact replacement boundaries at 3499 1ms
+     × applies the exact replacement boundaries at 3500 1ms
+     × applies the exact replacement boundaries at 3750 1ms
+     × applies the exact replacement boundaries at 3999 1ms
+     × applies the exact replacement boundaries at 4000 1ms
+     × applies the exact replacement boundaries at 4001 1ms
+     × shows 2000 arrival only from a confirmed event and clears exactly at its deadline 2ms
+     × shows 3000 arrival only from a confirmed event and clears exactly at its deadline 2ms
+     × shows 4000 arrival only from a confirmed event and clears exactly at its deadline 2ms
+     × puts stars in front of the opaque far wall, in the unchanged camera viewport above the opaque court 3ms
+     × gives green, blue and red lightning different widths and travel speeds with smooth motion and decay 2ms
+     × renders the 4000 assembly as four distinct phases with overlapping fading rings at the end 6ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 23 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 1250
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 1499
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 3249
+AssertionError: expected [ 'background-threads', …(4) ] to include 'meteor'
+ ❯ tests/unit/rally-render.test.ts:159:64
+    157|   ])('applies the exact replacement boundaries at %i',(score,yes,no)=>{
+    158|     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());view.…
+    159|     for(const effect of yes)expect(view.stats().activeEffects).toConta…
+       |                                                                ^
+    160|     for(const effect of no)expect(view.stats().activeEffects).not.toCo…
+    161|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 1500
+AssertionError: expected [ 'background-threads', …(4) ] to include 'tricolor-crossing'
+ ❯ tests/unit/rally-render.test.ts:159:64
+    157|   ])('applies the exact replacement boundaries at %i',(score,yes,no)=>{
+    158|     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());view.…
+    159|     for(const effect of yes)expect(view.stats().activeEffects).toConta…
+       |                                                                ^
+    160|     for(const effect of no)expect(view.stats().activeEffects).not.toCo…
+    161|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 1750
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 2499
+AssertionError: expected [ 'background-threads', …(4) ] to include 'floor-wave'
+ ❯ tests/unit/rally-render.test.ts:159:64
+    157|   ])('applies the exact replacement boundaries at %i',(score,yes,no)=>{
+    158|     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());view.…
+    159|     for(const effect of yes)expect(view.stats().activeEffects).toConta…
+       |                                                                ^
+    160|     for(const effect of no)expect(view.stats().activeEffects).not.toCo…
+    161|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 2000
+AssertionError: expected [ 'background-threads', …(4) ] to include 'star-world'
+ ❯ tests/unit/rally-render.test.ts:159:64
+    157|   ])('applies the exact replacement boundaries at %i',(score,yes,no)=>{
+    158|     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());view.…
+    159|     for(const effect of yes)expect(view.stats().activeEffects).toConta…
+       |                                                                ^
+    160|     for(const effect of no)expect(view.stats().activeEffects).not.toCo…
+    161|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 2250
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 3499
+AssertionError: expected [ 'background-threads', …(4) ] to include 'side-halos'
+ ❯ tests/unit/rally-render.test.ts:159:64
+    157|   ])('applies the exact replacement boundaries at %i',(score,yes,no)=>{
+    158|     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());view.…
+    159|     for(const effect of yes)expect(view.stats().activeEffects).toConta…
+       |                                                                ^
+    160|     for(const effect of no)expect(view.stats().activeEffects).not.toCo…
+    161|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 2500
+AssertionError: expected [ 'background-threads', …(4) ] to include 'orbit-ribbon'
+ ❯ tests/unit/rally-render.test.ts:159:64
+    157|   ])('applies the exact replacement boundaries at %i',(score,yes,no)=>{
+    158|     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());view.…
+    159|     for(const effect of yes)expect(view.stats().activeEffects).toConta…
+       |                                                                ^
+    160|     for(const effect of no)expect(view.stats().activeEffects).not.toCo…
+    161|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 2750
+AssertionError: expected [ 'background-threads', …(4) ] to include 'multi-halos'
+ ❯ tests/unit/rally-render.test.ts:159:64
+    157|   ])('applies the exact replacement boundaries at %i',(score,yes,no)=>{
+    158|     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());view.…
+    159|     for(const effect of yes)expect(view.stats().activeEffects).toConta…
+       |                                                                ^
+    160|     for(const effect of no)expect(view.stats().activeEffects).not.toCo…
+    161|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 3250
+AssertionError: expected [ 'background-threads', …(4) ] to include 'meteor-swarm'
+ ❯ tests/unit/rally-render.test.ts:159:64
+    157|   ])('applies the exact replacement boundaries at %i',(score,yes,no)=>{
+    158|     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());view.…
+    159|     for(const effect of yes)expect(view.stats().activeEffects).toConta…
+       |                                                                ^
+    160|     for(const effect of no)expect(view.stats().activeEffects).not.toCo…
+    161|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 3500
+AssertionError: expected [ 'background-threads', …(4) ] to include 'double-table-halos'
+ ❯ tests/unit/rally-render.test.ts:159:64
+    157|   ])('applies the exact replacement boundaries at %i',(score,yes,no)=>{
+    158|     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());view.…
+    159|     for(const effect of yes)expect(view.stats().activeEffects).toConta…
+       |                                                                ^
+    160|     for(const effect of no)expect(view.stats().activeEffects).not.toCo…
+    161|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 3750
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 3999
+AssertionError: expected [ 'background-threads', …(4) ] to include 'center-density'
+ ❯ tests/unit/rally-render.test.ts:159:64
+    157|   ])('applies the exact replacement boundaries at %i',(score,yes,no)=>{
+    158|     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());view.…
+    159|     for(const effect of yes)expect(view.stats().activeEffects).toConta…
+       |                                                                ^
+    160|     for(const effect of no)expect(view.stats().activeEffects).not.toCo…
+    161|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 4000
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > applies the exact replacement boundaries at 4001
+AssertionError: expected [ 'background-threads', …(4) ] to include 'final-world'
+ ❯ tests/unit/rally-render.test.ts:159:64
+    157|   ])('applies the exact replacement boundaries at %i',(score,yes,no)=>{
+    158|     const view=createRallyEffectView(DEFAULT_CONFIG,new Group());view.…
+    159|     for(const effect of yes)expect(view.stats().activeEffects).toConta…
+       |                                                                ^
+    160|     for(const effect of no)expect(view.stats().activeEffects).not.toCo…
+    161|     view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > shows 2000 arrival only from a confirmed event and clears exactly at its deadline
+AssertionError: expected [ 'background-threads', …(4) ] to include 'star-transition'
+ ❯ tests/unit/rally-render.test.ts:170:86
+    168|       view.update(snapshot(threshold,20.5));expect(view.stats().active…
+    169|       view.update(snapshot(threshold,19.99),state);expect(view.stats()…
+    170|       view.update(snapshot(threshold,20.5),state);expect(view.stats().…
+       |                                                                                      ^
+    171|       view.update(snapshot(threshold,20+duration),state);expect(view.s…
+    172|       view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > shows 3000 arrival only from a confirmed event and clears exactly at its deadline
+AssertionError: expected [ 'background-threads', …(4) ] to include 'electric-opening'
+ ❯ tests/unit/rally-render.test.ts:170:86
+    168|       view.update(snapshot(threshold,20.5));expect(view.stats().active…
+    169|       view.update(snapshot(threshold,19.99),state);expect(view.stats()…
+    170|       view.update(snapshot(threshold,20.5),state);expect(view.stats().…
+       |                                                                                      ^
+    171|       view.update(snapshot(threshold,20+duration),state);expect(view.s…
+    172|       view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > shows 4000 arrival only from a confirmed event and clears exactly at its deadline
+AssertionError: expected [ 'background-threads', …(4) ] to include 'final-assembly'
+ ❯ tests/unit/rally-render.test.ts:170:86
+    168|       view.update(snapshot(threshold,20.5));expect(view.stats().active…
+    169|       view.update(snapshot(threshold,19.99),state);expect(view.stats()…
+    170|       view.update(snapshot(threshold,20.5),state);expect(view.stats().…
+       |                                                                                      ^
+    171|       view.update(snapshot(threshold,20+duration),state);expect(view.s…
+    172|       view.dispose();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > puts stars in front of the opaque far wall, in the unchanged camera viewport above the opaque court
+AssertionError: expected 0 to be greater than 250
+ ❯ tests/unit/rally-render.test.ts:189:21
+    187|       }
+    188|     }
+    189|     expect(visible).toBeGreaterThan(250);
+       |                     ^
+    190|     const backing=view.worldRoot.getObjectByName('rally-world-glow') a…
+    191|     expect((backing.material as {blending:number}).blending).toBe(Norm…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > gives green, blue and red lightning different widths and travel speeds with smooth motion and decay
+AssertionError: expected undefined to be close to 0.021, received difference is NaN, but expected 0.00005
+ ❯ tests/unit/rally-render.test.ts:209:147
+    207|     };
+    208|     view.update(snapshot(1500,22));const result=widths();
+    209|     expect(result.values.get('green')).toBeCloseTo(.011,4);expect(resu…
+       |                                                                                                                                                   ^
+    210|     for(const values of result.alphas.values())expect(Math.max(...valu…
+    211|     const before=geometryValues(view.worldRoot);view.update(snapshot(1…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/23]⎯
+
+ FAIL  tests/unit/rally-render.test.ts > late rally world replacements and arrivals > renders the 4000 assembly as four distinct phases with overlapping fading rings at the end
+AssertionError: expected [ undefined, undefined, …(2) ] to deeply equal [ 'converge', 'assemble', …(2) ]
+
+- Expected
++ Received
+
+  [
+-   "converge",
+-   "assemble",
+-   "expand",
+-   "overlap-fade",
++   undefined,
++   undefined,
++   undefined,
++   undefined,
+  ]
+
+ ❯ tests/unit/rally-render.test.ts:223:20
+    221|       view.update(snapshot(4000,20+age),state);phases.push(view.stats(…
+    222|     }
+    223|     expect(phases).toEqual(['converge','assemble','expand','overlap-fa…
+       |                    ^
+    224|     expect(vertices[3]).toBeGreaterThan(vertices[2]!);view.dispose();
+    225|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/23]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  23 failed | 29 passed (52)
+   Start at  20:23:19
+   Duration  3.02s (tests 87%, transform 8%, import 4%, worker 1%)
+

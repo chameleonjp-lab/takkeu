@@ -1,0 +1,1534 @@
+[
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/320x568-text100.png",
+    "quality": "standard",
+    "control": {
+      "override": false,
+      "quality": "standard",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 40,
+        "particles": 248,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 761,
+          "worldQuads": 1502,
+          "particleCount": 248,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "standard",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 36,
+        "particles": 248,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 761,
+          "worldQuads": 1502,
+          "particleCount": 248,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "width": 960,
+    "height": 1704,
+    "channels": 4,
+    "controlPixelSHA256": "8e0cb2d74893ae1f2cdca71499b9bbb2c66dab2ca2b0dc08f1cd71fe69010dcb",
+    "optimizedPixelSHA256": "8e0cb2d74893ae1f2cdca71499b9bbb2c66dab2ca2b0dc08f1cd71fe69010dcb",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-000-standard.png",
+    "runId": "run-3",
+    "score": 4000,
+    "time": 20.65,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/320x568-text100.png",
+    "quality": "low",
+    "control": {
+      "override": false,
+      "quality": "low",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 40,
+        "particles": 124,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 380,
+          "worldQuads": 732,
+          "particleCount": 124,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "low",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 36,
+        "particles": 124,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 380,
+          "worldQuads": 732,
+          "particleCount": 124,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "width": 960,
+    "height": 1704,
+    "channels": 4,
+    "controlPixelSHA256": "6991c6797460480631b80c253fa0e7a307191af5b77212e278ca432f2bf2ae5a",
+    "optimizedPixelSHA256": "6991c6797460480631b80c253fa0e7a307191af5b77212e278ca432f2bf2ae5a",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-001-low.png",
+    "runId": "run-3",
+    "score": 4000,
+    "time": 20.65,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/390x844-text100.png",
+    "quality": "standard",
+    "control": {
+      "override": false,
+      "quality": "standard",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 40,
+        "particles": 248,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 761,
+          "worldQuads": 1502,
+          "particleCount": 248,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "standard",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 36,
+        "particles": 248,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 761,
+          "worldQuads": 1502,
+          "particleCount": 248,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "width": 1170,
+    "height": 2532,
+    "channels": 4,
+    "controlPixelSHA256": "394a4dc063da035c9d07285b63591aa401c4ad47a68979c8b82add3d8d8f181c",
+    "optimizedPixelSHA256": "394a4dc063da035c9d07285b63591aa401c4ad47a68979c8b82add3d8d8f181c",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-002-standard.png",
+    "runId": "run-5",
+    "score": 4000,
+    "time": 20.65,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/390x844-text100.png",
+    "quality": "low",
+    "control": {
+      "override": false,
+      "quality": "low",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 40,
+        "particles": 124,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 380,
+          "worldQuads": 732,
+          "particleCount": 124,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "low",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 36,
+        "particles": 124,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 380,
+          "worldQuads": 732,
+          "particleCount": 124,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "width": 1170,
+    "height": 2532,
+    "channels": 4,
+    "controlPixelSHA256": "29b4a778fe70e93dea0d302ef072b863bef9d6eaba6789fe700711d52128186c",
+    "optimizedPixelSHA256": "29b4a778fe70e93dea0d302ef072b863bef9d6eaba6789fe700711d52128186c",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-003-low.png",
+    "runId": "run-5",
+    "score": 4000,
+    "time": 20.65,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/844x390-text100.png",
+    "quality": "standard",
+    "control": {
+      "override": false,
+      "quality": "standard",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 40,
+        "particles": 248,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 761,
+          "worldQuads": 1502,
+          "particleCount": 248,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "standard",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 36,
+        "particles": 248,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 761,
+          "worldQuads": 1502,
+          "particleCount": 248,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "width": 2532,
+    "height": 1170,
+    "channels": 4,
+    "controlPixelSHA256": "bd262560ce0a023106b41f3e9aa6e05b2face4236b7fdd5eb8486aca1c4ab615",
+    "optimizedPixelSHA256": "bd262560ce0a023106b41f3e9aa6e05b2face4236b7fdd5eb8486aca1c4ab615",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-004-standard.png",
+    "runId": "run-7",
+    "score": 4000,
+    "time": 20.65,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/844x390-text100.png",
+    "quality": "low",
+    "control": {
+      "override": false,
+      "quality": "low",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 40,
+        "particles": 124,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 380,
+          "worldQuads": 732,
+          "particleCount": 124,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "low",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 36,
+        "particles": 124,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 380,
+          "worldQuads": 732,
+          "particleCount": 124,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "width": 2532,
+    "height": 1170,
+    "channels": 4,
+    "controlPixelSHA256": "62ae8edf227b3b16006c0c9294a9c6e3e7efd3cdb2be6b345b6a7859954c193f",
+    "optimizedPixelSHA256": "62ae8edf227b3b16006c0c9294a9c6e3e7efd3cdb2be6b345b6a7859954c193f",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-005-low.png",
+    "runId": "run-7",
+    "score": 4000,
+    "time": 20.65,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/390x844-text200.png",
+    "quality": "standard",
+    "control": {
+      "override": false,
+      "quality": "standard",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 40,
+        "particles": 248,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 761,
+          "worldQuads": 1502,
+          "particleCount": 248,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "standard",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 36,
+        "particles": 248,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 761,
+          "worldQuads": 1502,
+          "particleCount": 248,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "width": 1170,
+    "height": 2532,
+    "channels": 4,
+    "controlPixelSHA256": "31a3d04e4e74b4314ed4b4f19c345e974be00b17826e2e4488a5ed2b3914bd26",
+    "optimizedPixelSHA256": "31a3d04e4e74b4314ed4b4f19c345e974be00b17826e2e4488a5ed2b3914bd26",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-006-standard.png",
+    "runId": "run-9",
+    "score": 4000,
+    "time": 20.65,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/390x844-text200.png",
+    "quality": "low",
+    "control": {
+      "override": false,
+      "quality": "low",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 40,
+        "particles": 124,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 380,
+          "worldQuads": 732,
+          "particleCount": 124,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "low",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 35,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 36,
+        "particles": 124,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "final-assembly"
+          ],
+          "tableQuads": 380,
+          "worldQuads": 732,
+          "particleCount": 124,
+          "finalPhase": "converge",
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "width": 1170,
+    "height": 2532,
+    "channels": 4,
+    "controlPixelSHA256": "03bca6d034539fd2229f78dbe3a84b2a116f79f6f1e9cbe915ca78418450df59",
+    "optimizedPixelSHA256": "03bca6d034539fd2229f78dbe3a84b2a116f79f6f1e9cbe915ca78418450df59",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-007-low.png",
+    "runId": "run-9",
+    "score": 4000,
+    "time": 20.65,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/best-before.png",
+    "quality": "standard",
+    "control": {
+      "override": false,
+      "quality": "standard",
+      "materials": [],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 32,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "standard",
+      "materials": [],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 32,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      }
+    },
+    "width": 1170,
+    "height": 2532,
+    "channels": 4,
+    "controlPixelSHA256": "322bc0d9beafbe994fcbe84266b64a690b9cf60cba7bb3c509395cfbbec25225",
+    "optimizedPixelSHA256": "322bc0d9beafbe994fcbe84266b64a690b9cf60cba7bb3c509395cfbbec25225",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-008-standard.png",
+    "runId": "run-11",
+    "score": 99,
+    "time": 20,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/best-before.png",
+    "quality": "low",
+    "control": {
+      "override": false,
+      "quality": "low",
+      "materials": [],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 32,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "low",
+      "materials": [],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 32,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      }
+    },
+    "width": 1170,
+    "height": 2532,
+    "channels": 4,
+    "controlPixelSHA256": "252e0a7dafe7dff6b7aa4d71ce8728f26d01f7934492f6f7d6e2228d70c5c6c1",
+    "optimizedPixelSHA256": "252e0a7dafe7dff6b7aa4d71ce8728f26d01f7934492f6f7d6e2228d70c5c6c1",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-009-low.png",
+    "runId": "run-11",
+    "score": 99,
+    "time": 20,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/best-during.png",
+    "quality": "standard",
+    "control": {
+      "override": false,
+      "quality": "standard",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines"
+      ],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 38,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "perimeter-lap"
+          ],
+          "tableQuads": 30,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 2,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "standard",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines"
+      ],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 36,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "perimeter-lap"
+          ],
+          "tableQuads": 30,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 2,
+          "disposed": false
+        }
+      }
+    },
+    "width": 1170,
+    "height": 2532,
+    "channels": 4,
+    "controlPixelSHA256": "b7b8540f779eeec0aee385de2d929c62d52f6405fec5f69903b3deec7746167b",
+    "optimizedPixelSHA256": "b7b8540f779eeec0aee385de2d929c62d52f6405fec5f69903b3deec7746167b",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-010-standard.png",
+    "runId": "run-11",
+    "score": 100,
+    "time": 20.65,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/best-during.png",
+    "quality": "low",
+    "control": {
+      "override": false,
+      "quality": "low",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines"
+      ],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 38,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "perimeter-lap"
+          ],
+          "tableQuads": 15,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 2,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "low",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines"
+      ],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 36,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "perimeter-lap"
+          ],
+          "tableQuads": 15,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 2,
+          "disposed": false
+        }
+      }
+    },
+    "width": 1170,
+    "height": 2532,
+    "channels": 4,
+    "controlPixelSHA256": "d343d13d1f78bfaa742e1282c2b735fbac5a308bd6b6ccd96c2752e22e07e646",
+    "optimizedPixelSHA256": "d343d13d1f78bfaa742e1282c2b735fbac5a308bd6b6ccd96c2752e22e07e646",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-011-low.png",
+    "runId": "run-11",
+    "score": 100,
+    "time": 20.65,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/best-after.png",
+    "quality": "standard",
+    "control": {
+      "override": false,
+      "quality": "standard",
+      "materials": [],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 34,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "standard",
+      "materials": [],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 34,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      }
+    },
+    "width": 1170,
+    "height": 2532,
+    "channels": 4,
+    "controlPixelSHA256": "50ff6d595fe3354b825907421103abe1157be8e01040cff9ad721882dd3b7842",
+    "optimizedPixelSHA256": "50ff6d595fe3354b825907421103abe1157be8e01040cff9ad721882dd3b7842",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-012-standard.png",
+    "runId": "run-11",
+    "score": 100,
+    "time": 22.01,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/best-after.png",
+    "quality": "low",
+    "control": {
+      "override": false,
+      "quality": "low",
+      "materials": [],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 34,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "low",
+      "materials": [],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 34,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      }
+    },
+    "width": 1170,
+    "height": 2532,
+    "channels": 4,
+    "controlPixelSHA256": "ddc0393b416795254a2b32aa2f03341956b4eade9ca78fc4c67528673a76e5a0",
+    "optimizedPixelSHA256": "ddc0393b416795254a2b32aa2f03341956b4eade9ca78fc4c67528673a76e5a0",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-013-low.png",
+    "runId": "run-11",
+    "score": 100,
+    "time": 22.01,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/best-no-repeat.png",
+    "quality": "standard",
+    "control": {
+      "override": false,
+      "quality": "standard",
+      "materials": [
+        "rally-table-lines"
+      ],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 36,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "hit-ring"
+          ],
+          "tableQuads": 32,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 1,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "standard",
+      "materials": [
+        "rally-table-lines"
+      ],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 35,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "hit-ring"
+          ],
+          "tableQuads": 32,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 1,
+          "disposed": false
+        }
+      }
+    },
+    "width": 1170,
+    "height": 2532,
+    "channels": 4,
+    "controlPixelSHA256": "9786291e6d588c01a7ff429a6b79b9da6bc44c15deecde47dacf49f051b3828c",
+    "optimizedPixelSHA256": "9786291e6d588c01a7ff429a6b79b9da6bc44c15deecde47dacf49f051b3828c",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-014-standard.png",
+    "runId": "run-11",
+    "score": 101,
+    "time": 23,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/best-no-repeat.png",
+    "quality": "low",
+    "control": {
+      "override": false,
+      "quality": "low",
+      "materials": [
+        "rally-table-lines"
+      ],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 36,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "hit-ring"
+          ],
+          "tableQuads": 16,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 1,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "low",
+      "materials": [
+        "rally-table-lines"
+      ],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 35,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "hit-ring"
+          ],
+          "tableQuads": 16,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 1,
+          "disposed": false
+        }
+      }
+    },
+    "width": 1170,
+    "height": 2532,
+    "channels": 4,
+    "controlPixelSHA256": "d43ab847fc63eed28c967ae12bf09ff97103d7d4748baa9f9b92636ea737344c",
+    "optimizedPixelSHA256": "d43ab847fc63eed28c967ae12bf09ff97103d7d4748baa9f9b92636ea737344c",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-015-low.png",
+    "runId": "run-11",
+    "score": 101,
+    "time": 23,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/ordinary-2600.png",
+    "quality": "standard",
+    "control": {
+      "override": false,
+      "quality": "standard",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 40,
+        "particles": 161,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "single-halo",
+            "meteor",
+            "tricolor-crossing",
+            "star-world",
+            "side-halos",
+            "orbit-ribbon"
+          ],
+          "tableQuads": 377,
+          "worldQuads": 790,
+          "particleCount": 161,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "standard",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 36,
+        "particles": 161,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "single-halo",
+            "meteor",
+            "tricolor-crossing",
+            "star-world",
+            "side-halos",
+            "orbit-ribbon"
+          ],
+          "tableQuads": 377,
+          "worldQuads": 790,
+          "particleCount": 161,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "width": 1170,
+    "height": 2532,
+    "channels": 4,
+    "controlPixelSHA256": "4f8fc1cf7decbd202800a30cbdfcc9cc5cbc28a4cb1002566cc0d2699f7269ab",
+    "optimizedPixelSHA256": "4f8fc1cf7decbd202800a30cbdfcc9cc5cbc28a4cb1002566cc0d2699f7269ab",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-016-standard.png",
+    "runId": "run-14",
+    "score": 2600,
+    "time": 20.65,
+    "phase": "running"
+  },
+  {
+    "sourceScreenshot": "/workspace/takkeu-work/docs/verification/rally-4000/evidence/webkit/layout/ordinary-2600.png",
+    "quality": "low",
+    "control": {
+      "override": false,
+      "quality": "low",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 40,
+        "particles": 81,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "single-halo",
+            "meteor",
+            "tricolor-crossing",
+            "star-world",
+            "side-halos",
+            "orbit-ribbon"
+          ],
+          "tableQuads": 188,
+          "worldQuads": 400,
+          "particleCount": 81,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "optimized": {
+      "override": true,
+      "quality": "low",
+      "materials": [
+        "rally-table-glow",
+        "rally-table-lines",
+        "rally-world-glow",
+        "rally-world-lines"
+      ],
+      "resources": {
+        "geometries": 39,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 36,
+        "particles": 81,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "single-halo",
+            "meteor",
+            "tricolor-crossing",
+            "star-world",
+            "side-halos",
+            "orbit-ribbon"
+          ],
+          "tableQuads": 188,
+          "worldQuads": 400,
+          "particleCount": 81,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      }
+    },
+    "width": 1170,
+    "height": 2532,
+    "channels": 4,
+    "controlPixelSHA256": "251a11d75ece7794b01c26993efc81ae301d1ce1050a766aa4690672b3b1f95b",
+    "optimizedPixelSHA256": "251a11d75ece7794b01c26993efc81ae301d1ce1050a766aa4690672b3b1f95b",
+    "changedPixels": 0,
+    "maxChannelDelta": 0,
+    "optimizedScreenshot": "mobile-landscape-200-text-best-and-smash-warning-keep-controls-and-readable-four-digit-scores-017-low.png",
+    "runId": "run-14",
+    "score": 2600,
+    "time": 20.65,
+    "phase": "running"
+  }
+]

@@ -1,0 +1,50 @@
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/reduced-world.test.ts (2 tests | 2 failed) 100ms
+   × reduced motion freezes court colors while preserving actual ball and paddle coordinates 80ms
+   × reduced motion keeps legacy electricity static and disables decorative table shaking 19ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/reduced-world.test.ts > reduced motion freezes court colors while preserving actual ball and paddle coordinates
+AssertionError: expected '{"uResolution":{"value":{"x":1,"y":1}…' to be '{"uResolution":{"value":{"x":1,"y":1}…' // Object.is equality
+
+Expected: "{"uResolution":{"value":{"x":1,"y":1}},"uTime":{"value":20},"uMotion":{"value":{"x":0.8390588261766816,"y":-0.3360065615180454}},"uPulse":{"value":0.7374999999999983}}"
+Received: "{"uResolution":{"value":{"x":1,"y":1}},"uTime":{"value":20.5},"uMotion":{"value":{"x":0.7394772753012286,"y":-0.5054421268975162}},"uPulse":{"value":0.9125000000000025}}"
+
+ ❯ tests/unit/reduced-world.test.ts:14:67
+     12|   const uniforms=JSON.stringify(objects.opponentField.material.uniform…
+     13|   applyPresentation(objects,{...snapshot,simTime:20.5,paddle:{x:.2,y:.…
+     14|   expect(JSON.stringify(objects.opponentField.material.uniforms)).toBe…
+       |                                                                   ^
+     15|   expect(objects.playerPaddle.position.x).toBe(.2);objects.dispose();
+     16| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/reduced-world.test.ts > reduced motion keeps legacy electricity static and disables decorative table shaking
+AssertionError: expected 0.0027968408116831487 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 0.0027968408116831487
+
+ ❯ tests/unit/reduced-world.test.ts:25:46
+     23|   view.update(base,true);
+     24|   const positions=Array.from(view.lightning.geometry.attributes.positi…
+     25|   expect(objects.tableRig.position.length()).toBe(0);
+       |                                              ^
+     26|   view.update({...base,simTime:20.2},true);
+     27|   expect(Array.from(view.lightning.geometry.attributes.position!.array…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  20:22:14
+   Duration  417ms (tests 42%, transform 34%, import 23%, worker 1%)
+

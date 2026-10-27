@@ -1,0 +1,17 @@
+{
+  "original": "artifact-12624885223.zip",
+  "originalBytes": 3970285,
+  "originalSHA256": "5610535b8cc2d489c696c5bde34bb0ca86a4e76ebf9ebdcc1620fb1780bd0efc",
+  "reconstructedSHA256": "5610535b8cc2d489c696c5bde34bb0ca86a4e76ebf9ebdcc1620fb1780bd0efc",
+  "allPartsVerified": true,
+  "chunkBytes": 33554432,
+  "parts": [
+    {
+      "file": "artifact-12624885223.zip.part-000",
+      "bytes": 3970285,
+      "sha256": "5610535b8cc2d489c696c5bde34bb0ca86a4e76ebf9ebdcc1620fb1780bd0efc"
+    }
+  ],
+  "restoreCommand": "cat artifact-12624885223.zip.part-* > artifact-12624885223.zip",
+  "verifyCommand": "sha256sum artifact-12624885223.zip"
+}

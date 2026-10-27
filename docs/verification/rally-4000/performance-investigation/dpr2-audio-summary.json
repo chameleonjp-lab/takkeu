@@ -1,0 +1,82 @@
+[
+  {
+    "file": "001-standard-before.json.gz",
+    "label": "standard-before",
+    "p95Ms": 333.1999999999998,
+    "simulationSeconds": 6.891666666666799,
+    "durationMs": 12030.899999999627,
+    "drawingSize": {
+      "width": 1885,
+      "height": 1060
+    },
+    "validQueries": 78,
+    "gpuMedianMs": 143.939504,
+    "pendingQueries": 0,
+    "disjointQueries": 0,
+    "audioSources": 1755,
+    "continuousRunning30": true,
+    "sourceStable": true,
+    "errors": [],
+    "blocked": []
+  },
+  {
+    "file": "002-standard-candidate.json.gz",
+    "label": "standard-candidate",
+    "p95Ms": 316.6999999999989,
+    "simulationSeconds": 6.566666666666783,
+    "durationMs": 12123.799999999255,
+    "drawingSize": {
+      "width": 1885,
+      "height": 1060
+    },
+    "validQueries": 73,
+    "gpuMedianMs": 158.272172,
+    "pendingQueries": 0,
+    "disjointQueries": 0,
+    "audioSources": 1660,
+    "continuousRunning30": true,
+    "sourceStable": true,
+    "errors": [],
+    "blocked": []
+  },
+  {
+    "file": "003-low-candidate.json.gz",
+    "label": "low-candidate",
+    "p95Ms": 149.89999999999964,
+    "simulationSeconds": 11.291666666666666,
+    "durationMs": 12036.899999999627,
+    "drawingSize": {
+      "width": 960,
+      "height": 540
+    },
+    "validQueries": 176,
+    "gpuMedianMs": 61.6816385,
+    "pendingQueries": 0,
+    "disjointQueries": 0,
+    "audioSources": 2655,
+    "continuousRunning30": true,
+    "sourceStable": true,
+    "errors": [],
+    "blocked": []
+  },
+  {
+    "file": "004-low-before.json.gz",
+    "label": "low-before",
+    "p95Ms": 199.90000000000055,
+    "simulationSeconds": 10.258333333333391,
+    "durationMs": 12065.299999999255,
+    "drawingSize": {
+      "width": 1280,
+      "height": 720
+    },
+    "validQueries": 129,
+    "gpuMedianMs": 87.412939,
+    "pendingQueries": 0,
+    "disjointQueries": 0,
+    "audioSources": 2384,
+    "continuousRunning30": true,
+    "sourceStable": true,
+    "errors": [],
+    "blocked": []
+  }
+]

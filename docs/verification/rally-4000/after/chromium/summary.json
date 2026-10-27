@@ -1,0 +1,2153 @@
+{
+  "schema": "rally-4000-performance-summary-v1",
+  "reportErrors": [],
+  "playwrightStats": {
+    "startTime": "2026-10-25T22:00:48.770Z",
+    "duration": 1026833.5410000001,
+    "expected": 16,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "count": 16,
+  "expectedConditionsPerBrowser": 16,
+  "measurementCount": 16,
+  "passingExecutions": 16,
+  "metLinuxReferenceTargets": 0,
+  "unmetLinuxReferenceTargets": 16,
+  "targetHardwareVerdict": "unverified",
+  "rows": [
+    {
+      "title": "rally4000 standard score1500 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60148.699999999626,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-1500-repeat1.json",
+          "file": "chromium-rally4000-standard-1500-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 1,
+      "initialScore": 1500,
+      "initialBalls": 30,
+      "frames": 502,
+      "p95Ms": 249.90000000000146,
+      "fractionAtMost25ms": 0.1294820717131474,
+      "runningP95Ms": 249.90000000000146,
+      "runningFractionAtMost25ms": 0.1294820717131474,
+      "runningFrameCount": 502,
+      "runningSimulationSeconds": 42.55833333333156,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2310,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 33,
+        "particles": 1,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "background-threads",
+            "single-halo",
+            "meteor",
+            "tricolor-crossing"
+          ],
+          "tableQuads": 137,
+          "worldQuads": 332,
+          "particleCount": 1,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 3,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 1601,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 1577,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "single-halo",
+            "meteor",
+            "tricolor-crossing",
+            "floor-wave",
+            "star-world",
+            "side-halos"
+          ],
+          "tableQuads": 137,
+          "worldQuads": 1030,
+          "particleCount": 161,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 27600000,
+      "finalHeapBytes": 27600000,
+      "peakHeapBytes": 27600000,
+      "audioResources": {
+        "created": 33488,
+        "sourceCreated": 10659,
+        "liveNodes": 15,
+        "liveSources": 4,
+        "layeredVoices": 1,
+        "peakNodes": 284,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 810,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 standard score1500 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60014.10000000019,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-1500-repeat2.json",
+          "file": "chromium-rally4000-standard-1500-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 2,
+      "initialScore": 1500,
+      "initialBalls": 30,
+      "frames": 511,
+      "p95Ms": 249.90000000000146,
+      "fractionAtMost25ms": 0.1506849315068493,
+      "runningP95Ms": 249.90000000000146,
+      "runningFractionAtMost25ms": 0.1506849315068493,
+      "runningFrameCount": 511,
+      "runningSimulationSeconds": 42.566666666664894,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2310,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 1601,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 1577,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "single-halo",
+            "meteor",
+            "tricolor-crossing",
+            "floor-wave",
+            "star-world",
+            "side-halos"
+          ],
+          "tableQuads": 136,
+          "worldQuads": 1030,
+          "particleCount": 161,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 27600000,
+      "finalHeapBytes": 27600000,
+      "peakHeapBytes": 27600000,
+      "audioResources": {
+        "created": 33380,
+        "sourceCreated": 10605,
+        "liveNodes": 15,
+        "liveSources": 4,
+        "layeredVoices": 1,
+        "peakNodes": 284,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 810,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 standard score2000 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60013.60000000019,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-2000-repeat1.json",
+          "file": "chromium-rally4000-standard-2000-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 1,
+      "initialScore": 2000,
+      "initialBalls": 30,
+      "frames": 479,
+      "p95Ms": 266.6000000000058,
+      "fractionAtMost25ms": 0.1544885177453027,
+      "runningP95Ms": 266.6000000000058,
+      "runningFractionAtMost25ms": 0.1544885177453027,
+      "runningFrameCount": 479,
+      "runningSimulationSeconds": 39.949999999998376,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2750,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 1601,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 39,
+        "particles": 233,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "meteor",
+            "tricolor-crossing",
+            "star-world",
+            "side-halos",
+            "orbit-ribbon",
+            "multi-halos"
+          ],
+          "tableQuads": 378,
+          "worldQuads": 1030,
+          "particleCount": 161,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 26000000,
+      "finalHeapBytes": 26000000,
+      "peakHeapBytes": 26000000,
+      "audioResources": {
+        "created": 31781,
+        "sourceCreated": 10245,
+        "liveNodes": 29,
+        "liveSources": 8,
+        "layeredVoices": 2,
+        "peakNodes": 284,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 751,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 standard score2000 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60107.300000000556,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-2000-repeat2.json",
+          "file": "chromium-rally4000-standard-2000-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 2,
+      "initialScore": 2000,
+      "initialBalls": 30,
+      "frames": 469,
+      "p95Ms": 250,
+      "fractionAtMost25ms": 0.12366737739872068,
+      "runningP95Ms": 250,
+      "runningFractionAtMost25ms": 0.12366737739872068,
+      "runningFrameCount": 469,
+      "runningSimulationSeconds": 40.1083333333317,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2750,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 35,
+        "particles": 161,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "single-halo",
+            "meteor",
+            "tricolor-crossing",
+            "floor-wave",
+            "star-world"
+          ],
+          "tableQuads": 136,
+          "worldQuads": 934,
+          "particleCount": 161,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 1601,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 39,
+        "particles": 161,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "meteor",
+            "tricolor-crossing",
+            "star-world",
+            "side-halos",
+            "orbit-ribbon",
+            "multi-halos"
+          ],
+          "tableQuads": 377,
+          "worldQuads": 1030,
+          "particleCount": 161,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 27600000,
+      "finalHeapBytes": 27600000,
+      "peakHeapBytes": 27600000,
+      "audioResources": {
+        "created": 31564,
+        "sourceCreated": 10124,
+        "liveNodes": 29,
+        "liveSources": 8,
+        "layeredVoices": 2,
+        "peakNodes": 284,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 755,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 standard score3000 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60181.7,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-3000-repeat1.json",
+          "file": "chromium-rally4000-standard-3000-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 1,
+      "initialScore": 3000,
+      "initialBalls": 30,
+      "frames": 465,
+      "p95Ms": 283.20000000000437,
+      "fractionAtMost25ms": 0.16129032258064516,
+      "runningP95Ms": 283.20000000000437,
+      "runningFractionAtMost25ms": 0.16129032258064516,
+      "runningFrameCount": 465,
+      "runningSimulationSeconds": 38.29999999999847,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 3720,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 1608,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 39,
+        "particles": 312,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos"
+          ],
+          "tableQuads": 761,
+          "worldQuads": 1138,
+          "particleCount": 168,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 24500000,
+      "finalHeapBytes": 24500000,
+      "peakHeapBytes": 24500000,
+      "audioResources": {
+        "created": 30280,
+        "sourceCreated": 9732,
+        "liveNodes": 208,
+        "liveSources": 63,
+        "layeredVoices": 16,
+        "peakNodes": 284,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 720,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 standard score3000 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60181.39999999981,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-3000-repeat2.json",
+          "file": "chromium-rally4000-standard-3000-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 2,
+      "initialScore": 3000,
+      "initialBalls": 30,
+      "frames": 456,
+      "p95Ms": 266.7000000000007,
+      "fractionAtMost25ms": 0.13815789473684212,
+      "runningP95Ms": 266.7000000000007,
+      "runningFractionAtMost25ms": 0.13815789473684212,
+      "runningFrameCount": 456,
+      "runningSimulationSeconds": 38.666666666665115,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 3720,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 1608,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 40,
+        "particles": 168,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos"
+          ],
+          "tableQuads": 759,
+          "worldQuads": 1138,
+          "particleCount": 168,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 27600000,
+      "finalHeapBytes": 27600000,
+      "peakHeapBytes": 27600000,
+      "audioResources": {
+        "created": 30688,
+        "sourceCreated": 9881,
+        "liveNodes": 178,
+        "liveSources": 48,
+        "layeredVoices": 16,
+        "peakNodes": 284,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 747,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 standard score4000 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60073.9,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-4000-repeat1.json",
+          "file": "chromium-rally4000-standard-4000-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 1,
+      "initialScore": 4000,
+      "initialBalls": 30,
+      "frames": 402,
+      "p95Ms": 300,
+      "fractionAtMost25ms": 0.12189054726368159,
+      "runningP95Ms": 300,
+      "runningFractionAtMost25ms": 0.12189054726368159,
+      "runningFrameCount": 402,
+      "runningSimulationSeconds": 34.44999999999868,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 4657,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 35,
+        "particles": 248,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world"
+          ],
+          "tableQuads": 761,
+          "worldQuads": 1466,
+          "particleCount": 248,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 1688,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 40,
+        "particles": 1616,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "hit-ring"
+          ],
+          "tableQuads": 1466,
+          "worldQuads": 1466,
+          "particleCount": 248,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 35100000,
+      "finalHeapBytes": 35100000,
+      "peakHeapBytes": 35100000,
+      "audioResources": {
+        "created": 27630,
+        "sourceCreated": 8894,
+        "liveNodes": 3,
+        "liveSources": 0,
+        "layeredVoices": 0,
+        "peakNodes": 284,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 660,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 standard score4000 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60048.299999999625,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-standard-4000-repeat2.json",
+          "file": "chromium-rally4000-standard-4000-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "standard",
+      "repeat": 2,
+      "initialScore": 4000,
+      "initialBalls": 30,
+      "frames": 438,
+      "p95Ms": 283.2999999999993,
+      "fractionAtMost25ms": 0.14383561643835616,
+      "runningP95Ms": 283.2999999999993,
+      "runningFractionAtMost25ms": 0.14383561643835616,
+      "runningFrameCount": 438,
+      "runningSimulationSeconds": 37.124999999998536,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 4690,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 1688,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 38,
+        "particles": 272,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world"
+          ],
+          "tableQuads": 762,
+          "worldQuads": 1466,
+          "particleCount": 248,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 26000000,
+      "finalHeapBytes": 26000000,
+      "peakHeapBytes": 26000000,
+      "audioResources": {
+        "created": 29533,
+        "sourceCreated": 9508,
+        "liveNodes": 179,
+        "liveSources": 48,
+        "layeredVoices": 16,
+        "peakNodes": 284,
+        "peakSources": 101,
+        "peakVoices": 16
+      },
+      "opponentHits": 717,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score1500 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60130.89999999963,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-1500-repeat1.json",
+          "file": "chromium-rally4000-low-1500-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 1,
+      "initialScore": 1500,
+      "initialBalls": 30,
+      "frames": 470,
+      "p95Ms": 266.6999999999971,
+      "fractionAtMost25ms": 0.13617021276595745,
+      "runningP95Ms": 266.6999999999971,
+      "runningFractionAtMost25ms": 0.13617021276595745,
+      "runningFrameCount": 470,
+      "runningSimulationSeconds": 40.16666666666503,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2250,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 801,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 43,
+        "particles": 81,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "single-halo",
+            "meteor",
+            "tricolor-crossing",
+            "floor-wave",
+            "star-world",
+            "side-halos"
+          ],
+          "tableQuads": 68,
+          "worldQuads": 520,
+          "particleCount": 81,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 33100000,
+      "finalHeapBytes": 33100000,
+      "peakHeapBytes": 33100000,
+      "audioResources": {
+        "created": 29909,
+        "sourceCreated": 9204,
+        "liveNodes": 36,
+        "liveSources": 9,
+        "layeredVoices": 3,
+        "peakNodes": 244,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 764,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score1500 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60065.99999999981,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-1500-repeat2.json",
+          "file": "chromium-rally4000-low-1500-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 2,
+      "initialScore": 1500,
+      "initialBalls": 30,
+      "frames": 472,
+      "p95Ms": 250,
+      "fractionAtMost25ms": 0.15254237288135594,
+      "runningP95Ms": 250,
+      "runningFractionAtMost25ms": 0.15254237288135594,
+      "runningFrameCount": 472,
+      "runningSimulationSeconds": 39.4749999999984,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2250,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 33,
+        "particles": 1,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "background-threads",
+            "single-halo",
+            "meteor",
+            "tricolor-crossing"
+          ],
+          "tableQuads": 69,
+          "worldQuads": 170,
+          "particleCount": 1,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 3,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 801,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 43,
+        "particles": 621,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "single-halo",
+            "meteor",
+            "tricolor-crossing",
+            "floor-wave",
+            "star-world",
+            "side-halos"
+          ],
+          "tableQuads": 68,
+          "worldQuads": 520,
+          "particleCount": 81,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 27600000,
+      "finalHeapBytes": 27600000,
+      "peakHeapBytes": 27600000,
+      "audioResources": {
+        "created": 29376,
+        "sourceCreated": 9045,
+        "liveNodes": 3,
+        "liveSources": 0,
+        "layeredVoices": 0,
+        "peakNodes": 244,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 750,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score2000 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60098.89999999981,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-2000-repeat1.json",
+          "file": "chromium-rally4000-low-2000-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 1,
+      "initialScore": 2000,
+      "initialBalls": 30,
+      "frames": 444,
+      "p95Ms": 283.29999999999563,
+      "fractionAtMost25ms": 0.14414414414414414,
+      "runningP95Ms": 283.29999999999563,
+      "runningFractionAtMost25ms": 0.14414414414414414,
+      "runningFrameCount": 444,
+      "runningSimulationSeconds": 36.974999999998545,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2690,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 801,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 38,
+        "particles": 81,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "single-halo",
+            "meteor",
+            "tricolor-crossing",
+            "star-world",
+            "side-halos",
+            "orbit-ribbon"
+          ],
+          "tableQuads": 188,
+          "worldQuads": 400,
+          "particleCount": 81,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 23100000,
+      "finalHeapBytes": 23100000,
+      "peakHeapBytes": 23100000,
+      "audioResources": {
+        "created": 27355,
+        "sourceCreated": 8424,
+        "liveNodes": 66,
+        "liveSources": 16,
+        "layeredVoices": 7,
+        "peakNodes": 244,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 695,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score2000 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60200.49999999963,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-2000-repeat2.json",
+          "file": "chromium-rally4000-low-2000-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 2,
+      "initialScore": 2000,
+      "initialBalls": 30,
+      "frames": 439,
+      "p95Ms": 266.6999999999998,
+      "fractionAtMost25ms": 0.13895216400911162,
+      "runningP95Ms": 266.6999999999998,
+      "runningFractionAtMost25ms": 0.13895216400911162,
+      "runningFrameCount": 439,
+      "runningSimulationSeconds": 37.50833333333185,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 2717,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 35,
+        "particles": 81,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "single-halo",
+            "meteor",
+            "tricolor-crossing",
+            "floor-wave",
+            "star-world"
+          ],
+          "tableQuads": 69,
+          "worldQuads": 472,
+          "particleCount": 81,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 801,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 40,
+        "particles": 729,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "single-halo",
+            "meteor",
+            "tricolor-crossing",
+            "star-world",
+            "side-halos",
+            "orbit-ribbon",
+            "hit-ring"
+          ],
+          "tableQuads": 588,
+          "worldQuads": 400,
+          "particleCount": 81,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 26000000,
+      "finalHeapBytes": 26000000,
+      "peakHeapBytes": 26000000,
+      "audioResources": {
+        "created": 27809,
+        "sourceCreated": 8574,
+        "liveNodes": 244,
+        "liveSources": 81,
+        "layeredVoices": 16,
+        "peakNodes": 244,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 720,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score3000 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60038.50000000019,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-3000-repeat1.json",
+          "file": "chromium-rally4000-low-3000-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 1,
+      "initialScore": 3000,
+      "initialBalls": 30,
+      "frames": 429,
+      "p95Ms": 283.3000000000029,
+      "fractionAtMost25ms": 0.1585081585081585,
+      "runningP95Ms": 283.3000000000029,
+      "runningFractionAtMost25ms": 0.1585081585081585,
+      "runningFrameCount": 429,
+      "runningSimulationSeconds": 35.949999999998596,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 3687,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 35,
+        "particles": 81,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "meteor",
+            "tricolor-crossing",
+            "star-world",
+            "side-halos",
+            "orbit-ribbon",
+            "multi-halos"
+          ],
+          "tableQuads": 187,
+          "worldQuads": 520,
+          "particleCount": 81,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 804,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 40,
+        "particles": 732,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "hit-ring"
+          ],
+          "tableQuads": 731,
+          "worldQuads": 538,
+          "particleCount": 84,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 24500000,
+      "finalHeapBytes": 24500000,
+      "peakHeapBytes": 24500000,
+      "audioResources": {
+        "created": 26634,
+        "sourceCreated": 8211,
+        "liveNodes": 51,
+        "liveSources": 8,
+        "layeredVoices": 8,
+        "peakNodes": 244,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 690,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score3000 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60093.00000000056,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-3000-repeat2.json",
+          "file": "chromium-rally4000-low-3000-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 2,
+      "initialScore": 3000,
+      "initialBalls": 30,
+      "frames": 431,
+      "p95Ms": 283.3000000000029,
+      "fractionAtMost25ms": 0.12761020881670534,
+      "runningP95Ms": 283.3000000000029,
+      "runningFractionAtMost25ms": 0.12761020881670534,
+      "runningFrameCount": 431,
+      "runningSimulationSeconds": 36.97499999999854,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 3690,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 35,
+        "particles": 81,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "meteor",
+            "tricolor-crossing",
+            "star-world",
+            "side-halos",
+            "orbit-ribbon",
+            "multi-halos"
+          ],
+          "tableQuads": 189,
+          "worldQuads": 520,
+          "particleCount": 81,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 804,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 38,
+        "particles": 84,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos"
+          ],
+          "tableQuads": 381,
+          "worldQuads": 538,
+          "particleCount": 84,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 27600000,
+      "finalHeapBytes": 27600000,
+      "peakHeapBytes": 27600000,
+      "audioResources": {
+        "created": 27300,
+        "sourceCreated": 8409,
+        "liveNodes": 164,
+        "liveSources": 42,
+        "layeredVoices": 16,
+        "peakNodes": 244,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 714,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score4000 repeat1",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60018.299999999625,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-4000-repeat1.json",
+          "file": "chromium-rally4000-low-4000-repeat1.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 1,
+      "initialScore": 4000,
+      "initialBalls": 30,
+      "frames": 416,
+      "p95Ms": 300,
+      "fractionAtMost25ms": 0.12980769230769232,
+      "runningP95Ms": 300,
+      "runningFractionAtMost25ms": 0.12980769230769232,
+      "runningFrameCount": 416,
+      "runningSimulationSeconds": 35.80833333333194,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 4687,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 35,
+        "particles": 124,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world"
+          ],
+          "tableQuads": 381,
+          "worldQuads": 714,
+          "particleCount": 124,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 844,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 40,
+        "particles": 772,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world",
+            "hit-ring"
+          ],
+          "tableQuads": 797,
+          "worldQuads": 714,
+          "particleCount": 124,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 33100000,
+      "finalHeapBytes": 33100000,
+      "peakHeapBytes": 33100000,
+      "audioResources": {
+        "created": 26711,
+        "sourceCreated": 8232,
+        "liveNodes": 243,
+        "liveSources": 80,
+        "layeredVoices": 16,
+        "peakNodes": 244,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 690,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    },
+    {
+      "title": "rally4000 low score4000 repeat2",
+      "project": "chromium",
+      "expectedStatus": "passed",
+      "executionStatus": "passed",
+      "durationMs": 60212.799999999625,
+      "retry": 0,
+      "playwrightErrors": [],
+      "attachments": [
+        {
+          "name": "rally4000-low-4000-repeat2.json",
+          "file": "chromium-rally4000-low-4000-repeat2.json.gz",
+          "status": "retained"
+        }
+      ],
+      "schema": "rally-4000-real-loop-v1",
+      "environment": "Linux Playwright browser; target hardware unverified",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "deviceRatio": 1
+      },
+      "drawingSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "quality": "low",
+      "repeat": 2,
+      "initialScore": 4000,
+      "initialBalls": 30,
+      "frames": 415,
+      "p95Ms": 283.40000000000146,
+      "fractionAtMost25ms": 0.15180722891566265,
+      "runningP95Ms": 283.40000000000146,
+      "runningFractionAtMost25ms": 0.15180722891566265,
+      "runningFrameCount": 415,
+      "runningSimulationSeconds": 35.07499999999865,
+      "continuousRun": true,
+      "finalPhase": "running",
+      "pauseReason": null,
+      "finalScore": 4660,
+      "remainingBalls": 30,
+      "unexpectedPauses": [],
+      "initialResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 35,
+        "particles": 124,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world"
+          ],
+          "tableQuads": 381,
+          "worldQuads": 714,
+          "particleCount": 124,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "maximumResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 44,
+        "particles": 844,
+        "particleCapacity": 11776
+      },
+      "finalResources": {
+        "geometries": 57,
+        "textures": 4,
+        "programs": 16,
+        "drawCalls": 39,
+        "particles": 196,
+        "particleCapacity": 11776,
+        "rallyEffects": {
+          "activeEffects": [
+            "tricolor-crossing",
+            "star-world",
+            "orbit-ribbon",
+            "multi-halos",
+            "meteor-swarm",
+            "double-table-halos",
+            "final-world"
+          ],
+          "tableQuads": 378,
+          "worldQuads": 714,
+          "particleCount": 124,
+          "finalPhase": null,
+          "capacity": 10240,
+          "geometries": 4,
+          "materials": 4,
+          "nodes": 6,
+          "drawCalls": 4,
+          "disposed": false
+        }
+      },
+      "initialHeapBytes": 23100000,
+      "finalHeapBytes": 23100000,
+      "peakHeapBytes": 23100000,
+      "audioResources": {
+        "created": 25959,
+        "sourceCreated": 8001,
+        "liveNodes": 107,
+        "liveSources": 32,
+        "layeredVoices": 8,
+        "peakNodes": 244,
+        "peakSources": 81,
+        "peakVoices": 16
+      },
+      "opponentHits": 660,
+      "target": {
+        "p95MsAtMost": 25,
+        "fractionAtMost25msAtLeast": 0.95,
+        "continuousSimulationSecondsAtLeast": 59,
+        "initialBalls": 30
+      },
+      "linuxReferenceTarget": "NOT met",
+      "targetHardwareVerdict": "unverified",
+      "blockedRequests": [],
+      "pageErrors": [],
+      "thirtyBallsThroughout": true,
+      "required30BallLinuxTarget": "NOT met",
+      "measurementExecutionStatus": "measurement completed"
+    }
+  ]
+}

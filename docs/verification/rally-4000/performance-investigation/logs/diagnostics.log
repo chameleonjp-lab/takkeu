@@ -1,0 +1,41 @@
+START 1 {"seconds":10,"warmSeconds":3,"score":4000,"quality":"standard","dpr":1,"mode":"normal","collector":"full","profile":true,"audible":true,"root":"/workspace/takkeu-main","label":"D01-main-1"}
+12:56:35 AM [vite] (client) Re-optimizing dependencies because vite config has changed
+12:56:36 AM [vite] (client) Pre-transform error: Instrumentation anchor missing /workspace/takkeu-main/src/render/createView.ts: applyPresentation(objects, snapshot,reducedMotion);
+  Plugin: test-only-performance
+  File: /workspace/takkeu-main/src/render/createView.ts
+12:56:36 AM [vite] Internal server error: Instrumentation anchor missing /workspace/takkeu-main/src/render/createView.ts: applyPresentation(objects, snapshot,reducedMotion);
+  Plugin: test-only-performance
+  File: /workspace/takkeu-main/src/render/createView.ts
+      at replace (file:///workspace/takkeu/tests/helpers/investigatePerformance.mjs:19:56)
+      at TransformPluginContext.transform (file:///workspace/takkeu/tests/helpers/investigatePerformance.mjs:27:5)
+      at EnvironmentPluginContainer.transform (file:///workspace/takkeu-main/node_modules/vite/dist/node/chunks/node.js:8582:51)
+      at loadAndTransform (file:///workspace/takkeu-main/node_modules/vite/dist/node/chunks/node.js:20155:48)
+12:56:36 AM [vite] (client) Pre-transform error: Instrumentation anchor missing /workspace/takkeu-main/src/render/createView.ts: applyPresentation(objects, snapshot,reducedMotion);
+  Plugin: test-only-performance
+  File: /workspace/takkeu-main/src/render/createView.ts
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: '設定', exact: true })[22m
+
+    at /workspace/takkeu/tests/helpers/investigatePerformance.mjs:115:59 {
+  log: [
+    "  - waiting for getByRole('button', { name: '設定', exact: true })"
+  ],
+  name: 'TimeoutError'
+}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: '設定', exact: true })[22m
+
+    at /workspace/takkeu/tests/helpers/investigatePerformance.mjs:115:59 {
+  log: [
+    "  - waiting for getByRole('button', { name: '設定', exact: true })"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.19.0

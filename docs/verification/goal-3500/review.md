@@ -1,0 +1,24 @@
+# 独立レビュー
+
+実装者とは別のreviewerが、base572b2e6から3dd3b6dと確認時の差分を読み取り専用でレビューした。normal unit962件とChromium/WebKitの主要6ケース/engineの検証後に依頼。性能測定と干渉しないよう独立テスト再実行は依頼しなかった。
+
+Criticalなし。重要指摘は次の2件。
+
+1. 到達電撃のpriority100が落球55/99等の短い電撃の寿命全体を覆い、数字以外の落球演出が欠落する。共通buffer内で到達と最優先落球を同時に描画する必要がある。
+2. 進行中の節目演出はhidden/context復旧後、停止したsimTimeから再開される。clear専用の指示とも解釈できるが、今回は中断した一時演出全体を失効させる方針で対応する。simulation factsとscore/loss watermarksを維持する。
+
+追加の検証指摘: hiddenを先に経由せずdirect contextlost→restore/retryを検証する。厳密同時刻のclear/lossをball ID逆順でも検証する。hidden終了後のretry準備中に古いcanvas画像が最大150ms露出しないことを確認する。
+
+肯定確認: 3500でのbreakと既存action優先順、独立表示時計、非同期送信、1500以上の通常feedback停止、期限後upload停止、generic RPCへの新rule範囲guard、旧pendingの版別通信、殿堂の台帳分離・counter行ロック、900x1200賞状と結果所有権。
+
+Reviewerが独立判定しなかった範囲: 実ブラウザの画質/点滅/入力感/GPU/60秒性能、実AudioContextの末尾、本番catalog、進行中のCI、修正後の回帰試験。これらは実装者の実行記録とCIを根拠とし、独立再実行済みとは扱わない。実機と正式適合は未確認として残す。
+
+修正と再検証の結果はresults.mdへ記録する。Draftを維持しマージしない。
+
+修正検証: loss55/99と到達2000の重複をテストで再現して失敗を確認後、2種の限られたarc枠を同じbatchへ描画して成功。`presentationBoundary` とcontroller.interruptはゲームfactsを変えず旧表示を失効する。strict同時刻/ID逆転2件も成功。86file・968unit成功、型検査成功、実PG競合成功。direct hidden/restoreのrunning milestoneとclear lifecycleはChromium/WebKitのブラウザで確認した。
+
+途中のローカル42ケースは41成功・1失敗。失敗は20 retry中のExecution context destroyed/navigationで、時刻20:29:03のmanifest編集によるVite HMRと一致した。最終freeze後に対象を再実行し、CIでも検証する。新コードの資源増殖として読み替えない。
+
+追加の敵対的ケース: 99の寿命3秒が100の2秒より長く、100後に99が復帰することを再現した。100だけを表示し、100終了を2秒に固定して969 unitと両engine終端検証が成功。さらに全件CIで280px/文字200%の危険labelの横overflowを検出した。width≤280・非重複の判定は変えず、labelを折り返して両engineで成功。最終変更はこのCSSのみで、物理・電撃・通常30球の測定経路を変更していない。
+
+最終の独立静的監査と一次証拠照合はfinal-audit.md。新たなCritical/Importantなし。実装者確認の最終push/PR CIは各6job成功・0失敗、各969unit/236browser/8配布物成功である（ci-summary.json）。独立reviewerの実行結果へ読み替えない。

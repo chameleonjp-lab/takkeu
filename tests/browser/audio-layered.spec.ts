@@ -109,7 +109,7 @@ test('実AudioContextで多球・停止・復旧・run切替と部分失敗を�
     expect(row.burst.liveSources-base.liveSources).toBeLessThanOrEqual(160);
     expect(row.muted.liveSources).toBe(base.liveSources); expect(row.muted.layeredVoices).toBe(base.layeredVoices);
     expect(row.duplicate.sourceCreated).toBe(row.muted.sourceCreated);
-    expect(row.stopped.liveNodes).toBe(base.liveNodes+2); // master compressor + user volume only
+    expect(row.stopped.liveNodes).toBe(base.liveNodes+3); // compressor, user volume and independently ducked fanfare bus
   }
   expect(metrics.failed.liveSources).toBe(base.liveSources); expect(metrics.ended.liveSources).toBe(base.liveSources);
   expect(metrics.disposed.liveNodes).toBe(base.liveNodes); expect(metrics.state).toBe('closed');

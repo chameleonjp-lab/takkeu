@@ -1,0 +1,57 @@
+{
+  "original": "resolution-visuals.tar.gz",
+  "originalBytes": 297401924,
+  "originalSHA256": "cbebb7ea8f05b95198923bfa1a23f05ac588327deec496475f32ae2f2f1b2687",
+  "reconstructedSHA256": "cbebb7ea8f05b95198923bfa1a23f05ac588327deec496475f32ae2f2f1b2687",
+  "allPartsVerified": true,
+  "chunkBytes": 33554432,
+  "parts": [
+    {
+      "file": "resolution-visuals.tar.gz.part-000",
+      "bytes": 33554432,
+      "sha256": "20c2f0d198287f2308d4bd7eb2ffb2f4123e4fc0d68618fda00ffb47b49a3152"
+    },
+    {
+      "file": "resolution-visuals.tar.gz.part-001",
+      "bytes": 33554432,
+      "sha256": "7f16a55a5e0dd916ccb16f410dbdf4320d8e0028c42b234365623428885c65ce"
+    },
+    {
+      "file": "resolution-visuals.tar.gz.part-002",
+      "bytes": 33554432,
+      "sha256": "7fd0c44a4cf1528789032310bb342f87e2c6577494f139bfb22908d08451e805"
+    },
+    {
+      "file": "resolution-visuals.tar.gz.part-003",
+      "bytes": 33554432,
+      "sha256": "fcce4f0d27a05243e423d7d9a2814863c26424e9d53074087531ad811e88fd57"
+    },
+    {
+      "file": "resolution-visuals.tar.gz.part-004",
+      "bytes": 33554432,
+      "sha256": "2b33c133c4b5997fa4d048334c5e5f23f0f8a2d16c51ab4772c90e6bf40f0447"
+    },
+    {
+      "file": "resolution-visuals.tar.gz.part-005",
+      "bytes": 33554432,
+      "sha256": "b666a1294b29b0817dd2c7c01115ba53323b9959df50e7ff32b703ceddf38e3c"
+    },
+    {
+      "file": "resolution-visuals.tar.gz.part-006",
+      "bytes": 33554432,
+      "sha256": "cdd6c6338ea6453055232d8d0a94d2de82aaf3685ddd13beb35128216e47a7d9"
+    },
+    {
+      "file": "resolution-visuals.tar.gz.part-007",
+      "bytes": 33554432,
+      "sha256": "60970f37d302cf89ce93e850898138e0ac29c4ca1e3c2e54eaa98705ca9bffb8"
+    },
+    {
+      "file": "resolution-visuals.tar.gz.part-008",
+      "bytes": 28966468,
+      "sha256": "d7bd4cfb6ff4a66ac6b685d0b88b850115ca6b559ce0d8853a08ae60b5d9bdcf"
+    }
+  ],
+  "restoreCommand": "cat resolution-visuals.tar.gz.part-* > resolution-visuals.tar.gz",
+  "verifyCommand": "sha256sum resolution-visuals.tar.gz"
+}

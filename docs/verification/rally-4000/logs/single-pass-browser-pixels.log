@@ -1,0 +1,18 @@
+[WebServer] (node:39624) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:39648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✓  1 [webkit] › tests/browser/rally-effects.spec.ts:65:1 › all 23 thresholds: preserve before/arrival/during/after camera evidence and fixed resources (4.1m)
+  ✓  2 [webkit] › tests/browser/rally-effects.spec.ts:94:1 › moving background/electricity/rings: time sequences, deterministic restore and reduced motion (2.8m)
+  ✓  3 [webkit] › tests/browser/rally-effects.spec.ts:123:1 › losses keep actual distinct positions, number lifetimes and final drawing without advancing balls (2.0m)
+  ✓  4 [webkit] › tests/browser/rally-effects.spec.ts:154:1 › mobile, landscape, 200% text, best and smash warning keep controls and readable four-digit scores (27.1s)
+  ✓  5 [webkit] › tests/browser/rally-effects.spec.ts:202:1 › major labels fit at their largest initial scale with 200% text on 320px screens (10.7s)
+  ✓  6 [webkit] › tests/browser/rally-effects.spec.ts:221:1 › 300 gold rays visibly radiate behind the rally number at age0.65 (3.0s)
+
+  Slow test file: [webkit] › tests/browser/rally-effects.spec.ts (9.6m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  6 passed (9.6m)

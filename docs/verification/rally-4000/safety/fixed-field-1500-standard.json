@@ -1,0 +1,68 @@
+{
+  "diagnosticOnly": true,
+  "frames": 360,
+  "fps": 60,
+  "width": 1024,
+  "height": 768,
+  "referenceWindow": [
+    341,
+    256
+  ],
+  "areaThreshold25Percent": 21824.0,
+  "inclusiveOneSecondSamples": 61,
+  "sourcePixelRGB24SHA256": "155127f012fd949450782d6e5f38d358a494f84fc47bedc6bfa69929881d0d60",
+  "general": {
+    "count": 2,
+    "windowXY": [
+      301,
+      0
+    ],
+    "endFrame": 84,
+    "closingFrames": [
+      48,
+      84
+    ],
+    "globalClosingFramesInSameSecond": [
+      48,
+      49,
+      54,
+      80,
+      83,
+      84
+    ],
+    "maxGlobalAnyWindowClosingFrameCount": 7
+  },
+  "red": {
+    "count": 0,
+    "windowXY": null,
+    "endFrame": null,
+    "closingFrames": [],
+    "globalClosingFramesInSameSecond": [],
+    "maxGlobalAnyWindowClosingFrameCount": 0
+  },
+  "fixedFieldClosingFrameFlag": false,
+  "method": "Every frame with >25% closing-mask area, at every fixed window position; exact integral sums; inclusive fps+1 frame rolling counts. No grouping.",
+  "citation": {
+    "url": "https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html",
+    "quote": "the combined area of flashes occurring concurrently occupies no more than a total of .006 steradians within any 10 degree visual field on the screen (25% of any 10 degree visual field on the screen) at typical viewing distance",
+    "referenceWindowQuote": "For general software or web content, using a 341 x 256 pixel rectangle anywhere on the displayed screen area when the content is viewed at 1024 x 768 pixels will provide a good estimate of a 10 degree visual field"
+  },
+  "limitations": [
+    "Diagnostic only: original primary analyzer and its flags remain authoritative recorded results.",
+    "Uses original turning-detector closing instants; it does not establish the temporal extent or component identity of a flash.",
+    "A fixed-field count <=3 is not a standalone proof of WCAG frequency/area compliance; retain per-pixel high-frequency area and other original metrics.",
+    "Fixed viewport field; eye movement, physical viewing distance, HDR and hardware behavior are not modeled.",
+    "60Hz SDR/sRGB canvas sampling excludes CSS and is not accredited PEAT/Harding certification."
+  ],
+  "sourceDirectory": "docs/verification/rally-4000/safety/final-regular/1500-standard",
+  "originalAnalyzerSHA256": "daf77a431d9585044b30b64fa6d2f2e2a452f6c0ca621e2c4466dd64d2551f5d",
+  "originalRecordedMetrics": {
+    "flagged": true,
+    "maxGeneralHighFrequencyArea": 9207,
+    "maxRedHighFrequencyArea": 0,
+    "maxGeneralLargeClosingFramesPerSecond": 7,
+    "maxRedLargeClosingFramesPerSecond": 0
+  },
+  "originalPixelHashMatches": true,
+  "originalGlobalCountersMatch": true
+}

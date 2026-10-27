@@ -1,0 +1,84 @@
+
+> takkeu@0.1.0 test:unit
+> vitest run tests/unit/rally-effects.test.ts tests/unit/loss-position.test.ts
+
+
+ RUN  v5.0.5 /workspace/takkeu-work
+
+ ❯ tests/unit/rally-effects.test.ts (0 test)
+ ❯ tests/unit/loss-position.test.ts (2 tests | 2 failed) 15ms
+   × copies distinct confirmed trajectory positions for each loss in one fixed step 10ms
+   × keeps the 100th loss coordinate when the final tick stops further physics 3ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/rally-effects.test.ts [ tests/unit/rally-effects.test.ts ]
+Error: Cannot find module '../../src/game/rallyEffects' imported from /workspace/takkeu-work/tests/unit/rally-effects.test.ts
+ ❯ tests/unit/rally-effects.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { createRallyEffects, RALLY_EFFECTS, RALLY_EFFECT_LIMITS } from…
+       | ^
+      3| import type { GameEvent } from '../../src/game/types';
+      4|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/loss-position.test.ts > copies distinct confirmed trajectory positions for each loss in one fixed step
+AssertionError: expected [ { id: 'run-1:1', …(4) } ] to have a length of 2 but got 1
+
+- Expected
++ Received
+
+- 2
++ 1
+
+ ❯ tests/unit/loss-position.test.ts:16:18
+     14|   const result = s.step(missPaddle);
+     15|   const losses = result.events.filter(e => e.kind === 'ball-lost');
+     16|   expect(losses).toHaveLength(2);
+       |                  ^
+     17|   for (const event of losses) {
+     18|     const source = event.ballId === 1 ? first : second;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/loss-position.test.ts > keeps the 100th loss coordinate when the final tick stops further physics
+AssertionError: expected { id: 'run-2:1', runId: 'run-2', …(3) } to match object { lossCount: 100, position: { …(3) } }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "lossCount": 100,
+-   "position": {
+-     "x": 0.8,
+-     "y": 0.5452580836025189,
+-     "z": 2.6175995520939788,
+-   },
++   "ballId": 1,
++   "id": "run-2:1",
++   "kind": "ball-lost",
++   "runId": "run-2",
++   "time": 20.001968305488116,
+  }
+
+ ❯ tests/unit/loss-position.test.ts:35:17
+     33|   const result = s.step(missPaddle);
+     34|   const event = result.events.find(e => e.kind === 'ball-lost')!;
+     35|   expect(event).toMatchObject({lossCount:100,position:sampleReturn(los…
+       |                 ^
+     36|   expect(result.snapshot.phase).toBe('gameover');
+     37|   expect(result.events.filter(e => e.kind === 'game-over')).toHaveLeng…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  2 failed (2)
+   Start at  20:14:00
+   Duration  309ms (transform 75%, import 12%, tests 8%, worker 5%)
+

@@ -1,0 +1,25 @@
+ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 14 (Debian 14.2.0-19)
+  configuration: --prefix=/usr --extra-version=0+deb13u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.103 / 61.  7.103
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  5.100 / 10.  5.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, image2, from 'docs/verification/rally-4000/safety/worst-first/4000-low-legacy100/%04d.png':
+  Duration: 00:00:06.00, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 1024x768, 60 fps, 60 tbr, 60 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> ffv1 (native))
+Press [q] to stop, [?] for help
+Output #0, matroska, to 'docs/verification/rally-4000/safety/worst-first/4000-low-legacy100/capture-lossless.mkv':
+  Metadata:
+    encoder         : Lavf61.7.103
+  Stream #0:0: Video: ffv1 (FFV1 / 0x31564646), bgr0(pc, gbr/unknown/unknown, progressive), 1024x768, q=2-31, 200 kb/s, 60 fps, 1k tbn
+      Metadata:
+        encoder         : Lavc61.19.101 ffv1
+frame=   13 fps=0.0 q=-0.0 size=       1KiB time=00:00:00.21 bitrate=  23.2kbits/s speed=0.429x    frame=   31 fps= 31 q=-0.0 size=   11776KiB time=00:00:00.51 bitrate=186714.1kbits/s speed=0.514x    frame=   51 fps= 34 q=-0.0 size=   23808KiB time=00:00:00.85 bitrate=229453.1kbits/s speed=0.565x    frame=   70 fps= 35 q=-0.0 size=   30208KiB time=00:00:01.16 bitrate=212111.9kbits/s speed=0.582x    frame=   90 fps= 36 q=-0.0 size=   42240KiB time=00:00:01.50 bitrate=230686.7kbits/s speed=0.598x    frame=  111 fps= 37 q=-0.0 size=   54016KiB time=00:00:01.85 bitrate=239188.7kbits/s speed=0.615x    frame=  133 fps= 38 q=-0.0 size=   59648KiB time=00:00:02.21 bitrate=220437.4kbits/s speed=0.632x    frame=  155 fps= 39 q=-0.0 size=   70400KiB time=00:00:02.58 bitrate=223245.2kbits/s speed=0.645x    frame=  174 fps= 39 q=-0.0 size=   81408KiB time=00:00:02.90 bitrate=229963.6kbits/s speed=0.643x    frame=  193 fps= 39 q=-0.0 size=   87040KiB time=00:00:03.21 bitrate=221667.9kbits/s speed=0.642x    frame=  214 fps= 39 q=-0.0 size=   98048KiB time=00:00:03.56 bitrate=225198.8kbits/s speed=0.648x    frame=  233 fps= 39 q=-0.0 size=  108800KiB time=00:00:03.88 bitrate=229516.7kbits/s speed=0.646x    frame=  251 fps= 39 q=-0.0 size=  114176KiB time=00:00:04.18 bitrate=223584.8kbits/s speed=0.643x    frame=  268 fps= 38 q=-0.0 size=  124672KiB time=00:00:04.46 bitrate=228652.2kbits/s speed=0.637x    frame=  286 fps= 38 q=-0.0 size=  130048KiB time=00:00:04.76 bitrate=223500.7kbits/s speed=0.634x    frame=  303 fps= 38 q=-0.0 size=  140544KiB time=00:00:05.05 bitrate=227987.4kbits/s speed=0.63x    frame=  322 fps= 38 q=-0.0 size=  145920KiB time=00:00:05.36 bitrate=222741.0kbits/s speed=0.63x    frame=  341 fps= 38 q=-0.0 size=  156928KiB time=00:00:05.68 bitrate=226197.2kbits/s speed=0.63x    [out#0/matroska @ 0x55e94ec642c0] video:168367KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.002806%
+frame=  360 fps= 38 q=-0.0 Lsize=  168372KiB time=00:00:06.00 bitrate=229883.9kbits/s speed=0.638x    

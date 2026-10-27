@@ -1,0 +1,82 @@
+[WebServer] (node:28833) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:28857) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  1 [chromium] › tests/browser/rally-effects.spec.ts:147:1 › 300 gold rays visibly radiate behind the rally number at age0.65 (2.2s)
+(node:28944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.
+  ✘  2 [webkit] › tests/browser/rally-effects.spec.ts:147:1 › 300 gold rays visibly radiate behind the rally number at age0.65 (3.5s)
+
+
+  1) [chromium] › tests/browser/rally-effects.spec.ts:147:1 › 300 gold rays visibly radiate behind the rally number at age0.65 
+
+    Error: at least80pixels show >=15%red/+10%green/-5%blue gold contribution
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 80
+    Received:    0
+
+      158 |   await info.attach('gold-ray-without-aura',{body:withoutAura,contentType:'image/png'});
+      159 |   await info.attach('gold-ray-pixel-measurement',{body:JSON.stringify(measured),contentType:'application/json'});
+    > 160 |   expect(measured.count,'at least80pixels show >=15%red/+10%green/-5%blue gold contribution').toBeGreaterThanOrEqual(80);
+          |                                                                                               ^
+      161 |   expect(measured.quadrants.filter(count=>count>=10).length,'gold spokes radiate across at least3 quadrants').toBeGreaterThanOrEqual(3);
+      162 | });
+      163 |
+        at /workspace/takkeu-work/tests/browser/rally-effects.spec.ts:160:95
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    artifacts/gold-wide-smoke/rally-effects-300-gold-ray-7cb44-the-rally-number-at-age0-65-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: artifacts/gold-wide-smoke/rally-effects-300-gold-ray-7cb44-the-rally-number-at-age0-65-chromium/error-context.md
+
+    attachment #6: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/gold-wide-smoke/rally-effects-300-gold-ray-7cb44-the-rally-number-at-age0-65-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/gold-wide-smoke/rally-effects-300-gold-ray-7cb44-the-rally-number-at-age0-65-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit] › tests/browser/rally-effects.spec.ts:147:1 › 300 gold rays visibly radiate behind the rally number at age0.65 
+
+    Error: at least80pixels show >=15%red/+10%green/-5%blue gold contribution
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 80
+    Received:    0
+
+      158 |   await info.attach('gold-ray-without-aura',{body:withoutAura,contentType:'image/png'});
+      159 |   await info.attach('gold-ray-pixel-measurement',{body:JSON.stringify(measured),contentType:'application/json'});
+    > 160 |   expect(measured.count,'at least80pixels show >=15%red/+10%green/-5%blue gold contribution').toBeGreaterThanOrEqual(80);
+          |                                                                                               ^
+      161 |   expect(measured.quadrants.filter(count=>count>=10).length,'gold spokes radiate across at least3 quadrants').toBeGreaterThanOrEqual(3);
+      162 | });
+      163 |
+        at /workspace/takkeu-work/tests/browser/rally-effects.spec.ts:160:95
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    artifacts/gold-wide-smoke/rally-effects-300-gold-ray-7cb44-the-rally-number-at-age0-65-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: artifacts/gold-wide-smoke/rally-effects-300-gold-ray-7cb44-the-rally-number-at-age0-65-webkit/error-context.md
+
+    attachment #6: trace (application/zip) ─────────────────────────────────────────────────────────
+    artifacts/gold-wide-smoke/rally-effects-300-gold-ray-7cb44-the-rally-number-at-age0-65-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace artifacts/gold-wide-smoke/rally-effects-300-gold-ray-7cb44-the-rally-number-at-age0-65-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/browser/rally-effects.spec.ts:147:1 › 300 gold rays visibly radiate behind the rally number at age0.65 
+    [webkit] › tests/browser/rally-effects.spec.ts:147:1 › 300 gold rays visibly radiate behind the rally number at age0.65 

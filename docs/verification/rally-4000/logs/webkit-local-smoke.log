@@ -1,0 +1,19 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+browserType.launch: 
+╔══════════════════════════════════════════════════════╗
+║ Host system is missing dependencies to run browsers. ║
+║ Missing libraries:                                   ║
+║     libcairo-script-interpreter.so.2                 ║
+║     libhidapi-hidraw.so.0                            ║
+║     libGLESv2.so.2                                   ║
+╚══════════════════════════════════════════════════════╝
+    at /workspace/takkeu-baseline/[eval1]:2:28
+    at async node:internal/modules/esm/loader:224:26 {
+  log: [],
+  name: 'Error'
+}
+
+Node.js v24.19.0

@@ -1,5 +1,6 @@
 import { defineConfig } from '@playwright/test';
 export default defineConfig({
+  captureGitInfo: { commit: true, diff: false },
   testDir: './tests/release', outputDir: 'artifacts/release-tests', retries: 0, workers: 1, forbidOnly: !!process.env.CI,
   reporter: [['list'], ['json', { outputFile: 'artifacts/release-results.json' }]],
   projects: [{ name: 'chromium', use: { browserName: 'chromium', launchOptions: { args: ['--enable-unsafe-swiftshader', '--use-angle=swiftshader'] } } }, { name: 'webkit', use: { browserName: 'webkit' } }],

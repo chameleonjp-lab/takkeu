@@ -1,0 +1,200 @@
+{
+  "retrievedAt": "2026-10-25T20:55:44.293243+00:00",
+  "runId": 40232449369,
+  "runAttempt": 1,
+  "headSha": "7aa8333892746f9909b71bec479ffc30c2d2aa2f",
+  "archives": {
+    "workflow-logs.zip": {
+      "bytes": 65406,
+      "sha256": "7994d62c735bf1ff3cbed5147cb49370a5e5f445184fd94e8553904189a69d70",
+      "entries": [
+        {
+          "path": "0_verify.txt",
+          "bytes": 2144,
+          "sha256": "f636698811d066a012dbe450f773f1070845638ed1e4641db212066cbc234e40",
+          "crc32": "6d974fa0",
+          "extractedExact": true
+        },
+        {
+          "path": "verify/system.txt",
+          "bytes": 589,
+          "sha256": "0027aea02b3d5f1498902e4f2c57717057c1018498e2ced6ec42567f56b01be5",
+          "crc32": "276e1fee",
+          "extractedExact": true
+        },
+        {
+          "path": "verify/1_Set up job.txt",
+          "bytes": 1710,
+          "sha256": "41416d5027708c78929ad8bb675e984653622b097732314bcc5632e654d5fd12",
+          "crc32": "156bc982",
+          "extractedExact": true
+        },
+        {
+          "path": "verify/2_Require all validation jobs.txt",
+          "bytes": 379,
+          "sha256": "6392e5948a6723e751e7ef5001e4c2ca82714fe58a7f5ec853525017ef60330c",
+          "crc32": "178e7552",
+          "extractedExact": true
+        },
+        {
+          "path": "verify/3_Complete job.txt",
+          "bytes": 61,
+          "sha256": "8b8c5da55c4a413e294f0fce7323fdc0d356ae859c9b9987136ea7268b65a606",
+          "crc32": "9731e559",
+          "extractedExact": true
+        },
+        {
+          "path": "2_core.txt",
+          "bytes": 147434,
+          "sha256": "59ba68a3a6cac24ef48c56d28138336bd7684a287723dd20a05257c8c81b39da",
+          "crc32": "24ac1ed0",
+          "extractedExact": true
+        },
+        {
+          "path": "core/system.txt",
+          "bytes": 588,
+          "sha256": "bb21b43b057bf66f0c6cc920ef6b42a9a87304126b0833f9033935fbf776e205",
+          "crc32": "8afa3318",
+          "extractedExact": true
+        },
+        {
+          "path": "core/1_Set up job.txt",
+          "bytes": 2150,
+          "sha256": "4ea4b16b5aa6a84796f84613b15b61c39dd1434cf0bb84f11454313614aeaeb1",
+          "crc32": "a7ede5fc",
+          "extractedExact": true
+        },
+        {
+          "path": "core/2_Run actions_checkout@v5.txt",
+          "bytes": 11268,
+          "sha256": "8ae3668c29c16482a75cb26359064ca3ddd38d48c336ce2a3b6f69ae82ccfc6c",
+          "crc32": "42997667",
+          "extractedExact": true
+        },
+        {
+          "path": "core/3_Run actions_setup-node@v6.txt",
+          "bytes": 2211,
+          "sha256": "333d3c681aaca2143a4304c15c8e2af94e1586177d6ceba262fbda5ef9895b06",
+          "crc32": "3b44a998",
+          "extractedExact": true
+        },
+        {
+          "path": "core/4_Use the primary Ubuntu HTTPS mirror for browser dependencies.txt",
+          "bytes": 388,
+          "sha256": "027f23f58384be8fc091a35ca02f7ec1001052e19d1f184e3a0d5dc2d261e3dc",
+          "crc32": "dca68b11",
+          "extractedExact": true
+        },
+        {
+          "path": "core/5_Dependencies.txt",
+          "bytes": 125689,
+          "sha256": "7bd4387f6fb6ac680f680ef5526886cfa8051f648a77a3d43a296a3befb847c5",
+          "crc32": "8b0bf19b",
+          "extractedExact": true
+        },
+        {
+          "path": "core/6_Typecheck.txt",
+          "bytes": 863,
+          "sha256": "656eaf6b571d7280165ef49800f6e8072b7746861e886b4c09a3097f408dd4f8",
+          "crc32": "1bbfd363",
+          "extractedExact": true
+        },
+        {
+          "path": "core/9_Record revision.txt",
+          "bytes": 418,
+          "sha256": "145a93168c4bc9db694a82120700f508631d048dfbd31aafb3a7abaa89be7f01",
+          "crc32": "2d7a7756",
+          "extractedExact": true
+        },
+        {
+          "path": "core/10_Run actions_upload-artifact@v4.txt",
+          "bytes": 2412,
+          "sha256": "ce13d9f53430e33f55b997bdd3ef03f8dec9f58601179e31baad161653d7bed3",
+          "crc32": "c8a0ee20",
+          "extractedExact": true
+        },
+        {
+          "path": "core/20_Post Run actions_checkout@v5.txt",
+          "bytes": 1707,
+          "sha256": "de3f79559d6a5d8dd96856d00e90b74db5432008928d529307f1b21e6dff7cc2",
+          "crc32": "891c8c8d",
+          "extractedExact": true
+        },
+        {
+          "path": "core/21_Complete job.txt",
+          "bytes": 355,
+          "sha256": "ab955c701eeff13671ff9acb625b26fee4f3c02c011b818d61b4d77e8980d230",
+          "crc32": "42727a55",
+          "extractedExact": true
+        }
+      ],
+      "entryCount": 17,
+      "zipIntegrityPassed": true,
+      "allExtractedBytesExact": true
+    },
+    "artifact-12613761920.zip": {
+      "bytes": 14969,
+      "sha256": "10eddf619d198dc87b821a5a248f9b85cc7ad856450e345007c5d4c0d178e807",
+      "entries": [
+        {
+          "path": "artifacts/commit.txt",
+          "bytes": 41,
+          "sha256": "100d469a93532faaf52f22ee6d241624d1a09672b0b5f32e3472bf2538e71191",
+          "crc32": "ed4d69c1",
+          "extractedExact": true
+        },
+        {
+          "path": "artifacts/install.log",
+          "bytes": 387,
+          "sha256": "3f82a99ed6908a7cbcb694cfe9cf93bff83a8ef318de1abebebea309854bb824",
+          "crc32": "58312737",
+          "extractedExact": true
+        },
+        {
+          "path": "artifacts/browsers.log",
+          "bytes": 89386,
+          "sha256": "431862d1c68b0dfc37b3de191cf09ef73c82ad5788853ec5313d82a7405c22ed",
+          "crc32": "01bad94d",
+          "extractedExact": true
+        },
+        {
+          "path": "artifacts/node.txt",
+          "bytes": 9,
+          "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41",
+          "crc32": "dff08dec",
+          "extractedExact": true
+        },
+        {
+          "path": "artifacts/npm.txt",
+          "bytes": 8,
+          "sha256": "a38e383f1e9080b0dd9001481f6e56b341000de90a05061b66734350ad3adc41",
+          "crc32": "e30aa303",
+          "extractedExact": true
+        },
+        {
+          "path": "artifacts/typecheck.log",
+          "bytes": 288,
+          "sha256": "e6e925a45b77b5af7829fb92c8b69618e0b489d0790bae397b4149bd230f80a4",
+          "crc32": "4cc9c484",
+          "extractedExact": true
+        }
+      ],
+      "entryCount": 6,
+      "zipIntegrityPassed": true,
+      "allExtractedBytesExact": true,
+      "githubDigestMatches": true
+    }
+  },
+  "individualLogs": {
+    "core-job.log": {
+      "bytes": 147435,
+      "sha256": "c12538005e6a7318360d16ef035ac63a75443017b7521c239c1bda4a74a0a1a9",
+      "source": "GitHub connector fetch_workflow_job_logs decoded text"
+    },
+    "verify-job.log": {
+      "bytes": 2145,
+      "sha256": "dd5ada6db29ed42afe3a7e4b75d8e4a37351dd01fb1e5e4329c668ed1010a5bd",
+      "source": "GitHub connector fetch_workflow_job_logs decoded text"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "finalSource": "720c06357beff5e7bdfe0073fb35293c7f45b372",
+  "sourceTree": "cf7ed7ee335830f52c72bcbea21b0088ffa25705",
+  "runs": [
+    {
+      "runId": 40446563006,
+      "sourceCommit": "e2e8379ec649d1c4ee6b780142e024f813e90fb4",
+      "checkoutCommit": "e2e8379ec649d1c4ee6b780142e024f813e90fb4",
+      "checkoutTree": "bfd22a35c51af052dd21026a0d4d9902a8591399",
+      "sourceTree": "bfd22a35c51af052dd21026a0d4d9902a8591399",
+      "treeIdentical": true,
+      "allJobsSuccess": false
+    },
+    {
+      "runId": 40446576259,
+      "sourceCommit": "e2e8379ec649d1c4ee6b780142e024f813e90fb4",
+      "checkoutCommit": "102e021d243cfb270f5f4a3399c748650a7c4f66",
+      "checkoutTree": "bfd22a35c51af052dd21026a0d4d9902a8591399",
+      "sourceTree": "bfd22a35c51af052dd21026a0d4d9902a8591399",
+      "treeIdentical": true,
+      "allJobsSuccess": false
+    },
+    {
+      "runId": 40448430299,
+      "sourceCommit": "93294e80a9066c486121a20088189d1a17627a53",
+      "checkoutCommit": "1c2171a5b73fa5f7c9ff19122486f66eed8e98ed",
+      "checkoutTree": "bacd518ddf0c7cd327c23c37effa59679ea8dc6d",
+      "sourceTree": "bacd518ddf0c7cd327c23c37effa59679ea8dc6d",
+      "treeIdentical": true,
+      "allJobsSuccess": false
+    },
+    {
+      "runId": 40448414109,
+      "sourceCommit": "93294e80a9066c486121a20088189d1a17627a53",
+      "checkoutCommit": "93294e80a9066c486121a20088189d1a17627a53",
+      "checkoutTree": "bacd518ddf0c7cd327c23c37effa59679ea8dc6d",
+      "sourceTree": "bacd518ddf0c7cd327c23c37effa59679ea8dc6d",
+      "treeIdentical": true,
+      "allJobsSuccess": false
+    },
+    {
+      "runId": 40449499893,
+      "sourceCommit": "720c06357beff5e7bdfe0073fb35293c7f45b372",
+      "checkoutCommit": "720c06357beff5e7bdfe0073fb35293c7f45b372",
+      "checkoutTree": "cf7ed7ee335830f52c72bcbea21b0088ffa25705",
+      "sourceTree": "cf7ed7ee335830f52c72bcbea21b0088ffa25705",
+      "treeIdentical": true,
+      "allJobsSuccess": true
+    },
+    {
+      "runId": 40449517072,
+      "sourceCommit": "720c06357beff5e7bdfe0073fb35293c7f45b372",
+      "checkoutCommit": "29b0dd1dba17bed19ab74d1a948db9c5e7f1f8a1",
+      "checkoutTree": "cf7ed7ee335830f52c72bcbea21b0088ffa25705",
+      "sourceTree": "cf7ed7ee335830f52c72bcbea21b0088ffa25705",
+      "treeIdentical": true,
+      "allJobsSuccess": true
+    }
+  ],
+  "note": "PR CI uses a virtual merge checkout, not a merge of PR27 into main. Identical full trees are verified with read-only GitHub git-commit metadata."
+}
