@@ -83,8 +83,13 @@ export function createCertificateControls(host: HTMLElement) {
   };
   const shareImage = async () => {
     if (!file || typeof navigator.share !== 'function') return;
-    try { await navigator.share({ files: [file], title: 'タッケウ 3000ラリー達成賞状' }); }
-    catch (error) { if (!(error instanceof DOMException && error.name === 'AbortError')) message.textContent = '共有できませんでした。「画像を保存」か画像の長押しをご利用ください。'; }
+    const request = epoch, sharedFile = file;
+    try { await navigator.share({ files: [sharedFile], title: 'タッケウ 3000ラリー達成賞状' }); }
+    catch (error) {
+      if (request === epoch && file === sharedFile && !(error instanceof DOMException && error.name === 'AbortError')) {
+        message.textContent = '共有できませんでした。「画像を保存」か画像の長押しをご利用ください。';
+      }
+    }
   };
   create.addEventListener('click', generate); share.addEventListener('click', shareImage);
   return {

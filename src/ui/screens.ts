@@ -72,7 +72,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
           <button type="button" class="button subtle" data-action="home">ホームへ</button></div>
         <p class="result-message" data-loss-limit-message hidden>累計${MAX_LOST_BALLS}球の落球で終了しました。</p><p class="result-message" data-ranking-participation>もう1ラリー、つないでみよう。</p>
         <div data-result-notices></div>
-        <section class="ranking-panel" aria-labelledby="ranking-title"><p class="eyebrow">LEADERBOARD</p><h3 id="ranking-title">ランキング TOP 30</h3><p class="ranking-caption">最高ラリー数で競う、みんなの記録</p><p data-ranking-message role="status">ランキングを読み込んでいます。</p>
+        <section class="ranking-panel" aria-labelledby="ranking-title"><p class="eyebrow">LEADERBOARD</p><h3 id="ranking-title">ランキング TOP 30</h3><p class="ranking-caption">3000ラリーが現在のゴール。旧ルールの記録も残しています。</p><p data-ranking-message role="status">ランキングを読み込んでいます。</p>
           <div class="ranking-table-wrap"><table data-ranking-table hidden><caption class="sr-only">最高ラリー数の上位30名</caption><thead><tr><th scope="col">順位</th><th scope="col">名前</th><th scope="col">ラリー</th><th scope="col">回数</th></tr></thead><tbody data-ranking-body></tbody></table></div>
           <button type="button" class="button subtle" data-action="ranking-refresh">ランキングを更新</button><a class="lab-link" href="${RANKING_CONFIG.rankingUrl}">実験場で詳しいランキングを見る ↗</a>
         </section>
