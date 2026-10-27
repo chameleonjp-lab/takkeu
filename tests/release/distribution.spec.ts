@@ -20,7 +20,7 @@ for (const [port, base] of [[4174, '/'], [4175, '/takkeu/']] as const) {
     expect(metadata.meta['og:title']).toBe('タッケウ — つなげ、ラリー。');
     expect(metadata.meta['twitter:title']).toBe('タッケウ — つなげ、ラリー。');
     expect(metadata.meta['twitter:card']).toBe('summary_large_image');
-    for (const key of ['description', 'og:description', 'twitter:description']) expect(metadata.meta[key]).toBe('タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」。何ラリーつなげられる？');
+    for (const key of ['description', 'og:description', 'twitter:description']) expect(metadata.meta[key]).toBe('タップ＆ドラッグで3500ラリーのゲームクリアと殿堂入りを目指す卓球ゲーム「タッケウ」。');
     for (const key of ['og:image:alt', 'twitter:image:alt']) expect(metadata.meta[key]).toBe('緑の卓球台と赤いラケットが映る卓球ゲーム「タッケウ」の画面。つなげ、ラリー。');
     for (const key of ['og:image', 'og:image:secure_url', 'twitter:image']) expect(metadata.meta[key]).toBe(canonical + 'og-takkeu-v1.png');
     expect(metadata.meta['og:image:type']).toBe('image/png');
