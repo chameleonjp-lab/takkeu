@@ -51,3 +51,8 @@ for(const interrupt of ['hidden','restore']as const)test(`running milestones exp
  if(interrupt==='hidden')await page.evaluate(()=>Object.defineProperty(document,'hidden',{configurable:true,get:()=>false}));else{await page.evaluate(()=>window.stage3.restore());await page.clock.runFor(32);}
  await page.getByRole('button',{name:'つづける',exact:true}).click();await page.clock.runFor(32);expect(await page.evaluate(()=>window.stage3.resources()?.rallyEffects?.activeEffects)).not.toContain('rally-electric');
 });
+test('100th loss wins over99, shows its short ending and then stops3D rendering',async({page})=>{
+ await boot(page);await page.evaluate(()=>window.stage3.lossLimit(98));await page.clock.runFor(200);
+ const frozen=await page.evaluate(()=>window.stage3.snapshot());expect(frozen).toMatchObject({phase:'gameover',endReason:'loss',lostBallCount:100});await expect(page.locator('[data-result]')).toBeHidden();
+ await page.clock.runFor(2200);await expect(page.locator('[data-result]')).toBeVisible();const n=await page.evaluate(()=>window.stage3.metrics().viewRenders);await page.clock.runFor(2000);expect(await page.evaluate(()=>window.stage3.metrics().viewRenders)).toBe(n);expect(await page.evaluate(()=>window.stage3.snapshot())).toEqual(frozen);expect(await page.evaluate(()=>window.stage3.resources()?.rallyEffects?.activeEffects)).toEqual([]);
+});
