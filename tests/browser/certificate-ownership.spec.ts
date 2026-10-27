@@ -12,11 +12,11 @@ test('前の賞状の共有失敗を再挑戦後の結果へ表示しない', as
     });
   });
   await page.getByRole('button', { name: 'はじめる', exact: true }).click(); await waitForStart(page);
-  await page.evaluate(() => window.stage3.goal()); await page.clock.runFor(200);
+  await page.evaluate(() => window.stage3.goal()); await page.clock.runFor(3200);
   await page.locator('[data-certificate-create]').click(); await expect(page.locator('[data-certificate-share]')).toBeVisible();
   await page.locator('[data-certificate-share]').click();
   await page.getByRole('button', { name: 'もう一度', exact: true }).click(); await waitForStart(page);
-  await page.evaluate(() => window.stage3.goal()); await page.clock.runFor(200);
+  await page.evaluate(() => window.stage3.goal()); await page.clock.runFor(3200);
   await expect(page.locator('[data-certificate-message]')).toHaveText('');
   await page.evaluate(() => (window as typeof window & { rejectOldShare?: () => void }).rejectOldShare?.());
   await page.clock.runFor(32);

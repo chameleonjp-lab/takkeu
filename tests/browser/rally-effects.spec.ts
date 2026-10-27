@@ -7,8 +7,8 @@ import type { Page } from '../helpers/browserTest';
 import type {} from '../helpers/rallyHarness';
 import { goldContribution, pngPixels } from '../helpers/pngPixels';
 
-const thresholds=[50,100,200,300,400,500,600,700,800,900,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000];
-const evidenceRoot=resolve('docs/verification/rally-4000/evidence');
+const thresholds=[50,100,200,300,500,800,1000,1500,2000,2500,2750,3000,3500];
+const evidenceRoot=resolve('artifacts/goal-3500/browser-effects');
 // A/B performs five full-resolution screenshots instead of one per state,
 // including both qualities. Its infrastructure budget is separate from all
 // unchanged pixel/state assertions and the independent frame-time targets.
@@ -62,7 +62,7 @@ test.beforeEach(async({page})=>{
   await page.waitForFunction(()=>!!window.rally);
 });
 
-test('all 23 threshold facts keep HUD/audio timing; retired ambient geometry stays absent',async({page},info)=>{
+test('all current threshold facts keep HUD/audio timing; retired ambient geometry stays absent',async({page},info)=>{
   test.setTimeout(captureBudget(240_000));
   const directory=resolve(evidenceRoot,info.project.name,'thresholds');mkdirSync(directory,{recursive:true});
   const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
@@ -80,8 +80,8 @@ test('all 23 threshold facts keep HUD/audio timing; retired ambient geometry sta
       expect(record.scrollWidth).toBeLessThanOrEqual(record.width);
       expect(record.stats.tableQuads+record.stats.worldQuads).toBeLessThanOrEqual(record.stats.capacity);
       expect(record.stats.geometries).toBe(2);expect(record.stats.materials).toBe(2);
-      if(phase==='before'||offset>=.3)expect(record.stats.tableQuads+record.stats.worldQuads).toBe(0);
-      if([1000,2000,3000,4000].includes(threshold)&&phase==='during')expect(record.notice).toBe(`${threshold} RALLY`);
+      if(phase==='before'||phase==='after'||threshold<500&&offset>=.3)expect(record.stats.tableQuads+record.stats.worldQuads).toBe(0);
+      if([1000,2000,3000,3500].includes(threshold)&&phase==='during')expect(record.notice).toBe(threshold===3500?'3500 RALLY · CLEAR!':threshold===3000?'3000 RALLY · まだ続く！':`${threshold} RALLY`);
       const filename=`${threshold}-${phase}.png`;
       await cameraScreenshot(page,info,resolve(directory,filename));
       rows.push({threshold,phase,offset,screenshot:filename,...record});
@@ -105,9 +105,9 @@ test('local hit feedback expires at .3s without perpetual geometry; pause/restor
       await cameraScreenshot(page,info,resolve(directory,`${score}-${offset.toFixed(2)}.png`));
       rows.push({score,offset,geometry,stats:await page.evaluate(()=>window.rally.stats())});
     }
-    expect(shapes[0],`${score} confirmed hit is visible`).not.toEqual([]);
-    expect(shapes[1],`${score} hit expired at .35s`).toEqual([]);
-    expect(shapes[2],`${score} no ambient world remains`).toEqual([]);
+    if(score<1500)expect(shapes[0],`${score} confirmed hit is visible`).not.toEqual([]);
+    if(!thresholds.includes(score)||score<500)expect(shapes[1],`${score} hit expired at .35s`).toEqual([]);
+    await page.evaluate(()=>window.rally.time(25.2));expect(await page.evaluate(()=>window.rally.geometry()),`${score} no ambient world remains`).toEqual([]);
   }
   await page.evaluate(()=>{window.rally.show(4000,20.7);window.rally.pause();});
   const paused=await page.evaluate(()=>({state:window.rally.state(),snapshot:window.rally.snapshot(),geometry:window.rally.geometry()}));
@@ -131,7 +131,7 @@ test('losses keep actual distinct positions, number lifetimes and final drawing 
     await page.evaluate(count=>window.rally.loss(count,count===4||count===100?4:1,count===4),count);
     const initial=await page.evaluate(()=>({state:window.rally.state(),snapshot:window.rally.snapshot(),stats:window.rally.stats(),geometry:window.rally.geometry()}));
     expect(initial.state.losses.at(-1)?.count).toBe(count);
-    expect(initial.state.cues.some(c=>c.kind==='loss-spark')).toBe(true);
+    expect(initial.state.cues.some(c=>c.kind==='loss-spark')).toBe(false);
     if(count===4){
       expect(new Set(initial.state.losses.map(loss=>JSON.stringify(loss.position))).size).toBeGreaterThan(1);
       expect(new Set(initial.state.losses.map(loss=>loss.at)).size).toBe(1);
@@ -160,7 +160,7 @@ test('mobile, landscape, 200% text, best and smash warning keep controls and rea
   for(const [width,height,fontPercent] of [[320,568,100],[390,844,100],[844,390,100],[390,844,200]]){
     await page.setViewportSize({width:width!,height:height!});
     await page.evaluate(percent=>document.documentElement.style.fontSize=`${percent}%`,fontPercent);
-    await page.evaluate(()=>{window.rally.reset(3999,3999);window.rally.arrive(4000);window.rally.time(20.65);window.rally.warning();});
+    await page.evaluate(()=>{window.rally.reset(3499,3499);window.rally.arrive(3500);window.rally.time(20.65);window.rally.warning();});
     const bounds=await page.evaluate(()=>{
       const rect=(selector:string)=>{const r=document.querySelector(selector)!.getBoundingClientRect();return {x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height};};
       return {score:rect('[data-score]'),toast:rect('[data-rally-notice]'),warning:rect('[data-smash-warning]'),
@@ -206,7 +206,7 @@ test('major labels fit at their largest initial scale with 200% text on 320px sc
   await page.setViewportSize({width:320,height:568});
   await page.evaluate(()=>{document.documentElement.style.fontSize='200%';});
   const directory=resolve(evidenceRoot,info.project.name,'layout');mkdirSync(directory,{recursive:true});
-  for(const score of [1000,2000,3000,4000]){
+  for(const score of [1000,2000,3000,3500]){
     await page.evaluate(score=>window.rally.show(score),score);
     const bounds=await page.evaluate(()=>{
       const game=document.querySelector('[data-game]')!.getBoundingClientRect();

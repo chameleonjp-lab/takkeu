@@ -50,8 +50,8 @@ jobs:
       - name: Hall registration concurrency on disposable PostgreSQL
         run: |
           set -o pipefail
-          mkdir -p artifacts/goal-3000
-          node tests/helpers/checkHallConcurrency.mjs 2>&1 | tee artifacts/goal-3000/postgres-concurrency.log
+          mkdir -p artifacts/goal-3500
+          node tests/helpers/checkHallConcurrency.mjs 2>&1 | tee artifacts/goal-3500/postgres-concurrency.log
       - name: Build and test root and Pages distributions
         run: |
           set -o pipefail

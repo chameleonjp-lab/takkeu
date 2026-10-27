@@ -77,11 +77,11 @@ function render() {
   const fitKey=`${rectangle.width}:${rectangle.height}:${quality}`;
   if(fitKey!==fitted){view.resize(rectangle.width,rectangle.height);fitCamera(camera,rectangle.width,rectangle.height,DEFAULT_CONFIG);fitted=fitKey;}
   const state=controller.state();
-  view.render(presentation.snapshot,lastEvents,state);
-  if(!canvasCapture)diagnostic.update(presentation.snapshot,state,quality,matchMedia('(prefers-reduced-motion: reduce)').matches);
-  const cues=state.cues.filter(cue=>(cue.kind==='notice'||cue.kind==='major')&&presentation.snapshot.simTime>=cue.at&&presentation.snapshot.simTime<cue.at+cue.duration);
+  view.render(presentation.snapshot,lastEvents,state,presentation.presentationTime);
+  if(!canvasCapture)diagnostic.update({...presentation.snapshot,simTime:presentation.presentationTime},state,quality,matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const cues=state.cues.filter(cue=>(cue.kind==='notice'||cue.kind==='major')&&presentation.presentationTime>=cue.at&&presentation.presentationTime<cue.at+cue.duration);
   const cue=cues.sort((a,b)=>b.priority-a.priority||b.at-a.at)[0];
-  notice.update(presentation.snapshot,{notice:cue?{score:cue.value,at:cue.at,major:cue.kind==='major'}:null,bestAt:state.best?.at??null,goldAt:state.arrivals.find(a=>a.threshold===300)?.at??null},finishing);
+  notice.update({...presentation.snapshot,simTime:presentation.presentationTime},{notice:cue?{score:cue.value,at:cue.at,major:cue.kind==='major'}:null,bestAt:state.best?.at??null,goldAt:state.arrivals.find(a=>a.threshold===300)?.at??null},finishing);
   lastEvents=[];
 }
 function reset(score:number,bestAtStart=0) {
