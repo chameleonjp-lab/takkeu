@@ -86,3 +86,16 @@ test('naturally ends the protected fanfare after game-over and releases every na
   const path = info.outputPath('native-fanfare-resources.json');
   await writeFile(path, JSON.stringify(metrics, null, 2)); await info.attach('native-fanfare-resources.json', { path, contentType: 'application/json' });
 });
+
+test('3500 clear fanfare retains its native tail and naturally releases every source',async({page},info)=>{
+ await page.addInitScript(installAudioProbe);await page.goto('/tests/fixtures/audio-fanfare.html');
+ const metrics=await page.evaluate(async()=>{
+  const audioUrl='/src/audio/audio.ts',configUrl='/src/game/config.ts';
+  const {createAudio}=await import(/* @vite-ignore */ audioUrl),{DEFAULT_CONFIG}=await import(/* @vite-ignore */ configUrl);
+  const ctx=new AudioContext(),audio=createAudio(DEFAULT_CONFIG,()=>ctx),baseline=window.audioResources();audio.reset('clear3500');if(!await audio.unlock())throw Error('Audio unlock failed');
+  audio.consume([{kind:'player-hit',id:'3500',runId:'clear3500',time:0,ballId:1,rallyScore:3500},{kind:'game-clear',id:'clear',runId:'clear3500',time:0}]);
+  const start=window.audioResources();await new Promise(r=>setTimeout(r,1800));const tail=window.audioResources();await new Promise(r=>setTimeout(r,1300));const end=window.audioResources();await audio.dispose();return {baseline,start,tail,end,disposed:window.audioResources()};
+ });
+ expect(metrics.start.layeredVoices).toBe(1);expect(metrics.tail.liveSources).toBeGreaterThan(metrics.baseline.liveSources);expect(metrics.end.liveSources).toBe(metrics.baseline.liveSources);expect(metrics.disposed.liveNodes).toBe(metrics.baseline.liveNodes);
+ await info.attach('3500-native-fanfare',{body:JSON.stringify(metrics),contentType:'application/json'});
+});
