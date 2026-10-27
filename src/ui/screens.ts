@@ -27,9 +27,9 @@ export function createScreens(root: HTMLElement, actions: Actions) {
         <header class="brand"><span class="brand-mark" aria-hidden="true">t.</span><span>TAKKEU</span><span class="brand-note">卓球の、その先へ。</span></header>
         <div class="home-hero">
           <div class="hero-copy">
-            <p class="eyebrow"><span class="status-dot"></span> ROAD TO 3000 RALLIES.</p>
+            <p class="eyebrow"><span class="status-dot"></span> ROAD TO 3500 RALLIES.</p>
             <h1>タッケウ<span class="title-dot" aria-hidden="true">.</span></h1>
-            <p class="hero-lead">3000ラリーをつないで、<br>殿堂入りを目指そう。</p>
+            <p class="hero-lead">3500ラリーをつないで、<br>殿堂入りを目指そう。</p>
             <p class="hero-description">タップした位置にラケットを置き、ドラッグで球に合わせる。<br>自分の台で一度弾んだ球に触れれば、打ち返せます。<br>${CLEAR_SCORE}ラリーでゲームクリア。残球が0になるか、累計${MAX_LOST_BALLS}球落とすと終了です。</p>
             <div class="player-field"><label for="player-name">ランキングの名前 <span>任意</span></label><input id="player-name" data-player-name type="text" maxlength="40" autocomplete="nickname" placeholder="名前なしでも遊べます" aria-describedby="name-note"><p id="name-note" data-name-note>20文字以内。入力すると名前と記録が公開され、ランキングに参加します。同じ名前の記録は合算され、初回クリアで殿堂登録番号が付きます。再クリアも同じ番号です。名前なしでもクリア賞状を作れますが、殿堂番号は付きません。過去の記録は殿堂登録の対象外です。</p></div>
             <button type="button" class="button primary start-button" data-action="start">はじめる <span aria-hidden="true">↗</span></button>
@@ -72,11 +72,11 @@ export function createScreens(root: HTMLElement, actions: Actions) {
           <button type="button" class="button subtle" data-action="home">ホームへ</button></div>
         <p class="result-message" data-loss-limit-message hidden>累計${MAX_LOST_BALLS}球の落球で終了しました。</p><p class="result-message" data-ranking-participation>もう1ラリー、つないでみよう。</p>
         <div data-result-notices></div>
-        <section class="ranking-panel" aria-labelledby="ranking-title"><p class="eyebrow">LEADERBOARD</p><h3 id="ranking-title">ランキング TOP 30</h3><p class="ranking-caption">3000ラリーが現在のゴール。旧ルールの記録も残しています。</p><p data-ranking-message role="status">ランキングを読み込んでいます。</p>
+        <section class="ranking-panel" aria-labelledby="ranking-title"><p class="eyebrow">LEADERBOARD</p><h3 id="ranking-title">ランキング TOP 30</h3><p class="ranking-caption">新ルールの上限は3500ラリーです。過去の3000超・3500超の高スコアは旧ルールの記録として保持し、旧記録から殿堂番号は発行しません。</p><p data-ranking-message role="status">ランキングを読み込んでいます。</p>
           <div class="ranking-table-wrap"><table data-ranking-table hidden><caption class="sr-only">最高ラリー数の上位30名</caption><thead><tr><th scope="col">順位</th><th scope="col">名前</th><th scope="col">ラリー</th><th scope="col">回数</th></tr></thead><tbody data-ranking-body></tbody></table></div>
           <button type="button" class="button subtle" data-action="ranking-refresh">ランキングを更新</button><a class="lab-link" href="${RANKING_CONFIG.rankingUrl}">実験場で詳しいランキングを見る ↗</a>
         </section>
-        <section class="ranking-panel" aria-labelledby="hall-title"><p class="eyebrow">HALL OF FAME</p><h3 id="hall-title">3000ラリー 殿堂入り</h3><p class="ranking-caption">新ルールの初回クリア・登録順の先頭30件。同名の再クリアは同じ番号です。</p><p data-hall-list-message role="status">殿堂一覧を読み込んでいます。</p><ol class="hall-list" data-hall-list hidden></ol></section>
+        <section class="ranking-panel" aria-labelledby="hall-title"><p class="eyebrow">HALL OF FAME</p><h3 id="hall-title">3500ラリー 殿堂入り</h3><p class="ranking-caption">新ルールの初回クリア・登録順の先頭30件。同名の再クリアは同じ番号です。</p><p data-hall-list-message role="status">殿堂一覧を読み込んでいます。</p><ol class="hall-list" data-hall-list hidden></ol></section>
       </section>
       <div class="screen-notices" data-notices>
         <div class="ranking-notice" data-ranking-notice hidden><p data-ranking-status role="status"></p><button type="button" class="button subtle" data-action="ranking-retry" hidden>記録を再送する</button></div>
@@ -215,7 +215,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
     setResultHall(state: ResultHallState) {
       hallState = state;
       get('[data-result-hall]').hidden = state.status === 'hidden';
-      const messages = { hidden: '', anonymous: '3000ラリー、クリアおめでとう！', pending: '殿堂登録を確認しています。', retryable_failed: '殿堂登録は再送できます。', failed: '殿堂登録を確認できませんでした。', ineligible: 'この登録名は現在、殿堂登録の対象外です。' };
+      const messages = { hidden: '', anonymous: '3500ラリー、クリアおめでとう！', pending: '殿堂登録を確認しています。', retryable_failed: '殿堂登録は再送できます。', failed: '殿堂登録を確認できませんでした。', ineligible: 'この登録名は現在、殿堂登録の対象外です。' };
       setText('[data-hall-message]', state.status === 'registered' ? `殿堂登録 第${state.hall.number}号` : messages[state.status]);
       setText('[data-hall-note]', state.status === 'registered' ? `${state.hall.displayName}・初回登録日 ${certificateDate(state.hall.registeredAt)}（UTC）。再クリアも同じ番号です。`
         : state.status === 'anonymous' ? '名前なしのクリアです。達成賞状を作れます。殿堂番号は付きません。'
@@ -260,14 +260,14 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       get('[data-smash-warning]').hidden = !warning;
       const remaining = snapshot.balls.filter(ball => ball.phase !== 'lost').length;
       setText('[data-score]', String(snapshot.score)); setText('[data-balls]', String(remaining)); setText('[data-result-score]', String(snapshot.score));
-      if (phase === 'gameover') setText('[data-result] h2', cleared ? '3000ラリー達成！ゲームクリア！' : resultComment(snapshot.score));
+      if (phase === 'gameover') setText('[data-result] h2', cleared ? '3500ラリー達成！ゲームクリア！' : resultComment(snapshot.score));
       setText('[data-result] .result-header .eyebrow', cleared ? 'GAME CLEAR' : 'RALLY COMPLETE');
       setText('[data-losses]', `${snapshot.lostBallCount} / ${MAX_LOST_BALLS}`);
       get('[data-loss-limit-message]').hidden = snapshot.phase !== 'gameover' || snapshot.lostBallCount < MAX_LOST_BALLS;
       updateShare();
       if (snapshot.phase === 'paused') setText('[data-pause-message]', pauseMessages[snapshot.pauseReason ?? 'user']);
       if (lastPhase !== snapshot.phase) {
-        const endMessage = `${cleared ? '3000ラリー達成。ゲームクリア！' : snapshot.lostBallCount >= MAX_LOST_BALLS ? `累計${MAX_LOST_BALLS}球の落球で終了。` : '終了。'}${snapshot.score}ラリー。残球数${remaining}。`;
+        const endMessage = `${cleared ? '3500ラリー達成。ゲームクリア！' : snapshot.lostBallCount >= MAX_LOST_BALLS ? `累計${MAX_LOST_BALLS}球の落球で終了。` : '終了。'}${snapshot.score}ラリー。残球数${remaining}。`;
         setText('[data-status]', snapshot.phase === 'paused' ? '一時停止中。再開ボタンで続けられます。' : snapshot.phase === 'gameover' ? endMessage : snapshot.phase === 'running' ? `プレイ中。残球数${remaining}。` : 'ホーム');
         if (snapshot.phase === 'paused') { overlay.scrollTop = 0; focusPause(); }
         else {

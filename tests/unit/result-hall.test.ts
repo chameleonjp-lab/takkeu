@@ -2,7 +2,7 @@ import { expect, it } from 'vitest';
 import { createResultHall } from '../../src/ranking/resultHall';
 import type { Play } from '../../src/ranking/client';
 
-const play: Play = { startId: 'start', playId: 'first', displayName: '名前', normalizedName: '名前', rulesVersion: 'goal-3000-v1' };
+const play: Play = { startId: 'start', playId: 'first', displayName: '名前', normalizedName: '名前', rulesVersion: 'goal-3500-v1' };
 const hall = { number: 3, displayName: '名前', normalizedName: '名前', registeredAt: '2026-10-27T03:00:00Z' };
 it('keeps a delayed hall receipt attached to its play and submission', () => {
   const result = createResultHall(); result.show(play);

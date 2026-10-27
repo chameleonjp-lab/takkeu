@@ -27,12 +27,12 @@ export async function createCertificateImage(data: CertificateData, doc = docume
     text('賞 状', 278, 96, '#203a45', '700');
     ctx.beginPath(); ctx.moveTo(285, 321); ctx.lineTo(615, 321); ctx.stroke();
     text(`${data.hall?.displayName ?? data.name} 殿`, 426, 58, '#203a45', '700');
-    text(data.hall ? `殿堂登録 第${data.hall.number}号` : '3000ラリー達成', 510, 35, '#997134', '700');
+    text(data.hall ? `殿堂登録 第${data.hall.number}号` : '3500ラリー達成', 510, 35, '#997134', '700');
     text('あなたはタッケウにおいて', 617, 29);
-    text('3000ラリーを達成しました。', 670, 32, '#203a45', '700');
+    text('3500ラリーを達成しました。', 670, 32, '#203a45', '700');
     text('その集中力と正確な返球を', 733, 27);
     text('ここに称えます。', 777, 27);
-    text('3000 RALLY CLEAR', 893, 39, '#997134', '700');
+    text('3500 RALLY CLEAR', 893, 39, '#997134', '700');
     const date = certificateDate(data.hall?.registeredAt ?? data.achievedAt);
     text(data.hall ? `殿堂登録日 ${date}（UTC）` : `達成日 ${date}（端末時刻・UTC）`, 982, 23);
     text(`今回の落球数 ${data.lostBalls}球`, 1026, 23);
@@ -46,7 +46,7 @@ export function createCertificateControls(host: HTMLElement) {
   host.innerHTML = `<h3>クリア賞状</h3><p>画像を作って保存できます。</p>
     <button type="button" class="button subtle" data-certificate-create>賞状画像を作る</button>
     <p data-certificate-message role="status" aria-live="polite"></p>
-    <div data-certificate-preview hidden><img data-certificate-image alt="3000ラリー達成賞状" width="900" height="1200">
+    <div data-certificate-preview hidden><img data-certificate-image alt="3500ラリー達成賞状" width="900" height="1200">
       <a class="button subtle" data-certificate-download target="_blank" rel="noopener noreferrer">画像を保存</a>
       <button type="button" class="button subtle" data-certificate-share hidden>賞状画像を共有</button>
       <p>保存できない場合は、画像を長押しして保存できます。</p></div>`;
@@ -70,9 +70,9 @@ export function createCertificateControls(host: HTMLElement) {
       if (request !== epoch) return;
       if (url) URL.revokeObjectURL(url);
       url = URL.createObjectURL(blob);
-      const filename = current.hall ? `takkeu-hall-${current.hall.number}.png` : 'takkeu-3000-clear.png';
+      const filename = current.hall ? `takkeu-3500-hall-${current.hall.number}.png` : 'takkeu-3500-clear.png';
       file = new File([blob], filename, { type: 'image/png' });
-      image.src = url; image.alt = current.hall ? `${current.hall.displayName}の殿堂入り賞状・殿堂登録 第${current.hall.number}号` : `${current.name}の3000ラリー達成賞状（殿堂番号なし）`;
+      image.src = url; image.alt = current.hall ? `${current.hall.displayName}の3500ラリー殿堂入り賞状・殿堂登録 第${current.hall.number}号` : `${current.name}の3500ラリー達成賞状（殿堂番号なし）`;
       link.href = url; link.download = filename; preview.hidden = false;
       share.hidden = true;
       try { share.hidden = !(typeof navigator.canShare === 'function' && navigator.canShare({ files: [file] })); }
@@ -84,7 +84,7 @@ export function createCertificateControls(host: HTMLElement) {
   const shareImage = async () => {
     if (!file || typeof navigator.share !== 'function') return;
     const request = epoch, sharedFile = file;
-    try { await navigator.share({ files: [sharedFile], title: 'タッケウ 3000ラリー達成賞状' }); }
+    try { await navigator.share({ files: [sharedFile], title: 'タッケウ 3500ラリー達成賞状' }); }
     catch (error) {
       if (request === epoch && file === sharedFile && !(error instanceof DOMException && error.name === 'AbortError')) {
         message.textContent = '共有できませんでした。「画像を保存」か画像の長押しをご利用ください。';

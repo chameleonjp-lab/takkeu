@@ -1,5 +1,5 @@
 import { RANKING_CONFIG as config } from './config';
-import { createRankingClient, RankingError, validLostBalls, validScore, validUuid, validPendingContract } from './client';
+import { createRankingClient, RankingError, validLostBalls, validScore, validUuid, validPendingContract, clientVersionForPlay } from './client';
 import type { HallEntry, PendingResult, Play, RankingApi } from './client';
 import type { StorageLike } from '../storage/preferences';
 import { createGuestPlayCounter } from './guestPlays';
@@ -46,7 +46,7 @@ export function createRankingController(storage: StorageLike, api: RankingApi = 
         let next = pending.find(row => !row.permanentFailure);
         if (!next) { status = pending.length ? 'permanent_failed' : 'submitted'; notify(); return; }
         const selectedId = next.submissionId;
-        const needsHall = next.resultType === 'clear' && next.play.rulesVersion === 'goal-3000-v1';
+        const needsHall = next.resultType === 'clear' && !!next.play.rulesVersion;
         submission(next, next.scoreAcknowledged ? 'submitted' : 'submitting', needsHall ? { hallStatus: 'pending' } : {});
         try {
           if (!needsHall || !next.scoreAcknowledged) {
@@ -101,9 +101,10 @@ export function createRankingController(storage: StorageLike, api: RankingApi = 
     finish(play: Play | null, score: number, resultType: PendingResult['resultType'], lostBalls?: number): void {
       if (!play || finished.has(play.playId)) return;
       if (!validScore(score) || (lostBalls !== undefined && !validLostBalls(lostBalls))) { status = 'permanent_failed'; notify(); return; }
-      finished.add(play.playId);
-      pending.push({ play, submissionId: crypto.randomUUID(), score, resultType, clientVersion: play.rulesVersion ? config.clientVersion : config.legacyClientVersion,
-        ...(lostBalls === undefined ? {} : { lostBalls }) });
+      const row: PendingResult = { play, submissionId: crypto.randomUUID(), score, resultType, clientVersion: clientVersionForPlay(play),
+        ...(lostBalls === undefined ? {} : { lostBalls }) };
+      if (!validPendingContract(row)) { status = 'permanent_failed'; notify(); return; }
+      finished.add(play.playId); pending.push(row);
       submission(pending.at(-1)!, 'submitting');
       persist(); void retry();
     },

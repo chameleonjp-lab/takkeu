@@ -33,7 +33,7 @@ export function createRallyNotice(root: HTMLElement) {
       const showNotice=!!n&&active(n.at,t,n.major?2.5:1.8);
       const isMajor=showNotice&&n!.major;
       const chosen=isMajor?'major':best?'best':showNotice?'notice':'';
-      const text=chosen==='best'?'自己ベスト更新！':chosen?(n!.major||n!.score>=2000?`${n!.score} RALLY`:`${n!.score} RALLY · ${resultComment(n!.score)}`):'';
+      const text=chosen==='best'?'自己ベスト更新！':chosen?(n!.major||n!.score>=2000?n!.score===3500?'3500 RALLY · CLEAR!':n!.score===3000?'3000 RALLY · まだ続く！':`${n!.score} RALLY`:`${n!.score} RALLY · ${resultComment(n!.score)}`):'';
       toast.hidden=!visible||!text;toast.dataset.kind=chosen;
       if(label.textContent!==text)label.textContent=text;
       const age=isMajor?t-n!.at:0;
