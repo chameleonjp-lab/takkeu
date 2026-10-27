@@ -8,7 +8,9 @@ const image = 'postgres:17@sha256:b8faeff7712663c2773a190181e1246e37e364b887611c
 const env = { ...process.env };
 for (const key of ['DOCKER_HOST','DOCKER_CONTEXT','DOCKER_TLS','DOCKER_TLS_VERIFY','DOCKER_CERT_PATH']) delete env[key];
 const docker = args => execFileSync('docker', ['--host=unix:///var/run/docker.sock', ...args], { env, encoding: 'utf8', stdio: ['pipe','pipe','pipe'] });
-const args = ['--host=unix:///var/run/docker.sock', 'exec', '-i', container, 'psql', '-U', 'postgres', '-v', 'ON_ERROR_STOP=1', '-At'];
+// The image briefly starts a socket-only bootstrap server, then restarts it.
+// TCP becomes ready only for the final server, so fixtures cannot race shutdown.
+const args = ['--host=unix:///var/run/docker.sock', 'exec', '-i', container, 'psql', '-h', '127.0.0.1', '-U', 'postgres', '-v', 'ON_ERROR_STOP=1', '-At'];
 const query = sql => execFileSync('docker', args, { env, encoding: 'utf8', input: sql, maxBuffer: 4 * 1024 * 1024 }).trim();
 const receipt = value => JSON.parse(value.split('\n').find(line => line.startsWith('{')));
 const id = n => `11111111-1111-4111-8111-${String(n).padStart(12, '0')}`;
