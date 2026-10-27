@@ -17,6 +17,7 @@ import { createRankingClient } from '../ranking/client';
 import type { Play, RankingApi } from '../ranking/client';
 import { createRankingController, validateName } from '../ranking/controller';
 import { createResultPosition } from '../ranking/resultPosition';
+import { createResultHall } from '../ranking/resultHall';
 import { createFinishPresentation } from './finishPresentation';
 import type { InputMapping } from '../input/mapping';
 import { createLoadingScreen } from '../ui/loading';
@@ -74,13 +75,18 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     screens.setRankingState(state);
     const recorded = state.pendingCount < observedPending; observedPending = state.pendingCount;
     if ((state.status === 'submitted' || recorded) && session.snapshot().phase === 'gameover') void refreshLeaderboard();
-  }, event => { if (!disposed) void resultPosition.submission(event); });
+  }, event => { if (!disposed) { void resultPosition.submission(event); resultHall.submission(event); } });
   const resultPosition = createResultPosition(rankingApi, state => { if (!disposed) screens.setResultPosition(state); });
+  const resultHall = createResultHall(state => { if (!disposed) screens.setResultHall(state); });
   observedPending = ranking.state().pendingCount;
   screens.setPlayerName(ranking.name()); screens.setRankingState(ranking.state());
   async function refreshLeaderboard(): Promise<void> {
     const epoch = ++leaderboardEpoch;
     screens.setLeaderboard('loading');
+    screens.setHallOfFame('loading');
+    void (rankingApi.hallOfFame ? rankingApi.hallOfFame() : Promise.resolve([])).then(rows => {
+      if (!disposed && epoch === leaderboardEpoch) screens.setHallOfFame('loaded', rows);
+    }).catch(() => { if (!disposed && epoch === leaderboardEpoch) screens.setHallOfFame('error'); });
     try {
       const rows = await rankingApi.top();
       if (!disposed && epoch === leaderboardEpoch) screens.setLeaderboard('loaded', rows);
@@ -241,6 +247,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     }
   }
   function beginRun(play: Play | null): void {
+    resultHall.clear(); wasFinishing = false;
     ranking.finish(activePlay, session.snapshot().score, 'retire', session.snapshot().lostBallCount);
     activePlay = play; leaderboardEpoch++;
     nextProgressReportAt = performance.now() + 15000; progressReportInFlight = false;
@@ -275,6 +282,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   }
   function home(): void {
     resultPosition.clear();
+    resultHall.clear();
     if(starting)ranking.abandonStart();pendingStart?.abort();pendingStart=null;retirePreparingPlay();loadingProgress=null;loadingError=null;loadingScreen.show(null);screens.setPreparing(false);
     startEpoch++; leaderboardEpoch++; starting = false; screens.setStarting(false); screens.setContextAvailable(contextAvailable);
     ranking.finish(activePlay, session.snapshot().score, 'retire', session.snapshot().lostBallCount); activePlay = null;
@@ -333,10 +341,11 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     const presentation = finishPresentation.frame(result.snapshot, now, effectEnd);
     if (result.snapshot.phase === 'gameover' && observedPhase !== 'gameover') {
       swipe.cancel(); timeline.clear(result.snapshot.paddle); persist();
-      if (!presentation.finishing) silence();
+      if (!presentation.finishing && result.snapshot.endReason !== 'clear') silence();
       screens.setRankingParticipation(!!activePlay);
       resultPosition.show(activePlay);
-      ranking.finish(activePlay, result.snapshot.score, 'game_over', result.snapshot.lostBallCount); activePlay = null;
+      if (result.snapshot.endReason === 'clear') resultHall.show(activePlay); else resultHall.clear();
+      ranking.finish(activePlay, result.snapshot.score, result.snapshot.endReason === 'clear' ? 'clear' : 'game_over', result.snapshot.lostBallCount); activePlay = null;
       void refreshLeaderboard();
     }
     // Continue the last celebration without advancing gameplay. Once it ends,

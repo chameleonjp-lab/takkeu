@@ -1,20 +1,30 @@
 import { RANKING_CONFIG as config } from './config';
 
-export type Play = Readonly<{ startId: string; playId: string; displayName: string; normalizedName: string }>;
-export type PendingResult = Readonly<{ play: Play; submissionId: string; score: number; resultType: 'game_over' | 'retire'; clientVersion: string; lostBalls?: number; permanentFailure?: boolean }>;
+export type Play = Readonly<{ startId: string; playId: string; displayName: string; normalizedName: string; rulesVersion?: 'goal-3000-v1' }>;
+export type PendingResult = Readonly<{ play: Play; submissionId: string; score: number; resultType: 'clear' | 'game_over' | 'retire'; clientVersion: string; lostBalls?: number; permanentFailure?: boolean; scoreAcknowledged?: boolean }>;
+export type HallEntry = Readonly<{ number: number; displayName: string; normalizedName: string; registeredAt: string }>;
 export type RankingEntry = Readonly<{ rank: number; displayName: string; score: number; playCount: number }>;
 export type PlayerPosition = Readonly<{ rank: number; total: number; bestScore: number }>;
 export type ProgressReport = Readonly<{ score: number; simSeconds: number; ballCount: number; lostBalls: number }>;
 // Progress telemetry is optional so older injected clients/tests and transient network failures still work.
-export type RankingApi = Omit<ReturnType<typeof createRankingClient>, 'progress'> & {
+export type RankingApi = Omit<ReturnType<typeof createRankingClient>, 'progress' | 'hall' | 'hallOfFame'> & {
   progress?: (play: Play, report: ProgressReport) => Promise<void>;
+  hall?: (pending: PendingResult) => Promise<HallEntry | null>;
+  hallOfFame?: () => Promise<HallEntry[]>;
 };
 export class RankingError extends Error {
-  constructor(readonly retryable: boolean, message: string) { super(message); }
+  constructor(readonly retryable: boolean, message: string, readonly reason?: string) { super(message); }
 }
 export const validUuid = (value: unknown): value is string => typeof value === 'string' && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(value);
 export const validScore = (value: unknown): value is number => typeof value === 'number' && Number.isSafeInteger(value) && value >= config.minScore && value <= config.maxScore;
 export const validLostBalls = (value: unknown): value is number => typeof value === 'number' && Number.isSafeInteger(value) && value >= 0 && value <= 100;
+export function validPendingContract(row: PendingResult): boolean {
+  if (row.clientVersion === config.legacyClientVersion) return !row.play.rulesVersion && ['game_over', 'retire'].includes(row.resultType);
+  return row.clientVersion === config.clientVersion && row.play.rulesVersion === 'goal-3000-v1'
+    && validLostBalls(row.lostBalls) && row.score <= 3000
+    && (row.resultType === 'clear' ? row.score === 3000 && row.lostBalls < 100
+      : ['game_over', 'retire'].includes(row.resultType) && row.score < 3000);
+}
 const record = (value: unknown): Record<string, unknown> => value && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : {};
 const validName = (value: unknown): value is string => typeof value === 'string' && value.trim() === value && [...value].length >= 1 && [...value].length <= config.maxNameLength;
 function requireResponse(valid: boolean): asserts valid { if (!valid) throw new RankingError(false, 'ランキングの応答を確認できませんでした。'); }
@@ -35,7 +45,8 @@ export function createRankingClient(fetchImpl: typeof fetch = (...args) => globa
         throw new RankingError(retryable, `ランキング通信に失敗しました（${response.status}）。`);
       }
       if (record(data).accepted === false) {
-        throw new RankingError(record(data).reason === 'play_rate_limited', 'ランキングへの記録を受け付けられませんでした。');
+        const reason = record(data).reason;
+        throw new RankingError(reason === 'play_rate_limited', 'ランキングへの記録を受け付けられませんでした。', typeof reason === 'string' ? reason : undefined);
       }
       return data;
     } catch (error) {
@@ -43,39 +54,46 @@ export function createRankingClient(fetchImpl: typeof fetch = (...args) => globa
       throw new RankingError(true, 'ランキングに接続できません。通信を確認して再送してください。');
     } finally { globalThis.clearTimeout(timeout); }
   }
-  const identity = (play: Play) => ({ p_display_name: play.displayName, p_game_slug: config.gameSlug, p_client_version: config.clientVersion });
+  const identity = (play: Play, version = play.rulesVersion ? config.clientVersion : config.legacyClientVersion) => ({ p_display_name: play.displayName, p_game_slug: config.gameSlug, p_client_version: version });
+  const hallEntry = (value: unknown): HallEntry => {
+    const row = record(value);
+    requireResponse(Number.isSafeInteger(row.hall_number) && Number(row.hall_number) > 0 && validName(row.display_name)
+      && validName(row.normalized_name) && typeof row.registered_at === 'string'
+      && /(?:Z|[+-]\d{2}:\d{2})$/.test(row.registered_at) && Number.isFinite(Date.parse(row.registered_at)));
+    return { number: Number(row.hall_number), displayName: row.display_name, normalizedName: row.normalized_name, registeredAt: row.registered_at };
+  };
   return {
     async startGuest(startId: string): Promise<void> {
       requireResponse(validUuid(startId));
-      const data = record(await rpc(config.guestStartRpc, { p_start_id: startId, p_game_slug: config.gameSlug, p_client_version: config.clientVersion }));
+      const data = record(await rpc(config.guestStartRpc, { p_start_id: startId, p_game_slug: config.gameSlug, p_client_version: config.guestClientVersion }));
       requireResponse(data.accepted === true && data.start_id === startId && validUuid(data.play_id)
-        && data.game_slug === config.gameSlug && data.client_version === config.clientVersion);
+        && data.game_slug === config.gameSlug && data.client_version === config.guestClientVersion);
     },
     async start(startId: string, displayName: string): Promise<Play> {
       requireResponse(validUuid(startId) && validName(displayName));
       const data = record(await rpc(config.startRpc, { p_start_id: startId, p_display_name: displayName, p_game_slug: config.gameSlug, p_client_version: config.clientVersion }));
-      requireResponse(data.accepted === true && data.start_id === startId && validUuid(data.play_id) && data.display_name === displayName && typeof data.normalized_name === 'string' && data.normalized_name.length > 0 && data.game_slug === config.gameSlug && data.client_version === config.clientVersion);
-      return { startId, playId: data.play_id, displayName, normalizedName: data.normalized_name };
+      requireResponse(data.accepted === true && data.start_id === startId && validUuid(data.play_id) && data.display_name === displayName && typeof data.normalized_name === 'string' && data.normalized_name.length > 0 && data.game_slug === config.gameSlug && data.client_version === config.clientVersion && data.rules_version === 'goal-3000-v1');
+      return { startId, playId: data.play_id, displayName, normalizedName: data.normalized_name, rulesVersion: 'goal-3000-v1' };
     },
     async finish(pending: PendingResult): Promise<void> {
       const withFinalLossCount = pending.lostBalls !== undefined;
       requireResponse(validScore(pending.score) && validUuid(pending.play.playId) &&
-        pending.clientVersion === config.clientVersion && (!withFinalLossCount || validLostBalls(pending.lostBalls)));
+        validPendingContract(pending) && (!withFinalLossCount || validLostBalls(pending.lostBalls)));
       // Pending results created by older releases have no loss count. Keep their
       // existing finish/retry path and record NULL rather than pretending zero.
-      const endpoint = withFinalLossCount ? config.finishWithLossRpc : config.finishRpc;
-      const payload = { ...identity(pending.play), p_play_id: pending.play.playId,
+      const endpoint = pending.play.rulesVersion ? config.clearFinishRpc : withFinalLossCount ? config.finishWithLossRpc : config.finishRpc;
+      const payload = { ...identity(pending.play, pending.clientVersion), p_play_id: pending.play.playId,
         p_result_type: pending.resultType, p_reached_wave: 1, p_score: pending.score,
         p_ranking_score: pending.score, ...(withFinalLossCount ? { p_lost_balls: pending.lostBalls } : {}) };
       const data = record(await rpc(endpoint, payload));
       requireResponse(data.accepted === true && data.play_id === pending.play.playId &&
         data.game_slug === config.gameSlug && data.result_type === pending.resultType &&
         data.reached_wave === 1 && data.score === pending.score &&
-        (!withFinalLossCount || data.lost_balls === pending.lostBalls));
+        (!withFinalLossCount || data.lost_balls === pending.lostBalls) && (!pending.play.rulesVersion || data.rules_version === 'goal-3000-v1'));
     },
     async submit(pending: PendingResult): Promise<void> {
-      requireResponse(validScore(pending.score) && validUuid(pending.submissionId) && validUuid(pending.play.playId) && pending.clientVersion === config.clientVersion);
-      const rows = await rpc(config.scoreRpc, { ...identity(pending.play), p_play_id: pending.play.playId, p_submission_id: pending.submissionId, p_score: pending.score });
+      requireResponse(validScore(pending.score) && validUuid(pending.submissionId) && validUuid(pending.play.playId) && validPendingContract(pending));
+      const rows = await rpc(config.scoreRpc, { ...identity(pending.play, pending.clientVersion), p_play_id: pending.play.playId, p_submission_id: pending.submissionId, p_score: pending.score });
       requireResponse(Array.isArray(rows) && rows.length === 1);
       const data = record(rows[0]);
       // Duplicate acknowledgements return the aggregate's current display name.
@@ -91,11 +109,27 @@ export function createRankingClient(fetchImpl: typeof fetch = (...args) => globa
         Number.isSafeInteger(report.lostBalls) && report.lostBalls >= 0 && report.lostBalls <= 100);
       const result = record(await rpc(config.progressRpc, {
         p_play_id: play.playId, p_display_name: play.displayName,
-        p_client_version: config.clientVersion, p_score: report.score,
+        p_client_version: identity(play).p_client_version, p_score: report.score,
         p_sim_seconds: Math.round(report.simSeconds * 1000) / 1000,
         p_ball_count: report.ballCount, p_lost_balls: report.lostBalls,
       }));
       requireResponse(result.accepted === true);
+    },
+    async hall(pending: PendingResult): Promise<HallEntry | null> {
+      requireResponse(validPendingContract(pending) && pending.resultType === 'clear' && validUuid(pending.submissionId) && validUuid(pending.play.playId));
+      let data: Record<string, unknown>;
+      try { data = record(await rpc(config.hallRpc, { p_display_name: pending.play.displayName, p_client_version: pending.clientVersion, p_play_id: pending.play.playId, p_submission_id: pending.submissionId })); }
+      catch (error) { if (error instanceof RankingError && error.reason === 'hall_ineligible') return null; throw error; }
+      requireResponse(data.accepted === true && data.play_id === pending.play.playId && data.submission_id === pending.submissionId
+        && data.rules_version === 'goal-3000-v1' && data.normalized_name === pending.play.normalizedName);
+      return hallEntry(data);
+    },
+    async hallOfFame(): Promise<HallEntry[]> {
+      const rows = await rpc(config.hallListRpc, { p_limit: 30 });
+      requireResponse(Array.isArray(rows) && rows.length <= 30);
+      const entries = rows.map(hallEntry);
+      requireResponse(entries.every((entry, i) => i === 0 || entry.number > entries[i - 1]!.number));
+      return entries;
     },
     async position(normalizedName: string): Promise<PlayerPosition | null> {
       requireResponse(validName(normalizedName));

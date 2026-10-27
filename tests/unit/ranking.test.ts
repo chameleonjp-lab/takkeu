@@ -8,13 +8,13 @@ const startId = '11111111-1111-4111-8111-111111111111';
 const playId = '22222222-2222-4222-8222-222222222222';
 const submissionId = '33333333-3333-4333-8333-333333333333';
 const play = { startId, playId, displayName: 'テスト', normalizedName: 'テスト' };
-const pending = { play, submissionId, score: 42, resultType: 'game_over' as const, clientVersion: RANKING_CONFIG.clientVersion };
+const pending = { play, submissionId, score: 42, resultType: 'game_over' as const, clientVersion: RANKING_CONFIG.legacyClientVersion };
 const storage = () => { const data = new Map<string, string>(); return {
   getItem: (key: string) => data.get(key) ?? null, setItem: (key: string, value: string) => { data.set(key, value); },
   removeItem: (key: string) => { data.delete(key); }, key: (index: number) => [...data.keys()][index] ?? null,
   get length() { return data.size; },
 }; };
-const acceptedStart = { accepted: true, start_id: startId, play_id: playId, display_name: 'テスト', normalized_name: 'テスト', game_slug: 'takkeu', client_version: RANKING_CONFIG.clientVersion };
+const acceptedStart = { accepted: true, start_id: startId, play_id: playId, display_name: 'テスト', normalized_name: 'テスト', game_slug: 'takkeu', client_version: RANKING_CONFIG.clientVersion, rules_version: 'goal-3000-v1' };
 const acceptedFinish = { accepted: true, play_id: playId, game_slug: 'takkeu', result_type: 'game_over', reached_wave: 1, score: 42 };
 const acceptedScore = [{ accepted: true, result_submission_id: submissionId, result_play_id: playId, result_display_name: 'テスト', result_normalized_name: 'テスト', result_first_score: 42, result_best_score: 42, result_play_count: 1 }];
 const response = (data: unknown, status = 200) => new Response(JSON.stringify(data), { status });
@@ -89,11 +89,11 @@ it('sends guest count-only RPC fields and validates its acknowledgement', async 
   const calls: unknown[] = [];
   const client = createRankingClient(async (_input, init) => {
     calls.push(JSON.parse(String(init!.body)));
-    return response({ accepted: true, start_id: startId, play_id: playId, game_slug: 'takkeu', client_version: RANKING_CONFIG.clientVersion });
+    return response({ accepted: true, start_id: startId, play_id: playId, game_slug: 'takkeu', client_version: RANKING_CONFIG.guestClientVersion });
   });
   await client.startGuest(startId);
-  expect(calls).toEqual([{ p_start_id: startId, p_game_slug: 'takkeu', p_client_version: RANKING_CONFIG.clientVersion }]);
-  const wrong = createRankingClient(async () => response({ accepted: true, start_id: submissionId, play_id: playId, game_slug: 'takkeu', client_version: RANKING_CONFIG.clientVersion }));
+  expect(calls).toEqual([{ p_start_id: startId, p_game_slug: 'takkeu', p_client_version: RANKING_CONFIG.guestClientVersion }]);
+  const wrong = createRankingClient(async () => response({ accepted: true, start_id: submissionId, play_id: playId, game_slug: 'takkeu', client_version: RANKING_CONFIG.guestClientVersion }));
   await expect(wrong.startGuest(startId)).rejects.toMatchObject({ retryable: false });
 });
 
@@ -196,9 +196,9 @@ it('uses bound fetch, no-store and the shared start/finish/submit contract', asy
     expect(this).toBe(globalThis); calls.push({ url: String(input), init: init! });
     return response(replies.shift());
   });
-  expect(await client.start(startId, 'テスト')).toEqual(play);
+  expect(await client.start(startId, 'テスト')).toEqual({ ...play, rulesVersion: 'goal-3000-v1' });
   await client.finish(pending); await client.submit(pending);
-  expect(calls.map(call => call.url.split('/').at(-1))).toEqual(['start_game_play_v1', 'finish_game_play_v1', 'submit_score_idempotent_v1']);
+  expect(calls.map(call => call.url.split('/').at(-1))).toEqual(['start_takkeu_clear_play_v1', 'finish_game_play_v1', 'submit_score_idempotent_v1']);
   expect(calls.every(call => call.init.cache === 'no-store')).toBe(true);
   expect(JSON.parse(String(calls[1]!.init.body))).toMatchObject({ p_score: 42, p_result_type: 'game_over', p_play_id: playId });
 });
@@ -274,7 +274,7 @@ it('sends a bounded, optional high-score progress report independently from the 
   expect(calls).toEqual([{
     rpc: 'report_takkeu_progress_v1',
     body: {
-      p_play_id: playId, p_display_name: 'テスト', p_client_version: RANKING_CONFIG.clientVersion,
+      p_play_id: playId, p_display_name: 'テスト', p_client_version: RANKING_CONFIG.legacyClientVersion,
       p_score: 210, p_sim_seconds: 15.123, p_ball_count: 4, p_lost_balls: 2,
     },
   }]);
@@ -293,7 +293,7 @@ it('sends the actual final loss count with game-over score and rejects invalid o
   });
   await client.finish(finalResult);
   expect(seen).toEqual([{ rpc: 'finish_takkeu_play_v2', body: {
-    p_display_name: 'テスト', p_game_slug: 'takkeu', p_client_version: RANKING_CONFIG.clientVersion,
+    p_display_name: 'テスト', p_game_slug: 'takkeu', p_client_version: RANKING_CONFIG.legacyClientVersion,
     p_play_id: playId, p_result_type: 'game_over', p_reached_wave: 1,
     p_score: 42, p_ranking_score: 42, p_lost_balls: 1,
   } }]);

@@ -13,11 +13,12 @@ async function mockRanking(page: import('@playwright/test').Page, failScore = fa
     if (rpc === 'submit_score_idempotent_v1' && failScore && !failed) { failed = true; await route.fulfill({ status: 503, json: { code: 'unavailable' } }); return; }
     if (rpc === 'start_takkeu_guest_play_v1' && failGuest && !guestFailed) { guestFailed = true; await route.fulfill({ status: 503, json: { code: 'unavailable' } }); return; }
     let data: unknown;
-    if (rpc === 'start_game_play_v1') data = { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', display_name: body.p_display_name, normalized_name: body.p_display_name, client_version: version };
+    if (rpc === 'start_takkeu_clear_play_v1') data = { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', display_name: body.p_display_name, normalized_name: body.p_display_name, client_version: 'takkeu-web-clear-1', rules_version: 'goal-3000-v1' };
     if (rpc === 'start_takkeu_guest_play_v1') data = { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', client_version: version };
-    if (rpc === 'finish_takkeu_play_v2') data = { accepted: true, play_id: body.p_play_id, game_slug: 'takkeu', result_type: body.p_result_type, reached_wave: 1, score: body.p_score, lost_balls: body.p_lost_balls };
+    if (rpc === 'finish_takkeu_clear_play_v1') data = { accepted: true, play_id: body.p_play_id, game_slug: 'takkeu', result_type: body.p_result_type, reached_wave: 1, score: body.p_score, lost_balls: body.p_lost_balls, rules_version: 'goal-3000-v1' };
     if (rpc === 'submit_score_idempotent_v1') data = [{ accepted: true, result_submission_id: body.p_submission_id, result_play_id: body.p_play_id, result_display_name: body.p_display_name, result_normalized_name: body.p_display_name, result_first_score: body.p_score, result_best_score: body.p_score, result_play_count: 1 }];
     if (rpc === 'get_takkeu_player_position_v1') data = [{ rank_no: 123, total_entries: 250, best_score: 1500 }];
+    if (rpc === 'get_takkeu_hall_v1') data = [];
     if (rpc === 'get_best_score_ranking') data = Array.from({ length: 30 }, (_, i) => ({ rank_no: i < 2 ? 1 : i + 1, display_name: `プレイヤー${i + 1}`, best_score: 100 - i, play_count: i + 1 }));
     await route.fulfill({ json: data });
   });
@@ -42,7 +43,7 @@ test('名前なしで遊べて結果には上位30名と正式URLのXシェア�
   const starts = () => calls.filter(call => call.rpc === 'start_takkeu_guest_play_v1');
   expect(starts()).toHaveLength(1);
   expect(starts()[0]!.body).toEqual({ p_start_id: expect.stringMatching(/^[0-9a-f-]{36}$/), p_game_slug: 'takkeu', p_client_version: version });
-  expect(calls.filter(call => ['start_game_play_v1', 'finish_game_play_v1', 'submit_score_idempotent_v1'].includes(call.rpc))).toEqual([]);
+  expect(calls.filter(call => ['start_takkeu_clear_play_v1', 'finish_game_play_v1', 'submit_score_idempotent_v1'].includes(call.rpc))).toEqual([]);
   await expect(page.locator('[data-ranking-participation]')).toContainText('名前なし');
   await expect(page.locator('[data-ranking-participation]')).toContainText('プレイ回数のみ');
   const share = new URL(await page.locator('[data-share-x]').getAttribute('href') ?? '');
@@ -84,7 +85,7 @@ test('通信不能で始めた匿名2回の記録を再読込後も保ち復旧�
       accepted.add(String(body.p_start_id));
       await route.fulfill({ json: { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', client_version: version } }); return;
     }
-    expect(rpc).toBe('get_best_score_ranking'); await route.fulfill({ json: [] });
+    expect(['get_best_score_ranking', 'get_takkeu_hall_v1']).toContain(rpc); await route.fulfill({ json: [] });
   });
   await open(page); await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   await waitForStart(page);
@@ -122,7 +123,7 @@ test('名前ありは開始時に一度記録し通常終了を自動送信す�
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   await waitForStart(page);
   await expect(page.getByTestId('game-screen')).toBeVisible();
-  expect(calls.filter(call => call.rpc === 'start_game_play_v1')).toHaveLength(1);
+  expect(calls.filter(call => call.rpc === 'start_takkeu_clear_play_v1')).toHaveLength(1);
   expect(calls[0]!.body.p_display_name).toBe('テスト');
   expect(calls.filter(call => call.rpc === 'submit_score_idempotent_v1')).toHaveLength(0);
   await finish(page, 42);
@@ -131,7 +132,7 @@ test('名前ありは開始時に一度記録し通常終了を自動送信す�
   const finalLosses = await page.evaluate(() => window.stage3.snapshot().lostBallCount);
   expect(finalLosses).toBeGreaterThan(0);
   expect(finalLosses).toBeLessThanOrEqual(100);
-  expect(calls.find(call => call.rpc === 'finish_takkeu_play_v2')!.body).toMatchObject({
+  expect(calls.find(call => call.rpc === 'finish_takkeu_clear_play_v1')!.body).toMatchObject({
     p_play_id: playId, p_score: 42, p_result_type: 'game_over',
     p_lost_balls: finalLosses,
   });
@@ -146,7 +147,7 @@ test('送信失敗後も結果と共有を保ち同じIDで再送する', async 
   const retry = page.getByRole('button', { name: '記録を再送する' }); await expect(retry).toBeVisible();
   await expect(page.locator('[data-result-score]')).toHaveText('7');
   await expect(page.locator('[data-share-x]')).toBeVisible();
-  const finalizations = calls.filter(call => call.rpc === 'finish_takkeu_play_v2');
+  const finalizations = calls.filter(call => call.rpc === 'finish_takkeu_clear_play_v1');
   expect(finalizations).toHaveLength(1);
   expect(finalizations[0]!.body.p_lost_balls).toBeGreaterThan(0);
   const first = calls.find(call => call.rpc === 'submit_score_idempotent_v1')!.body;
@@ -154,7 +155,7 @@ test('送信失敗後も結果と共有を保ち同じIDで再送する', async 
   await expect(page.locator('[data-ranking-status]')).toHaveText('ランキングに記録しました。');
   expect(calls.filter(call => call.rpc === 'submit_score_idempotent_v1').map(call => call.body)).toEqual([first, first]);
   // Replaying the same pending result must carry the same final loss count.
-  expect(calls.filter(call => call.rpc === 'finish_takkeu_play_v2').map(call => call.body.p_lost_balls))
+  expect(calls.filter(call => call.rpc === 'finish_takkeu_clear_play_v1').map(call => call.body.p_lost_balls))
     .toEqual([finalizations[0]!.body.p_lost_balls, finalizations[0]!.body.p_lost_balls]);
 });
 

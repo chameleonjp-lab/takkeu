@@ -13,6 +13,18 @@ const boot = async (audioVoiceLimit = 8) => {
 const phrase = (t: ReturnType<typeof layeredAudioContext>) => t.sources.filter(source => source.stops[0]! > .5);
 
 describe('extended rally audio', () => {
+  it('lets the 3000 clear fanfare finish, stops contacts, and rejects later gameplay sounds', async () => {
+    const { t, audio } = await boot(); audio.consume([hit(3000)]);
+    const notes = phrase(t), count = t.sources.length;
+    audio.consume([{ kind: 'game-clear', id: 'clear', runId: 'run', time: 0 }]);
+    expect(notes.length).toBeGreaterThanOrEqual(4);
+    expect(notes.every(source => !source.record.disconnected && source.stops.length === 1)).toBe(true);
+    expect(t.sources.filter(source => !notes.includes(source)).every(source => source.record.disconnected)).toBe(true);
+    audio.consume([hit(3001, 'after', 1), { kind: 'smash-warning', id: 'late-warning', runId: 'run', time: 1 }]);
+    expect(t.sources).toHaveLength(count);
+    t.finishAll(); expect(t.sources.every(source => source.record.disconnected)).toBe(true);
+    await audio.dispose();
+  });
   it.each([1000, 3000, 4000])('replaces the ordinary hundred phrase at %s with a distinct longer cue exactly once', async score => {
     const { t, audio } = await boot(); audio.consume([hit(score)]);
     const notes = phrase(t), count = t.sources.length;

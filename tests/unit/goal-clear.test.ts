@@ -65,3 +65,17 @@ it('new sessions and resets have no previous clear outcome', () => {
   s.start(); s.reset(8);
   expect(s.snapshot()).toMatchObject({ phase: 'ready', score: 0, endReason: null });
 });
+
+it.each(['loss-first', 'clear-first'] as const)('keeps the existing action order when terminal events compete: %s', order => {
+  const s = scenario(2999); s.state.lostBallCount = 99;
+  s.state.balls = order === 'loss-first'
+    ? [ballLostAt(1, 20.001, 20), incoming(2, 20.5, INITIAL_PADDLE, 20, .5)]
+    : [incoming(1, 20.05), ballLostAt(2, 20.1, 20)];
+  const events = [];
+  for (let n = 0; n < 30 && s.state.phase === 'running'; n++) events.push(...s.step().events);
+  expect(s.snapshot()).toMatchObject(order === 'loss-first'
+    ? { score: 2999, phase: 'gameover', endReason: 'loss', lostBallCount: 100 }
+    : { score: 3000, phase: 'gameover', endReason: 'clear', lostBallCount: 99 });
+  expect(events.filter(e => e.kind === 'game-clear')).toHaveLength(order === 'loss-first' ? 0 : 1);
+  expect(events.filter(e => e.kind === 'game-over')).toHaveLength(order === 'loss-first' ? 1 : 0);
+});

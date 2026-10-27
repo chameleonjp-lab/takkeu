@@ -2,11 +2,12 @@
   "schema_version": "chameleonjp-ranking-manifest-v1",
   "game_id": "takkeu",
   "title": "タッケウ",
-  "description": "タップとドラッグでラケットを動かし、ラリーをつなぐ卓球ゲーム。",
-  "share_text": "タッケウで、もう1ラリーつなごう。",
+  "description": "タップとドラッグで3000ラリーのゲームクリアと殿堂入りを目指す卓球ゲーム。",
+  "share_text": "タッケウで3000ラリーの殿堂入りに挑戦。",
   "canonical_url": "https://chameleonjp-lab.github.io/takkeu/",
   "release_date": "2026-10-23",
-  "client_version": "takkeu-web-ranking-1",
+  "client_version": "takkeu-web-clear-1",
+  "game_clear": { "rally_goal": 3000, "hall_identity": "registered_name", "legacy_backfill": false },
   "submission_mode": "shared",
   "lab": { "representative_slug": "takkeu" },
   "player_name": {
@@ -16,7 +17,7 @@
     "max_length": 20,
     "storage_key": "chameleonjp_takkeu_player_name"
   },
-  "play_count": { "count_at": "start", "rpc": "start_game_play_v1", "guest_rpc": "start_takkeu_guest_play_v1", "includes_guests": true, "guest_scores": false, "idempotency": true },
+  "play_count": { "count_at": "start", "rpc": "start_takkeu_clear_play_v1", "guest_rpc": "start_takkeu_guest_play_v1", "includes_guests": true, "guest_scores": false, "idempotency": true },
   "submission": { "rpc": "submit_score_idempotent_v1", "automatic": true, "idempotency": true, "timeout_ms": 8000 },
   "player_position": { "rpc": "get_takkeu_player_position_v1", "basis": "best_score", "ties": "competition", "population_unit": "registered_names", "requires_submission_acknowledgement": true },
   "ranking_entries": [{
@@ -34,6 +35,6 @@
     "best_score_label": "最高ラリー数",
     "score_min": 0,
     "score_max": 100000000,
-    "ranked_results": ["game_over", "retire"]
+    "ranked_results": ["clear", "game_over", "retire"]
   }]
 }

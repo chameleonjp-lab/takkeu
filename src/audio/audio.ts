@@ -113,7 +113,7 @@ export function createAudio(config: GameConfig, contextFactory: () => AudioConte
         if (event.runId !== runId || !Number.isFinite(event.time) || event.time < seenTime || (event.time === seenTime && seen.has(event.id))) continue;
         if (event.time > seenTime) { seen.clear(); seenTime = event.time; }
         seen.add(event.id);
-        if (event.kind === 'game-over') { generation++; enabled = false; clearVoices(true); continue; }
+        if (event.kind === 'game-over' || event.kind === 'game-clear') { generation++; enabled = false; clearVoices(true); continue; }
         if (!enabled || muted || volume === 0 || !context || !bus || context.state !== 'running') continue;
         if (event.kind !== 'player-hit' && event.kind !== 'opponent-hit' && event.kind !== 'smash-warning') continue;
         try {

@@ -47,6 +47,11 @@ jobs:
         run: |
           set -o pipefail
           npm run test:unit 2>&1 | tee artifacts/unit.log
+      - name: Hall registration concurrency on disposable PostgreSQL
+        run: |
+          set -o pipefail
+          mkdir -p artifacts/goal-3000
+          node tests/helpers/checkHallConcurrency.mjs 2>&1 | tee artifacts/goal-3000/postgres-concurrency.log
       - name: Build and test root and Pages distributions
         run: |
           set -o pipefail

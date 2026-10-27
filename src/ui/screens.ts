@@ -1,12 +1,14 @@
 import courtPreviewUrl from './court-preview.png';
-import { MAX_LOST_BALLS } from '../game/config';
+import { CLEAR_SCORE, MAX_LOST_BALLS } from '../game/config';
 import type { GameSnapshot, PauseReason } from '../game/types';
 import { DEFAULT_PREFERENCES } from '../storage/preferences';
 import type { Preferences, Quality } from '../storage/preferences';
 import { RANKING_CONFIG, homeShareUrl, scoreShareUrl } from '../ranking/config';
-import type { RankingEntry } from '../ranking/client';
+import type { HallEntry, RankingEntry } from '../ranking/client';
 import type { RankingState } from '../ranking/controller';
 import type { ResultPositionState } from '../ranking/resultPosition';
+import type { ResultHallState } from '../ranking/resultHall';
+import { certificateDate, createCertificateControls } from './certificate';
 import { resultComment } from './resultComments';
 import { createResultEffects, resultEffectLevel } from './resultEffects';
 
@@ -25,11 +27,11 @@ export function createScreens(root: HTMLElement, actions: Actions) {
         <header class="brand"><span class="brand-mark" aria-hidden="true">t.</span><span>TAKKEU</span><span class="brand-note">卓球の、その先へ。</span></header>
         <div class="home-hero">
           <div class="hero-copy">
-            <p class="eyebrow"><span class="status-dot"></span> ONE BALL. ENDLESS RALLY.</p>
+            <p class="eyebrow"><span class="status-dot"></span> ROAD TO 3000 RALLIES.</p>
             <h1>タッケウ<span class="title-dot" aria-hidden="true">.</span></h1>
-            <p class="hero-lead">ワンバウンドをとらえて、<br>ラリーをつなぐ。</p>
-            <p class="hero-description">タップした位置にラケットを置き、ドラッグで球に合わせる。<br>自分の台で一度弾んだ球に触れれば、打ち返せます。<br>残球が0になるか、累計${MAX_LOST_BALLS}球落とすとゲーム終了です。</p>
-            <div class="player-field"><label for="player-name">ランキングの名前 <span>任意</span></label><input id="player-name" data-player-name type="text" maxlength="40" autocomplete="nickname" placeholder="名前なしでも遊べます" aria-describedby="name-note"><p id="name-note" data-name-note>20文字以内。入力すると名前と記録が公開され、カメレオンの実験場のランキングに参加します。同じ名前の記録は合算されます。名前なしのプレイも回数だけ記録します。</p></div>
+            <p class="hero-lead">3000ラリーをつないで、<br>殿堂入りを目指そう。</p>
+            <p class="hero-description">タップした位置にラケットを置き、ドラッグで球に合わせる。<br>自分の台で一度弾んだ球に触れれば、打ち返せます。<br>${CLEAR_SCORE}ラリーでゲームクリア。残球が0になるか、累計${MAX_LOST_BALLS}球落とすと終了です。</p>
+            <div class="player-field"><label for="player-name">ランキングの名前 <span>任意</span></label><input id="player-name" data-player-name type="text" maxlength="40" autocomplete="nickname" placeholder="名前なしでも遊べます" aria-describedby="name-note"><p id="name-note" data-name-note>20文字以内。入力すると名前と記録が公開され、ランキングに参加します。同じ名前の記録は合算され、初回クリアで殿堂登録番号が付きます。再クリアも同じ番号です。名前なしでもクリア賞状を作れますが、殿堂番号は付きません。過去の記録は殿堂登録の対象外です。</p></div>
             <button type="button" class="button primary start-button" data-action="start">はじめる <span aria-hidden="true">↗</span></button>
             <p class="start-note">2本指で短くタップ、またはEscキーで一時停止</p>
           </div>
@@ -48,7 +50,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
 
       <section class="game-screen" data-testid="game-screen" data-game hidden inert>
         <div class="input-surface" data-testid="input-surface"><div class="canvas-wrap"><canvas tabindex="0" aria-label="卓球ゲームの描画領域" aria-keyshortcuts="Escape"></canvas></div></div>
-        <div class="hud"><div><span class="eyebrow">RALLY</span><output aria-label="ラリー数" aria-live="off" class="rally-number" data-score>0</output></div><div class="balls-counter"><span class="eyebrow">残球数</span><output aria-label="残球数" aria-live="off" data-balls>1</output></div><div class="losses-counter"><span class="eyebrow">落球数</span><output aria-label="落球数" aria-live="off" data-losses>0 / ${MAX_LOST_BALLS}</output></div><p class="smash-warning" data-smash-warning role="status" hidden>スマッシュがくる！</p></div>
+        <div class="hud"><div><span class="eyebrow">RALLY / ${CLEAR_SCORE}</span><output aria-label="ラリー数" aria-live="off" class="rally-number" data-score>0</output></div><div class="balls-counter"><span class="eyebrow">残球数</span><output aria-label="残球数" aria-live="off" data-balls>1</output></div><div class="losses-counter"><span class="eyebrow">落球数</span><output aria-label="落球数" aria-live="off" data-losses>0 / ${MAX_LOST_BALLS}</output></div><p class="smash-warning" data-smash-warning role="status" hidden>スマッシュがくる！</p></div>
         <div class="game-notices" data-game-notices></div><p class="finish-label" data-finishing tabindex="-1" hidden>ゲーム終了</p>
         <div class="pause-overlay" role="dialog" aria-modal="true" aria-labelledby="pause-title" aria-describedby="pause-description" tabindex="-1" hidden inert><div class="pause-card"><p class="eyebrow">PAUSE</p><h2 id="pause-title">ひと休み</h2><p id="pause-description" data-pause-message></p><div data-pause-notices></div><button type="button" class="button primary" data-action="resume">つづける <span aria-hidden="true">→</span></button><button type="button" class="button subtle" data-action="retry">最初からやり直す</button><button type="button" class="text-button" data-action="home">ホームへ</button>${soundControls}</div></div>
       </section>
@@ -58,6 +60,8 @@ export function createScreens(root: HTMLElement, actions: Actions) {
         <p class="result-label">今回のラリー数</p>
         <div class="result-score-stage" data-result-effects><output class="result-score" aria-label="今回のラリー数" data-result-score>0</output><span class="result-unit" aria-hidden="true">RALLY</span></div>
         <h2 data-result-comment>次こそ決めよう！</h2>
+        <section class="hall-card" data-result-hall hidden aria-label="殿堂登録結果"><h3>殿堂入り</h3><p data-hall-message role="status" aria-live="polite"></p><p class="position-note" data-hall-note></p><button type="button" class="button subtle" data-action="hall-retry" hidden>殿堂登録を再送</button></section>
+        <section class="certificate-card" data-certificate hidden aria-label="クリア賞状"></section>
         <div class="result-position" data-result-position hidden role="group" aria-label="自己ベストの全登録順位">
           <p data-position-message role="status" aria-live="polite" aria-atomic="true"></p><span class="result-top100" data-top100 hidden>TOP 100入り！</span>
           <p class="position-note" data-position-note></p><button type="button" class="button subtle" data-action="position-retry" hidden>順位を再取得</button>
@@ -72,6 +76,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
           <div class="ranking-table-wrap"><table data-ranking-table hidden><caption class="sr-only">最高ラリー数の上位30名</caption><thead><tr><th scope="col">順位</th><th scope="col">名前</th><th scope="col">ラリー</th><th scope="col">回数</th></tr></thead><tbody data-ranking-body></tbody></table></div>
           <button type="button" class="button subtle" data-action="ranking-refresh">ランキングを更新</button><a class="lab-link" href="${RANKING_CONFIG.rankingUrl}">実験場で詳しいランキングを見る ↗</a>
         </section>
+        <section class="ranking-panel" aria-labelledby="hall-title"><p class="eyebrow">HALL OF FAME</p><h3 id="hall-title">3000ラリー 殿堂入り</h3><p class="ranking-caption">新ルールの初回クリア・登録順の先頭30件。同名の再クリアは同じ番号です。</p><p data-hall-list-message role="status">殿堂一覧を読み込んでいます。</p><ol class="hall-list" data-hall-list hidden></ol></section>
       </section>
       <div class="screen-notices" data-notices>
         <div class="ranking-notice" data-ranking-notice hidden><p data-ranking-status role="status"></p><button type="button" class="button subtle" data-action="ranking-retry" hidden>記録を再送する</button></div>
@@ -90,7 +95,11 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   const hud = get('.hud'), notices = get('[data-notices]');
   const doc = root.ownerDocument;
   const resultEffects = createResultEffects(get('[data-result-effects]'), get('[data-result-score]'));
+  const certificate = createCertificateControls(get('[data-certificate]'));
   let resultScore = 0;
+  let cleared = false, certificateRun = '';
+  let certificateBase: { achievedAt: string; lostBalls: number } | null = null;
+  let hallState: ResultHallState = { status: 'hidden' };
   let phase: GameSnapshot['phase'] = 'ready';
   let finishing = false, lastFinishing = false;
   let preparing = false;
@@ -98,7 +107,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   let lastRemaining = -1;
   let settingsOpen = false;
   const resultShare = get<HTMLAnchorElement>('[data-share-x]');
-  let shareScore: number | null = null;
+  let shareKey = '';
   const setInert = (node: HTMLElement, value: boolean): void => {
     node.inert = value; node.toggleAttribute('inert', value);
   };
@@ -106,7 +115,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   const updateVisibility = (): void => {
     show(home, !preparing && phase === 'ready' && !settingsOpen); show(settings, !preparing && phase === 'ready' && settingsOpen);
     show(game, preparing || phase === 'running' || phase === 'paused' || finishing); show(result, !preparing && phase === 'gameover' && !finishing); show(overlay, !preparing && phase === 'paused');
-    resultEffects.update(!result.hidden, resultScore);
+    resultEffects.update(!result.hidden && !cleared, resultScore);
     get('[data-finishing]').hidden = !finishing;
     setInert(surface, preparing || phase !== 'running'); setInert(hud, preparing || phase === 'paused');
     const host = get(phase === 'paused' ? '[data-pause-notices]' : phase === 'running' || finishing ? '[data-game-notices]' : phase === 'gameover' ? '[data-result-notices]' : settingsOpen ? '[data-settings-notices]' : '[data-home-notices]');
@@ -132,6 +141,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
     if (action === 'settings-back') showSettings(false);
     if (action === 'position-retry') actions.retryPosition?.();
     if (action === 'ranking-retry') actions.retryRanking?.();
+    if (action === 'hall-retry') actions.retryRanking?.();
     if (action === 'ranking-refresh') actions.refreshRanking?.();
   };
   const quality = get<HTMLSelectElement>('[aria-label="描画品質"]');
@@ -158,6 +168,22 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   root.addEventListener('input', input);
   root.addEventListener('change', change);
   const setText = (selector: string, value: string): void => { const node = get(selector); if (node.textContent !== value) node.textContent = value; };
+  const updateShare = (): void => {
+    if (phase !== 'gameover' && shareKey === 'inactive') return;
+    const number = hallState.status === 'registered' ? hallState.hall.number : undefined;
+    const key = phase === 'gameover' ? `${resultScore}:${cleared}:${number ?? ''}` : 'inactive';
+    if (shareKey === key) return;
+    shareKey = key;
+    const url = phase === 'gameover' ? scoreShareUrl(resultScore, cleared, number) : null;
+    if (url) { resultShare.href = url; resultShare.removeAttribute('aria-disabled'); resultShare.removeAttribute('tabindex'); }
+    else { resultShare.removeAttribute('href'); resultShare.setAttribute('aria-disabled', 'true'); resultShare.tabIndex = -1; }
+  };
+  const updateCertificate = (): void => {
+    certificate.set(cleared && certificateBase ? { ...certificateBase,
+      name: hallState.status === 'registered' ? hallState.hall.displayName : hallState.displayName ?? 'プレイヤー',
+      hall: hallState.status === 'registered' ? hallState.hall : null,
+    } : null);
+  };
   return {
     canvas, surface, canvasWrap: get<HTMLElement>('.canvas-wrap'),
     playerName() { return get<HTMLInputElement>('[data-player-name]').value; },
@@ -181,8 +207,31 @@ export function createScreens(root: HTMLElement, actions: Actions) {
     setRankingState(state: RankingState) {
       const messages = { idle: '', submitting: 'ランキングに記録しています。', submitted: 'ランキングに記録しました。', retryable_failed: '記録を送信できませんでした。通信を確認して再送できます。', permanent_failed: '記録を登録できませんでした。ゲームとシェアは引き続き利用できます。' };
       get('[data-ranking-notice]').hidden = state.status === 'idle';
-      setText('[data-ranking-status]', messages[state.status]);
+      setText('[data-ranking-status]', state.hallPendingCount === state.pendingCount && state.pendingCount > 0
+        ? state.status === 'permanent_failed' ? 'ラリー記録は送信済みですが、殿堂登録を確認できませんでした。' : 'ラリー記録は送信済みです。殿堂登録を確認・再送しています。'
+        : messages[state.status]);
       get('[data-action="ranking-retry"]').hidden = state.status !== 'retryable_failed';
+    },
+    setResultHall(state: ResultHallState) {
+      hallState = state;
+      get('[data-result-hall]').hidden = state.status === 'hidden';
+      const messages = { hidden: '', anonymous: '3000ラリー、クリアおめでとう！', pending: '殿堂登録を確認しています。', retryable_failed: '殿堂登録は再送できます。', failed: '殿堂登録を確認できませんでした。', ineligible: 'この登録名は現在、殿堂登録の対象外です。' };
+      setText('[data-hall-message]', state.status === 'registered' ? `殿堂登録 第${state.hall.number}号` : messages[state.status]);
+      setText('[data-hall-note]', state.status === 'registered' ? `${state.hall.displayName}・初回登録日 ${certificateDate(state.hall.registeredAt)}（UTC）。再クリアも同じ番号です。`
+        : state.status === 'anonymous' ? '名前なしのクリアです。達成賞状を作れます。殿堂番号は付きません。'
+        : state.status === 'pending' || state.status === 'retryable_failed' ? '正式な番号はサーバーでの登録完了後に表示します。'
+        : state.status === 'hidden' ? '' : '番号なしの達成賞状は作成できます。');
+      get('[data-action="hall-retry"]').hidden = state.status !== 'retryable_failed';
+      updateCertificate(); updateShare();
+    },
+    setHallOfFame(state: 'loading' | 'loaded' | 'error', rows: readonly HallEntry[] = []) {
+      const list = get<HTMLOListElement>('[data-hall-list]'); list.replaceChildren();
+      for (const entry of rows.slice(0, 30)) {
+        const item = doc.createElement('li');
+        item.textContent = `第${entry.number}号　${entry.displayName}　${certificateDate(entry.registeredAt)}（UTC）`; list.append(item);
+      }
+      list.hidden = state !== 'loaded' || !rows.length;
+      setText('[data-hall-list-message]', state === 'loading' ? '殿堂一覧を読み込んでいます。' : state === 'error' ? '殿堂一覧を取得できませんでした。「ランキングを更新」で再取得できます。' : rows.length ? '番号は登録名ごとの初回クリア順です。' : '最初の殿堂入りを目指そう。');
     },
     setLeaderboard(state: 'loading' | 'loaded' | 'error', rows: readonly RankingEntry[] = []) {
       const body = get('[data-ranking-body]'); body.replaceChildren();
@@ -198,6 +247,11 @@ export function createScreens(root: HTMLElement, actions: Actions) {
     render(snapshot: GameSnapshot, showingFinalEffects = false) {
       if (snapshot.phase !== 'ready') settingsOpen = false;
       resultScore = snapshot.score;
+      cleared = snapshot.phase === 'gameover' && snapshot.endReason === 'clear';
+      result.dataset.cleared = String(cleared);
+      if (cleared && certificateRun !== snapshot.runId) {
+        certificateRun = snapshot.runId; certificateBase = { achievedAt: new Date().toISOString(), lostBalls: snapshot.lostBallCount }; updateCertificate();
+      } else if (!cleared && certificateRun) { certificateRun = ''; certificateBase = null; certificate.set(null); }
       const level = resultEffectLevel(snapshot.score);
       result.dataset.scoreColor = level.color; result.dataset.resultTier = level.tier;
       get('[data-result-score]').dataset.digits = String(snapshot.score).length > 5 ? 'long' : 'short';
@@ -206,22 +260,14 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       get('[data-smash-warning]').hidden = !warning;
       const remaining = snapshot.balls.filter(ball => ball.phase !== 'lost').length;
       setText('[data-score]', String(snapshot.score)); setText('[data-balls]', String(remaining)); setText('[data-result-score]', String(snapshot.score));
-      if (phase === 'gameover') setText('[data-result] h2', resultComment(snapshot.score));
+      if (phase === 'gameover') setText('[data-result] h2', cleared ? '3000ラリー達成！ゲームクリア！' : resultComment(snapshot.score));
+      setText('[data-result] .result-header .eyebrow', cleared ? 'GAME CLEAR' : 'RALLY COMPLETE');
       setText('[data-losses]', `${snapshot.lostBallCount} / ${MAX_LOST_BALLS}`);
       get('[data-loss-limit-message]').hidden = snapshot.phase !== 'gameover' || snapshot.lostBallCount < MAX_LOST_BALLS;
-      const finalizedScore = snapshot.phase === 'gameover' ? snapshot.score : null;
-      if (!Object.is(shareScore, finalizedScore)) {
-        const url = finalizedScore === null ? null : scoreShareUrl(finalizedScore);
-        if (url) {
-          resultShare.href = url; resultShare.removeAttribute('aria-disabled'); resultShare.removeAttribute('tabindex');
-        } else {
-          resultShare.removeAttribute('href'); resultShare.setAttribute('aria-disabled', 'true'); resultShare.tabIndex = -1;
-        }
-        shareScore = finalizedScore;
-      }
+      updateShare();
       if (snapshot.phase === 'paused') setText('[data-pause-message]', pauseMessages[snapshot.pauseReason ?? 'user']);
       if (lastPhase !== snapshot.phase) {
-        const endMessage = `${snapshot.lostBallCount >= MAX_LOST_BALLS ? `累計${MAX_LOST_BALLS}球の落球で終了。` : '終了。'}${snapshot.score}ラリー。残球数${remaining}。`;
+        const endMessage = `${cleared ? '3000ラリー達成。ゲームクリア！' : snapshot.lostBallCount >= MAX_LOST_BALLS ? `累計${MAX_LOST_BALLS}球の落球で終了。` : '終了。'}${snapshot.score}ラリー。残球数${remaining}。`;
         setText('[data-status]', snapshot.phase === 'paused' ? '一時停止中。再開ボタンで続けられます。' : snapshot.phase === 'gameover' ? endMessage : snapshot.phase === 'running' ? `プレイ中。残球数${remaining}。` : 'ホーム');
         if (snapshot.phase === 'paused') { overlay.scrollTop = 0; focusPause(); }
         else {
@@ -250,6 +296,6 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       for (const button of root.querySelectorAll<HTMLButtonElement>('[data-action="resume"], [data-action="retry"]')) button.disabled = !available;
       if (phase === 'paused' && (!overlay.contains(doc.activeElement) || doc.activeElement?.matches(':disabled'))) focusPause();
     },
-    dispose() { resultEffects.dispose(); root.removeEventListener('click', click); root.removeEventListener('keydown', keydown); root.removeEventListener('input', input); root.removeEventListener('change', change); root.innerHTML = ''; },
+    dispose() { certificate.dispose(); resultEffects.dispose(); root.removeEventListener('click', click); root.removeEventListener('keydown', keydown); root.removeEventListener('input', input); root.removeEventListener('change', change); root.innerHTML = ''; },
   };
 }
