@@ -141,3 +141,23 @@ it('表示サイズが確定しない場合は期限で再試行へ進み、開�
   expect(t.results).toHaveLength(1);expect(t.results[0]!.resultType).toBe('retire');
   expect(vi.getTimerCount()).toBe(1);
 });
+
+
+it('records the real cumulative loss count when all balls are gone, even before 100 losses', async () => {
+  const t=setup({named:true});
+  t.click('[data-action="start"]');
+  await vi.advanceTimersByTimeAsync(300);
+  expect(t.session.snapshot().phase).toBe('running');
+  for(let tick=0;tick<3000&&t.session.snapshot().phase==='running';tick++){
+    t.session.step(DEFAULT_CONFIG.fixedDt,{target:{x:1,y:0.1}});
+  }
+  const ended=t.session.snapshot();
+  expect(ended.phase).toBe('gameover');
+  expect(ended.lostBallCount).toBeGreaterThan(0);
+  expect(ended.lostBallCount).toBeLessThan(100);
+  await vi.advanceTimersByTimeAsync(64);
+  expect(t.results.filter(row=>row.resultType==='game_over')).toHaveLength(1);
+  expect(t.results.find(row=>row.resultType==='game_over')).toMatchObject({
+    score:ended.score,lostBalls:ended.lostBallCount,
+  });
+});

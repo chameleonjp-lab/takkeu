@@ -15,7 +15,7 @@ async function mockRanking(page: import('@playwright/test').Page, failScore = fa
     let data: unknown;
     if (rpc === 'start_game_play_v1') data = { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', display_name: body.p_display_name, normalized_name: body.p_display_name, client_version: version };
     if (rpc === 'start_takkeu_guest_play_v1') data = { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', client_version: version };
-    if (rpc === 'finish_game_play_v1') data = { accepted: true, play_id: body.p_play_id, game_slug: 'takkeu', result_type: body.p_result_type, reached_wave: 1, score: body.p_score };
+    if (rpc === 'finish_takkeu_play_v2') data = { accepted: true, play_id: body.p_play_id, game_slug: 'takkeu', result_type: body.p_result_type, reached_wave: 1, score: body.p_score, lost_balls: body.p_lost_balls };
     if (rpc === 'submit_score_idempotent_v1') data = [{ accepted: true, result_submission_id: body.p_submission_id, result_play_id: body.p_play_id, result_display_name: body.p_display_name, result_normalized_name: body.p_display_name, result_first_score: body.p_score, result_best_score: body.p_score, result_play_count: 1 }];
     if (rpc === 'get_takkeu_player_position_v1') data = [{ rank_no: 123, total_entries: 250, best_score: 1500 }];
     if (rpc === 'get_best_score_ranking') data = Array.from({ length: 30 }, (_, i) => ({ rank_no: i < 2 ? 1 : i + 1, display_name: `プレイヤー${i + 1}`, best_score: 100 - i, play_count: i + 1 }));
@@ -128,7 +128,13 @@ test('名前ありは開始時に一度記録し通常終了を自動送信す�
   await finish(page, 42);
   await expect(page.locator('[data-ranking-status]')).toHaveText('ランキングに記録しました。');
   expect(calls.filter(call => call.rpc === 'submit_score_idempotent_v1')).toHaveLength(1);
-  expect(calls.find(call => call.rpc === 'finish_game_play_v1')!.body).toMatchObject({ p_play_id: playId, p_score: 42, p_result_type: 'game_over' });
+  const finalLosses = await page.evaluate(() => window.stage3.snapshot().lostBallCount);
+  expect(finalLosses).toBeGreaterThan(0);
+  expect(finalLosses).toBeLessThanOrEqual(100);
+  expect(calls.find(call => call.rpc === 'finish_takkeu_play_v2')!.body).toMatchObject({
+    p_play_id: playId, p_score: 42, p_result_type: 'game_over',
+    p_lost_balls: finalLosses,
+  });
 });
 
 test('送信失敗後も結果と共有を保ち同じIDで再送する', async ({ page }) => {
@@ -140,10 +146,16 @@ test('送信失敗後も結果と共有を保ち同じIDで再送する', async 
   const retry = page.getByRole('button', { name: '記録を再送する' }); await expect(retry).toBeVisible();
   await expect(page.locator('[data-result-score]')).toHaveText('7');
   await expect(page.locator('[data-share-x]')).toBeVisible();
+  const finalizations = calls.filter(call => call.rpc === 'finish_takkeu_play_v2');
+  expect(finalizations).toHaveLength(1);
+  expect(finalizations[0]!.body.p_lost_balls).toBeGreaterThan(0);
   const first = calls.find(call => call.rpc === 'submit_score_idempotent_v1')!.body;
   await retry.click(); await expect(retry).toBeHidden();
   await expect(page.locator('[data-ranking-status]')).toHaveText('ランキングに記録しました。');
   expect(calls.filter(call => call.rpc === 'submit_score_idempotent_v1').map(call => call.body)).toEqual([first, first]);
+  // Replaying the same pending result must carry the same final loss count.
+  expect(calls.filter(call => call.rpc === 'finish_takkeu_play_v2').map(call => call.body.p_lost_balls))
+    .toEqual([finalizations[0]!.body.p_lost_balls, finalizations[0]!.body.p_lost_balls]);
 });
 
 test('通信停止中も名前なしのプレイと再プレイが使えランキングは再取得できる', async ({ page }) => {

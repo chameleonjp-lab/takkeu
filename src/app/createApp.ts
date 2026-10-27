@@ -49,6 +49,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   let wasFinishing = false;
   let unlockAttempt = 0;
   let activePlay: Play | null = null;
+  let nextProgressReportAt = 0, progressReportInFlight = false;
   let starting = false, startEpoch = 0, leaderboardEpoch = 0;
   let pendingStart:AbortController|null=null,viewPrepared=false;
   let preparingPlay:Play|null=null;
@@ -181,7 +182,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     screens.setPreparing(true);loadingScreen.show(loadingProgress.state(message));
   }
   function retirePreparingPlay():void{
-    const play=preparingPlay;preparingPlay=null;if(play)ranking.finish(play,0,'retire');
+    const play=preparingPlay;preparingPlay=null;if(play)ranking.finish(play,0,'retire',0);
   }
   async function prepareStart(name:string,epoch:number,controller:AbortController,sound:Promise<boolean>):Promise<void>{
     const {signal}=controller,current=()=>!disposed&&epoch===startEpoch&&!signal.aborted;
@@ -203,7 +204,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
       progress.report('ranking',0);
       let play:Play|null=null;
       if(name){
-        const registered=ranking.start(name).then(accepted=>{if(!current())ranking.finish(accepted,0,'retire');return accepted;});
+        const registered=ranking.start(name).then(accepted=>{if(!current())ranking.finish(accepted,0,'retire',0);return accepted;});
         play=await waitForPreparation(registered,12000,signal);
         if(current())preparingPlay=play;
       }else void ranking.start('');
@@ -240,8 +241,9 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     }
   }
   function beginRun(play: Play | null): void {
-    ranking.finish(activePlay, session.snapshot().score, 'retire');
+    ranking.finish(activePlay, session.snapshot().score, 'retire', session.snapshot().lostBallCount);
     activePlay = play; leaderboardEpoch++;
+    nextProgressReportAt = performance.now() + 15000; progressReportInFlight = false;
     ranking.clearResult(); screens.setRankingParticipation(!!play);
     rememberBest(); persist();
     swipe.cancel(); session.reset(seed()); session.start();
@@ -275,7 +277,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     resultPosition.clear();
     if(starting)ranking.abandonStart();pendingStart?.abort();pendingStart=null;retirePreparingPlay();loadingProgress=null;loadingError=null;loadingScreen.show(null);screens.setPreparing(false);
     startEpoch++; leaderboardEpoch++; starting = false; screens.setStarting(false); screens.setContextAvailable(contextAvailable);
-    ranking.finish(activePlay, session.snapshot().score, 'retire'); activePlay = null;
+    ranking.finish(activePlay, session.snapshot().score, 'retire', session.snapshot().lostBallCount); activePlay = null;
     rememberBest(); persist(); swipe.cancel(); silence(); session.reset(seed());
     effects = createRallyEffects(session.snapshot().runId, preferences.bestScore); effectState = effects.state(); effectEnd=0;
     timeline.clear(INITIAL_PADDLE); audio.reset(session.snapshot().runId);
@@ -315,13 +317,26 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     // resize event. Refresh its camera mapping before accepting the next frame.
     if (session.snapshot().phase === 'running') resizeView();
     const result = loop.frame(now); rememberBest();
+    // Best-effort high-score snapshots for later reviews; never delay the game or rank submission.
+    if (activePlay && result.snapshot.phase === 'running' && now >= nextProgressReportAt) {
+      nextProgressReportAt = now + 15000;
+      if (result.snapshot.score >= 100 && !progressReportInFlight && rankingApi.progress) {
+        const play = activePlay;
+        progressReportInFlight = true;
+        void rankingApi.progress(play, {
+          score: result.snapshot.score, simSeconds: result.snapshot.simTime,
+          ballCount: result.snapshot.balls.length, lostBalls: result.snapshot.lostBallCount,
+        }).catch(() => { /* Offline snapshots never block play. */ })
+          .finally(() => { progressReportInFlight = false; });
+      }
+    }
     const presentation = finishPresentation.frame(result.snapshot, now, effectEnd);
     if (result.snapshot.phase === 'gameover' && observedPhase !== 'gameover') {
       swipe.cancel(); timeline.clear(result.snapshot.paddle); persist();
       if (!presentation.finishing) silence();
       screens.setRankingParticipation(!!activePlay);
       resultPosition.show(activePlay);
-      ranking.finish(activePlay, result.snapshot.score, 'game_over'); activePlay = null;
+      ranking.finish(activePlay, result.snapshot.score, 'game_over', result.snapshot.lostBallCount); activePlay = null;
       void refreshLeaderboard();
     }
     // Continue the last celebration without advancing gameplay. Once it ends,

@@ -12,7 +12,7 @@ async function fixture(page: Page, options: { failSubmit?: boolean; failPosition
   await page.route('https://*.supabase.co/rest/v1/rpc/**', async route => {
     const rpc = route.request().url().split('/').at(-1)!, body = route.request().postDataJSON(); calls.push({ rpc, body });
     if (rpc === 'start_game_play_v1') return route.fulfill({ json: { accepted: true, start_id: body.p_start_id, play_id: id(++starts), display_name: body.p_display_name, normalized_name: body.p_display_name, game_slug: 'takkeu', client_version: version } });
-    if (rpc === 'finish_game_play_v1') return route.fulfill({ json: { accepted: true, play_id: body.p_play_id, game_slug: 'takkeu', result_type: body.p_result_type, reached_wave: 1, score: body.p_score } });
+    if (rpc === 'finish_takkeu_play_v2') return route.fulfill({ json: { accepted: true, play_id: body.p_play_id, game_slug: 'takkeu', result_type: body.p_result_type, reached_wave: 1, score: body.p_score, lost_balls: body.p_lost_balls } });
     if (rpc === 'submit_score_idempotent_v1') {
       submissions++;
       if (options.holdSubmit) await pendingSubmit;
@@ -40,6 +40,8 @@ async function finish(page: Page) {
 
 test('登録確認前には取得せず、100位超でもDB自己ベストの順位を表示する', async ({ page }) => {
   const remote = await fixture(page, { holdSubmit: true }); await finish(page);
+  const finishCall = remote.calls.find(call => call.rpc === 'finish_takkeu_play_v2');
+  expect(finishCall?.body.p_lost_balls).toBeGreaterThan(0);
   await expect(page.locator('[data-position-message]')).toHaveText('順位を集計中…'); expect(remote.positions()).toBe(0);
   await expect(page.getByRole('button', { name: 'もう一度', exact: true })).toBeEnabled();
   remote.releaseSubmit(); await expect(page.locator('[data-position-message]')).toHaveText('123位 / 250登録中');

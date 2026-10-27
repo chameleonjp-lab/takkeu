@@ -92,7 +92,14 @@ const harness = { snapshot: (): GameSnapshot => session.snapshot(), show, restor
   },
   resources: () => currentView?.resources(),
   failNextView() { failNextView = true; },
-  finish() { state.phase = 'gameover'; state.balls.forEach(ball => { ball.phase = 'lost'; }); },
+  finish() {
+    // A synthetic full-stock loss must still represent the actual cumulative
+    // misses; the server does not accept a game-over result with zero losses.
+    const finalMisses = state.balls.filter(ball => ball.phase !== 'lost').length;
+    state.lostBallCount = Math.min(100, state.lostBallCount + finalMisses);
+    state.phase = 'gameover';
+    state.balls.forEach(ball => { ball.phase = 'lost'; });
+  },
   autoPlay(value: boolean) { autoPlay = value; },
   dispose: () => app.dispose(), freshSession: () => createSession(DEFAULT_CONFIG, 7).snapshot() };
 declare global { interface Window { stage3: typeof harness } }

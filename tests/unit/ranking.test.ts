@@ -263,3 +263,65 @@ it('accepts a duplicate acknowledgement after the aggregate display spelling cha
   const client = createRankingClient(async () => response([{ ...acceptedScore[0], result_display_name: 'TEST', result_normalized_name: 'test', was_duplicate: true }]));
   await expect(client.submit(named)).resolves.toBeUndefined();
 });
+
+it('sends a bounded, optional high-score progress report independently from the finish/submit path', async () => {
+  const calls: Array<{ rpc: string; body: Record<string, unknown> }> = [];
+  const client = createRankingClient(async (input, init) => {
+    calls.push({ rpc: String(input).split('/').at(-1)!, body: JSON.parse(String(init!.body)) });
+    return response({ accepted: true, high_density_signal: false });
+  });
+  await client.progress(play, { score: 210, simSeconds: 15.12349, ballCount: 4, lostBalls: 2 });
+  expect(calls).toEqual([{
+    rpc: 'report_takkeu_progress_v1',
+    body: {
+      p_play_id: playId, p_display_name: 'テスト', p_client_version: RANKING_CONFIG.clientVersion,
+      p_score: 210, p_sim_seconds: 15.123, p_ball_count: 4, p_lost_balls: 2,
+    },
+  }]);
+  await expect(client.progress(play, { score: 10, simSeconds: Infinity, ballCount: 50, lostBalls: 0 }))
+    .rejects.toMatchObject({ retryable: false });
+  expect(calls).toHaveLength(1);
+});
+
+
+it('sends the actual final loss count with game-over score and rejects invalid or mismatched acknowledgements', async () => {
+  const seen: Array<{ rpc: string; body: Record<string, unknown> }> = [];
+  const finalResult: PendingResult = { ...pending, lostBalls: 1 };
+  const client = createRankingClient(async (input, init) => {
+    seen.push({ rpc: String(input).split('/').at(-1)!, body: JSON.parse(String(init!.body)) });
+    return response({ ...acceptedFinish, lost_balls: 1 });
+  });
+  await client.finish(finalResult);
+  expect(seen).toEqual([{ rpc: 'finish_takkeu_play_v2', body: {
+    p_display_name: 'テスト', p_game_slug: 'takkeu', p_client_version: RANKING_CONFIG.clientVersion,
+    p_play_id: playId, p_result_type: 'game_over', p_reached_wave: 1,
+    p_score: 42, p_ranking_score: 42, p_lost_balls: 1,
+  } }]);
+
+  await expect(client.finish({ ...finalResult, lostBalls: 101 })).rejects.toMatchObject({ retryable: false });
+  const wrong = createRankingClient(async () => response({ ...acceptedFinish, lost_balls: 100 }));
+  await expect(wrong.finish(finalResult)).rejects.toMatchObject({ retryable: false });
+  expect(seen).toHaveLength(1);
+});
+
+it('persists final lost balls across an offline retry while old pending results keep their legacy route', async () => {
+  const local = storage(), remote = api();
+  remote.finish.mockRejectedValueOnce(new RankingError(true, 'offline'));
+  const controller = createRankingController(local, remote);
+  controller.finish(play, 42, 'game_over', 100);
+  await controller.retry();
+  expect(controller.state().status).toBe('retryable_failed');
+
+  const reloaded = createRankingController(local, remote);
+  await reloaded.retry();
+  expect(remote.finish.mock.calls[0]![0].lostBalls).toBe(100);
+  expect(remote.finish.mock.calls[1]![0].lostBalls).toBe(100);
+  expect(reloaded.state()).toMatchObject({ status: 'submitted', pendingCount: 0 });
+
+  // Pre-migration cached records lack lostBalls and must never be filled with 0 or 100.
+  const legacy = createRankingClient(async (input) => {
+    expect(String(input)).toContain('/finish_game_play_v1');
+    return response(acceptedFinish);
+  });
+  await expect(legacy.finish(pending)).resolves.toBeUndefined();
+});
