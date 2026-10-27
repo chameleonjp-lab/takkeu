@@ -133,11 +133,11 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group){
           const net = lossValue===50;
           active(final?'clear-electric':useLoss?'loss-electric':'rally-electric');
           const alpha=envelope(age,duration)*(reducedMotion?.24:final?.6:.46);
-          const arcs=reducedMotion?4:final||net?12:8,segments=reducedMotion?1:6;
+          const arcs=reducedMotion?4:final||net||threshold===2000||threshold===3000?12:8,segments=reducedMotion?1:6;
           // Smoothly interpolated shape, no strobe or random frame-to-frame replacement.
           const motion=reducedMotion?0:age;
           for(let i=0;i<arcs;i++){
-            const side=i%4,t=(Math.floor(i/4)+.5)/Math.ceil(arcs/4);
+            const side=(i+(threshold===2750?1:0))%4,t=(Math.floor(i/4)+.5)/Math.ceil(arcs/4);
             const w=config.tableHalfWidth+.035,l=config.tableHalfLength+.035;
             const ox=side<2?(side===0?-w:w):(t*2-1)*w;
             const oz=side<2?(t*2-1)*l:(side===2?-l:l);
@@ -145,7 +145,7 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group){
             const c=gold||final&&i%3===2?[1,.7,.12]:tricolor&&i%3===2?[.9,.15,.1]:i%2&&threshold>=1000||lossValue===77?[.15,.5,1]:[.08,.9,.35];
             let x=ox,y=config.tableY+.025,z=oz;
             for(let j=1;j<=segments;j++){
-              const u=j/segments,jitter=Math.sin(i*2.3+j*2.1+motion*2)*.035;
+              const u=j/segments,jitter=Math.sin(i*2.3+j*2.1+motion*2+(threshold===2750?2.4:0))*.035;
               const nx=ox+(side<2?(side===0?-1:1)*u*.11:u*.22)+jitter;
               const ny=config.tableY+.025+Math.sin(u*Math.PI)*.12;
               const nz=oz+(side<2?u*.22:(side===2?-1:1)*u*.11)+jitter;

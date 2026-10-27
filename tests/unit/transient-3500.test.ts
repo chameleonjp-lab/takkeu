@@ -36,3 +36,8 @@ it('prioritizes 100 then99 over simultaneous other digits and clears old finish 
  v.update({...snapshot(3200),celebrations:c});expect(v.stats().numbers).toEqual([100]);v.dispose();
  const finish=createFinishPresentation(),end={...snapshot(3500,20),phase:'gameover' as const,endReason:'clear' as const};expect(finish.frame(end,100).finishing).toBe(true);finish.cancel(end);expect(finish.frame(end,200).finishing).toBe(false);expect(finish.frame(end,300).snapshot).toBe(end);
 });
+it('uses a distinct2750 pattern and a stronger2000 perimeter than1500',()=>{
+ const rig=new Group(),v=createRallyEffectView(DEFAULT_CONFIG,rig);
+ const render=(score:number)=>{const e=createRallyEffects('transient',0);e.consume([hit(score)]);v.update(snapshot(score),e.state());const p:number[]=[];rig.traverse(n=>{if(n instanceof Mesh)p.push(...Array.from(n.geometry.getAttribute('position').array as ArrayLike<number>).slice(0,n.geometry.drawRange.count*3));});return {p,quads:v.stats().tableQuads};};
+ expect(render(2750).p).not.toEqual(render(2500).p);expect(render(2000).quads).toBeGreaterThan(render(1500).quads);v.dispose();
+});

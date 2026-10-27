@@ -26,3 +26,8 @@ it('shares a clear and an acknowledged hall number without inventing an ordinal'
   expect(new URL(scoreShareUrl(3500, true, 7)!).searchParams.get('text')).toContain('殿堂登録 第7号');
   expect(scoreShareUrl(2999, true)).toBeNull();
 });
+it('keeps the90-99 loss warning readable between events and resets it on retry',()=>{
+ const root=document.createElement('div'),screens=createScreens(root,actions);
+ for(const lostBallCount of [89,90,98,99,100,0]){screens.render({...scenario(3200).snapshot(),lostBallCount});expect((root.querySelector('[data-losses]')as HTMLElement).dataset.danger).toBe(String(lostBallCount>=90&&lostBallCount<100));if(lostBallCount>=90&&lostBallCount<100)expect(root.querySelector('[data-losses-label]')?.textContent).toContain(`あと${100-lostBallCount}球`);}
+ screens.dispose();
+});

@@ -50,7 +50,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
 
       <section class="game-screen" data-testid="game-screen" data-game hidden inert>
         <div class="input-surface" data-testid="input-surface"><div class="canvas-wrap"><canvas tabindex="0" aria-label="卓球ゲームの描画領域" aria-keyshortcuts="Escape"></canvas></div></div>
-        <div class="hud"><div><span class="eyebrow">RALLY / ${CLEAR_SCORE}</span><output aria-label="ラリー数" aria-live="off" class="rally-number" data-score>0</output></div><div class="balls-counter"><span class="eyebrow">残球数</span><output aria-label="残球数" aria-live="off" data-balls>1</output></div><div class="losses-counter"><span class="eyebrow">落球数</span><output aria-label="落球数" aria-live="off" data-losses>0 / ${MAX_LOST_BALLS}</output></div><p class="smash-warning" data-smash-warning role="status" hidden>スマッシュがくる！</p></div>
+        <div class="hud"><div><span class="eyebrow">RALLY / ${CLEAR_SCORE}</span><output aria-label="ラリー数" aria-live="off" class="rally-number" data-score>0</output></div><div class="balls-counter"><span class="eyebrow">残球数</span><output aria-label="残球数" aria-live="off" data-balls>1</output></div><div class="losses-counter"><span class="eyebrow" data-losses-label>落球数</span><output aria-label="落球数" aria-live="off" data-losses>0 / ${MAX_LOST_BALLS}</output></div><p class="smash-warning" data-smash-warning role="status" hidden>スマッシュがくる！</p></div>
         <div class="game-notices" data-game-notices></div><p class="finish-label" data-finishing tabindex="-1" hidden>ゲーム終了</p>
         <div class="pause-overlay" role="dialog" aria-modal="true" aria-labelledby="pause-title" aria-describedby="pause-description" tabindex="-1" hidden inert><div class="pause-card"><p class="eyebrow">PAUSE</p><h2 id="pause-title">ひと休み</h2><p id="pause-description" data-pause-message></p><div data-pause-notices></div><button type="button" class="button primary" data-action="resume">つづける <span aria-hidden="true">→</span></button><button type="button" class="button subtle" data-action="retry">最初からやり直す</button><button type="button" class="text-button" data-action="home">ホームへ</button>${soundControls}</div></div>
       </section>
@@ -263,6 +263,9 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       if (phase === 'gameover') setText('[data-result] h2', cleared ? '3500ラリー達成！ゲームクリア！' : resultComment(snapshot.score));
       setText('[data-result] .result-header .eyebrow', cleared ? 'GAME CLEAR' : 'RALLY COMPLETE');
       setText('[data-losses]', `${snapshot.lostBallCount} / ${MAX_LOST_BALLS}`);
+      const danger=snapshot.lostBallCount>=90&&snapshot.lostBallCount<MAX_LOST_BALLS;
+      get('[data-losses]').dataset.danger=String(danger);
+      setText('[data-losses-label]',danger?`落球注意 · あと${MAX_LOST_BALLS-snapshot.lostBallCount}球`:'落球数');
       get('[data-loss-limit-message]').hidden = snapshot.phase !== 'gameover' || snapshot.lostBallCount < MAX_LOST_BALLS;
       updateShare();
       if (snapshot.phase === 'paused') setText('[data-pause-message]', pauseMessages[snapshot.pauseReason ?? 'user']);
