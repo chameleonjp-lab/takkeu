@@ -26,7 +26,7 @@ export function createFireworks() {
   const seen = new Set<string>(), order:string[]=[];
   let runId='', cursor=0, active=0, disposed=false;
   const clear=()=>{births.fill(-Infinity);seen.clear();order.length=0;cursor=0;active=0;geometry.setDrawRange(0,0);};
-  return { root, geometry, material, active:()=>active,
+  return { root, geometry, material, active:()=>active, clear,
     update(snapshot:GameSnapshot,events:readonly GameEvent[],quality:Quality,reducedMotion=false,lowPriorityOpacity=1) {
       if(disposed)return;
       if(runId!==snapshot.runId){clear();runId=snapshot.runId;}

@@ -41,3 +41,11 @@ it('uses a distinct2750 pattern and a stronger2000 perimeter than1500',()=>{
  const render=(score:number)=>{const e=createRallyEffects('transient',0);e.consume([hit(score)]);v.update(snapshot(score),e.state());const p:number[]=[];rig.traverse(n=>{if(n instanceof Mesh)p.push(...Array.from(n.geometry.getAttribute('position').array as ArrayLike<number>).slice(0,n.geometry.drawRange.count*3));});return {p,quads:v.stats().tableQuads};};
  expect(render(2750).p).not.toEqual(render(2500).p);expect(render(2000).quads).toBeGreaterThan(render(1500).quads);v.dispose();
 });
+it.each([55,99])('keeps special loss%i visible throughout a competing major arrival',count=>{
+ const e=createRallyEffects('transient',0),v=createRallyEffectView(DEFAULT_CONFIG,new Group());e.consume([hit(2000),loss(count,20.1)]);v.update(snapshot(2000,20.3),e.state());expect(v.stats().activeEffects).toContain('rally-electric');expect(v.stats().activeEffects).toContain('loss-electric');expect(v.stats().tableQuads).toBeLessThanOrEqual(124);v.dispose();
+});
+it('interrupts drawing facts without resetting score/loss deduplication or best achievements',()=>{
+ const e=createRallyEffects('transient',99);e.consume([hit(2000),loss(55)]);e.interrupt();expect(e.state()).toMatchObject({score:2000,lostBallCount:55,arrivals:[],hits:[],losses:[],cues:[],best:null});
+ e.consume([hit(2000),loss(55)]);expect(e.state().arrivals).toEqual([]);expect(e.state().cues).toEqual([]);
+ e.consume([hit(2001,20.1),loss(60,20.2)]);expect(e.state().lostBallCount).toBe(60);expect(e.state().cues.some(c=>c.kind==='loss-wave'&&c.value===60)).toBe(true);expect(e.state().cues.some(c=>c.kind==='best-record')).toBe(false);
+});

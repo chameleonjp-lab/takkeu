@@ -28,7 +28,7 @@ export type RallyEffectsState = Readonly<{
   arrivals: readonly RallyArrival[]; hits: readonly RallyHit[]; losses: readonly RallyLoss[]; cues: readonly RallyCue[];
 }>;
 export type RallyEffectsController = Readonly<{
-  consume(events: readonly GameEvent[]): void; state(): RallyEffectsState; endTime(): number;
+  consume(events: readonly GameEvent[]): void; interrupt(): void; state(): RallyEffectsState; endTime(): number;
 }>;
 
 const config = (threshold: number, kind: RallyEffectCategory, effect: RallyEffectKind, duration: number | null,
@@ -65,7 +65,7 @@ const validTime = (value: number): boolean => Number.isFinite(value) && value >=
 export function createRallyEffects(runId: string, bestAtStart: number): RallyEffectsController {
   const initialBest = Number.isSafeInteger(bestAtStart) && bestAtStart > 0 ? bestAtStart : 0;
   let score = 0, lostBallCount = 0, latestTime = 0;
-  let best: RallyBest | null = null;
+  let best: RallyBest | null = null, bestVisible = true;
   let arrivals: RallyArrival[] = [], hits: RallyHit[] = [], losses: RallyLoss[] = [], cues: RallyCue[] = [];
   // Only the short rolling loss window lives here. The game caps total losses at100.
   let lossWindow: number[] = [];
@@ -102,7 +102,7 @@ export function createRallyEffects(runId: string, bestAtStart: number): RallyEff
         else if ((score < 50 && score % 5 === 0) || (score >= 50 && score < 200 && score % 10 === 0) ||
           (score >= 200 && score <= 3500 && score % 100 === 0)) cue(event,'notice',score,1.8,10);
         if (initialBest > 0 && best === null && score > initialBest) {
-          best = { score, at: event.time, ...positionFact(event.position) };
+          bestVisible = true; best = { score, at: event.time, ...positionFact(event.position) };
           cue(event,'best-record',score,2,50);
         }
       } else if (event.kind === 'ball-lost' && isCount(event.lossCount) && event.lossCount > lostBallCount && event.lossCount <= 100) {
@@ -124,11 +124,11 @@ export function createRallyEffects(runId: string, bestAtStart: number): RallyEff
     prune();
   };
   const state = (): RallyEffectsState => ({
-    runId, score, bestAtStart: initialBest, best: best === null ? null : copyFact(best), lostBallCount,
+    runId, score, bestAtStart: initialBest, best: best === null || !bestVisible ? null : copyFact(best), lostBallCount,
     stage: [...stage], arrivals: arrivals.map(copyFact), hits: hits.map(copyFact), losses: losses.map(copyFact), cues: cues.map(copyFact),
   });
   const endTime = (): number => Math.max(0,
     ...arrivals.map(arrival => arrival.at + (arrival.config.duration ?? 0)),
     ...hits.map(hit => hit.at + .3), ...cues.map(cue => cue.at + cue.duration));
-  return { consume, state, endTime };
+  return { consume, state, endTime, interrupt() { arrivals=[];hits=[];losses=[];cues=[];bestVisible=false; } };
 }

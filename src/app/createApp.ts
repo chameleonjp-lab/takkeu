@@ -3,7 +3,7 @@ import { DEFAULT_CONFIG, INITIAL_PADDLE } from '../game/config';
 import { createSession } from '../game/session';
 import { createRallyEffects } from '../game/rallyEffects';
 import { createRallyNotice } from '../ui/rallyNotice';
-import type { PauseReason } from '../game/types';
+import type { GameSnapshot, GameEvent, PauseReason } from '../game/types';
 import { createInputTimeline } from '../input/timeline';
 import { createView } from '../render/createView';
 import type { GameView } from '../render/createView';
@@ -19,6 +19,7 @@ import { createRankingController, validateName } from '../ranking/controller';
 import { createResultPosition } from '../ranking/resultPosition';
 import { createResultHall } from '../ranking/resultHall';
 import { createFinishPresentation } from './finishPresentation';
+import { createPresentationBoundary } from './presentationBoundary';
 import type { InputMapping } from '../input/mapping';
 import { createLoadingScreen } from '../ui/loading';
 import { createLoadingProgress,nextPaint,waitForPreparation } from './loadingProgress';
@@ -142,6 +143,19 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   }
   let fitted = '';
   let inputMapping: InputMapping | null = null;
+  const presentationBoundary=createPresentationBoundary();
+  function renderView(snapshot:GameSnapshot,events:readonly GameEvent[]=[],time=snapshot.simTime):void {
+    if(!view||!contextAvailable||document.hidden)return;
+    view.render(presentationBoundary.frame(snapshot),events,effectState,time);
+    // A canceled hidden frame must never reappear during cached retry preparation.
+    screens.canvas.style.visibility='';
+  }
+  function interruptPresentation():void {
+    const snapshot=session.snapshot();
+    effects.interrupt();effectState=effects.state();effectEnd=effects.endTime();
+    presentationBoundary.interrupt(snapshot);view?.interruptEffects?.();
+    screens.canvas.style.visibility='hidden';
+  }
   function resizeView(): void {
     if (!view || !contextAvailable) return;
     const rect = screens.canvasWrap.getBoundingClientRect();
@@ -154,7 +168,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     inputMapping = view.inputMapping();
     swipe.updateMapping(inputMapping, session.snapshot().phase === 'running');
     fitted = key;
-    if(!starting&&!loadingError){const p=finishPresentation.frame(session.snapshot(), performance.now(), effectEnd);view.render(p.snapshot, [], effectState, p.presentationTime);}
+    if(!starting&&!loadingError){const p=finishPresentation.frame(session.snapshot(), performance.now(), effectEnd);renderView(p.snapshot, [], p.presentationTime);}
   }
   function makeView(): GameView {
     fitted = '';inputMapping=null;viewPrepared=false;
@@ -266,13 +280,14 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
       startEpoch++;pendingStart?.abort();pendingStart=null;ranking.abandonStart();retirePreparingPlay();starting=false;screens.setStarting(false);silence();
       showLoadingError(reason==='context-lost'?'描画の復旧を待ってから、もう一度準備してください。':'画面を離れたため準備を中断しました。もう一度準備してください。');return;
     }
+    if(reason==='hidden'||reason==='context-lost')interruptPresentation();
     if (session.snapshot().phase === 'gameover') { finishPresentation.cancel(session.snapshot()); silence(); return; }
     if (session.snapshot().phase === 'paused' && observedPhase === 'paused') return;
     if (session.snapshot().phase === 'running') session.pause(reason);
     if (session.snapshot().phase !== 'paused') return;
     swipe.cancel(); timeline.clear(session.snapshot().paddle); silence(); rememberBest(); persist();
     loop.resetClock(performance.now()); screens.render(session.snapshot());
-    if (view && contextAvailable) view.render(session.snapshot(), [], effectState);
+    if (view && contextAvailable) renderView(session.snapshot());
     observedPhase = 'paused';
   }
   function resume(): void {
@@ -290,7 +305,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     effects = createRallyEffects(session.snapshot().runId, preferences.bestScore); effectState = effects.state(); effectEnd=0;
     timeline.clear(INITIAL_PADDLE); audio.reset(session.snapshot().runId);
     loop.resetClock(performance.now()); screens.render(session.snapshot());
-    if(view&&contextAvailable)view.render(session.snapshot(),[],effectState);
+    if(view&&contextAvailable)renderView(session.snapshot());
   }
   const unbindLifecycle = bindLifecycle({
     canvas: screens.canvas, pause, resize: resizeView,
@@ -351,7 +366,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     // Continue the last celebration without advancing gameplay. Once it ends,
     // frozen scenes only draw on explicit resize/restore or screen changes.
     const needsFrame = result.snapshot.phase === 'running' || result.snapshot.phase !== observedPhase || presentation.finishing || wasFinishing;
-    if (view && contextAvailable && !starting && !loadingError && result.snapshot.phase !== 'ready' && needsFrame && !document.hidden) view.render(presentation.snapshot, result.events, effectState, presentation.presentationTime);
+    if (view && contextAvailable && !starting && !loadingError && result.snapshot.phase !== 'ready' && needsFrame && !document.hidden) renderView(presentation.snapshot, result.events, presentation.presentationTime);
     if (wasFinishing && !presentation.finishing && result.snapshot.endReason !== 'clear') silence();
     screens.render(result.snapshot, presentation.finishing); updateRallyNotice({...presentation.snapshot,simTime:presentation.presentationTime},presentation.finishing); observedPhase = result.snapshot.phase; wasFinishing = presentation.finishing;
     frameId = requestAnimationFrame(frame);

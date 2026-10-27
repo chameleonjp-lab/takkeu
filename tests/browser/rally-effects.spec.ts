@@ -168,7 +168,7 @@ test('mobile, landscape, 200% text, best and smash warning keep controls and rea
         scroll:document.documentElement.scrollWidth,width:innerWidth,live:document.querySelector('[data-rally-live]')!.textContent};
     });
     expect(bounds.scroll).toBeLessThanOrEqual(bounds.width);expect(bounds.score.right).toBeLessThanOrEqual(bounds.width);
-    expect(bounds.pointer).toBe('none');expect(bounds.live).toBe('4000 RALLY');
+    expect(bounds.pointer).toBe('none');expect(bounds.live).toBe('3500 RALLY · CLEAR!');
     expect(bounds.toast.y>=bounds.warning.bottom||bounds.toast.right<=bounds.warning.x||bounds.toast.bottom<=bounds.warning.y).toBe(true);
     await cameraScreenshot(page,info,resolve(directory,`${width}x${height}-text${fontPercent}.png`));
   }

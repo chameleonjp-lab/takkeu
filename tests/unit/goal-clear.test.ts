@@ -89,3 +89,7 @@ it.each(['loss-first', 'clear-first'] as const)('keeps the existing action order
   expect(events.filter(e => e.kind === 'game-clear')).toHaveLength(order === 'loss-first' ? 0 : 1);
   expect(events.filter(e => e.kind === 'game-over')).toHaveLength(order === 'loss-first' ? 1 : 0);
 });
+it.each([true,false])('uses existing ball-id priority for strictly simultaneous clear and100th loss: clearFirst=%s',clearFirst=>{
+ const s=scenario(3499),hitBall=incoming(clearFirst?1:2,20),lostBall=incoming(clearFirst?2:1,19,{x:.8,y:.6});s.state.lostBallCount=99;s.state.balls=[hitBall,lostBall];
+ const result=s.step();expect(result.events.filter(e=>e.kind==='player-hit'||e.kind==='ball-lost').map(e=>e.time)).toEqual([20]);expect(result.snapshot).toMatchObject(clearFirst?{score:3500,lostBallCount:99,endReason:'clear'}:{score:3499,lostBallCount:100,endReason:'loss'});
+});

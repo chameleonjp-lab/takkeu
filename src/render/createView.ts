@@ -16,6 +16,7 @@ import { prepareScene } from './prepare';
 import { MAX_BALLS } from '../game/milestones';
 
 export interface GameView {
+  interruptEffects?(): void;
   prepare?(progress:(completed:number,total:number)=>void):Promise<void>;
   render(snapshot: GameSnapshot, events: readonly GameEvent[], effects?: RallyEffectsState, presentationTime?: number): void;
   resize(width: number, height: number): void;
@@ -47,6 +48,7 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
   let quality: Quality = 'standard';
   let preparation:Promise<void>|null=null,disposed=false;
   return {
+    interruptEffects() { fireworks.clear(); rallyEffects.clear(); },
     prepare(progress){
       if(!preparation)preparation=(async()=>{
         // Reserve every live-ball slot once; subsequent plays reuse the pool.

@@ -118,14 +118,14 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group){
           }
           particleCount+=LOSS_RAYS;
         }
-        // One bounded family of perimeter arcs, selected by importance. No background layers.
+        // Bounded arrival and loss arcs coexist in the same fixed batch. No background layers.
         const arrival = state.arrivals.filter(a => a.threshold >= 500 && time >= a.at && time < a.at + (a.config.duration ?? 0))
           .sort((a,b) => b.config.priority-a.config.priority || b.at-a.at)[0];
         const lossCue = state.cues.filter(c => ['loss-wave','loss-net','loss-number','loss-warning','loss-gold','loss-final'].includes(c.kind) && time >= c.at && time < c.at+c.duration)
           .sort((a,b) => b.priority-a.priority || b.value-a.value || b.at-a.at)[0];
-        const useLoss = !!lossCue && (!arrival || lossCue.priority >= arrival.config.priority);
-        const cue = useLoss ? lossCue : arrival;
-        if(cue){
+        for(const cue of [arrival,lossCue]){
+          if(!cue)continue;
+          const useLoss='value' in cue;
           const duration = 'threshold' in cue ? cue.config.duration! : cue.duration;
           const age = time-cue.at, threshold = 'threshold' in cue ? cue.threshold : 0;
           const lossValue = 'value' in cue ? cue.value : 0;
@@ -133,7 +133,7 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group){
           const net = lossValue===50;
           active(final?'clear-electric':useLoss?'loss-electric':'rally-electric');
           const alpha=envelope(age,duration)*(reducedMotion?.24:final?.6:.46);
-          const arcs=reducedMotion?4:final||net||threshold===2000||threshold===3000?12:8,segments=reducedMotion?1:6;
+          const arcs=reducedMotion||useLoss&&arrival?4:final||net||threshold===2000||threshold===3000?12:8,segments=reducedMotion?1:6;
           // Smoothly interpolated shape, no strobe or random frame-to-frame replacement.
           const motion=reducedMotion?0:age;
           for(let i=0;i<arcs;i++){
