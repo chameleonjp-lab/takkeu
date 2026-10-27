@@ -6,6 +6,7 @@ export function createFinishPresentation() {
   let runId='',startedAt:number|null=null,endsAt=0,duration=0;
   return {
     frame(snapshot:GameSnapshot,now:number,effectEnd=0) {
+      if(snapshot.phase==='gameover'&&snapshot.endReason==='clear')return{snapshot,finishing:false};
       if(snapshot.runId!==runId||snapshot.phase!=='gameover'){
         runId=snapshot.runId;startedAt=null;duration=0;
       }

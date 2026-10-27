@@ -8,7 +8,7 @@ import type { GameEvent } from '../../src/game/types';
 
 /** Evidence replay starts at zero. Only paddle input and normal pause lifecycle
  * are supplied: no score, ball, speed, RNG, trajectory or progression setters. */
-it('plays from zero through4001 with real physics and identical RNG with/without presentation', () => {
+it('plays from zero to the 3000 clear with real physics and identical RNG with/without presentation', () => {
   const started = performance.now();
   const simulation = createSimulationState(7);
   startSimulation(simulation,DEFAULT_CONFIG);
@@ -27,7 +27,7 @@ it('plays from zero through4001 with real physics and identical RNG with/without
   let lossEvents = 0, maxScoreIncrement = 0;
   let failure: string | null = null;
   try {
-    while (snapshot.score < 4001 && snapshot.phase === 'running' && ticks < 120 * 1200) {
+    while (snapshot.phase === 'running' && ticks < 120 * 1200) {
       const target = snapshot.scheduledReturns[0]?.target ?? snapshot.paddle;
       const beforeScore = snapshot.score;
       const result = stepSimulation(simulation,DEFAULT_CONFIG,DEFAULT_CONFIG.fixedDt,{target});
@@ -79,18 +79,20 @@ it('plays from zero through4001 with real physics and identical RNG with/without
         paused = true;
       }
     }
-    expect(scores).toEqual(Array.from({length:4001},(_,i) => i+1));
-    expect(snapshot).toMatchObject({score:4001,phase:'running'});
-    expect(effects.state().score).toBe(4001);
+    expect(scores).toEqual(Array.from({length:3000},(_,i) => i+1));
+    expect(snapshot).toMatchObject({score:3000,phase:'gameover',endReason:'clear'});
+    expect(eventCounts['game-clear']).toBe(1);
+    expect(stepSimulation(simulation,DEFAULT_CONFIG,DEFAULT_CONFIG.fixedDt,{target:snapshot.paddle})).toEqual({snapshot,events:[]});
+    expect(effects.state().score).toBe(3000);
     expect(maxBalls).toBeLessThanOrEqual(30);
     expect(snapshot.lostBallCount).toBeLessThanOrEqual(99);
     expect(lossEvents).toBe(snapshot.lostBallCount);
-    expect([...thresholdCounts.values()]).toEqual(RALLY_EFFECTS.map(() => 1));
-    expect([...arrivalCounts.keys()].sort((a,b) => a-b)).toEqual([100,200,300,800,1000,2000,3000,4000]);
+    expect([...thresholdCounts.values()]).toEqual(RALLY_EFFECTS.map(config => config.threshold<=3000?1:0));
+    expect([...arrivalCounts.keys()].sort((a,b) => a-b)).toEqual([100,200,300,800,1000,2000,3000]);
     expect([...arrivalCounts.values()].every(count => count === 1)).toBe(true);
-    for (const config of RALLY_EFFECTS.filter(config => config.kind === 'A')) expect(stageFirstSeen.has(config.effect)).toBe(true);
+    for (const config of RALLY_EFFECTS.filter(config => config.kind === 'A' && config.threshold<=3000)) expect(stageFirstSeen.has(config.effect)).toBe(true);
     expect(stageFirstSeen.has('green-blue-world')).toBe(true);
-    expect(stageFirstSeen.has('final-world')).toBe(true);
+    expect(stageFirstSeen.has('final-world')).toBe(false);
     expect(effects.state().best?.score).toBe(100);
     expect(pausedSteps).toBe(60);
     expect(eventEquivalent).toBe(true);
@@ -100,8 +102,8 @@ it('plays from zero through4001 with real physics and identical RNG with/without
     failure = error instanceof Error ? error.message : String(error);
     throw error;
   } finally {
-    mkdirSync('docs/verification/rally-4000',{recursive:true});
-    writeFileSync('docs/verification/rally-4000/through-play.json',`${JSON.stringify({
+    mkdirSync('artifacts/goal-3000',{recursive:true});
+    writeFileSync('artifacts/goal-3000/through-play.json',`${JSON.stringify({
       kind:'actual-fixed-step-play',seed:7,input:'earliest scheduledReturns target each fixed tick',
       productionStateSetters:false,fixedDt:DEFAULT_CONFIG.fixedDt,ticks,pausedSteps,
       simulatedSeconds:snapshot.simTime,wallDurationMs:performance.now()-started,
