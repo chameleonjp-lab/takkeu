@@ -17,7 +17,7 @@ export function isRepdigit(score: number): boolean {
 const numberDuration = (value: number): number => specialColors[value] ? 3 : 2;
 export function lossCelebration(state: CelebrationState, count: number, at: number): CelebrationState {
   const numberNotices = state.numberNotices.filter(n => at < n.at + numberDuration(n.value));
-  if (count % 10 === 0 || specialColors[count]) numberNotices.push({ value: count, at });
+  if (count % 10 === 0 || count >= 90 || specialColors[count]) numberNotices.push({ value: count, at });
   return { ...state, lastLossAt: at,
     lossStreak: state.lastLossAt !== null && at - state.lastLossAt <= 2 + 1e-10 ? state.lossStreak + 1 : 1, numberNotices };
 }

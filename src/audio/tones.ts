@@ -174,10 +174,10 @@ export function playMilestoneFanfare(context: BaseAudioContext, output: AudioNod
 /** Dedicated musical phrases share the bounded synthesis/ownership path. */
 export function playRallyAchievement(context: BaseAudioContext, output: AudioNode, onEnded: Ended = () => {}, options: ToneOptions = {}): Voice {
   const layered = supported(context), low = options.quality === 'low', score = options.score;
-  // 1000: rising fanfare; 3000: suspended bell blessing; 4000: falling pickup
+  // 1000: rising fanfare; 3000: suspended bell blessing; 3500: falling pickup
   // into an expanded final chord. These replace, rather than layer on, 100s.
   const phrase = score === 3000 ? { type: 'sine', pitches: [659.25, 987.77, 1318.51, 1174.66], gap: .32, chord: [587.33, 739.99, 987.77], start: 1.28, duration: 1.32 }
-    : score === 4000 ? { type: 'triangle', pitches: [1046.5, 783.99, 659.25, 880, 1174.66], gap: .2, chord: [587.33, 783.99, 1174.66], start: 1.1, duration: 1.7 }
+    : score === 3500 ? { type: 'triangle', pitches: [1046.5, 783.99, 659.25, 880, 1174.66], gap: .2, chord: [587.33, 783.99, 1174.66], start: 1.1, duration: 1.7 }
     : { type: 'sawtooth', pitches: [392, 523.25, 659.25, 783.99], gap: .21, chord: [523.25, 659.25, 1046.5], start: .96, duration: 1.24 };
   const note = (hz: number, delay: number, duration: number, chord = false): Layer => ({
     type: layered ? phrase.type as OscillatorType : 'triangle', high: hz, low: hz, delay, duration,

@@ -8,7 +8,7 @@ const hit = (score: number, at = score / 10, extra: Partial<GameEvent> = {}): Ga
 const loss = (count: number, at = count / 10, extra: Partial<GameEvent> = {}): GameEvent => ({ id: `${runId}:l${count}`, runId, kind: 'ball-lost', time: at, lossCount: count, position: { x: count / 100, y: .3, z: 2.2 }, ...extra });
 
 it('declares every threshold with category, duration, color, priority and replacement rules', () => {
-  expect(RALLY_EFFECTS.map(c => c.threshold)).toEqual([50,100,200,300,400,500,600,700,800,900,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000]);
+  expect(RALLY_EFFECTS.map(c => c.threshold)).toEqual([50,100,200,300,500,800,1000,1500,2000,2500,2750,3000,3500]);
   for (const config of RALLY_EFFECTS) {
     expect(['A', 'B', 'C']).toContain(config.kind);
     expect(config.color).toBeTruthy();
@@ -16,12 +16,12 @@ it('declares every threshold with category, duration, color, priority and replac
     expect(Array.isArray(config.replaces)).toBe(true);
   }
   expect(RALLY_EFFECTS.find(c => c.threshold === 50)).toMatchObject({ kind: 'C', duration: .3 });
-  for (const [threshold, duration] of [[100,1.2],[200,1.2],[300,1.5],[800,1.5],[1000,3.5],[2000,2.5],[3000,3.5],[4000,4]]) {
+  for (const [threshold, duration] of [[100,1.2],[200,1.2],[300,1.5],[800,1.5],[500,1.2],[1000,2],[1500,1.5],[2000,2],[2500,1.5],[2750,1.1],[3000,2],[3500,2.8]]) {
     expect(RALLY_EFFECTS.find(c => c.threshold === threshold)?.duration).toBe(duration);
   }
 });
 
-it.each([50,100,200,300,400,500,600,700,800,900,1000,1250,1500,1750,2000,2250,2500,2750,3000,3250,3500,3750,4000])('records threshold %i exactly at its confirmed score and never replays it', threshold => {
+it.each([50,100,200,300,500,800,1000,1500,2000,2500,2750,3000,3500])('records threshold %i exactly at its confirmed score and never replays it', threshold => {
   const effects = createRallyEffects(runId, 0);
   effects.consume([hit(threshold - 1, 1)]);
   expect(effects.state().arrivals.some(a => a.threshold === threshold)).toBe(false);
@@ -66,36 +66,14 @@ it('captures a nonzero run-start best once and never treats the first run as a r
 
 it('generates normal notices at each required cadence and major notices replace normal ones', () => {
   const effects = createRallyEffects(runId, 0);
-  const scores = [4,5,10,45,49,50,60,190,199,200,201,300,999,1000,2000,3000,4000,4001];
+  const scores = [4,5,10,45,49,50,60,190,199,200,201,300,999,1000,2000,3000,3500,3501];
   effects.consume(scores.map(score => hit(score, 1)));
   expect(effects.state().cues.filter(c => c.kind === 'notice').map(c => c.value)).toEqual([5,10,45,50,60,190,200,300]);
   const main = effects.state().cues.filter(c => c.kind === 'major');
-  expect(main.map(c => c.value)).toEqual([1000,2000,3000,4000]);
+  expect(main.map(c => c.value)).toEqual([1000,2000,3000,3500]);
   expect(main.every(c => c.duration === 2.5)).toBe(true);
   expect(effects.state().cues.filter(c => c.kind === 'notice').every(c => c.duration === 1.8)).toBe(true);
-  expect(effects.state().score).toBe(4001);
-});
-
-it('resolves all permanent replacements, preserves 4001+ and keeps transient end time independent of wall time', () => {
-  const effects = createRallyEffects(runId, 0);
-  effects.consume([hit(900, 10)]);
-  expect(effects.state().stage.map(c => c.effect)).toContain('corner-posts');
-  effects.consume([hit(1000, 11)]);
-  expect(effects.state().stage.map(c => c.effect)).not.toContain('corner-posts');
-  expect(effects.state().stage.map(c => c.effect)).toContain('green-blue-world');
-  effects.consume([hit(4000, 20)]);
-  expect(effects.state().stage.map(c => c.effect)).toContain('final-world');
-  expect(effects.state().stage.map(c => c.effect)).not.toContain('center-density');
-  expect(effects.state().stage.map(c => c.effect)).not.toContain('background-threads');
-  expect(effects.state().stage.map(c => c.effect)).not.toContain('floor-wave');
-  expect(effects.state().stage.map(c => c.effect)).not.toContain('meteor');
-  expect(effects.endTime()).toBe(24);
-  const paused = effects.state();
-  effects.consume([]);
-  expect(effects.state()).toEqual(paused);
-  effects.consume([hit(4001, 25)]);
-  expect(effects.state().score).toBe(4001);
-  expect(effects.state().arrivals).toEqual([]);
+  expect(effects.state().score).toBe(3501);
 });
 
 it('retains every loss coordinate and counts a true rolling two-second window, not a pairwise streak', () => {
@@ -170,18 +148,7 @@ it('retains all thirty same-frame action positions and all hundred simultaneous 
   expect(effects.state().cues.filter(c => c.kind === 'loss-spark')).toHaveLength(0);
 });
 
-it.each([
-  [1000,'corner-posts'], [1500,'green-perimeter'], [1500,'green-net'], [2000,'background-threads'],
-  [2500,'floor-wave'], [2750,'background-halo'], [3250,'meteor'], [3500,'side-halos'], [4000,'center-density'],
-])('replaces the %s previous permanent effect %s exactly at the new boundary', (threshold, replaced) => {
-  const effects = createRallyEffects(runId,0);
-  effects.consume([hit(Number(threshold)-1,1)]);
-  expect(effects.state().stage.map(c => c.effect)).toContain(replaced);
-  effects.consume([hit(Number(threshold),2)]);
-  expect(effects.state().stage.map(c => c.effect)).not.toContain(replaced);
-});
-
-it.each([[100,1.2],[200,1.2],[300,1.5],[800,1.5],[1000,3.5],[2000,2.5],[3000,3.5],[4000,4]])('expires arrival %i at its exact %.1fs duration', (score, duration) => {
+it.each([[100,1.2],[200,1.2],[300,1.5],[800,1.5],[500,1.2],[1000,2],[1500,1.5],[2000,2],[2500,1.5],[2750,1.1],[3000,2],[3500,2.8]])('expires arrival %i at its exact %.1fs duration', (score, duration) => {
   const effects = createRallyEffects(runId,0);
   effects.consume([hit(score,10)]);
   effects.consume([{id:'clock1',runId,kind:'opponent-hit',time:10+duration-.00001}]);
@@ -190,17 +157,7 @@ it.each([[100,1.2],[200,1.2],[300,1.5],[800,1.5],[1000,3.5],[2000,2.5],[3000,3.5
   expect(effects.state().arrivals).toHaveLength(0);
 });
 
-it('integrates the1000 green/blue world into the1500 tricolor lightning family without a duplicate old layer', () => {
-  const effects = createRallyEffects(runId,0);
-  effects.consume([hit(1499,1)]);
-  expect(effects.state().stage.map(c => c.effect)).toContain('green-blue-world');
-  effects.consume([hit(1500,2)]);
-  const lightningFamily = effects.state().stage.map(c => c.effect).filter(effect =>
-    ['green-blue-world','green-perimeter','green-net','tricolor-network'].includes(effect));
-  expect(lightningFamily).toEqual(['tricolor-network']);
-});
-
-it('treats2599/2600/2601 as the existing orbit stage with only the2600 normal numeric notice', () => {
+it('keeps2599/2600/2601 free of permanent decoration with only the2600 notice', () => {
   const effects = createRallyEffects(runId,0);
   effects.consume([hit(2599,10)]);
   expect(effects.state().cues.filter(c => c.kind === 'notice')).toEqual([]);
@@ -209,7 +166,7 @@ it('treats2599/2600/2601 as the existing orbit stage with only the2600 normal nu
   expect(effects.state().cues.filter(c => c.kind === 'major')).toEqual([]);
   expect(effects.state().arrivals).toEqual([]);
   const existingStage = effects.state().stage;
-  expect(existingStage.map(c => c.effect)).toContain('orbit-ribbon');
+  expect(existingStage).toEqual([]);
   expect(existingStage.map(c => c.effect)).not.toContain('multi-halos');
   expect(existingStage.some(c => c.threshold === 2600)).toBe(false);
   effects.consume([hit(2601,10.2)]);

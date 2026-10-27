@@ -122,7 +122,7 @@ export function createAudio(config: GameConfig, contextFactory: () => AudioConte
             : event.kind === 'smash-warning' ? playSmashWarning : playOpponentHit;
           startVoice(play, event.kind === 'smash-warning' ? 'warning' : 'hit', score);
           if (event.kind === 'player-hit' && Number.isSafeInteger(score) && score > 0 && score % 100 === 0) {
-            startVoice([1000, 3000, 4000].includes(score) ? playRallyAchievement : playMilestoneFanfare, 'fanfare', score);
+            startVoice([1000, 3000, 3500].includes(score) ? playRallyAchievement : playMilestoneFanfare, 'fanfare', score);
           }
         } catch { enabled = false; clearVoices(); onUnavailable(); }
       }

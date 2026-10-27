@@ -23,7 +23,7 @@ function batch(quadCapacity: number, additive = false) {
       let vertex = quads++ * 6;
       for (const p of [a,b,d,b,c,d]) { position.setXYZ(vertex,p.x,p.y,p.z); color.setXYZW(vertex++,rgba.r,rgba.g,rgba.b,rgba.a); }
     },
-    finish() { geometry.setDrawRange(0,quads*6); position.needsUpdate=true;color.needsUpdate=true;mesh.visible=quads>0; },
+    finish() { geometry.setDrawRange(0,quads*6); position.clearUpdateRanges();color.clearUpdateRanges(); if(quads){position.addUpdateRange(0,quads*18);color.addUpdateRange(0,quads*24);position.needsUpdate=true;color.needsUpdate=true;}mesh.visible=quads>0; },
     dispose() { mesh.removeFromParent(); geometry.dispose(); material.dispose(); },
   };
 }
@@ -107,7 +107,8 @@ export function createCelebrationView(config: GameConfig, tableRig: Group) {
           :{x:(t*2-1)*config.tableHalfWidth,y:config.tableY+.015,z:(side===2?-1:1)*config.tableHalfLength};
         bolt(origin,.18+hash(i+9)*.25,i+301,motionTime,{r:.08,g:1,b:.22},.9*lowPriorityOpacity,.009);
       }
-      frame.numbers.forEach((n,i)=>drawNumber(n.value,i,frame.numbers.length,motionTime,n.age,n.duration,reducedMotion?({55:'black',77:'blue',88:'green',99:'gold'} as Record<number,CelebrationPalette>)[n.value]??n.palette:n.palette,reducedMotion));
+      const numbers=[...frame.numbers].sort((a,b)=>b.value-a.value).slice(0,1);
+      numbers.forEach((n,i)=>drawNumber(n.value,i,numbers.length,motionTime,n.age,n.duration,reducedMotion?({55:'black',77:'blue',88:'green',99:'gold'} as Record<number,CelebrationPalette>)[n.value]??n.palette:n.palette,reducedMotion));
       const ambientEnvironment=snapshot.score<1000?frame.environment:null;
       if(ambientEnvironment)for(let i=0;i<24;i++){
         const x1=-9+i*.75,x2=x1+.75,age=time-(snapshot.celebrations.centuryAt??time);
@@ -124,7 +125,7 @@ export function createCelebrationView(config: GameConfig, tableRig: Group) {
       tableRig.position.set(Math.sin(time*5)*shake,Math.sin(time*6)*shake*.28,Math.cos(time*4.5)*shake*.35);
       tableRig.rotation.z=shake?Math.sin(time*5.5)*shake*.28:0;
       for(const target of [electric,electricGlow,digits,digitGlow,environment])target.finish();
-      stats={netBolts,edgeBolts:frame.edgeElectric&&snapshot.score<1500?48:0,numbers:frame.numbers.map(n=>n.value),environment:ambientEnvironment};
+      stats={netBolts,edgeBolts:frame.edgeElectric&&snapshot.score<1500?48:0,numbers:numbers.map(n=>n.value),environment:ambientEnvironment};
     },
     dispose(){if(disposed)return;disposed=true;for(const target of [electric,electricGlow,digits,digitGlow,environment])target.dispose();tableRoot.removeFromParent();worldRoot.removeFromParent();tableRig.position.set(0,0,0);tableRig.rotation.z=0;},
   };

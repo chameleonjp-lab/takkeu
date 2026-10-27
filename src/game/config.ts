@@ -14,7 +14,7 @@ export const DEFAULT_CONFIG: GameConfig = Object.freeze({
 
 export const INITIAL_PADDLE: PaddlePoint = Object.freeze({ x: 0, y: 0.5 });
 export const MAX_LOST_BALLS = 100;
-export const CLEAR_SCORE = 3000;
+export const CLEAR_SCORE = 3500;
 export const TRAJECTORY = Object.freeze({ bounceFraction: 0.72, flightArcHeight: 0.35, bounceArcHeight: 0.10 });
 export const DIFFICULTY = Object.freeze({
   scoreInterval: 1, speedGain: 1.6, speedDecay: 90,

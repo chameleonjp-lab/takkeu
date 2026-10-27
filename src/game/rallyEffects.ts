@@ -41,44 +41,21 @@ export const RALLY_EFFECTS: readonly RallyEffectConfig[] = Object.freeze([
   config(100,'B','perimeter',1.2,'green'),
   config(200,'B','crossing-network',1.2,'green-blue'),
   config(300,'B','gold-rays',1.5,'gold'),
-  config(400,'A','background-threads',null,'green-blue'),
-  config(500,'A','green-perimeter',null,'green'),
-  config(600,'A','green-net',null,'green'),
-  config(700,'A','background-halo',null,'green-blue'),
+  config(500,'B','green-perimeter',1.2,'green'),
   config(800,'B','rainbow-sparks',1.5,'rainbow-green'),
-  config(900,'A','corner-posts',null,'green-blue'),
-  config(1000,'B','shockwave',3.5,'green-blue',['corner-posts'],100),
-  config(1250,'A','meteor',4,'green-blue'),
-  config(1500,'A','tricolor-network',null,'green-blue-red',['green-perimeter','green-net','green-blue-world']),
-  config(1750,'A','floor-wave',4,'green-blue-red'),
-  //2000 combines A world persistence with its B2.5s arrival (consume creates both).
-  config(2000,'A','star-world',2.5,'green-blue-red',['background-threads'],100),
-  config(2250,'A','side-halos',3,'green-blue-red'),
-  config(2500,'A','orbit-ribbon',null,'green-blue-red',['floor-wave']),
-  config(2750,'A','multi-halos',null,'green-blue-red',['background-halo']),
-  config(3000,'B','electric-opening',3.5,'green-blue-red',[],100),
-  config(3250,'A','meteor-swarm',null,'green-blue-red',['meteor']),
-  config(3500,'A','double-table-halos',null,'green-blue-red',['side-halos']),
-  config(3750,'A','center-density',null,'green-blue-red'),
-  config(4000,'B','final-assembly',4,'green-blue-red',['center-density'],100),
+  config(1000,'B','shockwave',2,'green-blue',[],100),
+  config(1500,'B','tricolor-network',1.5,'green-blue-red'),
+  config(2000,'B','tricolor-network',2,'green-blue-red',[],100),
+  config(2500,'B','perimeter',1.5,'green-blue-red'),
+  config(2750,'B','crossing-network',1.1,'green-blue-red'),
+  config(3000,'B','electric-opening',2,'green-blue-red',[],100),
+  config(3500,'B','final-assembly',2.8,'green-blue-gold',[],110),
 ]);
 
 /** No event-ID history: score/loss watermarks deduplicate even after buffers expire.
  * At 30 balls, the .6s outgoing flight alone permits fewer than 90 hits in 1.5s.
  * The defensive cap also bounds malformed external batches without affecting play. */
 export const RALLY_EFFECT_LIMITS = Object.freeze({ hits: 512, cues: 512, losses: 100, hitSeconds: 1.5 });
-
-function worldStage(score: number): readonly RallyEffectConfig[] {
-  const stage = new Map<RallyEffectKind, RallyEffectConfig>();
-  for (const entry of RALLY_EFFECTS) {
-    if (entry.threshold > score) break;
-    for (const replaced of entry.replaces) stage.delete(replaced);
-    if (entry.kind === 'A') stage.set(entry.effect, entry);
-    if (entry.threshold === 1000) stage.set('green-blue-world', config(1000,'A','green-blue-world',null,'green-blue'));
-    if (entry.threshold === 4000) stage.set('final-world', config(4000,'A','final-world',null,'green-blue-red'));
-  }
-  return [...stage.values()];
-}
 
 const positionFact = (position: Point3 | undefined): { position?: Point3 } => position ? { position: { ...position } } : {};
 const copyFact = <T extends { position?: Point3 }>(fact: T): T => ({ ...fact, ...positionFact(fact.position) });
@@ -114,15 +91,16 @@ export function createRallyEffects(runId: string, bestAtStart: number): RallyEff
       latestTime = Math.max(latestTime, event.time);
       if (event.kind === 'player-hit' && isCount(event.rallyScore) && event.rallyScore > score) {
         score = event.rallyScore;
-        stage = worldStage(score);
-        if (score >= 50) hits.push({ id: event.id, score, at: event.time,
+        stage = [];
+        if (score >= 1500) hits = [];
+        if (score >= 50 && score < 1500) hits.push({ id: event.id, score, at: event.time,
           smashReturn: event.smashReturn ?? false, ...positionFact(event.position) });
         const arrival = RALLY_EFFECTS.find(entry => entry.threshold === score && (entry.kind === 'B' || entry.threshold === 2000));
         if (arrival) arrivals.push({ id: event.id, threshold: score, at: event.time, config: arrival, ...positionFact(event.position) });
-        const major = score === 1000 || score === 2000 || score === 3000 || score === 4000;
+        const major = score === 1000 || score === 2000 || score === 3000 || score === 3500;
         if (major) cue(event,'major',score,2.5,100);
         else if ((score < 50 && score % 5 === 0) || (score >= 50 && score < 200 && score % 10 === 0) ||
-          (score >= 200 && score <= 4000 && score % 100 === 0)) cue(event,'notice',score,1.8,10);
+          (score >= 200 && score <= 3500 && score % 100 === 0)) cue(event,'notice',score,1.8,10);
         if (initialBest > 0 && best === null && score > initialBest) {
           best = { score, at: event.time, ...positionFact(event.position) };
           cue(event,'best-record',score,2,50);
@@ -133,9 +111,9 @@ export function createRallyEffects(runId: string, bestAtStart: number): RallyEff
         lossWindow.push(event.time);
         const rollingCount = lossWindow.length;
         losses.push({ id: event.id, count: lostBallCount, at: event.time, rollingCount, ...positionFact(event.position) });
-        cue(event,'loss-spark',lostBallCount,.5);
+        if (score < 1500) cue(event,'loss-spark',lostBallCount,.5);
         if (rollingCount >= 4) cue(event,'loss-impact',lostBallCount,.5,80);
-        if ([10,20,30,40].includes(lostBallCount)) cue(event,'loss-wave',lostBallCount,1.2);
+        if ([10,20,30,40,60,70,80].includes(lostBallCount)) cue(event,'loss-wave',lostBallCount,1.2);
         if (lostBallCount === 50) cue(event,'loss-net',lostBallCount,1.2);
         if ([55,77,88].includes(lostBallCount)) cue(event,'loss-number',lostBallCount,.8);
         if (lostBallCount >= 90 && lostBallCount <= 99) cue(event,'loss-warning',lostBallCount,.8,80);

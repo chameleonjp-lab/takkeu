@@ -76,7 +76,7 @@ function show(score: number) {
 }
 function restore() { const canvas = document.querySelector('canvas')!; canvas.dispatchEvent(new Event('webglcontextrestored')); }
 const harness = { snapshot: (): GameSnapshot => session.snapshot(), show, restore, metrics: () => metrics,
-  goal(score = 2999, count = 30) {
+  goal(score = 3499, count = 30) {
     state = scenario(score, 0).state;
     state.balls = Array.from({ length: count }, (_, i) => incoming(i + 1, .05, { x: 0, y: .5 }, 0));
     state.nextBallId = count + 1;

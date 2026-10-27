@@ -19,8 +19,8 @@ it('keeps the maximum legacy net burst near the net with a fixed visible density
   let maxY=-Infinity;
   for(let i=0;i<view.lightning.geometry.drawRange.count;i++)maxY=Math.max(maxY,p.getY(i));
   expect(maxY).toBeLessThan(1.2);
-  // All existing 14 digit events remain; only the unsafe spatial burst is bounded.
-  expect(view.stats().numbers).toHaveLength(14);view.dispose();objects.dispose();
+  // Every digit event remains in state; the highest priority number is displayed.
+  expect(view.stats().numbers).toEqual([100]);view.dispose();objects.dispose();
 });
 it('uses a damped low-frequency shake without frame-to-frame table jumps',()=>{
   const {objects,view,snapshot}=stress();let maximumStep=0;
@@ -39,5 +39,5 @@ it('dims competing legacy electricity without dimming the protected loss digits'
   expect(alpha).toBeLessThanOrEqual(.361);
   const digits=view.numbers.geometry.getAttribute('color');
   let digitAlpha=0;for(let i=0;i<view.numbers.geometry.drawRange.count;i++)digitAlpha=Math.max(digitAlpha,digits.getW(i));
-  expect(digitAlpha).toBe(1);expect(view.stats().numbers).toHaveLength(14);view.dispose();objects.dispose();
+  expect(digitAlpha).toBe(1);expect(view.stats().numbers).toEqual([100]);view.dispose();objects.dispose();
 });

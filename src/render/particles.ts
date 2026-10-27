@@ -30,7 +30,7 @@ export function createFireworks() {
     update(snapshot:GameSnapshot,events:readonly GameEvent[],quality:Quality,reducedMotion=false,lowPriorityOpacity=1) {
       if(disposed)return;
       if(runId!==snapshot.runId){clear();runId=snapshot.runId;}
-      if(snapshot.phase==='gameover'||snapshot.phase==='ready'){clear();return;}
+      if(snapshot.score>=1500||snapshot.phase==='gameover'||snapshot.phase==='ready'){clear();return;}
       for(const event of events){
         if(event.runId!==runId||!event.effect||!event.position||seen.has(event.id)||event.time>snapshot.simTime+1e-9||snapshot.simTime-event.time>=LIFE)continue;
         seen.add(event.id);order.push(event.id);if(order.length>512)seen.delete(order.shift()!);

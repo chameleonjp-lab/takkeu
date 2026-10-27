@@ -25,13 +25,13 @@ it('the app delivers the final hit and clear sound event without suspending the 
     root.querySelector('.canvas-wrap')!.getBoundingClientRect = () => ({ x: 0, y: 0, left: 0, top: 0, width: 390, height: 844, right: 390, bottom: 844, toJSON() {} });
     root.querySelector<HTMLButtonElement>('[data-action="start"]')!.click(); await vi.advanceTimersByTimeAsync(200);
     expect(state.phase).toBe('running');
-    state.score = 2999; state.balls = [incoming(1, state.simTime + .05, undefined, state.simTime)];
+    state.score = 3499; state.balls = [incoming(1, state.simTime + .05, undefined, state.simTime)];
     const stopped = audio.suspend.mock.calls.length;
     await vi.advanceTimersByTimeAsync(100);
     expect(state.endReason).toBe('clear');
     expect(audio.consume.mock.calls.flatMap(c => c[0]).some(e => e.kind === 'game-clear')).toBe(true);
     expect(audio.suspend).toHaveBeenCalledTimes(stopped);
-    const draws = render.mock.calls.length; await vi.advanceTimersByTimeAsync(3000);
+    await vi.advanceTimersByTimeAsync(3000); const draws = render.mock.calls.length; await vi.advanceTimersByTimeAsync(3000);
     expect(render).toHaveBeenCalledTimes(draws); expect(audio.suspend).toHaveBeenCalledTimes(stopped);
   } finally { app.dispose(); root.remove(); vi.unstubAllGlobals(); vi.useRealTimers(); }
 });

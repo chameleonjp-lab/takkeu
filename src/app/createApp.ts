@@ -154,7 +154,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     inputMapping = view.inputMapping();
     swipe.updateMapping(inputMapping, session.snapshot().phase === 'running');
     fitted = key;
-    if(!starting&&!loadingError)view.render(finishPresentation.frame(session.snapshot(), performance.now(), effectEnd).snapshot, [], effectState);
+    if(!starting&&!loadingError){const p=finishPresentation.frame(session.snapshot(), performance.now(), effectEnd);view.render(p.snapshot, [], effectState, p.presentationTime);}
   }
   function makeView(): GameView {
     fitted = '';inputMapping=null;viewPrepared=false;
@@ -266,7 +266,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
       startEpoch++;pendingStart?.abort();pendingStart=null;ranking.abandonStart();retirePreparingPlay();starting=false;screens.setStarting(false);silence();
       showLoadingError(reason==='context-lost'?'描画の復旧を待ってから、もう一度準備してください。':'画面を離れたため準備を中断しました。もう一度準備してください。');return;
     }
-    if (session.snapshot().phase === 'gameover') { silence(); return; }
+    if (session.snapshot().phase === 'gameover') { finishPresentation.cancel(session.snapshot()); silence(); return; }
     if (session.snapshot().phase === 'paused' && observedPhase === 'paused') return;
     if (session.snapshot().phase === 'running') session.pause(reason);
     if (session.snapshot().phase !== 'paused') return;
@@ -351,9 +351,9 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     // Continue the last celebration without advancing gameplay. Once it ends,
     // frozen scenes only draw on explicit resize/restore or screen changes.
     const needsFrame = result.snapshot.phase === 'running' || result.snapshot.phase !== observedPhase || presentation.finishing || wasFinishing;
-    if (view && contextAvailable && !starting && !loadingError && result.snapshot.phase !== 'ready' && needsFrame) view.render(presentation.snapshot, result.events, effectState);
-    if (wasFinishing && !presentation.finishing) silence();
-    screens.render(result.snapshot, presentation.finishing); updateRallyNotice(presentation.snapshot,presentation.finishing); observedPhase = result.snapshot.phase; wasFinishing = presentation.finishing;
+    if (view && contextAvailable && !starting && !loadingError && result.snapshot.phase !== 'ready' && needsFrame && !document.hidden) view.render(presentation.snapshot, result.events, effectState, presentation.presentationTime);
+    if (wasFinishing && !presentation.finishing && result.snapshot.endReason !== 'clear') silence();
+    screens.render(result.snapshot, presentation.finishing); updateRallyNotice({...presentation.snapshot,simTime:presentation.presentationTime},presentation.finishing); observedPhase = result.snapshot.phase; wasFinishing = presentation.finishing;
     frameId = requestAnimationFrame(frame);
   };
   frameId = requestAnimationFrame(frame);

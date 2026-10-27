@@ -47,10 +47,10 @@ function envelope(age:number,duration:number){return Math.min(1,Math.max(0,age)*
 export function presentationPriority(snapshot:Pick<GameSnapshot,'runId'|'simTime'>,state?:RallyEffectsState):number {
   if(!state||state.runId!==snapshot.runId)return 1;
   const time=snapshot.simTime,smooth=(value:number)=>{const t=clamp(value);return t*t*(3-2*t);};
-  const confirmedMajor=Math.min(4000,Math.floor(state.score/1000)*1000);
+  const confirmedMajor=state.score >= 3500 ? 3500 : Math.floor(state.score/1000)*1000;
   let majorAt=-Infinity,majorDuration=0,majorScore=0,finalAt=-Infinity;
   for(const cue of state.arrivals){
-    if(cue.threshold<1000||cue.threshold>4000||cue.threshold%1000!==0||cue.at>time||cue.threshold<confirmedMajor)continue;
+    if(cue.threshold<1000||cue.threshold>3500||(cue.threshold%1000!==0&&cue.threshold!==3500)||cue.at>time||cue.threshold<confirmedMajor)continue;
     if(cue.at>majorAt||cue.at===majorAt&&cue.threshold>majorScore){majorAt=cue.at;majorDuration=cue.config.duration??0;majorScore=cue.threshold;}
   }
   let pressure=0;
@@ -61,7 +61,7 @@ export function presentationPriority(snapshot:Pick<GameSnapshot,'runId'|'simTime
   return 1-pressure*.55;
 }
 
-const HIT_SEGMENTS=12, LOSS_RAYS=6, TABLE_CAPACITY=512*HIT_SEGMENTS+4, WORLD_CAPACITY=100*LOSS_RAYS;
+const HIT_SEGMENTS=12, LOSS_RAYS=6, TABLE_CAPACITY=512*HIT_SEGMENTS+128, WORLD_CAPACITY=100*LOSS_RAYS;
 // Immutable unit-circle data is shared; event positions and times remain independent.
 const circle=Float64Array.from({length:(HIT_SEGMENTS+1)*2},(_,i)=>
   i%2?Math.sin(Math.floor(i/2)/HIT_SEGMENTS*TAU):Math.cos(Math.floor(i/2)/HIT_SEGMENTS*TAU));
@@ -101,14 +101,14 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group){
         slots.fill(-1);
         for(let i=0;i<state.hits.length;i++){
           const hit=state.hits[i]!,age=time-hit.at;
-          if(hit.score<50||!hit.position||age<0||age>=.3||!unique(state.hits,i))continue;
+          if(snapshot.score>=1500||hit.score>=1500||hit.score<50||!hit.position||age<0||age>=.3||!unique(state.hits,i))continue;
           active('hit-ring');
           hitRing(table,hit.position.x,hit.position.y,hit.position.z,.075+(reducedMotion?.35:age/.3)*.13,(1-age/.3)*.55*opacity);
         }
         slots.fill(-1);
         for(let i=0;i<state.losses.length;i++){
           const loss=state.losses[i]!,age=time-loss.at;
-          if(!loss.position||age<0||age>=.5||!unique(state.losses,i))continue;
+          if(snapshot.score>=1500||!loss.position||age<0||age>=.5||!unique(state.losses,i))continue;
           active('loss-sparks');
           const t=reducedMotion?.35:age/.5,p=loss.position;
           for(let ray=0;ray<LOSS_RAYS;ray++){
@@ -117,6 +117,42 @@ export function createRallyEffectView(config:GameConfig,tableRig:Group){
             world.line(x,y,z,x-Math.cos(angle)*.025,y-.014,z-Math.sin(angle)*.01,.008,.6,.95,.8,(1-age/.5)*.55*opacity);
           }
           particleCount+=LOSS_RAYS;
+        }
+        // One bounded family of perimeter arcs, selected by importance. No background layers.
+        const arrival = state.arrivals.filter(a => a.threshold >= 500 && time >= a.at && time < a.at + (a.config.duration ?? 0))
+          .sort((a,b) => b.config.priority-a.config.priority || b.at-a.at)[0];
+        const lossCue = state.cues.filter(c => ['loss-wave','loss-net','loss-number','loss-warning','loss-gold','loss-final'].includes(c.kind) && time >= c.at && time < c.at+c.duration)
+          .sort((a,b) => b.priority-a.priority || b.value-a.value || b.at-a.at)[0];
+        const useLoss = !!lossCue && (!arrival || lossCue.priority >= arrival.config.priority);
+        const cue = useLoss ? lossCue : arrival;
+        if(cue){
+          const duration = 'threshold' in cue ? cue.config.duration! : cue.duration;
+          const age = time-cue.at, threshold = 'threshold' in cue ? cue.threshold : 0;
+          const lossValue = 'value' in cue ? cue.value : 0;
+          const final = threshold===3500, gold = lossValue===99||lossValue===100;
+          const net = lossValue===50;
+          active(final?'clear-electric':useLoss?'loss-electric':'rally-electric');
+          const alpha=envelope(age,duration)*(reducedMotion?.24:final?.6:.46);
+          const arcs=reducedMotion?4:final||net?12:8,segments=reducedMotion?1:6;
+          // Smoothly interpolated shape, no strobe or random frame-to-frame replacement.
+          const motion=reducedMotion?0:age;
+          for(let i=0;i<arcs;i++){
+            const side=i%4,t=(Math.floor(i/4)+.5)/Math.ceil(arcs/4);
+            const w=config.tableHalfWidth+.035,l=config.tableHalfLength+.035;
+            const ox=side<2?(side===0?-w:w):(t*2-1)*w;
+            const oz=side<2?(t*2-1)*l:(side===2?-l:l);
+            const tricolor=threshold>=1500&&!final;
+            const c=gold||final&&i%3===2?[1,.7,.12]:tricolor&&i%3===2?[.9,.15,.1]:i%2&&threshold>=1000||lossValue===77?[.15,.5,1]:[.08,.9,.35];
+            let x=ox,y=config.tableY+.025,z=oz;
+            for(let j=1;j<=segments;j++){
+              const u=j/segments,jitter=Math.sin(i*2.3+j*2.1+motion*2)*.035;
+              const nx=ox+(side<2?(side===0?-1:1)*u*.11:u*.22)+jitter;
+              const ny=config.tableY+.025+Math.sin(u*Math.PI)*.12;
+              const nz=oz+(side<2?u*.22:(side===2?-1:1)*u*.11)+jitter;
+              table.line(x,y,z,nx,ny,nz,.01,c[0]!,c[1]!,c[2]!,alpha);x=nx;y=ny;z=nz;
+            }
+          }
+          if(net)table.line(-config.tableHalfWidth,config.tableY+.19,0,config.tableHalfWidth,config.tableY+.19,0,.012,.1,.7,1,alpha);
         }
         // The last actual loss keeps a short outline. Simulation and ending
         // clocks, score facts and audio events are not consumed by drawing.

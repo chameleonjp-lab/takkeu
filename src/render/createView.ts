@@ -17,7 +17,7 @@ import { MAX_BALLS } from '../game/milestones';
 
 export interface GameView {
   prepare?(progress:(completed:number,total:number)=>void):Promise<void>;
-  render(snapshot: GameSnapshot, events: readonly GameEvent[], effects?: RallyEffectsState): void;
+  render(snapshot: GameSnapshot, events: readonly GameEvent[], effects?: RallyEffectsState, presentationTime?: number): void;
   resize(width: number, height: number): void;
   inputMapping(): InputMapping;
   setQuality(quality: Quality): void;
@@ -60,16 +60,17 @@ export function createView(canvas: HTMLCanvasElement, config: GameConfig): GameV
       })();
       return preparation;
     },
-    render(snapshot, events, effects) {
+    render(snapshot, events, effects, presentationTime = snapshot.simTime) {
       if (snapshot.runId !== previousRunId) { flashUntil = 0; renderer.renderLists.dispose(); previousRunId = snapshot.runId; }
       for (const event of events) if (event.kind === 'player-hit') flashUntil = event.time + 0.12;
       const reducedMotion=motionQuery?.matches??false;
-      const lowPriorityOpacity=presentationPriority(snapshot,effects);
+      const display = { ...snapshot, simTime: presentationTime };
+      const lowPriorityOpacity=presentationPriority(display,effects);
       applyPresentation(objects, snapshot,reducedMotion);
       updateOpponentView(objects, snapshot, events);
       fireworks.update(snapshot,events,quality,reducedMotion,lowPriorityOpacity);
-      celebrations.update(snapshot,reducedMotion,lowPriorityOpacity);
-      rallyEffects.update(snapshot,effects,quality,reducedMotion);
+      celebrations.update(display,reducedMotion,lowPriorityOpacity);
+      rallyEffects.update(display,effects,quality,reducedMotion);
       if (!snapshot.progression.appliedMilestones.includes(100)) objects.rimMaterial.emissiveIntensity = snapshot.simTime < flashUntil ? 0.8 : 0.15;
       renderer.render(scene, camera);
     },

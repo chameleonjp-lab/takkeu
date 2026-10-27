@@ -13,19 +13,19 @@ const boot = async (audioVoiceLimit = 8) => {
 const phrase = (t: ReturnType<typeof layeredAudioContext>) => t.sources.filter(source => source.stops[0]! > .5);
 
 describe('extended rally audio', () => {
-  it('lets the 3000 clear fanfare finish, stops contacts, and rejects later gameplay sounds', async () => {
-    const { t, audio } = await boot(); audio.consume([hit(3000)]);
+  it('lets the 3500 clear fanfare finish, stops contacts, and rejects later gameplay sounds', async () => {
+    const { t, audio } = await boot(); audio.consume([hit(3500)]);
     const notes = phrase(t), count = t.sources.length;
     audio.consume([{ kind: 'game-clear', id: 'clear', runId: 'run', time: 0 }]);
     expect(notes.length).toBeGreaterThanOrEqual(4);
     expect(notes.every(source => !source.record.disconnected && source.stops.length === 1)).toBe(true);
-    expect(t.sources.filter(source => !notes.includes(source)).every(source => source.record.disconnected)).toBe(true);
-    audio.consume([hit(3001, 'after', 1), { kind: 'smash-warning', id: 'late-warning', runId: 'run', time: 1 }]);
+    expect(t.sources.filter(source => source.stops[0]! < .2).every(source => source.record.disconnected)).toBe(true);
+    audio.consume([hit(3501, 'after', 1), { kind: 'smash-warning', id: 'late-warning', runId: 'run', time: 1 }]);
     expect(t.sources).toHaveLength(count);
     t.finishAll(); expect(t.sources.every(source => source.record.disconnected)).toBe(true);
     await audio.dispose();
   });
-  it.each([1000, 3000, 4000])('replaces the ordinary hundred phrase at %s with a distinct longer cue exactly once', async score => {
+  it.each([1000, 3000, 3500])('replaces the ordinary hundred phrase at %s with a distinct longer cue exactly once', async score => {
     const { t, audio } = await boot(); audio.consume([hit(score)]);
     const notes = phrase(t), count = t.sources.length;
     expect(notes.length).toBeGreaterThanOrEqual(4);
@@ -35,9 +35,9 @@ describe('extended rally audio', () => {
     await audio.dispose(); expect(t.nodes.every(node => node.disconnected)).toBe(true);
   });
 
-  it('keeps 2000 ordinary and gives 1000, 3000 and 4000 different musical contours', async () => {
+  it('keeps 2000 ordinary and gives 1000, 3000 and 3500 different musical contours', async () => {
     const contours: number[][] = [];
-    for (const score of [1000, 2000, 3000, 4000]) {
+    for (const score of [1000, 2000, 3000, 3500]) {
       const { t, audio } = await boot(); audio.consume([hit(score)]);
       const notes = phrase(t); contours.push(notes.map(source => source.frequencies[0]!));
       if (score === 2000) {
@@ -79,7 +79,7 @@ describe('extended rally audio', () => {
 
   it.each([1, 8])('keeps a warning audible when every live voice is a dedicated fanfare, limit %s', async limit => {
     const { t, audio } = await boot(limit);
-    for (let i = 0; i < limit; i++) audio.consume([hit([1000, 3000, 4000][i % 3]!, `fanfare-${i}`)]);
+    for (let i = 0; i < limit; i++) audio.consume([hit([1000, 3000, 3500][i % 3]!, `fanfare-${i}`)]);
     const before = t.sources.length;
     audio.consume([{ kind: 'smash-warning', id: 'warning', runId: 'run', time: 0, ballId: 1 }]);
     const warning = t.sources.slice(before);
@@ -164,9 +164,13 @@ describe('extended rally audio', () => {
 
   it('preserves dedicated phrases with basic oscillator fallback and low quality', async () => {
     const t = fakeAudioContext(), audio = createAudio(DEFAULT_CONFIG, () => t.context);
-    audio.reset('run'); await audio.unlock(); audio.setQuality!('low'); audio.consume([hit(4000)]);
+    audio.reset('run'); await audio.unlock(); audio.setQuality!('low'); audio.consume([hit(3500)]);
     expect(Math.max(...t.voices.flatMap(source => source.stops))).toBeGreaterThan(2);
     expect(t.voices.length).toBeLessThanOrEqual(20);
     await audio.dispose(); expect(t.voices.every(source => source.disconnected)).toBe(true);
   });
+});
+
+it('3000 celebration leaves contacts and smash warnings enabled',async()=>{
+ const {t,audio}=await boot();audio.consume([hit(3000)]);const n=t.sources.length;audio.consume([hit(3001,'next',1),{kind:'smash-warning',id:'warning',runId:'run',time:1}]);expect(t.sources.length).toBeGreaterThan(n);await audio.dispose();
 });
