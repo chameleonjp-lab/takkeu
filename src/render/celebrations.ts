@@ -107,7 +107,7 @@ export function createCelebrationView(config: GameConfig, tableRig: Group) {
           :{x:(t*2-1)*config.tableHalfWidth,y:config.tableY+.015,z:(side===2?-1:1)*config.tableHalfLength};
         bolt(origin,.18+hash(i+9)*.25,i+301,motionTime,{r:.08,g:1,b:.22},.9*lowPriorityOpacity,.009);
       }
-      const numbers=[...frame.numbers].sort((a,b)=>b.value-a.value).slice(0,1);
+      const numbers=(snapshot.lostBallCount>=100?frame.numbers.filter(n=>n.value===100):[...frame.numbers]).sort((a,b)=>b.value-a.value).slice(0,1);
       numbers.forEach((n,i)=>drawNumber(n.value,i,numbers.length,motionTime,n.age,n.duration,reducedMotion?({55:'black',77:'blue',88:'green',99:'gold'} as Record<number,CelebrationPalette>)[n.value]??n.palette:n.palette,reducedMotion));
       const ambientEnvironment=snapshot.score<1000?frame.environment:null;
       if(ambientEnvironment)for(let i=0;i<24;i++){

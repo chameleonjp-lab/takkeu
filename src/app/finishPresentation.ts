@@ -15,7 +15,7 @@ export function createFinishPresentation() {
       if (snapshot.phase !== 'gameover') return { snapshot, finishing: false, presentationTime: snapshot.simTime };
       if (startedAt === null) {
         startedAt = now;
-        duration = snapshot.endReason === 'clear' ? 2.8 : Math.max(0, Math.min(5, Math.max(celebrationEnd(snapshot.celebrations),
+        duration = snapshot.endReason === 'clear' ? 2.8 : snapshot.lostBallCount >= 100 ? 2 : Math.max(0, Math.min(5, Math.max(celebrationEnd(snapshot.celebrations),
           Number.isFinite(effectEnd) ? effectEnd : 0) - snapshot.simTime));
         endsAt = snapshot.simTime + duration;
       }

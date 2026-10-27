@@ -49,3 +49,9 @@ it('interrupts drawing facts without resetting score/loss deduplication or best 
  e.consume([hit(2000),loss(55)]);expect(e.state().arrivals).toEqual([]);expect(e.state().cues).toEqual([]);
  e.consume([hit(2001,20.1),loss(60,20.2)]);expect(e.state().lostBallCount).toBe(60);expect(e.state().cues.some(c=>c.kind==='loss-wave'&&c.value===60)).toBe(true);expect(e.state().cues.some(c=>c.kind==='best-record')).toBe(false);
 });
+it('never revives the99 glyph after the100 marker has expired',()=>{
+ let c=lossCelebration(createCelebrations(),99,20);c=lossCelebration(c,100,20);
+ const v=createCelebrationView(DEFAULT_CONFIG,new Group());v.update({...snapshot(3200,22.5),phase:'gameover',lostBallCount:100,celebrations:c});expect(v.stats().numbers).toEqual([]);v.dispose();
+ const finish=createFinishPresentation(),end={...snapshot(3000,20),phase:'gameover' as const,endReason:'loss' as const,lostBallCount:100,celebrations:c};
+ expect(finish.frame(end,1000,25).finishing).toBe(true);expect(finish.frame(end,3000,25).finishing).toBe(false);
+});
