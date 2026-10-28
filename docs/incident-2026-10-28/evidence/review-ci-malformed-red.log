@@ -1,0 +1,29 @@
+✔ only explicitly owner-approved dispatch of full main SHA is eligible (4.828764ms)
+✔ GitHub gate uses latest main push CI, rejects stale SHA, failure, pending and API errors (0.737887ms)
+✖ malformed or incomplete CI API evidence fails closed (0.827533ms)
+✔ DB gate requires complete exact contract and least-privilege read-only observation (1.351253ms)
+✔ every publishing workflow is manual, gated and serialized; CI remains automatic (0.574692ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 28.602533
+
+✖ failing tests:
+
+test at tests/release/guards.test.mjs:27:1
+✖ malformed or incomplete CI API evidence fails closed (0.827533ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///workspace/takkeu/tests/release/guards.test.mjs:32:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }

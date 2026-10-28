@@ -1,0 +1,1444 @@
+{
+  "game": {
+    "game_slug": "takkeu",
+    "is_active": true,
+    "score_max": 100000000,
+    "score_min": 0,
+    "score_order": "desc",
+    "submission_mode": "shared"
+  },
+  "format": 1,
+  "tables": [
+    {
+      "rls": true,
+      "kind": "r",
+      "name": "game_play_sessions",
+      "owner": "postgres",
+      "schema": "private",
+      "columns": [
+        {
+          "name": "client_version",
+          "type": "text",
+          "default": "''::text",
+          "not_null": true
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "default": "now()",
+          "not_null": true
+        },
+        {
+          "name": "display_name",
+          "type": "text",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "finished_at",
+          "type": "timestamp with time zone",
+          "default": null,
+          "not_null": false
+        },
+        {
+          "name": "game_slug",
+          "type": "text",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "normalized_name",
+          "type": "text",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "play_id",
+          "type": "uuid",
+          "default": "gen_random_uuid()",
+          "not_null": true
+        },
+        {
+          "name": "ranking_score",
+          "type": "integer",
+          "default": null,
+          "not_null": false
+        },
+        {
+          "name": "reached_wave",
+          "type": "integer",
+          "default": "1",
+          "not_null": true
+        },
+        {
+          "name": "result_type",
+          "type": "text",
+          "default": "'retire'::text",
+          "not_null": true
+        },
+        {
+          "name": "score",
+          "type": "integer",
+          "default": "0",
+          "not_null": true
+        },
+        {
+          "name": "start_id",
+          "type": "uuid",
+          "default": null,
+          "not_null": false
+        },
+        {
+          "name": "started_at",
+          "type": "timestamp with time zone",
+          "default": "now()",
+          "not_null": true
+        },
+        {
+          "name": "submission_id",
+          "type": "uuid",
+          "default": null,
+          "not_null": false
+        },
+        {
+          "name": "takkeu_final_lost_balls",
+          "type": "integer",
+          "default": null,
+          "not_null": false
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp with time zone",
+          "default": "now()",
+          "not_null": true
+        }
+      ],
+      "indexes": [
+        {
+          "name": "game_play_sessions_game_player_started_idx",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE INDEX game_play_sessions_game_player_started_idx ON private.game_play_sessions USING btree (game_slug, normalized_name, started_at)"
+        },
+        {
+          "name": "game_play_sessions_game_started_idx",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE INDEX game_play_sessions_game_started_idx ON private.game_play_sessions USING btree (game_slug, started_at)"
+        },
+        {
+          "name": "game_play_sessions_normalized_name_idx",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE INDEX game_play_sessions_normalized_name_idx ON private.game_play_sessions USING btree (normalized_name)"
+        },
+        {
+          "name": "game_play_sessions_pkey",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE UNIQUE INDEX game_play_sessions_pkey ON private.game_play_sessions USING btree (play_id)"
+        },
+        {
+          "name": "game_play_sessions_start_id_key",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE UNIQUE INDEX game_play_sessions_start_id_key ON private.game_play_sessions USING btree (start_id) WHERE (start_id IS NOT NULL)"
+        },
+        {
+          "name": "game_play_sessions_submission_id_key",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE UNIQUE INDEX game_play_sessions_submission_id_key ON private.game_play_sessions USING btree (submission_id)"
+        }
+      ],
+      "policies": [],
+      "triggers": [],
+      "force_rls": false,
+      "privileges": [
+        {
+          "role": "anon",
+          "usage": false,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": false,
+          "truncate": false,
+          "references": false
+        },
+        {
+          "role": "authenticated",
+          "usage": false,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": false,
+          "truncate": false,
+          "references": false
+        },
+        {
+          "role": "service_role",
+          "usage": false,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": false,
+          "truncate": false,
+          "references": false
+        }
+      ],
+      "column_acls": [],
+      "constraints": [
+        {
+          "name": "game_play_sessions_game_slug_fkey",
+          "validated": true,
+          "definition": "FOREIGN KEY (game_slug) REFERENCES public.games(game_slug)"
+        },
+        {
+          "name": "game_play_sessions_normalized_name_fkey",
+          "validated": true,
+          "definition": "FOREIGN KEY (normalized_name) REFERENCES public.players(normalized_name)"
+        },
+        {
+          "name": "game_play_sessions_pkey",
+          "validated": true,
+          "definition": "PRIMARY KEY (play_id)"
+        },
+        {
+          "name": "game_play_sessions_ranking_score_check",
+          "validated": true,
+          "definition": "CHECK (((ranking_score IS NULL) OR (ranking_score >= 0)))"
+        },
+        {
+          "name": "game_play_sessions_reached_wave_check",
+          "validated": true,
+          "definition": "CHECK (((reached_wave >= 1) AND (reached_wave <= 30)))"
+        },
+        {
+          "name": "game_play_sessions_result_type_check",
+          "validated": true,
+          "definition": "CHECK ((result_type = ANY (ARRAY['play'::text, 'clear'::text, 'game_over'::text, 'retire'::text])))"
+        },
+        {
+          "name": "game_play_sessions_score_check",
+          "validated": true,
+          "definition": "CHECK ((score >= 0))"
+        },
+        {
+          "name": "game_play_sessions_submission_id_key",
+          "validated": true,
+          "definition": "UNIQUE (submission_id)"
+        },
+        {
+          "name": "takkeu_final_lost_balls_range_v1",
+          "validated": true,
+          "definition": "CHECK (((takkeu_final_lost_balls IS NULL) OR ((game_slug = 'takkeu'::text) AND ((takkeu_final_lost_balls >= 0) AND (takkeu_final_lost_balls <= 100)))))"
+        }
+      ]
+    },
+    {
+      "rls": true,
+      "kind": "r",
+      "name": "takkeu_guest_plays_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "columns": [
+        {
+          "name": "client_version",
+          "type": "text",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "play_id",
+          "type": "uuid",
+          "default": "gen_random_uuid()",
+          "not_null": true
+        },
+        {
+          "name": "start_id",
+          "type": "uuid",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "started_at",
+          "type": "timestamp with time zone",
+          "default": "clock_timestamp()",
+          "not_null": true
+        }
+      ],
+      "indexes": [
+        {
+          "name": "takkeu_guest_plays_v1_pkey",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE UNIQUE INDEX takkeu_guest_plays_v1_pkey ON private.takkeu_guest_plays_v1 USING btree (start_id)"
+        },
+        {
+          "name": "takkeu_guest_plays_v1_play_id_key",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE UNIQUE INDEX takkeu_guest_plays_v1_play_id_key ON private.takkeu_guest_plays_v1 USING btree (play_id)"
+        },
+        {
+          "name": "takkeu_guest_plays_v1_started_at_idx",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE INDEX takkeu_guest_plays_v1_started_at_idx ON private.takkeu_guest_plays_v1 USING btree (started_at)"
+        }
+      ],
+      "policies": [],
+      "triggers": [],
+      "force_rls": false,
+      "privileges": [
+        {
+          "role": "anon",
+          "usage": false,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": false,
+          "truncate": false,
+          "references": false
+        },
+        {
+          "role": "authenticated",
+          "usage": false,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": false,
+          "truncate": false,
+          "references": false
+        },
+        {
+          "role": "service_role",
+          "usage": false,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": false,
+          "truncate": false,
+          "references": false
+        }
+      ],
+      "column_acls": [],
+      "constraints": [
+        {
+          "name": "takkeu_guest_plays_v1_client_version_check",
+          "validated": true,
+          "definition": "CHECK (((char_length(client_version) >= 1) AND (char_length(client_version) <= 80)))"
+        },
+        {
+          "name": "takkeu_guest_plays_v1_pkey",
+          "validated": true,
+          "definition": "PRIMARY KEY (start_id)"
+        },
+        {
+          "name": "takkeu_guest_plays_v1_play_id_key",
+          "validated": true,
+          "definition": "UNIQUE (play_id)"
+        }
+      ]
+    },
+    {
+      "rls": true,
+      "kind": "r",
+      "name": "takkeu_progress_signals_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "columns": [
+        {
+          "name": "first_seen_at",
+          "type": "timestamp with time zone",
+          "default": "clock_timestamp()",
+          "not_null": true
+        },
+        {
+          "name": "last_seen_at",
+          "type": "timestamp with time zone",
+          "default": "clock_timestamp()",
+          "not_null": true
+        },
+        {
+          "name": "latest_score",
+          "type": "integer",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "occurrence_count",
+          "type": "integer",
+          "default": "1",
+          "not_null": true
+        },
+        {
+          "name": "play_id",
+          "type": "uuid",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "reason",
+          "type": "text",
+          "default": null,
+          "not_null": true
+        }
+      ],
+      "indexes": [
+        {
+          "name": "takkeu_progress_signals_v1_pkey",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE UNIQUE INDEX takkeu_progress_signals_v1_pkey ON private.takkeu_progress_signals_v1 USING btree (play_id, reason)"
+        }
+      ],
+      "policies": [],
+      "triggers": [],
+      "force_rls": false,
+      "privileges": [
+        {
+          "role": "anon",
+          "usage": false,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": false,
+          "truncate": false,
+          "references": false
+        },
+        {
+          "role": "authenticated",
+          "usage": false,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": false,
+          "truncate": false,
+          "references": false
+        },
+        {
+          "role": "service_role",
+          "usage": false,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": false,
+          "truncate": false,
+          "references": false
+        }
+      ],
+      "column_acls": [],
+      "constraints": [
+        {
+          "name": "takkeu_progress_signal_reason_check",
+          "validated": true,
+          "definition": "CHECK ((reason = ANY (ARRAY['invalid_rate'::text, 'high_density'::text, 'sim_time_invalid'::text, 'non_monotonic'::text])))"
+        },
+        {
+          "name": "takkeu_progress_signals_v1_pkey",
+          "validated": true,
+          "definition": "PRIMARY KEY (play_id, reason)"
+        },
+        {
+          "name": "takkeu_progress_signals_v1_play_id_fkey",
+          "validated": true,
+          "definition": "FOREIGN KEY (play_id) REFERENCES private.game_play_sessions(play_id)"
+        }
+      ]
+    },
+    {
+      "rls": true,
+      "kind": "r",
+      "name": "takkeu_progress_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "columns": [
+        {
+          "name": "first_report_at",
+          "type": "timestamp with time zone",
+          "default": "clock_timestamp()",
+          "not_null": true
+        },
+        {
+          "name": "high_density_signal",
+          "type": "boolean",
+          "default": "false",
+          "not_null": true
+        },
+        {
+          "name": "last_ball_count",
+          "type": "integer",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "last_lost_balls",
+          "type": "integer",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "last_report_at",
+          "type": "timestamp with time zone",
+          "default": "clock_timestamp()",
+          "not_null": true
+        },
+        {
+          "name": "last_score",
+          "type": "integer",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "last_sim_seconds",
+          "type": "numeric(12,3)",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "play_id",
+          "type": "uuid",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "report_count",
+          "type": "integer",
+          "default": "1",
+          "not_null": true
+        }
+      ],
+      "indexes": [
+        {
+          "name": "takkeu_progress_v1_pkey",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE UNIQUE INDEX takkeu_progress_v1_pkey ON private.takkeu_progress_v1 USING btree (play_id)"
+        }
+      ],
+      "policies": [],
+      "triggers": [],
+      "force_rls": false,
+      "privileges": [
+        {
+          "role": "anon",
+          "usage": false,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": false,
+          "truncate": false,
+          "references": false
+        },
+        {
+          "role": "authenticated",
+          "usage": false,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": false,
+          "truncate": false,
+          "references": false
+        },
+        {
+          "role": "service_role",
+          "usage": false,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": false,
+          "truncate": false,
+          "references": false
+        }
+      ],
+      "column_acls": [],
+      "constraints": [
+        {
+          "name": "takkeu_progress_v1_last_ball_count_check",
+          "validated": true,
+          "definition": "CHECK (((last_ball_count >= 0) AND (last_ball_count <= 30)))"
+        },
+        {
+          "name": "takkeu_progress_v1_last_lost_balls_check",
+          "validated": true,
+          "definition": "CHECK (((last_lost_balls >= 0) AND (last_lost_balls <= 100)))"
+        },
+        {
+          "name": "takkeu_progress_v1_last_score_check",
+          "validated": true,
+          "definition": "CHECK ((last_score >= 0))"
+        },
+        {
+          "name": "takkeu_progress_v1_last_sim_seconds_check",
+          "validated": true,
+          "definition": "CHECK ((last_sim_seconds >= (0)::numeric))"
+        },
+        {
+          "name": "takkeu_progress_v1_pkey",
+          "validated": true,
+          "definition": "PRIMARY KEY (play_id)"
+        },
+        {
+          "name": "takkeu_progress_v1_play_id_fkey",
+          "validated": true,
+          "definition": "FOREIGN KEY (play_id) REFERENCES private.game_play_sessions(play_id)"
+        },
+        {
+          "name": "takkeu_progress_v1_report_count_check",
+          "validated": true,
+          "definition": "CHECK ((report_count >= 1))"
+        }
+      ]
+    },
+    {
+      "rls": true,
+      "kind": "r",
+      "name": "game_scores",
+      "owner": "postgres",
+      "schema": "public",
+      "columns": [
+        {
+          "name": "best_clear_wave",
+          "type": "integer",
+          "default": "0",
+          "not_null": true
+        },
+        {
+          "name": "best_score",
+          "type": "integer",
+          "default": "0",
+          "not_null": true
+        },
+        {
+          "name": "best_score_at",
+          "type": "timestamp with time zone",
+          "default": null,
+          "not_null": false
+        },
+        {
+          "name": "display_name",
+          "type": "text",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "first_clear_wave",
+          "type": "integer",
+          "default": "0",
+          "not_null": true
+        },
+        {
+          "name": "first_score",
+          "type": "integer",
+          "default": null,
+          "not_null": false
+        },
+        {
+          "name": "first_score_at",
+          "type": "timestamp with time zone",
+          "default": null,
+          "not_null": false
+        },
+        {
+          "name": "game_slug",
+          "type": "text",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "normalized_name",
+          "type": "text",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "play_count",
+          "type": "integer",
+          "default": "0",
+          "not_null": true
+        },
+        {
+          "name": "ranking_note",
+          "type": "text",
+          "default": null,
+          "not_null": false
+        },
+        {
+          "name": "ranking_status",
+          "type": "text",
+          "default": "'normal'::text",
+          "not_null": true
+        },
+        {
+          "name": "ranking_status_updated_at",
+          "type": "timestamp with time zone",
+          "default": null,
+          "not_null": false
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp with time zone",
+          "default": "now()",
+          "not_null": true
+        }
+      ],
+      "indexes": [
+        {
+          "name": "game_scores_game_slug_ranking_status_idx",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE INDEX game_scores_game_slug_ranking_status_idx ON public.game_scores USING btree (game_slug, ranking_status)"
+        },
+        {
+          "name": "game_scores_pkey",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE UNIQUE INDEX game_scores_pkey ON public.game_scores USING btree (normalized_name, game_slug)"
+        },
+        {
+          "name": "idx_game_scores_game_first_score",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE INDEX idx_game_scores_game_first_score ON public.game_scores USING btree (game_slug, first_score DESC, first_score_at)"
+        },
+        {
+          "name": "idx_game_scores_game_score",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE INDEX idx_game_scores_game_score ON public.game_scores USING btree (game_slug, best_score DESC, best_score_at)"
+        }
+      ],
+      "policies": [
+        {
+          "cmd": "SELECT",
+          "name": "game_scores_select_public",
+          "qual": "true",
+          "roles": [
+            "anon"
+          ],
+          "permissive": "PERMISSIVE",
+          "with_check": null
+        }
+      ],
+      "triggers": [
+        {
+          "name": "guard_verified_game_scores",
+          "enabled": "O",
+          "definition": "CREATE TRIGGER guard_verified_game_scores BEFORE INSERT OR UPDATE ON public.game_scores FOR EACH ROW EXECUTE FUNCTION private.guard_verified_score_write()"
+        }
+      ],
+      "force_rls": false,
+      "privileges": [
+        {
+          "role": "anon",
+          "usage": true,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": true,
+          "truncate": false,
+          "references": false
+        },
+        {
+          "role": "authenticated",
+          "usage": true,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": true,
+          "truncate": false,
+          "references": false
+        },
+        {
+          "role": "service_role",
+          "usage": true,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": true,
+          "maintain": true,
+          "truncate": true,
+          "references": true
+        }
+      ],
+      "column_acls": [],
+      "constraints": [
+        {
+          "name": "game_scores_game_slug_fkey",
+          "validated": true,
+          "definition": "FOREIGN KEY (game_slug) REFERENCES public.games(game_slug) ON UPDATE CASCADE ON DELETE RESTRICT"
+        },
+        {
+          "name": "game_scores_normalized_name_fkey",
+          "validated": true,
+          "definition": "FOREIGN KEY (normalized_name) REFERENCES public.players(normalized_name) ON DELETE CASCADE"
+        },
+        {
+          "name": "game_scores_pkey",
+          "validated": true,
+          "definition": "PRIMARY KEY (normalized_name, game_slug)"
+        },
+        {
+          "name": "game_scores_ranking_status_check",
+          "validated": true,
+          "definition": "CHECK ((ranking_status = ANY (ARRAY['normal'::text, 'review'::text, 'hidden'::text, 'disqualified'::text, 'provisional_bot'::text, 'bot'::text])))"
+        }
+      ]
+    },
+    {
+      "rls": true,
+      "kind": "r",
+      "name": "players",
+      "owner": "postgres",
+      "schema": "public",
+      "columns": [
+        {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "default": "now()",
+          "not_null": true
+        },
+        {
+          "name": "display_name",
+          "type": "text",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "last_played_at",
+          "type": "timestamp with time zone",
+          "default": null,
+          "not_null": false
+        },
+        {
+          "name": "normalized_name",
+          "type": "text",
+          "default": null,
+          "not_null": true
+        }
+      ],
+      "indexes": [
+        {
+          "name": "players_pkey",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE UNIQUE INDEX players_pkey ON public.players USING btree (normalized_name)"
+        }
+      ],
+      "policies": [],
+      "triggers": [],
+      "force_rls": false,
+      "privileges": [
+        {
+          "role": "anon",
+          "usage": true,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": true,
+          "truncate": false,
+          "references": false
+        },
+        {
+          "role": "authenticated",
+          "usage": true,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": true,
+          "truncate": false,
+          "references": false
+        },
+        {
+          "role": "service_role",
+          "usage": true,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": true,
+          "maintain": true,
+          "truncate": true,
+          "references": true
+        }
+      ],
+      "column_acls": [],
+      "constraints": [
+        {
+          "name": "players_pkey",
+          "validated": true,
+          "definition": "PRIMARY KEY (normalized_name)"
+        }
+      ]
+    },
+    {
+      "rls": true,
+      "kind": "r",
+      "name": "score_runs",
+      "owner": "postgres",
+      "schema": "public",
+      "columns": [
+        {
+          "name": "clear_wave",
+          "type": "integer",
+          "default": "0",
+          "not_null": true
+        },
+        {
+          "name": "client_version",
+          "type": "text",
+          "default": "''::text",
+          "not_null": false
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "default": "now()",
+          "not_null": true
+        },
+        {
+          "name": "game_slug",
+          "type": "text",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "id",
+          "type": "bigint",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "metadata",
+          "type": "jsonb",
+          "default": "'{}'::jsonb",
+          "not_null": true
+        },
+        {
+          "name": "normalized_name",
+          "type": "text",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "play_id",
+          "type": "uuid",
+          "default": null,
+          "not_null": false
+        },
+        {
+          "name": "score",
+          "type": "integer",
+          "default": null,
+          "not_null": true
+        },
+        {
+          "name": "submission_id",
+          "type": "uuid",
+          "default": null,
+          "not_null": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_score_runs_game_created",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE INDEX idx_score_runs_game_created ON public.score_runs USING btree (game_slug, created_at DESC)"
+        },
+        {
+          "name": "score_runs_pkey",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE UNIQUE INDEX score_runs_pkey ON public.score_runs USING btree (id)"
+        },
+        {
+          "name": "score_runs_play_id_uidx",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE UNIQUE INDEX score_runs_play_id_uidx ON public.score_runs USING btree (play_id) WHERE (play_id IS NOT NULL)"
+        },
+        {
+          "name": "score_runs_sabasaba_play_token_unique",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE UNIQUE INDEX score_runs_sabasaba_play_token_unique ON public.score_runs USING btree (((metadata ->> 'play_token'::text))) WHERE ((game_slug = ANY (ARRAY['sabasaba_normal'::text, 'sabasaba_endless'::text])) AND ((metadata ->> 'play_token'::text) IS NOT NULL))"
+        },
+        {
+          "name": "score_runs_submission_id_uidx",
+          "ready": true,
+          "valid": true,
+          "definition": "CREATE UNIQUE INDEX score_runs_submission_id_uidx ON public.score_runs USING btree (submission_id) WHERE (submission_id IS NOT NULL)"
+        }
+      ],
+      "policies": [],
+      "triggers": [
+        {
+          "name": "attach_takkeu_final_losses_to_score_runs_v1",
+          "enabled": "O",
+          "definition": "CREATE TRIGGER attach_takkeu_final_losses_to_score_runs_v1 BEFORE INSERT OR UPDATE OF metadata ON public.score_runs FOR EACH ROW EXECUTE FUNCTION private.attach_takkeu_final_losses_v1()"
+        },
+        {
+          "name": "guard_sabasaba_verified_score_runs",
+          "enabled": "O",
+          "definition": "CREATE TRIGGER guard_sabasaba_verified_score_runs BEFORE INSERT ON public.score_runs FOR EACH ROW EXECUTE FUNCTION private.guard_sabasaba_score_runs()"
+        },
+        {
+          "name": "guard_verified_score_runs",
+          "enabled": "O",
+          "definition": "CREATE TRIGGER guard_verified_score_runs BEFORE INSERT OR UPDATE ON public.score_runs FOR EACH ROW EXECUTE FUNCTION private.guard_verified_score_write()"
+        }
+      ],
+      "force_rls": false,
+      "privileges": [
+        {
+          "role": "anon",
+          "usage": true,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": true,
+          "truncate": false,
+          "references": false
+        },
+        {
+          "role": "authenticated",
+          "usage": true,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": false,
+          "maintain": true,
+          "truncate": false,
+          "references": false
+        },
+        {
+          "role": "service_role",
+          "usage": true,
+          "delete": false,
+          "insert": false,
+          "select": false,
+          "update": false,
+          "trigger": true,
+          "maintain": true,
+          "truncate": true,
+          "references": true
+        }
+      ],
+      "column_acls": [],
+      "constraints": [
+        {
+          "name": "score_runs_pkey",
+          "validated": true,
+          "definition": "PRIMARY KEY (id)"
+        },
+        {
+          "name": "score_runs_play_id_fkey",
+          "validated": true,
+          "definition": "FOREIGN KEY (play_id) REFERENCES private.game_play_sessions(play_id)"
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "args": "",
+      "name": "attach_takkeu_final_losses_v1",
+      "owner": "postgres",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "trigger",
+      "schema": "private",
+      "strict": false,
+      "definer": true,
+      "language": "plpgsql",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": true
+        },
+        {
+          "role": "service_role",
+          "execute": true
+        }
+      ],
+      "volatility": "v",
+      "public_execute": true,
+      "body": "2721793f420026a77228b8a1f922d4a574a2d6d98f4efec90edc6c700a5d3903"
+    },
+    {
+      "args": "",
+      "name": "guard_sabasaba_score_runs",
+      "owner": "postgres",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "trigger",
+      "schema": "private",
+      "strict": false,
+      "definer": false,
+      "language": "plpgsql",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": false
+        },
+        {
+          "role": "authenticated",
+          "execute": false
+        },
+        {
+          "role": "service_role",
+          "execute": false
+        }
+      ],
+      "volatility": "v",
+      "public_execute": false,
+      "body": "0950adf7e69f8780be8303181947ee0a0020dab69579a80102c5e3d4c30ace07"
+    },
+    {
+      "args": "",
+      "name": "guard_verified_score_write",
+      "owner": "postgres",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "trigger",
+      "schema": "private",
+      "strict": false,
+      "definer": true,
+      "language": "plpgsql",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": false
+        },
+        {
+          "role": "authenticated",
+          "execute": false
+        },
+        {
+          "role": "service_role",
+          "execute": false
+        }
+      ],
+      "volatility": "v",
+      "public_execute": false,
+      "body": "329ebf309d1be7fc939042d0539ed4ecca5dbc54c81b07cd80b8ff6b8b38fd71"
+    },
+    {
+      "args": "p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer",
+      "name": "finish_game_play_v1",
+      "owner": "postgres",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "jsonb",
+      "schema": "public",
+      "strict": false,
+      "definer": true,
+      "language": "plpgsql",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": false
+        },
+        {
+          "role": "service_role",
+          "execute": false
+        }
+      ],
+      "volatility": "v",
+      "public_execute": false,
+      "body": "d8d5ead072215b5b7a5cdb1ed1848e495aa6f3bdd5b13fe8f21707e47daef324"
+    },
+    {
+      "args": "p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer, p_lost_balls integer",
+      "name": "finish_takkeu_play_v2",
+      "owner": "postgres",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "jsonb",
+      "schema": "public",
+      "strict": false,
+      "definer": true,
+      "language": "plpgsql",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": true
+        },
+        {
+          "role": "service_role",
+          "execute": true
+        }
+      ],
+      "volatility": "v",
+      "public_execute": false,
+      "body": "157ad340630de9243c648fe9bf1bd434f76a7a809c17103dd8ba1ff211d84190"
+    },
+    {
+      "args": "p_game_slug text, p_limit integer",
+      "name": "get_best_score_ranking",
+      "owner": "postgres",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "TABLE(rank_no bigint, display_name text, first_score integer, best_score integer, play_count integer, updated_at timestamp with time zone)",
+      "schema": "public",
+      "strict": false,
+      "definer": true,
+      "language": "plpgsql",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": true
+        },
+        {
+          "role": "service_role",
+          "execute": true
+        }
+      ],
+      "volatility": "s",
+      "public_execute": false,
+      "body": "f349cffa8123cd20c6fca5f1a0b1c1559d34125971dabd43627dab65ffb6fa89"
+    },
+    {
+      "args": "p_normalized_name text",
+      "name": "get_takkeu_player_position_v1",
+      "owner": "postgres",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "TABLE(rank_no bigint, total_entries bigint, best_score integer)",
+      "schema": "public",
+      "strict": false,
+      "definer": true,
+      "language": "sql",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": true
+        },
+        {
+          "role": "service_role",
+          "execute": true
+        }
+      ],
+      "volatility": "s",
+      "public_execute": false,
+      "body": "77f26db5ce28c40544cfa9a1c20563cba00b5490c6e906a283db8e191da668b9"
+    },
+    {
+      "args": "input_name text",
+      "name": "normalize_player_name",
+      "owner": "postgres",
+      "config": [
+        "search_path=pg_catalog, public"
+      ],
+      "result": "text",
+      "schema": "public",
+      "strict": false,
+      "definer": false,
+      "language": "sql",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": true
+        },
+        {
+          "role": "service_role",
+          "execute": true
+        }
+      ],
+      "volatility": "i",
+      "public_execute": true,
+      "body": "dd50e9794904162d70db1492dbcc4d7e9700dec285f00efd054ab28e44369df0"
+    },
+    {
+      "args": "p_play_id uuid, p_display_name text, p_client_version text, p_score integer, p_sim_seconds numeric, p_ball_count integer, p_lost_balls integer",
+      "name": "report_takkeu_progress_v1",
+      "owner": "postgres",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "jsonb",
+      "schema": "public",
+      "strict": false,
+      "definer": true,
+      "language": "plpgsql",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": true
+        },
+        {
+          "role": "service_role",
+          "execute": true
+        }
+      ],
+      "volatility": "v",
+      "public_execute": false,
+      "body": "09cdae47142184d685da1a0eceacf3df0202dc4a90b0dff7ce06790819da0fd7"
+    },
+    {
+      "args": "p_start_id uuid, p_display_name text, p_game_slug text, p_client_version text",
+      "name": "start_game_play_v1",
+      "owner": "postgres",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "jsonb",
+      "schema": "public",
+      "strict": false,
+      "definer": true,
+      "language": "plpgsql",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": false
+        },
+        {
+          "role": "service_role",
+          "execute": false
+        }
+      ],
+      "volatility": "v",
+      "public_execute": false,
+      "body": "46b1c6b05fa08f2763b184feba791094362b9ac5d1b9103eabe363c1e9dd3610"
+    },
+    {
+      "args": "p_start_id uuid, p_game_slug text, p_client_version text",
+      "name": "start_takkeu_guest_play_v1",
+      "owner": "postgres",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "jsonb",
+      "schema": "public",
+      "strict": false,
+      "definer": true,
+      "language": "plpgsql",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": true
+        },
+        {
+          "role": "service_role",
+          "execute": true
+        }
+      ],
+      "volatility": "v",
+      "public_execute": false,
+      "body": "70b1fea1bb8668be48cfce8f433fd9ba8ccafe9faaa294a61ae567f4fe47e2d1"
+    },
+    {
+      "args": "p_play_id uuid, p_submission_id uuid, p_display_name text, p_game_slug text, p_score integer, p_client_version text",
+      "name": "submit_score_idempotent_v1",
+      "owner": "postgres",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "TABLE(accepted boolean, result_submission_id uuid, result_play_id uuid, result_normalized_name text, result_display_name text, result_first_score integer, result_best_score integer, result_play_count integer, is_first_play boolean, is_new_best boolean, was_duplicate boolean)",
+      "schema": "public",
+      "strict": false,
+      "definer": true,
+      "language": "plpgsql",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": false
+        },
+        {
+          "role": "service_role",
+          "execute": false
+        }
+      ],
+      "volatility": "v",
+      "public_execute": false,
+      "body": "108478db4cff4e89e1a2ef934344e2ca8b86b0cdbaadf8bb2d9bc0fc7ef694ab"
+    }
+  ],
+  "migrations": [],
+  "observed_at": "2026-10-28T00:21:57.333042+00:00"
+}
