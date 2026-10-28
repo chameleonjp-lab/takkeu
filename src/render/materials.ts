@@ -28,7 +28,9 @@ export function lines(points: readonly number[][], material: LineBasicMaterial):
   for (let i = 0; i < points.length; i += 2) {
     const a = new Vector3(...points[i]! as [number, number, number]);
     const b = new Vector3(...points[i + 1]! as [number, number, number]);
-    for (let j = 0; j < 16; j++) vertices.push(a.clone().lerp(b, j / 16), a.clone().lerp(b, (j + 1) / 16));
+    // Keep each straight strand as one line; extra segments only served the
+    // animated color decoration and multiplied CPU updates/GPU transfers.
+    vertices.push(a, b);
   }
   return new LineSegments(new BufferGeometry().setFromPoints(vertices), material);
 }
