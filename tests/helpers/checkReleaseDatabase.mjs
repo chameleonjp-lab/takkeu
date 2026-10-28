@@ -30,17 +30,39 @@ try{
   query(readFileSync('tests/sql/release-production-schema.sql','utf8'));
   rejected('unapplied migration',()=>verifyDatabase(summarizeCatalog(run()),contract));
   query('BEGIN;'+readFileSync(contract.migration_file,'utf8')+"\nINSERT INTO supabase_migrations.schema_migrations VALUES ('20261027032043','takkeu_hall_of_fame'); COMMIT;");
+  // A normal role can override its transaction default and create a persistent
+  // large object through PUBLIC pg_catalog privileges; no application grants.
+  query('SET ROLE release_reader; BEGIN READ WRITE; SELECT pg_catalog.lo_create(0); ROLLBACK; RESET ROLE;');
+  rejected('PUBLIC large-object writer',()=>verifyDatabase(summarizeCatalog(run()),contract));
+  // This is a disposable-fixture restriction, NOT proposed production SQL.
+  query(`DO $$DECLARE f record; BEGIN FOR f IN SELECT p.oid::regprocedure AS sig FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace
+    WHERE n.nspname='pg_catalog' AND p.proname IN ('lo_create','lo_creat','lo_from_bytea','lo_put','lowrite','lo_truncate','lo_truncate64','lo_unlink')
+    LOOP EXECUTE format('REVOKE EXECUTE ON FUNCTION %s FROM PUBLIC',f.sig); END LOOP; END$$;`);
   const snapshot=summarizeCatalog(run());
   try{verifyDatabase(snapshot,contract);}catch(error){mkdirSync('artifacts/release-safety',{recursive:true});writeFileSync('artifacts/release-safety/catalog-mismatch.json',JSON.stringify(snapshot,null,2));throw error;}
   cases.push({name:'complete reviewed schema and least-privilege reader',result:'matched'});
+  query(`CREATE FUNCTION private.unreviewed_writer() RETURNS integer LANGUAGE sql VOLATILE AS $$INSERT INTO public.players(normalized_name,display_name) VALUES('LocalWriteProbe','LocalWriteProbe'); SELECT 1;$$;
+    REVOKE ALL ON FUNCTION private.unreviewed_writer() FROM PUBLIC;
+    CREATE FUNCTION public.unreviewed_stable_wrapper() RETURNS integer LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$SELECT private.unreviewed_writer();$$;`);
+  assert.equal(query("SET ROLE release_reader; BEGIN READ WRITE; SELECT public.unreviewed_stable_wrapper(); RESET ROLE; SELECT count(*) FROM public.players WHERE normalized_name='LocalWriteProbe'; ROLLBACK;").trim().split('\n').at(-1),'1');
+  rejected('STABLE wrapper with transitive write rejected',()=>verifyDatabase(summarizeCatalog(run()),contract));
+  query('DROP FUNCTION public.unreviewed_stable_wrapper(); DROP FUNCTION private.unreviewed_writer();');
+  query(`CREATE FUNCTION public.unreviewed_trigger_writer() RETURNS trigger LANGUAGE plpgsql VOLATILE SECURITY DEFINER SET search_path='' AS $$BEGIN INSERT INTO public.players(normalized_name,display_name) VALUES('TriggerWriteProbe','TriggerWriteProbe'); RETURN NEW; END;$$;`);
+  assert.equal(query("SET ROLE release_reader; BEGIN READ WRITE; CREATE TEMP TABLE permission_probe(n integer); CREATE TRIGGER write_probe AFTER INSERT ON permission_probe FOR EACH ROW EXECUTE FUNCTION public.unreviewed_trigger_writer(); INSERT INTO permission_probe VALUES(1); RESET ROLE; SELECT count(*) FROM public.players WHERE normalized_name='TriggerWriteProbe'; ROLLBACK;").trim().split('\n').at(-1),'1');
+  rejected('PUBLIC trigger bound to own temp table cannot bypass reader gate',()=>verifyDatabase(summarizeCatalog(run()),contract));
+  query('DROP FUNCTION public.unreviewed_trigger_writer();');
   rejected('administrator connection',()=>verifyDatabase(summarizeCatalog(run('postgres')),contract));
   for(const [name,alter,restore] of [
     ['partial RPC', 'ALTER FUNCTION public.get_takkeu_hall_v2(integer) RENAME TO missing_hall', 'ALTER FUNCTION public.missing_hall(integer) RENAME TO get_takkeu_hall_v2'],
     ['RLS disabled','ALTER TABLE public.takkeu_hall_of_fame_3500 DISABLE ROW LEVEL SECURITY','ALTER TABLE public.takkeu_hall_of_fame_3500 ENABLE ROW LEVEL SECURITY'],
+    ['score identity removed','ALTER TABLE public.score_runs ALTER COLUMN id DROP IDENTITY','ALTER TABLE public.score_runs ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY'],
     ['trigger disabled','ALTER TABLE public.score_runs DISABLE TRIGGER enforce_takkeu_3500_score_v1','ALTER TABLE public.score_runs ENABLE TRIGGER enforce_takkeu_3500_score_v1'],
+    ['readonly transitive helper drift',"ALTER FUNCTION private.get_game_player_counts_v1(text) SET search_path=public","ALTER FUNCTION private.get_game_player_counts_v1(text) SET search_path=''"],
     ['direct anon writes','GRANT INSERT ON public.takkeu_hall_of_fame_3500 TO anon','REVOKE INSERT ON public.takkeu_hall_of_fame_3500 FROM anon'],
     ['reader can write','GRANT INSERT ON public.players TO release_reader','REVOKE INSERT ON public.players FROM release_reader'],
     ['reader column write','GRANT UPDATE(score) ON public.score_runs TO release_reader','REVOKE UPDATE(score) ON public.score_runs FROM release_reader'],
+    ['reader direct large-object grant','GRANT EXECUTE ON FUNCTION pg_catalog.lo_create(oid) TO release_reader','REVOKE EXECUTE ON FUNCTION pg_catalog.lo_create(oid) FROM release_reader'],
+    ['reader server-file large-object capability','GRANT EXECUTE ON FUNCTION pg_catalog.lo_import(text) TO release_reader','REVOKE EXECUTE ON FUNCTION pg_catalog.lo_import(text) FROM release_reader'],
     ['reader history write','GRANT UPDATE ON supabase_migrations.schema_migrations TO release_reader','REVOKE UPDATE ON supabase_migrations.schema_migrations FROM release_reader'],
     ['anon column write','GRANT UPDATE(score) ON public.score_runs TO anon','REVOKE UPDATE(score) ON public.score_runs FROM anon'],
     ['anon column read','GRANT SELECT(best_score) ON public.game_scores TO anon','REVOKE SELECT(best_score) ON public.game_scores FROM anon'],
@@ -48,6 +70,10 @@ try{
     ['history missing',"DELETE FROM supabase_migrations.schema_migrations WHERE version='20261027032043'","INSERT INTO supabase_migrations.schema_migrations VALUES ('20261027032043','takkeu_hall_of_fame')"],
     ['verification permission missing','REVOKE SELECT(version,name) ON supabase_migrations.schema_migrations FROM release_reader','GRANT SELECT(version,name) ON supabase_migrations.schema_migrations TO release_reader'],
   ]) {query(alter+';');rejected(name,()=>verifyDatabase(summarizeCatalog(run()),contract));query(restore+';');}
+  const readonlyDefault=query("SELECT pg_get_functiondef('public.get_hito_wo_yurusuna_first_ranking(integer)'::regprocedure);");
+  assert.ok(readonlyDefault.includes('DEFAULT 20'));
+  query(readonlyDefault.replace('DEFAULT 20','DEFAULT 21'));
+  rejected('readonly default-argument drift',()=>verifyDatabase(summarizeCatalog(run()),contract));query(readonlyDefault);
   // Empty PostgreSQL ACL arrays left by REVOKE are equivalent to no column ACL.
   // Check arbitrary write RPCs outside the previously incomplete name blacklist.
   query("CREATE FUNCTION public.unreviewed_mutator() RETURNS void LANGUAGE plpgsql AS $$BEGIN RAISE EXCEPTION 'must never be called'; END;$$;");

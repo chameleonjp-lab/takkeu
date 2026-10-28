@@ -6,6 +6,8 @@
 
 2026-10-28の緊急対応で以前の自動公開方針を撤回した。[事故記録](incident-2026-10-28/report.md)、[DB適用前監査・復元計画](incident-2026-10-28/db-apply-plan.md)を参照。この修正は新PRのマージ後に有効になる。PR作成だけで既存workflowやrunが停止するわけではない。
 
+PR30はマージ済み。以後の最新調査・独立承認A–D・接続の阻害条件は[本番準備資料](production-readiness-2026-10-28/README.md)を参照する。PUBLIC8関数の整理だけでは標準large-object書込みを拒否できず、普通の新roleを準備完了とは扱わない。ゲートはidentity/generated、許可した読取りroutine/内部helperの本文・引数/default・実行設定、未知routineやPUBLIC triggerの経路も確認する。検査のboolは全PostgreSQL操作の形式的な非書込み証明ではない。
+
 ## 公開の条件
 
 1. 所有者`chameleonjp-lab`が現在mainの完全な小文字40桁SHAをレビューし、そのSHAの本番公開を承認する。

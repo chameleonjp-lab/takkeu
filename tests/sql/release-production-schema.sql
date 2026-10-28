@@ -6,7 +6,6 @@ CREATE SCHEMA supabase_migrations;
 CREATE ROLE anon; CREATE ROLE authenticated; CREATE ROLE service_role BYPASSRLS;
 CREATE ROLE release_reader LOGIN;
 CREATE TABLE supabase_migrations.schema_migrations(version text PRIMARY KEY,name text);
-CREATE SEQUENCE public.score_runs_id_seq;
 CREATE TABLE "public"."games" ("game_slug" text NOT NULL,
 "title" text NOT NULL,
 "game_url" text NOT NULL,
@@ -65,7 +64,7 @@ CREATE TABLE "public"."score_runs" ("clear_wave" integer NOT NULL DEFAULT 0,
 "client_version" text DEFAULT ''::text,
 "created_at" timestamp with time zone NOT NULL DEFAULT now(),
 "game_slug" text NOT NULL,
-"id" bigint NOT NULL,
+"id" bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
 "metadata" jsonb NOT NULL DEFAULT '{}'::jsonb,
 "normalized_name" text NOT NULL,
 "play_id" uuid,
@@ -308,7 +307,7 @@ begin
 end;
 $snapshot$;
 REVOKE ALL ON FUNCTION "private"."guard_verified_score_write"() FROM PUBLIC,anon,authenticated,service_role;
-CREATE FUNCTION "public"."finish_game_play_v1"(p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer) RETURNS jsonb LANGUAGE plpgsql VOLATILE SECURITY DEFINER SET search_path='' AS $snapshot$
+CREATE FUNCTION "public"."finish_game_play_v1"(p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer DEFAULT NULL::integer) RETURNS jsonb LANGUAGE plpgsql VOLATILE SECURITY DEFINER SET search_path='' AS $snapshot$
 declare
   v_game public.games%rowtype;
   v_session private.game_play_sessions%rowtype;
@@ -553,7 +552,7 @@ REVOKE ALL ON FUNCTION "public"."finish_takkeu_play_v2"(p_play_id uuid, p_displa
 GRANT EXECUTE ON FUNCTION "public"."finish_takkeu_play_v2"(p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer, p_lost_balls integer) TO "anon";
 GRANT EXECUTE ON FUNCTION "public"."finish_takkeu_play_v2"(p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer, p_lost_balls integer) TO "authenticated";
 GRANT EXECUTE ON FUNCTION "public"."finish_takkeu_play_v2"(p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer, p_lost_balls integer) TO "service_role";
-CREATE FUNCTION "public"."get_best_score_ranking"(p_game_slug text, p_limit integer) RETURNS TABLE(rank_no bigint, display_name text, first_score integer, best_score integer, play_count integer, updated_at timestamp with time zone) LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path='' AS $snapshot$
+CREATE FUNCTION "public"."get_best_score_ranking"(p_game_slug text, p_limit integer DEFAULT 100) RETURNS TABLE(rank_no bigint, display_name text, first_score integer, best_score integer, play_count integer, updated_at timestamp with time zone) LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path='' AS $snapshot$
 begin
   return query
   with play_counts as (
@@ -1287,3 +1286,172 @@ GRANT SELECT(game_slug,is_active,submission_mode,score_order,score_min,score_max
 CREATE POLICY takkeu_release_config_read ON public.games FOR SELECT TO release_reader USING(game_slug='takkeu');
 GRANT SELECT(version,name) ON supabase_migrations.schema_migrations TO release_reader;
 GRANT MAINTAIN ON public.players,public.game_scores,public.score_runs TO anon,authenticated,service_role;
+
+-- Reviewed nonvolatile SQL closure; no data is copied.
+SET check_function_bodies=off;
+CREATE FUNCTION private.get_game_player_counts_v1(p_game_slug text) RETURNS TABLE(normalized_name text, display_name text, play_count integer, first_score integer, best_score integer, updated_at timestamp with time zone) LANGUAGE sql STABLE SET search_path TO '' AS $readonly_snapshot$
+  with session_counts as (
+    select
+      s.normalized_name,
+      max(s.display_name) as display_name,
+      count(*)::integer as play_count,
+      max(s.updated_at) as updated_at
+    from private.game_play_sessions as s
+    where s.game_slug = pg_catalog.lower(pg_catalog.btrim(coalesce(p_game_slug, '')))
+    group by s.normalized_name
+  ),
+  score_counts as (
+    select
+      gs.normalized_name, gs.display_name, gs.play_count,
+      gs.first_score, gs.best_score, gs.updated_at, gs.ranking_status
+    from public.game_scores as gs
+    where gs.game_slug = pg_catalog.lower(pg_catalog.btrim(coalesce(p_game_slug, '')))
+  )
+  select
+    coalesce(gs.normalized_name, sc.normalized_name) as normalized_name,
+    coalesce(gs.display_name, sc.display_name) as display_name,
+    greatest(coalesce(gs.play_count, 0), coalesce(sc.play_count, 0))::integer as play_count,
+    gs.first_score,
+    gs.best_score,
+    greatest(gs.updated_at, sc.updated_at) as updated_at
+  from score_counts as gs
+  full join session_counts as sc on sc.normalized_name = gs.normalized_name
+  where coalesce(gs.ranking_status, 'normal') = 'normal';
+$readonly_snapshot$;
+REVOKE ALL ON FUNCTION private.get_game_player_counts_v1(p_game_slug text) FROM PUBLIC,anon,authenticated,service_role;
+CREATE FUNCTION public.get_disqualified_score_entries(p_game_slug text, p_limit integer DEFAULT 50) RETURNS TABLE(display_name text, ranking_status text, ranking_note text, first_score integer, best_score integer, play_count integer, updated_at timestamp with time zone, ranking_status_updated_at timestamp with time zone) LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO public AS $readonly_snapshot$
+  select
+    gs.display_name,
+    gs.ranking_status,
+    gs.ranking_note,
+    gs.first_score,
+    gs.best_score,
+    gs.play_count,
+    gs.updated_at,
+    gs.ranking_status_updated_at
+  from public.game_scores gs
+  where gs.game_slug = p_game_slug
+    and p_game_slug not in ('sabasaba_normal', 'sabasaba_endless')
+    and gs.ranking_status = 'disqualified'
+  order by
+    gs.ranking_status_updated_at desc nulls last,
+    gs.updated_at desc,
+    gs.display_name asc
+  limit least(greatest(coalesce(p_limit, 50), 1), 100);
+$readonly_snapshot$;
+REVOKE ALL ON FUNCTION public.get_disqualified_score_entries(p_game_slug text, p_limit integer) FROM PUBLIC,anon,authenticated,service_role;
+GRANT EXECUTE ON FUNCTION public.get_disqualified_score_entries(p_game_slug text, p_limit integer) TO PUBLIC;
+GRANT EXECUTE ON FUNCTION public.get_disqualified_score_entries(p_game_slug text, p_limit integer) TO "anon";
+GRANT EXECUTE ON FUNCTION public.get_disqualified_score_entries(p_game_slug text, p_limit integer) TO "authenticated";
+CREATE FUNCTION public.get_first_try_ranking(p_game_slug text, p_limit integer DEFAULT 100) RETURNS TABLE(rank_no bigint, display_name text, first_score integer, best_score integer, play_count integer, updated_at timestamp with time zone) LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO public AS $readonly_snapshot$
+  with play_counts as (
+    select
+      s.normalized_name,
+      s.game_slug,
+      count(*)::integer as started_play_count,
+      max(s.updated_at) as last_played_at
+    from private.game_play_sessions as s
+    where s.game_slug = lower(btrim(p_game_slug))
+    group by s.normalized_name, s.game_slug
+  ),
+  ranked as (
+    select
+      rank() over (
+        order by
+          case when coalesce((select score_order from public.games where game_slug = lower(btrim(p_game_slug)) limit 1), 'desc') = 'asc'
+            then gs.first_score end asc nulls last,
+          case when coalesce((select score_order from public.games where game_slug = lower(btrim(p_game_slug)) limit 1), 'desc') <> 'asc'
+            then gs.first_score end desc nulls last
+      ) as rank_no,
+      gs.display_name,
+      gs.first_score,
+      gs.best_score,
+      greatest(coalesce(pc.started_play_count, 0), gs.play_count)::integer as play_count,
+      greatest(gs.updated_at, coalesce(pc.last_played_at, gs.updated_at)) as updated_at
+    from public.game_scores as gs
+    left join play_counts as pc
+      on pc.normalized_name = gs.normalized_name
+     and pc.game_slug = gs.game_slug
+    where gs.game_slug = lower(btrim(p_game_slug))
+      and gs.first_score is not null
+      and coalesce(gs.ranking_status, 'normal') = 'normal'
+  )
+  select ranked.rank_no, ranked.display_name, ranked.first_score, ranked.best_score,
+         ranked.play_count, ranked.updated_at
+  from ranked
+  order by ranked.rank_no asc, ranked.updated_at asc, ranked.display_name asc
+  limit least(greatest(coalesce(p_limit, 100), 1), 100);
+$readonly_snapshot$;
+REVOKE ALL ON FUNCTION public.get_first_try_ranking(p_game_slug text, p_limit integer) FROM PUBLIC,anon,authenticated,service_role;
+GRANT EXECUTE ON FUNCTION public.get_first_try_ranking(p_game_slug text, p_limit integer) TO PUBLIC;
+GRANT EXECUTE ON FUNCTION public.get_first_try_ranking(p_game_slug text, p_limit integer) TO "anon";
+GRANT EXECUTE ON FUNCTION public.get_first_try_ranking(p_game_slug text, p_limit integer) TO "authenticated";
+CREATE FUNCTION public.get_game_play_stats(p_game_slug text) RETURNS TABLE(total_play_count bigint, player_count bigint) LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO '' AS $readonly_snapshot$
+  select named.total_play_count + case
+    when pg_catalog.lower(pg_catalog.btrim(coalesce(p_game_slug, ''))) = 'takkeu'
+      then (select count(*) from private.takkeu_guest_plays_v1) else 0::bigint end,
+    named.player_count
+  from (
+    select coalesce(sum(pc.play_count), 0)::bigint as total_play_count, count(*)::bigint as player_count
+    from private.get_game_player_counts_v1(p_game_slug) as pc
+  ) as named;
+$readonly_snapshot$;
+REVOKE ALL ON FUNCTION public.get_game_play_stats(p_game_slug text) FROM PUBLIC,anon,authenticated,service_role;
+GRANT EXECUTE ON FUNCTION public.get_game_play_stats(p_game_slug text) TO PUBLIC;
+GRANT EXECUTE ON FUNCTION public.get_game_play_stats(p_game_slug text) TO "anon";
+GRANT EXECUTE ON FUNCTION public.get_game_play_stats(p_game_slug text) TO "authenticated";
+CREATE FUNCTION public.get_hito_wo_yurusuna_best_ranking(p_limit integer DEFAULT 20) RETURNS TABLE(rank_no bigint, display_name text, clear_wave integer, score integer, play_count integer) LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO public AS $readonly_snapshot$
+  select
+    rank() over (
+      order by gs.best_score desc, gs.best_clear_wave desc, gs.display_name asc
+    ) as rank_no,
+    gs.display_name,
+    coalesce(gs.best_clear_wave, 0) as clear_wave,
+    gs.best_score as score,
+    gs.play_count
+  from public.game_scores gs
+  where gs.game_slug = 'hito_wo_yurusuna'
+  order by gs.best_score desc, gs.best_clear_wave desc, gs.display_name asc
+  limit greatest(1, least(coalesce(p_limit, 20), 100));
+$readonly_snapshot$;
+REVOKE ALL ON FUNCTION public.get_hito_wo_yurusuna_best_ranking(p_limit integer) FROM PUBLIC,anon,authenticated,service_role;
+GRANT EXECUTE ON FUNCTION public.get_hito_wo_yurusuna_best_ranking(p_limit integer) TO PUBLIC;
+GRANT EXECUTE ON FUNCTION public.get_hito_wo_yurusuna_best_ranking(p_limit integer) TO "anon";
+GRANT EXECUTE ON FUNCTION public.get_hito_wo_yurusuna_best_ranking(p_limit integer) TO "authenticated";
+CREATE FUNCTION public.get_hito_wo_yurusuna_first_ranking(p_limit integer DEFAULT 20) RETURNS TABLE(rank_no bigint, display_name text, clear_wave integer, score integer, play_count integer) LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO public AS $readonly_snapshot$
+  select
+    rank() over (
+      order by gs.first_score desc, gs.first_clear_wave desc, gs.display_name asc
+    ) as rank_no,
+    gs.display_name,
+    coalesce(gs.first_clear_wave, 0) as clear_wave,
+    gs.first_score as score,
+    gs.play_count
+  from public.game_scores gs
+  where gs.game_slug = 'hito_wo_yurusuna'
+  order by gs.first_score desc, gs.first_clear_wave desc, gs.display_name asc
+  limit greatest(1, least(coalesce(p_limit, 20), 100));
+$readonly_snapshot$;
+REVOKE ALL ON FUNCTION public.get_hito_wo_yurusuna_first_ranking(p_limit integer) FROM PUBLIC,anon,authenticated,service_role;
+GRANT EXECUTE ON FUNCTION public.get_hito_wo_yurusuna_first_ranking(p_limit integer) TO PUBLIC;
+GRANT EXECUTE ON FUNCTION public.get_hito_wo_yurusuna_first_ranking(p_limit integer) TO "anon";
+GRANT EXECUTE ON FUNCTION public.get_hito_wo_yurusuna_first_ranking(p_limit integer) TO "authenticated";
+CREATE FUNCTION public.get_play_count_ranking(p_game_slug text, p_limit integer DEFAULT 100) RETURNS TABLE(rank_no bigint, display_name text, play_count integer, first_score integer, best_score integer, updated_at timestamp with time zone) LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO '' AS $readonly_snapshot$
+  with ranked as (
+    select
+      rank() over (order by pc.play_count desc) as rank_no,
+      pc.display_name, pc.play_count, pc.first_score, pc.best_score, pc.updated_at
+    from private.get_game_player_counts_v1(p_game_slug) as pc
+  )
+  select
+    ranked.rank_no, ranked.display_name, ranked.play_count,
+    ranked.first_score, ranked.best_score, ranked.updated_at
+  from ranked
+  order by ranked.rank_no asc, ranked.updated_at asc, ranked.display_name asc
+  limit least(greatest(coalesce(p_limit, 100), 1), 100);
+$readonly_snapshot$;
+REVOKE ALL ON FUNCTION public.get_play_count_ranking(p_game_slug text, p_limit integer) FROM PUBLIC,anon,authenticated,service_role;
+GRANT EXECUTE ON FUNCTION public.get_play_count_ranking(p_game_slug text, p_limit integer) TO PUBLIC;
+GRANT EXECUTE ON FUNCTION public.get_play_count_ranking(p_game_slug text, p_limit integer) TO "anon";
+GRANT EXECUTE ON FUNCTION public.get_play_count_ranking(p_game_slug text, p_limit integer) TO "authenticated";
+SET check_function_bodies=on;

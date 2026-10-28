@@ -20,109 +20,145 @@
           "name": "client_version",
           "type": "text",
           "default": "''::text",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "created_at",
           "type": "timestamp with time zone",
           "default": "now()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "display_name",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "finished_at",
           "type": "timestamp with time zone",
           "default": null,
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         },
         {
           "name": "game_slug",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "normalized_name",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "play_id",
           "type": "uuid",
           "default": "gen_random_uuid()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "ranking_score",
           "type": "integer",
           "default": null,
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         },
         {
           "name": "reached_wave",
           "type": "integer",
           "default": "1",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "result_type",
           "type": "text",
           "default": "'retire'::text",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "score",
           "type": "integer",
           "default": "0",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "start_id",
           "type": "uuid",
           "default": null,
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         },
         {
           "name": "started_at",
           "type": "timestamp with time zone",
           "default": "now()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "submission_id",
           "type": "uuid",
           "default": null,
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         },
         {
           "name": "takkeu_clear_verified",
           "type": "boolean",
           "default": "false",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "takkeu_final_lost_balls",
           "type": "integer",
           "default": null,
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         },
         {
           "name": "takkeu_rules_version",
           "type": "text",
           "default": null,
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         },
         {
           "name": "updated_at",
           "type": "timestamp with time zone",
           "default": "now()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         }
       ],
       "indexes": [
@@ -275,25 +311,33 @@
           "name": "client_version",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "play_id",
           "type": "uuid",
           "default": "gen_random_uuid()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "start_id",
           "type": "uuid",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "started_at",
           "type": "timestamp with time zone",
           "default": "clock_timestamp()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         }
       ],
       "indexes": [
@@ -387,13 +431,17 @@
           "name": "next_number",
           "type": "integer",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "singleton",
           "type": "boolean",
           "default": "true",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         }
       ],
       "indexes": [
@@ -475,13 +523,17 @@
           "name": "next_number",
           "type": "integer",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "singleton",
           "type": "boolean",
           "default": "true",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         }
       ],
       "indexes": [
@@ -563,37 +615,49 @@
           "name": "first_seen_at",
           "type": "timestamp with time zone",
           "default": "clock_timestamp()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "last_seen_at",
           "type": "timestamp with time zone",
           "default": "clock_timestamp()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "latest_score",
           "type": "integer",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "occurrence_count",
           "type": "integer",
           "default": "1",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "play_id",
           "type": "uuid",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "reason",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         }
       ],
       "indexes": [
@@ -675,55 +739,73 @@
           "name": "first_report_at",
           "type": "timestamp with time zone",
           "default": "clock_timestamp()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "high_density_signal",
           "type": "boolean",
           "default": "false",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "last_ball_count",
           "type": "integer",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "last_lost_balls",
           "type": "integer",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "last_report_at",
           "type": "timestamp with time zone",
           "default": "clock_timestamp()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "last_score",
           "type": "integer",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "last_sim_seconds",
           "type": "numeric(12,3)",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "play_id",
           "type": "uuid",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "report_count",
           "type": "integer",
           "default": "1",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         }
       ],
       "indexes": [
@@ -825,85 +907,113 @@
           "name": "best_clear_wave",
           "type": "integer",
           "default": "0",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "best_score",
           "type": "integer",
           "default": "0",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "best_score_at",
           "type": "timestamp with time zone",
           "default": null,
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         },
         {
           "name": "display_name",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "first_clear_wave",
           "type": "integer",
           "default": "0",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "first_score",
           "type": "integer",
           "default": null,
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         },
         {
           "name": "first_score_at",
           "type": "timestamp with time zone",
           "default": null,
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         },
         {
           "name": "game_slug",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "normalized_name",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "play_count",
           "type": "integer",
           "default": "0",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "ranking_note",
           "type": "text",
           "default": null,
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         },
         {
           "name": "ranking_status",
           "type": "text",
           "default": "'normal'::text",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "ranking_status_updated_at",
           "type": "timestamp with time zone",
           "default": null,
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         },
         {
           "name": "updated_at",
           "type": "timestamp with time zone",
           "default": "now()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         }
       ],
       "indexes": [
@@ -1025,25 +1135,33 @@
           "name": "created_at",
           "type": "timestamp with time zone",
           "default": "now()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "display_name",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "last_played_at",
           "type": "timestamp with time zone",
           "default": null,
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         },
         {
           "name": "normalized_name",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         }
       ],
       "indexes": [
@@ -1115,61 +1233,81 @@
           "name": "clear_wave",
           "type": "integer",
           "default": "0",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "client_version",
           "type": "text",
           "default": "''::text",
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         },
         {
           "name": "created_at",
           "type": "timestamp with time zone",
           "default": "now()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "game_slug",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "id",
           "type": "bigint",
           "default": null,
-          "not_null": true
+          "identity": "a",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "metadata",
           "type": "jsonb",
           "default": "'{}'::jsonb",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "normalized_name",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "play_id",
           "type": "uuid",
           "default": null,
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         },
         {
           "name": "score",
           "type": "integer",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "submission_id",
           "type": "uuid",
           "default": null,
-          "not_null": false
+          "identity": "",
+          "not_null": false,
+          "generated": ""
         }
       ],
       "indexes": [
@@ -1291,31 +1429,41 @@
           "name": "display_name",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "first_play_id",
           "type": "uuid",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "hall_number",
           "type": "integer",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "normalized_name",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "registered_at",
           "type": "timestamp with time zone",
           "default": "clock_timestamp()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         }
       ],
       "indexes": [
@@ -1429,31 +1577,41 @@
           "name": "display_name",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "first_play_id",
           "type": "uuid",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "hall_number",
           "type": "integer",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "normalized_name",
           "type": "text",
           "default": null,
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         },
         {
           "name": "registered_at",
           "type": "timestamp with time zone",
           "default": "clock_timestamp()",
-          "not_null": true
+          "identity": "",
+          "not_null": true,
+          "generated": ""
         }
       ],
       "indexes": [
@@ -1570,6 +1728,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "",
       "privileges": [
         {
           "role": "anon",
@@ -1600,6 +1759,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "",
       "privileges": [
         {
           "role": "anon",
@@ -1630,6 +1790,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "",
       "privileges": [
         {
           "role": "anon",
@@ -1660,6 +1821,7 @@
       "strict": false,
       "definer": false,
       "language": "plpgsql",
+      "arguments": "",
       "privileges": [
         {
           "role": "anon",
@@ -1690,6 +1852,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "",
       "privileges": [
         {
           "role": "anon",
@@ -1720,6 +1883,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer DEFAULT NULL::integer",
       "privileges": [
         {
           "role": "anon",
@@ -1750,6 +1914,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer, p_lost_balls integer",
       "privileges": [
         {
           "role": "anon",
@@ -1780,6 +1945,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer, p_lost_balls integer",
       "privileges": [
         {
           "role": "anon",
@@ -1810,6 +1976,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer, p_lost_balls integer",
       "privileges": [
         {
           "role": "anon",
@@ -1840,6 +2007,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "p_game_slug text, p_limit integer DEFAULT 100",
       "privileges": [
         {
           "role": "anon",
@@ -1870,6 +2038,7 @@
       "strict": false,
       "definer": true,
       "language": "sql",
+      "arguments": "p_limit integer DEFAULT 30",
       "privileges": [
         {
           "role": "anon",
@@ -1900,6 +2069,7 @@
       "strict": false,
       "definer": true,
       "language": "sql",
+      "arguments": "p_limit integer DEFAULT 30",
       "privileges": [
         {
           "role": "anon",
@@ -1930,6 +2100,7 @@
       "strict": false,
       "definer": true,
       "language": "sql",
+      "arguments": "p_normalized_name text",
       "privileges": [
         {
           "role": "anon",
@@ -1960,6 +2131,7 @@
       "strict": false,
       "definer": false,
       "language": "sql",
+      "arguments": "input_name text",
       "privileges": [
         {
           "role": "anon",
@@ -1990,6 +2162,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "p_play_id uuid, p_submission_id uuid, p_display_name text, p_client_version text",
       "privileges": [
         {
           "role": "anon",
@@ -2020,6 +2193,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "p_play_id uuid, p_submission_id uuid, p_display_name text, p_client_version text",
       "privileges": [
         {
           "role": "anon",
@@ -2050,6 +2224,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "p_play_id uuid, p_display_name text, p_client_version text, p_score integer, p_sim_seconds numeric, p_ball_count integer, p_lost_balls integer",
       "privileges": [
         {
           "role": "anon",
@@ -2080,6 +2255,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "p_start_id uuid, p_display_name text, p_game_slug text, p_client_version text",
       "privileges": [
         {
           "role": "anon",
@@ -2110,6 +2286,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "p_start_id uuid, p_display_name text, p_game_slug text, p_client_version text",
       "privileges": [
         {
           "role": "anon",
@@ -2140,6 +2317,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "p_start_id uuid, p_display_name text, p_game_slug text, p_client_version text",
       "privileges": [
         {
           "role": "anon",
@@ -2170,6 +2348,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "p_start_id uuid, p_game_slug text, p_client_version text",
       "privileges": [
         {
           "role": "anon",
@@ -2200,6 +2379,7 @@
       "strict": false,
       "definer": true,
       "language": "plpgsql",
+      "arguments": "p_play_id uuid, p_submission_id uuid, p_display_name text, p_game_slug text, p_score integer, p_client_version text",
       "privileges": [
         {
           "role": "anon",
@@ -2225,7 +2405,257 @@
       "version": "20261027032043"
     }
   ],
-  "observed_at": "2026-10-28T00:21:57.333042+00:00",
+  "observed_at": "2026-10-28T10:48:58.599731+00:00",
+  "readonly_routines": [
+    {
+      "args": "p_game_slug text",
+      "name": "get_game_player_counts_v1",
+      "owner": "postgres",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "TABLE(normalized_name text, display_name text, play_count integer, first_score integer, best_score integer, updated_at timestamp with time zone)",
+      "schema": "private",
+      "strict": false,
+      "definer": false,
+      "language": "sql",
+      "arguments": "p_game_slug text",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": false
+        },
+        {
+          "role": "authenticated",
+          "execute": false
+        },
+        {
+          "role": "service_role",
+          "execute": false
+        }
+      ],
+      "volatility": "s",
+      "public_execute": false,
+      "body": "3c88d693d005ae3dc605fbb82dbb493d8d3ae9aaaa07941e248d941689536472"
+    },
+    {
+      "args": "p_game_slug text, p_limit integer",
+      "name": "get_disqualified_score_entries",
+      "owner": "postgres",
+      "config": [
+        "search_path=public"
+      ],
+      "result": "TABLE(display_name text, ranking_status text, ranking_note text, first_score integer, best_score integer, play_count integer, updated_at timestamp with time zone, ranking_status_updated_at timestamp with time zone)",
+      "schema": "public",
+      "strict": false,
+      "definer": true,
+      "language": "sql",
+      "arguments": "p_game_slug text, p_limit integer DEFAULT 50",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": true
+        },
+        {
+          "role": "service_role",
+          "execute": true
+        }
+      ],
+      "volatility": "s",
+      "public_execute": true,
+      "body": "84f610f338bed2f7708a6c7e6f9e4e2b0b899da4418f4119ed83d1145d8cb0b2"
+    },
+    {
+      "args": "p_game_slug text, p_limit integer",
+      "name": "get_first_try_ranking",
+      "owner": "postgres",
+      "config": [
+        "search_path=public"
+      ],
+      "result": "TABLE(rank_no bigint, display_name text, first_score integer, best_score integer, play_count integer, updated_at timestamp with time zone)",
+      "schema": "public",
+      "strict": false,
+      "definer": true,
+      "language": "sql",
+      "arguments": "p_game_slug text, p_limit integer DEFAULT 100",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": true
+        },
+        {
+          "role": "service_role",
+          "execute": true
+        }
+      ],
+      "volatility": "s",
+      "public_execute": true,
+      "body": "77c74711fd4f3c4ff73d35837027ea69621ffea35c2f850bb9619f01c7ac4a85"
+    },
+    {
+      "args": "p_game_slug text",
+      "name": "get_game_play_stats",
+      "owner": "postgres",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "TABLE(total_play_count bigint, player_count bigint)",
+      "schema": "public",
+      "strict": false,
+      "definer": true,
+      "language": "sql",
+      "arguments": "p_game_slug text",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": true
+        },
+        {
+          "role": "service_role",
+          "execute": true
+        }
+      ],
+      "volatility": "s",
+      "public_execute": true,
+      "body": "d083787df63a80c74a829c070405322d609332bbaac3b15d3182705d755d505f"
+    },
+    {
+      "args": "p_limit integer",
+      "name": "get_hito_wo_yurusuna_best_ranking",
+      "owner": "postgres",
+      "config": [
+        "search_path=public"
+      ],
+      "result": "TABLE(rank_no bigint, display_name text, clear_wave integer, score integer, play_count integer)",
+      "schema": "public",
+      "strict": false,
+      "definer": true,
+      "language": "sql",
+      "arguments": "p_limit integer DEFAULT 20",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": true
+        },
+        {
+          "role": "service_role",
+          "execute": true
+        }
+      ],
+      "volatility": "s",
+      "public_execute": true,
+      "body": "82925ac3dc0b2aa4f94a12a83245784c785bae7fa851dc090cb1d88bd86555ef"
+    },
+    {
+      "args": "p_limit integer",
+      "name": "get_hito_wo_yurusuna_first_ranking",
+      "owner": "postgres",
+      "config": [
+        "search_path=public"
+      ],
+      "result": "TABLE(rank_no bigint, display_name text, clear_wave integer, score integer, play_count integer)",
+      "schema": "public",
+      "strict": false,
+      "definer": true,
+      "language": "sql",
+      "arguments": "p_limit integer DEFAULT 20",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": true
+        },
+        {
+          "role": "service_role",
+          "execute": true
+        }
+      ],
+      "volatility": "s",
+      "public_execute": true,
+      "body": "7405fd7518555bfaecb00128a861cf09946c4e22ab92002ab149aa5d39b5e227"
+    },
+    {
+      "args": "p_game_slug text, p_limit integer",
+      "name": "get_play_count_ranking",
+      "owner": "postgres",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "TABLE(rank_no bigint, display_name text, play_count integer, first_score integer, best_score integer, updated_at timestamp with time zone)",
+      "schema": "public",
+      "strict": false,
+      "definer": true,
+      "language": "sql",
+      "arguments": "p_game_slug text, p_limit integer DEFAULT 100",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": true
+        },
+        {
+          "role": "service_role",
+          "execute": true
+        }
+      ],
+      "volatility": "s",
+      "public_execute": true,
+      "body": "58c0b6deb0c77c2263abe707377af800b7425be6ad43d42fcbc505e7b82ecd1a"
+    },
+    {
+      "args": "input_name text",
+      "name": "normalize_player_name",
+      "owner": "postgres",
+      "config": [
+        "search_path=pg_catalog, public"
+      ],
+      "result": "text",
+      "schema": "public",
+      "strict": false,
+      "definer": false,
+      "language": "sql",
+      "arguments": "input_name text",
+      "privileges": [
+        {
+          "role": "anon",
+          "execute": true
+        },
+        {
+          "role": "authenticated",
+          "execute": true
+        },
+        {
+          "role": "service_role",
+          "execute": true
+        }
+      ],
+      "volatility": "i",
+      "public_execute": true,
+      "body": "dd50e9794904162d70db1492dbcc4d7e9700dec285f00efd054ab28e44369df0"
+    }
+  ],
   "migration_file": "supabase/migrations/20261027032043_takkeu_hall_of_fame.sql",
   "migration_sha256": "b6a9828852e3b87840348814559353dec8b0286d6d6642dee7952b4fe9ef009b"
 }

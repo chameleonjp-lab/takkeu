@@ -35,7 +35,7 @@ test('malformed or incomplete CI API evidence fails closed',async()=>{
 test('DB gate requires complete exact contract and least-privilege read-only observation', () => {
   const contract={format:1,migrations:[{version:'20261027032043',name:'takkeu_hall_of_fame'}],game:{score_max:100000000},
     tables:[{schema:'public',name:'hall',rls:true,columns:[{name:'id',type:'integer'}],policies:[],privileges:[]}],
-    functions:[{schema:'public',name:'start_v2',args:'uuid',body:'reviewed',definer:true,config:['search_path=""']} ]};
+    functions:[{schema:'public',name:'start_v2',args:'uuid',body:'reviewed',definer:true,config:['search_path=""']} ],readonly_routines:[{name:'pure_read',body:'reviewed'}]};
   const observation={...structuredClone(contract),read_only:true,least_privilege:true,project:'mlpnjgezrnhdxsxolyzj'};
   assert.doesNotThrow(()=>verifyDatabase(observation,contract));
   for (const mutate of [x=>x.migrations=[],x=>x.tables=[],x=>x.functions=[],x=>x.read_only=false,

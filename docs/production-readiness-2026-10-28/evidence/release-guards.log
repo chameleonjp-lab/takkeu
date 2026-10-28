@@ -1,0 +1,25 @@
+
+> takkeu@0.1.0 test:release-guards
+> node --test --test-isolation=none tests/release/*.test.mjs
+
+✔ reviewed contract equals offline production baseline plus actual migration; all partial security states fail (1912.047375ms)
+✔ DB connection is project-bound, SSL verified, read-only and has no inherited connection options (0.939639ms)
+✔ permission, network, timeout and invalid response failures cannot become a successful DB gate (0.48902ms)
+✔ only explicitly owner-approved dispatch of full main SHA is eligible (0.276113ms)
+✔ GitHub gate uses latest main push CI, rejects stale SHA, failure, pending and API errors (0.71854ms)
+✔ malformed or incomplete CI API evidence fails closed (0.408519ms)
+✔ DB gate requires complete exact contract and least-privilege read-only observation (1.020055ms)
+✔ every publishing workflow is manual, gated and serialized; CI remains automatic (0.396176ms)
+✔ migration preparation is an offline, exact reviewed-payload, single-transaction operation (1.421365ms)
+✔ scoped permission preparation and restore touch only the eight reviewed app functions (1.550202ms)
+✔ offline preparation works in the real CI sparse layout without docs or credentials (53.886712ms)
+✔ actual workflow graph blocks every emergency failure mode and permits the approved complete path without publishing (1.492668ms)
+✔ all publishing paths use the single manual graph; normal CI has no production secrets (12.062421ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2061.80021

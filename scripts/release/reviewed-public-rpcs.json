@@ -1,0 +1,188 @@
+{
+  "observed_at": "2026-10-28T10:05:12.956445+00:00",
+  "project": "mlpnjgezrnhdxsxolyzj",
+  "functions": [
+    {
+      "schema": "public",
+      "name": "check_player_name",
+      "identity_args": "p_display_name text",
+      "owner": "postgres",
+      "definer": true,
+      "volatility": "v",
+      "public_execute": true,
+      "source_sha256": "c54f358e60d067711efc13f96de84e3f188fd8953304887621b8635c9091526f",
+      "acl": [
+        "=X/postgres",
+        "postgres=X/postgres",
+        "anon=X/postgres"
+      ],
+      "config": [
+        "search_path=public"
+      ],
+      "language": "plpgsql",
+      "result": "TABLE(name_exists boolean, registered_display_name text)",
+      "arguments": "p_display_name text",
+      "strict": false
+    },
+    {
+      "schema": "public",
+      "name": "get_best_score_ranking_with_metadata",
+      "identity_args": "p_game_slug text, p_limit integer",
+      "owner": "postgres",
+      "definer": true,
+      "volatility": "v",
+      "public_execute": true,
+      "source_sha256": "7d20f280ffbf38a0095e689d6cc9ca35b3c26874495af12f720ce5079bd2cccf",
+      "acl": [
+        "=X/postgres",
+        "postgres=X/postgres",
+        "anon=X/postgres",
+        "authenticated=X/postgres"
+      ],
+      "config": [
+        "search_path=public"
+      ],
+      "language": "sql",
+      "result": "TABLE(rank_no integer, display_name text, best_score integer, play_count integer, best_score_at timestamp with time zone, metadata jsonb)",
+      "arguments": "p_game_slug text, p_limit integer DEFAULT 10",
+      "strict": false
+    },
+    {
+      "schema": "public",
+      "name": "get_first_try_ranking_with_metadata",
+      "identity_args": "p_game_slug text, p_limit integer",
+      "owner": "postgres",
+      "definer": true,
+      "volatility": "v",
+      "public_execute": true,
+      "source_sha256": "2bbc2babf1e55573a7c15031af7aa4e40dfde8b97aee62d1067f86d6b2db7cad",
+      "acl": [
+        "=X/postgres",
+        "postgres=X/postgres",
+        "anon=X/postgres",
+        "authenticated=X/postgres"
+      ],
+      "config": [
+        "search_path=public"
+      ],
+      "language": "sql",
+      "result": "TABLE(rank_no integer, display_name text, first_score integer, play_count integer, first_score_at timestamp with time zone, metadata jsonb)",
+      "arguments": "p_game_slug text, p_limit integer DEFAULT 10",
+      "strict": false
+    },
+    {
+      "schema": "public",
+      "name": "get_game_ranking",
+      "identity_args": "p_game_slug text, p_limit integer",
+      "owner": "postgres",
+      "definer": true,
+      "volatility": "v",
+      "public_execute": true,
+      "source_sha256": "f51d0e3c8398b87996df8f0c7437e11b9c48adf2148b21680c86265b24119553",
+      "acl": [
+        "=X/postgres",
+        "postgres=X/postgres",
+        "anon=X/postgres"
+      ],
+      "config": [
+        "search_path=public"
+      ],
+      "language": "plpgsql",
+      "result": "TABLE(rank_no integer, display_name text, best_score integer, play_count integer, best_score_at timestamp with time zone)",
+      "arguments": "p_game_slug text, p_limit integer DEFAULT 100",
+      "strict": false
+    },
+    {
+      "schema": "public",
+      "name": "get_player_score_summary_with_metadata",
+      "identity_args": "p_game_slug text, p_normalized_name text",
+      "owner": "postgres",
+      "definer": true,
+      "volatility": "v",
+      "public_execute": true,
+      "source_sha256": "77e42ebe6dd5f1c6d06e67b961f0af9554158be0d64105bfe6c6b9bcff35bf25",
+      "acl": [
+        "=X/postgres",
+        "postgres=X/postgres",
+        "anon=X/postgres",
+        "authenticated=X/postgres"
+      ],
+      "config": [
+        "search_path=public"
+      ],
+      "language": "sql",
+      "result": "TABLE(display_name text, first_score integer, best_score integer, play_count integer, first_score_at timestamp with time zone, best_score_at timestamp with time zone, first_metadata jsonb, best_metadata jsonb)",
+      "arguments": "p_game_slug text, p_normalized_name text",
+      "strict": false
+    },
+    {
+      "schema": "public",
+      "name": "record_game_play",
+      "identity_args": "p_display_name text, p_game_slug text, p_result_type text, p_client_version text",
+      "owner": "postgres",
+      "definer": true,
+      "volatility": "v",
+      "public_execute": true,
+      "source_sha256": "71e73b5df6071bb810fee94b38a7fad8e68f50a07267258a2b9942900ec1007d",
+      "acl": [
+        "=X/postgres",
+        "postgres=X/postgres",
+        "anon=X/postgres",
+        "authenticated=X/postgres"
+      ],
+      "config": [
+        "search_path=\"\""
+      ],
+      "language": "plpgsql",
+      "result": "jsonb",
+      "arguments": "p_display_name text, p_game_slug text, p_result_type text DEFAULT 'play'::text, p_client_version text DEFAULT NULL::text",
+      "strict": false
+    },
+    {
+      "schema": "public",
+      "name": "record_play_event",
+      "identity_args": "p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_ranking_score integer, p_client_version text, p_play_id text",
+      "owner": "postgres",
+      "definer": true,
+      "volatility": "v",
+      "public_execute": true,
+      "source_sha256": "a6efa677c2997c24d753c340055c8ba61d399aeb948708b08519fb343ad2454d",
+      "acl": [
+        "=X/postgres",
+        "postgres=X/postgres",
+        "anon=X/postgres",
+        "authenticated=X/postgres"
+      ],
+      "config": [
+        "search_path=public"
+      ],
+      "language": "plpgsql",
+      "result": "jsonb",
+      "arguments": "p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_ranking_score integer DEFAULT NULL::integer, p_client_version text DEFAULT ''::text, p_play_id text DEFAULT NULL::text",
+      "strict": false
+    },
+    {
+      "schema": "public",
+      "name": "submit_hito_wo_yurusuna_score",
+      "identity_args": "p_display_name text, p_score integer, p_clear_wave integer, p_client_version text",
+      "owner": "postgres",
+      "definer": true,
+      "volatility": "v",
+      "public_execute": true,
+      "source_sha256": "6fe9f35681179d6b106ce81df79344b12663984b548cadccc1d89119ccd56e6b",
+      "acl": [
+        "=X/postgres",
+        "postgres=X/postgres",
+        "anon=X/postgres",
+        "authenticated=X/postgres"
+      ],
+      "config": [
+        "search_path=public"
+      ],
+      "language": "plpgsql",
+      "result": "TABLE(accepted boolean, result_normalized_name text, result_display_name text, result_first_score integer, result_best_score integer, result_play_count integer, is_first_play boolean, is_new_best boolean, result_clear_wave integer, result_first_clear_wave integer, result_best_clear_wave integer)",
+      "arguments": "p_display_name text, p_score integer, p_clear_wave integer, p_client_version text DEFAULT ''::text",
+      "strict": false
+    }
+  ]
+}

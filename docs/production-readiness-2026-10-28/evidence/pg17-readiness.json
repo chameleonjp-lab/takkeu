@@ -1,0 +1,188 @@
+{
+  "image": "postgres:17@sha256:b8faeff7712663c2773a190181e1246e37e364b887611c04658c28b44e2408fe",
+  "version": "PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+  "cases": [
+    {
+      "name": "late transaction failure rolls back complete DDL/history",
+      "result": "passed"
+    },
+    {
+      "name": "exact migration, transaction postconditions and unchanged existing data",
+      "result": "passed"
+    },
+    {
+      "name": "pre-migration legacy pending submits without inventing loss count",
+      "result": "passed"
+    },
+    {
+      "name": "duplicate apply refused without changing committed objects",
+      "result": "passed"
+    },
+    {
+      "name": "historical 45million provisional record preserved without shrinking max",
+      "result": "passed"
+    },
+    {
+      "name": "inventory 4 tables/2 columns/10 functions/2 triggers/21 constraints/8 indexes",
+      "result": "passed"
+    },
+    {
+      "name": "3500 only, losses below100, submitted score required",
+      "result": "passed"
+    },
+    {
+      "name": "same/different names on distinct backends and lost-response retry stable",
+      "result": "passed"
+    },
+    {
+      "name": "old3000 separate ledger, legacy4001 preserved and pending4002 accepted",
+      "result": "passed"
+    },
+    {
+      "name": "BOT/provisionalBOT/hidden cannot receive numbers; categories unchanged",
+      "result": "passed"
+    },
+    {
+      "name": "anon direct public.takkeu_hall_of_fame denied",
+      "result": "passed"
+    },
+    {
+      "name": "anon direct public.takkeu_hall_of_fame_3500 denied",
+      "result": "passed"
+    },
+    {
+      "name": "anon direct private.takkeu_hall_counter_v1 denied",
+      "result": "passed"
+    },
+    {
+      "name": "anon direct private.takkeu_hall_counter_3500_v1 denied",
+      "result": "passed"
+    },
+    {
+      "name": "authenticated direct public.takkeu_hall_of_fame denied",
+      "result": "passed"
+    },
+    {
+      "name": "authenticated direct public.takkeu_hall_of_fame_3500 denied",
+      "result": "passed"
+    },
+    {
+      "name": "authenticated direct private.takkeu_hall_counter_v1 denied",
+      "result": "passed"
+    },
+    {
+      "name": "authenticated direct private.takkeu_hall_counter_3500_v1 denied",
+      "result": "passed"
+    },
+    {
+      "name": "anon direct insert public.takkeu_hall_of_fame denied",
+      "result": "passed"
+    },
+    {
+      "name": "anon direct insert public.takkeu_hall_of_fame_3500 denied",
+      "result": "passed"
+    },
+    {
+      "name": "anon direct counter update denied",
+      "result": "passed"
+    },
+    {
+      "name": "anon direct counter update denied",
+      "result": "passed"
+    },
+    {
+      "name": "authenticated direct insert public.takkeu_hall_of_fame denied",
+      "result": "passed"
+    },
+    {
+      "name": "authenticated direct insert public.takkeu_hall_of_fame_3500 denied",
+      "result": "passed"
+    },
+    {
+      "name": "authenticated direct counter update denied",
+      "result": "passed"
+    },
+    {
+      "name": "authenticated direct counter update denied",
+      "result": "passed"
+    },
+    {
+      "name": "changed search_path refuses permission proposal",
+      "result": "passed"
+    },
+    {
+      "name": "late STRICT drift rolls back earlier permission changes",
+      "result": "passed"
+    },
+    {
+      "name": "eight scoped ACL changes satisfy exact body/ACL preconditions",
+      "result": "passed"
+    },
+    {
+      "name": "actual read/write caller paths preserve anon/authenticated/service outputs",
+      "result": "passed"
+    },
+    {
+      "name": "PUBLIC-only reader loses only the reviewed eight entrypoints",
+      "result": "passed"
+    },
+    {
+      "name": "A8 still cannot establish genuinely readonly credential",
+      "result": "passed"
+    },
+    {
+      "name": "exact original eight ACLs restored",
+      "result": "passed"
+    }
+  ],
+  "raceSame": [
+    {
+      "play_id": "71b323c8-9b47-4979-9d00-a7242e409e43",
+      "accepted": true,
+      "backend_pid": 315,
+      "hall_number": 1,
+      "display_name": "NativeClear",
+      "registered_at": "2026-10-28T10:59:43.342282+00:00",
+      "rules_version": "goal-3500-v1",
+      "submission_id": "33333333-3333-4333-8333-000000001001",
+      "normalized_name": "NativeClear"
+    },
+    {
+      "play_id": "f45a1c02-181f-483b-9c0b-6b56ea9143ef",
+      "accepted": true,
+      "backend_pid": 314,
+      "hall_number": 1,
+      "display_name": "NativeClear",
+      "registered_at": "2026-10-28T10:59:43.342282+00:00",
+      "rules_version": "goal-3500-v1",
+      "submission_id": "33333333-3333-4333-8333-000000001002",
+      "normalized_name": "NativeClear"
+    }
+  ],
+  "raceOther": [
+    {
+      "play_id": "033f3843-8bba-4311-bafe-8ab7ddf4ae3b",
+      "accepted": true,
+      "backend_pid": 386,
+      "hall_number": 3,
+      "display_name": "NativeB",
+      "registered_at": "2026-10-28T10:59:45.436665+00:00",
+      "rules_version": "goal-3500-v1",
+      "submission_id": "33333333-3333-4333-8333-000000001003",
+      "normalized_name": "NativeB"
+    },
+    {
+      "play_id": "56e7d569-e6a7-49b8-889f-cec87ff8a241",
+      "accepted": true,
+      "backend_pid": 385,
+      "hall_number": 2,
+      "display_name": "NativeC",
+      "registered_at": "2026-10-28T10:59:45.284245+00:00",
+      "rules_version": "goal-3500-v1",
+      "submission_id": "33333333-3333-4333-8333-000000001004",
+      "normalized_name": "NativeC"
+    }
+  ],
+  "result": "passed",
+  "productionConnection": false
+}
