@@ -1,0 +1,53 @@
+NOTICE:  relation "game_play_sessions_pkey" already exists, skipping
+NOTICE:  relation "game_play_sessions_submission_id_key" already exists, skipping
+NOTICE:  relation "game_scores_pkey" already exists, skipping
+NOTICE:  relation "players_pkey" already exists, skipping
+NOTICE:  relation "score_runs_pkey" already exists, skipping
+NOTICE:  relation "takkeu_guest_plays_v1_pkey" already exists, skipping
+NOTICE:  relation "takkeu_guest_plays_v1_play_id_key" already exists, skipping
+NOTICE:  relation "takkeu_progress_signals_v1_pkey" already exists, skipping
+NOTICE:  relation "takkeu_progress_v1_pkey" already exists, skipping
+NOTICE:  relation "game_play_events_pkey" already exists, skipping
+NOTICE:  relation "game_play_events_play_id_key" already exists, skipping
+ERROR:  division by zero
+CONTEXT:  SQL statement "SELECT 1/0"
+PL/pgSQL function inline_code_block line 436 at PERFORM
+ERROR:  collision or partial application; investigate first
+CONTEXT:  PL/pgSQL function inline_code_block line 12 at RAISE
+ERROR:  permission denied for table takkeu_hall_of_fame
+ERROR:  permission denied for table takkeu_hall_of_fame_3500
+ERROR:  permission denied for schema private
+LINE 1: SELECT * FROM private.takkeu_hall_counter_v1;
+                      ^
+ERROR:  permission denied for schema private
+LINE 1: SELECT * FROM private.takkeu_hall_counter_3500_v1;
+                      ^
+ERROR:  permission denied for table takkeu_hall_of_fame
+ERROR:  permission denied for table takkeu_hall_of_fame_3500
+ERROR:  permission denied for schema private
+LINE 1: SELECT * FROM private.takkeu_hall_counter_v1;
+                      ^
+ERROR:  permission denied for schema private
+LINE 1: SELECT * FROM private.takkeu_hall_counter_3500_v1;
+                      ^
+ERROR:  permission denied for table takkeu_hall_of_fame
+ERROR:  permission denied for table takkeu_hall_of_fame_3500
+ERROR:  permission denied for schema private
+LINE 1: UPDATE private.takkeu_hall_counter_v1 SET next_number=999;
+               ^
+ERROR:  permission denied for schema private
+LINE 1: UPDATE private.takkeu_hall_counter_3500_v1 SET next_number=9...
+               ^
+ERROR:  permission denied for table takkeu_hall_of_fame
+ERROR:  permission denied for table takkeu_hall_of_fame_3500
+ERROR:  permission denied for schema private
+LINE 1: UPDATE private.takkeu_hall_counter_v1 SET next_number=999;
+               ^
+ERROR:  permission denied for schema private
+LINE 1: UPDATE private.takkeu_hall_counter_3500_v1 SET next_number=9...
+               ^
+ERROR:  RPC/ACL drift: check_player_name
+CONTEXT:  PL/pgSQL function inline_code_block line 12 at RAISE
+ERROR:  RPC/ACL drift: submit_hito_wo_yurusuna_score
+CONTEXT:  PL/pgSQL function inline_code_block line 166 at RAISE
+PG17 production readiness: 33 checks passed; no production connection.

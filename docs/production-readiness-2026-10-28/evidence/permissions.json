@@ -1,0 +1,2315 @@
+{
+  "roles": [
+    {
+      "name": "supabase_admin",
+      "login": true,
+      "create_db": true,
+      "superuser": true,
+      "bypass_rls": true,
+      "create_role": true,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_monitor",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_read_all_settings",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_read_all_stats",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_stat_scan_tables",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_signal_backend",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_checkpoint",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_use_reserved_connections",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_read_server_files",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_write_server_files",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_execute_server_program",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_database_owner",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_read_all_data",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_write_all_data",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_create_subscription",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "pg_maintain",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "postgres",
+      "login": true,
+      "create_db": true,
+      "superuser": false,
+      "bypass_rls": true,
+      "create_role": true,
+      "read_only_config": null
+    },
+    {
+      "name": "pgbouncer",
+      "login": true,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "supabase_replication_admin",
+      "login": true,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "supabase_etl_admin",
+      "login": true,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": true,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "supabase_read_only_user",
+      "login": true,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": true,
+      "create_role": false,
+      "read_only_config": [
+        "default_transaction_read_only=on"
+      ]
+    },
+    {
+      "name": "anon",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "authenticated",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "service_role",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": true,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "authenticator",
+      "login": true,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "supabase_auth_admin",
+      "login": true,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": true,
+      "read_only_config": null
+    },
+    {
+      "name": "supabase_storage_admin",
+      "login": true,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": true,
+      "read_only_config": null
+    },
+    {
+      "name": "dashboard_user",
+      "login": false,
+      "create_db": true,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": true,
+      "read_only_config": null
+    },
+    {
+      "name": "supabase_privileged_role",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    },
+    {
+      "name": "supabase_realtime_admin",
+      "login": false,
+      "create_db": false,
+      "superuser": false,
+      "bypass_rls": false,
+      "create_role": false,
+      "read_only_config": null
+    }
+  ],
+  "counts": {
+    "players": 3831,
+    "score_runs": 18838,
+    "game_scores": 3774,
+    "all_sessions": 11701,
+    "takkeu_sessions": 11665
+  },
+  "tables": [
+    {
+      "acl": [
+        "postgres=a*r*w*d*D*x*t*m*/postgres",
+        "=r/postgres",
+        "dashboard_user=arwdDxtm/postgres"
+      ],
+      "rls": false,
+      "name": "pg_stat_statements_info",
+      "owner": "postgres",
+      "schema": "extensions",
+      "force_rls": false,
+      "size_bytes": 0,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=a*r*w*d*D*x*t*m*/postgres",
+        "=r/postgres",
+        "dashboard_user=arwdDxtm/postgres"
+      ],
+      "rls": false,
+      "name": "pg_stat_statements",
+      "owner": "postgres",
+      "schema": "extensions",
+      "force_rls": false,
+      "size_bytes": 0,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=ar*wdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "saml_relay_states",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 40960,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=ar*wdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "flow_state",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 40960,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=ar*wdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "saml_providers",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin",
+        "postgres=ar*wdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "instances",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 16384,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "anon=arwdDxtm/postgres",
+        "authenticated=arwdDxtm/postgres",
+        "service_role=Dxtm/postgres"
+      ],
+      "rls": true,
+      "name": "wakaranjan_learning_profiles",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": null,
+      "rls": false,
+      "name": "score_runs_id_seq",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 8192,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_auth_admin=rwU/supabase_auth_admin",
+        "dashboard_user=rwU/supabase_auth_admin",
+        "postgres=rwU/supabase_auth_admin"
+      ],
+      "rls": false,
+      "name": "refresh_tokens_id_seq",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 8192,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "postgres=r*/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "schema_migrations",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "anon=m/postgres",
+        "authenticated=m/postgres",
+        "service_role=Dxtm/postgres"
+      ],
+      "rls": true,
+      "name": "players",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 622592,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "faitofuraito_guest_plays_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 65536,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin",
+        "postgres=ar*wdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "refresh_tokens",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 65536,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_admin=arwdDxtm/supabase_admin",
+        "postgres=r*d*D*x*/supabase_admin",
+        "service_role=rd/supabase_admin"
+      ],
+      "rls": false,
+      "name": "secrets",
+      "owner": "supabase_admin",
+      "schema": "vault",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_admin=arwdDxtm/supabase_admin",
+        "postgres=r*d*D*x*/supabase_admin",
+        "service_role=rd/supabase_admin"
+      ],
+      "rls": false,
+      "name": "decrypted_secrets",
+      "owner": "supabase_admin",
+      "schema": "vault",
+      "force_rls": false,
+      "size_bytes": 0,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "takkeu_guest_plays_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 9887744,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin",
+        "postgres=ar*wdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "users",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 131072,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin",
+        "postgres=ar*wdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "audit_log_entries",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=ar*wdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "sso_domains",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=ar*wdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "mfa_amr_claims",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=ar*wdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "identities",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 40960,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=ar*wdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "sessions",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 49152,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=ar*wdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "mfa_challenges",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=ar*wdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "sso_providers",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=ar*wdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "mfa_factors",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 57344,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=ar*wdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": true,
+      "name": "one_time_tokens",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 90112,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "anon=rm/postgres",
+        "authenticated=m/postgres",
+        "service_role=Dxtm/postgres"
+      ],
+      "rls": true,
+      "name": "games",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 131072,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": false,
+      "name": "oauth_consents",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 49152,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": false,
+      "name": "oauth_authorizations",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 40960,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": false,
+      "name": "oauth_client_states",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": false,
+      "name": "oauth_clients",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": false,
+      "name": "webauthn_credentials",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": false,
+      "name": "custom_oauth_providers",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 57344,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": false,
+      "name": "webauthn_challenges",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "tomatoku_draw_sets_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 122880,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "anon=m/postgres",
+        "authenticated=m/postgres",
+        "service_role=Dxtm/postgres"
+      ],
+      "rls": true,
+      "name": "score_runs",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 9502720,
+      "column_acls": null
+    },
+    {
+      "acl": null,
+      "rls": true,
+      "name": "migrations",
+      "owner": "supabase_storage_admin",
+      "schema": "storage",
+      "force_rls": false,
+      "size_bytes": 73728,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_admin=arwdDxtm/supabase_admin"
+      ],
+      "rls": false,
+      "name": "schema_migrations",
+      "owner": "supabase_admin",
+      "schema": "realtime",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "aggregate_totals",
+      "owner": "postgres",
+      "schema": "slime_trial_private",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "tomatoku_competition_config",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "tomatoku_stage_catalog_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 65536,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "tomatoku_runs_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 155648,
+      "column_acls": null
+    },
+    {
+      "acl": null,
+      "rls": false,
+      "name": "game_play_events_id_seq",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 8192,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "request_receipts",
+      "owner": "postgres",
+      "schema": "slime_trial_private",
+      "force_rls": false,
+      "size_bytes": 40960,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "request_limits",
+      "owner": "postgres",
+      "schema": "slime_trial_private",
+      "force_rls": false,
+      "size_bytes": 49152,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "anon=Dxtm/postgres",
+        "authenticated=Dxtm/postgres",
+        "service_role=Dxtm/postgres"
+      ],
+      "rls": true,
+      "name": "game_play_events",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 679936,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "sabasaba_run_sessions",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 122880,
+      "column_acls": null
+    },
+    {
+      "acl": null,
+      "rls": false,
+      "name": "jobid_seq",
+      "owner": "supabase_admin",
+      "schema": "cron",
+      "force_rls": false,
+      "size_bytes": 8192,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_storage_admin=arwdDxtm/supabase_storage_admin",
+        "service_role=arwdDxtm/supabase_storage_admin",
+        "authenticated=r/supabase_storage_admin",
+        "anon=r/supabase_storage_admin"
+      ],
+      "rls": true,
+      "name": "s3_multipart_uploads",
+      "owner": "supabase_storage_admin",
+      "schema": "storage",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_storage_admin=arwdDxtm/supabase_storage_admin",
+        "service_role=arwdDxtm/supabase_storage_admin",
+        "authenticated=r/supabase_storage_admin",
+        "anon=r/supabase_storage_admin"
+      ],
+      "rls": true,
+      "name": "s3_multipart_uploads_parts",
+      "owner": "supabase_storage_admin",
+      "schema": "storage",
+      "force_rls": false,
+      "size_bytes": 16384,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_storage_admin=arwdDxtm/supabase_storage_admin",
+        "service_role=r/supabase_storage_admin",
+        "anon=r/supabase_storage_admin",
+        "authenticated=r/supabase_storage_admin"
+      ],
+      "rls": true,
+      "name": "buckets_vectors",
+      "owner": "supabase_storage_admin",
+      "schema": "storage",
+      "force_rls": false,
+      "size_bytes": 16384,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_storage_admin=arwdDxtm/supabase_storage_admin",
+        "service_role=r/supabase_storage_admin",
+        "anon=r/supabase_storage_admin",
+        "authenticated=r/supabase_storage_admin"
+      ],
+      "rls": true,
+      "name": "vector_indexes",
+      "owner": "supabase_storage_admin",
+      "schema": "storage",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "anon=m/postgres",
+        "authenticated=m/postgres",
+        "service_role=Dxtm/postgres"
+      ],
+      "rls": true,
+      "name": "game_scores",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 1359872,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "sainome_v2_unicode_ranges",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 524288,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "sainome_v2_unicode_scripts",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 139264,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "sainome_v2_unicode_sequences",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 344064,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_storage_admin=a*r*w*d*D*x*t*m*/supabase_storage_admin",
+        "service_role=arwdDxtm/supabase_storage_admin",
+        "authenticated=arwd/supabase_storage_admin",
+        "anon=arwd/supabase_storage_admin",
+        "postgres=a*r*w*d*D*x*t*m*/supabase_storage_admin"
+      ],
+      "rls": true,
+      "name": "objects",
+      "owner": "supabase_storage_admin",
+      "schema": "storage",
+      "force_rls": false,
+      "size_bytes": 73728,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_storage_admin=a*r*w*d*D*x*t*m*/supabase_storage_admin",
+        "service_role=arwdDxtm/supabase_storage_admin",
+        "authenticated=arwd/supabase_storage_admin",
+        "anon=arwd/supabase_storage_admin",
+        "postgres=a*r*w*d*D*x*t*m*/supabase_storage_admin"
+      ],
+      "rls": true,
+      "name": "buckets",
+      "owner": "supabase_storage_admin",
+      "schema": "storage",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_storage_admin=arwdDxtm/supabase_storage_admin",
+        "service_role=arwdDxtm/supabase_storage_admin",
+        "authenticated=arwd/supabase_storage_admin",
+        "anon=arwd/supabase_storage_admin"
+      ],
+      "rls": true,
+      "name": "buckets_analytics",
+      "owner": "supabase_storage_admin",
+      "schema": "storage",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": null,
+      "rls": false,
+      "name": "runid_seq",
+      "owner": "supabase_admin",
+      "schema": "cron",
+      "force_rls": false,
+      "size_bytes": 8192,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_realtime_admin=rwU/supabase_realtime_admin",
+        "postgres=rwU/supabase_realtime_admin",
+        "dashboard_user=rwU/supabase_realtime_admin",
+        "anon=U/supabase_realtime_admin",
+        "authenticated=U/supabase_realtime_admin",
+        "service_role=U/supabase_realtime_admin"
+      ],
+      "rls": false,
+      "name": "subscription_id_seq",
+      "owner": "supabase_realtime_admin",
+      "schema": "realtime",
+      "force_rls": false,
+      "size_bytes": 8192,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "anon=Dxtm/postgres",
+        "authenticated=Dxtm/postgres",
+        "service_role=Dxtm/postgres"
+      ],
+      "rls": true,
+      "name": "game_scores_backup_uchikaeru_before_score_migration_20260622_v3",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 16384,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "sainome_v2_config",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "sainome_v2_player_keys",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 49152,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "sainome_v2_plays",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "sainome_v2_scores",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 49152,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_realtime_admin=arwdDxtm/supabase_realtime_admin",
+        "postgres=arwdDxtm/supabase_realtime_admin",
+        "dashboard_user=arwdDxtm/supabase_realtime_admin",
+        "anon=r/supabase_realtime_admin",
+        "authenticated=r/supabase_realtime_admin",
+        "service_role=r/supabase_realtime_admin"
+      ],
+      "rls": false,
+      "name": "subscription",
+      "owner": "supabase_realtime_admin",
+      "schema": "realtime",
+      "force_rls": false,
+      "size_bytes": 98304,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "akerun_competition_config",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "akerun_problem_catalog_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=rdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "wasabi_matane_guestbook_entries",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 106496,
+      "column_acls": [
+        {
+          "acl": [
+            "anon=r/postgres",
+            "authenticated=r/postgres"
+          ],
+          "column": "display_name"
+        },
+        {
+          "acl": [
+            "anon=r/postgres",
+            "authenticated=r/postgres"
+          ],
+          "column": "first_entered_at"
+        },
+        {
+          "acl": [
+            "anon=r/postgres",
+            "authenticated=r/postgres"
+          ],
+          "column": "message"
+        }
+      ]
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=rDxtm/postgres",
+        "anon=r/postgres",
+        "authenticated=r/postgres"
+      ],
+      "rls": true,
+      "name": "wasabi_matane_offering_catalog",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 49152,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=rwDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "wasabi_matane_offering_placements",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 163840,
+      "column_acls": [
+        {
+          "acl": [
+            "anon=r/postgres",
+            "authenticated=r/postgres"
+          ],
+          "column": "id"
+        },
+        {
+          "acl": [
+            "anon=r/postgres",
+            "authenticated=r/postgres"
+          ],
+          "column": "request_id"
+        },
+        {
+          "acl": [
+            "anon=r/postgres",
+            "authenticated=r/postgres"
+          ],
+          "column": "offering_code"
+        },
+        {
+          "acl": [
+            "anon=r/postgres",
+            "authenticated=r/postgres"
+          ],
+          "column": "category"
+        },
+        {
+          "acl": [
+            "anon=r/postgres",
+            "authenticated=r/postgres"
+          ],
+          "column": "placement_index"
+        },
+        {
+          "acl": [
+            "anon=r/postgres",
+            "authenticated=r/postgres"
+          ],
+          "column": "zone_code"
+        },
+        {
+          "acl": [
+            "anon=r/postgres",
+            "authenticated=r/postgres"
+          ],
+          "column": "created_at"
+        },
+        {
+          "acl": [
+            "anon=r/postgres",
+            "authenticated=r/postgres"
+          ],
+          "column": "deleted_at"
+        }
+      ]
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=aDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "wasabi_matane_admin_events",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 16384,
+      "column_acls": null
+    },
+    {
+      "acl": null,
+      "rls": false,
+      "name": "schema_migrations",
+      "owner": "postgres",
+      "schema": "supabase_migrations",
+      "force_rls": false,
+      "size_bytes": 376832,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_admin=arwdDxtm/supabase_admin",
+        "=r/supabase_admin",
+        "postgres=r*/supabase_admin"
+      ],
+      "rls": true,
+      "name": "job",
+      "owner": "supabase_admin",
+      "schema": "cron",
+      "force_rls": false,
+      "size_bytes": 49152,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_realtime_admin=arwdDxtm/supabase_realtime_admin",
+        "postgres=a*r*wdDxtm/supabase_realtime_admin",
+        "dashboard_user=arwdDxtm/supabase_realtime_admin",
+        "anon=arw/supabase_realtime_admin",
+        "authenticated=arw/supabase_realtime_admin",
+        "service_role=arw/supabase_realtime_admin"
+      ],
+      "rls": true,
+      "name": "messages",
+      "owner": "supabase_realtime_admin",
+      "schema": "realtime",
+      "force_rls": false,
+      "size_bytes": 0,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_admin=arwdDxtm/supabase_admin",
+        "=rd/supabase_admin",
+        "postgres=a*r*w*d*D*x*m*/supabase_admin"
+      ],
+      "rls": true,
+      "name": "job_run_details",
+      "owner": "supabase_admin",
+      "schema": "cron",
+      "force_rls": false,
+      "size_bytes": 237568,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_realtime_admin=arwdDxtm/supabase_realtime_admin",
+        "postgres=a*r*wdDxtm/supabase_realtime_admin",
+        "dashboard_user=arwdDxtm/supabase_realtime_admin"
+      ],
+      "rls": false,
+      "name": "messages_2026_10_27",
+      "owner": "supabase_realtime_admin",
+      "schema": "realtime",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=rwDxtm/postgres",
+        "anon=r/postgres",
+        "authenticated=r/postgres"
+      ],
+      "rls": true,
+      "name": "wasabi_matane_memorial_config",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": null,
+      "rls": false,
+      "name": "takkeu_moderation_audit_v1_id_seq",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 8192,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": false,
+      "name": "scim_tokens",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 49152,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "takkeu_moderation_audit_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": false,
+      "name": "scim_users",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 90112,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": false,
+      "name": "mfa_recovery_code_sets",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_auth_admin",
+        "supabase_auth_admin=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "rls": false,
+      "name": "mfa_recovery_codes",
+      "owner": "supabase_auth_admin",
+      "schema": "auth",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "takkeu_progress_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 81920,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "takkeu_progress_signals_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 16384,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=Dxtm/postgres"
+      ],
+      "rls": true,
+      "name": "wasabi_matane_cheer_events",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 40960,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=Dxtm/postgres"
+      ],
+      "rls": true,
+      "name": "wasabi_matane_guestbook_clients",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 40960,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "game_play_sessions",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 5398528,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "akerun_request_buckets_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 57344,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "akerun_runs_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 90112,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres"
+      ],
+      "rls": true,
+      "name": "akerun_competition_scores_v1",
+      "owner": "postgres",
+      "schema": "private",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=Dxtm/postgres",
+        "anon=r/postgres",
+        "authenticated=r/postgres"
+      ],
+      "rls": true,
+      "name": "slime_trial_content_versions",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 49152,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_realtime_admin=arwdDxtm/supabase_realtime_admin",
+        "postgres=a*r*wdDxtm/supabase_realtime_admin",
+        "dashboard_user=arwdDxtm/supabase_realtime_admin"
+      ],
+      "rls": false,
+      "name": "messages_2026_10_22",
+      "owner": "supabase_realtime_admin",
+      "schema": "realtime",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "service_role=Dxtm/postgres",
+        "anon=r/postgres",
+        "authenticated=r/postgres"
+      ],
+      "rls": true,
+      "name": "slime_trial_aggregate_snapshots",
+      "owner": "postgres",
+      "schema": "public",
+      "force_rls": false,
+      "size_bytes": 32768,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_realtime_admin=arwdDxtm/supabase_realtime_admin",
+        "postgres=a*r*wdDxtm/supabase_realtime_admin",
+        "dashboard_user=arwdDxtm/supabase_realtime_admin"
+      ],
+      "rls": false,
+      "name": "messages_2026_10_23",
+      "owner": "supabase_realtime_admin",
+      "schema": "realtime",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_realtime_admin=arwdDxtm/supabase_realtime_admin",
+        "postgres=a*r*wdDxtm/supabase_realtime_admin",
+        "dashboard_user=arwdDxtm/supabase_realtime_admin"
+      ],
+      "rls": false,
+      "name": "messages_2026_10_25",
+      "owner": "supabase_realtime_admin",
+      "schema": "realtime",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_realtime_admin=arwdDxtm/supabase_realtime_admin",
+        "postgres=a*r*wdDxtm/supabase_realtime_admin",
+        "dashboard_user=arwdDxtm/supabase_realtime_admin"
+      ],
+      "rls": false,
+      "name": "messages_2026_10_24",
+      "owner": "supabase_realtime_admin",
+      "schema": "realtime",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    },
+    {
+      "acl": [
+        "supabase_realtime_admin=arwdDxtm/supabase_realtime_admin",
+        "postgres=a*r*wdDxtm/supabase_realtime_admin",
+        "dashboard_user=arwdDxtm/supabase_realtime_admin"
+      ],
+      "rls": false,
+      "name": "messages_2026_10_26",
+      "owner": "supabase_realtime_admin",
+      "schema": "realtime",
+      "force_rls": false,
+      "size_bytes": 24576,
+      "column_acls": null
+    }
+  ],
+  "policies": [
+    {
+      "cmd": "SELECT",
+      "qual": "(is_active = true)",
+      "roles": [
+        "anon"
+      ],
+      "tablename": "games",
+      "permissive": "PERMISSIVE",
+      "policyname": "games_select_public",
+      "schemaname": "public",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "qual": "true",
+      "roles": [
+        "anon"
+      ],
+      "tablename": "game_scores",
+      "permissive": "PERMISSIVE",
+      "policyname": "game_scores_select_public",
+      "schemaname": "public",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "qual": "true",
+      "roles": [
+        "anon",
+        "authenticated"
+      ],
+      "tablename": "wasabi_matane_memorial_config",
+      "permissive": "PERMISSIVE",
+      "policyname": "wasabi_matane_public_config_read",
+      "schemaname": "public",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "qual": "(enabled = true)",
+      "roles": [
+        "anon",
+        "authenticated"
+      ],
+      "tablename": "wasabi_matane_offering_catalog",
+      "permissive": "PERMISSIVE",
+      "policyname": "wasabi_matane_public_catalog_read",
+      "schemaname": "public",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "qual": "(deleted_at IS NULL)",
+      "roles": [
+        "anon",
+        "authenticated"
+      ],
+      "tablename": "wasabi_matane_offering_placements",
+      "permissive": "PERMISSIVE",
+      "policyname": "wasabi_matane_public_placements_read",
+      "schemaname": "public",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "qual": "false",
+      "roles": [
+        "anon",
+        "authenticated"
+      ],
+      "tablename": "wasabi_matane_admin_events",
+      "permissive": "PERMISSIVE",
+      "policyname": "wasabi_matane_admin_events_public_deny",
+      "schemaname": "public",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "qual": "(char_length(btrim(COALESCE(message, ''::text))) > 0)",
+      "roles": [
+        "anon",
+        "authenticated"
+      ],
+      "tablename": "wasabi_matane_guestbook_entries",
+      "permissive": "PERMISSIVE",
+      "policyname": "wasabi_matane_guestbook_public_messages_read",
+      "schemaname": "public",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "qual": "true",
+      "roles": [
+        "anon",
+        "authenticated"
+      ],
+      "tablename": "wakaranjan_learning_profiles",
+      "permissive": "PERMISSIVE",
+      "policyname": "wakaranjan_learning_profiles_select_by_name",
+      "schemaname": "public",
+      "with_check": null
+    },
+    {
+      "cmd": "INSERT",
+      "qual": null,
+      "roles": [
+        "anon",
+        "authenticated"
+      ],
+      "tablename": "wakaranjan_learning_profiles",
+      "permissive": "PERMISSIVE",
+      "policyname": "wakaranjan_learning_profiles_insert_by_name",
+      "schemaname": "public",
+      "with_check": "true"
+    },
+    {
+      "cmd": "UPDATE",
+      "qual": "true",
+      "roles": [
+        "anon",
+        "authenticated"
+      ],
+      "tablename": "wakaranjan_learning_profiles",
+      "permissive": "PERMISSIVE",
+      "policyname": "wakaranjan_learning_profiles_update_by_name",
+      "schemaname": "public",
+      "with_check": "true"
+    },
+    {
+      "cmd": "DELETE",
+      "qual": "true",
+      "roles": [
+        "anon",
+        "authenticated"
+      ],
+      "tablename": "wakaranjan_learning_profiles",
+      "permissive": "PERMISSIVE",
+      "policyname": "wakaranjan_learning_profiles_delete_by_name",
+      "schemaname": "public",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "qual": "true",
+      "roles": [
+        "anon",
+        "authenticated"
+      ],
+      "tablename": "slime_trial_content_versions",
+      "permissive": "PERMISSIVE",
+      "policyname": "content_public_read",
+      "schemaname": "public",
+      "with_check": null
+    },
+    {
+      "cmd": "SELECT",
+      "qual": "true",
+      "roles": [
+        "anon",
+        "authenticated"
+      ],
+      "tablename": "slime_trial_aggregate_snapshots",
+      "permissive": "PERMISSIVE",
+      "policyname": "aggregates_public_read",
+      "schemaname": "public",
+      "with_check": null
+    }
+  ],
+  "read_only": "on",
+  "memberships": [
+    {
+      "set": true,
+      "role": "pg_read_all_settings",
+      "admin": false,
+      "member": "pg_monitor",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "pg_read_all_stats",
+      "admin": false,
+      "member": "pg_monitor",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "pg_stat_scan_tables",
+      "admin": false,
+      "member": "pg_monitor",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "pg_read_all_data",
+      "admin": false,
+      "member": "supabase_etl_admin",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "pg_read_all_data",
+      "admin": false,
+      "member": "supabase_read_only_user",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "anon",
+      "admin": false,
+      "member": "authenticator",
+      "inherit": false
+    },
+    {
+      "set": true,
+      "role": "authenticated",
+      "admin": false,
+      "member": "authenticator",
+      "inherit": false
+    },
+    {
+      "set": true,
+      "role": "service_role",
+      "admin": false,
+      "member": "authenticator",
+      "inherit": false
+    },
+    {
+      "set": true,
+      "role": "authenticator",
+      "admin": false,
+      "member": "supabase_storage_admin",
+      "inherit": false
+    },
+    {
+      "set": true,
+      "role": "anon",
+      "admin": true,
+      "member": "postgres",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "authenticated",
+      "admin": true,
+      "member": "postgres",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "service_role",
+      "admin": true,
+      "member": "postgres",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "authenticator",
+      "admin": true,
+      "member": "postgres",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "pg_monitor",
+      "admin": true,
+      "member": "postgres",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "pg_read_all_data",
+      "admin": true,
+      "member": "postgres",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "pg_signal_backend",
+      "admin": true,
+      "member": "postgres",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "pg_monitor",
+      "admin": false,
+      "member": "supabase_etl_admin",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "pg_monitor",
+      "admin": false,
+      "member": "supabase_read_only_user",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "pg_create_subscription",
+      "admin": true,
+      "member": "postgres",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "supabase_privileged_role",
+      "admin": false,
+      "member": "postgres",
+      "inherit": true
+    },
+    {
+      "set": true,
+      "role": "supabase_privileged_role",
+      "admin": false,
+      "member": "supabase_etl_admin",
+      "inherit": true
+    }
+  ],
+  "observed_at": "2026-10-28T10:06:55.327554+00:00",
+  "default_acls": [
+    {
+      "acl": [
+        "postgres=rwU/supabase_admin",
+        "anon=rwU/supabase_admin",
+        "authenticated=rwU/supabase_admin",
+        "service_role=rwU/supabase_admin"
+      ],
+      "type": "S",
+      "owner": "supabase_admin",
+      "schema": "public"
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_admin",
+        "anon=arwdDxtm/supabase_admin",
+        "authenticated=arwdDxtm/supabase_admin",
+        "service_role=arwdDxtm/supabase_admin"
+      ],
+      "type": "r",
+      "owner": "supabase_admin",
+      "schema": "public"
+    },
+    {
+      "acl": [
+        "postgres=X/supabase_admin",
+        "anon=X/supabase_admin",
+        "authenticated=X/supabase_admin",
+        "service_role=X/supabase_admin"
+      ],
+      "type": "f",
+      "owner": "supabase_admin",
+      "schema": "public"
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "anon=arwdDxtm/postgres",
+        "authenticated=arwdDxtm/postgres",
+        "service_role=arwdDxtm/postgres"
+      ],
+      "type": "r",
+      "owner": "postgres",
+      "schema": "storage"
+    },
+    {
+      "acl": [
+        "postgres=X/postgres",
+        "anon=X/postgres",
+        "authenticated=X/postgres",
+        "service_role=X/postgres"
+      ],
+      "type": "f",
+      "owner": "postgres",
+      "schema": "storage"
+    },
+    {
+      "acl": [
+        "postgres=rwU/postgres",
+        "anon=rwU/postgres",
+        "authenticated=rwU/postgres",
+        "service_role=rwU/postgres"
+      ],
+      "type": "S",
+      "owner": "postgres",
+      "schema": "storage"
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_auth_admin",
+        "dashboard_user=arwdDxtm/supabase_auth_admin"
+      ],
+      "type": "r",
+      "owner": "supabase_auth_admin",
+      "schema": "auth"
+    },
+    {
+      "acl": [
+        "postgres=rwU/supabase_auth_admin",
+        "dashboard_user=rwU/supabase_auth_admin"
+      ],
+      "type": "S",
+      "owner": "supabase_auth_admin",
+      "schema": "auth"
+    },
+    {
+      "acl": [
+        "postgres=X/supabase_auth_admin",
+        "dashboard_user=X/supabase_auth_admin"
+      ],
+      "type": "f",
+      "owner": "supabase_auth_admin",
+      "schema": "auth"
+    },
+    {
+      "acl": [
+        "postgres=rwU/supabase_admin",
+        "dashboard_user=rwU/supabase_admin"
+      ],
+      "type": "S",
+      "owner": "supabase_admin",
+      "schema": "realtime"
+    },
+    {
+      "acl": [
+        "postgres=X/supabase_admin",
+        "dashboard_user=X/supabase_admin"
+      ],
+      "type": "f",
+      "owner": "supabase_admin",
+      "schema": "realtime"
+    },
+    {
+      "acl": [
+        "postgres=rwU/supabase_admin",
+        "anon=rwU/supabase_admin",
+        "authenticated=rwU/supabase_admin",
+        "service_role=rwU/supabase_admin"
+      ],
+      "type": "S",
+      "owner": "supabase_admin",
+      "schema": "graphql_public"
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_admin",
+        "anon=arwdDxtm/supabase_admin",
+        "authenticated=arwdDxtm/supabase_admin",
+        "service_role=arwdDxtm/supabase_admin"
+      ],
+      "type": "r",
+      "owner": "supabase_admin",
+      "schema": "graphql_public"
+    },
+    {
+      "acl": [
+        "postgres=X/supabase_admin",
+        "anon=X/supabase_admin",
+        "authenticated=X/supabase_admin",
+        "service_role=X/supabase_admin"
+      ],
+      "type": "f",
+      "owner": "supabase_admin",
+      "schema": "graphql_public"
+    },
+    {
+      "acl": [
+        "postgres=a*r*w*d*D*x*t*m*/supabase_admin"
+      ],
+      "type": "r",
+      "owner": "supabase_admin",
+      "schema": "extensions"
+    },
+    {
+      "acl": [
+        "postgres=X*/supabase_admin"
+      ],
+      "type": "f",
+      "owner": "supabase_admin",
+      "schema": "extensions"
+    },
+    {
+      "acl": [
+        "postgres=r*w*U*/supabase_admin"
+      ],
+      "type": "S",
+      "owner": "supabase_admin",
+      "schema": "extensions"
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/supabase_admin",
+        "anon=arwdDxtm/supabase_admin",
+        "authenticated=arwdDxtm/supabase_admin",
+        "service_role=arwdDxtm/supabase_admin"
+      ],
+      "type": "r",
+      "owner": "supabase_admin",
+      "schema": "graphql"
+    },
+    {
+      "acl": [
+        "postgres=X/supabase_admin",
+        "anon=X/supabase_admin",
+        "authenticated=X/supabase_admin",
+        "service_role=X/supabase_admin"
+      ],
+      "type": "f",
+      "owner": "supabase_admin",
+      "schema": "graphql"
+    },
+    {
+      "acl": [
+        "postgres=rwU/supabase_admin",
+        "anon=rwU/supabase_admin",
+        "authenticated=rwU/supabase_admin",
+        "service_role=rwU/supabase_admin"
+      ],
+      "type": "S",
+      "owner": "supabase_admin",
+      "schema": "graphql"
+    },
+    {
+      "acl": [
+        "postgres=arwdDxtm/postgres",
+        "anon=Dxtm/postgres",
+        "authenticated=Dxtm/postgres",
+        "service_role=Dxtm/postgres"
+      ],
+      "type": "r",
+      "owner": "postgres",
+      "schema": "public"
+    },
+    {
+      "acl": [
+        "postgres=rwU/postgres"
+      ],
+      "type": "S",
+      "owner": "postgres",
+      "schema": "public"
+    },
+    {
+      "acl": [
+        "postgres=X/postgres"
+      ],
+      "type": "f",
+      "owner": "postgres",
+      "schema": "public"
+    },
+    {
+      "acl": [
+        "postgres=a*r*wdDxtm/supabase_admin",
+        "dashboard_user=arwdDxtm/supabase_admin"
+      ],
+      "type": "r",
+      "owner": "supabase_admin",
+      "schema": "realtime"
+    },
+    {
+      "acl": [
+        "postgres=r*w*U*/supabase_admin"
+      ],
+      "type": "S",
+      "owner": "supabase_admin",
+      "schema": "cron"
+    },
+    {
+      "acl": [
+        "postgres=a*r*w*d*D*x*t*m*/supabase_admin"
+      ],
+      "type": "r",
+      "owner": "supabase_admin",
+      "schema": "cron"
+    },
+    {
+      "acl": [
+        "postgres=X*/supabase_admin"
+      ],
+      "type": "f",
+      "owner": "supabase_admin",
+      "schema": "cron"
+    }
+  ],
+  "takkeu_categories": [
+    {
+      "max": 45773300,
+      "min": 7927,
+      "count": 3,
+      "ranking_status": "provisional_bot"
+    },
+    {
+      "max": 3143,
+      "min": 0,
+      "count": 3071,
+      "ranking_status": "normal"
+    },
+    {
+      "max": 1,
+      "min": 1,
+      "count": 1,
+      "ranking_status": "hidden"
+    }
+  ]
+}

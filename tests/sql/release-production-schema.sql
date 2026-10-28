@@ -6,7 +6,6 @@ CREATE SCHEMA supabase_migrations;
 CREATE ROLE anon; CREATE ROLE authenticated; CREATE ROLE service_role BYPASSRLS;
 CREATE ROLE release_reader LOGIN;
 CREATE TABLE supabase_migrations.schema_migrations(version text PRIMARY KEY,name text);
-CREATE SEQUENCE public.score_runs_id_seq;
 CREATE TABLE "public"."games" ("game_slug" text NOT NULL,
 "title" text NOT NULL,
 "game_url" text NOT NULL,
@@ -65,7 +64,7 @@ CREATE TABLE "public"."score_runs" ("clear_wave" integer NOT NULL DEFAULT 0,
 "client_version" text DEFAULT ''::text,
 "created_at" timestamp with time zone NOT NULL DEFAULT now(),
 "game_slug" text NOT NULL,
-"id" bigint NOT NULL,
+"id" bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
 "metadata" jsonb NOT NULL DEFAULT '{}'::jsonb,
 "normalized_name" text NOT NULL,
 "play_id" uuid,
@@ -308,7 +307,7 @@ begin
 end;
 $snapshot$;
 REVOKE ALL ON FUNCTION "private"."guard_verified_score_write"() FROM PUBLIC,anon,authenticated,service_role;
-CREATE FUNCTION "public"."finish_game_play_v1"(p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer) RETURNS jsonb LANGUAGE plpgsql VOLATILE SECURITY DEFINER SET search_path='' AS $snapshot$
+CREATE FUNCTION "public"."finish_game_play_v1"(p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer DEFAULT NULL::integer) RETURNS jsonb LANGUAGE plpgsql VOLATILE SECURITY DEFINER SET search_path='' AS $snapshot$
 declare
   v_game public.games%rowtype;
   v_session private.game_play_sessions%rowtype;
@@ -553,7 +552,7 @@ REVOKE ALL ON FUNCTION "public"."finish_takkeu_play_v2"(p_play_id uuid, p_displa
 GRANT EXECUTE ON FUNCTION "public"."finish_takkeu_play_v2"(p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer, p_lost_balls integer) TO "anon";
 GRANT EXECUTE ON FUNCTION "public"."finish_takkeu_play_v2"(p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer, p_lost_balls integer) TO "authenticated";
 GRANT EXECUTE ON FUNCTION "public"."finish_takkeu_play_v2"(p_play_id uuid, p_display_name text, p_game_slug text, p_result_type text, p_reached_wave integer, p_score integer, p_client_version text, p_ranking_score integer, p_lost_balls integer) TO "service_role";
-CREATE FUNCTION "public"."get_best_score_ranking"(p_game_slug text, p_limit integer) RETURNS TABLE(rank_no bigint, display_name text, first_score integer, best_score integer, play_count integer, updated_at timestamp with time zone) LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path='' AS $snapshot$
+CREATE FUNCTION "public"."get_best_score_ranking"(p_game_slug text, p_limit integer DEFAULT 100) RETURNS TABLE(rank_no bigint, display_name text, first_score integer, best_score integer, play_count integer, updated_at timestamp with time zone) LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path='' AS $snapshot$
 begin
   return query
   with play_counts as (
@@ -1287,3 +1286,432 @@ GRANT SELECT(game_slug,is_active,submission_mode,score_order,score_min,score_max
 CREATE POLICY takkeu_release_config_read ON public.games FOR SELECT TO release_reader USING(game_slug='takkeu');
 GRANT SELECT(version,name) ON supabase_migrations.schema_migrations TO release_reader;
 GRANT MAINTAIN ON public.players,public.game_scores,public.score_runs TO anon,authenticated,service_role;
+
+-- Reviewed nonvolatile SQL closure; no data is copied.
+SET check_function_bodies=off;
+CREATE FUNCTION private.get_game_player_counts_v1(p_game_slug text) RETURNS TABLE(normalized_name text, display_name text, play_count integer, first_score integer, best_score integer, updated_at timestamp with time zone) LANGUAGE sql STABLE SET search_path TO '' AS $readonly_snapshot$
+  with session_counts as (
+    select
+      s.normalized_name,
+      max(s.display_name) as display_name,
+      count(*)::integer as play_count,
+      max(s.updated_at) as updated_at
+    from private.game_play_sessions as s
+    where s.game_slug = pg_catalog.lower(pg_catalog.btrim(coalesce(p_game_slug, '')))
+    group by s.normalized_name
+  ),
+  score_counts as (
+    select
+      gs.normalized_name, gs.display_name, gs.play_count,
+      gs.first_score, gs.best_score, gs.updated_at, gs.ranking_status
+    from public.game_scores as gs
+    where gs.game_slug = pg_catalog.lower(pg_catalog.btrim(coalesce(p_game_slug, '')))
+  )
+  select
+    coalesce(gs.normalized_name, sc.normalized_name) as normalized_name,
+    coalesce(gs.display_name, sc.display_name) as display_name,
+    greatest(coalesce(gs.play_count, 0), coalesce(sc.play_count, 0))::integer as play_count,
+    gs.first_score,
+    gs.best_score,
+    greatest(gs.updated_at, sc.updated_at) as updated_at
+  from score_counts as gs
+  full join session_counts as sc on sc.normalized_name = gs.normalized_name
+  where coalesce(gs.ranking_status, 'normal') = 'normal';
+$readonly_snapshot$;
+REVOKE ALL ON FUNCTION private.get_game_player_counts_v1(p_game_slug text) FROM PUBLIC,anon,authenticated,service_role;
+CREATE FUNCTION public.get_disqualified_score_entries(p_game_slug text, p_limit integer DEFAULT 50) RETURNS TABLE(display_name text, ranking_status text, ranking_note text, first_score integer, best_score integer, play_count integer, updated_at timestamp with time zone, ranking_status_updated_at timestamp with time zone) LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO public AS $readonly_snapshot$
+  select
+    gs.display_name,
+    gs.ranking_status,
+    gs.ranking_note,
+    gs.first_score,
+    gs.best_score,
+    gs.play_count,
+    gs.updated_at,
+    gs.ranking_status_updated_at
+  from public.game_scores gs
+  where gs.game_slug = p_game_slug
+    and p_game_slug not in ('sabasaba_normal', 'sabasaba_endless')
+    and gs.ranking_status = 'disqualified'
+  order by
+    gs.ranking_status_updated_at desc nulls last,
+    gs.updated_at desc,
+    gs.display_name asc
+  limit least(greatest(coalesce(p_limit, 50), 1), 100);
+$readonly_snapshot$;
+REVOKE ALL ON FUNCTION public.get_disqualified_score_entries(p_game_slug text, p_limit integer) FROM PUBLIC,anon,authenticated,service_role;
+GRANT EXECUTE ON FUNCTION public.get_disqualified_score_entries(p_game_slug text, p_limit integer) TO PUBLIC;
+GRANT EXECUTE ON FUNCTION public.get_disqualified_score_entries(p_game_slug text, p_limit integer) TO "anon";
+GRANT EXECUTE ON FUNCTION public.get_disqualified_score_entries(p_game_slug text, p_limit integer) TO "authenticated";
+CREATE FUNCTION public.get_first_try_ranking(p_game_slug text, p_limit integer DEFAULT 100) RETURNS TABLE(rank_no bigint, display_name text, first_score integer, best_score integer, play_count integer, updated_at timestamp with time zone) LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO public AS $readonly_snapshot$
+  with play_counts as (
+    select
+      s.normalized_name,
+      s.game_slug,
+      count(*)::integer as started_play_count,
+      max(s.updated_at) as last_played_at
+    from private.game_play_sessions as s
+    where s.game_slug = lower(btrim(p_game_slug))
+    group by s.normalized_name, s.game_slug
+  ),
+  ranked as (
+    select
+      rank() over (
+        order by
+          case when coalesce((select score_order from public.games where game_slug = lower(btrim(p_game_slug)) limit 1), 'desc') = 'asc'
+            then gs.first_score end asc nulls last,
+          case when coalesce((select score_order from public.games where game_slug = lower(btrim(p_game_slug)) limit 1), 'desc') <> 'asc'
+            then gs.first_score end desc nulls last
+      ) as rank_no,
+      gs.display_name,
+      gs.first_score,
+      gs.best_score,
+      greatest(coalesce(pc.started_play_count, 0), gs.play_count)::integer as play_count,
+      greatest(gs.updated_at, coalesce(pc.last_played_at, gs.updated_at)) as updated_at
+    from public.game_scores as gs
+    left join play_counts as pc
+      on pc.normalized_name = gs.normalized_name
+     and pc.game_slug = gs.game_slug
+    where gs.game_slug = lower(btrim(p_game_slug))
+      and gs.first_score is not null
+      and coalesce(gs.ranking_status, 'normal') = 'normal'
+  )
+  select ranked.rank_no, ranked.display_name, ranked.first_score, ranked.best_score,
+         ranked.play_count, ranked.updated_at
+  from ranked
+  order by ranked.rank_no asc, ranked.updated_at asc, ranked.display_name asc
+  limit least(greatest(coalesce(p_limit, 100), 1), 100);
+$readonly_snapshot$;
+REVOKE ALL ON FUNCTION public.get_first_try_ranking(p_game_slug text, p_limit integer) FROM PUBLIC,anon,authenticated,service_role;
+GRANT EXECUTE ON FUNCTION public.get_first_try_ranking(p_game_slug text, p_limit integer) TO PUBLIC;
+GRANT EXECUTE ON FUNCTION public.get_first_try_ranking(p_game_slug text, p_limit integer) TO "anon";
+GRANT EXECUTE ON FUNCTION public.get_first_try_ranking(p_game_slug text, p_limit integer) TO "authenticated";
+CREATE FUNCTION public.get_game_play_stats(p_game_slug text) RETURNS TABLE(total_play_count bigint, player_count bigint) LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO '' AS $readonly_snapshot$
+  select named.total_play_count + case
+    when pg_catalog.lower(pg_catalog.btrim(coalesce(p_game_slug, ''))) = 'takkeu'
+      then (select count(*) from private.takkeu_guest_plays_v1) else 0::bigint end,
+    named.player_count
+  from (
+    select coalesce(sum(pc.play_count), 0)::bigint as total_play_count, count(*)::bigint as player_count
+    from private.get_game_player_counts_v1(p_game_slug) as pc
+  ) as named;
+$readonly_snapshot$;
+REVOKE ALL ON FUNCTION public.get_game_play_stats(p_game_slug text) FROM PUBLIC,anon,authenticated,service_role;
+GRANT EXECUTE ON FUNCTION public.get_game_play_stats(p_game_slug text) TO PUBLIC;
+GRANT EXECUTE ON FUNCTION public.get_game_play_stats(p_game_slug text) TO "anon";
+GRANT EXECUTE ON FUNCTION public.get_game_play_stats(p_game_slug text) TO "authenticated";
+CREATE FUNCTION public.get_hito_wo_yurusuna_best_ranking(p_limit integer DEFAULT 20) RETURNS TABLE(rank_no bigint, display_name text, clear_wave integer, score integer, play_count integer) LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO public AS $readonly_snapshot$
+  select
+    rank() over (
+      order by gs.best_score desc, gs.best_clear_wave desc, gs.display_name asc
+    ) as rank_no,
+    gs.display_name,
+    coalesce(gs.best_clear_wave, 0) as clear_wave,
+    gs.best_score as score,
+    gs.play_count
+  from public.game_scores gs
+  where gs.game_slug = 'hito_wo_yurusuna'
+  order by gs.best_score desc, gs.best_clear_wave desc, gs.display_name asc
+  limit greatest(1, least(coalesce(p_limit, 20), 100));
+$readonly_snapshot$;
+REVOKE ALL ON FUNCTION public.get_hito_wo_yurusuna_best_ranking(p_limit integer) FROM PUBLIC,anon,authenticated,service_role;
+GRANT EXECUTE ON FUNCTION public.get_hito_wo_yurusuna_best_ranking(p_limit integer) TO PUBLIC;
+GRANT EXECUTE ON FUNCTION public.get_hito_wo_yurusuna_best_ranking(p_limit integer) TO "anon";
+GRANT EXECUTE ON FUNCTION public.get_hito_wo_yurusuna_best_ranking(p_limit integer) TO "authenticated";
+CREATE FUNCTION public.get_hito_wo_yurusuna_first_ranking(p_limit integer DEFAULT 20) RETURNS TABLE(rank_no bigint, display_name text, clear_wave integer, score integer, play_count integer) LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO public AS $readonly_snapshot$
+  select
+    rank() over (
+      order by gs.first_score desc, gs.first_clear_wave desc, gs.display_name asc
+    ) as rank_no,
+    gs.display_name,
+    coalesce(gs.first_clear_wave, 0) as clear_wave,
+    gs.first_score as score,
+    gs.play_count
+  from public.game_scores gs
+  where gs.game_slug = 'hito_wo_yurusuna'
+  order by gs.first_score desc, gs.first_clear_wave desc, gs.display_name asc
+  limit greatest(1, least(coalesce(p_limit, 20), 100));
+$readonly_snapshot$;
+REVOKE ALL ON FUNCTION public.get_hito_wo_yurusuna_first_ranking(p_limit integer) FROM PUBLIC,anon,authenticated,service_role;
+GRANT EXECUTE ON FUNCTION public.get_hito_wo_yurusuna_first_ranking(p_limit integer) TO PUBLIC;
+GRANT EXECUTE ON FUNCTION public.get_hito_wo_yurusuna_first_ranking(p_limit integer) TO "anon";
+GRANT EXECUTE ON FUNCTION public.get_hito_wo_yurusuna_first_ranking(p_limit integer) TO "authenticated";
+CREATE FUNCTION public.get_play_count_ranking(p_game_slug text, p_limit integer DEFAULT 100) RETURNS TABLE(rank_no bigint, display_name text, play_count integer, first_score integer, best_score integer, updated_at timestamp with time zone) LANGUAGE sql STABLE SECURITY DEFINER SET search_path TO '' AS $readonly_snapshot$
+  with ranked as (
+    select
+      rank() over (order by pc.play_count desc) as rank_no,
+      pc.display_name, pc.play_count, pc.first_score, pc.best_score, pc.updated_at
+    from private.get_game_player_counts_v1(p_game_slug) as pc
+  )
+  select
+    ranked.rank_no, ranked.display_name, ranked.play_count,
+    ranked.first_score, ranked.best_score, ranked.updated_at
+  from ranked
+  order by ranked.rank_no asc, ranked.updated_at asc, ranked.display_name asc
+  limit least(greatest(coalesce(p_limit, 100), 1), 100);
+$readonly_snapshot$;
+REVOKE ALL ON FUNCTION public.get_play_count_ranking(p_game_slug text, p_limit integer) FROM PUBLIC,anon,authenticated,service_role;
+GRANT EXECUTE ON FUNCTION public.get_play_count_ranking(p_game_slug text, p_limit integer) TO PUBLIC;
+GRANT EXECUTE ON FUNCTION public.get_play_count_ranking(p_game_slug text, p_limit integer) TO "anon";
+GRANT EXECUTE ON FUNCTION public.get_play_count_ranking(p_game_slug text, p_limit integer) TO "authenticated";
+SET check_function_bodies=on;
+
+-- OFFLINE ONLY: exact production event handlers/registrations, no business data.
+-- Handlers cannot be ignored merely because the reader cannot call them directly.
+CREATE ROLE supabase_admin SUPERUSER NOLOGIN;
+CREATE SCHEMA extensions;
+CREATE FUNCTION "public"."rls_auto_enable"() RETURNS event_trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path TO pg_catalog AS $event_snapshot$
+DECLARE
+  cmd record;
+BEGIN
+  FOR cmd IN
+    SELECT *
+    FROM pg_event_trigger_ddl_commands()
+    WHERE command_tag IN ('CREATE TABLE', 'CREATE TABLE AS', 'SELECT INTO')
+      AND object_type IN ('table','partitioned table')
+  LOOP
+     IF cmd.schema_name IS NOT NULL AND cmd.schema_name IN ('public') AND cmd.schema_name NOT IN ('pg_catalog','information_schema') AND cmd.schema_name NOT LIKE 'pg_toast%' AND cmd.schema_name NOT LIKE 'pg_temp%' THEN
+      BEGIN
+        EXECUTE format('alter table if exists %s enable row level security', cmd.object_identity);
+        RAISE LOG 'rls_auto_enable: enabled RLS on %', cmd.object_identity;
+      EXCEPTION
+        WHEN OTHERS THEN
+          RAISE LOG 'rls_auto_enable: failed to enable RLS on %', cmd.object_identity;
+      END;
+     ELSE
+        RAISE LOG 'rls_auto_enable: skip % (either system schema or not in enforced list: %.)', cmd.object_identity, cmd.schema_name;
+     END IF;
+  END LOOP;
+END;
+$event_snapshot$;
+ALTER FUNCTION "public"."rls_auto_enable"() OWNER TO "postgres";
+CREATE EVENT TRIGGER "ensure_rls" ON ddl_command_end WHEN TAG IN ('CREATE TABLE', 'CREATE TABLE AS', 'SELECT INTO') EXECUTE FUNCTION "public"."rls_auto_enable"();
+ALTER EVENT TRIGGER "ensure_rls" OWNER TO "postgres";
+CREATE FUNCTION "extensions"."set_graphql_placeholder"() RETURNS event_trigger LANGUAGE plpgsql SET search_path TO '' AS $event_snapshot$
+    DECLARE
+    graphql_is_dropped bool;
+    BEGIN
+    graphql_is_dropped = (
+        SELECT ev.schema_name = 'graphql_public'
+        FROM pg_event_trigger_dropped_objects() AS ev
+        WHERE ev.schema_name = 'graphql_public'
+    );
+
+    IF graphql_is_dropped
+    THEN
+        create or replace function graphql_public.graphql(
+            "operationName" text default null,
+            query text default null,
+            variables jsonb default null,
+            extensions jsonb default null
+        )
+            returns jsonb
+            language plpgsql
+            set search_path to ''
+        as $$
+            DECLARE
+                server_version float;
+            BEGIN
+                server_version = (SELECT (SPLIT_PART((select version()), ' ', 2))::float);
+
+                IF server_version >= 14 THEN
+                    RETURN jsonb_build_object(
+                        'errors', jsonb_build_array(
+                            jsonb_build_object(
+                                'message', 'pg_graphql extension is not enabled.'
+                            )
+                        )
+                    );
+                ELSE
+                    RETURN jsonb_build_object(
+                        'errors', jsonb_build_array(
+                            jsonb_build_object(
+                                'message', 'pg_graphql is only available on projects running Postgres 14 onwards.'
+                            )
+                        )
+                    );
+                END IF;
+            END;
+        $$;
+    END IF;
+
+    END;
+$event_snapshot$;
+ALTER FUNCTION "extensions"."set_graphql_placeholder"() OWNER TO "supabase_admin";
+CREATE EVENT TRIGGER "issue_graphql_placeholder" ON sql_drop WHEN TAG IN ('DROP EXTENSION') EXECUTE FUNCTION "extensions"."set_graphql_placeholder"();
+ALTER EVENT TRIGGER "issue_graphql_placeholder" OWNER TO "supabase_admin";
+CREATE FUNCTION "extensions"."grant_pg_cron_access"() RETURNS event_trigger LANGUAGE plpgsql SET search_path TO '' AS $event_snapshot$
+BEGIN
+  IF EXISTS (
+    SELECT
+    FROM pg_event_trigger_ddl_commands() AS ev
+    JOIN pg_extension AS ext
+    ON ev.objid = ext.oid
+    WHERE ext.extname = 'pg_cron'
+  )
+  THEN
+    grant usage on schema cron to postgres with grant option;
+
+    alter default privileges in schema cron grant all on tables to postgres with grant option;
+    alter default privileges in schema cron grant all on functions to postgres with grant option;
+    alter default privileges in schema cron grant all on sequences to postgres with grant option;
+
+    alter default privileges for user supabase_admin in schema cron grant all
+        on sequences to postgres with grant option;
+    alter default privileges for user supabase_admin in schema cron grant all
+        on tables to postgres with grant option;
+    alter default privileges for user supabase_admin in schema cron grant all
+        on functions to postgres with grant option;
+
+    grant all privileges on all tables in schema cron to postgres with grant option;
+    revoke all on table cron.job from postgres;
+    grant select on table cron.job to postgres with grant option;
+    revoke trigger on cron.job_run_details from postgres;
+  END IF;
+END;
+$event_snapshot$;
+ALTER FUNCTION "extensions"."grant_pg_cron_access"() OWNER TO "supabase_admin";
+CREATE EVENT TRIGGER "issue_pg_cron_access" ON ddl_command_end WHEN TAG IN ('CREATE EXTENSION') EXECUTE FUNCTION "extensions"."grant_pg_cron_access"();
+ALTER EVENT TRIGGER "issue_pg_cron_access" OWNER TO "supabase_admin";
+CREATE FUNCTION "extensions"."grant_pg_graphql_access"() RETURNS event_trigger LANGUAGE plpgsql SET search_path TO '' AS $event_snapshot$
+begin
+    if not exists (
+        select 1
+        from pg_catalog.pg_event_trigger_ddl_commands() ev
+        join pg_catalog.pg_extension e on ev.objid = e.oid
+        where e.extname = 'pg_graphql'
+    ) then
+        return;
+    end if;
+
+    drop function if exists graphql_public.graphql;
+    create or replace function graphql_public.graphql(
+        "operationName" text default null,
+        query text default null,
+        variables jsonb default null,
+        extensions jsonb default null
+    )
+        returns jsonb
+        language sql
+    as $$
+        select graphql.resolve(
+            query := query,
+            variables := coalesce(variables, '{}'),
+            "operationName" := "operationName",
+            extensions := extensions
+        );
+    $$;
+
+    -- Attach the wrapper to the extension so DROP EXTENSION cascades to it,
+    -- which in turn triggers set_graphql_placeholder to reinstall the "not enabled" stub.
+    alter extension pg_graphql add function graphql_public.graphql(text, text, jsonb, jsonb);
+
+    grant usage on schema graphql to postgres, anon, authenticated, service_role;
+    grant execute on function graphql.resolve to postgres, anon, authenticated, service_role;
+    grant usage on schema graphql to postgres with grant option;
+    grant usage on schema graphql_public to postgres with grant option;
+end;
+$event_snapshot$;
+ALTER FUNCTION "extensions"."grant_pg_graphql_access"() OWNER TO "supabase_admin";
+CREATE EVENT TRIGGER "issue_pg_graphql_access" ON ddl_command_end WHEN TAG IN ('CREATE EXTENSION') EXECUTE FUNCTION "extensions"."grant_pg_graphql_access"();
+ALTER EVENT TRIGGER "issue_pg_graphql_access" OWNER TO "supabase_admin";
+CREATE FUNCTION "extensions"."grant_pg_net_access"() RETURNS event_trigger LANGUAGE plpgsql SET search_path TO '' AS $event_snapshot$
+BEGIN
+  IF EXISTS (
+    SELECT 1
+    FROM pg_event_trigger_ddl_commands() AS ev
+    JOIN pg_extension AS ext
+    ON ev.objid = ext.oid
+    WHERE ext.extname = 'pg_net'
+  )
+  THEN
+    IF NOT EXISTS (
+      SELECT 1
+      FROM pg_roles
+      WHERE rolname = 'supabase_functions_admin'
+    )
+    THEN
+      CREATE USER supabase_functions_admin NOINHERIT CREATEROLE LOGIN NOREPLICATION;
+    END IF;
+
+    GRANT USAGE ON SCHEMA net TO supabase_functions_admin, postgres, anon, authenticated, service_role;
+
+    IF EXISTS (
+      SELECT FROM pg_extension
+      WHERE extname = 'pg_net'
+      -- all versions in use on existing projects as of 2025-02-20
+      -- version 0.12.0 onwards don't need these applied
+      AND extversion IN ('0.2', '0.6', '0.7', '0.7.1', '0.8.0', '0.10.0', '0.11.0')
+    ) THEN
+      ALTER function net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) SECURITY DEFINER;
+      ALTER function net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) SECURITY DEFINER;
+
+      ALTER function net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) SET search_path = net;
+      ALTER function net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) SET search_path = net;
+
+      REVOKE ALL ON FUNCTION net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) FROM PUBLIC;
+      REVOKE ALL ON FUNCTION net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) FROM PUBLIC;
+
+      GRANT EXECUTE ON FUNCTION net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) TO supabase_functions_admin, postgres, anon, authenticated, service_role;
+      GRANT EXECUTE ON FUNCTION net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) TO supabase_functions_admin, postgres, anon, authenticated, service_role;
+    END IF;
+  END IF;
+END;
+$event_snapshot$;
+ALTER FUNCTION "extensions"."grant_pg_net_access"() OWNER TO "supabase_admin";
+CREATE EVENT TRIGGER "issue_pg_net_access" ON ddl_command_end WHEN TAG IN ('CREATE EXTENSION') EXECUTE FUNCTION "extensions"."grant_pg_net_access"();
+ALTER EVENT TRIGGER "issue_pg_net_access" OWNER TO "supabase_admin";
+CREATE FUNCTION "extensions"."pgrst_ddl_watch"() RETURNS event_trigger LANGUAGE plpgsql SET search_path TO '' AS $event_snapshot$
+DECLARE
+  cmd record;
+BEGIN
+  FOR cmd IN SELECT * FROM pg_event_trigger_ddl_commands()
+  LOOP
+    IF cmd.command_tag IN (
+      'CREATE SCHEMA', 'ALTER SCHEMA'
+    , 'CREATE TABLE', 'CREATE TABLE AS', 'SELECT INTO', 'ALTER TABLE'
+    , 'CREATE FOREIGN TABLE', 'ALTER FOREIGN TABLE'
+    , 'CREATE VIEW', 'ALTER VIEW'
+    , 'CREATE MATERIALIZED VIEW', 'ALTER MATERIALIZED VIEW'
+    , 'CREATE FUNCTION', 'ALTER FUNCTION'
+    , 'CREATE TRIGGER'
+    , 'CREATE TYPE', 'ALTER TYPE'
+    , 'CREATE RULE'
+    , 'COMMENT'
+    )
+    -- don't notify in case of CREATE TEMP table or other objects created on pg_temp
+    AND cmd.schema_name is distinct from 'pg_temp'
+    THEN
+      NOTIFY pgrst, 'reload schema';
+    END IF;
+  END LOOP;
+END; $event_snapshot$;
+ALTER FUNCTION "extensions"."pgrst_ddl_watch"() OWNER TO "supabase_admin";
+CREATE EVENT TRIGGER "pgrst_ddl_watch" ON ddl_command_end EXECUTE FUNCTION "extensions"."pgrst_ddl_watch"();
+ALTER EVENT TRIGGER "pgrst_ddl_watch" OWNER TO "supabase_admin";
+CREATE FUNCTION "extensions"."pgrst_drop_watch"() RETURNS event_trigger LANGUAGE plpgsql SET search_path TO '' AS $event_snapshot$
+DECLARE
+  obj record;
+BEGIN
+  FOR obj IN SELECT * FROM pg_event_trigger_dropped_objects()
+  LOOP
+    IF obj.object_type IN (
+      'schema'
+    , 'table'
+    , 'foreign table'
+    , 'view'
+    , 'materialized view'
+    , 'function'
+    , 'trigger'
+    , 'type'
+    , 'rule'
+    )
+    AND obj.is_temporary IS false -- no pg_temp objects
+    THEN
+      NOTIFY pgrst, 'reload schema';
+    END IF;
+  END LOOP;
+END; $event_snapshot$;
+ALTER FUNCTION "extensions"."pgrst_drop_watch"() OWNER TO "supabase_admin";
+CREATE EVENT TRIGGER "pgrst_drop_watch" ON sql_drop EXECUTE FUNCTION "extensions"."pgrst_drop_watch"();
+ALTER EVENT TRIGGER "pgrst_drop_watch" OWNER TO "supabase_admin";

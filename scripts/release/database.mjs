@@ -23,6 +23,6 @@ export function checkDatabase(env=process.env) {
   if(digest(readFileSync(contract.migration_file,'utf8'))!==contract.migration_sha256) throw Error('Migration differs from reviewed contract');
   const snapshot=summarizeCatalog(readCatalog(connectionEnvironment(env)));
   verifyDatabase(snapshot,contract);
-  return {observed_at:snapshot.observed_at,project:PROJECT,migration:'20261027032043',read_only:true,least_privilege:true,
+  return {observed_at:snapshot.observed_at,project:PROJECT,migration:'20261027032043',read_only:snapshot.read_only,least_privilege:snapshot.least_privilege,
     tables:snapshot.tables.length,functions:snapshot.functions.length,result:'matched'};
 }

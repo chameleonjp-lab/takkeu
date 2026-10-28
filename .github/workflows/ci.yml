@@ -51,6 +51,8 @@ jobs:
         run: npm run test:release-guards
       - name: Production DB release gates on disposable PostgreSQL
         run: node tests/helpers/checkReleaseDatabase.mjs
+      - name: Approved-only migration and scoped RPC proposals on PostgreSQL17
+        run: node tests/helpers/checkProductionReadiness.mjs
       - name: Hall registration concurrency on disposable PostgreSQL
         run: |
           set -o pipefail

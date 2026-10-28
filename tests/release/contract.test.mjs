@@ -9,7 +9,7 @@ test('reviewed contract equals offline production baseline plus actual migration
   assert.equal(contract.tables.length,11);assert.equal(contract.functions.length,22);
   const observation={...structuredClone(contract),read_only:true,least_privilege:true,project:'mlpnjgezrnhdxsxolyzj'};
   assert.doesNotThrow(()=>verifyDatabase(observation,contract));
-  for(const field of ['tables','functions']) for(let i=0;i<contract[field].length;i++) {
+  for(const field of ['tables','functions','readonly_routines','event_triggers']) for(let i=0;i<contract[field].length;i++) {
     const partial=structuredClone(observation);partial[field].splice(i,1);assert.throws(()=>verifyDatabase(partial,contract));
   }
   for(const table of observation.tables) {

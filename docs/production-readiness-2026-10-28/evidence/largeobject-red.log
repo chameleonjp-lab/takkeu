@@ -1,0 +1,16 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Missing expected exception.
+    at rejected (file:///workspace/takkeu/tests/helpers/checkReleaseDatabase.mjs:24:35)
+    at file:///workspace/takkeu/tests/helpers/checkReleaseDatabase.mjs:36:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: undefined,
+  operator: 'throws',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

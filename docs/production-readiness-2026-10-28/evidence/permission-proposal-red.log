@@ -1,0 +1,64 @@
+NOTICE:  relation "game_play_sessions_pkey" already exists, skipping
+NOTICE:  relation "game_play_sessions_submission_id_key" already exists, skipping
+NOTICE:  relation "game_scores_pkey" already exists, skipping
+NOTICE:  relation "players_pkey" already exists, skipping
+NOTICE:  relation "score_runs_pkey" already exists, skipping
+NOTICE:  relation "takkeu_guest_plays_v1_pkey" already exists, skipping
+NOTICE:  relation "takkeu_guest_plays_v1_play_id_key" already exists, skipping
+NOTICE:  relation "takkeu_progress_signals_v1_pkey" already exists, skipping
+NOTICE:  relation "takkeu_progress_v1_pkey" already exists, skipping
+NOTICE:  relation "game_play_events_pkey" already exists, skipping
+NOTICE:  relation "game_play_events_play_id_key" already exists, skipping
+ERROR:  division by zero
+CONTEXT:  SQL statement "SELECT 1/0"
+PL/pgSQL function inline_code_block line 421 at PERFORM
+ERROR:  collision or partial application; investigate first
+CONTEXT:  PL/pgSQL function inline_code_block line 12 at RAISE
+ERROR:  permission denied for table takkeu_hall_of_fame
+ERROR:  permission denied for table takkeu_hall_of_fame_3500
+ERROR:  permission denied for schema private
+LINE 1: SELECT * FROM private.takkeu_hall_counter_v1;
+                      ^
+ERROR:  permission denied for schema private
+LINE 1: SELECT * FROM private.takkeu_hall_counter_3500_v1;
+                      ^
+ERROR:  permission denied for table takkeu_hall_of_fame
+ERROR:  permission denied for table takkeu_hall_of_fame_3500
+ERROR:  permission denied for schema private
+LINE 1: SELECT * FROM private.takkeu_hall_counter_v1;
+                      ^
+ERROR:  permission denied for schema private
+LINE 1: SELECT * FROM private.takkeu_hall_counter_3500_v1;
+                      ^
+ERROR:  RPC/ACL drift: check_player_name
+CONTEXT:  PL/pgSQL function inline_code_block line 8 at RAISE
+node:internal/errors:985
+  const err = new Error(message);
+              ^
+
+Error: Command failed: docker --host=unix:///var/run/docker.sock exec -i takkeu-readiness-6513 psql -X -w -q -At -U postgres -d postgres -v ON_ERROR_STOP=1
+ERROR:  RPC/ACL drift: check_player_name
+CONTEXT:  PL/pgSQL function inline_code_block line 8 at RAISE
+
+    at genericNodeError (node:internal/errors:985:15)
+    at wrappedFn (node:internal/errors:539:14)
+    at checkExecSyncError (node:child_process:942:11)
+    at execFileSync (node:child_process:978:15)
+    at query (file:///workspace/takkeu/tests/helpers/checkProductionReadiness.mjs:12:18)
+    at file:///workspace/takkeu/tests/helpers/checkProductionReadiness.mjs:87:3
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  status: 3,
+  signal: null,
+  output: [
+    null,
+    '',
+    'ERROR:  RPC/ACL drift: check_player_name\n' +
+      'CONTEXT:  PL/pgSQL function inline_code_block line 8 at RAISE\n'
+  ],
+  pid: 9356,
+  stdout: '',
+  stderr: 'ERROR:  RPC/ACL drift: check_player_name\n' +
+    'CONTEXT:  PL/pgSQL function inline_code_block line 8 at RAISE\n'
+}
+
+Node.js v24.19.0
