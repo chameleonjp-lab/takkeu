@@ -30,7 +30,7 @@
 Files: scripts/release/release-target.json, merge-authorization.mjs, tests/helpers/mergeReleaseFixture.mjs, tests/release/merge-authorization.test.mjs, tests/release/workflow.test.mjs, .github/workflows/ci.yml.
 - [ ] 最新mainから専用branch、証跡をcommit、新Draft PR作成、返却された正式番号を取得。
 - [ ] 新番号・release・head_refを一体として固定。旧32/33と番号差替え拒否のRED→GREEN。
-- [ ] PR/main CIに公開GET契約ゲートを加え、verifyがその成功を必須とする。
+- [ ] PR/main 専用の読み取り専用PR readiness workflowで公開GET契約と既存Pages設定を検査する。通常CIは本番非接続を維持する。
 - [ ] 既存release guards、PG17適用/rollback、PostgREST、並行登録、全unit/browser/distributionを既存CIで実行。条件は緩めない。
 Expected: SQLテスト・guardsはpass。本番gateはA/B未適用時に404でfail closed。適用後のみpass。
 
@@ -39,7 +39,7 @@ Files: evidence/production-*.json, approvals.md (記録のみ; SQLは固定)
 - [ ] A: backup/明示承認/直前契約/locksを確認後、生成SQL全文を1回のraw SQL実行へ渡す。履歴自動付与ツール不使用。
 - [ ] COMMIT・履歴・6区分・既存fingerprint・台帳0件/counter各1を確認。失敗はrollback/部分適用0を確認。
 - [ ] B: A成功・B明示承認後に固定SQL全文を単一transactionで実行。role/双方向membership/ACL/grant option/RLS/policy/本文/設定/履歴を確認。
-- [ ] 本番check-database-rest.mjs(GET nonce/freshness/6hash/self hash + 旧新8RPC HEAD)をGitHub Actionsで実行しログと時刻を保存。本番POSTなし。
+- [ ] 本番check-database-rest.mjs(GET nonce/freshness/6hash/self hash + 旧新8RPC HEAD)を専用GitHub Actionsで実行しログと時刻を保存。本番POSTなし。
 
 ## Task 4: 独立レビューと提出
 - [ ] 実装者とは別のレビュー担当がSQL・本番結果・互換性・新PR認証をレビュー。
