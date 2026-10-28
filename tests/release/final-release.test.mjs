@@ -20,17 +20,19 @@ test('release marker names the actual new PR and fixtures exercise that exact re
   assert.deepEqual(target,{format:1,release:'takkeu-3500-production-ab-final-20261028',pull_request:34,head_ref:'release/3500-production-ab-final-20261028',client_version:'takkeu-web-clear-3500-1'});
   assert.deepEqual(marker,target);
 });
-test('CI requires live public GET/HEAD proof before its aggregate verify can succeed',()=>{
-  const source=readFileSync('.github/workflows/ci.yml','utf8'),ci=parse(source);
-  const gate=ci.jobs['production-contract'];
-  assert.deepEqual(ci.jobs.verify.needs,['core','browser','production-contract']);
-  assert.match(ci.jobs.verify.steps[0].run,/needs\.production-contract\.result/);
+test('dedicated PR readiness requires live public GET/HEAD proof and preserves offline CI',()=>{
+  const source=readFileSync('.github/workflows/production-readiness.yml','utf8'),workflow=parse(source);
+  const gate=workflow.jobs['production-contract'];
+  assert.deepEqual(Object.keys(workflow.on),['pull_request']);
+  assert.deepEqual(workflow.permissions,{contents:'read'});
   assert.equal(gate.if,undefined);
   const probe=gate.steps.find(s=>s.run?.includes('check-database-rest.mjs'));
   assert.ok(probe);assert.match(probe.run,/set -o pipefail/);
   assert.doesNotMatch(probe.run,/continue-on-error|\|\| true/);
-  assert.ok(!Object.values(ci.jobs).some(j=>j['continue-on-error']));
+  assert.ok(!Object.values(workflow.jobs).some(j=>j['continue-on-error']));
   assert.ok(!gate.steps.some(s=>s['continue-on-error']));
   assert.equal(gate.steps.find(s=>s.uses?.startsWith('actions/upload-artifact@')).if,'always()');
-  assert.doesNotMatch(source,/secrets\.|TAKKEU_RELEASE_PG|PGPASSWORD/);
+  assert.doesNotMatch(source,/secrets\.|TAKKEU_RELEASE_PG|PGPASSWORD|pages: write|id-token: write/);
+  const ci=readFileSync('.github/workflows/ci.yml','utf8');
+  assert.doesNotMatch(ci,/pages: write|id-token: write|check-database/);
 });
