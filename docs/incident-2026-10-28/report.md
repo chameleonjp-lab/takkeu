@@ -2,9 +2,11 @@
 
 状態: **対象の未公開runをキャンセル確定。再発防止コードを準備。本番DB未適用・新クライアント未公開。** 「本番3500対応済み」ではない。新workflowはこのPRをユーザーがマージするまでmainへ反映されない。
 
+Draft PR: https://github.com/chameleonjp-lab/takkeu/pull/30 。機能変更コミット`170289b3b2ee1f999731e51d2acb12bc0ecac528`の[GitHub CI](https://github.com/chameleonjp-lab/takkeu/actions/runs/40609013451)は全6ジョブ成功。以後の証跡追記は文書のみで、ゲーム/検証コードは同じ。
+
 ## 現状と時刻付き証拠
 
-取得値とURLは[evidence/final-observations.json](evidence/final-observations.json)へ保存。UTCに9時間を加えると日本時間。
+初回確定の取得値とURLは[evidence/final-observations.json](evidence/final-observations.json)、00:48 UTCの最新確認は[evidence/live-final.json](evidence/live-final.json)、[main](evidence/main-final.json)、[対象run](evidence/release-run-final.json)、[DB](evidence/production-final-confirmation.json)へ保存。UTCに9時間を加えると日本時間。
 
 | 項目 | 確認結果 |
 | --- | --- |
@@ -59,15 +61,17 @@ concurrencyは同じtakkeu-pagesで直列化。environment待機後にDBとGitHu
 | ネイティブPG17同時登録 | 成功。別backend PIDによる同名/別名競合、再送receipt/採番数一致 |
 | root/Pages実配布 | Chromium/WebKit計8件成功。OGP/実ファイル/開始/保存/開発機能非混入 |
 | actionlint | CI/deploy両YAML成功 |
-| ブラウザ全回帰 | 実行中。最終ログで更新する |
-| GitHub上PR CI | Draft PR提出後に追跡する。公開dispatchは実行しない |
+| ブラウザ全回帰 | GitHub CIでChromium 115操作+3負荷、WebKit 115操作+3負荷、計236件成功。ローカル全236件も成功（27.2分） |
+| GitHub上PR CI | [40609013451](https://github.com/chameleonjp-lab/takkeu/actions/runs/40609013451)、コード変更SHA170289bでcore/4 browser/verify全6ジョブ成功。公開dispatchなし |
 | 本番DB | カタログと構成/分類SELECTのみ。適用も機能テスト書込みも未実施 |
 
 初回のローカル検証には環境起因の失敗があった。npm cache/browser保存先を/tmpへ変更し、node子プロセスのsandbox EPERMは許可されたローカル実行で再確認。WebKit標準OSライブラリ不足は使い捨てDebianから/tmpのブラウザ配下へ追加し、ldconfig事前検査だけを省略、**実ブラウザ8件は実行して成功**した。GitHub workflowの標準install --with-depsは維持した。native schema replicaのFK順序/接続DB名/RLS/search_path/出力改行のfixture不備も修正後再実行し、失敗を成功として数えていない。
 
 [独立敵対的レビュー](adversarial-review.md)は3つの抜けを検出。CI不完全応答、列/履歴/可変RPC権限、progress/guest依存を補強し、再現テストとnative gateで検証した。レビュー担当が修正後の全suiteを独立再実行したとは扱わない。
 
-GitHub実エンジンのmain push発生やenvironment approval待ち/実deployは、本番を動かさない条件のため未実施。ローカルgraphモデルを実GitHub配備の実行済み証拠と混同しない。main更新とPages API間の短い原子的でない境界は、公開中のmain/DB変更凍結でも保護する。実機の性能/音/演出など従来の未解決項目は今回の範囲外で、成功に変更しない。
+GitHub実エンジンではPRイベントから通常CIのみ起動し、全テスト成功とPages runなしを確認した。main pushを新たに発生させる操作やenvironment approval待ち/実deployは、本番を動かさない条件のため未実施。ローカルgraphモデルを実GitHub配備の実行済み証拠と混同しない。main更新とPages API間の短い原子的でない境界は、公開中のmain/DB変更凍結でも保護する。実機の性能/音/演出など従来の未解決項目は今回の範囲外で、成功に変更しない。
+
+ローカル全回帰ログは[evidence/local-browser-regression.log.gz](evidence/local-browser-regression.log.gz)。完全なCIログは[evidence/pr-ci-complete.log.gz](evidence/pr-ci-complete.log.gz)、集約は[evidence/pr-ci-summary.log](evidence/pr-ci-summary.log)、SHA/結果一覧は[evidence/verification-summary.json](evidence/verification-summary.json)。
 
 ## 復旧と残作業
 

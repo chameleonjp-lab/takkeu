@@ -42,9 +42,9 @@ Files: `scripts/release/db-contract.*`, catalog SQL, reviewed expected contract,
 ## Task 4: Migration and regression validation
 Files: DB test additions and `docs/incident-2026-10-28/db-apply-plan.md`.
 - [x] Audit SQL and production schema mismatch, test transaction failure/retry and new/old rule contracts using local databases.
-- [ ] Run existing native PostgreSQL concurrency, unit, type and root/Pages distribution checks. Preserve source files unchanged.
+- [x] Run existing native PostgreSQL concurrency, unit, type and root/Pages distribution checks. Preserve source files unchanged.
 - [x] Document object counts, impact, separate approvals, transactional apply/preflight and postcommit recovery.
 
 ## Task 5: Independent review and Draft PR
 - [x] Independent adversarial review of the final changes; reproduce and fix material findings, rerun affected checks.
-- [ ] Save evidence/report, update release runbook, commit on new branch and submit separate Draft PR; no merge/publish.
+- [x] Save evidence/report, update release runbook, commit on new branch and submit separate Draft PR; no merge/publish.

@@ -1,0 +1,681 @@
+{
+  "observed_at": "2026-10-28T00:48:34.908423+00:00",
+  "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/runs/40609013451/jobs?per_page=100",
+  "data": {
+    "total_count": 6,
+    "jobs": [
+      {
+        "id": 122555654640,
+        "run_id": 40609013451,
+        "workflow_name": "CI",
+        "head_branch": "fix/manual-pages-db-gate",
+        "run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/runs/40609013451",
+        "run_attempt": 1,
+        "node_id": "CR_kwDOVTXvv88AAAAciOLh8A",
+        "head_sha": "170289b3b2ee1f999731e51d2acb12bc0ecac528",
+        "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/jobs/122555654640",
+        "html_url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40609013451/job/122555654640",
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-28T00:28:49Z",
+        "started_at": "2026-10-28T00:28:51Z",
+        "completed_at": "2026-10-28T00:31:39Z",
+        "name": "core",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1,
+            "started_at": "2026-10-28T00:28:52Z",
+            "completed_at": "2026-10-28T00:28:54Z"
+          },
+          {
+            "name": "Run actions/checkout@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2,
+            "started_at": "2026-10-28T00:28:54Z",
+            "completed_at": "2026-10-28T00:28:56Z"
+          },
+          {
+            "name": "Run actions/setup-node@v6",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3,
+            "started_at": "2026-10-28T00:28:56Z",
+            "completed_at": "2026-10-28T00:29:02Z"
+          },
+          {
+            "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4,
+            "started_at": "2026-10-28T00:29:02Z",
+            "completed_at": "2026-10-28T00:29:02Z"
+          },
+          {
+            "name": "Dependencies",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5,
+            "started_at": "2026-10-28T00:29:02Z",
+            "completed_at": "2026-10-28T00:30:12Z"
+          },
+          {
+            "name": "Typecheck",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6,
+            "started_at": "2026-10-28T00:30:12Z",
+            "completed_at": "2026-10-28T00:30:13Z"
+          },
+          {
+            "name": "Unit tests",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7,
+            "started_at": "2026-10-28T00:30:13Z",
+            "completed_at": "2026-10-28T00:30:47Z"
+          },
+          {
+            "name": "Release guard tests (no production connection)",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8,
+            "started_at": "2026-10-28T00:30:47Z",
+            "completed_at": "2026-10-28T00:30:49Z"
+          },
+          {
+            "name": "Production DB release gates on disposable PostgreSQL",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9,
+            "started_at": "2026-10-28T00:30:49Z",
+            "completed_at": "2026-10-28T00:31:08Z"
+          },
+          {
+            "name": "Hall registration concurrency on disposable PostgreSQL",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10,
+            "started_at": "2026-10-28T00:31:08Z",
+            "completed_at": "2026-10-28T00:31:12Z"
+          },
+          {
+            "name": "Build and test root and Pages distributions",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11,
+            "started_at": "2026-10-28T00:31:12Z",
+            "completed_at": "2026-10-28T00:31:33Z"
+          },
+          {
+            "name": "Record revision",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 12,
+            "started_at": "2026-10-28T00:31:33Z",
+            "completed_at": "2026-10-28T00:31:34Z"
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 13,
+            "started_at": "2026-10-28T00:31:34Z",
+            "completed_at": "2026-10-28T00:31:35Z"
+          },
+          {
+            "name": "Post Run actions/setup-node@v6",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 25,
+            "started_at": "2026-10-28T00:31:35Z",
+            "completed_at": "2026-10-28T00:31:37Z"
+          },
+          {
+            "name": "Post Run actions/checkout@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 26,
+            "started_at": "2026-10-28T00:31:37Z",
+            "completed_at": "2026-10-28T00:31:37Z"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 27,
+            "started_at": "2026-10-28T00:31:37Z",
+            "completed_at": "2026-10-28T00:31:37Z"
+          }
+        ],
+        "check_run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/check-runs/122555654640",
+        "labels": [
+          "ubuntu-24.04"
+        ],
+        "runner_id": 1000014529,
+        "runner_name": "GitHub Actions 1000014529",
+        "runner_group_id": 0,
+        "runner_group_name": "GitHub Actions"
+      },
+      {
+        "id": 122556684372,
+        "run_id": 40609013451,
+        "workflow_name": "CI",
+        "head_branch": "fix/manual-pages-db-gate",
+        "run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/runs/40609013451",
+        "run_attempt": 1,
+        "node_id": "CR_kwDOVTXvv88AAAAciPKYVA",
+        "head_sha": "170289b3b2ee1f999731e51d2acb12bc0ecac528",
+        "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/jobs/122556684372",
+        "html_url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40609013451/job/122556684372",
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-28T00:31:40Z",
+        "started_at": "2026-10-28T00:31:41Z",
+        "completed_at": "2026-10-28T00:44:09Z",
+        "name": "Browser (webkit, interaction)",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1,
+            "started_at": "2026-10-28T00:31:42Z",
+            "completed_at": "2026-10-28T00:31:43Z"
+          },
+          {
+            "name": "Run actions/checkout@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2,
+            "started_at": "2026-10-28T00:31:43Z",
+            "completed_at": "2026-10-28T00:31:44Z"
+          },
+          {
+            "name": "Run actions/setup-node@v6",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3,
+            "started_at": "2026-10-28T00:31:44Z",
+            "completed_at": "2026-10-28T00:31:51Z"
+          },
+          {
+            "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4,
+            "started_at": "2026-10-28T00:31:51Z",
+            "completed_at": "2026-10-28T00:31:51Z"
+          },
+          {
+            "name": "Dependencies",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5,
+            "started_at": "2026-10-28T00:31:51Z",
+            "completed_at": "2026-10-28T00:32:29Z"
+          },
+          {
+            "name": "Browser tests",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6,
+            "started_at": "2026-10-28T00:32:29Z",
+            "completed_at": "2026-10-28T00:43:58Z"
+          },
+          {
+            "name": "Record revision",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7,
+            "started_at": "2026-10-28T00:43:58Z",
+            "completed_at": "2026-10-28T00:43:58Z"
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8,
+            "started_at": "2026-10-28T00:43:58Z",
+            "completed_at": "2026-10-28T00:44:06Z"
+          },
+          {
+            "name": "Post Run actions/setup-node@v6",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 15,
+            "started_at": "2026-10-28T00:44:06Z",
+            "completed_at": "2026-10-28T00:44:07Z"
+          },
+          {
+            "name": "Post Run actions/checkout@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 16,
+            "started_at": "2026-10-28T00:44:07Z",
+            "completed_at": "2026-10-28T00:44:07Z"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 17,
+            "started_at": "2026-10-28T00:44:07Z",
+            "completed_at": "2026-10-28T00:44:07Z"
+          }
+        ],
+        "check_run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/check-runs/122556684372",
+        "labels": [
+          "ubuntu-24.04"
+        ],
+        "runner_id": 1000014530,
+        "runner_name": "GitHub Actions 1000014530",
+        "runner_group_id": 0,
+        "runner_group_name": "GitHub Actions"
+      },
+      {
+        "id": 122556684377,
+        "run_id": 40609013451,
+        "workflow_name": "CI",
+        "head_branch": "fix/manual-pages-db-gate",
+        "run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/runs/40609013451",
+        "run_attempt": 1,
+        "node_id": "CR_kwDOVTXvv88AAAAciPKYWQ",
+        "head_sha": "170289b3b2ee1f999731e51d2acb12bc0ecac528",
+        "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/jobs/122556684377",
+        "html_url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40609013451/job/122556684377",
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-28T00:31:40Z",
+        "started_at": "2026-10-28T00:31:42Z",
+        "completed_at": "2026-10-28T00:34:37Z",
+        "name": "Browser (webkit, load)",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1,
+            "started_at": "2026-10-28T00:31:43Z",
+            "completed_at": "2026-10-28T00:31:43Z"
+          },
+          {
+            "name": "Run actions/checkout@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2,
+            "started_at": "2026-10-28T00:31:43Z",
+            "completed_at": "2026-10-28T00:31:46Z"
+          },
+          {
+            "name": "Run actions/setup-node@v6",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3,
+            "started_at": "2026-10-28T00:31:46Z",
+            "completed_at": "2026-10-28T00:31:52Z"
+          },
+          {
+            "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4,
+            "started_at": "2026-10-28T00:31:52Z",
+            "completed_at": "2026-10-28T00:31:52Z"
+          },
+          {
+            "name": "Dependencies",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5,
+            "started_at": "2026-10-28T00:31:52Z",
+            "completed_at": "2026-10-28T00:32:58Z"
+          },
+          {
+            "name": "Browser tests",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6,
+            "started_at": "2026-10-28T00:32:58Z",
+            "completed_at": "2026-10-28T00:34:33Z"
+          },
+          {
+            "name": "Record revision",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7,
+            "started_at": "2026-10-28T00:34:33Z",
+            "completed_at": "2026-10-28T00:34:33Z"
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8,
+            "started_at": "2026-10-28T00:34:33Z",
+            "completed_at": "2026-10-28T00:34:34Z"
+          },
+          {
+            "name": "Post Run actions/setup-node@v6",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 15,
+            "started_at": "2026-10-28T00:34:34Z",
+            "completed_at": "2026-10-28T00:34:34Z"
+          },
+          {
+            "name": "Post Run actions/checkout@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 16,
+            "started_at": "2026-10-28T00:34:34Z",
+            "completed_at": "2026-10-28T00:34:35Z"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 17,
+            "started_at": "2026-10-28T00:34:35Z",
+            "completed_at": "2026-10-28T00:34:35Z"
+          }
+        ],
+        "check_run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/check-runs/122556684377",
+        "labels": [
+          "ubuntu-24.04"
+        ],
+        "runner_id": 1000014532,
+        "runner_name": "GitHub Actions 1000014532",
+        "runner_group_id": 0,
+        "runner_group_name": "GitHub Actions"
+      },
+      {
+        "id": 122556684385,
+        "run_id": 40609013451,
+        "workflow_name": "CI",
+        "head_branch": "fix/manual-pages-db-gate",
+        "run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/runs/40609013451",
+        "run_attempt": 1,
+        "node_id": "CR_kwDOVTXvv88AAAAciPKYYQ",
+        "head_sha": "170289b3b2ee1f999731e51d2acb12bc0ecac528",
+        "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/jobs/122556684385",
+        "html_url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40609013451/job/122556684385",
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-28T00:31:40Z",
+        "started_at": "2026-10-28T00:31:41Z",
+        "completed_at": "2026-10-28T00:45:55Z",
+        "name": "Browser (chromium, interaction)",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1,
+            "started_at": "2026-10-28T00:31:42Z",
+            "completed_at": "2026-10-28T00:31:43Z"
+          },
+          {
+            "name": "Run actions/checkout@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2,
+            "started_at": "2026-10-28T00:31:43Z",
+            "completed_at": "2026-10-28T00:31:45Z"
+          },
+          {
+            "name": "Run actions/setup-node@v6",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3,
+            "started_at": "2026-10-28T00:31:45Z",
+            "completed_at": "2026-10-28T00:31:51Z"
+          },
+          {
+            "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4,
+            "started_at": "2026-10-28T00:31:51Z",
+            "completed_at": "2026-10-28T00:31:51Z"
+          },
+          {
+            "name": "Dependencies",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5,
+            "started_at": "2026-10-28T00:31:51Z",
+            "completed_at": "2026-10-28T00:32:18Z"
+          },
+          {
+            "name": "Browser tests",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6,
+            "started_at": "2026-10-28T00:32:18Z",
+            "completed_at": "2026-10-28T00:45:48Z"
+          },
+          {
+            "name": "Record revision",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7,
+            "started_at": "2026-10-28T00:45:48Z",
+            "completed_at": "2026-10-28T00:45:49Z"
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8,
+            "started_at": "2026-10-28T00:45:49Z",
+            "completed_at": "2026-10-28T00:45:53Z"
+          },
+          {
+            "name": "Post Run actions/setup-node@v6",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 15,
+            "started_at": "2026-10-28T00:45:53Z",
+            "completed_at": "2026-10-28T00:45:53Z"
+          },
+          {
+            "name": "Post Run actions/checkout@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 16,
+            "started_at": "2026-10-28T00:45:53Z",
+            "completed_at": "2026-10-28T00:45:53Z"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 17,
+            "started_at": "2026-10-28T00:45:53Z",
+            "completed_at": "2026-10-28T00:45:54Z"
+          }
+        ],
+        "check_run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/check-runs/122556684385",
+        "labels": [
+          "ubuntu-24.04"
+        ],
+        "runner_id": 1000014531,
+        "runner_name": "GitHub Actions 1000014531",
+        "runner_group_id": 0,
+        "runner_group_name": "GitHub Actions"
+      },
+      {
+        "id": 122556684464,
+        "run_id": 40609013451,
+        "workflow_name": "CI",
+        "head_branch": "fix/manual-pages-db-gate",
+        "run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/runs/40609013451",
+        "run_attempt": 1,
+        "node_id": "CR_kwDOVTXvv88AAAAciPKYsA",
+        "head_sha": "170289b3b2ee1f999731e51d2acb12bc0ecac528",
+        "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/jobs/122556684464",
+        "html_url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40609013451/job/122556684464",
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-28T00:31:40Z",
+        "started_at": "2026-10-28T00:31:42Z",
+        "completed_at": "2026-10-28T00:38:02Z",
+        "name": "Browser (chromium, load)",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1,
+            "started_at": "2026-10-28T00:31:43Z",
+            "completed_at": "2026-10-28T00:31:44Z"
+          },
+          {
+            "name": "Run actions/checkout@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2,
+            "started_at": "2026-10-28T00:31:44Z",
+            "completed_at": "2026-10-28T00:31:46Z"
+          },
+          {
+            "name": "Run actions/setup-node@v6",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3,
+            "started_at": "2026-10-28T00:31:46Z",
+            "completed_at": "2026-10-28T00:31:53Z"
+          },
+          {
+            "name": "Use the primary Ubuntu HTTPS mirror for browser dependencies",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4,
+            "started_at": "2026-10-28T00:31:53Z",
+            "completed_at": "2026-10-28T00:31:53Z"
+          },
+          {
+            "name": "Dependencies",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5,
+            "started_at": "2026-10-28T00:31:53Z",
+            "completed_at": "2026-10-28T00:32:23Z"
+          },
+          {
+            "name": "Browser tests",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6,
+            "started_at": "2026-10-28T00:32:23Z",
+            "completed_at": "2026-10-28T00:37:57Z"
+          },
+          {
+            "name": "Record revision",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7,
+            "started_at": "2026-10-28T00:37:57Z",
+            "completed_at": "2026-10-28T00:37:57Z"
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8,
+            "started_at": "2026-10-28T00:37:57Z",
+            "completed_at": "2026-10-28T00:37:59Z"
+          },
+          {
+            "name": "Post Run actions/setup-node@v6",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 15,
+            "started_at": "2026-10-28T00:37:59Z",
+            "completed_at": "2026-10-28T00:37:59Z"
+          },
+          {
+            "name": "Post Run actions/checkout@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 16,
+            "started_at": "2026-10-28T00:37:59Z",
+            "completed_at": "2026-10-28T00:37:59Z"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 17,
+            "started_at": "2026-10-28T00:37:59Z",
+            "completed_at": "2026-10-28T00:38:00Z"
+          }
+        ],
+        "check_run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/check-runs/122556684464",
+        "labels": [
+          "ubuntu-24.04"
+        ],
+        "runner_id": 1000014533,
+        "runner_name": "GitHub Actions 1000014533",
+        "runner_group_id": 0,
+        "runner_group_name": "GitHub Actions"
+      },
+      {
+        "id": 122561684971,
+        "run_id": 40609013451,
+        "workflow_name": "CI",
+        "head_branch": "fix/manual-pages-db-gate",
+        "run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/runs/40609013451",
+        "run_attempt": 1,
+        "node_id": "CR_kwDOVTXvv88AAAAciT7l6w",
+        "head_sha": "170289b3b2ee1f999731e51d2acb12bc0ecac528",
+        "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/actions/jobs/122561684971",
+        "html_url": "https://github.com/chameleonjp-lab/takkeu/actions/runs/40609013451/job/122561684971",
+        "status": "completed",
+        "conclusion": "success",
+        "created_at": "2026-10-28T00:45:55Z",
+        "started_at": "2026-10-28T00:45:58Z",
+        "completed_at": "2026-10-28T00:46:01Z",
+        "name": "verify",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1,
+            "started_at": "2026-10-28T00:45:58Z",
+            "completed_at": "2026-10-28T00:45:59Z"
+          },
+          {
+            "name": "Require all validation jobs",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2,
+            "started_at": "2026-10-28T00:45:59Z",
+            "completed_at": "2026-10-28T00:45:59Z"
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3,
+            "started_at": "2026-10-28T00:45:59Z",
+            "completed_at": "2026-10-28T00:45:59Z"
+          }
+        ],
+        "check_run_url": "https://api.github.com/repos/chameleonjp-lab/takkeu/check-runs/122561684971",
+        "labels": [
+          "ubuntu-24.04"
+        ],
+        "runner_id": 1000014534,
+        "runner_name": "GitHub Actions 1000014534",
+        "runner_group_id": 0,
+        "runner_group_name": "GitHub Actions"
+      }
+    ]
+  }
+}
