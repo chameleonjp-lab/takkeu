@@ -1,0 +1,272 @@
+{
+  "migrations": [
+    {
+      "version": "20260801174203",
+      "name": "tomatoku_verified_competition"
+    },
+    {
+      "version": "20260801174653",
+      "name": "tomatoku_verified_competition_review_safety"
+    },
+    {
+      "version": "20260801175246",
+      "name": "tomatoku_verified_competition_network_tolerance"
+    },
+    {
+      "version": "20260802052204",
+      "name": "tomatoku_auto_approve_verified_runs"
+    },
+    {
+      "version": "20260802052345",
+      "name": "fix_tomatoku_verified_score_guard"
+    },
+    {
+      "version": "20260803025504",
+      "name": "remove_incomplete_sainome_registration"
+    },
+    {
+      "version": "20260811064126",
+      "name": "sainome_ranking_v2_contract"
+    },
+    {
+      "version": "20260811083954",
+      "name": "sainome_unicode_name_contract"
+    },
+    {
+      "version": "20260813033722",
+      "name": "harden_sainome_ranking_submission_contract"
+    },
+    {
+      "version": "20260816164657",
+      "name": "sainome_300_seconds"
+    },
+    {
+      "version": "20260816164915",
+      "name": "enable_sainome_300_seconds_ranking"
+    },
+    {
+      "version": "20260817042852",
+      "name": "sainome_name_only_ranking"
+    },
+    {
+      "version": "20260817043559",
+      "name": "enable_doppan_ranking"
+    },
+    {
+      "version": "20260817124110",
+      "name": "repair_sainome_simple_name_ranking"
+    },
+    {
+      "version": "20260817133002",
+      "name": "align_sainome_with_shared_ranking"
+    },
+    {
+      "version": "20260819033945",
+      "name": "sainome_provisional_retire_ranking"
+    },
+    {
+      "version": "20260820051254",
+      "name": "enable_tomatoku_private_rls"
+    },
+    {
+      "version": "20260822170329",
+      "name": "sabaibu_verified_runs"
+    },
+    {
+      "version": "20260822180757",
+      "name": "sabaibu_verified_ranking_v2"
+    },
+    {
+      "version": "20260822180906",
+      "name": "sabaibu_verified_ranking_start_conflict_fix"
+    },
+    {
+      "version": "20260822181140",
+      "name": "sabaibu_integrate_verified_score_guard"
+    },
+    {
+      "version": "20260825163517",
+      "name": "sabaibu_rank_validation_hardening"
+    },
+    {
+      "version": "20260825164529",
+      "name": "sabaibu_disable_ranking_reads"
+    },
+    {
+      "version": "20260825173019",
+      "name": "akerun_verified_competition"
+    },
+    {
+      "version": "20260825174109",
+      "name": "akerun_verified_replay_guard"
+    },
+    {
+      "version": "20260825174525",
+      "name": "akerun_prepare_contention_guard"
+    },
+    {
+      "version": "20260825204033",
+      "name": "fix_offering_per_item_limit"
+    },
+    {
+      "version": "20260826012845",
+      "name": "harden_request_id_idempotency"
+    },
+    {
+      "version": "20260826050858",
+      "name": "akerun_score_baseline_v2"
+    },
+    {
+      "version": "20260826051002",
+      "name": "guest_messages"
+    },
+    {
+      "version": "20260826052454",
+      "name": "akerun_contract_v2_labels"
+    },
+    {
+      "version": "20260826164048",
+      "name": "akerun_runs_problem_id_index"
+    },
+    {
+      "version": "20260826182748",
+      "name": "guest_offering_per_category"
+    },
+    {
+      "version": "20260827015103",
+      "name": "add_wasabi_activity_metrics_20260827"
+    },
+    {
+      "version": "20260827045658",
+      "name": "20260827110000_same_name_guest_identity"
+    },
+    {
+      "version": "20260827111158",
+      "name": "akerun_run_abandonment"
+    },
+    {
+      "version": "20260828015126",
+      "name": "ranking_submission_contract_v1"
+    },
+    {
+      "version": "20260828015311",
+      "name": "ranking_submission_contract_v1_index_fix"
+    },
+    {
+      "version": "20260829065022",
+      "name": "admin_service_role_table_grants"
+    },
+    {
+      "version": "20260829065129",
+      "name": "ranking_start_idempotency_v1"
+    },
+    {
+      "version": "20260829072012",
+      "name": "akerun_result_guard_v1"
+    },
+    {
+      "version": "20260829080921",
+      "name": "akerun_operation_trace_v1"
+    },
+    {
+      "version": "20260829082750",
+      "name": "akerun_request_limits_v1"
+    },
+    {
+      "version": "20260829134621",
+      "name": "akerun_daily_competition_v1"
+    },
+    {
+      "version": "20260830171009",
+      "name": "create_wakaranjan_learning_profiles"
+    },
+    {
+      "version": "20260915150038",
+      "name": "align_game_play_stats_player_count_with_ranking"
+    },
+    {
+      "version": "20260915151357",
+      "name": "align_game_play_stats_with_ranking_rows"
+    },
+    {
+      "version": "20260918200225",
+      "name": "register_hanabin_ranking_v1"
+    },
+    {
+      "version": "20260918200344",
+      "name": "harden_normalize_player_name_search_path_v1"
+    },
+    {
+      "version": "20260921180630",
+      "name": "restore_saisupi_ranking_play_stats"
+    },
+    {
+      "version": "20260927234549",
+      "name": "register_start_only_as_retire_v1"
+    },
+    {
+      "version": "20260929035730",
+      "name": "faitofuraito_ranking_guest_v1"
+    },
+    {
+      "version": "20261013202016",
+      "name": "restore_legacy_play_count_ranking"
+    },
+    {
+      "version": "20261023180824",
+      "name": "slime_trial_schema"
+    },
+    {
+      "version": "20261023180831",
+      "name": "slime_trial_submit"
+    },
+    {
+      "version": "20261023180836",
+      "name": "slime_trial_realtime"
+    },
+    {
+      "version": "20261024095634",
+      "name": "takkeu_guest_play_count"
+    },
+    {
+      "version": "20261024205153",
+      "name": "slime_trial_anonymous_aggregate"
+    },
+    {
+      "version": "20261024205204",
+      "name": "slime_trial_cleanup_schedule"
+    },
+    {
+      "version": "20261025184307",
+      "name": "takkeu_result_position"
+    },
+    {
+      "version": "20261026155120",
+      "name": "takkeu_moderation_categories_20261027"
+    },
+    {
+      "version": "20261026155410",
+      "name": "takkeu_submission_guard_20261027"
+    },
+    {
+      "version": "20261026160108",
+      "name": "takkeu_progress_checks_20261027"
+    },
+    {
+      "version": "20261026161019",
+      "name": "takkeu_legacy_ranking_filter_20261027"
+    },
+    {
+      "version": "20261026161730",
+      "name": "takkeu_progress_throttle_20261027"
+    },
+    {
+      "version": "20261026162019",
+      "name": "takkeu_rate_limit_refinement_20261027"
+    },
+    {
+      "version": "20261026164246",
+      "name": "takkeu_final_lost_balls_20261027"
+    }
+  ]
+}
