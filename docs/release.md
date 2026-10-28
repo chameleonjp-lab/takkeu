@@ -1,70 +1,81 @@
-# タッケウの公開手順
+# タッケウの本番公開手順
 
-公開URL： https://chameleonjp-lab.github.io/takkeu/ 。GitHub PagesのSourceはGitHub Actionsを使用する。
+公開URL: https://chameleonjp-lab.github.io/takkeu/ 。Pages SourceはGitHub Actions。
 
-2026-10-22に第3段階PR #4がmainへマージされた。その後、ユーザーから「ページ公開」「今後マージされるPRの自動反映」の指示を受け、手動のみの公開方針を更新した。実機・試聴・390の最終点滅判定・実機性能は未確認のままであり、公開によって合格へ変更しない。[受入表](verification/acceptance.md)、[音の確認記録](verification/audio-review.md)を維持する。
+**mainへのマージは公開承認ではない。** CIはPR/main pushで自動実行するが、Pages releaseは`workflow_dispatch`だけで開始する。DB未適用・未確認・認証失敗・タイムアウトは公開禁止。失敗時に前の公開物を削除しない。
 
-第3段階の正式検証ソースは`1e13fd4281721a2b843967a3b69b5801088da26e`。公開時にはマージ後の**mainの完全40文字SHA**を対象とし、そのコミットで検査・ビルドをやり直す。PR headとマージ後SHAは別の場合がある。
+2026-10-28の緊急対応で以前の自動公開方針を撤回した。[事故記録](incident-2026-10-28/report.md)、[DB適用前監査・復元計画](incident-2026-10-28/db-apply-plan.md)を参照。この修正は新PRのマージ後に有効になる。PR作成だけで既存workflowやrunが停止するわけではない。
 
-最新の加速・配球・460〜555段階は[今回の受入記録](verification/extended-rally/README.md)を参照する。PRの提出・CI成功と、mainへのマージ・Pages配備成功・公開SHAの一致は別の状態として確認する。
+## 公開の条件
 
-## 自動公開
+1. 所有者`chameleonjp-lab`が現在mainの完全な小文字40桁SHAをレビューし、そのSHAの本番公開を承認する。
+2. 当該main pushの最新`CI` run/attemptが全体で`completed/success`。PRのCI成功だけでは不足。
+3. 手動実行でも同じSHAの再利用CIで、型・単体・使い捨てPostgreSQL・Chromium/WebKit操作/負荷検査を再実行する。
+4. rootと`/takkeu/`の実配布検証に成功し、同一runの`dist`と`release.json`を確保する。
+5. 本番DBを最小権限接続で読取り専用検査し、履歴・11テーブル・22関数・列・制約・index・trigger・RLS/policy・列ACL・有効権限・関数本文hash等がレビュー済み契約に一致する。
+6. environment待機後、DB・承認・CI・現在mainを再確認して同じrunの成果物を配備する。
 
-PRをレビューしてmainへマージすると、`Pages release`がmainへのpushを検出する。mainへの直接pushも同じ検査を通る。PRの自動マージ設定は使用しない。
+`takkeu-pages` concurrencyで直列化し、新runで進行中の正常な公開を自動キャンセルしない。待機中にmainが進めば古いrunは拒否する。GitHubのmain更新とdeploy APIは原子的操作ではないので、最終照合から配備完了までmainとDBスキーマ/権限を変更しない運用も必要。
 
-pushの`github.sha`を`EXPECTED_SHA`として固定し、そのコミットをcheckoutする。公開処理から再利用可能なCIを呼び出し、型・単体・Chromium/WebKitの操作／負荷を分割した各ジョブ・ルート／`/takkeu/`配布検査に成功した後、同じSHAの配布物を作ってPagesへ配備する。失敗した変更は公開せず、直前の配布物を維持する。
+## environmentと承認の実態
 
-検査前と配備直前に、checkout・対象SHA・現在のmainの全一致を検証する。mainが先へ進んだ古い実行は拒否し、新しいpushの実行で最新mainを検証して公開する。公開処理は直列化する。配備ジョブで再ビルドはしない。
+2026-10-28の読取り確認ではpublic repoで管理権限を確認。`github-pages`はmainブランチのみ許可、**required reviewersは未設定**、管理者bypassは有効だった。今回設定は変更していない。YAMLの`environment:`指定だけではreviewer承認は必須にならない。
 
-通常の更新でユーザーが行う操作は**PRのレビューとmainへのマージ**。Actionsの`Pages release`の成功と、公開後の`release.json`を確認する。Pages設定を毎回変更する必要はない。
+現実装の承認は所有者による手動dispatchの`approve_production=true`（初期値false）、SHA入力、actor/triggering actor一致で判定する。CodexやCIは公開dispatchを行わない。
 
-マージ直後、公開検証が進行中ならページは直前の版を表示する。PRのCI成功とPagesの配備成功は別であり、[Pages releaseの実行一覧](https://github.com/chameleonjp-lab/takkeu/actions/workflows/deploy.yml)で対象mainのSHA・配備ジョブまでの成功を確認する。2026-10-23のPR #10も、検証中は旧版の明るい相手コートが配信され、完了後に暗闇の版へ更新された。[公開照合記録](verification/ball-cadence/README.md)へ実SHA・画像を保存した。
+二者承認も必要なら、管理者が Settings → Environments → github-pages → Deployment protection rules → Required reviewers に実在の承認者を指定する。Prevent self-reviewにはdispatch所有者とは別の承認者が必要。管理者bypassを禁止し、Deployment branchesはmainのみを維持する。保存後GET `/repos/chameleonjp-lab/takkeu/environments/github-pages`で`required_reviewers`を再取得し、無承認runが待機することを確認する。未設定のまま二者承認必須と報告しない。
 
-全面化・直接操作のPR #14は2026-10-23にマージ済み。その公開ジョブ[40030215074](https://github.com/chameleonjp-lab/takkeu/actions/runs/40030215074)は、ブラウザ検証を一つのジョブで連続実行して20分の制限に達し、公開されなかった。今回のランキング・共有対応では、同じ検証をCIの分割ジョブで実行してこの時間切れを解消する。[今回の検証記録](ranking-share-verification.md)を参照する。
+## DB接続準備（本番変更には別承認）
 
-## 継続して確認する品質項目
+管理者が`TAKKEU_RELEASE_PGHOST` / `TAKKEU_RELEASE_PGPORT` / `TAKKEU_RELEASE_PGUSER` / `TAKKEU_RELEASE_PGPASSWORD`をgithub-pages environment secretsに設定する。既存secret名の列挙はintegrationの403で確認できず、安全な接続の存在は未確認。今回secretを作成・登録していない。
 
-1. iPhone 17 ProのOS/Safari版、縦横、音量、品質、低電力モード等の条件を記録する。4球の回帰に加え、最新規則の450の無落球47球、470以後2ごとの増球、555の無落球91球とランダム発光・花火・変向バウンド、390・420・480・最大速度付近を検証し、60秒の描画間隔の95%以上が25ms以下であるか測る。操作・回転・アプリ切替・画面ロック・音声復帰・VoiceOverも確認する。
-2. 自分音・相手音・4球の重なり・予告音を実際に聴き、識別と快適さを記録する。390の実動画を確認し、[WCAG 2.3.1](https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html)の頻度・明るさ・面積・赤色を判断する。不適合は表示を調整し再検証する。
-3. ゲーム・入力・音・描画・設定・依存・配布設定に変更があれば該当検証を更新する。実機・試聴・映像の対象SHAと結果をPR／検証記録へ紐付ける。自動検査で実機や試聴の結果を代替しない。
+接続先はプロジェクト`mlpnjgezrnhdxsxolyzj`に固定。直接hostは`db.mlpnjgezrnhdxsxolyzj.supabase.co`。poolerはDashboardの正確な`*.pooler.supabase.com`ホストと`<読取りロール>.mlpnjgezrnhdxsxolyzj`ユーザーを使う。DB=postgres、port=5432/6543、TLS=verify-full、system CA必須。証明書エラーをdisableで回避しない。
 
-## 手動公開
+専用LOGINはNOSUPERUSER/NOCREATEDB/NOCREATEROLE/NOBYPASSRLS、他ロールmembershipなし、ユーザースキーマCREATE・テーブル/列の変更・sequence USAGE/UPDATE・MAINTAIN・可変RPC実行権限なしとする。postgres接続・管理者password・service_roleを渡さない。
 
-再配布など手動実行が必要な場合は、Actions → **Pages release** → Run workflowで、ブランチを`main`、`expected_sha`を現在のmainの完全SHAにする。`gh workflow run deploy.yml --ref main -f expected_sha=<完全SHA>`でも実行できる。
+承認対象の接続準備:
 
-ワークフローはそのSHA自体をcheckoutし、現在のmainと一致することを照合する。短縮SHA、別ブランチ、古いSHA、検査中に進んだmainは拒否する。PRのCIは読取権限だけで動く。
+- DB CONNECT、public/supabase_migrations USAGE、public.gamesの構成6列、履歴version/name列のSELECTだけを付与。プレイヤー/スコア/セッションのSELECTは不要。
+- gamesの既存SELECT policyはanon向けだった。専用ロールがgame_slug=takkeuの構成行だけを読めるSELECT policyを別承認で用意する。anonのmembershipで代用すると書込みRPCも継承するので禁止。
+- PUBLIC権限はロールから個別拒否できない。本番で他ゲームを含むPUBLIC実行可能VOLATILE関数を確認した。ロール作成だけで最小権限にはならない。必要な実利用ロールへPUBLIC権限を狭める場合は、対象/件数/他ゲームへの影響/復元GRANTを調査し別承認を得る。準備完了までは公開ゲートを失敗させたままにする。高権限接続で回避しない。
+- `BEGIN READ ONLY`、statement timeout=15秒、lock timeout=3秒、接続10秒/プロセス25秒で検査する。アプリRPC試行や本番テスト記録を使わない。
 
-同じcheckoutで依存導入、型、単体、Chromium/WebKit画面検査、ルート／`/takkeu/`の配布検査を実行する。最後に作った`dist`だけをPages成果物へ保存する。配備直前にもmainのSHAを再照合し、**同じ実行の検査済み成果物**を配備する。配備ジョブで再ビルドはしない。検査失敗時は配備へ進まない。
+通常CIに本番接続を渡さない。DB出力は時刻・プロジェクト・件数・結果だけ。password/接続URL/psql stderrをログへ流さない。正当なスキーマ変更も契約と違えば停止し、新しい読取り監査・ローカル検証・PRレビューでbaseline/expected contractを更新する。
 
-自動・手動とも`release-verification-<対象SHA>`成果物に全文ログ、`revision.json`、配布物のSHA-256、画像等を90日保存する。公開対象の`release.json`にもコミットと基準パスを含める。実行URLと公開対象SHAを公開記録へ残す。mainが進んだ場合は最新pushの実行を確認し、必要なら最新SHAを指定して再実行する。
+## 承認後の実行
 
-## 公開後の確認
+先に[DB適用計画](incident-2026-10-28/db-apply-plan.md)を承認・実施し、適用後の読取り専用確認を完了する。DB適用とPages公開の承認は別。準備済みを適用済みと呼ばない。
 
-- `https://chameleonjp-lab.github.io/takkeu/release.json`の`commit`が`expected_sha`、`base`が`/takkeu/`であることを確認する。キャッシュを避けるため再読込やクエリー付き取得も使う。
-- `/takkeu/`の入口と全JS/CSSが200で読み込まれ、コンソールに例外がないことを確認する。
-- iPhone縦横とPCで開始、タップによる直接配置・ドラッグ・離した後の保持、二本指タップ／Escape停止・手動再開、結果、再挑戦、ホーム、保存、音の切替を短く試す。
-- `?score=450&debug=1`でも0ラリー・1球から始まること、`tests/fixtures/stage3.html`等の開発用ファイルが配信されないことを確認する。
-- 不具合があれば公開記録へ症状・端末・対象SHAを残し、次の手順で戻す。
+所有者が現在mainのSHAとCIを確認し、Actions → Pages release → Run workflow → branch=main、expected_sha=完全SHA、approve_production=trueで実行する。承認済み所有者向けCLI例:
 
-## 以前の承認済み版へ戻す
+```sh
+gh workflow run deploy.yml --ref main -f expected_sha=<完全40桁SHA> -f approve_production=true
+```
 
-1. 公開記録と`release.json`から直前の正常な公開SHAを特定し、その検証記録・成果物を確保する。
-2. mainを強制更新しない。正常版との差分を戻すブランチを作り、問題の変更をrevertしたPRを作る。マージコミットを戻す場合は正しい親を確認する。公開のSHA照合と自動・手動実行の仕組みは維持する。
-3. 復旧PRの型・単体・画面・配布検査を通し、戻すゲーム内容と既存実機・音・映像の証拠を比較する。差異があれば再検証する。ユーザーが復旧PRをマージする。
-4. マージにより**復旧後mainの新しいSHA**が自動公開されることを確認する。再実行が必要ならそのSHAを`expected_sha`として手動公開する。過去SHAをそのまま入力して最新mainの照合を回避しない。
-5. 公開後確認を繰り返し、障害版／正常版／復旧版のSHAと実行URLを記録する。
+environment reviewers設定時はその承認も必要。失敗を無視してdeployジョブだけ起動しない。過去runの再実行も公開承認に含めて扱う。
 
-## ローカルでの配布確認
+## 公開後と復旧
 
-Node/npmはリポジトリの固定版を使う。
+- クエリー付き`https://chameleonjp-lab.github.io/takkeu/release.json`でcommitとbase=/takkeu/を照合。Actions URL・SHA・取得時刻を保存する。
+- JS/CSS/OGPの200、通常開始/匿名開始/ランキング取得を確認。本番スコア送信や殿堂採番を検証目的で行わない。
+- 公開前失敗は旧Pagesを維持する。公開後はrunをキャンセルしても元に戻らない。
+- 復旧にはユーザー承認が必要。正常SHAのゲーム内容へ戻すブランチ/PRを作り、検証後ユーザーがマージし、復旧後mainの新しいSHAを承認して手動公開する。force push・DB逆migration・ランキング削除はしない。古いSHAの照合を回避する裏口も作らない。
+- 名前/自己ベスト/旧pendingを消さない。3500 pendingを旧クライアントが理解する保証はないため、保存領域を残し互換性を個別確認する。
+
+## ローカル確認
+
+Node/npmは固定版。すべてローカル/使い捨てDBで、本番secretを渡さない。
 
 ```sh
 npm ci
-npx playwright install --with-deps chromium webkit
 npm run typecheck
 npm run test:unit
+npm run test:release-guards
+node tests/helpers/checkReleaseDatabase.mjs
+node tests/helpers/checkHallConcurrency.mjs
+npx playwright install --with-deps chromium webkit
 npm run test:browser
 npm run verify:release
 ```
 
-`verify:release`はルート用ビルドを`artifacts/root-dist`、Pages用を`dist`へ作り、それぞれ実ファイルだけを配信するサーバーで確認する。`npm run build:pages`は`/takkeu/`用の単独ビルド。開発サーバーは公開に使わない。
+DB機能/競合はPostgreSQL/PGlite、workflowは実YAML graphと実gate関数をfixtureで実行する。GitHubのenvironment待機/配備そのものはローカルモデルで保証しない。iPhone/Safari実機、音・視認・性能の従来未確認項目も[受入記録](verification/acceptance.md)のまま維持する。

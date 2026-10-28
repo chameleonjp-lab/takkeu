@@ -1,0 +1,52 @@
+{
+  "observed_at": "2026-10-28T00:21:57.333042+00:00",
+  "project": "mlpnjgezrnhdxsxolyzj",
+  "dashboard_url": "https://supabase.com/dashboard/project/mlpnjgezrnhdxsxolyzj/database/migrations",
+  "source_query": "scripts/release/catalog.sql",
+  "transaction_read_only": true,
+  "migrations": [],
+  "existing_tables": [
+    "private.game_play_sessions",
+    "private.takkeu_guest_plays_v1",
+    "private.takkeu_progress_signals_v1",
+    "private.takkeu_progress_v1",
+    "public.game_scores",
+    "public.players",
+    "public.score_runs"
+  ],
+  "required_rpc_presence": {
+    "start_takkeu_clear_play_v1": false,
+    "start_takkeu_clear_play_v2": false,
+    "finish_takkeu_clear_play_v1": false,
+    "finish_takkeu_clear_play_v2": false,
+    "register_takkeu_hall_v1": false,
+    "register_takkeu_hall_v2": false,
+    "get_takkeu_hall_v1": false,
+    "get_takkeu_hall_v2": false
+  },
+  "game": {
+    "game_slug": "takkeu",
+    "is_active": true,
+    "score_max": 100000000,
+    "score_min": 0,
+    "score_order": "desc",
+    "submission_mode": "shared"
+  },
+  "role_used": "managed read-only audit transaction (not release-reader credential)",
+  "production_writes": false,
+  "categories_observed": [
+    {
+      "ranking_status": "hidden",
+      "count": 1
+    },
+    {
+      "ranking_status": "normal",
+      "count": 3068
+    },
+    {
+      "ranking_status": "provisional_bot",
+      "count": 3
+    }
+  ],
+  "categories_observed_at": "2026-10-28T00:04:03.608199+00:00"
+}

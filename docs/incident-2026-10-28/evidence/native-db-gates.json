@@ -1,0 +1,96 @@
+{
+  "version": "PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit\n",
+  "image": "postgres:17@sha256:b8faeff7712663c2773a190181e1246e37e364b887611c04658c28b44e2408fe",
+  "cases": [
+    {
+      "name": "unapplied migration",
+      "result": "blocked"
+    },
+    {
+      "name": "complete reviewed schema and least-privilege reader",
+      "result": "matched"
+    },
+    {
+      "name": "administrator connection",
+      "result": "blocked"
+    },
+    {
+      "name": "partial RPC",
+      "result": "blocked"
+    },
+    {
+      "name": "RLS disabled",
+      "result": "blocked"
+    },
+    {
+      "name": "trigger disabled",
+      "result": "blocked"
+    },
+    {
+      "name": "direct anon writes",
+      "result": "blocked"
+    },
+    {
+      "name": "reader can write",
+      "result": "blocked"
+    },
+    {
+      "name": "reader column write",
+      "result": "blocked"
+    },
+    {
+      "name": "reader history write",
+      "result": "blocked"
+    },
+    {
+      "name": "anon column write",
+      "result": "blocked"
+    },
+    {
+      "name": "anon column read",
+      "result": "blocked"
+    },
+    {
+      "name": "reader can call mutator",
+      "result": "blocked"
+    },
+    {
+      "name": "history missing",
+      "result": "blocked"
+    },
+    {
+      "name": "verification permission missing",
+      "result": "blocked"
+    },
+    {
+      "name": "unreviewed publicly executable volatile RPC",
+      "result": "blocked"
+    },
+    {
+      "name": "non-inherited writer role membership",
+      "result": "blocked"
+    },
+    {
+      "name": "missing takkeu_guest_plays_v1",
+      "result": "blocked"
+    },
+    {
+      "name": "missing takkeu_progress_v1",
+      "result": "blocked"
+    },
+    {
+      "name": "missing takkeu_progress_signals_v1",
+      "result": "blocked"
+    },
+    {
+      "name": "actual PostgreSQL statement timeout",
+      "result": "blocked"
+    },
+    {
+      "name": "write attempted inside read-only transaction",
+      "result": "blocked"
+    }
+  ],
+  "playerRows": 0,
+  "result": "passed"
+}

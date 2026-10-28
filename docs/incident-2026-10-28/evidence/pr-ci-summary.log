@@ -1,0 +1,11 @@
+core	Unit tests	2026-10-28T00:30:47.3406812Z  Test Files  87 passed (87)
+core	Unit tests	2026-10-28T00:30:47.3414143Z       Tests  972 passed (972)
+core	Release guard tests (no production connection)	2026-10-28T00:30:49.4390678Z ℹ pass 10
+core	Release guard tests (no production connection)	2026-10-28T00:30:49.4390982Z ℹ fail 0
+core	Production DB release gates on disposable PostgreSQL	2026-10-28T00:31:07.9381483Z Native PostgreSQL release gates: 22 cases passed; no production connection.
+core	Hall registration concurrency on disposable PostgreSQL	2026-10-28T00:31:12.8232923Z Postgres: same-name race, distinct-name race, stable receipts and counter passed.
+core	Build and test root and Pages distributions	2026-10-28T00:31:33.9038489Z   8 passed (17.5s)
+Browser (webkit, interaction)	Browser tests	2026-10-28T00:43:57.7786624Z   115 passed (11.5m)
+Browser (webkit, load)	Browser tests	2026-10-28T00:34:32.7447284Z   3 passed (1.6m)
+Browser (chromium, interaction)	Browser tests	2026-10-28T00:45:48.4486559Z   115 passed (13.5m)
+Browser (chromium, load)	Browser tests	2026-10-28T00:37:57.0471180Z   3 passed (5.5m)

@@ -47,6 +47,10 @@ jobs:
         run: |
           set -o pipefail
           npm run test:unit 2>&1 | tee artifacts/unit.log
+      - name: Release guard tests (no production connection)
+        run: npm run test:release-guards
+      - name: Production DB release gates on disposable PostgreSQL
+        run: node tests/helpers/checkReleaseDatabase.mjs
       - name: Hall registration concurrency on disposable PostgreSQL
         run: |
           set -o pipefail

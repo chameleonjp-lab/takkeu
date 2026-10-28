@@ -1,0 +1,71 @@
+{
+  "image": "postgres:17@sha256:b8faeff7712663c2773a190181e1246e37e364b887611c04658c28b44e2408fe",
+  "version": "PostgreSQL 17.11 (Debian 17.11-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+  "same": [
+    {
+      "play_id": "488570f8-60c3-4c87-887c-3ffdedb4d6d1",
+      "accepted": true,
+      "backend_pid": 216,
+      "hall_number": 1,
+      "display_name": "Same",
+      "registered_at": "2026-10-28T00:05:42.933391+00:00",
+      "rules_version": "goal-3500-v1",
+      "submission_id": "11111111-1111-4111-8111-000000000101",
+      "normalized_name": "Same",
+      "elapsedMs": 800.3499020000017
+    },
+    {
+      "play_id": "e418db49-b5ba-445c-a759-7c2b19b2c77f",
+      "accepted": true,
+      "backend_pid": 215,
+      "hall_number": 1,
+      "display_name": "Same",
+      "registered_at": "2026-10-28T00:05:42.933391+00:00",
+      "rules_version": "goal-3500-v1",
+      "submission_id": "11111111-1111-4111-8111-000000000102",
+      "normalized_name": "Same",
+      "elapsedMs": 496.9289779999999
+    }
+  ],
+  "different": [
+    {
+      "play_id": "7eaa0327-e2cd-4a87-bcce-7d95b07e7395",
+      "accepted": true,
+      "backend_pid": 230,
+      "hall_number": 3,
+      "display_name": "Second",
+      "registered_at": "2026-10-28T00:05:44.041114+00:00",
+      "rules_version": "goal-3500-v1",
+      "submission_id": "11111111-1111-4111-8111-000000000103",
+      "normalized_name": "Second",
+      "elapsedMs": 807.1528940000026
+    },
+    {
+      "play_id": "34d072f6-50f3-4e5a-a9f6-1e19031e5b31",
+      "accepted": true,
+      "backend_pid": 229,
+      "hall_number": 2,
+      "display_name": "Third",
+      "registered_at": "2026-10-28T00:05:43.736816+00:00",
+      "rules_version": "goal-3500-v1",
+      "submission_id": "11111111-1111-4111-8111-000000000104",
+      "normalized_name": "Third",
+      "elapsedMs": 501.5028390000007
+    }
+  ],
+  "retry": {
+    "play_id": "488570f8-60c3-4c87-887c-3ffdedb4d6d1",
+    "accepted": true,
+    "backend_pid": 237,
+    "hall_number": 1,
+    "display_name": "Same",
+    "registered_at": "2026-10-28T00:05:42.933391+00:00",
+    "rules_version": "goal-3500-v1",
+    "submission_id": "11111111-1111-4111-8111-000000000101",
+    "normalized_name": "Same",
+    "elapsedMs": 497.6812050000008
+  },
+  "entries": 3,
+  "nextNumber": 4,
+  "result": "passed"
+}

@@ -1,0 +1,33 @@
+✔ only explicitly owner-approved dispatch of full main SHA is eligible (1.521231ms)
+✔ GitHub gate uses latest main push CI, rejects stale SHA, failure, pending and API errors (3.317771ms)
+✔ malformed or incomplete CI API evidence fails closed (0.497136ms)
+✖ DB gate requires complete exact contract and least-privilege read-only observation (3.703943ms)
+✔ every publishing workflow is manual, gated and serialized; CI remains automatic (0.755675ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 46.880666
+
+✖ failing tests:
+
+test at tests/release/guards.test.mjs:35:1
+✖ DB gate requires complete exact contract and least-privilege read-only observation (3.703943ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///workspace/takkeu/tests/release/guards.test.mjs:46:71)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }

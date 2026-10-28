@@ -1,28 +1,53 @@
 name: Pages release
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
     inputs:
       expected_sha:
         description: 'Reviewed and approved main commit (full 40-character SHA)'
         required: true
         type: string
+      approve_production:
+        description: 'I approve publishing this exact SHA to production (repository owner only)'
+        required: true
+        default: false
+        type: boolean
 permissions:
   contents: read
+  actions: read
 env:
-  EXPECTED_SHA: ${{ github.event_name == 'push' && github.sha || inputs.expected_sha }}
+  EXPECTED_SHA: ${{ inputs.expected_sha }}
+  APPROVE_PRODUCTION: ${{ inputs.approve_production }}
 concurrency:
   group: takkeu-pages
   cancel-in-progress: false
 jobs:
+  preflight:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/docs/
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+      - name: Require owner approval, exact main SHA and successful main CI
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/release/check-github.mjs
   validation:
+    needs: preflight
     uses: ./.github/workflows/ci.yml
     with:
-      expected_sha: ${{ github.event_name == 'push' && github.sha || inputs.expected_sha }}
+      expected_sha: ${{ inputs.expected_sha }}
   verify-build:
     needs: validation
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
@@ -30,6 +55,10 @@ jobs:
         with:
           ref: ${{ env.EXPECTED_SHA }}
           persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/docs/
       - name: Match the release commit with current main
         run: |
           set -euo pipefail
@@ -69,12 +98,15 @@ jobs:
         with:
           path: dist
   deploy:
-    needs: verify-build
+    needs: [validation, verify-build]
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     permissions:
       contents: read
+      actions: read
       pages: write
       id-token: write
+    timeout-minutes: 10
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -83,6 +115,29 @@ jobs:
         with:
           ref: ${{ env.EXPECTED_SHA }}
           persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/docs/
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends postgresql-client
+      - name: Require the exact production DB contract (read only, fail closed)
+        env:
+          PGHOST: ${{ secrets.TAKKEU_RELEASE_PGHOST }}
+          PGPORT: ${{ secrets.TAKKEU_RELEASE_PGPORT }}
+          PGUSER: ${{ secrets.TAKKEU_RELEASE_PGUSER }}
+          PGPASSWORD: ${{ secrets.TAKKEU_RELEASE_PGPASSWORD }}
+          PGDATABASE: postgres
+        run: node scripts/release/check-database.mjs
+      - name: Recheck approval, latest CI and main after the environment wait
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/release/check-github.mjs
       - name: Recheck main immediately before deploying the verified artifact
         run: |
           set -euo pipefail

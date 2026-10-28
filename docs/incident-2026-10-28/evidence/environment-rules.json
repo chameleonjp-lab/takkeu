@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-10-28T00:03:32.757657+00:00",
+  "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/environments/github-pages",
+  "data": {
+    "id": 25015910812,
+    "node_id": "EN_kwDOVTXvv88AAAAF0xCBnA",
+    "name": "github-pages",
+    "url": "https://api.github.com/repos/chameleonjp-lab/takkeu/environments/github-pages",
+    "html_url": "https://github.com/chameleonjp-lab/takkeu/deployments/activity_log?environments_filter=github-pages",
+    "created_at": "2026-10-22T10:53:34Z",
+    "updated_at": "2026-10-22T10:53:34Z",
+    "can_admins_bypass": true,
+    "protection_rules": [
+      {
+        "id": 69707547,
+        "node_id": "GA_kwDOVTXvv84EJ6cb",
+        "type": "branch_policy"
+      }
+    ],
+    "deployment_branch_policy": {
+      "protected_branches": false,
+      "custom_branch_policies": true
+    }
+  }
+}
