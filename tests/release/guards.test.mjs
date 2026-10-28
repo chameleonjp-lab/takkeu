@@ -47,15 +47,15 @@ test('DB gate requires complete exact contract and least-privilege read-only obs
   }
   for(const invalid of [null,{},'timeout']) assert.throws(()=>verifyDatabase(invalid,contract));
 });
-test('every publishing workflow is manual, gated and serialized; CI remains automatic', () => {
+test('publishing consumes only completed main CI and preserves final gates; CI remains automatic', () => {
   const deploy=readFileSync('.github/workflows/deploy.yml','utf8');
   const ci=readFileSync('.github/workflows/ci.yml','utf8');
-  assert.doesNotMatch(deploy,/^  (push|pull_request|workflow_run|schedule):/m);
-  assert.match(deploy,/^  workflow_dispatch:/m);
-  assert.match(deploy,/approve_production:/);
+  assert.doesNotMatch(deploy,/^  (push|pull_request|workflow_dispatch|schedule):/m);
+  assert.match(deploy,/^  workflow_run:/m);
+  assert.match(deploy,/workflows: \[CI\]/);
   assert.match(deploy,/cancel-in-progress: false/);
-  assert.match(deploy,/node scripts\/release\/check-database.mjs/g);
-  assert.match(deploy,/needs: \[validation, verify-build\]/);
+  assert.match(deploy,/node scripts\/release\/check-database-rest.mjs/g);
+  assert.match(deploy,/needs: \[preflight, verify-build\]/);
   assert.match(ci,/^  push:\n    branches: \[main/m);
   assert.doesNotMatch(ci,/pages: write|id-token: write|check-database/);
 });
