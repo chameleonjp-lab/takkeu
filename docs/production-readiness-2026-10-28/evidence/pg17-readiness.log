@@ -11,7 +11,7 @@ NOTICE:  relation "game_play_events_pkey" already exists, skipping
 NOTICE:  relation "game_play_events_play_id_key" already exists, skipping
 ERROR:  division by zero
 CONTEXT:  SQL statement "SELECT 1/0"
-PL/pgSQL function inline_code_block line 427 at PERFORM
+PL/pgSQL function inline_code_block line 436 at PERFORM
 ERROR:  collision or partial application; investigate first
 CONTEXT:  PL/pgSQL function inline_code_block line 12 at RAISE
 ERROR:  permission denied for table takkeu_hall_of_fame

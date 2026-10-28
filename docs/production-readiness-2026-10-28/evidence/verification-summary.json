@@ -1,17 +1,24 @@
 {
-  "created_at": "2026-10-28T11:01:34.581013+00:00",
+  "created_at": "2026-10-28T11:26:06.545024+00:00",
   "base_main": "754b71bc7aa6ce982a4ceb7221ad14fabd600c95",
   "migration_sha256": "b6a9828852e3b87840348814559353dec8b0286d6d6642dee7952b4fe9ef009b",
   "local_results": {
     "typecheck": "passed",
     "unit_tests": 972,
     "release_tests": 13,
-    "native_gate_cases": 30,
+    "native_gate_cases": 34,
     "native_readiness_checks": 33,
     "actionlint": "passed"
   },
   "production_mutations": false,
   "github_settings_mutations": false,
   "pages_dispatch": false,
-  "safe_production_connection": "unresolved; remain fail closed"
+  "safe_production_connection": "unresolved; remain fail closed",
+  "prior_pr_ci": {
+    "run": 40676985103,
+    "head_sha": "36a2c75b2d10ff09354158b840c8b09dc6ac4373",
+    "result": "success",
+    "browser_tests": 236,
+    "root_pages_distribution_tests": 8
+  }
 }

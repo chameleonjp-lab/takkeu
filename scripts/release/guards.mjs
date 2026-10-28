@@ -30,16 +30,17 @@ export async function verifyGithub(expected, get) {
 }
 export function summarizeCatalog(snapshot) {
   const result = structuredClone(snapshot);
-  for(const field of ['functions','readonly_routines']) result[field] = result[field].map(({source,...fn})=>({...fn,body:digest(source)}));
+  for(const field of ['functions','readonly_routines','event_triggers']) result[field] = result[field].map(({source,...fn})=>({...fn,body:digest(source)}));
   return result;
 }
 export function verifyDatabase(snapshot, contract) {
   if (!snapshot || snapshot.format!==1 || contract?.format!==1 || snapshot.read_only !== true || snapshot.least_privilege !== true || snapshot.project !== PROJECT) {
     throw Error('DB observation is not a verified least-privilege read-only production check');
   }
-  for (const field of ['migrations','game','tables','functions','readonly_routines']) {
+  for (const field of ['migrations','game','tables','functions','readonly_routines','event_triggers']) {
     if (!Array.isArray(contract?.migrations) || !contract.migrations.length || !Array.isArray(contract.tables) || !contract.tables.length
       || !Array.isArray(contract.functions) || !contract.functions.length || !Array.isArray(contract.readonly_routines) || !contract.readonly_routines.length
+      || !Array.isArray(contract.event_triggers) || !contract.event_triggers.length
       || !isDeepStrictEqual(snapshot[field],contract[field])) {
       throw Error(`DB contract mismatch: ${field}; release stopped`);
     }

@@ -23,6 +23,10 @@
       "result": "blocked"
     },
     {
+      "name": "automatic event trigger with inaccessible definer writer rejected",
+      "result": "blocked"
+    },
+    {
       "name": "administrator connection",
       "result": "blocked"
     },
@@ -40,6 +44,14 @@
     },
     {
       "name": "trigger disabled",
+      "result": "blocked"
+    },
+    {
+      "name": "event trigger disabled",
+      "result": "blocked"
+    },
+    {
+      "name": "event handler settings drift",
       "result": "blocked"
     },
     {
@@ -88,6 +100,10 @@
     },
     {
       "name": "verification permission missing",
+      "result": "blocked"
+    },
+    {
+      "name": "existing automatic event-handler body drift",
       "result": "blocked"
     },
     {

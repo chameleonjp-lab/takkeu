@@ -29,7 +29,8 @@
 2. スキーマ複製にscore_runsのGENERATED ALWAYS AS IDENTITYが落ち、実送信が失敗することを再現。identity/generated属性を契約へ加え、削除時の拒否と正しい複製での実送信を検証する。
 3. 独立レビューのSTABLE→VOLATILE呼出しによる書込みを再現。属性だけで読取りと判断せず、現在PUBLICから到達する7読取りroutineと内部helper1件の正確な本文・実行設定を照合し、未知の非volatile routineも拒否する。既存VOLATILE拒否は残す。
 4. 対象migrationだけを単一transactionで適用/履歴記録/事前事後契約照合/既存行fingerprint比較する**オフラインSQL生成器**を用意。接続も自動適用もしない。
-5. PUBLIC8件の限定変更と正確な復元SQLを用意し、anon/authenticated/service_roleの実呼出しをPG17で比較。新ゲートの値を固定したり検査を削除したりしない。
+5. 独立再レビューで、EXECUTE/USAGEなしでも自動起動するevent triggerの見落としを再現。現在の全7登録とhandler本文/owner/設定/tag/enabledを厳密照合し、追加・欠落・無効化・本文/設定変更を拒否する。本番のカタログも11:25 UTCにREAD ONLYで再取得し全baseline契約との一致を確認した。
+6. PUBLIC8件の限定変更と正確な復元SQLを用意し、anon/authenticated/service_roleの実呼出しをPG17で比較。新ゲートの値を固定したり検査を削除したりしない。
 
 ## PUBLICと接続方式の結論
 
@@ -46,12 +47,13 @@
 
 ## 検証資料
 
-- `npm run typecheck`、全単体972件、生成/実sparse配置を含むguard13件、native gate30ケース、native migration/caller33チェックが成功。
-- `node tests/helpers/checkReleaseDatabase.mjs`: PG17で正常契約、履歴/表/RPC/ACL/RLS/trigger/identity、権限不足、timeout、LOB/未知routine/間接書込みを検査。
+- `npm run typecheck`、全単体972件、生成/実sparse配置を含むguard13件、native gate34ケース、native migration/caller33チェックが成功。
+- `node tests/helpers/checkReleaseDatabase.mjs`: PG17で正常契約、履歴/表/RPC/ACL/RLS/trigger/event trigger/identity、権限不足、timeout、LOB/未知routine/間接書込みを検査。
 - `node tests/helpers/checkProductionReadiness.mjs`: PG17で原SQL初回/二重/途中失敗・ROLLBACK、全件数、旧pending/4000超、新旧台帳、正式送信前拒否、3500/3000/3501/100落球、分類、直接アクセス、3role caller parity、限定ACL apply/restore・drift拒否。
 - 既存`checkHallConcurrency.mjs`の**新規同名**/別名の同時登録と安定receiptも維持する。新helperの同名競合は既存番号の再利用であり、両試験を区別する。
 - ゲーム/Chromium/WebKit/ビルド/Pages検査は通常CIで実行する。最終CI URLと結果はDraft PRに追記し、証跡時点のmain CIと混同しない。
 - 負例のpermission denied/division by zeroログは意図した拒否で、最後の成功集計とexit 0を確認する。初回の実装/fixture不備と修正は[独立レビュー](adversarial-review.md)とログに記録する。
+- 最終の[独立再検証](independent-final-review.md)でもnative34/preparation3、event登録欠落の拒否と正確な復元、7 handlerと両契約の一致を確認した。Supabase側のhandler更新も不一致なら停止し、新しい監査とレビュー後に契約を更新する。
 
 他ゲームのverified本体はこの複製で全機能再実行していない。必要なrowtype定義は複製し、Takkeu/sharedの実通過経路と対象RPCの既知callerを試験した。権限や呼出し元が不明な部分を「安全性確認済み」に変えない。
 

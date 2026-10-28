@@ -51,12 +51,20 @@ try{
   assert.equal(query("SET ROLE release_reader; BEGIN READ WRITE; CREATE TEMP TABLE permission_probe(n integer); CREATE TRIGGER write_probe AFTER INSERT ON permission_probe FOR EACH ROW EXECUTE FUNCTION public.unreviewed_trigger_writer(); INSERT INTO permission_probe VALUES(1); RESET ROLE; SELECT count(*) FROM public.players WHERE normalized_name='TriggerWriteProbe'; ROLLBACK;").trim().split('\n').at(-1),'1');
   rejected('PUBLIC trigger bound to own temp table cannot bypass reader gate',()=>verifyDatabase(summarizeCatalog(run()),contract));
   query('DROP FUNCTION public.unreviewed_trigger_writer();');
+  query(`CREATE FUNCTION private.unreviewed_event_writer() RETURNS event_trigger LANGUAGE plpgsql VOLATILE SECURITY DEFINER SET search_path='' AS $$BEGIN INSERT INTO public.players(normalized_name,display_name) VALUES('EventWriteProbe','EventWriteProbe'); END;$$;
+    REVOKE ALL ON FUNCTION private.unreviewed_event_writer() FROM PUBLIC;
+    CREATE EVENT TRIGGER unreviewed_event_write ON ddl_command_end WHEN TAG IN ('CREATE TABLE') EXECUTE FUNCTION private.unreviewed_event_writer();`);
+  assert.equal(query("SET ROLE release_reader; BEGIN READ WRITE; CREATE TEMP TABLE event_permission_probe(n integer); RESET ROLE; SELECT count(*) FROM public.players WHERE normalized_name='EventWriteProbe'; ROLLBACK;").trim().split('\n').at(-1),'1');
+  rejected('automatic event trigger with inaccessible definer writer rejected',()=>verifyDatabase(summarizeCatalog(run()),contract));
+  query('DROP EVENT TRIGGER unreviewed_event_write; DROP FUNCTION private.unreviewed_event_writer();');
   rejected('administrator connection',()=>verifyDatabase(summarizeCatalog(run('postgres')),contract));
   for(const [name,alter,restore] of [
     ['partial RPC', 'ALTER FUNCTION public.get_takkeu_hall_v2(integer) RENAME TO missing_hall', 'ALTER FUNCTION public.missing_hall(integer) RENAME TO get_takkeu_hall_v2'],
     ['RLS disabled','ALTER TABLE public.takkeu_hall_of_fame_3500 DISABLE ROW LEVEL SECURITY','ALTER TABLE public.takkeu_hall_of_fame_3500 ENABLE ROW LEVEL SECURITY'],
     ['score identity removed','ALTER TABLE public.score_runs ALTER COLUMN id DROP IDENTITY','ALTER TABLE public.score_runs ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY'],
     ['trigger disabled','ALTER TABLE public.score_runs DISABLE TRIGGER enforce_takkeu_3500_score_v1','ALTER TABLE public.score_runs ENABLE TRIGGER enforce_takkeu_3500_score_v1'],
+    ['event trigger disabled','ALTER EVENT TRIGGER ensure_rls DISABLE','ALTER EVENT TRIGGER ensure_rls ENABLE'],
+    ['event handler settings drift','ALTER FUNCTION public.rls_auto_enable() SET search_path=public','ALTER FUNCTION public.rls_auto_enable() SET search_path=pg_catalog'],
     ['readonly transitive helper drift',"ALTER FUNCTION private.get_game_player_counts_v1(text) SET search_path=public","ALTER FUNCTION private.get_game_player_counts_v1(text) SET search_path=''"],
     ['direct anon writes','GRANT INSERT ON public.takkeu_hall_of_fame_3500 TO anon','REVOKE INSERT ON public.takkeu_hall_of_fame_3500 FROM anon'],
     ['reader can write','GRANT INSERT ON public.players TO release_reader','REVOKE INSERT ON public.players FROM release_reader'],
@@ -70,6 +78,9 @@ try{
     ['history missing',"DELETE FROM supabase_migrations.schema_migrations WHERE version='20261027032043'","INSERT INTO supabase_migrations.schema_migrations VALUES ('20261027032043','takkeu_hall_of_fame')"],
     ['verification permission missing','REVOKE SELECT(version,name) ON supabase_migrations.schema_migrations FROM release_reader','GRANT SELECT(version,name) ON supabase_migrations.schema_migrations TO release_reader'],
   ]) {query(alter+';');rejected(name,()=>verifyDatabase(summarizeCatalog(run()),contract));query(restore+';');}
+  const eventDefinition=query("SELECT pg_get_functiondef('public.rls_auto_enable()'::regprocedure);");
+  query(eventDefinition.replace('DECLARE','-- unreviewed handler body\nDECLARE'));
+  rejected('existing automatic event-handler body drift',()=>verifyDatabase(summarizeCatalog(run()),contract));query(eventDefinition);
   const readonlyDefault=query("SELECT pg_get_functiondef('public.get_hito_wo_yurusuna_first_ranking(integer)'::regprocedure);");
   assert.ok(readonlyDefault.includes('DEFAULT 20'));
   query(readonlyDefault.replace('DEFAULT 20','DEFAULT 21'));

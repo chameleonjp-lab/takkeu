@@ -1455,3 +1455,263 @@ GRANT EXECUTE ON FUNCTION public.get_play_count_ranking(p_game_slug text, p_limi
 GRANT EXECUTE ON FUNCTION public.get_play_count_ranking(p_game_slug text, p_limit integer) TO "anon";
 GRANT EXECUTE ON FUNCTION public.get_play_count_ranking(p_game_slug text, p_limit integer) TO "authenticated";
 SET check_function_bodies=on;
+
+-- OFFLINE ONLY: exact production event handlers/registrations, no business data.
+-- Handlers cannot be ignored merely because the reader cannot call them directly.
+CREATE ROLE supabase_admin SUPERUSER NOLOGIN;
+CREATE SCHEMA extensions;
+CREATE FUNCTION "public"."rls_auto_enable"() RETURNS event_trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path TO pg_catalog AS $event_snapshot$
+DECLARE
+  cmd record;
+BEGIN
+  FOR cmd IN
+    SELECT *
+    FROM pg_event_trigger_ddl_commands()
+    WHERE command_tag IN ('CREATE TABLE', 'CREATE TABLE AS', 'SELECT INTO')
+      AND object_type IN ('table','partitioned table')
+  LOOP
+     IF cmd.schema_name IS NOT NULL AND cmd.schema_name IN ('public') AND cmd.schema_name NOT IN ('pg_catalog','information_schema') AND cmd.schema_name NOT LIKE 'pg_toast%' AND cmd.schema_name NOT LIKE 'pg_temp%' THEN
+      BEGIN
+        EXECUTE format('alter table if exists %s enable row level security', cmd.object_identity);
+        RAISE LOG 'rls_auto_enable: enabled RLS on %', cmd.object_identity;
+      EXCEPTION
+        WHEN OTHERS THEN
+          RAISE LOG 'rls_auto_enable: failed to enable RLS on %', cmd.object_identity;
+      END;
+     ELSE
+        RAISE LOG 'rls_auto_enable: skip % (either system schema or not in enforced list: %.)', cmd.object_identity, cmd.schema_name;
+     END IF;
+  END LOOP;
+END;
+$event_snapshot$;
+ALTER FUNCTION "public"."rls_auto_enable"() OWNER TO "postgres";
+CREATE EVENT TRIGGER "ensure_rls" ON ddl_command_end WHEN TAG IN ('CREATE TABLE', 'CREATE TABLE AS', 'SELECT INTO') EXECUTE FUNCTION "public"."rls_auto_enable"();
+ALTER EVENT TRIGGER "ensure_rls" OWNER TO "postgres";
+CREATE FUNCTION "extensions"."set_graphql_placeholder"() RETURNS event_trigger LANGUAGE plpgsql SET search_path TO '' AS $event_snapshot$
+    DECLARE
+    graphql_is_dropped bool;
+    BEGIN
+    graphql_is_dropped = (
+        SELECT ev.schema_name = 'graphql_public'
+        FROM pg_event_trigger_dropped_objects() AS ev
+        WHERE ev.schema_name = 'graphql_public'
+    );
+
+    IF graphql_is_dropped
+    THEN
+        create or replace function graphql_public.graphql(
+            "operationName" text default null,
+            query text default null,
+            variables jsonb default null,
+            extensions jsonb default null
+        )
+            returns jsonb
+            language plpgsql
+            set search_path to ''
+        as $$
+            DECLARE
+                server_version float;
+            BEGIN
+                server_version = (SELECT (SPLIT_PART((select version()), ' ', 2))::float);
+
+                IF server_version >= 14 THEN
+                    RETURN jsonb_build_object(
+                        'errors', jsonb_build_array(
+                            jsonb_build_object(
+                                'message', 'pg_graphql extension is not enabled.'
+                            )
+                        )
+                    );
+                ELSE
+                    RETURN jsonb_build_object(
+                        'errors', jsonb_build_array(
+                            jsonb_build_object(
+                                'message', 'pg_graphql is only available on projects running Postgres 14 onwards.'
+                            )
+                        )
+                    );
+                END IF;
+            END;
+        $$;
+    END IF;
+
+    END;
+$event_snapshot$;
+ALTER FUNCTION "extensions"."set_graphql_placeholder"() OWNER TO "supabase_admin";
+CREATE EVENT TRIGGER "issue_graphql_placeholder" ON sql_drop WHEN TAG IN ('DROP EXTENSION') EXECUTE FUNCTION "extensions"."set_graphql_placeholder"();
+ALTER EVENT TRIGGER "issue_graphql_placeholder" OWNER TO "supabase_admin";
+CREATE FUNCTION "extensions"."grant_pg_cron_access"() RETURNS event_trigger LANGUAGE plpgsql SET search_path TO '' AS $event_snapshot$
+BEGIN
+  IF EXISTS (
+    SELECT
+    FROM pg_event_trigger_ddl_commands() AS ev
+    JOIN pg_extension AS ext
+    ON ev.objid = ext.oid
+    WHERE ext.extname = 'pg_cron'
+  )
+  THEN
+    grant usage on schema cron to postgres with grant option;
+
+    alter default privileges in schema cron grant all on tables to postgres with grant option;
+    alter default privileges in schema cron grant all on functions to postgres with grant option;
+    alter default privileges in schema cron grant all on sequences to postgres with grant option;
+
+    alter default privileges for user supabase_admin in schema cron grant all
+        on sequences to postgres with grant option;
+    alter default privileges for user supabase_admin in schema cron grant all
+        on tables to postgres with grant option;
+    alter default privileges for user supabase_admin in schema cron grant all
+        on functions to postgres with grant option;
+
+    grant all privileges on all tables in schema cron to postgres with grant option;
+    revoke all on table cron.job from postgres;
+    grant select on table cron.job to postgres with grant option;
+    revoke trigger on cron.job_run_details from postgres;
+  END IF;
+END;
+$event_snapshot$;
+ALTER FUNCTION "extensions"."grant_pg_cron_access"() OWNER TO "supabase_admin";
+CREATE EVENT TRIGGER "issue_pg_cron_access" ON ddl_command_end WHEN TAG IN ('CREATE EXTENSION') EXECUTE FUNCTION "extensions"."grant_pg_cron_access"();
+ALTER EVENT TRIGGER "issue_pg_cron_access" OWNER TO "supabase_admin";
+CREATE FUNCTION "extensions"."grant_pg_graphql_access"() RETURNS event_trigger LANGUAGE plpgsql SET search_path TO '' AS $event_snapshot$
+begin
+    if not exists (
+        select 1
+        from pg_catalog.pg_event_trigger_ddl_commands() ev
+        join pg_catalog.pg_extension e on ev.objid = e.oid
+        where e.extname = 'pg_graphql'
+    ) then
+        return;
+    end if;
+
+    drop function if exists graphql_public.graphql;
+    create or replace function graphql_public.graphql(
+        "operationName" text default null,
+        query text default null,
+        variables jsonb default null,
+        extensions jsonb default null
+    )
+        returns jsonb
+        language sql
+    as $$
+        select graphql.resolve(
+            query := query,
+            variables := coalesce(variables, '{}'),
+            "operationName" := "operationName",
+            extensions := extensions
+        );
+    $$;
+
+    -- Attach the wrapper to the extension so DROP EXTENSION cascades to it,
+    -- which in turn triggers set_graphql_placeholder to reinstall the "not enabled" stub.
+    alter extension pg_graphql add function graphql_public.graphql(text, text, jsonb, jsonb);
+
+    grant usage on schema graphql to postgres, anon, authenticated, service_role;
+    grant execute on function graphql.resolve to postgres, anon, authenticated, service_role;
+    grant usage on schema graphql to postgres with grant option;
+    grant usage on schema graphql_public to postgres with grant option;
+end;
+$event_snapshot$;
+ALTER FUNCTION "extensions"."grant_pg_graphql_access"() OWNER TO "supabase_admin";
+CREATE EVENT TRIGGER "issue_pg_graphql_access" ON ddl_command_end WHEN TAG IN ('CREATE EXTENSION') EXECUTE FUNCTION "extensions"."grant_pg_graphql_access"();
+ALTER EVENT TRIGGER "issue_pg_graphql_access" OWNER TO "supabase_admin";
+CREATE FUNCTION "extensions"."grant_pg_net_access"() RETURNS event_trigger LANGUAGE plpgsql SET search_path TO '' AS $event_snapshot$
+BEGIN
+  IF EXISTS (
+    SELECT 1
+    FROM pg_event_trigger_ddl_commands() AS ev
+    JOIN pg_extension AS ext
+    ON ev.objid = ext.oid
+    WHERE ext.extname = 'pg_net'
+  )
+  THEN
+    IF NOT EXISTS (
+      SELECT 1
+      FROM pg_roles
+      WHERE rolname = 'supabase_functions_admin'
+    )
+    THEN
+      CREATE USER supabase_functions_admin NOINHERIT CREATEROLE LOGIN NOREPLICATION;
+    END IF;
+
+    GRANT USAGE ON SCHEMA net TO supabase_functions_admin, postgres, anon, authenticated, service_role;
+
+    IF EXISTS (
+      SELECT FROM pg_extension
+      WHERE extname = 'pg_net'
+      -- all versions in use on existing projects as of 2025-02-20
+      -- version 0.12.0 onwards don't need these applied
+      AND extversion IN ('0.2', '0.6', '0.7', '0.7.1', '0.8.0', '0.10.0', '0.11.0')
+    ) THEN
+      ALTER function net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) SECURITY DEFINER;
+      ALTER function net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) SECURITY DEFINER;
+
+      ALTER function net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) SET search_path = net;
+      ALTER function net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) SET search_path = net;
+
+      REVOKE ALL ON FUNCTION net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) FROM PUBLIC;
+      REVOKE ALL ON FUNCTION net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) FROM PUBLIC;
+
+      GRANT EXECUTE ON FUNCTION net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) TO supabase_functions_admin, postgres, anon, authenticated, service_role;
+      GRANT EXECUTE ON FUNCTION net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) TO supabase_functions_admin, postgres, anon, authenticated, service_role;
+    END IF;
+  END IF;
+END;
+$event_snapshot$;
+ALTER FUNCTION "extensions"."grant_pg_net_access"() OWNER TO "supabase_admin";
+CREATE EVENT TRIGGER "issue_pg_net_access" ON ddl_command_end WHEN TAG IN ('CREATE EXTENSION') EXECUTE FUNCTION "extensions"."grant_pg_net_access"();
+ALTER EVENT TRIGGER "issue_pg_net_access" OWNER TO "supabase_admin";
+CREATE FUNCTION "extensions"."pgrst_ddl_watch"() RETURNS event_trigger LANGUAGE plpgsql SET search_path TO '' AS $event_snapshot$
+DECLARE
+  cmd record;
+BEGIN
+  FOR cmd IN SELECT * FROM pg_event_trigger_ddl_commands()
+  LOOP
+    IF cmd.command_tag IN (
+      'CREATE SCHEMA', 'ALTER SCHEMA'
+    , 'CREATE TABLE', 'CREATE TABLE AS', 'SELECT INTO', 'ALTER TABLE'
+    , 'CREATE FOREIGN TABLE', 'ALTER FOREIGN TABLE'
+    , 'CREATE VIEW', 'ALTER VIEW'
+    , 'CREATE MATERIALIZED VIEW', 'ALTER MATERIALIZED VIEW'
+    , 'CREATE FUNCTION', 'ALTER FUNCTION'
+    , 'CREATE TRIGGER'
+    , 'CREATE TYPE', 'ALTER TYPE'
+    , 'CREATE RULE'
+    , 'COMMENT'
+    )
+    -- don't notify in case of CREATE TEMP table or other objects created on pg_temp
+    AND cmd.schema_name is distinct from 'pg_temp'
+    THEN
+      NOTIFY pgrst, 'reload schema';
+    END IF;
+  END LOOP;
+END; $event_snapshot$;
+ALTER FUNCTION "extensions"."pgrst_ddl_watch"() OWNER TO "supabase_admin";
+CREATE EVENT TRIGGER "pgrst_ddl_watch" ON ddl_command_end EXECUTE FUNCTION "extensions"."pgrst_ddl_watch"();
+ALTER EVENT TRIGGER "pgrst_ddl_watch" OWNER TO "supabase_admin";
+CREATE FUNCTION "extensions"."pgrst_drop_watch"() RETURNS event_trigger LANGUAGE plpgsql SET search_path TO '' AS $event_snapshot$
+DECLARE
+  obj record;
+BEGIN
+  FOR obj IN SELECT * FROM pg_event_trigger_dropped_objects()
+  LOOP
+    IF obj.object_type IN (
+      'schema'
+    , 'table'
+    , 'foreign table'
+    , 'view'
+    , 'materialized view'
+    , 'function'
+    , 'trigger'
+    , 'type'
+    , 'rule'
+    )
+    AND obj.is_temporary IS false -- no pg_temp objects
+    THEN
+      NOTIFY pgrst, 'reload schema';
+    END IF;
+  END LOOP;
+END; $event_snapshot$;
+ALTER FUNCTION "extensions"."pgrst_drop_watch"() OWNER TO "supabase_admin";
+CREATE EVENT TRIGGER "pgrst_drop_watch" ON sql_drop EXECUTE FUNCTION "extensions"."pgrst_drop_watch"();
+ALTER EVENT TRIGGER "pgrst_drop_watch" OWNER TO "supabase_admin";

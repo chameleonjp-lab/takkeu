@@ -2657,5 +2657,166 @@
     }
   ],
   "migration_file": "supabase/migrations/20261027032043_takkeu_hall_of_fame.sql",
-  "migration_sha256": "b6a9828852e3b87840348814559353dec8b0286d6d6642dee7952b4fe9ef009b"
+  "migration_sha256": "b6a9828852e3b87840348814559353dec8b0286d6d6642dee7952b4fe9ef009b",
+  "event_triggers": [
+    {
+      "name": "ensure_rls",
+      "tags": [
+        "CREATE TABLE",
+        "CREATE TABLE AS",
+        "SELECT INTO"
+      ],
+      "event": "ddl_command_end",
+      "owner": "postgres",
+      "config": [
+        "search_path=pg_catalog"
+      ],
+      "result": "event_trigger",
+      "strict": false,
+      "definer": true,
+      "enabled": "O",
+      "language": "plpgsql",
+      "arguments": "",
+      "volatility": "v",
+      "function_args": "",
+      "function_name": "rls_auto_enable",
+      "function_owner": "postgres",
+      "function_schema": "public",
+      "body": "2782e98b348aca7d6f6f73c420fd78d2e094957dd7a52b0483d4c34f29d2a7a1"
+    },
+    {
+      "name": "issue_graphql_placeholder",
+      "tags": [
+        "DROP EXTENSION"
+      ],
+      "event": "sql_drop",
+      "owner": "supabase_admin",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "event_trigger",
+      "strict": false,
+      "definer": false,
+      "enabled": "O",
+      "language": "plpgsql",
+      "arguments": "",
+      "volatility": "v",
+      "function_args": "",
+      "function_name": "set_graphql_placeholder",
+      "function_owner": "supabase_admin",
+      "function_schema": "extensions",
+      "body": "80e0c97f0a475697c1b517e0d27887bfa0c2baf138229735a58a345d2168505b"
+    },
+    {
+      "name": "issue_pg_cron_access",
+      "tags": [
+        "CREATE EXTENSION"
+      ],
+      "event": "ddl_command_end",
+      "owner": "supabase_admin",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "event_trigger",
+      "strict": false,
+      "definer": false,
+      "enabled": "O",
+      "language": "plpgsql",
+      "arguments": "",
+      "volatility": "v",
+      "function_args": "",
+      "function_name": "grant_pg_cron_access",
+      "function_owner": "supabase_admin",
+      "function_schema": "extensions",
+      "body": "00db212b76cecd4b0794b2f20c414ab4988d675959747cd12d3eb4c6d6736f38"
+    },
+    {
+      "name": "issue_pg_graphql_access",
+      "tags": [
+        "CREATE EXTENSION"
+      ],
+      "event": "ddl_command_end",
+      "owner": "supabase_admin",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "event_trigger",
+      "strict": false,
+      "definer": false,
+      "enabled": "O",
+      "language": "plpgsql",
+      "arguments": "",
+      "volatility": "v",
+      "function_args": "",
+      "function_name": "grant_pg_graphql_access",
+      "function_owner": "supabase_admin",
+      "function_schema": "extensions",
+      "body": "03de03bb70da1d448f7a674215d1b63a924dc7115db657dae34b1aa8977e030e"
+    },
+    {
+      "name": "issue_pg_net_access",
+      "tags": [
+        "CREATE EXTENSION"
+      ],
+      "event": "ddl_command_end",
+      "owner": "supabase_admin",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "event_trigger",
+      "strict": false,
+      "definer": false,
+      "enabled": "O",
+      "language": "plpgsql",
+      "arguments": "",
+      "volatility": "v",
+      "function_args": "",
+      "function_name": "grant_pg_net_access",
+      "function_owner": "supabase_admin",
+      "function_schema": "extensions",
+      "body": "754e58111dbe32030af4d91591dfd78cb3cf8e8f4f56a5fcc199bb0cf7f4ac2b"
+    },
+    {
+      "name": "pgrst_ddl_watch",
+      "tags": null,
+      "event": "ddl_command_end",
+      "owner": "supabase_admin",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "event_trigger",
+      "strict": false,
+      "definer": false,
+      "enabled": "O",
+      "language": "plpgsql",
+      "arguments": "",
+      "volatility": "v",
+      "function_args": "",
+      "function_name": "pgrst_ddl_watch",
+      "function_owner": "supabase_admin",
+      "function_schema": "extensions",
+      "body": "de987df746eb39647098459e7993bd8595e592969b0cd647828a3d13d37cffe0"
+    },
+    {
+      "name": "pgrst_drop_watch",
+      "tags": null,
+      "event": "sql_drop",
+      "owner": "supabase_admin",
+      "config": [
+        "search_path=\"\""
+      ],
+      "result": "event_trigger",
+      "strict": false,
+      "definer": false,
+      "enabled": "O",
+      "language": "plpgsql",
+      "arguments": "",
+      "volatility": "v",
+      "function_args": "",
+      "function_name": "pgrst_drop_watch",
+      "function_owner": "supabase_admin",
+      "function_schema": "extensions",
+      "body": "791b41f0632fc86e0fc86a303ec0fd710c4e2ecf947a23422dae2b7a2c122f1d"
+    }
+  ]
 }

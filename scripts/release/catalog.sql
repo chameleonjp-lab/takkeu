@@ -18,6 +18,15 @@ SELECT jsonb_build_object(
    AND NOT EXISTS (SELECT FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname NOT IN ('pg_catalog','information_schema') AND n.nspname !~ '^pg_(toast|temp)' AND has_schema_privilege(current_user,n.oid,'USAGE') AND p.provolatile='v' AND p.prorettype<>'event_trigger'::regtype AND has_function_privilege(current_user,p.oid,'EXECUTE'))
    AND NOT EXISTS (SELECT FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname NOT IN ('pg_catalog','information_schema') AND n.nspname !~ '^pg_(toast|temp)' AND has_schema_privilege(current_user,n.oid,'USAGE') AND p.provolatile<>'v' AND p.prorettype<>'event_trigger'::regtype AND has_function_privilege(current_user,p.oid,'EXECUTE') AND NOT (n.nspname='public' AND p.proname IN ('get_disqualified_score_entries','get_first_try_ranking','get_game_play_stats','get_hito_wo_yurusuna_best_ranking','get_hito_wo_yurusuna_first_ranking','get_play_count_ranking','normalize_player_name'))),
  'migrations',COALESCE((SELECT jsonb_agg(jsonb_build_object('version',version,'name',name) ORDER BY version) FROM supabase_migrations.schema_migrations WHERE version IN ('20261027032043')), '[]'::jsonb),
+ -- Event handlers execute automatically, even without caller USAGE/EXECUTE.
+ -- Pin all registrations and bodies, including disabled handlers and tags.
+ 'event_triggers',COALESCE((SELECT jsonb_agg(jsonb_build_object(
+   'name',e.evtname,'owner',pg_get_userbyid(e.evtowner),'event',e.evtevent,'enabled',e.evtenabled,'tags',e.evttags,
+   'function_schema',n.nspname,'function_name',p.proname,'function_args',pg_get_function_identity_arguments(p.oid),
+   'arguments',pg_get_function_arguments(p.oid),'result',pg_get_function_result(p.oid),'source',p.prosrc,
+   'language',l.lanname,'definer',p.prosecdef,'function_owner',pg_get_userbyid(p.proowner),'config',p.proconfig,
+   'volatility',p.provolatile,'strict',p.proisstrict) ORDER BY e.evtname)
+   FROM pg_event_trigger e JOIN pg_proc p ON p.oid=e.evtfoid JOIN pg_namespace n ON n.oid=p.pronamespace JOIN pg_language l ON l.oid=p.prolang),'[]'::jsonb),
  'game',(SELECT jsonb_build_object('game_slug',game_slug,'is_active',is_active,'submission_mode',submission_mode,'score_order',score_order,'score_min',score_min,'score_max',score_max) FROM public.games WHERE game_slug='takkeu'),
  'tables',COALESCE((SELECT jsonb_agg(jsonb_build_object(
    'schema',n.nspname,'name',c.relname,'kind',c.relkind,'owner',pg_get_userbyid(c.relowner),'rls',c.relrowsecurity,'force_rls',c.relforcerowsecurity,

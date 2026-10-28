@@ -21,13 +21,13 @@ function catalogAssertion(expected, label) {
   const sql = readFileSync('scripts/release/catalog.sql', 'utf8');
   const query = sql.slice(sql.indexOf('SELECT jsonb_build_object('), sql.lastIndexOf('ROLLBACK;')).trim();
   return `${query.replace(/;$/, ' INTO actual;')}
-  FOREACH field IN ARRAY ARRAY['functions','readonly_routines'] LOOP
+  FOREACH field IN ARRAY ARRAY['functions','readonly_routines','event_triggers'] LOOP
   actual := jsonb_set(actual,ARRAY[field],(SELECT jsonb_agg((f-'source') || jsonb_build_object('body',
     encode(sha256(convert_to(replace(f->>'source',chr(13)||chr(10),chr(10)),'UTF8')),'hex')) ORDER BY ord)
     FROM jsonb_array_elements(actual->field) WITH ORDINALITY e(f,ord)));
   END LOOP;
   expected := ${json(expected)};
-  FOREACH field IN ARRAY ARRAY['migrations','game','tables','functions','readonly_routines'] LOOP
+  FOREACH field IN ARRAY ARRAY['migrations','game','tables','functions','readonly_routines','event_triggers'] LOOP
     IF actual->field IS DISTINCT FROM expected->field THEN RAISE EXCEPTION '${label} contract mismatch: %',field; END IF;
   END LOOP;`;
 }
