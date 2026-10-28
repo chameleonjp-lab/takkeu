@@ -102,8 +102,38 @@ NOTIFY pgrst,'reload schema';
 COMMIT;
 `;
 }
+export function prepareInspectorRemovalSql() {
+  const source=inspectorSource();
+  const metadata=source.slice(source.indexOf("  SELECT jsonb_build_object('body_sha256'"),source.indexOf('  RETURN jsonb_build_object')).replace('INTO self','INTO actual');
+  const expected=JSON.stringify(inspectorMetadata()).replaceAll("'","''");
+  return `-- RECOVERY PROPOSAL ONLY. Requires separate explicit approval; never run automatically.
+-- Removes only the newly added inspector, after exact catalog/security checks.
+BEGIN;
+SET LOCAL lock_timeout='5s'; SET LOCAL statement_timeout='15s'; SET LOCAL search_path=pg_catalog;
+DO $remove_check$ DECLARE actual jsonb; BEGIN
+  IF current_user<>'postgres' OR current_database()<>'postgres' THEN RAISE EXCEPTION 'approved postgres recovery owner required'; END IF;
+  ${metadata}
+  IF actual IS DISTINCT FROM '${expected}'::jsonb THEN RAISE EXCEPTION 'inspector changed; recovery requires fresh review'; END IF;
+END $remove_check$;
+GRANT ${INSPECTOR_OWNER} TO postgres WITH INHERIT FALSE, SET TRUE;
+SET LOCAL ROLE ${INSPECTOR_OWNER};
+DROP FUNCTION public.${INSPECTOR}();
+RESET ROLE;
+DROP POLICY takkeu_release_inspector_config ON public.games;
+REVOKE SELECT(game_slug,is_active,submission_mode,score_order,score_min,score_max) ON public.games FROM ${INSPECTOR_OWNER};
+REVOKE SELECT(version,name) ON supabase_migrations.schema_migrations FROM ${INSPECTOR_OWNER};
+REVOKE USAGE ON SCHEMA public,supabase_migrations FROM ${INSPECTOR_OWNER};
+-- Unknown dependencies stop this transaction; never DROP OWNED or CASCADE.
+DROP ROLE ${INSPECTOR_OWNER};
+DELETE FROM supabase_migrations.schema_migrations WHERE version='${INSPECTOR_MIGRATION}' AND name='takkeu_release_rest_inspector';
+NOTIFY pgrst,'reload schema';
+COMMIT;
+`;
+}
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   const out=resolve(process.argv[2]??'artifacts/merge-release/proposals');mkdirSync(out,{recursive:true});
   const sql=prepareInspectorSql();writeFileSync(resolve(out,'inspector-approved-only.sql'),sql);
   console.log(`inspector-approved-only.sql sha256=${digest(sql)}`);
+  const removal=prepareInspectorRemovalSql();writeFileSync(resolve(out,'inspector-removal-separate-approval.sql'),removal);
+  console.log(`inspector-removal-separate-approval.sql sha256=${digest(removal)}`);
 }

@@ -28,7 +28,7 @@
 - 関数の返却は固定project、時刻、nonce、read_onlyと不透明SHA256だけ。任意SQL・オブジェクト名指定・ゲームRPC呼出し・プレイヤー行読み取りは0。空search_pathの代わりにpg_catalog固定と全対象schema修飾を用いる。
 - [信頼境界](design.md)のとおり、意図的に偽装するDB管理者への独立attestationではない。通常の本文／ACL／grant option／所有者属性／双方向membership／policy変更は検出する。
 
-復元：適用中失敗はROLLBACK。COMMIT後の異常は公開を停止し、既存ゲーム・殿堂を残す。緊急停止が必要なら、この新APIだけのEXECUTE剥奪を別途具体的承認して行う。全撤去は、当該関数の本文／所有者／ACLと追加依存を再確認し、当該関数・policyだけDROP、列／schemaの当該role GRANTだけREVOKE、当該新roleだけDROP、当該履歴1行だけ削除する順序で、別途復元SQLの個別承認を受ける。DROP OWNED/CASCADE、他role／他ゲーム変更はしない。roleへ未知の依存があれば全撤去を中止する。
+復元：適用中失敗はROLLBACK。COMMIT後の異常は公開を停止し、既存ゲーム・殿堂を残す。緊急停止が必要なら、この新APIだけのEXECUTE剥奪を別途具体的承認して行う。全撤去用の[別承認SQL](inspector-removal-separate-approval.sql)を用意し、非superuserでの撤去・再適用と改変時の拒否を使い捨てPG17で検証済み。この復元SQLはBの追加承認には含めず、本番では実行していない。全撤去は、当該関数の本文／所有者／ACLと追加依存を再確認し、当該関数・policyだけDROP、列／schemaの当該role GRANTだけREVOKE、当該新roleだけDROP、当該履歴1行だけ削除する順序で、別途復元SQLの個別承認を受ける。DROP OWNED/CASCADE、他role／他ゲーム変更はしない。roleへ未知の依存があれば全撤去を中止する。
 
 ## 本番実行と証拠
 

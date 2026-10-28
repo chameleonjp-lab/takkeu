@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { randomUUID } from 'node:crypto';
 import assert from 'node:assert/strict';
 import { prepareMigrationSql } from '../../scripts/release/prepare-production.mjs';
-import { prepareInspectorSql, inspectorMetadata, INSPECTOR } from '../../scripts/release/prepare-rest-inspector.mjs';
+import { prepareInspectorSql, prepareInspectorRemovalSql, inspectorMetadata, INSPECTOR } from '../../scripts/release/prepare-rest-inspector.mjs';
 import { fingerprintContract, expectedInspectorHash, verifyRpcRoutes } from '../../scripts/release/rest-contract.mjs';
 
 const name=`takkeu-rest-${process.pid}`;const env={...process.env};
@@ -16,6 +16,7 @@ const nonce=randomUUID();const request=`BEGIN READ ONLY; SET LOCAL ROLE anon; SE
 const snapshot=()=>JSON.parse(query(request));
 const expected=JSON.parse(readFileSync('scripts/release/expected-contract.json'));
 const checks=[];const pass=name=>checks.push(name);
+mkdirSync('artifacts/merge-release',{recursive:true});
 let started=false;
 try {
   docker(['run','-d','--rm','--name',name,'-p','127.0.0.1::3000','-e','POSTGRES_HOST_AUTH_METHOD=trust','-e','POSTGRES_USER=rest_test_admin','-e','POSTGRES_DB=postgres','postgres:17@sha256:b8faeff7712663c2773a190181e1246e37e364b887611c04658c28b44e2408fe']);started=true;
@@ -98,6 +99,14 @@ try {
   writeFileSync('artifacts/merge-release/route-observations.json',JSON.stringify({routes:routeObservations,missing_options:missing.status},null,2));
   for(const fn of expected.functions.filter(f=>f.schema==='public'&&/^(start_takkeu_clear_play|finish_takkeu_clear_play|register_takkeu_hall|get_takkeu_hall)_v[12]$/.test(f.name)))assert.ok(openapi.paths[`/rpc/${fn.name}`]?.post);
   pass('eight old/new hall RPC routes visible in actual PostgREST schema cache');
+  const removal=prepareInspectorRemovalSql();
+  query(functionDef.replace('BEGIN\n','BEGIN\n -- changed inspector body\n'));
+  assert.throws(()=>query(removal));query(functionDef);pass('recovery refuses changed inspector without removing anything');
+  bootstrap('ALTER ROLE postgres NOSUPERUSER CREATEROLE CREATEDB;');
+  query(removal);
+  assert.equal(query("SELECT count(*) FROM pg_roles WHERE rolname='takkeu_release_inspector'; SELECT count(*) FROM pg_proc WHERE proname='get_takkeu_release_contract_v1'; SELECT count(*) FROM pg_policy WHERE polname='takkeu_release_inspector_config'; SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version='20261028124434';"),'0\n0\n0\n0');
+  query(proposal);assert.deepEqual(snapshot().fingerprints,fingerprintContract(expected));assert.equal(snapshot().inspector_sha256,expectedInspectorHash());
+  pass('separately approved recovery and reapply work under nonsuperuser without touching hall contract');
   mkdirSync('artifacts/merge-release',{recursive:true});writeFileSync('artifacts/merge-release/rest-native.json',JSON.stringify({checks,result},null,2));
   console.log(`PG17 fixed GET inspector: ${checks.length} checks passed; no production connection.`);
 } finally {if(started){try{docker(['rm','-f',name+'-api']);}catch{}docker(['rm','-f',name]);}}

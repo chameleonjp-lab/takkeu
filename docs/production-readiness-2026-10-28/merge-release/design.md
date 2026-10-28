@@ -78,4 +78,4 @@ deploy-pages以前の失敗は旧正常版を変更しない。公開後の検�
 
 `tests/release/workflow.test.mjs` は実YAMLのjob条件・needsと実gate関数で負例を実行し、deploy-pagesはカウンタに置換する。実GitHubではDraft PRのCIイベント、公開runが起動しないこと、設定を確認する。最終PRのマージを伴う実デプロイ試験は行わない。
 
-原migration PG17 33項目、旧native gate34項目、REST APIのPG17／実PostgREST検証30項目、guard23、unit972、actionlint、root/Pagesビルド・配布8、Chromium/WebKitを実行。最終結果と独立レビュー指摘はREADME／review.mdに記録する。本番backupとA/B未適用は別の阻害条件であり、テスト成功では解消しない。
+原migration PG17 33項目、旧native gate34項目、REST APIのPG17／実PostgREST検証32項目、guard23、unit972、actionlint、root/Pagesビルド・配布8、Chromium/WebKitを実行。最終結果と独立レビュー指摘はREADME／review.mdに記録する。本番backupとA/B未適用は別の阻害条件であり、テスト成功では解消しない。

@@ -27,7 +27,7 @@
 
 CIが生成したmanifestと公開runで生成した同SHA全ファイルを比較し、同runのPages tar全バイトも確認してからdeployする。公開後はrelease.json・HTML・JS・CSS・PNGすべてをcache-busting URLで比較し、3500versionとDB応答を確認する。deploy前の失敗は旧正常版を維持。deploy後の不一致は失敗として明示し、削除／force push／DB逆migrationは行わない。
 
-実行済み：型検査、単体87file/972、公開guard23、原migration PG17 readiness33、旧native gate34、新APIのPG17＋実PostgREST30、殿堂別接続競合、actionlint。通常／Pages buildと配布8も成功。ゲーム全Chromium/WebKitは検証中。正式な公開対象PRは32、branchはrelease/3500-merge-to-pagesに固定済み。最新headの実GitHub CI結果と最終ブラウザ結果は[PR #32のChecksと本文](https://github.com/chameleonjp-lab/takkeu/pull/32)を正本とする。
+実行済み：型検査、単体87file/972、公開guard23、原migration PG17 readiness33、旧native gate34、新APIのPG17＋実PostgREST32、殿堂別接続競合、actionlint。通常／Pages buildと配布8も成功。ゲーム全Chromium/WebKitは検証中。正式な公開対象PRは32、branchはrelease/3500-merge-to-pagesに固定済み。最新headの実GitHub CI結果と最終ブラウザ結果は[PR #32のChecksと本文](https://github.com/chameleonjp-lab/takkeu/pull/32)を正本とする。
 
 ブラウザ環境は既存workspaceからDocker公式Playwright1.64.1-nobleを使い、hostのNode24.19.0をreadonly mountした。初回のGit所有権／host WebKit library不足は試験環境の問題として修正し、ゲーム仕様・テスト条件を緩和していない。Codex Cloud environmentの作成／利用開始、課金サービス追加は行っていない。
 
