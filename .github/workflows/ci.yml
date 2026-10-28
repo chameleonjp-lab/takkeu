@@ -53,6 +53,8 @@ jobs:
         run: node tests/helpers/checkReleaseDatabase.mjs
       - name: Approved-only migration and scoped RPC proposals on PostgreSQL17
         run: node tests/helpers/checkProductionReadiness.mjs
+      - name: Fixed GET inspector on PostgreSQL17 and real PostgREST (disposable only)
+        run: node tests/helpers/checkRestInspector.mjs
       - name: Hall registration concurrency on disposable PostgreSQL
         run: |
           set -o pipefail
@@ -62,6 +64,13 @@ jobs:
         run: |
           set -o pipefail
           npm run verify:release 2>&1 | tee artifacts/build-release.log
+      - name: Bind every Pages file to this CI checkout
+        run: node scripts/release/distribution.mjs write dist artifacts/pages-manifest.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ci-pages-contract-${{ github.sha }}
+          path: artifacts/pages-manifest.json
+          retention-days: 30
       - name: Record revision
         if: always()
         run: |

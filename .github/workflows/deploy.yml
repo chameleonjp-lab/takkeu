@@ -1,55 +1,35 @@
 name: Pages release
 on:
-  workflow_dispatch:
-    inputs:
-      expected_sha:
-        description: 'Reviewed and approved main commit (full 40-character SHA)'
-        required: true
-        type: string
-      approve_production:
-        description: 'I approve publishing this exact SHA to production (repository owner only)'
-        required: true
-        default: false
-        type: boolean
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
 permissions:
   contents: read
+  pull-requests: read
   actions: read
+  deployments: read
+  pages: read
 env:
-  EXPECTED_SHA: ${{ inputs.expected_sha }}
-  APPROVE_PRODUCTION: ${{ inputs.approve_production }}
+  # workflow_run github.sha is the default-branch tip, NOT necessarily the CI SHA.
+  EXPECTED_SHA: ${{ github.event.workflow_run.head_sha }}
 concurrency:
   group: takkeu-pages
   cancel-in-progress: false
 jobs:
   preflight:
-    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    if: >-
+      github.event_name == 'workflow_run' && github.event.action == 'completed' &&
+      github.ref == 'refs/heads/main' && github.repository == 'chameleonjp-lab/takkeu' &&
+      github.event.workflow_run.event == 'push' && github.event.workflow_run.head_branch == 'main' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.repository.id == 1429598143 &&
+      github.event.workflow_run.head_repository.id == 1429598143
     runs-on: ubuntu-24.04
-    timeout-minutes: 3
-    steps:
-      - uses: actions/checkout@v5
-        with:
-          persist-credentials: false
-          sparse-checkout-cone-mode: false
-          sparse-checkout: |
-            /*
-            !/docs/
-      - uses: actions/setup-node@v6
-        with:
-          node-version-file: .node-version
-      - name: Require owner approval, exact main SHA and successful main CI
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: node scripts/release/check-github.mjs
-  validation:
-    needs: preflight
-    uses: ./.github/workflows/ci.yml
-    with:
-      expected_sha: ${{ inputs.expected_sha }}
-  verify-build:
-    needs: validation
-    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 5
+    outputs:
+      sha: ${{ steps.authorization.outputs.sha }}
+      ci_run_id: ${{ steps.authorization.outputs.ci_run_id }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -59,16 +39,29 @@ jobs:
           sparse-checkout: |
             /*
             !/docs/
-      - name: Match the release commit with current main
-        run: |
-          set -euo pipefail
-          mkdir -p artifacts
-          main_sha="$(git ls-remote --refs origin refs/heads/main | cut -f1)"
-          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
-          [[ "$GITHUB_REF" == refs/heads/main ]]
-          [[ "$(git rev-parse HEAD)" == "$EXPECTED_SHA" ]]
-          [[ "$main_sha" == "$EXPECTED_SHA" ]]
-          node scripts/check-release-revision.mjs "$EXPECTED_SHA" "$GITHUB_REF" "$main_sha" | tee artifacts/revision.json
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+      - name: Require formal owner merge, release PR, current main CI and Pages settings
+        id: authorization
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/release/check-github.mjs
+      - name: Verify production DB and PostgREST contract before building
+        run: node scripts/release/check-database-rest.mjs
+  verify-build:
+    needs: preflight
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ needs.preflight.outputs.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/docs/
       - uses: actions/setup-node@v6
         with:
           node-version-file: .node-version
@@ -77,43 +70,59 @@ jobs:
         run: |
           test -f /etc/apt/apt-mirrors.txt
           printf '%s\n' 'https://archive.ubuntu.com/ubuntu' | sudo tee /etc/apt/apt-mirrors.txt > /dev/null
-      - name: Verify and build this checkout
+      - name: Build and verify the CI SHA in this release run
         run: |
           set -euo pipefail
-          npm ci 2>&1 | tee artifacts/install.log
-          npx playwright install --with-deps chromium webkit 2>&1 | tee artifacts/browsers.log
+          mkdir -p artifacts
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
+          npm ci
+          npx playwright install --with-deps chromium webkit
           npm run verify:release 2>&1 | tee artifacts/distribution.log
-          node -e "if (JSON.parse(require('fs').readFileSync('dist/release.json')).commit !== require('child_process').execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim()) process.exit(1)"
-          find dist -type f -print0 | sort -z | xargs -0 sha256sum > artifacts/distribution-sha256.txt
+          node scripts/release/distribution.mjs write dist artifacts/pages-manifest.json
+      - name: Download manifest from the exact successful main CI run
+        uses: actions/download-artifact@v4
+        with:
+          name: ci-pages-contract-${{ env.EXPECTED_SHA }}
+          github-token: ${{ github.token }}
+          run-id: ${{ needs.preflight.outputs.ci_run_id }}
+          path: artifacts/ci-contract
+      - name: Require byte identity with the CI verified distribution
+        run: node scripts/release/distribution.mjs compare artifacts/pages-manifest.json artifacts/ci-contract/pages-manifest.json
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-manifest-${{ env.EXPECTED_SHA }}
+          path: artifacts/pages-manifest.json
+          retention-days: 90
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: release-verification-${{ env.EXPECTED_SHA }}
           path: |
-            artifacts/
-            test-results/
-            playwright-report/
+            artifacts/distribution.log
+            artifacts/release-results.json
+            artifacts/release-tests/
           retention-days: 90
-      - uses: actions/upload-pages-artifact@v4
-        with:
-          path: dist
   deploy:
-    needs: [validation, verify-build]
-    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    needs: [preflight, verify-build]
     runs-on: ubuntu-24.04
     permissions:
       contents: read
+      pull-requests: read
       actions: read
+      deployments: read
       pages: write
       id-token: write
-    timeout-minutes: 10
+    timeout-minutes: 15
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
         with:
-          ref: ${{ env.EXPECTED_SHA }}
+          ref: ${{ needs.preflight.outputs.sha }}
           persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
@@ -122,31 +131,49 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version-file: .node-version
-      - name: Install PostgreSQL client
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends postgresql-client
-      - name: Require the exact production DB contract (read only, fail closed)
-        env:
-          PGHOST: ${{ secrets.TAKKEU_RELEASE_PGHOST }}
-          PGPORT: ${{ secrets.TAKKEU_RELEASE_PGPORT }}
-          PGUSER: ${{ secrets.TAKKEU_RELEASE_PGUSER }}
-          PGPASSWORD: ${{ secrets.TAKKEU_RELEASE_PGPASSWORD }}
-          PGDATABASE: postgres
-        run: node scripts/release/check-database.mjs
-      - name: Recheck approval, latest CI and main after the environment wait
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-manifest-${{ env.EXPECTED_SHA }}
+          path: artifacts/release-contract
+      - name: Download only this run's Pages artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: artifacts/pages
+      - name: Verify exact uploaded tar bytes against the CI matched manifest
+        run: node scripts/release/distribution.mjs tar artifacts/pages/artifact.tar artifacts/release-contract/pages-manifest.json
+      - name: Recheck formal merge, latest CI, Environment and current main immediately before release
         env:
           GH_TOKEN: ${{ github.token }}
         run: node scripts/release/check-github.mjs
+      - name: Recheck production read-only DB contract immediately before release
+        run: node scripts/release/check-database-rest.mjs
       - name: Recheck main immediately before deploying the verified artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          main_sha="$(git ls-remote --refs origin refs/heads/main | cut -f1)"
-          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
-          [[ "$GITHUB_REF" == refs/heads/main ]]
-          [[ "$(git rev-parse HEAD)" == "$EXPECTED_SHA" ]]
-          [[ "$main_sha" == "$EXPECTED_SHA" ]]
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
+          main_sha="$(gh api repos/chameleonjp-lab/takkeu/git/ref/heads/main --jq .object.sha)"
           node scripts/check-release-revision.mjs "$EXPECTED_SHA" "$GITHUB_REF" "$main_sha"
-      - name: Deploy the artifact from verify-build in this run
+      - name: Deploy only the verified Pages artifact from this run
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
+          timeout: '600000'
+          error_count: '3'
+      - name: Verify published SHA, all static bytes, 3500 version and production DB
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: node scripts/release/distribution.mjs live artifacts/release-contract/pages-manifest.json
+      - name: Explain release failure without destructive rollback
+        if: failure()
+        run: |
+          {
+            echo '## Pages release failed'
+            echo 'Check the first failed gate above. No gate is optional and no secret values are logged.'
+            echo 'If deploy-pages did not run, the previous deployment is preserved.'
+            echo 'If deployment ran, the new site may already be live: inspect the postdeploy mismatch. No artifact deletion or DB rollback was attempted.'
+            echo 'Recovery requires an explicit corrective release PR; do not repeatedly rerun this workflow.'
+          } >> "$GITHUB_STEP_SUMMARY"
