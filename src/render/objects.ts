@@ -13,7 +13,9 @@ export function createObjects(config: GameConfig) {
   const court = (sign: number) => {
     const group = new Group();
     const face = (half: number) => {
-      const geometry = new PlaneGeometry(config.tableHalfWidth, config.tableHalfLength, 16, 24);
+      // Flat surfaces need only two triangles. The coarse color gradient is
+      // decorative; table dimensions, texture coverage and normals are unchanged.
+      const geometry = new PlaneGeometry(config.tableHalfWidth, config.tableHalfLength);
       const uv = geometry.attributes.uv!;
       for (let i = 0; i < uv.count; i++) uv.setXY(i, uv.getX(i) / 2 + (half + 1) / 4, -uv.getY(i) / 2 + (sign + 3) / 4);
       const material = standard(0x008a34, 0.38); material.map = surface;
@@ -29,7 +31,7 @@ export function createObjects(config: GameConfig) {
     const x = config.tableHalfWidth, z = sign * config.tableHalfLength, y = config.tableY + 0.004;
     const group = new Group();
     for (const [width, depth, px, pz] of [[0.025, Math.abs(z), -x, z / 2], [0.025, Math.abs(z), x, z / 2], [2 * x, 0.025, 0, z], [0.015, Math.abs(z), 0, z / 2]]) {
-      const stripe = new Mesh(new PlaneGeometry(width, depth, 8, 16), standard(0xf4f5e8));
+      const stripe = new Mesh(new PlaneGeometry(width, depth), standard(0xf4f5e8));
       stripe.rotation.x = -Math.PI / 2; stripe.position.set(px!, y, pz!); group.add(stripe);
     }
     return group;
