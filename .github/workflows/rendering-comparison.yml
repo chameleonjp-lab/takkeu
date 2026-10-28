@@ -4,6 +4,8 @@ on:
     paths:
       - 'src/render/**'
       - 'tests/helpers/compareGameplayRendering.mjs'
+      - 'tests/helpers/renderingEvidence.mjs'
+      - 'tests/helpers/compareGameplayFlash.mjs'
       - '.github/workflows/rendering-comparison.yml'
 permissions:
   contents: read
@@ -59,5 +61,55 @@ jobs:
         if: always()
         with:
           name: rendering-${{ matrix.engine }}-${{ matrix.quality }}-${{ github.event.pull_request.head.sha }}
+          path: artifacts/
+          retention-days: 90
+  flash:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        quality: [standard, low]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/docs/
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: baseline
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/docs/
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Capture dependencies
+        run: |
+          test -f /etc/apt/apt-mirrors.txt
+          printf '%s\n' 'https://archive.ubuntu.com/ubuntu' | sudo tee /etc/apt/apt-mirrors.txt > /dev/null
+          npm ci
+          npx playwright install --with-deps chromium
+          python3 -m pip install --user numpy pillow
+          ln -s ../node_modules baseline/node_modules
+      - name: Compare unchanged flash screening at4stages
+        env:
+          QUALITY: ${{ matrix.quality }}
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/flash
+          node tests/helpers/compareGameplayFlash.mjs baseline . artifacts/flash "$QUALITY" 2>&1 | tee artifacts/flash.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: flash-${{ matrix.quality }}-${{ github.event.pull_request.head.sha }}
           path: artifacts/
           retention-days: 90
