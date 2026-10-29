@@ -1,0 +1,17 @@
+{
+  "failure": {
+    "run": 40725270109,
+    "head": "9827d1401222901e9c43b5171bf17106092ebc7f",
+    "job": 122946711502,
+    "test": "publishing consumes only completed main CI and preserves final gates; CI remains automatic",
+    "reason": "Existing test intentionally forbids production database checks inside ci.yml."
+  },
+  "fix": "Restore ci.yml byte-for-byte. Move live GET/HEAD proof to dedicated Production release readiness pull_request workflow. Preserve deploy preflight and all existing test assertions.",
+  "existing_tests_weakened": false,
+  "new_test_scope": "dedicated PR readiness inevitable read-only gate, offline CI invariant",
+  "production_get_before": {
+    "job": 122946710694,
+    "observed_at": "2026-10-28T16:22:25.3776792Z",
+    "status": 404
+  }
+}

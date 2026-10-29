@@ -1,0 +1,40 @@
+{
+  "engine": "functions JavaScript isolate; actual authorization + verifyGithub + fixture sources with import wiring only; no simulated production result",
+  "red": {
+    "test": "alternate PR number with otherwise valid owner merge and release evidence must be rejected",
+    "expected": "rejected",
+    "actual": "authorized PR 33",
+    "result": "RED",
+    "base_sha": "a2354abb69516c4f146e241f68556accce05491a"
+  },
+  "green": [
+    {
+      "test": "actual final PR34 positive",
+      "result": "passed"
+    },
+    {
+      "test": "alternate PR32 with full matching evidence rejected",
+      "result": "passed"
+    },
+    {
+      "test": "alternate PR33 with full matching evidence rejected",
+      "result": "passed"
+    },
+    {
+      "test": "alternate PR35 with full matching evidence rejected",
+      "result": "passed"
+    },
+    {
+      "test": "alternate PR999 with full matching evidence rejected",
+      "result": "passed"
+    },
+    {
+      "test": "old release/ref {\"release\":\"takkeu-3500-20261028\"}",
+      "result": "passed"
+    },
+    {
+      "test": "old release/ref {\"head_ref\":\"release/3500-merge-to-pages\"}",
+      "result": "passed"
+    }
+  ]
+}

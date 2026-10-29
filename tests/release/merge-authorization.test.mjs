@@ -4,7 +4,7 @@ import { authorizeMergeRelease } from '../../scripts/release/merge-authorization
 import { fixture, sha, marker } from '../helpers/mergeReleaseFixture.mjs';
 const owner={login:'chameleonjp-lab',id:283055705,type:'User'};
 const source=fixture();const run=source.event.workflow_run;
-const pr=await source.get('/pulls/32');
+const pr=await source.get('/pulls/34');
 test('formal owner merge plus successful exact main CI and explicit release marker authorizes',async()=>{
   assert.equal((await authorizeMergeRelease(fixture())).main_sha,sha);
 });
@@ -14,10 +14,10 @@ test('PR-only/draft/branch/direct-push/non-owner/unmerged/stale/failed/forged ru
     x=>x.event.workflow_run.event='pull_request',x=>x.event.workflow_run.head_branch='feature',x=>x.event.workflow_run.head_repository.id=42,
     x=>x.event.workflow_run.conclusion='failure',x=>x.event.workflow_run.id=9,x=>x.expected='b'.repeat(40),x=>x.marker.pull_request=0,
   ]){const x=fixture();mutate(x);await assert.rejects(authorizeMergeRelease(x));}
-  for(const changes of [{merged:false},{draft:true},{merged_by:{...owner,id:1}},{merged_by:{...owner,login:'other'}},{merge_commit_sha:'b'.repeat(40)},{base:{...pr.base,ref:'feature'}},{head:{...pr.head,repo:{id:42}}},{changed_files:2}])await assert.rejects(authorizeMergeRelease(fixture({'/pulls/32':{...pr,...changes}})));
+  for(const changes of [{merged:false},{draft:true},{merged_by:{...owner,id:1}},{merged_by:{...owner,login:'other'}},{merge_commit_sha:'b'.repeat(40)},{base:{...pr.base,ref:'feature'}},{head:{...pr.head,repo:{id:42}}},{changed_files:2}])await assert.rejects(authorizeMergeRelease(fixture({'/pulls/34':{...pr,...changes}})));
   for(const changes of [{conclusion:'failure'},{status:'in_progress'},{event:'pull_request'},{workflow_id:1},{head_branch:'elsewhere'},{run_attempt:2},{actor:{...owner,id:1}}])await assert.rejects(authorizeMergeRelease(fixture({'/actions/runs/7':{...run,...changes}})));
   await assert.rejects(authorizeMergeRelease(fixture({'/git/ref/heads/main':{object:{sha:'b'.repeat(40)}}})));
-  await assert.rejects(authorizeMergeRelease(fixture({'/pulls/32/files?per_page=100&page=1':[{filename:'other',status:'modified'}]})));
+  await assert.rejects(authorizeMergeRelease(fixture({'/pulls/34/files?per_page=100&page=1':[{filename:'other',status:'modified'}]})));
 });
 test('extra environment approval, unsupported Pages settings, previous SHA deployment and API failures stop',async()=>{
   for(const data of [
@@ -27,4 +27,20 @@ test('extra environment approval, unsupported Pages settings, previous SHA deplo
     {[`/deployments?sha=${sha}&environment=github-pages&per_page=100`]:[{id:9,sha,environment:'github-pages'}],'/deployments/9/statuses?per_page=100':[{state:'success'}]},
   ])await assert.rejects(authorizeMergeRelease(fixture(data)));
   const f=fixture();f.get=async()=>{throw Error('API denied/timeout')};await assert.rejects(authorizeMergeRelease(f));
+});
+
+test('only GitHub-issued final PR 34 is accepted, even when every alternate merge response agrees',async()=>{
+  for(const number of [32,33,35,999]){
+    const f=fixture();const pr=await f.get('/pulls/34');const get=f.get;
+    f.marker.pull_request=number;
+    f.get=path=>path===`/pulls/${number}`?Promise.resolve({...pr,number}):
+      path===`/pulls/${number}/files?per_page=100&page=1`?get('/pulls/34/files?per_page=100&page=1'):get(path);
+    await assert.rejects(authorizeMergeRelease(f),/Explicit release PR marker missing/);
+  }
+});
+test('former release and head branch identities are refused for final PR 34',async()=>{
+  for(const changes of [{release:'takkeu-3500-20261028'},{head_ref:'release/3500-merge-to-pages'}]){
+    const f=fixture();Object.assign(f.marker,changes);
+    await assert.rejects(authorizeMergeRelease(f),/Explicit release PR marker missing/);
+  }
 });

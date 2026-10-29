@@ -1,0 +1,63 @@
+name: Production release readiness
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  production-contract:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/docs/
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+      - name: Require production A/B GET contract and all old/new RPC HEAD signatures
+        run: |
+          mkdir -p artifacts
+          set -o pipefail
+          node scripts/release/check-database-rest.mjs 2>&1 | tee artifacts/production-rest.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: production-rest-${{ github.sha }}
+          path: artifacts/production-rest.log
+          retention-days: 90
+
+  pages-settings:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    permissions:
+      contents: read
+      actions: read
+      pages: read
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/docs/
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+      - name: Verify existing Pages and Environment settings without modifying them
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p artifacts
+          set -o pipefail
+          node scripts/release/check-pages-settings.mjs 2>&1 | tee artifacts/pages-settings.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pages-settings-${{ github.sha }}
+          path: artifacts/pages-settings.log
+          retention-days: 90
