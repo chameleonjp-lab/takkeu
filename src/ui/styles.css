@@ -137,3 +137,26 @@ canvas:focus-visible { outline: 2px solid #7be2d1; outline-offset: -3px; }
 .losses-counter { min-width: 0; max-width: 100%; }
 .losses-counter [data-losses-label] { white-space: normal; overflow-wrap: anywhere; }
 .losses-counter output { white-space: nowrap; }
+
+/* A language change alters copy, never the court or the input surface. */
+:root { font-family: "Hiragino Kaku Gothic ProN", "Noto Sans", "Noto Sans Thai", "Noto Sans CJK JP", "Yu Gothic", system-ui, sans-serif; }
+.home-screen { position: relative; }
+.home-screen .brand { min-height: 48px; }
+.language-control { display: grid; gap: 4px; font-size: .8125rem; min-width: 0; }
+.language-control select { display: block; width: 100%; max-width: 100%; min-width: 0; min-height: 44px; padding: 7px 10px; border: 1px solid #45616d; border-radius: 10px; background: #12202e; color: #eaf3f6; font-size: .8125rem; }
+.home-screen .language-control { margin-left: auto; flex: 0 1 190px; max-width: 45%; font-size: 0; }
+.hero-copy, .how-to p, .hud > div { min-width: 0; }
+.hero-copy, .brand-note, .how-to, .home-footer, .ranking-panel th { overflow-wrap: anywhere; }
+.ranking-panel th { hyphens: auto; }
+@media (max-width: 600px) {
+  .home-screen .brand-note { display: none; }
+  .hero-description { line-height: 1.75; margin-bottom: 16px; }
+  .hero-lead { font-size: 1.25rem; line-height: 1.5; margin-bottom: 12px; }
+  .hero-copy > .eyebrow { margin-bottom: 12px; }
+  .hero-copy h1 { margin-bottom: 12px; }
+  .home-hero { padding-top: 16px; }
+}
+.name-details { min-width: 0; font-size: .6875rem; color: #90a4b3; }
+.name-details summary { cursor: pointer; min-height: 44px; padding-block: 10px; line-height: 1.7; }
+.name-details summary:focus-visible { outline: 2px solid #7be2d1; outline-offset: 3px; }
+.name-details[open] p { margin-block: 4px 10px; }

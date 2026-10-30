@@ -84,7 +84,7 @@ test('準備の失敗はルール付きの再試行画面になり、手動の�
   await page.clock.install();await page.clock.pauseAt(new Date(Date.now()+1000));
   await page.goto('/tests/fixtures/stage3.html');await page.evaluate(()=>window.stage3.failNextView());
   await page.getByRole('button',{name:'はじめる',exact:true}).click();await page.clock.runFor(100);
-  await expect(page.locator('[data-loading-screen] [role="alert"]')).toContainText('renderer creation failed');
+  await expect(page.locator('[data-loading-screen] [role="alert"]')).toHaveText('準備を完了できませんでした。もう一度お試しください。');
   expect(await page.evaluate(()=>window.stage3.snapshot().phase)).toBe('ready');
   await page.screenshot({path:info.outputPath('loading-error-retry.png')});
   await page.getByRole('button',{name:'もう一度準備する',exact:true}).click();await waitForStart(page);

@@ -1,0 +1,773 @@
+{
+  "date": "2026-10-30",
+  "languages": 15,
+  "sourceKeys": 248,
+  "catalogValues": 3720,
+  "resultComments": 660,
+  "uniquePassedCases": 82,
+  "note": "Local cumulative runs; newest matching case replaces earlier evidence. The final commit is fully rerun by GitHub CI; see PR #35 checks and commit.txt artifacts for exact checkout SHA.",
+  "runs": {
+    "main": {
+      "startTime": "2026-10-30T21:53:36.227Z",
+      "duration": 216466.26,
+      "expected": 32,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "states": {
+      "startTime": "2026-10-30T21:40:28.289Z",
+      "duration": 161039.682,
+      "expected": 30,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "lifecycle": {
+      "startTime": "2026-10-30T21:44:16.287Z",
+      "duration": 78678.64199999999,
+      "expected": 14,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "zoom": {
+      "startTime": "2026-10-30T21:54:34.791Z",
+      "duration": 27258.813000000002,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "finalSmoke": {
+      "startTime": "2026-10-30T22:20:21.420Z",
+      "duration": 49461.484000000004,
+      "expected": 12,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "finalCaptures": {
+      "startTime": "2026-10-30T22:23:38.199Z",
+      "duration": 102514.914,
+      "expected": 14,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "cases": [
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n ja: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5589,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n en: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5065,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n es: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4938,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n pt-BR: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5211,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n zh-Hans: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 6503,
+      "run": "finalCaptures"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n fr: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5170,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n de: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5913,
+      "run": "finalCaptures"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n ko: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5325,
+      "run": "finalCaptures"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n ru: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5524,
+      "run": "finalCaptures"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n it: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4983,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n zh-Hant: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5982,
+      "run": "finalCaptures"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n id: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 7857,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n tr: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 7011,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n vi: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 6047,
+      "run": "finalCaptures"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n th: all principal screens, live state and PNG",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 6282,
+      "run": "finalCaptures"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n browser preference and saved language are separate from gameplay storage",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 1424,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n ja: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 7569,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n en: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 7586,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n es: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 7017,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n pt-BR: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 7199,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n zh-Hans: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 8390,
+      "run": "finalCaptures"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n fr: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 7651,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n de: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 8040,
+      "run": "finalCaptures"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n ko: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 8864,
+      "run": "finalCaptures"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n ru: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 8895,
+      "run": "finalCaptures"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n it: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 7522,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n zh-Hant: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 7942,
+      "run": "finalCaptures"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n id: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 7488,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n tr: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 7141,
+      "run": "main"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n vi: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 7983,
+      "run": "finalCaptures"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n th: all principal screens, live state and PNG",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 8129,
+      "run": "finalCaptures"
+    },
+    {
+      "file": "i18n.spec.ts",
+      "title": "i18n browser preference and saved language are separate from gameplay storage",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 1710,
+      "run": "main"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states ja: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2389,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states en: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2346,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states es: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2151,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states pt-BR: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2228,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states zh-Hans: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2656,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states fr: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2726,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states de: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3202,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states ko: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2450,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states ru: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2508,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states it: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2435,
+      "run": "finalSmoke"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states zh-Hant: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2766,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states id: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2232,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states tr: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2314,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states vi: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2888,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states th: tables, receipts, retries and enlarged short layouts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2564,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states ja: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 4946,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states en: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 4716,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states es: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 4501,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states pt-BR: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 4377,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states zh-Hans: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 4884,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states fr: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 4486,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states de: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 6820,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states ko: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 6977,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states ru: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 6786,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states it: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 5212,
+      "run": "finalSmoke"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states zh-Hant: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 11509,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states id: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 14139,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states tr: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 14537,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states vi: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 12900,
+      "run": "states"
+    },
+    {
+      "file": "i18n-state.spec.ts",
+      "title": "i18n states th: tables, receipts, retries and enlarged short layouts",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 12973,
+      "run": "states"
+    },
+    {
+      "file": "i18n-lifecycle.spec.ts",
+      "title": "language changes preserve held start, finish, Hall and rank requests and their identities",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 8860,
+      "run": "lifecycle"
+    },
+    {
+      "file": "i18n-lifecycle.spec.ts",
+      "title": "a failed score request retries once only after an explicit action in the new language",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3808,
+      "run": "lifecycle"
+    },
+    {
+      "file": "i18n-lifecycle.spec.ts",
+      "title": "a failed position request retries once only after an explicit action in the new language",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2400,
+      "run": "lifecycle"
+    },
+    {
+      "file": "i18n-lifecycle.spec.ts",
+      "title": "denied localStorage accessor keeps browser detection, home selection and same-page gameplay usable",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2992,
+      "run": "lifecycle"
+    },
+    {
+      "file": "i18n-lifecycle.spec.ts",
+      "title": "denied localStorage methods keeps browser detection, home selection and same-page gameplay usable",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2784,
+      "run": "lifecycle"
+    },
+    {
+      "file": "i18n-lifecycle.spec.ts",
+      "title": "thirty synchronous language switches retain listeners, canvas, simulation and GPU resources",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2547,
+      "run": "finalSmoke"
+    },
+    {
+      "file": "i18n-lifecycle.spec.ts",
+      "title": "language switches discard a pending PNG and revoke each of three real certificate previews",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 11030,
+      "run": "lifecycle"
+    },
+    {
+      "file": "i18n-lifecycle.spec.ts",
+      "title": "language changes preserve held start, finish, Hall and rank requests and their identities",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 7325,
+      "run": "lifecycle"
+    },
+    {
+      "file": "i18n-lifecycle.spec.ts",
+      "title": "a failed score request retries once only after an explicit action in the new language",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 5067,
+      "run": "lifecycle"
+    },
+    {
+      "file": "i18n-lifecycle.spec.ts",
+      "title": "a failed position request retries once only after an explicit action in the new language",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 5027,
+      "run": "lifecycle"
+    },
+    {
+      "file": "i18n-lifecycle.spec.ts",
+      "title": "denied localStorage accessor keeps browser detection, home selection and same-page gameplay usable",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 4849,
+      "run": "lifecycle"
+    },
+    {
+      "file": "i18n-lifecycle.spec.ts",
+      "title": "denied localStorage methods keeps browser detection, home selection and same-page gameplay usable",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 4583,
+      "run": "lifecycle"
+    },
+    {
+      "file": "i18n-lifecycle.spec.ts",
+      "title": "thirty synchronous language switches retain listeners, canvas, simulation and GPU resources",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 4721,
+      "run": "finalSmoke"
+    },
+    {
+      "file": "i18n-lifecycle.spec.ts",
+      "title": "language switches discard a pending PNG and revoke each of three real certificate previews",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 10029,
+      "run": "lifecycle"
+    },
+    {
+      "file": "i18n-text-size.spec.ts",
+      "title": "i18n home keeps natural header and disclosure flow at 200 percent text in portrait and landscape",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4603,
+      "run": "finalSmoke"
+    },
+    {
+      "file": "i18n-text-size.spec.ts",
+      "title": "i18n home keeps natural header and disclosure flow at 200 percent text in portrait and landscape",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 11645,
+      "run": "finalSmoke"
+    },
+    {
+      "file": "i18n-memory.spec.ts",
+      "title": "i18n repeated language batches retain bounded DOM, listeners and collected JavaScript heap",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 705,
+      "run": "finalSmoke"
+    },
+    {
+      "file": "i18n-memory.spec.ts",
+      "title": "i18n repeated language batches retain bounded DOM, listeners and collected JavaScript heap",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 1583,
+      "run": "finalSmoke"
+    },
+    {
+      "file": "i18n-text-size.spec.ts",
+      "title": "i18n Start remains within 700px with OS fallback fonts in every language",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 1635,
+      "run": "finalSmoke"
+    },
+    {
+      "file": "i18n-text-size.spec.ts",
+      "title": "i18n Start remains within 700px with OS fallback fonts in every language",
+      "project": "webkit",
+      "status": "passed",
+      "durationMs": 5024,
+      "run": "finalSmoke"
+    }
+  ],
+  "memory": [
+    {
+      "browserName": "chromium",
+      "warmSwitches": 45,
+      "batchSize": 150,
+      "before": {
+        "heapBytes": 2878056,
+        "counters": {
+          "documents": 1,
+          "nodes": 1375,
+          "jsEventListeners": 18
+        },
+        "method": "Chromium CDP after explicit collection"
+      },
+      "first": {
+        "heapBytes": 2891076,
+        "counters": {
+          "documents": 1,
+          "nodes": 1375,
+          "jsEventListeners": 18
+        },
+        "method": "Chromium CDP after explicit collection"
+      },
+      "second": {
+        "heapBytes": 2905804,
+        "counters": {
+          "documents": 1,
+          "nodes": 1375,
+          "jsEventListeners": 18
+        },
+        "method": "Chromium CDP after explicit collection"
+      },
+      "domElements": 286
+    },
+    {
+      "browserName": "webkit",
+      "warmSwitches": 45,
+      "batchSize": 150,
+      "before": {
+        "heapBytes": null,
+        "counters": null,
+        "method": "WebKit: DOM and resource ownership; no exposed heap API"
+      },
+      "first": {
+        "heapBytes": null,
+        "counters": null,
+        "method": "WebKit: DOM and resource ownership; no exposed heap API"
+      },
+      "second": {
+        "heapBytes": null,
+        "counters": null,
+        "method": "WebKit: DOM and resource ownership; no exposed heap API"
+      },
+      "domElements": 286
+    }
+  ]
+}

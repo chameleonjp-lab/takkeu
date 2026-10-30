@@ -3,7 +3,7 @@ export default defineConfig({
   captureGitInfo: { commit: true, diff: false },
   testDir: './tests/performance', outputDir: 'artifacts/performance-tests', retries: 0, workers: 1, timeout: 90_000,
   reporter: [['list'], ['json', { outputFile: 'artifacts/performance-results.json' }]],
-  use: { baseURL: 'http://127.0.0.1:4176', video: 'off', trace: 'retain-on-failure' },
+  use: { locale: 'ja-JP', baseURL: 'http://127.0.0.1:4176', video: 'off', trace: 'retain-on-failure' },
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'], launchOptions: { args: ['--enable-unsafe-swiftshader', '--use-angle=swiftshader'] } } },
     { name: 'webkit', use: { ...devices['iPhone 13'], defaultBrowserType: 'webkit' } },

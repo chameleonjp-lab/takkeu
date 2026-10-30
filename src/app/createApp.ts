@@ -9,6 +9,7 @@ import { createView } from '../render/createView';
 import type { GameView } from '../render/createView';
 import { loadPreferences, savePreferences } from '../storage/preferences';
 import type { Preferences, StorageLike } from '../storage/preferences';
+import { getLanguage, initializeLanguage, onLanguageChange, t } from '../i18n/i18n';
 import { createScreens } from '../ui/screens';
 import { createLoop } from './loop';
 import { createControls } from './controls';
@@ -32,6 +33,13 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     removeItem: (key: string) => window.localStorage.removeItem(key), key: (index: number) => window.localStorage.key(index),
     get length() { return window.localStorage.length; },
   };
+  initializeLanguage(storage, root.ownerDocument.defaultView?.navigator);
+  const applyDocumentLanguage = (): void => {
+    root.ownerDocument.documentElement.lang = getLanguage();
+    root.ownerDocument.title = t('タッケウ — ラリーをつなごう');
+  };
+  applyDocumentLanguage();
+  const unsubscribeLanguage = onLanguageChange(applyDocumentLanguage);
   let preferences = loadPreferences(storage);
   const seed = (): number => Date.now() >>> 0;
   const session = (services.createSession ?? createSession)(config, seed());
@@ -376,6 +384,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     dispose() {
       if (disposed) return;
       rememberBest(); persist(); disposed = true; unlockAttempt++;
+      unsubscribeLanguage();
       if(starting)ranking.abandonStart();pendingStart?.abort();pendingStart=null;retirePreparingPlay();loadingScreen.dispose();
       resultPosition.dispose();
       cancelAnimationFrame(frameId); swipe.dispose(); unbindLifecycle();

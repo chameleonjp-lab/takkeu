@@ -1,14 +1,24 @@
 import {test,expect} from '../helpers/browserTest';
 import type {} from '../helpers/rallyGlHarness';
 
-test('default rally draw budget uses four actual GL submissions',async({context,page},info)=>{
+test('default live rally feedback uses two single-pass submissions within the four-draw ceiling',async({context,page},info)=>{
   await context.route('**/*',route=>new URL(route.request().url()).origin==='http://127.0.0.1:4176'?route.continue():route.abort());
   await page.goto('/tests/fixtures/rally-gl.html');
   await page.waitForFunction(()=>Boolean(window.rallyGl),{},{timeout:60_000});
   const result=await page.evaluate(()=>window.rallyGl.defaultContribution());
   await info.attach('default-rally-draw-budget.json',{body:JSON.stringify(result,null,2),contentType:'application/json'});
+  expect(result.snapshot.score).toBeGreaterThanOrEqual(555);
+  expect(result.snapshot.score).toBeLessThan(3500);
+  expect(result.snapshot.phase).toBe('running');
+  expect(result.snapshot.endReason).toBeNull();
+  expect(result.snapshot.runId).toBe(result.stateRunId);
   expect(result.snapshot.balls).toBe(30);
-  expect(result.contribution).toBe(4);
+  expect(result.snapshot.lostBallCount).toBe(1);
+  expect(result.activeGeometry.tableQuads).toBeGreaterThan(0);
+  expect(result.activeGeometry.worldQuads).toBeGreaterThan(0);
+  expect(result.activeGeometry.drawCalls).toBe(2);
+  expect(result.contribution).toBeLessThanOrEqual(4);
+  expect(result.contribution).toBe(2);
 });
 
 for(const quality of ['standard','low'] as const)for(const frame of ['peak','middle'] as const){

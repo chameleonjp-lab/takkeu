@@ -1,4 +1,5 @@
 import type { GameSnapshot } from '../game/types';
+import { formatNumber, getLanguage, onLanguageChange, t } from '../i18n/i18n';
 import { resultComment } from './resultComments';
 import './rallyNotice.css';
 
@@ -23,20 +24,36 @@ export function createRallyNotice(root: HTMLElement) {
   score.parentElement!.classList.add('rally-score-host');score.parentElement!.append(aura);
   hud.append(toast,live);
   let announced='',disposed=false;
+  let chosen='',notice:RallyNoticeFrame['notice']=null,textKey='',text='';
+  const updateText=():void=>{
+    const key=`${getLanguage()}:${chosen}:${chosen==='best'?'':notice?.score??''}`;
+    if(key===textKey)return;
+    textKey=key;
+    const scoreText=notice?formatNumber(notice.score):'';
+    text=chosen==='best'?t('自己ベスト更新！'):chosen&&notice
+      ?notice.major||notice.score>=2000
+        ?notice.score===3500?t('{score} RALLY · CLEAR!',{score:scoreText})
+          :notice.score===3000?t('{score} RALLY · まだ続く！',{score:scoreText})
+            :t('{score} RALLY',{score:scoreText})
+        :t('{score} RALLY · {comment}',{score:scoreText,comment:resultComment(notice.score)})
+      :'';
+    if(label.textContent!==text)label.textContent=text;
+  };
+  // A language switch redraws only the visual label. The original achievement
+  // key owns the live announcement, so the same cue is never announced twice.
+  const unsubscribeLanguage=onLanguageChange(updateText);
   const active=(at:number|null,time:number,duration:number)=>at!==null&&time>=at&&time<at+duration-1e-9;
   return {
     update(snapshot:GameSnapshot,frame:RallyNoticeFrame,finishing=false) {
       if(disposed)return;
       const visible=snapshot.phase!=='ready'&&(snapshot.phase!=='gameover'||finishing);
-      const t=snapshot.simTime,n=frame.notice;
-      const best=active(frame.bestAt,t,2),gold=active(frame.goldAt,t,1.5);
-      const showNotice=!!n&&active(n.at,t,n.major?2.5:1.8);
+      const time=snapshot.simTime,n=frame.notice;
+      const best=active(frame.bestAt,time,2),gold=active(frame.goldAt,time,1.5);
+      const showNotice=!!n&&active(n.at,time,n.major?2.5:1.8);
       const isMajor=showNotice&&n!.major;
-      const chosen=isMajor?'major':best?'best':showNotice?'notice':'';
-      const text=chosen==='best'?'自己ベスト更新！':chosen?(n!.major||n!.score>=2000?n!.score===3500?'3500 RALLY · CLEAR!':n!.score===3000?'3000 RALLY · まだ続く！':`${n!.score} RALLY`:`${n!.score} RALLY · ${resultComment(n!.score)}`):'';
+      chosen=isMajor?'major':best?'best':showNotice?'notice':'';notice=n;updateText();
       toast.hidden=!visible||!text;toast.dataset.kind=chosen;
-      if(label.textContent!==text)label.textContent=text;
-      const age=isMajor?t-n!.at:0;
+      const age=isMajor?time-n!.at:0;
       // Cubic ease-out gives the dedicated label a large, decelerating arrival.
       toast.style.setProperty('--arrival-scale',String(isMajor?1+1.2*Math.pow(Math.max(0,1-age/.55),3):1));
       // Scale the text, not the full flex row. Bound the arrival to the HUD even
@@ -51,10 +68,10 @@ export function createRallyNotice(root: HTMLElement) {
       if(!visible){live.textContent='';announced='';}
       aura.hidden=!visible||(!best&&!gold);aura.dataset.kind=best?'best':'gold';
       score.parentElement!.dataset.rallyAura=!aura.hidden?(best?'best':'gold'):'';
-      const auraAge=t-(best?frame.bestAt!:frame.goldAt!);
+      const auraAge=time-(best?frame.bestAt!:frame.goldAt!);
       aura.style.setProperty('--aura-scale',String(1+Math.max(0,auraAge)*.3));
       aura.style.setProperty('--aura-opacity',String(Math.max(0,1-auraAge/(best?2:1.5))*(best?.6:.95)));
     },
-    dispose(){disposed=true;toast.remove();live.remove();aura.remove();score.classList.remove('rally-score-anchor');score.parentElement?.classList.remove('rally-score-host');if(score.parentElement)delete score.parentElement.dataset.rallyAura;},
+    dispose(){if(disposed)return;disposed=true;unsubscribeLanguage();toast.remove();live.remove();aura.remove();score.classList.remove('rally-score-anchor');score.parentElement?.classList.remove('rally-score-host');if(score.parentElement)delete score.parentElement.dataset.rallyAura;},
   };
 }

@@ -1,0 +1,252 @@
+{
+  "date": "2026-10-30",
+  "baselineSha": "84b9122713b280255d762978c4bf9906f8b1987b",
+  "identicalFiles": 61,
+  "rankingConfigObjectIdentical": true,
+  "files": [
+    {
+      "file": "src/game/celebrations.ts",
+      "sha256": "dc82a0a20b046df9b5829fe24b180b54f614f91769b34e25e3cbaa0b127dc095"
+    },
+    {
+      "file": "src/game/collision.ts",
+      "sha256": "8e5ad013fcafcc33d7aabf57d9ccdae0dd99fa6db4f1aefb5cd75a1730074c1c"
+    },
+    {
+      "file": "src/game/config.ts",
+      "sha256": "5f3a3fa2c5d17a541c0a150a075e1e4ff198c5ee75de240a2b5a718fe3d49a89"
+    },
+    {
+      "file": "src/game/difficulty.ts",
+      "sha256": "edd4db4b76a67d862d2febe96ffe2b498ad4f09ac4f089ec2796a96b15ea757b"
+    },
+    {
+      "file": "src/game/flightSpeed.ts",
+      "sha256": "8020ff1fd1e6d843dd47a7b854e6c4f14c6110caa9c4e90210f0dfc61b5721d6"
+    },
+    {
+      "file": "src/game/milestones.ts",
+      "sha256": "8c06f67752be261f12250d8136bbca60f2e709019b4cb4066f33aa284d69ca6c"
+    },
+    {
+      "file": "src/game/opponent.ts",
+      "sha256": "69f800055694bf5745d89428086fbab15538116406b7d6b8487ca0c99c20f3e9"
+    },
+    {
+      "file": "src/game/progression.ts",
+      "sha256": "95ac4b6393e413702a11c6c786c2e8d118c59150ddd51e45926622129f5e951a"
+    },
+    {
+      "file": "src/game/rallyEffects.ts",
+      "sha256": "39286b9d57105187dc38a55ef1186127c3e41ec89636b512dbac3f60dd3555d2"
+    },
+    {
+      "file": "src/game/scheduler.ts",
+      "sha256": "75fd289e244e6de2b610d79751d80217379822e1fc2fe64c657e477ad6eb8830"
+    },
+    {
+      "file": "src/game/session.ts",
+      "sha256": "5c6fdc5f690b3addaeb8484d9f962276f4b3f60623e12acb1d4968909ad0c93a"
+    },
+    {
+      "file": "src/game/simulation.ts",
+      "sha256": "1b4a104c455cd9bdc8e6ee03b89644db3c01a411a843387d8ec6d3cd8ffef4cb"
+    },
+    {
+      "file": "src/game/targets.ts",
+      "sha256": "19ddd59cebbcb0b12ae09341f34df93ad8ef61628a70a064948747e69e89b8ec"
+    },
+    {
+      "file": "src/game/trajectory.ts",
+      "sha256": "2e985214f496ceac6955d9e21a011232513dde662f1ecea3df40ffdd94fcb924"
+    },
+    {
+      "file": "src/game/types.ts",
+      "sha256": "9bcb80fa04a01a9df514a065df90c2ca15a8b808e34e9fe77357ce1aef5c737a"
+    },
+    {
+      "file": "src/game/viewpoint.ts",
+      "sha256": "1e5bea55f6b62fc37c9dce79f2b266d938d08e3fd663a925540e7b39dc9ad3f9"
+    },
+    {
+      "file": "src/render/balls.ts",
+      "sha256": "015f4c5014692459f2387c1bf24a07386f56c778f975bec63b32db2034e914c4"
+    },
+    {
+      "file": "src/render/camera.ts",
+      "sha256": "21bbe2f2ecd39520e72ffdca080a0936414b7131f06ded2d5a85f1aa21fd31ac"
+    },
+    {
+      "file": "src/render/celebrations.ts",
+      "sha256": "d6c79f97f7538d38d89a1f941a22c66fa26f1c60c3850cd8d6967a9b040c7af4"
+    },
+    {
+      "file": "src/render/createView.ts",
+      "sha256": "a8b278e9e9e4f96cf18ea595366d19cff84e33d78df487a905fd1e7929b12804"
+    },
+    {
+      "file": "src/render/environment.ts",
+      "sha256": "089bb1539b6cb324697c8eb2d57f78919bfbeaf393a079572ea883efe641ab3e"
+    },
+    {
+      "file": "src/render/field.ts",
+      "sha256": "33a224d11f907415d9064e9c9b9096a6cf84b7f7f71915d69f5810e43e31a452"
+    },
+    {
+      "file": "src/render/materials.ts",
+      "sha256": "81c703826ed5631db5265ebf943231a1efd8157eb77df380fdf0671e9d4ce2e2"
+    },
+    {
+      "file": "src/render/objects.ts",
+      "sha256": "811e1276739f91dbcec12150e4c72f0cb1c7ad0cfec3aaa5ce29c8eefb7edf35"
+    },
+    {
+      "file": "src/render/opponentView.ts",
+      "sha256": "18b3fd0fc7fabc45a7137c8ba544306208c626405cd85b497efb6af50a448658"
+    },
+    {
+      "file": "src/render/paddle.ts",
+      "sha256": "9b88815c5b00032957a222f43b5b13dae1004fa144a92ec05fe8e1f32944c9dd"
+    },
+    {
+      "file": "src/render/particles.ts",
+      "sha256": "1d2fd8fff2d11e91712fbcaf249fb0b7e4c6d9bc767cd70cb178216caa94c5ca"
+    },
+    {
+      "file": "src/render/prepare.ts",
+      "sha256": "1be3dacde68f5df22a0b296f141a3a179c8c289a4d79e95398266f456c1bb6e2"
+    },
+    {
+      "file": "src/render/presentation.ts",
+      "sha256": "e8d9c8952245dab13873571e677909d5c00845cf839b40b9c2fab2208f34b65e"
+    },
+    {
+      "file": "src/render/quality.ts",
+      "sha256": "670a050005c1f3a37c93ae16e568e3ef4f9dcd010dc159acef6290b147f1fc1d"
+    },
+    {
+      "file": "src/render/rainbow.ts",
+      "sha256": "0b6d3bed0975942d7f220fc8b527f4a6e2831a5374e87e09c4974d55f305e180"
+    },
+    {
+      "file": "src/render/rallyEffects.ts",
+      "sha256": "c15202ea2f07228d831ee0172cfbb3f17ca69dcd81f12ee86ddfacd18e78b11a"
+    },
+    {
+      "file": "src/audio/audio.ts",
+      "sha256": "4dbefec0ef4e2dc010083c437b90a8719238c7c028ac8605cdaa41e837a3de3a"
+    },
+    {
+      "file": "src/audio/tones.ts",
+      "sha256": "daa763739acb712b23208f75b68a32a8dfbbad6be04b6f2d3f824e915cc7aa3e"
+    },
+    {
+      "file": "src/input/mapping.ts",
+      "sha256": "80199b8f730a6339e6a106bf8cedec28308062e72dd878e080b38ce6b022ef32"
+    },
+    {
+      "file": "src/input/swipe.ts",
+      "sha256": "cde8301accea83b7a2588ace83dda2db63943252e9fbf252c65ea9460cfe885c"
+    },
+    {
+      "file": "src/input/timeline.ts",
+      "sha256": "f1d8aa89893bb444fd0c3cdf6426c90e647eb02027aaf51773e14f45edea9461"
+    },
+    {
+      "file": "src/storage/preferences.ts",
+      "sha256": "d1413a7c858fdef151919d1a8a31c9c2511b8c97723cabb11be1ede0b9599d37"
+    },
+    {
+      "file": "src/ranking/client.ts",
+      "sha256": "d9afdad47aad372173856ce7ba4df0343803ba7dd2a1f70375620b77cae0741f"
+    },
+    {
+      "file": "src/ranking/controller.ts",
+      "sha256": "97cce51c85c6036168d304f711bb54d115c7c59b1fa41835808fa54d5555c5a4"
+    },
+    {
+      "file": "src/ranking/resultHall.ts",
+      "sha256": "397a4f8063bff71a92a75d92da4d8bd66468b6ecd1b5a6a81bb414550f4ec75c"
+    },
+    {
+      "file": "src/ranking/resultPosition.ts",
+      "sha256": "1a3bf05686ffcc88e6b50678d662c3cc5abb2dbda45a87b4bd966ac005f1c051"
+    },
+    {
+      "file": "ranking-manifest.json",
+      "sha256": "e4590d678f33042d1188650e602d61026aa6763c7260cefde40efaaa85901a99"
+    },
+    {
+      "file": "supabase/migrations/20261024095634_takkeu_guest_play_count.sql",
+      "sha256": "896dd45c17ddc6b85ea338a8261dbecc24c1c35c0a98112053ae17349a08caae"
+    },
+    {
+      "file": "supabase/migrations/20261025184307_takkeu_result_position.sql",
+      "sha256": "1a4f62c589ddd6a0e49f0a54e10a9cb554e1ed4cd8345649922d1d8f929339b9"
+    },
+    {
+      "file": "supabase/migrations/20261027032043_takkeu_hall_of_fame.sql",
+      "sha256": "b6a9828852e3b87840348814559353dec8b0286d6d6642dee7952b4fe9ef009b"
+    },
+    {
+      "file": "supabase/migrations/20261027_takkeu_final_lost_balls.sql",
+      "sha256": "02b953d6ccad9af9315ca0d6f8f073560efdbb974af142c18596ca0ba0174177"
+    },
+    {
+      "file": "supabase/migrations/20261027_takkeu_legacy_ranking_filter.sql",
+      "sha256": "e23765b2d0b4c7ad6a7a6f708254099c5ad0f4813c92b0b67dd317bf43377550"
+    },
+    {
+      "file": "supabase/migrations/20261027_takkeu_moderation_categories.sql",
+      "sha256": "9dfe835a984af0647dbbf546491e95f28352156f71630476dc692686e1750cc1"
+    },
+    {
+      "file": "supabase/migrations/20261027_takkeu_progress_checks.sql",
+      "sha256": "7bb52b57568e84a7bf0393f1c677e4a1a7d3dfbeecf7427f73aeea6dc1f94ace"
+    },
+    {
+      "file": "supabase/migrations/20261027_takkeu_progress_throttle.sql",
+      "sha256": "c0163ce9812a80b77a105a59e8a16b18a4ddc78700ce3945072704b107e3d947"
+    },
+    {
+      "file": "supabase/migrations/20261027_takkeu_rate_limit_refinement.sql",
+      "sha256": "afd97f7ddf593db06b17eb6c85faf4f69c9d58c34501dac1717544c9cfd92958"
+    },
+    {
+      "file": "supabase/migrations/20261027_takkeu_submission_guard.sql",
+      "sha256": "95cb83dd3d5f3eff9a8468013b3d113e8def43cc042bd43dc1414c3dacee26f7"
+    },
+    {
+      "file": "supabase/migrations/20261028124434_takkeu_release_rest_inspector.sql",
+      "sha256": "6cd7f3b046aee78e960d64363f14ac8b9c1b1e3490bd9c4f96180d6b1d8a7d34"
+    },
+    {
+      "file": ".github/workflows/ci.yml",
+      "sha256": "9f5740cfb0e01572cd5a8bc871d2a3cfccc7247ef345c682b3876ca81c56bf48"
+    },
+    {
+      "file": ".github/workflows/deploy.yml",
+      "sha256": "532508723bea02816a39a6bcd7a38212ac77edeed8d919bd40cdad6526d556f0"
+    },
+    {
+      "file": ".github/workflows/production-readiness.yml",
+      "sha256": "aec19f750ce0ce381ad7fe8bd09fced31ab299003a64a923f65b3958cbc72a63"
+    },
+    {
+      "file": ".github/workflows/rendering-comparison.yml",
+      "sha256": "8bc0d844290cc2c2c8eb4682640094a55f18ea4161e6db8b44953c9c672d2575"
+    },
+    {
+      "file": "index.html",
+      "sha256": "f14900699a5f98c3a47ad028be6222ff9ed4263218c343ee4701c5bf073a4fa6"
+    },
+    {
+      "file": "package.json",
+      "sha256": "06dfed107ad6425ecc5172fca201fde6793628886b066a861426b01f19ba5a2a"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "9d4b6dd8b05874c6f32e1a79b7e45ad3e0a3e2bf8ebb4eadc9eaec38f51eeac1"
+    }
+  ]
+}

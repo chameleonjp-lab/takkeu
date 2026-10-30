@@ -1,3 +1,4 @@
+import { t } from '../i18n/i18n';
 import manifest from '../../ranking-manifest.json';
 
 const entry = manifest.ranking_entries[0]!;
@@ -47,13 +48,13 @@ function shareUrl(text: string, url?: string): string {
 
 export function scoreShareUrl(score: number, cleared = false, hallNumber?: number): string | null {
   if (!validShareScore(score) || (cleared && score !== 3500)) return null;
-  const ordinal = cleared && Number.isSafeInteger(hallNumber) && hallNumber! > 0 ? `\n殿堂登録 第${hallNumber}号` : '';
-  return shareUrl(cleared ? `タッケウ3500ラリー、ゲームクリア！${ordinal}\n3500ラリーの殿堂入りに挑戦しよう！\n#タッケウ\n${RANKING_CONFIG.canonicalUrl}`
-    : `タッケウで${score}ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\n${RANKING_CONFIG.canonicalUrl}`);
+  const ordinal = cleared && Number.isSafeInteger(hallNumber) && hallNumber! > 0 ? `\n${t('殿堂登録 第{number}号', { number: hallNumber! })}` : '';
+  return shareUrl(cleared ? t('タッケウ3500ラリー、ゲームクリア！{ordinal}\n3500ラリーの殿堂入りに挑戦しよう！\n{tag}\n{url}', { ordinal, tag: t('#タッケウ'), url: RANKING_CONFIG.canonicalUrl })
+    : t('タッケウで{score}ラリー達成！\nあなたは何ラリーできるかな？\n{tag}\n{url}', { score, tag: t('#タッケウ'), url: RANKING_CONFIG.canonicalUrl }));
 }
 
 export function homeShareUrl(bestScore: number): string {
   return shareUrl(validShareScore(bestScore) && bestScore >= 1
-    ? `卓球ゲーム「タッケウ」で自己ベスト${bestScore}ラリー！\n何ラリーつなげられる？ #タッケウ`
-    : 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ', RANKING_CONFIG.canonicalUrl);
+    ? t('卓球ゲーム「タッケウ」で自己ベスト{score}ラリー！\n何ラリーつなげられる？ {tag}', { score: bestScore, tag: t('#タッケウ') })
+    : t('タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ {tag}', { tag: t('#タッケウ') }), RANKING_CONFIG.canonicalUrl);
 }

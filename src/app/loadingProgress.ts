@@ -1,3 +1,4 @@
+/** Stage and error retain source text so in-flight work can be presented in any language. */
 export type LoadingState = Readonly<{percent:number;stage:string;remainingSeconds:number|null;elapsedSeconds:number;error:string|null}>;
 type Stage='court'|'sound'|'ranking'|'controls';
 const stages:Record<Stage,{weight:number;label:string}>={

@@ -17,7 +17,7 @@ test('A/B production proposals remain byte-identical to the explicitly reviewed 
 });
 test('release marker names the actual new PR and fixtures exercise that exact release',()=>{
   const target=JSON.parse(readFileSync('scripts/release/release-target.json','utf8'));
-  assert.deepEqual(target,{format:1,release:'takkeu-3500-production-ab-final-20261028',pull_request:34,head_ref:'release/3500-production-ab-final-20261028',client_version:'takkeu-web-clear-3500-1'});
+  assert.deepEqual(target,{format:1,release:'takkeu-i18n-15-20261030',pull_request:35,head_ref:'feat/i18n-15-languages',client_version:'takkeu-web-clear-3500-1'});
   assert.deepEqual(marker,target);
 });
 test('dedicated PR readiness requires live public GET/HEAD proof and preserves offline CI',()=>{
