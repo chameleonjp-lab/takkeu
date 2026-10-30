@@ -150,8 +150,11 @@ canvas:focus-visible { outline: 2px solid #7be2d1; outline-offset: -3px; }
 .ranking-panel th { hyphens: auto; }
 @media (max-width: 600px) {
   .home-screen .brand-note { display: none; }
-  .hero-description { line-height: 1.75; }
-  .home-hero { padding-top: 24px; }
+  .hero-description { line-height: 1.75; margin-bottom: 16px; }
+  .hero-lead { font-size: 1.25rem; line-height: 1.5; margin-bottom: 12px; }
+  .hero-copy > .eyebrow { margin-bottom: 12px; }
+  .hero-copy h1 { margin-bottom: 12px; }
+  .home-hero { padding-top: 16px; }
 }
 .name-details { min-width: 0; font-size: .6875rem; color: #90a4b3; }
 .name-details summary { cursor: pointer; min-height: 44px; padding-block: 10px; line-height: 1.7; }

@@ -52,6 +52,6 @@ export function formatNumber(value: number, language = getLanguage()): string {
 export function translateError(message: string): string {
   const status = /^ランキング通信に失敗しました（(\d+)）。$/u.exec(message);
   if (status) return t('ランキング通信に失敗しました（{status}）。', { status: status[1]! });
-  if (Object.hasOwn(TRANSLATIONS.ja, message) || getLanguage() === 'ja') return t(message);
+  if (Object.hasOwn(TRANSLATIONS.ja, message)) return t(message);
   return t('準備を完了できませんでした。もう一度お試しください。');
 }

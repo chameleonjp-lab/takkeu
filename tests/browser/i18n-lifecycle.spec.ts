@@ -273,6 +273,11 @@ test('thirty synchronous language switches retain listeners, canvas, simulation 
   await expect(page.locator('[data-score]')).toHaveText('555');
   await page.keyboard.press('Escape');
   await expect(page.locator('.pause-overlay')).toBeVisible();
+  const paused=await page.evaluate(()=>({snapshot:window.stage3.snapshot(),resources:window.stage3.resources(),metrics:window.stage3.metrics()}));
+  await page.locator('.pause-overlay [data-language]').selectOption('de');
+  expect(await page.evaluate(()=>({snapshot:window.stage3.snapshot(),resources:window.stage3.resources(),metrics:window.stage3.metrics()}))).toEqual(paused);
+  await expect(page.locator('.pause-overlay')).toBeVisible();
+  await expect(page.locator('html')).toHaveAttribute('lang','de');
   await page.locator('[data-action="resume"]').click();
   await page.clock.runFor(16);
   expect(await page.evaluate(() => window.stage3.snapshot().simTime)).toBeGreaterThan(check.after.snapshot.simTime);

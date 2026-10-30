@@ -42,4 +42,4 @@ workflow自体、所有者による承認判定、DB検査、distribution hash�
 
 この検証はrelease markerとローカルの正式gate regressionの証拠であり、公開成功の記録ではない。PRはDraftとして発行されており、この作業ではmainへのマージ、公開workflowの起動、本番DB更新、Pages公開を行っていない。
 
-最終レビュー対象のSHAに対するアプリ全体の検証・翻訳レビュー、GitHub上のPR checks、実際の本番読取り専用契約とPages設定はそれぞれ確認が必要である。所有者マージ後のmain SHA、正式CI run/attempt、artifact hash一致、配備直前の再確認、公開後のbyte/DB一致は、実際のrelease runが成功するまで未確認のまま扱う。GitHubのmain更新とdeploy APIは原子的ではないため、最終照合から配備完了までmainとDB契約を変更しない運用も維持する。
+アプリ・翻訳・ブラウザ・描画負荷の実行結果は [verification-results.md](verification-results.md) に保存した。実際の本番読取り専用契約もGET/HEADで一致した。Production release readinessはPR #35上で本番契約とPages/environment設定を検証して成功している。最終コミットの全CIは [PR checks](https://github.com/chameleonjp-lab/takkeu/pull/35/checks) とartifactのcommit.txtで確認し、成功前にDraftを解除しない。所有者マージ後のmain SHA、正式CI run/attempt、artifact hash一致、配備直前の再確認、公開後のbyte/DB一致は、実際のrelease runが成功するまで未確認のまま扱う。GitHubのmain更新とdeploy APIは原子的ではないため、最終照合から配備完了までmainとDB契約を変更しない運用も維持する。

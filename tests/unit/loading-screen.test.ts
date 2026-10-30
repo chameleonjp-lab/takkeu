@@ -116,7 +116,8 @@ it('shows a safe error message and requires a deliberate retry or home action', 
   const alert = get('[role="alert"]');
   const retry = get<HTMLButtonElement>('[data-loading-action="retry"]');
   expect(alert.hidden).toBe(false);
-  expect(alert.textContent).toContain('<img src=x onerror=alert(1)>');
+  expect(alert.textContent).toBe('準備を完了できませんでした。もう一度お試しください。');
+  expect(alert.textContent).not.toContain('<img');
   expect(alert.querySelector('img')).toBeNull();
   expect(get('[data-loading-screen]').getAttribute('aria-busy')).toBe('false');
   expect(get('[data-loading-eta]').hidden).toBe(true);

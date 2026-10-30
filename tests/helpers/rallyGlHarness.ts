@@ -1,10 +1,18 @@
 import { Scene, Vector4 } from 'three';
 import type { Mesh, MeshBasicMaterial, Object3D } from 'three';
 import { DEFAULT_CONFIG } from '../../src/game/config';
+import { speedMultiplier } from '../../src/game/difficulty';
+import { MAX_BALLS } from '../../src/game/milestones';
+import { createRallyEffects } from '../../src/game/rallyEffects';
+import type { RallyEffectsState } from '../../src/game/rallyEffects';
+import { scheduleReturn } from '../../src/game/scheduler';
+import { snapshotSimulation, stepSimulation } from '../../src/game/simulation';
+import { deflectBounce } from '../../src/game/trajectory';
 import { createView } from '../../src/render/createView';
-import type { GameEvent } from '../../src/game/types';
+import type { GameEvent, GameSnapshot } from '../../src/game/types';
 import type { Quality } from '../../src/storage/preferences';
 import { rallyPerformanceReplay } from './rallyPerformanceReplay';
+import { scenario } from './scenarios';
 
 // Diagnostic only: capture the real private scene without adding production APIs.
 const canvas=document.querySelector<HTMLCanvasElement>('canvas')!;
@@ -74,6 +82,41 @@ function input(name:keyof typeof inputs,quality:Quality){
     .map(event=>({...event,id:`${runId}:${event.id}`,runId}));
   return {snapshot:{...frame.snapshot,runId},state:{...frame.state,runId},events,index,activeHits:activeHits(frame)};
 }
+function defaultFeedbackInput(){
+  // Use real simulation facts below the clear cap. Delay the other returns just
+  // enough to miss one ball, then resume the normal replay autoplayer. A real
+  // reward restores 30 live balls while the hit and loss batches overlap.
+  const score=555,state=scenario(score,0).state;
+  state.balls=[];
+  for(let id=1;id<=MAX_BALLS;id++){
+    let plan=scheduleReturn({ballId:id,earliestDepartAt:id===1?0:.15,
+      preferredTarget:{x:[-.7,.7,0,.4][(id-1)%4]!,y:.5},speedMultiplier:speedMultiplier(score),score,smash:true},
+      snapshotSimulation(state).scheduledReturns,DEFAULT_CONFIG);
+    const from={x:0,y:.5,z:-DEFAULT_CONFIG.paddleZ};
+    plan=deflectBounce(plan,from,(id*17%29)/29,DEFAULT_CONFIG);
+    state.balls.push({id,phase:'queued',position:from,from,plan,warningSent:false});
+  }
+  state.nextBallId=MAX_BALLS+1;
+  const controller=createRallyEffects(state.runId,0),history:GameEvent[]=[];
+  let selected:{snapshot:GameSnapshot;state:RallyEffectsState}|null=null,bestHits=0;
+  for(let step=0;step<Math.round(2/DEFAULT_CONFIG.fixedDt);step++){
+    const target=state.lostBallCount===0?{x:DEFAULT_CONFIG.paddleMaxX,y:DEFAULT_CONFIG.paddleMaxY}
+      :snapshotSimulation(state).scheduledReturns[0]?.target??state.paddle;
+    const result=stepSimulation(state,DEFAULT_CONFIG,DEFAULT_CONFIG.fixedDt,{target});
+    controller.consume(result.events);history.push(...result.events);
+    const snapshot=result.snapshot,effects=controller.state(),time=snapshot.simTime;
+    const hits=effects.hits.filter(hit=>time>=hit.at&&time<hit.at+.3).length;
+    const losses=effects.losses.filter(loss=>time>=loss.at&&time<loss.at+.5).length;
+    if(snapshot.phase==='running'&&snapshot.score<1500&&snapshot.balls.length===MAX_BALLS&&losses>0&&hits>bestHits){
+      selected={snapshot,state:effects};bestHits=hits;
+    }
+  }
+  if(!selected)throw new Error('The default GL fixture needs 30 live balls and overlapping confirmed hit/loss feedback.');
+  const runId='gl-default-live-feedback';
+  const events=history.filter(event=>event.time<=selected.snapshot.simTime&&selected.snapshot.simTime-event.time<.7)
+    .map(event=>({...event,id:`${runId}:${event.id}`,runId}));
+  return {snapshot:{...selected.snapshot,runId},state:{...selected.state,runId},events};
+}
 function configure(next:Mode){
   mode=next;
   for(const root of roots)root.visible=next!=='hidden';
@@ -83,17 +126,22 @@ function pixels(){const data=new Uint8Array(1280*720*4);gl.readPixels(0,0,1280,7
 const harness={
   defaultContribution(){
     // Do not configure material flags: this checks the actual production default.
-    const frozen=input('middle','standard');view.setQuality('standard');
+    const frozen=defaultFeedbackInput();view.setQuality('standard');
     for(const root of roots)root.visible=true;
     for(let warm=0;warm<2;warm++){view.render(frozen.snapshot,frozen.events,frozen.state);gl.finish();}
     counters=fresh();view.render(frozen.snapshot,frozen.events,frozen.state);gl.finish();
-    const visible={...counters,rendererCalls:view.resources().drawCalls};
+    const resources=view.resources(),visible={...counters,rendererCalls:resources.drawCalls};
+    const activeGeometry=resources.rallyEffects;
+    if(!activeGeometry)throw new Error('The default GL fixture requires rally geometry counters.');
     for(const root of roots)root.visible=false;
     counters=fresh();view.render(frozen.snapshot,frozen.events,frozen.state);gl.finish();
     const hidden={...counters,rendererCalls:view.resources().drawCalls};
     for(const root of roots)root.visible=true;
     return {visible,hidden,contribution:visible.drawCalls-hidden.drawCalls,
-      snapshot:{score:frozen.snapshot.score,simTime:frozen.snapshot.simTime,balls:frozen.snapshot.balls.length}};
+      activeGeometry:{tableQuads:activeGeometry.tableQuads,worldQuads:activeGeometry.worldQuads,drawCalls:activeGeometry.drawCalls},
+      stateRunId:frozen.state.runId,
+      snapshot:{score:frozen.snapshot.score,simTime:frozen.snapshot.simTime,balls:frozen.snapshot.balls.length,
+        phase:frozen.snapshot.phase,endReason:frozen.snapshot.endReason,runId:frozen.snapshot.runId,lostBallCount:frozen.snapshot.lostBallCount}};
   },
   async profile(name:keyof typeof inputs,quality:Quality,frameCount=8){
     const frozen=input(name,quality);view.setQuality(quality);

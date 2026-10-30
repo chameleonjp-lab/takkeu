@@ -39,4 +39,5 @@ it('localizes unexpected technical failures at the presentation boundary and kee
   expect(translateError('Unexpected WebGL failure')).not.toContain('Unexpected WebGL failure');
   expect(translateError('予期しない描画エラー。')).not.toMatch(/[ぁ-んァ-ヶ]/u);
   expect(translateError('ランキング通信に失敗しました（503）。')).toContain('503');
+  setLanguage('ja');expect(translateError('Unexpected WebGL failure')).toBe('準備を完了できませんでした。もう一度お試しください。');
 });

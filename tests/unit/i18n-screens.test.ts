@@ -21,10 +21,10 @@ function setup() {
   return { root, screens, actions, get };
 }
 
-it('offers every supported language on both home and settings', () => {
+it('offers every supported language on home, settings and the pause menu', () => {
   const { root, get } = setup();
   const selectors = root.querySelectorAll<HTMLSelectElement>('[data-language]');
-  expect(selectors).toHaveLength(2);
+  expect(selectors).toHaveLength(3);
   for (const select of selectors) {
     expect(select.options).toHaveLength(15);
     expect([...select.options].map(option => option.value)).toContain('ja');
@@ -33,6 +33,7 @@ it('offers every supported language on both home and settings', () => {
   }
   expect(get('[data-home]').querySelector('[data-language]')).not.toBeNull();
   expect(get('[data-settings]').querySelector('[data-language]')).not.toBeNull();
+  expect(get('.pause-overlay').querySelector('[data-language]')).not.toBeNull();
 });
 
 it('switches language from either selector without replacing controls or losing edits and focus', () => {
@@ -141,4 +142,16 @@ it('refreshes paused and running messages without moving focus or translating ev
 it('unsubscribes language updates when screens are disposed', () => {
   const { root, screens } = setup(); screens.dispose();
   expect(() => i18n.setLanguage('en')).not.toThrow(); expect(root.childNodes).toHaveLength(0);
+});
+
+it('allows an actual pause-menu selection while preserving the pause, canvas and action ownership',()=>{
+  const {screens,actions,get}=setup();
+  const snapshot={...scenario(555).snapshot(),phase:'paused' as const,pauseReason:'user' as const,lostBallCount:35};
+  screens.render(snapshot);const canvas=screens.canvas,select=get<HTMLSelectElement>('.pause-overlay [data-language]');
+  expect(select).not.toBeNull();select.focus();select.value='en';select.dispatchEvent(new Event('change',{bubbles:true}));
+  expect(i18n.getLanguage()).toBe('en');expect(document.activeElement).toBe(select);
+  expect(screens.canvas).toBe(canvas);expect(get('.pause-overlay').hidden).toBe(false);
+  expect(get('[data-score]').textContent).toBe('555');expect(get('[data-losses]').textContent).toBe('35 / 100');
+  expect(actions.start).not.toHaveBeenCalled();expect(actions.retry).not.toHaveBeenCalled();
+  expect(actions.home).not.toHaveBeenCalled();expect(actions.resume).not.toHaveBeenCalled();
 });

@@ -1,0 +1,2213 @@
+{
+  "date": "2026-10-30",
+  "baselineSha": "84b9122713b280255d762978c4bf9906f8b1987b",
+  "currentTimingReferenceSha": "40901ed9749668acabd301aeecb4622112499ab6",
+  "initialCurrentRun": {
+    "stats": {
+      "startTime": "2026-10-30T21:57:13.528Z",
+      "duration": 514109.83999999997,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "file": "browser-load.spec.ts",
+        "title": "standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける",
+        "project": "chromium",
+        "status": "passed",
+        "measurements": [
+          {
+            "initialBalls": 30,
+            "initialScore": 450,
+            "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "deviceRatio": 1
+            },
+            "drawingSize": {
+              "width": 1280,
+              "height": 720
+            },
+            "quality": "standard",
+            "durationMs": 60052.4,
+            "p95Ms": 166.59999999999854,
+            "fractionAtMost25ms": 0.167989417989418,
+            "runningSimulationSeconds": 52.883333333330974,
+            "finalPhase": "running",
+            "pauseReason": null,
+            "remaining": 30,
+            "score": 1440,
+            "opponentHits": 991,
+            "smashHits": 991,
+            "audioResources": {
+              "created": 40723,
+              "sourceCreated": 12930,
+              "liveNodes": 186,
+              "liveSources": 54,
+              "layeredVoices": 16,
+              "peakNodes": 283,
+              "peakSources": 100,
+              "peakVoices": 16
+            },
+            "initialResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 25,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "finalResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 30,
+              "particles": 24,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "runningP95Ms": 166.59999999999854,
+            "runningFractionAtMost25ms": 0.167989417989418,
+            "continuousRun": true,
+            "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+            "targetHardwareVerdict": "未確認"
+          }
+        ]
+      },
+      {
+        "file": "browser-load.spec.ts",
+        "title": "standard・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける",
+        "project": "chromium",
+        "status": "passed",
+        "measurements": [
+          {
+            "initialBalls": 30,
+            "initialScore": 555,
+            "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "deviceRatio": 1
+            },
+            "drawingSize": {
+              "width": 1280,
+              "height": 720
+            },
+            "quality": "standard",
+            "durationMs": 60035.10000000009,
+            "p95Ms": 150,
+            "fractionAtMost25ms": 0.15316455696202533,
+            "runningSimulationSeconds": 53.908333333330916,
+            "finalPhase": "running",
+            "pauseReason": null,
+            "remaining": 30,
+            "score": 1575,
+            "opponentHits": 1020,
+            "smashHits": 1020,
+            "audioResources": {
+              "created": 41820,
+              "sourceCreated": 13266,
+              "liveNodes": 156,
+              "liveSources": 47,
+              "layeredVoices": 12,
+              "peakNodes": 284,
+              "peakSources": 101,
+              "peakVoices": 16
+            },
+            "initialResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 27,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "finalResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 26,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "runningP95Ms": 150,
+            "runningFractionAtMost25ms": 0.15316455696202533,
+            "continuousRun": true,
+            "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+            "targetHardwareVerdict": "未確認"
+          }
+        ]
+      },
+      {
+        "file": "browser-load.spec.ts",
+        "title": "low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける",
+        "project": "chromium",
+        "status": "passed",
+        "measurements": [
+          {
+            "initialBalls": 30,
+            "initialScore": 450,
+            "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "deviceRatio": 1
+            },
+            "drawingSize": {
+              "width": 960,
+              "height": 540
+            },
+            "quality": "low",
+            "durationMs": 60015.20000000009,
+            "p95Ms": 116.60000000000036,
+            "fractionAtMost25ms": 0.18433619866284623,
+            "runningSimulationSeconds": 57.749999999997364,
+            "finalPhase": "running",
+            "pauseReason": null,
+            "remaining": 30,
+            "score": 1531,
+            "opponentHits": 1084,
+            "smashHits": 1084,
+            "audioResources": {
+              "created": 42278,
+              "sourceCreated": 13028,
+              "liveNodes": 78,
+              "liveSources": 22,
+              "layeredVoices": 7,
+              "peakNodes": 244,
+              "peakSources": 81,
+              "peakVoices": 16
+            },
+            "initialResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 43,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "finalResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 27,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "runningP95Ms": 116.60000000000036,
+            "runningFractionAtMost25ms": 0.18433619866284623,
+            "continuousRun": true,
+            "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+            "targetHardwareVerdict": "未確認"
+          }
+        ]
+      },
+      {
+        "file": "browser-load.spec.ts",
+        "title": "low・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける",
+        "project": "chromium",
+        "status": "passed",
+        "measurements": [
+          {
+            "initialBalls": 30,
+            "initialScore": 555,
+            "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "deviceRatio": 1
+            },
+            "drawingSize": {
+              "width": 960,
+              "height": 540
+            },
+            "quality": "low",
+            "durationMs": 60004.499999999905,
+            "p95Ms": 100.09999999999854,
+            "fractionAtMost25ms": 0.20928196147110334,
+            "runningSimulationSeconds": 58.12499999999734,
+            "finalPhase": "running",
+            "pauseReason": null,
+            "remaining": 30,
+            "score": 1661,
+            "opponentHits": 1110,
+            "smashHits": 1110,
+            "audioResources": {
+              "created": 43257,
+              "sourceCreated": 13325,
+              "liveNodes": 90,
+              "liveSources": 25,
+              "layeredVoices": 9,
+              "peakNodes": 246,
+              "peakSources": 82,
+              "peakVoices": 16
+            },
+            "initialResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 27,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "finalResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 27,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "runningP95Ms": 100.09999999999854,
+            "runningFractionAtMost25ms": 0.20928196147110334,
+            "continuousRun": true,
+            "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+            "targetHardwareVerdict": "未確認"
+          }
+        ]
+      },
+      {
+        "file": "browser-load.spec.ts",
+        "title": "standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける",
+        "project": "webkit",
+        "status": "passed",
+        "measurements": [
+          {
+            "initialBalls": 30,
+            "initialScore": 450,
+            "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+            "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+            "viewport": {
+              "width": 390,
+              "height": 664,
+              "deviceRatio": 3
+            },
+            "drawingSize": {
+              "width": 585,
+              "height": 996
+            },
+            "quality": "standard",
+            "durationMs": 60014,
+            "p95Ms": 56,
+            "fractionAtMost25ms": 0.012743125419181758,
+            "runningSimulationSeconds": 59.19999999999728,
+            "finalPhase": "running",
+            "pauseReason": null,
+            "remaining": 30,
+            "score": 1560,
+            "opponentHits": 1112,
+            "smashHits": 1112,
+            "audioResources": {
+              "created": 45365,
+              "sourceCreated": 14359,
+              "liveNodes": 103,
+              "liveSources": 24,
+              "layeredVoices": 12,
+              "peakNodes": 283,
+              "peakSources": 100,
+              "peakVoices": 16
+            },
+            "initialResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 43,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "finalResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 27,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "runningP95Ms": 56,
+            "runningFractionAtMost25ms": 0.012743125419181758,
+            "continuousRun": true,
+            "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+            "targetHardwareVerdict": "未確認"
+          }
+        ]
+      },
+      {
+        "file": "browser-load.spec.ts",
+        "title": "standard・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける",
+        "project": "webkit",
+        "status": "passed",
+        "measurements": [
+          {
+            "initialBalls": 30,
+            "initialScore": 555,
+            "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+            "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+            "viewport": {
+              "width": 390,
+              "height": 664,
+              "deviceRatio": 3
+            },
+            "drawingSize": {
+              "width": 585,
+              "height": 996
+            },
+            "quality": "standard",
+            "durationMs": 60005,
+            "p95Ms": 54,
+            "fractionAtMost25ms": 0.00808080808080808,
+            "runningSimulationSeconds": 59.19999999999728,
+            "finalPhase": "running",
+            "pauseReason": null,
+            "remaining": 30,
+            "score": 1665,
+            "opponentHits": 1129,
+            "smashHits": 1129,
+            "audioResources": {
+              "created": 46223,
+              "sourceCreated": 14673,
+              "liveNodes": 171,
+              "liveSources": 45,
+              "layeredVoices": 16,
+              "peakNodes": 283,
+              "peakSources": 100,
+              "peakVoices": 16
+            },
+            "initialResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 25,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "finalResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 27,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "runningP95Ms": 54,
+            "runningFractionAtMost25ms": 0.00808080808080808,
+            "continuousRun": true,
+            "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+            "targetHardwareVerdict": "未確認"
+          }
+        ]
+      },
+      {
+        "file": "browser-load.spec.ts",
+        "title": "low・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける",
+        "project": "webkit",
+        "status": "passed",
+        "measurements": [
+          {
+            "initialBalls": 30,
+            "initialScore": 450,
+            "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+            "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+            "viewport": {
+              "width": 390,
+              "height": 664,
+              "deviceRatio": 3
+            },
+            "drawingSize": {
+              "width": 390,
+              "height": 664
+            },
+            "quality": "low",
+            "durationMs": 60018,
+            "p95Ms": 49,
+            "fractionAtMost25ms": 0.09059029807130334,
+            "runningSimulationSeconds": 59.091666666663954,
+            "finalPhase": "running",
+            "pauseReason": null,
+            "remaining": 30,
+            "score": 1560,
+            "opponentHits": 1111,
+            "smashHits": 1111,
+            "audioResources": {
+              "created": 42999,
+              "sourceCreated": 13256,
+              "liveNodes": 66,
+              "liveSources": 17,
+              "layeredVoices": 7,
+              "peakNodes": 244,
+              "peakSources": 81,
+              "peakVoices": 16
+            },
+            "initialResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 25,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "finalResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 26,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "runningP95Ms": 49,
+            "runningFractionAtMost25ms": 0.09059029807130334,
+            "continuousRun": true,
+            "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+            "targetHardwareVerdict": "未確認"
+          }
+        ]
+      },
+      {
+        "file": "browser-load.spec.ts",
+        "title": "low・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける",
+        "project": "webkit",
+        "status": "passed",
+        "measurements": [
+          {
+            "initialBalls": 30,
+            "initialScore": 555,
+            "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+            "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+            "viewport": {
+              "width": 390,
+              "height": 664,
+              "deviceRatio": 3
+            },
+            "drawingSize": {
+              "width": 390,
+              "height": 664
+            },
+            "quality": "low",
+            "durationMs": 60003,
+            "p95Ms": 48,
+            "fractionAtMost25ms": 0.08304297328687572,
+            "runningSimulationSeconds": 59.11666666666395,
+            "finalPhase": "running",
+            "pauseReason": null,
+            "remaining": 30,
+            "score": 1665,
+            "opponentHits": 1114,
+            "smashHits": 1114,
+            "audioResources": {
+              "created": 43762,
+              "sourceCreated": 13480,
+              "liveNodes": 33,
+              "liveSources": 8,
+              "layeredVoices": 3,
+              "peakNodes": 246,
+              "peakSources": 82,
+              "peakVoices": 16
+            },
+            "initialResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 27,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "finalResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 27,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "runningP95Ms": 48,
+            "runningFractionAtMost25ms": 0.08304297328687572,
+            "continuousRun": true,
+            "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+            "targetHardwareVerdict": "未確認"
+          }
+        ]
+      },
+      {
+        "file": "rally-gl.spec.ts",
+        "title": "default rally draw budget uses four actual GL submissions",
+        "project": "chromium",
+        "status": "failed",
+        "measurements": [
+          {
+            "visible": {
+              "drawCalls": 27,
+              "drawVertices": 34116,
+              "drawMs": 0.19999999972060323,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 27,
+              "bufferSubDataBytes": 23208,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116
+              },
+              "rendererCalls": 27
+            },
+            "hidden": {
+              "drawCalls": 27,
+              "drawVertices": 34116,
+              "drawMs": 0,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 27,
+              "bufferSubDataBytes": 23208,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116
+              },
+              "rendererCalls": 27
+            },
+            "contribution": 0,
+            "snapshot": {
+              "score": 4270,
+              "simTime": 15.016666666666454,
+              "balls": 30
+            }
+          }
+        ]
+      },
+      {
+        "file": "rally-gl.spec.ts",
+        "title": "default rally draw budget uses four actual GL submissions",
+        "project": "webkit",
+        "status": "failed",
+        "measurements": [
+          {
+            "visible": {
+              "drawCalls": 27,
+              "drawVertices": 34116,
+              "drawMs": 1,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 27,
+              "bufferSubDataBytes": 23208,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116
+              },
+              "rendererCalls": 27
+            },
+            "hidden": {
+              "drawCalls": 27,
+              "drawVertices": 34116,
+              "drawMs": 0,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 27,
+              "bufferSubDataBytes": 23208,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116
+              },
+              "rendererCalls": 27
+            },
+            "contribution": 0,
+            "snapshot": {
+              "score": 4270,
+              "simTime": 15.016666666666454,
+              "balls": 30
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "baselineTiming": {
+    "stats": {
+      "startTime": "2026-10-30T22:13:08.859Z",
+      "duration": 256198.747,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "file": "browser-load.spec.ts",
+        "title": "standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける",
+        "project": "chromium",
+        "status": "passed",
+        "measurements": [
+          {
+            "initialBalls": 30,
+            "initialScore": 450,
+            "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "deviceRatio": 1
+            },
+            "drawingSize": {
+              "width": 1280,
+              "height": 720
+            },
+            "quality": "standard",
+            "durationMs": 60033.499999999905,
+            "p95Ms": 166.6999999999971,
+            "fractionAtMost25ms": 0.1566579634464752,
+            "runningSimulationSeconds": 53.0416666666643,
+            "finalPhase": "running",
+            "pauseReason": null,
+            "remaining": 30,
+            "score": 1441,
+            "opponentHits": 992,
+            "smashHits": 992,
+            "audioResources": {
+              "created": 40882,
+              "sourceCreated": 13002,
+              "liveNodes": 16,
+              "liveSources": 4,
+              "layeredVoices": 1,
+              "peakNodes": 283,
+              "peakSources": 100,
+              "peakVoices": 16
+            },
+            "initialResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 43,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "finalResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 31,
+              "particles": 48,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [
+                  "hit-ring"
+                ],
+                "tableQuads": 12,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 1,
+                "disposed": false
+              }
+            },
+            "runningP95Ms": 166.6999999999971,
+            "runningFractionAtMost25ms": 0.1566579634464752,
+            "continuousRun": true,
+            "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+            "targetHardwareVerdict": "未確認"
+          }
+        ]
+      },
+      {
+        "file": "browser-load.spec.ts",
+        "title": "low・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける",
+        "project": "chromium",
+        "status": "passed",
+        "measurements": [
+          {
+            "initialBalls": 30,
+            "initialScore": 555,
+            "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "deviceRatio": 1
+            },
+            "drawingSize": {
+              "width": 960,
+              "height": 540
+            },
+            "quality": "low",
+            "durationMs": 60023.3,
+            "p95Ms": 100,
+            "fractionAtMost25ms": 0.21957236842105263,
+            "runningSimulationSeconds": 58.54999999999732,
+            "finalPhase": "running",
+            "pauseReason": null,
+            "remaining": 30,
+            "score": 1665,
+            "opponentHits": 1110,
+            "smashHits": 1110,
+            "audioResources": {
+              "created": 43299,
+              "sourceCreated": 13341,
+              "liveNodes": 16,
+              "liveSources": 4,
+              "layeredVoices": 1,
+              "peakNodes": 246,
+              "peakSources": 82,
+              "peakVoices": 16
+            },
+            "initialResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 27,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "finalResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 27,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "runningP95Ms": 100,
+            "runningFractionAtMost25ms": 0.21957236842105263,
+            "continuousRun": true,
+            "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+            "targetHardwareVerdict": "未確認"
+          }
+        ]
+      },
+      {
+        "file": "browser-load.spec.ts",
+        "title": "standard・450からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける",
+        "project": "webkit",
+        "status": "passed",
+        "measurements": [
+          {
+            "initialBalls": 30,
+            "initialScore": 450,
+            "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+            "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+            "viewport": {
+              "width": 390,
+              "height": 664,
+              "deviceRatio": 3
+            },
+            "drawingSize": {
+              "width": 585,
+              "height": 996
+            },
+            "quality": "standard",
+            "durationMs": 60027,
+            "p95Ms": 56,
+            "fractionAtMost25ms": 0.008202323991797676,
+            "runningSimulationSeconds": 59.149999999997284,
+            "finalPhase": "running",
+            "pauseReason": null,
+            "remaining": 30,
+            "score": 1560,
+            "opponentHits": 1112,
+            "smashHits": 1112,
+            "audioResources": {
+              "created": 45323,
+              "sourceCreated": 14383,
+              "liveNodes": 83,
+              "liveSources": 24,
+              "layeredVoices": 8,
+              "peakNodes": 283,
+              "peakSources": 100,
+              "peakVoices": 16
+            },
+            "initialResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 43,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "finalResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 27,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "runningP95Ms": 56,
+            "runningFractionAtMost25ms": 0.008202323991797676,
+            "continuousRun": true,
+            "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+            "targetHardwareVerdict": "未確認"
+          }
+        ]
+      },
+      {
+        "file": "browser-load.spec.ts",
+        "title": "low・555からLinuxの実フレーム60秒を記録し、実機の性能判定とは分ける",
+        "project": "webkit",
+        "status": "passed",
+        "measurements": [
+          {
+            "initialBalls": 30,
+            "initialScore": 555,
+            "environment": "Linux Playwright browser, not iPhone 17 Pro hardware",
+            "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+            "viewport": {
+              "width": 390,
+              "height": 664,
+              "deviceRatio": 3
+            },
+            "drawingSize": {
+              "width": 390,
+              "height": 664
+            },
+            "quality": "low",
+            "durationMs": 60008,
+            "p95Ms": 45,
+            "fractionAtMost25ms": 0.12265666845206213,
+            "runningSimulationSeconds": 59.266666666663944,
+            "finalPhase": "running",
+            "pauseReason": null,
+            "remaining": 30,
+            "score": 1666,
+            "opponentHits": 1135,
+            "smashHits": 1135,
+            "audioResources": {
+              "created": 43997,
+              "sourceCreated": 13545,
+              "liveNodes": 15,
+              "liveSources": 4,
+              "layeredVoices": 1,
+              "peakNodes": 246,
+              "peakSources": 82,
+              "peakVoices": 16
+            },
+            "initialResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 27,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "finalResources": {
+              "geometries": 55,
+              "textures": 4,
+              "programs": 17,
+              "drawCalls": 27,
+              "particles": 0,
+              "particleCapacity": 8408,
+              "rallyEffects": {
+                "activeEffects": [],
+                "tableQuads": 0,
+                "worldQuads": 0,
+                "particleCount": 0,
+                "finalPhase": null,
+                "capacity": 6872,
+                "geometries": 2,
+                "materials": 2,
+                "nodes": 4,
+                "drawCalls": 0,
+                "disposed": false
+              }
+            },
+            "runningP95Ms": 45,
+            "runningFractionAtMost25ms": 0.12265666845206213,
+            "continuousRun": true,
+            "measurementVerdict": "Linux reference target NOT met or continuous run interrupted",
+            "targetHardwareVerdict": "未確認"
+          }
+        ]
+      }
+    ]
+  },
+  "oldBudgetBaseline": {
+    "stats": {
+      "startTime": "2026-10-30T22:06:42.753Z",
+      "duration": 11899.181,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "file": "rally-gl.spec.ts",
+        "title": "default rally draw budget uses four actual GL submissions",
+        "project": "chromium",
+        "status": "failed",
+        "measurements": [
+          {
+            "visible": {
+              "drawCalls": 27,
+              "drawVertices": 34116,
+              "drawMs": 0,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 27,
+              "bufferSubDataBytes": 23208,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116
+              },
+              "rendererCalls": 27
+            },
+            "hidden": {
+              "drawCalls": 27,
+              "drawVertices": 34116,
+              "drawMs": 0.10000000009313226,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 27,
+              "bufferSubDataBytes": 23208,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116
+              },
+              "rendererCalls": 27
+            },
+            "contribution": 0,
+            "snapshot": {
+              "score": 4270,
+              "simTime": 15.016666666666454,
+              "balls": 30
+            }
+          }
+        ]
+      },
+      {
+        "file": "rally-gl.spec.ts",
+        "title": "default rally draw budget uses four actual GL submissions",
+        "project": "webkit",
+        "status": "failed",
+        "measurements": [
+          {
+            "visible": {
+              "drawCalls": 27,
+              "drawVertices": 34116,
+              "drawMs": 2,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 27,
+              "bufferSubDataBytes": 23208,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116
+              },
+              "rendererCalls": 27
+            },
+            "hidden": {
+              "drawCalls": 27,
+              "drawVertices": 34116,
+              "drawMs": 24,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 27,
+              "bufferSubDataBytes": 23208,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116
+              },
+              "rendererCalls": 27
+            },
+            "contribution": 0,
+            "snapshot": {
+              "score": 4270,
+              "simTime": 15.016666666666454,
+              "balls": 30
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "oldInvalidFixtureRed": {
+    "stats": {
+      "startTime": "2026-10-30T22:11:35.221Z",
+      "duration": 5972.7699999999995,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "file": "rally-gl.spec.ts",
+        "title": "default live rally feedback uses two single-pass submissions within the four-draw ceiling",
+        "project": "chromium",
+        "status": "failed",
+        "measurements": [
+          {
+            "visible": {
+              "drawCalls": 27,
+              "drawVertices": 34116,
+              "drawMs": 0,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 27,
+              "bufferSubDataBytes": 23208,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116
+              },
+              "rendererCalls": 27
+            },
+            "hidden": {
+              "drawCalls": 27,
+              "drawVertices": 34116,
+              "drawMs": 0,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 27,
+              "bufferSubDataBytes": 23208,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116
+              },
+              "rendererCalls": 27
+            },
+            "contribution": 0,
+            "snapshot": {
+              "score": 4270,
+              "simTime": 15.016666666666454,
+              "balls": 30
+            }
+          }
+        ]
+      },
+      {
+        "file": "rally-gl.spec.ts",
+        "title": "default live rally feedback uses two single-pass submissions within the four-draw ceiling",
+        "project": "webkit",
+        "status": "failed",
+        "measurements": [
+          {
+            "visible": {
+              "drawCalls": 27,
+              "drawVertices": 34116,
+              "drawMs": 2,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 27,
+              "bufferSubDataBytes": 23208,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116
+              },
+              "rendererCalls": 27
+            },
+            "hidden": {
+              "drawCalls": 27,
+              "drawVertices": 34116,
+              "drawMs": 2,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 27,
+              "bufferSubDataBytes": 23208,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116
+              },
+              "rendererCalls": 27
+            },
+            "contribution": 0,
+            "snapshot": {
+              "score": 4270,
+              "simTime": 15.016666666666454,
+              "balls": 30
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "repairedBudget": {
+    "stats": {
+      "startTime": "2026-10-30T22:12:47.549Z",
+      "duration": 6212.818,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "file": "rally-gl.spec.ts",
+        "title": "default live rally feedback uses two single-pass submissions within the four-draw ceiling",
+        "project": "chromium",
+        "status": "passed",
+        "measurements": [
+          {
+            "visible": {
+              "drawCalls": 36,
+              "drawVertices": 42456,
+              "drawMs": 0,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 39,
+              "bufferSubDataBytes": 135588,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116,
+                "6144": 6144,
+                "9900": 9900,
+                "18432": 36864,
+                "43200": 432,
+                "57600": 576,
+                "145152": 6912,
+                "193536": 9216,
+                "451584": 18144,
+                "602112": 24192
+              },
+              "rendererCalls": 36
+            },
+            "hidden": {
+              "drawCalls": 34,
+              "drawVertices": 40908,
+              "drawMs": 0,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 35,
+              "bufferSubDataBytes": 92244,
+              "uploadMs": 0.10000000009313226,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116,
+                "6144": 6144,
+                "9900": 9900,
+                "18432": 36864,
+                "145152": 6912,
+                "193536": 9216
+              },
+              "rendererCalls": 34
+            },
+            "contribution": 2,
+            "activeGeometry": {
+              "tableQuads": 252,
+              "worldQuads": 6,
+              "drawCalls": 2
+            },
+            "stateRunId": "gl-default-live-feedback",
+            "snapshot": {
+              "score": 584,
+              "simTime": 0.974999999999999,
+              "balls": 30,
+              "phase": "running",
+              "endReason": null,
+              "runId": "gl-default-live-feedback",
+              "lostBallCount": 1
+            }
+          }
+        ]
+      },
+      {
+        "file": "rally-gl.spec.ts",
+        "title": "default live rally feedback uses two single-pass submissions within the four-draw ceiling",
+        "project": "webkit",
+        "status": "passed",
+        "measurements": [
+          {
+            "visible": {
+              "drawCalls": 36,
+              "drawVertices": 42456,
+              "drawMs": 1,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 39,
+              "bufferSubDataBytes": 135588,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116,
+                "6144": 6144,
+                "9900": 9900,
+                "18432": 36864,
+                "43200": 432,
+                "57600": 576,
+                "145152": 6912,
+                "193536": 9216,
+                "451584": 18144,
+                "602112": 24192
+              },
+              "rendererCalls": 36
+            },
+            "hidden": {
+              "drawCalls": 34,
+              "drawVertices": 40908,
+              "drawMs": 1,
+              "bufferDataCalls": 0,
+              "bufferDataBytes": 0,
+              "bufferSubDataCalls": 35,
+              "bufferSubDataBytes": 92244,
+              "uploadMs": 0,
+              "uploadsByCapacity": {
+                "24": 24,
+                "48": 288,
+                "288": 1728,
+                "384": 384,
+                "600": 1200,
+                "624": 1248,
+                "912": 1824,
+                "1344": 1344,
+                "1404": 1404,
+                "2048": 6144,
+                "3504": 3504,
+                "4116": 4116,
+                "6144": 6144,
+                "9900": 9900,
+                "18432": 36864,
+                "145152": 6912,
+                "193536": 9216
+              },
+              "rendererCalls": 34
+            },
+            "contribution": 2,
+            "activeGeometry": {
+              "tableQuads": 252,
+              "worldQuads": 6,
+              "drawCalls": 2
+            },
+            "stateRunId": "gl-default-live-feedback",
+            "snapshot": {
+              "score": 584,
+              "simTime": 0.974999999999999,
+              "balls": 30,
+              "phase": "running",
+              "endReason": null,
+              "runId": "gl-default-live-feedback",
+              "lostBallCount": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "timingComparison": [
+    {
+      "browser": "chromium",
+      "quality": "standard",
+      "start": 450,
+      "baseline_p95_ms": 166.6999999999971,
+      "current_p95_ms": 166.59999999999854,
+      "baseline_fraction25": 0.1566579634464752,
+      "current_fraction25": 0.167989417989418,
+      "baseline_continuous": true,
+      "current_continuous": true,
+      "baseline_resources_initial": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 43,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "baseline_resources_final": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 31,
+        "particles": 48,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [
+            "hit-ring"
+          ],
+          "tableQuads": 12,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 1,
+          "disposed": false
+        }
+      },
+      "current_resources_initial": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 25,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "current_resources_final": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 30,
+        "particles": 24,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "baseline_audio": {
+        "created": 40882,
+        "sourceCreated": 13002,
+        "liveNodes": 16,
+        "liveSources": 4,
+        "layeredVoices": 1,
+        "peakNodes": 283,
+        "peakSources": 100,
+        "peakVoices": 16
+      },
+      "current_audio": {
+        "created": 40723,
+        "sourceCreated": 12930,
+        "liveNodes": 186,
+        "liveSources": 54,
+        "layeredVoices": 16,
+        "peakNodes": 283,
+        "peakSources": 100,
+        "peakVoices": 16
+      },
+      "baseline_target": "Linux reference target NOT met or continuous run interrupted",
+      "current_target": "Linux reference target NOT met or continuous run interrupted"
+    },
+    {
+      "browser": "chromium",
+      "quality": "low",
+      "start": 555,
+      "baseline_p95_ms": 100,
+      "current_p95_ms": 100.09999999999854,
+      "baseline_fraction25": 0.21957236842105263,
+      "current_fraction25": 0.20928196147110334,
+      "baseline_continuous": true,
+      "current_continuous": true,
+      "baseline_resources_initial": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "baseline_resources_final": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "current_resources_initial": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "current_resources_final": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "baseline_audio": {
+        "created": 43299,
+        "sourceCreated": 13341,
+        "liveNodes": 16,
+        "liveSources": 4,
+        "layeredVoices": 1,
+        "peakNodes": 246,
+        "peakSources": 82,
+        "peakVoices": 16
+      },
+      "current_audio": {
+        "created": 43257,
+        "sourceCreated": 13325,
+        "liveNodes": 90,
+        "liveSources": 25,
+        "layeredVoices": 9,
+        "peakNodes": 246,
+        "peakSources": 82,
+        "peakVoices": 16
+      },
+      "baseline_target": "Linux reference target NOT met or continuous run interrupted",
+      "current_target": "Linux reference target NOT met or continuous run interrupted"
+    },
+    {
+      "browser": "webkit",
+      "quality": "standard",
+      "start": 450,
+      "baseline_p95_ms": 56,
+      "current_p95_ms": 56,
+      "baseline_fraction25": 0.008202323991797676,
+      "current_fraction25": 0.012743125419181758,
+      "baseline_continuous": true,
+      "current_continuous": true,
+      "baseline_resources_initial": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 43,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "baseline_resources_final": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "current_resources_initial": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 43,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "current_resources_final": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "baseline_audio": {
+        "created": 45323,
+        "sourceCreated": 14383,
+        "liveNodes": 83,
+        "liveSources": 24,
+        "layeredVoices": 8,
+        "peakNodes": 283,
+        "peakSources": 100,
+        "peakVoices": 16
+      },
+      "current_audio": {
+        "created": 45365,
+        "sourceCreated": 14359,
+        "liveNodes": 103,
+        "liveSources": 24,
+        "layeredVoices": 12,
+        "peakNodes": 283,
+        "peakSources": 100,
+        "peakVoices": 16
+      },
+      "baseline_target": "Linux reference target NOT met or continuous run interrupted",
+      "current_target": "Linux reference target NOT met or continuous run interrupted"
+    },
+    {
+      "browser": "webkit",
+      "quality": "low",
+      "start": 555,
+      "baseline_p95_ms": 45,
+      "current_p95_ms": 48,
+      "baseline_fraction25": 0.12265666845206213,
+      "current_fraction25": 0.08304297328687572,
+      "baseline_continuous": true,
+      "current_continuous": true,
+      "baseline_resources_initial": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "baseline_resources_final": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "current_resources_initial": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "current_resources_final": {
+        "geometries": 55,
+        "textures": 4,
+        "programs": 17,
+        "drawCalls": 27,
+        "particles": 0,
+        "particleCapacity": 8408,
+        "rallyEffects": {
+          "activeEffects": [],
+          "tableQuads": 0,
+          "worldQuads": 0,
+          "particleCount": 0,
+          "finalPhase": null,
+          "capacity": 6872,
+          "geometries": 2,
+          "materials": 2,
+          "nodes": 4,
+          "drawCalls": 0,
+          "disposed": false
+        }
+      },
+      "baseline_audio": {
+        "created": 43997,
+        "sourceCreated": 13545,
+        "liveNodes": 15,
+        "liveSources": 4,
+        "layeredVoices": 1,
+        "peakNodes": 246,
+        "peakSources": 82,
+        "peakVoices": 16
+      },
+      "current_audio": {
+        "created": 43762,
+        "sourceCreated": 13480,
+        "liveNodes": 33,
+        "liveSources": 8,
+        "layeredVoices": 3,
+        "peakNodes": 246,
+        "peakSources": 82,
+        "peakVoices": 16
+      },
+      "baseline_target": "Linux reference target NOT met or continuous run interrupted",
+      "current_target": "Linux reference target NOT met or continuous run interrupted"
+    }
+  ],
+  "limitations": [
+    "Linux software rendering, not actual iPhone Safari.",
+    "Both baseline and current miss the unchanged Linux 95%-of-frames-within-25ms reference target.",
+    "Single measurements do not establish statistical timing equivalence; WebKit low p95 increases 45 to48ms.",
+    "The obsolete above-cap4000 GLfixture failed before localization; repaired valid30-ball fixture preserves the4-draw ceiling and additionally requires exact2 active single-pass submissions."
+  ]
+}

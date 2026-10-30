@@ -57,8 +57,13 @@ for (const { id, locale } of SUPPORTED_LANGUAGES) test(`i18n states ${id}: table
   await expect(page.locator('html')).toHaveAttribute('lang', id);
   await expect(page.locator('[data-result]')).toBeVisible();
   const before = await page.evaluate(() => window.i18nHarness.state());
-  const date = new Intl.DateTimeFormat(locale, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(new Date(registeredAt));
-  const formatted = (value: number) => value.toLocaleString(locale);
+  // Node and browser CLDR versions can group four-digit Italian numbers differently.
+  // Calculate expected standard Intl values in the browser under test, keeping UTC explicit.
+  const expectedIntl = await page.evaluate(({locale,registeredAt}) => ({
+    date: new Intl.DateTimeFormat(locale, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(new Date(registeredAt)),
+    numbers: Object.fromEntries([35,1250,3500].map(value => [value, value.toLocaleString(locale)])),
+  }), {locale,registeredAt});
+  const date=expectedIntl.date, formatted=(value:number)=>expectedIntl.numbers[value]!;
   await message(page, '[data-result-comment]', '3500ラリー達成！ゲームクリア！');
   await message(page, '[data-position-message]', '{rank}位 / {total}登録中', { rank: formatted(35), total: formatted(1250) });
   await message(page, '[data-position-note]', '登録名ごとの自己ベスト順位（{score}ラリー）', { score: formatted(3500) });
