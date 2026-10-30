@@ -27,14 +27,14 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   root.innerHTML = `
     <main class="shell">
       <section class="home-screen" data-home>
-        <header class="brand"><span class="brand-mark" aria-hidden="true">t.</span><span>TAKKEU</span><span class="brand-note">卓球の、その先へ。</span></header>
+        <header class="brand"><span class="brand-mark" aria-hidden="true">t.</span><span>TAKKEU</span><span class="brand-note">卓球の、その先へ。</span>${languageControl}</header>
         <div class="home-hero">
           <div class="hero-copy">
             <p class="eyebrow"><span class="status-dot"></span> ROAD TO 3500 RALLIES.</p>
             <h1>タッケウ<span class="title-dot" aria-hidden="true">.</span></h1>
             <p class="hero-lead">3500ラリーをつないで、<br>殿堂入りを目指そう。</p>
             <p class="hero-description">タップした位置にラケットを置き、ドラッグで球に合わせる。<br>自分の台で一度弾んだ球に触れれば、打ち返せます。<br>${CLEAR_SCORE}ラリーでゲームクリア。残球が0になるか、累計${MAX_LOST_BALLS}球落とすと終了です。</p>
-            ${languageControl}<div class="player-field"><label for="player-name">ランキングの名前 <span>任意</span></label><input id="player-name" data-player-name dir="auto" type="text" maxlength="40" autocomplete="nickname" placeholder="名前なしでも遊べます" aria-describedby="name-note"><p id="name-note" data-name-note>20文字以内。入力すると名前と記録が公開され、ランキングに参加します。同じ名前の記録は合算され、初回クリアで殿堂登録番号が付きます。再クリアも同じ番号です。名前なしでもクリア賞状を作れますが、殿堂番号は付きません。過去の記録は殿堂登録の対象外です。</p></div>
+            <div class="player-field"><label for="player-name">ランキングの名前 <span>任意</span></label><input id="player-name" data-player-name dir="auto" type="text" maxlength="40" autocomplete="nickname" placeholder="名前なしでも遊べます" aria-describedby="name-note"><details class="name-details"><summary>名前の公開と登録について</summary><p id="name-note" data-name-note>20文字以内。入力すると名前と記録が公開され、ランキングに参加します。同じ名前の記録は合算され、初回クリアで殿堂登録番号が付きます。再クリアも同じ番号です。名前なしでもクリア賞状を作れますが、殿堂番号は付きません。過去の記録は殿堂登録の対象外です。</p></details></div>
             <button type="button" class="button primary start-button" data-action="start">はじめる <span aria-hidden="true">↗</span></button>
             <p class="start-note">2本指で短くタップ、またはEscキーで一時停止</p>
           </div>

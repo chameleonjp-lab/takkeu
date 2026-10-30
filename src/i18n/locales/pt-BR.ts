@@ -247,5 +247,6 @@ export default {
   "タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ {tag}": "TAKKEU: o jogo de tênis de mesa que você joga tocando e arrastando!\nQuantas rebatidas consegue emendar? {tag}",
   "最大30球で、3500ラリーを目指そう。": "Busque 3500 rebatidas com até 30 bolas ao mesmo tempo.",
   "タッケウ — ラリーをつなごう": "TAKKEU — Mantenha a troca de bolas",
-  "ゲームクリア": "Vitória"
+  "ゲームクリア": "Vitória",
+  "名前の公開と登録について": "Nomes públicos e cadastro"
 } satisfies Record<keyof typeof ja, string>;

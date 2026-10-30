@@ -154,8 +154,7 @@ canvas:focus-visible { outline: 2px solid #7be2d1; outline-offset: -3px; }
   .hero-description { line-height: 1.75; }
   .home-hero { padding-top: 24px; }
 }
-@media (max-width: 900px) and (max-height: 750px) {
-  /* Long rule/name disclosures remain complete and scrollable. Keep Start in reach. */
-  .home-screen { padding-bottom: 90px; }
-  .home-screen .start-button { position: fixed; z-index: 4; bottom: max(12px, var(--safe-bottom)); left: max(20px, var(--safe-left)); width: calc(100% - max(20px, var(--safe-left)) - max(20px, var(--safe-right))); }
-}
+.name-details { min-width: 0; font-size: .6875rem; color: #90a4b3; }
+.name-details summary { cursor: pointer; min-height: 44px; padding-block: 10px; line-height: 1.7; }
+.name-details summary:focus-visible { outline: 2px solid #7be2d1; outline-offset: 3px; }
+.name-details[open] p { margin-block: 4px 10px; }

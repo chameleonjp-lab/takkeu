@@ -19,6 +19,9 @@ for (const { id } of SUPPORTED_LANGUAGES) test(`i18n ${id}: all principal screen
   const box=await start.boundingBox(); expect(box).not.toBeNull();
   expect(box!.y+box!.height, 'Start stays visible on a short phone viewport').toBeLessThanOrEqual(700);
   expect(box!.height).toBeGreaterThanOrEqual(44);
+  const selectorBox=await page.locator('[data-home] [data-language]').boundingBox();
+  const brandBox=await page.locator('[data-home] .brand').boundingBox();
+  expect(selectorBox!.y+selectorBox!.height,'Language selector stays in the header').toBeLessThanOrEqual(brandBox!.y+brandBox!.height+1);
   const overflow=()=>page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+1);
   expect(await overflow()).toBe(false);
   if(id!=='ja') expect(await page.locator('.hero-description').innerText()).not.toMatch(kana);

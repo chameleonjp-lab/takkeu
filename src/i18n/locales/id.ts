@@ -247,5 +247,6 @@ export default {
   "タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ {tag}": "TAKKEU, game tenis meja dengan ketuk dan seret!\nBerapa reli yang bisa Anda sambungkan? {tag}",
   "最大30球で、3500ラリーを目指そう。": "Kejar 3500 reli dengan maksimal 30 bola sekaligus.",
   "タッケウ — ラリーをつなごう": "TAKKEU — Sambungkan relinya",
-  "ゲームクリア": "Permainan tuntas"
+  "ゲームクリア": "Permainan tuntas",
+  "名前の公開と登録について": "Nama publik dan pendaftaran"
 } satisfies Record<keyof typeof ja, string>;

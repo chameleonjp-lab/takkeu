@@ -247,5 +247,6 @@ export default {
   "タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ {tag}": "TAKKEU: a table tennis game you play by tapping and dragging!\nHow long can you keep the rally going? {tag}",
   "最大30球で、3500ラリーを目指そう。": "Aim for 3500 rallies with up to 30 balls at once.",
   "タッケウ — ラリーをつなごう": "TAKKEU — Keep the rally going",
-  "ゲームクリア": "Game cleared"
+  "ゲームクリア": "Game cleared",
+  "名前の公開と登録について": "Public names and registration"
 } satisfies Record<keyof typeof ja, string>;

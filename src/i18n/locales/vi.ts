@@ -247,5 +247,6 @@ export default {
   "タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ {tag}": "TAKKEU, trò bóng bàn chơi bằng cách chạm và kéo!\nBạn có thể nối được bao nhiêu lần trả bóng? {tag}",
   "最大30球で、3500ラリーを目指そう。": "Chinh phục 3500 lần trả bóng với tối đa 30 bóng cùng lúc.",
   "タッケウ — ラリーをつなごう": "TAKKEU — Nối tiếp những lượt bóng",
-  "ゲームクリア": "Hoàn thành trò chơi"
+  "ゲームクリア": "Hoàn thành trò chơi",
+  "名前の公開と登録について": "Tên công khai và đăng ký"
 } satisfies Record<keyof typeof ja, string>;

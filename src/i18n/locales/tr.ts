@@ -247,5 +247,6 @@ export default {
   "タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ {tag}": "Dokunup sürükleyerek oynanan masa tenisi oyunu TAKKEU!\nSen kaç ralli sürdürebilirsin? {tag}",
   "最大30球で、3500ラリーを目指そう。": "Aynı anda en fazla 30 topla 3500 ralliye ulaşmayı hedefle.",
   "タッケウ — ラリーをつなごう": "TAKKEU — ralliyi sürdür",
-  "ゲームクリア": "Oyun tamamlandı"
+  "ゲームクリア": "Oyun tamamlandı",
+  "名前の公開と登録について": "Herkese açık ad ve kayıt"
 } satisfies Record<keyof typeof ja, string>;
