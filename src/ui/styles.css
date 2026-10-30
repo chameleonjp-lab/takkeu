@@ -137,3 +137,25 @@ canvas:focus-visible { outline: 2px solid #7be2d1; outline-offset: -3px; }
 .losses-counter { min-width: 0; max-width: 100%; }
 .losses-counter [data-losses-label] { white-space: normal; overflow-wrap: anywhere; }
 .losses-counter output { white-space: nowrap; }
+
+/* A language change alters copy, never the court or the input surface. */
+:root { font-family: "Hiragino Kaku Gothic ProN", "Noto Sans", "Noto Sans Thai", "Noto Sans CJK JP", "Yu Gothic", system-ui, sans-serif; }
+.home-screen { position: relative; }
+.home-screen .brand { min-height: 48px; padding-right: 210px; }
+.language-control { display: grid; gap: 4px; font-size: .8125rem; min-width: 0; }
+.language-control select { width: 100%; max-width: 100%; min-width: 0; min-height: 44px; padding: 7px 10px; border: 1px solid #45616d; border-radius: 10px; background: #12202e; color: #eaf3f6; font-size: .8125rem; }
+.home-screen .language-control { position: absolute; top: 0; right: 0; width: min(45%, 190px); font-size: 0; }
+.hero-copy, .how-to p, .hud > div { min-width: 0; }
+.hero-copy, .brand-note, .how-to, .home-footer, .ranking-panel th { overflow-wrap: anywhere; }
+.ranking-panel th { hyphens: auto; }
+@media (max-width: 600px) {
+  .home-screen .brand { padding-right: 46%; }
+  .home-screen .brand-note { display: none; }
+  .hero-description { line-height: 1.75; }
+  .home-hero { padding-top: 24px; }
+}
+@media (max-width: 900px) and (max-height: 750px) {
+  /* Long rule/name disclosures remain complete and scrollable. Keep Start in reach. */
+  .home-screen { padding-bottom: 90px; }
+  .home-screen .start-button { position: fixed; z-index: 4; bottom: max(12px, var(--safe-bottom)); left: max(20px, var(--safe-left)); width: calc(100% - max(20px, var(--safe-left)) - max(20px, var(--safe-right))); }
+}

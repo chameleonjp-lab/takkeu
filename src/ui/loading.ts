@@ -1,5 +1,6 @@
 import type { LoadingState } from '../app/loadingProgress';
 import { MAX_LOST_BALLS } from '../game/config';
+import { getLanguage, onLanguageChange, t, translateError } from '../i18n/i18n';
 import './loading.css';
 
 type LoadingActions = { cancel(): void; retry(): void };
@@ -43,6 +44,7 @@ export function createLoadingScreen(root: HTMLElement, actions: LoadingActions) 
           <li>押したまま動かすと、指やポインターについて動きます。</li>
           <li>自分の台で1回バウンドした球を打ち返そう。</li>
         </ul>
+        <p class="loading-end" data-loading-goal>最大30球で、3500ラリーを目指そう。</p>
         <p class="loading-end" data-loading-end>残球が0になるか、累計${MAX_LOST_BALLS}球落とすとゲーム終了です。</p>
       </section>
       <p class="loading-error" role="alert" aria-atomic="true" hidden></p>
@@ -66,9 +68,69 @@ export function createLoadingScreen(root: HTMLElement, actions: LoadingActions) 
   const cancel = get<HTMLButtonElement>('[data-loading-action="cancel"]');
   let disposed = false;
   let hadError = false;
+  let currentState: LoadingState | null = null;
+  let displayed = '';
   const setText = (node: HTMLElement, value: string): void => {
     if (node.textContent !== value) node.textContent = value;
   };
+  const applyStaticText = (): void => {
+    progress.setAttribute('aria-label', t('ゲームの準備'));
+    get('.loading-instructions').setAttribute('aria-label', t('遊び方と終了条件'));
+    setText(get('h3'), t('準備のあいだに、遊び方をチェック'));
+    const rules = get('[data-loading-rules]').children;
+    setText(rules[0] as HTMLElement, t('タップした位置にラケットを置きます。'));
+    setText(rules[1] as HTMLElement, t('押したまま動かすと、指やポインターについて動きます。'));
+    setText(rules[2] as HTMLElement, t('自分の台で1回バウンドした球を打ち返そう。'));
+    setText(get('[data-loading-goal]'), t('最大30球で、3500ラリーを目指そう。'));
+    setText(get('[data-loading-end]'), t('残球が0になるか、累計{count}球落とすとゲーム終了です。', { count: MAX_LOST_BALLS }));
+    setText(retry, t('もう一度準備する'));
+    setText(cancel, t('ホームへ'));
+    if (!currentState) setText(heading, t('プレイを準備しています'));
+  };
+  const render = (state: LoadingState, manageFocus: boolean): void => {
+    const firstShow = section.hidden;
+    const hasError = state.error !== null;
+    section.hidden = false;
+    section.inert = false;
+    section.removeAttribute('inert');
+    section.setAttribute('aria-busy', String(!hasError));
+    const percent = Number.isFinite(state.percent) ? Math.max(0, Math.min(100, state.percent)) : 0;
+    const elapsed = Number.isFinite(state.elapsedSeconds) ? Math.max(0, Math.floor(state.elapsedSeconds)) : 0;
+    const remaining = state.remainingSeconds !== null && Number.isFinite(state.remainingSeconds)
+      ? Math.max(0, Math.ceil(state.remainingSeconds)) : null;
+    progress.setAttribute('aria-valuenow', String(percent));
+    fill.style.width = `${percent}%`;
+    // The animation loop supplies fractional elapsed time every frame. Translate
+    // only when an actual displayed value or the selected language changes.
+    const key = JSON.stringify([getLanguage(), Math.floor(percent), elapsed, remaining, state.stage, state.error]);
+    if (key !== displayed) {
+      const stageText = t(state.stage);
+      setText(percentLabel, t('{percent}%', { percent: Math.floor(percent) }));
+      progress.setAttribute('aria-valuetext', t('{percent}%、{stage}', { percent: Math.floor(percent), stage: stageText }));
+      setText(stage, stageText);
+      setText(heading, t(hasError ? '準備を完了できませんでした' : 'プレイを準備しています'));
+      setText(eta, hasError ? '' : remaining !== null
+        ? t('あと約{seconds}秒（目安）', { seconds: remaining })
+        : t('{seconds}秒経過 · 通常より時間がかかっています。準備ができるまでお待ちください。', { seconds: elapsed }));
+      setText(tip, t(tips[Math.floor(elapsed / 4) % tips.length]!));
+      setText(alert, state.error === null ? '' : translateError(state.error));
+      displayed = key;
+    }
+    eta.hidden = hasError;
+    alert.hidden = !hasError;
+    retry.hidden = !hasError;
+    if (manageFocus) {
+      if (firstShow) section.scrollTop = 0;
+      if (hasError && (firstShow || !hadError)) retry.focus();
+      else if (firstShow || hadError && !hasError) heading.focus({ preventScroll: true });
+    }
+    hadError = hasError;
+  };
+  applyStaticText();
+  const unsubscribeLanguage = onLanguageChange(() => {
+    applyStaticText();
+    if (currentState) render(currentState, false);
+  });
 
   const click = (event: MouseEvent): void => {
     const target = event.target instanceof Element ? event.target.closest<HTMLButtonElement>('[data-loading-action]') : null;
@@ -95,43 +157,21 @@ export function createLoadingScreen(root: HTMLElement, actions: LoadingActions) 
   return {
     show(state: LoadingState | null): void {
       if (disposed) return;
+      currentState = state;
       if (state === null) {
         section.hidden = true;
         section.inert = true;
         section.setAttribute('inert', '');
         hadError = false;
+        displayed = '';
         return;
       }
-      const firstShow = section.hidden;
-      const hasError = state.error !== null;
-      section.hidden = false;
-      section.inert = false;
-      section.removeAttribute('inert');
-      section.setAttribute('aria-busy', String(!hasError));
-      const percent = Number.isFinite(state.percent) ? Math.max(0, Math.min(100, state.percent)) : 0;
-      const elapsed = Number.isFinite(state.elapsedSeconds) ? Math.max(0, Math.floor(state.elapsedSeconds)) : 0;
-      setText(percentLabel, `${Math.floor(percent)}%`);
-      progress.setAttribute('aria-valuenow', String(percent));
-      progress.setAttribute('aria-valuetext', `${Math.floor(percent)}%、${state.stage}`);
-      fill.style.width = `${percent}%`;
-      setText(stage, state.stage);
-      setText(heading, hasError ? '準備を完了できませんでした' : 'プレイを準備しています');
-      eta.hidden = hasError;
-      setText(eta, hasError ? '' : state.remainingSeconds !== null && Number.isFinite(state.remainingSeconds)
-        ? `あと約${Math.max(0, Math.ceil(state.remainingSeconds))}秒（目安）`
-        : `${elapsed}秒経過 · 通常より時間がかかっています。準備ができるまでお待ちください。`);
-      setText(tip, tips[Math.floor(elapsed / 4) % tips.length]!);
-      alert.hidden = !hasError;
-      setText(alert, state.error ?? '');
-      retry.hidden = !hasError;
-      if (firstShow) section.scrollTop = 0;
-      if (hasError && (firstShow || !hadError)) retry.focus();
-      else if (firstShow || hadError && !hasError) heading.focus({ preventScroll: true });
-      hadError = hasError;
+      render(state, true);
     },
     dispose(): void {
       if (disposed) return;
       disposed = true;
+      unsubscribeLanguage();
       section.removeEventListener('click', click);
       section.removeEventListener('keydown', keydown);
       section.remove();

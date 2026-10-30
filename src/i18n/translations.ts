@@ -1,0 +1,17 @@
+import ja from './locales/ja';
+import en from './locales/en';
+import es from './locales/es';
+import ptBR from './locales/pt-BR';
+import zhHans from './locales/zh-Hans';
+import fr from './locales/fr';
+import de from './locales/de';
+import ko from './locales/ko';
+import ru from './locales/ru';
+import it from './locales/it';
+import zhHant from './locales/zh-Hant';
+import id from './locales/id';
+import tr from './locales/tr';
+import vi from './locales/vi';
+import th from './locales/th';
+import type { Language } from './languages';
+export const TRANSLATIONS: Record<Language, Readonly<Record<keyof typeof ja, string>>> = {'ja':ja,'en':en,'es':es,'pt-BR':ptBR,'zh-Hans':zhHans,'fr':fr,'de':de,'ko':ko,'ru':ru,'it':it,'zh-Hant':zhHant,'id':id,'tr':tr,'vi':vi,th};

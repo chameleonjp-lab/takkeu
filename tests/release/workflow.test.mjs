@@ -43,7 +43,7 @@ test('actual workflow rejects all predeploy failures and reaches deploy only for
   for(const options of [
     {mutate:f=>f.context.eventName='pull_request'},{mutate:f=>f.context.eventName='push'},{mutate:f=>f.event.workflow_run.event='pull_request'},
     {mutate:f=>f.event.workflow_run.head_branch='feature'},{mutate:f=>f.context.actor='other'},{mutate:f=>f.event.workflow_run.conclusion='failure'},
-    {api:{'/pulls/34':{merged:false}}},{api:{'/pulls/34':{draft:true}}},
+    {api:{'/pulls/35':{merged:false}}},{api:{'/pulls/35':{draft:true}}},
     {api:{'/git/ref/heads/main':{object:{sha:'b'.repeat(40)}}}},
     {missingMigration:true},{partialRpc:true},{contractDrift:true},{dbTimeout:true},{authFailed:true},
     {distributionFailed:true},{ciBytesDiffer:true},{uploadBytesDiffer:true},{mainMoved:true},{lastMainMoved:true},{dbMoved:true},

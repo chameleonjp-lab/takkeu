@@ -12,8 +12,8 @@ export async function authorizeMergeRelease({expected,event,context,marker,get})
     &&source.event==='push'&&source.head_branch==='main'&&source.conclusion==='success'&&source.status==='completed'
     &&source.head_sha===expected&&Number.isSafeInteger(source.id)&&source.id>0&&source.workflow_id===392845635
     &&source.path==='.github/workflows/ci.yml'&&source.name==='CI','Untrusted CI completion event');
-  requireThat(marker?.format===1&&marker.release==='takkeu-3500-production-ab-final-20261028'&&marker.client_version==='takkeu-web-clear-3500-1'
-    &&marker.head_ref==='release/3500-production-ab-final-20261028'&&marker.pull_request===34,'Explicit release PR marker missing');
+  requireThat(marker?.format===1&&marker.release==='takkeu-i18n-15-20261030'&&marker.client_version==='takkeu-web-clear-3500-1'
+    &&marker.head_ref==='feat/i18n-15-languages'&&marker.pull_request===35,'Explicit release PR marker missing');
   const repository=await get('');
   requireThat(sameRepo(repository)&&owner(repository.owner)&&repository.default_branch==='main','Repository identity changed');
   const ci=await verifyGithub(expected,get);

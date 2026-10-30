@@ -1,3 +1,4 @@
+import { t } from '../i18n/i18n';
 const comments = [
   '次こそ決めよう！', 'ラリー、開幕！', 'いいぞ、つながる！', 'コツをつかんだ！',
   '返球センスあり！', 'いい手応え！', '打ち返し上手！', 'リズムに乗ってきた！',
@@ -17,5 +18,5 @@ export function resultComment(score: number): string {
   const index = rally < 50 ? Math.floor(rally / 5)
     : rally < 200 ? 10 + Math.floor((rally - 50) / 10)
     : Math.min(43, 25 + Math.floor((rally - 200) / 100));
-  return comments[index]!;
+  return t(comments[index]!);
 }
