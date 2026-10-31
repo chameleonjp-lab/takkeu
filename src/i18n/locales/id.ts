@@ -1,6 +1,7 @@
 import type ja from './ja';
 
 export default {
+  "共有文をコピー": "Salin teks berbagi",
   "卓球の、その先へ。": "Lampaui batas tenis meja.",
   "3500ラリーへの挑戦": "Tantangan 3500 reli",
   "タッケウ": "TAKKEU",

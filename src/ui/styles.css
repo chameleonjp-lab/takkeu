@@ -160,3 +160,8 @@ canvas:focus-visible { outline: 2px solid #7be2d1; outline-offset: -3px; }
 .name-details summary { cursor: pointer; min-height: 44px; padding-block: 10px; line-height: 1.7; }
 .name-details summary:focus-visible { outline: 2px solid #7be2d1; outline-offset: 3px; }
 .name-details[open] p { margin-block: 4px 10px; }
+
+[data-share-home-x], [data-share-x] { display: inline-flex; align-items: center; justify-content: center; background: #000; color: #fff; min-height: 44px; padding: 12px 18px; white-space: normal; overflow-wrap: anywhere; text-align: center; border-radius: 6px; }
+.share-copy { margin-block: 12px; }
+.share-copy summary { min-height: 44px; padding: 12px 0; cursor: pointer; }
+.share-copy textarea { width: 100%; min-height: 7em; resize: vertical; font-size: 1rem; color: #fff; background: #18202b; }

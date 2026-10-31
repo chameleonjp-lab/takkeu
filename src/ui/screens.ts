@@ -45,7 +45,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
           <div><span class="step-number">02</span><p><strong>ドラッグで動かす</strong><span>押している間は、その位置について動きます。</span></p></div>
           <div><span class="step-number">03</span><p><strong>離すと止まる</strong><span>最後の位置を保ち、自分の返球で +1。</span></p></div>
         </div>
-        <footer class="home-footer"><p>自己ベスト <output aria-label="自己ベスト" data-best>0</output> ラリー</p><a data-share-home-x href="${homeShareUrl(0)}" target="_blank" rel="noopener noreferrer">Xでシェア</a><a href="${RANKING_CONFIG.rankingUrl}">ランキング</a><button type="button" class="button subtle" data-action="settings">設定</button></footer>
+        <footer class="home-footer"><p>自己ベスト <output aria-label="自己ベスト" data-best>0</output> ラリー</p><a data-share-home-x href="${homeShareUrl(0)}" target="_blank" rel="noopener noreferrer">Xでシェア</a><a href="${RANKING_CONFIG.rankingUrl}">ランキング</a><button type="button" class="button subtle" data-action="settings">設定</button></footer><details class="share-copy"><summary>共有文をコピー</summary><textarea data-share-home-copy readonly aria-label="共有文をコピー"></textarea></details>
         <div data-home-notices></div>
       </section>
 
@@ -71,13 +71,14 @@ export function createScreens(root: HTMLElement, actions: Actions) {
         </div>
         <p class="result-best">この端末の自己ベスト <output aria-label="自己ベスト" data-best>0</output> <span>ラリー</span></p>
         <div class="result-actions"><button type="button" class="button primary" data-action="retry">もう一度 <span aria-hidden="true">↗</span></button>
-          <a class="button share-button" data-share-x aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer">Xでスコアをシェア <span aria-hidden="true">↗</span></a>
+          <a class="button share-button" data-share-x aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer">Xでシェア</a>
           <button type="button" class="button subtle" data-action="home">ホームへ</button></div>
+        <details class="share-copy"><summary>共有文をコピー</summary><textarea data-share-result-copy readonly aria-label="共有文をコピー"></textarea></details>
         <p class="result-message" data-loss-limit-message hidden>累計${MAX_LOST_BALLS}球の落球で終了しました。</p><p class="result-message" data-ranking-participation>もう1ラリー、つないでみよう。</p>
         <div data-result-notices></div>
         <section class="ranking-panel" aria-labelledby="ranking-title"><p class="eyebrow">LEADERBOARD</p><h3 id="ranking-title">ランキング TOP 30</h3><p class="ranking-caption">新ルールの上限は3500ラリーです。過去の3000超・3500超の高スコアは旧ルールの記録として保持し、旧記録から殿堂番号は発行しません。</p><p data-ranking-message role="status">ランキングを読み込んでいます。</p>
           <div class="ranking-table-wrap"><table data-ranking-table hidden><caption class="sr-only">最高ラリー数の上位30名</caption><thead><tr><th scope="col">順位</th><th scope="col">名前</th><th scope="col">ラリー</th><th scope="col">回数</th></tr></thead><tbody data-ranking-body></tbody></table></div>
-          <button type="button" class="button subtle" data-action="ranking-refresh">ランキングを更新</button><a class="lab-link" href="${RANKING_CONFIG.rankingUrl}">実験場で詳しいランキングを見る ↗</a>
+          <button type="button" class="button subtle" data-action="ranking-refresh">ランキングを更新</button><a class="lab-link" href="${RANKING_CONFIG.rankingUrl}">ランキング</a>
         </section>
         <section class="ranking-panel" aria-labelledby="hall-title"><p class="eyebrow">HALL OF FAME</p><h3 id="hall-title">3500ラリー 殿堂入り</h3><p class="ranking-caption">新ルールの初回クリア・登録順の先頭30件。同名の再クリアは同じ番号です。</p><p data-hall-list-message role="status">殿堂一覧を読み込んでいます。</p><ol class="hall-list" data-hall-list hidden></ol></section>
       </section>
@@ -219,6 +220,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
     if (shareKey === key) return;
     shareKey = key;
     const url = phase === 'gameover' ? scoreShareUrl(resultScore, cleared, number) : null;
+    get<HTMLTextAreaElement>('[data-share-result-copy]').value = url ? new URL(url).searchParams.get('text') ?? '' : '';
     if (url) { resultShare.href = url; resultShare.removeAttribute('aria-disabled'); resultShare.removeAttribute('tabindex'); }
     else { resultShare.removeAttribute('href'); resultShare.setAttribute('aria-disabled', 'true'); resultShare.tabIndex = -1; }
   };
@@ -311,7 +313,9 @@ export function createScreens(root: HTMLElement, actions: Actions) {
     displayParticipation(); displayPosition(); displayRankingState(); displayHall(); displayHallList(); displayLeaderboard(); displaySound();
     setText('[data-error]', errorSource ? translateError(errorSource) : '');
     displaySnapshotText(latestSnapshot, lastRemaining < 0 ? 1 : lastRemaining);
-    get<HTMLAnchorElement>('[data-share-home-x]').href = homeShareUrl(preferences.bestScore);
+    const homeUrl = homeShareUrl(preferences.bestScore);
+    get<HTMLAnchorElement>('[data-share-home-x]').href = homeUrl;
+    get<HTMLTextAreaElement>('[data-share-home-copy]').value = `${new URL(homeUrl).searchParams.get('text')}\n${RANKING_CONFIG.canonicalUrl}`;
     updateShare();
   };
   refreshLanguage();
