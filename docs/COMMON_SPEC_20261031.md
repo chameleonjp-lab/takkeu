@@ -8,11 +8,21 @@
 
 着手時GitHub公開ブランチ `main`、SHA `5482a88b928744fa32fa562ab5b04073addf48d2`。進行中のopen PRは着手時およびPR作成前のAPI読取りで0件。ブランチ保護APIは403で詳細未確認、rulesetsの読取りは空。保護・環境・登録フラグは変更していない。Codebergからの導線切替は今回行わない（現在登録されたGitHub公開URLを維持）。
 
-多言語基準: Sainome `79b1e5733e725cd1148b10fa5699ba846e2bf57d` / `src/i18n/index.js` SUPPORTED_LANGUAGES: ja,en,es,pt-BR,zh-Hans,fr,de,ko,ru,it,zh-Hant,id,tr,vi,th。
+多言語基準: Sainome `79b1e5733e725cd1148b10fa5699ba846e2bf57d` / `js/language-options.js` の言語選択肢: ja,en,es,pt-BR,zh-Hans,fr,de,ko,ru,it,zh-Hant,id,tr,vi,th。
 
 ## 実装
 
 任意の今後の所有者マージPRを、成功した同一mainコミットのCIと既存保護条件で公開できるよう、PR35だけを許可する制限を解除。ホーム共有をゲーム紹介に統一し、結果/ホームのXボタンとランキング表記を統一。15言語の選択可能な共有コピー欄を追加。
+
+### 既存DB検証基準の更新
+
+初回PR検証は `readonly_routines` 不一致で公開前に停止した。2026-10-31のカタログ読取で8関数を照合し、差分は `get_game_play_stats` 本体だけと確認。既存のイロアテ・イロナラベの匿名開始数を加えるCASE分岐4行が本番に追加済みだった。タッケウの分岐、名前あり参加者の集計、所有者・権限・検索パス・残り7関数は一致している。
+
+元の承認済みSQLを再現する `production-baseline.json` と `expected-contract.json` は変更しない。現在の配備検証では `current-database-contract.mjs` がコミット済みの読取証拠 `reviewed-stats-20261031.json` から、この1関数の確認済み本体ハッシュだけを置き換える。観測結果を自動承認する処理ではなく、それ以外のすべての定義・権限の一致を引き続き必須とする。
+
+旧SHA256: `d083787df63a80c74a829c070405322d609332bbaac3b15d3182705d755d505f`。確認した現行SHA256: `1cca46b6baab251b93f746db315f5a84cb36ae51a688d29047cc8a397a116d74`。
+
+合成データのPostgreSQLテストで、タッケウの総回数・参加人数が変更前後で一致し、追加2ゲームだけ匿名回数が加算されることを検証した。2026-10-31 09:50 UTCの本番GET/HEAD読取ゲートは全契約 `matched`。これは配備前の構成確認であり、変更版ゲームの本番公開確認ではない。本番SQLの適用や書込みは行っていない。
 
 ## 対応表
 

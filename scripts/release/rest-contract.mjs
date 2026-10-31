@@ -3,6 +3,7 @@ import { randomUUID } from 'node:crypto';
 import { isDeepStrictEqual } from 'node:util';
 import { PROJECT, digest } from './guards.mjs';
 import { INSPECTOR, inspectorMetadata } from './prepare-rest-inspector.mjs';
+import { currentDatabaseContract } from './current-database-contract.mjs';
 
 const fields=['migrations','game','tables','functions','readonly_routines','event_triggers'];
 // Match PostgreSQL jsonb::text (key UTF8 byte length, then unsigned byte order).
@@ -53,7 +54,7 @@ export async function readPublicJson(url,{fetcher=fetch,headers={},maxBytes=1638
   for await(const chunk of response.body){size+=chunk.length;if(size>maxBytes)throw Error('Public API response too large');chunks.push(chunk);}
   return JSON.parse(Buffer.concat(chunks).toString('utf8'));
 }
-export async function checkDatabaseRest({fetcher=fetch,nonce=randomUUID(),now,contract=JSON.parse(readFileSync('scripts/release/expected-contract.json','utf8'))}={}) {
+export async function checkDatabaseRest({fetcher=fetch,nonce=randomUUID(),now,contract=currentDatabaseContract()}={}) {
   if(digest(readFileSync(contract.migration_file,'utf8'))!==contract.migration_sha256)throw Error('Original migration contract hash mismatch');
   const {url,key}=publicDatabaseConfiguration();
   const snapshot=await readPublicJson(`${url}/rest/v1/rpc/${INSPECTOR}`,{fetcher,headers:{apikey:key,'x-takkeu-probe':nonce}});

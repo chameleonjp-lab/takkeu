@@ -1,0 +1,36 @@
+{
+  "project": "mlpnjgezrnhdxsxolyzj",
+  "observed_date": "2026-10-31",
+  "before": "\n  select named.total_play_count + case\n    when pg_catalog.lower(pg_catalog.btrim(coalesce(p_game_slug, ''))) = 'takkeu'\n      then (select count(*) from private.takkeu_guest_plays_v1) else 0::bigint end,\n    named.player_count\n  from (\n    select coalesce(sum(pc.play_count), 0)::bigint as total_play_count, count(*)::bigint as player_count\n    from private.get_game_player_counts_v1(p_game_slug) as pc\n  ) as named;\n",
+  "after": "\n  select named.total_play_count + case\n    when pg_catalog.lower(pg_catalog.btrim(coalesce(p_game_slug, ''))) = 'takkeu'\n      then (select count(*) from private.takkeu_guest_plays_v1)\n    when pg_catalog.lower(pg_catalog.btrim(coalesce(p_game_slug, ''))) = 'iroate'\n      then (select count(*) from private.iroate_guest_plays_v1)\n    when pg_catalog.lower(pg_catalog.btrim(coalesce(p_game_slug, ''))) = 'ironarabe'\n      then (select count(*) from private.ironarabe_guest_plays_v1) else 0::bigint end,\n    named.player_count\n  from (\n    select coalesce(sum(pc.play_count), 0)::bigint as total_play_count, count(*)::bigint as player_count\n    from private.get_game_player_counts_v1(p_game_slug) as pc\n  ) as named;\n",
+  "metadata": {
+    "args": "p_game_slug text",
+    "name": "get_game_play_stats",
+    "owner": "postgres",
+    "config": [
+      "search_path=\"\""
+    ],
+    "result": "TABLE(total_play_count bigint, player_count bigint)",
+    "schema": "public",
+    "strict": false,
+    "definer": true,
+    "language": "sql",
+    "arguments": "p_game_slug text",
+    "privileges": [
+      {
+        "role": "anon",
+        "execute": true
+      },
+      {
+        "role": "authenticated",
+        "execute": true
+      },
+      {
+        "role": "service_role",
+        "execute": true
+      }
+    ],
+    "volatility": "s",
+    "public_execute": true
+  }
+}
