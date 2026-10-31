@@ -42,7 +42,7 @@ it('keeps home best and the current finalized result separate through retry and 
   expect(home).not.toBeNull();
   expect(home.closest('footer')).not.toBeNull();
   expect(home.textContent).toBe('Xでシェア');
-  expect(new URL(home.href).searchParams.get('text')).toBe('卓球ゲーム「タッケウ」で自己ベスト200ラリー！\n何ラリーつなげられる？ #タッケウ');
+  expect(new URL(home.href).searchParams.get('text')).toBe('タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ');
   for (const link of [home, result]) {
     expect(link.target).toBe('_blank');
     expect(link.rel).toBe('noopener noreferrer');
@@ -64,7 +64,7 @@ it('keeps home best and the current finalized result separate through retry and 
   expect(new URL(result.href).searchParams.get('text')).toBe('タッケウで0ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
   screens.render({ ...scenario(0).snapshot(), phase: 'ready' });
   expect(result.hasAttribute('href')).toBe(false);
-  expect(new URL(home.href).searchParams.get('text')).toContain('自己ベスト250ラリー');
+  expect(new URL(home.href).searchParams.get('text')).toContain('タップ＆ドラッグで遊べる卓球ゲーム');
 });
 
 it.each([0, NaN, Infinity, -1, 2.5])('keeps the generic home link available for empty or invalid best %s', bestScore => {

@@ -15,8 +15,8 @@ it.each([0, 1, 42, 1234567890, Number.MAX_SAFE_INTEGER])('shares the finalized r
   expect(share(scoreShareUrl(score), false)).toBe(`タッケウで${score}ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/`);
 });
 
-it.each([1, 42, 1234567890, Number.MAX_SAFE_INTEGER])('shares a valid home best of %s', best => {
-  expect(share(homeShareUrl(best))).toBe(`卓球ゲーム「タッケウ」で自己ベスト${best}ラリー！\n何ラリーつなげられる？ #タッケウ`);
+it.each([1, 42, 1234567890, Number.MAX_SAFE_INTEGER])('shares a game introduction regardless of home best %s', best => {
+  expect(share(homeShareUrl(best))).toBe(`タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ`);
 });
 
 it.each([0, -1, -0.5, 0.5, NaN, Infinity, -Infinity, undefined, null, '42'])('uses generic home copy for missing, zero or invalid best %s', best => {

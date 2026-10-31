@@ -11,6 +11,7 @@ export function fixture(overrides={}){
     '/git/ref/heads/main':{object:{sha}},
     '/actions/runs/7':run,
     [`/actions/workflows/ci.yml/runs?head_sha=${sha}&branch=main&event=push&per_page=100`]:{total_count:1,workflow_runs:[run]},
+    [`/commits/${sha}/pulls?per_page=100`]:[pr],
     '/pulls/35':pr,'/pulls/35/files?per_page=100&page=1':[{filename:'scripts/release/release-target.json',status:'modified'}],
     '/pages':{html_url:'https://chameleonjp-lab.github.io/takkeu/',build_type:'workflow',https_enforced:true,cname:null},
     '/environments/github-pages':{protection_rules:[{type:'branch_policy'}],deployment_branch_policy:{protected_branches:false,custom_branch_policies:true}},

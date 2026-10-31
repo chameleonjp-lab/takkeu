@@ -13,7 +13,7 @@ try {
   const event=JSON.parse(readFileSync(e.GITHUB_EVENT_PATH,'utf8'));
   const result=await authorizeMergeRelease({expected:e.EXPECTED_SHA,event,
     context:{eventName:e.GITHUB_EVENT_NAME,ref:e.GITHUB_REF,repository:e.GITHUB_REPOSITORY,actor:e.GITHUB_ACTOR,triggeringActor:e.GITHUB_TRIGGERING_ACTOR,runId:e.GITHUB_RUN_ID},
-    marker:JSON.parse(readFileSync('scripts/release/release-target.json','utf8')),get});
+    get});
   if(e.GITHUB_OUTPUT)appendFileSync(e.GITHUB_OUTPUT,`sha=${result.main_sha}\nci_run_id=${result.ci_run_id}\n`);
   console.log(JSON.stringify({observed_at:new Date().toISOString(),...result}));
 } catch(error) {

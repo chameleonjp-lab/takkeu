@@ -1,6 +1,7 @@
 import type ja from './ja';
 
 export default {
+  "共有文をコピー": "Text zum Teilen kopieren",
   "卓球の、その先へ。": "Über Tischtennis hinaus.",
   "3500ラリーへの挑戦": "Die Herausforderung: 3500 Ballwechsel",
   "タッケウ": "TAKKEU",

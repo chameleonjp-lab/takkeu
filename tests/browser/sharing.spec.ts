@@ -86,7 +86,7 @@ test('自己ベストと今回の結果を区別し、通信失敗・再挑戦�
   await page.route('https://*.supabase.co/rest/v1/rpc/get_best_score_ranking', route => route.fulfill({ status: 503, json: { code: 'unavailable' } }));
   await openHarness(page, 200);
   const home = page.locator('[data-share-home-x]'), result = page.locator('[data-share-x]');
-  const bestText = '卓球ゲーム「タッケウ」で自己ベスト200ラリー！\n何ラリーつなげられる？ #タッケウ';
+  const bestText = 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ';
   await activateIntent(page, home, bestText);
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   await waitForStart(page);
@@ -110,7 +110,7 @@ test('自己ベストと今回の結果を区別し、通信失敗・再挑戦�
   await renderLargeResult(page, 1234567890);
   await activateIntent(page, result, 'タッケウで1234567890ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
   await page.locator('[data-result] [data-action="home"]').click();
-  await expectIntent(home, '卓球ゲーム「タッケウ」で自己ベスト1234567890ラリー！\n何ラリーつなげられる？ #タッケウ');
+  await expectIntent(home, 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ');
   expect(intents).toHaveLength(4);
 });
 
@@ -131,7 +131,7 @@ for (const [width, height] of [[320, 568], [568, 320], [1280, 720]] as const) {
       });
       expect(overlaps).toBe(false);
       await page.screenshot({ path: info.outputPath(`home-${width}x${height}-${textScale}.png`) });
-      await activateIntent(page, home, '卓球ゲーム「タッケウ」で自己ベスト1234567890ラリー！\n何ラリーつなげられる？ #タッケウ');
+      await activateIntent(page, home, 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ');
       await renderLargeResult(page, 1234567890);
       const result = page.locator('[data-share-x]');
       await result.scrollIntoViewIfNeeded();
