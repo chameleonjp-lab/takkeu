@@ -63,7 +63,9 @@ test('3500/30球で正確にクリアし、3D描画を止め、正式番号入�
 test('スコア受領後の殿堂通信失敗は永続再送し、スコアを二重送信しない', async ({ page }) => {
   const remote = await setup(page, { failHall: true }); await clear(page);
   await expect(page.locator('[data-hall-message]')).toHaveText('殿堂登録は再送できます。');
-  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('takkeu.ranking.pending.v1')!)[0].scoreAcknowledged)).toBe(true);
+  const receiptId=remote.calls.find(c=>c.rpc==='submit_score_idempotent_v1')!.body.p_submission_id;
+  expect(typeof receiptId).toBe('string');
+  expect(await page.evaluate(id=>JSON.parse(localStorage.getItem('takkeu.ranking.pending.v1.entry.v2.'+id)!),receiptId)).toMatchObject({submissionId:receiptId,score:3500,scoreAcknowledged:true});
   await expect(page.locator('[data-position-message]')).toHaveText('3位 / 100登録中');
   await page.getByRole('button', { name: '殿堂登録を再送', exact: true }).click();
   await expect(page.locator('[data-hall-message]')).toHaveText('殿堂登録 第7号');
