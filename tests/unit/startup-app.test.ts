@@ -19,7 +19,8 @@ function setup({validLayout=true,silent=false,named=false,rankControlled=false}:
   const mapping={screen:{left:0,top:0,width:390,height:844},isCurrent:()=>true,toWorld:()=>({x:0,y:.5})};
   const view:GameView={prepare:async()=>{},render(){},resize(){},inputMapping:()=>mapping,setQuality(){},resources:()=>({geometries:0,textures:0,programs:0,drawCalls:0,particles:0,particleCapacity:1536}),dispose(){}};
   const audio={prepare:()=>silent?new Promise<boolean>(()=>{}):Promise.resolve(true),unlock:async()=>true,consume(){},setVolume(){},setMuted(){},suspend(){},reset(){},dispose:async()=>{}};
-  const app=createApp(root,{createSession:()=>session,createView:()=>view,createAudio:()=>audio,storage:{getItem:()=>null,setItem(){}},
+  const store=new Map<string,string>();
+  const app=createApp(root,{createSession:()=>session,createView:()=>view,createAudio:()=>audio,storage:{getItem:k=>store.get(k)??null,setItem(k,v){store.set(k,v)}},
     rankingApi:{position:async()=>null,start:async startId=>{
       if(!rankControlled)return play;
       let record=accepted.get(startId);
@@ -56,38 +57,30 @@ it.each(['pause','result','home'])('準備済みなら%sから案内を出さず
   expect(t.root.querySelector<HTMLElement>('[data-loading-screen]')!.hidden).toBe(true);
 });
 
-it.each([0,180])('準備済みのランキング応答が%s msなら必要な間だけ案内し、応答後は描画フレームを待たない',async(delay)=>{
+it.each([0,180])('ランキング応答が%s ms遅れても開始を止めず、遅い応答で進行を戻さない',async(delay)=>{
   const t=setup({named:true,rankControlled:true});t.click('[data-action="start"]');await vi.advanceTimersByTimeAsync(100);
   t.requests[0]!.resolve();await vi.advanceTimersByTimeAsync(100);
   t.root.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
-  const before=t.session.snapshot();t.click('[data-action="retry"]');await vi.advanceTimersByTimeAsync(0);
-  expect(t.requests).toHaveLength(2);expect(t.session.snapshot()).toEqual(before);
+  t.click('[data-action="retry"]');await vi.advanceTimersByTimeAsync(0);
+  expect(t.requests).toHaveLength(2);expect(t.session.snapshot().phase).toBe('running');
+  await vi.advanceTimersByTimeAsync(delay);
+  const before=t.session.snapshot();
   expect(t.root.querySelector<HTMLElement>('[data-loading-screen]')!.hidden).toBe(true);
-  if(delay){
-    await vi.advanceTimersByTimeAsync(100);
-    expect(t.root.querySelector<HTMLElement>('[data-loading-screen]')!.hidden).toBe(true);
-    await vi.advanceTimersByTimeAsync(80);
-    expect(t.session.snapshot()).toEqual(before);
-    expect(t.root.querySelector<HTMLElement>('[data-loading-screen]')!.hidden).toBe(false);
-    expect(t.root.querySelector('[data-loading-stage]')!.textContent).toContain('ランキング');
-  }
   t.requests[1]!.resolve();await vi.advanceTimersByTimeAsync(0);
-  expect(t.session.snapshot().phase).toBe('running');expect(t.session.snapshot().simTime).toBe(0);
-  expect(t.root.querySelector<HTMLElement>('[data-loading-screen]')!.hidden).toBe(true);
+  expect(t.session.snapshot()).toEqual(before);
 });
 
-it.each([false,true])('準備済み開始の案内表示前の中断・表示後のキャンセルで遅い応答から開始しない（表示済み%s）',async(shown)=>{
+it.each([false,true])('開始通信中の休止・ホーム移動を遅い応答で解除しない（ホーム%s）',async(home)=>{
   const t=setup({named:true,rankControlled:true});t.click('[data-action="start"]');await vi.advanceTimersByTimeAsync(100);
   t.requests[0]!.resolve();await vi.advanceTimersByTimeAsync(100);
   t.root.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
   t.click('[data-action="retry"]');await vi.advanceTimersByTimeAsync(0);expect(t.requests).toHaveLength(2);
-  if(shown){await vi.advanceTimersByTimeAsync(180);t.click('[data-loading-action="cancel"]');}
+  if(home){t.root.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));t.click('[data-action="home"]');}
   else window.dispatchEvent(new Event('blur'));
   t.requests[1]!.resolve();await vi.advanceTimersByTimeAsync(1000);
-  expect(t.session.snapshot().phase).toBe(shown?'ready':'paused');
-  expect(t.results.filter(row=>row.play.playId===t.requests[1]!.play.playId)).toHaveLength(1);
-  if(shown)expect(t.root.querySelector<HTMLElement>('[data-loading-screen]')!.hidden).toBe(true);
-  else expect(t.root.querySelector('[data-loading-screen] [role="alert"]')!.textContent).toContain('中断');
+  expect(t.session.snapshot().phase).toBe(home?'ready':'paused');
+  expect(t.results.filter(row=>row.play.playId===t.requests[1]!.play.playId)).toHaveLength(home?1:0);
+  expect(t.root.querySelector<HTMLElement>('[data-loading-screen]')!.hidden).toBe(true);
 });
 
 it('準備済みでも現在のコート寸法が0なら古い有効な操作座標で開始しない',async()=>{
@@ -111,7 +104,7 @@ it('音声の準備が返らなくても期限後は無音で開始し、操作�
 
 it.each([false,true])('キャンセル後の同名開始で古い応答が新しいプレイの得点を終了させない（旧応答先行%s）',async(oldFirst)=>{
   const t=setup({named:true,rankControlled:true});t.click('[data-action="start"]');await vi.advanceTimersByTimeAsync(100);
-  expect(t.requests).toHaveLength(1);t.click('[data-loading-action="cancel"]');
+  expect(t.requests).toHaveLength(1);t.root.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));t.click('[data-action="home"]');
   t.click('[data-action="start"]');await vi.advanceTimersByTimeAsync(100);expect(t.requests).toHaveLength(2);
   if(oldFirst){t.requests[0]!.resolve();await vi.advanceTimersByTimeAsync(10);}
   t.requests[1]!.resolve();await vi.advanceTimersByTimeAsync(3000);
@@ -161,3 +154,4 @@ it('records the real cumulative loss count when all balls are gone, even before 
     score:ended.score,lostBalls:ended.lostBallCount,
   });
 });
+it('named ranking connection cannot hold gameplay while the original start remains pending',async()=>{const t=setup({named:true,rankControlled:true});t.click('[data-action="start"]');await vi.advanceTimersByTimeAsync(1000);expect(t.requests).toHaveLength(1);expect(t.session.snapshot().phase).toBe('running');expect(t.results).toHaveLength(0);t.requests[0]!.resolve();await vi.advanceTimersByTimeAsync(0);expect(t.session.snapshot().phase).toBe('running')});

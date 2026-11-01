@@ -11,7 +11,7 @@ async function setup(page: Page, options: { failHall?: boolean; holdHall?: boole
     const rpc = route.request().url().split('/').at(-1)!, body = route.request().postDataJSON(); calls.push({ rpc, body });
     if (rpc === 'start_takkeu_clear_play_v2') return route.fulfill({ json: { accepted: true, start_id: body.p_start_id, play_id: uid(++starts), display_name: body.p_display_name, normalized_name: body.p_display_name, game_slug: 'takkeu', client_version: body.p_client_version, rules_version: 'goal-3500-v1' } });
     if (rpc === 'finish_takkeu_clear_play_v2') return route.fulfill({ json: { accepted: true, play_id: body.p_play_id, game_slug: 'takkeu', result_type: body.p_result_type, reached_wave: 1, score: body.p_score, lost_balls: body.p_lost_balls, rules_version: 'goal-3500-v1' } });
-    if (rpc === 'submit_score_idempotent_v1') return route.fulfill({ json: [{ accepted: true, result_play_id: body.p_play_id, result_submission_id: body.p_submission_id, result_display_name: body.p_display_name, result_normalized_name: body.p_display_name, result_first_score: body.p_score, result_best_score: Math.max(4001, body.p_score), result_play_count: starts }] });
+    if (rpc === 'submit_score_idempotent_v1') return route.fulfill({ json: [{ accepted: true, result_play_id: body.p_play_id, result_submission_id: body.p_submission_id, result_display_name: body.p_display_name, result_normalized_name: body.p_display_name, result_first_score: body.p_score, result_best_score: Math.max(4001, body.p_score), result_play_count: starts, is_first_play: false, is_new_best: false, was_duplicate: false }] });
     if (rpc === 'register_takkeu_hall_v2') {
       hallCalls++;
       if (options.holdHall) await new Promise<void>(resolve => releases.push(resolve));

@@ -16,7 +16,7 @@ const storage = () => { const data = new Map<string, string>(); return {
 }; };
 const acceptedStart = { accepted: true, start_id: startId, play_id: playId, display_name: 'テスト', normalized_name: 'テスト', game_slug: 'takkeu', client_version: RANKING_CONFIG.clientVersion, rules_version: 'goal-3500-v1' };
 const acceptedFinish = { accepted: true, play_id: playId, game_slug: 'takkeu', result_type: 'game_over', reached_wave: 1, score: 42 };
-const acceptedScore = [{ accepted: true, result_submission_id: submissionId, result_play_id: playId, result_display_name: 'テスト', result_normalized_name: 'テスト', result_first_score: 42, result_best_score: 42, result_play_count: 1 }];
+const acceptedScore = [{ accepted: true, result_submission_id: submissionId, result_play_id: playId, result_display_name: 'テスト', result_normalized_name: 'テスト', result_first_score: 42, result_best_score: 42, result_play_count: 1, is_first_play: false, is_new_best: false, was_duplicate: false }];
 const response = (data: unknown, status = 200) => new Response(JSON.stringify(data), { status });
 function api() { return { position: vi.fn(async () => null), start: vi.fn(async (_startId: string, _name: string) => play), startGuest: vi.fn(async (_startId: string) => {}), finish: vi.fn(async (_result: PendingResult) => {}), submit: vi.fn(async (_result: PendingResult) => {}), top: vi.fn(async () => []) }; }
 afterEach(() => vi.useRealTimers());
@@ -94,7 +94,7 @@ it('sends guest count-only RPC fields and validates its acknowledgement', async 
   await client.startGuest(startId);
   expect(calls).toEqual([{ p_start_id: startId, p_game_slug: 'takkeu', p_client_version: RANKING_CONFIG.guestClientVersion }]);
   const wrong = createRankingClient(async () => response({ accepted: true, start_id: submissionId, play_id: playId, game_slug: 'takkeu', client_version: RANKING_CONFIG.guestClientVersion }));
-  await expect(wrong.startGuest(startId)).rejects.toMatchObject({ retryable: false });
+  await expect(wrong.startGuest(startId)).rejects.toMatchObject({ retryable: true });
 });
 
 it('preserves offline guest starts from two tabs that opened before either starts', async () => {
@@ -170,15 +170,11 @@ it('keeps an earlier failed result when a second play finishes and drains both i
   expect(controller.state().pendingCount).toBe(0);
 });
 
-it('coalesces simultaneous retries and still submits when saving is unavailable', async () => {
-  const remote = api(); let release!: () => void;
-  remote.finish.mockImplementationOnce(() => new Promise<void>(resolve => { release = resolve; }));
-  const controller = createRankingController({ getItem: () => null, setItem: () => { throw Error('blocked'); } }, remote);
-  controller.finish(play, 5, 'game_over');
-  const first = controller.retry(), second = controller.retry();
-  expect(remote.finish).toHaveBeenCalledTimes(1);
-  release(); await Promise.all([first, second]);
-  expect(remote.submit).toHaveBeenCalledTimes(1);
+it('coalesces simultaneous retries after durable storage', async () => {
+  const remote=api();let release!:()=>void;remote.finish.mockImplementationOnce(()=>new Promise<void>(resolve=>{release=resolve}));
+  const controller=createRankingController(storage(),remote);controller.finish(play,5,'game_over');
+  const first=controller.retry(),second=controller.retry();expect(remote.finish).toHaveBeenCalledTimes(1);
+  release();await Promise.all([first,second]);expect(remote.submit).toHaveBeenCalledTimes(1);
 });
 
 it('does not offer retries for a permanent server rejection', async () => {
@@ -205,12 +201,12 @@ it('uses bound fetch, no-store and the shared start/finish/submit contract', asy
 
 it('rejects a successful HTTP response belonging to another play', async () => {
   const client = createRankingClient(async () => response({ ...acceptedStart, start_id: submissionId }));
-  await expect(client.start(startId, 'テスト')).rejects.toMatchObject({ retryable: false });
+  await expect(client.start(startId, 'テスト')).rejects.toMatchObject({ retryable: true });
 });
 
 it('rejects a score acknowledgement with mismatched identity or identifiers', async () => {
   const client = createRankingClient(async () => response([{ ...acceptedScore[0], result_submission_id: startId }]));
-  await expect(client.submit(pending)).rejects.toMatchObject({ retryable: false });
+  await expect(client.submit(pending)).rejects.toMatchObject({ retryable: true });
 });
 
 it('classifies rate limits and times out after 8 seconds', async () => {
@@ -300,7 +296,7 @@ it('sends the actual final loss count with game-over score and rejects invalid o
 
   await expect(client.finish({ ...finalResult, lostBalls: 101 })).rejects.toMatchObject({ retryable: false });
   const wrong = createRankingClient(async () => response({ ...acceptedFinish, lost_balls: 100 }));
-  await expect(wrong.finish(finalResult)).rejects.toMatchObject({ retryable: false });
+  await expect(wrong.finish(finalResult)).rejects.toMatchObject({ retryable: true });
   expect(seen).toHaveLength(1);
 });
 

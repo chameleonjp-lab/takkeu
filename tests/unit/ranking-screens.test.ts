@@ -123,3 +123,4 @@ it('exposes empty/error recovery and retry only for transient submission failure
   screens.setRankingState({ status: 'submitted', pendingCount: 0 });
   expect(get('[data-ranking-status]').textContent).toContain('記録');
 });
+it('explains result storage failure and removes the warning only after recovery',()=>{const {screens,get}=setup();screens.setRankingState({status:'retryable_failed',pendingCount:1,storageFailed:true});expect(get('[data-ranking-status]').textContent).toContain('再読み込みせず');expect(get('[data-action="ranking-retry"]').hidden).toBe(false);screens.setRankingState({status:'submitted',pendingCount:0});expect(get('[data-ranking-status]').textContent).not.toContain('再読み込みせず')});

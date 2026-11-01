@@ -1,3 +1,5 @@
+import {createResultSnapshot} from '../storage/resultSnapshot';
+import type {NamedRun} from '../ranking/deferredStart';
 import { createAudio } from '../audio/audio';
 import { DEFAULT_CONFIG, INITIAL_PADDLE } from '../game/config';
 import { createSession } from '../game/session';
@@ -43,6 +45,9 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   let preferences = loadPreferences(storage);
   const seed = (): number => Date.now() >>> 0;
   const session = (services.createSession ?? createSession)(config, seed());
+  const savedResult=createResultSnapshot(storage);
+  let restoredResult=savedResult.load(session.snapshot());
+  let resultStorageFailed=false;
   const timeline = createInputTimeline(INITIAL_PADDLE);
   const audio = (services.createAudio ?? createAudio)(config, undefined, () => { if (session.snapshot().phase === 'running') pause('hidden'); }, () => {
     if (!disposed) { unlockAttempt++; screens.setAudioReady(preferences.muted); }
@@ -59,10 +64,11 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   let wasFinishing = false;
   let unlockAttempt = 0;
   let activePlay: Play | null = null;
+  let activeRun:NamedRun|null=null,lastResultRun:NamedRun|null=null,resultBoundPlayId:string|null=null;
   let nextProgressReportAt = 0, progressReportInFlight = false;
   let starting = false, startEpoch = 0, leaderboardEpoch = 0;
   let pendingStart:AbortController|null=null,viewPrepared=false;
-  let preparingPlay:Play|null=null;
+  let preparingPlay:NamedRun|null=null;
   let loadingProgress:ReturnType<typeof createLoadingProgress>|null=null,loadingError:string|null=null;
   let loadingShowAt=0;
   let observedPending = 0;
@@ -72,7 +78,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     volume(value) { updatePreferences({ volume: value }); void unlockAudio(); },
     retryAudio() { void unlockAudio(); },
     quality(value) { updatePreferences({ quality: value }); resizeView(); },
-    retryRanking() { void ranking.retry(); },
+    retryRanking() { retryResultStorage();void ranking.retry(); },
     refreshRanking() { void refreshLeaderboard(); void resultPosition.retry(); },
     retryPosition() { void ranking.retry().then(() => { if (!disposed && resultPosition.state().status === 'error') void resultPosition.retry(); }); },
   });
@@ -81,12 +87,18 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   const rankingApi = services.rankingApi ?? createRankingClient();
   const ranking = createRankingController(storage, rankingApi, state => {
     if (disposed) return;
-    screens.setRankingState(state);
+    screens.setRankingState({...state,...(resultStorageFailed?{storageFailed:true}:{})});
     const recorded = state.pendingCount < observedPending; observedPending = state.pendingCount;
     if ((state.status === 'submitted' || recorded) && session.snapshot().phase === 'gameover') void refreshLeaderboard();
-  }, event => { if (!disposed) { void resultPosition.submission(event); resultHall.submission(event); } });
+  }, event => { if (!disposed) { bindResultPlay();void resultPosition.submission(event); resultHall.submission(event); } });
   const resultPosition = createResultPosition(rankingApi, state => { if (!disposed) screens.setResultPosition(state); });
   const resultHall = createResultHall(state => { if (!disposed) screens.setResultHall(state); });
+  function bindResultPlay():void{
+    const play=lastResultRun?.play;if(!play||resultBoundPlayId===play.playId||session.snapshot().phase!=='gameover')return;
+    resultBoundPlayId=play.playId;resultPosition.show(play);if(session.snapshot().endReason==='clear')resultHall.show(play);
+  }
+  function retryResultStorage():void{resultStorageFailed=!savedResult.save();screens.setRankingState({...ranking.state(),...(resultStorageFailed?{storageFailed:true}:{})});}
+  function closeSavedResult():void{restoredResult=null;resultStorageFailed=!savedResult.close();screens.setRankingState({...ranking.state(),...(resultStorageFailed?{storageFailed:true}:{})});}
   observedPending = ranking.state().pendingCount;
   screens.setPlayerName(ranking.name()); screens.setRankingState(ranking.state());
   async function refreshLeaderboard(): Promise<void> {
@@ -189,7 +201,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     let name: string;
     try { name = validateName(screens.playerName()); }
     catch (error) { screens.setError(error instanceof Error ? error.message : '名前を確認してください。'); return; }
-    screens.setPlayerName(name); screens.setError('');
+    closeSavedResult();screens.setPlayerName(name); screens.setError('');
     const epoch = ++startEpoch;
     pendingStart?.abort();const controller=new AbortController();pendingStart=controller;
     resultPosition.clear();
@@ -210,7 +222,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     screens.setPreparing(true);loadingScreen.show(loadingProgress.state(message));
   }
   function retirePreparingPlay():void{
-    const play=preparingPlay;preparingPlay=null;if(play)ranking.finish(play,0,'retire',0);
+    const play=preparingPlay;preparingPlay=null;if(play)ranking.finishRun(play,0,'retire',0);
   }
   async function prepareStart(name:string,epoch:number,controller:AbortController,sound:Promise<boolean>):Promise<void>{
     const {signal}=controller,current=()=>!disposed&&epoch===startEpoch&&!signal.aborted;
@@ -230,19 +242,15 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
       progress.report('sound',0);const soundReady=await sound;if(!current())return;
       screens.setAudioReady(soundReady||preferences.muted);progress.report('sound',1);
       progress.report('ranking',0);
-      let play:Play|null=null;
-      if(name){
-        const registered=ranking.start(name).then(accepted=>{if(!current())ranking.finish(accepted,0,'retire',0);return accepted;});
-        play=await waitForPreparation(registered,12000,signal);
-        if(current())preparingPlay=play;
-      }else void ranking.start('');
+      const run=ranking.begin(name);preparingPlay=run;
+      if(run)void run.ready.then(play=>{if(disposed)return;if(activeRun===run)activePlay=play;bindResultPlay();});
       if(!current())return;progress.report('ranking',1);progress.report('controls',0);
       await waitForPreparation(fitStartingInput(signal,reuseCourt),5000,signal);
       if(!current()||!contextAvailable||document.hidden){retirePreparingPlay();throw new Error('画面に戻ってから、もう一度準備してください。');}
       progress.report('controls',1);progress.finish();
       preparingPlay=null;pendingStart=null;starting=false;loadingProgress=null;loadingScreen.show(null);
       screens.setStarting(false);screens.setPreparing(false);screens.setContextAvailable(contextAvailable);
-      beginRun(play);
+      beginRun(run);
     }catch(error){
       if(!current())return;
       controller.abort();ranking.abandonStart();retirePreparingPlay();
@@ -268,12 +276,12 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
       }else stable='';
     }
   }
-  function beginRun(play: Play | null): void {
+  function beginRun(run:NamedRun|null): void {
     resultHall.clear(); wasFinishing = false;
-    ranking.finish(activePlay, session.snapshot().score, 'retire', session.snapshot().lostBallCount);
-    activePlay = play; leaderboardEpoch++;
+    ranking.finishRun(activeRun, session.snapshot().score, 'retire', session.snapshot().lostBallCount);
+    activeRun=run;activePlay=run?.play??null;lastResultRun=null;resultBoundPlayId=null;leaderboardEpoch++;
     nextProgressReportAt = performance.now() + 15000; progressReportInFlight = false;
-    ranking.clearResult(); screens.setRankingParticipation(!!play);
+    ranking.clearResult(); screens.setRankingParticipation(!!run);
     rememberBest(); persist();
     swipe.cancel(); session.reset(seed()); session.start();
     effects = createRallyEffects(session.snapshot().runId, preferences.bestScore); effectState = effects.state(); effectEnd=0;
@@ -304,11 +312,12 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     session.resume(); loop.resetClock(performance.now()); screens.render(session.snapshot()); void unlockAudio();
   }
   function home(): void {
+    closeSavedResult();
     resultPosition.clear();
     resultHall.clear();
     if(starting)ranking.abandonStart();pendingStart?.abort();pendingStart=null;retirePreparingPlay();loadingProgress=null;loadingError=null;loadingScreen.show(null);screens.setPreparing(false);
     startEpoch++; leaderboardEpoch++; starting = false; screens.setStarting(false); screens.setContextAvailable(contextAvailable);
-    ranking.finish(activePlay, session.snapshot().score, 'retire', session.snapshot().lostBallCount); activePlay = null;
+    ranking.finishRun(activeRun, session.snapshot().score, 'retire', session.snapshot().lostBallCount); activePlay = null;activeRun=null;lastResultRun=null;resultBoundPlayId=null;
     rememberBest(); persist(); swipe.cancel(); silence(); session.reset(seed());
     effects = createRallyEffects(session.snapshot().runId, preferences.bestScore); effectState = effects.state(); effectEnd=0;
     timeline.clear(INITIAL_PADDLE); audio.reset(session.snapshot().runId);
@@ -332,9 +341,11 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
       });
     },
   });
-  screens.setSound(preferences.muted); screens.setPreferences(preferences); persist(); screens.render(session.snapshot());
+  screens.setSound(preferences.muted); screens.setPreferences(preferences); persist(); screens.render(restoredResult?.snapshot??session.snapshot());
+  if(restoredResult){screens.setRankingParticipation(restoredResult.named);void refreshLeaderboard();}
   void ranking.retry();
   const retryOnline = () => {
+    retryResultStorage();
     // The connection can recover before an old request reports its failure.
     // Retry again after that in-flight attempt settles so the event is not lost.
     void ranking.retry().then(() => { if (!disposed) void ranking.retry(); });
@@ -343,6 +354,7 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
   let frameId = 0;
   const frame = (now: number): void => {
     if (disposed) return;
+    if(restoredResult){screens.render(restoredResult.snapshot);frameId=requestAnimationFrame(frame);return;}
     if(starting&&loadingProgress&&now>=loadingShowAt)loadingScreen.show(loadingProgress.state());
     // Dynamic viewport/layout changes can resize the court without a window
     // resize event. Refresh its camera mapping before accepting the next frame.
@@ -365,10 +377,12 @@ export function createApp(root: HTMLElement, services: Partial<AppServices> = {}
     if (result.snapshot.phase === 'gameover' && observedPhase !== 'gameover') {
       swipe.cancel(); timeline.clear(result.snapshot.paddle); persist();
       if (!presentation.finishing && result.snapshot.endReason !== 'clear') silence();
-      screens.setRankingParticipation(!!activePlay);
+      savedResult.capture(result.snapshot,!!activeRun,activeRun?{startId:activeRun.startId,name:activeRun.displayName}:null);retryResultStorage();
+      lastResultRun=activeRun;resultBoundPlayId=null;screens.setRankingParticipation(!!activeRun);
       resultPosition.show(activePlay);
-      if (result.snapshot.endReason === 'clear') resultHall.show(activePlay); else resultHall.clear();
-      ranking.finish(activePlay, result.snapshot.score, result.snapshot.endReason === 'clear' ? 'clear' : 'game_over', result.snapshot.lostBallCount); activePlay = null;
+      if(result.snapshot.endReason==='clear'){if(activePlay||!activeRun)resultHall.show(activePlay);else resultHall.clear()}else resultHall.clear();
+      if(activePlay)resultBoundPlayId=activePlay.playId;
+      ranking.finishRun(activeRun,result.snapshot.score,result.snapshot.endReason==='clear'?'clear':'game_over',result.snapshot.lostBallCount);activeRun=null;activePlay=null;
       void refreshLeaderboard();
     }
     // Continue the last celebration without advancing gameplay. Once it ends,

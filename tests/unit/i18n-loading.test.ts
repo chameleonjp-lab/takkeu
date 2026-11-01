@@ -168,7 +168,7 @@ it('uses the root document browser preferences when no language is stored', () =
   expect(frameDocument.documentElement.lang).toBe('fr');
 });
 
-it('switches during a ranking request and retranslates its later error without restarting preparation', async () => {
+it('switches during a ranking request without restarting gameplay or making later failure a blocking loading error', async () => {
   const app = preparingApp();
   app.root.querySelector<HTMLButtonElement>('[data-action="start"]')!.click();
   await vi.advanceTimersByTimeAsync(100);
@@ -183,9 +183,10 @@ it('switches during a ranking request and retranslates its later error without r
   app.failRanking(new Error('ランキング通信に失敗しました（503）。'));
   await vi.advanceTimersByTimeAsync(0);
   const alert = app.root.querySelector('[data-loading-screen] [role="alert"]')!;
-  expect(alert.textContent).toContain('503');
-  expect(alert.textContent).not.toContain('ランキング通信に失敗しました');
+  expect(app.root.querySelector<HTMLElement>('[data-loading-screen]')!.hidden).toBe(true);
+  expect(alert.textContent).not.toContain('503');
+  expect(app.session.snapshot()).toEqual(before);
   i18n.setLanguage('ja');
-  expect(alert.textContent).toBe('ランキング通信に失敗しました（503）。');
+  expect(app.session.snapshot()).toEqual(before);
   expect(app.calls).toEqual(calls);
 });

@@ -26,7 +26,7 @@ it('uses the new-rule start/finish and validates a server-issued hall receipt', 
   expect(calls[2]!.body).toEqual({ p_play_id: play.playId, p_submission_id: submissionId, p_display_name: 'テスト', p_client_version: 'takkeu-web-clear-3500-1' });
   expect(calls.every(c => c.body.p_client_version === 'takkeu-web-clear-3500-1')).toBe(true);
   const wrong = createRankingClient(async () => response({ accepted: true, play_id: play.playId, submission_id: submissionId, rules_version: 'goal-3500-v1', hall_number: 7, display_name: '別名', normalized_name: '別名', registered_at: hall.registeredAt }));
-  await expect(wrong.hall(pending)).rejects.toMatchObject({ retryable: false });
+  await expect(wrong.hall(pending)).rejects.toMatchObject({ retryable: true });
 });
 
 it('retains acknowledged scores until hall registration succeeds across a reload', async () => {
@@ -37,7 +37,7 @@ it('retains acknowledged scores until hall registration succeeds across a reload
   controller.finish(play, 3500, 'clear', 0); await controller.retry();
   expect(remote.hall).toHaveBeenCalledTimes(1);
   expect(events.some(e => e.status === 'submitted' && e.hallStatus === 'pending')).toBe(true);
-  expect(JSON.parse(storage.data.get(config.pendingKey)!)[0]).toMatchObject({ scoreAcknowledged: true, resultType: 'clear', score: 3500 });
+  expect(JSON.parse([...storage.data.entries()].find(([key])=>key.startsWith(config.pendingKey+'.entry.v2.'))![1])).toMatchObject({ scoreAcknowledged: true, resultType: 'clear', score: 3500 });
   const reloaded = createRankingController(storage, remote, () => {}, e => events.push(e));
   await reloaded.retry();
   expect(remote.submit).toHaveBeenCalledTimes(1); expect(remote.finish).toHaveBeenCalledTimes(1);
@@ -53,7 +53,7 @@ it('preserves old >3500 pending scores and original client versions without hall
   const calls: { endpoint: string; version: unknown }[] = [];
   const client = createRankingClient(async (url, init) => {
     const b = JSON.parse(String(init!.body)), endpoint = String(url).split('/').at(-1)!; calls.push({ endpoint, version: b.p_client_version });
-    return response(endpoint === 'finish_takkeu_play_v2' ? { accepted: true, play_id: play.playId, game_slug: 'takkeu', result_type: 'game_over', reached_wave: 1, score: 4001, lost_balls: 1 } : [{ accepted: true, result_play_id: play.playId, result_submission_id: submissionId, result_normalized_name: 'テスト', result_display_name: 'テスト', result_first_score: 4001, result_best_score: 4001, result_play_count: 1 }]);
+    return response(endpoint === 'finish_takkeu_play_v2' ? { accepted: true, play_id: play.playId, game_slug: 'takkeu', result_type: 'game_over', reached_wave: 1, score: 4001, lost_balls: 1 } : [{ accepted: true, result_play_id: play.playId, result_submission_id: submissionId, result_normalized_name: 'テスト', result_display_name: 'テスト', result_first_score: 4001, result_best_score: 4001, result_play_count: 1, is_first_play: false, is_new_best: false, was_duplicate: false }]);
   });
   const controller = createRankingController(storage, client); await controller.retry();
   expect(controller.state().pendingCount).toBe(0);
@@ -74,7 +74,7 @@ it('retries goal3000 pending on its original RPC and never relabels its receipt'
  const api=createRankingClient(async(url,init)=>{
   const rpc=String(url).split('/').at(-1)!,b=JSON.parse(String(init!.body));calls.push({rpc,version:b.p_client_version});
   if(rpc==='finish_takkeu_clear_play_v1')return response({accepted:true,play_id:play.playId,game_slug:'takkeu',result_type:'clear',reached_wave:1,score:3000,lost_balls:0,rules_version:'goal-3000-v1'});
-  if(rpc==='submit_score_idempotent_v1')return response([{accepted:true,result_play_id:play.playId,result_submission_id:submissionId,result_normalized_name:play.normalizedName,result_display_name:play.displayName,result_first_score:4001,result_best_score:4001,result_play_count:2}]);
+  if(rpc==='submit_score_idempotent_v1')return response([{accepted:true,result_play_id:play.playId,result_submission_id:submissionId,result_normalized_name:play.normalizedName,result_display_name:play.displayName,result_first_score:4001,result_best_score:4001,result_play_count:2, is_first_play: false, is_new_best: false, was_duplicate: false}]);
   return response({accepted:true,play_id:play.playId,submission_id:submissionId,rules_version:'goal-3000-v1',hall_number:7,display_name:play.displayName,normalized_name:play.normalizedName,registered_at:hall.registeredAt});
  });
  const c=createRankingController(storage,api);await c.retry();expect(c.state().pendingCount).toBe(0);

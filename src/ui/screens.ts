@@ -260,12 +260,12 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   const displayRankingState = (): void => {
     const state = rankingState;
     const messages = { idle: '', submitting: 'ランキングに記録しています。', submitted: 'ランキングに記録しました。', retryable_failed: '記録を送信できませんでした。通信を確認して再送できます。', permanent_failed: '記録を登録できませんでした。ゲームとシェアは引き続き利用できます。' };
-    get('[data-ranking-notice]').hidden = state.status === 'idle';
-    const source = state.hallPendingCount === state.pendingCount && state.pendingCount > 0
+    get('[data-ranking-notice]').hidden = state.status === 'idle'&&!state.storageFailed;
+    const source = state.storageFailed ? '端末に記録を保存できません。結果を失わないため、再読み込みせず保存できる状態で再送してください。' : state.hallPendingCount === state.pendingCount && state.pendingCount > 0
       ? state.status === 'permanent_failed' ? 'ラリー記録は送信済みですが、殿堂登録を確認できませんでした。' : 'ラリー記録は送信済みです。殿堂登録を確認・再送しています。'
       : messages[state.status];
     setText('[data-ranking-status]', source ? t(source) : '');
-    get('[data-action="ranking-retry"]').hidden = state.status !== 'retryable_failed';
+    get('[data-action="ranking-retry"]').hidden = state.status !== 'retryable_failed'&&!state.storageFailed;
   };
   const displayHall = (): void => {
     const state = hallState;

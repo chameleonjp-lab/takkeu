@@ -76,7 +76,8 @@ it('reports a blocked current submission when an older queued request fails, wit
     finish: vi.fn(async (_pending: PendingResult) => {}), submit: async (_pending: PendingResult) => {}, top: async () => [], position: vi.fn(async () => position) };
   remote.finish.mockImplementationOnce(() => new Promise<void>((_resolve, reject) => { rejectOld = reject; }));
   const result = createResultPosition(remote);
-  const ranking = createRankingController({ getItem: () => null, setItem: () => {} }, remote, () => {}, event => { void result.submission(event); });
+  const store=new Map<string,string>();
+  const ranking = createRankingController({ getItem: k => store.get(k)??null, setItem: (k,v) => {store.set(k,v)} }, remote, () => {}, event => { void result.submission(event); });
   ranking.finish({ ...play, playId: '44444444-4444-4444-8444-444444444444' }, 900, 'game_over');
   result.show(play); ranking.finish(play, 12, 'game_over');
   const sending = ranking.retry(); rejectOld(Error('offline')); await sending;

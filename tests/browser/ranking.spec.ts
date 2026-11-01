@@ -16,7 +16,7 @@ async function mockRanking(page: import('@playwright/test').Page, failScore = fa
     if (rpc === 'start_takkeu_clear_play_v2') data = { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', display_name: body.p_display_name, normalized_name: body.p_display_name, client_version: 'takkeu-web-clear-3500-1', rules_version: 'goal-3500-v1' };
     if (rpc === 'start_takkeu_guest_play_v1') data = { accepted: true, start_id: body.p_start_id, play_id: playId, game_slug: 'takkeu', client_version: version };
     if (rpc === 'finish_takkeu_clear_play_v2') data = { accepted: true, play_id: body.p_play_id, game_slug: 'takkeu', result_type: body.p_result_type, reached_wave: 1, score: body.p_score, lost_balls: body.p_lost_balls, rules_version: 'goal-3500-v1' };
-    if (rpc === 'submit_score_idempotent_v1') data = [{ accepted: true, result_submission_id: body.p_submission_id, result_play_id: body.p_play_id, result_display_name: body.p_display_name, result_normalized_name: body.p_display_name, result_first_score: body.p_score, result_best_score: body.p_score, result_play_count: 1 }];
+    if (rpc === 'submit_score_idempotent_v1') data = [{ accepted: true, result_submission_id: body.p_submission_id, result_play_id: body.p_play_id, result_display_name: body.p_display_name, result_normalized_name: body.p_display_name, result_first_score: body.p_score, result_best_score: body.p_score, result_play_count: 1, is_first_play: false, is_new_best: false, was_duplicate: false }];
     if (rpc === 'get_takkeu_player_position_v1') data = [{ rank_no: 123, total_entries: 250, best_score: 1500 }];
     if (rpc === 'get_takkeu_hall_v2') data = [];
     if (rpc === 'get_best_score_ranking') data = Array.from({ length: 30 }, (_, i) => ({ rank_no: i < 2 ? 1 : i + 1, display_name: `プレイヤー${i + 1}`, best_score: 100 - i, play_count: i + 1 }));
@@ -167,4 +167,32 @@ test('通信停止中も名前なしのプレイと再プレイが使えラン�
   await page.getByRole('button', { name: 'もう一度', exact: true }).click();
   await waitForStart(page);
   await expect(page.getByTestId('game-screen')).toBeVisible();
+});
+
+test('named start failure never blocks play; quota holds the final receipt until recovery, then reload cannot resubmit it', async ({ page }) => {
+  const calls=await mockRanking(page);
+  const starts:Record<string,unknown>[]=[];
+  await page.route('**/rpc/start_takkeu_clear_play_v2',async route=>{
+    const body=route.request().postDataJSON() as Record<string,unknown>;starts.push(body);
+    if(starts.length===1){await route.abort();return;}
+    await route.fulfill({json:{accepted:true,start_id:body.p_start_id,play_id:playId,game_slug:'takkeu',display_name:body.p_display_name,normalized_name:body.p_display_name,client_version:'takkeu-web-clear-3500-1',rules_version:'goal-3500-v1'}});
+  });
+  await open(page);
+  await page.getByLabel('ランキングの名前').fill('保存テスト');
+  await page.getByRole('button',{name:'はじめる',exact:true}).click();await waitForStart(page);
+  await expect(page.getByTestId('game-screen')).toBeVisible();
+  await expect.poll(()=>starts.length).toBe(1);
+  await page.evaluate(()=>{const original=Storage.prototype.setItem;const state=window as unknown as {quotaBlocked:boolean};state.quotaBlocked=true;Storage.prototype.setItem=function(k,v){if(state.quotaBlocked&&k.startsWith('takkeu.ranking.pending.v1'))throw new DOMException('quota','QuotaExceededError');return original.call(this,k,v)};});
+  await finish(page,17);
+  await expect(page.locator('[data-result-score]')).toHaveText('17');
+  await expect(page.locator('[data-ranking-status]')).toContainText('端末に記録を保存できません');
+  expect(calls.filter(x=>x.rpc==='finish_takkeu_clear_play_v2'||x.rpc==='submit_score_idempotent_v1')).toHaveLength(0);
+  await page.evaluate(()=>{(window as unknown as {quotaBlocked:boolean}).quotaBlocked=false;window.dispatchEvent(new Event('online'));});
+  await expect(page.locator('[data-ranking-status]')).toHaveText('ランキングに記録しました。');
+  expect(starts).toHaveLength(2);expect(starts[1]).toEqual(starts[0]);
+  const submitted=calls.filter(x=>x.rpc==='submit_score_idempotent_v1');expect(submitted).toHaveLength(1);expect(submitted[0]!.body).toMatchObject({p_score:17,p_display_name:'保存テスト'});
+  await page.reload();await expect(page.locator('[data-result-score]')).toHaveText('17');
+  await page.locator('[data-result] [data-action="home"]').click();await expect(page.getByRole('button',{name:'はじめる',exact:true})).toBeVisible();
+  await page.evaluate(()=>window.dispatchEvent(new Event('online')));await page.clock.runFor(100);
+  expect(calls.filter(x=>x.rpc==='submit_score_idempotent_v1')).toHaveLength(1);
 });

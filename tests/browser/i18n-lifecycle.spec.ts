@@ -51,7 +51,7 @@ async function remoteRanking(page: Page, options: { hold?: readonly string[]; fa
     if (name === rpc.score) return route.fulfill({ json: [{
       accepted: true, result_play_id: body.p_play_id, result_submission_id: body.p_submission_id,
       result_display_name: body.p_display_name, result_normalized_name: body.p_display_name,
-      result_first_score: body.p_score, result_best_score: 4001, result_play_count: 1,
+      result_first_score: body.p_score, result_best_score: 4001, result_play_count: 1, is_first_play: false, is_new_best: false, was_duplicate: false,
     }] });
     if (name === rpc.hall) return route.fulfill({ json: {
       accepted: true, play_id: body.p_play_id, submission_id: body.p_submission_id,

@@ -1,6 +1,7 @@
 import type ja from './ja';
 
 export default {
+  "端末に記録を保存できません。結果を失わないため、再読み込みせず保存できる状態で再送してください。": "Este dispositivo no puede guardar el registro. Para no perder el resultado, no recargues; reintenta cuando se pueda guardar.",
   "共有文をコピー": "Copiar texto para compartir",
   "卓球の、その先へ。": "Más allá del tenis de mesa.",
   "3500ラリーへの挑戦": "El reto de las 3500 devoluciones",

@@ -1,6 +1,7 @@
 import type ja from './ja';
 
 export default {
+  "端末に記録を保存できません。結果を失わないため、再読み込みせず保存できる状態で再送してください。": "Bu cihaz kaydı saklayamıyor. Sonucu kaybetmemek için sayfayı yenilemeyin; kayıt mümkün olduğunda yeniden deneyin.",
   "共有文をコピー": "Paylaşım metnini kopyala",
   "卓球の、その先へ。": "Masa tenisinin ötesine.",
   "3500ラリーへの挑戦": "3500 ralli meydan okuması",

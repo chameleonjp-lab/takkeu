@@ -17,7 +17,7 @@ async function fixture(page: Page, options: { failSubmit?: boolean; failPosition
       submissions++;
       if (options.holdSubmit) await pendingSubmit;
       if (options.failSubmit && !failedSubmit) { failedSubmit = true; return route.fulfill({ status: 503, json: {} }); }
-      return route.fulfill({ json: [{ accepted: true, result_play_id: body.p_play_id, result_submission_id: body.p_submission_id, result_display_name: body.p_display_name, result_normalized_name: body.p_display_name, result_first_score: 12, result_best_score: Math.max(1500, body.p_score), result_play_count: starts }] });
+      return route.fulfill({ json: [{ accepted: true, result_play_id: body.p_play_id, result_submission_id: body.p_submission_id, result_display_name: body.p_display_name, result_normalized_name: body.p_display_name, result_first_score: 12, result_best_score: Math.max(1500, body.p_score), result_play_count: starts, is_first_play: false, is_new_best: false, was_duplicate: false }] });
     }
     if (rpc === 'get_takkeu_player_position_v1') {
       positions++; if (options.holdPosition) await pendingPosition;
