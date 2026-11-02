@@ -11,7 +11,7 @@ async function setup(page: Page, options: { failHall?: boolean; holdHall?: boole
     const rpc = route.request().url().split('/').at(-1)!, body = route.request().postDataJSON(); calls.push({ rpc, body });
     if (rpc === 'start_takkeu_clear_play_v2') return route.fulfill({ json: { accepted: true, start_id: body.p_start_id, play_id: uid(++starts), display_name: body.p_display_name, normalized_name: body.p_display_name, game_slug: 'takkeu', client_version: body.p_client_version, rules_version: 'goal-3500-v1' } });
     if (rpc === 'finish_takkeu_clear_play_v2') return route.fulfill({ json: { accepted: true, play_id: body.p_play_id, game_slug: 'takkeu', result_type: body.p_result_type, reached_wave: 1, score: body.p_score, lost_balls: body.p_lost_balls, rules_version: 'goal-3500-v1' } });
-    if (rpc === 'submit_score_idempotent_v1') return route.fulfill({ json: [{ accepted: true, result_play_id: body.p_play_id, result_submission_id: body.p_submission_id, result_display_name: body.p_display_name, result_normalized_name: body.p_display_name, result_first_score: body.p_score, result_best_score: Math.max(4001, body.p_score), result_play_count: starts }] });
+    if (rpc === 'submit_score_idempotent_v1') return route.fulfill({ json: [{ accepted: true, result_play_id: body.p_play_id, result_submission_id: body.p_submission_id, result_display_name: body.p_display_name, result_normalized_name: body.p_display_name, result_first_score: body.p_score, result_best_score: Math.max(4001, body.p_score), result_play_count: starts, is_first_play: false, is_new_best: false, was_duplicate: false }] });
     if (rpc === 'register_takkeu_hall_v2') {
       hallCalls++;
       if (options.holdHall) await new Promise<void>(resolve => releases.push(resolve));
@@ -63,7 +63,9 @@ test('3500/30球で正確にクリアし、3D描画を止め、正式番号入�
 test('スコア受領後の殿堂通信失敗は永続再送し、スコアを二重送信しない', async ({ page }) => {
   const remote = await setup(page, { failHall: true }); await clear(page);
   await expect(page.locator('[data-hall-message]')).toHaveText('殿堂登録は再送できます。');
-  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('takkeu.ranking.pending.v1')!)[0].scoreAcknowledged)).toBe(true);
+  const receiptId=remote.calls.find(c=>c.rpc==='submit_score_idempotent_v1')!.body.p_submission_id;
+  expect(typeof receiptId).toBe('string');
+  expect(await page.evaluate(id=>JSON.parse(localStorage.getItem('takkeu.ranking.pending.v1.entry.v2.'+id)!),receiptId)).toMatchObject({submissionId:receiptId,score:3500,scoreAcknowledged:true});
   await expect(page.locator('[data-position-message]')).toHaveText('3位 / 100登録中');
   await page.getByRole('button', { name: '殿堂登録を再送', exact: true }).click();
   await expect(page.locator('[data-hall-message]')).toHaveText('殿堂登録 第7号');

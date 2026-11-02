@@ -6,8 +6,9 @@ import { authorizeMergeRelease } from '../../scripts/release/merge-authorization
 import { checkDatabaseRest, fingerprintContract, expectedInspectorHash } from '../../scripts/release/rest-contract.mjs';
 import { inspectorMetadata } from '../../scripts/release/prepare-rest-inspector.mjs';
 import { fixture, sha } from '../helpers/mergeReleaseFixture.mjs';
+import { currentDatabaseContract } from '../../scripts/release/current-database-contract.mjs';
 const workflow=parse(readFileSync('.github/workflows/deploy.yml','utf8'));
-const contract=JSON.parse(readFileSync('scripts/release/expected-contract.json'));
+const contract=currentDatabaseContract();
 // Execute predicates from the actual YAML and the real gate functions. Only
 // external API responses and deploy-pages are substituted. Never publish here.
 async function exercise(options={}) {

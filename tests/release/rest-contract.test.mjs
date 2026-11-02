@@ -4,7 +4,8 @@ import { readFileSync } from 'node:fs';
 import { fingerprintContract, pgJsonbText, checkDatabaseRest } from '../../scripts/release/rest-contract.mjs';
 import { digest } from '../../scripts/release/guards.mjs';
 import { inspectorMetadata, prepareInspectorSql, inspectorMigrationFile } from '../../scripts/release/prepare-rest-inspector.mjs';
-const contract=JSON.parse(readFileSync('scripts/release/expected-contract.json'));
+import { currentDatabaseContract } from '../../scripts/release/current-database-contract.mjs';
+const contract=currentDatabaseContract();
 const nonce='40bf07e9-f27f-4717-b336-39ff1965241c';
 const now=Date.now();
 test('reviewable API migration equals deterministic catalog-only generator',()=>{
@@ -29,6 +30,11 @@ test('fixed GET request checks real contract digests, owner metadata, freshness 
   assert.equal((await checkDatabaseRest({fetcher:transport(),nonce,now})).result,'matched');
   const mutations=[x=>x.format=1,x=>x.project='wrong',x=>x.read_only=false,x=>x.nonce='replayed',x=>x.observed_at=new Date(now-60000).toISOString(),x=>x.observed_at=new Date(now+60000).toISOString(),x=>x.fingerprints.migrations='0'.repeat(64),x=>delete x.fingerprints.functions,x=>x.fingerprints.extra='data',x=>x.inspector_sha256='0'.repeat(64),x=>x.inspector={owner:'postgres'},x=>x.internal_rows=['secret']];
   for(const mutate of mutations){const body=valid();mutate(body);await assert.rejects(checkDatabaseRest({fetcher:transport(body),nonce,now}));}
+});
+test('the older statistics definition is rejected after its explicit reviewed update',async()=>{
+  const body=valid();
+  body.fingerprints=fingerprintContract(JSON.parse(readFileSync('scripts/release/expected-contract.json')));
+  await assert.rejects(checkDatabaseRest({fetcher:transport(body),nonce,now}),/readonly_routines/);
 });
 test('auth/timeout/malformed/non-json/oversized errors never become ready',async()=>{
   for(const status of [401,403,404,429,500])await assert.rejects(checkDatabaseRest({fetcher:transport({}, {status}),nonce,now}));

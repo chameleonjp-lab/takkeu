@@ -53,8 +53,6 @@ export function scoreShareUrl(score: number, cleared = false, hallNumber?: numbe
     : t('タッケウで{score}ラリー達成！\nあなたは何ラリーできるかな？\n{tag}\n{url}', { score, tag: t('#タッケウ'), url: RANKING_CONFIG.canonicalUrl }));
 }
 
-export function homeShareUrl(bestScore: number): string {
-  return shareUrl(validShareScore(bestScore) && bestScore >= 1
-    ? t('卓球ゲーム「タッケウ」で自己ベスト{score}ラリー！\n何ラリーつなげられる？ {tag}', { score: bestScore, tag: t('#タッケウ') })
-    : t('タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ {tag}', { tag: t('#タッケウ') }), RANKING_CONFIG.canonicalUrl);
+export function homeShareUrl(_bestScore: number): string {
+  return shareUrl(t('タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ {tag}', { tag: t('#タッケウ') }), RANKING_CONFIG.canonicalUrl);
 }

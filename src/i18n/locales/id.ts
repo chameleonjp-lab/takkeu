@@ -1,6 +1,8 @@
 import type ja from './ja';
 
 export default {
+  "端末に記録を保存できません。結果を失わないため、再読み込みせず保存できる状態で再送してください。": "Perangkat ini tidak dapat menyimpan catatan. Agar hasil tidak hilang, jangan muat ulang halaman; coba lagi saat penyimpanan tersedia.",
+  "共有文をコピー": "Salin teks berbagi",
   "卓球の、その先へ。": "Lampaui batas tenis meja.",
   "3500ラリーへの挑戦": "Tantangan 3500 reli",
   "タッケウ": "TAKKEU",

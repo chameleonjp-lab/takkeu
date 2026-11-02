@@ -1,5 +1,6 @@
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
+import { currentDatabaseContract } from './current-database-contract.mjs';
 import { PROJECT, summarizeCatalog, verifyDatabase, digest } from './guards.mjs';
 
 export function connectionEnvironment(e) {
@@ -19,7 +20,7 @@ export function readCatalog(env, run=spawnSync) {
   try { return JSON.parse(result.stdout); } catch { throw Error('Invalid database verification response'); }
 }
 export function checkDatabase(env=process.env) {
-  const contract=JSON.parse(readFileSync('scripts/release/expected-contract.json','utf8'));
+  const contract=currentDatabaseContract();
   if(digest(readFileSync(contract.migration_file,'utf8'))!==contract.migration_sha256) throw Error('Migration differs from reviewed contract');
   const snapshot=summarizeCatalog(readCatalog(connectionEnvironment(env)));
   verifyDatabase(snapshot,contract);
