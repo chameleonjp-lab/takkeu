@@ -1,5 +1,6 @@
 import { test as base, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { installStaticNetworkBoundary } from './staticNetworkBoundary';
 
 export { expect };
 export type { Page } from '@playwright/test';
@@ -25,6 +26,7 @@ export async function waitForStart(page:Page):Promise<void>{
 // Browser gameplay must never write to the live ranking database. Page-level
 // routes in ranking.spec.ts take precedence when testing specific API behavior.
 export const test = base.extend<{ rankingTraffic: RpcCall[] }>({
+  serviceWorkers: 'block',
   page:async({page},use)=>{
     const install=page.clock.install.bind(page.clock);
     page.clock.install=async options=>{await install(options);virtualClocks.add(page);};
@@ -33,6 +35,7 @@ export const test = base.extend<{ rankingTraffic: RpcCall[] }>({
   rankingTraffic: [async ({ context }, use) => {
     const calls: RpcCall[] = [];
     const unexpected: string[] = [];
+    await installStaticNetworkBoundary(context, unexpected);
     await context.route('https://*.supabase.co/**', async route => {
       const request = route.request(), rpc = request.url().split('/').at(-1)!;
       if (request.method() !== 'POST' || !request.url().includes('/rest/v1/rpc/')) {

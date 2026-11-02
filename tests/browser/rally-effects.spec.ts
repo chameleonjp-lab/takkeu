@@ -1,3 +1,4 @@
+import { isolatedStaticRoute } from '../helpers/staticNetworkBoundary';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { createHash } from 'node:crypto';
@@ -55,7 +56,7 @@ async function cameraScreenshot(page:Page,info:TestInfo,path:string){
 test.use({viewport:{width:390,height:844},video:'off'});
 test.beforeEach(async({page})=>{
   // A visual fixture has no reason to leave localhost, even for a known RPC.
-  await page.route('**/*',route=>new URL(route.request().url()).hostname==='127.0.0.1'?route.continue():route.abort());
+  await page.route('**/*',async route=>{const unexpected:string[]=[];await isolatedStaticRoute(route,unexpected);expect(unexpected).toEqual([]);});
   // Freeze each loaded module graph while other independent tasks edit source.
   await page.routeWebSocket('**/*',socket=>socket.close());
   await page.goto('/tests/fixtures/rally.html');

@@ -40,6 +40,8 @@ function validShareScore(score: number): boolean {
   return Number.isFinite(score) && Number.isInteger(score) && score >= 0;
 }
 
+const SHARE_TAGS = '#タッケウ #ゲーム制作';
+
 function shareUrl(text: string, url?: string): string {
   const params = new URLSearchParams({ text });
   if (url) params.set('url', url);
@@ -49,10 +51,12 @@ function shareUrl(text: string, url?: string): string {
 export function scoreShareUrl(score: number, cleared = false, hallNumber?: number): string | null {
   if (!validShareScore(score) || (cleared && score !== 3500)) return null;
   const ordinal = cleared && Number.isSafeInteger(hallNumber) && hallNumber! > 0 ? `\n${t('殿堂登録 第{number}号', { number: hallNumber! })}` : '';
-  return shareUrl(cleared ? t('タッケウ3500ラリー、ゲームクリア！{ordinal}\n3500ラリーの殿堂入りに挑戦しよう！\n{tag}\n{url}', { ordinal, tag: t('#タッケウ'), url: RANKING_CONFIG.canonicalUrl })
-    : t('タッケウで{score}ラリー達成！\nあなたは何ラリーできるかな？\n{tag}\n{url}', { score, tag: t('#タッケウ'), url: RANKING_CONFIG.canonicalUrl }));
+  const body = cleared ? t('タッケウ3500ラリー、ゲームクリア！{ordinal}\n3500ラリーの殿堂入りに挑戦しよう！\n{tag}\n{url}', { ordinal, tag: '', url: '' })
+    : t('タッケウで{score}ラリー達成！\nあなたは何ラリーできるかな？\n{tag}\n{url}', { score, tag: '', url: '' });
+  return shareUrl(`${body.trimEnd()}\n${RANKING_CONFIG.canonicalUrl}\n${SHARE_TAGS}`);
 }
 
 export function homeShareUrl(_bestScore: number): string {
-  return shareUrl(t('タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ {tag}', { tag: t('#タッケウ') }), RANKING_CONFIG.canonicalUrl);
+  const body = t('タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ {tag}', { tag: '' });
+  return shareUrl(`${body.trimEnd()}\n${SHARE_TAGS}`, RANKING_CONFIG.canonicalUrl);
 }
