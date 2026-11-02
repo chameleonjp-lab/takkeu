@@ -103,7 +103,7 @@ export function createRankingClient(fetchImpl: typeof fetch = (...args) => globa
       // Duplicate acknowledgements return the aggregate's current display name.
       // Another play can change its spelling; the normalized identity stays fixed.
       const nameMatches = data.result_display_name === pending.play.displayName || (data.was_duplicate === true && validName(data.result_display_name));
-      requireResponse(data.accepted === true && data.result_submission_id === pending.submissionId && data.result_play_id === pending.play.playId && nameMatches && data.result_normalized_name === pending.play.normalizedName && validScore(data.result_first_score) && validScore(data.result_best_score) && data.result_best_score >= pending.score && Number.isSafeInteger(data.result_play_count) && Number(data.result_play_count) >= 1 && ['is_first_play','is_new_best','was_duplicate'].every(key=>typeof data[key]==='boolean'));
+      requireResponse(data.accepted === true && data.result_submission_id === pending.submissionId && data.result_play_id === pending.play.playId && nameMatches && data.result_normalized_name === pending.play.normalizedName && validScore(data.result_first_score) && validScore(data.result_best_score) && data.result_best_score >= pending.score && Number.isSafeInteger(data.result_play_count) && Number(data.result_play_count) >= 1 && Number(data.result_play_count) <= 2147483647 && ['is_first_play','is_new_best','was_duplicate'].every(key=>typeof data[key]==='boolean'));
     },
     async progress(play: Play, report: ProgressReport): Promise<void> {
       requireRequest(validUuid(play.playId) && validName(play.displayName) &&
@@ -156,3 +156,4 @@ export function createRankingClient(fetchImpl: typeof fetch = (...args) => globa
     },
   };
 }
+
