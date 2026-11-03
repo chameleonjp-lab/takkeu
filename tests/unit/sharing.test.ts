@@ -12,15 +12,15 @@ function share(url: string | null, separateUrl = true) {
 }
 
 it.each([0, 1, 42, 1234567890, Number.MAX_SAFE_INTEGER])('shares the finalized result %s, including zero and scores above the ranking limit', score => {
-  expect(share(scoreShareUrl(score), false)).toBe(`タッケウで${score}ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/`);
+  expect(share(scoreShareUrl(score), false)).toBe(`タッケウで${score}ラリー達成！\nあなたは何ラリーできるかな？\nhttps://chameleonjp-lab.github.io/takkeu/\n#タッケウ #ゲーム制作`);
 });
 
 it.each([1, 42, 1234567890, Number.MAX_SAFE_INTEGER])('shares a game introduction regardless of home best %s', best => {
-  expect(share(homeShareUrl(best))).toBe(`タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ`);
+  expect(share(homeShareUrl(best))).toBe(`タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？\n#タッケウ #ゲーム制作`);
 });
 
 it.each([0, -1, -0.5, 0.5, NaN, Infinity, -Infinity, undefined, null, '42'])('uses generic home copy for missing, zero or invalid best %s', best => {
-  expect(share(homeShareUrl(best as number))).toBe('タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ');
+  expect(share(homeShareUrl(best as number))).toBe('タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？\n#タッケウ #ゲーム制作');
 });
 
 it.each([-1, -0.5, 0.5, NaN, Infinity, -Infinity, undefined, null, '42'])('does not build a result share for invalid score %s', score => {

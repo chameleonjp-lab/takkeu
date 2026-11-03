@@ -12,8 +12,8 @@ it.each(SUPPORTED_LANGUAGES)('$id translates home, result and all 44 comment ban
   const text=result.searchParams.get('text')!;
   expect(text).toContain('3500'); expect(text).toContain('35'); expect(text).toContain('https://chameleonjp-lab.github.io/takkeu/');
   if(id!=='ja') {
-    expect(home.searchParams.get('text')).not.toMatch(/[ぁ-んァ-ヶ]/u);
-    expect(text).not.toMatch(/[ぁ-んァ-ヶ]/u);
+    expect(home.searchParams.get('text')!.replace('\n#タッケウ #ゲーム制作','')).not.toMatch(/[ぁ-んァ-ヶ]/u);
+    expect(text.replace('\n#タッケウ #ゲーム制作','')).not.toMatch(/[ぁ-んァ-ヶ]/u);
   }
   // X weights CJK and many non-Latin characters as 2, and URLs as 23.
   const weighted=(value:string)=>[...value.replace(/https?:\/\/\S+/gu, 'x'.repeat(23))].reduce((sum,c)=>{const n=c.codePointAt(0)!;return sum+(n<=0x10ff||(n>=0x2000&&n<=0x200d)||(n>=0x2010&&n<=0x201f)||(n>=0x2032&&n<=0x2037)?1:2);},0);

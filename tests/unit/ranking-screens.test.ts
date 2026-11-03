@@ -30,7 +30,7 @@ it('keeps replay after the result information and shares the actual score and ca
   expect(get('[data-result-position]').compareDocumentPosition(get('[data-result] [data-action="retry"]'))).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
   const url = new URL(get<HTMLAnchorElement>('[data-share-x]').href);
   expect(url.hostname).toBe('twitter.com');
-  expect(url.searchParams.get('text')).toBe('タッケウで42ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
+  expect(url.searchParams.get('text')).toBe('タッケウで42ラリー達成！\nあなたは何ラリーできるかな？\nhttps://chameleonjp-lab.github.io/takkeu/\n#タッケウ #ゲーム制作');
   expect(url.searchParams.has('url')).toBe(false);
 });
 
@@ -42,7 +42,7 @@ it('keeps home best and the current finalized result separate through retry and 
   expect(home).not.toBeNull();
   expect(home.closest('footer')).not.toBeNull();
   expect(home.textContent).toBe('Xでシェア');
-  expect(new URL(home.href).searchParams.get('text')).toBe('タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ');
+  expect(new URL(home.href).searchParams.get('text')).toBe('タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？\n#タッケウ #ゲーム制作');
   for (const link of [home, result]) {
     expect(link.target).toBe('_blank');
     expect(link.rel).toBe('noopener noreferrer');
@@ -53,7 +53,7 @@ it('keeps home best and the current finalized result separate through retry and 
   screens.render({ ...scenario(37).snapshot(), phase: 'running' });
   expect(result.hasAttribute('href')).toBe(false);
   screens.render({ ...scenario(37).snapshot(), phase: 'gameover' });
-  expect(new URL(result.href).searchParams.get('text')).toBe('タッケウで37ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
+  expect(new URL(result.href).searchParams.get('text')).toBe('タッケウで37ラリー達成！\nあなたは何ラリーできるかな？\nhttps://chameleonjp-lab.github.io/takkeu/\n#タッケウ #ゲーム制作');
   expect(result.hasAttribute('aria-disabled')).toBe(false);
   expect(result.tabIndex).toBe(0);
   screens.setPreferences({ ...DEFAULT_PREFERENCES, bestScore: 250 });
@@ -61,7 +61,7 @@ it('keeps home best and the current finalized result separate through retry and 
   screens.render({ ...scenario(0).snapshot(), phase: 'running' });
   expect(result.hasAttribute('href')).toBe(false);
   screens.render({ ...scenario(0).snapshot(), phase: 'gameover' });
-  expect(new URL(result.href).searchParams.get('text')).toBe('タッケウで0ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
+  expect(new URL(result.href).searchParams.get('text')).toBe('タッケウで0ラリー達成！\nあなたは何ラリーできるかな？\nhttps://chameleonjp-lab.github.io/takkeu/\n#タッケウ #ゲーム制作');
   screens.render({ ...scenario(0).snapshot(), phase: 'ready' });
   expect(result.hasAttribute('href')).toBe(false);
   expect(new URL(home.href).searchParams.get('text')).toContain('タップ＆ドラッグで遊べる卓球ゲーム');
@@ -72,7 +72,7 @@ it.each([0, NaN, Infinity, -1, 2.5])('keeps the generic home link available for 
   screens.setPreferences({ ...DEFAULT_PREFERENCES, bestScore });
   const home = get<HTMLAnchorElement>('[data-share-home-x]');
   expect(home).not.toBeNull();
-  expect(new URL(home.href).searchParams.get('text')).toBe('タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ');
+  expect(new URL(home.href).searchParams.get('text')).toBe('タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？\n#タッケウ #ゲーム制作');
 });
 
 it.each([NaN, Infinity, -1, 2.5])('disables an unavailable result %s and recovers on a valid final score', score => {
@@ -95,7 +95,7 @@ it('preserves the result share through leaderboard and submission failures', () 
   for (const status of ['retryable_failed', 'permanent_failed'] as const) {
     screens.setRankingState({ status, pendingCount: 1 });
     const link = get<HTMLAnchorElement>('[data-share-x]');
-    expect(new URL(link.href).searchParams.get('text')).toBe('タッケウで1234567890ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
+    expect(new URL(link.href).searchParams.get('text')).toBe('タッケウで1234567890ラリー達成！\nあなたは何ラリーできるかな？\nhttps://chameleonjp-lab.github.io/takkeu/\n#タッケウ #ゲーム制作');
     expect(link.closest('[inert], [hidden]')).toBeNull();
   }
 });

@@ -3,7 +3,7 @@ import { execFileSync } from 'node:child_process';
 for (const [port, base] of [[4174, '/'], [4175, '/takkeu/']] as const) {
   test(`実配布物 ${base} の初期HTMLに静的なOG・XカードがありPNGを配信する`, async ({ page, request }) => {
     const origin = `http://127.0.0.1:${port}`;
-    const response = await request.get(origin + base);
+    const response = await request.get(origin + base, { maxRedirects: 0 });
     expect(response.ok()).toBe(true);
     const metadata = await page.evaluate(source => {
       const html = new DOMParser().parseFromString(source, 'text/html');
@@ -26,7 +26,7 @@ for (const [port, base] of [[4174, '/'], [4175, '/takkeu/']] as const) {
     expect(metadata.meta['og:image:type']).toBe('image/png');
     expect(metadata.meta['og:image:width']).toBe('1200');
     expect(metadata.meta['og:image:height']).toBe('630');
-    const image = await request.get(origin + base + 'og-takkeu-v1.png');
+    const image = await request.get(origin + base + 'og-takkeu-v1.png', { maxRedirects: 0 });
     expect(image.ok()).toBe(true);
     expect(image.headers()['content-type']).toContain('image/png');
     const bytes = await image.body();
@@ -43,16 +43,16 @@ for (const [port, base] of [[4174, '/'], [4175, '/takkeu/']] as const) {
     await page.goto(origin + base + '?score=450&debug=1');
     await expect(page.getByRole('heading', { name: 'タッケウ', exact: true })).toBeVisible();
     expect(await page.locator('.home-art img').evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
-    const revision = await (await request.get(origin + base + 'release.json')).json();
+    const revision = await (await request.get(origin + base + 'release.json', { maxRedirects: 0 })).json();
     expect(revision.commit).toBe(execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim());
     expect(revision.base).toBe(base);
-    const manifest = await (await request.get(origin + base + 'ranking-manifest.json')).json();
+    const manifest = await (await request.get(origin + base + 'ranking-manifest.json', { maxRedirects: 0 })).json();
     expect(manifest.canonical_url).toBe('https://chameleonjp-lab.github.io/takkeu/');
     expect(manifest.player_name.required_before_start).toBe(false);
     await expect(page.locator('meta[name="chameleonjp-release"]')).toHaveAttribute('content', 'takkeu-20261023-01');
     await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', 'https://chameleonjp-lab.github.io/takkeu/og-takkeu-v1.png');
     await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute('content', 'summary_large_image');
-    const image = await request.get(origin + base + 'og-takkeu-v1.png');
+    const image = await request.get(origin + base + 'og-takkeu-v1.png', { maxRedirects: 0 });
     expect(image.ok()).toBe(true); expect(image.headers()['content-type']).toContain('image/png');
     const imageBytes = await image.body();
     expect([imageBytes.readUInt32BE(16), imageBytes.readUInt32BE(20)]).toEqual([1200, 630]);
@@ -65,7 +65,7 @@ for (const [port, base] of [[4174, '/'], [4175, '/takkeu/']] as const) {
     await expect(page.getByLabel('残球数', { exact: true })).toHaveText('1');
     await page.keyboard.press('Escape');
     expect(failures).toEqual([]);
-    for (const path of ['tests/fixtures/stage2.html', 'tests/fixtures/stage3.html', 'src/main.ts', '@vite/client']) expect((await request.get(origin + base + path)).status()).toBe(404);
+    for (const path of ['tests/fixtures/stage2.html', 'tests/fixtures/stage3.html', 'src/main.ts', '@vite/client']) expect((await request.get(origin + base + path, { maxRedirects: 0 })).status()).toBe(404);
     expect(await page.evaluate(() => 'stage2' in window || 'stage3' in window)).toBe(false);
   });
 }

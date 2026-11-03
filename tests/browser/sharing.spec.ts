@@ -3,7 +3,7 @@ import type { BrowserContext, Locator, Page } from '@playwright/test';
 import type {} from '../helpers/appHarness';
 
 const canonicalUrl = 'https://chameleonjp-lab.github.io/takkeu/';
-const genericText = 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ';
+const genericText = 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？\n#タッケウ #ゲーム制作';
 
 async function blockX(context: BrowserContext) {
   const intents: string[] = [];
@@ -31,6 +31,7 @@ async function activateIntent(page: Page, link: Locator, text: string, keyboard 
   if (keyboard) { await expect(link).toBeFocused(); await page.keyboard.press('Enter'); }
   else await link.click();
   const popup = await popupReady;
+  await popup.waitForURL((await link.getAttribute('href'))!);
   await popup.waitForLoadState('domcontentloaded');
   expect(new URL(popup.url()).searchParams.get('text')).toBe(text);
   expect(await popup.evaluate(() => window.opener === null)).toBe(true);
@@ -86,7 +87,7 @@ test('自己ベストと今回の結果を区別し、通信失敗・再挑戦�
   await page.route('https://*.supabase.co/rest/v1/rpc/get_best_score_ranking', route => route.fulfill({ status: 503, json: { code: 'unavailable' } }));
   await openHarness(page, 200);
   const home = page.locator('[data-share-home-x]'), result = page.locator('[data-share-x]');
-  const bestText = 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ';
+  const bestText = 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？\n#タッケウ #ゲーム制作';
   await activateIntent(page, home, bestText);
   await page.getByRole('button', { name: 'はじめる', exact: true }).click();
   await waitForStart(page);
@@ -97,20 +98,20 @@ test('自己ベストと今回の結果を区別し、通信失敗・再挑戦�
   await page.getByRole('button', { name: 'もう一度', exact: true }).focus();
   await page.keyboard.press('Tab');
   await expect(result).toBeFocused();
-  await activateIntent(page, result, 'タッケウで37ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/', true);
+  await activateIntent(page, result, 'タッケウで37ラリー達成！\nあなたは何ラリーできるかな？\nhttps://chameleonjp-lab.github.io/takkeu/\n#タッケウ #ゲーム制作', true);
   await page.getByRole('button', { name: 'もう一度', exact: true }).click();
   await waitForStart(page);
   await page.clock.runFor(16);
   await expect(result).not.toHaveAttribute('href');
   await finish(page, 0);
-  await activateIntent(page, result, 'タッケウで0ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
+  await activateIntent(page, result, 'タッケウで0ラリー達成！\nあなたは何ラリーできるかな？\nhttps://chameleonjp-lab.github.io/takkeu/\n#タッケウ #ゲーム制作');
   await page.locator('[data-result] [data-action="home"]').click();
   await expect(result).not.toHaveAttribute('href');
   await expectIntent(home, bestText);
   await renderLargeResult(page, 1234567890);
-  await activateIntent(page, result, 'タッケウで1234567890ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
+  await activateIntent(page, result, 'タッケウで1234567890ラリー達成！\nあなたは何ラリーできるかな？\nhttps://chameleonjp-lab.github.io/takkeu/\n#タッケウ #ゲーム制作');
   await page.locator('[data-result] [data-action="home"]').click();
-  await expectIntent(home, 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ');
+  await expectIntent(home, 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？\n#タッケウ #ゲーム制作');
   expect(intents).toHaveLength(4);
 });
 
@@ -131,7 +132,7 @@ for (const [width, height] of [[320, 568], [568, 320], [1280, 720]] as const) {
       });
       expect(overlaps).toBe(false);
       await page.screenshot({ path: info.outputPath(`home-${width}x${height}-${textScale}.png`) });
-      await activateIntent(page, home, 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？ #タッケウ');
+      await activateIntent(page, home, 'タップ＆ドラッグで遊べる卓球ゲーム「タッケウ」！\n何ラリーつなげられる？\n#タッケウ #ゲーム制作');
       await renderLargeResult(page, 1234567890);
       const result = page.locator('[data-share-x]');
       await result.scrollIntoViewIfNeeded();
@@ -141,7 +142,7 @@ for (const [width, height] of [[320, 568], [568, 320], [1280, 720]] as const) {
       expect(bounds!.x).toBeGreaterThanOrEqual(0);
       expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(width);
       await page.screenshot({ path: info.outputPath(`result-${width}x${height}-${textScale}.png`) });
-      await activateIntent(page, result, 'タッケウで1234567890ラリー達成！\nあなたは何ラリーできるかな？\n#タッケウ\nhttps://chameleonjp-lab.github.io/takkeu/');
+      await activateIntent(page, result, 'タッケウで1234567890ラリー達成！\nあなたは何ラリーできるかな？\nhttps://chameleonjp-lab.github.io/takkeu/\n#タッケウ #ゲーム制作');
       expect(intents).toHaveLength(2);
     });
   }

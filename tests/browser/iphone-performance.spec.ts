@@ -19,7 +19,10 @@ test('LAN HTTP相当の非secure originでも起動し60秒の診断記録を保
   // No external hostname is resolved or contacted.
   await page.route('http://device-lan.invalid/**',async route=>{
     const url=new URL(route.request().url());
-    await route.fulfill({response:await route.fetch({url:`http://127.0.0.1:4173${url.pathname}${url.search}`})});
+    if(!['GET','HEAD'].includes(route.request().method())){await route.abort();throw new Error('Non-static LAN fixture request');}
+    const response=await route.fetch({url:`http://127.0.0.1:4173${url.pathname}${url.search}`,maxRedirects:0});
+    if(response.status()>=300&&response.status()<400){await route.abort();throw new Error('LAN fixture redirect');}
+    await route.fulfill({response});
   });
   await page.routeWebSocket('**/*',socket=>socket.close());
   await page.clock.install({time:new Date('2026-10-26T00:00:00Z')});

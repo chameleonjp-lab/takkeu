@@ -1,3 +1,4 @@
+import { activateShareLink } from './shareLink';
 import courtPreviewUrl from './court-preview.png';
 import { CLEAR_SCORE, MAX_LOST_BALLS } from '../game/config';
 import type { GameSnapshot, PauseReason } from '../game/types';
@@ -45,7 +46,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
           <div><span class="step-number">02</span><p><strong>ドラッグで動かす</strong><span>押している間は、その位置について動きます。</span></p></div>
           <div><span class="step-number">03</span><p><strong>離すと止まる</strong><span>最後の位置を保ち、自分の返球で +1。</span></p></div>
         </div>
-        <footer class="home-footer"><p>自己ベスト <output aria-label="自己ベスト" data-best>0</output> ラリー</p><a data-share-home-x href="${homeShareUrl(0)}" target="_blank" rel="noopener noreferrer">Xでシェア</a><a href="${RANKING_CONFIG.rankingUrl}">ランキング</a><button type="button" class="button subtle" data-action="settings">設定</button></footer><details class="share-copy"><summary>共有文をコピー</summary><textarea data-share-home-copy readonly aria-label="共有文をコピー"></textarea></details>
+        <footer class="home-footer"><p>自己ベスト <output aria-label="自己ベスト" data-best>0</output> ラリー</p><a data-share-home-x href="${homeShareUrl(0)}" target="_blank" rel="noopener noreferrer">Xでシェア</a><a href="${RANKING_CONFIG.rankingUrl}">ランキング</a><button type="button" class="button subtle" data-action="settings">設定</button></footer>
         <div data-home-notices></div>
       </section>
 
@@ -73,7 +74,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
         <div class="result-actions"><button type="button" class="button primary" data-action="retry">もう一度 <span aria-hidden="true">↗</span></button>
           <a class="button share-button" data-share-x aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer">Xでシェア</a>
           <button type="button" class="button subtle" data-action="home">ホームへ</button></div>
-        <details class="share-copy"><summary>共有文をコピー</summary><textarea data-share-result-copy readonly aria-label="共有文をコピー"></textarea></details>
+
         <p class="result-message" data-loss-limit-message hidden>累計${MAX_LOST_BALLS}球の落球で終了しました。</p><p class="result-message" data-ranking-participation>もう1ラリー、つないでみよう。</p>
         <div data-result-notices></div>
         <section class="ranking-panel" aria-labelledby="ranking-title"><p class="eyebrow">LEADERBOARD</p><h3 id="ranking-title">ランキング TOP 30</h3><p class="ranking-caption">新ルールの上限は3500ラリーです。過去の3000超・3500超の高スコアは旧ルールの記録として保持し、旧記録から殿堂番号は発行しません。</p><p data-ranking-message role="status">ランキングを読み込んでいます。</p>
@@ -171,6 +172,8 @@ export function createScreens(root: HTMLElement, actions: Actions) {
     (open ? get('#settings-title') : home.querySelector<HTMLElement>('[data-action="settings"]'))?.focus({ preventScroll: true });
   };
   const click = (event: MouseEvent): void => {
+    const share = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('[data-share-home-x], [data-share-x]') : null;
+    if (share && doc.defaultView && activateShareLink(event, share, doc.defaultView, t('共有文をコピー'))) return;
     const target = event.target instanceof Element ? event.target.closest<HTMLElement>('[data-action]') : null;
     if (!target || target.closest('[hidden], [inert]') || target.matches(':disabled')) return;
     event.preventDefault();
@@ -220,7 +223,6 @@ export function createScreens(root: HTMLElement, actions: Actions) {
     if (shareKey === key) return;
     shareKey = key;
     const url = phase === 'gameover' ? scoreShareUrl(resultScore, cleared, number) : null;
-    get<HTMLTextAreaElement>('[data-share-result-copy]').value = url ? new URL(url).searchParams.get('text') ?? '' : '';
     if (url) { resultShare.href = url; resultShare.removeAttribute('aria-disabled'); resultShare.removeAttribute('tabindex'); }
     else { resultShare.removeAttribute('href'); resultShare.setAttribute('aria-disabled', 'true'); resultShare.tabIndex = -1; }
   };
@@ -315,7 +317,6 @@ export function createScreens(root: HTMLElement, actions: Actions) {
     displaySnapshotText(latestSnapshot, lastRemaining < 0 ? 1 : lastRemaining);
     const homeUrl = homeShareUrl(preferences.bestScore);
     get<HTMLAnchorElement>('[data-share-home-x]').href = homeUrl;
-    get<HTMLTextAreaElement>('[data-share-home-copy]').value = `${new URL(homeUrl).searchParams.get('text')}\n${RANKING_CONFIG.canonicalUrl}`;
     updateShare();
   };
   refreshLanguage();
