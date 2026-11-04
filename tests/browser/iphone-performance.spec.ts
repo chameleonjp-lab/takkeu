@@ -1,4 +1,5 @@
 import { test,expect,waitForStart } from '../helpers/browserTest';
+import { isolatedHmrSocket } from '../helpers/staticNetworkBoundary';
 
 test('test-only iPhone recorder requires started play and blocks off-origin fetch',async({page})=>{
   const external:string[]=[];
@@ -24,7 +25,15 @@ test('LAN HTTP相当の非secure originでも起動し60秒の診断記録を保
     if(response.status()>=300&&response.status()<400){await route.abort();throw new Error('LAN fixture redirect');}
     await route.fulfill({response});
   });
-  await page.routeWebSocket('**/*',socket=>socket.close());
+  // This origin exists only in this mocked test; its blobs never use HTTP.
+  await page.route('blob:http://device-lan.invalid/**', async route => {
+    const url = new URL(route.request().url());
+    if (url.protocol !== 'blob:' || url.origin !== 'http://device-lan.invalid' || !['GET', 'HEAD'].includes(route.request().method())) {
+      await route.abort('blockedbyclient'); return;
+    }
+    await route.continue();
+  });
+  await page.routeWebSocket('**/*', socket => isolatedHmrSocket(socket, errors, 'ws://device-lan.invalid'));
   await page.clock.install({time:new Date('2026-10-26T00:00:00Z')});
   await page.clock.pauseAt(new Date('2026-10-26T00:00:01Z'));
   await page.goto('http://device-lan.invalid/tests/fixtures/performance-iphone.html');

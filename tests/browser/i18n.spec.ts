@@ -55,7 +55,9 @@ for (const { id } of SUPPORTED_LANGUAGES) test(`i18n ${id}: all principal screen
   await expect(page.locator('[data-result]')).toHaveAttribute('data-cleared','true');
   const text=new URL((await page.locator('[data-share-x]').getAttribute('href'))!).searchParams.get('text')!;
   expect(text).toContain('3500');expect(text).toContain('https://chameleonjp-lab.github.io/takkeu/');
-  if(id!=='ja') expect(text).not.toMatch(kana);
+  const fixedTags = '\n#タッケウ #ゲーム制作';
+  expect(text.endsWith(fixedTags)).toBe(true);
+  if(id!=='ja') expect(text.slice(0, -fixedTags.length)).not.toMatch(kana);
   await page.locator('[data-certificate-create]').click();
   await expect(page.locator('[data-certificate-preview]')).toBeVisible();
   const size=await page.locator('[data-certificate-image]').evaluate((img:HTMLImageElement)=>[img.naturalWidth,img.naturalHeight]);
