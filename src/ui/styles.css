@@ -144,7 +144,7 @@ canvas:focus-visible { outline: 2px solid #7be2d1; outline-offset: -3px; }
 .home-screen .brand { min-height: 48px; }
 .language-control { display: grid; gap: 4px; font-size: .8125rem; min-width: 0; }
 .language-control select { display: block; width: 100%; max-width: 100%; min-width: 0; min-height: 44px; padding: 7px 10px; border: 1px solid #45616d; border-radius: 10px; background: #12202e; color: #eaf3f6; font-size: .8125rem; }
-.home-screen .language-control { margin-left: auto; flex: 0 1 190px; max-width: 45%; font-size: 0; }
+.home-screen .language-control { flex: 0 1 190px; max-width: 45%; font-size: 0; }
 .hero-copy, .how-to p, .hud > div { min-width: 0; }
 .hero-copy, .brand-note, .how-to, .home-footer, .ranking-panel th { overflow-wrap: anywhere; }
 .ranking-panel th { hyphens: auto; }
