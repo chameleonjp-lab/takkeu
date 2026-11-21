@@ -330,7 +330,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       for (const button of root.querySelectorAll<HTMLButtonElement>('[data-action="start"], [data-action="retry"]')) { button.disabled = starting; button.setAttribute('aria-busy', String(starting)); }
       get<HTMLInputElement>('[data-player-name]').disabled = starting;
     },
-    setRankingParticipation(named: boolean) { participation = named; displayParticipation(); },
+    setRankingParticipation(named: boolean | null) { participation = named; displayParticipation(); },
     setResultPosition(state: ResultPositionState) { positionState = state; displayPosition(); },
     setRankingState(state: RankingState) { rankingState = state; displayRankingState(); },
     setResultHall(state: ResultHallState) {
