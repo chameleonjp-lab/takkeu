@@ -197,7 +197,10 @@ it.each([false,true])('開始通知の同期エラーでも準備エラーに戻
   await vi.advanceTimersByTimeAsync(64);
   expect(t.session.snapshot().phase).toBe('gameover');
   expect(t.root.querySelector('[data-ranking-participation]')!.textContent).toContain('もう1ラリー');
-  expect(t.root.querySelector<HTMLElement>('[data-result]')!.hidden).toBe(false);
+  // The final effect may keep the result hidden for up to five seconds.
+  await vi.waitFor(() => expect(t.root.querySelector<HTMLElement>('[data-result]')!.hidden).toBe(false), {
+    timeout: 5_500, interval: 16,
+  });
   expect(t.root.querySelector('[data-ranking-status]')!.textContent).toContain('端末に記録を保存できません');
   expect(t.startTraffic).toHaveLength(0);expect(t.results).toHaveLength(0);
 });
