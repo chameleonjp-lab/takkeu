@@ -8,31 +8,38 @@ import type { PendingResult,Play } from '../../src/ranking/client';
 
 const cleanup:(()=>void)[]=[];
 afterEach(()=>{for(const dispose of cleanup.splice(0))dispose();vi.unstubAllGlobals();vi.useRealTimers();});
-function setup({validLayout=true,silent=false,named=false,rankControlled=false}:{validLayout?:boolean;silent?:boolean;named?:boolean;rankControlled?:boolean}={}){
+function setup({validLayout=true,silent=false,named=false,rankControlled=false,failBegin=false}:{validLayout?:boolean;silent?:boolean;named?:boolean;rankControlled?:boolean;failBegin?:boolean}={}){
   vi.useFakeTimers();
   vi.stubGlobal('requestAnimationFrame',(cb:FrameRequestCallback)=>setTimeout(()=>cb(performance.now()),16) as unknown as number);
   vi.stubGlobal('cancelAnimationFrame',(id:number)=>clearTimeout(id));
   const root=document.createElement('div');document.body.append(root);
   const session=createSession(DEFAULT_CONFIG,7),results:PendingResult[]=[];
+  if(failBegin){
+    const start=session.start;
+    session.start=()=>{start();vi.spyOn(crypto,'randomUUID').mockImplementation(()=>{throw new Error('test UUID API unavailable');});};
+    cleanup.push(()=>vi.restoreAllMocks());
+  }
   const play:Play={startId:'11111111-1111-4111-8111-111111111111',playId:'22222222-2222-4222-8222-222222222222',displayName:'テスト',normalizedName:'テスト'};
+  const startTraffic:{channel:'guest'|'named';startId:string;phase:string;name?:string}[]=[];
   const requests:{startId:string;play:Play;resolve():void}[]=[],accepted=new Map<string,Play>();
   const mapping={screen:{left:0,top:0,width:390,height:844},isCurrent:()=>true,toWorld:()=>({x:0,y:.5})};
   const view:GameView={prepare:async()=>{},render(){},resize(){},inputMapping:()=>mapping,setQuality(){},resources:()=>({geometries:0,textures:0,programs:0,drawCalls:0,particles:0,particleCapacity:1536}),dispose(){}};
   const audio={prepare:()=>silent?new Promise<boolean>(()=>{}):Promise.resolve(true),unlock:async()=>true,consume(){},setVolume(){},setMuted(){},suspend(){},reset(){},dispose:async()=>{}};
   const store=new Map<string,string>();
   const app=createApp(root,{createSession:()=>session,createView:()=>view,createAudio:()=>audio,storage:{getItem:k=>store.get(k)??null,setItem(k,v){store.set(k,v)}},
-    rankingApi:{position:async()=>null,start:async startId=>{
+    rankingApi:{position:async()=>null,start:async (startId,name)=>{
+      startTraffic.push({channel:'named',startId,phase:session.snapshot().phase,name});
       if(!rankControlled)return play;
       let record=accepted.get(startId);
       if(!record){record={...play,startId,playId:`22222222-2222-4222-8222-${String(accepted.size+1).padStart(12,'0')}`};accepted.set(startId,record);}
       const value=record;
       return new Promise<Play>(resolve=>{requests.push({startId,play:value,resolve:()=>resolve(value)});});
-    },startGuest:async()=>{},finish:async result=>{results.push(result);},submit:async()=>{},top:async()=>[]}});
+    },startGuest:async startId=>{startTraffic.push({channel:'guest',startId,phase:session.snapshot().phase});},finish:async result=>{results.push(result);},submit:async()=>{},top:async()=>[]}});
   root.querySelector('.canvas-wrap')!.getBoundingClientRect=()=>({x:0,y:0,left:0,top:0,width:validLayout?390:0,height:validLayout?844:0,right:390,bottom:844,toJSON(){return{};}});
   if(named)root.querySelector<HTMLInputElement>('[data-player-name]')!.value='テスト';
   const click=(selector:string)=>root.querySelector<HTMLButtonElement>(selector)!.click();
   cleanup.push(()=>{app.dispose();root.remove();});
-  return{root,session,results,requests,click,setLayout(value:boolean){validLayout=value;}};
+  return{root,session,results,requests,startTraffic,click,setLayout(value:boolean){validLayout=value;}};
 }
 
 it.each(['pause','result','home'])('準備済みなら%sから案内を出さず次の描画フレームを待たず開始する',async(from)=>{
@@ -116,23 +123,44 @@ it.each([false,true])('キャンセル後の同名開始で古い応答が新し
   expect(new Set(t.results.map(row=>row.play.playId)).size).toBe(2);
 });
 
-it('ランキング開始後に操作座標の準備をキャンセルしても開始済み記録を一度だけ閉じる',async()=>{
-  const t=setup({validLayout:false,named:true});t.click('[data-action="start"]');
-  await vi.advanceTimersByTimeAsync(100);
+it.each([false,true])('操作座標の準備キャンセルでは開始を送信せず再試行だけを1回記録する（名前あり%s）',async(named)=>{
+  const t=setup({validLayout:false,named,rankControlled:named});
+  t.click('[data-action="start"]');await vi.advanceTimersByTimeAsync(100);
   expect(t.root.querySelector('[data-loading-stage]')!.textContent).toContain('スタート位置');
+  expect(t.startTraffic).toHaveLength(0);
   t.click('[data-loading-action="cancel"]');await vi.advanceTimersByTimeAsync(100);
   expect(t.session.snapshot().phase).toBe('ready');
-  expect(t.results).toHaveLength(1);expect(t.results[0]).toMatchObject({resultType:'retire',score:0});
-  await vi.advanceTimersByTimeAsync(5000);expect(t.results).toHaveLength(1);expect(t.session.snapshot().phase).toBe('ready');
+  expect(t.startTraffic).toHaveLength(0);expect(t.results).toHaveLength(0);
+  t.setLayout(true);
+  t.click('[data-action="start"]');t.click('[data-action="start"]');
+  await vi.advanceTimersByTimeAsync(200);
+  expect(t.session.snapshot().phase).toBe('running');
+  expect(t.startTraffic).toHaveLength(1);
+  expect(t.startTraffic[0]).toMatchObject({channel:named?'named':'guest',phase:'running'});
+  if(named){expect(t.startTraffic[0]!.name).toBe('テスト');t.requests[0]!.resolve();}
+  await vi.advanceTimersByTimeAsync(0);
+  expect(t.startTraffic).toHaveLength(1);expect(t.results).toHaveLength(0);
 });
 
-it('表示サイズが確定しない場合は期限で再試行へ進み、開始済み記録と準備用RAFを回収する',async()=>{
+it('表示サイズが確定しない場合は開始も結果も送信せず期限で再試行へ進む',async()=>{
   const t=setup({validLayout:false,named:true});t.click('[data-action="start"]');
   await vi.advanceTimersByTimeAsync(5200);
   expect(t.session.snapshot().phase).toBe('ready');
   expect(t.root.querySelector('[data-loading-screen] [role="alert"]')!.textContent).toContain('準備に時間がかかっています');
-  expect(t.results).toHaveLength(1);expect(t.results[0]!.resultType).toBe('retire');
+  expect(t.startTraffic).toHaveLength(0);expect(t.results).toHaveLength(0);
   expect(vi.getTimerCount()).toBe(1);
+});
+
+it('開始操作時の名前を固定し、描画準備中の入力変更で別名のランキングに切り替えない',async()=>{
+  const t=setup({validLayout:false,named:true,rankControlled:true});
+  t.click('[data-action="start"]');await vi.advanceTimersByTimeAsync(100);
+  expect(t.startTraffic).toHaveLength(0);
+  t.root.querySelector<HTMLInputElement>('[data-player-name]')!.value='変更後';
+  t.setLayout(true);await vi.advanceTimersByTimeAsync(100);
+  expect(t.startTraffic).toHaveLength(1);
+  expect(t.startTraffic[0]).toMatchObject({channel:'named',name:'テスト',phase:'running'});
+  t.requests[0]!.resolve();await vi.advanceTimersByTimeAsync(0);
+  expect(t.session.snapshot().phase).toBe('running');
 });
 
 
@@ -155,3 +183,21 @@ it('records the real cumulative loss count when all balls are gone, even before 
   });
 });
 it('named ranking connection cannot hold gameplay while the original start remains pending',async()=>{const t=setup({named:true,rankControlled:true});t.click('[data-action="start"]');await vi.advanceTimersByTimeAsync(1000);expect(t.requests).toHaveLength(1);expect(t.session.snapshot().phase).toBe('running');expect(t.results).toHaveLength(0);t.requests[0]!.resolve();await vi.advanceTimersByTimeAsync(0);expect(t.session.snapshot().phase).toBe('running')});
+
+it.each([false,true])('開始通知の同期エラーでも準備エラーに戻らずゲームを続ける（名前あり%s）',async(named)=>{
+  const t=setup({named,failBegin:true});
+  t.click('[data-action="start"]');await vi.advanceTimersByTimeAsync(200);
+  expect(t.session.snapshot().phase).toBe('running');
+  expect(t.session.snapshot().simTime).toBeGreaterThan(0);
+  expect(t.root.querySelector<HTMLElement>('[data-loading-screen]')!.hidden).toBe(true);
+  expect(t.startTraffic).toHaveLength(0);
+  for(let tick=0;tick<3000&&t.session.snapshot().phase==='running';tick++){
+    t.session.step(DEFAULT_CONFIG.fixedDt,{target:{x:1,y:0.1}});
+  }
+  await vi.advanceTimersByTimeAsync(64);
+  expect(t.session.snapshot().phase).toBe('gameover');
+  expect(t.root.querySelector('[data-ranking-participation]')!.textContent).toContain('もう1ラリー');
+  expect(t.root.querySelector<HTMLElement>('[data-result]')!.hidden).toBe(false);
+  expect(t.root.querySelector('[data-ranking-status]')!.textContent).toContain('端末に記録を保存できません');
+  expect(t.startTraffic).toHaveLength(0);expect(t.results).toHaveLength(0);
+});
