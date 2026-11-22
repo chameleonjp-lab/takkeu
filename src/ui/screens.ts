@@ -28,7 +28,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
   root.innerHTML = `
     <main class="shell">
       <section class="home-screen" data-home>
-        <header class="brand"><span class="brand-mark" aria-hidden="true">t.</span><span>TAKKEU</span><span class="brand-note">卓球の、その先へ。</span>${languageControl}</header>
+        <header class="brand">${languageControl}<span class="brand-mark" aria-hidden="true">t.</span><span>TAKKEU</span><span class="brand-note">卓球の、その先へ。</span></header>
         <div class="home-hero">
           <div class="hero-copy">
             <p class="eyebrow"><span class="status-dot"></span> ROAD TO 3500 RALLIES.</p>
@@ -330,7 +330,7 @@ export function createScreens(root: HTMLElement, actions: Actions) {
       for (const button of root.querySelectorAll<HTMLButtonElement>('[data-action="start"], [data-action="retry"]')) { button.disabled = starting; button.setAttribute('aria-busy', String(starting)); }
       get<HTMLInputElement>('[data-player-name]').disabled = starting;
     },
-    setRankingParticipation(named: boolean) { participation = named; displayParticipation(); },
+    setRankingParticipation(named: boolean | null) { participation = named; displayParticipation(); },
     setResultPosition(state: ResultPositionState) { positionState = state; displayPosition(); },
     setRankingState(state: RankingState) { rankingState = state; displayRankingState(); },
     setResultHall(state: ResultHallState) {

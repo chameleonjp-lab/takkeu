@@ -109,14 +109,18 @@ test('language changes preserve held start, finish, Hall and rank requests and t
     await page.clock.runFor(5);
     return remote.count(rpc.start);
   }, { timeout: 30000, intervals: [1, 5, 10] }).toBe(1);
-  await expect(page.locator('[data-loading-screen]')).toBeVisible();
+  // The start request belongs to an admitted play, not the preparation screen.
+  await waitForStart(page);
+  await expect(page.locator('[data-game]')).toBeVisible();
+  await expect(page.locator('[data-loading-screen]')).toBeHidden();
+  const run = await page.evaluate(() => window.stage3.snapshot().runId);
   const startCounts = remote.counts();
   await language(page, 'en');
-  await expect(page.locator('[data-loading-screen] h2')).toHaveText('Getting ready to play');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(page.locator('[data-player-name]')).toHaveValue(playerName);
+  expect(await page.evaluate(() => window.stage3.snapshot())).toMatchObject({ phase: 'running', runId: run });
   expect(remote.counts()).toEqual(startCounts);
   remote.release(rpc.start);
-  await waitForStart(page);
   await clear(page);
   await expect.poll(() => remote.count(rpc.finish)).toBe(1);
   await expect(page.locator('[data-ranking-body] bdi')).toHaveText(playerName);

@@ -75,6 +75,30 @@ for (const { id } of SUPPORTED_LANGUAGES) test(`i18n ${id}: all principal screen
   await expect(start).toContainText('はじめる');
 });
 
+test('home language starts on the left of the first header without starting a run', async ({ page, rankingTraffic }) => {
+  await page.goto('/tests/fixtures/stage3.html');
+  const control = page.locator('[data-home] [data-language]');
+  await expect(control.locator('option')).toHaveCount(15);
+  await control.selectOption('pt-BR');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'pt-BR');
+  for (const viewport of [{ width: 320, height: 568 }, { width: 402, height: 700 }, { width: 844, height: 390 }]) {
+    await page.setViewportSize(viewport);
+    const fits = await control.evaluate(select => {
+      const label = select.closest('label')!;
+      const header = label.closest('header')!;
+      const bounds = header.getBoundingClientRect();
+      const picker = select.getBoundingClientRect();
+      const brand = header.querySelector('.brand-mark')!.getBoundingClientRect();
+      return header.firstElementChild === label && Math.abs(picker.left - bounds.left) <= 1 &&
+        picker.top >= bounds.top - 1 && picker.bottom <= bounds.bottom + 1 &&
+        picker.right <= brand.left + 1 && picker.height >= 44 &&
+        document.documentElement.scrollWidth <= innerWidth + 1;
+    });
+    expect(fits, `selector remains upper-left in ${viewport.width}×${viewport.height}`).toBe(true);
+  }
+  expect(rankingTraffic).toEqual([]);
+});
+
 test('i18n browser preference and saved language are separate from gameplay storage',async({page})=>{
   await page.addInitScript(()=>{
     Object.defineProperties(navigator,{languages:{get:()=>['zh-HK','en']},language:{get:()=> 'en'}});
